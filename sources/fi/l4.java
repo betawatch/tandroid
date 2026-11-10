@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.id;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 final int i11 = 1;
                 if (!z9) {
                     TextView textView = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.E8, g5Var);
+                    org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.E8, g5Var);
                     textView.setGravity(16);
                     textView.setLines(1);
                     textView.setSingleLine();
@@ -187,7 +187,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 final int i12 = 3;
                 if (jVar instanceof tg.k2) {
                     TextView textView2 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.E8, g5Var);
+                    org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.E8, g5Var);
                     textView2.setGravity(16);
                     textView2.setLines(1);
                     textView2.setSingleLine();
@@ -875,7 +875,7 @@ public final /* synthetic */ class l4 implements Runnable {
                 boolean z10 = jVar instanceof tg.n1;
                 if (j5Var.indexOfChild(jVar) != j5Var.getChildCount() - 1 && !(jVar instanceof tg.q1)) {
                     TextView textView3 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.s6.U(textView3, org.telegram.ui.ActionBar.l6.E8, g5Var);
+                    org.telegram.ui.ActionBar.t6.U(textView3, org.telegram.ui.ActionBar.m6.E8, g5Var);
                     textView3.setLines(1);
                     textView3.setSingleLine();
                     textView3.setEllipsize(TextUtils.TruncateAt.END);
@@ -1019,7 +1019,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     linearLayout.addView(textView3, c8.ha.o(-2, 44));
                 } else if (!z10 && !z9 && !(jVar instanceof tg.r1) && !(jVar instanceof tg.n0) && !(jVar instanceof tg.l2) && !(jVar instanceof tg.k0) && !(jVar instanceof tg.q1)) {
                     TextView textView4 = new TextView(o5Var.getContext());
-                    org.telegram.ui.ActionBar.s6.U(textView4, org.telegram.ui.ActionBar.l6.E8, g5Var);
+                    org.telegram.ui.ActionBar.t6.U(textView4, org.telegram.ui.ActionBar.m6.E8, g5Var);
                     textView4.setLines(1);
                     textView4.setSingleLine();
                     textView4.setEllipsize(TextUtils.TruncateAt.END);
@@ -1165,8 +1165,8 @@ public final /* synthetic */ class l4 implements Runnable {
                 int i18 = 0;
                 while (i18 < linearLayout.getChildCount()) {
                     View childAt = linearLayout.getChildAt(i18);
-                    int i19 = org.telegram.ui.ActionBar.l6.i6;
-                    int w02 = org.telegram.ui.ActionBar.l6.w0(i19, g5Var);
+                    int i19 = org.telegram.ui.ActionBar.m6.i6;
+                    int w02 = org.telegram.ui.ActionBar.m6.w0(i19, g5Var);
                     int i20 = 8;
                     int i21 = i18 == 0 ? 8 : 0;
                     int i22 = i18 == linearLayout.getChildCount() - 1 ? 8 : 0;
@@ -1174,7 +1174,7 @@ public final /* synthetic */ class l4 implements Runnable {
                     if (i18 != 0) {
                         i20 = 0;
                     }
-                    org.telegram.ui.ActionBar.s6.Q(childAt, org.telegram.ui.ActionBar.l6.c0(w02, i21, i22, i23, i20), null, org.telegram.ui.ActionBar.s6.M(i19), g5Var);
+                    org.telegram.ui.ActionBar.t6.Q(childAt, org.telegram.ui.ActionBar.m6.c0(w02, i21, i22, i23, i20), null, org.telegram.ui.ActionBar.t6.M(i19), g5Var);
                     i18++;
                 }
                 o5Var.r1.addView(linearLayout);

@@ -3,42 +3,91 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hz extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.g6 a;
+public class hz extends ReplacementSpan {
+    public final TextPaint a;
     public final Paint b;
-    public final int c;
-    public final org.telegram.ui.Components.ny0 d;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public int f;
+    public final int h;
+    public boolean n;
+    public int r;
+    public org.telegram.ui.ActionBar.h6 s;
+    public CharSequence w;
 
-    public hz(String str, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    public hz(int i7) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
         Paint paint = new Paint(1);
         this.b = paint;
-        this.a = g6Var;
-        this.c = i7;
-        this.d = new org.telegram.ui.Components.ny0(str, 9.33f, org.telegram.messenger.g0.o());
+        this.w = "NEW";
+        this.h = i7;
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
         paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(i7 < 0 ? 12.0f : i7));
+    }
+
+    public final void a() {
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(this.w, this.a, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineWidth(0);
+            this.e = this.c.getHeight();
+        }
     }
 
     @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        int w02 = org.telegram.ui.ActionBar.l6.w0(this.c, this.a);
-        int r12 = org.telegram.ui.ActionBar.l6.r1(0.15f, w02);
+    public void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        a();
+        if (this.n) {
+            this.f = org.telegram.ui.ActionBar.m6.w0(this.r, this.s);
+        }
+        int i14 = this.f;
+        if (i14 == 0) {
+            i14 = paint.getColor();
+        }
         Paint paint2 = this.b;
-        paint2.setColor(r12);
-        float f11 = (i13 + i11) / 2.0f;
-        float L = org.telegram.messenger.g0.L(14.66f);
+        paint2.setColor(i14);
+        int i15 = org.telegram.messenger.g0.B(i14) > 0.721f ? -16777216 : -1;
+        TextPaint textPaint = this.a;
+        textPaint.setColor(i15);
+        paint2.setAlpha((int) (paint2.getAlpha() * 1.0f));
+        textPaint.setAlpha((int) (textPaint.getAlpha() * 1.0f));
+        float L = f10 + org.telegram.messenger.g0.L(2.0f);
+        float L2 = (i12 - this.e) + org.telegram.messenger.g0.L(1.0f);
         RectF rectF = org.telegram.messenger.g0.P;
-        float f12 = L / 2.0f;
-        rectF.set(f10, f11 - f12, this.d.k() + f10 + org.telegram.messenger.g0.L(9.33f), f12 + f11);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint2);
-        this.d.c(f10 + org.telegram.messenger.g0.L(4.66f), f11, 1.0f, w02, canvas);
+        rectF.set(L, L2, this.d + L, this.e + L2);
+        float L3 = org.telegram.messenger.g0.L(4.4f);
+        rectF.inset(org.telegram.messenger.g0.L(-4.0f), org.telegram.messenger.g0.L(this.h == 8 ? -3.66f : -2.33f));
+        canvas.drawRoundRect(rectF, L3, L3, paint2);
+        canvas.save();
+        canvas.translate(L, L2);
+        this.c.draw(canvas);
+        canvas.restore();
     }
 
     @Override // android.text.style.ReplacementSpan
     public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.d.k() + org.telegram.messenger.g0.L(9.33f));
+        a();
+        return (int) (org.telegram.messenger.g0.L(10.0f) + this.d);
+    }
+
+    public hz() {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.w = "NEW";
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        paint.setStyle(Paint.Style.FILL);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(10.0f));
     }
 }

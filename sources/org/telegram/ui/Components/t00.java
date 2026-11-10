@@ -1,7 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface t00 {
-    void a(int i7);
+public final class t00 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u00 b;
+
+    public /* synthetic */ t00(u00 u00Var, int i7) {
+        this.a = i7;
+        this.b = u00Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                u00 u00Var = this.b;
+                org.telegram.messenger.qs.f(u00Var.r.a).j(u00Var.f);
+                u00Var.requestLayout();
+                break;
+            default:
+                u00 u00Var2 = this.b;
+                u00Var2.d = null;
+                u00Var2.a = null;
+                u00Var2.b = false;
+                break;
+        }
+    }
 }

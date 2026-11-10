@@ -1,61 +1,104 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
+import android.util.Pair;
+import android.view.VelocityTracker;
+import java.io.File;
+import java.io.Serializable;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ Bitmap c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ rn0(PhotoViewer photoViewer, Bitmap bitmap, int i7) {
-        this.a = i7;
-        this.b = photoViewer;
-        this.c = bitmap;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ rn0(to0 to0Var, int[] iArr, int[] iArr2, boolean z9, boolean z10, boolean z11) {
+        this.e = to0Var;
+        this.f = iArr;
+        this.h = iArr2;
+        this.b = z9;
+        this.c = z10;
+        this.d = z11;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        Bitmap bitmap = this.c;
-        PhotoViewer photoViewer = this.b;
+        Object obj = this.h;
+        Serializable serializable = this.f;
+        Object obj2 = this.e;
         switch (i7) {
             case 0:
+                PhotoViewer photoViewer = (PhotoViewer) obj2;
+                File file = (File) serializable;
+                org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj;
                 Drawable[] drawableArr = PhotoViewer.Y8;
-                photoViewer.g0(bitmap);
-                org.telegram.messenger.g0.h3(new rn0(photoViewer, bitmap, 6));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.Y8;
-                photoViewer.g0(bitmap);
-                org.telegram.messenger.g0.h3(new rn0(photoViewer, bitmap, 5));
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.Y8;
-                photoViewer.g0(bitmap);
-                org.telegram.messenger.g0.h3(new rn0(photoViewer, bitmap, 4));
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.Y8;
-                photoViewer.g0(bitmap);
-                break;
-            case 4:
-                photoViewer.B4.v0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.X2(true, true);
-                break;
-            case 5:
-                photoViewer.B4.v0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.X2(true, true);
+                Pair L0 = org.telegram.messenger.g0.L0(file);
+                int i10 = photoViewer.U3;
+                photoViewer.U3 = i10 - 1;
+                String absolutePath = file.getAbsolutePath();
+                boolean z9 = this.b;
+                org.telegram.messenger.gf gfVar = new org.telegram.messenger.gf(i10, absolutePath, z9 ? 0 : ((Integer) L0.first).intValue(), z9, 0, 0);
+                gfVar.n(L0);
+                photoViewer.c2 = 2;
+                photoViewer.u2 = false;
+                photoViewer.d = new bq0(photoViewer, photoViewer.d, ijVar, gfVar, this.c, this.d);
+                photoViewer.p1.f();
+                if (photoViewer.T6 == null) {
+                    photoViewer.T6 = VelocityTracker.obtain();
+                }
+                photoViewer.A7 = 3;
+                photoViewer.m3(false, false);
+                photoViewer.g3(true, false);
+                cn cnVar = photoViewer.k4;
+                if (cnVar == null || cnVar.Z == null || !cnVar.U9()) {
+                    photoViewer.Q1();
+                } else {
+                    photoViewer.k4.Z.L();
+                }
+                photoViewer.L0.setAlpha(org.telegram.messenger.qs.e4);
+                photoViewer.e0.setAlpha(1.0f);
+                photoViewer.X1(null, null, null, null, null, null, Collections.singletonList(gfVar), 0, null);
+                photoViewer.P0.setTranslationY(org.telegram.messenger.g0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.S0.setTranslationY(org.telegram.messenger.g0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.F.setTranslationY(-r0.getHeight());
+                photoViewer.Q1.setTranslationY(org.telegram.messenger.g0.L(photoViewer.r1 ? 154.0f : 96.0f));
+                photoViewer.E0();
+                photoViewer.d3();
+                photoViewer.A7 = 0;
                 break;
             default:
-                photoViewer.B4.v0(bitmap);
-                photoViewer.s5.setUndoCutState(true);
-                photoViewer.X2(true, true);
+                to0 to0Var = (to0) obj2;
+                int[] iArr = (int[]) serializable;
+                int i11 = iArr[0] + 1;
+                iArr[0] = i11;
+                int i12 = ((int[]) obj)[0];
+                if (i11 == i12) {
+                    sq0 sq0Var = to0Var.b.e0;
+                    boolean z10 = this.b;
+                    int i13 = (this.c ? 1 : 0) + (z10 ? 1 : 0);
+                    boolean z11 = this.d;
+                    new org.telegram.ui.Components.gc(sq0Var, null).m(i13 + (z11 ? 1 : 0) > 1 ? org.telegram.ui.Components.fc.w : z11 ? i12 > 1 ? org.telegram.ui.Components.fc.s : org.telegram.ui.Components.fc.r : z10 ? i12 > 1 ? org.telegram.ui.Components.fc.n : org.telegram.ui.Components.fc.h : i12 > 1 ? org.telegram.ui.Components.fc.f : org.telegram.ui.Components.fc.e, i12, -115203550, -1, null).j();
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ rn0(PhotoViewer photoViewer, File file, boolean z9, org.telegram.messenger.ij ijVar, boolean z10, boolean z11) {
+        this.e = photoViewer;
+        this.f = file;
+        this.b = z9;
+        this.h = ijVar;
+        this.c = z10;
+        this.d = z11;
     }
 }

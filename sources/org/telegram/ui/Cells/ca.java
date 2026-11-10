@@ -9,14 +9,14 @@ import org.telegram.messenger.lc;
 import org.telegram.messenger.w10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.dj0;
 import org.telegram.ui.Components.xo;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ca implements ej0, bg.p, lc, org.telegram.messenger.j9, xo, w10 {
+public final /* synthetic */ class ca implements dj0, bg.p, lc, org.telegram.messenger.j9, xo, w10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -36,23 +36,23 @@ public final /* synthetic */ class ca implements ej0, bg.p, lc, org.telegram.mes
             case 4:
                 o4 o4Var = (o4) this.b;
                 float progress = 1.0f - (o4Var.w.getProgress() * 0.143f);
-                org.telegram.ui.Components.l9 l9Var = o4Var.a;
-                l9Var.setScaleX(progress);
-                l9Var.setScaleY(progress);
+                org.telegram.ui.Components.k9 k9Var = o4Var.a;
+                k9Var.setScaleX(progress);
+                k9Var.setScaleY(progress);
                 o4Var.invalidate();
                 break;
             default:
                 d7 d7Var = (d7) this.b;
                 float progress2 = 1.0f - (d7Var.d.getProgress() * 0.143f);
-                org.telegram.ui.Components.l9 l9Var2 = d7Var.a;
-                l9Var2.setScaleX(progress2);
-                l9Var2.setScaleY(progress2);
+                org.telegram.ui.Components.k9 k9Var2 = d7Var.a;
+                k9Var2.setScaleX(progress2);
+                k9Var2.setScaleY(progress2);
                 d7Var.invalidate();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.dj0
     public boolean c(int i7, View view) {
         ga gaVar = (ga) this.b;
         gaVar.getClass();
@@ -67,7 +67,7 @@ public final /* synthetic */ class ca implements ej0, bg.p, lc, org.telegram.mes
 
     @Override // org.telegram.messenger.lc
     public void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
-        ah0 B;
+        zg0 B;
         q0 q0Var;
         int w10;
         ij ijVar;
@@ -117,7 +117,7 @@ public final /* synthetic */ class ca implements ej0, bg.p, lc, org.telegram.mes
                     int J0 = org.telegram.messenger.g0.J0(imageReceiver3.n());
                     o7Var.a = J0;
                     CheckBoxBase checkBoxBase = o7Var.P;
-                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.l6.w(J0, org.telegram.ui.ActionBar.l6.r1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (w10 = org.telegram.ui.ActionBar.m6.w(J0, org.telegram.ui.ActionBar.m6.r1(0.25f, -1)))) {
                         checkBoxBase.x = w10;
                         checkBoxBase.b();
                         break;

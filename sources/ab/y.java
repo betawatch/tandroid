@@ -17,22 +17,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.w1;
-import org.telegram.ui.Components.c70;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.y60;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.x60;
 import org.telegram.ui.cn;
-import org.telegram.ui.e40;
-import org.telegram.ui.iz;
-import org.telegram.ui.j30;
-import org.telegram.ui.kb1;
+import org.telegram.ui.f40;
+import org.telegram.ui.jz;
+import org.telegram.ui.k30;
+import org.telegram.ui.lb1;
 import org.telegram.ui.sj;
 import org.telegram.ui.y6;
 import p4.a1;
 import p4.g1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, bg.p, bp, a1, h2.j, xh.j {
+public final /* synthetic */ class y implements OnSuccessListener, h7, lb1, r1, bg.p, bp, a1, h2.j, xh.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -45,11 +45,11 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
 
     @Override // org.telegram.messenger.bp
     public boolean a(TLRPC.TL_error tL_error) {
-        c70 c70Var = (c70) this.c;
+        b70 b70Var = (b70) this.c;
         if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
-            c70Var.setOnDismissListener(new y60(0, c70Var, this.b));
+            b70Var.setOnDismissListener(new x60(0, b70Var, this.b));
         }
-        c70Var.dismiss();
+        b70Var.dismiss();
         return false;
     }
 
@@ -75,7 +75,7 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
         }
     }
 
-    @Override // org.telegram.ui.kb1
+    @Override // org.telegram.ui.lb1
     public void c(int i7, ArrayList arrayList) {
         switch (this.a) {
             case 2:
@@ -103,21 +103,21 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
                 a0Var.e.run();
                 break;
             default:
-                iz izVar = (iz) this.c;
-                LongSparseIntArray longSparseIntArray = izVar.H;
-                izVar.D = i7;
+                jz jzVar = (jz) this.c;
+                LongSparseIntArray longSparseIntArray = jzVar.H;
+                jzVar.D = i7;
                 if (this.b) {
-                    izVar.u0(izVar.F, arrayList, true);
-                    izVar.F = arrayList;
-                    for (int i11 = 0; i11 < izVar.F.size(); i11++) {
-                        izVar.G.remove(izVar.F.get(i11));
+                    jzVar.u0(jzVar.F, arrayList, true);
+                    jzVar.F = arrayList;
+                    for (int i11 = 0; i11 < jzVar.F.size(); i11++) {
+                        jzVar.G.remove(jzVar.F.get(i11));
                     }
                     ArrayList arrayList4 = new ArrayList();
                     int size = longSparseIntArray.size();
                     for (int i12 = 0; i12 < size; i12++) {
                         long keyAt = longSparseIntArray.keyAt(i12);
                         Long valueOf = Long.valueOf(keyAt);
-                        if (!m5.C(keyAt) && !izVar.F.contains(valueOf)) {
+                        if (!m5.C(keyAt) && !jzVar.F.contains(valueOf)) {
                             arrayList4.add(valueOf);
                         }
                     }
@@ -126,17 +126,17 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
                         longSparseIntArray.delete(((Long) arrayList4.get(i13)).longValue());
                     }
                 } else {
-                    izVar.u0(izVar.G, arrayList, false);
-                    izVar.G = arrayList;
-                    for (int i14 = 0; i14 < izVar.G.size(); i14++) {
-                        Long l10 = (Long) izVar.G.get(i14);
-                        izVar.F.remove(l10);
+                    jzVar.u0(jzVar.G, arrayList, false);
+                    jzVar.G = arrayList;
+                    for (int i14 = 0; i14 < jzVar.G.size(); i14++) {
+                        Long l10 = (Long) jzVar.G.get(i14);
+                        jzVar.F.remove(l10);
                         longSparseIntArray.delete(l10.longValue());
                     }
                 }
-                izVar.p0();
-                izVar.o0(false);
-                izVar.C0();
+                jzVar.p0();
+                jzVar.o0(false);
+                jzVar.C0();
                 break;
         }
     }
@@ -149,9 +149,9 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
                 break;
             case 4:
             default:
-                e40 e40Var = ((j30) this.c).b;
-                e40Var.R2.A(0, null);
-                e40Var.n1().j(this.b ? 101 : 40, 0L, null);
+                f40 f40Var = ((k30) this.c).b;
+                f40Var.U2.A(0, null);
+                f40Var.n1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 5:
                 cn cnVar = (cn) this.c;
@@ -171,9 +171,9 @@ public final /* synthetic */ class y implements OnSuccessListener, h7, kb1, r1, 
 
     @Override // bg.p
     public void j(long j3) {
-        i6 i6Var = ((w1) this.c).a.y3;
-        if (i6Var != null) {
-            i6Var.t(id.M((int) j3, this.b), true, true);
+        h6 h6Var = ((w1) this.c).a.y3;
+        if (h6Var != null) {
+            h6Var.t(id.M((int) j3, this.b), true, true);
         }
     }
 

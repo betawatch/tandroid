@@ -11,9 +11,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.wp0;
+import org.telegram.ui.xp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class y implements Runnable {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                j jVar = ((wp0) obj).B0;
+                j jVar = ((xp0) obj).B0;
                 if (jVar instanceof k2) {
                     ((k2) jVar).getEditText();
                     return;
@@ -181,23 +181,23 @@ public final class y implements Runnable {
                 return;
             case 5:
                 wg.w0 w0Var = (wg.w0) obj;
-                String str = w0Var.f2;
+                String str = w0Var.i2;
                 if (str != null) {
-                    w0Var.f1(w0Var.j2, str, false);
+                    w0Var.f1(w0Var.m2, str, false);
                     return;
                 }
                 return;
             case 6:
                 wg.f1 f1Var = (wg.f1) obj;
-                String str2 = f1Var.g2;
+                String str2 = f1Var.j2;
                 if (str2 != null) {
-                    if (f1Var.p2 >= 0) {
-                        ConnectionsManager.getInstance(f1Var.a).cancelRequest(f1Var.p2, true);
-                        f1Var.p2 = -1;
+                    if (f1Var.s2 >= 0) {
+                        ConnectionsManager.getInstance(f1Var.a).cancelRequest(f1Var.s2, true);
+                        f1Var.s2 = -1;
                     }
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str2;
-                    f1Var.p2 = ConnectionsManager.getInstance(f1Var.a).sendRequest(tL_contacts_search, new bi.j0(f1Var, 25));
+                    f1Var.s2 = ConnectionsManager.getInstance(f1Var.a).sendRequest(tL_contacts_search, new bi.j0(f1Var, 25));
                     return;
                 }
                 return;

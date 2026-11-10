@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final int a;
@@ -25,7 +25,7 @@ public final class y extends FrameLayout {
     public y(z zVar, Context context, int i7) {
         super(context);
         int i10;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         oi.q qVar;
         this.r = zVar;
         this.b = new ArrayList();
@@ -38,8 +38,8 @@ public final class y extends FrameLayout {
         int classGuid = zVar.getClassGuid();
         ai.e eVar = new ai.e(this, 2);
         a1.c cVar = new a1.c(this, 10);
-        g6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
-        r41 r41Var = new r41(context, i10, classGuid, true, eVar, cVar, null, g6Var);
+        h6Var = ((org.telegram.ui.ActionBar.f2) zVar).resourceProvider;
+        r41 r41Var = new r41(context, i10, classGuid, true, eVar, cVar, null, h6Var);
         this.c = r41Var;
         r41Var.s1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), false);
         r41Var.f3.r = false;

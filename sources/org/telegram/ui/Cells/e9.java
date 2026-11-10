@@ -9,11 +9,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import org.telegram.messenger.oc;
 import org.telegram.messenger.pc;
-import org.telegram.ui.Components.hd0;
+import org.telegram.ui.Components.gd0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e9 implements pc, oc, hd0 {
+public final /* synthetic */ class e9 implements pc, oc, gd0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -30,13 +30,13 @@ public final /* synthetic */ class e9 implements pc, oc, hd0 {
         f9Var.b(menu);
     }
 
-    @Override // org.telegram.ui.Components.hd0
+    @Override // org.telegram.ui.Components.gd0
     public void l(int i7, int i10) {
         s5 s5Var = (s5) this.a;
-        hd0 hd0Var = (hd0) this.b;
+        gd0 gd0Var = (gd0) this.b;
         m.f3 f3Var = s5Var.e;
         TextView textView = s5Var.b;
-        hd0Var.l(i7, i10);
+        gd0Var.l(i7, i10);
         if (i10 > 0) {
             textView.setText("+" + i10);
         } else {

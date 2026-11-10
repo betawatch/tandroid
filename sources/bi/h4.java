@@ -8,14 +8,14 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.iy0;
-import org.telegram.ui.Components.yn;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.xn;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h4 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,22 +70,22 @@ public final /* synthetic */ class h4 implements Runnable {
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
             case 5:
-                ((yn) this.d).e(this.b, this.c, (HashSet) this.e);
+                ((xn) this.d).e(this.b, this.c, (HashSet) this.e);
                 return;
             case 6:
-                yw ywVar = (yw) this.d;
+                zw zwVar = (zw) this.d;
                 long j13 = this.b;
                 long j14 = this.c;
-                y91 y91Var = (y91) this.e;
-                if (ywVar.D2 == null) {
-                    ywVar.finishFragment();
+                z91 z91Var = (z91) this.e;
+                if (zwVar.D2 == null) {
+                    zwVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(xr.a(j13, j14));
-                ywVar.D2.y(ywVar, arrayList, null, false, ywVar.K2, ywVar.L2, ywVar.M2, y91Var);
-                if (ywVar.j2) {
-                    ywVar.D2 = null;
+                zwVar.D2.y(zwVar, arrayList, null, false, zwVar.K2, zwVar.L2, zwVar.M2, z91Var);
+                if (zwVar.j2) {
+                    zwVar.D2 = null;
                     return;
                 }
                 return;
@@ -114,7 +114,7 @@ public final /* synthetic */ class h4 implements Runnable {
                 long j18 = this.c;
                 synchronized (t0Var.g) {
                     if (!p0Var.d && !p0Var.e) {
-                        ((iy0) t0Var.e).a(p0Var.a, p0Var.b, j17, j18);
+                        ((hy0) t0Var.e).a(p0Var.a, p0Var.b, j17, j18);
                         return;
                     }
                     return;

@@ -22,13 +22,13 @@ import fi.v3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.ha0;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.w41;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i2 extends Dialog {
     public float D;
@@ -47,8 +47,8 @@ public final class i2 extends Dialog {
     public BitmapShader r;
     public Paint s;
     public Matrix w;
-    public final ia0 x;
-    public final ia0 y;
+    public final ha0 x;
+    public final ha0 y;
 
     public i2(Context context, final int i7) {
         super(context, R.style.TransparentDialog);
@@ -90,10 +90,10 @@ public final class i2 extends Dialog {
         g2 g2Var = new g2(this, context, org.telegram.messenger.g0.p);
         this.f = g2Var;
         s1Var2.addView(g2Var, ha.e(-2, -2, 17));
-        l60 F = l60.F(w41Var, bVar, w41Var);
-        ia0 ia0Var = new ia0(getContext(), R.raw.position_below, id.M0(2131744644, null), R.raw.position_above, id.M0(2131744643, null), bVar);
-        this.x = ia0Var;
-        ia0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
+        k60 F = k60.F(w41Var, bVar, w41Var);
+        ha0 ha0Var = new ha0(getContext(), R.raw.position_below, id.M0(2131744644, null), R.raw.position_above, id.M0(2131744643, null), bVar);
+        this.x = ha0Var;
+        ha0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
             public final /* synthetic */ i2 b;
 
             {
@@ -122,10 +122,10 @@ public final class i2 extends Dialog {
                 }
             }
         });
-        F.q(ia0Var);
-        ia0 ia0Var2 = new ia0(context, R.raw.media_shrink, id.M0(2131748899, null), R.raw.media_enlarge, id.M0(2131748898, null), bVar);
-        this.y = ia0Var2;
-        ia0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
+        F.q(ha0Var);
+        ha0 ha0Var2 = new ha0(context, R.raw.media_shrink, id.M0(2131748899, null), R.raw.media_enlarge, id.M0(2131748898, null), bVar);
+        this.y = ha0Var2;
+        ha0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.f2
             public final /* synthetic */ i2 b;
 
             {
@@ -154,7 +154,7 @@ public final class i2 extends Dialog {
                 }
             }
         });
-        F.q(ia0Var2);
+        F.q(ha0Var2);
         F.k();
         F.c(R.drawable.msg_select, id.M0(2131754218, null), new e2(this, 2), false);
         F.c(R.drawable.msg_delete, id.M0(2131751361, null), new e2(this, 3), true);
@@ -172,7 +172,7 @@ public final class i2 extends Dialog {
         this.E = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 29));
         this.E.addListener(new ai.g0(this, z9, e2Var, 15));
-        this.E.setInterpolator(xq.h);
+        this.E.setInterpolator(wq.h);
         this.E.setDuration(z9 ? 420L : 320L);
         this.E.start();
     }
@@ -220,7 +220,7 @@ public final class i2 extends Dialog {
         }
         window.setAttributes(attributes);
         w41Var.setSystemUiVisibility(256);
-        org.telegram.messenger.g0.o3(w41Var, !l6.I.q());
+        org.telegram.messenger.g0.o3(w41Var, !m6.I.q());
     }
 
     @Override // android.app.Dialog

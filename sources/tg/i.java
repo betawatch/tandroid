@@ -8,18 +8,18 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public int d;
-    public final w5 e;
+    public final v5 e;
     public boolean f;
     public final /* synthetic */ j h;
 
@@ -33,7 +33,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new w5(this, 0L, 250L, xq.h);
+        this.e = new v5(this, 0L, 250L, wq.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -54,7 +54,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        li0 selectionBounds = jVar.getSelectionBounds();
+        ki0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;

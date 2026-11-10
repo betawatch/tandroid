@@ -3,7 +3,7 @@ package hi;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class o2 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -42,7 +42,7 @@ public final class o2 extends AnimatorListenerAdapter {
         float f11 = z9 ? a3Var.h0 : 1.0f - a3Var.h0;
         a3Var.g0 = f11;
         x2Var.setAlpha(1.0f - f11);
-        x2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * a3Var.g0);
+        x2Var.setTranslationY((-org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) * a3Var.g0);
         a3Var.n0.setAlpha(a3Var.g0);
         if (z9) {
             x2Var.setVisibility(8);

@@ -9,16 +9,16 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w8 extends Drawable {
     public int a;
     public final View b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.w5 g;
+    public final org.telegram.ui.Components.v5 g;
     public boolean h;
     public Paint i;
     public int e = qs.e4;
@@ -27,7 +27,7 @@ public final class w8 extends Drawable {
 
     public w8(View view) {
         this.b = view;
-        this.g = new org.telegram.ui.Components.w5(view, 350L, xq.h);
+        this.g = new org.telegram.ui.Components.v5(view, 350L, wq.h);
         Paint paint = new Paint(1);
         this.c = paint;
         paint.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, 0.0f, 1593835520);

@@ -1,20 +1,55 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class m00 extends ug.y0 {
-    public final /* synthetic */ int r;
+import android.graphics.RectF;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m00(int i7, int i10, int i11, int i12, org.telegram.ui.ActionBar.g6 g6Var, int i13) {
-        super(i7, i10, i11, i12, g6Var);
-        this.r = i13;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class m00 implements org.telegram.messenger.d20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ m00(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // ug.y0
-    public final int c(int i7) {
-        switch (this.r) {
+    @Override // org.telegram.messenger.d20
+    public final Object a(Object obj) {
+        int i7 = this.a;
+        Object obj2 = this.b;
+        switch (i7) {
+            case 0:
+                r00 r00Var = (r00) obj2;
+                r00Var.getClass();
+                if (((View) obj).getParent() == r00Var.c) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                od0 od0Var = (od0) obj2;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    org.telegram.messenger.g0.h3(new kd0(od0Var, 3));
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = (ProfileActivity) obj2;
+                URLSpan uRLSpan = (URLSpan) obj;
+                RectF rectF = ProfileActivity.V6;
+                if (uRLSpan == null) {
+                    break;
+                } else {
+                    profileActivity.S4(uRLSpan.getURL(), null);
+                    break;
+                }
         }
-        return org.telegram.ui.ActionBar.l6.F0(i7);
+        return Boolean.FALSE;
     }
 }

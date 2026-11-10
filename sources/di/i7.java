@@ -13,16 +13,16 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.pa;
-import org.telegram.ui.Components.my;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.vi0;
-import org.telegram.ui.cw0;
+import org.telegram.ui.Components.ly;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.ui0;
+import org.telegram.ui.dw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i7 implements m9 {
-    public final qj0 a;
-    public final cw0 b;
+    public final pj0 a;
+    public final dw0 b;
     public final int[] c;
     public final boolean d;
     public h7 e;
@@ -32,15 +32,15 @@ public final class i7 implements m9 {
     public boolean r;
     public int s;
 
-    public i7(qj0 qj0Var, boolean z9) {
+    public i7(pj0 pj0Var, boolean z9) {
         this.c = new int[2];
-        this.a = qj0Var;
+        this.a = pj0Var;
         this.d = z9;
         this.b = null;
     }
 
-    public static i7 a(qj0 qj0Var) {
-        return new i7(qj0Var, false);
+    public static i7 a(pj0 pj0Var) {
+        return new i7(pj0Var, false);
     }
 
     @Override // di.m9
@@ -63,8 +63,8 @@ public final class i7 implements m9 {
             n9Var.i = r1[1] - this.s;
             return;
         }
-        if (view instanceof org.telegram.ui.Components.x9) {
-            n9Var.h = ((org.telegram.ui.Components.x9) view).e3;
+        if (view instanceof org.telegram.ui.Components.w9) {
+            n9Var.h = ((org.telegram.ui.Components.w9) view).e3;
             n9Var.i = (view.getMeasuredHeight() - n9Var.g.getPaddingBottom()) - this.s;
         } else {
             n9Var.h = view.getPaddingTop();
@@ -75,9 +75,9 @@ public final class i7 implements m9 {
     @Override // di.m9
     public final void e(long j3, int i7, l3 l3Var) {
         ArrayList arrayList;
-        qj0 qj0Var = this.a;
-        if (qj0Var != null && (qj0Var.getParent() instanceof q)) {
-            q qVar = (q) qj0Var.getParent();
+        pj0 pj0Var = this.a;
+        if (pj0Var != null && (pj0Var.getParent() instanceof q)) {
+            q qVar = (q) pj0Var.getParent();
             if (qVar.k(j3)) {
                 qVar.b0.add(l3Var);
                 return;
@@ -87,7 +87,7 @@ public final class i7 implements m9 {
             }
         }
         int i10 = 0;
-        if (qj0Var == null || !(qj0Var.getParent() instanceof l5)) {
+        if (pj0Var == null || !(pj0Var.getParent() instanceof l5)) {
             if (this.d) {
                 z6 P1 = qp.s1(p10.s0).P1();
                 ArrayList arrayList2 = P1.h;
@@ -98,10 +98,10 @@ public final class i7 implements m9 {
             l3Var.run();
             return;
         }
-        l5 l5Var = (l5) qj0Var.getParent();
-        my myVar = l5Var.y;
+        l5 l5Var = (l5) pj0Var.getParent();
+        ly lyVar = l5Var.y;
         h5 h5Var = l5Var.x;
-        if (h5Var != null && (arrayList = h5Var.c) != null && myVar != null) {
+        if (h5Var != null && (arrayList = h5Var.c) != null && lyVar != null) {
             while (true) {
                 if (i10 >= arrayList.size()) {
                     i10 = -1;
@@ -122,11 +122,11 @@ public final class i7 implements m9 {
                 i10++;
             }
             if (i10 >= 0) {
-                int L0 = myVar.L0();
-                int N0 = myVar.N0();
+                int L0 = lyVar.L0();
+                int N0 = lyVar.N0();
                 if (i10 < L0 || i10 > N0) {
-                    myVar.h1(i10, org.telegram.messenger.g0.L(60.0f));
-                    qj0Var.post(l3Var);
+                    lyVar.h1(i10, org.telegram.messenger.g0.L(60.0f));
+                    pj0Var.post(l3Var);
                     return;
                 }
             }
@@ -141,9 +141,9 @@ public final class i7 implements m9 {
         n9Var.b = null;
         n9Var.c = null;
         n9Var.e = null;
-        qj0 qj0Var = this.a;
-        q qVar = (qj0Var == null || !(qj0Var.getParent() instanceof q)) ? null : (q) qj0Var.getParent();
-        ViewGroup viewGroup = (qVar == null || qVar.g()) ? qj0Var : qVar.r;
+        pj0 pj0Var = this.a;
+        q qVar = (pj0Var == null || !(pj0Var.getParent() instanceof q)) ? null : (q) pj0Var.getParent();
+        ViewGroup viewGroup = (qVar == null || qVar.g()) ? pj0Var : qVar.r;
         ViewGroup viewGroup2 = this.b;
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
@@ -218,11 +218,11 @@ public final class i7 implements m9 {
                         c(n9Var);
                         return true;
                     }
-                } else if ((childAt instanceof org.telegram.ui.Cells.o7) && qj0Var != null) {
+                } else if ((childAt instanceof org.telegram.ui.Cells.o7) && pj0Var != null) {
                     org.telegram.ui.Cells.o7 o7Var = (org.telegram.ui.Cells.o7) childAt;
                     ij messageObject = o7Var.getMessageObject();
                     if ((o7Var.getStyle() == 1 && i10 == 0) || (messageObject != null && messageObject.x4() && messageObject.e1() == i10 && messageObject.l.dialogId == j3)) {
-                        vi0 fastScroll = qj0Var.getFastScroll();
+                        ui0 fastScroll = pj0Var.getFastScroll();
                         int[] iArr = new int[2];
                         if (fastScroll != null) {
                             fastScroll.getLocationInWindow(iArr);
@@ -249,21 +249,21 @@ public final class i7 implements m9 {
                     }
                 } else if (childAt instanceof org.telegram.ui.Cells.m6) {
                     org.telegram.ui.Cells.m6 m6Var = (org.telegram.ui.Cells.m6) childAt;
-                    org.telegram.ui.Components.l9 l9Var = m6Var.h;
+                    org.telegram.ui.Components.k9 k9Var2 = m6Var.h;
                     if (m6Var.D != j3) {
                         continue;
                     } else {
-                        boolean z11 = (l9Var == null || l9Var.getImageReceiver() == null || l9Var.getImageReceiver().S == null) ? false : true;
+                        boolean z11 = (k9Var2 == null || k9Var2.getImageReceiver() == null || k9Var2.getImageReceiver().S == null) ? false : true;
                         if (m6Var.n == i10 && z11) {
-                            n9Var.a = l9Var;
-                            n9Var.c = l9Var.getImageReceiver();
+                            n9Var.a = k9Var2;
+                            n9Var.c = k9Var2.getImageReceiver();
                             n9Var.g = (View) m6Var.getParent();
                             float alphaInternal = m6Var.getAlphaInternal() * m6Var.getAlpha();
                             n9Var.k = alphaInternal;
                             if (alphaInternal < 1.0f) {
                                 Paint paint = new Paint(1);
                                 n9Var.j = paint;
-                                paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, m6Var.getResourcesProvider()));
+                                paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, m6Var.getResourcesProvider()));
                             }
                             c(n9Var);
                             return true;
@@ -279,7 +279,7 @@ public final class i7 implements m9 {
                             if (alphaInternal2 < 1.0f) {
                                 Paint paint2 = new Paint(1);
                                 n9Var.j = paint2;
-                                paint2.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, m6Var.getResourcesProvider()));
+                                paint2.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, m6Var.getResourcesProvider()));
                             }
                             c(n9Var);
                             return true;
@@ -328,9 +328,9 @@ public final class i7 implements m9 {
         return false;
     }
 
-    public i7(cw0 cw0Var) {
+    public i7(dw0 dw0Var) {
         this.c = new int[2];
-        this.b = cw0Var;
+        this.b = dw0Var;
         this.a = null;
     }
 }

@@ -1,119 +1,126 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s0 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.q1 {
+public final /* synthetic */ class s0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ s0(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i7) {
+    public /* synthetic */ s0(Object obj, int i7) {
         this.a = i7;
         this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
-        this.h = obj6;
     }
 
-    @Override // org.telegram.messenger.q1
-    public void a(f5.f fVar, List list) {
-        switch (this.a) {
-            case 2:
-                TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.b;
-                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) this.c;
-                ConnectionsManager connectionsManager = (ConnectionsManager) this.d;
-                org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) this.e;
-                org.telegram.messenger.c20 c20Var2 = (org.telegram.messenger.c20) this.f;
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.h;
-                tL_inputStorePaymentPremiumGiftCode.currency = ((f5.l) list.get(0)).a().c;
-                tL_inputStorePaymentPremiumGiftCode.amount = (long) (Math.pow(10.0d, org.telegram.messenger.r1.i().h(tL_premiumGiftCodeOption.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
-                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
-                tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumGiftCode;
-                connectionsManager.sendRequest(tL_payments_canPurchaseStore, new bi.c8(c20Var, list, fVar, c20Var2, f2Var, tL_inputStorePaymentPremiumGiftCode, 4));
-                break;
-            default:
-                TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.b;
-                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) this.c;
-                ConnectionsManager connectionsManager2 = (ConnectionsManager) this.d;
-                wg.u uVar = (wg.u) this.e;
-                wg.u uVar2 = (wg.u) this.f;
-                org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) this.h;
-                tL_inputStorePaymentPremiumGiveaway.currency = ((f5.l) list.get(0)).a().c;
-                tL_inputStorePaymentPremiumGiveaway.amount = (long) (Math.pow(10.0d, org.telegram.messenger.r1.i().h(tL_premiumGiftCodeOption2.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
-                TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
-                tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentPremiumGiveaway;
-                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new bi.c8(uVar, list, fVar, uVar2, f2Var2, tL_inputStorePaymentPremiumGiveaway, 3));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                TLRPC.User user = (TLRPC.User) this.b;
-                org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.c;
-                org.telegram.ui.cn cnVar = (org.telegram.ui.cn) this.d;
-                TLRPC.Chat chat = (TLRPC.Chat) this.e;
-                org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) this.f;
-                org.telegram.ui.Cells.c2[] c2VarArr = (org.telegram.ui.Cells.c2[]) this.h;
-                if (user != null) {
-                    org.telegram.messenger.yr a02 = org.telegram.messenger.yr.a0(cVar.a);
-                    a02.a.c(new org.telegram.messenger.vp(3, cnVar.a(), user.id, a02));
-                } else {
-                    org.telegram.messenger.yr a03 = org.telegram.messenger.yr.a0(cVar.a);
-                    a03.a.c(new org.telegram.messenger.vp(3, cnVar.a(), -chat.id, a03));
+                org.telegram.ui.m6 m6Var = (org.telegram.ui.m6) this.b;
+                if (i7 == 6) {
+                    m6Var.run();
+                    break;
                 }
-                TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
-                tL_contacts_blockFromReplies.msg_id = ijVar.e1();
-                tL_contacts_blockFromReplies.delete_message = true;
-                tL_contacts_blockFromReplies.delete_history = true;
-                if (c2VarArr[0].b()) {
-                    tL_contacts_blockFromReplies.report_spam = true;
-                    if (cnVar.getParentActivity() != null) {
-                        cnVar.g8();
-                        UndoView undoView = cnVar.M3;
-                        if (undoView != null) {
-                            undoView.j(74, 0L, null);
-                        }
+                break;
+            case 1:
+                hk hkVar = (hk) this.b;
+                if (i7 != 6) {
+                    hkVar.getClass();
+                    break;
+                } else {
+                    fi.d dVar = hkVar.o0;
+                    if (dVar.c0) {
+                        dVar.performClick();
+                        break;
                     }
                 }
-                ConnectionsManager.getInstance(cVar.a).sendRequest(tL_contacts_blockFromReplies, new x1(cVar, 0));
+                break;
+            case 2:
+                org.telegram.ui.Cells.i3 i3Var = ((org.telegram.ui.Cells.k3) this.b).d;
+                if (i7 == 5) {
+                    i3Var.requestFocus();
+                    i3Var.setSelection(i3Var.length());
+                    break;
+                }
+                break;
+            case 3:
+                hq hqVar = (hq) this.b;
+                if (i7 == 6) {
+                    hqVar.run();
+                    break;
+                }
+                break;
+            case 4:
+                ec0 ec0Var = (ec0) this.b;
+                if (i7 != 6) {
+                    ec0Var.getClass();
+                    break;
+                } else {
+                    ec0Var.n(false);
+                    break;
+                }
+            case 5:
+                j4 j4Var = (j4) this.b;
+                if (i7 == 6) {
+                    j4Var.l1.a.callOnClick();
+                    break;
+                }
+                break;
+            case 6:
+                ah.i iVar = ((el0) this.b).d;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        iVar.m();
+                        org.telegram.messenger.g0.v1(iVar);
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                mo0 mo0Var = (mo0) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        org.telegram.messenger.g0.v1(mo0Var.t2.r);
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.b;
+                if (i7 == 5) {
+                    alertDialog$Builder.a.d(-1).callOnClick();
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                if (i7 == 6) {
+                    u1Var.d(-1).callOnClick();
+                    break;
+                }
+                break;
+            case 10:
+                vz0 vz0Var = (vz0) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        org.telegram.messenger.g0.v1(vz0Var.b);
+                        break;
+                    }
+                }
                 break;
             default:
-                org.telegram.ui.mj0 mj0Var = (org.telegram.ui.mj0) this.b;
-                String str = (String) this.c;
-                String str2 = (String) this.d;
-                String str3 = (String) this.e;
-                org.telegram.ui.gf0 gf0Var = (org.telegram.ui.gf0) this.f;
-                m4.d0 d0Var = (m4.d0) this.h;
-                org.telegram.ui.dk0 dk0Var = mj0Var.a;
-                dk0Var.Y[0].setText(str);
-                dk0Var.Y[1].setText(str2);
-                dk0Var.Y[2].setText(str3);
-                dk0Var.R1(true, true);
-                mj0Var.c(gf0Var, d0Var);
+                b51 b51Var = (b51) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        org.telegram.messenger.g0.v1(b51Var.J);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ s0(TLRPC.User user, org.telegram.messenger.c cVar, org.telegram.ui.cn cnVar, TLRPC.Chat chat, org.telegram.messenger.ij ijVar, org.telegram.ui.Cells.c2[] c2VarArr, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.a = 0;
-        this.b = user;
-        this.c = cVar;
-        this.d = cnVar;
-        this.e = chat;
-        this.f = ijVar;
-        this.h = c2VarArr;
+        return false;
     }
 }

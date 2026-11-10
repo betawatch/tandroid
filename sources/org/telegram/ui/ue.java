@@ -1,26 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.animation.ValueAnimator;
+import android.view.View;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ue implements Runnable {
+public final /* synthetic */ class ue implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ cn b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ ue(cn cnVar, boolean z9, int i7) {
+    public /* synthetic */ ue(cn cnVar, org.telegram.ui.Cells.t0 t0Var, int i7) {
         this.a = i7;
         this.b = cnVar;
-        this.c = z9;
+        this.c = t0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
+                cn cnVar = this.b;
+                cnVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cnVar.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue;
+                cnVar.L9();
+                this.c.setAlpha(floatValue);
                 break;
             default:
-                this.b.fd(0, this.c);
+                cn cnVar2 = this.b;
+                cnVar2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cnVar2.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue2;
+                cnVar2.L9();
+                cnVar2.N9();
+                this.c.setAlpha(floatValue2);
                 break;
         }
     }

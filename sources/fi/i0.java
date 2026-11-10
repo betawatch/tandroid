@@ -11,7 +11,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ye;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i0 extends View {
     public final Paint a;
@@ -222,7 +222,7 @@ public final class i0 extends View {
                 z10 = true;
                 a(matrix, z10);
                 a(matrix2, false);
-                org.telegram.ui.Components.w5 w5Var = j0Var.b;
+                org.telegram.ui.Components.v5 v5Var = j0Var.b;
                 if (j0Var.D) {
                     og.m mVar = j0Var.f.L;
                     if (mVar != null) {
@@ -236,7 +236,7 @@ public final class i0 extends View {
                     }
                     z11 = false;
                 }
-                float d = w5Var.d(z11);
+                float d = v5Var.d(z11);
                 float f19 = 1.0f - (d * f12);
                 matrix2.preScale(f19, 1.0f);
                 matrix.preScale(f19, 1.0f);
@@ -281,10 +281,10 @@ public final class i0 extends View {
         z10 = true;
         a(matrix, z10);
         a(matrix2, false);
-        org.telegram.ui.Components.w5 w5Var2 = j0Var.b;
+        org.telegram.ui.Components.v5 v5Var2 = j0Var.b;
         if (j0Var.D) {
         }
-        float d2 = w5Var2.d(z11);
+        float d2 = v5Var2.d(z11);
         float f192 = 1.0f - (d2 * f12);
         matrix2.preScale(f192, 1.0f);
         matrix.preScale(f192, 1.0f);

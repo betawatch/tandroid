@@ -9,17 +9,17 @@ import di.n4;
 import java.util.ArrayList;
 import m4.d0;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.m41;
-import org.telegram.ui.ni0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.n41;
+import org.telegram.ui.oi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
 
-    public p(Context context, g6 g6Var) {
-        super(context, g6Var);
+    public p(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.w0 = true;
         this.x0 = true;
     }
@@ -60,9 +60,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                m41 m41Var = (m41) ((ni0) eVar).b;
-                m41Var.f();
-                m41Var.b.t0.d(false, false);
+                n41 n41Var = (n41) ((oi0) eVar).b;
+                n41Var.f();
+                n41Var.b.t0.d(false, false);
             }
             invalidate();
             B();

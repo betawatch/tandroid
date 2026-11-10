@@ -7,7 +7,7 @@ import j$.time.chrono.ChronoLocalDateTime;
 import j$.time.chrono.ChronoZonedDateTime;
 import j$.time.chrono.f0;
 import j$.time.chrono.h;
-import j$.time.chrono.k;
+import j$.time.chrono.l;
 import j$.time.chrono.n;
 import j$.time.chrono.r;
 import j$.time.chrono.u;
@@ -22,7 +22,7 @@ import j$.util.a1;
 import j$.util.b0;
 import j$.util.c0;
 import j$.util.concurrent.ConcurrentHashMap;
-import j$.util.concurrent.l;
+import j$.util.concurrent.k;
 import j$.util.d0;
 import j$.util.e0;
 import j$.util.function.b;
@@ -70,13 +70,13 @@ public abstract /* synthetic */ class a {
         return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
     }
 
-    public static /* synthetic */ boolean P(Unsafe unsafe, Object obj, long j3, l lVar) {
+    public static /* synthetic */ boolean P(Unsafe unsafe, Object obj, long j3, k kVar) {
         while (true) {
             Unsafe unsafe2 = unsafe;
             Object obj2 = obj;
             long j10 = j3;
-            l lVar2 = lVar;
-            if (unsafe2.compareAndSwapObject(obj2, j10, (Object) null, lVar2)) {
+            k kVar2 = kVar;
+            if (unsafe2.compareAndSwapObject(obj2, j10, (Object) null, kVar2)) {
                 return true;
             }
             if (unsafe2.getObject(obj2, j10) != null) {
@@ -85,7 +85,7 @@ public abstract /* synthetic */ class a {
             unsafe = unsafe2;
             obj = obj2;
             j3 = j10;
-            lVar = lVar2;
+            kVar = kVar2;
         }
     }
 
@@ -310,18 +310,18 @@ public abstract /* synthetic */ class a {
         throw new NoSuchElementException("No value present");
     }
 
-    public static boolean q(j$.time.chrono.l lVar, o oVar) {
+    public static boolean q(l lVar, o oVar) {
         return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.ERA : oVar != null && oVar.j(lVar);
     }
 
-    public static k M(j$.time.temporal.l lVar) {
+    public static j$.time.chrono.k M(j$.time.temporal.l lVar) {
         Objects.requireNonNull(lVar, "temporal");
-        Object obj = (k) lVar.m(p.b);
+        Object obj = (j$.time.chrono.k) lVar.m(p.b);
         r rVar = r.c;
         if (obj == null) {
             obj = Objects.requireNonNull(rVar, "defaultObj");
         }
-        return (k) obj;
+        return (j$.time.chrono.k) obj;
     }
 
     public static int k(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
@@ -338,14 +338,14 @@ public abstract /* synthetic */ class a {
         return p.a(chronoZonedDateTime, oVar);
     }
 
-    public static int l(j$.time.chrono.l lVar, o oVar) {
+    public static int l(l lVar, o oVar) {
         if (oVar == j$.time.temporal.a.ERA) {
             return lVar.getValue();
         }
         return p.a(lVar, oVar);
     }
 
-    public static long n(j$.time.chrono.l lVar, o oVar) {
+    public static long n(l lVar, o oVar) {
         if (oVar == j$.time.temporal.a.ERA) {
             return lVar.getValue();
         }
@@ -355,22 +355,22 @@ public abstract /* synthetic */ class a {
         return oVar.m(lVar);
     }
 
-    public static k V(String str) {
+    public static j$.time.chrono.k V(String str) {
         ConcurrentHashMap concurrentHashMap = j$.time.chrono.a.a;
         Objects.requireNonNull(str, "id");
         while (true) {
             ConcurrentHashMap concurrentHashMap2 = j$.time.chrono.a.a;
-            k kVar = (k) concurrentHashMap2.get(str);
+            j$.time.chrono.k kVar = (j$.time.chrono.k) concurrentHashMap2.get(str);
             if (kVar == null) {
-                kVar = (k) j$.time.chrono.a.b.get(str);
+                kVar = (j$.time.chrono.k) j$.time.chrono.a.b.get(str);
             }
             if (kVar != null) {
                 return kVar;
             }
             if (concurrentHashMap2.get("ISO") != null) {
-                Iterator it = ServiceLoader.load(k.class).iterator();
+                Iterator it = ServiceLoader.load(j$.time.chrono.k.class).iterator();
                 while (it.hasNext()) {
-                    k kVar2 = (k) it.next();
+                    j$.time.chrono.k kVar2 = (j$.time.chrono.k) it.next();
                     if (str.equals(kVar2.getId()) || str.equals(kVar2.o())) {
                         return kVar2;
                     }
@@ -404,7 +404,7 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static Object u(j$.time.chrono.l lVar, j$.time.format.a aVar) {
+    public static Object u(l lVar, j$.time.format.a aVar) {
         if (aVar == p.c) {
             return ChronoUnit.ERAS;
         }

@@ -3,25 +3,25 @@ package sh;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.x31;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class m extends x31 {
+public final class m extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        x31.h(new m());
+        w31.h(new m());
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final View d(Context context, qj0 qj0Var, int i7, g6 g6Var) {
-        mz mzVar = new mz(context, null);
-        mzVar.setViewType(16);
-        mzVar.setMinimumHeight(g0.L(48.0f));
-        return mzVar;
+    @Override // org.telegram.ui.Components.w31
+    public final View d(Context context, pj0 pj0Var, int i7, h6 h6Var) {
+        lz lzVar = new lz(context, null);
+        lzVar.setViewType(16);
+        lzVar.setMinimumHeight(g0.L(48.0f));
+        return lzVar;
     }
 }

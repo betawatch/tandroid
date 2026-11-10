@@ -1,6 +1,6 @@
 package bi;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 k7Var.T1(j3);
                 break;
             case 2:
-                z1 z1Var = k7Var.m3;
+                z1 z1Var = k7Var.p3;
                 k7Var.s2(1, true, null);
                 if (j3 > 0) {
                     org.telegram.messenger.g0.r(z1Var);

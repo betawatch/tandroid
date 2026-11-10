@@ -6,9 +6,9 @@ import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class g extends rf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -74,19 +74,19 @@ public final class g extends rf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    vy vyVar = eVar.d;
+                    uy uyVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte M = vyVar.M();
+                    byte M = uyVar.M();
                     eVar.d(qs.e3, b10);
                     int e10 = (int) eVar.a.e();
                     byte[] bArr = new byte[e10];
                     int i12 = 0;
                     while (i12 < e10) {
-                        int read = ((ab.d) vyVar.b).read(bArr, i12, e10 - i12);
+                        int read = ((ab.d) uyVar.b).read(bArr, i12, e10 - i12);
                         if (read <= 0) {
                             throw new EOFException();
                         }

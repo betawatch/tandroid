@@ -12,14 +12,14 @@ import c8.ha;
 import fi.v3;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final o0 a;
-    public final l9 b;
+    public final k9 b;
     public AnimatorSet c;
     public boolean d;
     public boolean e;
@@ -34,14 +34,14 @@ public final class p0 extends FrameLayout {
             invalidate();
         }
         o0Var.e = true;
-        l9 l9Var = new l9(activity);
-        this.b = l9Var;
-        addView(l9Var, ha.e(qs.R1, qs.R1, 17));
+        k9 k9Var = new k9(activity);
+        this.b = k9Var;
+        addView(k9Var, ha.e(qs.R1, qs.R1, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(xq.g);
+        this.c.setInterpolator(wq.g);
         this.c.setDuration(3000L);
         boolean e10 = sc.e(512);
         this.f = e10;
@@ -63,7 +63,7 @@ public final class p0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<p0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(xq.g);
+        this.c.setInterpolator(wq.g);
         this.c.setDuration(400L);
         this.c.start();
     }

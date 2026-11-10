@@ -14,15 +14,15 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.n11;
-import org.telegram.ui.Components.n50;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.m50;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.af;
+import org.telegram.ui.bf;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q3 implements c20 {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class q3 implements c20 {
                 final qp qpVar = (qp) this.c;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.d;
                 cn cnVar = (cn) this.e;
-                final af afVar = (af) this.f;
+                final bf bfVar = (bf) this.f;
                 final long j10 = this.b;
                 final org.telegram.ui.ae aeVar = (org.telegram.ui.ae) this.g;
                 final TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
@@ -114,7 +114,7 @@ public final /* synthetic */ class q3 implements c20 {
                     parentActivity = org.telegram.messenger.t0.b;
                 }
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                final org.telegram.ui.ActionBar.g6 resourceProvider = T == null ? null : T.getResourceProvider();
+                final org.telegram.ui.ActionBar.h6 resourceProvider = T == null ? null : T.getResourceProvider();
                 final boolean[] zArr = new boolean[1];
                 FrameLayout frameLayout = new FrameLayout(parentActivity);
                 boolean z10 = ((org.telegram.messenger.h0) qpVar.x7.m.b).c && !TextUtils.isEmpty(qpVar.u6);
@@ -122,7 +122,7 @@ public final /* synthetic */ class q3 implements c20 {
                 if (!z10) {
                     if (contentsettings != null && contentsettings.sensitive_can_change) {
                         org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, resourceProvider);
-                        c2Var.setBackground(org.telegram.ui.ActionBar.l6.N0(false));
+                        c2Var.setBackground(org.telegram.ui.ActionBar.m6.N0(false));
                         c2Var.e(org.telegram.messenger.id.M0(2131748482, null), "", zArr[0], false, false);
                         z9 = z10;
                         c2Var.setPadding(org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(16.0f), 0);
@@ -142,7 +142,7 @@ public final /* synthetic */ class q3 implements c20 {
                                 if (zArr2[0]) {
                                     return;
                                 }
-                                afVar.run();
+                                bfVar.run();
                             }
                         });
                         if (z11) {
@@ -191,7 +191,7 @@ public final /* synthetic */ class q3 implements c20 {
                         if (zArr22[0]) {
                             return;
                         }
-                        afVar.run();
+                        bfVar.run();
                     }
                 });
                 if (z11) {
@@ -199,20 +199,20 @@ public final /* synthetic */ class q3 implements c20 {
                 alertDialog$Builder.p();
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new bg.h0((n50) this.c, (org.telegram.ui.ActionBar.u1) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
+                org.telegram.messenger.g0.h3(new bg.h0((m50) this.c, (org.telegram.ui.ActionBar.u1) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.g, (TLRPC.ChannelParticipant) obj));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new bg.h0((n11) this.c, (TLRPC.ChannelParticipant) obj, (org.telegram.ui.ActionBar.z0) this.d, (l60) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.g));
+                org.telegram.messenger.g0.h3(new bg.h0((m11) this.c, (TLRPC.ChannelParticipant) obj, (org.telegram.ui.ActionBar.z0) this.d, (k60) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.g));
                 break;
         }
     }
 
-    public /* synthetic */ q3(qp qpVar, org.telegram.ui.ActionBar.u1 u1Var, cn cnVar, af afVar, long j3, org.telegram.ui.ae aeVar) {
+    public /* synthetic */ q3(qp qpVar, org.telegram.ui.ActionBar.u1 u1Var, cn cnVar, bf bfVar, long j3, org.telegram.ui.ae aeVar) {
         this.a = 1;
         this.c = qpVar;
         this.d = u1Var;
         this.e = cnVar;
-        this.f = afVar;
+        this.f = bfVar;
         this.b = j3;
         this.g = aeVar;
     }

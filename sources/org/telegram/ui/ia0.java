@@ -1,48 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ia0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ra0 a;
+public final class ia0 extends v4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sa0 b;
 
-    public ia0(ra0 ra0Var) {
-        this.a = ra0Var;
+    public /* synthetic */ ia0(sa0 sa0Var, int i7) {
+        this.a = i7;
+        this.b = sa0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        ra0 ra0Var = this.a;
-        if (i7 == -1) {
-            ra0Var.finishFragment();
-            return;
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        switch (this.a) {
+            case 0:
+                if (i7 == 1) {
+                    sa0 sa0Var = this.b;
+                    if (sa0Var.t0 && sa0Var.u0) {
+                        org.telegram.messenger.g0.v1(sa0Var.getParentActivity().getCurrentFocus());
+                        break;
+                    }
+                }
+                break;
+            default:
+                boolean z9 = i7 != 0;
+                sa0 sa0Var2 = this.b;
+                sa0Var2.M = z9;
+                if (!z9 && sa0Var2.H != null) {
+                    sa0Var2.H = null;
+                    break;
+                }
+                break;
         }
-        if (i7 != 1) {
-            if (i7 == 5) {
-                ra0Var.C0(false);
-                return;
-            }
-            if (i7 == 6) {
-                ra0Var.B0(null);
-                return;
-            }
-            if ((i7 == 2 || i7 == 3 || i7 == 4) && ra0Var.E != null) {
-                ra0Var.D0();
-                ra0Var.E.j(i7 != 3 ? i7 == 4 ? 2 : 0 : 1);
-                return;
-            }
-            return;
-        }
-        try {
-            TLRPC.GeoPoint geoPoint = ra0Var.D0.k.media.geo;
-            double d = geoPoint.lat;
-            double d2 = geoPoint._long;
-            ra0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    }
+
+    @Override // v4.s0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                sa0 sa0Var = this.b;
+                sa0Var.K0(false);
+                if (sa0Var.H != null) {
+                    sa0Var.J += i10;
+                    break;
+                }
+                break;
         }
     }
 }

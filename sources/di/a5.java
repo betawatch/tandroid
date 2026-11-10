@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a5 extends k.a {
     public final /* synthetic */ b5 c;
@@ -146,14 +146,14 @@ public final class a5 extends k.a {
                 }
             }
         });
-        View d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, b5Var.getContext(), l5Var.s);
+        View d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, b5Var.getContext(), l5Var.s);
         d1Var.setTag(R.id.fit_width_tag, 1);
         actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, ha.o(-1, 8));
         String M0 = id.M0(z9 ? 2131744502 : 2131744445, null);
         b bVar = l5Var.s;
         TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.j5, bVar);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, bVar);
         textView.setPadding(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
         textView.setText(M0);
         textView.setTag(R.id.fit_width_tag, 1);

@@ -1,66 +1,196 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import java.util.Calendar;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class fl0 extends FrameLayout {
-    public final Paint a;
-    public float b;
-    public r1.g c;
-    public final /* synthetic */ jl0 d;
+public final class fl0 implements TextWatcher {
+    public int a = -1;
+    public boolean b;
+    public int c;
+    public final /* synthetic */ kl0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl0(jl0 jl0Var, Context context) {
-        super(context);
-        this.d = jl0Var;
-        this.a = new Paint(1);
-        setWillNotDraw(false);
+    public fl0(kl0 kl0Var) {
+        this.d = kl0Var;
     }
 
-    public final void a(boolean z9, boolean z10) {
-        r1.g gVar = this.c;
-        if (gVar != null) {
-            gVar.d();
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0175  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0183  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x019e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0189  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        ps psVar;
+        kl0 kl0Var = this.d;
+        if (kl0Var.o0) {
+            return;
         }
-        float f10 = z9 ? 1.0f : 0.0f;
-        if (!z10) {
-            this.b = f10;
-            TextView textView = this.d.U;
-            if (textView != null) {
-                textView.setAlpha((f10 * 0.2f) + 0.8f);
+        boolean z9 = true;
+        EditTextBoldCursor editTextBoldCursor = kl0Var.f[1];
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        String obj = editTextBoldCursor.getText().toString();
+        if (this.a == 3) {
+            obj = obj.substring(0, this.c) + obj.substring(this.c + 1);
+            selectionStart--;
+        }
+        StringBuilder sb2 = new StringBuilder(obj.length());
+        int i10 = 0;
+        while (i10 < obj.length()) {
+            int i11 = i10 + 1;
+            String substring = obj.substring(i10, i11);
+            if ("0123456789".contains(substring)) {
+                sb2.append(substring);
             }
-            invalidate();
-            return;
+            i10 = i11;
         }
-        float f11 = this.b;
-        if (f11 == f10) {
-            return;
+        kl0Var.o0 = true;
+        org.telegram.ui.ActionBar.t6.U(kl0Var.f[1], org.telegram.ui.ActionBar.m6.G6, kl0Var.Y0);
+        if (sb2.length() > 4) {
+            sb2.setLength(4);
         }
-        r1.g gVar2 = new r1.g(new r1.f(f11 * 100.0f));
-        r1.h hVar = new r1.h(f10 * 100.0f);
-        hVar.b(z9 ? 500.0f : 650.0f);
-        hVar.a(1.0f);
-        gVar2.m = hVar;
-        this.c = gVar2;
-        gVar2.b(new cb0(this, 1));
-        this.c.a(new l9(this, 1));
-        this.c.h();
+        if (sb2.length() < 2) {
+            this.b = false;
+        }
+        if (!this.b) {
+            if (sb2.length() == 1) {
+                int intValue = Utilities.z(sb2.toString()).intValue();
+                if (intValue != 1 && intValue != 0) {
+                    sb2.insert(0, "0");
+                    selectionStart++;
+                }
+            } else if (sb2.length() == 2) {
+                int intValue2 = Utilities.z(sb2.toString()).intValue();
+                if (intValue2 > 12 || intValue2 == 0) {
+                    org.telegram.ui.ActionBar.t6.U(kl0Var.f[1], org.telegram.ui.ActionBar.m6.p7, kl0Var.Y0);
+                } else {
+                    z9 = false;
+                }
+                selectionStart++;
+                if (!z9) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                kl0Var.o0 = false;
+            }
+            z9 = false;
+            if (!z9) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            kl0Var.o0 = false;
+        }
+        int i12 = sb2.length() > 2 ? 2 : 1;
+        String[] strArr = new String[i12];
+        strArr[0] = sb2.substring(0, 2);
+        if (i12 == 2) {
+            strArr[1] = sb2.substring(2);
+        }
+        if (sb2.length() == 4 && i12 == 2) {
+            int intValue3 = Utilities.z(strArr[0]).intValue();
+            int intValue4 = Utilities.z(strArr[1]).intValue() + 2000;
+            Calendar calendar = Calendar.getInstance();
+            i7 = ((org.telegram.ui.ActionBar.f2) kl0Var).currentAccount;
+            boolean z10 = org.telegram.messenger.p10.i(i7).d().startsWith("7") || ((psVar = kl0Var.A0) != null && psVar.c.equals("7"));
+            int i13 = z10 ? 2022 : calendar.get(1);
+            int i14 = z10 ? 1 : calendar.get(2) + 1;
+            if (intValue4 < i13 || (intValue4 == i13 && intValue3 < i14)) {
+                org.telegram.ui.ActionBar.t6.U(kl0Var.f[1], org.telegram.ui.ActionBar.m6.p7, kl0Var.Y0);
+                if (!z9) {
+                }
+                if (sb2.length() == 2) {
+                }
+                selectionStart++;
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                }
+                kl0Var.o0 = false;
+            }
+            z9 = false;
+            if (!z9) {
+            }
+            if (sb2.length() == 2) {
+            }
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            kl0Var.o0 = false;
+        }
+        int intValue5 = Utilities.z(strArr[0]).intValue();
+        if (intValue5 > 12 || intValue5 == 0) {
+            org.telegram.ui.ActionBar.t6.U(kl0Var.f[1], org.telegram.ui.ActionBar.m6.p7, kl0Var.Y0);
+            if (!z9 && sb2.length() == 4) {
+                kl0Var.f[kl0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+            }
+            if (sb2.length() == 2) {
+                if (sb2.length() > 2 && sb2.charAt(2) != '/') {
+                    sb2.insert(2, '/');
+                }
+                editTextBoldCursor.setText(sb2);
+                if (selectionStart >= 0) {
+                    editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                }
+                kl0Var.o0 = false;
+            }
+            sb2.append('/');
+            selectionStart++;
+            editTextBoldCursor.setText(sb2);
+            if (selectionStart >= 0) {
+            }
+            kl0Var.o0 = false;
+        }
+        z9 = false;
+        if (!z9) {
+            kl0Var.f[kl0Var.i0 ? (char) 2 : (char) 3].requestFocus();
+        }
+        if (sb2.length() == 2) {
+        }
+        selectionStart++;
+        editTextBoldCursor.setText(sb2);
+        if (selectionStart >= 0) {
+        }
+        kl0Var.o0 = false;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int i7 = org.telegram.ui.ActionBar.l6.O6;
-        jl0 jl0Var = this.d;
-        canvas.drawColor(jl0Var.getThemedColor(i7));
-        int themedColor = jl0Var.getThemedColor(org.telegram.ui.ActionBar.l6.Si);
-        Paint paint = this.a;
-        paint.setColor(themedColor);
-        canvas.drawCircle(org.telegram.messenger.id.a0 ? getWidth() - org.telegram.messenger.g0.L(28.0f) : org.telegram.messenger.g0.L(28.0f), -org.telegram.messenger.g0.L(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        if (i10 == 0 && i11 == 1) {
+            this.b = TextUtils.indexOf((CharSequence) this.d.f[1].getText(), '/') != -1;
+            this.a = 1;
+            return;
+        }
+        if (i10 != 1 || i11 != 0) {
+            this.a = -1;
+            return;
+        }
+        if (charSequence.charAt(i7) != '/' || i7 <= 0) {
+            this.a = 2;
+            return;
+        }
+        this.b = false;
+        this.a = 3;
+        this.c = i7 - 1;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

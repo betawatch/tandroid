@@ -21,21 +21,21 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.c2;
-import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.kk0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.i30;
+import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.s4;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.e40;
-import org.telegram.ui.tv0;
-import org.telegram.ui.yq0;
-import org.telegram.ui.yw;
+import org.telegram.ui.f40;
+import org.telegram.ui.uv0;
+import org.telegram.ui.zq0;
+import org.telegram.ui.zw;
 import wg.f1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
+public final /* synthetic */ class e0 implements i30, r1, c7, s4, w5.b, v9.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -50,12 +50,12 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
         this.e = obj3;
     }
 
-    @Override // org.telegram.ui.Components.t4
+    @Override // org.telegram.ui.Components.s4
     public void L(int i7, int i10, boolean z9) {
-        cn.A1((cn) this.c, (ArrayList) this.d, this.b, (kk0) this.e, z9, i7);
+        cn.A1((cn) this.c, (ArrayList) this.d, this.b, (jk0) this.e, z9, i7);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public void U(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z9, TLRPC.VideoSize videoSize) {
         cn cnVar = (cn) this.c;
         TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
@@ -84,19 +84,19 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
     }
 
     @Override // v9.g
-    public ScheduledFuture a(final rt rtVar) {
+    public ScheduledFuture a(final qt qtVar) {
         switch (this.a) {
             case 7:
                 v9.f fVar = (v9.f) this.c;
                 Runnable runnable = (Runnable) this.d;
-                return fVar.b.schedule(new v9.d(fVar, runnable, rtVar, 1), this.b, (TimeUnit) this.e);
+                return fVar.b.schedule(new v9.d(fVar, runnable, qtVar, 1), this.b, (TimeUnit) this.e);
             default:
                 final v9.f fVar2 = (v9.f) this.c;
                 final Callable callable = (Callable) this.d;
                 return fVar2.b.schedule(new Callable() { // from class: v9.e
                     @Override // java.util.concurrent.Callable
                     public final Object call() {
-                        return f.this.a.submit(new u9.f(11, callable, rtVar));
+                        return f.this.a.submit(new u9.f(11, callable, qtVar));
                     }
                 }, this.b, (TimeUnit) this.e);
         }
@@ -123,7 +123,7 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
         }
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -147,18 +147,18 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
                 if (c2Var != null && c2Var.b()) {
                     z9 = true;
                 }
-                e40.B1(r3Var, z9, this.b, runnable);
+                f40.B1(r3Var, z9, this.b, runnable);
                 break;
             default:
-                tv0 tv0Var = (tv0) this.c;
-                yw ywVar = (yw) this.d;
+                uv0 uv0Var = (uv0) this.c;
+                zw zwVar = (zw) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
-                ProfileActivity profileActivity = tv0Var.b;
+                ProfileActivity profileActivity = uv0Var.b;
                 profileActivity.M1 = true;
                 Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
                 long j3 = -this.b;
                 k10.putLong("chat_id", j3);
-                if (profileActivity.getMessagesController().E(k10, ywVar, null, null)) {
+                if (profileActivity.getMessagesController().E(k10, zwVar, null, null)) {
                     cn cnVar = new cn(k10);
                     profileActivity.getNotificationCenter().n(profileActivity, 4);
                     profileActivity.getNotificationCenter().k(4, new Object[0]);
@@ -170,12 +170,12 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
         }
     }
 
-    @Override // org.telegram.ui.Components.j30
-    public /* synthetic */ yq0 getCloseIntoObject() {
+    @Override // org.telegram.ui.Components.i30
+    public /* synthetic */ zq0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ String getInitialSearchString() {
         return null;
     }
@@ -213,7 +213,7 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ boolean x() {
         return false;
     }
@@ -234,15 +234,15 @@ public final /* synthetic */ class e0 implements j30, r1, c7, t4, w5.b, v9.g {
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void T() {
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void H(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void O(boolean z9, boolean z10) {
     }
 }

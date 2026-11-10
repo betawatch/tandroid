@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
@@ -30,12 +30,12 @@ public final /* synthetic */ class gh implements org.telegram.messenger.u10 {
                 return cn.u0((cn) this.b, (Context) this.c);
             case 1:
                 org.telegram.ui.Components.m41 m41Var = (org.telegram.ui.Components.m41) this.b;
-                Object obj = ((org.telegram.ui.Components.y31) this.c).G;
-                org.telegram.ui.Components.qj0 qj0Var = m41Var.d;
+                Object obj = ((org.telegram.ui.Components.x31) this.c).G;
+                org.telegram.ui.Components.pj0 pj0Var = m41Var.d;
                 int i7 = 0;
                 while (true) {
                     if (i7 < m41Var.D.size()) {
-                        org.telegram.ui.Components.y31 G = m41Var.G(i7);
+                        org.telegram.ui.Components.x31 G = m41Var.G(i7);
                         if (G == null || G.G != obj) {
                             i7++;
                         }
@@ -44,36 +44,36 @@ public final /* synthetic */ class gh implements org.telegram.messenger.u10 {
                     }
                 }
                 if (i7 != -1) {
-                    for (int i10 = 0; i10 < qj0Var.getChildCount(); i10++) {
-                        childAt = qj0Var.getChildAt(i10);
+                    for (int i10 = 0; i10 < pj0Var.getChildCount(); i10++) {
+                        childAt = pj0Var.getChildAt(i10);
                         int R = RecyclerView.R(childAt);
                         if (R != -1 && R == i7) {
-                            if (childAt instanceof b51) {
+                            if (childAt instanceof c51) {
                                 return null;
                             }
-                            return (b51) childAt;
+                            return (c51) childAt;
                         }
                     }
                 }
                 childAt = null;
-                if (childAt instanceof b51) {
+                if (childAt instanceof c51) {
                 }
                 break;
             default:
-                d51 d51Var = (d51) this.b;
-                p41 p41Var = (p41) this.c;
-                int childCount = d51Var.S.getChildCount();
+                e51 e51Var = (e51) this.b;
+                q41 q41Var = (q41) this.c;
+                int childCount = e51Var.S.getChildCount();
                 for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt2 = d51Var.S.getChildAt(i11);
-                    if (childAt2 instanceof n41) {
-                        n41 n41Var = (n41) childAt2;
-                        if (n41Var.r == p41Var) {
-                            return n41Var;
+                    View childAt2 = e51Var.S.getChildAt(i11);
+                    if (childAt2 instanceof o41) {
+                        o41 o41Var = (o41) childAt2;
+                        if (o41Var.r == q41Var) {
+                            return o41Var;
                         }
                     }
                 }
-                d51Var.S.setItemAnimator(null);
-                d51Var.B0.f();
+                e51Var.S.setItemAnimator(null);
+                e51Var.B0.f();
                 return null;
         }
     }

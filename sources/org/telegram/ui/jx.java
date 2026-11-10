@@ -1,35 +1,43 @@
 package org.telegram.ui;
 
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class jx {
-    public float a;
-    public float b;
-    public boolean c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public boolean h;
-    public boolean i;
-    public ch.d j;
-    public long k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public int p;
-    public TLRPC.Document q;
-    public final ImageReceiver r;
-    public String s;
+public final class jx implements org.telegram.messenger.lc {
+    public final /* synthetic */ kx a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.messenger.ij c;
+    public final /* synthetic */ lx d;
 
-    public jx() {
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.r = imageReceiver;
-        imageReceiver.z1 = true;
-        imageReceiver.b = true;
+    public jx(lx lxVar, kx kxVar, boolean z9, org.telegram.messenger.ij ijVar) {
+        this.d = lxVar;
+        this.a = kxVar;
+        this.b = z9;
+        this.c = ijVar;
+    }
+
+    @Override // org.telegram.messenger.lc
+    public final void O(ImageReceiver imageReceiver) {
+        org.telegram.messenger.ij ijVar;
+        if (this.b && (ijVar = this.c) != null && ijVar.F2() && imageReceiver.B() != null && imageReceiver.B().y == null) {
+            try {
+                this.d.G.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.lc
+    public final void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver2 = this.a.r;
+        if (imageReceiver2.B() != null) {
+            imageReceiver2.B().N(0, false, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.lc
+    public final /* synthetic */ void t0(int i7, Drawable drawable) {
     }
 }

@@ -11,11 +11,11 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,13 +42,13 @@ public final /* synthetic */ class o1 implements Runnable {
             case 0:
                 z1 z1Var = (z1) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) tLObject;
-                vp0 vp0Var = z1Var.a;
-                vp0Var.e.k(z1Var.e.d, savedStarGift);
-                ((l60) obj).u();
-                vp0Var.o();
-                TL_stars.TL_starGiftCollection c10 = vp0Var.e.c(z1Var.e.d);
+                up0 up0Var = z1Var.a;
+                up0Var.e.k(z1Var.e.d, savedStarGift);
+                ((k60) obj).u();
+                up0Var.o();
+                TL_stars.TL_starGiftCollection c10 = up0Var.e.c(z1Var.e.d);
                 if (c10 != null) {
-                    hc.a0(vp0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750037, k7.z1(savedStarGift.gift), c10.title))).j();
+                    gc.a0(up0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750037, k7.z1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;

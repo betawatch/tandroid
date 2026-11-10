@@ -5,26 +5,26 @@ import android.view.ViewGroup;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v7 extends pj0 {
+public final class v7 extends oj0 {
     public final /* synthetic */ w7 c;
 
     public v7(w7 w7Var) {
         this.c = w7Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 2;
     }
 
     @Override // v4.g0
     public final int b() {
-        return this.c.j1.size() + 2;
+        return this.c.m1.size() + 2;
     }
 
     @Override // v4.g0
@@ -43,11 +43,11 @@ public final class v7 extends pj0 {
     public final void t(v4.d1 d1Var, int i7) {
         boolean z9;
         w7 w7Var = this.c;
-        int i10 = w7Var.i1;
+        int i10 = w7Var.l1;
         if (d1Var.f == 2) {
             r8 r8Var = (r8) d1Var.a;
             r8Var.d(true, true);
-            TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) w7Var.j1.get(i7 - 2);
+            TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) w7Var.m1.get(i7 - 2);
             boolean z10 = inputPeer instanceof TLRPC.TL_inputPeerSelf;
             if (z10) {
                 r8Var.setUser(p10.i(i10).f());
@@ -60,9 +60,9 @@ public final class v7 extends pj0 {
             }
             r8Var.f.setVisibility(8);
             r8Var.h.setVisibility(0);
-            TLRPC.InputPeer inputPeer2 = w7Var.k1;
+            TLRPC.InputPeer inputPeer2 = w7Var.n1;
             if (inputPeer2 != null || i7 != 2) {
-                if ((inputPeer2 instanceof TLRPC.TL_inputPeerSelf ? p10.i(w7Var.i1).e() : org.telegram.messenger.m5.n(inputPeer2)) != (z10 ? p10.i(w7Var.i1).e() : org.telegram.messenger.m5.n(inputPeer))) {
+                if ((inputPeer2 instanceof TLRPC.TL_inputPeerSelf ? p10.i(w7Var.l1).e() : org.telegram.messenger.m5.n(inputPeer2)) != (z10 ? p10.i(w7Var.l1).e() : org.telegram.messenger.m5.n(inputPeer))) {
                     z9 = false;
                     r8Var.c(z9, false);
                     r8Var.setDivider(i7 != b() - 1);
@@ -85,6 +85,6 @@ public final class v7 extends pj0 {
         } else {
             view = new r8(w7Var.getContext(), w7Var.I0);
         }
-        return new yi0(view);
+        return new xi0(view);
     }
 }

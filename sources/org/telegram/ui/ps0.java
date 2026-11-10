@@ -1,19 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ps0 extends j11 {
-    public final /* synthetic */ PremiumPreviewFragment e;
+public final class ps0 extends t11 {
+    public final /* synthetic */ bi.p5 e2;
+    public final /* synthetic */ k11[] f2;
+    public final /* synthetic */ PremiumPreviewFragment g2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ps0(PremiumPreviewFragment premiumPreviewFragment, os0 os0Var) {
-        super(os0Var);
-        this.e = premiumPreviewFragment;
+    public ps0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i7, org.telegram.ui.ActionBar.h6 h6Var, int i10, bi.p5 p5Var, k11[] k11VarArr) {
+        super(premiumPreviewFragment2, activity, true, num, i7, true, h6Var, i10);
+        this.g2 = premiumPreviewFragment;
+        this.e2 = p5Var;
+        this.f2 = k11VarArr;
     }
 
-    @Override // org.telegram.ui.j11, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.u0 = null;
+    @Override // org.telegram.ui.t11
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.t11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.e2.a(l10, num);
+        k11 k11Var = this.f2[0];
+        if (k11Var != null) {
+            this.g2.u0 = null;
+            k11Var.dismiss();
+        }
     }
 }

@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class i1 {
-    public static final xq w = mi.l.V;
+    public static final wq w = mi.l.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -67,7 +67,7 @@ public abstract class i1 {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof n3)) {
+                    if (!(view.getParent() instanceof o3)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {

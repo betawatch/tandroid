@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.o5;
+import org.telegram.ui.ActionBar.p5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class u1 {
     public final int a;
@@ -20,7 +20,7 @@ public final class u1 {
     public boolean i;
     public TLRPC.TL_webPage j;
     public int k;
-    public o5 l;
+    public p5 l;
     public final ArrayList m = new ArrayList();
 
     public u1(int i7) {
@@ -28,7 +28,7 @@ public final class u1 {
     }
 
     public final void a() {
-        o5 o5Var;
+        p5 p5Var;
         if (this.c) {
             return;
         }
@@ -36,10 +36,10 @@ public final class u1 {
         if (!this.g) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
         }
-        if (this.i || (o5Var = this.l) == null) {
+        if (this.i || (p5Var = this.l) == null) {
             return;
         }
-        o5Var.run();
+        p5Var.run();
     }
 
     public final TLRPC.WebPage b() {
@@ -78,9 +78,9 @@ public final class u1 {
         this.d = u0Var.getUrl();
         this.e = u0Var.getProgress();
         this.f = u0Var.b;
-        o5 o5Var = this.l;
-        if (o5Var != null) {
-            o5Var.run();
+        p5 p5Var = this.l;
+        if (p5Var != null) {
+            p5Var.run();
         }
         this.l = w1.e(u0Var, new t1(this, 1));
     }

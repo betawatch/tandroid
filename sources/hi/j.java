@@ -25,28 +25,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.ca;
 import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.ux0;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.n00;
-import org.telegram.ui.q00;
+import org.telegram.ui.o00;
+import org.telegram.ui.r00;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class j extends q00 implements ls {
+public final class j extends r00 implements ls {
     public final long R;
     public FrameLayout S;
     public vg.m T;
     public LinearLayout U;
     public bi.w V;
-    public x70 W;
+    public w70 W;
     public boolean Y;
     public TL_payments.starRefProgram Z;
     public TL_payments.starRefProgram a0;
@@ -65,13 +66,13 @@ public final class j extends q00 implements ls {
     public static void A0(j jVar, Context context) {
         if (jVar.V.c0) {
             FrameLayout frameLayout = new FrameLayout(context);
-            ux0 ux0Var = new ux0(context, jVar.resourceProvider);
+            tx0 tx0Var = new tx0(context, jVar.resourceProvider);
             d dVar = new d(jVar, 1);
-            ux0Var.c(id.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
+            tx0Var.c(id.M0(2131754344, null), J0(jVar.a0.commission_permille), null, null);
             String M0 = id.M0(2131754342, null);
             int i7 = jVar.a0.duration_months;
-            ux0Var.c(M0, i7 <= 0 ? id.M0(2131749198, null) : (i7 < 12 || i7 % 12 != 0) ? id.G(i7, "Months", new Object[0]) : id.G(i7 / 12, "Years", new Object[0]), null, null);
-            frameLayout.addView(ux0Var, ha.d(-1, -2.0f, qs.E1, 24.0f, 0.0f, 24.0f, 0.0f));
+            tx0Var.c(M0, i7 <= 0 ? id.M0(2131749198, null) : (i7 < 12 || i7 % 12 != 0) ? id.G(i7, "Months", new Object[0]) : id.G(i7 / 12, "Years", new Object[0]), null, null);
+            frameLayout.addView(tx0Var, ha.d(-1, -2.0f, qs.E1, 24.0f, 0.0f, 24.0f, 0.0f));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, jVar.resourceProvider);
             String M02 = id.M0(2131754347, null);
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
@@ -89,7 +90,7 @@ public final class j extends q00 implements ls {
         u1Var.dismiss();
         if (!(tLObject instanceof TL_payments.starRefProgram)) {
             if (tL_error != null) {
-                org.telegram.ui.Components.hc.d0(tL_error);
+                gc.d0(tL_error);
                 return;
             }
             return;
@@ -109,7 +110,7 @@ public final class j extends q00 implements ls {
         u1Var.dismiss();
         if (!(tLObject instanceof TL_payments.starRefProgram)) {
             if (tL_error != null) {
-                org.telegram.ui.Components.hc.d0(tL_error);
+                gc.d0(tL_error);
                 return;
             }
             return;
@@ -146,26 +147,26 @@ public final class j extends q00 implements ls {
         linearLayout.setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
         TextView textView = new TextView(jVar.getParentActivity());
         textView.setTextSize(1, 16.0f);
-        int i12 = l6.G6;
-        s6.U(textView, i12, jVar.resourceProvider);
+        int i12 = m6.G6;
+        t6.U(textView, i12, jVar.resourceProvider);
         textView.setText(org.telegram.messenger.g0.X2(id.M0(2131754322, null)));
         linearLayout.addView(textView, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar = new md(jVar.getParentActivity(), i11);
         mdVar.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar.setTextSize(1, 16.0f);
-        s6.U(mdVar, i12, jVar.resourceProvider);
+        t6.U(mdVar, i12, jVar.resourceProvider);
         mdVar.setText(org.telegram.messenger.g0.X2(id.M0(2131754321, null)));
         linearLayout.addView(mdVar, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar2 = new md(jVar.getParentActivity(), i11);
         mdVar2.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar2.setTextSize(1, 16.0f);
-        s6.U(mdVar2, i12, jVar.resourceProvider);
+        t6.U(mdVar2, i12, jVar.resourceProvider);
         mdVar2.setText(org.telegram.messenger.g0.X2(id.M0(2131754320, null)));
         linearLayout.addView(mdVar2, ha.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         md mdVar3 = new md(jVar.getParentActivity(), i11);
         mdVar3.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
         mdVar3.setTextSize(1, 16.0f);
-        s6.U(mdVar3, i12, jVar.resourceProvider);
+        t6.U(mdVar3, i12, jVar.resourceProvider);
         mdVar3.setText(org.telegram.messenger.g0.X2(id.M0(2131754319, null)));
         linearLayout.addView(mdVar3, ha.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, jVar.getParentActivity(), jVar.resourceProvider);
@@ -192,7 +193,7 @@ public final class j extends q00 implements ls {
             finishFragment();
             f2Var = null;
         } else {
-            org.telegram.ui.ActionBar.q4 parentLayout = getParentLayout();
+            org.telegram.ui.ActionBar.r4 parentLayout = getParentLayout();
             List fragmentStack = parentLayout.getFragmentStack();
             int size = fragmentStack.size() - 1;
             while (true) {
@@ -221,9 +222,9 @@ public final class j extends q00 implements ls {
         }
         if (f2Var != null) {
             if (z9) {
-                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.linkbroken, id.M0(2131754339, null), org.telegram.messenger.g0.X2(id.M0(2131754340, null))).j();
+                gc.a0(f2Var).I(R.raw.linkbroken, id.M0(2131754339, null), org.telegram.messenger.g0.X2(id.M0(2131754340, null))).j();
             } else {
-                org.telegram.ui.Components.hc.a0(f2Var).I(R.raw.contact_check, id.M0(2131754325, null), id.M0(2131754326, null)).j();
+                gc.a0(f2Var).I(R.raw.contact_check, id.M0(2131754325, null), id.M0(2131754326, null)).j();
             }
         }
     }
@@ -232,34 +233,34 @@ public final class j extends q00 implements ls {
         if (getParentActivity() == null) {
             return;
         }
-        n00 n00Var = (n00) super.o0(getParentActivity());
-        y31 y31Var = new y31(-2);
-        y31Var.c = n00Var;
-        arrayList.add(y31Var);
+        o00 o00Var = (o00) super.o0(getParentActivity());
+        x31 x31Var = new x31(-2);
+        x31Var.c = o00Var;
+        arrayList.add(x31Var);
         arrayList.add(h.i(R.drawable.menu_feature_premium, id.M0(2131753151, null), id.M0(2131753152, null)));
         arrayList.add(h.i(R.drawable.msg_channel, id.M0(2131753149, null), id.M0(2131753150, null)));
         arrayList.add(h.i(R.drawable.menu_feature_links2, id.M0(2131753147, null), id.M0(2131753148, null)));
-        arrayList.add(y31.B(1, null));
-        arrayList.add(y31.u(id.M0(2131754344, null)));
+        arrayList.add(x31.B(1, null));
+        arrayList.add(x31.u(id.M0(2131754344, null)));
         int i7 = getMessagesController().h6;
         int i10 = this.a0.commission_permille;
         int i11 = getMessagesController().i6;
         int i12 = 2;
         ai.c0 c0Var = new ai.c0(i12);
         a aVar = new a(this, 1);
-        y31 y31Var2 = new y31(15);
-        y31Var2.z = i10;
-        y31Var2.C = aVar;
+        x31 x31Var2 = new x31(15);
+        x31Var2.z = i10;
+        x31Var2.C = aVar;
         s7 s7Var = new s7();
         s7Var.a = i7;
         s7Var.b = i11;
         s7Var.e = new ca(c0Var, 7);
-        y31Var2.G = s7Var;
-        y31Var2.B = -1L;
-        y31Var2.B = this.Z == null ? -1 : r4.commission_permille;
-        arrayList.add(y31Var2);
-        arrayList.add(y31.C(id.M0(2131754343, null)));
-        arrayList.add(y31.u(id.M0(2131754342, null)));
+        x31Var2.G = s7Var;
+        x31Var2.B = -1L;
+        x31Var2.B = this.Z == null ? -1 : r4.commission_permille;
+        arrayList.add(x31Var2);
+        arrayList.add(x31.C(id.M0(2131754343, null)));
+        arrayList.add(x31.u(id.M0(2131754342, null)));
         String[] strArr = this.b0;
         List list = this.c0;
         if (strArr == null) {
@@ -278,11 +279,11 @@ public final class j extends q00 implements ls {
         String[] strArr2 = this.b0;
         int indexOf = list.indexOf(Integer.valueOf(this.a0.duration_months));
         a aVar2 = new a(this, i12);
-        y31 y31Var3 = new y31(14);
-        y31Var3.p = strArr2;
-        y31Var3.z = indexOf;
-        y31Var3.C = aVar2;
-        y31Var3.B = -1L;
+        x31 x31Var3 = new x31(14);
+        x31Var3.p = strArr2;
+        x31Var3.z = indexOf;
+        x31Var3.C = aVar2;
+        x31Var3.B = -1L;
         TL_payments.starRefProgram starrefprogram = this.Z;
         if (starrefprogram != null) {
             if (starrefprogram.duration_months > 0) {
@@ -292,27 +293,27 @@ public final class j extends q00 implements ls {
                         break;
                     }
                     if (((Integer) list.get(size)).intValue() > 0 && ((Integer) list.get(size)).intValue() <= this.Z.duration_months) {
-                        y31Var3.B = size;
+                        x31Var3.B = size;
                         break;
                     }
                     size--;
                 }
             } else {
-                y31Var3.B = list.size() - 1;
+                x31Var3.B = list.size() - 1;
             }
         }
-        arrayList.add(y31Var3);
-        arrayList.add(y31.C(id.M0(2131754341, null)));
-        arrayList.add(f.i(2, getThemedColor(l6.ik), id.M0(2131754337, null), id.M0(2131754338, null)));
-        arrayList.add(y31.B(3, null));
+        arrayList.add(x31Var3);
+        arrayList.add(x31.C(id.M0(2131754341, null)));
+        arrayList.add(f.i(2, getThemedColor(m6.ik), id.M0(2131754337, null), id.M0(2131754338, null)));
+        arrayList.add(x31.B(3, null));
         if (!this.Y && this.a0.end_date == 0) {
-            y31 e10 = y31.e(4, id.M0(2131754324, null));
+            x31 e10 = x31.e(4, id.M0(2131754324, null));
             e10.r = true;
             arrayList.add(e10);
-            arrayList.add(y31.B(5, null));
+            arrayList.add(x31.B(5, null));
         }
-        arrayList.add(y31.B(6, null));
-        arrayList.add(y31.B(7, null));
+        arrayList.add(x31.B(6, null));
+        arrayList.add(x31.B(7, null));
     }
 
     public final TL_payments.starRefProgram I0() {
@@ -342,11 +343,11 @@ public final class j extends q00 implements ls {
         wVar.setEnabled(starrefprogram2.end_date == 0 && !((starrefprogram = this.Z) != null && starrefprogram.commission_permille == starrefprogram2.commission_permille && starrefprogram.duration_months == starrefprogram2.duration_months));
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         this.G = false;
         this.E = org.telegram.messenger.g0.L(238.0f);
-        s6.h(l6.i5, new ec(4, context, this), null);
+        t6.h(m6.i5, new ec(4, context, this), null);
         super.createView(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.S = frameLayout;
@@ -354,8 +355,8 @@ public final class j extends q00 implements ls {
         vg.m mVar = new vg.m(context, 1, 3);
         this.T = mVar;
         vg.f fVar = mVar.b;
-        fVar.z = l6.Tk;
-        fVar.A = l6.Uk;
+        fVar.z = m6.Tk;
+        fVar.A = m6.Uk;
         fVar.b();
         this.T.setStarParticlesView(this.e);
         this.S.addView(this.T, ha.d(qs.U2, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
@@ -363,9 +364,9 @@ public final class j extends q00 implements ls {
         LinearLayout linearLayout = new LinearLayout(context);
         this.U = linearLayout;
         linearLayout.setOrientation(1);
-        s6.h(l6.d6, this.U, getResourceProvider());
+        t6.h(m6.d6, this.U, getResourceProvider());
         View view = new View(context);
-        s6.h(l6.d7, view, getResourceProvider());
+        t6.h(m6.d7, view, getResourceProvider());
         this.U.addView(view, new LinearLayout.LayoutParams(ha.z(-1.0f), ha.z(1.0f / org.telegram.messenger.g0.p)));
         int i7 = 2;
         bi.w wVar = new bi.w(i7, context, this.resourceProvider, true);
@@ -374,10 +375,10 @@ public final class j extends q00 implements ls {
         wVar.i(id.M0(2131754332, null), false, true);
         this.V.setOnClickListener(new bi.r(16, this, context));
         this.U.addView(this.V, ha.k(10.0f, 10.0f, 10.0f, 7.0f, -1, 48));
-        x70 x70Var = new x70(context, this.resourceProvider);
-        this.W = x70Var;
-        s6.U(x70Var, l6.z6, getResourceProvider());
-        s6.G(this.W, l6.Uc, getResourceProvider());
+        w70 w70Var = new w70(context, this.resourceProvider);
+        this.W = w70Var;
+        t6.U(w70Var, m6.z6, getResourceProvider());
+        t6.G(this.W, m6.Uc, getResourceProvider());
         this.W.setTextSize(1, 12.0f);
         this.W.setGravity(17);
         this.U.addView(this.W, ha.k(32.0f, 1.0f, 32.0f, 8.0f, -1, -2));
@@ -388,7 +389,7 @@ public final class j extends q00 implements ls {
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
-        kVar.o(xq.h);
+        kVar.o(wq.h);
         kVar.n(350L);
         this.c.setItemAnimator(kVar);
         return this.fragmentView;
@@ -396,24 +397,24 @@ public final class j extends q00 implements ls {
 
     @Override // org.telegram.ui.ActionBar.f2
     public final int getNavigationBarColor() {
-        return getThemedColor(l6.d6);
+        return getThemedColor(m6.d6);
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final v4.g0 k0() {
         hc hcVar = new hc(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new ai.e(this, 26), getResourceProvider(), 3);
         this.e0 = hcVar;
         return hcVar;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final ug.q1 m0() {
         e eVar = new e(getParentActivity(), 0);
         eVar.c();
         return eVar;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final View o0(Context context) {
         throw null;
     }
@@ -458,14 +459,14 @@ public final class j extends q00 implements ls {
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onInsets(int i7, int i10, int i11, int i12) {
         this.c.setPadding(0, 0, 0, org.telegram.messenger.g0.L(84.0f) + i12);
         this.c.setClipToPadding(false);
         this.U.setPadding(0, 0, 0, i12);
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onPause() {
         super.onPause();
         vg.m mVar = this.T;
@@ -475,7 +476,7 @@ public final class j extends q00 implements ls {
         }
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onResume() {
         super.onResume();
         vg.m mVar = this.T;

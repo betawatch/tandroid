@@ -1,42 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.view.View;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r5 b;
+public final class l5 implements n5 {
+    public final WeakReference a;
+    public final boolean b;
+    public Layout c;
+    public q5 d;
+    public Rect e;
+    public h5 f;
+    public org.telegram.messenger.e6 h;
+    public boolean n;
+    public float r;
+    public float s;
+    public boolean w;
 
-    public /* synthetic */ l5(r5 r5Var, int i7) {
-        this.a = i7;
-        this.b = r5Var;
+    public l5(View view, boolean z9) {
+        this.a = new WeakReference(view);
+        this.b = z9;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        Runnable runnable2;
-        switch (this.a) {
-            case 0:
-                this.b.scaleAnimator = null;
-                boolean unused = r5.lockPositionChanging = false;
-                break;
-            case 1:
-                r5 r5Var = this.b;
-                r5Var.scaleAnimator = null;
-                runnable = r5Var.removedAction;
-                if (runnable != null) {
-                    runnable2 = r5Var.removedAction;
-                    runnable2.run();
-                    r5Var.removedAction = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.moveAnimator = null;
-                break;
+    @Override // org.telegram.ui.Components.n5
+    public final void invalidate() {
+        View view = (View) this.a.get();
+        if (view == null) {
+            return;
+        }
+        if (!this.b || view.getParent() == null) {
+            view.invalidate();
+        } else {
+            ((View) view.getParent()).invalidate();
         }
     }
 }

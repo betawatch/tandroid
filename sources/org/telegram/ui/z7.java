@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -43,13 +43,13 @@ public final class z7 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.cc.e();
+                org.telegram.ui.Components.bc.e();
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
             case 2:
-                if (((b31) this.b).a.getImageReceiver().B() != null && !((b31) this.b).a.getImageReceiver().B().k0) {
-                    ((b31) this.b).a.getImageReceiver().B().N(0, false, false);
-                    ((b31) this.b).a.getImageReceiver().B().H(false);
+                if (((c31) this.b).a.getImageReceiver().B() != null && !((c31) this.b).a.getImageReceiver().B().k0) {
+                    ((c31) this.b).a.getImageReceiver().B().N(0, false, false);
+                    ((c31) this.b).a.getImageReceiver().B().H(false);
                     break;
                 }
                 break;
@@ -57,7 +57,7 @@ public final class z7 implements View.OnClickListener {
                 vf.c.t((Context) this.b, org.telegram.messenger.id.M0(2131745255, null));
                 break;
             default:
-                ((y91) this.b).L0(true);
+                ((z91) this.b).L0(true);
                 break;
         }
     }

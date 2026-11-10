@@ -15,7 +15,7 @@ import android.graphics.Shader;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -24,8 +24,8 @@ public class CheckBoxBase {
     public float B;
     public String C;
     public xo D;
-    public org.telegram.ui.ActionBar.t4 E;
-    public org.telegram.ui.ActionBar.g6 F;
+    public org.telegram.ui.ActionBar.u4 E;
+    public org.telegram.ui.ActionBar.h6 F;
     public org.telegram.messenger.k9 G;
     public long H;
     public View a;
@@ -53,19 +53,19 @@ public class CheckBoxBase {
     public final Path j = new Path();
     public boolean k = true;
     public float m = 1.0f;
-    public int r = org.telegram.ui.ActionBar.l6.k7;
+    public int r = org.telegram.ui.ActionBar.m6.k7;
 
-    public CheckBoxBase(int i7, View view, org.telegram.ui.ActionBar.g6 g6Var) {
-        int i10 = org.telegram.ui.ActionBar.l6.Zc;
+    public CheckBoxBase(int i7, View view, org.telegram.ui.ActionBar.h6 h6Var) {
+        int i10 = org.telegram.ui.ActionBar.m6.Zc;
         this.s = i10;
         this.t = i10;
-        this.u = org.telegram.ui.ActionBar.l6.h5;
+        this.u = org.telegram.ui.ActionBar.m6.h5;
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new k2(16);
+        this.G = new j2(16);
         this.H = 200L;
-        this.F = g6Var;
+        this.F = h6Var;
         this.a = view;
         this.B = i7;
         if (I == null) {
@@ -169,10 +169,10 @@ public class CheckBoxBase {
                 if (this.z) {
                     I.setColor(Color.argb((int) (this.m * 25.0f), 0, 0, 0));
                     if (this.A == 8) {
-                        paint2.setColor(org.telegram.ui.ActionBar.l6.w0(this.t, this.F));
+                        paint2.setColor(org.telegram.ui.ActionBar.m6.w0(this.t, this.F));
                     } else {
                         i12 = -1;
-                        paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, -1, org.telegram.ui.ActionBar.l6.w0(this.r, this.F)));
+                        paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, -1, org.telegram.ui.ActionBar.m6.w0(this.r, this.F)));
                     }
                 } else {
                     i12 = -1;
@@ -183,7 +183,7 @@ public class CheckBoxBase {
                         if (i26 < 0) {
                             i26 = this.r;
                         }
-                        paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, 16777215, org.telegram.ui.ActionBar.l6.w0(i26, this.F)));
+                        paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, 16777215, org.telegram.ui.ActionBar.m6.w0(i26, this.F)));
                     }
                 }
                 if (this.z || (i24 = this.A) < 0 || i24 == 12 || i24 == 13) {
@@ -233,7 +233,7 @@ public class CheckBoxBase {
                     f15 = 1.0f;
                     i15 = 7;
                 }
-                I.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+                I.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
                 i16 = this.A;
                 if (i16 != i13 || i16 == i15 || i16 == 8 || i16 == 9 || i16 == 10 || i16 == 14) {
                     i17 = 6;
@@ -266,7 +266,7 @@ public class CheckBoxBase {
                                 i21 = 90;
                             }
                             if (i27 == 6) {
-                                int w02 = org.telegram.ui.ActionBar.l6.w0(this.u, this.F);
+                                int w02 = org.telegram.ui.ActionBar.m6.w0(this.u, this.F);
                                 int alpha = Color.alpha(w02);
                                 paint.setColor(w02);
                                 paint.setAlpha((int) (alpha * f14));
@@ -277,7 +277,7 @@ public class CheckBoxBase {
                                 i23 = i21;
                                 i17 = 6;
                                 canvas2.drawArc(rectF, i21, f32, false, paint);
-                                int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.X9, this.F);
+                                int w03 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.X9, this.F);
                                 int alpha2 = Color.alpha(w03);
                                 paint.setColor(w03);
                                 paint.setAlpha((int) (alpha2 * f14));
@@ -294,15 +294,15 @@ public class CheckBoxBase {
                             float f33 = f14 < 0.5f ? 0.0f : (f14 - 0.5f) / 0.5f;
                             int i29 = this.A;
                             if (i29 == 9) {
-                                I.setColor(org.telegram.ui.ActionBar.l6.w0(this.t, this.F));
+                                I.setColor(org.telegram.ui.ActionBar.m6.w0(this.t, this.F));
                             } else if (i29 == 11 || i29 == i17 || i29 == 7 || i29 == 10 || ((!this.z && this.s >= 0) || i29 == 14)) {
-                                I.setColor(org.telegram.ui.ActionBar.l6.w0(this.s, this.F));
+                                I.setColor(org.telegram.ui.ActionBar.m6.w0(this.s, this.F));
                             } else {
                                 int i30 = this.x;
                                 if (i30 != 0) {
                                     I.setColor(i30);
                                 } else {
-                                    I.setColor(org.telegram.ui.ActionBar.l6.w0(this.k ? org.telegram.ui.ActionBar.l6.i7 : org.telegram.ui.ActionBar.l6.j7, this.F));
+                                    I.setColor(org.telegram.ui.ActionBar.m6.w0(this.k ? org.telegram.ui.ActionBar.m6.i7 : org.telegram.ui.ActionBar.m6.j7, this.F));
                                 }
                             }
                             if (this.n) {
@@ -313,11 +313,11 @@ public class CheckBoxBase {
                             boolean z11 = this.y;
                             Paint paint3 = this.d;
                             if (z11 || (i19 = this.r) < 0) {
-                                paint3.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.k7, this.F));
+                                paint3.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.k7, this.F));
                             } else {
-                                paint3.setColor(org.telegram.ui.ActionBar.l6.w0(i19, this.F));
+                                paint3.setColor(org.telegram.ui.ActionBar.m6.w0(i19, this.F));
                             }
-                            if (this.h < f15 && org.telegram.ui.ActionBar.l6.I.q()) {
+                            if (this.h < f15 && org.telegram.ui.ActionBar.m6.I.q()) {
                                 paint3.setColor(i0.a.f(this.h, I.getColor(), paint3.getColor()));
                             }
                             if (this.A != -1) {
@@ -352,7 +352,7 @@ public class CheckBoxBase {
                                         float f37 = L3 - f36;
                                         float f38 = L3 + f36;
                                         canvas2 = canvas;
-                                        canvas2.drawRoundRect(f37, f37, f38, f38, T13, T13, org.telegram.ui.ActionBar.l6.Cm);
+                                        canvas2.drawRoundRect(f37, f37, f38, f38, T13, T13, org.telegram.ui.ActionBar.m6.Cm);
                                     }
                                 } else {
                                     canvas2 = canvas;
@@ -360,7 +360,7 @@ public class CheckBoxBase {
                                     canvas2.drawCircle(L3, L3, L5, paint4);
                                     float f39 = (f15 - f12) * L5;
                                     if (z12 && f39 > 0.0f) {
-                                        canvas2.drawCircle(L3, L3, f39, org.telegram.ui.ActionBar.l6.Cm);
+                                        canvas2.drawCircle(L3, L3, f39, org.telegram.ui.ActionBar.m6.Cm);
                                     }
                                 }
                                 canvas2.restoreToCount(save);
@@ -375,7 +375,7 @@ public class CheckBoxBase {
                                     J.setPathEffect(new DashPathEffect(new float[]{org.telegram.messenger.g0.L(0.66f), org.telegram.messenger.g0.L(4.0f)}, 0.0f));
                                 }
                                 J.setStrokeWidth(org.telegram.messenger.g0.L(1.66f));
-                                J.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.M6, this.F));
+                                J.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.M6, this.F));
                                 canvas2.drawCircle(i7, i14, org.telegram.messenger.g0.L(9.0f), J);
                             } else if (f33 != 0.0f) {
                                 if (this.C != null) {
@@ -399,7 +399,7 @@ public class CheckBoxBase {
                                         f17 = 10.0f;
                                     }
                                     this.g.setTextSize(org.telegram.messenger.g0.L(f17));
-                                    this.g.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+                                    this.g.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
                                     canvas2.save();
                                     float f40 = i7;
                                     canvas2.scale(f33, f15, f40, i14);
@@ -446,13 +446,13 @@ public class CheckBoxBase {
                     }
                     i17 = 6;
                     paint.setStyle(Paint.Style.FILL);
-                    org.telegram.ui.ActionBar.t4 t4Var = this.E;
-                    if (t4Var == null || !t4Var.l()) {
+                    org.telegram.ui.ActionBar.u4 u4Var = this.E;
+                    if (u4Var == null || !u4Var.l()) {
                         paint.setShader(null);
                     } else {
-                        org.telegram.ui.ActionBar.t4 t4Var2 = this.E;
-                        Shader shader = t4Var2.a;
-                        Matrix matrix = t4Var2.k;
+                        org.telegram.ui.ActionBar.u4 u4Var2 = this.E;
+                        Shader shader = u4Var2.a;
+                        Matrix matrix = u4Var2.k;
                         matrix.reset();
                         this.E.a();
                         matrix.postTranslate(f13, (-this.E.r) + rect.top);
@@ -470,26 +470,26 @@ public class CheckBoxBase {
             } else if (this.z) {
                 int i33 = this.A;
                 if (i33 == 12 || i33 == 13) {
-                    I.setColor(org.telegram.ui.ActionBar.l6.w0(i11, this.F));
+                    I.setColor(org.telegram.ui.ActionBar.m6.w0(i11, this.F));
                     I.setAlpha((int) (this.m * 255.0f));
-                    paint2.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+                    paint2.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
                 } else if (i33 == 6 || i33 == 7) {
-                    I.setColor(org.telegram.ui.ActionBar.l6.w0(this.t, this.F));
-                    paint2.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+                    I.setColor(org.telegram.ui.ActionBar.m6.w0(this.t, this.F));
+                    paint2.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
                 } else if (i33 == 10 || i33 == 14) {
-                    paint2.setColor(org.telegram.ui.ActionBar.l6.w0(this.t, this.F));
+                    paint2.setColor(org.telegram.ui.ActionBar.m6.w0(this.t, this.F));
                 } else {
                     Paint paint6 = I;
-                    int indexOfKey = org.telegram.ui.ActionBar.l6.im.indexOfKey(org.telegram.ui.ActionBar.l6.Zc);
-                    paint6.setColor((16777215 & (indexOfKey >= 0 ? org.telegram.ui.ActionBar.l6.im.valueAt(indexOfKey) : org.telegram.ui.ActionBar.l6.X)) | 671088640);
-                    paint2.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+                    int indexOfKey = org.telegram.ui.ActionBar.m6.im.indexOfKey(org.telegram.ui.ActionBar.m6.Zc);
+                    paint6.setColor((16777215 & (indexOfKey >= 0 ? org.telegram.ui.ActionBar.m6.im.valueAt(indexOfKey) : org.telegram.ui.ActionBar.m6.X)) | 671088640);
+                    paint2.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
                 }
             } else {
                 int i34 = this.t;
                 if (i34 < 0) {
                     i34 = this.r;
                 }
-                paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, 16777215, org.telegram.ui.ActionBar.l6.w0(i34, this.F)));
+                paint2.setColor(org.telegram.messenger.g0.S0(f14, this.m, 16777215, org.telegram.ui.ActionBar.m6.w0(i34, this.F)));
             }
             i12 = -1;
             if (this.z) {
@@ -500,7 +500,7 @@ public class CheckBoxBase {
             f15 = 1.0f;
             i15 = 7;
             f16 = 1.5f;
-            I.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+            I.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
             i16 = this.A;
             if (i16 != i13) {
             }
@@ -537,7 +537,7 @@ public class CheckBoxBase {
         f15 = 1.0f;
         i15 = 7;
         f16 = 1.5f;
-        I.setColor(org.telegram.ui.ActionBar.l6.w0(this.r, this.F));
+        I.setColor(org.telegram.ui.ActionBar.m6.w0(this.r, this.F));
         i16 = this.A;
         if (i16 != i13) {
         }
@@ -627,8 +627,8 @@ public class CheckBoxBase {
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z9 ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new z5(this, 19));
-        this.p.setInterpolator(xq.g);
+        ofFloat.addListener(new y5(this, 19));
+        this.p.setInterpolator(wq.g);
         this.p.setDuration(this.H);
         this.p.start();
     }

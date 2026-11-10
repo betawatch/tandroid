@@ -10,7 +10,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l9 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class l9 implements Runnable {
                 pe peVar = (pe) this.e;
                 long j15 = this.b;
                 long j16 = this.c;
-                org.telegram.ui.Components.xf xfVar = (org.telegram.ui.Components.xf) this.f;
+                org.telegram.ui.Components.wf wfVar = (org.telegram.ui.Components.wf) this.f;
                 if (MediaController.cropOpusFile(mediaController.j1.getAbsolutePath(), peVar.getAbsolutePath(), j15, j16)) {
                     File file = mediaController.j1;
                     if (file != null) {
@@ -94,7 +94,7 @@ public final /* synthetic */ class l9 implements Runnable {
                     }
                     mediaController.j1 = peVar;
                     mediaController.k1 = j16 - j15;
-                    g0.h3(xfVar);
+                    g0.h3(wfVar);
                     return;
                 }
                 return;

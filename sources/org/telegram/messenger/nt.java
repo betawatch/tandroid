@@ -8,17 +8,17 @@ import org.json.JSONObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.vd0;
+import org.telegram.ui.wd0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class nt implements v0.g {
-    public final /* synthetic */ vd0 a;
+    public final /* synthetic */ wd0 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ int c;
 
-    public nt(vd0 vd0Var, Context context, int i7) {
-        this.a = vd0Var;
+    public nt(wd0 wd0Var, Context context, int i7) {
+        this.a = wd0Var;
         this.b = context;
         this.c = i7;
     }
@@ -27,23 +27,23 @@ public final class nt implements v0.g {
     public final void a(Object obj) {
         w0.i iVar = (w0.i) obj;
         boolean z9 = iVar instanceof w0.k;
-        vd0 vd0Var = this.a;
+        wd0 wd0Var = this.a;
         if (z9) {
-            vd0Var.a(0L, null, "EMPTY");
+            wd0Var.a(0L, null, "EMPTY");
             return;
         }
         if (iVar instanceof w0.g) {
-            vd0Var.a(0L, null, "CANCELLED");
+            wd0Var.a(0L, null, "CANCELLED");
         } else if (iVar instanceof w0.j) {
-            vd0Var.a(0L, null, "CANCELLED");
+            wd0Var.a(0L, null, "CANCELLED");
         } else if (iVar != null) {
-            vd0Var.a(0L, null, iVar.getMessage());
+            wd0Var.a(0L, null, iVar.getMessage());
         }
     }
 
     @Override // v0.g
     public final void onResult(Object obj) {
-        final vd0 vd0Var = this.a;
+        final wd0 wd0Var = this.a;
         bi.b1 b1Var = ((v0.o) obj).a;
         TL_account.finishPasskeyLogin finishpasskeylogin = new TL_account.finishPasskeyLogin();
         finishpasskeylogin.credential = new TL_account.inputPasskeyCredentialPublicKey();
@@ -74,18 +74,18 @@ public final class nt implements v0.g {
                 finishpasskeylogin.from_dc_id = currentDatacenterId;
                 finishpasskeylogin.from_auth_key_id = currentAuthKeyId;
             }
-            final int sendRequestTyped = ConnectionsManager.getInstance(i7).sendRequestTyped(finishpasskeylogin, new d3.b(1), new q9(u1Var, vd0Var, parseLong, 3), parseInt, 72);
+            final int sendRequestTyped = ConnectionsManager.getInstance(i7).sendRequestTyped(finishpasskeylogin, new d3.b(1), new q9(u1Var, wd0Var, parseLong, 3), parseInt, 72);
             final int i10 = this.c;
             u1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.messenger.mt
                 @Override // android.content.DialogInterface.OnCancelListener
                 public final void onCancel(DialogInterface dialogInterface) {
                     ConnectionsManager.getInstance(i10).cancelRequest(sendRequestTyped, true);
-                    vd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
+                    wd0Var.a(Long.valueOf(parseLong), null, "CANCELLED");
                 }
             });
         } catch (Exception e10) {
             a8.g(e10, true);
-            vd0Var.a(0L, null, e10.getMessage());
+            wd0Var.a(0L, null, e10.getMessage());
         }
     }
 }

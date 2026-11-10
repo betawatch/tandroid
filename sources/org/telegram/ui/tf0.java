@@ -1,44 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class tf0 extends org.telegram.ui.Components.dg {
-    public final /* synthetic */ org.telegram.ui.Components.dg n0;
-    public final /* synthetic */ boolean o0;
-    public final /* synthetic */ dg0 p0;
+public final class tf0 extends lx {
+    public final int[] N;
+    public final /* synthetic */ eg0 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tf0(dg0 dg0Var, Context context, int i7, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.dg dgVar, boolean z9) {
-        super(i7, context, g6Var, false);
-        this.p0 = dg0Var;
-        this.n0 = dgVar;
-        this.o0 = z9;
+    public tf0(eg0 eg0Var, sf0 sf0Var, int i7) {
+        super(i7, sf0Var);
+        this.O = eg0Var;
+        this.N = new int[2];
     }
 
-    @Override // org.telegram.ui.Components.dg
-    public final boolean b() {
-        return this.n0.b();
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final boolean c() {
-        return this.n0.c();
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final boolean d() {
-        return (this.o0 && this.p0.p0 && this.r <= 0) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final int getFillColor() {
-        return this.n0.getFillColor();
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final boolean j() {
-        return this.n0.j();
+    @Override // org.telegram.ui.lx
+    public final void g(kx kxVar) {
+        eg0 eg0Var = this.O;
+        ag0 ag0Var = eg0Var.J;
+        if (kxVar == null) {
+            return;
+        }
+        if (eg0Var.k0 != null) {
+            kxVar.c = true;
+            float f10 = (lx.f() * org.telegram.messenger.g0.p) / 1.3f;
+            float f11 = f10 / 3.0f;
+            kxVar.d = f11;
+            kxVar.e = f11;
+            kxVar.a = Utilities.i(eg0Var.k0.right - (0.75f * f10), org.telegram.messenger.g0.q.x - f10, 0.0f);
+            kxVar.b = eg0Var.k0.bottom - (f10 / 2.0f);
+            return;
+        }
+        org.telegram.ui.Cells.q1 q1Var = eg0Var.P;
+        if (q1Var == null || !q1Var.isAttachedToWindow() || eg0Var.P.getMessageObject() == null || eg0Var.P.getMessageObject().e1() != eg0Var.Q) {
+            return;
+        }
+        eg0Var.P.getLocationOnScreen(this.N);
+        kxVar.c = true;
+        float f12 = (lx.f() * org.telegram.messenger.g0.p) / 1.3f;
+        float f13 = f12 / 3.0f;
+        kxVar.d = f13;
+        kxVar.e = f13;
+        float f14 = f12 / 2.0f;
+        kxVar.a = Utilities.i(((ag0Var.getScaleX() * eg0Var.P.getTimeX()) + r8[0]) - f14, org.telegram.messenger.g0.q.x - f12, 0.0f);
+        kxVar.b = ((ag0Var.getScaleY() * eg0Var.P.getTimeY()) + r8[1]) - f14;
     }
 }

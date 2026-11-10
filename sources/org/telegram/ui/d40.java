@@ -1,81 +1,50 @@
 package org.telegram.ui;
 
-import android.graphics.Matrix;
+import android.content.Context;
+import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import java.security.SecureRandom;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class d40 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public Shader g;
-    public final int i;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
+public final class d40 extends LinearLayout {
+    public final org.telegram.ui.Components.i6 a;
+    public float b;
+    public final /* synthetic */ f40 c;
 
-    public d40(int i7) {
-        this.i = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d40(f40 f40Var, Context context) {
+        super(context);
+        this.c = f40Var;
+        this.b = 0.0f;
+        setOrientation(1);
+        setGravity(17);
+        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(context, true, false, false);
+        this.a = i6Var;
+        i6Var.setTextColor(-1);
+        i6Var.setTextSize(org.telegram.messenger.g0.L(46.0f));
+        i6Var.setTypeface(org.telegram.messenger.g0.o());
+        i6Var.setGravity(1);
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setText(org.telegram.messenger.id.M0(2131743446, null));
+        addView(i6Var, c8.ha.o(-1, 46));
+        addView(textView, c8.ha.o(-2, -2));
     }
 
-    public final void a() {
-        int i7 = this.i;
-        if (e40.s1(i7)) {
-            this.a = a8.p0.f(Utilities.b.nextInt(100), 0.2f, 100.0f, 0.85f);
-            this.b = 1.0f;
-        } else if (i7 == 1) {
-            SecureRandom secureRandom = Utilities.b;
-            this.a = a8.p0.f(secureRandom.nextInt(100), 0.3f, 100.0f, 0.2f);
-            this.b = a8.p0.f(secureRandom.nextInt(100), 0.3f, 100.0f, 0.7f);
-        } else {
-            SecureRandom secureRandom2 = Utilities.b;
-            this.a = com.google.android.recaptcha.internal.a.c(secureRandom2.nextInt(100), 100.0f, 0.2f, 0.8f);
-            this.b = secureRandom2.nextInt(100) / 100.0f;
+    public void setWatchersCount(int i7) {
+        String E = org.telegram.messenger.id.E(i7, ',');
+        org.telegram.ui.Components.i6 i6Var = this.a;
+        float measureText = i6Var.getPaint().measureText((CharSequence) E, 0, E.length());
+        if (this.b != measureText) {
+            int i10 = org.telegram.ui.ActionBar.m6.zk;
+            f40 f40Var = this.c;
+            i6Var.getPaint().setShader(new LinearGradient(0.0f, 0.0f, measureText, 0.0f, new int[]{org.telegram.ui.ActionBar.m6.w0(i10, f40Var.I0), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Bk, f40Var.I0)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+            this.b = measureText;
         }
-    }
-
-    public final void b(int i7, int i10, int i11, long j3, float f10) {
-        if (this.g == null) {
-            return;
-        }
-        float f11 = this.e;
-        if (f11 == 0.0f || this.f >= f11) {
-            this.e = Utilities.b.nextInt(org.telegram.messenger.qs.e3) + 1500;
-            this.f = 0.0f;
-            if (this.a == -1.0f) {
-                a();
-            }
-            this.c = this.a;
-            this.d = this.b;
-            a();
-        }
-        float f12 = j3;
-        float f13 = 1.0f;
-        float f14 = (f12 * 0.02f * f10) + (f12 * 1.0f) + this.f;
-        this.f = f14;
-        float f15 = this.e;
-        if (f14 > f15) {
-            this.f = f15;
-        }
-        float interpolation = org.telegram.ui.Components.xq.g.getInterpolation(this.f / f15);
-        float f16 = i11;
-        float f17 = this.c;
-        float f18 = (((((this.a - f17) * interpolation) + f17) * f16) + i10) - 200.0f;
-        float f19 = this.d;
-        float f20 = (((((this.b - f19) * interpolation) + f19) * f16) + i7) - 200.0f;
-        int i12 = this.i;
-        if (!e40.s1(i12)) {
-            f13 = i12 == 1 ? 4.0f : 2.5f;
-        }
-        float L = (org.telegram.messenger.g0.L(122.0f) / 400.0f) * f13;
-        Matrix matrix = this.h;
-        matrix.reset();
-        matrix.postTranslate(f18, f20);
-        matrix.postScale(L, L, f18 + 200.0f, f20 + 200.0f);
-        this.g.setLocalMatrix(matrix);
+        i6Var.setText(E);
     }
 }

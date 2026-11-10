@@ -3,11 +3,11 @@ package wi;
 import android.content.Context;
 import android.view.TextureView;
 import java.io.File;
-import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.l40;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.ax;
+import org.telegram.ui.Components.k40;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public final Context a;
@@ -19,12 +19,12 @@ public final class k0 {
     public o0 g;
     public int h;
     public boolean i = true;
-    public rt j;
+    public qt j;
     public q0 k;
-    public bx l;
+    public ax l;
 
-    public k0(Context context, l40 l40Var) {
+    public k0(Context context, k40 k40Var) {
         this.a = context;
-        this.b = l40Var;
+        this.b = k40Var;
     }
 }

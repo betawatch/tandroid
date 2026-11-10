@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class n implements View.OnFocusChangeListener {
                 uVar.b(f10, f10, true);
                 break;
             case 1:
-                ((a1) this.b).V1.c(z9, !TextUtils.isEmpty(r2.W1.getText()));
+                ((a1) this.b).Y1.c(z9, !TextUtils.isEmpty(r2.Z1.getText()));
                 break;
             case 2:
-                ((e1) this.b).m1.c(z9, !TextUtils.isEmpty(r2.n1.getText()));
+                ((e1) this.b).p1.c(z9, !TextUtils.isEmpty(r2.q1.getText()));
                 break;
             case 3:
-                ((h1) this.b).i1.c(z9, !TextUtils.isEmpty(r2.j1.getText()));
+                ((h1) this.b).l1.c(z9, !TextUtils.isEmpty(r2.m1.getText()));
                 break;
             case 4:
                 ch.l lVar = (ch.l) this.b;

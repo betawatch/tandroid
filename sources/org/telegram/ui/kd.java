@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class kd implements RequestDelegate {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.h3(new iq0(tL_error, 22));
+                    org.telegram.messenger.g0.h3(new jq0(tL_error, 22));
                     break;
                 }
                 break;
@@ -45,19 +45,19 @@ public final /* synthetic */ class kd implements RequestDelegate {
                             case 0:
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    zdVar3.l1 = d51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.id.M0(2131748402, null), 0, false);
+                                    zdVar3.l1 = e51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.id.M0(2131748402, null), 0, false);
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    zdVar3.m1 = d51.i0(statsGraph, org.telegram.messenger.id.M0(2131748401, null), 2, false);
-                                    p41 p41Var = zdVar3.l1;
-                                    if (p41Var != null) {
-                                        p41Var.n = true;
+                                    zdVar3.m1 = e51.i0(statsGraph, org.telegram.messenger.id.M0(2131748401, null), 2, false);
+                                    q41 q41Var = zdVar3.l1;
+                                    if (q41Var != null) {
+                                        q41Var.n = true;
                                     }
                                     zdVar3.g1 = tL_payments_starsRevenueStats.usd_rate;
                                     zdVar3.L(true, tL_payments_starsRevenueStats.status);
-                                    zdVar3.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.xq.h).withEndAction(new dd(zdVar3, 5)).start();
+                                    zdVar3.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.wq.h).withEndAction(new dd(zdVar3, 5)).start();
                                     zdVar3.E();
                                     break;
                                 }
@@ -87,19 +87,19 @@ public final /* synthetic */ class kd implements RequestDelegate {
                             case 0:
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    zdVar32.l1 = d51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.id.M0(2131748402, null), 0, false);
+                                    zdVar32.l1 = e51.i0(tL_payments_starsRevenueStats.top_hours_graph, org.telegram.messenger.id.M0(2131748402, null), 0, false);
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    zdVar32.m1 = d51.i0(statsGraph, org.telegram.messenger.id.M0(2131748401, null), 2, false);
-                                    p41 p41Var = zdVar32.l1;
-                                    if (p41Var != null) {
-                                        p41Var.n = true;
+                                    zdVar32.m1 = e51.i0(statsGraph, org.telegram.messenger.id.M0(2131748401, null), 2, false);
+                                    q41 q41Var = zdVar32.l1;
+                                    if (q41Var != null) {
+                                        q41Var.n = true;
                                     }
                                     zdVar32.g1 = tL_payments_starsRevenueStats.usd_rate;
                                     zdVar32.L(true, tL_payments_starsRevenueStats.status);
-                                    zdVar32.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.xq.h).withEndAction(new dd(zdVar32, 5)).start();
+                                    zdVar32.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.wq.h).withEndAction(new dd(zdVar32, 5)).start();
                                     zdVar32.E();
                                     break;
                                 }

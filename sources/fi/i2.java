@@ -10,13 +10,13 @@ import java.util.Timer;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i2 extends f2 {
     public ch.f0 i;
     public ch.f0 j;
     public int k;
-    public final org.telegram.ui.Components.w5 l;
+    public final org.telegram.ui.Components.v5 l;
     public Timer m;
     public final di.w8 n;
     public final ArrayList o;
@@ -28,14 +28,14 @@ public final class i2 extends f2 {
         this.p = ndVar;
         this.i = new ch.f0(ndVar);
         this.j = new ch.f0(ndVar);
-        this.l = new org.telegram.ui.Components.w5(ndVar);
+        this.l = new org.telegram.ui.Components.v5(ndVar);
         this.n = new di.w8(ndVar);
         this.o = new ArrayList();
         this.a = 3;
         this.b = org.telegram.messenger.g0.L(44.0f);
         this.c = org.telegram.messenger.g0.L(36.0f);
         k2 k2Var = (k2) ndVar.h;
-        int i7 = k2.y1;
+        int i7 = k2.B1;
         ArrayList arrayList = ui.b0(k2Var.a).h;
         for (int i10 = 0; i10 < Math.min(arrayList.size(), 8); i10++) {
             this.o.add(ch.o0.c((TLRPC.TL_availableReaction) arrayList.get(i10)));

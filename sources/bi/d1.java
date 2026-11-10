@@ -19,12 +19,12 @@ import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.nd0;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.od0;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -35,11 +35,11 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ d1(e1 e1Var, cn cnVar, int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, long j3, c20 c20Var) {
+    public /* synthetic */ d1(e1 e1Var, cn cnVar, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, c20 c20Var) {
         this.d = e1Var;
         this.b = i7;
         this.e = context;
-        this.f = g6Var;
+        this.f = h6Var;
         this.c = j3;
         this.h = c20Var;
     }
@@ -52,29 +52,29 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
             case 0:
                 e1 e1Var = (e1) this.d;
                 Context context = (Context) this.e;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.f;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.f;
                 c20 c20Var = (c20) this.h;
-                if (e1Var.q1.c0) {
+                if (e1Var.t1.c0) {
                     int i7 = this.b;
                     if (!qp.s1(i7).v2()) {
-                        ea x10 = ea.x(i7, e1Var.y1.a);
+                        ea x10 = ea.x(i7, e1Var.B1.a);
                         cg.a l10 = x10.e ? cg.a.l(x10.p()) : null;
-                        if (!e1Var.j1 && (l10 == null || l10.b < e1Var.y1.b)) {
-                            cg.a aVar = e1Var.y1;
+                        if (!e1Var.m1 && (l10 == null || l10.b < e1Var.B1.b)) {
+                            cg.a aVar = e1Var.B1;
                             cg.b bVar = aVar.a;
                             if (bVar != cg.b.a) {
                                 if (bVar == cg.b.b) {
-                                    new gi.e(context, g6Var, aVar, true, null).show();
+                                    new gi.e(context, h6Var, aVar, true, null).show();
                                     break;
                                 }
                             } else {
                                 long a10 = aVar.a();
                                 long j3 = this.c;
-                                new tc(context, g6Var, a10, 13, qg.d.h(i7, j3), null, j3).show();
+                                new tc(context, h6Var, a10, 13, qg.d.h(i7, j3), null, j3).show();
                                 break;
                             }
                         } else {
-                            c20Var.a(new nj(e1Var.y1, e1Var.z1));
+                            c20Var.a(new nj(e1Var.B1, e1Var.C1));
                             e1Var.dismiss();
                             break;
                         }
@@ -91,7 +91,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                 org.telegram.ui.web.p pVar = (org.telegram.ui.web.p) this.h;
                 final org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    i1Var.T1 = true;
+                    i1Var.W1 = true;
                     Bundle bundle = new Bundle();
                     bundle.putBoolean("onlySelect", true);
                     bundle.putBoolean("canSelectTopics", true);
@@ -137,19 +137,19 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                     hi.g1 g1Var = new hi.g1(i1Var, bundle, t0Var);
                     final int i11 = this.b;
                     final long j10 = this.c;
-                    g1Var.D2 = new sw() { // from class: hi.x0
-                        @Override // org.telegram.ui.sw
+                    g1Var.D2 = new tw() { // from class: hi.x0
+                        @Override // org.telegram.ui.tw
                         public final /* synthetic */ boolean G() {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.sw
-                        public final /* synthetic */ boolean N(yw ywVar) {
+                        @Override // org.telegram.ui.tw
+                        public final /* synthetic */ boolean N(zw zwVar) {
                             return false;
                         }
 
-                        @Override // org.telegram.ui.sw
-                        public final boolean y(yw ywVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, y91 y91Var) {
+                        @Override // org.telegram.ui.tw
+                        public final boolean y(zw zwVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, z91 z91Var) {
                             TLRPC.TL_forumTopic f10;
                             TLRPC.Message message;
                             ArrayList arrayList3 = new ArrayList();
@@ -189,16 +189,16 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                                 }
                             }
                             i1 i1Var2 = i1.this;
-                            if (!i1Var2.U1) {
-                                i1Var2.U1 = true;
+                            if (!i1Var2.X1) {
+                                i1Var2.X1 = true;
                                 t0Var.a(arrayList3.size() <= 0 ? "USER_DECLINED" : null, arrayList3);
                             }
-                            if (y91Var == null) {
-                                ywVar.finishFragment();
+                            if (z91Var == null) {
+                                zwVar.finishFragment();
                                 return true;
                             }
-                            y91Var.finishFragment();
-                            ywVar.removeSelfFromStack();
+                            z91Var.finishFragment();
+                            zwVar.removeSelfFromStack();
                             return true;
                         }
                     };
@@ -209,11 +209,11 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                 }
                 break;
             default:
-                nd0 nd0Var = (nd0) this.d;
+                od0 od0Var = (od0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                fi.d dVar = nd0Var.b;
+                fi.d dVar = od0Var.b;
                 if (!dVar.Q) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -236,7 +236,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                         tL_dataJSON.data = u10.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    nd0Var.w.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.z9(nd0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    od0Var.w.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.z9(od0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
@@ -252,8 +252,8 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
         this.h = pVar;
     }
 
-    public /* synthetic */ d1(nd0 nd0Var, String str, long j3, String str2, String str3, int i7) {
-        this.d = nd0Var;
+    public /* synthetic */ d1(od0 od0Var, String str, long j3, String str2, String str3, int i7) {
+        this.d = od0Var;
         this.e = str;
         this.c = j3;
         this.f = str2;

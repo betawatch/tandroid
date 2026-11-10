@@ -14,12 +14,12 @@ import org.telegram.messenger.f6;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.vb0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.wb0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k2 extends j {
     public String A0;
@@ -72,7 +72,7 @@ public final class k2 extends j {
         setSwatch(i1Var);
         setType(i10);
         k();
-        j2Var.addTextChangedListener(new vb0(2, this));
+        j2Var.addTextChangedListener(new wb0(2, this));
     }
 
     @Override // tg.j
@@ -105,10 +105,10 @@ public final class k2 extends j {
     }
 
     @Override // tg.j
-    public li0 getSelectionBounds() {
+    public ki0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new li0();
+            return new ki0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -116,7 +116,7 @@ public final class k2 extends j {
         float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         j2 j2Var = this.q0;
-        return new li0(x10, (positionY - (((L2 - j2Var.getExtendedPaddingTop()) - org.telegram.messenger.g0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - j2Var.getExtendedPaddingBottom()) * scaleX);
+        return new ki0(x10, (positionY - (((L2 - j2Var.getExtendedPaddingTop()) - org.telegram.messenger.g0.N(4.0f)) / 2.0f)) * scaleX, ((L * scaleX) + x10) - x10, (L2 - j2Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // tg.j
@@ -214,7 +214,7 @@ public final class k2 extends j {
         j2Var.setTextColor(i7);
         j2Var.setCursorColor(i7);
         j2Var.setHandlesColor(i7);
-        j2Var.setHighlightColor(l6.r1(0.4f, i7));
+        j2Var.setHighlightColor(m6.r1(0.4f, i7));
     }
 
     public final void s() {
@@ -253,8 +253,8 @@ public final class k2 extends j {
                 }
                 f6VarArr[i10].b = 0.85f;
             }
-            for (r5 r5Var : (r5[]) text.getSpans(0, text.length(), r5.class)) {
-                r5Var.replaceFontMetrics(getFontMetricsInt());
+            for (q5 q5Var : (q5[]) text.getSpans(0, text.length(), q5.class)) {
+                q5Var.replaceFontMetrics(getFontMetricsInt());
             }
             j2Var.q();
         }

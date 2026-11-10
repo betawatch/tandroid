@@ -15,7 +15,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.l0;
 import org.telegram.ui.Wallet.q2;
@@ -26,7 +26,7 @@ import org.telegram.utils.twidget.k0;
 import org.telegram.utils.twidget.n0;
 import org.telegram.utils.twidget.v0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -154,7 +154,7 @@ public final /* synthetic */ class b implements Runnable {
                         byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
                         Context context = T.getContext();
                         int i12 = h7.b;
-                        g6 resourceProvider = T.getResourceProvider();
+                        h6 resourceProvider = T.getResourceProvider();
                         i0 i0Var = new i0(h7, v0Var, j10, bytes);
                         ArrayList arrayList = t2.a;
                         q2 q2Var = new q2(new boolean[]{false}, i0Var);

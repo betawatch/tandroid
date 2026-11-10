@@ -22,10 +22,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import m4.d0;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 import p4.r0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public final Set D;
@@ -47,7 +47,7 @@ public final class e implements m {
     public final boolean h;
     public final d0 n;
     public final pb.b r;
-    public final vy s;
+    public final uy s;
     public final long w;
     public final ArrayList x;
     public final Set y;
@@ -64,7 +64,7 @@ public final class e implements m {
         this.h = z10;
         this.r = bVar;
         this.n = new d0(19);
-        this.s = new vy(this, 9);
+        this.s = new uy(this, 9);
         this.x = new ArrayList();
         this.y = Collections.newSetFromMap(new IdentityHashMap());
         this.D = Collections.newSetFromMap(new IdentityHashMap());
@@ -172,7 +172,7 @@ public final class e implements m {
                     bVar = new pb.b(21);
                 }
                 this.F = bVar;
-                bVar.B(new org.telegram.ui.Components.n(this));
+                bVar.B(new org.telegram.ui.Components.m(this));
                 return;
             } catch (UnsupportedSchemeException e10) {
                 throw new x(e10);

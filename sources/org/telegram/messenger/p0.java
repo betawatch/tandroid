@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.p61;
+import org.telegram.ui.q61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final gf.g A;
@@ -182,7 +182,7 @@ public final class p0 {
         }
         if (((h0) this.o0.b).c) {
             ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
-            g0.h3(new p61(11));
+            g0.h3(new q61(11));
         }
         return z9;
     }

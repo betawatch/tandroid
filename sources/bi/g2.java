@@ -13,19 +13,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.o10;
+import org.telegram.ui.Components.n10;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.dh;
-import org.telegram.ui.dk0;
-import org.telegram.ui.ee0;
-import org.telegram.ui.gf0;
-import org.telegram.ui.mj0;
-import org.telegram.ui.ro0;
-import org.telegram.ui.ry0;
-import org.telegram.ui.uj0;
+import org.telegram.ui.ek0;
+import org.telegram.ui.fe0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.nj0;
+import org.telegram.ui.so0;
+import org.telegram.ui.sy0;
 import org.telegram.ui.uo;
+import org.telegram.ui.vj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -116,32 +116,32 @@ public final /* synthetic */ class g2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new u0(obj4, tL_error, obj3, obj2, (TLObject) obj, 28));
                 break;
             case 12:
-                ro0 ro0Var = (ro0) obj4;
+                so0 so0Var = (so0) obj4;
                 TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers2 = (TLRPC.TL_messages_getAttachedStickers) obj2;
                 org.telegram.ui.ld ldVar = (org.telegram.ui.ld) obj;
                 if (tL_error != null && org.telegram.messenger.r8.r(tL_error.text) && obj3 != null) {
-                    org.telegram.messenger.r8.n(ro0Var.a).u(new Object[]{tL_messages_getAttachedStickers2, ldVar}, obj3);
+                    org.telegram.messenger.r8.n(so0Var.a).u(new Object[]{tL_messages_getAttachedStickers2, ldVar}, obj3);
                     break;
                 } else {
                     ldVar.run(tLObject, tL_error);
                     break;
                 }
             case 13:
-                org.telegram.messenger.g0.h3(new o10((ee0) obj4, tL_error, (String) obj3, (String) obj2, (String) obj, 13));
+                org.telegram.messenger.g0.h3(new n10((fe0) obj4, tL_error, (String) obj3, (String) obj2, (String) obj, 13));
                 break;
             case 14:
-                org.telegram.messenger.g0.h3(new a3((dk0) obj4, tL_error, (String) obj3, (uj0) obj2, tLObject, (TL_account.sendVerifyPhoneCode) obj));
+                org.telegram.messenger.g0.h3(new a3((ek0) obj4, tL_error, (String) obj3, (vj0) obj2, tLObject, (TL_account.sendVerifyPhoneCode) obj));
                 break;
             case 15:
-                org.telegram.messenger.g0.h3(new o10((mj0) obj4, tL_error, (gf0) obj3, (m4.d0) obj2, (TL_account.verifyEmail) obj, 20));
+                org.telegram.messenger.g0.h3(new n10((nj0) obj4, tL_error, (hf0) obj3, (m4.d0) obj2, (TL_account.verifyEmail) obj, 20));
                 break;
             case 16:
-                org.telegram.messenger.g0.h3(new o10((PrivacyControlActivity) obj4, tL_error, (boolean[]) obj3, (TLRPC.GlobalPrivacySettings) obj2, (TL_account.setGlobalPrivacySettings) obj, 24));
+                org.telegram.messenger.g0.h3(new n10((PrivacyControlActivity) obj4, tL_error, (boolean[]) obj3, (TLRPC.GlobalPrivacySettings) obj2, (TL_account.setGlobalPrivacySettings) obj, 24));
                 break;
             case 17:
-                ry0 ry0Var = (ry0) obj4;
-                ry0Var.getClass();
-                org.telegram.messenger.g0.h3(new a3(ry0Var, tLObject, (CharSequence) obj3, tL_error, (byte[]) obj2, (String) obj));
+                sy0 sy0Var = (sy0) obj4;
+                sy0Var.getClass();
+                org.telegram.messenger.g0.h3(new a3(sy0Var, tLObject, (CharSequence) obj3, tL_error, (byte[]) obj2, (String) obj));
                 break;
             case 18:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.web.x((org.telegram.ui.web.x0) obj4, tLObject, (di.p7) obj3, (String) obj2, (String) obj));

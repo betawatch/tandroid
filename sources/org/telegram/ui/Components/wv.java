@@ -1,63 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.util.Property;
 import android.view.MotionEvent;
-import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class wv extends c5.k {
-    public final /* synthetic */ hy w0;
+public final class wv extends ImageView {
+    public final /* synthetic */ gy a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wv(hy hyVar, Context context) {
+    public wv(gy gyVar, Context context) {
         super(context);
-        this.w0 = hyVar;
+        this.a = gyVar;
     }
 
-    @Override // c5.k, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.w0.f) {
-            return false;
-        }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        try {
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (IllegalArgumentException unused) {
-            return false;
-        }
-    }
-
-    @Override // c5.k
-    public final void x(int i7, boolean z9) {
-        hy hyVar = this.w0;
-        lw lwVar = hyVar.I;
-        hy.a(hyVar, i7 == 1);
-        if (i7 != getCurrentItem()) {
-            super.x(i7, z9);
-            return;
-        }
-        if (i7 != 0) {
-            if (i7 == 1) {
-                hyVar.h0.y0(0);
-                return;
-            } else {
-                hyVar.D0.y0(1);
-                return;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        hx hxVar;
+        int action = motionEvent.getAction();
+        gy gyVar = this.a;
+        if (action == 0) {
+            gyVar.P1 = true;
+            gyVar.Q1 = false;
+            org.telegram.messenger.g0.i3(new q2(gyVar, 350, 6), 350);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            gyVar.P1 = false;
+            if (!gyVar.Q1 && (hxVar = gyVar.t1) != null && hxVar.k()) {
+                try {
+                    gyVar.y.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
             }
         }
-        hyVar.Q0[1] = 0;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(lwVar, (Property<lw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
-        ofFloat.setDuration(150L);
-        ofFloat.setInterpolator(xq.h);
-        ofFloat.start();
-        hyVar.G(1, 0);
-        if (lwVar != null) {
-            lwVar.j(0, true);
-        }
+        super.onTouchEvent(motionEvent);
+        return true;
     }
 }

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements v10 {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class j2 implements v10 {
                         Integer num = (Integer) c3Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i11 = w2.b;
-                        y31 K = y31.K(w2.class);
+                        x31 K = x31.K(w2.class);
                         K.G = stargiftattributemodel;
                         K.l = lowerCase;
                         K.z = intValue;
@@ -86,7 +86,7 @@ public final /* synthetic */ class j2 implements v10 {
                         Integer num2 = (Integer) c3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                         int intValue2 = num2 == null ? 0 : num2.intValue();
                         int i13 = p2.b;
-                        y31 K2 = y31.K(p2.class);
+                        x31 K2 = x31.K(p2.class);
                         K2.G = stargiftattributebackdrop;
                         K2.l = lowerCase2;
                         K2.z = intValue2;
@@ -121,7 +121,7 @@ public final /* synthetic */ class j2 implements v10 {
                         Integer num3 = (Integer) c3Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         ?? intValue3 = num3 == null ? z12 : num3.intValue();
                         int i15 = z2.b;
-                        y31 K3 = y31.K(z2.class);
+                        x31 K3 = x31.K(z2.class);
                         K3.G = stargiftattributepattern;
                         K3.l = lowerCase3;
                         K3.z = intValue3;

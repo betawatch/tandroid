@@ -10,12 +10,12 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class e3 extends pj0 {
+public abstract class e3 extends oj0 {
     public boolean d;
     public String f;
     public String h;
@@ -31,7 +31,7 @@ public abstract class e3 extends pj0 {
         this.x = f3Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -84,34 +84,34 @@ public abstract class e3 extends pj0 {
 
     @Override // v4.g0
     public final void t(v4.d1 d1Var, int i7) {
-        org.telegram.ui.Components.l9 l9Var = (org.telegram.ui.Components.l9) d1Var.a;
+        org.telegram.ui.Components.k9 k9Var = (org.telegram.ui.Components.k9) d1Var.a;
         TLObject tLObject = (TLObject) this.c.get(i7);
         boolean z9 = tLObject instanceof TLRPC.Document;
         ColorDrawable colorDrawable = this.s;
         if (z9) {
-            l9Var.j(hc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
+            k9Var.j(hc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
             return;
         }
         if (tLObject instanceof TLRPC.Photo) {
             TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-            l9Var.j(hc.i(org.telegram.messenger.w7.w(photo.sizes, qs.r5, false, null, false), photo), "200_200", colorDrawable, null);
+            k9Var.j(hc.i(org.telegram.messenger.w7.w(photo.sizes, qs.r5, false, null, false), photo), "200_200", colorDrawable, null);
         } else {
             if (!(tLObject instanceof TLRPC.BotInlineResult)) {
-                l9Var.b();
+                k9Var.b();
                 return;
             }
             TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;
             TLRPC.WebDocument webDocument = botInlineResult.thumb;
             if (webDocument != null) {
-                l9Var.j(hc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
+                k9Var.j(hc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
             } else {
-                l9Var.b();
+                k9Var.b();
             }
         }
     }
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return new yi0(new bi.b7(this.x.getContext(), 1));
+        return new xi0(new bi.b7(this.x.getContext(), 1));
     }
 }

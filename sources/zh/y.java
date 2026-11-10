@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y extends y0 {
     public final RectF w0;
@@ -18,8 +18,8 @@ public final class y extends y0 {
     public final /* synthetic */ b0 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(b0 b0Var, Context context, int i7, g6 g6Var) {
-        super(i7, context, g6Var);
+    public y(b0 b0Var, Context context, int i7, h6 h6Var) {
+        super(i7, context, h6Var);
         this.z0 = b0Var;
         this.w0 = new RectF();
         this.x0 = new RectF();
@@ -34,12 +34,12 @@ public final class y extends y0 {
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         b0 b0Var = this.z0;
-        w wVar = b0Var.S1;
+        w wVar = b0Var.V1;
         boolean drawChild = super.drawChild(canvas, view, j3);
         FrameLayout frameLayout = this.d;
         if (view == frameLayout) {
             FrameLayout frameLayout2 = wVar.b;
-            v vVar = b0Var.Q1;
+            v vVar = b0Var.T1;
             RectF rectF = this.w0;
             if (!jh.k.c(frameLayout2, vVar, rectF)) {
                 return true;

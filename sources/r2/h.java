@@ -21,17 +21,17 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 import org.telegram.utils.twidget.v;
 import s2.w;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
     public final j2.h b;
     public final j2.h c;
-    public final org.telegram.ui.Components.n d;
+    public final org.telegram.ui.Components.m d;
     public final w[] e;
     public final u[] f;
     public final s2.d g;
@@ -44,24 +44,24 @@ public final class h {
     public Uri p;
     public boolean q;
     public a3.u r;
-    public final vy j = new vy(12);
+    public final uy j = new uy(12);
     public byte[] m = m0.b;
     public long s = -9223372036854775807L;
 
-    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, org.telegram.ui.Components.n nVar, d0 d0Var, org.telegram.ui.Components.n nVar2, List list, m2.j jVar) {
+    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, org.telegram.ui.Components.m mVar, d0 d0Var, org.telegram.ui.Components.m mVar2, List list, m2.j jVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = wVarArr;
         this.f = uVarArr;
-        this.d = nVar2;
+        this.d = mVar2;
         this.i = list;
         this.k = jVar;
-        j2.h createDataSource = ((j2.g) nVar.a).createDataSource();
+        j2.h createDataSource = ((j2.g) mVar.a).createDataSource();
         this.b = createDataSource;
         if (d0Var != null) {
             createDataSource.addTransferListener(d0Var);
         }
-        this.c = ((j2.g) nVar.a).createDataSource();
+        this.c = ((j2.g) mVar.a).createDataSource();
         this.h = new m1("", uVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < wVarArr.length; i7++) {
@@ -312,8 +312,8 @@ public final class h {
         if (uri == null) {
             return null;
         }
-        vy vyVar = this.j;
-        byte[] bArr = (byte[]) ((v) vyVar.b).remove(uri);
+        uy uyVar = this.j;
+        byte[] bArr = (byte[]) ((v) uyVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }

@@ -3,15 +3,15 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.dx;
-import org.telegram.ui.Components.hx;
-import org.telegram.ui.e40;
+import org.telegram.ui.Components.cx;
+import org.telegram.ui.Components.gx;
+import org.telegram.ui.a81;
+import org.telegram.ui.f40;
 import org.telegram.ui.nm;
-import org.telegram.ui.ra0;
 import org.telegram.ui.rn;
-import org.telegram.ui.z71;
+import org.telegram.ui.sa0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
@@ -46,16 +46,16 @@ public final /* synthetic */ class g0 implements DialogInterface.OnCancelListene
                 ((ChatActivityEnterView) this.c).P2.getConnectionsManager().cancelRequest(this.b, true);
                 break;
             case 5:
-                ConnectionsManager.getInstance(((hx) ((dx) this.c).c.b).F.c1).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((gx) ((cx) this.c).c.b).F.c1).cancelRequest(this.b, true);
                 break;
             case 6:
-                ConnectionsManager.getInstance(((e40) this.c).k1.a).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((f40) this.c).n1.a).cancelRequest(this.b, true);
                 break;
             case 7:
-                ((ra0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                ((sa0) this.c).getConnectionsManager().cancelRequest(this.b, true);
                 break;
             default:
-                ConnectionsManager.getInstance(((z71) this.c).currentAccount).cancelRequest(this.b, true);
+                ConnectionsManager.getInstance(((a81) this.c).currentAccount).cancelRequest(this.b, true);
                 break;
         }
     }

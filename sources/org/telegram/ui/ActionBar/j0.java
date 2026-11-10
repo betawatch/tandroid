@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.transition.Transition;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.r00;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j0 implements Transition.TransitionListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class j0 implements Transition.TransitionListener {
                 ((r0) this.b).i0.e();
                 break;
             default:
-                ((s00) this.b).E.e();
+                ((r00) this.b).E.e();
                 break;
         }
     }
@@ -34,7 +34,7 @@ public final class j0 implements Transition.TransitionListener {
                 ((r0) this.b).i0.e();
                 break;
             default:
-                ((s00) this.b).E.e();
+                ((r00) this.b).E.e();
                 break;
         }
     }
@@ -56,7 +56,7 @@ public final class j0 implements Transition.TransitionListener {
                 ((r0) this.b).i0.d();
                 break;
             default:
-                ((s00) this.b).E.d();
+                ((r00) this.b).E.d();
                 break;
         }
     }

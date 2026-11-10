@@ -20,17 +20,17 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v8 extends View {
     public int a;
     public int b;
     public final Matrix c;
     public final Paint[] d;
-    public final org.telegram.ui.Components.w5 e;
+    public final org.telegram.ui.Components.v5 e;
     public boolean f;
     public int h;
     public final Drawable[] n;
@@ -38,19 +38,19 @@ public final class v8 extends View {
     public boolean s;
     public final Paint w;
     public final Path x;
-    public final ic y;
+    public final hc y;
 
     public v8(Context context) {
         super(context);
         this.c = new Matrix();
         this.d = new Paint[]{new Paint(1), new Paint(1)};
-        this.e = new org.telegram.ui.Components.w5(this, 0L, 260L, xq.h);
+        this.e = new org.telegram.ui.Components.v5(this, 0L, 260L, wq.h);
         this.n = new Drawable[2];
         this.r = new float[2];
         Paint paint = new Paint(1);
         this.w = paint;
         this.x = new Path();
-        this.y = new ic(this, 0.6f, 5.0f);
+        this.y = new hc(this, 0.6f, 5.0f);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -65,23 +65,23 @@ public final class v8 extends View {
             this.f = false;
         } else {
             int i7 = q8Var.a;
-            org.telegram.ui.Components.w5 w5Var = this.e;
+            org.telegram.ui.Components.v5 v5Var = this.e;
             if (i7 == 1) {
                 c(15.0f, R.drawable.msg_stories_closefriends);
                 d(-7808710, -13781445);
-                w5Var.f(z10, !z10);
+                v5Var.f(z10, !z10);
             } else if (i7 == 2) {
                 c(17.33f, R.drawable.msg_folders_private);
                 d(-3905294, -6923014);
-                w5Var.f(z10, !z10);
+                v5Var.f(z10, !z10);
             } else if (i7 == 3) {
                 c(17.33f, R.drawable.msg_folders_groups);
                 d(-18621, -618956);
-                w5Var.f(z10, !z10);
+                v5Var.f(z10, !z10);
             } else if (z9) {
                 c(17.33f, R.drawable.msg_folders_channels);
                 d(-15292942, -15630089);
-                w5Var.f(z10, !z10);
+                v5Var.f(z10, !z10);
             } else {
                 this.f = false;
             }
@@ -98,23 +98,23 @@ public final class v8 extends View {
             this.f = false;
         } else {
             boolean z11 = storyItem.close_friends;
-            org.telegram.ui.Components.w5 w5Var = this.e;
+            org.telegram.ui.Components.v5 v5Var = this.e;
             if (z11) {
                 c(15.0f, R.drawable.msg_stories_closefriends);
                 d(-7808710, -13781445);
-                w5Var.f(z10, true);
+                v5Var.f(z10, true);
             } else if (storyItem.contacts) {
                 c(17.33f, R.drawable.msg_folders_private);
                 d(-3905294, -6923014);
-                w5Var.f(z10, true);
+                v5Var.f(z10, true);
             } else if (storyItem.selected_contacts || (z9 && ((arrayList = storyItem.privacy) == null || arrayList.isEmpty()))) {
                 c(17.33f, R.drawable.msg_folders_groups);
                 d(-18621, -618956);
-                w5Var.f(z10, true);
+                v5Var.f(z10, true);
             } else if (z9) {
                 c(17.33f, R.drawable.msg_folders_channels);
                 d(-15292942, -15630089);
-                w5Var.f(z10, true);
+                v5Var.f(z10, true);
             } else {
                 this.f = false;
             }

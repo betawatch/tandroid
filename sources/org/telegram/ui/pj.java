@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class pj extends org.telegram.ui.Components.co {
+public final class pj extends org.telegram.ui.Components.bo {
     public final /* synthetic */ cn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class pj extends org.telegram.ui.Components.co {
         this.f = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.co
+    @Override // org.telegram.ui.Components.bo
     public final void a(boolean z9) {
         cn cnVar = this.f;
         cnVar.I7();

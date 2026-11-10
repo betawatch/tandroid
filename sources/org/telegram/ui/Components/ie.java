@@ -1,38 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.ImageView;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ie extends ImageView {
-    public float a;
+public final class ie implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ie(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
+    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView, int i7) {
+        this.a = i7;
         this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        this.a = f10;
-        float L = org.telegram.messenger.g0.L(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f11 = L + chatActivityEnterView.D + chatActivityEnterView.y;
-        ke keVar = chatActivityEnterView.K1;
-        float L2 = org.telegram.messenger.g0.L((keVar == null || keVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        ke keVar2 = chatActivityEnterView.K1;
-        float alpha = (L2 * (keVar2 == null ? 0.0f : keVar2.getAlpha())) + f11;
-        ke keVar3 = chatActivityEnterView.x1;
-        float L3 = org.telegram.messenger.g0.L((keVar3 == null || keVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        ke keVar4 = chatActivityEnterView.x1;
-        super.setTranslationX((L3 * (keVar4 != null ? keVar4.getAlpha() : 0.0f)) + alpha);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                ie ieVar = chatActivityEnterView.r3;
+                if ((!chatActivityEnterView.g0() || !chatActivityEnterView.s()) && !org.telegram.ui.ActionBar.f2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E) {
+                    vf vfVar = chatActivityEnterView.Z2;
+                    if (vfVar != null) {
+                        vfVar.f1();
+                    }
+                    chatActivityEnterView.E0.requestFocus();
+                    org.telegram.messenger.g0.K3(chatActivityEnterView.E0);
+                    org.telegram.messenger.g0.r(ieVar);
+                    org.telegram.messenger.g0.i3(ieVar, 100L);
+                    break;
+                }
+                break;
+            case 1:
+                vf vfVar2 = this.b.Z2;
+                if (vfVar2 != null) {
+                    vfVar2.Z1(0, 0, 0, 0L, 0L, true);
+                    break;
+                }
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView2.V0;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    chatActivityEnterView2.V0.start();
+                    break;
+                }
+                break;
+        }
     }
 }

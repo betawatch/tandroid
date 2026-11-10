@@ -20,30 +20,30 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
+public final class a4 extends View implements org.telegram.ui.ActionBar.c6 {
     public float D;
-    public final org.telegram.ui.Components.w5 E;
-    public final org.telegram.ui.Components.w5 F;
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.Components.v5 E;
+    public final org.telegram.ui.Components.v5 F;
+    public final org.telegram.ui.ActionBar.h6 a;
     public final ImageReceiver b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.i6 e;
+    public final org.telegram.ui.Components.h6 e;
     public boolean f;
     public boolean h;
     public View.OnClickListener n;
-    public final ic r;
+    public final hc r;
     public int s;
     public String w;
     public float x;
     public float y;
 
-    public a4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public a4(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
@@ -51,25 +51,25 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
         this.c = paint;
         Paint paint2 = new Paint(1);
         this.d = paint2;
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false);
-        this.e = i6Var;
-        this.r = new ic(this);
+        org.telegram.ui.Components.h6 h6Var2 = new org.telegram.ui.Components.h6(false, false, false);
+        this.e = h6Var2;
+        this.r = new hc(this);
         this.s = -1;
-        xq xqVar = xq.h;
-        this.E = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
-        this.F = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
-        i6Var.setCallback(this);
-        i6Var.u(-1);
-        i6Var.b = 17;
-        i6Var.w(org.telegram.messenger.g0.L(16.0f));
-        i6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        i6Var.M = org.telegram.messenger.g0.q.x;
-        i6Var.n(0.65f, 480L, xqVar);
-        i6Var.A = 0.35f;
+        wq wqVar = wq.h;
+        this.E = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
+        this.F = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
+        h6Var2.setCallback(this);
+        h6Var2.u(-1);
+        h6Var2.b = 17;
+        h6Var2.w(org.telegram.messenger.g0.L(16.0f));
+        h6Var2.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        h6Var2.M = org.telegram.messenger.g0.q.x;
+        h6Var2.n(0.65f, 480L, wqVar);
+        h6Var2.A = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        this.a = g6Var;
-        paint2.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, g6Var));
+        this.a = h6Var;
+        paint2.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, h6Var));
         imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
         c8.ka.a(this);
     }
@@ -310,10 +310,10 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
             float f12 = f10 - f11;
             float f13 = this.y;
             float f14 = f10 + f11;
-            org.telegram.ui.Components.i6 i6Var = this.e;
-            i6Var.o(f12, f13, f14, f13);
-            i6Var.B = (int) (d2 * 255.0f);
-            i6Var.draw(canvas);
+            org.telegram.ui.Components.h6 h6Var = this.e;
+            h6Var.o(f12, f13, f14, f13);
+            h6Var.B = (int) (d2 * 255.0f);
+            h6Var.draw(canvas);
         }
         canvas.restore();
     }
@@ -340,18 +340,18 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
         View.OnClickListener onClickListener;
         boolean z9 = motionEvent.getX() >= this.x - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getX() <= this.x + ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() >= this.y - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() <= this.y + ((float) org.telegram.messenger.g0.L(14.0f));
         int action = motionEvent.getAction();
-        ic icVar = this.r;
+        hc hcVar = this.r;
         if (action == 0) {
-            icVar.c(z9);
+            hcVar.c(z9);
         } else if (motionEvent.getAction() == 1) {
-            if (icVar.i && z9 && (onClickListener = this.n) != null) {
+            if (hcVar.i && z9 && (onClickListener = this.n) != null) {
                 onClickListener.onClick(this);
             }
-            icVar.c(false);
+            hcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            icVar.c(false);
+            hcVar.c(false);
         }
-        return icVar.i || super.onTouchEvent(motionEvent);
+        return hcVar.i || super.onTouchEvent(motionEvent);
     }
 
     public void setOnCheckboxClick(View.OnClickListener onClickListener) {
@@ -362,10 +362,10 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
         this.e.t(i7 < 0 ? "" : Integer.toString(i7 + 1), true, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.d.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, this.a));
+            this.d.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, this.a));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -377,7 +377,7 @@ public final class a4 extends View implements org.telegram.ui.ActionBar.b6 {
         return drawable == this.e || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

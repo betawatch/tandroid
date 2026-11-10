@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class hj extends v4.s0 {
     public boolean b;
@@ -46,8 +46,8 @@ public final class hj extends v4.s0 {
         if (m3Var != null && m3Var.V) {
             m3Var.f(true);
         }
-        org.telegram.ui.Components.j6 j6Var = cnVar.k3;
-        if (j6Var != null && j6Var.getVisibility() == 0 && cnVar.U9()) {
+        org.telegram.ui.Components.i6 i6Var = cnVar.k3;
+        if (i6Var != null && i6Var.getVisibility() == 0 && cnVar.U9()) {
             org.telegram.messenger.g0.v1(cnVar.getParentActivity().getCurrentFocus());
         }
         if (i7 == 2) {
@@ -170,8 +170,8 @@ public final class hj extends v4.s0 {
         cnVar.s9.G();
         ArrayList arrayList = cnVar.Sa.F;
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            if (!((jx) arrayList.get(i12)).c) {
-                ((jx) arrayList.get(i12)).b -= i10;
+            if (!((kx) arrayList.get(i12)).c) {
+                ((kx) arrayList.get(i12)).b -= i10;
             }
         }
         ch.k0 k0Var = ch.k0.B;

@@ -23,14 +23,14 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
-import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.vr;
-import org.telegram.ui.Components.xr;
-import org.telegram.ui.tt;
-import org.telegram.ui.vt;
+import org.telegram.ui.Components.ur;
+import org.telegram.ui.Components.wr;
+import org.telegram.ui.Components.zg0;
+import org.telegram.ui.ut;
+import org.telegram.ui.wt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class nb implements Runnable {
                 if (document != null) {
                     imageReceiver.u0 = true;
                     imageReceiver.g1 = new aa.n(zArr, 7);
-                    rz f10 = org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.l6.a7, 0.3f, null);
+                    rz f10 = org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.m6.a7, 0.3f, null);
                     TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, qs.q2, true, null, true);
                     imageReceiver.W(0);
                     imageReceiver.r0(org.telegram.messenger.hc.b(document), "160_160_nr", org.telegram.messenger.hc.c(w10, document), "160_160", f10, document.size, "tgs", p02, 1);
@@ -240,13 +240,13 @@ public final /* synthetic */ class nb implements Runnable {
                     break;
                 }
             case 3:
-                vr vrVar = (vr) obj3;
+                ur urVar = (ur) obj3;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) obj2;
                 TLObject tLObject3 = (TLObject) obj;
-                ArrayList arrayList3 = vrVar.V;
-                int i14 = vrVar.P;
-                if (i11 == vrVar.f0 && TextUtils.equals(tL_messages_searchGlobal.q, vrVar.g0)) {
-                    vrVar.b0 = false;
+                ArrayList arrayList3 = urVar.V;
+                int i14 = urVar.P;
+                if (i11 == urVar.f0 && TextUtils.equals(tL_messages_searchGlobal.q, urVar.g0)) {
+                    urVar.b0 = false;
                     if (!z9) {
                         arrayList3.clear();
                     }
@@ -262,25 +262,25 @@ public final /* synthetic */ class nb implements Runnable {
                             TLRPC.Message message = arrayList4.get(i15);
                             i15++;
                             ij ijVar = new ij(i14, message, false, true);
-                            ijVar.K5(vrVar.g0, true);
+                            ijVar.K5(urVar.g0, true);
                             arrayList3.add(ijVar);
                         }
-                        vrVar.d0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
+                        urVar.d0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList3.size(), messages_messages.count);
-                        vrVar.e0 = messages_messages.next_rate;
+                        urVar.e0 = messages_messages.next_rate;
                     }
-                    vrVar.O(true);
+                    urVar.O(true);
                     break;
                 }
                 break;
             case 4:
-                xr xrVar = (xr) obj3;
+                wr wrVar = (wr) obj3;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) obj2;
                 TLObject tLObject4 = (TLObject) obj;
-                ArrayList arrayList5 = xrVar.R;
-                int i16 = xrVar.P;
-                if (i11 == xrVar.c0 && TextUtils.equals(tL_messages_searchGlobal2.q, xrVar.d0)) {
-                    xrVar.Y = false;
+                ArrayList arrayList5 = wrVar.R;
+                int i16 = wrVar.P;
+                if (i11 == wrVar.c0 && TextUtils.equals(tL_messages_searchGlobal2.q, wrVar.d0)) {
+                    wrVar.Y = false;
                     if (!z9) {
                         arrayList5.clear();
                     }
@@ -296,55 +296,55 @@ public final /* synthetic */ class nb implements Runnable {
                             TLRPC.Message message2 = arrayList6.get(i17);
                             i17++;
                             ij ijVar2 = new ij(i16, message2, false, true);
-                            ijVar2.K5(xrVar.d0, true);
+                            ijVar2.K5(wrVar.d0, true);
                             arrayList5.add(ijVar2);
                         }
-                        xrVar.a0 = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
+                        wrVar.a0 = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList5.size(), messages_messages2.count);
-                        xrVar.b0 = messages_messages2.next_rate;
+                        wrVar.b0 = messages_messages2.next_rate;
                     }
-                    xrVar.O(true);
+                    wrVar.O(true);
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.xd xdVar = (org.telegram.ui.Components.xd) obj3;
+                org.telegram.ui.Components.wd wdVar = (org.telegram.ui.Components.wd) obj3;
                 Context context = (Context) obj2;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
-                vt vtVar = (vt) xdVar.d;
-                vtVar.a();
-                org.telegram.ui.Cells.m8 m8Var = vtVar.e;
-                vtVar.c();
-                int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.q6, false);
-                ah0 ah0Var = vtVar.d;
-                ah0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
-                int x03 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.a7, false);
+                wt wtVar = (wt) wdVar.d;
+                wtVar.a();
+                org.telegram.ui.Cells.m8 m8Var = wtVar.e;
+                wtVar.c();
+                int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false);
+                zg0 zg0Var = wtVar.d;
+                zg0Var.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
+                int x03 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false);
                 Activity activity = context instanceof Activity ? (Activity) context : null;
                 if ((activity != null ? activity.getWindow() : null) != null) {
-                    ValueAnimator valueAnimator = vtVar.h;
+                    ValueAnimator valueAnimator = wtVar.h;
                     if (valueAnimator != null && valueAnimator.isRunning()) {
-                        vtVar.h.cancel();
+                        wtVar.h.cancel();
                     }
-                    ValueAnimator valueAnimator2 = vtVar.h;
+                    ValueAnimator valueAnimator2 = wtVar.h;
                     if (valueAnimator2 != null && valueAnimator2.isRunning()) {
-                        i11 = vtVar.n;
+                        i11 = wtVar.n;
                     }
                     int i18 = i11;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    vtVar.h = ofFloat;
-                    ofFloat.addUpdateListener(new tt(xdVar, z9 ? 50.0f : 200.0f, i18, x03, activity));
-                    vtVar.h.addListener(new org.telegram.ui.r0(activity, x03, c11 == true ? 1 : 0));
-                    vtVar.h.setDuration(350L);
-                    vtVar.h.start();
+                    wtVar.h = ofFloat;
+                    ofFloat.addUpdateListener(new ut(wdVar, z9 ? 50.0f : 200.0f, i18, x03, activity));
+                    wtVar.h.addListener(new org.telegram.ui.r0(activity, x03, c11 == true ? 1 : 0));
+                    wtVar.h.setDuration(350L);
+                    wtVar.h.start();
                 }
-                if (org.telegram.ui.ActionBar.l6.k1()) {
-                    m8Var.p(org.telegram.messenger.id.M0(2131745466, null), ah0Var, true);
+                if (org.telegram.ui.ActionBar.m6.k1()) {
+                    m8Var.p(org.telegram.messenger.id.M0(2131745466, null), zg0Var, true);
                     m8Var.x += 2;
                 } else {
-                    m8Var.p(org.telegram.messenger.id.M0(2131745467, null), ah0Var, true);
+                    m8Var.p(org.telegram.messenger.id.M0(2131745467, null), zg0Var, true);
                     m8Var.x += 2;
                 }
-                org.telegram.ui.ActionBar.l6.M1(f2Var);
+                org.telegram.ui.ActionBar.m6.M1(f2Var);
                 break;
             case 6:
                 p4.m0 m0Var = (p4.m0) obj3;

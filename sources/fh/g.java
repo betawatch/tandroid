@@ -17,12 +17,12 @@ import oi.q;
 import oi.r;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class g extends oi.e implements b6 {
+public final class g extends oi.e implements c6 {
     public static Path g0 = new Path();
     public int D;
     public int E;
@@ -59,7 +59,7 @@ public final class g extends oi.e implements b6 {
     public int y;
     public boolean s = true;
     public float I = -1.0f;
-    public int M = s6.b;
+    public int M = t6.b;
     public final l N = new l();
 
     public g(ri.a aVar, ri.a aVar2, ri.a aVar3) {
@@ -135,7 +135,7 @@ public final class g extends oi.e implements b6 {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         ri.a aVar;
-        int i7 = s6.b;
+        int i7 = t6.b;
         if (this.M != i7) {
             this.M = i7;
             try {
@@ -453,9 +453,9 @@ public final class g extends oi.e implements b6 {
         n();
     }
 
-    @Override // oi.e, org.telegram.ui.ActionBar.b6
+    @Override // oi.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        this.M = s6.b;
+        this.M = t6.b;
         gh.a aVar = this.w;
         if (aVar == null) {
             return;
@@ -497,7 +497,7 @@ public final class g extends oi.e implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

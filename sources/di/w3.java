@@ -1,9 +1,9 @@
 package di;
 
 import org.telegram.messenger.z10;
-import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements z10 {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class w3 implements z10 {
                     i4Var.a = false;
                     p9Var.setOnReadyListener(new e2(1, currentTimeMillis, runnable));
                     ((h9) j4Var.z1).g(false);
-                    dh0 dh0Var = j4Var.i0;
-                    if (dh0Var != null) {
-                        dh0Var.setAnimation(this.c.u);
+                    ch0 ch0Var = j4Var.i0;
+                    if (ch0Var != null) {
+                        ch0Var.setAnimation(this.c.u);
                     }
                     if (j4Var.A2 > 0 && l10.longValue() > j4Var.A2 - 1400) {
                         l10 = 0L;
@@ -71,9 +71,9 @@ public final /* synthetic */ class w3 implements z10 {
                     i4Var2.a = false;
                     p9Var2.setOnReadyListener(new e2(2, currentTimeMillis2, runnable2));
                     ((h9) j4Var2.z1).g(false);
-                    dh0 dh0Var2 = j4Var2.i0;
-                    if (dh0Var2 != null) {
-                        dh0Var2.setAnimation(this.c.u);
+                    ch0 ch0Var2 = j4Var2.i0;
+                    if (ch0Var2 != null) {
+                        ch0Var2.setAnimation(this.c.u);
                     }
                     if (j4Var2.A2 > 0 && l11.longValue() > j4Var2.A2 - 1400) {
                         l11 = 0L;

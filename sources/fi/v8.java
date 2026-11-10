@@ -16,10 +16,10 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements c20 {
     public final /* synthetic */ int a;
@@ -147,17 +147,17 @@ public final /* synthetic */ class v8 implements c20 {
             case 5:
                 di.b bVar = vaVar.a;
                 int intValue = ((Integer) obj).intValue() / 3600;
-                org.telegram.ui.Components.wa waVar = new org.telegram.ui.Components.xa(vaVar.b, new r7(i10)).a;
-                WindowManager.LayoutParams layout = waVar.getLayout();
+                org.telegram.ui.Components.va vaVar2 = new org.telegram.ui.Components.wa(vaVar.b, new r7(i10)).a;
+                WindowManager.LayoutParams layout = vaVar2.getLayout();
                 if (layout != null) {
                     layout.height = -2;
                     layout.width = vaVar.r.getWidth();
                     layout.y = (int) (vaVar.r.getY() + org.telegram.messenger.g0.L(56.0f));
-                    org.telegram.ui.Components.xa xaVar = waVar.a;
-                    xaVar.getWindow().setAttributes(xaVar.b);
+                    org.telegram.ui.Components.wa waVar = vaVar2.a;
+                    waVar.getWindow().setAttributes(waVar.b);
                 }
-                waVar.setTouchable(true);
-                new hc(waVar, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(id.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.l6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                vaVar2.setTouchable(true);
+                new gc(vaVar2, bVar).G(R.raw.fire_on, 3, org.telegram.messenger.g0.S2(id.G(intValue, "StoryPeriodPremium", new Object[0]), org.telegram.ui.ActionBar.m6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 6:
                 Boolean bool = (Boolean) obj;
@@ -174,9 +174,9 @@ public final /* synthetic */ class v8 implements c20 {
                 vaVar.X0.x(2, bool.booleanValue());
                 vaVar.Y0.clearAnimation();
                 org.telegram.messenger.camera.q.k(vaVar.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
-                cc ccVar = cc.w;
-                if (ccVar != null && ccVar.a == 2) {
-                    ccVar.l();
+                bc bcVar = bc.w;
+                if (bcVar != null && bcVar.a == 2) {
+                    bcVar.l();
                     break;
                 }
                 break;
@@ -337,9 +337,9 @@ public final /* synthetic */ class v8 implements c20 {
                     int i16 = -(org.telegram.messenger.g0.L(24.0f) + vaVar.c1.getEditTextHeight());
                     n9Var2.setTranslationY(i16 - (vaVar.Z0 == null ? 0 : r3.getContentHeight() - org.telegram.messenger.g0.L(5.0f)));
                 }
-                cc ccVar2 = cc.w;
-                if (ccVar2 != null && ccVar2.a == 2) {
-                    ccVar2.l();
+                bc bcVar2 = bc.w;
+                if (bcVar2 != null && bcVar2.a == 2) {
+                    bcVar2.l();
                 }
                 if (vaVar.c1.o0 && (n9Var = vaVar.d1) != null) {
                     n9Var.c(false, true);

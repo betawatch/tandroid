@@ -12,12 +12,12 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.bb1;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.cb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, fi.c7, lc, RequestTimeDelegate, jm0, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, fi.c7, lc, RequestTimeDelegate, im0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.im0
     public void a(float f10) {
         ij ijVar = ((du) this.b).W;
         if (ijVar == null) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
 
     @Override // org.telegram.ui.ActionBar.r1
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        ((org.telegram.ui.cn) this.b).presentFragment(new bb1(6, null));
+        ((org.telegram.ui.cn) this.b).presentFragment(new cb1(6, null));
     }
 
     @Override // com.google.android.gms.tasks.OnTokenCanceledListener
@@ -90,13 +90,13 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
                     break;
                 }
             default:
-                org.telegram.ui.ActionBar.p3 p3Var = (org.telegram.ui.ActionBar.p3) this.b;
+                org.telegram.ui.ActionBar.q3 q3Var = (org.telegram.ui.ActionBar.q3) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 if (bitmap == null) {
-                    p3Var.a(null);
+                    q3Var.a(null);
                     break;
                 } else {
-                    p3Var.a(new gg.a(bitmap, 0, null));
+                    q3Var.a(new gg.a(bitmap, 0, null));
                     break;
                 }
         }
@@ -138,7 +138,7 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
     public /* synthetic */ void O(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.im0
     public /* synthetic */ void d(float f10) {
     }
 

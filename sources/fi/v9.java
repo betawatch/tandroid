@@ -19,12 +19,12 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.jt0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.it0;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v9 implements Runnable {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class v9 implements Runnable {
                 qp.e1().edit().putInt("storysvddualhint", qp.e1().getInt("storysvddualhint", 0) + 1).apply();
                 return;
             case 3:
-                ((org.telegram.ui.Components.l9) this.b).setVisibility(8);
+                ((org.telegram.ui.Components.k9) this.b).setVisibility(8);
                 return;
             case 4:
                 ya yaVar = (ya) this.b;
@@ -318,11 +318,11 @@ public final /* synthetic */ class v9 implements Runnable {
                 return;
             case 7:
                 gi.f fVar = (gi.f) this.b;
-                jt0 jt0Var = fVar.U;
-                if (jt0Var == null || fVar.a0 == -1) {
+                it0 it0Var = fVar.U;
+                if (it0Var == null || fVar.a0 == -1) {
                     return;
                 }
-                jt0Var.a();
+                it0Var.a();
                 return;
             case 8:
                 ((h2.j0) this.b).getClass();
@@ -375,11 +375,11 @@ public final /* synthetic */ class v9 implements Runnable {
                 return;
             case 22:
                 org.telegram.messenger.g0.g(((TL_account.TL_businessChatLink) this.b).link);
-                hc.a0(LaunchActivity.Q()).k(false).j();
+                gc.a0(LaunchActivity.Q()).k(false).j();
                 return;
             case 23:
                 kg.i0 i0Var = (kg.i0) this.b;
-                m41 m41Var = i0Var.W1;
+                m41 m41Var = i0Var.Z1;
                 if (m41Var != null) {
                     m41Var.O(true);
                 }

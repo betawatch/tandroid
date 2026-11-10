@@ -7,9 +7,9 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.r2;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static boolean i = true;
@@ -58,14 +58,14 @@ public final class k0 {
         ArrayList arrayList = (ArrayList) this.e;
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
-            ((rt) this.f).g0((v4.a) arrayList.get(i7));
+            ((qt) this.f).g0((v4.a) arrayList.get(i7));
         }
         l(arrayList);
         this.b = 0;
     }
 
     public void c() {
-        rt rtVar = (rt) this.f;
+        qt qtVar = (qt) this.f;
         b();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -73,22 +73,22 @@ public final class k0 {
             v4.a aVar = (v4.a) arrayList.get(i7);
             int i10 = aVar.a;
             if (i10 == 1) {
-                rtVar.g0(aVar);
-                rtVar.k0(aVar.b, aVar.d);
+                qtVar.g0(aVar);
+                qtVar.k0(aVar.b, aVar.d);
             } else if (i10 == 2) {
-                rtVar.g0(aVar);
+                qtVar.g0(aVar);
                 int i11 = aVar.b;
                 int i12 = aVar.d;
-                RecyclerView recyclerView = (RecyclerView) rtVar.b;
+                RecyclerView recyclerView = (RecyclerView) qtVar.b;
                 recyclerView.f0(i11, i12, true);
                 recyclerView.x0 = true;
                 recyclerView.u0.c += i12;
             } else if (i10 == 4) {
-                rtVar.g0(aVar);
-                rtVar.i0(aVar.b, aVar.d, aVar.c);
+                qtVar.g0(aVar);
+                qtVar.i0(aVar.b, aVar.d, aVar.c);
             } else if (i10 == 8) {
-                rtVar.g0(aVar);
-                rtVar.l0(aVar.b, aVar.d);
+                qtVar.g0(aVar);
+                qtVar.l0(aVar.b, aVar.d);
             }
         }
         l(arrayList);
@@ -143,17 +143,17 @@ public final class k0 {
     }
 
     public void e(v4.a aVar, int i7) {
-        rt rtVar = (rt) this.f;
-        rtVar.g0(aVar);
+        qt qtVar = (qt) this.f;
+        qtVar.g0(aVar);
         int i10 = aVar.a;
         if (i10 != 2) {
             if (i10 != 4) {
                 throw new IllegalArgumentException("only remove and update ops can be dispatched in first pass");
             }
-            rtVar.i0(i7, aVar.d, aVar.c);
+            qtVar.i0(i7, aVar.d, aVar.c);
         } else {
             int i11 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) rtVar.b;
+            RecyclerView recyclerView = (RecyclerView) qtVar.b;
             recyclerView.f0(i7, i11, true);
             recyclerView.x0 = true;
             recyclerView.u0.c += i11;
@@ -251,25 +251,25 @@ public final class k0 {
     }
 
     public void j(v4.a aVar) {
-        rt rtVar = (rt) this.f;
+        qt qtVar = (qt) this.f;
         ((ArrayList) this.e).add(aVar);
         int i7 = aVar.a;
         if (i7 == 1) {
-            rtVar.k0(aVar.b, aVar.d);
+            qtVar.k0(aVar.b, aVar.d);
             return;
         }
         if (i7 == 2) {
             int i10 = aVar.b;
             int i11 = aVar.d;
-            RecyclerView recyclerView = (RecyclerView) rtVar.b;
+            RecyclerView recyclerView = (RecyclerView) qtVar.b;
             recyclerView.f0(i10, i11, false);
             recyclerView.x0 = true;
             return;
         }
         if (i7 == 4) {
-            rtVar.i0(aVar.b, aVar.d, aVar.c);
+            qtVar.i0(aVar.b, aVar.d, aVar.c);
         } else if (i7 == 8) {
-            rtVar.l0(aVar.b, aVar.d);
+            qtVar.l0(aVar.b, aVar.d);
         } else {
             throw new IllegalArgumentException("Unknown update op type for " + aVar);
         }
@@ -317,10 +317,10 @@ public final class k0 {
         Object obj;
         v4.a aVar;
         f5.u uVar = (f5.u) this.c;
-        rt rtVar = (rt) this.f;
-        rt rtVar2 = (rt) this.g;
+        qt qtVar = (qt) this.f;
+        qt qtVar2 = (qt) this.g;
         ArrayList arrayList = (ArrayList) this.d;
-        rtVar2.getClass();
+        qtVar2.getClass();
         while (true) {
             int size = arrayList.size() - 1;
             boolean z12 = false;
@@ -342,7 +342,7 @@ public final class k0 {
                 break;
             }
             int i19 = size + 1;
-            k0 k0Var = (k0) rtVar2.b;
+            k0 k0Var = (k0) qtVar2.b;
             f5.u uVar2 = (f5.u) k0Var.c;
             v4.a aVar2 = (v4.a) arrayList.get(size);
             v4.a aVar3 = (v4.a) arrayList.get(i19);
@@ -580,7 +580,7 @@ public final class k0 {
                 int i49 = 0;
                 char c11 = 65535;
                 while (i48 < i47) {
-                    RecyclerView recyclerView = (RecyclerView) rtVar.b;
+                    RecyclerView recyclerView = (RecyclerView) qtVar.b;
                     v4.d1 L = recyclerView.L(i48, true);
                     if (L != null) {
                     }
@@ -637,7 +637,7 @@ public final class k0 {
                 int i53 = 0;
                 char c12 = 65535;
                 while (i50 < i51) {
-                    RecyclerView recyclerView2 = (RecyclerView) rtVar.b;
+                    RecyclerView recyclerView2 = (RecyclerView) qtVar.b;
                     v4.d1 L2 = recyclerView2.L(i50, true);
                     if (L2 != null) {
                     }
@@ -869,7 +869,7 @@ public final class k0 {
         }
     }
 
-    public k0(rt rtVar) {
+    public k0(qt qtVar) {
         this.a = 1;
         this.c = new f5.u(30, 13);
         this.d = new ArrayList();
@@ -877,7 +877,7 @@ public final class k0 {
         this.b = 0;
         boolean z9 = r2.a;
         this.h = new ArrayList();
-        this.f = rtVar;
-        this.g = new rt(this, 21);
+        this.f = qtVar;
+        this.g = new qt(this, 21);
     }
 }

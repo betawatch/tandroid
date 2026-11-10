@@ -2,10 +2,10 @@ package xg;
 
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.web.a0;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 import wg.b0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class d implements Runnable {
                 f fVar = this.b;
                 sb2.append(fVar.h);
                 String sb3 = sb2.toString();
-                yw ywVar = new yw(f1.h(3, "onlySelect", "dialogsType", true));
-                ywVar.D2 = new a0(25, fVar, sb3);
-                fVar.e.presentFragment(ywVar);
+                zw zwVar = new zw(f1.h(3, "onlySelect", "dialogsType", true));
+                zwVar.D2 = new a0(25, fVar, sb3);
+                fVar.e.presentFragment(zwVar);
                 ((b0) fVar).r.dismiss();
                 break;
         }

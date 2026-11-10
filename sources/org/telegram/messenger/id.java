@@ -35,12 +35,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v31;
-import org.telegram.ui.i60;
-import org.telegram.ui.ty0;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.j60;
+import org.telegram.ui.uy0;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class id {
     public static boolean a0 = false;
@@ -1106,11 +1106,11 @@ public final class id {
     /* JADX WARN: Multi-variable type inference failed */
     public static Spannable g(String str) {
         if (str instanceof Spannable) {
-            ((Spannable) str).setSpan(new v31(g0.o()), 0, str.length(), 33);
+            ((Spannable) str).setSpan(new u31(g0.o()), 0, str.length(), 33);
             return (Spannable) str;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        spannableStringBuilder.setSpan(new v31(g0.o()), 0, str.length(), 33);
+        spannableStringBuilder.setSpan(new u31(g0.o()), 0, str.length(), 33);
         return spannableStringBuilder;
     }
 
@@ -2705,7 +2705,7 @@ public final class id {
                                         configuration.locale = idVar2.y;
                                         t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                         idVar2.D = false;
-                                        ty0.s = false;
+                                        uy0.s = false;
                                     } else {
                                         a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                     }
@@ -2828,7 +2828,7 @@ public final class id {
                                             configuration.locale = idVar2.y;
                                             t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                             idVar2.D = false;
-                                            ty0.s = false;
+                                            uy0.s = false;
                                         } else {
                                             a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                         }
@@ -2919,7 +2919,7 @@ public final class id {
                                     configuration.locale = idVar2.y;
                                     t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                     idVar2.D = false;
-                                    ty0.s = false;
+                                    uy0.s = false;
                                 } else {
                                     a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                 }
@@ -3010,7 +3010,7 @@ public final class id {
                                     configuration.locale = idVar2.y;
                                     t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                     idVar2.D = false;
-                                    ty0.s = false;
+                                    uy0.s = false;
                                 } else {
                                     a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                 }
@@ -3130,7 +3130,7 @@ public final class id {
                                                         configuration.locale = idVar2.y;
                                                         t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                                         idVar2.D = false;
-                                                        ty0.s = false;
+                                                        uy0.s = false;
                                                     } else {
                                                         a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                                     }
@@ -3245,7 +3245,7 @@ public final class id {
                                                 configuration.locale = idVar2.y;
                                                 t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                                 idVar2.D = false;
-                                                ty0.s = false;
+                                                uy0.s = false;
                                             } else {
                                                 a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                             }
@@ -3366,7 +3366,7 @@ public final class id {
                                     configuration.locale = idVar2.y;
                                     t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                     idVar2.D = false;
-                                    ty0.s = false;
+                                    uy0.s = false;
                                 } else {
                                     a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                 }
@@ -3491,7 +3491,7 @@ public final class id {
                                             configuration.locale = idVar2.y;
                                             t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                             idVar2.D = false;
-                                            ty0.s = false;
+                                            uy0.s = false;
                                         } else {
                                             a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                         }
@@ -3580,7 +3580,7 @@ public final class id {
                                     configuration.locale = idVar2.y;
                                     t0.b.getResources().updateConfiguration(configuration, t0.b.getResources().getDisplayMetrics());
                                     idVar2.D = false;
-                                    ty0.s = false;
+                                    uy0.s = false;
                                 } else {
                                     a8.b("saveRemoteLocaleStrings: currentLocaleInfo != localeInfo, do nothing");
                                 }
@@ -3618,7 +3618,7 @@ public final class id {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int c(fd fdVar, boolean z9, boolean z10, boolean z11, boolean z12, int i7, i60 i60Var) {
+    public final int c(fd fdVar, boolean z9, boolean z10, boolean z11, boolean z12, int i7, j60 j60Var) {
         String str;
         int i10;
         File file;
@@ -3666,7 +3666,7 @@ public final class id {
             if (z10) {
                 str = " ";
                 i10 = 0;
-                g0.h3(new dg(idVar, fdVar2, i7, i60Var, 6));
+                g0.h3(new dg(idVar, fdVar2, i7, j60Var, 6));
                 idVar = this;
                 fdVar2 = fdVar;
                 file = d;
@@ -3678,7 +3678,7 @@ public final class id {
                 idVar = this;
                 fdVar2 = fdVar;
                 file = d;
-                f10 = idVar.f(fdVar2, null, true, i7, i60Var);
+                f10 = idVar.f(fdVar2, null, true, i7, j60Var);
                 z13 = true;
             }
         } else {
@@ -3804,9 +3804,9 @@ public final class id {
                     z17 = false;
                     qs.e().k(qs.x4, new Object[0]);
                 }
-                ty0.s = z17;
-                if (i60Var != null) {
-                    i60Var.run();
+                uy0.s = z17;
+                if (j60Var != null) {
+                    j60Var.run();
                 }
             }
             z15 = false;

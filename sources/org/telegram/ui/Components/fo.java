@@ -1,13 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fo implements View.OnClickListener {
+public final /* synthetic */ class fo implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ vo b;
 
@@ -16,72 +13,29 @@ public final /* synthetic */ class fo implements View.OnClickListener {
         this.b = voVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        vo voVar = this.b;
-        switch (i7) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        switch (this.a) {
             case 0:
-                di diVar = voVar.O1;
-                if (diVar.s2 != diVar.a2) {
-                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131745537, null));
-                    di diVar2 = voVar.O1;
-                    diVar2.F1(diVar2.a2);
-                    break;
-                } else {
-                    voVar.Q1.setText(org.telegram.messenger.id.M0(2131752138, null));
-                    di diVar3 = voVar.O1;
-                    if (diVar3.i2 == null) {
-                        Context context = diVar3.getContext();
-                        org.telegram.ui.ActionBar.g6 g6Var = diVar3.I0;
-                        qi qiVar = new qi(context, g6Var, diVar3);
-                        qiVar.r = org.telegram.messenger.g0.L(80.0f);
-                        qiVar.x = 3;
-                        bi.q1 q1Var = new bi.q1(qiVar, context, g6Var, 14);
-                        qiVar.n = q1Var;
-                        la laVar = new la(qiVar, context);
-                        qiVar.w = laVar;
-                        q1Var.setAdapter(laVar);
-                        q1Var.setClipToPadding(false);
-                        q1Var.setItemAnimator(null);
-                        q1Var.setLayoutAnimation(null);
-                        q1Var.setVerticalScrollBarEnabled(false);
-                        org.telegram.ui.ActionBar.s6.l(q1Var, 21, org.telegram.ui.ActionBar.l6.A5, g6Var);
-                        qiVar.addView(q1Var, c8.ha.c(-1.0f, -1));
-                        q1Var.setOnScrollListener(new ai.b(qiVar, 29));
-                        ei.h hVar = new ei.h(qiVar, qiVar.r, 2);
-                        qiVar.s = hVar;
-                        hVar.O = new ai.l(qiVar, 6);
-                        q1Var.setLayoutManager(hVar);
-                        diVar3.i2 = qiVar;
-                        qiVar.setDelegate(new sa(diVar3, 1));
-                    }
-                    diVar3.F1(diVar3.i2);
-                    qi qiVar2 = voVar.O1.i2;
-                    boolean z9 = voVar.D1;
-                    la laVar2 = qiVar2.w;
-                    ((ArrayList) laVar2.e).clear();
-                    WallpapersListActivity.E0((ArrayList) laVar2.e, z9);
-                    laVar2.f();
-                    break;
-                }
-            case 1:
-                if (!voVar.P0()) {
-                    voVar.dismiss();
-                    break;
-                } else {
-                    voVar.T0(true);
-                    voVar.Z0(true);
-                    break;
-                }
-            case 2:
-                if (voVar.J1 == null) {
-                    voVar.V0(!voVar.D1);
-                    break;
-                }
+                vo voVar = this.b;
+                voVar.Y1 = (TL_stories.TL_premium_boostsStatus) obj;
+                voVar.X1 = true;
+                voVar.Z0(true);
+                voVar.W1 = false;
                 break;
             default:
-                voVar.K0(false);
+                org.telegram.messenger.e3 e3Var = (org.telegram.messenger.e3) obj;
+                vo voVar2 = this.b;
+                if (voVar2.getContext() != null) {
+                    org.telegram.ui.cn cnVar = voVar2.u1;
+                    ug.i0 i0Var = new ug.i0(22, voVar2.a, voVar2.getContext(), cnVar, voVar2.I0);
+                    i0Var.A1(e3Var);
+                    i0Var.z1(voVar2.Y1, true);
+                    i0Var.B1(voVar2.u1.a());
+                    i0Var.L2 = new co(voVar2, 2);
+                    i0Var.show();
+                    break;
+                }
                 break;
         }
     }

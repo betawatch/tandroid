@@ -2,12 +2,12 @@ package l2;
 
 import a8.ia;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class b implements m1 {
     public boolean D;
     public boolean E;
-    public x2.g0 G;
+    public x2.f0 G;
     public a3.s H;
     public final int b;
     public q1 d;
@@ -15,7 +15,7 @@ public abstract class b implements m1 {
     public m2.j f;
     public h2.g0 h;
     public int n;
-    public x2.c1 r;
+    public x2.b1 r;
     public e2.u[] s;
     public long w;
     public long x;
@@ -29,9 +29,9 @@ public abstract class b implements m1 {
     }
 
     public final int B(long j3) {
-        x2.c1 c1Var = this.r;
-        c1Var.getClass();
-        return c1Var.l(j3 - this.w);
+        x2.b1 b1Var = this.r;
+        b1Var.getClass();
+        return b1Var.l(j3 - this.w);
     }
 
     public abstract int C(e2.u uVar);
@@ -91,9 +91,9 @@ public abstract class b implements m1 {
     public abstract void p(long j3, boolean z9, boolean z10);
 
     public final int w(wf.b bVar, k2.h hVar, int i7) {
-        x2.c1 c1Var = this.r;
-        c1Var.getClass();
-        int m10 = c1Var.m(bVar, hVar, i7);
+        x2.b1 b1Var = this.r;
+        b1Var.getClass();
+        int m10 = b1Var.m(bVar, hVar, i7);
         if (m10 == -4) {
             if (hVar.isEndOfStream()) {
                 this.y = Long.MIN_VALUE;
@@ -119,16 +119,16 @@ public abstract class b implements m1 {
 
     public abstract void x(long j3, long j10);
 
-    public final void y(e2.u[] uVarArr, x2.c1 c1Var, long j3, long j10, x2.g0 g0Var) {
+    public final void y(e2.u[] uVarArr, x2.b1 b1Var, long j3, long j10, x2.f0 f0Var) {
         ia.p(!this.D);
-        this.r = c1Var;
-        this.G = g0Var;
+        this.r = b1Var;
+        this.G = f0Var;
         if (this.y == Long.MIN_VALUE) {
             this.y = j3;
         }
         this.s = uVarArr;
         this.w = j10;
-        u(uVarArr, j3, j10, g0Var);
+        u(uVarArr, j3, j10, f0Var);
     }
 
     public final void z(long j3, boolean z9, boolean z10) {
@@ -169,6 +169,6 @@ public abstract class b implements m1 {
     public void o(boolean z9, boolean z10) {
     }
 
-    public void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
+    public void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
     }
 }

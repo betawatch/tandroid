@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ee0;
+import org.telegram.ui.fe0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -271,10 +271,10 @@ public final /* synthetic */ class ng implements Runnable {
                 qs.f(uiVar.currentAccount).k(qs.l5, new Object[0]);
                 return;
             case 1:
-                org.telegram.ui.Components.v4.c0(((qp) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_channels_inviteToChannel) this.d, Boolean.TRUE);
+                org.telegram.ui.Components.u4.c0(((qp) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_channels_inviteToChannel) this.d, Boolean.TRUE);
                 return;
             case 2:
-                org.telegram.ui.Components.v4.f(((qp) this.c).currentAccount, (TLRPC.Chat) this.b, (TLRPC.TL_messages_invitedUsers) this.d);
+                org.telegram.ui.Components.u4.f(((qp) this.c).currentAccount, (TLRPC.Chat) this.b, (TLRPC.TL_messages_invitedUsers) this.d);
                 return;
             case 3:
                 yr yrVar = (yr) this.c;
@@ -322,7 +322,7 @@ public final /* synthetic */ class ng implements Runnable {
                 ckVar.run();
                 return;
             case 4:
-                org.telegram.ui.Components.v4.c0(((gz) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_messages_forwardMessages) this.d, new Object[0]);
+                org.telegram.ui.Components.u4.c0(((gz) this.c).currentAccount, (TLRPC.TL_error) this.b, null, (TLRPC.TL_messages_forwardMessages) this.d, new Object[0]);
                 return;
             case 5:
                 f10 f10Var = (f10) this.c;
@@ -351,21 +351,21 @@ public final /* synthetic */ class ng implements Runnable {
                 return;
             case 6:
                 boolean[] zArr = (boolean[]) this.c;
-                org.telegram.ui.Components.jc[] jcVarArr = (org.telegram.ui.Components.jc[]) this.b;
+                org.telegram.ui.Components.ic[] icVarArr = (org.telegram.ui.Components.ic[]) this.b;
                 ui.a aVar = (ui.a) this.d;
                 if (zArr[0]) {
                     return;
                 }
                 zArr[0] = true;
-                jcVarArr[0].setText(id.M0(2131746606, null) + "...");
-                jcVarArr[0].b.f(false);
+                icVarArr[0].setText(id.M0(2131746606, null) + "...");
+                icVarArr[0].b.f(false);
                 try {
-                    ConnectionsManager.getInstance(p10.s0).checkProxy(aVar, new o(i11, zArr, jcVarArr));
+                    ConnectionsManager.getInstance(p10.s0).checkProxy(aVar, new o(i11, zArr, icVarArr));
                     return;
                 } catch (NumberFormatException unused) {
                     zArr[0] = false;
-                    jcVarArr[0].setText(id.M0(2131743913, null));
-                    org.telegram.ui.ActionBar.s6.U(jcVarArr[0], org.telegram.ui.ActionBar.l6.p7, null);
+                    icVarArr[0].setText(id.M0(2131743913, null));
+                    org.telegram.ui.ActionBar.t6.U(icVarArr[0], org.telegram.ui.ActionBar.m6.p7, null);
                     return;
                 }
             case 7:
@@ -501,15 +501,15 @@ public final /* synthetic */ class ng implements Runnable {
                 c cVar = (c) this.c;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) this.b;
                 TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode = (TL_update.TL_updateSentPhoneCode) this.d;
-                ee0 ee0Var = (ee0) LaunchActivity.L();
-                if (ee0Var == null) {
-                    ee0Var = new ee0(cVar.a);
+                fe0 fe0Var = (fe0) LaunchActivity.L();
+                if (fe0Var == null) {
+                    fe0Var = new fe0(cVar.a);
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null) {
-                        T.presentFragment(ee0Var);
+                        T.presentFragment(fe0Var);
                     }
                 }
-                ee0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+                fe0Var.I1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
                 return;
             case 10:
                 v1 v1Var = (v1) this.c;
@@ -546,17 +546,17 @@ public final /* synthetic */ class ng implements Runnable {
                 }
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 if (tL_error2 == null || Q == null || !"CHANNEL_PRIVATE".equals(tL_error2.text)) {
-                    org.telegram.ui.Components.hc.X().f0(tL_error2, false);
+                    org.telegram.ui.Components.gc.X().f0(tL_error2, false);
                 } else {
                     LaunchActivity launchActivity = LaunchActivity.G1;
                     if (launchActivity == null || !launchActivity.isFinishing()) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, Q.getContext(), Q.getResourceProvider());
                         alertDialog$Builder.a.R = id.M0(R.string.AppName, null);
                         HashMap hashMap2 = new HashMap();
-                        int i18 = org.telegram.ui.ActionBar.l6.L5;
-                        hashMap2.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.l6.x0(null, i18, false)));
-                        hashMap2.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.l6.x0(null, i18, false)));
-                        alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.l6.x0(null, i18, false), hashMap2);
+                        int i18 = org.telegram.ui.ActionBar.m6.L5;
+                        hashMap2.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.m6.x0(null, i18, false)));
+                        hashMap2.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.m6.x0(null, i18, false)));
+                        alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.m6.x0(null, i18, false), hashMap2);
                         alertDialog$Builder.a.W = true;
                         alertDialog$Builder.a.R = id.M0(2131752329, null);
                         alertDialog$Builder.a.T = id.M0(2131752441, null);

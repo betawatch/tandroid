@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z9 {
     public final org.telegram.ui.ActionBar.f2 a;
     public final long b;
-    public final org.telegram.ui.Components.cc c;
-    public final org.telegram.ui.Components.wb d;
-    public final org.telegram.ui.Components.ac e;
+    public final org.telegram.ui.Components.bc c;
+    public final org.telegram.ui.Components.vb d;
+    public final org.telegram.ui.Components.zb e;
     public final da f;
     public int g;
     public long h;
@@ -62,29 +62,29 @@ public final class z9 {
         this.a = f2Var;
         this.b = j3;
         Context t6 = ea.t(f2Var);
-        org.telegram.ui.Components.wb wbVar = new org.telegram.ui.Components.wb(t6, f2Var.getResourceProvider());
-        this.d = wbVar;
-        wbVar.c(R.raw.stars_topup, new String[0]);
+        org.telegram.ui.Components.vb vbVar = new org.telegram.ui.Components.vb(t6, f2Var.getResourceProvider());
+        this.d = vbVar;
+        vbVar.c(R.raw.stars_topup, new String[0]);
         da daVar = new da(t6, f2Var.getResourceProvider());
         this.f = daVar;
         daVar.b = 3000L;
-        int i10 = org.telegram.ui.ActionBar.l6.uj;
-        org.telegram.ui.ActionBar.g6 resourceProvider = f2Var.getResourceProvider();
+        int i10 = org.telegram.ui.ActionBar.m6.uj;
+        org.telegram.ui.ActionBar.h6 resourceProvider = f2Var.getResourceProvider();
         a3.l lVar = new a3.l(24);
         a3.l lVar2 = new a3.l(25);
-        int P = org.telegram.ui.ActionBar.s6.P(i10, -1, 0, 0.0f, resourceProvider);
+        int P = org.telegram.ui.ActionBar.t6.P(i10, -1, 0, 0.0f, resourceProvider);
         lVar2.c(P, daVar);
-        org.telegram.ui.ActionBar.m6 w10 = org.telegram.ui.ActionBar.s6.w(101, daVar);
+        org.telegram.ui.ActionBar.n6 w10 = org.telegram.ui.ActionBar.t6.w(101, daVar);
         w10.c(i10, -1, 0, 0.0f, resourceProvider);
         w10.n = lVar;
         w10.o = lVar2;
         w10.m = false;
         w10.g = P;
         final int i11 = 1;
-        org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(t6, f2Var.getResourceProvider(), true, false);
-        this.e = acVar;
-        acVar.e(org.telegram.messenger.id.M0(2131745023, null));
-        acVar.b = new Runnable(this) { // from class: bi.y9
+        org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(t6, f2Var.getResourceProvider(), true, false);
+        this.e = zbVar;
+        zbVar.e(org.telegram.messenger.id.M0(2131745023, null));
+        zbVar.b = new Runnable(this) { // from class: bi.y9
             public final /* synthetic */ z9 b;
 
             {
@@ -114,10 +114,10 @@ public final class z9 {
                 }
             }
         };
-        acVar.addView(daVar, c8.ha.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        acVar.e.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(8.0f));
-        wbVar.setButton(acVar);
-        org.telegram.ui.Components.cc b10 = org.telegram.ui.Components.hc.a0(f2Var).b(wbVar, -1);
+        zbVar.addView(daVar, c8.ha.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        zbVar.e.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(8.0f));
+        vbVar.setButton(zbVar);
+        org.telegram.ui.Components.bc b10 = org.telegram.ui.Components.gc.a0(f2Var).b(vbVar, -1);
         this.c = b10;
         b10.r = false;
         b10.k(true);

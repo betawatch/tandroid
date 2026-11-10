@@ -15,9 +15,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class hb extends View implements o2 {
     public final Drawable a;
@@ -26,7 +26,7 @@ public final class hb extends View implements o2 {
     public final Paint d;
     public final Paint e;
     public float f;
-    public final org.telegram.ui.Components.w5 h;
+    public final org.telegram.ui.Components.v5 h;
     public final Path n;
 
     public hb(Activity activity) {
@@ -35,7 +35,7 @@ public final class hb extends View implements o2 {
         this.d = paint;
         Paint paint2 = new Paint(3);
         this.e = paint2;
-        this.h = new org.telegram.ui.Components.w5(this, 0L, 350L, xq.h);
+        this.h = new org.telegram.ui.Components.v5(this, 0L, 350L, wq.h);
         this.n = new Path();
         this.a = activity.getResources().getDrawable(R.drawable.media_dual_camera2_shadow).mutate();
         this.b = R.drawable.media_dual_camera2;

@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.ui.yv0;
+import org.telegram.ui.zv0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class oa extends qa {
     public final /* synthetic */ int g;
@@ -17,9 +17,9 @@ public final class oa extends qa {
     public final void e() {
         switch (this.g) {
             case 0:
-                yv0 yv0Var = (yv0) this.h;
-                yv0Var.Q = false;
-                yv0Var.invalidate();
+                zv0 zv0Var = (zv0) this.h;
+                zv0Var.Q = false;
+                zv0Var.invalidate();
                 break;
             case 1:
                 di.j4 z9 = ((di.q9) this.h).z();
@@ -29,8 +29,8 @@ public final class oa extends qa {
                 }
                 break;
             default:
-                org.telegram.ui.Components.l9 l9Var = (org.telegram.ui.Components.l9) this.h;
-                l9Var.post(new v9(l9Var, 3));
+                org.telegram.ui.Components.k9 k9Var = (org.telegram.ui.Components.k9) this.h;
+                k9Var.post(new v9(k9Var, 3));
                 break;
         }
     }
@@ -39,9 +39,9 @@ public final class oa extends qa {
     public final void f(boolean z9) {
         switch (this.g) {
             case 0:
-                yv0 yv0Var = (yv0) this.h;
-                yv0Var.Q = true;
-                yv0Var.invalidate();
+                zv0 zv0Var = (zv0) this.h;
+                zv0Var.Q = true;
+                zv0Var.invalidate();
                 break;
             case 1:
                 di.j4 z10 = ((di.q9) this.h).z();
@@ -56,7 +56,7 @@ public final class oa extends qa {
                 }
                 break;
             default:
-                ((org.telegram.ui.Components.l9) this.h).setVisibility(0);
+                ((org.telegram.ui.Components.k9) this.h).setVisibility(0);
                 break;
         }
     }

@@ -1,33 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k3 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class k3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n3 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+    public final /* synthetic */ TL_wallet.card c;
 
-    public /* synthetic */ k3(n3 n3Var, int i7) {
+    public /* synthetic */ k3(org.telegram.ui.ActionBar.f2 f2Var, TL_wallet.card cardVar, int i7) {
         this.a = i7;
-        this.b = n3Var;
+        this.b = f2Var;
+        this.c = cardVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                n3 n3Var = this.b;
-                n3Var.getClass();
-                n3Var.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n3Var.e();
+                org.telegram.ui.ActionBar.f2 f2Var = this.b;
+                f2Var.presentFragment(new o9(f2Var.getCurrentAccount(), this.c.address));
                 break;
             default:
-                n3 n3Var2 = this.b;
-                n3Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n3Var2.Q = floatValue;
-                n3Var2.r.setUseGyroscope(floatValue);
+                org.telegram.ui.ActionBar.f2 f2Var2 = this.b;
+                f2Var2.presentFragment(new o9(f2Var2.getCurrentAccount(), this.c.address));
                 break;
         }
     }

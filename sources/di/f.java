@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements c20 {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class f implements c20 {
                     while (i7 < size) {
                         TLRPC.EmojiGroup emojiGroup = arrayList.get(i7);
                         i7++;
-                        org.telegram.ui.Components.i5.g(this.b).b(emojiGroup.icon_emoji_id, null);
+                        org.telegram.ui.Components.h5.g(this.b).b(emojiGroup.icon_emoji_id, null);
                     }
                     break;
                 }

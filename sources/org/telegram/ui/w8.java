@@ -3,7 +3,7 @@ package org.telegram.ui;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w8 extends v4.s0 {
     public boolean a;
@@ -22,7 +22,7 @@ public final class w8 extends v4.s0 {
         if (abs > 0) {
             int size = i9Var.c.f3.D.size();
             if (!i9Var.F && !i9Var.D && !arrayList.isEmpty() && L0 + abs >= size - 5) {
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.p(14, this, (f9) jg.g.i(1, arrayList)));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.c(15, this, (f9) jg.g.i(1, arrayList)));
             }
         }
         if (i10 != 0 && this.a) {

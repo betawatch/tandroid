@@ -1,59 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qy implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+import android.graphics.SurfaceTexture;
 
-    public /* synthetic */ qy(Object obj, boolean z9, boolean z10, boolean z11, int i7) {
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qy implements SurfaceTexture.OnFrameAvailableListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.q5 b;
+
+    public /* synthetic */ qy(org.telegram.messenger.q5 q5Var, int i7) {
         this.a = i7;
-        this.e = obj;
-        this.b = z9;
-        this.c = z10;
-        this.d = z11;
+        this.b = q5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.utils.twidget.v0 v0Var;
-        q71 q71Var;
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 0:
-                sy syVar = (sy) this.e;
-                boolean z9 = this.b;
-                boolean z10 = this.c;
-                boolean z11 = this.d;
-                if (z9) {
-                    wy wyVar = syVar.J;
-                    wyVar.a = true;
-                    wyVar.b = true;
-                }
-                if (z10) {
-                    syVar.y = true;
-                }
-                long currentTimeMillis = System.currentTimeMillis();
-                if (z11 || Math.abs(syVar.a0 - currentTimeMillis) > 30) {
-                    syVar.a0 = currentTimeMillis;
-                    syVar.d0.run();
-                    break;
-                }
-                break;
-            case 1:
-                ((org.telegram.ui.ee0) this.e).O1(this.b, this.c, this.d);
+                ((ry) this.b).c(false, true, true);
                 break;
             default:
-                org.telegram.utils.twidget.i1 i1Var = (org.telegram.utils.twidget.i1) this.e;
-                boolean z12 = this.b;
-                boolean z13 = this.c;
-                boolean z14 = this.d;
-                if (!i1Var.w && (v0Var = i1Var.L) != null && (q71Var = v0Var.h) != null && q71Var.w && !q71Var.x) {
-                    q71Var.k(z12, z13, z14);
-                    break;
-                }
+                ((a40) this.b).requestRender(true, false);
                 break;
         }
     }

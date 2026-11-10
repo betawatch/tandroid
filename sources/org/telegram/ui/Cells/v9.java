@@ -21,16 +21,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class v9 {
     public final g9 A;
     public final Rect B;
     public u9 C;
     public c8.da D;
-    public qj0 E;
+    public pj0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -50,7 +50,7 @@ public abstract class v9 {
     public float V;
     public q9 W;
     public q9 X;
-    public org.telegram.ui.ActionBar.w3 Y;
+    public org.telegram.ui.ActionBar.x3 Y;
     public boolean Z;
     public int a;
     public final l9 a0;
@@ -65,7 +65,7 @@ public abstract class v9 {
     public float f;
     public final d9 f0;
     public float g;
-    public org.telegram.ui.ActionBar.g6 g0;
+    public org.telegram.ui.ActionBar.h6 g0;
     public final int[] h = new int[2];
     public boolean h0;
     public boolean i;
@@ -361,8 +361,8 @@ public abstract class v9 {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof qj0) {
-            this.E = (qj0) viewGroup;
+        if (viewGroup instanceof pj0) {
+            this.E = (pj0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -370,15 +370,15 @@ public abstract class v9 {
     public final void T() {
         if (this.C != null && !this.i && x() && d()) {
             if (!this.P) {
-                org.telegram.ui.ActionBar.w3 w3Var = this.Y;
+                org.telegram.ui.ActionBar.x3 x3Var = this.Y;
                 g9 g9Var = this.A;
-                if (w3Var == null) {
-                    org.telegram.ui.ActionBar.w3 w3Var2 = new org.telegram.ui.ActionBar.w3(this.C.getContext(), g9Var, this.C, new org.telegram.ui.ActionBar.k4(this.C.getContext(), this.C, 1, q(), null));
-                    this.Y = w3Var2;
-                    g9Var.onCreateActionMode(w3Var2, w3Var2.c);
+                if (x3Var == null) {
+                    org.telegram.ui.ActionBar.x3 x3Var2 = new org.telegram.ui.ActionBar.x3(this.C.getContext(), g9Var, this.C, new org.telegram.ui.ActionBar.l4(this.C.getContext(), this.C, 1, q(), null));
+                    this.Y = x3Var2;
+                    g9Var.onCreateActionMode(x3Var2, x3Var2.c);
                 }
-                org.telegram.ui.ActionBar.w3 w3Var3 = this.Y;
-                g9Var.onPrepareActionMode(w3Var3, w3Var3.c);
+                org.telegram.ui.ActionBar.x3 x3Var3 = this.Y;
+                g9Var.onPrepareActionMode(x3Var3, x3Var3.c);
                 this.Y.hide(1L);
             }
             org.telegram.messenger.g0.r(this.n0);
@@ -717,7 +717,7 @@ public abstract class v9 {
         return 0;
     }
 
-    public org.telegram.ui.ActionBar.g6 q() {
+    public org.telegram.ui.ActionBar.h6 q() {
         return this.g0;
     }
 
@@ -732,20 +732,20 @@ public abstract class v9 {
     public abstract CharSequence s(q9 q9Var, boolean z9);
 
     public int t(int i7) {
-        return org.telegram.ui.ActionBar.l6.w0(i7, this.g0);
+        return org.telegram.ui.ActionBar.m6.w0(i7, this.g0);
     }
 
     public final void u() {
-        org.telegram.ui.ActionBar.w3 w3Var;
+        org.telegram.ui.ActionBar.x3 x3Var;
         if (this.Y != null && this.P) {
             this.P = false;
             this.n0.run();
         }
         this.P = false;
-        if (x() || (w3Var = this.Y) == null) {
+        if (x() || (x3Var = this.Y) == null) {
             return;
         }
-        w3Var.finish();
+        x3Var.finish();
         this.Y = null;
     }
 

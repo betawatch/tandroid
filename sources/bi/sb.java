@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,9 +23,9 @@ public final /* synthetic */ class sb implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ sb(int i7, fi.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z9, boolean z10, org.telegram.ui.ActionBar.v2[] v2VarArr) {
+    public /* synthetic */ sb(int i7, fi.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z9, boolean z10, org.telegram.ui.ActionBar.w2[] w2VarArr) {
         this.e = dVar;
-        this.f = v2VarArr;
+        this.f = w2VarArr;
         this.d = i7;
         this.b = z9;
         this.h = starsSubscription;
@@ -58,16 +58,16 @@ public final /* synthetic */ class sb implements Runnable {
         switch (this.a) {
             case 0:
                 fi.d dVar = (fi.d) this.e;
-                org.telegram.ui.ActionBar.v2[] v2VarArr = (org.telegram.ui.ActionBar.v2[]) this.f;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.f;
                 int i10 = this.d;
                 boolean z10 = this.b;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
                 boolean z11 = this.c;
                 TLObject tLObject = (TLObject) this.n;
                 dVar.setLoading(false);
-                org.telegram.ui.ActionBar.v2 v2Var = v2VarArr[0];
-                if (v2Var != null) {
-                    v2Var.dismiss();
+                org.telegram.ui.ActionBar.w2 w2Var = w2VarArr[0];
+                if (w2Var != null) {
+                    w2Var.dismiss();
                 }
                 ea.y(i10, false).R();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
@@ -82,7 +82,7 @@ public final /* synthetic */ class sb implements Runnable {
                         z9 = false;
                         a02 = org.telegram.messenger.id.a0(null, null, 2131744999, org.telegram.messenger.id.u(starsSubscription.until_date, false), starsSubscription.title);
                     }
-                    org.telegram.ui.Components.hc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.id.M0(2131744997, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
+                    org.telegram.ui.Components.gc.a0(T).V(Collections.singletonList(tLObject), org.telegram.messenger.id.M0(2131744997, null), org.telegram.messenger.g0.X2(a02), null).k(z9);
                     return;
                 }
                 return;

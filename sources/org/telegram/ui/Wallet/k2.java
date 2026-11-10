@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -38,16 +38,16 @@ public final /* synthetic */ class k2 implements DialogInterface.OnDismissListen
                 TLRPC.User user = (TLRPC.User) this.b;
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    T.presentFragment(new l9(user));
+                    T.presentFragment(new o9(user));
                     break;
                 }
                 break;
             default:
-                l9 l9Var = (l9) this.b;
-                EditTextBoldCursor editTextBoldCursor = l9Var.H;
+                o9 o9Var = (o9) this.b;
+                EditTextBoldCursor editTextBoldCursor = o9Var.H;
                 if (editTextBoldCursor != null) {
                     editTextBoldCursor.requestFocus();
-                    org.telegram.messenger.g0.K3(l9Var.H);
+                    org.telegram.messenger.g0.K3(o9Var.H);
                     break;
                 }
                 break;

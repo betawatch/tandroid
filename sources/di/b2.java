@@ -10,12 +10,12 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.ls0;
-import org.telegram.ui.rv;
-import org.telegram.ui.yw;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.sv;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements z10 {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class b2 implements z10 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        rv rvVar;
+        sv svVar;
         org.telegram.ui.ActionBar.f2 f2Var;
-        org.telegram.ui.ActionBar.q4 parentLayout;
+        org.telegram.ui.ActionBar.r4 parentLayout;
         switch (this.a) {
             case 0:
                 j4 j4Var = (j4) this.b;
@@ -55,9 +55,9 @@ public final /* synthetic */ class b2 implements z10 {
                         i4Var.a = false;
                         p9Var.setOnReadyListener(new e2(0, currentTimeMillis, runnable));
                         ((h9) j4Var.z1).g(false);
-                        dh0 dh0Var = j4Var.i0;
-                        if (dh0Var != null) {
-                            dh0Var.setAnimation(j4Var.g1.u);
+                        ch0 ch0Var = j4Var.i0;
+                        if (ch0Var != null) {
+                            ch0Var.setAnimation(j4Var.g1.u);
                         }
                         if (j4Var.A2 > 0 && l10.longValue() > j4Var.A2 - 1400) {
                             l10 = 0L;
@@ -87,11 +87,11 @@ public final /* synthetic */ class b2 implements z10 {
                         ArrayList arrayList = new ArrayList();
                         for (int size = fragmentStack.size() - 1; size >= 0; size--) {
                             org.telegram.ui.ActionBar.f2 f2Var3 = (org.telegram.ui.ActionBar.f2) fragmentStack.get(size);
-                            if (f2Var3 instanceof yw) {
-                                yw ywVar = (yw) f2Var3;
-                                ywVar.W3();
-                                rvVar = ywVar.E0;
-                                r3 = rvVar != null ? rvVar.e(l11.longValue()) : null;
+                            if (f2Var3 instanceof zw) {
+                                zw zwVar = (zw) f2Var3;
+                                zwVar.W3();
+                                svVar = zwVar.E0;
+                                r3 = svVar != null ? svVar.e(l11.longValue()) : null;
                                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
                                     ((ActionBarLayout) parentLayout).d0((org.telegram.ui.ActionBar.f2) arrayList.get(i7), false);
                                 }
@@ -101,12 +101,12 @@ public final /* synthetic */ class b2 implements z10 {
                                 }
                                 q9Var.B();
                                 j4Var.D3 = false;
-                                if (rvVar != null || !rvVar.k(l11.longValue())) {
+                                if (svVar != null || !svVar.k(l11.longValue())) {
                                     vaVar.X(qa.c(r3));
                                     org.telegram.messenger.g0.i3(runnable, 400L);
                                     break;
                                 } else {
-                                    rvVar.b0.add(new bi.u0(r3, rvVar, l11, vaVar, runnable, 8));
+                                    svVar.b0.add(new bi.u0(r3, svVar, l11, vaVar, runnable, 8));
                                     break;
                                 }
                             } else {
@@ -114,40 +114,40 @@ public final /* synthetic */ class b2 implements z10 {
                             }
                         }
                     }
-                    rvVar = null;
+                    svVar = null;
                     f2Var = q9Var.f;
                     if (f2Var != null) {
                     }
                     q9Var.B();
                     j4Var.D3 = false;
-                    if (rvVar != null) {
+                    if (svVar != null) {
                     }
                     vaVar.X(qa.c(r3));
                     org.telegram.messenger.g0.i3(runnable, 400L);
                 }
                 break;
             case 1:
-                ls0 ls0Var = (ls0) this.b;
+                ks0 ks0Var = (ks0) this.b;
                 org.telegram.ui.q8 q8Var = (org.telegram.ui.q8) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i10 = ls0Var.d;
+                int i10 = ks0Var.d;
                 qp.s1(i10).Y3((ArrayList) obj2, true);
                 qp.s1(i10).S3((ArrayList) obj3, true);
-                org.telegram.ui.Components.i5.g(i10).d((ArrayList) obj4);
+                org.telegram.ui.Components.h5.g(i10).d((ArrayList) obj4);
                 for (int i11 = 0; i11 < arrayList2.size(); i11++) {
                     ij ijVar = (ij) arrayList2.get(i11);
                     if (ijVar.z2() && ijVar.k.reactions != null) {
                         ijVar.Q2 = true;
                     }
-                    ijVar.K5(ls0Var.x, true);
-                    ls0Var.n.add(ijVar);
+                    ijVar.K5(ks0Var.x, true);
+                    ks0Var.n.add(ijVar);
                 }
-                ls0Var.G(true);
+                ks0Var.G(true);
                 org.telegram.messenger.g0.i3(q8Var, 540L);
                 break;
             default:
                 org.telegram.ui.Wallet.l0 l0Var = (org.telegram.ui.Wallet.l0) this.b;
-                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) this.c;
+                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) obj2;
                 byte[] bArr = (byte[]) obj3;
@@ -158,14 +158,14 @@ public final /* synthetic */ class b2 implements z10 {
                     g0Var.c = bArr;
                     g0Var.b = i0Var.b();
                     g0Var.a = sendtransfer;
-                    l0Var.c.p(p10.i(l0Var.a).e(), bArr, i0Var, new org.telegram.ui.Wallet.s(l0Var, g0Var, f8Var));
+                    l0Var.c.p(p10.i(l0Var.a).e(), bArr, i0Var, new org.telegram.ui.Wallet.s(l0Var, g0Var, i8Var));
                     break;
                 } else {
                     org.telegram.ui.Wallet.l0.j("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    f8Var.a(null, str);
+                    i8Var.a(null, str);
                     break;
                 }
         }

@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class nu extends fu {
     public final Paint W;
@@ -37,7 +37,7 @@ public final class nu extends fu {
         int i13 = ((i11 - i12) - rect.right) / 2;
         float f10 = (((r1 - i13) / 2.0f) - i10) + i12;
         float L = (g0.L(12.0f) - g0.L(1.0f)) / 2.0f;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.kl : org.telegram.ui.ActionBar.l6.jl, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.kl : org.telegram.ui.ActionBar.m6.jl, kvVar.D);
         Paint paint = this.W;
         paint.setColor(w02);
         RectF rectF = g0.P;

@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x3 implements v10 {
     public final /* synthetic */ int a;
@@ -59,12 +59,12 @@ public final /* synthetic */ class x3 implements v10 {
                         }
                         ArrayList arrayList4 = new ArrayList(arrayList.size());
                         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                            org.telegram.ui.ActionBar.r3 r3Var = new org.telegram.ui.ActionBar.r3(d4Var.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i10));
-                            r3Var.p(0, null);
-                            r3Var.p(1, null);
-                            r3Var.n(0, null);
-                            r3Var.n(1, null);
-                            arrayList4.add(r3Var);
+                            org.telegram.ui.ActionBar.s3 s3Var = new org.telegram.ui.ActionBar.s3(d4Var.currentAccount, (TLRPC.TL_chatThemeUniqueGift) arrayList.get(i10));
+                            s3Var.p(0, null);
+                            s3Var.p(1, null);
+                            s3Var.n(0, null);
+                            s3Var.n(1, null);
+                            arrayList4.add(s3Var);
                         }
                         g0.h3(new mn(d4Var, tl_chatThemes, arrayList4, arrayList, soVar, 1));
                         break;
@@ -157,7 +157,7 @@ public final /* synthetic */ class x3 implements v10 {
                 break;
             case 5:
                 qp qpVar3 = (qp) this.b;
-                org.telegram.ui.Components.dr drVar = (org.telegram.ui.Components.dr) this.c;
+                org.telegram.ui.Components.cr crVar = (org.telegram.ui.Components.cr) this.c;
                 TL_communities.ParticipantJoinedChats participantJoinedChats = (TL_communities.ParticipantJoinedChats) obj;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj2;
                 if (participantJoinedChats != null) {
@@ -175,7 +175,7 @@ public final /* synthetic */ class x3 implements v10 {
                         }
                     }
                 }
-                drVar.a(participantJoinedChats, tL_error5);
+                crVar.a(participantJoinedChats, tL_error5);
                 break;
             case 6:
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;

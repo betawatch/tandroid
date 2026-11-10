@@ -1,36 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class bv0 extends yv0 {
-    public bv0(Context context) {
-        super(context);
+public final class bv0 implements jp {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ ProfileActivity c;
+
+    public bv0(ProfileActivity profileActivity, TLRPC.Chat chat, mp mpVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = mpVar;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        di.z2 z2Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.i5 i5Var = this.e;
-        if (i5Var == null || (z2Var = i5Var.k) == null) {
-            return;
-        }
-        z2Var.P0(false);
+    @Override // org.telegram.ui.jp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.L.m(-profileActivity.e1, user, profileActivity.D2.megagroup ? 10 : 9);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().L()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
+    @Override // org.telegram.ui.jp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.d1));
+        if (a22 == null || (chat = this.a) == null || profileActivity.d1 == 0) {
             return;
         }
-        accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131754798, null));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.id.M0(2131747817, null)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, org.telegram.messenger.id.M0(2131754818, null)));
+        mp mpVar = this.b;
+        if (!mpVar.Q || mpVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.f2 f2Var : mpVar.getParentLayout().getFragmentStack()) {
+            if (f2Var instanceof mb) {
+                mb mbVar = (mb) f2Var;
+                mbVar.a1();
+                org.telegram.messenger.g0.h3(new pc0(mbVar, a22, chat, 28));
+                return;
+            }
+        }
     }
 }

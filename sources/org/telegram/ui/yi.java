@@ -8,16 +8,16 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram.ui.Components.s40, ml, nm0 {
+public final class yi implements org.telegram.ui.ActionBar.o0, gr0, org.telegram.ui.Components.r40, ml, om0 {
     public final /* synthetic */ cn a;
 
     public /* synthetic */ yi(cn cnVar) {
         this.a = cnVar;
     }
 
-    @Override // org.telegram.ui.fr0
+    @Override // org.telegram.ui.gr0
     public void I(org.telegram.messenger.ij ijVar) {
         if (ijVar == null) {
             return;
@@ -27,7 +27,7 @@ public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram
                 if (this.a.z0.getChildAt(i7) instanceof org.telegram.ui.Cells.q1) {
                     org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.a.z0.getChildAt(i7);
                     if (q1Var.getMessageObject() != null && q1Var.getMessageObject().e1() == ijVar.e1()) {
-                        org.telegram.ui.Components.v5 m10 = q1Var.getPhotoImage().m();
+                        org.telegram.ui.Components.u5 m10 = q1Var.getPhotoImage().m();
                         if (m10.b0) {
                             m10.stop();
                         }
@@ -56,7 +56,7 @@ public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram
         this.a.z0.invalidate();
     }
 
-    @Override // org.telegram.ui.fr0
+    @Override // org.telegram.ui.gr0
     public void I0(org.telegram.messenger.ij ijVar) {
         cn cnVar = this.a;
         cnVar.z0.I0(true);
@@ -82,12 +82,12 @@ public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram
         this.a.l(i7, 0, true, 0, true, 0);
     }
 
-    @Override // org.telegram.ui.fr0
+    @Override // org.telegram.ui.gr0
     public TextureView l0() {
         return this.a.K8;
     }
 
-    @Override // org.telegram.ui.nm0
+    @Override // org.telegram.ui.om0
     public void m() {
         try {
             Intent intent = new Intent();
@@ -106,7 +106,7 @@ public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram
 
     @Override // org.telegram.ui.ActionBar.o0
     public void n() {
-        org.telegram.ui.Components.kk0.d(new me(this.a, 2));
+        org.telegram.ui.Components.jk0.d(new me(this.a, 2));
     }
 
     @Override // org.telegram.ui.ml
@@ -114,7 +114,7 @@ public final class yi implements org.telegram.ui.ActionBar.o0, fr0, org.telegram
         this.a.Fa(str, false);
     }
 
-    @Override // org.telegram.ui.nm0
+    @Override // org.telegram.ui.om0
     public void c(ArrayList arrayList) {
     }
 

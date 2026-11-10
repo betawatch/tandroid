@@ -1,60 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class ay extends FrameLayout {
-    public float[] D;
-    public FrameLayout a;
-    public org.telegram.ui.ActionBar.l5 b;
-    public org.telegram.ui.ActionBar.l5 c;
-    public ImageView d;
-    public zx e;
-    public bi.md f;
-    public bi.md h;
-    public TextView n;
-    public org.telegram.ui.ActionBar.f2 r;
-    public String s;
-    public float w;
-    public ValueAnimator x;
-    public org.telegram.ui.ActionBar.g1 y;
+public final class ay extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public Paint a;
+    public float[] b;
+    public Path c;
+    public float d;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
-    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
-        float f10 = 0.0f;
-        float f11 = 0.0f;
-        while (frameLayout != frameLayout2) {
-            float y10 = frameLayout.getY() + f10;
-            f11 += frameLayout.getX();
-            if (frameLayout instanceof ScrollView) {
-                y10 -= frameLayout.getScrollY();
-            }
-            f10 = y10;
-            if (!(frameLayout.getParent() instanceof View)) {
-                break;
-            }
-            frameLayout = (View) frameLayout.getParent();
-            if (!(frameLayout instanceof ViewGroup)) {
-                return;
-            }
-        }
-        fArr[0] = f11 - frameLayout2.getPaddingLeft();
-        fArr[1] = f10 - frameLayout2.getPaddingTop();
+    public final void a(float f10, float f11) {
+        float[] fArr = this.b;
+        fArr[7] = f10;
+        fArr[6] = f10;
+        fArr[1] = f10;
+        fArr[0] = f10;
+        fArr[5] = f11;
+        fArr[4] = f11;
+        fArr[3] = f11;
+        fArr[2] = f11;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(127.0f), TLObject.FLAG_30));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        Path path = this.c;
+        path.rewind();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, 0.0f, measuredWidth - org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(4.0f)), getMeasuredHeight());
+        a(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(8.0f)));
+        float[] fArr = this.b;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(rectF, fArr, direction);
+        Paint paint = this.a;
+        canvas.drawPath(path, paint);
+        path.rewind();
+        rectF.set(measuredWidth + org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(4.0f)), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        a(org.telegram.messenger.g0.W1(this.d, 0, org.telegram.messenger.g0.L(8.0f)), org.telegram.messenger.g0.L(8.0f));
+        path.addRoundRect(rectF, fArr, direction);
+        canvas.drawPath(path, paint);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        try {
+            this.a.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Ci, false));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

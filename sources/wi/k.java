@@ -30,14 +30,14 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.up0;
-import org.telegram.ui.Components.x30;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.tp0;
+import org.telegram.ui.Components.w30;
 import org.telegram.ui.Wallet.f2;
-import org.telegram.ui.i60;
-import org.telegram.ui.ky0;
+import org.telegram.ui.j60;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class k {
     public CameraCaptureSession A;
@@ -121,14 +121,14 @@ public final class k {
     public final o j;
     public boolean j0;
     public final n3 j1;
-    public final rt k;
+    public final qt k;
     public boolean k0;
     public final a k1;
     public boolean l0;
     public final a l1;
     public HandlerThread m;
     public boolean m0;
-    public final x30 m1;
+    public final w30 m1;
     public Handler n;
     public boolean n0;
     public final e n1;
@@ -164,12 +164,12 @@ public final class k {
     public final ArrayList s0 = new ArrayList();
     public int s1 = 1;
 
-    public k(Context context, TextureView textureView, r0 r0Var, int i7, n0 n0Var, o0 o0Var, boolean z9, o oVar, rt rtVar) {
+    public k(Context context, TextureView textureView, r0 r0Var, int i7, n0 n0Var, o0 o0Var, boolean z9, o oVar, qt qtVar) {
         n3 n3Var = new n3(this, 2);
         this.j1 = n3Var;
         this.k1 = new a(this, 5);
         this.l1 = new a(this, 6);
-        this.m1 = new x30(this, 4);
+        this.m1 = new w30(this, 4);
         this.n1 = new e(this, 0);
         this.o1 = new e(this, 1);
         this.p1 = new f(this, 0);
@@ -185,7 +185,7 @@ public final class k {
         this.h = o0Var;
         this.i = z9;
         this.j = oVar;
-        this.k = rtVar;
+        this.k = qtVar;
         textureView.addOnLayoutChangeListener(n3Var);
     }
 
@@ -683,7 +683,7 @@ public final class k {
                             t tVar2 = this.v;
                             Handler handler = tVar2.u;
                             if (tVar2.r0 && handler != null) {
-                                handler.post(new i60(tVar2, z10, surface, 17));
+                                handler.post(new j60(tVar2, z10, surface, 17));
                             }
                         }
                         t tVar3 = this.v;
@@ -834,8 +834,8 @@ public final class k {
             }
             if (z9) {
                 this.j.a("camera lost while recording", exc);
-                rt rtVar = this.k;
-                ((t0) rtVar.b).i.post(new j0(rtVar, exc, 0));
+                qt qtVar = this.k;
+                ((t0) qtVar.b).i.post(new j0(qtVar, exc, 0));
                 return;
             }
         }
@@ -844,8 +844,8 @@ public final class k {
 
     public final void M(Exception exc) {
         this.j.a("camera error", exc);
-        rt rtVar = this.k;
-        ((t0) rtVar.b).i.post(new j0(rtVar, exc, 1));
+        qt qtVar = this.k;
+        ((t0) qtVar.b).i.post(new j0(qtVar, exc, 1));
     }
 
     public final void N() {
@@ -883,7 +883,7 @@ public final class k {
         this.U0 = 0L;
     }
 
-    public final ky0 P(String str, CameraCharacteristics cameraCharacteristics, StreamConfigurationMap streamConfigurationMap, Size[] sizeArr, wa waVar) {
+    public final ly0 P(String str, CameraCharacteristics cameraCharacteristics, StreamConfigurationMap streamConfigurationMap, Size[] sizeArr, wa waVar) {
         Range[] rangeArr = (Range[]) cameraCharacteristics.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
         o oVar = this.j;
         o0 o0Var = this.h;
@@ -896,7 +896,7 @@ public final class k {
             u10.append(C);
             u10.append(this.e0 ? ", reason=session-wide fallback" : "");
             oVar.b(u10.toString());
-            return new ky0(o0Var2, C, waVar, 24);
+            return new ly0(o0Var2, C, waVar, 24);
         }
         int i7 = o0Var.a;
         Range C2 = C(rangeArr, i7);
@@ -919,7 +919,7 @@ public final class k {
             try {
                 wa l10 = l(sizeArr2, R(cameraCharacteristics), this.d, this.g);
                 oVar.b("fps selection: id=" + str + ", requested=" + i7 + ", mode=REGULAR, range=" + C2 + ", compatibleSizes=" + Arrays.toString(sizeArr2));
-                return new ky0(o0.c, C2, l10, 24);
+                return new ly0(o0.c, C2, l10, 24);
             } catch (RuntimeException unused) {
                 oVar.b("fps selection: id=" + str + ", regular " + i7 + " fps rejected: no compatible output pair, compatibleSizes=" + Arrays.toString(sizeArr2));
             }
@@ -928,7 +928,7 @@ public final class k {
         }
         Range C3 = C(rangeArr, 30);
         oVar.b("fps selection: id=" + str + ", requested=" + i7 + ", fallback=30, range=" + C3);
-        return new ky0(o0Var2, C3, waVar, 24);
+        return new ly0(o0Var2, C3, waVar, 24);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(27:44|45|46|47|48|49|50|51|52|53|54|55|56|57|58|59|60|(2:61|62)|(2:(1:91)(1:69)|(7:71|72|73|(4:(1:(1:85)(1:83))|86|87|39)|37|38|39))|92|72|73|(1:75)|(0)|86|87|39) */
@@ -963,7 +963,7 @@ public final class k {
         r7 r7Var2;
         String str3;
         r7 r7Var3;
-        ky0 P;
+        ly0 P;
         r7 r7Var4;
         o oVar;
         StringBuilder sb2;
@@ -1205,13 +1205,13 @@ public final class k {
         CameraCharacteristics cameraCharacteristics2 = (CameraCharacteristics) r7Var5.c;
         Size[] sizeArr = (Size[]) r7Var5.d;
         wa waVar = (wa) r7Var5.e;
-        ky0 ky0Var = (ky0) r7Var5.f;
-        wa waVar2 = (wa) ky0Var.d;
+        ly0 ly0Var = (ly0) r7Var5.f;
+        wa waVar2 = (wa) ly0Var.d;
         this.o = str8;
         this.G = m0Var;
         this.p = cameraCharacteristics2;
-        this.I = (o0) ky0Var.b;
-        this.J = (Range) ky0Var.c;
+        this.I = (o0) ly0Var.b;
+        this.J = (Range) ly0Var.c;
         this.c0 = false;
         this.K = waVar;
         N();
@@ -1351,7 +1351,7 @@ public final class k {
         if (!this.U || handler == null) {
             return;
         }
-        handler.post(new up0(16, this, z9));
+        handler.post(new tp0(16, this, z9));
     }
 
     public final boolean T(float f10) {
@@ -1437,8 +1437,8 @@ public final class k {
         this.O = false;
         this.P = false;
         this.M = 0.0f;
-        rt rtVar = this.k;
-        ((t0) rtVar.b).i.post(new u9.f(27, rtVar, m0Var));
+        qt qtVar = this.k;
+        ((t0) qtVar.b).i.post(new u9.f(27, qtVar, m0Var));
         this.F0 = SystemClock.elapsedRealtimeNanos();
         this.j.b("camera device switch started: from=" + this.F + ", to=" + m0Var);
         if (Z(m0Var)) {
@@ -1509,7 +1509,7 @@ public final class k {
             b bVar = new b(this, m0Var, j3, 0);
             Handler handler = tVar.u;
             if (tVar.r0 && handler != null) {
-                handler.post(new i60(tVar, z10, bVar, 17));
+                handler.post(new j60(tVar, z10, bVar, 17));
             }
             this.l0 = true;
             this.m0 = true;
@@ -1519,8 +1519,8 @@ public final class k {
             N();
             this.j.b("camera switch path: DUAL_ACTIVE, activeId=" + this.y.getId() + ", standbyId=" + this.o0.getId() + ", input=" + (this.n0 ? 1 : 0) + ", elapsedMs=" + z(this.F0));
             this.c.post(new a(this, 2));
-            rt rtVar = this.k;
-            ((t0) rtVar.b).i.post(new i60(rtVar, new h(this.F, this.H, this.I, this.q, this.N, F()), z9, 18));
+            qt qtVar = this.k;
+            ((t0) qtVar.b).i.post(new j60(qtVar, new h(this.F, this.H, this.I, this.q, this.N, F()), z9, 18));
             return true;
         } catch (CameraAccessException e12) {
             e = e12;
@@ -1778,12 +1778,12 @@ public final class k {
         }
         int i12 = i11;
         o oVar = this.j;
-        rt rtVar = this.k;
-        Objects.requireNonNull(rtVar);
-        c cVar = new c(rtVar, 0);
-        rt rtVar2 = this.k;
-        Objects.requireNonNull(rtVar2);
-        n nVar = new n(xVar, j3, i7, i10, i12, oVar, cVar, new c(rtVar2, 1));
+        qt qtVar = this.k;
+        Objects.requireNonNull(qtVar);
+        c cVar = new c(qtVar, 0);
+        qt qtVar2 = this.k;
+        Objects.requireNonNull(qtVar2);
+        n nVar = new n(xVar, j3, i7, i10, i12, oVar, cVar, new c(qtVar2, 1));
         this.w = nVar;
         synchronized (nVar) {
             if (nVar.D) {
@@ -1814,9 +1814,9 @@ public final class k {
         boolean z10 = this.i;
         o oVar2 = this.j;
         n nVar2 = this.w;
-        rt rtVar3 = this.k;
-        Objects.requireNonNull(rtVar3);
-        t tVar = new t(size, surface4, surface5, z9, i13, i14, D, z10, oVar2, nVar2, new c(rtVar3, 2));
+        qt qtVar3 = this.k;
+        Objects.requireNonNull(qtVar3);
+        t tVar = new t(size, surface4, surface5, z9, i13, i14, D, z10, oVar2, nVar2, new c(qtVar3, 2));
         this.v = tVar;
         tVar.u0 = new a(this, 3);
         int y10 = y();

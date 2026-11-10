@@ -4,21 +4,21 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c70;
-import org.telegram.ui.Components.x60;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.w60;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mc implements v10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2 c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ mc(org.telegram.ui.Components.na naVar, Object obj, long j3, int i7) {
+    public /* synthetic */ mc(org.telegram.ui.Components.ma maVar, Object obj, long j3, int i7) {
         this.a = i7;
-        this.c = naVar;
+        this.c = maVar;
         this.d = obj;
         this.b = j3;
     }
@@ -28,24 +28,24 @@ public final /* synthetic */ class mc implements v10 {
         TLRPC.Updates updates;
         switch (this.a) {
             case 0:
-                oc.d1((oc) this.c, (y31) this.d, this.b, (Boolean) obj, (String) obj2);
+                oc.d1((oc) this.c, (x31) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             case 1:
-                c70 c70Var = (c70) this.c;
+                b70 b70Var = (b70) this.c;
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = (TLRPC.TL_messages_importChatInvite) this.d;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
                     TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    qp.s1(c70Var.a).O3(updates2, false);
+                    qp.s1(b70Var.a).O3(updates2, false);
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        org.telegram.messenger.g0.h3(new x60(c70Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, 1));
+                        org.telegram.messenger.g0.h3(new w60(b70Var, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult, this.b, 1));
                     }
                     updates = null;
                 }
-                org.telegram.messenger.g0.h3(new org.telegram.ui.m6(c70Var, tL_error, updates, tL_messages_importChatInvite, 24));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.m6(b70Var, tL_error, updates, tL_messages_importChatInvite, 24));
                 break;
             default:
                 zh.l3 l3Var = (zh.l3) this.c;
@@ -58,9 +58,9 @@ public final /* synthetic */ class mc implements v10 {
         }
     }
 
-    public /* synthetic */ mc(c70 c70Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+    public /* synthetic */ mc(b70 b70Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
         this.a = 1;
-        this.c = c70Var;
+        this.c = b70Var;
         this.b = j3;
         this.d = tL_messages_importChatInvite;
     }

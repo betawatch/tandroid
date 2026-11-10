@@ -7,62 +7,62 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class y extends LinearLayout {
     public boolean a;
-    public final k b;
+    public final l b;
     public boolean c;
     public boolean d;
     public ArrayList e;
     public Runnable f;
 
-    public y(Context context, k kVar) {
+    public y(Context context, l lVar) {
         super(context);
         this.a = true;
         setOrientation(0);
-        this.b = kVar;
+        this.b = lVar;
     }
 
     public final r0 a(int i7, int i10) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, i10, null, z9 ? kVar.q0 : kVar.p0, null, org.telegram.messenger.g0.L(48.0f), null, null);
+        l lVar = this.b;
+        return b(i7, i10, null, z9 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.g0.L(48.0f), null, null);
     }
 
-    public final r0 b(int i7, int i10, CharSequence charSequence, int i11, Drawable drawable, int i12, CharSequence charSequence2, g6 g6Var) {
+    public final r0 b(int i7, int i10, CharSequence charSequence, int i11, Drawable drawable, int i12, CharSequence charSequence2, h6 h6Var) {
         if (this.e == null) {
             this.e = new ArrayList();
         }
         this.e.add(Integer.valueOf(i7));
-        return f(-1, i7, i10, charSequence, i11, drawable, i12, charSequence2, g6Var);
+        return f(-1, i7, i10, charSequence, i11, drawable, i12, charSequence2, h6Var);
     }
 
-    public final r0 c(int i7, int i10, g6 g6Var) {
+    public final r0 c(int i7, int i10, h6 h6Var) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, i10, null, z9 ? kVar.q0 : kVar.p0, null, org.telegram.messenger.g0.L(48.0f), null, g6Var);
+        l lVar = this.b;
+        return b(i7, i10, null, z9 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.g0.L(48.0f), null, h6Var);
     }
 
     public final r0 d(int i7, Drawable drawable) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, 0, null, z9 ? kVar.q0 : kVar.p0, drawable, org.telegram.messenger.g0.L(48.0f), null, null);
+        l lVar = this.b;
+        return b(i7, 0, null, z9 ? lVar.q0 : lVar.p0, drawable, org.telegram.messenger.g0.L(48.0f), null, null);
     }
 
     public final r0 e(int i7, String str) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, 0, str, z9 ? kVar.q0 : kVar.p0, null, 0, str, null);
+        l lVar = this.b;
+        return b(i7, 0, str, z9 ? lVar.q0 : lVar.p0, null, 0, str, null);
     }
 
-    public final r0 f(int i7, int i10, int i11, CharSequence charSequence, int i12, Drawable drawable, int i13, CharSequence charSequence2, g6 g6Var) {
+    public final r0 f(int i7, int i10, int i11, CharSequence charSequence, int i12, Drawable drawable, int i13, CharSequence charSequence2, h6 h6Var) {
         Context context = getContext();
         boolean z9 = this.c;
-        k kVar = this.b;
-        r0 r0Var = new r0(context, this, i12, z9 ? kVar.s0 : kVar.r0, charSequence != null, g6Var);
+        l lVar = this.b;
+        r0 r0Var = new r0(context, this, i12, z9 ? lVar.s0 : lVar.r0, charSequence != null, h6Var);
         r0Var.setTag(Integer.valueOf(i10));
         if (charSequence != null) {
             r0Var.E.setText(charSequence);
@@ -73,8 +73,8 @@ public class y extends LinearLayout {
             addView(r0Var, i7, layoutParams);
         } else {
             if (drawable != null) {
-                if (drawable instanceof ah0) {
-                    r0Var.y.setAnimation((ah0) drawable);
+                if (drawable instanceof zg0) {
+                    r0Var.y.setAnimation((zg0) drawable);
                 } else {
                     r0Var.y.setImageDrawable(drawable);
                 }
@@ -92,8 +92,8 @@ public class y extends LinearLayout {
 
     public final r0 g(int i7, int i10, int i11) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, i10, null, z9 ? kVar.q0 : kVar.p0, null, i11, null, null);
+        l lVar = this.b;
+        return b(i7, i10, null, z9 ? lVar.q0 : lVar.p0, null, i11, null, null);
     }
 
     public int getClosingSearchFieldWidth() {
@@ -169,8 +169,8 @@ public class y extends LinearLayout {
 
     public final r0 h(int i7, int i10, int i11, String str) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return b(i7, i10, null, z9 ? kVar.q0 : kVar.p0, null, i11, str, null);
+        l lVar = this.b;
+        return b(i7, i10, null, z9 ? lVar.q0 : lVar.p0, null, i11, str, null);
     }
 
     public final void i(boolean z9) {
@@ -182,7 +182,7 @@ public class y extends LinearLayout {
                 if (r0Var.u() && r0Var.v()) {
                     n0 n0Var = r0Var.H;
                     if (n0Var == null || n0Var.b()) {
-                        this.b.z(false);
+                        this.b.A(false);
                         r0Var.T(z9);
                         return;
                     }
@@ -212,7 +212,7 @@ public class y extends LinearLayout {
         return i7;
     }
 
-    public final x l(int i7, int i10, int i11, Drawable drawable, int i12, g6 g6Var) {
+    public final x l(int i7, int i10, int i11, Drawable drawable, int i12, h6 h6Var) {
         if (this.e == null) {
             this.e = new ArrayList();
         }
@@ -226,26 +226,26 @@ public class y extends LinearLayout {
         xVar.e = i11;
         xVar.f = drawable;
         xVar.g = i12;
-        xVar.h = g6Var;
+        xVar.h = h6Var;
         return xVar;
     }
 
-    public final x m(Drawable drawable, g6 g6Var) {
+    public final x m(Drawable drawable, h6 h6Var) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return l(14, 0, z9 ? kVar.q0 : kVar.p0, drawable, org.telegram.messenger.g0.L(48.0f), g6Var);
+        l lVar = this.b;
+        return l(14, 0, z9 ? lVar.q0 : lVar.p0, drawable, org.telegram.messenger.g0.L(48.0f), h6Var);
     }
 
-    public final x n(g6 g6Var) {
+    public final x n(h6 h6Var) {
         boolean z9 = this.c;
-        k kVar = this.b;
-        return l(32, R.drawable.call, z9 ? kVar.q0 : kVar.p0, null, org.telegram.messenger.g0.L(48.0f), g6Var);
+        l lVar = this.b;
+        return l(32, R.drawable.call, z9 ? lVar.q0 : lVar.p0, null, org.telegram.messenger.g0.L(48.0f), h6Var);
     }
 
     public final void o(int i7) {
-        j jVar = this.b.u0;
-        if (jVar != null) {
-            jVar.b(i7);
+        k kVar = this.b.u0;
+        if (kVar != null) {
+            kVar.b(i7);
         }
     }
 
@@ -256,9 +256,9 @@ public class y extends LinearLayout {
         if (runnable != null) {
             runnable.run();
         }
-        k kVar = this.b;
-        if (kVar != null) {
-            kVar.k();
+        l lVar = this.b;
+        if (lVar != null) {
+            lVar.l();
         }
     }
 
@@ -318,8 +318,8 @@ public class y extends LinearLayout {
             View childAt = getChildAt(i7);
             if (childAt instanceof r0) {
                 boolean z9 = this.c;
-                k kVar = this.b;
-                childAt.setBackgroundDrawable(l6.h0(z9 ? kVar.q0 : kVar.p0, 1, -1));
+                l lVar = this.b;
+                childAt.setBackgroundDrawable(m6.h0(z9 ? lVar.q0 : lVar.p0, 1, -1));
             }
         }
     }
@@ -404,8 +404,8 @@ public class y extends LinearLayout {
             if (childAt instanceof r0) {
                 r0 r0Var = (r0) childAt;
                 boolean z9 = this.c;
-                k kVar = this.b;
-                r0Var.setIconColor(z9 ? kVar.s0 : kVar.r0);
+                l lVar = this.b;
+                r0Var.setIconColor(z9 ? lVar.s0 : lVar.r0);
             }
         }
     }

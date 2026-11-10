@@ -18,11 +18,11 @@ import org.telegram.messenger.ha;
 import org.telegram.messenger.j1;
 import org.telegram.messenger.o;
 import org.telegram.messenger.y9;
-import org.telegram.ui.Components.jk;
-import org.telegram.ui.z90;
+import org.telegram.ui.Components.ik;
+import org.telegram.ui.aa0;
 import v7.i;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -98,7 +98,7 @@ public final class c extends q {
                 break;
             case 3:
                 if (i7 == 1) {
-                    ((jk) ((j1) this.c).b).run();
+                    ((ik) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -122,14 +122,14 @@ public final class c extends q {
                 break;
             case 5:
                 if (i7 == 1) {
-                    ((z90) ((j1) this.c).b).run();
+                    ((aa0) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             default:
                 if (i7 == 1) {
-                    ((jk) ((j1) this.c).b).run();
+                    ((ik) ((j1) this.c).b).run();
                     parcel2.writeNoException();
                     break;
                 }

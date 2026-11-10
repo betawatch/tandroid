@@ -14,9 +14,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.cc1;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w41 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final class w41 extends FrameLayout {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 3:
-                if (!((org.telegram.ui.Wallet.a6) this.b).a || view.getTag() == org.telegram.ui.Wallet.a6.n0) {
+                if (!((org.telegram.ui.Wallet.d6) this.b).a || view.getTag() == org.telegram.ui.Wallet.d6.n0) {
                     return super.drawChild(canvas, view, j3);
                 }
                 return false;
@@ -92,25 +92,25 @@ public final class w41 extends FrameLayout {
         switch (this.a) {
             case 0:
                 y41 y41Var = (y41) this.b;
-                y41Var.i1.setBounds(0, (int) ((y41Var.n1 - y41Var.s0) - getTranslationY()), getMeasuredWidth(), getMeasuredHeight());
-                y41Var.i1.draw(canvas);
+                y41Var.l1.setBounds(0, (int) ((y41Var.q1 - y41Var.s0) - getTranslationY()), getMeasuredWidth(), getMeasuredHeight());
+                y41Var.l1.draw(canvas);
                 break;
             case 6:
                 super.onDraw(canvas);
-                org.telegram.ui.wp0 wp0Var = (org.telegram.ui.wp0) this.b;
-                Paint paint = wp0Var.k1;
-                tg.e1 e1Var = wp0Var.d1;
-                paint.setAlpha((int) ((1.0f - wp0Var.m1) * e1Var.getAlpha() * 102.0f));
+                org.telegram.ui.xp0 xp0Var = (org.telegram.ui.xp0) this.b;
+                Paint paint = xp0Var.k1;
+                tg.e1 e1Var = xp0Var.d1;
+                paint.setAlpha((int) ((1.0f - xp0Var.m1) * e1Var.getAlpha() * 102.0f));
                 RectF rectF = org.telegram.messenger.g0.P;
                 e1Var.b(rectF);
-                float translationY = e1Var.getTranslationY() + wp0Var.L0.getTranslationY() + e1Var.getTop() + r4.getTop();
+                float translationY = e1Var.getTranslationY() + xp0Var.L0.getTranslationY() + e1Var.getTop() + r4.getTop();
                 float f10 = rectF.left;
-                tg.j1 j1Var = wp0Var.e1;
-                rectF.set(org.telegram.messenger.g0.T1(f10, j1Var.getLeft(), wp0Var.m1), org.telegram.messenger.g0.T1(rectF.top + translationY, j1Var.getTop() - j1Var.getTranslationY(), wp0Var.m1), org.telegram.messenger.g0.T1(rectF.right, j1Var.getRight(), wp0Var.m1), org.telegram.messenger.g0.T1(translationY + rectF.bottom, j1Var.getBottom() - j1Var.getTranslationY(), wp0Var.m1));
-                float L = org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(wp0Var.m1, 32, 16));
-                Paint paint2 = wp0Var.l1;
+                tg.j1 j1Var = xp0Var.e1;
+                rectF.set(org.telegram.messenger.g0.T1(f10, j1Var.getLeft(), xp0Var.m1), org.telegram.messenger.g0.T1(rectF.top + translationY, j1Var.getTop() - j1Var.getTranslationY(), xp0Var.m1), org.telegram.messenger.g0.T1(rectF.right, j1Var.getRight(), xp0Var.m1), org.telegram.messenger.g0.T1(translationY + rectF.bottom, j1Var.getBottom() - j1Var.getTranslationY(), xp0Var.m1));
+                float L = org.telegram.messenger.g0.L(org.telegram.messenger.g0.W1(xp0Var.m1, 32, 16));
+                Paint paint2 = xp0Var.l1;
                 int alpha = paint2.getAlpha();
-                paint2.setAlpha((int) (alpha * wp0Var.m1));
+                paint2.setAlpha((int) (alpha * xp0Var.m1));
                 canvas.drawRoundRect(rectF, L, L, paint2);
                 paint2.setAlpha(alpha);
                 canvas.drawRoundRect(rectF, L, L, paint);
@@ -120,12 +120,12 @@ public final class w41 extends FrameLayout {
                 Rect rect = n1Var.E0;
                 Rect rect2 = n1Var.D0;
                 Paint paint3 = n1Var.F0;
-                ot0 ot0Var = n1Var.v0;
+                nt0 nt0Var = n1Var.v0;
                 Bitmap bitmap = n1Var.A0;
                 if (n1Var.z0 != null) {
                     canvas.save();
                     float d = n1Var.u0.d(n1Var.t0);
-                    canvas.scale(1.0f - (d * 2.0f), 1.0f, ot0Var.a / 2.0f, 0.0f);
+                    canvas.scale(1.0f - (d * 2.0f), 1.0f, nt0Var.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.k5.A(1.0f, d, 4.0f * d, 0.25f));
                     float d2 = n1Var.y0.d(n1Var.x0);
                     if (!n1Var.x0) {
@@ -134,7 +134,7 @@ public final class w41 extends FrameLayout {
                         if (bitmap != null) {
                             canvas.translate(r6.getWidth() / 2.0f, r6.getHeight() / 2.0f);
                             canvas.rotate(n1Var.w0);
-                            float max = Math.max(ot0Var.a / bitmap.getWidth(), ot0Var.b / bitmap.getHeight());
+                            float max = Math.max(nt0Var.a / bitmap.getWidth(), nt0Var.b / bitmap.getHeight());
                             canvas.scale(max, max);
                             if (n1Var.G0 != null) {
                                 canvas.rotate(-n1Var.getOrientation());
@@ -174,13 +174,13 @@ public final class w41 extends FrameLayout {
             case 8:
                 tg.d2 d2Var = (tg.d2) this.b;
                 ImageReceiver imageReceiver = d2Var.x0;
-                ot0 ot0Var2 = d2Var.v0;
+                nt0 nt0Var2 = d2Var.v0;
                 if (d2Var.w0 != null) {
                     canvas.save();
                     float d10 = d2Var.u0.d(d2Var.t0);
-                    canvas.scale(1.0f - (d10 * 2.0f), 1.0f, ot0Var2.a / 2.0f, 0.0f);
+                    canvas.scale(1.0f - (d10 * 2.0f), 1.0f, nt0Var2.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.k5.A(1.0f, d10, 4.0f * d10, 0.25f));
-                    imageReceiver.y0(0.0f, 0.0f, (int) ot0Var2.a, (int) ot0Var2.b);
+                    imageReceiver.y0(0.0f, 0.0f, (int) nt0Var2.a, (int) nt0Var2.b);
                     imageReceiver.h(canvas, null);
                     canvas.restore();
                     break;
@@ -224,13 +224,13 @@ public final class w41 extends FrameLayout {
         switch (this.a) {
             case 0:
                 y41 y41Var = (y41) this.b;
-                if (motionEvent.getAction() != 0 || y41Var.n1 == 0 || motionEvent.getY() >= y41Var.n1) {
+                if (motionEvent.getAction() != 0 || y41Var.q1 == 0 || motionEvent.getY() >= y41Var.q1) {
                     return super.onInterceptTouchEvent(motionEvent);
                 }
                 y41Var.dismiss();
                 return true;
             case 3:
-                return ((org.telegram.ui.Wallet.a6) this.b).a || super.onInterceptTouchEvent(motionEvent);
+                return ((org.telegram.ui.Wallet.d6) this.b).a || super.onInterceptTouchEvent(motionEvent);
             default:
                 return super.onInterceptTouchEvent(motionEvent);
         }
@@ -244,37 +244,37 @@ public final class w41 extends FrameLayout {
         switch (this.a) {
             case 2:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((org.telegram.ui.Wallet.w5) this.b).S.c(org.telegram.messenger.g0.L(4.0f))));
+                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((org.telegram.ui.Wallet.z5) this.b).S.c(org.telegram.messenger.g0.L(4.0f))));
                 break;
             case 11:
                 ug.w0 w0Var = (ug.w0) this.b;
                 if (w0Var.J0) {
-                    w0Var.q1 = View.MeasureSpec.getSize(i7);
+                    w0Var.t1 = View.MeasureSpec.getSize(i7);
                 } else {
-                    w0Var.q1 = (int) (Math.min(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10)) * 0.8f);
+                    w0Var.t1 = (int) (Math.min(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10)) * 0.8f);
                 }
                 super.onMeasure(i7, i10);
                 break;
             case 12:
                 super.onMeasure(i7, i10);
                 ug.f1 f1Var = (ug.f1) ((bi.k5) this.b).d;
-                bi.qd qdVar = f1Var.j2;
+                bi.qd qdVar = f1Var.m2;
                 if (qdVar == null) {
-                    View view = f1Var.t2;
+                    View view = f1Var.w2;
                     if (view == null) {
                         f10 = 0.0f;
-                        f1Var.i2.setTranslationY(f10 - (r4.getMeasuredHeight() / 2.0f));
+                        f1Var.l2.setTranslationY(f10 - (r4.getMeasuredHeight() / 2.0f));
                         break;
                     } else {
                         top = view.getTop();
-                        measuredHeight = f1Var.t2.getMeasuredHeight();
+                        measuredHeight = f1Var.w2.getMeasuredHeight();
                     }
                 } else {
                     top = qdVar.getTop();
-                    measuredHeight = f1Var.j2.getMeasuredHeight();
+                    measuredHeight = f1Var.m2.getMeasuredHeight();
                 }
                 f10 = (measuredHeight / 2.0f) + top;
-                f1Var.i2.setTranslationY(f10 - (r4.getMeasuredHeight() / 2.0f));
+                f1Var.l2.setTranslationY(f10 - (r4.getMeasuredHeight() / 2.0f));
             case 13:
                 super.onMeasure(i7, i10);
                 ((zh.y0) this.b).K.measure(View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
@@ -309,13 +309,13 @@ public final class w41 extends FrameLayout {
             case 0:
                 return !((y41) this.b).I && super.onTouchEvent(motionEvent);
             case 1:
-                ((cc1) this.b).T.onTouchEvent(motionEvent);
+                ((dc1) this.b).T.onTouchEvent(motionEvent);
                 return super.onTouchEvent(motionEvent);
             case 6:
                 if (motionEvent.getActionMasked() == 0) {
-                    org.telegram.ui.wp0 wp0Var = (org.telegram.ui.wp0) this.b;
-                    if (wp0Var.n1) {
-                        wp0Var.z0(false);
+                    org.telegram.ui.xp0 xp0Var = (org.telegram.ui.xp0) this.b;
+                    if (xp0Var.n1) {
+                        xp0Var.z0(false);
                         return true;
                     }
                 }
@@ -331,7 +331,7 @@ public final class w41 extends FrameLayout {
             case 5:
                 super.onWindowFocusChanged(z9);
                 if (z9) {
-                    ((org.telegram.ui.Wallet.v9) this.b).k0(true);
+                    ((org.telegram.ui.Wallet.y9) this.b).k0(true);
                     break;
                 }
                 break;
@@ -371,10 +371,10 @@ public final class w41 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w41(org.telegram.ui.wp0 wp0Var, Context context) {
+    public w41(org.telegram.ui.xp0 xp0Var, Context context) {
         super(context);
         this.a = 6;
-        this.b = wp0Var;
+        this.b = xp0Var;
         setWillNotDraw(false);
     }
 

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d3 implements c20 {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class d3 implements c20 {
                 break;
             case 3:
                 String str = (String) this.b;
-                org.telegram.ui.Components.l9 l9Var = (org.telegram.ui.Components.l9) this.c;
+                org.telegram.ui.Components.k9 k9Var = (org.telegram.ui.Components.k9) this.c;
                 String str2 = (String) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
                 if (tL_messages_stickerSet != null) {
@@ -76,8 +76,8 @@ public final /* synthetic */ class d3 implements c20 {
                         i11++;
                     }
                     if (document != null) {
-                        l9Var.p(hc.b(document), str2, t5.f(document, org.telegram.ui.ActionBar.l6.m6, 0.2f, null), document);
-                        l9Var.invalidate();
+                        k9Var.p(hc.b(document), str2, t5.f(document, org.telegram.ui.ActionBar.m6.m6, 0.2f, null), document);
+                        k9Var.invalidate();
                         break;
                     }
                 }

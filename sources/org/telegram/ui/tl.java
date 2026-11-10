@@ -7,9 +7,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class tl extends pq0 {
+public final class tl extends qq0 {
     public final ArrayList a;
     public final int[] b = new int[2];
     public final /* synthetic */ cn c;
@@ -19,8 +19,8 @@ public final class tl extends pq0 {
         this.a = arrayList;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
-    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         char c10;
         char c11;
         ImageReceiver imageReceiver;
@@ -136,16 +136,16 @@ public final class tl extends pq0 {
                 }
             }
             if (imageReceiver != null) {
-                yq0 yq0Var = new yq0();
-                yq0Var.b = iArr[c10];
-                yq0Var.c = iArr[c11];
-                yq0Var.d = cnVar.z0;
-                yq0Var.a = imageReceiver;
-                yq0Var.e = imageReceiver.p();
-                yq0Var.h = imageReceiver.E();
-                yq0Var.j = (int) ((cnVar.N9 - cnVar.P9) - org.telegram.messenger.g0.L(4.0f));
-                yq0Var.i = (int) (cnVar.s9(org.telegram.ui.Components.j11.c) + cnVar.w.d() + org.telegram.messenger.g0.L(9.0f) + cnVar.Wa + cnVar.Yc);
-                return yq0Var;
+                zq0 zq0Var = new zq0();
+                zq0Var.b = iArr[c10];
+                zq0Var.c = iArr[c11];
+                zq0Var.d = cnVar.z0;
+                zq0Var.a = imageReceiver;
+                zq0Var.e = imageReceiver.p();
+                zq0Var.h = imageReceiver.E();
+                zq0Var.j = (int) ((cnVar.N9 - cnVar.P9) - org.telegram.messenger.g0.L(4.0f));
+                zq0Var.i = (int) (cnVar.s9(org.telegram.ui.Components.i11.c) + cnVar.w.d() + org.telegram.messenger.g0.L(9.0f) + cnVar.Wa + cnVar.Yc);
+                return zq0Var;
             }
             i10++;
             tlVar = this;

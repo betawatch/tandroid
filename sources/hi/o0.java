@@ -8,9 +8,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.c20;
 import org.telegram.ui.Cells.z5;
-import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.t4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -57,10 +57,10 @@ public final /* synthetic */ class o0 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 2:
-                u4 u4Var = (u4) this.c;
+                t4 t4Var = (t4) this.c;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.b;
                 Activity activity = (Activity) this.d;
-                org.telegram.messenger.g0.v1(u4Var);
+                org.telegram.messenger.g0.v1(t4Var);
                 if (f2Var != null) {
                     org.telegram.messenger.g0.a3(activity, f2Var.getClassGuid());
                     break;
@@ -68,9 +68,9 @@ public final /* synthetic */ class o0 implements DialogInterface.OnDismissListen
                 break;
             case 3:
                 c20 c20Var2 = (c20) this.c;
-                org.telegram.ui.Components.o3 o3Var = (org.telegram.ui.Components.o3) this.b;
-                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.d;
-                c20Var2.a(Integer.valueOf(q3Var.getValue() + (o3Var.getValue() * 60)));
+                org.telegram.ui.Components.n3 n3Var = (org.telegram.ui.Components.n3) this.b;
+                org.telegram.ui.Components.p3 p3Var = (org.telegram.ui.Components.p3) this.d;
+                c20Var2.a(Integer.valueOf(p3Var.getValue() + (n3Var.getValue() * 60)));
                 break;
             case 4:
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.c;

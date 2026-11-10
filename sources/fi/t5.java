@@ -16,7 +16,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public final int a;
@@ -63,7 +63,7 @@ public final class t5 extends FrameLayout {
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         frameLayout.addView(imageView2, c8.ha.d(28, 28.0f, 85, 0.0f, 0.0f, 12.0f, 16.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(22.0f), i0.a.o(-16777216, qs.G1)));
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(22.0f), i0.a.o(-16777216, qs.G1)));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);
@@ -102,7 +102,7 @@ public final class t5 extends FrameLayout {
     }
 
     public final void b(CharSequence charSequence) {
-        this.e.b0.b(org.telegram.ui.Components.r5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
+        this.e.b0.b(org.telegram.ui.Components.q5.cloneSpans(new SpannableString(charSequence)), null, null, false, false);
     }
 
     @Override // android.view.ViewGroup

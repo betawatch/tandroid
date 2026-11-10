@@ -2,10 +2,10 @@ package bi;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.v10;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.wp0;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.xp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q9 implements q0.a {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class q9 implements q0.a {
                 a3Var.E.setLoadProgressAnimated(f10.floatValue());
                 if (f10.floatValue() == 1.0f) {
                     ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
-                    duration.setInterpolator(xq.f);
+                    duration.setInterpolator(wq.f);
                     duration.addUpdateListener(new hi.w1(a3Var, 1));
                     duration.addListener(new t5(a3Var, 27));
                     duration.start();
@@ -54,7 +54,7 @@ public final /* synthetic */ class q9 implements q0.a {
                 c4Var.I.setLoadProgressAnimated(f11.floatValue());
                 if (f11.floatValue() == 1.0f) {
                     ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
-                    duration2.setInterpolator(xq.f);
+                    duration2.setInterpolator(wq.f);
                     duration2.addUpdateListener(new hi.t3(c4Var, c10 == true ? 1 : 0));
                     duration2.addListener(new t5(c4Var, 28));
                     duration2.start();
@@ -81,13 +81,13 @@ public final /* synthetic */ class q9 implements q0.a {
                         w4Var.getAdapter().f();
                         break;
                     default:
-                        wp0 wp0Var = (wp0) nVar.d;
-                        wp0Var.w0(false);
-                        sg.l0 l0Var2 = wp0Var.E1;
+                        xp0 xp0Var = (xp0) nVar.d;
+                        xp0Var.w0(false);
+                        sg.l0 l0Var2 = xp0Var.E1;
                         l0Var2.h(intValue, true);
                         l0Var2.g();
-                        wp0Var.setNewColor(intValue);
-                        tg.d0 d0Var = wp0Var.p1;
+                        xp0Var.setNewColor(intValue);
+                        tg.d0 d0Var = xp0Var.p1;
                         d0Var.setSelectedColorIndex(l0Var2.d());
                         d0Var.getAdapter().f();
                         break;

@@ -8,12 +8,12 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.hg;
-import org.telegram.ui.Components.hy;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.dg0;
+import org.telegram.ui.Components.gg;
+import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 b2 b2Var2 = this.b;
                 if (!b2Var2.B0) {
                     if (b2Var2.A0 == null) {
-                        hy hyVar = new hy(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.O, true, b2Var2.getResourceProvider(), false, false);
-                        b2Var2.A0 = hyVar;
-                        hyVar.setVisibility(8);
-                        hy hyVar2 = b2Var2.A0;
-                        hyVar2.x2 = false;
-                        hyVar2.setDelegate(new s1(b2Var2));
+                        gy gyVar = new gy(b2Var2, true, false, false, b2Var2.getParentActivity(), true, null, b2Var2.O, true, b2Var2.getResourceProvider(), false, false);
+                        b2Var2.A0 = gyVar;
+                        gyVar.setVisibility(8);
+                        gy gyVar2 = b2Var2.A0;
+                        gyVar2.x2 = false;
+                        gyVar2.setDelegate(new s1(b2Var2));
                         int indexOfChild = b2Var2.O.indexOfChild(b2Var2.a0);
                         if (indexOfChild < 0) {
                             indexOfChild = b2Var2.O.getChildCount();
@@ -98,7 +98,7 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                         org.telegram.messenger.g0.v1(S2);
                     }
                     b2Var2.m0();
-                    b2Var2.b0.j(hg.d, true);
+                    b2Var2.b0.j(gg.d, true);
                     break;
                 } else {
                     b2Var2.p0(true);
@@ -111,12 +111,12 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 }
                 break;
             case 6:
-                l60 l60Var = b2Var.x0;
-                if (l60Var != null) {
-                    l60Var.u();
+                k60 k60Var = b2Var.x0;
+                if (k60Var != null) {
+                    k60Var.u();
                     b2Var.x0 = null;
                 }
-                final l60 H = l60.H(b2Var, view);
+                final k60 H = k60.H(b2Var, view);
                 H.Q = true;
                 a T2 = b2Var.P.T2();
                 H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, id.M0(2131753999, null), new l1(b2Var, T2, 5));
@@ -172,9 +172,9 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 b2Var.x0 = H;
                 break;
             case 7:
-                l60 l60Var2 = b2Var.x0;
-                if (l60Var2 != null) {
-                    l60Var2.u();
+                k60 k60Var2 = b2Var.x0;
+                if (k60Var2 != null) {
+                    k60Var2.u();
                     b2Var.x0 = null;
                 }
                 t3 t3Var2 = b2Var.P;
@@ -201,9 +201,9 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                     break;
                 }
             case 8:
-                l60 l60Var3 = b2Var.x0;
-                if (l60Var3 != null) {
-                    l60Var3.u();
+                k60 k60Var3 = b2Var.x0;
+                if (k60Var3 != null) {
+                    k60Var3.u();
                     b2Var.x0 = null;
                 }
                 a T22 = b2Var.P.T2();
@@ -221,9 +221,9 @@ public final /* synthetic */ class i1 implements View.OnClickListener {
                 break;
             case 10:
                 b2Var.w0();
-                dg0 dg0Var = b2Var.O0;
-                if (dg0Var != null) {
-                    dg0Var.g(true);
+                eg0 eg0Var = b2Var.O0;
+                if (eg0Var != null) {
+                    eg0Var.g(true);
                     b2Var.O0 = null;
                     break;
                 }

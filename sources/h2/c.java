@@ -28,10 +28,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.jc;
 import org.telegram.messenger.p5;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.qd0;
 import org.telegram.ui.sk;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -100,7 +100,7 @@ public final class c {
     }
 
     public boolean F() {
-        return ((rd0) this.b).b() && ((rd0) this.c).b() && ((rd0) this.d).b() && ((rd0) this.e).b();
+        return ((qd0) this.b).b() && ((qd0) this.c).b() && ((qd0) this.d).b() && ((qd0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -277,18 +277,18 @@ public final class c {
                 int d = descriptor.d(name);
                 i10 = -3;
                 if (d == -3 && p0Var3.c) {
-                    org.telegram.ui.Components.n nVar = json.c;
+                    org.telegram.ui.Components.m mVar = json.c;
                     b1.f fVar = new b1.f(2, descriptor, json);
-                    nVar.getClass();
-                    nVar.getClass();
+                    mVar.getClass();
+                    mVar.getClass();
                     kotlin.jvm.internal.j.e(descriptor, "descriptor");
-                    Map map = (Map) ((ConcurrentHashMap) nVar.a).get(descriptor);
+                    Map map = (Map) ((ConcurrentHashMap) mVar.a).get(descriptor);
                     qe.g gVar = qe.f.a;
                     Object obj = map != null ? map.get(gVar) : null;
                     Object obj2 = obj != null ? obj : null;
                     if (obj2 == null) {
                         obj2 = fVar.invoke();
-                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) nVar.a;
+                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) mVar.a;
                         Object obj3 = concurrentHashMap.get(descriptor);
                         Object obj4 = obj3;
                         if (obj3 == null) {
@@ -592,26 +592,26 @@ public final class c {
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        rd0 rd0Var = (rd0) this.b;
-        if (rd0Var.f == null) {
-            rd0Var.a();
+        qd0 qd0Var = (qd0) this.b;
+        if (qd0Var.f == null) {
+            qd0Var.a();
         }
-        float[] fArr = rd0Var.f;
-        rd0 rd0Var2 = (rd0) this.c;
-        if (rd0Var2.f == null) {
-            rd0Var2.a();
+        float[] fArr = qd0Var.f;
+        qd0 qd0Var2 = (qd0) this.c;
+        if (qd0Var2.f == null) {
+            qd0Var2.a();
         }
-        float[] fArr2 = rd0Var2.f;
-        rd0 rd0Var3 = (rd0) this.d;
-        if (rd0Var3.f == null) {
-            rd0Var3.a();
+        float[] fArr2 = qd0Var2.f;
+        qd0 qd0Var3 = (qd0) this.d;
+        if (qd0Var3.f == null) {
+            qd0Var3.a();
         }
-        float[] fArr3 = rd0Var3.f;
-        rd0 rd0Var4 = (rd0) this.e;
-        if (rd0Var4.f == null) {
-            rd0Var4.a();
+        float[] fArr3 = qd0Var3.f;
+        qd0 qd0Var4 = (qd0) this.e;
+        if (qd0Var4.f == null) {
+            qd0Var4.a();
         }
-        float[] fArr4 = rd0Var4.f;
+        float[] fArr4 = qd0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -776,10 +776,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new rd0();
-        this.c = new rd0();
-        this.d = new rd0();
-        this.e = new rd0();
+        this.b = new qd0();
+        this.c = new qd0();
+        this.d = new qd0();
+        this.e = new qd0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

@@ -79,26 +79,27 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.s3;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.x3;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.va;
 import org.telegram.ui.Components.wa;
-import org.telegram.ui.Components.xa;
 import org.telegram.ui.an;
 import org.telegram.ui.cn;
 import org.telegram.ui.nm;
 import org.telegram.ui.q5;
 import org.telegram.ui.ql;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -118,58 +119,58 @@ public final /* synthetic */ class d0 implements Runnable {
     private final void a() {
         String[] split;
         String[] strArr = (String[]) this.c;
-        k6 k6Var = (k6) this.d;
+        l6 l6Var = (l6) this.d;
         boolean z9 = this.b;
         l2.a0 a0Var = (l2.a0) this.e;
         try {
-            l6.g0 = l6.hm.get(l6.g5, -1);
+            m6.g0 = m6.hm.get(m6.g5, -1);
             if (TextUtils.isEmpty(strArr[0])) {
                 try {
-                    if (k6Var.c != null) {
-                        new File(k6Var.c).delete();
+                    if (l6Var.c != null) {
+                        new File(l6Var.c).delete();
                     }
                 } catch (Exception unused) {
                 }
-                k6Var.c = null;
-                l6.h0 = null;
+                l6Var.c = null;
+                m6.h0 = null;
             } else {
-                l6.h0 = strArr[0];
-                String absolutePath = new File(t0.h(), Utilities.a(l6.h0) + ".wp").getAbsolutePath();
+                m6.h0 = strArr[0];
+                String absolutePath = new File(t0.h(), Utilities.a(m6.h0) + ".wp").getAbsolutePath();
                 try {
-                    String str = k6Var.c;
+                    String str = l6Var.c;
                     if (str != null && !str.equals(absolutePath)) {
-                        new File(k6Var.c).delete();
+                        new File(l6Var.c).delete();
                     }
                 } catch (Exception unused2) {
                 }
-                k6Var.c = absolutePath;
+                l6Var.c = absolutePath;
                 try {
-                    Uri parse = Uri.parse(l6.h0);
-                    k6Var.e = parse.getQueryParameter("slug");
+                    Uri parse = Uri.parse(m6.h0);
+                    l6Var.e = parse.getQueryParameter("slug");
                     String queryParameter = parse.getQueryParameter("mode");
                     if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
                         for (int i7 = 0; i7 < split.length; i7++) {
                             if ("blur".equals(split[i7])) {
-                                k6Var.h = true;
+                                l6Var.h = true;
                             } else if ("motion".equals(split[i7])) {
-                                k6Var.n = true;
+                                l6Var.n = true;
                             }
                         }
                     }
                     Utilities.z(parse.getQueryParameter("intensity"));
-                    k6Var.y = 45;
+                    l6Var.y = 45;
                     try {
                         String queryParameter2 = parse.getQueryParameter("bg_color");
                         if (!TextUtils.isEmpty(queryParameter2)) {
-                            k6Var.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
+                            l6Var.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
                             if (queryParameter2.length() >= 13 && org.telegram.messenger.g0.S1(queryParameter2.charAt(6))) {
-                                k6Var.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
+                                l6Var.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
                             }
                             if (queryParameter2.length() >= 20 && org.telegram.messenger.g0.S1(queryParameter2.charAt(13))) {
-                                k6Var.w = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
+                                l6Var.w = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
                             }
                             if (queryParameter2.length() == 27 && org.telegram.messenger.g0.S1(queryParameter2.charAt(20))) {
-                                k6Var.x = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
+                                l6Var.x = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
                             }
                         }
                     } catch (Exception unused3) {
@@ -177,7 +178,7 @@ public final /* synthetic */ class d0 implements Runnable {
                     try {
                         String queryParameter3 = parse.getQueryParameter("rotation");
                         if (!TextUtils.isEmpty(queryParameter3)) {
-                            k6Var.y = Utilities.z(queryParameter3).intValue();
+                            l6Var.y = Utilities.z(queryParameter3).intValue();
                         }
                     } catch (Exception unused4) {
                     }
@@ -185,21 +186,21 @@ public final /* synthetic */ class d0 implements Runnable {
                     a8.g(th2, true);
                 }
             }
-            if (!z9 && l6.M == null) {
-                l6.K = k6Var;
-                if (l6.I == l6.J) {
-                    l6.T = 2000;
-                    l6.U = SystemClock.elapsedRealtime();
+            if (!z9 && m6.M == null) {
+                m6.K = l6Var;
+                if (m6.I == m6.J) {
+                    m6.T = 2000;
+                    m6.U = SystemClock.elapsedRealtime();
                     org.telegram.messenger.g0.i3(new rc(13), 2100L);
                 }
             }
-            l6.I = k6Var;
-            l6.t1(false, false);
+            m6.I = l6Var;
+            m6.t1(false, false);
         } catch (Exception e10) {
             a8.g(e10, true);
         }
-        if (l6.M == null && !l6.Q) {
-            qp.s1(k6Var.E).x4(k6Var, k6Var.k(false), z9, false);
+        if (m6.M == null && !m6.Q) {
+            qp.s1(l6Var.E).x4(l6Var, l6Var.k(false), z9, false);
         }
         a0Var.run();
     }
@@ -230,7 +231,7 @@ public final /* synthetic */ class d0 implements Runnable {
         Integer num4;
         ij ijVar;
         int i16;
-        g6 g6Var;
+        h6 h6Var;
         ec ecVar;
         SQLitePreparedStatement executeFast2 = null;
         int i17 = 2;
@@ -288,7 +289,7 @@ public final /* synthetic */ class d0 implements Runnable {
                 o0 o0Var = (o0) this.e;
                 boolean z12 = this.b;
                 j4 j4Var = e3Var.a;
-                v4.X(j4Var.l2, 1, j4Var.k1, new d3(e3Var, z12, o0Var, view));
+                u4.X(j4Var.l2, 1, j4Var.k1, new d3(e3Var, z12, o0Var, view));
                 return;
             case 3:
                 r1 r1Var = (r1) this.c;
@@ -301,7 +302,7 @@ public final /* synthetic */ class d0 implements Runnable {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
                         k2 k2Var = t1Var.r;
                         ArrayList arrayList6 = t1Var.n;
-                        int i20 = k2.y1;
+                        int i20 = k2.B1;
                         yr.a0(k2Var.a).v1(str, messages_botresults);
                         r1Var.h = messages_botresults.next_offset;
                         if (z13) {
@@ -853,21 +854,21 @@ public final /* synthetic */ class d0 implements Runnable {
                 return;
             case 27:
                 cn cnVar = (cn) this.c;
-                i6 i6Var = (i6) this.d;
-                k6 k6Var = (k6) this.e;
+                j6 j6Var = (j6) this.d;
+                l6 l6Var = (l6) this.e;
                 boolean z36 = this.b;
-                if (i6Var == null) {
+                if (j6Var == null) {
                     UndoView undoView = cnVar.M3;
-                    l6.K1(k6Var, false, -1, undoView != null ? undoView.getUndoButton() : null);
+                    m6.K1(l6Var, false, -1, undoView != null ? undoView.getUndoButton() : null);
                     return;
                 }
                 cnVar.getClass();
-                i6 k11 = k6Var.k(false);
-                int i36 = i6Var.a;
+                j6 k11 = l6Var.k(false);
+                int i36 = j6Var.a;
                 UndoView undoView2 = cnVar.M3;
-                l6.K1(k6Var, false, i36, undoView2 != null ? undoView2.getUndoButton() : null);
+                m6.K1(l6Var, false, i36, undoView2 != null ? undoView2.getUndoButton() : null);
                 if (z36) {
-                    l6.l0(k6Var, k11, true);
+                    m6.l0(l6Var, k11, true);
                     return;
                 }
                 return;
@@ -902,25 +903,25 @@ public final /* synthetic */ class d0 implements Runnable {
                 spannableStringBuilder.append(' ');
                 i16 = ((f2) cnVar2).currentAccount;
                 k5.q(null, null, 2131744393, new Object[]{Long.valueOf(qp.s1(i16).x7.i.M1(TimeUnit.HOURS))}, spannableStringBuilder);
-                cc[] ccVarArr = new cc[1];
-                q5 q5Var = new q5(ccVarArr, 4);
+                bc[] bcVarArr = new bc[1];
+                q5 q5Var = new q5(bcVarArr, 4);
                 u1[] u1VarArr = new u1[1];
-                u1 s02 = v4.s0(cnVar2, id.M0(2131744374, null), spannableStringBuilder, id.M0(message2.suggested_post.schedule_date == 0 ? 2131748250 : 2131744373, null), false, new u0(nmVar, message2, u1VarArr, ijVar, q5Var, 26));
+                u1 s02 = u4.s0(cnVar2, id.M0(2131744374, null), spannableStringBuilder, id.M0(message2.suggested_post.schedule_date == 0 ? 2131748250 : 2131744373, null), false, new u0(nmVar, message2, u1VarArr, ijVar, q5Var, 26));
                 u1VarArr[0] = s02;
                 s02.setOnDismissListener(q5Var);
                 if (z37 && m10.a == cg.b.a) {
-                    wa a10 = xa.a(cnVar2.getParentActivity());
-                    g6Var = ((f2) cnVar2).resourceProvider;
-                    cc G = new hc(a10, g6Var).G(R.raw.info, 10, id.M0(2131744388, null));
+                    va a10 = wa.a(cnVar2.getParentActivity());
+                    h6Var = ((f2) cnVar2).resourceProvider;
+                    bc G = new gc(a10, h6Var).G(R.raw.info, 10, id.M0(2131744388, null));
                     G.j = 60000;
                     G.k(true);
-                    ccVarArr[0] = G;
+                    bcVarArr[0] = G;
                     return;
                 }
                 return;
             default:
                 an anVar = (an) this.c;
-                anVar.s((org.telegram.ui.ActionBar.r3) this.d, (TLRPC.WallPaper) this.e, this.b);
+                anVar.s((s3) this.d, (TLRPC.WallPaper) this.e, this.b);
                 anVar.p(anVar.h);
                 ql qlVar = anVar.G.l1;
                 if (qlVar == null || (ecVar = qlVar.L) == null) {

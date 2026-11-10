@@ -59,16 +59,16 @@ import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.sn;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.rn;
+import org.telegram.ui.Components.uy;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ky0;
-import org.telegram.ui.q31;
+import org.telegram.ui.ly0;
+import org.telegram.ui.r31;
 import q4.q;
 import r0.k1;
 import r0.m;
@@ -84,9 +84,9 @@ import wh.h;
 import zh.g1;
 import zh.h0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a, ua.a, p, m, q1 {
+public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, cj0, wh.a, ua.a, p, m, q1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -97,7 +97,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
 
     @Override // r0.m
     public k1 S0(View view, k1 k1Var) {
-        ((h0) this.b).n1.j(k1Var);
+        ((h0) this.b).q1.j(k1Var);
         return k1.b;
     }
 
@@ -105,7 +105,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
     public void a(f fVar, List list) {
         int i7;
         g1 g1Var = (g1) this.b;
-        ArrayList arrayList = g1Var.e2;
+        ArrayList arrayList = g1Var.h2;
         Iterator it = list.iterator();
         long j3 = 0;
         while (true) {
@@ -199,7 +199,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
                     Log.d("FirebaseSessions", "Subscriber " + dVar3 + " registered.");
                     a11.a.countDown();
                 }
-                u uVar2 = new u(gVar, b0Var, aVar, xVar, new w9.a(fVar), new w9.a(fVar), dVar2, jVar, new vy(o11, 28), eVar2);
+                u uVar2 = new u(gVar, b0Var, aVar, xVar, new w9.a(fVar), new w9.a(fVar), dVar2, jVar, new uy(o11, 28), eVar2);
                 ba.e eVar3 = uVar2.n;
                 gVar.a();
                 String str2 = gVar.c.b;
@@ -455,16 +455,16 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
 
     /* JADX WARN: Removed duplicated region for block: B:24:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x0122  */
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void f(float f10, float f11, int i7, View view) {
         long j3;
         w0 w0Var = (w0) this.b;
-        LinkedHashMap linkedHashMap = w0Var.d2;
-        v0 v0Var = w0Var.Q1;
-        HashSet hashSet = w0Var.W1;
+        LinkedHashMap linkedHashMap = w0Var.g2;
+        v0 v0Var = w0Var.T1;
+        HashSet hashSet = w0Var.Z1;
         if (view instanceof m8) {
             linkedHashMap.clear();
             w0Var.i1(true);
@@ -483,18 +483,18 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
                 }
                 linkedHashMap.put(valueOf, user);
             }
-            if (hashSet.size() != 11 || w0Var.j2 != 1) {
+            if (hashSet.size() != 11 || w0Var.m2 != 1) {
                 j3 = 1;
-                if (hashSet.size() != wg.r.f() + 1 || w0Var.j2 != 2) {
+                if (hashSet.size() != wg.r.f() + 1 || w0Var.m2 != 2) {
                     v0Var.b(true, hashSet, new r0(w0Var, 1), null);
                     w0Var.n1(true, false);
                     if (chat != null && !t3.t0(chat) && hashSet.contains(Long.valueOf(j10))) {
-                        Context context = w0Var.o1.getContext();
-                        g6 g6Var = w0Var.I0;
-                        q31 q31Var = new q31(w0Var, j10, 4);
+                        Context context = w0Var.r1.getContext();
+                        h6 h6Var = w0Var.I0;
+                        r31 r31Var = new r31(w0Var, j10, 4);
                         r0 r0Var = new r0(w0Var, 2);
                         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, g6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
                         boolean V = t3.V(chat);
                         String M0 = id.M0(V ? 2131753397 : 2131753395, null);
                         u1 u1Var = alertDialog$Builder.a;
@@ -502,7 +502,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
                         u1Var.T = id.M0(V ? 2131753396 : 2131753394, null);
                         alertDialog$Builder.k(id.M0(2131754486, "Add"), new org.telegram.ui.web.a0(17, atomicBoolean, r0Var));
                         alertDialog$Builder.h(id.M0(2131752589, "Cancel"), new v0.j(15));
-                        alertDialog$Builder.j(new u3(18, atomicBoolean, q31Var));
+                        alertDialog$Builder.j(new u3(18, atomicBoolean, r31Var));
                         alertDialog$Builder.p();
                     } else if (chat != null) {
                         w0Var.e1();
@@ -516,17 +516,17 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
                     } else {
                         hashSet.add(Long.valueOf(hashCode));
                     }
-                    if (hashSet.size() == qp.s1(p10.s0).p0 + j3 && w0Var.j2 == 3) {
+                    if (hashSet.size() == qp.s1(p10.s0).p0 + j3 && w0Var.m2 == 3) {
                         hashSet.remove(Long.valueOf(hashCode));
                         w0Var.k1();
                         return;
                     }
-                    v0Var.b(true, hashSet, new r0(w0Var, 3), w0Var.c2);
-                    if (TextUtils.isEmpty(w0Var.f2)) {
+                    v0Var.b(true, hashSet, new r0(w0Var, 3), w0Var.f2);
+                    if (TextUtils.isEmpty(w0Var.i2)) {
                         w0Var.n1(true, false);
                         return;
                     }
-                    w0Var.f2 = null;
+                    w0Var.i2 = null;
                     v0Var.setText("");
                     w0Var.n1(false, false);
                     w0Var.n1(true, true);
@@ -542,7 +542,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -562,7 +562,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
                 }
                 break;
             case 6:
-                ((sn) this.b).run();
+                ((rn) this.b).run();
                 break;
             case 7:
                 ((r0) this.b).run();
@@ -578,7 +578,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
         ui.e eVar = (ui.e) this.b;
         Iterator it = ((Iterable) ((v5.g) ((v5.d) eVar.c)).c(new v0.j(5))).iterator();
         while (it.hasNext()) {
-            ((ky0) eVar.d).J((i) it.next(), 1, false);
+            ((ly0) eVar.d).J((i) it.next(), 1, false);
         }
         return null;
     }
@@ -638,7 +638,7 @@ public final /* synthetic */ class e implements w5.b, u9.d, d5.a, r1, dj0, wh.a,
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

@@ -1,51 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vn implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class vn extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final /* synthetic */ int T;
+    public Object U;
 
-    public /* synthetic */ vn(Object obj, Context context, Object obj2, int i7, Object obj3, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = context;
-        this.e = obj2;
-        this.c = i7;
-        this.f = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ vn(int i7, int i10, int i11, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, i10, context, h6Var);
+        this.T = i11;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.T) {
             case 0:
-                yn ynVar = (yn) this.d;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.e;
-                xn xnVar = (xn) this.f;
-                ynVar.a();
-                v4.D(this.b, g6Var, new l2.q(this.c, xnVar, 6));
+                canvas.save();
+                Path path = (Path) this.U;
+                path.rewind();
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path.addRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild;
+            case 1:
+                canvas.save();
+                Path path2 = (Path) this.U;
+                path2.rewind();
+                RectF rectF2 = org.telegram.messenger.g0.P;
+                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path2.addRoundRect(rectF2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path2);
+                boolean drawChild2 = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild2;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        int i11;
+        switch (this.T) {
+            case 2:
+                k60 k60Var = (k60) this.U;
+                if (this == k60Var.A && (i11 = k60Var.X) > 0) {
+                    i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i11, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
+                }
+                super.onMeasure(i7, i10);
                 break;
             default:
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) this.d;
-                wo woVar = (wo) this.e;
-                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
-                v2Var.dismiss();
-                Activity W = org.telegram.messenger.g0.W(this.b);
-                if (W != null) {
-                    org.telegram.messenger.qp.e1().edit().putBoolean("callmiconstart", woVar.a.q).apply();
-                    org.telegram.ui.Components.voip.y1.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
-                    break;
-                }
+                super.onMeasure(i7, i10);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vn(k60 k60Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(R.drawable.popup_fixed_alert4, i7, context, h6Var);
+        this.T = 2;
+        this.U = k60Var;
     }
 }

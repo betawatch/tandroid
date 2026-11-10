@@ -11,18 +11,18 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.uq0;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.vq0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class c extends pj0 {
-    public final g6 c;
+public final class c extends oj0 {
+    public final h6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
@@ -31,12 +31,12 @@ public final class c extends pj0 {
     public b r;
     public final boolean s;
 
-    public c(int i7, g6 g6Var) {
+    public c(int i7, h6 h6Var) {
         ArrayList arrayList = new ArrayList();
         this.f = arrayList;
         this.s = true;
-        this.c = g6Var;
-        y0 y0Var = new y0(l6.zk, l6.Ak, l6.Bk, l6.Ck, g6Var);
+        this.c = h6Var;
+        y0 y0Var = new y0(m6.zk, m6.Ak, m6.Bk, m6.Ck, h6Var);
         this.h = y0Var;
         y0Var.o = 0.0f;
         y0Var.p = 0.0f;
@@ -58,7 +58,7 @@ public final class c extends pj0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return false;
     }
@@ -90,16 +90,16 @@ public final class c extends pj0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.uq0] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.vq0] */
     /* JADX WARN: Type inference failed for: r1v7, types: [ug.e] */
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         v3 v3Var;
         Context context = viewGroup.getContext();
-        g6 g6Var = this.c;
+        h6 h6Var = this.c;
         if (i7 != 1) {
             if (i7 != 2) {
-                ?? eVar = new e(context, g6Var);
+                ?? eVar = new e(context, h6Var);
                 b bVar = this.r;
                 LimitPreviewView limitPreviewView = eVar.c;
                 limitPreviewView.setParentViewForGradien(bVar);
@@ -109,7 +109,7 @@ public final class c extends pj0 {
                 v3Var = new v3(context, 16);
             }
         } else if (this.s) {
-            ?? uq0Var = new uq0(context, 18);
+            ?? vq0Var = new vq0(context, 18);
             LinearLayout f10 = k5.f(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(ia.e.c(context.getDrawable(R.drawable.other_2x_large), (y0) ia.e.d().b));
@@ -118,11 +118,11 @@ public final class c extends pj0 {
             textView.setText(id.M0(2131751349, null));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            s6.U(textView, l6.G6, g6Var);
+            t6.U(textView, m6.G6, h6Var);
             textView.setTypeface(org.telegram.messenger.g0.o());
             f10.addView(textView, ha.e(-2, -2, 16));
-            uq0Var.addView(f10, ha.e(-2, -2, 17));
-            v3Var = uq0Var;
+            vq0Var.addView(f10, ha.e(-2, -2, 17));
+            v3Var = vq0Var;
         } else {
             v3Var = new v3(context, 64);
         }

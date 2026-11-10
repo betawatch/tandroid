@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u5 implements d60 {
+public final /* synthetic */ class u5 implements e60 {
     public final /* synthetic */ int a;
     public final /* synthetic */ x5 b;
     public final /* synthetic */ org.telegram.messenger.s2 c;
@@ -13,7 +13,7 @@ public final /* synthetic */ class u5 implements d60 {
         this.c = s2Var;
     }
 
-    @Override // org.telegram.ui.d60
+    @Override // org.telegram.ui.e60
     public final void a(int i7) {
         switch (this.a) {
             case 0:

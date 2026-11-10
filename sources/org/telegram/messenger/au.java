@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class au extends View implements org.telegram.ui.Cells.h9 {
     public boolean D;
     public ds E;
     public final int a;
-    public org.telegram.ui.ActionBar.g6 b;
+    public org.telegram.ui.ActionBar.h6 b;
     public ij c;
     public TL_iv.RichMessage d;
     public kv e;
@@ -29,13 +29,13 @@ public final class au extends View implements org.telegram.ui.Cells.h9 {
     public int x;
     public int y;
 
-    public au(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public au(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.x = -1;
         this.y = -1;
         this.D = true;
         this.a = i7;
-        this.b = g6Var;
+        this.b = h6Var;
         qs.i(this);
     }
 
@@ -83,7 +83,7 @@ public final class au extends View implements org.telegram.ui.Cells.h9 {
         canvas.translate(this.f, this.h);
         kv kvVar = this.e;
         kvVar.S(this.f, Math.max(0, (getWidth() - this.e.C) - this.f));
-        kvVar.w.linkColor = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Vc : org.telegram.ui.ActionBar.l6.Uc, kvVar.D);
+        kvVar.w.linkColor = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.Vc : org.telegram.ui.ActionBar.m6.Uc, kvVar.D);
         kvVar.h(canvas, null, height > 0.0f, 0.0f, height);
         if (this.e.C()) {
             this.e.i(canvas, null);
@@ -233,11 +233,11 @@ public final class au extends View implements org.telegram.ui.Cells.h9 {
         invalidate();
     }
 
-    public void setResourcesProvider(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.b = g6Var;
+    public void setResourcesProvider(org.telegram.ui.ActionBar.h6 h6Var) {
+        this.b = h6Var;
         kv kvVar = this.e;
         if (kvVar != null) {
-            kvVar.D = g6Var;
+            kvVar.D = h6Var;
         }
     }
 

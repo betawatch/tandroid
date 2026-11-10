@@ -3,21 +3,21 @@ package kg;
 import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.q4;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l1 extends tt0 {
+public final class l1 extends st0 {
     public final /* synthetic */ int f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l1(Context context, q4 q4Var, int i7) {
-        super(context, q4Var);
+    public /* synthetic */ l1(Context context, r4 r4Var, int i7) {
+        super(context, r4Var);
         this.f0 = i7;
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.st0
     public boolean O() {
         switch (this.f0) {
             case 2:

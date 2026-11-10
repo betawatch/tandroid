@@ -3,10 +3,10 @@ package bi;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.km0;
+import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m6 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -59,16 +59,16 @@ public final class m6 implements View.OnAttachStateChangeListener {
             case 4:
                 break;
             case 5:
-                ((org.telegram.ui.Components.r6) this.b).c(null);
+                ((org.telegram.ui.Components.q6) this.b).c(null);
                 break;
             case 6:
                 ((zh.x1) this.b).a(view);
                 break;
             case 7:
-                org.telegram.ui.Components.y9 y9Var = (org.telegram.ui.Components.y9) this.b;
-                ArrayList arrayList2 = y9Var.c;
+                org.telegram.ui.Components.x9 x9Var = (org.telegram.ui.Components.x9) this.b;
+                ArrayList arrayList2 = x9Var.c;
                 arrayList2.clear();
-                for (View view2 = y9Var.b; view2 != null; view2 = (View) view2.getParent()) {
+                for (View view2 = x9Var.b; view2 != null; view2 = (View) view2.getParent()) {
                     arrayList2.add(0, view2);
                     if (!(view2.getParent() instanceof View)) {
                         break;
@@ -81,14 +81,14 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 ((a5.h) this.b).a();
                 break;
             case 10:
-                ak0 ak0Var = (ak0) this.b;
-                org.telegram.ui.Components.g5 g5Var = ak0Var.t;
-                if (g5Var != null) {
-                    g5Var.a();
+                zj0 zj0Var = (zj0) this.b;
+                org.telegram.ui.Components.f5 f5Var = zj0Var.t;
+                if (f5Var != null) {
+                    f5Var.a();
                 }
-                org.telegram.ui.Components.g5 g5Var2 = ak0Var.u;
-                if (g5Var2 != null) {
-                    g5Var2.a();
+                org.telegram.ui.Components.f5 f5Var2 = zj0Var.u;
+                if (f5Var2 != null) {
+                    f5Var2.a();
                     break;
                 }
                 break;
@@ -169,36 +169,36 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 5:
-                ((org.telegram.ui.Components.r6) this.b).b(null);
+                ((org.telegram.ui.Components.q6) this.b).b(null);
                 break;
             case 6:
                 ((zh.x1) this.b).n(view);
                 break;
             case 7:
-                ((org.telegram.ui.Components.y9) this.b).c.clear();
+                ((org.telegram.ui.Components.x9) this.b).c.clear();
                 break;
             case 8:
-                org.telegram.ui.Components.cc ccVar = (org.telegram.ui.Components.cc) this.b;
-                ccVar.e.removeOnAttachStateChangeListener(this);
-                ccVar.c(0L, false);
+                org.telegram.ui.Components.bc bcVar = (org.telegram.ui.Components.bc) this.b;
+                bcVar.e.removeOnAttachStateChangeListener(this);
+                bcVar.c(0L, false);
                 break;
             case 9:
                 ((a5.h) this.b).b();
                 break;
             case 10:
-                ak0 ak0Var = (ak0) this.b;
-                org.telegram.ui.Components.g5 g5Var = ak0Var.t;
-                if (g5Var != null) {
-                    g5Var.b();
+                zj0 zj0Var = (zj0) this.b;
+                org.telegram.ui.Components.f5 f5Var = zj0Var.t;
+                if (f5Var != null) {
+                    f5Var.b();
                 }
-                org.telegram.ui.Components.g5 g5Var2 = ak0Var.u;
-                if (g5Var2 != null) {
-                    g5Var2.a();
+                org.telegram.ui.Components.f5 f5Var2 = zj0Var.u;
+                if (f5Var2 != null) {
+                    f5Var2.a();
                     break;
                 }
                 break;
             case 11:
-                view.removeCallbacks((Runnable) ((lm0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((km0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 12:

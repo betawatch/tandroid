@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class a51 extends FrameLayout {
     public ValueAnimator a;
@@ -39,10 +39,10 @@ public class a51 extends FrameLayout {
         float f10;
         canvas.save();
         c51 c51Var = this.e;
-        Drawable drawable = c51Var.n1;
-        RectF rectF = c51Var.t1;
-        int L = org.telegram.messenger.g0.L(6.0f) + (c51Var.u1 - c51Var.s0);
-        int L2 = (c51Var.u1 - c51Var.s0) - org.telegram.messenger.g0.L(13.0f);
+        Drawable drawable = c51Var.q1;
+        RectF rectF = c51Var.w1;
+        int L = org.telegram.messenger.g0.L(6.0f) + (c51Var.x1 - c51Var.s0);
+        int L2 = (c51Var.x1 - c51Var.s0) - org.telegram.messenger.g0.L(13.0f);
         int L3 = org.telegram.messenger.g0.L(50.0f) + getMeasuredHeight();
         int i7 = c51Var.s0;
         int i10 = org.telegram.messenger.g0.m;
@@ -64,25 +64,25 @@ public class a51 extends FrameLayout {
         int min2 = translationY2 < f11 ? (int) Math.min(f11, ((r7 - i11) - c51Var.s0) - getTranslationY()) : 0;
         drawable.setBounds(0, i11, getMeasuredWidth(), i13);
         drawable.draw(canvas);
-        if (!c51Var.J1) {
+        if (!c51Var.M1) {
             if (f10 != 1.0f) {
-                org.telegram.ui.ActionBar.l6.t0.setColor(c51Var.w1);
+                org.telegram.ui.ActionBar.m6.t0.setColor(c51Var.z1);
                 rectF.set(c51Var.t0, c51Var.s0 + i11, getMeasuredWidth() - c51Var.t0, org.telegram.messenger.g0.L(24.0f) + c51Var.s0 + i11);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f10, org.telegram.messenger.g0.L(12.0f) * f10, org.telegram.ui.ActionBar.l6.t0);
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f) * f10, org.telegram.messenger.g0.L(12.0f) * f10, org.telegram.ui.ActionBar.m6.t0);
             }
             int L4 = org.telegram.messenger.g0.L(36.0f);
             rectF.set((getMeasuredWidth() - L4) / 2, i12, (getMeasuredWidth() + L4) / 2, org.telegram.messenger.g0.L(4.0f) + i12);
-            org.telegram.ui.ActionBar.l6.t0.setColor(org.telegram.ui.ActionBar.l6.x0(null, c51Var.z1, false));
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.l6.t0);
+            org.telegram.ui.ActionBar.m6.t0.setColor(org.telegram.ui.ActionBar.m6.x0(null, c51Var.C1, false));
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.ui.ActionBar.m6.t0);
         }
         if (min2 > 0) {
-            org.telegram.ui.ActionBar.l6.t0.setColor(c51Var.w1);
+            org.telegram.ui.ActionBar.m6.t0.setColor(c51Var.z1);
         }
         boolean z9 = min2 > org.telegram.messenger.g0.m / 2;
         Boolean bool = this.d;
         if (bool == null || bool.booleanValue() != z9) {
-            boolean z10 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, c51Var.I0)) > 0.721f;
-            boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.l6.w(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.s8, c51Var.I0), 855638016)) > 0.721f;
+            boolean z10 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, c51Var.I0)) > 0.721f;
+            boolean z11 = org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.s8, c51Var.I0), 855638016)) > 0.721f;
             this.d = Boolean.valueOf(z9);
             if (!z9) {
                 z10 = z11;
@@ -97,7 +97,7 @@ public class a51 extends FrameLayout {
         if (motionEvent.getAction() == 0) {
             float y10 = motionEvent.getY();
             c51 c51Var = this.e;
-            if (y10 < c51Var.u1) {
+            if (y10 < c51Var.x1) {
                 c51Var.dismiss();
                 return true;
             }
@@ -117,7 +117,7 @@ public class a51 extends FrameLayout {
         int size = View.MeasureSpec.getSize(i10);
         this.c = true;
         c51 c51Var = this.e;
-        bi.q1 q1Var = c51Var.k1;
+        bi.q1 q1Var = c51Var.n1;
         int i11 = c51Var.t0;
         setPadding(i11, org.telegram.messenger.g0.m, i11, 0);
         this.c = false;
@@ -125,7 +125,7 @@ public class a51 extends FrameLayout {
         if (c51Var.d) {
             L = org.telegram.messenger.g0.L(8.0f);
             c51Var.u0(false);
-            int i12 = c51Var.u1;
+            int i12 = c51Var.x1;
             if (i12 != 0) {
                 float f10 = i12;
                 this.b = f10;
@@ -137,10 +137,10 @@ public class a51 extends FrameLayout {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b, 0.0f);
                 this.a = ofFloat;
-                ofFloat.addUpdateListener(new d60(this, 29));
+                ofFloat.addUpdateListener(new c60(this, 29));
                 this.a.setDuration(250L);
                 this.a.setInterpolator(org.telegram.ui.ActionBar.i1.w);
-                this.a.addListener(new g11(this, 5));
+                this.a.addListener(new f11(this, 5));
                 this.a.start();
             } else if (this.a != null) {
                 setTranslationY(this.b);

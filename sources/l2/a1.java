@@ -4,7 +4,7 @@ import a8.ia;
 import android.util.Pair;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class a1 {
     public final m2.e c;
@@ -31,7 +31,7 @@ public final class a1 {
         this.e = xVar;
     }
 
-    public static x2.g0 o(e2.l1 l1Var, Object obj, long j3, long j10, e2.k1 k1Var, e2.i1 i1Var) {
+    public static x2.f0 o(e2.l1 l1Var, Object obj, long j3, long j10, e2.k1 k1Var, e2.i1 i1Var) {
         l1Var.g(obj, i1Var);
         l1Var.n(i1Var.c, k1Var);
         l1Var.b(obj);
@@ -45,7 +45,7 @@ public final class a1 {
         }
         l1Var.g(obj, i1Var);
         int c10 = i1Var.c(j3);
-        return c10 == -1 ? new x2.g0(obj, j10, i1Var.b(j3)) : new x2.g0(c10, i1Var.e(c10), -1, j10, obj);
+        return c10 == -1 ? new x2.f0(obj, j10, i1Var.b(j3)) : new x2.f0(c10, i1Var.e(c10), -1, j10, obj);
     }
 
     public final x0 a() {
@@ -118,15 +118,15 @@ public final class a1 {
         long j21 = (x0Var.p + y0Var.f) - j3;
         if (y0Var.i) {
             y0 y0Var2 = x0Var.g;
-            x2.g0 g0Var = y0Var2.a;
+            x2.f0 f0Var = y0Var2.a;
             long j22 = y0Var2.d;
-            int d = l1Var.d(l1Var.b(g0Var.a), this.a, this.b, this.g, this.h);
+            int d = l1Var.d(l1Var.b(f0Var.a), this.a, this.b, this.g, this.h);
             if (d != -1) {
                 e2.i1 i1Var = this.a;
                 int i7 = l1Var.f(d, i1Var, true).c;
                 Object obj2 = i1Var.b;
                 obj2.getClass();
-                long j23 = g0Var.d;
+                long j23 = f0Var.d;
                 e2.k1 k1Var = this.b;
                 if (l1Var.m(i7, k1Var, 0L).n == d) {
                     int i10 = i1Var.c;
@@ -167,9 +167,9 @@ public final class a1 {
                     j17 = -9223372036854775807L;
                     j18 = j23;
                 }
-                x2.g0 o4 = o(l1Var, obj, j15, j18, this.b, this.a);
+                x2.f0 o4 = o(l1Var, obj, j15, j18, this.b, this.a);
                 if (j16 != -9223372036854775807L && j22 != -9223372036854775807L) {
-                    int i11 = l1Var.g(g0Var.a, i1Var).g.a;
+                    int i11 = l1Var.g(f0Var.a, i1Var).g.a;
                     i1Var.g.getClass();
                     if (i11 > 0) {
                         i1Var.g(0);
@@ -179,34 +179,34 @@ public final class a1 {
             }
             return null;
         }
-        x2.g0 g0Var2 = y0Var.a;
-        Object obj4 = g0Var2.a;
-        int i12 = g0Var2.e;
+        x2.f0 f0Var2 = y0Var.a;
+        Object obj4 = f0Var2.a;
+        int i12 = f0Var2.e;
         e2.i1 i1Var2 = this.a;
         l1Var.g(obj4, i1Var2);
         boolean z9 = y0Var.h;
-        if (!g0Var2.b()) {
+        if (!f0Var2.b()) {
             if (i12 != -1) {
                 i1Var2.f(i12);
             }
             int e10 = i1Var2.e(i12);
             i1Var2.g(i12);
             if (e10 != i1Var2.g.a(i12).a) {
-                return e(l1Var, g0Var2.a, g0Var2.e, e10, y0Var.f, g0Var2.d, z9);
+                return e(l1Var, f0Var2.a, f0Var2.e, e10, y0Var.f, f0Var2.d, z9);
             }
             l1Var.g(obj4, i1Var2);
             i1Var2.d(i12);
             i1Var2.g.a(i12).getClass();
-            return f(l1Var, g0Var2.a, 0L, -9223372036854775807L, y0Var.f, g0Var2.d, false);
+            return f(l1Var, f0Var2.a, 0L, -9223372036854775807L, y0Var.f, f0Var2.d, false);
         }
-        int i13 = g0Var2.b;
+        int i13 = f0Var2.b;
         int i14 = i1Var2.g.a(i13).a;
         if (i14 == -1) {
             return null;
         }
-        int a10 = i1Var2.g.a(i13).a(g0Var2.c);
+        int a10 = i1Var2.g.a(i13).a(f0Var2.c);
         if (a10 < i14) {
-            return e(l1Var, g0Var2.a, i13, a10, y0Var.d, g0Var2.d, z9);
+            return e(l1Var, f0Var2.a, i13, a10, y0Var.d, f0Var2.d, z9);
         }
         long j24 = y0Var.d;
         if (j24 == -9223372036854775807L) {
@@ -238,20 +238,20 @@ public final class a1 {
             j11 = -9223372036854775807L;
             j12 = j24;
         }
-        int i16 = g0Var2.b;
+        int i16 = f0Var2.b;
         l1Var2.g(obj4, i1Var2);
         i1Var2.d(i16);
         i1Var2.g.a(i16).getClass();
-        return f(l1Var2, g0Var2.a, Math.max(j10, j12), j11, y0Var.d, g0Var2.d, z9);
+        return f(l1Var2, f0Var2.a, Math.max(j10, j12), j11, y0Var.d, f0Var2.d, z9);
     }
 
-    public final y0 d(e2.l1 l1Var, x2.g0 g0Var, long j3, long j10, long j11) {
-        l1Var.g(g0Var.a, this.a);
-        return g0Var.b() ? e(l1Var, g0Var.a, g0Var.b, g0Var.c, j3, g0Var.d, false) : f(l1Var, g0Var.a, j10, j11, j3, g0Var.d, false);
+    public final y0 d(e2.l1 l1Var, x2.f0 f0Var, long j3, long j10, long j11) {
+        l1Var.g(f0Var.a, this.a);
+        return f0Var.b() ? e(l1Var, f0Var.a, f0Var.b, f0Var.c, j3, f0Var.d, false) : f(l1Var, f0Var.a, j10, j11, j3, f0Var.d, false);
     }
 
     public final y0 e(e2.l1 l1Var, Object obj, int i7, int i10, long j3, long j10, boolean z9) {
-        x2.g0 g0Var = new x2.g0(i7, i10, -1, j10, obj);
+        x2.f0 f0Var = new x2.f0(i7, i10, -1, j10, obj);
         e2.i1 i1Var = this.a;
         long a10 = l1Var.g(obj, i1Var).a(i7, i10);
         if (i10 == i1Var.e(i7)) {
@@ -262,7 +262,7 @@ public final class a1 {
         if (a10 != -9223372036854775807L && 0 >= a10) {
             j11 = Math.max(0L, a10 - 1);
         }
-        return new y0(g0Var, j11, -9223372036854775807L, j3, -9223372036854775807L, a10, z9, false, false, false, false);
+        return new y0(f0Var, j11, -9223372036854775807L, j3, -9223372036854775807L, a10, z9, false, false, false, false);
     }
 
     public final y0 f(e2.l1 l1Var, Object obj, long j3, long j10, long j11, long j12, boolean z9) {
@@ -276,12 +276,12 @@ public final class a1 {
         } else if (i1Var.g.a > 0) {
             i1Var.g(0);
         }
-        x2.g0 g0Var = new x2.g0(obj, j12, b10);
-        if (!g0Var.b() && b10 == -1) {
+        x2.f0 f0Var = new x2.f0(obj, j12, b10);
+        if (!f0Var.b() && b10 == -1) {
             z10 = true;
         }
-        boolean j14 = j(l1Var, g0Var);
-        boolean i7 = i(l1Var, g0Var, z10);
+        boolean j14 = j(l1Var, f0Var);
+        boolean i7 = i(l1Var, f0Var, z10);
         if (b10 != -1) {
             i1Var.g(b10);
         }
@@ -295,7 +295,7 @@ public final class a1 {
             j13 = -9223372036854775807L;
         }
         long j15 = (j13 == -9223372036854775807L || j13 == Long.MIN_VALUE) ? i1Var.d : j13;
-        return new y0(g0Var, (j15 == -9223372036854775807L || j3 < j15) ? j3 : Math.max(0L, j15 - 1), j10, j11, j13, j15, z9, false, z10, j14, i7);
+        return new y0(f0Var, (j15 == -9223372036854775807L || j3 < j15) ? j3 : Math.max(0L, j15 - 1), j10, j11, j13, j15, z9, false, z10, j14, i7);
     }
 
     public final x0 g() {
@@ -304,33 +304,33 @@ public final class a1 {
 
     public final y0 h(e2.l1 l1Var, y0 y0Var) {
         long j3;
-        x2.g0 g0Var = y0Var.a;
-        boolean b10 = g0Var.b();
-        int i7 = g0Var.e;
+        x2.f0 f0Var = y0Var.a;
+        boolean b10 = f0Var.b();
+        int i7 = f0Var.e;
         boolean z9 = !b10 && i7 == -1;
-        int i10 = g0Var.b;
-        boolean j10 = j(l1Var, g0Var);
-        boolean i11 = i(l1Var, g0Var, z9);
-        Object obj = g0Var.a;
+        int i10 = f0Var.b;
+        boolean j10 = j(l1Var, f0Var);
+        boolean i11 = i(l1Var, f0Var, z9);
+        Object obj = f0Var.a;
         e2.i1 i1Var = this.a;
         l1Var.g(obj, i1Var);
-        if (g0Var.b() || i7 == -1) {
+        if (f0Var.b() || i7 == -1) {
             j3 = -9223372036854775807L;
         } else {
             i1Var.d(i7);
             j3 = 0;
         }
-        long a10 = g0Var.b() ? i1Var.a(i10, g0Var.c) : (j3 == -9223372036854775807L || j3 == Long.MIN_VALUE) ? i1Var.d : j3;
-        if (g0Var.b()) {
+        long a10 = f0Var.b() ? i1Var.a(i10, f0Var.c) : (j3 == -9223372036854775807L || j3 == Long.MIN_VALUE) ? i1Var.d : j3;
+        if (f0Var.b()) {
             i1Var.g(i10);
         } else if (i7 != -1) {
             i1Var.g(i7);
         }
-        return new y0(g0Var, y0Var.b, y0Var.c, y0Var.d, j3, a10, y0Var.g, false, z9, j10, i11);
+        return new y0(f0Var, y0Var.b, y0Var.c, y0Var.d, j3, a10, y0Var.g, false, z9, j10, i11);
     }
 
-    public final boolean i(e2.l1 l1Var, x2.g0 g0Var, boolean z9) {
-        int b10 = l1Var.b(g0Var.a);
+    public final boolean i(e2.l1 l1Var, x2.f0 f0Var, boolean z9) {
+        int b10 = l1Var.b(f0Var.a);
         if (!l1Var.m(l1Var.f(b10, this.a, false).c, this.b, 0L).i) {
             if (l1Var.d(b10, this.a, this.b, this.g, this.h) == -1 && z9) {
                 return true;
@@ -339,9 +339,9 @@ public final class a1 {
         return false;
     }
 
-    public final boolean j(e2.l1 l1Var, x2.g0 g0Var) {
-        boolean z9 = !g0Var.b() && g0Var.e == -1;
-        Object obj = g0Var.a;
+    public final boolean j(e2.l1 l1Var, x2.f0 f0Var) {
+        boolean z9 = !f0Var.b() && f0Var.e == -1;
+        Object obj = f0Var.a;
         if (z9) {
             if (l1Var.m(l1Var.g(obj, this.a).c, this.b, 0L).o == l1Var.b(obj)) {
                 return true;
@@ -373,7 +373,7 @@ public final class a1 {
         this.d.d(new z0(this, p10, x0Var2 == null ? null : x0Var2.g.a, 0));
     }
 
-    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, x2.e1] */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, x2.d1] */
     public final void m(long j3) {
         x0 x0Var = this.l;
         if (x0Var != null) {
@@ -420,7 +420,7 @@ public final class a1 {
         return i7;
     }
 
-    public final x2.g0 p(e2.l1 l1Var, Object obj, long j3) {
+    public final x2.f0 p(e2.l1 l1Var, Object obj, long j3) {
         long q10;
         int b10;
         Object obj2 = obj;
@@ -541,12 +541,12 @@ public final class a1 {
                 y0 c10 = c(l1Var, x0Var2, j3);
                 if (c10 != null) {
                     long j13 = c10.b;
-                    x2.g0 g0Var = y0Var.a;
+                    x2.f0 f0Var = y0Var.a;
                     long j14 = y0Var.c;
                     j12 = -9223372036854775807L;
                     long j15 = y0Var.b;
                     i7 = 0;
-                    if (g0Var.equals(c10.a)) {
+                    if (f0Var.equals(c10.a)) {
                         if (j15 != j13) {
                             if (j14 != -9223372036854775807L) {
                                 long j16 = c10.c;

@@ -1,9 +1,9 @@
 package ch;
 
 import bi.x5;
-import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.ob0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class s implements Runnable {
                         } catch (Exception unused) {
                         }
                     }
-                    pb0 pb0Var = b0Var.p;
-                    if (pb0Var != null) {
-                        pb0Var.run();
+                    ob0 ob0Var = b0Var.p;
+                    if (ob0Var != null) {
+                        ob0Var.run();
                         break;
                     }
                 }

@@ -1,97 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class xw0 extends Drawable implements org.telegram.ui.ActionBar.k5 {
-    public final org.telegram.ui.Components.i6 a;
-    public final Paint b;
-    public int c;
-    public float d;
-    public float e;
-    public final org.telegram.ui.Cells.j0 f;
-    public org.telegram.ui.Cells.t0 h;
+public final class xw0 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final int f;
+    public int g;
+    public String h;
 
-    public xw0(String str) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.d = 1.0f;
-        this.e = 1.0f;
-        this.f = new org.telegram.ui.Cells.j0(this);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false);
-        this.a = i6Var;
-        i6Var.setCallback(new vq(1, this));
-        i6Var.t(str, true, true);
-        i6Var.w(org.telegram.messenger.g0.L(11.0f));
-        i6Var.b = 17;
-        paint.setColor(520093696);
+    public xw0(int i7, String str, int i10, Runnable runnable) {
+        this(i7, str, null, null, null, i10, runnable);
     }
 
-    public final void a(int i7) {
-        Paint paint = this.b;
-        if (paint.getColor() != i7) {
-            paint.setColor(i7);
-            invalidateSelf();
+    public final void a(String str) {
+        this.h = str;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof xw0) && this.f == ((xw0) obj).f;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.f(serializedData.toByteArray());
+    }
+
+    public xw0(int i7, String str, String str2, int i10, Runnable runnable) {
+        this(i7, str, null, str2, null, i10, runnable);
+    }
+
+    public xw0(int i7, String str, String str2, String str3, int i10, Runnable runnable) {
+        this(i7, str, str2, str3, null, i10, runnable);
+    }
+
+    public xw0(int i7, String str, String str2, String str3, String str4, int i10, Runnable runnable) {
+        this.f = i7;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i10;
+        if (str3 != null && str4 != null) {
+            this.d = new String[]{str3, str4};
+        } else if (str3 != null) {
+            this.d = new String[]{str3};
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f10 = this.d * this.e;
-        if (f10 <= 0.0f) {
-            return;
-        }
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(getBounds());
-        canvas.save();
-        float a10 = this.f.a(0.1f);
-        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-        Paint paint = this.b;
-        int alpha = paint.getAlpha();
-        paint.setAlpha((int) (alpha * f10));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(20.0f), paint);
-        paint.setAlpha(alpha);
-        int i7 = this.c;
-        org.telegram.ui.Components.i6 i6Var = this.a;
-        i6Var.u(i7);
-        i6Var.B = (int) (f10 * 255.0f);
-        i6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        i6Var.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return (int) (this.d * 255.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(17.33f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.a.d + org.telegram.messenger.g0.L(11.0f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.d = i7 / 255.0f;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

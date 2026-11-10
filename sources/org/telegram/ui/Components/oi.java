@@ -1,26 +1,57 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.vc1;
+import org.telegram.ui.wc1;
+import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class oi extends v4.c0 {
-    public final /* synthetic */ ei.h r;
+public final class oi extends org.telegram.ui.Cells.ua {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ oj0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(ei.h hVar, Context context) {
-        super(context);
-        this.r = hVar;
+    public /* synthetic */ oi(oj0 oj0Var, Context context, int i7) {
+        super(context, 5);
+        this.x = i7;
+        this.y = oj0Var;
     }
 
-    @Override // v4.c0
-    public final int k(int i7, View view) {
-        return org.telegram.messenger.k5.B(7.0f, ((qi) this.r.R).n.getPaddingTop(), super.k(i7, view));
+    @Override // org.telegram.ui.Cells.ua
+    public final void a(int i7, Object obj) {
+        switch (this.x) {
+            case 0:
+                q0.a aVar = ((pi) ((ka) this.y).f).y;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
+                }
+                break;
+            case 1:
+                WallpapersListActivity.w0(((vc1) this.y).d, this, obj, i7);
+                break;
+            default:
+                ((wc1) this.y).E.presentFragment(new x71(obj, null, true));
+                break;
+        }
     }
 
-    @Override // v4.c0
-    public final int m(int i7) {
-        return super.m(i7) * 2;
+    @Override // org.telegram.ui.Cells.ua
+    public boolean b(Object obj, int i7) {
+        switch (this.x) {
+            case 1:
+                return WallpapersListActivity.x0(((vc1) this.y).d, this, obj, i7);
+            default:
+                return super.b(obj, i7);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oi(ka kaVar, Context context) {
+        super(context, 1);
+        this.x = 0;
+        this.y = kaVar;
     }
 }

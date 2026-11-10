@@ -6,22 +6,22 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public final RectF d;
-    public final /* synthetic */ g6 e;
+    public final /* synthetic */ h6 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(Context context, g6 g6Var) {
+    public a(Context context, h6 h6Var) {
         super(context);
-        this.e = g6Var;
+        this.e = h6Var;
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
@@ -30,19 +30,19 @@ public final class a extends View {
         this.c = paint3;
         this.d = new RectF();
         paint2.setColor(-1);
-        paint.setColor(l6.w0(l6.d6, g6Var));
-        paint3.setColor(l6.w0(l6.kk, g6Var));
+        paint.setColor(m6.w0(m6.d6, h6Var));
+        paint3.setColor(m6.w0(m6.kk, h6Var));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int i7 = l6.d6;
-        g6 g6Var = this.e;
-        int w02 = l6.w0(i7, g6Var);
+        int i7 = m6.d6;
+        h6 h6Var = this.e;
+        int w02 = m6.w0(i7, h6Var);
         Paint paint = this.a;
         paint.setColor(w02);
-        int w03 = l6.w0(l6.kk, g6Var);
+        int w03 = m6.w0(m6.kk, h6Var);
         Paint paint2 = this.c;
         paint2.setColor(w03);
         float width = getWidth();

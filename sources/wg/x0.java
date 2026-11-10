@@ -6,9 +6,9 @@ import org.telegram.messenger.ui;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.pg0;
+import org.telegram.ui.qg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,26 +28,26 @@ public final /* synthetic */ class x0 implements Runnable {
                 f1Var.j1(true);
                 break;
             case 1:
-                f1Var.V1.setVisibility(8);
+                f1Var.Y1.setVisibility(8);
                 break;
             case 2:
                 f1Var.e1();
                 f1Var.p1(true, false);
                 break;
             case 3:
-                pg0 pg0Var = f1Var.R1;
-                pg0Var.b.r(id.M0(2131745836, null), true);
+                qg0 qg0Var = f1Var.U1;
+                qg0Var.b.r(id.M0(2131745836, null), true);
                 break;
             case 4:
-                pg0 pg0Var2 = f1Var.R1;
-                pg0Var2.b.r(id.M0(2131749650, null), true);
+                qg0 qg0Var2 = f1Var.U1;
+                qg0Var2.b.r(id.M0(2131749650, null), true);
                 break;
             case 5:
                 f1Var.e1();
                 f1Var.p1(true, false);
                 break;
             case 6:
-                ArrayList arrayList = f1Var.b2;
+                ArrayList arrayList = f1Var.e2;
                 if (arrayList.isEmpty()) {
                     arrayList.addAll(ui.b0(f1Var.a).i1);
                     f1Var.o1(true, true);
@@ -55,14 +55,14 @@ public final /* synthetic */ class x0 implements Runnable {
                 }
                 break;
             case 7:
-                f1Var.V1.setVisibility(8);
+                f1Var.Y1.setVisibility(8);
                 break;
             case 8:
                 f1Var.e1();
                 f1Var.p1(true, false);
                 break;
             case 9:
-                f2 f2Var = f1Var.o1;
+                f2 f2Var = f1Var.r1;
                 if (f2Var != null) {
                     d2 d2Var = new d2();
                     d2Var.a = true;

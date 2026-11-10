@@ -20,12 +20,12 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.gc1;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.zg0;
+import org.telegram.ui.hc1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean D;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.y S;
     public final Paint T;
-    public final ah0 U;
+    public final zg0 U;
     public final Drawable V;
     public final o0 W;
     public final FabBackgroundDrawable a;
@@ -57,8 +57,8 @@ public final class e extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final ic n;
-    public final ic r;
+    public final hc n;
+    public final hc r;
     public b s;
     public final int w;
     public float x;
@@ -67,8 +67,8 @@ public final class e extends View {
     public e(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new ic(this);
-        this.r = new ic(this);
+        this.n = new hc(this);
+        this.r = new hc(this);
         this.D = true;
         this.E = true;
         this.M = new Rect();
@@ -110,15 +110,15 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        ah0 ah0Var = new ah0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
-        this.U = ah0Var;
-        ah0Var.K(1);
-        ah0Var.P(90);
-        ah0Var.R(this);
+        zg0 zg0Var = new zg0(R.raw.call_accept, org.telegram.messenger.g0.L(48.0f), org.telegram.messenger.g0.L(48.0f), true, null);
+        this.U = zg0Var;
+        zg0Var.K(1);
+        zg0Var.P(90);
+        zg0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.y j02 = l6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
+        org.telegram.ui.Cells.y j02 = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, i0.a.o(-1, 76));
         this.S = j02;
         j02.setCallback(this);
     }
@@ -340,8 +340,8 @@ public final class e extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            ic icVar = this.n;
-            ic icVar2 = this.r;
+            hc hcVar = this.n;
+            hc hcVar2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -360,7 +360,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y10) < f10 || this.J > this.L * 0.8f)) {
-                            ((gc1) this.Q).b();
+                            ((hc1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -368,35 +368,35 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y10) < f10 || (-this.K) > this.L * 0.8f)) {
-                            ((gc1) this.Q).a();
+                            ((hc1) this.Q).a();
                         }
                     }
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.F = false;
-                icVar2.c(false);
-                icVar.c(false);
+                hcVar2.c(false);
+                hcVar.c(false);
                 setPressed(false);
                 return false;
             }
             motionEvent.getX();
             this.H = motionEvent.getY();
             if (this.O == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = l6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.R ? l6.x0(null, l6.i6, false) : -51130);
+                this.S = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, this.R ? m6.x0(null, m6.i6, false) : -51130);
                 this.F = true;
                 this.G = true;
-                icVar2.c(true);
-                icVar.c(false);
+                hcVar2.c(true);
+                hcVar.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
             }
             if (this.P == null && this.M.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = l6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
+                this.S = m6.j0(org.telegram.messenger.g0.L(52.0f), 0, -11677354);
                 this.F = true;
                 this.G = false;
-                icVar2.c(false);
-                icVar.c(true);
+                hcVar2.c(false);
+                hcVar.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.P;
                 if (valueAnimator != null) {

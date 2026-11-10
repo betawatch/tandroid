@@ -15,7 +15,7 @@ import c8.j9;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n extends View {
     public final Paint a;
@@ -60,7 +60,7 @@ public final class n extends View {
         }
         int HSVToColor = Color.HSVToColor(fArr);
         q qVar = this.n;
-        qVar.m1 = HSVToColor;
+        qVar.p1 = HSVToColor;
         qVar.I0(HSVToColor, 0);
         invalidate();
     }
@@ -91,7 +91,7 @@ public final class n extends View {
         drawable.setBounds(i7, i10, (int) (a10 + L + i11), (int) (a11 + L + i11));
         drawable.draw(canvas);
         canvas.drawCircle(a10, a11, L, paint);
-        tg.y0.A1(a10, a11, strokeWidth, i0.a.o(this.n.m1, qs.e4), canvas);
+        tg.y0.A1(a10, a11, strokeWidth, i0.a.o(this.n.p1, qs.e4), canvas);
     }
 
     @Override // android.view.View

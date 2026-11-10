@@ -5,7 +5,7 @@ import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y3 implements c20 {
     public final /* synthetic */ int a;
@@ -37,9 +37,9 @@ public final /* synthetic */ class y3 implements c20 {
                 k7 k7Var2 = this.b;
                 k7Var2.getClass();
                 if (stargiftupgradepreview != null) {
-                    k7Var2.g3 = stargiftupgradepreview.sample_attributes;
-                    k7Var2.h3 = stargiftupgradepreview.prices;
-                    k7Var2.i3 = stargiftupgradepreview.next_prices;
+                    k7Var2.j3 = stargiftupgradepreview.sample_attributes;
+                    k7Var2.k3 = stargiftupgradepreview.prices;
+                    k7Var2.l3 = stargiftupgradepreview.next_prices;
                     k7Var2.Z1();
                     break;
                 }
@@ -47,11 +47,11 @@ public final /* synthetic */ class y3 implements c20 {
             default:
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 k7 k7Var3 = this.b;
-                k7Var3.F2 = false;
-                k7Var3.G2 = true;
+                k7Var3.I2 = false;
+                k7Var3.J2 = true;
                 if (savedStarGift != null) {
-                    k7Var3.e3 = Boolean.valueOf(savedStarGift.unsaved);
-                    ij ijVar = k7Var3.z2;
+                    k7Var3.h3 = Boolean.valueOf(savedStarGift.unsaved);
+                    ij ijVar = k7Var3.C2;
                     if (ijVar != null && (message = ijVar.k) != null) {
                         TLRPC.MessageAction messageAction = message.action;
                         if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {

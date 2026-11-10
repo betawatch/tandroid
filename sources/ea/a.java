@@ -48,10 +48,10 @@ import da.l;
 import da.l0;
 import da.l1;
 import da.l2;
-import da.m;
 import da.m0;
 import da.m1;
 import da.m2;
+import da.n;
 import da.n0;
 import da.n1;
 import da.n2;
@@ -100,13 +100,13 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.Components.n;
+import org.telegram.ui.Components.m;
 import pa.d;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class a {
-    public static final n a;
+    public static final m a;
 
     static {
         d dVar = new d();
@@ -134,7 +134,7 @@ public final class a {
         v vVar = v.a;
         dVar.b(q2.class, vVar);
         dVar.b(t0.class, vVar);
-        m mVar = m.a;
+        da.m mVar = da.m.a;
         dVar.b(k2.class, mVar);
         dVar.b(v0.class, mVar);
         o oVar = o.a;
@@ -164,7 +164,7 @@ public final class a {
         q qVar = q.a;
         dVar.b(f2.class, qVar);
         dVar.b(z0.class, qVar);
-        da.n nVar = da.n.a;
+        n nVar = n.a;
         dVar.b(d2.class, nVar);
         dVar.b(x0.class, nVar);
         c cVar = c.a;
@@ -195,7 +195,7 @@ public final class a {
         dVar.b(w1.class, fVar);
         dVar.b(j0.class, fVar);
         dVar.d = true;
-        a = new n(dVar);
+        a = new m(dVar);
     }
 
     public static c1 a(JsonReader jsonReader) {

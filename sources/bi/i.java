@@ -20,19 +20,19 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.tq;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.sq;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.e40;
-import org.telegram.ui.oa1;
-import org.telegram.ui.tv0;
-import org.telegram.ui.yw;
+import org.telegram.ui.f40;
+import org.telegram.ui.pa1;
+import org.telegram.ui.uv0;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, dj0, dp, w5.b, v5.e, ua.a {
+public final /* synthetic */ class i implements pa1, org.telegram.ui.ActionBar.r1, org.telegram.messenger.lc, cj0, dp, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -47,7 +47,7 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.dp
     public void a(boolean z9, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        org.telegram.messenger.g0.h3(new o((tv0) this.c, this.b, tL_chatAdminRights, str, z9, (yw) this.d));
+        org.telegram.messenger.g0.h3(new o((uv0) this.c, this.b, tL_chatAdminRights, str, z9, (zw) this.d));
     }
 
     @Override // v5.e
@@ -81,7 +81,7 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
         ((x9.a) bVar.get()).d((String) this.c, this.b, (da.p1) this.d);
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public void f(float f10, float f11, int i7, View view) {
         ProfileActivity.h0((ProfileActivity) this.c, (Context) this.d, this.b, view, i7, f10, f11);
     }
@@ -112,7 +112,7 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -149,18 +149,18 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
             case 3:
             case 4:
             default:
-                e40 e40Var = (e40) this.c;
-                qp.s1(e40Var.k1.a).n(e40Var.l1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.f2) e40Var.Z1.M().getFragmentStack().get(e40Var.Z1.M().getFragmentStack().size() - 1), new r3(e40Var, this.b, 26));
+                f40 f40Var = (f40) this.c;
+                qp.s1(f40Var.n1.a).n(f40Var.l1(), (TLRPC.User) this.d, null, (org.telegram.ui.ActionBar.f2) f40Var.c2.M().getFragmentStack().get(f40Var.c2.M().getFragmentStack().size() - 1), new r3(f40Var, this.b, 26));
                 break;
             case 5:
-                tq tqVar = (tq) this.c;
+                sq sqVar = (sq) this.c;
                 fi.d dVar = (fi.d) this.d;
                 if (!dVar.Q) {
                     dVar.setLoading(true);
                     TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = new TL_phone.getGroupCallStreamRtmpUrl();
-                    getgroupcallstreamrtmpurl.peer = qp.s1(tqVar.a).j1(this.b);
+                    getgroupcallstreamrtmpurl.peer = qp.s1(sqVar.a).j1(this.b);
                     getgroupcallstreamrtmpurl.revoke = true;
-                    ConnectionsManager.getInstance(tqVar.a).sendRequest(getgroupcallstreamrtmpurl, new pq(tqVar, dVar, 0));
+                    ConnectionsManager.getInstance(sqVar.a).sendRequest(getgroupcallstreamrtmpurl, new oq(sqVar, dVar, 0));
                     break;
                 }
                 break;
@@ -179,7 +179,7 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
         return null;
     }
 
-    @Override // org.telegram.ui.oa1
+    @Override // org.telegram.ui.pa1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((z) this.c).u0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
@@ -199,7 +199,7 @@ public final /* synthetic */ class i implements oa1, org.telegram.ui.ActionBar.r
     public /* synthetic */ void t0(int i7, Drawable drawable) {
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

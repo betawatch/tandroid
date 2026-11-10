@@ -61,8 +61,8 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.hr0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.ir0;
 import org.xml.sax.Attributes;
 import pb.h;
 import q2.f;
@@ -74,7 +74,7 @@ import w7.o;
 import w7.q;
 import w7.s;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d, IMapsProvider, gh.a, l1, m, u, x5.a {
     public static final /* synthetic */ a b = new a(14);
@@ -113,11 +113,11 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
             if (z9) {
                 String a10 = bg.m.a("data-document-id", attributes);
                 if (a10 != null) {
-                    editable.setSpan(new r5(Long.parseLong(a10), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
+                    editable.setSpan(new q5(Long.parseLong(a10), (Paint.FontMetricsInt) null), editable.length(), editable.length(), 17);
                     return true;
                 }
             } else {
-                Object[] spans = editable.getSpans(0, editable.length(), r5.class);
+                Object[] spans = editable.getSpans(0, editable.length(), q5.class);
                 if (spans.length != 0) {
                     int length = spans.length;
                     while (true) {
@@ -132,7 +132,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
                         length--;
                     }
                 }
-                Object obj2 = (r5) obj;
+                Object obj2 = (q5) obj;
                 if (obj2 != null) {
                     int spanStart = editable.getSpanStart(obj2);
                     editable.removeSpan(obj2);
@@ -369,7 +369,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hr0 N1() {
+    public /* synthetic */ ir0 N1() {
         return null;
     }
 
@@ -607,7 +607,7 @@ public final class a implements k, eg.a, g, fg.a, d, ja.a, b, Continuation, u9.d
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n0(r5 r5Var) {
+    public /* synthetic */ boolean n0(q5 q5Var) {
         return false;
     }
 

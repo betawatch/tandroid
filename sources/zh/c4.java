@@ -16,25 +16,25 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.r5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c4 extends View {
     public final m7 a;
-    public final g6 b;
+    public final h6 b;
     public float c;
     public float d;
     public Drawable e;
 
-    public c4(int i7, Context context, g6 g6Var) {
+    public c4(int i7, Context context, h6 h6Var) {
         super(context);
-        this.b = g6Var;
-        m7 m7Var = new m7(i7, this, g6Var);
+        this.b = h6Var;
+        m7 m7Var = new m7(i7, this, h6Var);
         this.a = m7Var;
         m7Var.y.setCallback(this);
         qs.i(this);
@@ -42,7 +42,7 @@ public final class c4 extends View {
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z9) {
         m7 m7Var = this.a;
-        g5 g5Var = m7Var.e;
+        f5 f5Var = m7Var.e;
         b1 b1Var = m7Var.j;
         ImageReceiver imageReceiver = m7Var.d;
         m7Var.N = false;
@@ -58,9 +58,9 @@ public final class c4 extends View {
         paint.setShader(null);
         TL_stars.starGiftAttributePattern stargiftattributepattern = m7Var.l;
         if (stargiftattributepattern != null) {
-            g5Var.i(stargiftattributepattern.document, false);
+            f5Var.i(stargiftattributepattern.document, false);
         } else {
-            g5Var.g(null, false);
+            f5Var.g(null, false);
         }
         TL_stars.starGiftAttributeModel stargiftattributemodel2 = m7Var.m;
         if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
@@ -72,11 +72,11 @@ public final class c4 extends View {
         boolean z10 = tL_starGiftUnique.burned;
         m7Var.L = z10;
         if (z10) {
-            int w02 = l6.w0(l6.q7, m7Var.c);
+            int w02 = m6.w0(m6.q7, m7Var.c);
             Paint paint2 = (Paint) b1Var.b;
             paint2.setShader(null);
             paint2.setColor(w02);
-            m7Var.M = s6.b;
+            m7Var.M = t6.b;
             b1Var.f(11, id.M0(2131749893, null), true);
         } else {
             b1Var.e(m7Var.k, true, false);
@@ -84,10 +84,10 @@ public final class c4 extends View {
         }
         if (m7Var.S) {
             imageReceiver.P();
-            g5Var.a();
+            f5Var.a();
             m7Var.y.d.P();
         }
-        m7Var.O = org.telegram.messenger.camera.q.C(64.0f, (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m, (int) (org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.Q0() * 0.6f : (org.telegram.messenger.g0.q.x * 0.62f) - org.telegram.messenger.g0.L(34.0f)));
+        m7Var.O = org.telegram.messenger.camera.q.C(64.0f, (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m, (int) (org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.Q0() * 0.6f : (org.telegram.messenger.g0.q.x * 0.62f) - org.telegram.messenger.g0.L(34.0f)));
         if (!org.telegram.messenger.g0.Q1()) {
             m7Var.O = (int) (m7Var.O * 1.2f);
         }
@@ -126,18 +126,18 @@ public final class c4 extends View {
         m7Var.e.b();
         i0 i0Var = m7Var.y;
         i0Var.d.R();
-        r5.release((View) null, i0Var.q);
+        q5.release((View) null, i0Var.q);
         i0Var.q = null;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
-        g6 g6Var = this.b;
-        if (g6Var != null) {
-            g6Var.b(0.0f, getY(), getMeasuredWidth(), height);
+        h6 h6Var = this.b;
+        if (h6Var != null) {
+            h6Var.b(0.0f, getY(), getMeasuredWidth(), height);
         } else {
-            l6.r(0.0f, getY(), getMeasuredWidth(), height);
+            m6.r(0.0f, getY(), getMeasuredWidth(), height);
         }
         m7 m7Var = this.a;
         this.c = (getWidth() - ((int) m7Var.T.f)) / 2.0f;

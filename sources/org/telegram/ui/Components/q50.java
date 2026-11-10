@@ -2,48 +2,127 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class q50 extends cv0 {
-    public final /* synthetic */ int K;
+public final class q50 extends oj0 {
+    public final /* synthetic */ x50 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q50(Context context, View view, int i7, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, view, i7, g6Var);
-        this.K = i10;
+    public q50(x50 x50Var) {
+        this.c = x50Var;
     }
 
-    @Override // org.telegram.ui.Components.cv0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.K) {
-            case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().P0(false);
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().P0(false);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+    @Override // org.telegram.ui.Components.oj0
+    public final boolean D(v4.d1 d1Var) {
+        int i7 = d1Var.f;
+        return i7 == 3 || i7 == 1;
+    }
+
+    public final TLObject E(int i7) {
+        x50 x50Var = this.c;
+        if (x50Var.g2 == null) {
+            return (TLObject) x50Var.Y1.get(i7 - x50Var.S1);
+        }
+        TLRPC.Dialog dialog = (TLRPC.Dialog) x50Var.h2.get(i7 - x50Var.S1);
+        return org.telegram.messenger.m5.E(dialog.id) ? org.telegram.messenger.qp.s1(x50Var.a).a2(Long.valueOf(dialog.id)) : org.telegram.messenger.qp.s1(x50Var.a).M0(Long.valueOf(-dialog.id));
+    }
+
+    @Override // v4.g0
+    public final int b() {
+        return this.c.W1;
+    }
+
+    @Override // v4.g0
+    public final int d(int i7) {
+        x50 x50Var = this.c;
+        if (i7 == x50Var.R1) {
+            return 1;
+        }
+        x50Var.getClass();
+        if (i7 == 0) {
+            return 2;
+        }
+        if (i7 >= x50Var.S1 && i7 < x50Var.T1) {
+            return 3;
+        }
+        if (i7 == x50Var.V1) {
+            return 4;
+        }
+        return i7 == x50Var.U1 ? 5 : 0;
+    }
+
+    @Override // v4.g0
+    public final void t(v4.d1 d1Var, int i7) {
+        int i10 = d1Var.f;
+        View view = d1Var.a;
+        if (i10 == 2) {
+            view.requestLayout();
+            return;
+        }
+        if (i10 != 3) {
+            return;
+        }
+        org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) view;
+        TLObject E = E(i7);
+        Object object = h4Var.getObject();
+        long j3 = object instanceof TLRPC.User ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
+        x50 x50Var = this.c;
+        h4Var.e(E, null, null, i7 != x50Var.T1);
+        long j10 = E instanceof TLRPC.User ? ((TLRPC.User) E).id : E instanceof TLRPC.Chat ? -((TLRPC.Chat) E).id : 0L;
+        if (j10 != 0) {
+            a0.h hVar = x50Var.N1;
+            if (hVar == null || hVar.h(j10) < 0) {
+                h4Var.c(x50Var.Z1.h(j10) >= 0, j3 == j10);
+                h4Var.setCheckBoxEnabled(true);
+            } else {
+                h4Var.c(true, false);
+                h4Var.setCheckBoxEnabled(false);
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.cv0, android.view.View
-    public void setVisibility(int i7) {
-        switch (this.K) {
-            case 2:
-                super.setVisibility(i7);
-                if (i7 != 0) {
-                    e(false, false);
-                    break;
+    @Override // v4.g0
+    public final v4.d1 x(ViewGroup viewGroup, int i7) {
+        View view;
+        Context context = viewGroup.getContext();
+        if (i7 != 2) {
+            x50 x50Var = this.c;
+            int i10 = 0;
+            if (i7 == 3) {
+                view = new org.telegram.ui.Cells.h4(context, 1, 0, x50Var.g2 != null);
+            } else if (i7 != 4) {
+                View view2 = null;
+                boolean z9 = false;
+                if (i7 != 5) {
+                    org.telegram.ui.Cells.x4 x4Var = new org.telegram.ui.Cells.x4(context);
+                    x4Var.b(R.drawable.msg_link, 7, org.telegram.messenger.id.M0(2131743390, null), true);
+                    int i11 = org.telegram.ui.ActionBar.m6.n5;
+                    x4Var.a(i11, i11);
+                    view = x4Var;
+                } else {
+                    p50 p50Var = new p50(context, view2, i10, z9 ? 1 : 0, 0);
+                    p50Var.setLayoutParams(new v4.o0(-1, -1));
+                    p50Var.e.setVisibility(8);
+                    org.telegram.ui.zr zrVar = x50Var.g2;
+                    xh.l lVar = p50Var.d;
+                    if (zrVar != null) {
+                        lVar.setText(org.telegram.messenger.id.M0(2131750726, null));
+                    } else {
+                        lVar.setText(org.telegram.messenger.id.M0(2131748223, null));
+                    }
+                    p50Var.setAnimateLayoutChange(true);
+                    view = p50Var;
                 }
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
+            } else {
+                view = new View(context);
+            }
+        } else {
+            view = new bi.ec(19, context, this);
         }
+        return new xi0(view);
     }
 }

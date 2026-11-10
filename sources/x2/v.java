@@ -1,61 +1,73 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import a8.ia;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class v extends s {
-    public final /* synthetic */ int f;
+public final class v extends l2.a {
+    public final e2.l1 h;
+    public final int i;
+    public final int j;
+    public final int k;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(e2.l1 l1Var, int i7) {
-        super(l1Var);
-        this.f = i7;
-    }
-
-    @Override // x2.s, e2.l1
-    public int e(int i7, int i10, boolean z9) {
-        switch (this.f) {
-            case 0:
-                e2.l1 l1Var = this.e;
-                int e10 = l1Var.e(i7, i10, z9);
-                return e10 == -1 ? l1Var.a(z9) : e10;
-            default:
-                return super.e(i7, i10, z9);
+    public v(e2.l1 l1Var, int i7) {
+        super(new f1(i7));
+        this.h = l1Var;
+        int h = l1Var.h();
+        this.i = h;
+        this.j = l1Var.o();
+        this.k = i7;
+        if (h > 0) {
+            ia.o("LoopingMediaSource contains too many periods", i7 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
         }
     }
 
-    @Override // x2.s, e2.l1
-    public e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
-        switch (this.f) {
-            case 1:
-                super.f(i7, i1Var, z9);
-                i1Var.f = true;
-                return i1Var;
-            default:
-                return super.f(i7, i1Var, z9);
-        }
+    @Override // e2.l1
+    public final int h() {
+        return this.i * this.k;
     }
 
-    @Override // x2.s, e2.l1
-    public int k(int i7, int i10, boolean z9) {
-        switch (this.f) {
-            case 0:
-                e2.l1 l1Var = this.e;
-                int k10 = l1Var.k(i7, i10, z9);
-                return k10 == -1 ? l1Var.c(z9) : k10;
-            default:
-                return super.k(i7, i10, z9);
-        }
+    @Override // e2.l1
+    public final int o() {
+        return this.j * this.k;
     }
 
-    @Override // x2.s, e2.l1
-    public e2.k1 m(int i7, e2.k1 k1Var, long j3) {
-        switch (this.f) {
-            case 1:
-                super.m(i7, k1Var, j3);
-                k1Var.k = true;
-                return k1Var;
-            default:
-                return super.m(i7, k1Var, j3);
+    @Override // l2.a
+    public final int q(Object obj) {
+        if (obj instanceof Integer) {
+            return ((Integer) obj).intValue();
         }
+        return -1;
+    }
+
+    @Override // l2.a
+    public final int r(int i7) {
+        return i7 / this.i;
+    }
+
+    @Override // l2.a
+    public final int s(int i7) {
+        return i7 / this.j;
+    }
+
+    @Override // l2.a
+    public final Object t(int i7) {
+        return Integer.valueOf(i7);
+    }
+
+    @Override // l2.a
+    public final int u(int i7) {
+        return i7 * this.i;
+    }
+
+    @Override // l2.a
+    public final int v(int i7) {
+        return i7 * this.j;
+    }
+
+    @Override // l2.a
+    public final e2.l1 x(int i7) {
+        return this.h;
     }
 }

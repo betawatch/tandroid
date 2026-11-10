@@ -10,20 +10,20 @@ import java.util.HashSet;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.t41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class y1 extends View implements org.telegram.ui.ActionBar.b6 {
+public final class y1 extends View implements org.telegram.ui.ActionBar.c6 {
     public final t41 a;
-    public final org.telegram.ui.ActionBar.g6 b;
+    public final org.telegram.ui.ActionBar.h6 b;
     public int c;
     public int d;
     public l1 e;
     public float f;
     public int h;
 
-    public y1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public y1(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.b = g6Var;
+        this.b = h6Var;
         t41 t41Var = new t41();
         this.a = t41Var;
         t41Var.setCallback(this);
@@ -34,11 +34,11 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.b6 {
     }
 
     public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.g6 g6Var = this.b;
-        if (g6Var != null) {
-            g6Var.b(0.0f, this.f, getMeasuredWidth(), this.h);
+        org.telegram.ui.ActionBar.h6 h6Var = this.b;
+        if (h6Var != null) {
+            h6Var.b(0.0f, this.f, getMeasuredWidth(), this.h);
         } else {
-            org.telegram.ui.ActionBar.l6.r(0.0f, this.f, getMeasuredWidth(), this.h);
+            org.telegram.ui.ActionBar.m6.r(0.0f, this.f, getMeasuredWidth(), this.h);
         }
         float L = org.telegram.messenger.g0.L(18.0f);
         float L2 = org.telegram.messenger.g0.L(6.0f);
@@ -46,13 +46,13 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.b6 {
         float L4 = org.telegram.messenger.g0.L(6.0f) + this.d;
         float L5 = org.telegram.messenger.g0.L(18.0f);
         float L6 = org.telegram.messenger.g0.L(18.0f);
-        Paint d = g6Var != null ? g6Var.d("paintChatActionBackground") : null;
+        Paint d = h6Var != null ? h6Var.d("paintChatActionBackground") : null;
         if (d == null) {
-            d = org.telegram.ui.ActionBar.l6.V0("paintChatActionBackground");
+            d = org.telegram.ui.ActionBar.m6.V0("paintChatActionBackground");
         }
         canvas.drawRoundRect(L, L2, L3, L4, L5, L6, d);
-        if (g6Var != null ? g6Var.g() : org.telegram.ui.ActionBar.l6.d1()) {
-            canvas.drawRoundRect(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(18.0f) + this.c, org.telegram.messenger.g0.L(6.0f) + this.d, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.l6.h2);
+        if (h6Var != null ? h6Var.g() : org.telegram.ui.ActionBar.m6.d1()) {
+            canvas.drawRoundRect(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(18.0f) + this.c, org.telegram.messenger.g0.L(6.0f) + this.d, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.m6.h2);
         }
     }
 
@@ -91,7 +91,7 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.b6 {
         this.e = l1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         this.a.b();
     }
@@ -101,7 +101,7 @@ public final class y1 extends View implements org.telegram.ui.ActionBar.b6 {
         return super.verifyDrawable(drawable) || drawable == this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

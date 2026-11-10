@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.graphics.Matrix;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ja extends y5 {
     public final /* synthetic */ va C0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ja(va vaVar, Activity activity, org.telegram.ui.Components.y9 y9Var, x5 x5Var) {
-        super(activity, y9Var, x5Var);
+    public ja(va vaVar, Activity activity, org.telegram.ui.Components.x9 x9Var, x5 x5Var) {
+        super(activity, x9Var, x5Var);
         this.C0 = vaVar;
     }
 

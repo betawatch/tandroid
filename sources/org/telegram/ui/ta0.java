@@ -1,43 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ta0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class ta0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ee0 b;
+    public final /* synthetic */ fe0 b;
 
-    public /* synthetic */ ta0(ee0 ee0Var, int i7) {
+    public /* synthetic */ ta0(fe0 fe0Var, int i7) {
         this.a = i7;
-        this.b = ee0Var;
+        this.b = fe0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        fe0 fe0Var = this.b;
+        switch (i7) {
             case 0:
-                ee0 ee0Var = this.b;
-                ee0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ee0Var.c.setAlpha(floatValue);
-                ee0Var.c.setTranslationY((1.0f - floatValue) * org.telegram.messenger.g0.L(230.0f));
+                fe0Var.c0 = false;
                 break;
             case 1:
-                ee0 ee0Var2 = this.b;
-                ee0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f10 = (0.9f * floatValue2) + 0.1f;
-                ee0Var2.V.setScaleX(f10);
-                ee0Var2.V.setScaleY(f10);
-                ee0Var2.V.setAlpha(floatValue2);
+                fe0Var.w0 = false;
+                fe0Var.P1(true, true);
                 break;
             default:
-                ee0 ee0Var3 = this.b;
-                ee0Var3.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ee0Var3.c.setAlpha(floatValue3);
-                ee0Var3.c.setTranslationY((1.0f - floatValue3) * org.telegram.messenger.g0.L(230.0f));
+                if (fe0Var.getParentActivity() != null && !fe0Var.getParentActivity().isFinishing() && fe0Var.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fe0Var.getParentActivity());
+                    String M0 = org.telegram.messenger.id.M0(2131746071, null);
+                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                    u1Var.R = M0;
+                    u1Var.T = org.telegram.messenger.id.M0(2131745949, null);
+                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747831, null), new wa0(fe0Var, 1));
+                    alertDialog$Builder.p();
+                    break;
+                }
                 break;
         }
     }

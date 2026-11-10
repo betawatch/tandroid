@@ -8,12 +8,12 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f5 extends ReplacementSpan {
     public final Paint a;
     public final ImageReceiver b;
-    public final org.telegram.ui.Components.w8 c;
+    public final org.telegram.ui.Components.v8 c;
     public float d;
     public final int e;
     public View f;
@@ -37,9 +37,9 @@ public final class f5 extends ReplacementSpan {
     }
 
     public final void b(TLRPC.Chat chat) {
-        org.telegram.ui.Components.w8 w8Var = this.c;
-        w8Var.q(chat);
-        this.b.i0(chat, w8Var, null);
+        org.telegram.ui.Components.v8 v8Var = this.c;
+        v8Var.q(chat);
+        this.b.i0(chat, v8Var, null);
     }
 
     public final void c(long j3) {
@@ -85,7 +85,7 @@ public final class f5 extends ReplacementSpan {
                 int alpha2 = paint.getAlpha();
                 this.s = alpha2;
                 paint2.setAlpha(alpha2);
-                paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.l6.r1(this.s / 255.0f, 855638016));
+                paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.m6.r1(this.s / 255.0f, 855638016));
             }
             canvas.drawCircle((org.telegram.messenger.g0.L(this.d) / 2.0f) + 0.0f + f10, ((i11 + i13) / 2.0f) + this.r, org.telegram.messenger.g0.L(this.d) / 2.0f, paint2);
         }
@@ -100,9 +100,9 @@ public final class f5 extends ReplacementSpan {
     }
 
     public final void e(TLRPC.User user) {
-        org.telegram.ui.Components.w8 w8Var = this.c;
-        w8Var.r(user);
-        this.b.i0(user, w8Var, null);
+        org.telegram.ui.Components.v8 v8Var = this.c;
+        v8Var.r(user);
+        this.b.i0(user, v8Var, null);
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -119,7 +119,7 @@ public final class f5 extends ReplacementSpan {
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.b = imageReceiver;
         imageReceiver.J0 = true;
-        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+        this.c = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
         imageReceiver.J0(org.telegram.messenger.g0.L(f10));
         this.d = f10;
         Paint paint = new Paint(1);

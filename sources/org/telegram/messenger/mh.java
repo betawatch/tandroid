@@ -7,7 +7,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mh implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -130,7 +130,7 @@ public final /* synthetic */ class mh implements Runnable {
                                         try {
                                             i16 = i20;
                                             try {
-                                                TLRPC.Document e10 = org.telegram.ui.Components.i5.e(uiVar3.currentAccount, Long.parseLong(((String) arrayList6.get(i20)).substring(9)));
+                                                TLRPC.Document e10 = org.telegram.ui.Components.h5.e(uiVar3.currentAccount, Long.parseLong(((String) arrayList6.get(i20)).substring(9)));
                                                 String V = ij.V(e10, null, null);
                                                 if (e10 != null && V != null && V.contains(str6) && ((z11 || ij.m3(e10)) && !hashSet.contains(Long.valueOf(e10.id)))) {
                                                     hashSet.add(Long.valueOf(e10.id));
@@ -379,7 +379,7 @@ public final /* synthetic */ class mh implements Runnable {
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
                 TLObject tLObject = (TLObject) obj;
                 if (((bp) obj4).a(tL_error)) {
-                    org.telegram.ui.Components.v4.c0(qpVar.currentAccount, tL_error, f2Var, tLObject, Boolean.valueOf(z10 && !z9));
+                    org.telegram.ui.Components.u4.c0(qpVar.currentAccount, tL_error, f2Var, tLObject, Boolean.valueOf(z10 && !z9));
                     break;
                 }
                 break;

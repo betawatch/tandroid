@@ -9,36 +9,36 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.ca;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class s1 extends fi.d {
-    public final ca k0;
+    public final ba k0;
     public final RectF l0;
     public int m0;
     public final c2 n0;
-    public final g6 o0;
+    public final h6 o0;
     public int p0;
     public boolean q0;
 
-    public s1(c2 c2Var, ContextThemeWrapper contextThemeWrapper, g6 g6Var, y9 y9Var) {
-        super(contextThemeWrapper, g6Var, false);
+    public s1(c2 c2Var, ContextThemeWrapper contextThemeWrapper, h6 h6Var, x9 x9Var) {
+        super(contextThemeWrapper, h6Var, false);
         this.l0 = new RectF();
         this.p0 = 8;
-        this.o0 = g6Var;
+        this.o0 = h6Var;
         this.n0 = c2Var;
-        this.k0 = new ca(y9Var, this, 0, true);
+        this.k0 = new ba(x9Var, this, 0, true);
         setWillNotDraw(false);
         setTextColor(-1);
         setFlickeringLoading(true);
         this.d.x(org.telegram.messenger.g0.o());
         removeView(this.r);
-        setForeground(l6.a0(l6.r1(0.08f, -1), 8, 8));
+        setForeground(m6.a0(m6.r1(0.08f, -1), 8, 8));
         setPadding(org.telegram.messenger.g0.L(24.0f), 0, org.telegram.messenger.g0.L(24.0f), 0);
     }
 
@@ -115,7 +115,7 @@ public abstract class s1 extends fi.d {
 
     public void setRad(int i7) {
         this.p0 = i7;
-        setForeground(l6.a0(l6.w0(l6.i6, this.o0), i7, i7));
+        setForeground(m6.a0(m6.w0(m6.i6, this.o0), i7, i7));
     }
 
     public void setRestoreState(boolean z9) {

@@ -7,11 +7,11 @@ import c8.ud;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.sc;
-import org.telegram.ui.Components.ms;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.ls;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class q {
     public static r F;
@@ -63,13 +63,13 @@ public final class q {
         this.o.add(gVar);
     }
 
-    public final void b(qj0 qj0Var) {
-        if (qj0Var == null) {
+    public final void b(pj0 pj0Var) {
+        if (pj0Var == null) {
             return;
         }
-        this.n.add(qj0Var);
-        qj0Var.D2.b.add(new ms() { // from class: oi.f
-            @Override // org.telegram.ui.Components.ms
+        this.n.add(pj0Var);
+        pj0Var.D2.b.add(new ls() { // from class: oi.f
+            @Override // org.telegram.ui.Components.ls
             public final void a(int i7, boolean z9) {
                 q qVar = q.this;
                 qVar.h++;
@@ -77,19 +77,19 @@ public final class q {
             }
         });
         j jVar = new j(this);
-        if (qj0Var.P == null) {
-            qj0Var.P = new ArrayList();
+        if (pj0Var.P == null) {
+            pj0Var.P = new ArrayList();
         }
-        qj0Var.P.add(jVar);
-        qj0Var.j(new ai.b(this, 23));
+        pj0Var.P.add(jVar);
+        pj0Var.j(new ai.b(this, 23));
     }
 
-    public final void c(w61 w61Var) {
-        if (w61Var == null) {
+    public final void c(v61 v61Var) {
+        if (v61Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = w61Var.R;
+        ArrayList arrayList = v61Var.R;
         if (arrayList.contains(gVar)) {
             return;
         }

@@ -15,13 +15,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.t0;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.eb0;
-import x2.e0;
-import x2.z0;
+import org.telegram.ui.Components.db0;
+import x2.d0;
+import x2.y0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, eb0, g9.k, h2.j, t3.g {
+public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListener, j2.g, r1, db0, g9.k, h2.j, t3.g {
     public final /* synthetic */ int a;
 
     public /* synthetic */ j(int i7) {
@@ -30,7 +30,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
 
     @Override // h2.j
     public void accept(Object obj) {
-        ((z0) obj).b.release();
+        ((y0) obj).b.release();
     }
 
     @Override // v5.e
@@ -55,7 +55,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
             case 22:
                 return ((f3.o) obj).a().getClass().getSimpleName();
             case 23:
-                return i0.q(h9.o.y(((e0) obj).o().b, new j(25)));
+                return i0.q(h9.o.y(((d0) obj).o().b, new j(25)));
             case 25:
                 return Integer.valueOf(((m1) obj).c);
             case 28:
@@ -129,7 +129,7 @@ public final /* synthetic */ class j implements v5.e, u9.d, ua.a, OnFailureListe
         }
     }
 
-    @Override // org.telegram.ui.Components.eb0
+    @Override // org.telegram.ui.Components.db0
     public String h(int i7) {
         switch (this.a) {
             case 16:

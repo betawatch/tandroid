@@ -1,102 +1,117 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.Intent;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ji0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 c;
+public final class ji0 extends org.telegram.ui.Components.st0 {
+    public final /* synthetic */ int f0;
+    public final /* synthetic */ FrameLayout g0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 h0;
 
-    public /* synthetic */ ji0(org.telegram.ui.ActionBar.f2 f2Var, Object obj, int i7) {
-        this.a = i7;
-        this.c = f2Var;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ji0(org.telegram.ui.ActionBar.f2 f2Var, Context context, FrameLayout frameLayout, int i7) {
+        super(context, null);
+        this.f0 = i7;
+        this.h0 = f2Var;
+        this.g0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        int i10 = this.a;
-        Object obj = this.b;
-        int i11 = 0;
-        org.telegram.ui.ActionBar.f2 f2Var = this.c;
-        switch (i10) {
+    @Override // org.telegram.ui.Components.st0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        int measuredHeight;
+        org.telegram.ui.ActionBar.z4 z4Var;
+        int measuredHeight2;
+        switch (this.f0) {
             case 0:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) f2Var;
-                if (i7 != -1) {
-                    if (i7 == 1) {
-                        passcodeActivity.D = passcodeActivity.D != 0 ? 0 : 1;
-                        org.telegram.messenger.g0.i3(new bd0(17, this, (org.telegram.ui.ActionBar.z0) obj), 150L);
-                        passcodeActivity.h.setText("");
-                        dr[] drVarArr = passcodeActivity.n.f;
-                        int length = drVarArr.length;
-                        while (i11 < length) {
-                            drVarArr[i11].setText("");
-                            i11++;
-                        }
-                        passcodeActivity.z0();
-                        break;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.h0;
+                int visibility = passcodeActivity.w.getVisibility();
+                FrameLayout frameLayout = this.g0;
+                if (visibility == 8 || Q() < org.telegram.messenger.g0.L(20.0f)) {
+                    if (passcodeActivity.w.getVisibility() != 8) {
+                        int measuredWidth = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f);
+                        frameLayout.layout(0, 0, measuredWidth, measuredHeight);
+                    } else {
+                        int measuredWidth2 = getMeasuredWidth();
+                        measuredHeight = getMeasuredHeight();
+                        frameLayout.layout(0, 0, measuredWidth2, measuredHeight);
                     }
+                } else if (passcodeActivity.q0()) {
+                    int measuredWidth3 = getMeasuredWidth();
+                    measuredHeight = Q() + (getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f));
+                    frameLayout.layout(0, 0, measuredWidth3, measuredHeight);
                 } else {
-                    passcodeActivity.finishFragment();
+                    int measuredWidth4 = getMeasuredWidth();
+                    measuredHeight = getMeasuredHeight();
+                    frameLayout.layout(0, 0, measuredWidth4, measuredHeight);
+                }
+                z4Var = ((org.telegram.ui.ActionBar.f2) passcodeActivity).simpleActionBar;
+                View view = z4Var != null ? ((org.telegram.ui.ActionBar.f2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.f2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                }
+                passcodeActivity.w.layout(0, measuredHeight, getMeasuredWidth(), org.telegram.messenger.g0.L(230.0f) + measuredHeight);
+                R();
+                break;
+            default:
+                k0 k0Var = (k0) this.g0;
+                cb1 cb1Var = (cb1) this.h0;
+                if (cb1Var.e0.getVisibility() == 8 || Q() < org.telegram.messenger.g0.L(20.0f)) {
+                    if (cb1Var.e0.getVisibility() != 8) {
+                        int measuredWidth5 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f);
+                        k0Var.layout(0, 0, measuredWidth5, measuredHeight2);
+                    } else {
+                        int measuredWidth6 = getMeasuredWidth();
+                        measuredHeight2 = getMeasuredHeight();
+                        k0Var.layout(0, 0, measuredWidth6, measuredHeight2);
+                    }
+                } else if (cb1Var.A0()) {
+                    int measuredWidth7 = getMeasuredWidth();
+                    measuredHeight2 = Q() + (getMeasuredHeight() - org.telegram.messenger.g0.L(230.0f));
+                    k0Var.layout(0, 0, measuredWidth7, measuredHeight2);
+                } else {
+                    int measuredWidth8 = getMeasuredWidth();
+                    measuredHeight2 = getMeasuredHeight();
+                    k0Var.layout(0, 0, measuredWidth8, measuredHeight2);
+                }
+                cb1Var.e0.layout(0, measuredHeight2, getMeasuredWidth(), org.telegram.messenger.g0.L(230.0f) + measuredHeight2);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        org.telegram.ui.ActionBar.z4 z4Var;
+        switch (this.f0) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i7);
+                int size2 = View.MeasureSpec.getSize(i10);
+                setMeasuredDimension(size, size2);
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.h0;
+                this.g0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((passcodeActivity.w.getVisibility() == 8 || Q() >= org.telegram.messenger.g0.L(20.0f)) ? size2 : size2 - org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
+                passcodeActivity.w.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
+                z4Var = ((org.telegram.ui.ActionBar.f2) passcodeActivity).simpleActionBar;
+                View view = z4Var != null ? ((org.telegram.ui.ActionBar.f2) passcodeActivity).simpleActionBar : ((org.telegram.ui.ActionBar.f2) passcodeActivity).actionBar;
+                if (view != null && view.getParent() == this) {
+                    view.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
                     break;
                 }
                 break;
             default:
-                ProxyListActivity proxyListActivity = (ProxyListActivity) f2Var;
-                ArrayList arrayList = proxyListActivity.E;
-                if (i7 == -1) {
-                    if (!arrayList.isEmpty()) {
-                        proxyListActivity.a.F();
-                        break;
-                    } else {
-                        proxyListActivity.finishFragment();
-                        break;
-                    }
-                } else if (i7 == 0) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
-                    String M0 = org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131751510 : 2131751511, null);
-                    org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                    u1Var.T = M0;
-                    alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                    u1Var.R = org.telegram.messenger.id.M0(2131751509, null);
-                    alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new ni0(this, 13));
-                    proxyListActivity.showDialog(u1Var);
-                    TextView textView = (TextView) u1Var.d(-1);
-                    if (textView != null) {
-                        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.q7, null);
-                        break;
-                    }
-                } else if (i7 == 1) {
-                    StringBuilder sb2 = new StringBuilder();
-                    int size = arrayList.size();
-                    while (i11 < size) {
-                        Object obj2 = arrayList.get(i11);
-                        i11++;
-                        org.telegram.messenger.hz hzVar = (org.telegram.messenger.hz) obj2;
-                        if (sb2.length() > 0) {
-                            sb2.append("\n\n");
-                        }
-                        sb2.append(hzVar.a.e());
-                    }
-                    Intent intent = new Intent("android.intent.action.SEND");
-                    intent.setType("text/plain");
-                    intent.putExtra("android.intent.extra.TEXT", sb2.toString());
-                    Intent createChooser = Intent.createChooser(intent, org.telegram.messenger.id.M0(arrayList.size() > 1 ? 2131745457 : 2131745458, null));
-                    createChooser.setFlags(TLObject.FLAG_28);
-                    ((Context) obj).startActivity(createChooser);
-                    l4 l4Var = proxyListActivity.a;
-                    if (l4Var != null) {
-                        l4Var.F();
-                        break;
-                    }
+                int size3 = View.MeasureSpec.getSize(i7);
+                int size4 = View.MeasureSpec.getSize(i10);
+                setMeasuredDimension(size3, size4);
+                cb1 cb1Var = (cb1) this.h0;
+                if (cb1Var.e0.getVisibility() != 8 && Q() < org.telegram.messenger.g0.L(20.0f)) {
+                    size4 -= org.telegram.messenger.g0.L(230.0f);
                 }
+                ((k0) this.g0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
+                cb1Var.e0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(230.0f), TLObject.FLAG_30));
                 break;
         }
     }

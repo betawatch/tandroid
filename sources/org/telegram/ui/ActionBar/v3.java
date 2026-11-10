@@ -2,41 +2,42 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v3 {
-    public final k4 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e = true;
-    public boolean f;
-    public long g;
+public final class v3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x3 b;
 
-    public v3(k4 k4Var) {
-        this.a = k4Var;
+    public /* synthetic */ v3(x3 x3Var, int i7) {
+        this.a = i7;
+        this.b = x3Var;
     }
 
-    public final void a() {
-        if (this.f) {
-            boolean z9 = this.b;
-            k4 k4Var = this.a;
-            if (z9 || this.c || this.d || !this.e) {
-                i4 i4Var = k4Var.b;
-                if (i4Var.f()) {
-                    i4Var.G = true;
-                    i4Var.x.start();
-                    i4Var.D.setEmpty();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                x3 x3Var = this.b;
+                View view = x3Var.m;
+                if (view.getWindowVisibility() == 0 && view.isShown()) {
+                    w3 w3Var = x3Var.s;
+                    w3Var.getClass();
+                    System.currentTimeMillis();
+                    w3Var.c = false;
+                    x3Var.s.a();
+                    break;
                 }
-                return;
-            }
-            View view = k4Var.a;
-            y3 y3Var = k4Var.l;
-            view.removeOnLayoutChangeListener(y3Var);
-            k4Var.a.addOnLayoutChangeListener(y3Var);
-            k4Var.c();
-            this.g = System.currentTimeMillis();
+                break;
+            default:
+                x3 x3Var2 = this.b;
+                View view2 = x3Var2.m;
+                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
+                    w3 w3Var2 = x3Var2.s;
+                    w3Var2.b = false;
+                    w3Var2.a();
+                    break;
+                }
+                break;
         }
     }
 }

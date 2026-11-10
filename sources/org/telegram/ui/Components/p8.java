@@ -1,39 +1,94 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class p8 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class p8 extends pj0 {
+    public final ArrayList e3;
+    public final int f3;
+    public int g3;
+    public final org.telegram.ui.x7 h3;
+    public o8 i3;
+    public final /* synthetic */ s8 j3;
 
-    public final p8 a() {
-        p8 p8Var = new p8();
-        p8Var.c = this.c;
-        p8Var.d = this.d;
-        p8Var.e = this.e;
-        p8Var.f = this.f;
-        p8Var.b = this.b;
-        return p8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p8(s8 s8Var, Activity activity) {
+        super(activity, null);
+        this.j3 = s8Var;
+        this.e3 = new ArrayList();
+        this.f3 = org.telegram.messenger.qs.e3;
+        this.g3 = -1;
+        v4.b0 b0Var = new v4.b0();
+        b0Var.j1(0);
+        setLayoutManager(b0Var);
+        for (int i7 = 0; i7 < 7; i7++) {
+            o8 o8Var = new o8();
+            int i10 = this.f3;
+            this.f3 = i10 + 1;
+            o8Var.a = i10;
+            int[] iArr = s8.c0[i7];
+            o8Var.c = iArr[0];
+            o8Var.d = iArr[1];
+            o8Var.e = iArr[2];
+            o8Var.f = iArr[3];
+            this.e3.add(o8Var);
+        }
+        for (int i11 = 0; i11 < 30; i11++) {
+            o8 o8Var2 = new o8();
+            int i12 = this.f3;
+            this.f3 = i12 + 1;
+            o8Var2.a = i12;
+            int[] iArr2 = s8.d0[i11];
+            o8Var2.c = iArr2[0];
+            o8Var2.d = iArr2[1];
+            o8Var2.e = 0;
+            o8Var2.f = 0;
+            o8Var2.b = true;
+            this.e3.add(o8Var2);
+        }
+        setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        setClipToPadding(false);
+        this.f1 = true;
+        int i13 = 2;
+        setOnItemClickListener(new j(this, i13));
+        org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, i13);
+        this.h3 = x7Var;
+        setAdapter(x7Var);
+        setOverScrollMode(1);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7) / this.h3.b();
+        s8 s8Var = this.j3;
+        s8Var.P = size;
+        if (size < org.telegram.messenger.g0.L(39.0f)) {
+            s8Var.P = org.telegram.messenger.g0.L(39.0f);
+        } else if (s8Var.P > org.telegram.messenger.g0.L(150.0f)) {
+            s8Var.P = org.telegram.messenger.g0.L(48.0f);
         }
-        if (!(obj instanceof p8)) {
-            return false;
-        }
-        p8 p8Var = (p8) obj;
-        return this.c == p8Var.c && this.d == p8Var.d && this.e == p8Var.e && this.f == p8Var.f;
+        super.onMeasure(i7, i10);
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    public final void z1(o8 o8Var) {
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.e3;
+            if (i7 >= arrayList.size()) {
+                this.i3 = o8Var;
+                this.g3 = 1;
+                break;
+            } else {
+                if (((o8) arrayList.get(i7)).equals(o8Var)) {
+                    this.g3 = ((o8) arrayList.get(i7)).a;
+                    break;
+                }
+                i7++;
+            }
+        }
+        this.h3.f();
     }
 }

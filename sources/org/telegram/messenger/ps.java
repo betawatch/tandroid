@@ -4,7 +4,7 @@ import android.app.Activity;
 import java.lang.ref.WeakReference;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class ps implements ms, ls {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class ps implements ms, ls {
                 if (i7 == 274) {
                     ((org.telegram.ui.ActionBar.u1) this.b).dismiss();
                     qs.e().n(this, i7);
-                    g0.i3(new org.telegram.ui.jz(this, 13), 100L);
+                    g0.i3(new org.telegram.ui.kz(this, 13), 100L);
                     break;
                 }
                 break;
@@ -56,7 +56,7 @@ public final class ps implements ms, ls {
                         } else {
                             Activity activity = x0Var.W;
                             if (activity != null) {
-                                x0Var.g0 = org.telegram.ui.s9.j0(activity, 3, new org.telegram.ui.Components.n(x0Var));
+                                x0Var.g0 = org.telegram.ui.s9.j0(activity, 3, new org.telegram.ui.Components.m(x0Var));
                                 break;
                             }
                         }

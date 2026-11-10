@@ -1,141 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class zv implements c5.g {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ hy b;
+public final class zv extends qu {
+    public final /* synthetic */ TLRPC.StickerSet Q1;
+    public final /* synthetic */ gy R1;
 
-    public zv(hy hyVar, boolean z9) {
-        this.b = hyVar;
-        this.a = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zv(gy gyVar, org.telegram.ui.ActionBar.f2 f2Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(f2Var, context, h6Var, arrayList);
+        this.R1 = gyVar;
+        this.Q1 = stickerSet;
     }
 
-    @Override // c5.g
-    public final void a(int i7) {
-        hy hyVar = this.b;
-        wv wvVar = hyVar.h;
-        boolean z9 = false;
-        if (wvVar != null) {
-            int currentItem = wvVar.getCurrentItem();
-            int i10 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
-            if (hyVar.A1 != i10) {
-                hyVar.A1 = i10;
-                org.telegram.messenger.qp.d1().edit().putInt("selected_page", i10).commit();
-            }
+    @Override // org.telegram.ui.Components.qu
+    public final void K0(boolean z9) {
+        gy gyVar = this.R1;
+        ArrayList arrayList = gyVar.p1;
+        TLRPC.StickerSet stickerSet = this.Q1;
+        if (!z9) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
-        hyVar.L(i7 == 0, true);
-        if (i7 == 2 && (this.a || hyVar.v0)) {
-            z9 = true;
-        }
-        hyVar.Q(z9, true);
-        if (hyVar.t1.z()) {
-            if (i7 == 0) {
-                iv ivVar = hyVar.V;
-                if (ivVar != null) {
-                    ivVar.d.requestFocus();
-                    return;
-                }
-                return;
-            }
-            if (i7 == 1) {
-                nv nvVar = hyVar.o0;
-                if (nvVar != null) {
-                    nvVar.d.requestFocus();
-                    return;
-                }
-                return;
-            }
-            tv tvVar = hyVar.G0;
-            if (tvVar != null) {
-                tvVar.d.requestFocus();
-            }
-        }
+        gyVar.T();
     }
 
-    @Override // c5.g
-    public final void b(float f10, int i7, int i10) {
-        float f11;
-        hy hyVar = this.b;
-        ux uxVar = hyVar.G0;
-        ux uxVar2 = hyVar.o0;
-        ux uxVar3 = hyVar.V;
-        vv vvVar = hyVar.C0;
-        qv qvVar = hyVar.D0;
-        ow owVar = hyVar.p0;
-        lv lvVar = hyVar.h0;
-        tw twVar = hyVar.P;
-        boolean z9 = true;
-        if (hyVar.x0 == null || hyVar.g0 == null) {
-            f11 = 0.0f;
-        } else {
-            if (i7 == 0) {
-                twVar.setVisibility(0);
-                f11 = 0.0f;
-                lvVar.setVisibility(f10 == 0.0f ? 8 : 0);
-                owVar.setVisibility(f10 == 0.0f ? 8 : 0);
-                qvVar.setVisibility(8);
-                if (vvVar != null) {
-                    vvVar.setVisibility(8);
-                }
-            } else {
-                f11 = 0.0f;
-                if (i7 == 1) {
-                    twVar.setVisibility(8);
-                    lvVar.setVisibility(0);
-                    owVar.setVisibility(0);
-                    qvVar.setVisibility(f10 == 0.0f ? 8 : 0);
-                    if (vvVar != null) {
-                        vvVar.setVisibility(f10 != 0.0f ? 0 : 8);
-                    }
-                } else if (i7 == 2) {
-                    twVar.setVisibility(8);
-                    lvVar.setVisibility(8);
-                    owVar.setVisibility(8);
-                    qvVar.setVisibility(0);
-                    if (vvVar != null) {
-                        vvVar.setVisibility(0);
-                    }
-                }
-            }
-        }
-        hyVar.getMeasuredWidth();
-        hyVar.getPaddingLeft();
-        hyVar.getPaddingRight();
-        ix ixVar = hyVar.t1;
-        if (ixVar != null) {
-            if (i7 == 1) {
-                ixVar.s(i10 == 0 ? 0 : 2);
-            } else if (i7 == 2) {
-                ixVar.s(3);
-            } else {
-                ixVar.s(0);
-            }
-        }
-        hyVar.M(true);
-        int currentItem = hyVar.h.getCurrentItem();
-        ux uxVar4 = currentItem == 0 ? uxVar3 : currentItem == 1 ? uxVar2 : uxVar;
-        String obj = uxVar4.d.getText().toString();
-        int i11 = 0;
-        while (i11 < 3) {
-            ux uxVar5 = i11 == 0 ? uxVar3 : i11 == 1 ? uxVar2 : uxVar;
-            if (uxVar5 != null) {
-                rp rpVar = uxVar5.d;
-                if (uxVar5 != uxVar4 && rpVar != null && !rpVar.getText().toString().equals(obj)) {
-                    rpVar.setText(obj);
-                    rpVar.setSelection(obj.length());
-                }
-            }
-            i11++;
-        }
-        if ((i7 != 0 || f10 <= f11) && i7 != 1) {
-            z9 = false;
-        }
-        hy.a(hyVar, z9);
-        hyVar.Z();
-    }
-
-    @Override // c5.g
-    public final void c(int i7) {
+    @Override // org.telegram.ui.Components.qu, org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    public final void dismiss() {
+        this.R1.w2 = false;
+        super.dismiss();
     }
 }

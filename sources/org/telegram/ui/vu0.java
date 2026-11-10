@@ -1,50 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class vu0 extends v4.b0 {
-    public final /* synthetic */ ProfileActivity I;
+public final class vu0 extends v4.k {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
     public vu0(ProfileActivity profileActivity) {
-        this.I = profileActivity;
+        this.G = profileActivity;
     }
 
-    @Override // v4.b0, v4.n0
-    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
-        ProfileActivity profileActivity = this.I;
-        View m10 = profileActivity.c.m(0);
-        if (m10 != null && !profileActivity.F0) {
-            int top = m10.getTop() - profileActivity.j4();
-            boolean z9 = profileActivity.n2;
-            if (z9 || top <= i7) {
-                if (z9) {
-                    if (i7 >= top) {
-                        profileActivity.n2 = false;
-                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.o2) {
-                        i7 /= 2;
-                    }
-                }
-            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().L() && !org.telegram.messenger.g0.C1() && ((!profileActivity.m2 && !org.telegram.messenger.g0.Q1()) || profileActivity.I0)) {
-                profileActivity.n2 = profileActivity.I2 == null;
-            }
-            i7 = top;
+    @Override // v4.k
+    public final long K(long j3, long j10, long j11) {
+        return 0L;
+    }
+
+    @Override // v4.k
+    public final void N() {
+        org.telegram.messenger.g0.h3(new uu0(this, 0));
+    }
+
+    @Override // v4.k
+    public final void P(v4.d1 d1Var) {
+        RectF rectF = ProfileActivity.V6;
+        this.G.s5();
+    }
+
+    @Override // v4.k, v4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new a3(this, 24));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().q(null, this.F, true);
         }
-        if (!profileActivity.N1 || profileActivity.a.P0) {
-            return super.o0(i7, v0Var, a1Var);
-        }
-        return 0;
-    }
-
-    @Override // v4.b0, v4.n0
-    public final boolean y0() {
-        return this.I.q0 != null;
-    }
-
-    @Override // v4.b0
-    public final void z0(v4.a1 a1Var, int[] iArr) {
-        super.z0(a1Var, iArr);
-        iArr[0] = Math.max(iArr[0], ProfileActivity.J0(this.I));
+        super.m();
     }
 }

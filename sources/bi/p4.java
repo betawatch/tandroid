@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements v10 {
     public final /* synthetic */ int a;
@@ -101,8 +101,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique3.resell_amount = arrayList;
                                                     arrayList.add(aVar3.e(bVar).o());
                                                     tL_starGiftUnique3.resell_amount.add(aVar3.e(bVar2).o());
-                                                    k7Var3.X1.setResellPrice(aVar3);
-                                                    zh.p1 p1Var = k7Var3.c3;
+                                                    k7Var3.a2.setResellPrice(aVar3);
+                                                    zh.p1 p1Var = k7Var3.f3;
                                                     if (p1Var != null) {
                                                         p1Var.run();
                                                     }
@@ -118,8 +118,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique3.resell_amount = arrayList2;
                                                     arrayList2.add(aVar3.e(bVar).o());
                                                     tL_starGiftUnique3.resell_amount.add(aVar3.e(bVar2).o());
-                                                    k7Var3.X1.setResellPrice(aVar3);
-                                                    zh.p1 p1Var2 = k7Var3.c3;
+                                                    k7Var3.a2.setResellPrice(aVar3);
+                                                    zh.p1 p1Var2 = k7Var3.f3;
                                                     if (p1Var2 != null) {
                                                         p1Var2.run();
                                                     }
@@ -189,8 +189,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique32.resell_amount = arrayList;
                                                     arrayList.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var32.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var = k7Var32.c3;
+                                                    k7Var32.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var = k7Var32.f3;
                                                     if (p1Var != null) {
                                                         p1Var.run();
                                                     }
@@ -206,8 +206,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique32.resell_amount = arrayList2;
                                                     arrayList2.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var32.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var2 = k7Var32.c3;
+                                                    k7Var32.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var2 = k7Var32.f3;
                                                     if (p1Var2 != null) {
                                                         p1Var2.run();
                                                     }
@@ -230,24 +230,24 @@ public final /* synthetic */ class p4 implements v10 {
                 c20 c20Var = (c20) obj;
                 Boolean bool = (Boolean) obj2;
                 k7 k7Var2 = this.b;
-                zh.k3 k3Var = k7Var2.O2;
+                zh.k3 k3Var = k7Var2.R2;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = this.c;
                 if (k3Var == null) {
                     zh.k3 k3Var2 = new zh.k3(k7Var2.a, tL_starGiftUnique2.gift_id);
-                    k7Var2.O2 = k3Var2;
+                    k7Var2.R2 = k3Var2;
                     k3Var2.a();
                 }
                 HashSet hashSet = new HashSet();
                 int i10 = 0;
                 while (true) {
-                    b6[] b6VarArr = k7Var2.X1.M.n;
+                    b6[] b6VarArr = k7Var2.a2.M.n;
                     if (i10 >= b6VarArr.length) {
-                        zh.l3 l3Var = new zh.l3(k7Var2.getContext(), tL_starGiftUnique2.title, k7Var2.O2);
-                        l3Var.Y1.addAll(hashSet);
-                        l3Var.a2.O(true);
-                        l3Var.Z1 = bool.booleanValue();
-                        l3Var.W1.set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
-                        l3Var.X1 = new n2(c20Var, 0);
+                        zh.l3 l3Var = new zh.l3(k7Var2.getContext(), tL_starGiftUnique2.title, k7Var2.R2);
+                        l3Var.b2.addAll(hashSet);
+                        l3Var.d2.O(true);
+                        l3Var.c2 = bool.booleanValue();
+                        l3Var.Z1.set(org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(4 - hashSet.size(), "GiftCraftSelect", new Object[0])));
+                        l3Var.a2 = new n2(c20Var, 0);
                         l3Var.show();
                         break;
                     } else {
@@ -334,8 +334,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique32.resell_amount = arrayList;
                                                     arrayList.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var32.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var = k7Var32.c3;
+                                                    k7Var32.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var = k7Var32.f3;
                                                     if (p1Var != null) {
                                                         p1Var.run();
                                                     }
@@ -351,8 +351,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique32.resell_amount = arrayList2;
                                                     arrayList2.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique32.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var32.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var2 = k7Var32.c3;
+                                                    k7Var32.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var2 = k7Var32.f3;
                                                     if (p1Var2 != null) {
                                                         p1Var2.run();
                                                     }
@@ -422,8 +422,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique322.resell_amount = arrayList;
                                                     arrayList.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique322.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var322.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var = k7Var322.c3;
+                                                    k7Var322.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var = k7Var322.f3;
                                                     if (p1Var != null) {
                                                         p1Var.run();
                                                     }
@@ -439,8 +439,8 @@ public final /* synthetic */ class p4 implements v10 {
                                                     tL_starGiftUnique322.resell_amount = arrayList2;
                                                     arrayList2.add(aVar32.e(bVar).o());
                                                     tL_starGiftUnique322.resell_amount.add(aVar32.e(bVar2).o());
-                                                    k7Var322.X1.setResellPrice(aVar32);
-                                                    zh.p1 p1Var2 = k7Var322.c3;
+                                                    k7Var322.a2.setResellPrice(aVar32);
+                                                    zh.p1 p1Var2 = k7Var322.f3;
                                                     if (p1Var2 != null) {
                                                         p1Var2.run();
                                                     }

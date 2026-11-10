@@ -1,36 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class aa0 implements cj0 {
-    public final /* synthetic */ da0 a;
+public final class aa0 extends org.telegram.ui.Cells.q1 {
+    public final /* synthetic */ org.telegram.ui.x7 ld;
 
-    public aa0(da0 da0Var) {
-        this.a = da0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aa0(org.telegram.ui.x7 x7Var, Context context, int i7, h6.m mVar, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, false, mVar, h6Var);
+        this.ld = x7Var;
     }
 
-    @Override // org.telegram.ui.Components.cj0
-    public final void c(int i7, View view) {
-        da0 da0Var = this.a;
-        if (da0Var.a != 1 || da0Var.r.f.size() <= 1) {
-            return;
-        }
-        int e12 = ((org.telegram.messenger.ij) da0Var.r.f.get(i7)).e1();
-        boolean z9 = da0Var.r.g.get(e12, false);
-        boolean z10 = !z9;
-        if (da0Var.r.g.size() == 1 && z9) {
-            return;
-        }
-        if (z9) {
-            da0Var.r.g.delete(e12);
-        } else {
-            da0Var.r.g.put(e12, z10);
-        }
-        if (view instanceof org.telegram.ui.Cells.q1) {
-            ((org.telegram.ui.Cells.q1) view).l3(z10, z10, true);
-        }
-        da0Var.l(true);
+    @Override // org.telegram.ui.Cells.q1, org.telegram.ui.Cells.z, android.view.View, org.telegram.ui.Cells.q9
+    public final void invalidate() {
+        super.invalidate();
+        ((ca0) this.ld.d).f.invalidate();
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        ca0.b((ca0) this.ld.d, this);
+    }
+
+    @Override // org.telegram.ui.Cells.q1
+    public final void w3(org.telegram.messenger.ij ijVar, org.telegram.messenger.dj djVar, boolean z9, boolean z10, boolean z11, boolean z12) {
+        super.w3(ijVar, djVar, z9, z10, z11, z12);
+        ca0.b((ca0) this.ld.d, this);
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.View
+    public final void invalidate(int i7, int i10, int i11, int i12) {
+        super.invalidate(i7, i10, i11, i12);
+        ((ca0) this.ld.d).f.invalidate();
     }
 }

@@ -1,56 +1,43 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xu0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.w2 b;
-
-    public /* synthetic */ xu0(org.telegram.messenger.w2 w2Var, int i7) {
-        this.a = i7;
-        this.b = w2Var;
+public final class xu0 extends org.telegram.messenger.x2 {
+    @Override // org.telegram.messenger.x2
+    public final void e(int i7, Object obj, org.telegram.messenger.v10 v10Var) {
+        org.telegram.messenger.yr.a0(i7).a.c(new org.telegram.ui.q8(i7, (Integer) obj, (org.telegram.messenger.v2) v10Var, 21));
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                boolean z9 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
-                org.telegram.messenger.w2 w2Var = this.b;
-                if (!z9) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
-                        w2Var.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        w2Var.a(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    w2Var.a(bool, null, 0L, bool);
-                    break;
-                }
-            default:
-                boolean z10 = tLObject instanceof TLRPC.TL_emojiListNotModified;
-                org.telegram.messenger.w2 w2Var2 = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
-                        w2Var2.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
-                        w2Var2.a(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    w2Var2.a(bool2, null, 0L, bool2);
-                    break;
-                }
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.messenger.x2
+    public final void f(int i7, Object obj, long j3, org.telegram.messenger.w2 w2Var) {
+        TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups;
+        Integer num = (Integer) obj;
+        if (num.intValue() == 1) {
+            TLRPC.TL_messages_getEmojiStatusGroups tL_messages_getEmojiStatusGroups = new TLRPC.TL_messages_getEmojiStatusGroups();
+            tL_messages_getEmojiStatusGroups.hash = (int) j3;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiStatusGroups;
+        } else if (num.intValue() == 2) {
+            TLRPC.TL_messages_getEmojiProfilePhotoGroups tL_messages_getEmojiProfilePhotoGroups = new TLRPC.TL_messages_getEmojiProfilePhotoGroups();
+            tL_messages_getEmojiProfilePhotoGroups.hash = (int) j3;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiProfilePhotoGroups;
+        } else if (num.intValue() == 3) {
+            TLRPC.TL_messages_getEmojiStickerGroups tL_messages_getEmojiStickerGroups = new TLRPC.TL_messages_getEmojiStickerGroups();
+            tL_messages_getEmojiStickerGroups.hash = (int) j3;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiStickerGroups;
+        } else {
+            TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups2 = new TLRPC.TL_messages_getEmojiGroups();
+            tL_messages_getEmojiGroups2.hash = (int) j3;
+            tL_messages_getEmojiGroups = tL_messages_getEmojiGroups2;
         }
+        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getEmojiGroups, new wu0(w2Var, 0));
+    }
+
+    @Override // org.telegram.messenger.x2
+    public final void g(int i7, Object obj, Object obj2) {
+        org.telegram.messenger.yr.a0(i7).a.c(new org.telegram.ui.q8(i7, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 22));
     }
 }

@@ -1,46 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.view.View;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class zq extends ImageView {
-    public final /* synthetic */ int a = 0;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final class zq extends View implements org.telegram.ui.ActionBar.c6 {
+    public final TextPaint a;
+    public final TextPaint b;
+    public final String c;
+    public final String d;
+    public final Rect e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq(br brVar, Context context, vy vyVar) {
+    public zq(Context context, String str, String str2) {
         super(context);
-        this.c = brVar;
-        this.b = vyVar;
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.b = textPaint2;
+        this.e = new Rect();
+        this.c = str;
+        this.d = str2;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(24.0f));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
+        textPaint2.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.H6, false));
     }
 
     @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                br brVar = (br) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (brVar.n || brVar.f)) {
-                    brVar.n = false;
-                    brVar.f = false;
-                    removeCallbacks(brVar.r);
-                    removeCallbacks(brVar.h);
-                }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((vy) this.b).b).onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
+    public final void onDraw(Canvas canvas) {
+        TextPaint textPaint = this.b;
+        String str = this.d;
+        float measureText = textPaint.measureText(str);
+        TextPaint textPaint2 = this.a;
+        String str2 = this.c;
+        float measureText2 = textPaint2.measureText(str2);
+        int length = str2.length();
+        Rect rect = this.e;
+        textPaint2.getTextBounds(str2, 0, length, rect);
+        textPaint.getTextBounds(str, 0, str.length(), rect);
+        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
+        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq(ji0 ji0Var, Context context) {
-        super(context);
-        this.c = ji0Var;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        this.a.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
+        this.b.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.H6, false));
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

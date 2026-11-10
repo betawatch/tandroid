@@ -4,18 +4,18 @@ import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class nk extends org.telegram.ui.Components.ja0 {
+public final class nk extends org.telegram.ui.Components.ia0 {
     public final /* synthetic */ cn H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nk(cn cnVar, Context context, cn cnVar2, dh.c cVar, org.telegram.messenger.mj mjVar, TLRPC.User user, TLRPC.Chat chat, int i7, org.telegram.ui.Components.fa0 fa0Var, int i10, boolean z9) {
-        super(context, cnVar2, cVar, mjVar, user, chat, i7, fa0Var, i10, z9);
+    public nk(cn cnVar, Context context, cn cnVar2, dh.c cVar, org.telegram.messenger.mj mjVar, TLRPC.User user, TLRPC.Chat chat, int i7, org.telegram.ui.Components.ea0 ea0Var, int i10, boolean z9) {
+        super(context, cnVar2, cVar, mjVar, user, chat, i7, ea0Var, i10, z9);
         this.H = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.ja0
+    @Override // org.telegram.ui.Components.ia0
     public final void b() {
         org.telegram.messenger.ij ijVar;
         sm smVar;
@@ -26,7 +26,7 @@ public final class nk extends org.telegram.ui.Components.ja0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ja0
+    @Override // org.telegram.ui.Components.ia0
     public final void c(boolean z9) {
         int i7;
         boolean z10;
@@ -72,9 +72,9 @@ public final class nk extends org.telegram.ui.Components.ja0 {
             org.telegram.messenger.kj kjVar3 = cnVar.v5.b;
             h.putInt("messagesCount", kjVar3 != null ? kjVar3.e.size() : 0);
             h.putBoolean("canSelectTopics", true);
-            yw ywVar = new yw(h);
-            ywVar.D2 = cnVar;
-            cnVar.presentFragment(ywVar);
+            zw zwVar = new zw(h);
+            zwVar.D2 = cnVar;
+            cnVar.presentFragment(zwVar);
         }
     }
 }

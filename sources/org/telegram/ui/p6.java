@@ -2,21 +2,21 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class p6 extends org.telegram.ui.ActionBar.v2 {
-    public static final /* synthetic */ int j1 = 0;
-    public final /* synthetic */ int i1;
+public final class p6 extends org.telegram.ui.ActionBar.w2 {
+    public static final /* synthetic */ int m1 = 0;
+    public final /* synthetic */ int l1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p6(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
-        super(i7, context, g6Var, z9);
-        this.i1 = 2;
+    public /* synthetic */ p6(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
+        super(i7, context, h6Var, z9);
+        this.l1 = 2;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public boolean H() {
-        switch (this.i1) {
+        switch (this.l1) {
             case 0:
                 return false;
             default:
@@ -24,13 +24,13 @@ public final class p6 extends org.telegram.ui.ActionBar.v2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public void s0() {
-        switch (this.i1) {
+        switch (this.l1) {
             case 2:
                 super.s0();
                 try {
-                    int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.I0);
+                    int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.I0);
                     if (this.G0 != w02) {
                         O(w02);
                         break;
@@ -49,6 +49,6 @@ public final class p6 extends org.telegram.ui.ActionBar.v2 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ p6(int i7, Context context, boolean z9) {
         super(context, z9);
-        this.i1 = i7;
+        this.l1 = i7;
     }
 }

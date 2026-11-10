@@ -14,10 +14,10 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
-    public final org.telegram.ui.Components.i6 a;
+    public final org.telegram.ui.Components.h6 a;
     public final Paint b;
     public final bg.q c;
     public final Drawable d;
@@ -31,14 +31,14 @@ public final class l extends FrameLayout {
         this.c = new bg.q(new ca(this, 1));
         this.e = i7;
         this.d = jg.g.h(context, R.drawable.filled_gift_sell_24);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false);
-        this.a = i6Var;
-        i6Var.M = org.telegram.messenger.g0.q.x;
-        i6Var.setCallback(this);
-        i6Var.x(org.telegram.messenger.g0.o());
-        i6Var.w(org.telegram.messenger.g0.L(14.0f));
-        i6Var.u(-1);
-        i6Var.b = 3;
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(false, false, false);
+        this.a = h6Var;
+        h6Var.M = org.telegram.messenger.g0.q.x;
+        h6Var.setCallback(this);
+        h6Var.x(org.telegram.messenger.g0.o());
+        h6Var.w(org.telegram.messenger.g0.L(14.0f));
+        h6Var.u(-1);
+        h6Var.b = 3;
         paint.setShader(new LinearGradient(0.0f, 0.0f, org.telegram.messenger.g0.L(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
@@ -52,26 +52,26 @@ public final class l extends FrameLayout {
     }
 
     public final void b(long j3) {
-        org.telegram.ui.Components.i6 i6Var = this.a;
+        org.telegram.ui.Components.h6 h6Var = this.a;
         if (j3 == 0) {
-            i6Var.t(id.M0(2131750336, null), true, true);
+            h6Var.t(id.M0(2131750336, null), true, true);
         } else {
-            i6Var.t(j3 > 3600 ? org.telegram.messenger.g0.g0((int) j3, false, false) : org.telegram.messenger.g0.h0((int) j3, false), isAttachedToWindow(), true);
+            h6Var.t(j3 > 3600 ? org.telegram.messenger.g0.g0((int) j3, false, false) : org.telegram.messenger.g0.h0((int) j3, false), isAttachedToWindow(), true);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(14.0f);
-        org.telegram.ui.Components.i6 i6Var = this.a;
-        int c10 = measuredWidth - ((int) i6Var.c());
+        org.telegram.ui.Components.h6 h6Var = this.a;
+        int c10 = measuredWidth - ((int) h6Var.c());
         int L = c10 - org.telegram.messenger.g0.L(30.0f);
         canvas.save();
         canvas.translate(L, 0.0f);
         canvas.drawRoundRect(0.0f, 0.0f, getWidth() - L, getHeight(), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), this.b);
         canvas.restore();
-        i6Var.setBounds(c10, 0, getMeasuredWidth() - org.telegram.messenger.g0.L(8.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(1.0f));
-        i6Var.draw(canvas);
+        h6Var.setBounds(c10, 0, getMeasuredWidth() - org.telegram.messenger.g0.L(8.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(1.0f));
+        h6Var.draw(canvas);
         int L2 = org.telegram.messenger.g0.L(-22.0f) + c10;
         int L3 = org.telegram.messenger.g0.L(5.0f);
         int L4 = org.telegram.messenger.g0.L(-4.0f) + c10;

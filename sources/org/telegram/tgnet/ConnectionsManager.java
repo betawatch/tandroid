@@ -101,13 +101,13 @@ import org.telegram.messenger.y8;
 import org.telegram.messenger.z2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.ee0;
-import org.telegram.ui.lo0;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.fe0;
+import org.telegram.ui.mo0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class ConnectionsManager extends c1 {
     private static final int CORE_POOL_SIZE;
@@ -166,7 +166,7 @@ public class ConnectionsManager extends c1 {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -321,12 +321,12 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public interface INativeTlTest {
         boolean test(long j3);
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -455,7 +455,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -469,7 +469,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class RequestException extends RuntimeException {
         public final int code;
         public final String text;
@@ -492,7 +492,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -621,7 +621,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -986,7 +986,7 @@ public class ConnectionsManager extends c1 {
         n10.append(System.currentTimeMillis() - j3);
         n10.append("ms");
         a8.e(n10.toString(), exc);
-        native_receivedIntegrityCheckClassic(i7, i10, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + ee0.x1(exc));
+        native_receivedIntegrityCheckClassic(i7, i10, str, "PLAYINTEGRITY_FAILED_EXCEPTION_" + fe0.x1(exc));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1360,7 +1360,7 @@ public class ConnectionsManager extends c1 {
                 g0.h3(new vj(s12, 19));
             }
         }
-        if (l6.o == i11 && Math.abs(j10 - qp.A8) >= 60) {
+        if (m6.o == i11 && Math.abs(j10 - qp.A8) >= 60) {
             g0.h3(s12.H2);
             qp.A8 = j10;
         }
@@ -1442,7 +1442,7 @@ public class ConnectionsManager extends c1 {
             }
             if ((i7 & 2) != 0) {
                 try {
-                    if (u51.k0.isEmpty()) {
+                    if (t51.k0.isEmpty()) {
                         connectionsManager = this;
                         b3.g.c(t0.b).e(i16, Math.max(0L, (System.currentTimeMillis() - j3) - native_getCurrentPingTime(connectionsManager.currentAccount)));
                         boolean z11 = r2.a;
@@ -1942,7 +1942,7 @@ public class ConnectionsManager extends c1 {
             ui.e eVar2 = eVar;
             x xVar = new x(this, 22);
             if (aVar.a == 3 && aVar.g() && requestTimeDelegate != null) {
-                g0.h3(new lo0(eVar2, xVar, aVar, requestTimeDelegate, 29));
+                g0.h3(new mo0(eVar2, xVar, aVar, requestTimeDelegate, 29));
                 return 0L;
             }
             if (requestTimeDelegate != null) {

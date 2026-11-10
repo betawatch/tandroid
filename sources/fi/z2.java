@@ -9,25 +9,25 @@ import java.util.ArrayList;
 import org.telegram.messenger.gf;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.wi0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class z2 extends wi0 {
+public final class z2 extends vi0 {
     public final /* synthetic */ f3 c;
 
     public z2(f3 f3Var) {
         this.c = f3Var;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 2;
     }
 
-    @Override // org.telegram.ui.Components.wi0
+    @Override // org.telegram.ui.Components.vi0
     public final String F(int i7) {
         gf gfVar;
         int i10 = i7 - 2;
@@ -54,27 +54,27 @@ public final class z2 extends wi0 {
         return id.e0(j3, true);
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public final void G(qj0 qj0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.vi0
+    public final void G(pj0 pj0Var, float f10, int[] iArr) {
         int e10 = e();
-        float width = (qj0Var.getWidth() - qj0Var.getPaddingLeft()) - qj0Var.getPaddingRight();
+        float width = (pj0Var.getWidth() - pj0Var.getPaddingLeft()) - pj0Var.getPaddingRight();
         f3 f3Var = this.c;
         ei.h hVar = f3Var.e;
         float f11 = hVar.J;
         int i7 = (int) (((int) (width / f11)) * f3Var.O);
         int ceil = (int) Math.ceil(e10 / f11);
-        float W1 = (org.telegram.messenger.g0.W1(f10, 0, Math.max(0, r2 - ((org.telegram.messenger.g0.q.y - qj0Var.getPaddingTop()) - qj0Var.getPaddingBottom()))) / (ceil * i7)) * ceil;
+        float W1 = (org.telegram.messenger.g0.W1(f10, 0, Math.max(0, r2 - ((org.telegram.messenger.g0.q.y - pj0Var.getPaddingTop()) - pj0Var.getPaddingBottom()))) / (ceil * i7)) * ceil;
         int round = Math.round(W1);
         iArr[0] = Math.max(0, hVar.J * round) + 2;
-        iArr[1] = qj0Var.getPaddingTop() + ((int) ((W1 - round) * i7));
+        iArr[1] = pj0Var.getPaddingTop() + ((int) ((W1 - round) * i7));
     }
 
-    @Override // org.telegram.ui.Components.wi0
-    public final float H(qj0 qj0Var) {
+    @Override // org.telegram.ui.Components.vi0
+    public final float H(pj0 pj0Var) {
         int e10 = e();
-        float width = (qj0Var.getWidth() - qj0Var.getPaddingLeft()) - qj0Var.getPaddingRight();
+        float width = (pj0Var.getWidth() - pj0Var.getPaddingLeft()) - pj0Var.getPaddingRight();
         float f10 = this.c.e.J;
-        return (Math.max(0, qj0Var.computeVerticalScrollOffset() - r2.getPadding()) - qj0Var.getPaddingTop()) / ((((int) Math.ceil(e10 / f10)) * ((int) (((int) (width / f10)) * r2.O))) - (org.telegram.messenger.g0.q.y - qj0Var.getPaddingTop()));
+        return (Math.max(0, pj0Var.computeVerticalScrollOffset() - r2.getPadding()) - pj0Var.getPaddingTop()) / ((((int) Math.ceil(e10 / f10)) * ((int) (((int) (width / f10)) * r2.O))) - (org.telegram.messenger.g0.q.y - pj0Var.getPaddingTop()));
     }
 
     @Override // v4.g0
@@ -184,7 +184,7 @@ public final class z2 extends wi0 {
         } else {
             view = new b3(f3Var.getContext(), f3Var.b, f3Var.O, f3Var.M);
         }
-        return new yi0(view);
+        return new xi0(view);
     }
 
     @Override // v4.g0

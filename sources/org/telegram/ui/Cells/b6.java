@@ -3,17 +3,17 @@ package org.telegram.ui.Cells;
 import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.cw0;
+import org.telegram.ui.dw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b6 implements p2 {
     public final /* synthetic */ org.telegram.ui.ActionBar.f2 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ cw0 c;
+    public final /* synthetic */ dw0 c;
 
-    public b6(cw0 cw0Var, org.telegram.ui.ActionBar.f2 f2Var, Context context) {
-        this.c = cw0Var;
+    public b6(dw0 dw0Var, org.telegram.ui.ActionBar.f2 f2Var, Context context) {
+        this.c = dw0Var;
         this.a = f2Var;
         this.b = context;
     }

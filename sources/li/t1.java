@@ -9,14 +9,14 @@ import android.graphics.RectF;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.hy;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class t1 extends tt0 {
+public final class t1 extends st0 {
     public boolean f0;
     public final Paint g0;
     public final RectF h0;
@@ -31,11 +31,11 @@ public final class t1 extends tt0 {
         this.h0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         b2 b2Var = this.i0;
         Rect rect = b2Var.x;
-        int r12 = l6.r1(b2Var.I, b2Var.getThemedColor(l6.d6));
+        int r12 = m6.r1(b2Var.I, b2Var.getThemedColor(m6.d6));
         Paint paint = this.g0;
         paint.setColor(r12);
         if (!b2Var.E || b2Var.y == null) {
@@ -83,7 +83,7 @@ public final class t1 extends tt0 {
         b2 b2Var = this.i0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (b2Var.v0()) {
-                org.telegram.messenger.k5.o(null, 2131746003, new hc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.k5.o(null, 2131746003, new gc(b2Var.X, b2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!b2Var.P.k3(keyEvent)) {
@@ -102,10 +102,10 @@ public final class t1 extends tt0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        hy hyVar;
+        gy gyVar;
         b2 b2Var = this.i0;
         if (!b2Var.P.u3.x() || !b2Var.P.v3.onTouchEvent(motionEvent)) {
-            int height = (!b2Var.C0 || (hyVar = b2Var.A0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(b2Var.D0, b2Var.T0), b2Var.U0) : (int) hyVar.getY();
+            int height = (!b2Var.C0 || (gyVar = b2Var.A0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(b2Var.D0, b2Var.T0), b2Var.U0) : (int) gyVar.getY();
             if (motionEvent.getAction() == 0 && b2Var.B0 && motionEvent.getY() < height) {
                 b2Var.p0(true);
             }

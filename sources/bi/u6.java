@@ -19,12 +19,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class u6 extends a5.h {
-    public org.telegram.ui.Components.i6 D;
+    public org.telegram.ui.Components.h6 D;
     public final float E;
     public bg.q F;
     public int G;
@@ -38,11 +38,11 @@ public final class u6 extends a5.h {
     public final int f;
     public final View h;
     public final ImageReceiver n;
-    public final org.telegram.ui.Components.g5 r;
+    public final org.telegram.ui.Components.f5 r;
     public RadialGradient s;
     public final Matrix w;
-    public final ny0 x;
-    public final ny0 y;
+    public final my0 x;
+    public final my0 y;
 
     public u6(View view, TL_stars.StarGift starGift, int i7, float f10) {
         super(view);
@@ -62,26 +62,26 @@ public final class u6 extends a5.h {
         this.E = f10;
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.n = imageReceiver;
-        org.telegram.ui.Components.g5 g5Var = new org.telegram.ui.Components.g5(org.telegram.messenger.g0.L(i7 > 180 ? 24.0f : 18.0f), view, false);
-        this.r = g5Var;
+        org.telegram.ui.Components.f5 f5Var = new org.telegram.ui.Components.f5(org.telegram.messenger.g0.L(i7 > 180 ? 24.0f : 18.0f), view, false);
+        this.r = f5Var;
         this.f = i7;
         if (starGift instanceof TL_stars.TL_starGift) {
             float f13 = i7;
             dd.c1(imageReceiver, starGift.sticker, (int) (0.75f * f13));
             String str = starGift.title;
-            ny0 ny0Var = new ny0(str == null ? "Gift" : str, 16.0f, org.telegram.messenger.g0.o());
-            this.x = ny0Var;
-            ny0Var.n(-1);
+            my0 my0Var = new my0(str == null ? "Gift" : str, 16.0f, org.telegram.messenger.g0.o());
+            this.x = my0Var;
+            my0Var.n(-1);
             float f14 = i7 - 30;
-            ny0Var.p(org.telegram.messenger.g0.L(f14));
+            my0Var.p(org.telegram.messenger.g0.L(f14));
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-            ny0Var.a();
-            ny0Var.m(1);
-            ny0 ny0Var2 = new ny0(starGift.sold_out ? org.telegram.messenger.id.M0(2131749967, null) : org.telegram.messenger.id.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
-            this.y = ny0Var2;
-            ny0Var2.p(org.telegram.messenger.g0.L(f14));
-            ny0Var2.a();
-            ny0Var2.m(1);
+            my0Var.a();
+            my0Var.m(1);
+            my0 my0Var2 = new my0(starGift.sold_out ? org.telegram.messenger.id.M0(2131749967, null) : org.telegram.messenger.id.G(starGift.availability_total, "Gift2SoldAuctionPreviewGifts", new Object[0]), 13.0f, null);
+            this.y = my0Var2;
+            my0Var2.p(org.telegram.messenger.g0.L(f14));
+            my0Var2.a();
+            my0Var2.m(1);
             ud udVar = new ud(1, 40);
             this.e = udVar;
             float f15 = 0.45f * f13;
@@ -227,11 +227,11 @@ public final class u6 extends a5.h {
             TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) ea.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
             TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ea.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             if (stargiftattributepattern != null) {
-                g5Var.i(stargiftattributepattern.document, false);
+                f5Var.i(stargiftattributepattern.document, false);
             }
             if (stargiftattributebackdrop != null) {
                 this.s = new RadialGradient(0.0f, 0.0f, org.telegram.messenger.g0.N(i7) / 2.0f, new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                g5Var.k(Integer.valueOf(stargiftattributebackdrop.pattern_color | (-16777216)));
+                f5Var.k(Integer.valueOf(stargiftattributebackdrop.pattern_color | (-16777216)));
             }
             if (stargiftattributemodel != null) {
                 dd.c1(imageReceiver, stargiftattributemodel.document, (int) (i7 * 0.75f));
@@ -268,9 +268,9 @@ public final class u6 extends a5.h {
     }
 
     public final void c(int i7) {
-        ny0 ny0Var = this.y;
-        if (ny0Var != null) {
-            ny0Var.n(i7 | (-16777216));
+        my0 my0Var = this.y;
+        if (my0Var != null) {
+            my0Var.n(i7 | (-16777216));
         }
     }
 
@@ -282,9 +282,9 @@ public final class u6 extends a5.h {
         }
         this.F.a(ConnectionsManager.getInstance(p10.s0).getCurrentTime() < i7 ? i7 - r0 : i10 - r0);
         if (this.D == null) {
-            org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false);
-            this.D = i6Var;
-            i6Var.u(-1);
+            org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(false, false, false);
+            this.D = h6Var;
+            h6Var.u(-1);
             this.D.w(org.telegram.messenger.g0.L(12.0f));
             this.D.setCallback(new a5.b(this, 1));
         }
@@ -293,7 +293,7 @@ public final class u6 extends a5.h {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ny0 ny0Var;
+        my0 my0Var;
         Paint paint = (Paint) this.b;
         Rect bounds = getBounds();
         RectF rectF = this.d;
@@ -320,9 +320,9 @@ public final class u6 extends a5.h {
             udVar.b(canvas, -1, 1.0f);
         }
         canvas.restore();
-        ny0 ny0Var2 = this.x;
+        my0 my0Var2 = this.x;
         ImageReceiver imageReceiver = this.n;
-        if (ny0Var2 == null || (ny0Var = this.y) == null) {
+        if (my0Var2 == null || (my0Var = this.y) == null) {
             float min = Math.min(rectF.width(), rectF.height()) * 0.75f;
             float f11 = min / 2.0f;
             imageReceiver.y0(rectF.centerX() - f11, rectF.centerY() - f11, min, min);
@@ -340,8 +340,8 @@ public final class u6 extends a5.h {
             float min2 = Math.min(rectF.width(), rectF.height()) * 0.6f;
             imageReceiver.y0(rectF.centerX() - (min2 / 2.0f), (rectF.height() * 0.12f) + rectF.top, min2, min2);
             imageReceiver.h(canvas, null);
-            ny0Var2.e(canvas, rectF.centerX() - (ny0Var2.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(50.0f));
-            ny0Var.e(canvas, rectF.centerX() - (ny0Var.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(30.0f));
+            my0Var2.e(canvas, rectF.centerX() - (my0Var2.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(50.0f));
+            my0Var.e(canvas, rectF.centerX() - (my0Var.k() / 2.0f), rectF.bottom - org.telegram.messenger.g0.L(30.0f));
         }
         canvas.restore();
     }
@@ -371,7 +371,7 @@ public final class u6 extends a5.h {
     }
 
     public final void h() {
-        ny0 ny0Var;
+        my0 my0Var;
         int currentTime = ConnectionsManager.getInstance(p10.s0).getCurrentTime();
         int i7 = this.G;
         if (currentTime > i7) {
@@ -384,9 +384,9 @@ public final class u6 extends a5.h {
                 this.D.t(org.telegram.messenger.g0.g0(i7 - currentTime, true, false), true, true);
             }
         }
-        if (currentTime <= this.G || (ny0Var = this.y) == null) {
+        if (currentTime <= this.G || (my0Var = this.y) == null) {
             return;
         }
-        ny0Var.q(org.telegram.messenger.id.M0(2131749967, null));
+        my0Var.q(org.telegram.messenger.id.M0(2131749967, null));
     }
 }

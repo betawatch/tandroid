@@ -15,30 +15,30 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class b extends x31 {
+public final class b extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        x31.h(new b());
+        w31.h(new b());
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
         c cVar = (c) view;
         boolean z10 = false;
-        cVar.setGrid(y31Var.u == 1);
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) y31Var.G;
+        cVar.setGrid(x31Var.u == 1);
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) x31Var.G;
         TextView textView = cVar.d;
         TextView textView2 = cVar.c;
-        org.telegram.ui.Components.l9 l9Var = cVar.b;
+        org.telegram.ui.Components.k9 k9Var = cVar.b;
         hc hcVar = null;
         if (TextUtils.isEmpty(nftitem.name)) {
             textView2.setText(id.M0(2131743176, null));
@@ -58,10 +58,10 @@ public final class b extends x31 {
             textView.setText(id.V(null, null, 2131743174, b10, b11));
         }
         hc c10 = c.c(nftitem, !cVar.f);
-        int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.y6, cVar.a);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.y6, cVar.a);
         Drawable mutate = cVar.getContext().getResources().getDrawable(R.drawable.wallet_nft_placeholder).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(cVar.f ? 11.0f : 8.0f), org.telegram.ui.ActionBar.l6.r1(0.1f, w02));
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(cVar.f ? 11.0f : 8.0f), org.telegram.ui.ActionBar.m6.r1(0.1f, w02));
         xp xpVar = new xp(d02, mutate);
         cVar.h = mutate;
         cVar.n = d02;
@@ -70,12 +70,12 @@ public final class b extends x31 {
             if (nftitem.image_small != null && nftitem.image != null) {
                 hcVar = c.c(nftitem, true);
             }
-            l9Var.a.r0(c10, "160_160", hcVar, "100_100", xpVar, 0L, null, nftitem, 0);
-            l9Var.d();
+            k9Var.a.r0(c10, "160_160", hcVar, "100_100", xpVar, 0L, null, nftitem, 0);
+            k9Var.d();
         } else if (c10 != null) {
-            l9Var.j(c10, "46_46", xpVar, nftitem);
+            k9Var.j(c10, "46_46", xpVar, nftitem);
         } else {
-            l9Var.setImageDrawable(xpVar);
+            k9Var.setImageDrawable(xpVar);
         }
         if (z9 && !cVar.f) {
             z10 = true;
@@ -85,32 +85,32 @@ public final class b extends x31 {
         cVar.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final boolean c(y31 y31Var, y31 y31Var2) {
-        if (!e(y31Var, y31Var2)) {
+    @Override // org.telegram.ui.Components.w31
+    public final boolean c(x31 x31Var, x31 x31Var2) {
+        if (!e(x31Var, x31Var2)) {
             return false;
         }
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) y31Var.G;
-        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) y31Var2.G;
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) x31Var.G;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) x31Var2.G;
         if (nftitem != nftitem2) {
             return nftitem != null && nftitem2 != null && Objects.equals(nftitem.name, nftitem2.name) && Objects.equals(nftitem.image, nftitem2.image) && Objects.equals(nftitem.image_small, nftitem2.image_small) && Objects.equals(nftitem.description, nftitem2.description) && Objects.equals(nftitem.attributes, nftitem2.attributes) && Objects.equals(nftitem.extra, nftitem2.extra);
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
-        return new c(context, g6Var);
+    @Override // org.telegram.ui.Components.w31
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        return new c(context, h6Var);
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final boolean e(y31 y31Var, y31 y31Var2) {
-        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) y31Var.G;
-        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) y31Var2.G;
+    @Override // org.telegram.ui.Components.w31
+    public final boolean e(x31 x31Var, x31 x31Var2) {
+        TL_wallet.nftItem nftitem = (TL_wallet.nftItem) x31Var.G;
+        TL_wallet.nftItem nftitem2 = (TL_wallet.nftItem) x31Var2.G;
         return (nftitem == null || nftitem2 == null) ? nftitem == nftitem2 : TextUtils.equals(nftitem.address, nftitem2.address);
     }
 
-    @Override // org.telegram.ui.Components.x31
+    @Override // org.telegram.ui.Components.w31
     public final boolean f() {
         return true;
     }

@@ -6,10 +6,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class s implements Runnable {
                 final int i10 = 0;
                 linearLayout.setOrientation(0);
                 TextView textView = new TextView(g0Var.getContext());
-                int i11 = l6.E8;
+                int i11 = m6.E8;
                 u uVar = g0Var.z1;
-                s6.U(textView, i11, uVar);
-                textView.setBackground(l6.N0(false));
+                t6.U(textView, i11, uVar);
+                textView.setBackground(m6.N0(false));
                 textView.setGravity(16);
                 textView.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
                 final int i12 = 1;
@@ -78,8 +78,8 @@ public final /* synthetic */ class s implements Runnable {
                 linearLayout.addView(textView, ha.o(-2, 48));
                 if (jVar instanceof k2) {
                     TextView textView2 = new TextView(g0Var.getContext());
-                    s6.U(textView2, i11, uVar);
-                    textView2.setBackground(l6.N0(false));
+                    t6.U(textView2, i11, uVar);
+                    textView2.setBackground(m6.N0(false));
                     textView2.setGravity(16);
                     textView2.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
                     textView2.setTextSize(1, 14.0f);
@@ -91,8 +91,8 @@ public final /* synthetic */ class s implements Runnable {
                 }
                 if (jVar instanceof d2) {
                     TextView textView3 = new TextView(g0Var.getContext());
-                    s6.U(textView3, i11, uVar);
-                    textView3.setBackgroundDrawable(l6.N0(false));
+                    t6.U(textView3, i11, uVar);
+                    textView3.setBackgroundDrawable(m6.N0(false));
                     textView3.setGravity(16);
                     textView3.setEllipsize(truncateAt);
                     textView3.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
@@ -130,8 +130,8 @@ public final /* synthetic */ class s implements Runnable {
                 }
                 if (!(jVar instanceof n1)) {
                     TextView textView4 = new TextView(g0Var.getContext());
-                    s6.U(textView4, i11, uVar);
-                    textView4.setBackgroundDrawable(l6.N0(false));
+                    t6.U(textView4, i11, uVar);
+                    textView4.setBackgroundDrawable(m6.N0(false));
                     textView4.setGravity(16);
                     textView4.setEllipsize(truncateAt);
                     textView4.setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);

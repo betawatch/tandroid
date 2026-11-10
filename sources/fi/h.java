@@ -8,7 +8,7 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -24,7 +24,7 @@ public final class h implements TextWatcher {
         String str;
         m mVar = this.c;
         e eVar = mVar.c0;
-        org.telegram.ui.Components.j6 j6Var = mVar.w;
+        org.telegram.ui.Components.i6 i6Var = mVar.w;
         mVar.x = Character.codePointCount(editable, 0, editable.length());
         int captionLimit = mVar.getCaptionLimit();
         if (mVar.x + 25 > captionLimit) {
@@ -32,13 +32,13 @@ public final class h implements TextWatcher {
         } else {
             str = null;
         }
-        j6Var.a();
-        j6Var.setText(str);
-        j6Var.setTextColor(mVar.x >= captionLimit ? -1280137 : -1);
+        i6Var.a();
+        i6Var.setText(str);
+        i6Var.setTextColor(mVar.x >= captionLimit ? -1280137 : -1);
         if (mVar.x > captionLimit && !p10.i(mVar.U).q() && mVar.x < mVar.getCaptionPremiumLimit() && mVar.x > this.a && (mVar.e() || qp.s1(mVar.U).D3())) {
             int i7 = -mVar.N;
             mVar.N = i7;
-            org.telegram.messenger.g0.G3(i7, j6Var, null);
+            org.telegram.messenger.g0.G3(i7, i6Var, null);
             org.telegram.messenger.p2.D.a();
         }
         int i10 = mVar.x;
@@ -76,7 +76,7 @@ public final class h implements TextWatcher {
         if (mVar.M == null) {
             i iVar = new i(mVar, mVar.getContext(), mVar.y, LaunchActivity.Q(), new di.b(), 0);
             mVar.M = iVar;
-            mVar.T = new org.telegram.ui.Components.ca(mVar.O, iVar, 0, false);
+            mVar.T = new org.telegram.ui.Components.ba(mVar.O, iVar, 0, false);
             mVar.M.p(new cb.c(mVar, 24));
             dh.c cVar = mVar.g0;
             if (cVar != null) {

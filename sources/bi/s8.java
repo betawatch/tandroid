@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -21,20 +21,20 @@ public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ TLRPC.TL_error d;
     public final /* synthetic */ v10 e;
     public final /* synthetic */ Context f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 h;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 h;
     public final /* synthetic */ long n;
     public final /* synthetic */ String r;
     public final /* synthetic */ long s;
     public final /* synthetic */ TLObject w;
     public final /* synthetic */ TLObject x;
 
-    public /* synthetic */ s8(ea eaVar, TLObject tLObject, TLRPC.TL_error tL_error, v10 v10Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, long j3, String str, long j10, TLObject tLObject2, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ s8(ea eaVar, TLObject tLObject, TLRPC.TL_error tL_error, v10 v10Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, String str, long j10, TLObject tLObject2, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.b = eaVar;
         this.c = tLObject;
         this.d = tL_error;
         this.e = v10Var;
         this.f = context;
-        this.h = g6Var;
+        this.h = h6Var;
         this.n = j3;
         this.r = str;
         this.s = j10;
@@ -44,8 +44,8 @@ public final /* synthetic */ class s8 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        t80 t80Var;
-        t80 t80Var2;
+        u80 u80Var;
+        u80 u80Var2;
         switch (this.a) {
             case 0:
                 ea eaVar = this.b;
@@ -53,25 +53,25 @@ public final /* synthetic */ class s8 implements Runnable {
                 TLRPC.TL_error tL_error = this.d;
                 v10 v10Var = this.e;
                 Context context = this.f;
-                org.telegram.ui.ActionBar.g6 g6Var = this.h;
+                org.telegram.ui.ActionBar.h6 h6Var = this.h;
                 long j3 = this.n;
                 String str = this.r;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.w;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.x;
                 long j10 = this.s;
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                org.telegram.ui.Components.hc X = (Q == null || Q.visibleDialog != null) ? org.telegram.ui.Components.hc.X() : org.telegram.ui.Components.hc.a0(Q);
+                org.telegram.ui.Components.gc X = (Q == null || Q.visibleDialog != null) ? org.telegram.ui.Components.gc.X() : org.telegram.ui.Components.gc.a0(Q);
                 if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error != null && "BALANCE_TOO_LOW".equals(tL_error.text)) {
                         if (!qp.s1(eaVar.a).j7) {
                             boolean[] zArr = {false};
-                            tc tcVar = new tc(context, g6Var, j3, 6, str, new m3(eaVar, zArr, tL_payments_paymentFormStarGift, starGift, j10, v10Var), 0L);
+                            tc tcVar = new tc(context, h6Var, j3, 6, str, new m3(eaVar, zArr, tL_payments_paymentFormStarGift, starGift, j10, v10Var), 0L);
                             tcVar.setOnDismissListener(new t8(v10Var, zArr, 2));
                             tcVar.show();
                             break;
                         } else {
                             v10Var.a(Boolean.FALSE, null);
-                            ea.c0(context, g6Var);
+                            ea.c0(context, h6Var);
                             break;
                         }
                     } else if (tL_error != null && "STARGIFT_USAGE_LIMITED".equals(tL_error.text)) {
@@ -97,8 +97,8 @@ public final /* synthetic */ class s8 implements Runnable {
                     }
                     qp.s1(eaVar.a).e7.edit().putBoolean("show_gift_for_" + j10, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j10, true).apply();
                     LaunchActivity launchActivity = LaunchActivity.G1;
-                    if (launchActivity != null && (t80Var = launchActivity.v0) != null) {
-                        t80Var.c(true);
+                    if (launchActivity != null && (u80Var = launchActivity.v0) != null) {
+                        u80Var.c(true);
                         break;
                     }
                 }
@@ -109,25 +109,25 @@ public final /* synthetic */ class s8 implements Runnable {
                 TLRPC.TL_error tL_error2 = this.d;
                 v10 v10Var2 = this.e;
                 Context context2 = this.f;
-                org.telegram.ui.ActionBar.g6 g6Var2 = this.h;
+                org.telegram.ui.ActionBar.h6 h6Var2 = this.h;
                 long j11 = this.n;
                 String str2 = this.r;
                 long j12 = this.s;
                 TLObject tLObject3 = this.w;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.x;
                 org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
-                org.telegram.ui.Components.hc X2 = (Q2 == null || Q2.visibleDialog != null) ? org.telegram.ui.Components.hc.X() : org.telegram.ui.Components.hc.a0(Q2);
+                org.telegram.ui.Components.gc X2 = (Q2 == null || Q2.visibleDialog != null) ? org.telegram.ui.Components.gc.X() : org.telegram.ui.Components.gc.a0(Q2);
                 if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error2 != null && "BALANCE_TOO_LOW".equals(tL_error2.text)) {
                         if (!qp.s1(eaVar2.a).j7) {
                             boolean[] zArr2 = {false};
-                            tc tcVar2 = new tc(context2, g6Var2, j11, 6, str2, new m3(eaVar2, zArr2, j12, tLObject3, tL_textWithEntities, v10Var2), 0L);
+                            tc tcVar2 = new tc(context2, h6Var2, j11, 6, str2, new m3(eaVar2, zArr2, j12, tLObject3, tL_textWithEntities, v10Var2), 0L);
                             tcVar2.setOnDismissListener(new t8(v10Var2, zArr2, 1));
                             tcVar2.show();
                             break;
                         } else {
                             v10Var2.a(Boolean.FALSE, null);
-                            ea.c0(context2, g6Var2);
+                            ea.c0(context2, h6Var2);
                             break;
                         }
                     } else if (tL_error2 != null && "STARGIFT_USAGE_LIMITED".equals(tL_error2.text)) {
@@ -148,8 +148,8 @@ public final /* synthetic */ class s8 implements Runnable {
                     }
                     qp.s1(eaVar2.a).e7.edit().putBoolean("show_gift_for_" + j12, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j12, true).apply();
                     LaunchActivity launchActivity2 = LaunchActivity.G1;
-                    if (launchActivity2 != null && (t80Var2 = launchActivity2.v0) != null) {
-                        t80Var2.c(true);
+                    if (launchActivity2 != null && (u80Var2 = launchActivity2.v0) != null) {
+                        u80Var2.c(true);
                         break;
                     }
                 }
@@ -157,13 +157,13 @@ public final /* synthetic */ class s8 implements Runnable {
         }
     }
 
-    public /* synthetic */ s8(ea eaVar, TLObject tLObject, TLRPC.TL_error tL_error, v10 v10Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+    public /* synthetic */ s8(ea eaVar, TLObject tLObject, TLRPC.TL_error tL_error, v10 v10Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
         this.b = eaVar;
         this.c = tLObject;
         this.d = tL_error;
         this.e = v10Var;
         this.f = context;
-        this.h = g6Var;
+        this.h = h6Var;
         this.n = j3;
         this.r = str;
         this.w = tL_payments_paymentFormStarGift;

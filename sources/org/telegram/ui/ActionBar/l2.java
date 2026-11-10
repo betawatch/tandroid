@@ -1,56 +1,31 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.view.View;
-import fi.r7;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l2 extends s2 {
-    public final /* synthetic */ v2 H;
+public final /* synthetic */ class l2 implements oi.n, r0.m, r1 {
+    public final /* synthetic */ w2 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(v2 v2Var, Context context) {
-        super(v2Var, context);
-        this.H = v2Var;
+    public /* synthetic */ l2(w2 w2Var) {
+        this.a = w2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.s2, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.H.Z(canvas);
+    @Override // r0.m
+    public r0.k1 S0(View view, r0.k1 k1Var) {
+        return this.a.b0(k1Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.s2, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        try {
-            return super.drawChild(canvas, view, j3);
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return true;
-        }
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(u1 u1Var, int i7) {
+        this.a.dismiss();
+        wg.f1.l1(0, null);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        setTag(R.id.bulletin_delegate_tag, new r7(6));
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        v2 v2Var = this.H;
-        v2Var.h = null;
-        v2Var.c.requestApplyInsets();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        setTag(R.id.bulletin_delegate_tag, null);
+    @Override // oi.n
+    public int h() {
+        w2 w2Var = this.a;
+        w2Var.getClass();
+        return m6.w0(m6.h5, w2Var.I0);
     }
 }

@@ -4,7 +4,7 @@ import android.view.View;
 import bi.fc;
 import bi.mb;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 g0Var2.B0(1);
                 g0Var2.postDelayed(new n(g0Var2, 1), 350L);
                 v vVar = new v(g0Var2.getContext(), g0Var2.z1, false, false);
-                vVar.v1 = new q(g0Var2);
+                vVar.y1 = new q(g0Var2);
                 vVar.N0(new fc(g0Var2, 4));
                 vVar.setOnDismissListener(new mb(g0Var2, i7));
                 vVar.show();

@@ -35,16 +35,16 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.c80;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.j6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.i6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.uq0;
+import org.telegram.ui.vq0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -123,11 +123,11 @@ public final /* synthetic */ class x implements Runnable {
                     ImageView imageView = new ImageView(context);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
                     int L = org.telegram.messenger.g0.L(44.0f);
-                    int i12 = l6.Ci;
-                    ShapeDrawable L2 = l6.L(L, l6.x0(null, i12, false));
-                    o6 M = s6.M(i12);
+                    int i12 = m6.Ci;
+                    ShapeDrawable L2 = m6.L(L, m6.x0(null, i12, false));
+                    p6 M = t6.M(i12);
                     imageView.setBackground(L2);
-                    s6.j(imageView, L2, M, null, null);
+                    t6.j(imageView, L2, M, null, null);
                     imageView.setImageResource(R.drawable.msg_round_file_s);
                     linearLayout.addView(imageView, ha.t(44, 44, 19, 0, 0, 10, 0));
                     LinearLayout linearLayout2 = new LinearLayout(context);
@@ -135,17 +135,17 @@ public final /* synthetic */ class x implements Runnable {
                     TextView g10 = k5.g(context, 1, 15.0f);
                     g10.setTypeface(org.telegram.messenger.g0.o());
                     g10.setText(str6);
-                    s6.U(g10, l6.n5, null);
+                    t6.U(g10, m6.n5, null);
                     linearLayout2.addView(g10, ha.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
-                    j6 j6Var = new j6(context, true, true, true);
-                    j6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
+                    i6 i6Var = new i6(context, true, true, true);
+                    i6Var.setTextSize(org.telegram.messenger.g0.L(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    c80 c80Var = new c80(org.telegram.messenger.g0.L(55.0f), j6Var);
-                    int i13 = l6.se;
-                    c80Var.a(l6.r1(0.35f, l6.x0(null, i13, false)), l6.r1(0.075f, l6.x0(null, i13, false)));
-                    spannableString.setSpan(c80Var, 0, 1, 33);
-                    j6Var.setText(spannableString);
-                    ai.e eVar = new ai.e(j6Var, 28);
+                    b80 b80Var = new b80(org.telegram.messenger.g0.L(55.0f), i6Var);
+                    int i13 = m6.se;
+                    b80Var.a(m6.r1(0.35f, m6.x0(null, i13, false)), m6.r1(0.075f, m6.x0(null, i13, false)));
+                    spannableString.setSpan(b80Var, 0, 1, 33);
+                    i6Var.setText(spannableString);
+                    ai.e eVar = new ai.e(i6Var, 28);
                     HashMap hashMap2 = hi.g0.h;
                     if (hashMap2.containsKey(str5)) {
                         Pair pair = (Pair) hashMap2.get(str5);
@@ -153,8 +153,8 @@ public final /* synthetic */ class x implements Runnable {
                     } else {
                         new hi.a0(str5, eVar).execute(str5);
                     }
-                    s6.Y(j6Var, i13, null);
-                    linearLayout2.addView(j6Var, ha.o(-1, 15));
+                    t6.Y(i6Var, i13, null);
+                    linearLayout2.addView(i6Var, ha.o(-1, 15));
                     linearLayout.addView(linearLayout2, ha.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.o(linearLayout);
                     final boolean[] zArr = new boolean[1];
@@ -258,7 +258,7 @@ public final /* synthetic */ class x implements Runnable {
                     }
                     x0 x0Var5 = u0Var.Q;
                     if (x0Var5 != null) {
-                        new hc(x0Var5, x0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, str12))).k(true);
+                        new gc(x0Var5, x0Var5.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, str12))).k(true);
                         break;
                     }
                 } catch (Exception e10) {
@@ -402,7 +402,7 @@ public final /* synthetic */ class x implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                uq0 uq0Var = (uq0) obj3;
+                vq0 vq0Var = (vq0) obj3;
                 String str16 = (String) obj2;
                 p1 p1Var = (p1) obj;
                 if (!zArr2[0]) {
@@ -411,7 +411,7 @@ public final /* synthetic */ class x implements Runnable {
                     webView.onPause();
                     webView.destroy();
                     org.telegram.messenger.g0.E2(webView);
-                    org.telegram.messenger.g0.E2(uq0Var);
+                    org.telegram.messenger.g0.E2(vq0Var);
                     try {
                         jSONObject = new JSONObject(str16);
                     } catch (Exception e16) {

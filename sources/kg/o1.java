@@ -11,11 +11,11 @@ import android.view.View;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o1 extends ReplacementSpan {
     public static final /* synthetic */ int d = 0;
@@ -25,7 +25,7 @@ public final class o1 extends ReplacementSpan {
 
     public o1(View[] viewArr) {
         this.a = 2;
-        this.b = new xq(0.33d, 0.0d, 0.67d, 1.0d);
+        this.b = new wq(0.33d, 0.0d, 0.67d, 1.0d);
         this.c = viewArr;
     }
 
@@ -37,32 +37,32 @@ public final class o1 extends ReplacementSpan {
                 float f11 = (i11 + i13) / 2.0f;
                 RectF rectF = org.telegram.messenger.g0.P;
                 float f12 = N / 2.0f;
-                rectF.set(f10, f11 - f12, ((int) (((ny0) this.c).c + org.telegram.messenger.g0.L(10.0f))) + f10, f12 + f11);
+                rectF.set(f10, f11 - f12, ((int) (((my0) this.c).c + org.telegram.messenger.g0.L(10.0f))) + f10, f12 + f11);
                 Paint paint2 = (Paint) this.b;
-                int i14 = l6.z6;
-                paint2.setColor(l6.r1(0.15f, l6.x0(null, i14, false)));
+                int i14 = m6.z6;
+                paint2.setColor(m6.r1(0.15f, m6.x0(null, i14, false)));
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint2);
-                ((ny0) this.c).c(f10 + org.telegram.messenger.g0.L(5.0f), f11, Utilities.i((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), l6.x0(null, i14, false), canvas);
+                ((my0) this.c).c(f10 + org.telegram.messenger.g0.L(5.0f), f11, Utilities.i((paint.getAlpha() * 2) / 255.0f, 1.0f, 0.0f), m6.x0(null, i14, false), canvas);
                 break;
             case 1:
                 float f13 = (i11 + i13) / 2.0f;
                 RectF rectF2 = org.telegram.messenger.g0.P;
-                rectF2.set(f10, f13 - org.telegram.messenger.g0.L(7.66f), ((ny0) this.c).c + f10 + org.telegram.messenger.g0.L(6.66f), org.telegram.messenger.g0.L(7.66f) + f13);
+                rectF2.set(f10, f13 - org.telegram.messenger.g0.L(7.66f), ((my0) this.c).c + f10 + org.telegram.messenger.g0.L(6.66f), org.telegram.messenger.g0.L(7.66f) + f13);
                 canvas.saveLayerAlpha(rectF2, qs.e4, 31);
                 Paint paint3 = (Paint) this.b;
                 paint3.setColor(paint.getColor());
                 canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), paint3);
-                ((ny0) this.c).c(f10 + org.telegram.messenger.g0.L(3.33f), f13, 1.0f, -1, canvas);
+                ((my0) this.c).c(f10 + org.telegram.messenger.g0.L(3.33f), f13, 1.0f, -1, canvas);
                 canvas.restore();
                 break;
             default:
-                xq xqVar = (xq) this.b;
+                wq wqVar = (wq) this.b;
                 canvas.save();
                 canvas.translate(f10 + org.telegram.messenger.g0.L(4.0f), i12 / 2.0f);
                 long uptimeMillis = (SystemClock.uptimeMillis() % 250) + 500;
                 for (int i15 = 0; i15 < 3; i15++) {
                     float min = Math.min(1.0f, (((i15 * 250) + uptimeMillis) % 750) / 667.0f);
-                    canvas.drawCircle(org.telegram.messenger.g0.N((xqVar.getInterpolation(min) * 16.0f) + 1.667f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.N((min <= 0.425f ? xqVar.getInterpolation(min / 0.425f) : 1.0f - xqVar.getInterpolation((min - 0.425f) / 0.575f)) * 2.0f), paint);
+                    canvas.drawCircle(org.telegram.messenger.g0.N((wqVar.getInterpolation(min) * 16.0f) + 1.667f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.N((min <= 0.425f ? wqVar.getInterpolation(min / 0.425f) : 1.0f - wqVar.getInterpolation((min - 0.425f) / 0.575f)) * 2.0f), paint);
                 }
                 canvas.restore();
                 for (View view : (View[]) this.c) {
@@ -76,9 +76,9 @@ public final class o1 extends ReplacementSpan {
     public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                return (int) (((ny0) this.c).c + org.telegram.messenger.g0.L(10.0f));
+                return (int) (((my0) this.c).c + org.telegram.messenger.g0.L(10.0f));
             case 1:
-                return (int) (((ny0) this.c).c + org.telegram.messenger.g0.L(6.66f));
+                return (int) (((my0) this.c).c + org.telegram.messenger.g0.L(6.66f));
             default:
                 return org.telegram.messenger.g0.L(20.0f);
         }
@@ -87,14 +87,14 @@ public final class o1 extends ReplacementSpan {
     public o1(int i7) {
         this.a = 0;
         this.b = new Paint(1);
-        this.c = new ny0(id.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
+        this.c = new my0(id.G(i7, "BusinessRepliesMore", new Object[0]), 9.33f, org.telegram.messenger.g0.o());
     }
 
     public o1() {
         this.a = 1;
         this.b = new Paint(1);
-        ny0 ny0Var = new ny0("x50", 13.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
-        this.c = ny0Var;
-        ny0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        my0 my0Var = new my0("x50", 13.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        this.c = my0Var;
+        my0Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

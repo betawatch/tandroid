@@ -11,11 +11,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.s60;
-import org.telegram.ui.Components.u60;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.r60;
+import org.telegram.ui.Components.t60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -29,14 +29,14 @@ public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ a1(org.telegram.ui.ActionBar.u1 u1Var, Context context, int i7, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, g6 g6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
+    public /* synthetic */ a1(org.telegram.ui.ActionBar.u1 u1Var, Context context, int i7, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, h6 h6Var, org.telegram.ui.web.p pVar, bi.t0 t0Var) {
         this.b = u1Var;
         this.d = context;
         this.e = i7;
         this.c = j3;
         this.f = tL_messages_preparedInlineMessage;
         this.h = fileArr;
-        this.n = g6Var;
+        this.n = h6Var;
         this.r = pVar;
         this.s = t0Var;
     }
@@ -52,16 +52,16 @@ public final /* synthetic */ class a1 implements Runnable {
                 Context context = (Context) this.d;
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) this.f;
                 File[] fileArr = (File[]) this.h;
-                g6 g6Var = (g6) this.n;
+                h6 h6Var = (h6) this.n;
                 org.telegram.ui.web.p pVar = (org.telegram.ui.web.p) this.r;
                 bi.t0 t0Var = (bi.t0) this.s;
                 u1Var.dismiss();
-                new i1(context, this.e, this.c, tL_messages_preparedInlineMessage, fileArr[0], null, g6Var, pVar, t0Var).show();
+                new i1(context, this.e, this.c, tL_messages_preparedInlineMessage, fileArr[0], null, h6Var, pVar, t0Var).show();
                 break;
             case 1:
                 org.telegram.ui.ActionBar.u1 u1Var2 = (org.telegram.ui.ActionBar.u1) this.b;
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) this.h;
-                s60 s60Var = (s60) this.n;
+                r60 r60Var = (r60) this.n;
                 Context context2 = (Context) this.d;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.r;
                 TLRPC.Peer peer = (TLRPC.Peer) this.s;
@@ -74,18 +74,18 @@ public final /* synthetic */ class a1 implements Runnable {
                 if (tLObject != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject;
                     if (joinaspeers.peers.size() != 1) {
-                        u60.z1 = joinaspeers.peers;
+                        t60.C1 = joinaspeers.peers;
                         long j3 = this.c;
-                        u60.B1 = j3;
-                        u60.A1 = SystemClock.elapsedRealtime();
+                        t60.E1 = j3;
+                        t60.D1 = SystemClock.elapsedRealtime();
                         int i10 = cVar.a;
-                        u60.C1 = i10;
+                        t60.F1 = i10;
                         qp.s1(i10).S3(joinaspeers.chats, false);
                         qp.s1(cVar.a).Y3(joinaspeers.users, false);
-                        u60.L0(context2, j3, joinaspeers.peers, f2Var, this.e, peer, s60Var);
+                        t60.L0(context2, j3, joinaspeers.peers, f2Var, this.e, peer, r60Var);
                         break;
                     } else {
-                        s60Var.a(qp.s1(cVar.a).j1(ij.B1(joinaspeers.peers.get(0))), false, false, false);
+                        r60Var.a(qp.s1(cVar.a).j1(ij.B1(joinaspeers.peers.get(0))), false, false, false);
                         break;
                     }
                 }
@@ -118,11 +118,11 @@ public final /* synthetic */ class a1 implements Runnable {
         }
     }
 
-    public /* synthetic */ a1(org.telegram.ui.ActionBar.u1 u1Var, TLObject tLObject, org.telegram.messenger.c cVar, s60 s60Var, long j3, Context context, org.telegram.ui.ActionBar.f2 f2Var, int i7, TLRPC.Peer peer) {
+    public /* synthetic */ a1(org.telegram.ui.ActionBar.u1 u1Var, TLObject tLObject, org.telegram.messenger.c cVar, r60 r60Var, long j3, Context context, org.telegram.ui.ActionBar.f2 f2Var, int i7, TLRPC.Peer peer) {
         this.b = u1Var;
         this.f = tLObject;
         this.h = cVar;
-        this.n = s60Var;
+        this.n = r60Var;
         this.c = j3;
         this.d = context;
         this.r = f2Var;

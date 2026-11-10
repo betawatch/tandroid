@@ -1,149 +1,49 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import java.util.HashSet;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class fb0 extends TextView implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Cells.y a;
-    public final org.telegram.ui.Components.b80 b;
-    public int c;
-    public final /* synthetic */ ee0 d;
+public final class fb0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fe0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb0(ee0 ee0Var, Context context) {
-        super(context);
-        this.d = ee0Var;
-        int i7 = org.telegram.ui.ActionBar.l6.I6;
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.l6.h0(org.telegram.ui.ActionBar.l6.r1(0.1f, org.telegram.ui.ActionBar.l6.x0(null, i7, false)), 7, -1);
-        this.a = h02;
-        org.telegram.ui.Components.b80 b80Var = new org.telegram.ui.Components.b80();
-        this.b = b80Var;
-        org.telegram.ui.ActionBar.r6 r6Var = org.telegram.ui.ActionBar.s6.a;
-        this.c = org.telegram.ui.ActionBar.l6.r1(0.1f, org.telegram.ui.ActionBar.l6.x0(null, i7, false));
-        h02.setCallback(this);
-        b80Var.D = true;
-        b80Var.u = 0.8f;
+    public /* synthetic */ fb0(fe0 fe0Var, int i7) {
+        this.a = i7;
+        this.b = fe0Var;
     }
 
-    public boolean a() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.I6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.ze));
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public final void c() {
-        CharSequence text;
-        Layout layout = getLayout();
-        if (layout == null || (text = layout.getText()) == null) {
-            return;
-        }
-        org.telegram.ui.Components.s70 s70Var = new org.telegram.ui.Components.s70(0);
-        float L = org.telegram.messenger.g0.L(3.0f);
-        float L2 = org.telegram.messenger.g0.L(6.0f);
-        s70Var.q = L;
-        s70Var.r = L2;
-        int length = text.length();
-        s70Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, s70Var);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(s70Var.s, s70Var.u, s70Var.t, s70Var.v);
-        this.a.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        org.telegram.ui.Components.b80 b80Var = this.b;
-        b80Var.y = s70Var;
-        b80Var.k(4.0f);
-        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.l6.ze);
-        b80Var.g(org.telegram.ui.ActionBar.l6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.l6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.l6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.l6.r1(6.0f, themedColor));
-        b80Var.l();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float paddingTop;
-        canvas.save();
-        if ((getGravity() & 16) == 0 || getLayout() == null) {
-            paddingTop = getPaddingTop();
-        } else {
-            paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-        }
-        canvas.translate(getPaddingLeft(), paddingTop);
-        this.a.draw(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        boolean a10 = a();
-        org.telegram.ui.Components.b80 b80Var = this.b;
-        if (a10 || b80Var.d()) {
-            canvas.save();
-            canvas.translate(getPaddingLeft(), paddingTop);
-            b80Var.draw(canvas);
-            canvas.restore();
-            invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                fe0 fe0Var = this.b;
+                if (fe0Var.d == animator) {
+                    fe0Var.d = null;
+                    break;
+                }
+                break;
+            default:
+                fe0 fe0Var2 = this.b;
+                fe0Var2.c.setVisibility(8);
+                if (fe0Var2.d == animator) {
+                    fe0Var2.d = null;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        c();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean b10 = b();
-        org.telegram.ui.Cells.y yVar = this.a;
-        if (b10 && motionEvent.getAction() == 0) {
-            yVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-            yVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
-            yVar.setState(new int[0]);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        c();
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        try {
-            int r12 = org.telegram.ui.ActionBar.l6.r1(0.1f, org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.I6, false));
-            org.telegram.ui.Cells.y yVar = this.a;
-            if (yVar != null && r12 != this.c) {
-                org.telegram.ui.ActionBar.l6.H1(yVar, r12, true);
-            }
-            this.c = r12;
-            org.telegram.ui.Components.b80 b80Var = this.b;
-            if (b80Var != null) {
-                int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.l6.ze);
-                b80Var.g(org.telegram.ui.ActionBar.l6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.l6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.l6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.l6.r1(6.0f, themedColor));
-            }
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
     }
 }

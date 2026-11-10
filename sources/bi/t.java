@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t extends LinearLayout {
     public final /* synthetic */ int a;
@@ -90,19 +90,19 @@ public final class t extends LinearLayout {
         setOrientation(1);
         setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
         TextView g10 = org.telegram.messenger.k5.g(context, 1, 14.0f);
-        int i7 = org.telegram.ui.ActionBar.l6.G6;
-        org.telegram.ui.ActionBar.s6.U(g10, i7, null);
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(g10, i7, null);
         g10.setTypeface(org.telegram.messenger.g0.o());
         g10.setText(org.telegram.messenger.id.M0(2131754944, null));
         addView(g10);
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.s6.U(textView, i7, null);
+        org.telegram.ui.ActionBar.t6.U(textView, i7, null);
         textView.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754946, null)));
         addView(textView, c8.ha.q(-1, -2, 0.0f, 0, 0, 0, 0, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.s6.U(textView2, i7, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, i7, null);
         textView2.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131754945, null)));
         addView(textView2, c8.ha.q(-1, -2, 0.0f, 0, 0, 24, 0, 0));
     }

@@ -10,7 +10,7 @@ import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class zo extends fi.m3 {
     public final /* synthetic */ int W0 = 0;
@@ -68,8 +68,8 @@ public final class zo extends fi.m3 {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.W0) {
             case 0:
-                ah0[] ah0VarArr = (ah0[]) this.X0;
-                return (ah0VarArr != null && (drawable == ah0VarArr[0] || drawable == ah0VarArr[1])) || super.verifyDrawable(drawable);
+                zg0[] zg0VarArr = (zg0[]) this.X0;
+                return (zg0VarArr != null && (drawable == zg0VarArr[0] || drawable == zg0VarArr[1])) || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -79,7 +79,7 @@ public final class zo extends fi.m3 {
     public zo(Activity activity) {
         super(activity, 3);
         int i7 = 0;
-        this.X0 = new ah0[2];
+        this.X0 = new zg0[2];
         this.Y0 = new int[2];
         r(true);
         this.K = Layout.Alignment.ALIGN_NORMAL;
@@ -90,14 +90,14 @@ public final class zo extends fi.m3 {
         this.u0 = 0.0f;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         while (i7 < 2) {
-            ((ah0[]) this.X0)[i7] = new ah0(i7 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
-            ((ah0[]) this.X0)[i7].setCallback(this);
+            ((zg0[]) this.X0)[i7] = new zg0(i7 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+            ((zg0[]) this.X0)[i7].setCallback(this);
             if (i7 > 0) {
                 spannableStringBuilder.append((CharSequence) "\n");
             }
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) "x");
-            spannableStringBuilder.setSpan(new yo(((ah0[]) this.X0)[i7]), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new yo(((zg0[]) this.X0)[i7]), length, spannableStringBuilder.length(), 33);
             spannableStringBuilder.append((CharSequence) org.telegram.messenger.id.M0(i7 == 0 ? 2131749298 : 2131749299, null));
             i7++;
         }

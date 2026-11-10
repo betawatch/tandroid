@@ -16,9 +16,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.rz;
 import org.telegram.messenger.sz;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
     public static rz j;
@@ -86,7 +86,7 @@ public final class a extends Drawable {
             }
         }
         int[] iArr2 = (int[]) l.get(iArr[this.e]);
-        int[] iArr3 = l6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
+        int[] iArr3 = m6.I.q() ? new int[]{i0.a.f(0.2f, iArr2[0], -1), i0.a.f(0.2f, iArr2[1], -1)} : iArr2;
         this.h = iArr3;
         Paint paint = new Paint(1);
         LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, iArr3, (float[]) null, Shader.TileMode.CLAMP);

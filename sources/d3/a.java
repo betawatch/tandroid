@@ -11,9 +11,9 @@ import bi.h4;
 import e2.x1;
 import h2.m0;
 import org.telegram.ui.Cells.f1;
-import x2.c1;
+import x2.b1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class a extends l2.b {
     public final long I;
@@ -526,9 +526,9 @@ public abstract class a extends l2.b {
             if (k()) {
                 f10 = this.D;
             } else {
-                c1 c1Var = this.r;
-                c1Var.getClass();
-                f10 = c1Var.f();
+                b1 b1Var = this.r;
+                b1Var.getClass();
+                f10 = b1Var.f();
             }
             if (f10 || this.R != null) {
                 if (this.a0 != 3) {
@@ -666,6 +666,6 @@ public abstract class a extends l2.b {
     }
 
     @Override // l2.b
-    public final void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
+    public final void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
     }
 }

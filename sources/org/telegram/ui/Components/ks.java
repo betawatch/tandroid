@@ -1,11 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class ks {
-    public static final xq a = new xq(0.39d, 0.575d, 0.565d, 1.0d);
-    public static final xq b = new xq(0.445d, 0.05d, 0.55d, 0.95d);
-    public static final xq c = new xq(0.55d, 0.085d, 0.68d, 0.53d);
-    public static final xq d = new xq(0.25d, 0.46d, 0.45d, 0.94d);
-    public static final xq e = new xq(0.455d, 0.03d, 0.515d, 0.955d);
+public final /* synthetic */ class ks implements ls {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ ks(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.ui.Components.ls
+    public final void a(int i7, boolean z9) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = ((ns) this.b).b;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((ls) obj).a(i7, z9);
+                }
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
+        }
+    }
 }

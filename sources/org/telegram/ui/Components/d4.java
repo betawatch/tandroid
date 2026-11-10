@@ -1,10 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.content.Context;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class d4 extends ib0 {
-    @Override // org.telegram.ui.Components.ib0
+public final class d4 extends hb0 {
+    public final /* synthetic */ int[] y0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d4(Context context, org.telegram.ui.ActionBar.h6 h6Var, int[] iArr) {
+        super(context, h6Var);
+        this.y0 = iArr;
+    }
+
+    @Override // org.telegram.ui.Components.hb0
     public final CharSequence d(int i7) {
-        return org.telegram.messenger.id.G(i7, "Minutes", new Object[0]);
+        int i10 = this.y0[i7];
+        return i10 == 0 ? org.telegram.messenger.id.M0(2131753849, null) : i10 < 10080 ? org.telegram.messenger.id.G(i10 / 1440, "Days", new Object[0]) : i10 < 44640 ? org.telegram.messenger.id.G(i10 / 1440, "Weeks", new Object[0]) : i10 < 525600 ? org.telegram.messenger.id.G(i10 / 10080, "Months", new Object[0]) : org.telegram.messenger.id.G(((i10 * 5) / 31) * 1440, "Years", new Object[0]);
     }
 }

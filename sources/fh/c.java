@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c extends aa {
     public final Paint a = new Paint(1);
@@ -29,13 +29,13 @@ public final class c extends aa {
         if (i7 == 0) {
             return;
         }
-        int r12 = l6.r1(i7 / 255.0f, gVar.y);
+        int r12 = m6.r1(i7 / 255.0f, gVar.y);
         if (Color.alpha(gVar.x) > 0 && i7 == 255) {
             float f10 = gVar.V;
             if (f10 > 0.0f) {
                 float f11 = gVar.T;
                 float f12 = gVar.U;
-                int r13 = l6.r1(f10, gVar.x);
+                int r13 = m6.r1(f10, gVar.x);
                 Paint paint = this.b;
                 paint.setShadowLayer(f11, 0.0f, f12, r13);
                 fVar.d(canvas, paint, gVar.S);

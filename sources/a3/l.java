@@ -29,20 +29,20 @@ import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.r6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.ht0;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.bb1;
-import org.telegram.ui.ky0;
-import x2.q1;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.cb1;
+import org.telegram.ui.ly0;
+import x2.p1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, b20, r1, p6, q6, ht0, u9.d {
+public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, Vector.TLDeserializer, b20, r1, q6, r6, gt0, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l(int i7) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -102,11 +102,11 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         String str3;
         switch (this.a) {
             case 0:
-                q1 q1Var = (q1) obj;
-                q1Var.getClass();
+                p1 p1Var = (p1) obj;
+                p1Var.getClass();
                 Bundle bundle = new Bundle();
-                String str4 = q1.e;
-                t1 t1Var = q1Var.b;
+                String str4 = p1.e;
+                t1 t1Var = p1Var.b;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>(t1Var.d);
                 g0 listIterator = t1Var.listIterator(0);
                 while (listIterator.hasNext()) {
@@ -117,11 +117,11 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
             case 10:
                 bb.e eVar = (bb.e) obj;
                 eVar.getClass();
-                ky0 ky0Var = ab.w.a;
-                ky0Var.getClass();
+                ly0 ly0Var = ab.w.a;
+                ly0Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    ky0Var.q(eVar, byteArrayOutputStream);
+                    ly0Var.q(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -334,7 +334,7 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q6
+    @Override // org.telegram.ui.ActionBar.r6
     public void c(int i7, View view) {
         ((da) view).setColor(i7);
     }
@@ -367,30 +367,30 @@ public final /* synthetic */ class l implements g9.k, Continuation, l5.e, h2.j, 
     public void g(u1 u1Var, int i7) {
         switch (this.a) {
             case 22:
-                int i10 = k7.s3;
+                int i10 = k7.v3;
                 break;
             default:
-                k7.b2(new bb1(6, null));
+                k7.b2(new cb1(6, null));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return f1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.q6
     public int i(View view) {
         return ((da) view).y;
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public RecyclerView l(View view) {
         return ((ad) view).a;
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ void s(RecyclerView recyclerView) {
         f1.b(recyclerView);
     }

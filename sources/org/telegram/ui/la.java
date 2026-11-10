@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class la extends org.telegram.ui.ActionBar.f2 {
     public static final Paint H = new Paint(1);
@@ -26,13 +26,13 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
     public ia E;
     public ka F;
     public org.telegram.ui.Cells.b2 G;
-    public org.telegram.ui.ActionBar.b5 a;
-    public org.telegram.ui.Components.qj0 b;
+    public org.telegram.ui.ActionBar.c5 a;
+    public org.telegram.ui.Components.pj0 b;
     public ea c;
     public boolean d;
     public int e;
     public String f;
-    public org.telegram.ui.ActionBar.p h;
+    public org.telegram.ui.ActionBar.c h;
     public boolean n;
     public String r;
     public final ArrayList s;
@@ -57,7 +57,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
-        org.telegram.ui.Components.v4.c0(laVar.currentAccount, tL_error, laVar, updateusername, new Object[0]);
+        org.telegram.ui.Components.u4.c0(laVar.currentAccount, tL_error, laVar, updateusername, new Object[0]);
         laVar.m0();
     }
 
@@ -160,10 +160,10 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
     @Override // org.telegram.ui.ActionBar.f2
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.t8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.A8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.v8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.d6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.t8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.v8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
     }
 
     @Override // org.telegram.ui.ActionBar.f2
@@ -174,7 +174,7 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131743674, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, i7));
-        this.a = this.simpleActionBar.o(org.telegram.messenger.id.M0(2131745946, null));
+        this.a = this.simpleActionBar.p(org.telegram.messenger.id.M0(2131745946, null));
         TLRPC.User a22 = org.telegram.messenger.qp.s1(this.currentAccount).a2(Long.valueOf(l0()));
         if (a22 == null) {
             a22 = k0();
@@ -216,26 +216,26 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
             }
         }
         this.fragmentView = new FrameLayout(context);
-        org.telegram.ui.Components.qj0 qj0Var = new org.telegram.ui.Components.qj0(context, null);
-        this.b = qj0Var;
-        qj0Var.r1();
+        org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
+        this.b = pj0Var;
+        pj0Var.r1();
         this.b.setLayoutManager(new v4.b0());
-        org.telegram.ui.Components.qj0 qj0Var2 = this.b;
+        org.telegram.ui.Components.pj0 pj0Var2 = this.b;
         ea eaVar = new ea(this);
         this.c = eaVar;
-        qj0Var2.setAdapter(eaVar);
-        org.telegram.ui.ActionBar.s6.J(this.b, org.telegram.ui.ActionBar.l6.i6, getResourceProvider());
+        pj0Var2.setAdapter(eaVar);
+        org.telegram.ui.ActionBar.t6.J(this.b, org.telegram.ui.ActionBar.m6.i6, getResourceProvider());
         this.b.setSectionsDrawBackground(true);
         new v4.y(new ei.d(this, i7)).h(this.b);
         ((FrameLayout) this.fragmentView).addView(this.b, c8.ha.c(-1.0f, -1));
         this.fragmentView.setOnTouchListener(new ei.b(6));
         this.b.setOnItemClickListener(new ca(this));
-        org.telegram.messenger.g0.i3(new iq0(this, 19), 40L);
+        org.telegram.messenger.g0.i3(new jq0(this, 19), 40L);
         return this.fragmentView;
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.Components.qj0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.pj0 getListViewForSimpleGlass() {
         return this.b;
     }
 
@@ -256,9 +256,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                 ka.a(kaVar);
             }
         }
-        org.telegram.ui.ActionBar.p pVar = this.h;
-        if (pVar != null) {
-            org.telegram.messenger.g0.r(pVar);
+        org.telegram.ui.ActionBar.c cVar = this.h;
+        if (cVar != null) {
+            org.telegram.messenger.g0.r(cVar);
             this.h = null;
             this.f = null;
             if (this.e != 0) {
@@ -271,9 +271,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                 if (b2Var2 != null) {
                     b2Var2.setText(org.telegram.messenger.id.M0(2131743656, null));
                     org.telegram.ui.Cells.b2 b2Var3 = this.G;
-                    int i7 = org.telegram.ui.ActionBar.l6.p7;
+                    int i7 = org.telegram.ui.ActionBar.m6.p7;
                     b2Var3.setTag(Integer.valueOf(i7));
-                    org.telegram.ui.ActionBar.s6.U(this.G, i7, null);
+                    org.telegram.ui.ActionBar.t6.U(this.G, i7, null);
                     ka kaVar2 = this.F;
                     if (kaVar2 != null) {
                         ka.a(kaVar2);
@@ -288,9 +288,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                         if (b2Var4 != null) {
                             b2Var4.setText(org.telegram.messenger.id.M0(2131743652, null));
                             org.telegram.ui.Cells.b2 b2Var5 = this.G;
-                            int i11 = org.telegram.ui.ActionBar.l6.p7;
+                            int i11 = org.telegram.ui.ActionBar.m6.p7;
                             b2Var5.setTag(Integer.valueOf(i11));
-                            org.telegram.ui.ActionBar.s6.U(this.G, i11, null);
+                            org.telegram.ui.ActionBar.t6.U(this.G, i11, null);
                             ka kaVar3 = this.F;
                             if (kaVar3 != null) {
                                 ka.a(kaVar3);
@@ -302,9 +302,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                         if (b2Var6 != null) {
                             b2Var6.setText(org.telegram.messenger.id.M0(2131743656, null));
                             org.telegram.ui.Cells.b2 b2Var7 = this.G;
-                            int i12 = org.telegram.ui.ActionBar.l6.p7;
+                            int i12 = org.telegram.ui.ActionBar.m6.p7;
                             b2Var7.setTag(Integer.valueOf(i12));
-                            org.telegram.ui.ActionBar.s6.U(this.G, i12, null);
+                            org.telegram.ui.ActionBar.t6.U(this.G, i12, null);
                             ka kaVar4 = this.F;
                             if (kaVar4 != null) {
                                 ka.a(kaVar4);
@@ -321,9 +321,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
             if (b2Var8 != null) {
                 b2Var8.setText(org.telegram.messenger.id.M0(2131743654, null));
                 org.telegram.ui.Cells.b2 b2Var9 = this.G;
-                int i13 = org.telegram.ui.ActionBar.l6.p7;
+                int i13 = org.telegram.ui.ActionBar.m6.p7;
                 b2Var9.setTag(Integer.valueOf(i13));
-                org.telegram.ui.ActionBar.s6.U(this.G, i13, null);
+                org.telegram.ui.ActionBar.t6.U(this.G, i13, null);
                 ka kaVar5 = this.F;
                 if (kaVar5 != null) {
                     ka.a(kaVar5);
@@ -340,9 +340,9 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                     if (b2Var10 != null) {
                         b2Var10.setText(org.telegram.messenger.id.a0("UsernameAvailable", null, 2131743667, str));
                         org.telegram.ui.Cells.b2 b2Var11 = this.G;
-                        int i14 = org.telegram.ui.ActionBar.l6.w6;
+                        int i14 = org.telegram.ui.ActionBar.m6.w6;
                         b2Var11.setTag(Integer.valueOf(i14));
-                        org.telegram.ui.ActionBar.s6.U(this.G, i14, null);
+                        org.telegram.ui.ActionBar.t6.U(this.G, i14, null);
                         ka kaVar6 = this.F;
                         if (kaVar6 != null) {
                             ka.a(kaVar6);
@@ -354,27 +354,27 @@ public final class la extends org.telegram.ui.ActionBar.f2 {
                 if (b2Var12 != null) {
                     b2Var12.setText(org.telegram.messenger.id.M0(2131743666, null));
                     org.telegram.ui.Cells.b2 b2Var13 = this.G;
-                    int i15 = org.telegram.ui.ActionBar.l6.F6;
+                    int i15 = org.telegram.ui.ActionBar.m6.F6;
                     b2Var13.setTag(Integer.valueOf(i15));
-                    org.telegram.ui.ActionBar.s6.U(this.G, i15, null);
+                    org.telegram.ui.ActionBar.t6.U(this.G, i15, null);
                     ka kaVar7 = this.F;
                     if (kaVar7 != null) {
                         ka.a(kaVar7);
                     }
                 }
                 this.f = str;
-                org.telegram.ui.ActionBar.p pVar2 = new org.telegram.ui.ActionBar.p(18, this, str);
-                this.h = pVar2;
-                org.telegram.messenger.g0.i3(pVar2, 300L);
+                org.telegram.ui.ActionBar.c cVar2 = new org.telegram.ui.ActionBar.c(19, this, str);
+                this.h = cVar2;
+                org.telegram.messenger.g0.i3(cVar2, 300L);
                 return true;
             }
             org.telegram.ui.Cells.b2 b2Var14 = this.G;
             if (b2Var14 != null) {
                 b2Var14.setText(org.telegram.messenger.id.M0(2131743655, null));
                 org.telegram.ui.Cells.b2 b2Var15 = this.G;
-                int i16 = org.telegram.ui.ActionBar.l6.p7;
+                int i16 = org.telegram.ui.ActionBar.m6.p7;
                 b2Var15.setTag(Integer.valueOf(i16));
-                org.telegram.ui.ActionBar.s6.U(this.G, i16, null);
+                org.telegram.ui.ActionBar.t6.U(this.G, i16, null);
                 ka kaVar8 = this.F;
                 if (kaVar8 != null) {
                     ka.a(kaVar8);

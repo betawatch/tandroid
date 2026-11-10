@@ -3,19 +3,19 @@ package fi;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b6 {
     public final a0 a;
     public boolean b;
     public a6 c;
-    public final org.telegram.ui.Components.w5 d;
-    public final org.telegram.ui.Components.w5 e;
-    public final org.telegram.ui.Components.w5 f;
-    public final org.telegram.ui.Components.w5[] g;
-    public final org.telegram.ui.Components.w5[] h;
+    public final org.telegram.ui.Components.v5 d;
+    public final org.telegram.ui.Components.v5 e;
+    public final org.telegram.ui.Components.v5 f;
+    public final org.telegram.ui.Components.v5[] g;
+    public final org.telegram.ui.Components.v5[] h;
     public final Paint i;
     public final Path j;
 
@@ -30,12 +30,12 @@ public final class b6 {
         paint.setShadowLayer(1.08045274E9f, 0.0f, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(6.0f));
         this.j = new Path();
         this.a = a0Var;
-        xq xqVar = xq.g;
-        this.d = new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 320L, xqVar);
-        this.e = new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar);
-        this.f = new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar);
-        this.g = new org.telegram.ui.Components.w5[]{new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar)};
-        this.h = new org.telegram.ui.Components.w5[]{new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar), new org.telegram.ui.Components.w5(0.0f, a0Var, 0L, 160L, xqVar)};
+        wq wqVar = wq.g;
+        this.d = new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 320L, wqVar);
+        this.e = new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar);
+        this.f = new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar);
+        this.g = new org.telegram.ui.Components.v5[]{new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar)};
+        this.h = new org.telegram.ui.Components.v5[]{new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar), new org.telegram.ui.Components.v5(0.0f, a0Var, 0L, 160L, wqVar)};
     }
 
     public final void a(a6 a6Var) {

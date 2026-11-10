@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.RectF;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hk implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -16,13 +16,13 @@ public final /* synthetic */ class hk implements ViewTreeObserver.OnPreDrawListe
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         int i7 = this.a;
         Object obj = this.b;
         switch (i7) {
             case 0:
-                kVar = ((org.telegram.ui.ActionBar.f2) ((ik) obj).d).actionBar;
-                kVar.invalidate();
+                lVar = ((org.telegram.ui.ActionBar.f2) ((ik) obj).d).actionBar;
+                lVar.invalidate();
                 break;
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
@@ -31,7 +31,7 @@ public final /* synthetic */ class hk implements ViewTreeObserver.OnPreDrawListe
                 profileActivity.C5();
                 break;
             default:
-                ((d51) obj).t0();
+                ((e51) obj).t0();
                 break;
         }
         return true;

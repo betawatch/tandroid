@@ -1,38 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ay0 extends ReplacementSpan {
-    public float a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Paint d;
-
-    public ay0(int i7, Paint paint, String str) {
-        this.b = str;
-        this.c = i7;
-        this.d = paint;
+public final class ay0 extends org.telegram.ui.Cells.q1 {
+    @Override // org.telegram.ui.Cells.q1
+    public final int getParentWidth() {
+        return org.telegram.messenger.camera.q.y(128.0f, org.telegram.messenger.g0.q.x, 2);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float f11 = (i11 + i13) / 2.0f;
-        float L = org.telegram.messenger.g0.L(19.0f);
-        paint.setColor(this.c);
-        float f12 = L / 2.0f;
-        canvas.drawRoundRect(f10, f11 - f12, f10 + this.a + org.telegram.messenger.g0.L(11.33f), f11 + f12, f12, f12, this.d);
-        canvas.drawText(this.b, org.telegram.messenger.g0.N(5.66f) + f10, i13 - org.telegram.messenger.g0.L(6.0f), paint);
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        float N = org.telegram.messenger.g0.N(11.33f);
-        float measureText = paint.measureText(this.b);
-        this.a = measureText;
-        return (int) (N + measureText);
+    @Override // org.telegram.ui.Cells.q1
+    public final void Z3() {
     }
 }

@@ -1,38 +1,68 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class fs extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ is o;
+public final class fs implements View.OnClickListener {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ js c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs(is isVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = isVar;
+    public fs(js jsVar, ArrayList arrayList, boolean z9) {
+        this.c = jsVar;
+        this.a = arrayList;
+        this.b = z9;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ms msVar = this.o.a;
-        msVar.k = null;
-        msVar.K = false;
-        if (msVar.R) {
-            msVar.m();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ns nsVar = this.c.a;
+        if (nsVar.w == null) {
+            return;
         }
-        View view = msVar.h;
-        if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.z7) {
-                ((org.telegram.ui.Cells.z7) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.x7) {
-                ((org.telegram.ui.Cells.x7) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.h2) {
-                ((org.telegram.ui.Cells.h2) view).setScaled(false);
+        int intValue = ((Integer) view.getTag()).intValue();
+        ArrayList arrayList = this.a;
+        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
+            ls lsVar = nsVar.l;
+            if (lsVar != null) {
+                TLRPC.Document document = nsVar.W;
+                String str = nsVar.Y;
+                boolean z9 = true;
+                Object obj = nsVar.b0;
+                if (((Integer) arrayList.get(intValue)).intValue() != 0) {
+                    z9 = false;
+                }
+                lsVar.l(document, str, obj, z9, 0, 0);
             }
-            msVar.h = null;
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
+            ls lsVar2 = nsVar.l;
+            if (lsVar2 != null) {
+                lsVar2.M(nsVar.a0, nsVar.i);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
+            org.telegram.messenger.ui.b0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
+            TLRPC.Document document2 = nsVar.W;
+            Object obj2 = nsVar.b0;
+            String str2 = nsVar.Y;
+            ls lsVar3 = nsVar.l;
+            if (lsVar3 == null) {
+                return;
+            } else {
+                org.telegram.ui.Components.u4.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
+            org.telegram.messenger.ui.b0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
+            nsVar.l.i(nsVar.X);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
+            nsVar.l.o(nsVar.W);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
+            nsVar.l.F(nsVar.W);
         }
+        nsVar.o();
     }
 }

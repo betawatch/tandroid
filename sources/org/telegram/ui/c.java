@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.net.Uri;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.r1 {
             default:
                 g gVar2 = this.b;
                 gVar2.getClass();
-                ee0 ee0Var = new ee0();
-                ee0Var.F = 2;
-                gVar2.presentFragment(ee0Var, true);
+                fe0 fe0Var = new fe0();
+                fe0Var.F = 2;
+                gVar2.presentFragment(fe0Var, true);
                 break;
         }
     }

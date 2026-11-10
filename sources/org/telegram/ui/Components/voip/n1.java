@@ -19,10 +19,10 @@ import fi.v3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.sb1;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n1 extends FrameLayout {
     public float D;
@@ -188,8 +188,8 @@ public final class n1 extends FrameLayout {
         n1Var.d0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        xq xqVar = xq.f;
-        duration.setInterpolator(xqVar).setListener(new k1(this, translationX2, translationY2, 0)).setInterpolator(xqVar).start();
+        wq wqVar = wq.f;
+        duration.setInterpolator(wqVar).setListener(new k1(this, translationX2, translationY2, 0)).setInterpolator(wqVar).start();
     }
 
     public final void d(float f10, float f11) {
@@ -263,7 +263,7 @@ public final class n1 extends FrameLayout {
         float z11 = com.google.android.recaptcha.internal.a.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i10, f11, systemWindowInsetTop);
         if (z9) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z10).translationY(z11).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(xq.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z10).translationY(z11).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(wq.f).start();
             return;
         }
         if (!this.S) {
@@ -303,7 +303,7 @@ public final class n1 extends FrameLayout {
         }
         m1 m1Var = this.i0;
         if (m1Var != null) {
-            ((sb1) m1Var).b.d0.d(this.P, this.J);
+            ((ub1) m1Var).b.d0.d(this.P, this.J);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {
@@ -390,7 +390,7 @@ public final class n1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f13) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f13);
                 }
-                startDelay.setDuration(150L).setInterpolator(xq.f).start();
+                startDelay.setDuration(150L).setInterpolator(wq.f).start();
             }
             this.e = false;
             return true;

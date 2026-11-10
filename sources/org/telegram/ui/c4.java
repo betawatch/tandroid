@@ -6,10 +6,10 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c4 extends FrameLayout {
-    public final org.telegram.ui.Components.nm0 a;
+    public final org.telegram.ui.Components.mm0 a;
     public final int b;
     public final int c;
     public int d;
@@ -26,12 +26,12 @@ public final class c4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        org.telegram.ui.Components.nm0 nm0Var = new org.telegram.ui.Components.nm0(context, null, false);
-        this.a = nm0Var;
-        nm0Var.setReportChanges(true);
-        nm0Var.setSeparatorsCount(19);
-        nm0Var.setDelegate(new f(this, 3));
-        addView(nm0Var, c8.ha.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null, false);
+        this.a = mm0Var;
+        mm0Var.setReportChanges(true);
+        mm0Var.setSeparatorsCount(19);
+        mm0Var.setDelegate(new f(this, 3));
+        addView(mm0Var, c8.ha.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -42,9 +42,9 @@ public final class c4 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int i7 = org.telegram.ui.ActionBar.l6.I6;
+        int i7 = org.telegram.ui.ActionBar.m6.I6;
         this.f.getClass();
-        int v02 = org.telegram.ui.ActionBar.l6.v0(i7);
+        int v02 = org.telegram.ui.ActionBar.m6.v0(i7);
         TextPaint textPaint = this.e;
         textPaint.setColor(v02);
         canvas.drawText("" + org.telegram.messenger.iz.Z0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);

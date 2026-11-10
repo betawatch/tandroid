@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class u2 extends FrameLayout {
-    public final org.telegram.ui.Components.w5 a;
+    public final org.telegram.ui.Components.v5 a;
     public final Paint b;
     public final Path c;
     public float d;
@@ -25,12 +25,12 @@ public final class u2 extends FrameLayout {
     public u2(x2 x2Var, Context context) {
         super(context);
         this.e = x2Var;
-        this.a = new org.telegram.ui.Components.w5(this, 250L, xq.h);
+        this.a = new org.telegram.ui.Components.v5(this, 250L, wq.h);
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new Path();
         setWillNotDraw(false);
-        paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, x2Var.I0));
+        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, x2Var.I0));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -38,11 +38,11 @@ public final class u2 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         float f10;
         x2 x2Var = this.e;
-        Integer num = x2Var.m1;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, x2Var.I0);
+        Integer num = x2Var.p1;
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, x2Var.I0);
         Paint paint = this.b;
         paint.setColor(intValue);
-        View[] viewPages = x2Var.i1.getViewPages();
+        View[] viewPages = x2Var.l1.getViewPages();
         this.d = 0.0f;
         for (ai.i0 i0Var : viewPages) {
             if (i0Var != 0) {
@@ -94,14 +94,14 @@ public final class u2 extends FrameLayout {
         int size = View.MeasureSpec.getSize(i7);
         int size2 = View.MeasureSpec.getSize(i10);
         x2 x2Var = this.e;
-        FrameLayout frameLayout = x2Var.l1;
+        FrameLayout frameLayout = x2Var.o1;
         if (frameLayout != null) {
             frameLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
-            i11 = x2Var.l1.getMeasuredHeight();
+            i11 = x2Var.o1.getMeasuredHeight();
         } else {
             i11 = 0;
         }
-        x2Var.i1.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - i11), TLObject.FLAG_30));
+        x2Var.l1.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - i11), TLObject.FLAG_30));
         setMeasuredDimension(size, size2);
     }
 }

@@ -6,17 +6,17 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2[] b;
     public final /* synthetic */ TL_stars.StarsTransaction c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ oa(org.telegram.ui.ActionBar.v2[] v2VarArr, long j3, TL_stars.StarsTransaction starsTransaction) {
+    public /* synthetic */ oa(org.telegram.ui.ActionBar.w2[] w2VarArr, long j3, TL_stars.StarsTransaction starsTransaction) {
         this.a = 3;
-        this.b = v2VarArr;
+        this.b = w2VarArr;
         this.d = j3;
         this.c = starsTransaction;
     }
@@ -102,9 +102,9 @@ public final /* synthetic */ class oa implements Runnable {
         }
     }
 
-    public /* synthetic */ oa(org.telegram.ui.ActionBar.v2[] v2VarArr, TL_stars.StarsTransaction starsTransaction, long j3, int i7) {
+    public /* synthetic */ oa(org.telegram.ui.ActionBar.w2[] w2VarArr, TL_stars.StarsTransaction starsTransaction, long j3, int i7) {
         this.a = i7;
-        this.b = v2VarArr;
+        this.b = w2VarArr;
         this.c = starsTransaction;
         this.d = j3;
     }

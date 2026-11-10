@@ -8,12 +8,12 @@ import c8.ha;
 import l2.x;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.y4;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.z4;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -32,7 +32,7 @@ public final class a {
     public ViewGroup n;
     public eh.a o;
 
-    public a(q qVar, org.telegram.ui.ActionBar.n nVar) {
+    public a(q qVar, n nVar) {
         this.a = qVar;
         qVar.a = new x(this, 21);
         qVar.d = new qi.b(g0.L(48.0f));
@@ -84,7 +84,7 @@ public final class a {
     }
 
     public static int d(int i7) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
         return g0.L(7.0f) + ((i7 + currentActionBarHeight) - ((currentActionBarHeight - g0.L(46.0f)) / 2));
     }
 
@@ -114,7 +114,7 @@ public final class a {
         fVar.I = qs.q2;
         ri.c cVar = fVar.G;
         if (cVar != null) {
-            fVar.H = l6.r1(qs.q2 / 255.0f, cVar.b);
+            fVar.H = m6.r1(qs.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -127,7 +127,7 @@ public final class a {
         fVar.K = qs.n3;
         ri.c cVar2 = fVar.G;
         if (cVar2 != null) {
-            fVar.J = l6.r1(qs.n3 / 255.0f, cVar2.b);
+            fVar.J = m6.r1(qs.n3 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -156,7 +156,7 @@ public final class a {
         fVar.I = qs.q2;
         ri.c cVar = fVar.G;
         if (cVar != null) {
-            fVar.H = l6.r1(qs.q2 / 255.0f, cVar.b);
+            fVar.H = m6.r1(qs.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -169,7 +169,7 @@ public final class a {
         fVar.K = qs.n3;
         ri.c cVar2 = fVar.G;
         if (cVar2 != null) {
-            fVar.J = l6.r1(qs.n3 / 255.0f, cVar2.b);
+            fVar.J = m6.r1(qs.n3 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -180,42 +180,42 @@ public final class a {
         return fVar;
     }
 
-    public final void f(FrameLayout frameLayout, qj0 qj0Var, View view, g6 g6Var) {
+    public final void f(FrameLayout frameLayout, pj0 pj0Var, View view, h6 h6Var) {
         this.m = frameLayout;
-        this.n = qj0Var;
-        qj0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.o = new bi.g(4, qj0Var, frameLayout);
-        this.a.b(qj0Var);
-        qj0Var.setClipToPadding(false);
-        g(frameLayout, view, g6Var);
+        this.n = pj0Var;
+        pj0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.o = new bi.g(4, pj0Var, frameLayout);
+        this.a.b(pj0Var);
+        pj0Var.setClipToPadding(false);
+        g(frameLayout, view, h6Var);
     }
 
-    public final void g(FrameLayout frameLayout, View view, g6 g6Var) {
+    public final void g(FrameLayout frameLayout, View view, h6 h6Var) {
         if (view == null) {
             return;
         }
         g0.E2(view);
         frameLayout.addView(view, ha.e(-1, -2, 48));
-        boolean z9 = view instanceof y4;
+        boolean z9 = view instanceof z4;
         dh.c cVar = this.c;
         if (z9) {
-            y4 y4Var = (y4) view;
-            y4Var.setExtraHeight(g0.L(6.0f));
-            gh.e l10 = c8.g0.l(g6Var);
-            y4Var.L = cVar;
-            y4Var.M = l10;
-            y4Var.n();
-            y4Var.n0 = this.d;
-            y4Var.o0 = this.e;
+            z4 z4Var = (z4) view;
+            z4Var.setExtraHeight(g0.L(6.0f));
+            gh.e l10 = c8.g0.l(h6Var);
+            z4Var.L = cVar;
+            z4Var.M = l10;
+            z4Var.o();
+            z4Var.n0 = this.d;
+            z4Var.o0 = this.e;
             return;
         }
-        if (view instanceof org.telegram.ui.ActionBar.k) {
-            org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) view;
-            kVar.setAddToContainer(false);
-            kVar.setCenterTitleAndGlass(true);
-            kVar.setExtraHeight(g0.L(6.0f));
-            kVar.T0 = true;
-            kVar.N(cVar, c8.g0.l(g6Var), false);
+        if (view instanceof org.telegram.ui.ActionBar.l) {
+            org.telegram.ui.ActionBar.l lVar = (org.telegram.ui.ActionBar.l) view;
+            lVar.setAddToContainer(false);
+            lVar.setCenterTitleAndGlass(true);
+            lVar.setExtraHeight(g0.L(6.0f));
+            lVar.T0 = true;
+            lVar.O(cVar, c8.g0.l(h6Var), false);
         }
     }
 }

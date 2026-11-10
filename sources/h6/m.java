@@ -100,22 +100,22 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.f51;
+import org.telegram.ui.Components.hi0;
 import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.nx0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.vj;
-import org.telegram.ui.Components.zw0;
+import org.telegram.ui.Components.mx0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.uj;
+import org.telegram.ui.Components.yw0;
 import org.telegram.ui.cn;
-import org.telegram.ui.ym0;
+import org.telegram.ui.zm0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ep, ii0, ym0 {
+public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ep, hi0, zm0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -132,7 +132,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     public static Object[] l(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        zw0 zw0Var = nx0.S;
+        yw0 yw0Var = mx0.S;
         int i7 = -1;
         for (int i10 : iArr) {
             i7 = Math.max(i7, i10);
@@ -289,7 +289,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         }
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean E() {
         return false;
     }
@@ -317,7 +317,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         ((v0) this.c).e(true, f10);
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean U() {
         return false;
     }
@@ -376,7 +376,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         j8.c cVar2 = new j8.c(arrayList, false, false);
         cVar.getClass();
         s b10 = com.google.android.gms.common.api.internal.t.b();
-        b10.c = new rt(cVar2, 19);
+        b10.c = new qt(cVar2, 19);
         b10.a = 2426;
         cVar.e(0, b10.a()).addOnCompleteListener(new y9(aVar, 1));
     }
@@ -396,7 +396,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         return -1;
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.zm0
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -407,9 +407,9 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         ((f2) this.c).presentFragment(new cn((Bundle) this.d));
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.zm0
     public void f0() {
-        ((vj) this.d).Q.A();
+        ((uj) this.d).Q.A();
     }
 
     @Override // fd.a
@@ -444,7 +444,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -464,7 +464,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
             if (k11 == null) {
                 f12 = 0.0f;
                 f10 = f12;
-                cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+                cnVar.Db(I8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
             } else {
                 f13 = p0Var2.b + k11.w + (k11.z / 2.0f);
                 f11 = p0Var2.c + k11.x;
@@ -472,7 +472,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
             }
         } else if (!(I8 instanceof t0) || (k10 = (p0Var = ((t0) I8).E0).k(o0Var)) == null) {
             f10 = 0.0f;
-            cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+            cnVar.Db(I8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
         } else {
             f13 = p0Var.b + k10.w + (k10.z / 2.0f);
             f11 = p0Var.c + k10.x;
@@ -480,7 +480,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         }
         f12 = f11 + (i7 / 2.0f);
         f10 = f12;
-        cnVar.Db(I8, (ij) this.b, (ji0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
+        cnVar.Db(I8, (ij) this.b, (ii0) this.c, view, f13, f10, o0Var, false, (o0Var == null && o0Var.a) ? true : z9, z10, false);
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -941,24 +941,24 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         return paintArr[i7];
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean v() {
         return true;
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.zm0
     public void v0(int i7, boolean z9, boolean z10) {
         if (z9) {
             return;
         }
-        vj vjVar = (vj) this.d;
+        uj ujVar = (uj) this.d;
         HashMap hashMap = (HashMap) this.b;
         ArrayList arrayList = (ArrayList) this.c;
-        di diVar = vjVar.b;
-        if (hashMap.isEmpty() || vjVar.Q == null || vjVar.K) {
+        ci ciVar = ujVar.b;
+        if (hashMap.isEmpty() || ujVar.Q == null || ujVar.K) {
             return;
         }
-        vjVar.K = true;
+        ujVar.K = true;
         ArrayList arrayList2 = new ArrayList();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             Object obj = hashMap.get(arrayList.get(i10));
@@ -983,7 +983,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
                 fzVar.h = gfVar.x;
             }
         }
-        v4.X(diVar.D3, diVar.X0() + arrayList2.size(), diVar.b1(), new r2(i7, 2, vjVar, arrayList2, z10));
+        u4.X(ciVar.G3, ciVar.X0() + arrayList2.size(), ciVar.b1(), new r2(i7, 2, ujVar, arrayList2, z10));
     }
 
     public int w(gc.e eVar) {
@@ -1093,11 +1093,11 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         Arrays.sort(copyOf);
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.zm0
     public void A() {
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ void M() {
     }
 
@@ -1109,7 +1109,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         view.addOnLayoutChangeListener(f51Var);
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.zm0
     public void B(Editable editable) {
     }
 
@@ -1287,7 +1287,7 @@ public final class m implements ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocat
         this.d = l(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
     }
 }

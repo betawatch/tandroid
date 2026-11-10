@@ -6,22 +6,22 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import java.util.HashSet;
-import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.ch0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class t1 extends Drawable implements b6 {
+public final class t1 extends Drawable implements c6 {
     public final View a;
     public final GradientDrawable b;
     public final int c;
     public final int d;
-    public final g6 e;
+    public final h6 e;
 
-    public t1(dh0 dh0Var, int i7, int i10, int i11, g6 g6Var) {
-        this.a = dh0Var;
+    public t1(ch0 ch0Var, int i7, int i10, int i11, h6 h6Var) {
+        this.a = ch0Var;
         this.c = i10;
         this.d = i11;
-        this.e = g6Var;
+        this.e = h6Var;
         GradientDrawable gradientDrawable = new GradientDrawable();
         this.b = gradientDrawable;
         gradientDrawable.setColor(i7);
@@ -56,16 +56,16 @@ public final class t1 extends Drawable implements b6 {
         this.b.setColorFilter(colorFilter);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         int i7 = this.d;
         if (i7 >= 0) {
-            this.b.setColor(l6.w0(i7, this.e));
+            this.b.setColor(m6.w0(i7, this.e));
             invalidateSelf();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

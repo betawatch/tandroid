@@ -9,7 +9,7 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,16 +35,16 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                 s8 s8Var = n8Var.W;
                 d dVar = n8Var.w;
                 if (!dVar.Q) {
-                    int i13 = s8.U1;
+                    int i13 = s8.X1;
                     int i14 = s8Var.a;
-                    HashMap hashMap2 = s8Var.l1;
-                    ArrayList arrayList2 = s8Var.k1;
-                    HashMap hashMap3 = s8Var.p1;
-                    ArrayList arrayList3 = s8Var.o1;
+                    HashMap hashMap2 = s8Var.o1;
+                    ArrayList arrayList2 = s8Var.n1;
+                    HashMap hashMap3 = s8Var.s1;
+                    ArrayList arrayList3 = s8Var.r1;
                     qp s12 = qp.s1(i14);
                     int i15 = n8Var.a;
                     if (i15 == 5) {
-                        e8 e8Var = s8Var.M1;
+                        e8 e8Var = s8Var.P1;
                         if (e8Var != null) {
                             e8Var.a(arrayList);
                         }
@@ -57,9 +57,9 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                         ConnectionsManager.getInstance(s8Var.a).sendRequest(tL_editCloseFriends, new bi.j(14, n8Var, s12));
                         break;
                     } else if (i15 == 0) {
-                        int i16 = s8Var.E1;
+                        int i16 = s8Var.H1;
                         if (i16 == 3) {
-                            q8Var = new q8(s8Var.E1, s8Var.a, new ArrayList(s8.R0(arrayList3, hashMap3)));
+                            q8Var = new q8(s8Var.H1, s8Var.a, new ArrayList(s8.R0(arrayList3, hashMap3)));
                             ArrayList arrayList4 = q8Var.c;
                             arrayList4.clear();
                             arrayList4.addAll(arrayList3);
@@ -67,9 +67,9 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                             hashMap4.clear();
                             hashMap4.putAll(hashMap3);
                         } else if (i16 == 2) {
-                            q8Var = new q8(i16, s8Var.a, s8Var.n1);
+                            q8Var = new q8(i16, s8Var.a, s8Var.q1);
                         } else if (i16 == 4) {
-                            q8Var = new q8(s8Var.E1, s8Var.a, new ArrayList(s8.R0(arrayList2, hashMap2)));
+                            q8Var = new q8(s8Var.H1, s8Var.a, new ArrayList(s8.R0(arrayList2, hashMap2)));
                             ArrayList arrayList5 = q8Var.c;
                             arrayList5.clear();
                             arrayList5.addAll(arrayList2);
@@ -82,13 +82,13 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                         s8Var.N0(q8Var, new di.x3(s8Var, 1), false);
                         break;
                     } else if (i15 == 2) {
-                        if (s8Var.Q1) {
+                        if (s8Var.T1) {
                             s8Var.M0();
                             s8Var.N0(new q8(2, s8Var.a, arrayList), new di.x3(s8Var, 1), false);
                             break;
                         } else {
                             s8Var.M0();
-                            s8Var.i1.E(0);
+                            s8Var.l1.E(0);
                             break;
                         }
                     } else if (i15 != 3) {
@@ -122,12 +122,12 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                             ConnectionsManager.getInstance(i17).sendRequest(tL_contacts_setBlocked, new bi.j0(d8Var, i10));
                             break;
                         } else {
-                            s8Var.E1 = i15;
+                            s8Var.H1 = i15;
                             s8Var.M0();
-                            s8Var.i1.E(0);
+                            s8Var.l1.E(0);
                             break;
                         }
-                    } else if (s8Var.Q1) {
+                    } else if (s8Var.T1) {
                         HashSet R02 = s8.R0(arrayList, hashMap);
                         if (!R02.isEmpty()) {
                             s8Var.M0();
@@ -142,23 +142,23 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                             break;
                         }
                     } else if (!s8.R0(arrayList, hashMap).isEmpty()) {
-                        s8Var.E1 = 3;
+                        s8Var.H1 = 3;
                         s8Var.M0();
-                        s8Var.i1.E(0);
+                        s8Var.l1.E(0);
                         break;
                     }
                 }
                 break;
             case 1:
                 s8 s8Var2 = n8Var.W;
-                if (s8Var2.F1) {
-                    s8Var2.D1 = 5;
-                    s8Var2.i1.E(1);
+                if (s8Var2.I1) {
+                    s8Var2.G1 = 5;
+                    s8Var2.l1.E(1);
                     break;
                 } else {
                     s8 s8Var3 = new s8(n8Var.getContext(), s8Var2.I0);
-                    s8Var3.M1 = new e8(n8Var, i12);
-                    s8Var3.H1 = s8Var2.H1;
+                    s8Var3.P1 = new e8(n8Var, i12);
+                    s8Var3.K1 = s8Var2.K1;
                     s8Var3.show();
                     break;
                 }
@@ -184,7 +184,7 @@ public final /* synthetic */ class c8 implements View.OnClickListener {
                 }
                 arrayList7.clear();
                 hashMap7.clear();
-                n8Var.W.A1.clear();
+                n8Var.W.D1.clear();
                 n8Var.y.d.a();
                 n8Var.g(true);
                 n8Var.f(true);

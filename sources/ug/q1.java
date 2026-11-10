@@ -15,11 +15,11 @@ import java.util.HashSet;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.c6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class q1 extends View implements b6 {
+public class q1 extends View implements c6 {
     public p1 a;
     public final tg.y b;
     public int c;
@@ -168,14 +168,14 @@ public class q1 extends View implements b6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         tg.y yVar = this.b;
         removeCallbacks(yVar);
         postDelayed(yVar, 150L);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

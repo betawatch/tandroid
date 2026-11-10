@@ -13,12 +13,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.up0;
 import zh.c2;
 import zh.z1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class q implements Runnable {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 zh.y0 y0Var = (zh.y0) this.d;
                 final View view = (View) this.e;
-                vp0 vp0Var = z1Var.a;
+                up0 up0Var = z1Var.a;
                 if (savedStarGift.unsaved) {
                     savedStarGift.unsaved = false;
                     y0Var.i(savedStarGift, true, false);
@@ -105,21 +105,21 @@ public final /* synthetic */ class q implements Runnable {
                 boolean z9 = savedStarGift.pinned_to_top;
                 final boolean z10 = !z9;
                 if (z1Var.e.o(savedStarGift, z10, false)) {
-                    new c2(z1Var.getContext(), vp0Var.c, savedStarGift, z1Var.c, new u10() { // from class: zh.t1
+                    new c2(z1Var.getContext(), up0Var.c, savedStarGift, z1Var.c, new u10() { // from class: zh.t1
                         @Override // org.telegram.messenger.u10
                         public final Object run() {
                             ((y0) view).d(z10, true);
                             z1 z1Var2 = z1.this;
                             z1Var2.f.v0(0);
-                            return hc.a0(z1Var2.a.a);
+                            return gc.a0(z1Var2.a.a);
                         }
                     }).show();
                     return;
                 }
                 if (z9) {
-                    k5.o(null, 2131749880, hc.a0(vp0Var.a), R.raw.ic_unpin, 36);
+                    k5.o(null, 2131749880, gc.a0(up0Var.a), R.raw.ic_unpin, 36);
                 } else {
-                    hc.a0(vp0Var.a).I(R.raw.ic_pin, id.M0(2131750076, null), id.M0(2131750077, null)).j();
+                    gc.a0(up0Var.a).I(R.raw.ic_pin, id.M0(2131750076, null), id.M0(2131750077, null)).j();
                 }
                 ((zh.y0) view).d(z10, true);
                 z1Var.f.v0(0);

@@ -3,9 +3,9 @@ package m2;
 import e2.c1;
 import e2.v0;
 import e2.x1;
-import x2.c0;
+import x2.b0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public interface b {
     void A(a aVar, int i7);
@@ -14,7 +14,7 @@ public interface b {
 
     void G(v0 v0Var);
 
-    void b(c0 c0Var);
+    void b(b0 b0Var);
 
     void d(a aVar, int i7, long j3);
 
@@ -22,7 +22,7 @@ public interface b {
 
     void onSeekStarted(a aVar);
 
-    void r(a aVar, c0 c0Var);
+    void r(a aVar, b0 b0Var);
 
     void w(x1 x1Var);
 

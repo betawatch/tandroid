@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.en0;
+import org.telegram.ui.aw;
+import org.telegram.ui.fn0;
 import org.telegram.ui.rn;
-import org.telegram.ui.sw;
-import org.telegram.ui.yw;
-import org.telegram.ui.zv;
+import org.telegram.ui.tw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements c20 {
     public final /* synthetic */ int a;
@@ -49,14 +49,14 @@ public final /* synthetic */ class r2 implements c20 {
         switch (i7) {
             case 0:
                 k7 k7Var = (k7) obj4;
-                k7Var.c2.setLoading(false);
+                k7Var.f2.setLoading(false);
                 ug.i0 i0Var = new ug.i0(26, k7Var.a, k7Var.getContext(), new w4(k7Var, i10), k7Var.I0);
                 i0Var.A1((org.telegram.messenger.e3) obj);
                 i0Var.z1((TL_stories.TL_premium_boostsStatus) obj3, true);
                 i0Var.B1(j3);
                 TLRPC.Chat M0 = ((qp) obj2).M0(Long.valueOf(-j3));
                 if (M0 != null) {
-                    i0Var.I2 = new j3(k7Var, M0);
+                    i0Var.L2 = new j3(k7Var, M0);
                 }
                 i0Var.show();
                 break;
@@ -99,13 +99,13 @@ public final /* synthetic */ class r2 implements c20 {
                 if (e3Var != null) {
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                     r3 r3Var = z6Var2.j(j3) ? new r3(z6Var2, j3, 5) : null;
-                    int i11 = ug.i0.O2;
+                    int i11 = ug.i0.R2;
                     if (Q != null && tL_premium_boostsStatus2 != null && Q.getContext() != null) {
                         ug.i0 i0Var2 = new ug.i0(18, Q.getCurrentAccount(), Q.getContext(), Q, Q.getResourceProvider());
                         i0Var2.A1(e3Var);
                         i0Var2.z1(tL_premium_boostsStatus2, true);
                         i0Var2.B1(j3);
-                        i0Var2.I2 = r3Var;
+                        i0Var2.L2 = r3Var;
                         i0Var2.show();
                     }
                     c20Var2.a(Boolean.FALSE);
@@ -120,20 +120,20 @@ public final /* synthetic */ class r2 implements c20 {
             case 5:
                 org.telegram.ui.ActionBar.f2[] f2VarArr = (org.telegram.ui.ActionBar.f2[]) obj2;
                 ((org.telegram.ui.ActionBar.u1) obj3).dismiss();
-                yw ywVar = ((zv) obj4).b;
-                ywVar.getMessagesController().T2(Long.valueOf(j3), null, 32);
-                sw swVar = ywVar.D2;
-                ywVar.removeSelfFromStack();
+                zw zwVar = ((aw) obj4).b;
+                zwVar.getMessagesController().T2(Long.valueOf(j3), null, 32);
+                tw twVar = zwVar.D2;
+                zwVar.removeSelfFromStack();
                 if (f2VarArr[1] != null) {
                     f2VarArr[0].removeSelfFromStack();
                     f2VarArr[1].finishFragment();
                 } else {
                     f2VarArr[0].finishFragment();
                 }
-                if (swVar != null) {
+                if (twVar != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(xr.a(-j3, 0L));
-                    swVar.y(ywVar, arrayList, null, false, ywVar.K2, ywVar.L2, ywVar.M2, null);
+                    twVar.y(zwVar, arrayList, null, false, zwVar.K2, zwVar.L2, zwVar.M2, null);
                     break;
                 }
                 break;
@@ -144,7 +144,7 @@ public final /* synthetic */ class r2 implements c20 {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.Y8;
                 if (bitmap == null) {
-                    org.telegram.messenger.g0.h3(new en0(photoViewer, 18));
+                    org.telegram.messenger.g0.h3(new fn0(photoViewer, 18));
                     break;
                 } else {
                     try {
@@ -162,7 +162,7 @@ public final /* synthetic */ class r2 implements c20 {
                         break;
                     } catch (Exception e10) {
                         org.telegram.messenger.a8.g(e10, true);
-                        org.telegram.messenger.g0.h3(new en0(photoViewer, 19));
+                        org.telegram.messenger.g0.h3(new fn0(photoViewer, 19));
                         return;
                     }
                 }

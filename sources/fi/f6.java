@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f6 extends k1.b {
     public final /* synthetic */ int o = 0;
@@ -18,9 +18,9 @@ public final class f6 extends k1.b {
     public final /* synthetic */ View q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f6(org.telegram.ui.ActionBar.k3 k3Var, org.telegram.ui.ActionBar.k3 k3Var2) {
-        super(k3Var2);
-        this.q = k3Var;
+    public f6(org.telegram.ui.ActionBar.l3 l3Var, org.telegram.ui.ActionBar.l3 l3Var2) {
+        super(l3Var2);
+        this.q = l3Var;
         this.p = new Rect();
     }
 
@@ -40,19 +40,19 @@ public final class f6 extends k1.b {
                 }
                 return 1;
             default:
-                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.q;
-                ArrayList arrayList = k3Var.R;
-                if (k3Var.V >= 0.5f) {
-                    org.telegram.ui.Cells.y yVar = k3Var.i0;
+                org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) this.q;
+                ArrayList arrayList = l3Var.R;
+                if (l3Var.V >= 0.5f) {
+                    org.telegram.ui.Cells.y yVar = l3Var.i0;
                     if (yVar != null && yVar.getBounds().contains((int) f10, (int) f11)) {
                         return 1;
                     }
                     for (int size = arrayList.size() - 1; size >= 0; size--) {
-                        org.telegram.ui.ActionBar.j3 j3Var = (org.telegram.ui.ActionBar.j3) arrayList.get(size);
-                        float f12 = j3Var.i;
-                        RectF rectF = j3Var.a;
+                        org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) arrayList.get(size);
+                        float f12 = k3Var.i;
+                        RectF rectF = k3Var.a;
                         if (Math.abs(f12) < 0.4f && rectF.contains(f10, f11)) {
-                            Rect bounds = j3Var.d.l.getBounds();
+                            Rect bounds = k3Var.d.l.getBounds();
                             return (bounds.isEmpty() || !bounds.contains((int) (f10 - rectF.left), (int) ((f11 - rectF.top) - ((float) org.telegram.messenger.g0.L(24.0f))))) ? size + 1000 : size + 2000;
                         }
                     }
@@ -76,19 +76,19 @@ public final class f6 extends k1.b {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.q;
-                ArrayList arrayList2 = k3Var.R;
-                if (k3Var.V >= 0.5f) {
-                    org.telegram.ui.Cells.y yVar = k3Var.i0;
+                org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) this.q;
+                ArrayList arrayList2 = l3Var.R;
+                if (l3Var.V >= 0.5f) {
+                    org.telegram.ui.Cells.y yVar = l3Var.i0;
                     if (yVar != null && !yVar.getBounds().isEmpty()) {
                         arrayList.add(1);
                     }
                     for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-                        org.telegram.ui.ActionBar.j3 j3Var = (org.telegram.ui.ActionBar.j3) arrayList2.get(i7);
-                        if (Math.abs(j3Var.i) < 0.4f && !j3Var.a.isEmpty()) {
+                        org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) arrayList2.get(i7);
+                        if (Math.abs(k3Var.i) < 0.4f && !k3Var.a.isEmpty()) {
                             arrayList.add(Integer.valueOf(i7 + 1000));
-                            org.telegram.ui.ActionBar.a3 a3Var = j3Var.d;
-                            if (a3Var != null && !a3Var.l.getBounds().isEmpty()) {
+                            org.telegram.ui.ActionBar.b3 b3Var = k3Var.d;
+                            if (b3Var != null && !b3Var.l.getBounds().isEmpty()) {
                                 arrayList.add(Integer.valueOf(i7 + 2000));
                             }
                         }
@@ -152,17 +152,17 @@ public final class f6 extends k1.b {
                 }
                 return true;
             default:
-                org.telegram.ui.ActionBar.k3 k3Var2 = (org.telegram.ui.ActionBar.k3) view;
-                ArrayList arrayList = k3Var2.R;
+                org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) view;
+                ArrayList arrayList = l3Var.R;
                 if (i10 != 16) {
                     return false;
                 }
                 if (i7 == 1) {
-                    org.telegram.ui.ActionBar.d3 d3Var = k3Var2.a;
-                    if (d3Var != null) {
-                        d3Var.f();
+                    org.telegram.ui.ActionBar.e3 e3Var = l3Var.a;
+                    if (e3Var != null) {
+                        e3Var.f();
                     }
-                    k3Var2.a(false);
+                    l3Var.a(false);
                 } else {
                     if (i7 >= 2000) {
                         i11 = i7 - 2000;
@@ -177,16 +177,16 @@ public final class f6 extends k1.b {
                     if (i11 < 0 || i11 >= arrayList.size()) {
                         return false;
                     }
-                    org.telegram.ui.ActionBar.j3 j3Var = (org.telegram.ui.ActionBar.j3) arrayList.get(i11);
+                    org.telegram.ui.ActionBar.k3 k3Var2 = (org.telegram.ui.ActionBar.k3) arrayList.get(i11);
                     if (z9) {
-                        org.telegram.ui.ActionBar.d3 d3Var2 = k3Var2.a;
-                        if (d3Var2 != null) {
-                            d3Var2.g(j3Var.c, new org.telegram.messenger.voip.k(3, this, j3Var));
+                        org.telegram.ui.ActionBar.e3 e3Var2 = l3Var.a;
+                        if (e3Var2 != null) {
+                            e3Var2.g(k3Var2.c, new org.telegram.messenger.voip.k(3, this, k3Var2));
                         }
-                    } else if (k3Var2.a != null) {
-                        k3Var2.a(false);
-                        j3Var.getClass();
-                        k3Var2.a.e(j3Var.c);
+                    } else if (l3Var.a != null) {
+                        l3Var.a(false);
+                        k3Var2.getClass();
+                        l3Var.a.e(k3Var2.c);
                     }
                 }
                 return true;
@@ -259,8 +259,8 @@ public final class f6 extends k1.b {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) view;
-                ArrayList arrayList = k3Var.R;
+                org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) view;
+                ArrayList arrayList = l3Var.R;
                 dVar.i("android.widget.Button");
                 dVar.b(s0.c.c);
                 if (i7 != 1) {
@@ -279,11 +279,11 @@ public final class f6 extends k1.b {
                         z10 = true;
                     }
                     if (i10 >= 0 && i10 < arrayList.size()) {
-                        org.telegram.ui.ActionBar.j3 j3Var = (org.telegram.ui.ActionBar.j3) arrayList.get(i10);
-                        org.telegram.ui.ActionBar.c3 c3Var = j3Var.c;
-                        RectF rectF = j3Var.a;
-                        if (c3Var != null && c3Var.b() != null) {
-                            str3 = j3Var.c.b();
+                        org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) arrayList.get(i10);
+                        org.telegram.ui.ActionBar.d3 d3Var = k3Var.c;
+                        RectF rectF = k3Var.a;
+                        if (d3Var != null && d3Var.b() != null) {
+                            str3 = k3Var.c.b();
                         }
                         if (!z10) {
                             rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
@@ -296,7 +296,7 @@ public final class f6 extends k1.b {
                             dVar.j(str);
                             break;
                         } else {
-                            Rect bounds = j3Var.d.l.getBounds();
+                            Rect bounds = k3Var.d.l.getBounds();
                             rect.set((int) (rectF.left + bounds.left), (int) (rectF.top + org.telegram.messenger.g0.L(24.0f) + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.top + org.telegram.messenger.g0.L(24.0f) + bounds.bottom));
                             dVar.h(rect);
                             if (TextUtils.isEmpty(str3)) {
@@ -314,7 +314,7 @@ public final class f6 extends k1.b {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Cells.y yVar = k3Var.i0;
+                    org.telegram.ui.Cells.y yVar = l3Var.i0;
                     if (yVar != null) {
                         rect.set(yVar.getBounds());
                     } else {

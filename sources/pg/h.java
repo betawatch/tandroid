@@ -18,16 +18,16 @@ import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.uy;
 import tg.f0;
 import ug.w0;
 import ug.y0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class h extends FrameLayout {
         switch (this.a) {
             case 1:
                 c0 c0Var = (c0) this.c;
-                c0Var.b(l6.r1(0.65f, l6.w0(l6.d6, (g6) this.b)));
+                c0Var.b(m6.r1(0.65f, m6.w0(m6.d6, (h6) this.b)));
                 c0Var.draw(canvas);
                 super.dispatchDraw(canvas);
                 break;
@@ -62,7 +62,7 @@ public final class h extends FrameLayout {
                 canvas.save();
                 canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
                 y0 y0Var = (y0) this.b;
-                y0Var.f.setAlpha(((w0) this.c).B1);
+                y0Var.f.setAlpha(((w0) this.c).E1);
                 canvas.drawRoundRect(rectF, g0.L(24.0f) - 1, g0.L(24.0f) - 1, y0Var.f);
                 canvas.restore();
                 super.dispatchDraw(canvas);
@@ -121,7 +121,7 @@ public final class h extends FrameLayout {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 3:
-                super.onMeasure(i7, q.B(2.0f, ((w0) this.c).q1, TLObject.FLAG_30));
+                super.onMeasure(i7, q.B(2.0f, ((w0) this.c).t1, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -152,7 +152,7 @@ public final class h extends FrameLayout {
             case 0:
                 j jVar = (j) this.c;
                 d dVar = jVar.r;
-                boolean onTouchEvent = ((GestureDetector) ((vy) this.b).b).onTouchEvent(motionEvent);
+                boolean onTouchEvent = ((GestureDetector) ((uy) this.b).b).onTouchEvent(motionEvent);
                 if (motionEvent.getAction() == 0) {
                     g0.i3(dVar, 200L);
                 } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -208,24 +208,24 @@ public final class h extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(int i7, Context context, g6 g6Var) {
+    public h(int i7, Context context, h6 h6Var) {
         super(context);
         this.a = i7;
         switch (i7) {
             case 4:
                 super(context);
                 LinearLayout f10 = k5.f(context, 1);
-                j6 j6Var = new j6(context, false, false, false);
-                this.b = j6Var;
-                int i10 = l6.G6;
-                s6.Y(j6Var, i10, g6Var);
-                j6Var.setTextSize(g0.L(17.0f));
-                j6Var.setTypeface(g0.o());
-                f10.addView(j6Var, ha.r(-2, 23, 1));
+                i6 i6Var = new i6(context, false, false, false);
+                this.b = i6Var;
+                int i10 = m6.G6;
+                t6.Y(i6Var, i10, h6Var);
+                i6Var.setTextSize(g0.L(17.0f));
+                i6Var.setTypeface(g0.o());
+                f10.addView(i6Var, ha.r(-2, 23, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTextSize(1, 11.0f);
-                s6.U(textView, i10, g6Var);
+                t6.U(textView, i10, h6Var);
                 textView.setSingleLine();
                 textView.setMaxLines(1);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -234,7 +234,7 @@ public final class h extends FrameLayout {
                 break;
             default:
                 this.c = new c0(8);
-                this.b = g6Var;
+                this.b = h6Var;
                 break;
         }
     }

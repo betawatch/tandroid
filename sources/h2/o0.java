@@ -16,10 +16,10 @@ import org.telegram.messenger.y8;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.e2;
 import org.telegram.ui.Cells.h2;
-import org.telegram.ui.Components.j2;
+import org.telegram.ui.Components.i2;
 import org.telegram.ui.Wallet.g3;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -146,7 +146,7 @@ public final /* synthetic */ class o0 implements Runnable {
                         p0Var3.getClass();
                         o4 = org.telegram.ui.Wallet.p0.o(bArr);
                     }
-                    org.telegram.ui.Wallet.p0.h.execute(new j2(p0Var3, p0Var3.l(), o4, true, (c20) kVar));
+                    org.telegram.ui.Wallet.p0.h.execute(new i2(p0Var3, p0Var3.l(), o4, true, (c20) kVar));
                     break;
                 }
         }

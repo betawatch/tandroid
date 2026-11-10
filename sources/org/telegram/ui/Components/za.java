@@ -1,75 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class za extends gb {
-    private ya button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.g6 resourcesProvider;
-    public vb timerView;
-    private boolean wrapWidth;
+public interface za {
+    boolean a();
 
-    public za(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.resourcesProvider = g6Var;
-    }
+    void b(bc bcVar);
 
-    public ya getButton() {
-        return this.button;
-    }
+    void c(float f10);
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
-        ya yaVar = this.button;
-        if (yaVar != null && view != yaVar) {
-            i10 = org.telegram.messenger.camera.q.D(12.0f, yaVar.getMeasuredWidth(), i10);
-        }
-        super.measureChildWithMargins(view, i7, i10, i11, i12);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
+    void d(bc bcVar);
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
-        }
-        super.onMeasure(i7, i10);
-        if (this.button == null || View.MeasureSpec.getMode(i7) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
+    boolean e();
 
-    public void setButton(ya yaVar) {
-        ya yaVar2 = this.button;
-        if (yaVar2 != null) {
-            removeCallback(yaVar2);
-            removeView(this.button);
-        }
-        this.button = yaVar;
-        if (yaVar != null) {
-            addCallback(yaVar);
-            addView(yaVar, 0, c8.ha.h(-2.0f, -2.0f, 8388629));
-        }
-    }
+    int f(int i7);
 
-    public void setTimer() {
-        vb vbVar = new vb(getContext(), this.resourcesProvider);
-        this.timerView = vbVar;
-        vbVar.b = 5000L;
-        addView(vbVar, c8.ha.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-    }
+    boolean g(int i7);
 
-    public void setWrapWidth() {
-        this.wrapWidth = true;
-    }
+    int h(int i7);
 }

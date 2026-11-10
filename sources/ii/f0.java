@@ -7,9 +7,9 @@ import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements tr, qr {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final /* synthetic */ class f0 implements tr, qr {
 
     @Override // org.telegram.messenger.qr
     public void k(boolean z9) {
-        yw ywVar = (yw) this.d;
+        zw zwVar = (zw) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        yw.x0(this.a, this.b, chat, ywVar, this.c, z9);
+        zw.x0(this.a, this.b, chat, zwVar, this.c, z9);
     }
 
     @Override // org.telegram.messenger.tr
@@ -44,8 +44,8 @@ public final /* synthetic */ class f0 implements tr, qr {
         qp.s1(this.a).Q2(-j3, this.b, false, this.c, new g0(f2Var, j3, 0));
     }
 
-    public /* synthetic */ f0(yw ywVar, int i7, TLRPC.Chat chat, long j3, boolean z9) {
-        this.d = ywVar;
+    public /* synthetic */ f0(zw zwVar, int i7, TLRPC.Chat chat, long j3, boolean z9) {
+        this.d = zwVar;
         this.a = i7;
         this.e = chat;
         this.b = j3;

@@ -63,13 +63,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.om0;
+import org.telegram.ui.pm0;
 import v0.o;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -330,12 +330,12 @@ public final /* synthetic */ class e implements Runnable {
                             }
                         }
                     };
-                    om0 om0Var = new om0(10, false, false, null);
-                    om0Var.G = 1;
-                    om0Var.H = false;
-                    om0Var.y = false;
-                    om0Var.V = new a0(c0Var, s0Var2, c20Var, false, 7);
-                    s0Var2.presentFragment(om0Var);
+                    pm0 pm0Var = new pm0(10, false, false, null);
+                    pm0Var.G = 1;
+                    pm0Var.H = false;
+                    pm0Var.y = false;
+                    pm0Var.V = new a0(c0Var, s0Var2, c20Var, false, 7);
+                    s0Var2.presentFragment(pm0Var);
                     return;
                 }
                 return;
@@ -483,10 +483,10 @@ public final /* synthetic */ class e implements Runnable {
                 f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (tL_error == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error.text)) {
-                        k5.o(null, 2131743881, hc.a0(T), R.raw.error, 36);
+                        k5.o(null, 2131743881, gc.a0(T), R.raw.error, 36);
                         return;
                     } else {
-                        k5.o(null, 2131743880, hc.a0(T), R.raw.fire_on, 36);
+                        k5.o(null, 2131743880, gc.a0(T), R.raw.fire_on, 36);
                         return;
                     }
                 }
@@ -498,18 +498,18 @@ public final /* synthetic */ class e implements Runnable {
                 if (l10.longValue() < 0 && (M0 = qp.s1(k7Var.a).M0(Long.valueOf(-l10.longValue()))) != null) {
                     str3 = M0.title;
                 }
-                cc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749616, null) : id.a0(null, null, 2131749617, str3)));
+                bc Q = k7Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str3) ? id.M0(2131749616, null) : id.a0(null, null, 2131749617, str3)));
                 Q.t = true;
                 Q.j();
                 return;
             case 28:
                 k7 k7Var2 = (k7) this.b;
                 if (((ea) this.c).e) {
-                    k7Var2.c2.setLoading(false);
+                    k7Var2.f2.setLoading(false);
                     k7Var2.s1();
                     return;
                 } else {
-                    cc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743878, "NO_BALANCE"));
+                    bc Q2 = k7Var2.k().Q(R.raw.error, 36, id.a0(null, null, 2131743878, "NO_BALANCE"));
                     Q2.t = true;
                     Q2.j();
                     return;

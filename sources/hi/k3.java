@@ -4,11 +4,11 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class k3 extends ClickableSpan {
     public final /* synthetic */ int a = 1;
@@ -29,7 +29,7 @@ public final class k3 extends ClickableSpan {
         switch (i7) {
             case 0:
                 final bi.l0 l0Var = (bi.l0) this.c;
-                l60 H = l60.H((q3) obj, view);
+                k60 H = k60.H((q3) obj, view);
                 final int i10 = 0;
                 char c10 = 1;
                 int i11 = this.b;
@@ -210,14 +210,14 @@ public final class k3 extends ClickableSpan {
             default:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                textPaint.setColor(l6.w0(this.b, (g6) this.c));
+                textPaint.setColor(m6.w0(this.b, (h6) this.c));
                 break;
         }
     }
 
-    public k3(int i7, g6 g6Var, Runnable runnable) {
+    public k3(int i7, h6 h6Var, Runnable runnable) {
         this.b = i7;
-        this.c = g6Var;
+        this.c = h6Var;
         this.d = runnable;
     }
 }

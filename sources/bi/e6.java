@@ -10,7 +10,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e6 extends View {
     public final u6 a;
@@ -22,15 +22,15 @@ public final class e6 extends View {
         u6 u6Var = new u6(this, starGift, 60, 0.27f);
         this.a = u6Var;
         u6Var.K = 3;
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
-        w8Var.l(tLObject);
+        org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        v8Var.l(tLObject);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
         imageReceiver.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver.i0(tLObject, w8Var, null);
+        imageReceiver.i0(tLObject, v8Var, null);
         Drawable mutate = context.getDrawable(R.drawable.chats_undo).mutate();
         this.c = mutate;
-        org.telegram.ui.ActionBar.s6.x(this, mutate, org.telegram.ui.ActionBar.l6.z6, null, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.t6.x(this, mutate, org.telegram.ui.ActionBar.m6.z6, null, PorterDuff.Mode.MULTIPLY);
         mutate.setBounds(org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(-12.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f));
     }
 

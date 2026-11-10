@@ -1,37 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class d4 extends ArrayAdapter {
-    public final /* synthetic */ i4 a;
+public final class d4 extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ j4 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d4(i4 i4Var, Context context) {
-        super(context, 0);
-        this.a = i4Var;
+    public /* synthetic */ d4(j4 j4Var, float f10, float f11, int i7, int i10) {
+        this.a = i10;
+        this.e = j4Var;
+        this.b = f10;
+        this.c = f11;
+        this.d = i7;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i7, View view, ViewGroup viewGroup) {
-        i4 i4Var = this.a;
-        ab.v vVar = i4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i7);
-        int width = i4Var.I.getWidth();
-        if (view != null) {
-            int i10 = vVar.a;
-            k4.e(view, menuItem, ((i4) vVar.e).Q.j != null);
-        } else {
-            view = k4.b(((i4) vVar.e).Q, (Context) vVar.c, menuItem, true, false, false);
-            int i11 = vVar.b;
-            view.setPadding(i11, 0, i11, 0);
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f10, Transformation transformation) {
+        switch (this.a) {
+            case 0:
+                float f11 = this.b;
+                float z9 = com.google.android.recaptcha.internal.a.z(this.c, f11, f10, f11);
+                j4 j4Var = this.e;
+                j4Var.i.setX(z9 + (j4Var.f.getWidth() - this.d));
+                float f12 = 1.0f - f10;
+                j4Var.l.setAlpha(f12);
+                j4Var.j.setAlpha(f12);
+                break;
+            default:
+                float f13 = this.b;
+                float z10 = com.google.android.recaptcha.internal.a.z(this.c, f13, f10, f13);
+                j4 j4Var2 = this.e;
+                j4Var2.i.setX(z10 + (j4Var2.f.getWidth() - this.d));
+                j4Var2.l.setAlpha(f10);
+                j4Var2.j.setAlpha(f10);
+                break;
         }
-        view.setMinimumWidth(width);
-        return view;
     }
 }

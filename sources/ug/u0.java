@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class u0 extends c5.k {
     public long w0;
@@ -44,12 +44,12 @@ public final class u0 extends c5.k {
                 float width = getWidth() * 0.45f;
                 w0 w0Var = this.z0;
                 if (x10 <= width) {
-                    int i7 = w0Var.x1 - 1;
+                    int i7 = w0Var.A1 - 1;
                     if (i7 >= 0) {
                         x(i7, true);
                     }
-                } else if (w0Var.x1 + 1 < w0Var.k1.size()) {
-                    x(w0Var.x1 + 1, true);
+                } else if (w0Var.A1 + 1 < w0Var.n1.size()) {
+                    x(w0Var.A1 + 1, true);
                 }
                 this.x0 = false;
                 return false;
@@ -77,12 +77,12 @@ public final class u0 extends c5.k {
             getChildAt(0).measure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
             L = getChildAt(0).getMeasuredHeight();
         }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(L + this.z0.C1, TLObject.FLAG_30));
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(L + this.z0.F1, TLObject.FLAG_30));
     }
 
     @Override // c5.k, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.z0.s1) {
+        if (this.z0.v1) {
             return false;
         }
         return super.onTouchEvent(motionEvent) || A(motionEvent);

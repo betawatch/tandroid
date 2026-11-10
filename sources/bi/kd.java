@@ -10,7 +10,7 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements Runnable {
     public final /* synthetic */ int a;
@@ -36,18 +36,18 @@ public final /* synthetic */ class kd implements Runnable {
         switch (i7) {
             case 0:
                 ce ceVar = (ce) obj;
-                ceVar.w1 = j3;
-                ceVar.v1 = j3;
+                ceVar.z1 = j3;
+                ceVar.y1 = j3;
                 if (z9) {
-                    di.s0 s0Var = ceVar.x1;
+                    di.s0 s0Var = ceVar.A1;
                     s0Var.c = j3;
-                    ceVar.y1.set(s0Var);
+                    ceVar.B1.set(s0Var);
                 }
                 ceVar.M0();
-                ceVar.A1.a(true, true);
-                be beVar = ceVar.u1;
+                ceVar.D1.a(true, true);
+                be beVar = ceVar.x1;
                 if (beVar != null) {
-                    beVar.setMyPrivacy(ceVar.v1);
+                    beVar.setMyPrivacy(ceVar.y1);
                     break;
                 }
                 break;
@@ -55,11 +55,11 @@ public final /* synthetic */ class kd implements Runnable {
                 fi.n8 n8Var = (fi.n8) obj;
                 fi.s8 s8Var = n8Var.W;
                 if (z9) {
-                    int i12 = fi.s8.U1;
+                    int i12 = fi.s8.X1;
                     qp.s1(s8Var.a).T2(Long.valueOf(j3), new fi.f8(n8Var, j3, i10), qs.e3);
                     break;
                 } else {
-                    int i13 = fi.s8.U1;
+                    int i13 = fi.s8.X1;
                     qp.s1(s8Var.a).V2(0, j3, true);
                     break;
                 }

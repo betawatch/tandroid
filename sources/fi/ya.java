@@ -3,13 +3,13 @@ package fi;
 import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ya {
-    public final org.telegram.ui.Components.w5 a;
+    public final org.telegram.ui.Components.v5 a;
     public final int b;
     public final short[] d;
     public short e;
@@ -24,7 +24,7 @@ public final class ya {
 
     public ya(fb fbVar, String str, int i7) {
         this.l = fbVar;
-        this.a = new org.telegram.ui.Components.w5(fbVar, 0L, 600L, xq.h);
+        this.a = new org.telegram.ui.Components.v5(fbVar, 0L, 600L, wq.h);
         int i10 = 0;
         MediaExtractor mediaExtractor = new MediaExtractor();
         this.f = mediaExtractor;

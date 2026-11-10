@@ -27,12 +27,12 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.o8;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -51,7 +51,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     public boolean T;
     public int U;
     public int V;
-    public kb W;
+    public jb W;
     public float X;
     public float Y;
     public final i a;
@@ -93,8 +93,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 this.y = mutate;
                 q1Var.setHideSideButtonByQuickShare(true);
                 iVar.performHapticFeedback(3, 1);
-                int w02 = l6.w0(l6.G8, this.D.getResourcesProvider());
-                mutate.setColorFilter(new PorterDuffColorFilter(l6.x0(null, l6.He, false), PorterDuff.Mode.MULTIPLY));
+                int w02 = m6.w0(m6.G8, this.D.getResourcesProvider());
+                mutate.setColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.He, false), PorterDuff.Mode.MULTIPLY));
                 LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, g0.L(100.0f), new int[]{w02, 16777215 & w02}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                 this.f = linearGradient;
                 this.c.setShader(linearGradient);
@@ -281,8 +281,8 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                 float f17 = hVar.X;
                 float f18 = hVar.Y;
                 float f19 = (L3 + f17) / 2.0f;
-                kb kbVar = hVar.W;
-                float min = (kbVar == null || !kbVar.top) ? Math.min(centerY, f18) - g0.L(15) : Math.max(centerY, f18) + g0.L(15);
+                jb jbVar = hVar.W;
+                float min = (jbVar == null || !jbVar.top) ? Math.min(centerY, f18) - g0.L(15) : Math.max(centerY, f18) + g0.L(15);
                 float g10 = g(L3, f17, interpolation2);
                 double d = L3;
                 double d2 = centerY;
@@ -339,10 +339,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                         Z1.setAlpha(alpha2);
                                     }
                                     if (g22 || paint != null) {
-                                        int alpha3 = l6.h2.getAlpha();
-                                        l6.h2.setAlpha((int) (alpha3 * f25));
-                                        canvas3.drawRoundRect(rectF3, L4, L4, l6.h2);
-                                        l6.h2.setAlpha(alpha3);
+                                        int alpha3 = m6.h2.getAlpha();
+                                        m6.h2.setAlpha((int) (alpha3 * f25));
+                                        canvas3.drawRoundRect(rectF3, L4, L4, m6.h2);
+                                        m6.h2.setAlpha(alpha3);
                                     }
                                     canvas3.save();
                                     canvas3.translate(f23 + g0.L(f26), ((g0.L(f22) - dVar2.h.getHeight()) / 2.0f) + f24);
@@ -509,10 +509,10 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                                                     Z1.setAlpha(alpha2);
                                                 }
                                                 if (g22 || paint2 != null) {
-                                                    int alpha3 = l6.h2.getAlpha();
-                                                    l6.h2.setAlpha((int) (alpha3 * f252));
-                                                    canvas3.drawRoundRect(rectF32, L42, L42, l6.h2);
-                                                    l6.h2.setAlpha(alpha3);
+                                                    int alpha3 = m6.h2.getAlpha();
+                                                    m6.h2.setAlpha((int) (alpha3 * f252));
+                                                    canvas3.drawRoundRect(rectF32, L42, L42, m6.h2);
+                                                    m6.h2.setAlpha(alpha3);
                                                 }
                                                 canvas3.save();
                                                 canvas3.translate(f232 + g0.L(f262), ((g0.L(f222) - dVar22.h.getHeight()) / 2.0f) + f242);
@@ -596,9 +596,9 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         if (animator == this.a0) {
             this.N = true;
             invalidateSelf();
-            kb kbVar = this.W;
-            if (kbVar != null) {
-                kbVar.a.setVisibility(0);
+            jb jbVar = this.W;
+            if (jbVar != null) {
+                jbVar.a.setVisibility(0);
             }
             if (this.M) {
                 fVar.run();

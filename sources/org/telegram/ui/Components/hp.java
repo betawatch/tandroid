@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.core.widget.NestedScrollView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class hp extends NestedScrollView {
     public boolean W;
@@ -23,9 +23,9 @@ public final class hp extends NestedScrollView {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         lp lpVar = this.a0;
-        int scrollY = (int) ((getScrollY() + (lpVar.n1 - lpVar.s0)) - getTranslationY());
-        Drawable drawable = lpVar.i1;
-        drawable.setBounds(0, scrollY, getMeasuredWidth(), org.telegram.messenger.g0.L(19.0f) + lpVar.k1.getMeasuredHeight() + scrollY + lpVar.s0);
+        int scrollY = (int) ((getScrollY() + (lpVar.q1 - lpVar.s0)) - getTranslationY());
+        Drawable drawable = lpVar.l1;
+        drawable.setBounds(0, scrollY, getMeasuredWidth(), org.telegram.messenger.g0.L(19.0f) + lpVar.n1.getMeasuredHeight() + scrollY + lpVar.s0);
         drawable.draw(canvas);
     }
 
@@ -33,7 +33,7 @@ public final class hp extends NestedScrollView {
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
             lp lpVar = this.a0;
-            if (lpVar.n1 != 0 && motionEvent.getY() < lpVar.n1) {
+            if (lpVar.q1 != 0 && motionEvent.getY() < lpVar.q1) {
                 lpVar.dismiss();
                 return true;
             }
@@ -55,11 +55,11 @@ public final class hp extends NestedScrollView {
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i10);
         lp lpVar = this.a0;
-        measureChildWithMargins(lpVar.k1, i7, 0, i10, 0);
-        int measuredHeight = lpVar.k1.getMeasuredHeight();
+        measureChildWithMargins(lpVar.n1, i7, 0, i10, 0);
+        int measuredHeight = lpVar.n1.getMeasuredHeight();
         int i11 = (size / 5) * 3;
         int i12 = size - i11;
-        if (!lpVar.m1 && measuredHeight - i12 >= org.telegram.messenger.g0.L(90.0f)) {
+        if (!lpVar.p1 && measuredHeight - i12 >= org.telegram.messenger.g0.L(90.0f)) {
             if (measuredHeight >= org.telegram.messenger.g0.L(90.0f) + (size / 2)) {
                 int L = org.telegram.messenger.g0.L(108.0f) + (measuredHeight / 2);
                 if (i12 < L) {

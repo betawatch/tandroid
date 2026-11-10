@@ -46,16 +46,16 @@ import java.util.Iterator;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.ju0;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.n20;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Wallet.a8;
-import org.telegram.ui.Wallet.e5;
-import org.telegram.ui.Wallet.f5;
+import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.zg0;
+import org.telegram.ui.Wallet.d8;
+import org.telegram.ui.Wallet.h5;
+import org.telegram.ui.Wallet.i5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -266,37 +266,37 @@ public final /* synthetic */ class f implements Runnable {
                 yVar.a();
                 return;
             case 16:
-                new ju0(((n20) this.b).getContext()).show();
+                new iu0(((m20) this.b).getContext()).show();
                 return;
             case 17:
-                g0.K3(((a1) this.b).W1);
+                g0.K3(((a1) this.b).Z1);
                 return;
             case 18:
-                g0.K3(((e1) this.b).n1);
+                g0.K3(((e1) this.b).q1);
                 return;
             case 19:
-                g0.K3(((h1) this.b).j1);
+                g0.K3(((h1) this.b).m1);
                 return;
             case 20:
                 ((w1) this.b).onBackPressed();
                 return;
             case 21:
-                e5 e5Var = (e5) ((j7) this.b);
-                a8 a8Var = e5Var.c.j0;
-                if (a8Var != null) {
-                    TL_wallet.nftItem nftitem = e5Var.b;
-                    if (a8Var.A()) {
-                        a8Var.c0(a8Var.v(nftitem));
+                h5 h5Var = (h5) ((j7) this.b);
+                d8 d8Var = h5Var.c.j0;
+                if (d8Var != null) {
+                    TL_wallet.nftItem nftitem = h5Var.b;
+                    if (d8Var.A()) {
+                        d8Var.c0(d8Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
             case 22:
-                f5 f5Var = (f5) ((i7) this.b);
-                a8 a8Var2 = f5Var.b.j0;
-                if (a8Var2 != null) {
-                    a8Var2.b0(f5Var.a);
+                i5 i5Var = (i5) ((i7) this.b);
+                d8 d8Var2 = i5Var.b.j0;
+                if (d8Var2 != null) {
+                    d8Var2.b0(i5Var.a);
                     return;
                 }
                 return;
@@ -435,8 +435,8 @@ public final /* synthetic */ class f implements Runnable {
             case 28:
                 e7 e7Var = (e7) this.b;
                 f fVar = e7Var.l0;
-                l9[] l9VarArr = e7Var.d;
-                if (!l9VarArr[2 - e7Var.u0].getImageReceiver().J()) {
+                k9[] k9VarArr = e7Var.d;
+                if (!k9VarArr[2 - e7Var.u0].getImageReceiver().J()) {
                     g0.r(fVar);
                     g0.i3(fVar, 150L);
                     return;
@@ -451,8 +451,8 @@ public final /* synthetic */ class f implements Runnable {
                     }
                     int i14 = 1 - e7Var.u0;
                     e7Var.u0 = i14;
-                    ah0 B = l9VarArr[2 - i14].getImageReceiver().B();
-                    ah0 B2 = l9VarArr[e7Var.u0 + 1].getImageReceiver().B();
+                    zg0 B = k9VarArr[2 - i14].getImageReceiver().B();
+                    zg0 B2 = k9VarArr[e7Var.u0 + 1].getImageReceiver().B();
                     if (B2 != null && B != null) {
                         B2.T(false, B.t());
                     }
@@ -470,7 +470,7 @@ public final /* synthetic */ class f implements Runnable {
                     ofFloat.addUpdateListener(new a7(e7Var, 2));
                     e7Var.k0.addListener(new d7(e7Var));
                     e7Var.k0.setDuration(320L);
-                    e7Var.k0.setInterpolator(xq.h);
+                    e7Var.k0.setInterpolator(wq.h);
                     e7Var.k0.start();
                     return;
                 }

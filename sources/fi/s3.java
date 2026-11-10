@@ -20,13 +20,13 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s3 extends FrameLayout implements RendererCommon.RendererEvents, ls {
     public boolean D;
@@ -34,7 +34,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     public final r3 b;
     public final SurfaceViewRenderer c;
     public final TextureViewRenderer d;
-    public final org.telegram.ui.Components.l9 e;
+    public final org.telegram.ui.Components.k9 e;
     public final TextureView f;
     public View h;
     public Runnable n;
@@ -47,10 +47,10 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     public s3(Context context, int i7) {
         super(context);
         this.a = i7;
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.e = l9Var;
-        l9Var.setAlpha(0.75f);
-        addView(l9Var, c8.ha.e(-1, -1, qs.E1));
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.e = k9Var;
+        k9Var.setAlpha(0.75f);
+        addView(k9Var, c8.ha.e(-1, -1, qs.E1));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
         addView(textureView, c8.ha.e(-1, -1, qs.E1));
@@ -79,7 +79,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
         r3 r3Var = this.b;
         r3Var.setVisibility(0);
         d dVar = (d) r3Var.d;
-        r3Var.animate().alpha(this.D ? 1.0f : 0.0f).setInterpolator(xq.h).setDuration(320L).withEndAction(new bi.k1(6, this, z9)).start();
+        r3Var.animate().alpha(this.D ? 1.0f : 0.0f).setInterpolator(wq.h).setDuration(320L).withEndAction(new bi.k1(6, this, z9)).start();
         dVar.setVisibility((!z9 || runnable == null) ? 8 : 0);
         dVar.setOnClickListener(runnable == null ? null : new bi.z6(2, runnable));
     }
@@ -124,21 +124,21 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
                         org.telegram.messenger.a8.g(e10, true);
                     }
                     if (this.s != j3) {
-                        org.telegram.ui.Components.l9 l9Var = this.e;
+                        org.telegram.ui.Components.k9 k9Var = this.e;
                         if (j3 == 0) {
-                            l9Var.b();
+                            k9Var.b();
                         } else {
                             String absolutePath = new File(org.telegram.messenger.w7.z(i7), rf.b.h(j3, "live", ".jpg")).getAbsolutePath();
                             if (j3 > 0) {
                                 TLRPC.User a22 = qp.s1(this.a).a2(Long.valueOf(j3));
                                 hc l10 = hc.l(this.a, 1, a22);
-                                int d = a22 != null ? org.telegram.ui.Components.w8.d(a22.id) : i0.a.f(0.2f, -16777216, -1);
-                                l9Var.getImageReceiver().u0(hc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, a22, 0);
+                                int d = a22 != null ? org.telegram.ui.Components.v8.d(a22.id) : i0.a.f(0.2f, -16777216, -1);
+                                k9Var.getImageReceiver().u0(hc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, a22, 0);
                             } else {
                                 TLRPC.Chat M0 = qp.s1(this.a).M0(Long.valueOf(-j3));
                                 hc a10 = hc.a(1, M0);
-                                int d2 = M0 != null ? org.telegram.ui.Components.w8.d(M0.id) : i0.a.f(0.2f, -16777216, -1);
-                                l9Var.getImageReceiver().u0(hc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, M0, 0);
+                                int d2 = M0 != null ? org.telegram.ui.Components.v8.d(M0.id) : i0.a.f(0.2f, -16777216, -1);
+                                k9Var.getImageReceiver().u0(hc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, M0, 0);
                             }
                         }
                     }
@@ -180,7 +180,7 @@ public final class s3 extends FrameLayout implements RendererCommon.RendererEven
     public final void c(boolean z9, boolean z10) {
         if (z9 || !z10) {
             if (z10) {
-                org.telegram.messenger.camera.q.l(getTextureView().animate().alpha(z9 ? 1.0f : 0.0f), xq.h, 320L);
+                org.telegram.messenger.camera.q.l(getTextureView().animate().alpha(z9 ? 1.0f : 0.0f), wq.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z9 ? 1.0f : 0.0f);

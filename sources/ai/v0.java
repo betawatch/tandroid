@@ -24,14 +24,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.xa;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.wa;
 import org.telegram.ui.Wallet.d2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -111,7 +111,7 @@ public final /* synthetic */ class v0 implements v10 {
                     reportprofilephoto.reason = new TLRPC.TL_inputReportReasonPersonalDetails();
                 }
                 ConnectionsManager.getInstance(i11).sendRequest(reportprofilephoto, null);
-                new hc(xa.a(context), bVar).E(bVar).j();
+                new gc(wa.a(context), bVar).E(bVar).j();
                 break;
             case 2:
                 d2 d2Var = (d2) obj5;
@@ -139,7 +139,7 @@ public final /* synthetic */ class v0 implements v10 {
                 break;
             default:
                 Context context2 = (Context) obj5;
-                g6 g6Var = (g6) obj4;
+                h6 h6Var = (h6) obj4;
                 Runnable runnable = (Runnable) obj3;
                 s9 s9Var = (s9) obj;
                 if (s9Var != null) {
@@ -162,12 +162,12 @@ public final /* synthetic */ class v0 implements v10 {
                         TextView textView = new TextView(context2);
                         qs.i(textView);
                         textView.setText(id.M0(2131750305, null));
-                        int i14 = l6.j5;
-                        k5.n(textView, i14, g6Var, 1, 20.0f);
+                        int i14 = m6.j5;
+                        k5.n(textView, i14, h6Var, 1, 20.0f);
                         textView.setGravity(id.a0 ? 5 : 3);
                         f10.addView(textView, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context2);
-                        s6.U(textView2, i14, g6Var);
+                        t6.U(textView2, i14, h6Var);
                         textView2.setTextSize(1, 16.0f);
                         String t6 = m5.t(o4);
                         String t10 = m5.t(j11);
@@ -176,19 +176,19 @@ public final /* synthetic */ class v0 implements v10 {
                         objArr[1] = t10;
                         k5.r(null, null, 2131750304, objArr, textView2);
                         f10.addView(textView2, ha.t(-1, -2, 48, 24, 4, 24, 4));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i7, context2, g6Var);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i7, context2, h6Var);
                         alertDialog$Builder.o(f10);
                         alertDialog$Builder.k(id.M0(2131751771, null), new u5.e(d0Var, 13));
                         alertDialog$Builder.h(id.M0(2131752589, null), null);
                         alertDialog$Builder.a.show();
                         break;
                     } else if (s9Var.e.bid_date > 0 && !s9Var.f()) {
-                        zh.l lVar = new zh.l(context2, g6Var, null, s9Var);
-                        lVar.f2 = runnable;
+                        zh.l lVar = new zh.l(context2, h6Var, null, s9Var);
+                        lVar.i2 = runnable;
                         lVar.show();
                         break;
                     } else {
-                        new zh.u(context2, g6Var, j11, s9Var.d, runnable).show();
+                        new zh.u(context2, h6Var, j11, s9Var.d, runnable).show();
                         break;
                     }
                 }
@@ -204,9 +204,9 @@ public final /* synthetic */ class v0 implements v10 {
         this.c = j3;
     }
 
-    public /* synthetic */ v0(Context context, g6 g6Var, int i7, long j3, Runnable runnable) {
+    public /* synthetic */ v0(Context context, h6 h6Var, int i7, long j3, Runnable runnable) {
         this.d = context;
-        this.e = g6Var;
+        this.e = h6Var;
         this.b = i7;
         this.c = j3;
         this.f = runnable;

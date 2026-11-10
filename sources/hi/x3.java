@@ -13,16 +13,16 @@ import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.b20;
 import org.telegram.messenger.k9;
-import org.telegram.ui.ActionBar.p6;
 import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.r6;
+import org.telegram.ui.Components.lt0;
 import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.k, org.telegram.ui.ActionBar.r1, h2.o, h2.p, u9.d {
+public final /* synthetic */ class x3 implements lt0, k9, b20, q6, r6, ih.b, g9.k, org.telegram.ui.ActionBar.r1, h2.o, h2.p, u9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ x3(int i7) {
@@ -30,7 +30,7 @@ public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         switch (this.a) {
         }
         return Boolean.FALSE;
@@ -150,7 +150,7 @@ public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q6
+    @Override // org.telegram.ui.ActionBar.r6
     public void c(int i7, View view) {
         Drawable background = view.getBackground();
         if (background instanceof xp) {
@@ -180,7 +180,7 @@ public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.
         }
     }
 
-    @Override // org.telegram.ui.Components.mt0
+    @Override // org.telegram.ui.Components.lt0
     public void f(Object obj, float f10) {
         ((b4) obj).setSwipeOffsetY(f10);
     }
@@ -202,7 +202,7 @@ public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.
         ((e2.a1) obj).F(new e2.z0(sVar));
     }
 
-    @Override // org.telegram.ui.ActionBar.p6
+    @Override // org.telegram.ui.ActionBar.q6
     public int i(View view) {
         Drawable background = view.getBackground();
         if (!(background instanceof xp)) {
@@ -248,7 +248,7 @@ public final /* synthetic */ class x3 implements mt0, k9, b20, p6, q6, ih.b, g9.
 
     @Override // org.telegram.messenger.k9
     public Object j(Object obj) {
-        nt0 nt0Var = b4.b0;
+        mt0 mt0Var = b4.b0;
         return Boolean.FALSE;
     }
 

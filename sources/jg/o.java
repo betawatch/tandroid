@@ -4,9 +4,9 @@ import bi.ub;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.yr;
-import org.telegram.ui.jw;
+import org.telegram.ui.kw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -88,9 +88,9 @@ public final /* synthetic */ class o implements Runnable {
                         boolean z10 = (i15 == 4 || i15 == 11) ? false : true;
                         boolean z11 = i15 == 2 || i15 == 1;
                         boolean z12 = i15 == 0;
-                        jw jwVar = h0Var2.U;
-                        if (jwVar != null) {
-                            j3 = jwVar.a();
+                        kw kwVar = h0Var2.U;
+                        if (kwVar != null) {
+                            j3 = kwVar.a();
                         }
                         zVar.h(this.d, true, z9, true, z10, z11, 0L, z12, 0, i17, j3, null);
                         i10 = i17;

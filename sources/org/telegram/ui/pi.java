@@ -6,24 +6,24 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class pi implements org.telegram.ui.Components.dj0 {
+public final class pi implements org.telegram.ui.Components.cj0 {
     public final /* synthetic */ cn a;
 
     public pi(cn cnVar) {
         this.a = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public final void f(float f10, float f11, int i7, View view) {
         boolean z9;
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         org.telegram.ui.Cells.q1 q1Var;
         org.telegram.messenger.ij messageObject;
         org.telegram.messenger.ij messageObject2;
         int i10;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         cn cnVar = this.a;
         z9 = ((org.telegram.ui.ActionBar.f2) cnVar).inPreviewMode;
         if (z9) {
@@ -42,8 +42,8 @@ public final class pi implements org.telegram.ui.Components.dj0 {
                 i10 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
                 long j3 = tL_messageActionWalletTonConnectRequest.session_id;
                 int e12 = messageObject2.e1();
-                g6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
-                org.telegram.ui.Wallet.d2.q(parentActivity, i10, j3, e12, g6Var, null);
+                h6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
+                org.telegram.ui.Wallet.d2.q(parentActivity, i10, j3, e12, h6Var, null);
                 return;
             }
         }
@@ -79,8 +79,8 @@ public final class pi implements org.telegram.ui.Components.dj0 {
                 return;
             }
         }
-        kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-        if (kVar.w() || cnVar.X9()) {
+        lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+        if (lVar.x() || cnVar.X9()) {
             if (view instanceof org.telegram.ui.Cells.q1) {
                 org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) view;
                 if (cnVar.s9.z(q1Var2.getMessageObject())) {
@@ -105,11 +105,11 @@ public final class pi implements org.telegram.ui.Components.dj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public final boolean f1(View view) {
         boolean z9;
         org.telegram.messenger.ij messageObject;
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         TLRPC.ChatFull chatFull;
         cn cnVar = this.a;
         if (!cnVar.W9() && (!((z9 = view instanceof org.telegram.ui.Cells.q1)) || !((org.telegram.ui.Cells.q1) view).P2())) {
@@ -130,8 +130,8 @@ public final class pi implements org.telegram.ui.Components.dj0 {
                         messageObject = ((org.telegram.ui.Cells.t0) view).getMessageObject();
                     }
                     if (messageObject != null && !messageObject.j0 && !messageObject.o4() && messageObject.z() && !messageObject.Y2()) {
-                        kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                        if (!kVar.w() && !cnVar.z() && !cnVar.c() && !messageObject.r4()) {
+                        lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                        if (!lVar.x() && !cnVar.z() && !cnVar.c() && !messageObject.r4()) {
                             return true;
                         }
                     }
@@ -141,7 +141,7 @@ public final class pi implements org.telegram.ui.Components.dj0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public final void r0(View view, float f10, float f11) {
         org.telegram.messenger.ij messageObject;
         boolean z9;

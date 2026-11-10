@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.nt0;
+import org.telegram.ui.ot0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class b4 implements Runnable {
     private final void b() {
         Account[] accountArr;
         g5 g5Var = (g5) this.b;
-        nt0 nt0Var = (nt0) this.c;
+        ot0 ot0Var = (ot0) this.c;
         AccountManager accountManager = AccountManager.get(t0.b);
         try {
             Account[] accountsByType = accountManager.getAccountsByType("org.telegram.messenger");
@@ -118,7 +118,7 @@ public final /* synthetic */ class b4 implements Runnable {
         g5Var.l0.clear();
         g5Var.getNotificationCenter().k(qs.O, new Object[0]);
         g5Var.A(0L, false);
-        nt0Var.run();
+        ot0Var.run();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -355,8 +355,8 @@ public final /* synthetic */ class b4 implements Runnable {
                         id.E0().V0(qpVar3.currentAccount, true);
                     }
                 }
-                org.telegram.ui.ActionBar.l6.m1(qpVar3.currentAccount, false);
-                org.telegram.ui.ActionBar.l6.G(false);
+                org.telegram.ui.ActionBar.m6.m1(qpVar3.currentAccount, false);
+                org.telegram.ui.ActionBar.m6.G(false);
                 if (tL_config.static_maps_provider == null) {
                     tL_config.static_maps_provider = "telegram";
                 }
@@ -476,7 +476,7 @@ public final /* synthetic */ class b4 implements Runnable {
                     return;
                 } else {
                     qpVar4.getNotificationCenter().k(28, Long.valueOf(tL_messages_invitedUsers.updates.chats.get(0).id));
-                    org.telegram.ui.Components.v4.f(qpVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.u4.f(qpVar4.currentAccount, tL_messages_invitedUsers.updates.chats.get(0), tL_messages_invitedUsers);
                     return;
                 }
             case 10:
@@ -681,7 +681,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 ((i3) obj2).a.getMessagesController().P1().k.j((ArrayList) obj);
                 return;
             case 18:
-                org.telegram.ui.ActionBar.p3 p3Var = (org.telegram.ui.ActionBar.p3) obj;
+                org.telegram.ui.ActionBar.q3 q3Var = (org.telegram.ui.ActionBar.q3) obj;
                 try {
                     try {
                         fileInputStream = new FileInputStream((File) obj2);
@@ -692,7 +692,7 @@ public final /* synthetic */ class b4 implements Runnable {
                         a8.g(e, true);
                         bitmap = r52;
                         arrayList = r72;
-                        g0.h3(new b4(21, p3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                        g0.h3(new b4(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                         return;
                     }
                 } catch (Exception e15) {
@@ -700,7 +700,7 @@ public final /* synthetic */ class b4 implements Runnable {
                     a8.g(e, true);
                     bitmap = r52;
                     arrayList = r72;
-                    g0.h3(new b4(21, p3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                    g0.h3(new b4(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                     return;
                 }
                 try {
@@ -754,7 +754,7 @@ public final /* synthetic */ class b4 implements Runnable {
                                 fileInputStream.close();
                                 bitmap = d;
                                 arrayList = arrayList6;
-                                g0.h3(new b4(21, p3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
+                                g0.h3(new b4(21, q3Var, bitmap != null ? new gg.a(bitmap, 1, arrayList) : null));
                                 return;
                             } catch (Throwable th7) {
                                 th3 = th7;
@@ -792,7 +792,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 ((j1) obj2).onComplete((Bitmap) obj);
                 return;
             case 21:
-                ((org.telegram.ui.ActionBar.p3) obj2).a((gg.a) obj);
+                ((org.telegram.ui.ActionBar.q3) obj2).a((gg.a) obj);
                 return;
             case 22:
                 ((org.telegram.ui.Components.so) obj2).onError((TLRPC.TL_error) obj);

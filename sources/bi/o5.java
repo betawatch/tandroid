@@ -5,12 +5,12 @@ import android.text.SpannableStringBuilder;
 import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.cn;
 import org.telegram.ui.ui;
 import org.telegram.ui.vg;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o5 implements c20 {
     public final /* synthetic */ int a;
@@ -35,17 +35,17 @@ public final /* synthetic */ class o5 implements c20 {
         SpannableStringBuilder spannableStringBuilder;
         int size;
         int i7;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         int i10 = this.a;
         Object obj2 = this.d;
         switch (i10) {
             case 0:
                 d6 d6Var = (d6) obj2;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.q5 q5Var = d6Var.E;
+                org.telegram.ui.Components.p5 p5Var = d6Var.E;
                 if (this.b == this.c) {
                     d6Var.d0 = arrayList;
-                    q5Var.animate().alpha(d6Var.s ? 0.0f : d6Var.d0 != null ? 1.0f : 0.25f).setInterpolator(xq.h).setDuration(420L).start();
+                    p5Var.animate().alpha(d6Var.s ? 0.0f : d6Var.d0 != null ? 1.0f : 0.25f).setInterpolator(wq.h).setDuration(420L).start();
                     ArrayList arrayList2 = new ArrayList();
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if ((arrayList.get(i11) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i11)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
@@ -58,14 +58,14 @@ public final /* synthetic */ class o5 implements c20 {
                                     Object obj3 = arrayList2.get(i7);
                                     i7++;
                                     spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.r5(((TL_stars.starGiftAttributeModel) obj3).document, q5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.q5(((TL_stars.starGiftAttributeModel) obj3).document, p5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
                                 if (spannableStringBuilder.length() > 0) {
                                     spannableStringBuilder.append((CharSequence) " ");
                                 }
                                 spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                                q5Var.setText(spannableStringBuilder);
+                                p5Var.setText(spannableStringBuilder);
                                 break;
                             }
                         }
@@ -78,7 +78,7 @@ public final /* synthetic */ class o5 implements c20 {
                     if (spannableStringBuilder.length() > 0) {
                     }
                     spannableStringBuilder.append((CharSequence) org.telegram.messenger.g0.I2(org.telegram.messenger.id.M0(2131749754, null), false, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f)));
-                    q5Var.setText(spannableStringBuilder);
+                    p5Var.setText(spannableStringBuilder);
                 }
                 break;
             case 1:
@@ -97,8 +97,8 @@ public final /* synthetic */ class o5 implements c20 {
                     String H = l10.longValue() > 0 ? org.telegram.messenger.id.H(',', "RemoveMessageFeeRefund", (int) l10.longValue()) : null;
                     String M02 = org.telegram.messenger.id.M0(2131751817, null);
                     vg vgVar = new vg(uiVar, j3, this.c, l10, 1);
-                    g6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
-                    org.telegram.ui.Components.v4.f0(parentActivity, M0, X2, H, M02, vgVar, g6Var, true);
+                    h6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
+                    org.telegram.ui.Components.u4.f0(parentActivity, M0, X2, H, M02, vgVar, h6Var, true);
                     break;
                 }
                 break;

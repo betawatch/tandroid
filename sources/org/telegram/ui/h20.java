@@ -1,11 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class h20 implements nh.g {
-    public final /* synthetic */ e40 a;
+import android.view.View;
 
-    public h20(e40 e40Var) {
-        this.a = e40Var;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class h20 extends View {
+    public final /* synthetic */ f40 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h20(f40 f40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = f40Var;
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.a.U0();
+        }
     }
 }

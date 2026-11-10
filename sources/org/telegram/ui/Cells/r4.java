@@ -11,7 +11,7 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r4 extends FrameLayout {
     public final RadioButton a;
@@ -24,19 +24,19 @@ public final class r4 extends FrameLayout {
     public r4(Context context) {
         super(context);
         this.f = 62;
-        if (org.telegram.ui.ActionBar.l6.k0 == null) {
-            org.telegram.ui.ActionBar.l6.R(context);
+        if (org.telegram.ui.ActionBar.m6.k0 == null) {
+            org.telegram.ui.ActionBar.m6.R(context);
         }
         setWillNotDraw(false);
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(org.telegram.messenger.g0.L(20.0f));
-        org.telegram.ui.ActionBar.s6.O(radioButton, org.telegram.ui.ActionBar.l6.D5, org.telegram.ui.ActionBar.l6.E5, null);
+        org.telegram.ui.ActionBar.t6.O(radioButton, org.telegram.ui.ActionBar.m6.D5, org.telegram.ui.ActionBar.m6.E5, null);
         boolean z9 = id.a0;
         addView(radioButton, c8.ha.d(22, 22.0f, (z9 ? 5 : 3) | 16, z9 ? 0 : 20, 0.0f, z9 ? 20 : 0, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.j5, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, null);
         textView.setTextSize(1, 16.0f);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -46,7 +46,7 @@ public final class r4 extends FrameLayout {
         addView(textView, c8.ha.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 23 : 62, 0.0f, z10 ? 62 : 23, 17.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.r5, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.r5, null);
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
@@ -64,7 +64,7 @@ public final class r4 extends FrameLayout {
         if (this.d) {
             boolean z9 = id.a0;
             int i7 = this.f;
-            canvas.drawLine(z9 ? 0.0f : org.telegram.messenger.g0.L(i7 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+            canvas.drawLine(z9 ? 0.0f : org.telegram.messenger.g0.L(i7 - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7 - 3) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

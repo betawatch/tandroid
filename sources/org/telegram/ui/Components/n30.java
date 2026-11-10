@@ -1,26 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.opengl.GLES20;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class n30 {
-    public long a;
-    public float b;
-    public float c;
-    public boolean d;
-    public float e;
-    public final RectF f = new RectF();
-    public int g;
-    public final Paint h;
-    public final int i;
+public final class n30 extends e4.b {
+    public final int g;
 
-    public n30(int i7) {
-        this.i = i7;
-        Paint paint = new Paint(1);
-        this.h = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
+    public n30() {
+        super(R.raw.round_blur_stage_1_frag);
+        this.g = GLES20.glGetUniformLocation(this.a, "texOffset");
     }
 }

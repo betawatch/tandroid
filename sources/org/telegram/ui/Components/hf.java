@@ -1,91 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hf extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class hf extends hi.k0 {
+    public final /* synthetic */ ChatActivityEnterView D;
 
-    public hf(ChatActivityEnterView chatActivityEnterView, boolean z9, float f10, float f11, float f12, float f13) {
-        this.f = chatActivityEnterView;
-        this.a = z9;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
-        this.e = f13;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.D = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        float f10;
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        boolean z9 = this.a;
-        if (z9) {
-            int i7 = ChatActivityEnterView.s5;
-            chatActivityEnterView.X();
-        }
-        dn0 dn0Var = chatActivityEnterView.p0;
-        if (dn0Var != null) {
-            dn0Var.setVisibility(z9 ? 0 : 8);
-            chatActivityEnterView.p0.setAlpha(this.d);
-            chatActivityEnterView.p0.setTranslationX(this.e);
-            f10 = chatActivityEnterView.p0.getTranslationX();
-        } else {
-            f10 = 0.0f;
-        }
-        chatActivityEnterView.Q0.setTranslationX(f10);
-        chatActivityEnterView.G = f10;
-        chatActivityEnterView.L1();
-        chatActivityEnterView.requestLayout();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.a) {
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        ChatActivityEnterView chatActivityEnterView = this.D;
+        if (chatActivityEnterView.V0 == null || chatActivityEnterView.o3 != 1) {
             return;
         }
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        dn0 dn0Var = chatActivityEnterView.p0;
-        if (dn0Var != null) {
-            dn0Var.setVisibility(8);
-        }
-        chatActivityEnterView.Q0.setTranslationX(0.0f);
-        chatActivityEnterView.G = 0.0f;
-        chatActivityEnterView.L1();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        float f10;
-        boolean z9 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        if (z9) {
-            int i7 = ChatActivityEnterView.s5;
-            chatActivityEnterView.X();
-            chatActivityEnterView.p0.setVisibility(0);
-        }
-        dn0 dn0Var = chatActivityEnterView.p0;
-        if (dn0Var != null) {
-            dn0Var.setAlpha(this.b);
-            chatActivityEnterView.p0.setTranslationX(this.c);
-            f10 = chatActivityEnterView.p0.getTranslationX();
-        } else {
-            f10 = 0.0f;
-        }
-        chatActivityEnterView.Q0.setTranslationX(f10);
-        chatActivityEnterView.G = f10;
-        chatActivityEnterView.L1();
-        hi.y yVar = chatActivityEnterView.l0;
-        if (yVar == null || yVar.getTag() != null) {
-            return;
-        }
-        chatActivityEnterView.B0.clear();
+        chatActivityEnterView.Z2.w(f10);
     }
 }

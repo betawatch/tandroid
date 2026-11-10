@@ -52,16 +52,16 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.e4;
 import org.telegram.ui.g4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -93,15 +93,15 @@ public final /* synthetic */ class e0 implements Runnable {
                 w5 w5Var = d6Var.h;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(d6Var.getContext());
-                    dh0 dh0Var = new dh0(d6Var.getContext());
-                    dh0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(dh0Var, ha.e(32, 32, 17));
-                    dh0Var.setScaleX(0.5f);
-                    dh0Var.setScaleY(0.5f);
-                    dh0Var.setAlpha(0.0f);
-                    dh0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    d6Var.l0 = dh0Var;
-                    frameLayout.setBackground(new t6(org.telegram.messenger.g0.L(12.0f), l6.r1(0.075f, -1)));
+                    ch0 ch0Var = new ch0(d6Var.getContext());
+                    ch0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(ch0Var, ha.e(32, 32, 17));
+                    ch0Var.setScaleX(0.5f);
+                    ch0Var.setScaleY(0.5f);
+                    ch0Var.setAlpha(0.0f);
+                    ch0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    d6Var.l0 = ch0Var;
+                    frameLayout.setBackground(new t6(org.telegram.messenger.g0.L(12.0f), m6.r1(0.075f, -1)));
                     w5Var.a[i11].setVisibility(8);
                     frameLayout.setRotation(180.0f);
                     w5Var.f(i11, frameLayout);
@@ -120,14 +120,14 @@ public final /* synthetic */ class e0 implements Runnable {
                     b6Var.setScaleY(0.5f);
                     b6Var.setAlpha(0.0f);
                     ViewPropertyAnimator duration = b6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(520L);
-                    xq xqVar = xq.h;
-                    ViewPropertyAnimator interpolator = duration.setInterpolator(xqVar);
+                    wq wqVar = wq.h;
+                    ViewPropertyAnimator interpolator = duration.setInterpolator(wqVar);
                     interpolator.setUpdateListener(new ah.h(d6Var, 4));
                     interpolator.start();
                     w5Var.a[i11].setVisibility(8);
                     z5Var.setVisibility(0);
                     z5Var.setAlpha(0.0f);
-                    z5Var.animate().alpha(0.5f).setDuration(820L).setInterpolator(xqVar).start();
+                    z5Var.animate().alpha(0.5f).setDuration(820L).setInterpolator(wqVar).start();
                     break;
                 }
             case 2:
@@ -163,11 +163,11 @@ public final /* synthetic */ class e0 implements Runnable {
                 break;
             case 5:
                 ch.o oVar = (ch.o) this.c;
-                r5 r5Var = (r5) this.d;
+                q5 q5Var = (q5) this.d;
                 int i15 = this.b;
                 Editable text = oVar.h.getText();
-                int spanStart = text.getSpanStart(r5Var);
-                int spanEnd = text.getSpanEnd(r5Var);
+                int spanStart = text.getSpanStart(q5Var);
+                int spanEnd = text.getSpanEnd(q5Var);
                 int i16 = spanEnd - spanStart;
                 if (spanStart != -1 && spanEnd != -1) {
                     oVar.h.getText().delete(spanStart, spanEnd);
@@ -307,7 +307,7 @@ public final /* synthetic */ class e0 implements Runnable {
             case 19:
                 l2.g1 g1Var = (l2.g1) this.c;
                 Pair pair = (Pair) this.d;
-                g1Var.b.h.N(((Integer) pair.first).intValue(), (x2.g0) pair.second, this.b);
+                g1Var.b.h.N(((Integer) pair.first).intValue(), (x2.f0) pair.second, this.b);
                 break;
             case 20:
                 m5 m5Var = (m5) this.c;
@@ -344,13 +344,13 @@ public final /* synthetic */ class e0 implements Runnable {
             case 25:
                 int i29 = this.b;
                 Context context2 = (Context) this.c;
-                v2[] v2VarArr = (v2[]) this.d;
+                w2[] w2VarArr = (w2[]) this.d;
                 String str2 = qp.s1(i29).O6;
                 if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
                     str2 = "https://".concat(str2);
                 }
                 vf.c.t(context2, str2);
-                v2VarArr[0].dismiss();
+                w2VarArr[0].dismiss();
                 break;
             case 26:
                 g4 g4Var = (g4) this.c;

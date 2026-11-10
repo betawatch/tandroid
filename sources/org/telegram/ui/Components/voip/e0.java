@@ -13,14 +13,14 @@ import org.telegram.messenger.r3;
 import org.telegram.messenger.s3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.rm0;
-import org.telegram.ui.Components.vs;
+import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.us;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.b20;
-import org.telegram.ui.e40;
+import org.telegram.ui.c20;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e0 implements ti.m {
     public static e0 e;
@@ -30,13 +30,13 @@ public final class e0 implements ti.m {
     public String d;
 
     public static ArrayList a(long j3, r3 r3Var) {
-        b20 b20Var;
+        c20 c20Var;
         ArrayList arrayList = r3Var.f;
         ArrayList arrayList2 = new ArrayList();
-        e40 e40Var = e40.u5;
+        f40 f40Var = f40.x5;
         s3 s3Var = null;
-        if (e40Var != null && (b20Var = e40Var.R3) != null && b20Var.b) {
-            s3Var = b20Var.e;
+        if (f40Var != null && (c20Var = f40Var.U3) != null && c20Var.b) {
+            s3Var = c20Var.e;
         }
         if (s3Var != null && d(r3Var, s3Var, j3)) {
             arrayList2.add(s3Var);
@@ -77,11 +77,11 @@ public final class e0 implements ti.m {
         if (e0Var == null || (oVar = e0Var.a) == null || !oVar.d()) {
             return;
         }
-        q10 q10Var = q10.e0;
+        p10 p10Var = p10.e0;
         ti.o oVar2 = e.a;
         boolean z9 = false;
-        ?? r42 = q10Var != null ? 1 : 0;
-        if (q10Var != null && q10Var.r) {
+        ?? r42 = p10Var != null ? 1 : 0;
+        if (p10Var != null && p10Var.r) {
             z9 = true;
         }
         int i7 = oVar2.c;
@@ -172,7 +172,7 @@ public final class e0 implements ti.m {
 
     @Override // ti.m
     public final boolean E() {
-        return e40.u5 != null && e40.v5;
+        return f40.x5 != null && f40.y5;
     }
 
     @Override // ti.m
@@ -211,15 +211,15 @@ public final class e0 implements ti.m {
     @Override // ti.m
     public final void Q() {
         this.a = null;
-        e40 e40Var = e40.u5;
-        if (e40Var != null && e40Var.getWindow() != null) {
-            e40Var.getWindow().getDecorView().setVisibility(0);
+        f40 f40Var = f40.x5;
+        if (f40Var != null && f40Var.getWindow() != null) {
+            f40Var.getWindow().getDecorView().setVisibility(0);
         }
-        org.telegram.messenger.g0.h3(new vs(11));
+        org.telegram.messenger.g0.h3(new us(11));
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
         return false;
     }
 
@@ -232,11 +232,11 @@ public final class e0 implements ti.m {
         }
         g.a = z9;
         this.b = (a0) view;
-        e40 e40Var = e40.u5;
-        if (e40Var != null) {
-            e40Var.x1();
-            if (e40Var.getWindow() != null) {
-                e40Var.getWindow().getDecorView().setVisibility(4);
+        f40 f40Var = f40.x5;
+        if (f40Var != null) {
+            f40Var.x1();
+            if (f40Var.getWindow() != null) {
+                f40Var.getWindow().getDecorView().setVisibility(4);
             }
         }
         a0 a0Var = this.b;
@@ -249,7 +249,7 @@ public final class e0 implements ti.m {
             a0Var.j(true);
             org.telegram.messenger.g0.i3(a0Var.I, 250L);
         }
-        q10.k(view.getContext());
+        p10.k(view.getContext());
     }
 
     @Override // ti.m
@@ -276,14 +276,14 @@ public final class e0 implements ti.m {
             this.c = a0Var.n;
             this.b = null;
         }
-        e40 e40Var = e40.u5;
-        if (e40Var != null) {
-            if (e40Var.getWindow() != null) {
-                e40Var.getWindow().getDecorView().setVisibility(0);
+        f40 f40Var = f40.x5;
+        if (f40Var != null) {
+            if (f40Var.getWindow() != null) {
+                f40Var.getWindow().getDecorView().setVisibility(0);
             }
-            e40Var.y1();
+            f40Var.y1();
         }
-        q10.k(view.getContext());
+        p10.k(view.getContext());
     }
 
     @Override // ti.m
@@ -294,7 +294,7 @@ public final class e0 implements ti.m {
     @Override // ti.m
     public final void f0(int i7) {
         g.b(i7, true);
-        org.telegram.messenger.g0.i3(new vs(11), 300L);
+        org.telegram.messenger.g0.i3(new us(11), 300L);
     }
 
     @Override // ti.m

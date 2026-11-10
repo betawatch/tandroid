@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.cn;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class m0 {
     public static SpannableStringBuilder a(ij ijVar, String str, String str2, boolean z9, boolean z10) {
@@ -111,17 +111,17 @@ public abstract class m0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static void d(f2 f2Var, long j3, int i7) {
-        q4 q4Var;
+        r4 r4Var;
         cn cnVar;
         int i10;
         List list = null;
         if (org.telegram.messenger.g0.Q1()) {
-            q4Var = null;
+            r4Var = null;
             cnVar = null;
         } else {
-            q4Var = f2Var.getParentLayout();
-            if (q4Var != null) {
-                List fragmentStack = q4Var.getFragmentStack();
+            r4Var = f2Var.getParentLayout();
+            if (r4Var != null) {
+                List fragmentStack = r4Var.getFragmentStack();
                 i10 = fragmentStack.size() - 2;
                 while (true) {
                     if (i10 < 0) {
@@ -141,14 +141,14 @@ public abstract class m0 {
                 list = fragmentStack;
                 boolean U = t3.U(f2Var.getCurrentAccount(), j3);
                 if (i10 != -1) {
-                    if (!(f2Var instanceof yw)) {
+                    if (!(f2Var instanceof zw)) {
                         f2Var.finishFragment();
                     }
-                    f(hc.X(), i7, U);
+                    f(gc.X(), i7, U);
                     return;
                 }
                 for (int size = list.size() - 2; size > i10; size--) {
-                    ((ActionBarLayout) q4Var).d0((f2) list.get(size), false);
+                    ((ActionBarLayout) r4Var).d0((f2) list.get(size), false);
                 }
                 f2Var.finishFragment();
                 org.telegram.messenger.g0.i3(new h0(i7, cnVar, U), 250L);
@@ -178,7 +178,7 @@ public abstract class m0 {
         u1VarArr[0].setOnCancelListener(new e0(i7, sendRequestTyped, u1VarArr, 0));
     }
 
-    public static void f(hc hcVar, int i7, boolean z9) {
+    public static void f(gc gcVar, int i7, boolean z9) {
         String M0;
         int i10 = i7 == 2 ? R.raw.timer_toast : R.raw.contact_check;
         int i11 = i7 == 2 ? 24 : 36;
@@ -189,6 +189,6 @@ public abstract class m0 {
         } else {
             M0 = id.M0(2131751940, null);
         }
-        hcVar.G(i10, i11, M0).j();
+        gcVar.G(i10, i11, M0).j();
     }
 }

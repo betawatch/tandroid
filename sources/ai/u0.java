@@ -8,10 +8,10 @@ import org.telegram.messenger.ls;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.qq;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements v10 {
     public final /* synthetic */ int a;
@@ -81,19 +81,19 @@ public final /* synthetic */ class u0 implements v10 {
                 }
                 break;
             default:
-                qq qqVar = (qq) lsVar;
+                rq rqVar = (rq) lsVar;
                 m8 m8Var = (m8) obj3;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (updates == null) {
-                    qqVar.getClass();
+                    rqVar.getClass();
                     if (tL_error2 != null) {
                         m8Var.setChecked(z9);
-                        hc.a0(qqVar).f0(tL_error2, false);
+                        gc.a0(rqVar).f0(tL_error2, false);
                         break;
                     }
                 } else {
-                    qqVar.getMessagesController().O3(updates, false);
+                    rqVar.getMessagesController().O3(updates, false);
                     break;
                 }
                 break;

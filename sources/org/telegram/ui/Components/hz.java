@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class hz {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ iz k;
+    public long a;
+    public Object b;
+    public Serializable c;
+    public Object d;
 
-    public hz(iz izVar) {
-        this.k = izVar;
+    public void a(rh.b bVar, boolean z9) {
+        org.telegram.ui.ActionBar.p5 p5Var = (org.telegram.ui.ActionBar.p5) this.d;
+        if (((rh.b) this.c) != bVar) {
+            org.telegram.messenger.g0.r(p5Var);
+            this.c = bVar;
+            if (z9) {
+                ((ii.c) this.b).a(bVar);
+            }
+            if (bVar == rh.b.b || bVar == rh.b.c) {
+                org.telegram.messenger.g0.i3(p5Var, this.a);
+            }
+        }
     }
 }

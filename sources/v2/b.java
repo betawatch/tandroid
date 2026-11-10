@@ -17,9 +17,9 @@ import jg.g;
 import l2.c0;
 import l2.i0;
 import l2.x;
-import x2.g0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b extends l2.b implements Handler.Callback {
     public final a I;
@@ -158,7 +158,7 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     @Override // l2.b
-    public final void u(u[] uVarArr, long j3, long j10, g0 g0Var) {
+    public final void u(u[] uVarArr, long j3, long j10, f0 f0Var) {
         this.M = this.I.a(uVarArr[0]);
         q0 q0Var = this.Q;
         if (q0Var != null) {

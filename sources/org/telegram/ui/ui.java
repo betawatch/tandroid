@@ -18,9 +18,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ui extends org.telegram.ui.ActionBar.j {
+public final class ui extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ Context a;
     public final /* synthetic */ cn b;
 
@@ -30,14 +30,14 @@ public final class ui extends org.telegram.ui.ActionBar.j {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.ActionBar.j
+    @Override // org.telegram.ui.ActionBar.k
     public final void b(int i7) {
         int i10;
         TLRPC.User user;
         TLRPC.ChatFull chatFull;
         TLRPC.User a22;
         int i11;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         int i12;
         int i13;
         long j3;
@@ -47,14 +47,14 @@ public final class ui extends org.telegram.ui.ActionBar.j {
         int i16;
         int i17;
         TLRPC.User user2;
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.Components.t01 t01Var;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.Components.s01 s01Var;
         cn cnVar = this.b;
         SparseArray[] sparseArrayArr = cnVar.o6;
         SparseArray[] sparseArrayArr2 = cnVar.n6;
         SparseArray[] sparseArrayArr3 = cnVar.m6;
-        if (i7 != -2 && i7 != 75 && i7 != -1 && (t01Var = cnVar.m0) != null && t01Var.y > 0.0f) {
-            t01Var.d();
+        if (i7 != -2 && i7 != 75 && i7 != -1 && (s01Var = cnVar.m0) != null && s01Var.y > 0.0f) {
+            s01Var.d();
         }
         final int i18 = 0;
         if (i7 == -1) {
@@ -62,8 +62,8 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                 cnVar.Ua();
                 return;
             }
-            kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-            if (kVar.w()) {
+            lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+            if (lVar.x()) {
                 cnVar.O7(false);
                 return;
             }
@@ -113,7 +113,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                 tL_channels_toggleViewForumAsMessages.channel_id = k00Var.getMessagesController().h1(j11);
                 tL_channels_toggleViewForumAsMessages.enabled = false;
                 k00Var.getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new org.telegram.messenger.s1(k00Var, 7));
-                y91.M0(cnVar);
+                z91.M0(cnVar);
                 return;
             }
             org.telegram.messenger.ij ijVar = null;
@@ -226,7 +226,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                         if (cnVar.getParentActivity() == null) {
                             return;
                         }
-                        cnVar.showDialog(org.telegram.ui.Components.v4.S(cnVar.getParentActivity(), cnVar.h, cnVar.za).a);
+                        cnVar.showDialog(org.telegram.ui.Components.u4.S(cnVar.getParentActivity(), cnVar.h, cnVar.za).a);
                         return;
                     }
                     int i25 = 14;
@@ -245,7 +245,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("user_id", cnVar.f.id);
                                 bundle.putBoolean("addContact", true);
-                                cnVar.presentFragment(new pr(bundle));
+                                cnVar.presentFragment(new qr(bundle));
                                 return;
                             }
                             if (i7 == 18) {
@@ -279,14 +279,14 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 return;
                             }
                             if (i7 == 21) {
-                                int i27 = ry0.s1;
+                                int i27 = sy0.v1;
                                 int currentAccount = cnVar.getCurrentAccount();
                                 Activity parentActivity = cnVar.getParentActivity();
                                 long a10 = cnVar.a();
                                 if (parentActivity == null) {
                                     return;
                                 }
-                                ry0.J0(currentAccount, parentActivity, a10, false, false, new ArrayList(), null, null, new byte[0], null, null);
+                                sy0.J0(currentAccount, parentActivity, a10, false, false, new ArrayList(), null, null, new byte[0], null, null);
                                 return;
                             }
                             if (i7 == 22) {
@@ -391,12 +391,12 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 return;
                             }
                             if (i7 == 61) {
-                                y91.M0(cnVar);
+                                z91.M0(cnVar);
                                 return;
                             }
                             if (i7 == 65) {
                                 org.telegram.messenger.g0.g(cnVar.d4.link);
-                                org.telegram.ui.Components.hc.a0(LaunchActivity.Q()).k(false).j();
+                                org.telegram.ui.Components.gc.a0(LaunchActivity.Q()).k(false).j();
                                 return;
                             }
                             if (i7 == 66) {
@@ -438,8 +438,8 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 Activity parentActivity3 = cnVar.getParentActivity();
                                 i11 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
                                 TL_account.TL_businessChatLink tL_businessChatLink = cnVar.d4;
-                                g6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
-                                kg.v.g0(parentActivity3, i11, tL_businessChatLink, g6Var);
+                                h6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
+                                kg.v.g0(parentActivity3, i11, tL_businessChatLink, h6Var);
                                 return;
                             }
                             if (i7 == 68) {
@@ -453,7 +453,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 cnVar.showDialog(u1Var);
                                 TextView textView2 = (TextView) u1Var.d(-1);
                                 if (textView2 != null) {
-                                    org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.q7, cnVar.getResourceProvider());
+                                    org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.q7, cnVar.getResourceProvider());
                                     return;
                                 }
                                 return;
@@ -464,13 +464,13 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                                 }
                                 org.telegram.messenger.g0.v1(cnVar.l1);
                                 cnVar.m0.requestLayout();
-                                org.telegram.ui.Components.t01 t01Var2 = cnVar.m0;
-                                t01Var2.h();
-                                t01Var2.a(1.0f, 0.0f);
+                                org.telegram.ui.Components.s01 s01Var2 = cnVar.m0;
+                                s01Var2.h();
+                                s01Var2.a(1.0f, 0.0f);
                                 return;
                             }
                             if (i7 == 73) {
-                                w81 f02 = w81.f0(-cnVar.j6, 0L);
+                                x81 f02 = x81.f0(-cnVar.j6, 0L);
                                 f02.D = cnVar;
                                 cnVar.presentFragment(f02);
                                 return;
@@ -480,7 +480,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                             } else {
                                 if (i7 == 889) {
                                     HashSet hashSet = g4.c1;
-                                    org.telegram.ui.Components.hc.a0(cnVar).t("No rich message copied", null).j();
+                                    org.telegram.ui.Components.gc.a0(cnVar).t("No rich message copied", null).j();
                                     return;
                                 }
                                 return;
@@ -494,7 +494,7 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                         if (cnVar.r4 == 0 || (a22 = cnVar.getMessagesController().a2(Long.valueOf(cnVar.r4))) == null) {
                             return;
                         }
-                        org.telegram.ui.Components.v4.q(cnVar, -1, a22, cnVar.e, true, new ni.c(i25, this, a22), cnVar.getResourceProvider());
+                        org.telegram.ui.Components.u4.q(cnVar, -1, a22, cnVar.e, true, new ni.c(i25, this, a22), cnVar.getResourceProvider());
                         return;
                     }
                     TLRPC.ChatFull chatFull2 = cnVar.p8;
@@ -503,11 +503,11 @@ public final class ui extends org.telegram.ui.ActionBar.j {
                         if (i7 == 15) {
                             i10 = (cnVar.h != null || (((user = cnVar.f) == null || org.telegram.messenger.t10.B(user) || org.telegram.messenger.t10.x(cnVar.f)) && ((chatFull = cnVar.p8) == null || !chatFull.can_delete_channel))) ? 15 : 15;
                         }
-                        org.telegram.ui.Components.v4.r(cnVar, i7 == i10, cnVar.e, cnVar.f, cnVar.h == null ? 0 : 1, true, false, z11, new l2.q(this, i7, z11));
+                        org.telegram.ui.Components.u4.r(cnVar, i7 == i10, cnVar.e, cnVar.f, cnVar.h == null ? 0 : 1, true, false, z11, new l2.q(this, i7, z11));
                         return;
                     }
                     boolean z12 = z11;
-                    org.telegram.ui.Components.v4.q(cnVar, -1, cnVar.f, cnVar.e, z12, new ti(this, z12), cnVar.getResourceProvider());
+                    org.telegram.ui.Components.u4.q(cnVar, -1, cnVar.f, cnVar.e, z12, new ti(this, z12), cnVar.getResourceProvider());
                     return;
                 }
                 TLRPC.Chat chat = cnVar.e;

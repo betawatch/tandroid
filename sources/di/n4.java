@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.x50;
-import org.telegram.ui.sb1;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.w50;
+import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -83,10 +83,10 @@ public final class n4 implements ValueAnimator.AnimatorUpdateListener {
                 o7Var.invalidate();
                 break;
             case 8:
-                ((org.telegram.ui.Components.l9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                ((org.telegram.ui.Components.k9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
                 break;
             case 9:
-                bi.q1 q1Var = ((x50) this.b).e.k1;
+                bi.q1 q1Var = ((w50) this.b).e.n1;
                 int i10 = q1Var.C1;
                 if (i10 != -1 && (view = q1Var.D1) != null) {
                     q1Var.k1(i10, view);
@@ -95,17 +95,17 @@ public final class n4 implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 10:
-                w61 w61Var = (w61) this.b;
-                View[] viewArr = w61Var.e;
-                if (w61Var.y) {
+                v61 v61Var = (v61) this.b;
+                View[] viewArr = v61Var.e;
+                if (v61Var.y) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    w61Var.c = abs;
-                    l61 l61Var = w61Var.M;
-                    if (l61Var != null) {
-                        l61Var.e(abs, w61Var.d, w61Var.b);
+                    v61Var.c = abs;
+                    k61 k61Var = v61Var.M;
+                    if (k61Var != null) {
+                        k61Var.e(abs, v61Var.d, v61Var.b);
                     }
                 }
-                w61Var.x(false);
+                v61Var.x(false);
                 break;
             case 11:
                 org.telegram.ui.Components.voip.n1 n1Var = (org.telegram.ui.Components.voip.n1) this.b;
@@ -113,7 +113,7 @@ public final class n4 implements ValueAnimator.AnimatorUpdateListener {
                 n1Var.J = floatValue;
                 org.telegram.ui.Components.voip.m1 m1Var = n1Var.i0;
                 if (m1Var != null) {
-                    ((sb1) m1Var).b.d0.d(n1Var.P, floatValue);
+                    ((ub1) m1Var).b.d0.d(n1Var.P, floatValue);
                 }
                 n1Var.invalidate();
                 break;

@@ -9,10 +9,10 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -61,11 +61,11 @@ public final class y {
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
             qs.f(this.a).k(qs.J1, new Object[0]);
-            hc.a0(vVar).U(id.M0(2131752715, null), true, new ai.e0(this, indexOf, c10, 18), new fi.x1(this, str, c10, 25)).j();
+            gc.a0(vVar).U(id.M0(2131752715, null), true, new ai.e0(this, indexOf, c10, 18), new fi.x1(this, str, c10, 25)).j();
         }
     }
 
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, ad adVar) {
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, zc zcVar) {
         TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
         editbusinesschatlink.slug = tL_businessChatLink.link;
         if (!tL_inputBusinessChatLink.entities.isEmpty()) {
@@ -75,7 +75,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new f2(this, tL_businessChatLink, adVar, 9));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new f2(this, tL_businessChatLink, zcVar, 9));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {

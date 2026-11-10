@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d5 extends cn {
     public final /* synthetic */ v10 td;
@@ -26,13 +26,13 @@ public final class d5 extends cn {
         return false;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.Components.kg, org.telegram.ui.Components.c40
+    @Override // org.telegram.ui.cn, org.telegram.ui.Components.jg, org.telegram.ui.Components.b40
     public final long a() {
         return 0L;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.cn, org.telegram.ui.oa0
+    @Override // org.telegram.ui.cn, org.telegram.ui.pa0
     public final void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3) {
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
@@ -72,7 +72,7 @@ public final class d5 extends cn {
     }
 
     @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.ActionBar.g6 getResourceProvider() {
+    public final org.telegram.ui.ActionBar.h6 getResourceProvider() {
         return this.ud.p1;
     }
 
@@ -81,7 +81,7 @@ public final class d5 extends cn {
         return false;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.Components.kg
+    @Override // org.telegram.ui.cn, org.telegram.ui.Components.jg
     public final TLRPC.User j() {
         return p10.i(this.currentAccount).f();
     }

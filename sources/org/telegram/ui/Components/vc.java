@@ -1,58 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import androidx.mediarouter.app.MediaRouteButton;
-import java.lang.reflect.Field;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class vc extends MediaRouteButton {
-    public boolean a;
+public final class vc extends LinearLayout {
+    public final wc[] a;
 
-    public final void a() {
-        boolean b10 = b();
-        if (this.a != b10) {
-            this.a = b10;
-            c(b10);
+    public vc(Context context) {
+        super(context);
+        this.a = new wc[2];
+    }
+
+    public final void a(org.telegram.ui.uj ujVar, LinearLayout.LayoutParams layoutParams) {
+        int childCount = getChildCount();
+        if (childCount < 2) {
+            this.a[childCount] = ujVar;
+            addView(ujVar, layoutParams);
         }
     }
 
-    public final boolean b() {
-        Field declaredField;
-        try {
-            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
-            declaredField.setAccessible(true);
-        } catch (Exception unused) {
-        }
-        return ((Integer) declaredField.get(this)).intValue() > 0;
-    }
-
-    public abstract void c(boolean z9);
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        a();
-    }
-
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-    }
-
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onDraw(Canvas canvas) {
-        a();
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
+    public wc[] getButtons() {
+        return this.a;
     }
 }

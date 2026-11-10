@@ -1,34 +1,18 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+public final class p0 extends f3.v {
+    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ p0(w0 w0Var, int i7) {
-        this.a = i7;
-        this.b = w0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p0(v0 v0Var, f3.c0 c0Var) {
+        super(c0Var);
+        this.b = v0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b0 = true;
-                break;
-            case 1:
-                this.b.u();
-                break;
-            default:
-                w0 w0Var = this.b;
-                if (!w0Var.h0) {
-                    d0 d0Var = w0Var.I;
-                    d0Var.getClass();
-                    d0Var.d(w0Var);
-                    break;
-                }
-                break;
-        }
+    @Override // f3.v, f3.c0
+    public final long h() {
+        return this.b.T;
     }
 }

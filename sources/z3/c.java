@@ -25,10 +25,10 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 import y7.i6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -48,7 +48,7 @@ public abstract class c {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r38v11 java.util.List), method size: 3236
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -2157,7 +2157,7 @@ public abstract class c {
         int i40;
         String str5;
         int i41;
-        rt rtVar;
+        qt qtVar;
         String str6;
         int i42;
         int i43;
@@ -2504,7 +2504,7 @@ public abstract class c {
                             if (m11 == 1986361461) {
                                 xVar.N(i61 + 8);
                                 int i110 = xVar.b;
-                                rt rtVar2 = null;
+                                qt qtVar2 = null;
                                 while (i110 - i61 < m10) {
                                     xVar.N(i110);
                                     int m12 = xVar.m();
@@ -2516,7 +2516,7 @@ public abstract class c {
                                             if (i111 - i110 >= m12) {
                                                 str5 = str10;
                                                 i41 = i110;
-                                                rtVar = null;
+                                                qtVar = null;
                                                 break;
                                             }
                                             xVar.N(i111);
@@ -2527,13 +2527,13 @@ public abstract class c {
                                                 int A9 = xVar.A();
                                                 str5 = str10;
                                                 i41 = i110;
-                                                rtVar = new rt(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i50), 28);
+                                                qtVar = new qt(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i50), 28);
                                             } else {
                                                 i111 += m13;
                                                 i50 = 8;
                                             }
                                         }
-                                        rtVar2 = rtVar;
+                                        qtVar2 = qtVar;
                                     } else {
                                         str5 = str10;
                                         i41 = i110;
@@ -2542,15 +2542,15 @@ public abstract class c {
                                     str10 = str5;
                                     i50 = 8;
                                 }
-                                if (rtVar2 == null) {
+                                if (qtVar2 == null) {
                                     i6Var = null;
                                     i39 = 2;
                                 } else {
                                     i39 = 2;
-                                    i6Var = new i6(rtVar2, 2);
+                                    i6Var = new i6(qtVar2, 2);
                                 }
                                 if (i6Var != null) {
-                                    ia.a aVar = (ia.a) ((rt) i6Var.b).b;
+                                    ia.a aVar = (ia.a) ((qt) i6Var.b).b;
                                     if (eVar4 == null || ((i0) eVar4.b).size() < i39) {
                                         i40 = i51;
                                         if (i40 == -1) {

@@ -23,11 +23,11 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ue0;
 import org.telegram.ui.Components.ve0;
-import org.telegram.ui.Components.we0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j5 extends FrameLayout {
     public boolean D;
@@ -52,17 +52,17 @@ public final class j5 extends FrameLayout {
     public final ArrayList W;
     public float a;
     public float a0;
-    public we0 b;
+    public ve0 b;
     public float b0;
     public final g6.d0 c;
     public float c0;
-    public s4 d;
+    public t4 d;
     public final float[] d0;
     public r0 e;
     public final RectF e0;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
     public fh.g h;
-    public s4 n;
+    public t4 n;
     public final WeakHashMap r;
     public boolean s;
     public boolean w;
@@ -162,13 +162,13 @@ public final class j5 extends FrameLayout {
     }
 
     public final void b() {
-        s4 s4Var = this.d;
-        if (s4Var == null) {
+        t4 t4Var = this.d;
+        if (t4Var == null) {
             return;
         }
         r0 r0Var = this.e;
         RectF rectF = this.P;
-        this.E = s4Var.b(r0Var, rectF);
+        this.E = t4Var.b(r0Var, rectF);
         View menuHostView = this.d.getMenuHostView();
         RectF rectF2 = this.e0;
         boolean c10 = jh.k.c(menuHostView, this, rectF2);
@@ -219,11 +219,11 @@ public final class j5 extends FrameLayout {
             this.f.getSwipeBack().setForegroundOnGlass(false);
         }
         r0 r0Var = this.e;
-        s4 s4Var = this.d;
+        t4 t4Var = this.d;
         this.e = null;
         this.d = null;
-        if (s4Var != null) {
-            s4Var.f(null, null);
+        if (t4Var != null) {
+            t4Var.g(null, null);
         }
         if (r0Var != null) {
             r0Var.getIconView().setAlpha(1.0f);
@@ -239,19 +239,19 @@ public final class j5 extends FrameLayout {
         }
     }
 
-    public final void d(s4 s4Var, r0 r0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        if (this.D && this.d == s4Var && this.e == r0Var) {
+    public final void d(t4 t4Var, r0 r0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        if (this.D && this.d == t4Var && this.e == r0Var) {
             return;
         }
-        s4 s4Var2 = this.d;
-        if (s4Var2 != null && (s4Var2 != s4Var || this.e != r0Var)) {
+        t4 t4Var2 = this.d;
+        if (t4Var2 != null && (t4Var2 != t4Var || this.e != r0Var)) {
             c();
         }
-        this.d = s4Var;
+        this.d = t4Var;
         this.e = r0Var;
-        s4Var.getClass();
+        t4Var.getClass();
         this.s = false;
-        this.w = s4Var.a();
+        this.w = t4Var.a();
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.f;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != actionBarPopupWindow$ActionBarPopupWindowLayout) {
             if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
@@ -263,17 +263,17 @@ public final class j5 extends FrameLayout {
         actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationX(0.0f);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY(0.0f);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(1.0f);
-        s6.c0(actionBarPopupWindow$ActionBarPopupWindowLayout, false);
-        l60.U(actionBarPopupWindow$ActionBarPopupWindowLayout, l6.r1(0.06f, l6.w0(l6.E8, this.d.getMenuResourcesProvider())));
+        t6.c0(actionBarPopupWindow$ActionBarPopupWindowLayout, false);
+        k60.U(actionBarPopupWindow$ActionBarPopupWindowLayout, m6.r1(0.06f, m6.w0(m6.E8, this.d.getMenuResourcesProvider())));
         actionBarPopupWindow$ActionBarPopupWindowLayout.f();
-        we0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        ve0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         if (swipeBack != null) {
             swipeBack.b(false);
             swipeBack.setForegroundOnGlass(true);
             if (this.b != swipeBack) {
                 this.b = swipeBack;
-                swipeBack.y.add(new ve0() { // from class: org.telegram.ui.ActionBar.h5
-                    @Override // org.telegram.ui.Components.ve0
+                swipeBack.y.add(new ue0() { // from class: org.telegram.ui.ActionBar.h5
+                    @Override // org.telegram.ui.Components.ue0
                     public final void a(float f10, float f11) {
                         j5.this.invalidate();
                     }
@@ -283,8 +283,8 @@ public final class j5 extends FrameLayout {
                 if (swipeBack.getChildAt(i7) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) swipeBack.getChildAt(i7);
                     j(actionBarPopupWindow$ActionBarPopupWindowLayout3, 0);
-                    s6.c0(actionBarPopupWindow$ActionBarPopupWindowLayout3, false);
-                    l60.U(actionBarPopupWindow$ActionBarPopupWindowLayout3, l6.r1(0.06f, l6.w0(l6.E8, this.d.getMenuResourcesProvider())));
+                    t6.c0(actionBarPopupWindow$ActionBarPopupWindowLayout3, false);
+                    k60.U(actionBarPopupWindow$ActionBarPopupWindowLayout3, m6.r1(0.06f, m6.w0(m6.E8, this.d.getMenuResourcesProvider())));
                 }
             }
         }
@@ -297,23 +297,23 @@ public final class j5 extends FrameLayout {
             addView(actionBarPopupWindow$ActionBarPopupWindowLayout, new FrameLayout.LayoutParams(-2, -2));
         }
         fh.g gVar = this.h;
-        if (gVar == null || this.n != s4Var) {
+        if (gVar == null || this.n != t4Var) {
             if (gVar != null) {
                 gVar.a.setEmpty();
                 this.h.setBounds(0, 0, 0, 0);
             }
             WeakHashMap weakHashMap = this.r;
-            fh.g gVar2 = (fh.g) weakHashMap.get(s4Var);
+            fh.g gVar2 = (fh.g) weakHashMap.get(t4Var);
             this.h = gVar2;
             if (gVar2 == null) {
-                fh.g e10 = s4Var.e(this);
-                this.h = e10;
-                if (e10 != null) {
-                    e10.p(this.c);
-                    weakHashMap.put(s4Var, this.h);
+                fh.g f10 = t4Var.f(this);
+                this.h = f10;
+                if (f10 != null) {
+                    f10.p(this.c);
+                    weakHashMap.put(t4Var, this.h);
                 }
             }
-            this.n = s4Var;
+            this.n = t4Var;
         }
         ViewParent parent = getParent();
         if (parent instanceof ViewGroup) {
@@ -323,7 +323,7 @@ public final class j5 extends FrameLayout {
         this.D = true;
         this.G = SystemClock.uptimeMillis();
         h();
-        s4Var.f(this, r0Var);
+        t4Var.g(this, r0Var);
         b();
         if (!this.E && r0Var != null) {
             r0Var.getIconView().setAlpha(0.0f);
@@ -371,7 +371,7 @@ public final class j5 extends FrameLayout {
                 this.M = (f15 <= 0.0f || !this.E) ? 0.0f : f14 * 0.07f * ((float) Math.exp((-f15) / 0.11f)) * ((float) Math.sin((f15 * 6.283185307179586d) / 0.17000000178813934d));
                 if (!this.E ? f15 >= 0.0f : f15 > 0.45f) {
                     this.M = 0.0f;
-                    post(new g5(this, 0));
+                    post(new k2(this, 1));
                 }
             }
             float f16 = this.c0;
@@ -387,7 +387,7 @@ public final class j5 extends FrameLayout {
         b();
         float backScaleX = this.f.getBackScaleX() * this.f.getMeasuredWidth();
         float backScaleY = this.f.getBackScaleY() * this.f.getMeasuredHeight();
-        we0 swipeBack = this.f.getSwipeBack();
+        ve0 swipeBack = this.f.getSwipeBack();
         RectF rectF2 = this.Q;
         if (swipeBack == null || !(swipeBack.Q || this.f.c)) {
             rectF2.set(this.f.getLeft(), this.f.getTop(), this.f.getLeft() + backScaleX, this.f.getTop() + backScaleY);
@@ -436,7 +436,7 @@ public final class j5 extends FrameLayout {
         paint.setAlpha((int) (26.0f * l12));
         canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
         int L = org.telegram.messenger.g0.L(6.0f);
-        float l14 = this.E ? 1.0f : Utilities.l(l12 / 0.25f);
+        float l14 = (this.E && this.d.d()) ? 1.0f : Utilities.l(l12 / 0.25f);
         fh.g gVar = this.h;
         Path path = this.V;
         RectF rectF6 = this.S;
@@ -472,7 +472,7 @@ public final class j5 extends FrameLayout {
             float f25 = l14;
             c10 = 1;
             rectF = rectF2;
-            int w02 = l6.w0(l6.G8, this.d.getMenuResourcesProvider());
+            int w02 = m6.w0(m6.G8, this.d.getMenuResourcesProvider());
             Paint paint2 = this.x;
             paint2.setColor(w02);
             paint2.setAlpha((int) (paint2.getAlpha() * f25));
@@ -624,8 +624,8 @@ public final class j5 extends FrameLayout {
 
     public final float i(gh.a aVar, boolean z9) {
         if (aVar == this.c) {
-            s4 s4Var = this.d;
-            aVar = s4Var != null ? s4Var.getMenuGlassColorProvider() : null;
+            t4 t4Var = this.d;
+            aVar = t4Var != null ? t4Var.getMenuGlassColorProvider() : null;
         }
         if (!(aVar instanceof gh.e)) {
             return org.telegram.messenger.g0.N(z9 ? 1.0f : 0.6666667f);
@@ -662,8 +662,8 @@ public final class j5 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.f;
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout == null || actionBarPopupWindow$ActionBarPopupWindowLayout.getParent() != this) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
+        if (this.d == null || (actionBarPopupWindow$ActionBarPopupWindowLayout = this.f) == null || actionBarPopupWindow$ActionBarPopupWindowLayout.getParent() != this) {
             return;
         }
         b();
@@ -689,11 +689,11 @@ public final class j5 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         int size = View.MeasureSpec.getSize(i7);
         int size2 = View.MeasureSpec.getSize(i10);
         setMeasuredDimension(size, size2);
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.f;
-        if (actionBarPopupWindow$ActionBarPopupWindowLayout == null || actionBarPopupWindow$ActionBarPopupWindowLayout.getParent() != this) {
+        if (this.d == null || (actionBarPopupWindow$ActionBarPopupWindowLayout = this.f) == null || actionBarPopupWindow$ActionBarPopupWindowLayout.getParent() != this) {
             return;
         }
         b();

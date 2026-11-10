@@ -1,623 +1,120 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.opengl.GLES20;
-import android.os.SystemClock;
-import android.util.Log;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.view.animation.LinearInterpolator;
-import androidx.recyclerview.widget.RecyclerView;
-import java.nio.Buffer;
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
-import org.webrtc.VideoFrame;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class et implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class et extends ys {
+    public Drawable Y1;
+    public final /* synthetic */ int Z1;
+    public final /* synthetic */ kt a2;
 
-    public /* synthetic */ et(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public et(kt ktVar, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(context, h6Var);
+        this.a2 = ktVar;
+        this.Z1 = i7;
+        this.Y1 = null;
     }
 
-    private final void a() {
-        s8.a aVar = (s8.a) this.b;
-        synchronized (aVar.a) {
-            try {
-                if (aVar.b()) {
-                    Log.e("WakeLock", String.valueOf(aVar.j).concat(" ** IS FORCE-RELEASED ON TIMEOUT **"));
-                    aVar.d();
-                    if (aVar.b()) {
-                        aVar.c = 1;
-                        aVar.e();
-                    }
+    @Override // org.telegram.ui.Components.ys
+    public final void F(int i7, int i10) {
+        this.a2.q(i7, i10);
+    }
+
+    @Override // org.telegram.ui.Components.ct
+    public final int e() {
+        return this.a2.h();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i7 = this.Z1;
+        if (i7 == 2 || i7 == 3) {
+            return 2;
+        }
+        return super.getActionModeStyle();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void o(ActionMode actionMode, Menu menu) {
+        kt ktVar = this.a2;
+        if (ktVar.a()) {
+            org.telegram.ui.cn.B8(menu, null, ktVar.L == 3, true, true, true);
+        } else {
+            ktVar.i(actionMode, menu);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    public final void onSelectionChanged(int i7, int i10) {
+        super.onSelectionChanged(i7, i10);
+        kt ktVar = this.a2;
+        xj0 xj0Var = ktVar.c;
+        if (xj0Var != null) {
+            boolean z9 = false;
+            boolean z10 = i10 != i7;
+            if (ktVar.a() && z10) {
+                org.telegram.messenger.as.i();
+                z9 = true;
+            }
+            if (ktVar.n != z9) {
+                ktVar.n = z9;
+                if (z9) {
+                    this.Y1 = xj0Var.d;
+                    xj0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    xj0Var.b(this.Y1, true);
+                    this.Y1 = null;
                 }
-            } catch (Throwable th2) {
-                throw th2;
             }
         }
     }
 
-    /* JADX WARN: Type inference failed for: r0v74, types: [org.telegram.ui.Components.gl] */
-    @Override // java.lang.Runnable
-    public final void run() {
-        int L;
-        float f10;
-        int i7;
-        final int i10 = 1;
-        final int i11 = 0;
-        switch (this.a) {
-            case 0:
-                lt ltVar = (lt) this.b;
-                et etVar = ltVar.P;
-                ft ftVar = ltVar.a;
-                if (ltVar.D || ftVar == null || !ltVar.N || ltVar.w || org.telegram.messenger.g0.D || org.telegram.messenger.g0.E || !org.telegram.messenger.g0.Q1()) {
-                    return;
-                }
-                ftVar.requestFocus();
-                org.telegram.messenger.g0.K3(ftVar);
-                org.telegram.messenger.g0.r(etVar);
-                org.telegram.messenger.g0.i3(etVar, 100L);
-                return;
-            case 1:
-                ab.q qVar = (ab.q) ((di.h3) this.b).d;
-                if (!qVar.a || ((ArrayList) qVar.d).isEmpty() || ((AnimatorSet) qVar.c).isRunning()) {
-                    return;
-                }
-                try {
-                    ((AnimatorSet) qVar.c).start();
-                    return;
-                } catch (Exception unused) {
-                    return;
-                }
-            case 2:
-                hy hyVar = (hy) this.b;
-                if (hyVar.B0.s != null) {
-                    return;
-                }
-                hyVar.X1 = false;
-                hyVar.Z();
-                return;
-            case 3:
-                fz fzVar = (fz) this.b;
-                if (fzVar.O) {
-                    float f11 = fzVar.p0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 320.0f);
-                    fzVar.p0 = f11;
-                    fzVar.setAnimationIdicatorProgress(fzVar.i0.getInterpolation(f11));
-                    if (fzVar.p0 > 1.0f) {
-                        fzVar.p0 = 1.0f;
-                    }
-                    if (fzVar.p0 < 1.0f) {
-                        org.telegram.messenger.g0.h3(fzVar.v0);
-                        return;
-                    }
-                    fzVar.O = false;
-                    fzVar.setEnabled(true);
-                    bz bzVar = fzVar.J;
-                    if (bzVar != null) {
-                        ((org.telegram.ui.pw) bzVar).b(1.0f);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 4:
-                FragmentContextView fragmentContextView = (FragmentContextView) this.b;
-                float[] fArr = FragmentContextView.W0;
-                fragmentContextView.f();
-                org.telegram.messenger.g0.i3(fragmentContextView.t0, 1000L);
-                return;
-            case 5:
-                TextureView textureView = ((h40) this.b).H0.p0;
-                if (textureView != null) {
-                    try {
-                        org.telegram.messenger.g0.h3(new fq(22, this, textureView.getBitmap(org.telegram.messenger.g0.L(56.0f), org.telegram.messenger.g0.L(56.0f))));
-                        return;
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                        return;
-                    }
-                }
-                return;
-            case 6:
-                m50 m50Var = (m50) this.b;
-                n50 n50Var = m50Var.D;
-                a50 a50Var = n50Var.M1;
-                if (a50Var != null && a50Var.getAdapter() != null) {
-                    n50Var.M1.getClass();
-                    int R = RecyclerView.R(m50Var);
-                    if (R >= 0) {
-                        n50Var.K1.t(n50Var.M1.T(m50Var), R);
-                    }
-                }
-                org.telegram.messenger.g0.h3(this);
-                return;
-            case 7:
-                ja0 ja0Var = (ja0) this.b;
-                ValueAnimator valueAnimator = ja0Var.h;
-                if (valueAnimator == null || valueAnimator.isRunning()) {
-                    return;
-                }
-                ja0Var.h.start();
-                return;
-            case 8:
-                ((fc0) this.b).e();
-                return;
-            case 9:
-                lg0 lg0Var = (lg0) this.b;
-                lg0Var.y = true;
-                ValueAnimator valueAnimator2 = lg0Var.z;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                lg0Var.x = 0.0f;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                lg0Var.z = ofFloat;
-                ofFloat.addUpdateListener(lg0Var.b0);
-                lg0Var.z.setInterpolator(new LinearInterpolator());
-                lg0Var.z.setDuration(150L);
-                lg0Var.z.start();
-                return;
-            case 10:
-                qj0 qj0Var = (qj0) this.b;
-                m.c3 c3Var = qj0Var.f2;
-                int[] iArr = qj0Var.k2;
-                org.telegram.ui.cn cnVar = (org.telegram.ui.cn) c3Var.d;
-                iArr[0] = (int) cnVar.N9;
-                iArr[1] = cnVar.Wa;
-                if (qj0Var.h2) {
-                    L = -org.telegram.messenger.g0.L(12.0f);
-                    qj0Var.M0(0.0f, qj0Var.k2[0]);
-                } else {
-                    L = org.telegram.messenger.g0.L(12.0f);
-                    qj0Var.M0(0.0f, qj0Var.getMeasuredHeight() - qj0Var.k2[1]);
-                }
-                ((org.telegram.ui.cn) qj0Var.f2.d).z0.scrollBy(0, L);
-                if (qj0Var.g2) {
-                    org.telegram.messenger.g0.h3(qj0Var.C2);
-                    return;
-                }
-                return;
-            case 11:
-                vi0 vi0Var = (vi0) this.b;
-                et etVar2 = vi0Var.i0;
-                if (vi0Var.n) {
-                    org.telegram.messenger.g0.r(etVar2);
-                    org.telegram.messenger.g0.i3(etVar2, 4000L);
-                    return;
-                } else {
-                    vi0Var.U = false;
-                    vi0Var.invalidate();
-                    return;
-                }
-            case 12:
-                uj0 uj0Var = (uj0) this.b;
-                RecyclerView recyclerView = uj0Var.a;
-                if (recyclerView == null) {
-                    return;
-                }
-                if (uj0Var.g) {
-                    recyclerView.scrollBy(0, -uj0Var.i);
-                    org.telegram.messenger.g0.h3(this);
-                    return;
-                } else {
-                    if (uj0Var.h) {
-                        recyclerView.scrollBy(0, uj0Var.i);
-                        org.telegram.messenger.g0.h3(this);
-                        return;
-                    }
-                    return;
-                }
-            case 13:
-                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) this.b;
-                if (scrollSlidingTextTabStrip.H) {
-                    float f12 = scrollSlidingTextTabStrip.S + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / scrollSlidingTextTabStrip.b0);
-                    scrollSlidingTextTabStrip.S = f12;
-                    scrollSlidingTextTabStrip.setAnimationIdicatorProgress(scrollSlidingTextTabStrip.N.getInterpolation(f12));
-                    if (scrollSlidingTextTabStrip.S > 1.0f) {
-                        scrollSlidingTextTabStrip.S = 1.0f;
-                    }
-                    if (scrollSlidingTextTabStrip.S < 1.0f) {
-                        org.telegram.messenger.g0.h3(scrollSlidingTextTabStrip.d0);
-                        return;
-                    }
-                    scrollSlidingTextTabStrip.H = false;
-                    scrollSlidingTextTabStrip.setEnabled(true);
-                    vk0 vk0Var = scrollSlidingTextTabStrip.b;
-                    if (vk0Var != null) {
-                        vk0Var.F0(1.0f);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 14:
-                ShutterButton shutterButton = (ShutterButton) this.b;
-                dt0 dt0Var = shutterButton.e;
-                if (dt0Var != null) {
-                    final hl hlVar = (hl) dt0Var;
-                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = hlVar.e;
-                    di diVar = chatAttachAlertPhotoLayout.b;
-                    ol olVar = chatAttachAlertPhotoLayout.R;
-                    int i12 = diVar.K2;
-                    org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
-                    if ((i12 == 2 || (f2Var instanceof org.telegram.ui.cn)) && !chatAttachAlertPhotoLayout.s0 && !diVar.M1 && chatAttachAlertPhotoLayout.P != null && !diVar.x1) {
-                        if (f2Var == null) {
-                            f2Var = LaunchActivity.Q();
-                        }
-                        if (f2Var != null && f2Var.getParentActivity() != null) {
-                            if (chatAttachAlertPhotoLayout.w0) {
-                                int i13 = 21;
-                                if (chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") == 0) {
-                                    for (int i14 = 0; i14 < 2; i14++) {
-                                        chatAttachAlertPhotoLayout.S[i14].animate().alpha(0.0f).translationX(org.telegram.messenger.g0.L(30.0f)).setDuration(150L).setInterpolator(xq.f).start();
-                                    }
-                                    ViewPropertyAnimator duration = chatAttachAlertPhotoLayout.r0.animate().alpha(0.0f).translationX(-org.telegram.messenger.g0.L(30.0f)).setDuration(150L);
-                                    xq xqVar = xq.f;
-                                    duration.setInterpolator(xqVar).start();
-                                    chatAttachAlertPhotoLayout.q0.animate().alpha(0.0f).setDuration(150L).setInterpolator(xqVar).start();
-                                    org.telegram.ui.ActionBar.f2 f2Var2 = diVar.W1;
-                                    hlVar.a = org.telegram.messenger.g0.s0((f2Var2 instanceof org.telegram.ui.cn) && ((org.telegram.ui.cn) f2Var2).z());
-                                    org.telegram.messenger.g0.X3(olVar, true);
-                                    olVar.setText(org.telegram.messenger.g0.g0(0, true, false));
-                                    chatAttachAlertPhotoLayout.g0 = 0;
-                                    chatAttachAlertPhotoLayout.h0 = new Runnable() { // from class: org.telegram.ui.Components.gl
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i11) {
-                                                case 0:
-                                                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = hlVar.e;
-                                                    if (chatAttachAlertPhotoLayout2.h0 != null) {
-                                                        int i15 = chatAttachAlertPhotoLayout2.g0 + 1;
-                                                        chatAttachAlertPhotoLayout2.g0 = i15;
-                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.g0.g0(i15, true, false));
-                                                        org.telegram.messenger.g0.i3(chatAttachAlertPhotoLayout2.h0, 1000L);
-                                                        break;
-                                                    }
-                                                    break;
-                                                default:
-                                                    org.telegram.messenger.g0.i3(hlVar.e.h0, 1000L);
-                                                    break;
-                                            }
-                                        }
-                                    };
-                                    org.telegram.messenger.g0.f2(f2Var.getParentActivity());
-                                    CameraController.getInstance().recordVideo(chatAttachAlertPhotoLayout.P.getCameraSessionObject(), hlVar.a, diVar.K2 != 0, new u(hlVar, i13), new Runnable() { // from class: org.telegram.ui.Components.gl
-                                        @Override // java.lang.Runnable
-                                        public final void run() {
-                                            switch (i10) {
-                                                case 0:
-                                                    ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = hlVar.e;
-                                                    if (chatAttachAlertPhotoLayout2.h0 != null) {
-                                                        int i15 = chatAttachAlertPhotoLayout2.g0 + 1;
-                                                        chatAttachAlertPhotoLayout2.g0 = i15;
-                                                        chatAttachAlertPhotoLayout2.R.setText(org.telegram.messenger.g0.g0(i15, true, false));
-                                                        org.telegram.messenger.g0.i3(chatAttachAlertPhotoLayout2.h0, 1000L);
-                                                        break;
-                                                    }
-                                                    break;
-                                                default:
-                                                    org.telegram.messenger.g0.i3(hlVar.e.h0, 1000L);
-                                                    break;
-                                            }
-                                        }
-                                    }, chatAttachAlertPhotoLayout.P);
-                                    chatAttachAlertPhotoLayout.k0.a(et0.b);
-                                    chatAttachAlertPhotoLayout.P.runHaptic();
-                                    return;
-                                }
-                                chatAttachAlertPhotoLayout.Q0 = true;
-                                f2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
-                            } else {
-                                org.telegram.messenger.k5.p(null, 2131749538, new hc(chatAttachAlertPhotoLayout.P, hlVar.c), null);
-                            }
-                        }
-                    }
-                    shutterButton.w = false;
-                    return;
-                }
-                return;
-            case 15:
-                cv0 cv0Var = (cv0) this.b;
-                View view = cv0Var.s;
-                if (view == null) {
-                    cv0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
-                    return;
-                }
-                if (view.getVisibility() != 0) {
-                    cv0Var.s.setVisibility(0);
-                    cv0Var.s.setAlpha(0.0f);
-                }
-                cv0Var.s.animate().setListener(null).cancel();
-                cv0Var.s.animate().alpha(1.0f).setDuration(150L).start();
-                return;
-            case 16:
-                ((ThemeEditorView) this.b).a = false;
-                try {
-                    org.telegram.ui.ActionBar.l6.l();
-                    org.telegram.ui.ActionBar.l6.o();
-                    org.telegram.ui.ActionBar.l6.q();
-                    org.telegram.ui.ActionBar.l6.k(false, false);
-                    org.telegram.ui.ActionBar.s6.b0(null, true);
-                    LaunchActivity launchActivity = LaunchActivity.G1;
-                    if (launchActivity != null) {
-                        launchActivity.c0();
-                        return;
-                    }
-                    return;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
-                }
-            case 17:
-                v61 v61Var = (v61) this.b;
-                if (v61Var.J) {
-                    float f13 = v61Var.f0 + ((SystemClock.elapsedRealtime() <= 17 ? r2 : 17L) / 200.0f);
-                    v61Var.f0 = f13;
-                    v61Var.setAnimationIdicatorProgress(v61Var.a0.getInterpolation(f13));
-                    if (v61Var.f0 > 1.0f) {
-                        v61Var.f0 = 1.0f;
-                    }
-                    if (v61Var.f0 < 1.0f) {
-                        org.telegram.messenger.g0.h3(v61Var.i0);
-                        return;
-                    }
-                    v61Var.J = false;
-                    v61Var.setEnabled(true);
-                    u61 u61Var = v61Var.D;
-                    if (u61Var != null) {
-                        ((n) u61Var).y(1.0f);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 18:
-                org.telegram.ui.Components.voip.a0 a0Var = (org.telegram.ui.Components.voip.a0) this.b;
-                if (a0Var.w) {
-                    a0Var.j(false);
-                    org.telegram.messenger.g0.i3(this, 250L);
-                    return;
-                }
-                return;
-            case 19:
-                org.telegram.ui.b20 b20Var = (org.telegram.ui.b20) this.b;
-                if (!b20Var.b || b20Var.Q0.q2 != null) {
-                    org.telegram.messenger.g0.i3(b20Var.h0, 3000L);
-                    return;
-                } else {
-                    b20Var.g0 = false;
-                    b20Var.setUiVisible(false);
-                    return;
-                }
-            case 20:
-                org.telegram.ui.Components.voip.g1 g1Var = (org.telegram.ui.Components.voip.g1) this.b;
-                org.telegram.ui.Components.voip.q0 q0Var = g1Var.e;
-                if (q0Var == null) {
-                    return;
-                }
-                if (!g1Var.b.a(g1Var.s)) {
-                    if (g1Var.h == null) {
-                        g1Var.h = new org.telegram.ui.Components.voip.e1();
-                    }
-                    VideoFrame videoFrame = g1Var.h.b;
-                    if (videoFrame != null) {
-                        q0Var.onFrame(videoFrame);
-                    }
-                }
-                org.telegram.messenger.g0.i3(this, 500L);
-                return;
-            case 21:
-                org.telegram.ui.Components.voip.f1 f1Var = (org.telegram.ui.Components.voip.f1) this.b;
-                f1Var.a();
-                if (f1Var.b) {
-                    org.telegram.messenger.g0.i3(this, 500L);
-                    return;
-                }
-                return;
-            case 22:
-                org.telegram.ui.Components.voip.f2 f2Var3 = (org.telegram.ui.Components.voip.f2) this.b;
-                org.telegram.ui.Components.voip.m mVar = f2Var3.b;
-                if (mVar != null) {
-                    mVar.b();
-                }
-                long c10 = org.telegram.ui.Components.voip.g.c();
-                boolean a10 = org.telegram.ui.Components.voip.m.a(VoIPService.getSharedInstance());
-                if (c10 != f2Var3.c || a10 != f2Var3.d) {
-                    f2Var3.c = c10;
-                    f2Var3.d = a10;
-                    ti.o oVar = f2Var3.a;
-                    if (oVar != null) {
-                        oVar.c();
-                    }
-                }
-                org.telegram.messenger.g0.i3(this, 500L);
-                return;
-            case 23:
-                org.telegram.ui.Wallet.y0 y0Var = (org.telegram.ui.Wallet.y0) this.b;
-                if (y0Var.d && y0Var.e && y0Var.k != null) {
-                    if (SystemClock.elapsedRealtime() - y0Var.l >= 30000) {
-                        y0Var.f("heartbeat timed out");
-                        return;
-                    }
-                    y0Var.d("sending ping; last pong " + (SystemClock.elapsedRealtime() - y0Var.l) + " ms ago");
-                    y0Var.g("{\"operation\":\"ping\",\"id\":\"heartbeat\"}");
-                    org.telegram.messenger.g0.i3(this, 15000L);
-                    return;
-                }
-                return;
-            case 24:
-                org.telegram.ui.Wallet.w5 w5Var = (org.telegram.ui.Wallet.w5) this.b;
-                if (w5Var.a == null || w5Var.e == null) {
-                    return;
-                }
-                w5Var.W0();
-                if (w5Var.s) {
-                    w5Var.a.postOnAnimation(this);
-                    return;
-                }
-                return;
-            case 25:
-                org.telegram.ui.Wallet.a6 a6Var = (org.telegram.ui.Wallet.a6) this.b;
-                org.telegram.ui.Wallet.h6 h6Var = a6Var.G;
-                if (a6Var.a0) {
-                    long nanoTime = System.nanoTime();
-                    if (h6Var.a) {
-                        if (h6Var.j == 0) {
-                            h6Var.j = nanoTime;
-                        } else {
-                            float min = Math.min(0.1f, Math.max(0.0f, (nanoTime - r5) * 1.0E-9f));
-                            h6Var.j = nanoTime;
-                            if (h6Var.i - h6Var.h >= 1000000000) {
-                                float exp = 1.0f - ((float) Math.exp((-min) / 1.0f));
-                                float f14 = h6Var.d;
-                                h6Var.d = com.google.android.recaptcha.internal.a.z(h6Var.b, f14, exp, f14);
-                                float f15 = h6Var.e;
-                                h6Var.e = com.google.android.recaptcha.internal.a.z(h6Var.c, f15, exp, f15);
-                            }
-                        }
-                    }
-                    a6Var.K = h6Var.a ? Math.max(-15.0f, Math.min(15.0f, h6Var.b - h6Var.d)) : 0.0f;
-                    float c11 = org.telegram.ui.Wallet.a6.c((h6Var.a ? Math.max(-15.0f, Math.min(15.0f, h6Var.c - h6Var.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
-                    float f16 = a6Var.K;
-                    float f17 = a6Var.L;
-                    float z9 = com.google.android.recaptcha.internal.a.z(f16, f17, 1.0f, f17);
-                    a6Var.L = z9;
-                    float f18 = a6Var.M;
-                    float z10 = com.google.android.recaptcha.internal.a.z(c11, f18, 1.0f, f18);
-                    a6Var.M = z10;
-                    float f19 = a6Var.e0;
-                    a6Var.b((z9 * f19) + a6Var.N + a6Var.d0, (z10 * f19) + a6Var.O);
-                    a6Var.postOnAnimation(this);
-                    return;
-                }
-                return;
-            case 26:
-                if (org.telegram.utils.twidget.n0.h.remove(this)) {
-                    org.telegram.messenger.g0.r(this);
-                    ((org.telegram.ui.ae) this.b).run();
-                    return;
-                }
-                return;
-            case 27:
-                ((qe.h) this.b).o();
-                return;
-            case 28:
-                a();
-                return;
-            default:
-                sg.t0 t0Var = (sg.t0) this.b;
-                if (!t0Var.f || t0Var.D.D) {
-                    return;
-                }
-                sg.t0.a(t0Var);
-                GLES20.glBindFramebuffer(36160, 0);
-                sg.t0 t0Var2 = (sg.t0) this.b;
-                GLES20.glViewport(0, 0, t0Var2.n, t0Var2.r);
-                GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                GLES20.glClear(TLObject.FLAG_14);
-                sg.j0 j0Var = ((sg.t0) this.b).D.c;
-                if (j0Var.r != null) {
-                    if (j0Var.D != null && j0Var.F != null && j0Var.E) {
-                        GLES20.glBindFramebuffer(36160, 0);
-                        sg.w0 w0Var = (sg.w0) j0Var.r.get("videoBlur");
-                        if (w0Var != null) {
-                            GLES20.glUseProgram(w0Var.a);
-                            GLES20.glUniformMatrix4fv(w0Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(j0Var.y));
-                            GLES20.glUniform1f(w0Var.d("flipy"), 0.0f);
-                            GLES20.glUniform1i(w0Var.d("texture"), 0);
-                            GLES20.glActiveTexture(33984);
-                            GLES20.glBindTexture(3553, j0Var.D.c());
-                            GLES20.glTexParameteri(3553, 10241, 9729);
-                            GLES20.glUniform1i(w0Var.d("blured"), 1);
-                            GLES20.glActiveTexture(33985);
-                            da daVar = j0Var.F.m;
-                            GLES20.glBindTexture(3553, daVar != null ? daVar.s[2] : -1);
-                            if (j0Var.b == null || !(j0Var.i instanceof sg.d)) {
-                                GLES20.glUniform1f(w0Var.d("eraser"), 0.0f);
-                            } else {
-                                GLES20.glUniform1f(w0Var.d("eraser"), 1.0f);
-                                GLES20.glUniform1i(w0Var.d("mask"), 2);
-                                GLES20.glActiveTexture(33986);
-                                GLES20.glBindTexture(3553, j0Var.g());
-                            }
-                            GLES20.glBlendFunc(1, 0);
-                            GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) j0Var.m);
-                            GLES20.glEnableVertexAttribArray(0);
-                            GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) j0Var.n);
-                            GLES20.glEnableVertexAttribArray(1);
-                            synchronized (j0Var.F.h) {
-                                GLES20.glDrawArrays(5, 0, 4);
-                            }
-                        }
-                    }
-                    if (j0Var.b != null) {
-                        j0Var.n(j0Var.g(), j0Var.b, (1.0f - (j0Var.I * 0.5f)) - (j0Var.J * 0.5f));
-                    } else if (j0Var.c != null) {
-                        j0Var.o(j0Var.j(), j0Var.g(), j0Var.c, 1.0f);
-                    } else {
-                        int j3 = j0Var.j();
-                        f10 = 0.5f;
-                        sg.w0 w0Var2 = (sg.w0) j0Var.r.get(j0Var.G ? "maskingBlit" : "blit");
-                        if (j3 != 0 && w0Var2 != null) {
-                            GLES20.glUseProgram(w0Var2.a);
-                            GLES20.glUniformMatrix4fv(w0Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(j0Var.y));
-                            GLES20.glUniform1f(w0Var2.d("alpha"), 1.0f);
-                            if (j0Var.G) {
-                                GLES20.glUniform1i(w0Var2.d("texture"), 1);
-                                GLES20.glUniform1i(w0Var2.d("mask"), 0);
-                                GLES20.glUniform1f(w0Var2.d("preview"), 0.4f);
-                                GLES20.glActiveTexture(33984);
-                                GLES20.glBindTexture(3553, j3);
-                                GLES20.glActiveTexture(33985);
-                                GLES20.glBindTexture(3553, j0Var.l.c());
-                            } else {
-                                GLES20.glUniform1i(w0Var2.d("texture"), 0);
-                                GLES20.glActiveTexture(33984);
-                                GLES20.glBindTexture(3553, j3);
-                            }
-                            GLES20.glBlendFunc(1, 771);
-                            GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) j0Var.m);
-                            GLES20.glEnableVertexAttribArray(0);
-                            GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) j0Var.n);
-                            GLES20.glEnableVertexAttribArray(1);
-                            GLES20.glDrawArrays(5, 0, 4);
-                            c8.fc.a();
-                        }
-                        i7 = j0Var.q;
-                        if (i7 != 0 && j0Var.d != null && j0Var.I > 0.0f) {
-                            j0Var.o(i7, j0Var.g(), j0Var.d, (j0Var.J * f10) + (j0Var.I * f10));
-                        }
-                    }
-                    f10 = 0.5f;
-                    i7 = j0Var.q;
-                    if (i7 != 0) {
-                        j0Var.o(i7, j0Var.g(), j0Var.d, (j0Var.J * f10) + (j0Var.I * f10));
-                    }
-                }
-                GLES20.glBlendFunc(1, 771);
-                sg.t0 t0Var3 = (sg.t0) this.b;
-                t0Var3.b.eglSwapBuffers(t0Var3.c, t0Var3.e);
-                sg.v0 v0Var = ((sg.t0) this.b).D;
-                if (!v0Var.s) {
-                    v0Var.s = true;
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.o5(this, 28));
-                }
-                if (((sg.t0) this.b).h) {
-                    return;
-                }
-                ((sg.t0) this.b).h = true;
-                return;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ft ftVar;
+        kt ktVar = this.a2;
+        if (ktVar.e && motionEvent.getAction() == 0) {
+            ktVar.u();
+            if (!ktVar.y || (ftVar = ktVar.d) == null) {
+                ktVar.x(org.telegram.messenger.g0.D ? 0 : 2);
+            } else {
+                ftVar.t(false);
+                ktVar.y = false;
+                ktVar.k(true);
+                org.telegram.messenger.g0.K3(this);
+            }
+            ktVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!org.telegram.messenger.g0.K3(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+            return false;
+        }
+    }
+
+    @Override // android.view.View
+    public final void scrollTo(int i7, int i10) {
+        if (this.a2.t(i10)) {
+            super.scrollTo(i7, i10);
         }
     }
 }

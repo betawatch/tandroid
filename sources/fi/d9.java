@@ -20,13 +20,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.sy;
+import org.telegram.ui.Components.ry;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, r71, h51, y7, c7 {
+public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, q71, h51, y7, c7 {
     public final /* synthetic */ int a;
     public final /* synthetic */ va b;
 
@@ -49,10 +49,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
     }
 
     @Override // org.telegram.ui.Components.h51
-    public void a(sy syVar) {
+    public void a(ry ryVar) {
         hf hfVar;
         va vaVar = this.b;
-        if (syVar == null) {
+        if (ryVar == null) {
             vaVar.getClass();
             return;
         }
@@ -60,10 +60,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
         if (e7Var == null || (hfVar = e7Var.a1) == null) {
             return;
         }
-        syVar.d(new org.telegram.ui.Components.n(hfVar));
+        ryVar.d(new org.telegram.ui.Components.m(hfVar));
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.q71
     public void b(float f10) {
         va vaVar = this.b;
         y9 y9Var = vaVar.B0;
@@ -287,10 +287,10 @@ public final /* synthetic */ class d9 implements CameraView.CameraViewDelegate, 
             B = null;
         }
         vaVar.d0(vaVar.f0 == 0 ? B : null);
-        s71 s71Var = vaVar.V0;
-        if (s71Var != null) {
+        r71 r71Var = vaVar.V0;
+        if (r71Var != null) {
             vaVar.T1 = 0.0f;
-            s71Var.b(false, 0.0f);
+            r71Var.b(false, 0.0f);
         }
         vaVar.l0(true);
     }

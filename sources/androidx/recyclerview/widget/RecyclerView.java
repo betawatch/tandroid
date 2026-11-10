@@ -42,9 +42,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.ly0;
 import q0.a;
 import r0.c0;
 import r0.i0;
@@ -79,7 +79,7 @@ import v4.w0;
 import v4.x0;
 import v4.z0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] Q0 = {R.attr.clipToPadding};
@@ -128,7 +128,7 @@ public class RecyclerView extends ViewGroup {
     public l0 c0;
     public final ug.k0 d;
     public int d0;
-    public final ky0 e;
+    public final ly0 e;
     public int e0;
     public final d0 f;
     public VelocityTracker f0;
@@ -1205,11 +1205,11 @@ public class RecyclerView extends ViewGroup {
             this.e.k(-1, view, true);
             return;
         }
-        ky0 ky0Var = this.e;
-        int indexOfChild = ((RecyclerView) ((vy) ky0Var.b).b).indexOfChild(view);
+        ly0 ly0Var = this.e;
+        int indexOfChild = ((RecyclerView) ((uy) ly0Var.b).b).indexOfChild(view);
         if (indexOfChild >= 0) {
-            ((ua) ky0Var.c).I(indexOfChild);
-            ky0Var.D(view);
+            ((ua) ly0Var.c).I(indexOfChild);
+            ly0Var.D(view);
         } else {
             throw new IllegalArgumentException("view is not a child, cannot hide " + view);
         }
@@ -1997,12 +1997,12 @@ public class RecyclerView extends ViewGroup {
             h0();
             k0Var.k();
             if (!this.K) {
-                ky0 ky0Var = this.e;
-                int v = ky0Var.v();
+                ly0 ly0Var = this.e;
+                int v = ly0Var.v();
                 int i13 = 0;
                 while (true) {
                     if (i13 < v) {
-                        d1 U = U(ky0Var.u(i13));
+                        d1 U = U(ly0Var.u(i13));
                         if (U != null && !U.r() && U.m()) {
                             s();
                             break;
@@ -3112,10 +3112,10 @@ public class RecyclerView extends ViewGroup {
         int m0 = i7 != 0 ? this.y.m0(i7, v0Var, a1Var) : 0;
         int o02 = i10 != 0 ? this.y.o0(i10, v0Var, a1Var) : 0;
         Trace.endSection();
-        ky0 ky0Var = this.e;
-        int v = ky0Var.v();
+        ly0 ly0Var = this.e;
+        int v = ly0Var.v();
         for (int i12 = 0; i12 < v; i12++) {
-            View u10 = ky0Var.u(i12);
+            View u10 = ly0Var.u(i12);
             d1 T = T(u10);
             if (T != null && (d1Var = T.k) != null) {
                 View view = d1Var.a;
@@ -3351,8 +3351,8 @@ public class RecyclerView extends ViewGroup {
         this.n0 = viewConfiguration.getScaledMaximumFlingVelocity();
         setWillNotDraw(getOverScrollMode() == 2);
         this.c0.a = gVar;
-        this.d = new ug.k0(new rt(this, 22));
-        this.e = new ky0(new vy(this, 25));
+        this.d = new ug.k0(new qt(this, 22));
+        this.e = new ly0(new uy(this, 25));
         WeakHashMap weakHashMap = i0.a;
         if ((i10 >= 26 ? c0.a(this) : 0) == 0 && i10 >= 26) {
             c0.b(this, 8);

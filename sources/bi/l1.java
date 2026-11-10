@@ -11,8 +11,8 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.ar;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.Components.vp;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
@@ -20,7 +20,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                int i7 = w1.s2;
+                int i7 = w1.v2;
                 break;
             case 1:
                 int i10 = ch.f.e;
@@ -77,14 +77,14 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                 int i15 = vp.f0;
                 break;
             case 11:
-                int i16 = br.x;
+                int i16 = ar.x;
                 break;
             case 12:
                 float[] fArr = FragmentContextView.W0;
                 MediaController B = MediaController.B();
-                u51 u51Var = B.E0;
-                if (u51Var != null) {
-                    u51Var.s0(false);
+                t51 t51Var = B.E0;
+                if (t51Var != null) {
+                    t51Var.s0(false);
                 }
                 B.n0();
                 B.m();
@@ -131,19 +131,19 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     return;
                 }
             case 21:
-                int i17 = org.telegram.ui.Wallet.n3.W;
+                int i17 = org.telegram.ui.Wallet.p3.W;
                 break;
             case 22:
                 PhotoViewer.p1().c0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 23:
-                int i18 = zh.l.s2;
+                int i18 = zh.l.v2;
                 break;
             case 24:
-                org.telegram.ui.Components.jc[] jcVarArr = zh.u.h2;
+                org.telegram.ui.Components.ic[] icVarArr = zh.u.k2;
                 break;
             default:
-                int i19 = zh.b0.Y1;
+                int i19 = zh.b0.b2;
                 break;
         }
     }

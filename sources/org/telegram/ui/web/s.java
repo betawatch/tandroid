@@ -32,12 +32,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.o5;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.wq;
 import tg.c2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class s implements Runnable {
     public final void run() {
         x0 x0Var;
         d0 d0Var;
-        o5 o5Var;
+        p5 p5Var;
         p4.m1 m1Var;
         int i7 = 3;
         SurfaceTexture surfaceTexture = null;
@@ -153,8 +153,8 @@ public final /* synthetic */ class s implements Runnable {
                 if (webPage != null && webPage.cached_page == null) {
                     u1Var.h = null;
                 }
-                if (!iz.w0 && u1Var.h != null && (o5Var = u1Var.l) != null) {
-                    o5Var.run();
+                if (!iz.w0 && u1Var.h != null && (p5Var = u1Var.l) != null) {
+                    p5Var.run();
                 }
                 u1Var.c();
                 return;
@@ -238,9 +238,9 @@ public final /* synthetic */ class s implements Runnable {
             case 17:
                 r2.p pVar2 = (r2.p) this.b;
                 r2.i iVar = (r2.i) this.c;
-                rt rtVar = pVar2.c;
+                qt qtVar = pVar2.c;
                 Uri uri = iVar.y;
-                s2.c cVar = (s2.c) ((r2.j) rtVar.b).b.d.get(uri);
+                s2.c cVar = (s2.c) ((r2.j) qtVar.b).b.d.get(uri);
                 if (cVar != null) {
                     s2.c.b(cVar, uri, true);
                     return;
@@ -292,7 +292,7 @@ public final /* synthetic */ class s implements Runnable {
                     c2Var.b0.setScaleX(0.3f);
                     c2Var.b0.setScaleY(0.3f);
                     c2Var.b0.setAlpha(0.0f);
-                    c2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(xq.f).start();
+                    c2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(wq.f).start();
                     return;
                 }
                 return;

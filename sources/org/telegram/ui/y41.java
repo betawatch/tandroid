@@ -1,82 +1,103 @@
 package org.telegram.ui;
 
-import java.util.Locale;
-import org.telegram.tgnet.tl.TL_stats;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class y41 {
-    public String A;
-    public boolean B;
-    public boolean C;
-    public String D;
-    public String E;
-    public String F;
-    public boolean G;
-    public boolean H;
-    public String a;
-    public String b;
-    public String c;
-    public boolean d;
-    public String e;
-    public String f;
-    public String g;
-    public boolean h;
-    public String i;
-    public String j;
-    public String k;
-    public boolean l;
-    public String m;
-    public String n;
-    public String o;
-    public String p;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public String t;
-    public String u;
-    public String v;
-    public boolean w;
-    public boolean x;
-    public String y;
-    public String z;
+public final class y41 extends LinearLayout implements org.telegram.ui.ActionBar.c6 {
+    public final TextView[] a;
+    public final TextView[] b;
+    public final TextView[] c;
 
-    public static ab.b0 a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
-        String str;
-        double d = tL_statsAbsValueAndPrev.current;
-        double d2 = tL_statsAbsValueAndPrev.previous;
-        int i7 = (int) (d - d2);
-        float abs = d2 == 0.0d ? 0.0f : Math.abs((i7 / ((float) d2)) * 100.0f);
-        String o02 = org.telegram.messenger.g0.o0((int) tL_statsAbsValueAndPrev.current, 0);
-        boolean z9 = true;
-        str = "";
-        if (i7 != 0 && abs != 0.0f) {
-            int i10 = (int) abs;
-            if (abs == i10) {
-                Locale locale = Locale.ENGLISH;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i7 > 0 ? "+" : "");
-                sb2.append(org.telegram.messenger.g0.o0(i7, 0));
-                str = sb2.toString() + " (" + i10 + "%)";
+    public y41(Context context, int i7) {
+        super(context);
+        int i10 = i7 * 2;
+        this.a = new TextView[i10];
+        this.b = new TextView[i10];
+        this.c = new TextView[i10];
+        setOrientation(1);
+        setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        for (int i11 = 0; i11 < i7; i11++) {
+            LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
+            for (int i12 = 0; i12 < 2; i12++) {
+                LinearLayout f11 = org.telegram.messenger.k5.f(context, 1);
+                LinearLayout f12 = org.telegram.messenger.k5.f(context, 0);
+                int i13 = (i11 * 2) + i12;
+                this.a[i13] = new TextView(context);
+                this.b[i13] = new TextView(context);
+                this.c[i13] = new TextView(context);
+                this.a[i13].setTypeface(org.telegram.messenger.g0.o());
+                this.a[i13].setTextSize(1, 17.0f);
+                this.c[i13].setTextSize(1, 13.0f);
+                this.c[i13].setGravity(3);
+                this.b[i13].setTextSize(1, 13.0f);
+                this.b[i13].setPadding(org.telegram.messenger.g0.L(4.0f), 0, 0, 0);
+                f12.addView(this.a[i13]);
+                f12.addView(this.b[i13]);
+                f11.addView(f12);
+                f11.addView(this.c[i13]);
+                f10.addView(f11, c8.ha.l(1.0f, -1, -2));
+            }
+            addView(f10, c8.ha.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 16.0f));
+        }
+    }
+
+    public final void a(String str, int i7, String str2, String str3) {
+        this.a[i7].setText(str);
+        this.b[i7].setText(str2);
+        this.c[i7].setText(str3);
+        updateColors();
+    }
+
+    public void setData(a51 a51Var) {
+        TextView[] textViewArr = this.a;
+        textViewArr[0].setText(a51Var.b);
+        textViewArr[1].setText(a51Var.f);
+        textViewArr[2].setText(a51Var.j);
+        textViewArr[3].setText(a51Var.n);
+        TextView[] textViewArr2 = this.b;
+        textViewArr2[0].setText(a51Var.c);
+        textViewArr2[0].setTag(Integer.valueOf(a51Var.d ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
+        textViewArr2[1].setText(a51Var.g);
+        textViewArr2[1].setTag(Integer.valueOf(a51Var.h ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
+        textViewArr2[2].setText(a51Var.k);
+        textViewArr2[2].setTag(Integer.valueOf(a51Var.l ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
+        textViewArr2[3].setText(a51Var.o);
+        textViewArr2[3].setTag(Integer.valueOf(a51Var.p ? org.telegram.ui.ActionBar.m6.x6 : org.telegram.ui.ActionBar.m6.p7));
+        TextView[] textViewArr3 = this.c;
+        textViewArr3[0].setText(a51Var.a);
+        textViewArr3[1].setText(a51Var.e);
+        textViewArr3[2].setText(a51Var.i);
+        textViewArr3[3].setText(a51Var.m);
+        updateColors();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        TextView[] textViewArr;
+        TextView[] textViewArr2;
+        TextView[] textViewArr3 = this.a;
+        if (textViewArr3 == null || (textViewArr = this.b) == null || (textViewArr2 = this.c) == null) {
+            return;
+        }
+        for (int i7 = 0; i7 < textViewArr3.length; i7++) {
+            TextView textView = textViewArr3[i7];
+            int i10 = org.telegram.ui.ActionBar.m6.G6;
+            textView.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+            textViewArr2[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.z6, false));
+            Integer num = (Integer) textViewArr[i7].getTag();
+            if (num != null) {
+                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, num.intValue(), false));
             } else {
-                Locale locale2 = Locale.ENGLISH;
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append(i7 > 0 ? "+" : "");
-                sb3.append(org.telegram.messenger.g0.o0(i7, 0));
-                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
+                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
             }
         }
-        boolean z10 = i7 >= 0;
-        if (i7 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
-            z9 = false;
-        }
-        Boolean valueOf = Boolean.valueOf(z10);
-        Boolean valueOf2 = Boolean.valueOf(z9);
-        ab.b0 b0Var = new ab.b0(11, false);
-        b0Var.b = o02;
-        b0Var.e = str;
-        b0Var.c = valueOf;
-        b0Var.d = valueOf2;
-        return b0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

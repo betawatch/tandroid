@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                s10 s10Var = (s10) obj3;
+                f10 f10Var = (f10) obj3;
                 TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 String str = LaunchActivity.B1;
@@ -45,11 +45,11 @@ public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
                     updates = updates2;
                 } else {
                     if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        org.telegram.messenger.g0.h3(new s10(10, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                        org.telegram.messenger.g0.h3(new f10(11, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
                     }
                     updates = null;
                 }
-                org.telegram.messenger.g0.h3(new bi.ub(launchActivity, s10Var, tL_error, updates, this.b, 19));
+                org.telegram.messenger.g0.h3(new bi.ub(launchActivity, f10Var, tL_error, updates, this.b, 19));
                 break;
             case 2:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -58,49 +58,49 @@ public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
                 ArrayList arrayList = passkeysActivity.b;
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse)) {
                     if (tL_error2 != null) {
-                        org.telegram.ui.Components.hc.a0(passkeysActivity).f0(tL_error2, false);
+                        org.telegram.ui.Components.gc.a0(passkeysActivity).f0(tL_error2, false);
                         arrayList.add(Utilities.j(i10, arrayList.size(), 0), passkey);
                         passkeysActivity.a.f3.O(true);
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.hc.a0(passkeysActivity).e0("FALSE", false);
+                    org.telegram.ui.Components.gc.a0(passkeysActivity).e0("FALSE", false);
                     arrayList.add(Utilities.j(i10, arrayList.size(), 0), passkey);
                     passkeysActivity.a.f3.O(true);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.a8 a8Var = (org.telegram.ui.Wallet.a8) obj4;
+                org.telegram.ui.Wallet.d8 d8Var = (org.telegram.ui.Wallet.d8) obj4;
                 TL_wallet.card cardVar = (TL_wallet.card) obj3;
                 TL_wallet.card cardVar2 = (TL_wallet.card) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                a8Var.f1 = 0;
+                d8Var.f1 = 0;
                 if (cardVar2 == null) {
                     if (cardVar != null) {
-                        org.telegram.ui.Wallet.a8.e0(i10, cardVar);
+                        org.telegram.ui.Wallet.d8.e0(i10, cardVar);
                     }
-                    if (!a8Var.a1) {
+                    if (!d8Var.a1) {
                         if (tL_error3 != null) {
-                            org.telegram.ui.Components.hc.a0(a8Var.a).f0(tL_error3, false);
+                            org.telegram.ui.Components.gc.a0(d8Var.a).f0(tL_error3, false);
                         }
-                        a8Var.d1 = false;
-                        TL_wallet.card cardVar3 = a8Var.b1;
+                        d8Var.d1 = false;
+                        TL_wallet.card cardVar3 = d8Var.b1;
                         if (cardVar3 != null) {
-                            a8Var.d(cardVar3);
+                            d8Var.d(cardVar3);
                             break;
                         }
                     }
                 } else {
-                    org.telegram.ui.Wallet.a8.e0(i10, cardVar2);
-                    if (!a8Var.a1) {
-                        if (!a8Var.d1) {
-                            a8Var.d(cardVar2);
+                    org.telegram.ui.Wallet.d8.e0(i10, cardVar2);
+                    if (!d8Var.a1) {
+                        if (!d8Var.d1) {
+                            d8Var.d(cardVar2);
                             break;
                         } else {
-                            a8Var.b1 = cardVar2;
-                            a8Var.c1 = org.telegram.ui.Wallet.a8.T(cardVar2);
-                            a8Var.Q();
+                            d8Var.b1 = cardVar2;
+                            d8Var.c1 = org.telegram.ui.Wallet.d8.T(cardVar2);
+                            d8Var.Q();
                             break;
                         }
                     }
@@ -109,10 +109,10 @@ public final /* synthetic */ class yf implements org.telegram.messenger.v10 {
         }
     }
 
-    public /* synthetic */ yf(LaunchActivity launchActivity, s10 s10Var, int i7) {
+    public /* synthetic */ yf(LaunchActivity launchActivity, f10 f10Var, int i7) {
         this.a = 1;
         this.c = launchActivity;
-        this.d = s10Var;
+        this.d = f10Var;
         this.b = i7;
     }
 }

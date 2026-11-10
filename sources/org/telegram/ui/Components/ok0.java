@@ -1,143 +1,99 @@
 package org.telegram.ui.Components;
 
 import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.transition.Transition;
-import android.transition.TransitionValues;
-import android.util.Property;
+import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.Map;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ok0 extends Transition {
+public final class ok0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public /* synthetic */ ok0(Object obj, int i7) {
+    public /* synthetic */ ok0(KeyEvent.Callback callback, boolean z9, float f10, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.d = callback;
+        this.b = z9;
+        this.c = f10;
     }
 
-    @Override // android.transition.Transition
-    public final void captureEndValues(TransitionValues transitionValues) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                break;
-            case 1:
-                transitionValues.values.put("start", Boolean.FALSE);
-                Map map = transitionValues.values;
-                zv0 zv0Var = (zv0) this.b;
-                map.put("offset", Integer.valueOf(zv0Var.b.getTop() + zv0Var.V1));
-                break;
-            case 2:
-                View view = transitionValues.view;
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (view == photoViewer.Q1) {
-                    transitionValues.values.put("translationY", Integer.valueOf(photoViewer.T1.getPendingMarginTopDiff()));
+                rk0 rk0Var = (rk0) this.d;
+                org.telegram.ui.e61 e61Var = rk0Var.e;
+                rk0Var.h0 = null;
+                boolean z9 = this.b;
+                rk0Var.i0 = z9 ? 1.0f : 0.0f;
+                for (int i7 = 0; i7 < e61Var.getChildCount(); i7++) {
+                    e61Var.getChildAt(i7).invalidate();
+                }
+                e61Var.invalidate();
+                rk0Var.p();
+                if (!z9) {
+                    float childCount = rk0Var.k0 * e61Var.getChildCount();
+                    float scrollX = rk0Var.getScrollX();
+                    float f10 = this.c;
+                    float childCount2 = (scrollX + f10) / (rk0Var.j0 * e61Var.getChildCount());
+                    float measuredWidth = (childCount - rk0Var.getMeasuredWidth()) / childCount;
+                    if (childCount2 > measuredWidth) {
+                        f10 = 0.0f;
+                        childCount2 = measuredWidth;
+                    }
+                    float f11 = childCount * childCount2;
+                    if (f11 - f10 < 0.0f) {
+                        f11 = f10;
+                    }
+                    rk0Var.l0 = (rk0Var.getScrollX() + f10) - f11;
+                    int i10 = (int) (f11 - f10);
+                    rk0Var.m0 = i10;
+                    if (i10 < 0) {
+                        rk0Var.m0 = 0;
+                    }
+                    for (int i11 = 0; i11 < e61Var.getChildCount(); i11++) {
+                        View childAt = e61Var.getChildAt(i11);
+                        if (childAt instanceof gv0) {
+                            ((gv0) childAt).setExpanded(false);
+                        }
+                        childAt.getLayoutParams().width = org.telegram.messenger.g0.L(33.0f);
+                    }
+                    rk0Var.g0 = false;
+                    rk0Var.getLayoutParams().height = org.telegram.messenger.g0.L(36.0f);
+                    e61Var.requestLayout();
                     break;
                 }
                 break;
             default:
-                View view2 = transitionValues.view;
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                if (view2 == secretMediaViewer.X) {
-                    transitionValues.values.put("translationY", Integer.valueOf(secretMediaViewer.Y.getPendingMarginTopDiff()));
+                super.onAnimationEnd(animator);
+                if (!this.b) {
+                    super/*android.app.Dialog*/.dismiss();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // android.transition.Transition
-    public final void captureStartValues(TransitionValues transitionValues) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
         switch (this.a) {
-            case 0:
-                break;
             case 1:
-                transitionValues.values.put("start", Boolean.TRUE);
-                Map map = transitionValues.values;
-                zv0 zv0Var = (zv0) this.b;
-                map.put("offset", Integer.valueOf(zv0Var.b.getTop() + zv0Var.V1));
-                break;
-            case 2:
-                View view = transitionValues.view;
-                org.telegram.ui.xp0 xp0Var = ((PhotoViewer) this.b).T1;
-                if (view == xp0Var) {
-                    transitionValues.values.put("scrollY", Integer.valueOf(xp0Var.getScrollY()));
+                super.onAnimationStart(animator);
+                yh.k kVar = ((yh.l) this.d).D;
+                kVar.setVisibility(0);
+                if (this.b) {
+                    float f10 = this.c;
+                    kVar.setScaleX(f10);
+                    kVar.setScaleY(f10);
                     break;
                 }
                 break;
             default:
-                View view2 = transitionValues.view;
-                org.telegram.ui.xp0 xp0Var2 = ((SecretMediaViewer) this.b).Y;
-                if (view2 == xp0Var2) {
-                    transitionValues.values.put("scrollY", Integer.valueOf(xp0Var2.getScrollY()));
-                    break;
-                }
+                super.onAnimationStart(animator);
                 break;
         }
-    }
-
-    @Override // android.transition.Transition
-    public final Animator createAnimator(ViewGroup viewGroup, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        int intValue;
-        int intValue2;
-        int i7 = this.a;
-        Object obj = this.b;
-        int i10 = 1;
-        int i11 = 2;
-        int i12 = 0;
-        switch (i7) {
-            case 0:
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new d60(this, 12));
-                return ofFloat;
-            case 1:
-                int i13 = ((zv0) obj).V1;
-                int intValue3 = ((Integer) transitionValues.values.get("offset")).intValue() - ((Integer) transitionValues2.values.get("offset")).intValue();
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat2.setDuration(250L);
-                ofFloat2.addUpdateListener(new fi.k4(this, intValue3, i13, 4));
-                return ofFloat2;
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (transitionValues.view == photoViewer.T1) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(((Integer) transitionValues.values.get("scrollY")).intValue(), 0);
-                    ofInt.addListener(new org.telegram.ui.zp0(this, i12));
-                    ofInt.addUpdateListener(new org.telegram.ui.a3(this, 20));
-                    return ofInt;
-                }
-                if (transitionValues2.view != photoViewer.Q1 || (intValue = ((Integer) transitionValues2.values.get("translationY")).intValue()) == 0) {
-                    return null;
-                }
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(photoViewer.Q1, (Property<org.telegram.ui.nq0, Float>) View.TRANSLATION_Y, 0.0f, intValue);
-                ofFloat3.addListener(new org.telegram.ui.zp0(this, i10));
-                return ofFloat3;
-            default:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) obj;
-                if (transitionValues.view == secretMediaViewer.Y) {
-                    ValueAnimator ofInt2 = ValueAnimator.ofInt(((Integer) transitionValues.values.get("scrollY")).intValue(), 0);
-                    ofInt2.addListener(new org.telegram.ui.lz0(this, i12));
-                    ofInt2.addUpdateListener(new org.telegram.ui.jz0(this, i11));
-                    return ofInt2;
-                }
-                if (transitionValues2.view != secretMediaViewer.X || (intValue2 = ((Integer) transitionValues2.values.get("translationY")).intValue()) == 0) {
-                    return null;
-                }
-                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(secretMediaViewer.X, (Property<org.telegram.ui.nq0, Float>) View.TRANSLATION_Y, 0.0f, intValue2);
-                ofFloat4.addListener(new org.telegram.ui.lz0(this, i10));
-                return ofFloat4;
-        }
-    }
-
-    private final void a(TransitionValues transitionValues) {
-    }
-
-    private final void b(TransitionValues transitionValues) {
     }
 }

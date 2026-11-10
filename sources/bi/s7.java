@@ -5,9 +5,9 @@ import java.util.Arrays;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.di0;
+import org.telegram.ui.ei0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s7 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -55,24 +55,24 @@ public final /* synthetic */ class s7 implements DialogInterface.OnDismissListen
                 break;
             case 2:
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.b;
-                org.telegram.ui.ActionBar.v2[] v2VarArr = (org.telegram.ui.ActionBar.v2[]) this.d;
-                org.telegram.ui.ActionBar.v2[] v2VarArr2 = (org.telegram.ui.ActionBar.v2[]) this.e;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.d;
+                org.telegram.ui.ActionBar.w2[] w2VarArr2 = (org.telegram.ui.ActionBar.w2[]) this.e;
                 this.c[0] = true;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
                 if (inputtonconnectoauthsession != null) {
                     Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
                     inputtonconnectoauthsessionArr[0] = null;
                 }
-                org.telegram.ui.ActionBar.v2 v2Var = v2VarArr[0];
-                if (v2Var != null) {
-                    v2Var.dismiss();
-                    v2VarArr[0] = null;
+                org.telegram.ui.ActionBar.w2 w2Var = w2VarArr[0];
+                if (w2Var != null) {
+                    w2Var.dismiss();
+                    w2VarArr[0] = null;
                 }
-                di0.a = null;
-                org.telegram.ui.ActionBar.v2 v2Var2 = v2VarArr2[0];
-                if (v2Var2 != null) {
-                    v2Var2.dismiss();
-                    v2VarArr2[0] = null;
+                ei0.a = null;
+                org.telegram.ui.ActionBar.w2 w2Var2 = w2VarArr2[0];
+                if (w2Var2 != null) {
+                    w2Var2.dismiss();
+                    w2VarArr2[0] = null;
                     break;
                 }
                 break;
@@ -99,11 +99,11 @@ public final /* synthetic */ class s7 implements DialogInterface.OnDismissListen
         this.e = str;
     }
 
-    public /* synthetic */ s7(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.v2[] v2VarArr, org.telegram.ui.ActionBar.v2[] v2VarArr2) {
+    public /* synthetic */ s7(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.w2[] w2VarArr, org.telegram.ui.ActionBar.w2[] w2VarArr2) {
         this.a = 2;
         this.c = zArr;
         this.b = inputtonconnectoauthsessionArr;
-        this.d = v2VarArr;
-        this.e = v2VarArr2;
+        this.d = w2VarArr;
+        this.e = w2VarArr2;
     }
 }

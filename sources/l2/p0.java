@@ -1,9 +1,9 @@
 package l2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final x2.g0 a;
+    public final x2.f0 a;
     public final long b;
     public final long c;
     public final boolean d;
@@ -13,8 +13,8 @@ public final class p0 {
     public final boolean h;
     public final int i;
 
-    public p0(x2.g0 g0Var, long j3, long j10, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13, int i7) {
-        this.a = g0Var;
+    public p0(x2.f0 f0Var, long j3, long j10, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13, int i7) {
+        this.a = f0Var;
         this.b = j3;
         this.c = j10;
         this.d = z9;

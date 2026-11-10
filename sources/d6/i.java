@@ -76,18 +76,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.do0;
-import org.telegram.ui.Components.gt0;
-import org.telegram.ui.Components.ii0;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.p00;
+import org.telegram.ui.Components.co0;
+import org.telegram.ui.Components.ft0;
+import org.telegram.ui.Components.hi0;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.q00;
 import q4.q;
 import sg.u0;
 import tg.r1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class i implements SuccessContinuation, h0, a0, androidx.activity.result.b, gt0, ce.c, ii0, e0, c4.d, p, do0, n, og.n, u0, za, OnSuccessListener, ib.b {
+public final class i implements SuccessContinuation, h0, a0, androidx.activity.result.b, ft0, ce.c, hi0, e0, c4.d, p, co0, n, og.n, u0, za, OnSuccessListener, ib.b {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -204,7 +204,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         ((e7) y5Var.d.T.get(i7)).P = f10;
     }
 
-    @Override // org.telegram.ui.Components.do0
+    @Override // org.telegram.ui.Components.co0
     public void C0() {
         j4.h0((j4) this.b);
     }
@@ -214,21 +214,21 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean E() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.gt0
+    @Override // org.telegram.ui.Components.ft0
     public void F(boolean z9) {
         dd ddVar = (dd) this.b;
         te.a aVar = ddVar.Y;
         if (aVar != null) {
             aVar.a(z9, true);
         }
-        p00 p00Var = ddVar.s;
-        if (p00Var != null) {
-            p00Var.invalidate();
+        q00 q00Var = ddVar.s;
+        if (q00Var != null) {
+            q00Var.invalidate();
         }
     }
 
@@ -375,7 +375,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         e7Var.j = true;
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean U() {
         return false;
     }
@@ -460,7 +460,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         x9Var.M0.setViewHidden(false);
     }
 
-    @Override // org.telegram.ui.Components.gt0
+    @Override // org.telegram.ui.Components.ft0
     public float Y0() {
         return jg.g.e(9.66f, oi.a.d(((dd) this.b).b0), 0);
     }
@@ -587,7 +587,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         y5Var.w(true);
     }
 
-    @Override // org.telegram.ui.Components.gt0
+    @Override // org.telegram.ui.Components.ft0
     public int e1() {
         return ((dd) this.b).c0;
     }
@@ -689,7 +689,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         }
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public void i(View view, o0 o0Var, boolean z9, boolean z10) {
         ch.r rVar = (ch.r) this.b;
         rVar.a.Db(null, rVar.e, rVar.b, view, 0.0f, 0.0f, o0Var, false, z9, z10, false);
@@ -716,18 +716,18 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
             y5Var.m(j3);
             return;
         }
-        u51 u51Var = y5Var.e;
-        if (u51Var != null) {
-            u51Var.q0(j3, true);
+        t51 t51Var = y5Var.e;
+        if (t51Var != null) {
+            t51Var.q0(j3, true);
             return;
         }
         if (y5Var.j()) {
             y5Var.E.m(j3, true);
             return;
         }
-        u51 u51Var2 = y5Var.D;
-        if (u51Var2 != null) {
-            u51Var2.q0(j3, false);
+        t51 t51Var2 = y5Var.D;
+        if (t51Var2 != null) {
+            t51Var2.q0(j3, false);
         }
     }
 
@@ -912,8 +912,8 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         }
         e7Var.Z = f10;
         e7Var.j = true;
-        u51 u51Var = y5Var.e;
-        if (u51Var == null || u51Var.U() == -9223372036854775807L) {
+        t51 t51Var = y5Var.e;
+        if (t51Var == null || t51Var.U() == -9223372036854775807L) {
             return;
         }
         y5Var.m((long) (f10 * y5Var.e.U()));
@@ -947,7 +947,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         y5Var.y(true);
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ boolean v() {
         return true;
     }
@@ -1025,11 +1025,11 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
         this.b = (kd.j) pVar;
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ void M() {
     }
 
-    @Override // org.telegram.ui.Components.do0
+    @Override // org.telegram.ui.Components.co0
     public /* synthetic */ void W() {
     }
 
@@ -1061,7 +1061,7 @@ public final class i implements SuccessContinuation, h0, a0, androidx.activity.r
     public void q(n6.a aVar, com.google.android.gms.common.api.e eVar, boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.ii0
+    @Override // org.telegram.ui.Components.hi0
     public /* synthetic */ void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
     }
 }

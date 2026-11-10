@@ -17,12 +17,12 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.bj;
-import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.aj;
+import org.telegram.ui.Components.ci;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -106,10 +106,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 gcVar.s.c(new dg(gcVar, str5, this.c, file, 5));
                 break;
             case 2:
-                bj bjVar = (bj) obj4;
+                aj ajVar = (aj) obj4;
                 ArrayList arrayList = (ArrayList) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
-                bjVar.getClass();
+                ajVar.getClass();
                 String lowerCase = ((String) obj3).trim().toLowerCase();
                 if (lowerCase.length() != 0) {
                     String S0 = id.E0().S0(lowerCase, true, false);
@@ -123,14 +123,14 @@ public final /* synthetic */ class g0 implements Runnable {
                         strArr2[1] = S0;
                     }
                     ArrayList arrayList3 = new ArrayList();
-                    bj bjVar2 = bjVar;
+                    aj ajVar2 = ajVar;
                     ArrayList arrayList4 = new ArrayList();
                     LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                     int i15 = 0;
                     while (true) {
                         String str6 = " ";
                         if (i15 >= arrayList.size()) {
-                            bj bjVar3 = bjVar2;
+                            aj ajVar3 = ajVar2;
                             String[] strArr3 = strArr2;
                             int i16 = 0;
                             while (i16 < arrayList2.size()) {
@@ -179,11 +179,11 @@ public final /* synthetic */ class g0 implements Runnable {
                                 i16 = i7 + 1;
                                 str6 = str;
                             }
-                            org.telegram.messenger.g0.h3(new ai.a1(bjVar3, this.c, arrayList3, arrayList4, 19));
+                            org.telegram.messenger.g0.h3(new ai.a1(ajVar3, this.c, arrayList3, arrayList4, 19));
                             break;
                         } else {
                             org.telegram.messenger.d5 d5Var = (org.telegram.messenger.d5) arrayList.get(i15);
-                            bj bjVar4 = bjVar2;
+                            aj ajVar4 = ajVar2;
                             String lowerCase3 = org.telegram.messenger.g5.m(r62, d5Var.i, d5Var.j).toLowerCase();
                             ArrayList arrayList5 = arrayList;
                             String S03 = id.E0().S0(lowerCase3, true, r62);
@@ -235,22 +235,22 @@ public final /* synthetic */ class g0 implements Runnable {
                                     }
                                     arrayList3.add(d5Var);
                                     i15++;
-                                    bjVar2 = bjVar4;
+                                    ajVar2 = ajVar4;
                                     arrayList = arrayList5;
                                     strArr2 = strArr;
                                     r62 = 0;
                                 }
                             }
                             i15++;
-                            bjVar2 = bjVar4;
+                            ajVar2 = ajVar4;
                             arrayList = arrayList5;
                             strArr2 = strArr;
                             r62 = 0;
                         }
                     }
                 } else {
-                    bjVar.h = -1;
-                    org.telegram.messenger.g0.h3(new ai.a1(bjVar, bjVar.h, new ArrayList(), new ArrayList(), 19));
+                    ajVar.h = -1;
+                    org.telegram.messenger.g0.h3(new ai.a1(ajVar, ajVar.h, new ArrayList(), new ArrayList(), 19));
                     break;
                 }
                 break;
@@ -260,8 +260,8 @@ public final /* synthetic */ class g0 implements Runnable {
                 ArrayList arrayList6 = (ArrayList) obj2;
                 cn cnVar = (cn) obj;
                 boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                di diVar = chatAttachAlertPhotoLayout.b;
-                if (!diVar.w1 || diVar.x1) {
+                ci ciVar = chatAttachAlertPhotoLayout.b;
+                if (!ciVar.z1 || ciVar.A1) {
                     i10 = i13;
                 } else {
                     PhotoViewer.p1().H2(null, f2Var, null);
@@ -270,23 +270,23 @@ public final /* synthetic */ class g0 implements Runnable {
                     p12.n = false;
                     i10 = 3;
                 }
-                if (diVar.y1) {
+                if (ciVar.B1) {
                     i10 = 13;
                 }
-                PhotoViewer.p1().e2(arrayList6, this.c, i10, false, chatAttachAlertPhotoLayout.h1, diVar.y1 ? null : cnVar);
-                PhotoViewer.p1().u2(diVar.H1);
-                if (diVar.w1 && !diVar.x1) {
+                PhotoViewer.p1().e2(arrayList6, this.c, i10, false, chatAttachAlertPhotoLayout.h1, ciVar.B1 ? null : cnVar);
+                PhotoViewer.p1().u2(ciVar.K1);
+                if (ciVar.z1 && !ciVar.A1) {
                     PhotoViewer.p1().O = false;
-                } else if (diVar.K2 != 0) {
+                } else if (ciVar.N2 != 0) {
                     PhotoViewer.p1().O = true;
-                    PhotoViewer.p1().P = diVar.L2 != null;
+                    PhotoViewer.p1().P = ciVar.O2 != null;
                 }
-                if (diVar.x1) {
-                    PhotoViewer.p1().S0(null, null, false, diVar.A1);
+                if (ciVar.A1) {
+                    PhotoViewer.p1().S0(null, null, false, ciVar.D1);
                 }
                 if (ChatAttachAlertPhotoLayout.V()) {
                     PhotoViewer p13 = PhotoViewer.p1();
-                    Editable text = diVar.a1().getText();
+                    Editable text = ciVar.a1().getText();
                     p13.o7 = true;
                     p13.p7 = text;
                     p13.x2(null, text, false, false);
@@ -332,8 +332,8 @@ public final /* synthetic */ class g0 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ g0(bj bjVar, String str, ArrayList arrayList, ArrayList arrayList2, int i7, int i10) {
-        this.d = bjVar;
+    public /* synthetic */ g0(aj ajVar, String str, ArrayList arrayList, ArrayList arrayList2, int i7, int i10) {
+        this.d = ajVar;
         this.e = str;
         this.f = arrayList;
         this.h = arrayList2;

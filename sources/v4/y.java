@@ -12,11 +12,11 @@ import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import org.telegram.ui.Components.jj0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class y extends m0 implements p0 {
     public int E;
@@ -25,7 +25,7 @@ public class y extends m0 implements p0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public vy N;
+    public uy N;
     public w O;
     public Rect Q;
     public long R;
@@ -46,7 +46,7 @@ public class y extends m0 implements p0 {
     public final ArrayList F = new ArrayList();
     public final tg.y I = new tg.y(this, 4);
     public View M = null;
-    public final jj0 P = new jj0(this);
+    public final ij0 P = new ij0(this);
 
     public y(v vVar) {
         this.y = vVar;
@@ -163,17 +163,17 @@ public class y extends m0 implements p0 {
         }
     }
 
-    public final void h(qj0 qj0Var) {
+    public final void h(pj0 pj0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == qj0Var) {
+        if (recyclerView == pj0Var) {
             return;
         }
-        jj0 jj0Var = this.P;
+        ij0 ij0Var = this.P;
         if (recyclerView != null) {
             recyclerView.q0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(jj0Var);
-            if (recyclerView2.F == jj0Var) {
+            recyclerView2.E.remove(ij0Var);
+            if (recyclerView2.F == ij0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -205,21 +205,21 @@ public class y extends m0 implements p0 {
                 this.N = null;
             }
         }
-        this.H = qj0Var;
-        if (qj0Var != null) {
-            qj0Var.getResources();
+        this.H = pj0Var;
+        if (pj0Var != null) {
+            pj0Var.getResources();
             this.f = org.telegram.messenger.g0.L(120.0f);
             this.h = org.telegram.messenger.g0.L(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(jj0Var);
+            this.H.E.add(ij0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new vy(this.H.getContext(), this.O);
+            this.N = new uy(this.H.getContext(), this.O);
         }
     }
 

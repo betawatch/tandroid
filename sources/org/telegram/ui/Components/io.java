@@ -1,75 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class io implements org.telegram.ui.ActionBar.t6 {
+public final class io implements ValueAnimator.AnimatorUpdateListener {
     public boolean a = false;
-    public final /* synthetic */ vo b;
+    public final /* synthetic */ xz0 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ vo e;
 
-    public io(vo voVar) {
-        this.b = voVar;
+    public io(vo voVar, xz0 xz0Var, float f10, boolean z9) {
+        this.e = voVar;
+        this.b = xz0Var;
+        this.c = f10;
+        this.d = z9;
     }
 
-    @Override // org.telegram.ui.ActionBar.t6
-    public final void a(float f10) {
-        ArrayList arrayList;
-        vo voVar = this.b;
-        to toVar = voVar.n1;
-        if (f10 == 0.0f && !this.a) {
-            if (toVar != null && (arrayList = toVar.d) != null) {
-                int size = arrayList.size();
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    ((uo) obj).c = voVar.D1 ? 1 : 0;
-                }
-            }
-            if (!voVar.F1) {
-                for (int i10 = 0; i10 < toVar.b(); i10++) {
-                    ((uo) toVar.d.get(i10)).getClass();
-                }
-            }
-            this.a = true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        vo voVar = this.e;
+        voVar.L1 = floatValue;
+        if (!this.d) {
+            floatValue = 1.0f - floatValue;
         }
-        ah0 ah0Var = voVar.v1;
-        int i11 = org.telegram.ui.ActionBar.l6.Ci;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(i11, voVar.I0);
-        voVar.a2 = w02;
-        ah0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
-        voVar.E0(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.a7, voVar.I0));
-        if (voVar.F1) {
-            for (int i12 = 0; i12 < toVar.b(); i12++) {
-                ((uo) toVar.d.get(i12)).getClass();
-            }
+        this.b.setRadius(this.c * floatValue);
+        if (this.a || voVar.L1 <= 0.5f) {
+            return;
         }
-        if (f10 == 1.0f && this.a) {
-            voVar.F1 = false;
-            this.a = false;
-        }
-        voVar.Y0();
-        bi.x5 x5Var = voVar.P1;
-        if (x5Var != null) {
-            int L = org.telegram.messenger.g0.L(0.0f);
-            int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.d6, voVar.I0);
-            int o4 = i0.a.o(org.telegram.ui.ActionBar.l6.w0(i11, voVar.I0), 76);
-            x5Var.setBackground(org.telegram.ui.ActionBar.l6.k0(L, L, L, L, w03, o4, o4));
-        }
-        j6 j6Var = voVar.Q1;
-        if (j6Var != null) {
-            j6Var.setTextColor(org.telegram.ui.ActionBar.l6.w0(i11, voVar.I0));
-        }
-        int w04 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, voVar.I0);
-        voVar.b2 = w04;
-        voVar.v0(w04);
-    }
-
-    @Override // org.telegram.ui.ActionBar.t6
-    public final void b() {
-        this.b.N0();
+        this.a = true;
     }
 }

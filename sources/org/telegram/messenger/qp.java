@@ -76,18 +76,18 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ra0;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u60;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.t60;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.le0;
-import org.telegram.ui.o80;
-import org.telegram.ui.oc0;
-import org.telegram.ui.y91;
+import org.telegram.ui.me0;
+import org.telegram.ui.p80;
+import org.telegram.ui.pc0;
+import org.telegram.ui.z91;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class qp extends c1 implements ls {
     public static volatile long A8;
@@ -249,7 +249,7 @@ public final class qp extends c1 implements ls {
     public final a0.h R;
     public final ArrayList R0;
     public final ArrayList R1;
-    public org.telegram.ui.ActionBar.d6 R2;
+    public org.telegram.ui.ActionBar.e6 R2;
     public String R3;
     public int R4;
     public long R5;
@@ -1588,7 +1588,7 @@ public final class qp extends c1 implements ls {
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         HashMap hashMap = new HashMap();
-        int i7 = org.telegram.ui.ActionBar.l6.L5;
+        int i7 = org.telegram.ui.ActionBar.m6.L5;
         hashMap.put("info1", Integer.valueOf(f2Var.getThemedColor(i7)));
         hashMap.put("info2", Integer.valueOf(f2Var.getThemedColor(i7)));
         alertDialog$Builder.m(R.raw.not_available, 52, f2Var.getThemedColor(i7), hashMap);
@@ -1823,35 +1823,35 @@ public final class qp extends c1 implements ls {
         return s1(0).d7;
     }
 
-    public static TLRPC.TL_wallPaperSettings g2(org.telegram.ui.ActionBar.d6 d6Var) {
+    public static TLRPC.TL_wallPaperSettings g2(org.telegram.ui.ActionBar.e6 e6Var) {
         TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
-        tL_wallPaperSettings.blur = d6Var.i;
-        tL_wallPaperSettings.motion = d6Var.j;
-        int i7 = d6Var.d;
+        tL_wallPaperSettings.blur = e6Var.i;
+        tL_wallPaperSettings.motion = e6Var.j;
+        int i7 = e6Var.d;
         if (i7 != 0) {
             tL_wallPaperSettings.background_color = i7 & 16777215;
             int i10 = tL_wallPaperSettings.flags;
-            tL_wallPaperSettings.intensity = (int) (d6Var.k * 100.0f);
+            tL_wallPaperSettings.intensity = (int) (e6Var.k * 100.0f);
             tL_wallPaperSettings.flags = i10 | 9;
         } else {
-            float f10 = d6Var.k;
+            float f10 = e6Var.k;
             if (f10 > 0.0f) {
                 tL_wallPaperSettings.intensity = (int) (f10 * 100.0f);
                 tL_wallPaperSettings.flags |= 8;
             }
         }
-        int i11 = d6Var.e;
+        int i11 = e6Var.e;
         if (i11 != 0) {
             tL_wallPaperSettings.second_background_color = i11 & 16777215;
-            tL_wallPaperSettings.rotation = g0.s1(d6Var.h, true);
+            tL_wallPaperSettings.rotation = g0.s1(e6Var.h, true);
             tL_wallPaperSettings.flags |= 16;
         }
-        int i12 = d6Var.f;
+        int i12 = e6Var.f;
         if (i12 != 0) {
             tL_wallPaperSettings.third_background_color = i12 & 16777215;
             tL_wallPaperSettings.flags |= 32;
         }
-        int i13 = d6Var.g;
+        int i13 = e6Var.g;
         if (i13 != 0) {
             tL_wallPaperSettings.fourth_background_color = i13 & 16777215;
             tL_wallPaperSettings.flags |= 64;
@@ -1969,15 +1969,15 @@ public final class qp extends c1 implements ls {
         return tL_emojiStatusCollectible;
     }
 
-    public static TLRPC.InputWallPaper r1(org.telegram.ui.ActionBar.d6 d6Var) {
-        if (d6Var.l <= 0) {
+    public static TLRPC.InputWallPaper r1(org.telegram.ui.ActionBar.e6 e6Var) {
+        if (e6Var.l <= 0) {
             TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-            tL_inputWallPaperSlug.slug = d6Var.c;
+            tL_inputWallPaperSlug.slug = e6Var.c;
             return tL_inputWallPaperSlug;
         }
         TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
-        tL_inputWallPaper.id = d6Var.l;
-        tL_inputWallPaper.access_hash = d6Var.m;
+        tL_inputWallPaper.id = e6Var.l;
+        tL_inputWallPaper.access_hash = e6Var.m;
         return tL_inputWallPaper;
     }
 
@@ -2099,9 +2099,9 @@ public final class qp extends c1 implements ls {
     }
 
     public final void A() {
-        org.telegram.ui.ActionBar.d6 d6Var = this.R2;
-        if (d6Var != null) {
-            if (d6Var.s != null) {
+        org.telegram.ui.ActionBar.e6 e6Var = this.R2;
+        if (e6Var != null) {
+            if (e6Var.s != null) {
                 for (int i7 = 0; i7 < this.R2.s.size(); i7++) {
                     ConnectionsManager.getInstance(this.currentAccount).cancelRequest(((Integer) this.R2.s.get(i7)).intValue(), true);
                 }
@@ -2296,7 +2296,7 @@ public final class qp extends c1 implements ls {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void B(long j3, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, org.telegram.ui.jz jzVar) {
+    public final void B(long j3, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, TLRPC.VideoSize videoSize, double d, String str, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, org.telegram.ui.kz kzVar) {
         TLRPC.InputChatPhoto inputChatPhoto;
         TLRPC.TL_messages_editChatPhoto tL_messages_editChatPhoto;
         if (tL_inputChatPhoto != null) {
@@ -2332,7 +2332,7 @@ public final class qp extends c1 implements ls {
             tL_messages_editChatPhoto2.photo = inputChatPhoto;
             tL_messages_editChatPhoto = tL_messages_editChatPhoto2;
         }
-        getConnectionsManager().sendRequest(tL_messages_editChatPhoto, new mm(this, tL_inputChatPhoto, fileLocation, fileLocation2, str, j3, jzVar), 64);
+        getConnectionsManager().sendRequest(tL_messages_editChatPhoto, new mm(this, tL_inputChatPhoto, fileLocation, fileLocation2, str, j3, kzVar), 64);
     }
 
     public final void B0(long j3, boolean z9) {
@@ -3252,7 +3252,7 @@ public final class qp extends c1 implements ls {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 qp qpVar = qp.this;
                 if (tL_error != null) {
-                    org.telegram.ui.Components.v4.c0(qpVar.currentAccount, tL_error, f2Var, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z9));
+                    org.telegram.ui.Components.u4.c0(qpVar.currentAccount, tL_error, f2Var, tL_messages_editChatDefaultBannedRights, Boolean.valueOf(z9));
                 } else {
                     qpVar.getClass();
                     g0.i3(new mk(qpVar, j3, 19), 1000L);
@@ -5368,7 +5368,7 @@ public final class qp extends c1 implements ls {
                             ArrayList<TLRPC.Document> arrayList6 = messages_messages4.animatedEmoji;
                             final boolean z24 = z12;
                             if (arrayList6 != null && z24) {
-                                org.telegram.ui.Components.i5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
+                                org.telegram.ui.Components.h5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
                             }
                             char c12 = 2;
                             final int i46 = i19;
@@ -5675,7 +5675,7 @@ public final class qp extends c1 implements ls {
                 ArrayList<TLRPC.Document> arrayList6 = messages_messages4.animatedEmoji;
                 final boolean z24 = z12;
                 if (arrayList6 != null && z24) {
-                    org.telegram.ui.Components.i5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
+                    org.telegram.ui.Components.h5.g(qpVar5.currentAccount).d(messages_messages4.animatedEmoji);
                 }
                 char c12 = 2;
                 final int i46 = i19;
@@ -6187,7 +6187,7 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void M4(final long j3, TLRPC.User user, TLRPC.Chat chat, TLRPC.TL_chatBannedRights tL_chatBannedRights, final boolean z9, final org.telegram.ui.ActionBar.f2 f2Var, final org.telegram.ui.ActionBar.p pVar) {
+    public final void M4(final long j3, TLRPC.User user, TLRPC.Chat chat, TLRPC.TL_chatBannedRights tL_chatBannedRights, final boolean z9, final org.telegram.ui.ActionBar.f2 f2Var, final org.telegram.ui.ActionBar.c cVar) {
         if ((user == null && chat == null) || tL_chatBannedRights == null) {
             return;
         }
@@ -6209,7 +6209,7 @@ public final class qp extends c1 implements ls {
                 }
                 qpVar.O3((TLRPC.Updates) tLObject, false);
                 g0.i3(new mk(qpVar, j3, 17), 1000L);
-                Runnable runnable = pVar;
+                Runnable runnable = cVar;
                 if (runnable != null) {
                     g0.h3(runnable);
                 }
@@ -6304,8 +6304,8 @@ public final class qp extends c1 implements ls {
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
         jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v24 org.telegram.messenger.support.LongSparseIntArray, still in use, count: 2, list:
-          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d4c: IF  (r0v24 org.telegram.messenger.support.LongSparseIntArray) != (null org.telegram.messenger.support.LongSparseIntArray)  -> B:1313:0x1d54 A[HIDDEN]
-          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d54: PHI (r0v7 org.telegram.messenger.support.LongSparseIntArray) = (r0v24 org.telegram.messenger.support.LongSparseIntArray) binds: [B:1258:0x1d4c] A[DONT_GENERATE, DONT_INLINE]
+          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d5e: IF  (r0v24 org.telegram.messenger.support.LongSparseIntArray) != (null org.telegram.messenger.support.LongSparseIntArray)  -> B:1318:0x1d66 A[HIDDEN]
+          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d66: PHI (r0v7 org.telegram.messenger.support.LongSparseIntArray) = (r0v24 org.telegram.messenger.support.LongSparseIntArray) binds: [B:1263:0x1d5e] A[DONT_GENERATE, DONT_INLINE]
         	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
         	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
         	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:125)
@@ -6341,56 +6341,56 @@ public final class qp extends c1 implements ls {
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.process(IfRegionVisitor.java:34)
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
         */
-    /* JADX WARN: Removed duplicated region for block: B:1005:0x17b1  */
-    /* JADX WARN: Removed duplicated region for block: B:1023:0x17d7  */
-    /* JADX WARN: Removed duplicated region for block: B:1062:0x1898  */
-    /* JADX WARN: Removed duplicated region for block: B:1071:0x18bb  */
-    /* JADX WARN: Removed duplicated region for block: B:1081:0x191a  */
-    /* JADX WARN: Removed duplicated region for block: B:1102:0x1989  */
-    /* JADX WARN: Removed duplicated region for block: B:1108:0x19b4  */
-    /* JADX WARN: Removed duplicated region for block: B:1110:0x19c1  */
-    /* JADX WARN: Removed duplicated region for block: B:1113:0x19d1  */
-    /* JADX WARN: Removed duplicated region for block: B:1120:0x1a0c  */
-    /* JADX WARN: Removed duplicated region for block: B:1127:0x1a48  */
-    /* JADX WARN: Removed duplicated region for block: B:1132:0x1a67  */
-    /* JADX WARN: Removed duplicated region for block: B:1133:0x1a23  */
-    /* JADX WARN: Removed duplicated region for block: B:1146:0x19fe  */
-    /* JADX WARN: Removed duplicated region for block: B:1148:0x19b7  */
-    /* JADX WARN: Removed duplicated region for block: B:1153:0x1998  */
-    /* JADX WARN: Removed duplicated region for block: B:1157:0x18b5  */
-    /* JADX WARN: Removed duplicated region for block: B:1162:0x1699  */
-    /* JADX WARN: Removed duplicated region for block: B:1261:0x1d6d  */
-    /* JADX WARN: Removed duplicated region for block: B:1268:0x1da6  */
-    /* JADX WARN: Removed duplicated region for block: B:1271:0x1dcb  */
-    /* JADX WARN: Removed duplicated region for block: B:1278:0x1e02  */
-    /* JADX WARN: Removed duplicated region for block: B:1280:0x1e21  */
-    /* JADX WARN: Removed duplicated region for block: B:1285:0x1e48  */
-    /* JADX WARN: Removed duplicated region for block: B:1290:0x1e72  */
-    /* JADX WARN: Removed duplicated region for block: B:1295:0x1ea3  */
-    /* JADX WARN: Removed duplicated region for block: B:1300:0x1eca  */
-    /* JADX WARN: Removed duplicated region for block: B:1306:0x1ef3  */
-    /* JADX WARN: Removed duplicated region for block: B:1311:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1312:0x1dc7  */
-    /* JADX WARN: Removed duplicated region for block: B:746:0x1253  */
-    /* JADX WARN: Removed duplicated region for block: B:775:0x12b6  */
-    /* JADX WARN: Removed duplicated region for block: B:778:0x12c8  */
-    /* JADX WARN: Removed duplicated region for block: B:781:0x12e9  */
-    /* JADX WARN: Removed duplicated region for block: B:784:0x12f4  */
-    /* JADX WARN: Removed duplicated region for block: B:792:0x133a  */
-    /* JADX WARN: Removed duplicated region for block: B:795:0x134b  */
-    /* JADX WARN: Removed duplicated region for block: B:799:0x12eb  */
-    /* JADX WARN: Removed duplicated region for block: B:800:0x12b9  */
-    /* JADX WARN: Removed duplicated region for block: B:855:0x157e  */
-    /* JADX WARN: Removed duplicated region for block: B:924:0x1630  */
-    /* JADX WARN: Removed duplicated region for block: B:934:0x1667  */
-    /* JADX WARN: Removed duplicated region for block: B:943:0x16a0  */
-    /* JADX WARN: Removed duplicated region for block: B:964:0x171b  */
+    /* JADX WARN: Removed duplicated region for block: B:1010:0x17c3  */
+    /* JADX WARN: Removed duplicated region for block: B:1028:0x17e9  */
+    /* JADX WARN: Removed duplicated region for block: B:1067:0x18aa  */
+    /* JADX WARN: Removed duplicated region for block: B:1076:0x18cd  */
+    /* JADX WARN: Removed duplicated region for block: B:1086:0x192c  */
+    /* JADX WARN: Removed duplicated region for block: B:1107:0x199b  */
+    /* JADX WARN: Removed duplicated region for block: B:1113:0x19c6  */
+    /* JADX WARN: Removed duplicated region for block: B:1115:0x19d3  */
+    /* JADX WARN: Removed duplicated region for block: B:1118:0x19e3  */
+    /* JADX WARN: Removed duplicated region for block: B:1125:0x1a1e  */
+    /* JADX WARN: Removed duplicated region for block: B:1132:0x1a5a  */
+    /* JADX WARN: Removed duplicated region for block: B:1137:0x1a79  */
+    /* JADX WARN: Removed duplicated region for block: B:1138:0x1a35  */
+    /* JADX WARN: Removed duplicated region for block: B:1151:0x1a10  */
+    /* JADX WARN: Removed duplicated region for block: B:1153:0x19c9  */
+    /* JADX WARN: Removed duplicated region for block: B:1158:0x19aa  */
+    /* JADX WARN: Removed duplicated region for block: B:1162:0x18c7  */
+    /* JADX WARN: Removed duplicated region for block: B:1167:0x16ab  */
+    /* JADX WARN: Removed duplicated region for block: B:1266:0x1d7f  */
+    /* JADX WARN: Removed duplicated region for block: B:1273:0x1db8  */
+    /* JADX WARN: Removed duplicated region for block: B:1276:0x1ddd  */
+    /* JADX WARN: Removed duplicated region for block: B:1283:0x1e14  */
+    /* JADX WARN: Removed duplicated region for block: B:1285:0x1e33  */
+    /* JADX WARN: Removed duplicated region for block: B:1290:0x1e5a  */
+    /* JADX WARN: Removed duplicated region for block: B:1295:0x1e84  */
+    /* JADX WARN: Removed duplicated region for block: B:1300:0x1eb5  */
+    /* JADX WARN: Removed duplicated region for block: B:1305:0x1edc  */
+    /* JADX WARN: Removed duplicated region for block: B:1311:0x1f05  */
+    /* JADX WARN: Removed duplicated region for block: B:1316:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1317:0x1dd9  */
+    /* JADX WARN: Removed duplicated region for block: B:751:0x1265  */
+    /* JADX WARN: Removed duplicated region for block: B:780:0x12c8  */
+    /* JADX WARN: Removed duplicated region for block: B:783:0x12da  */
+    /* JADX WARN: Removed duplicated region for block: B:786:0x12fb  */
+    /* JADX WARN: Removed duplicated region for block: B:789:0x1306  */
+    /* JADX WARN: Removed duplicated region for block: B:797:0x134c  */
+    /* JADX WARN: Removed duplicated region for block: B:800:0x135d  */
+    /* JADX WARN: Removed duplicated region for block: B:804:0x12fd  */
+    /* JADX WARN: Removed duplicated region for block: B:805:0x12cb  */
+    /* JADX WARN: Removed duplicated region for block: B:860:0x1590  */
+    /* JADX WARN: Removed duplicated region for block: B:929:0x1642  */
+    /* JADX WARN: Removed duplicated region for block: B:939:0x1679  */
+    /* JADX WARN: Removed duplicated region for block: B:948:0x16b2  */
+    /* JADX WARN: Removed duplicated region for block: B:969:0x172d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean N3(java.util.ArrayList r89, final java.util.ArrayList r90, final java.util.ArrayList r91, boolean r92, final int r93) {
         /*
-            Method dump skipped, instructions count: 7964
+            Method dump skipped, instructions count: 7982
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.qp.N3(java.util.ArrayList, java.util.ArrayList, java.util.ArrayList, boolean, int):boolean");
@@ -8094,33 +8094,33 @@ public final class qp extends c1 implements ls {
     
         if (r4 == r6) goto L300;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:588:0x0d5f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:583:0x0d4e, code lost:
     
-        if (r0.getCallStateForSubscription() == 0) goto L576;
+        if (r0.getCallStateForSubscription() == 0) goto L571;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:590:0x0d62, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:585:0x0d51, code lost:
     
         r0 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:635:0x0d6a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:630:0x0d59, code lost:
     
-        if (r0.getCallState() == 0) goto L576;
+        if (r0.getCallState() == 0) goto L571;
      */
-    /* JADX WARN: Removed duplicated region for block: B:1000:0x17e6  */
-    /* JADX WARN: Removed duplicated region for block: B:1087:0x1950  */
-    /* JADX WARN: Removed duplicated region for block: B:1097:0x19cb  */
-    /* JADX WARN: Removed duplicated region for block: B:1111:0x1a2c  */
-    /* JADX WARN: Removed duplicated region for block: B:1113:0x1a3c  */
-    /* JADX WARN: Removed duplicated region for block: B:1115:0x1a40  */
-    /* JADX WARN: Removed duplicated region for block: B:1118:0x1a46  */
-    /* JADX WARN: Removed duplicated region for block: B:1127:0x1a82  */
-    /* JADX WARN: Removed duplicated region for block: B:1130:0x1a95  */
-    /* JADX WARN: Removed duplicated region for block: B:1133:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1135:0x1a39  */
+    /* JADX WARN: Removed duplicated region for block: B:1082:0x193f  */
+    /* JADX WARN: Removed duplicated region for block: B:1092:0x19ba  */
+    /* JADX WARN: Removed duplicated region for block: B:1106:0x1a1b  */
+    /* JADX WARN: Removed duplicated region for block: B:1108:0x1a2b  */
+    /* JADX WARN: Removed duplicated region for block: B:1110:0x1a2f  */
+    /* JADX WARN: Removed duplicated region for block: B:1113:0x1a35  */
+    /* JADX WARN: Removed duplicated region for block: B:1122:0x1a71  */
+    /* JADX WARN: Removed duplicated region for block: B:1125:0x1a84  */
+    /* JADX WARN: Removed duplicated region for block: B:1128:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1130:0x1a28  */
     /* JADX WARN: Removed duplicated region for block: B:314:0x0763  */
-    /* JADX WARN: Removed duplicated region for block: B:769:0x130f  */
-    /* JADX WARN: Removed duplicated region for block: B:773:0x1322  */
-    /* JADX WARN: Removed duplicated region for block: B:994:0x17ca  */
+    /* JADX WARN: Removed duplicated region for block: B:764:0x12fe  */
+    /* JADX WARN: Removed duplicated region for block: B:768:0x1311  */
+    /* JADX WARN: Removed duplicated region for block: B:989:0x17b9  */
+    /* JADX WARN: Removed duplicated region for block: B:995:0x17d5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -8856,12 +8856,6 @@ public final class qp extends c1 implements ls {
                                                                                     } else if (update instanceof TL_update.TL_updateEditForumTopic) {
                                                                                         TL_update.TL_updateEditForumTopic tL_updateEditForumTopic = (TL_update.TL_updateEditForumTopic) update;
                                                                                         qpVar.S1().r(m5.o(tL_updateEditForumTopic.peer), tL_updateEditForumTopic);
-                                                                                    } else if (update instanceof TL_update.TL_updatePhoneCallSignalingData) {
-                                                                                        TL_update.TL_updatePhoneCallSignalingData tL_updatePhoneCallSignalingData = (TL_update.TL_updatePhoneCallSignalingData) update;
-                                                                                        VoIPService sharedInstance = VoIPService.getSharedInstance();
-                                                                                        if (sharedInstance != null) {
-                                                                                            sharedInstance.onSignalingData(tL_updatePhoneCallSignalingData);
-                                                                                        }
                                                                                     } else if (update instanceof TL_update.TL_updateGroupCallParticipants) {
                                                                                         TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) update;
                                                                                         r3 r3Var = (r3) qpVar.m1.f(tL_updateGroupCallParticipants.call.id);
@@ -8900,7 +8894,7 @@ public final class qp extends c1 implements ls {
                                                                                         }
                                                                                     } else if (update instanceof TL_update.TL_updatePhoneCall) {
                                                                                         TL_phone.PhoneCall phoneCall = ((TL_update.TL_updatePhoneCall) update).phone_call;
-                                                                                        VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                                                                                        VoIPService sharedInstance = VoIPService.getSharedInstance();
                                                                                         if (r2.a) {
                                                                                             a8.b("Received call in update: " + phoneCall);
                                                                                             jg.g.u(phoneCall.id, new StringBuilder("call id "));
@@ -8929,8 +8923,8 @@ public final class qp extends c1 implements ls {
                                                                                                     }
                                                                                                     z17 = true;
                                                                                                 }
-                                                                                                a8.d("updatePhoneCall: svc=" + sharedInstance2 + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z17);
-                                                                                                if (sharedInstance2 == null && VoIPService.callIShouldHavePutIntoIntent == null && z17) {
+                                                                                                a8.d("updatePhoneCall: svc=" + sharedInstance + " callIShouldHavePutIntoIntent=" + VoIPService.callIShouldHavePutIntoIntent + " callStateIsIdle=" + z17);
+                                                                                                if (sharedInstance == null && VoIPService.callIShouldHavePutIntoIntent == null && z17) {
                                                                                                     if (r2.a) {
                                                                                                         jg.g.u(phoneCall.id, new StringBuilder("Starting service for call "));
                                                                                                     }
@@ -8957,7 +8951,7 @@ public final class qp extends c1 implements ls {
                                                                                                     } catch (Throwable th3) {
                                                                                                         a8.f(th3);
                                                                                                     }
-                                                                                                } else if (sharedInstance2 == null || sharedInstance2.getAccount() == qpVar.currentAccount || sharedInstance2.getUser() == null || sharedInstance2.getUser().id != qpVar.getUserConfig().e()) {
+                                                                                                } else if (sharedInstance == null || sharedInstance.getAccount() == qpVar.currentAccount || sharedInstance.getUser() == null || sharedInstance.getUser().id != qpVar.getUserConfig().e()) {
                                                                                                     if (r2.a) {
                                                                                                         a8.b("Auto-declining call " + phoneCall.id + " because there's already active one");
                                                                                                     }
@@ -8973,7 +8967,7 @@ public final class qp extends c1 implements ls {
                                                                                             } else if (r2.a) {
                                                                                                 a8.b("ignoring too old call");
                                                                                             }
-                                                                                        } else if (sharedInstance2 == null || sharedInstance2.getAccount() != qpVar.currentAccount || phoneCall == null) {
+                                                                                        } else if (sharedInstance == null || sharedInstance.getAccount() != qpVar.currentAccount || phoneCall == null) {
                                                                                             if (phoneCall instanceof TL_phone.TL_phoneCallDiscarded) {
                                                                                                 VoIPPreNotificationService.dismiss(t0.b, false);
                                                                                             }
@@ -8990,7 +8984,7 @@ public final class qp extends c1 implements ls {
                                                                                                 }
                                                                                             }
                                                                                         } else {
-                                                                                            sharedInstance2.onCallUpdated(phoneCall);
+                                                                                            sharedInstance.onCallUpdated(phoneCall);
                                                                                         }
                                                                                     } else if (update instanceof TL_update.TL_updateDialogUnreadMark) {
                                                                                         TL_update.TL_updateDialogUnreadMark tL_updateDialogUnreadMark = (TL_update.TL_updateDialogUnreadMark) update;
@@ -9045,7 +9039,7 @@ public final class qp extends c1 implements ls {
                                                                                         TL_update.TL_updateMessageExtendedMedia tL_updateMessageExtendedMedia = (TL_update.TL_updateMessageExtendedMedia) update;
                                                                                         qpVar.getNotificationCenter().k(qs.p1, Long.valueOf(m5.o(tL_updateMessageExtendedMedia.peer)), Integer.valueOf(tL_updateMessageExtendedMedia.msg_id), tL_updateMessageExtendedMedia.extended_media);
                                                                                     } else if (update instanceof TL_update.TL_updateTheme) {
-                                                                                        org.telegram.ui.ActionBar.l6.I1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, qpVar.currentAccount, true);
+                                                                                        org.telegram.ui.ActionBar.m6.I1(null, null, (TLRPC.TL_theme) ((TL_update.TL_updateTheme) update).theme, qpVar.currentAccount, true);
                                                                                     } else if (update instanceof TL_update.TL_updateDialogFilter) {
                                                                                         qpVar.c3(true, null);
                                                                                     } else if (update instanceof TL_update.TL_updateDialogFilterOrder) {
@@ -9179,7 +9173,7 @@ public final class qp extends c1 implements ls {
                                                                                                                         sb2.append(" text=");
                                                                                                                         org.telegram.ui.Cells.f1.u(tL_updateTranscribedAudio.text, sb2);
                                                                                                                     }
-                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !t11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
+                                                                                                                    if (!(tL_updateTranscribedAudio.pending && TextUtils.isEmpty(tL_updateTranscribedAudio.text)) && (tL_updateTranscribedAudio.pending || !s11.f(null, tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text))) {
                                                                                                                         qpVar.getMessagesStorage().b2(tL_updateTranscribedAudio.msg_id, m5.o(tL_updateTranscribedAudio.peer), tL_updateTranscribedAudio.transcription_id, tL_updateTranscribedAudio.text, !tL_updateTranscribedAudio.pending);
                                                                                                                         c11 = 2;
                                                                                                                         qpVar.getNotificationCenter().k(qs.A1, null, Long.valueOf(tL_updateTranscribedAudio.transcription_id), tL_updateTranscribedAudio.text, null, Boolean.valueOf(!tL_updateTranscribedAudio.pending));
@@ -9243,8 +9237,8 @@ public final class qp extends c1 implements ls {
                                                                                                                                     putLong.putLong("paidReactionsDialogId", dialogId).apply();
                                                                                                                                     qpVar.n8 = false;
                                                                                                                                 } else if (update instanceof TL_update.TL_updateGroupCallChainBlocks) {
-                                                                                                                                    VoIPService sharedInstance3 = VoIPService.getSharedInstance();
-                                                                                                                                    if (sharedInstance3 != null && (conferenceCall = sharedInstance3.conference) != null) {
+                                                                                                                                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
+                                                                                                                                    if (sharedInstance2 != null && (conferenceCall = sharedInstance2.conference) != null) {
                                                                                                                                         conferenceCall.applyUpdate(null, (TL_update.TL_updateGroupCallChainBlocks) update, true, null);
                                                                                                                                     }
                                                                                                                                 } else if (update instanceof TL_update.TL_updateChatParticipantRank) {
@@ -10213,7 +10207,7 @@ public final class qp extends c1 implements ls {
             m10Var.a();
         }
         this.J3 = false;
-        org.telegram.ui.yw.z4[this.currentAccount] = false;
+        org.telegram.ui.zw.z4[this.currentAccount] = false;
         this.d7.edit().clear().commit();
         this.f7.edit().putLong("lastGifLoadTime", 0L).putLong("lastStickersLoadTime", 0L).putLong("lastStickersLoadTimeMask", 0L).putLong("lastStickersLoadTimeFavs", 0L).commit();
         k5.d(this.e7.edit().remove("archivehint").remove("proximityhint").remove("archivehint_l").remove("gifhint"), "reminderhint", "soundHint", "dcDomainName2", "webFileDatacenterId").remove("themehint").remove("showFiltersTooltip").remove("transcribeButtonPressed").commit();
@@ -10847,11 +10841,11 @@ public final class qp extends c1 implements ls {
         return set == null || set.contains("sensitive");
     }
 
-    public final void T(Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, tr trVar, org.telegram.ui.rf rfVar) {
+    public final void T(Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, tr trVar, org.telegram.ui.oe oeVar) {
         TLRPC.TL_messages_migrateChat tL_messages_migrateChat = new TLRPC.TL_messages_migrateChat();
         tL_messages_migrateChat.chat_id = j3;
         org.telegram.ui.ActionBar.u1 u1Var = context != null ? new org.telegram.ui.ActionBar.u1(3, context, null) : null;
-        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new bi.x7(this, context, u1Var, trVar, j3, rfVar, f2Var, tL_messages_migrateChat));
+        int sendRequest = getConnectionsManager().sendRequest(tL_messages_migrateChat, new bi.x7(this, context, u1Var, trVar, j3, oeVar, f2Var, tL_messages_migrateChat));
         if (u1Var != null) {
             u1Var.setOnCancelListener(new gm(this, sendRequest, 0));
             try {
@@ -12133,21 +12127,21 @@ public final class qp extends c1 implements ls {
                 z13 = true;
                 getNotificationCenter().k(qs.y1, Long.valueOf(j12), 0);
                 getNotificationsController().l(j12, 0L);
-                if (u60.C1 == this.currentAccount && (arrayList = u60.z1) != null && j12 <= 0) {
+                if (t60.F1 == this.currentAccount && (arrayList = t60.C1) != null && j12 <= 0) {
                     int size = arrayList.size();
                     int i21 = 0;
                     while (true) {
                         if (i21 >= size) {
                             break;
                         }
-                        if (ij.B1((TLRPC.Peer) u60.z1.get(i21)) == j12) {
-                            u60.z1.remove(i21);
+                        if (ij.B1((TLRPC.Peer) t60.C1.get(i21)) == j12) {
+                            t60.C1.remove(i21);
                             break;
                         }
                         i21++;
                     }
-                    if (u60.z1.isEmpty()) {
-                        u60.z1 = null;
+                    if (t60.C1.isEmpty()) {
+                        t60.C1 = null;
                     }
                 }
             } else {
@@ -13412,9 +13406,9 @@ public final class qp extends c1 implements ls {
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         ij ijVar;
-        org.telegram.ui.ActionBar.k6 k6Var;
+        org.telegram.ui.ActionBar.l6 l6Var;
         TLRPC.InputFile inputFile;
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.j6 j6Var;
         TLRPC.InputFile inputFile2;
         TLRPC.TL_theme tL_theme;
         TLRPC.TL_inputThemeSettings tL_inputThemeSettings;
@@ -13430,37 +13424,37 @@ public final class qp extends c1 implements ls {
                 String str3 = qpVar.Q2;
                 if (str3 == null || !str3.equals(str)) {
                     Object obj = hashMap.get(str);
-                    if (obj instanceof org.telegram.ui.ActionBar.k6) {
-                        k6Var = (org.telegram.ui.ActionBar.k6) obj;
-                        if (str.equals(k6Var.H)) {
-                            k6Var.J = inputFile3;
-                            k6Var.H = null;
-                        } else if (str.equals(k6Var.I)) {
-                            k6Var.K = inputFile3;
-                            k6Var.I = null;
+                    if (obj instanceof org.telegram.ui.ActionBar.l6) {
+                        l6Var = (org.telegram.ui.ActionBar.l6) obj;
+                        if (str.equals(l6Var.H)) {
+                            l6Var.J = inputFile3;
+                            l6Var.H = null;
+                        } else if (str.equals(l6Var.I)) {
+                            l6Var.K = inputFile3;
+                            l6Var.I = null;
                         }
-                        inputFile = k6Var.J;
-                        inputFile2 = k6Var.K;
-                        i6Var = null;
-                    } else if (obj instanceof org.telegram.ui.ActionBar.i6) {
-                        org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj;
-                        if (str.equals(i6Var2.u)) {
-                            i6Var2.w = inputFile3;
-                            i6Var2.u = null;
-                        } else if (str.equals(i6Var2.v)) {
-                            i6Var2.x = inputFile3;
-                            i6Var2.v = null;
+                        inputFile = l6Var.J;
+                        inputFile2 = l6Var.K;
+                        j6Var = null;
+                    } else if (obj instanceof org.telegram.ui.ActionBar.j6) {
+                        org.telegram.ui.ActionBar.j6 j6Var2 = (org.telegram.ui.ActionBar.j6) obj;
+                        if (str.equals(j6Var2.u)) {
+                            j6Var2.w = inputFile3;
+                            j6Var2.u = null;
+                        } else if (str.equals(j6Var2.v)) {
+                            j6Var2.x = inputFile3;
+                            j6Var2.v = null;
                         }
-                        org.telegram.ui.ActionBar.k6 k6Var2 = i6Var2.b;
-                        TLRPC.InputFile inputFile4 = i6Var2.w;
-                        inputFile2 = i6Var2.x;
-                        i6Var = i6Var2;
-                        k6Var = k6Var2;
+                        org.telegram.ui.ActionBar.l6 l6Var2 = j6Var2.b;
+                        TLRPC.InputFile inputFile4 = j6Var2.w;
+                        inputFile2 = j6Var2.x;
+                        j6Var = j6Var2;
+                        l6Var = l6Var2;
                         inputFile = inputFile4;
                     } else {
-                        k6Var = null;
+                        l6Var = null;
                         inputFile = null;
-                        i6Var = null;
+                        j6Var = null;
                         inputFile2 = null;
                     }
                     hashMap.remove(str);
@@ -13474,13 +13468,13 @@ public final class qp extends c1 implements ls {
                         uploadtheme.thumb = inputFile;
                         inputFile.name = "theme-preview.jpg";
                         uploadtheme.flags |= 1;
-                        if (i6Var != null) {
-                            i6Var.x = null;
-                            i6Var.w = null;
-                            tL_theme = i6Var.r;
+                        if (j6Var != null) {
+                            j6Var.x = null;
+                            j6Var.w = null;
+                            tL_theme = j6Var.r;
                             TLRPC.TL_inputThemeSettings tL_inputThemeSettings2 = new TLRPC.TL_inputThemeSettings();
-                            String str4 = k6Var.a;
-                            int i12 = org.telegram.ui.ActionBar.l6.a;
+                            String str4 = l6Var.a;
+                            int i12 = org.telegram.ui.ActionBar.m6.a;
                             if ("Blue".equals(str4)) {
                                 baseTheme = new TLRPC.TL_baseThemeClassic();
                             } else if ("Day".equals(str4)) {
@@ -13493,64 +13487,64 @@ public final class qp extends c1 implements ls {
                                 baseTheme = new TLRPC.TL_baseThemeNight();
                             }
                             tL_inputThemeSettings2.base_theme = baseTheme;
-                            tL_inputThemeSettings2.accent_color = i6Var.c;
-                            int i13 = i6Var.d;
+                            tL_inputThemeSettings2.accent_color = j6Var.c;
+                            int i13 = j6Var.d;
                             if (i13 != 0) {
                                 tL_inputThemeSettings2.flags |= 8;
                                 tL_inputThemeSettings2.outbox_accent_color = i13;
                             }
-                            int i14 = i6Var.e;
+                            int i14 = j6Var.e;
                             if (i14 != 0) {
                                 tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i14));
                                 tL_inputThemeSettings2.flags |= 1;
-                                int i15 = i6Var.f;
+                                int i15 = j6Var.f;
                                 if (i15 != 0) {
                                     tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i15));
-                                    int i16 = i6Var.g;
+                                    int i16 = j6Var.g;
                                     if (i16 != 0) {
                                         tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i16));
-                                        int i17 = i6Var.h;
+                                        int i17 = j6Var.h;
                                         if (i17 != 0) {
                                             tL_inputThemeSettings2.message_colors.add(Integer.valueOf(i17));
                                         }
                                     }
                                 }
-                                tL_inputThemeSettings2.message_colors_animated = i6Var.i;
+                                tL_inputThemeSettings2.message_colors_animated = j6Var.i;
                             }
                             tL_inputThemeSettings2.flags |= 2;
                             tL_inputThemeSettings2.wallpaper_settings = new TLRPC.TL_wallPaperSettings();
-                            if (TextUtils.isEmpty(i6Var.o)) {
+                            if (TextUtils.isEmpty(j6Var.o)) {
                                 TLRPC.TL_inputWallPaperNoFile tL_inputWallPaperNoFile = new TLRPC.TL_inputWallPaperNoFile();
                                 tL_inputWallPaperNoFile.id = 0L;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperNoFile;
                             } else {
                                 TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
-                                tL_inputWallPaperSlug.slug = i6Var.o;
+                                tL_inputWallPaperSlug.slug = j6Var.o;
                                 tL_inputThemeSettings2.wallpaper = tL_inputWallPaperSlug;
                                 TLRPC.WallPaperSettings wallPaperSettings = tL_inputThemeSettings2.wallpaper_settings;
-                                wallPaperSettings.intensity = (int) (i6Var.p * 100.0f);
+                                wallPaperSettings.intensity = (int) (j6Var.p * 100.0f);
                                 wallPaperSettings.flags |= 8;
                             }
                             TLRPC.WallPaperSettings wallPaperSettings2 = tL_inputThemeSettings2.wallpaper_settings;
-                            wallPaperSettings2.motion = i6Var.q;
-                            long j3 = i6Var.j;
+                            wallPaperSettings2.motion = j6Var.q;
+                            long j3 = j6Var.j;
                             if (j3 != 0) {
                                 wallPaperSettings2.background_color = (int) j3;
                                 wallPaperSettings2.flags |= 1;
                             }
-                            long j10 = i6Var.k;
+                            long j10 = j6Var.k;
                             if (j10 != 0) {
                                 wallPaperSettings2.second_background_color = (int) j10;
                                 wallPaperSettings2.flags |= 16;
-                                wallPaperSettings2.rotation = g0.s1(i6Var.n, true);
+                                wallPaperSettings2.rotation = g0.s1(j6Var.n, true);
                             }
-                            long j11 = i6Var.l;
+                            long j11 = j6Var.l;
                             if (j11 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings3.third_background_color = (int) j11;
                                 wallPaperSettings3.flags |= 32;
                             }
-                            long j12 = i6Var.m;
+                            long j12 = j6Var.m;
                             if (j12 != 0) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = tL_inputThemeSettings2.wallpaper_settings;
                                 wallPaperSettings4.fourth_background_color = (int) j12;
@@ -13558,29 +13552,29 @@ public final class qp extends c1 implements ls {
                             }
                             tL_inputThemeSettings = tL_inputThemeSettings2;
                         } else {
-                            k6Var.K = null;
-                            k6Var.J = null;
-                            tL_theme = k6Var.F;
+                            l6Var.K = null;
+                            l6Var.J = null;
+                            tL_theme = l6Var.F;
                             tL_inputThemeSettings = null;
                         }
-                        org.telegram.ui.ActionBar.k6 k6Var3 = k6Var;
+                        org.telegram.ui.ActionBar.l6 l6Var3 = l6Var;
                         qpVar = this;
-                        getConnectionsManager().sendRequest(uploadtheme, new eo(qpVar, tL_theme, k6Var3, tL_inputThemeSettings, i6Var, 0));
+                        getConnectionsManager().sendRequest(uploadtheme, new eo(qpVar, tL_theme, l6Var3, tL_inputThemeSettings, j6Var, 0));
                     }
                 } else {
                     TL_account.uploadWallPaper uploadwallpaper = new TL_account.uploadWallPaper();
                     uploadwallpaper.file = inputFile3;
                     uploadwallpaper.mime_type = "image/jpeg";
-                    org.telegram.ui.ActionBar.d6 d6Var = qpVar.R2;
+                    org.telegram.ui.ActionBar.e6 e6Var = qpVar.R2;
                     String str5 = qpVar.Q2;
                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
-                    tL_wallPaperSettings.blur = d6Var.i;
-                    tL_wallPaperSettings.motion = d6Var.j;
+                    tL_wallPaperSettings.blur = e6Var.i;
+                    tL_wallPaperSettings.motion = e6Var.j;
                     uploadwallpaper.settings = tL_wallPaperSettings;
-                    org.telegram.ui.ActionBar.d6 d6Var2 = qpVar.R2;
-                    d6Var2.r = 1.0f;
-                    d6Var2.s = new ArrayList();
-                    qpVar.R2.s.add(Integer.valueOf(qpVar.getConnectionsManager().sendRequest(uploadwallpaper, new q6(qpVar, d6Var, tL_wallPaperSettings, str5, 3))));
+                    org.telegram.ui.ActionBar.e6 e6Var2 = qpVar.R2;
+                    e6Var2.r = 1.0f;
+                    e6Var2.s = new ArrayList();
+                    qpVar.R2.s.add(Integer.valueOf(qpVar.getConnectionsManager().sendRequest(uploadwallpaper, new q6(qpVar, e6Var, tL_wallPaperSettings, str5, 3))));
                 }
                 qpVar = this;
             } else {
@@ -13596,17 +13590,17 @@ public final class qp extends c1 implements ls {
                 String str8 = qpVar.Q2;
                 if (str8 == null || !str8.equals(str6)) {
                     Object remove = hashMap.remove(str6);
-                    boolean z9 = remove instanceof org.telegram.ui.ActionBar.k6;
+                    boolean z9 = remove instanceof org.telegram.ui.ActionBar.l6;
                     int i18 = qs.N2;
                     if (z9) {
-                        org.telegram.ui.ActionBar.k6 k6Var4 = (org.telegram.ui.ActionBar.k6) remove;
-                        k6Var4.K = null;
-                        k6Var4.J = null;
-                        qpVar.getNotificationCenter().k(i18, k6Var4, null);
-                    } else if (remove instanceof org.telegram.ui.ActionBar.i6) {
-                        org.telegram.ui.ActionBar.i6 i6Var3 = (org.telegram.ui.ActionBar.i6) remove;
-                        i6Var3.u = null;
-                        qpVar.getNotificationCenter().k(i18, i6Var3.b, i6Var3);
+                        org.telegram.ui.ActionBar.l6 l6Var4 = (org.telegram.ui.ActionBar.l6) remove;
+                        l6Var4.K = null;
+                        l6Var4.J = null;
+                        qpVar.getNotificationCenter().k(i18, l6Var4, null);
+                    } else if (remove instanceof org.telegram.ui.ActionBar.j6) {
+                        org.telegram.ui.ActionBar.j6 j6Var3 = (org.telegram.ui.ActionBar.j6) remove;
+                        j6Var3.u = null;
+                        qpVar.getNotificationCenter().k(i18, j6Var3.b, j6Var3);
                     }
                 } else {
                     qpVar.Q2 = null;
@@ -14205,7 +14199,7 @@ public final class qp extends c1 implements ls {
         getConnectionsManager().sendRequest(tL_messages_deleteChatUser, new el(this, T, user, j3), 64);
     }
 
-    public final r3 g1(long j3, boolean z9, o80 o80Var) {
+    public final r3 g1(long j3, boolean z9, p80 p80Var) {
         TLRPC.InputGroupCall inputGroupCall;
         TLRPC.ChatFull N0 = N0(j3);
         if (N0 == null || (inputGroupCall = N0.call) == null) {
@@ -14221,7 +14215,7 @@ public final class qp extends c1 implements ls {
                     TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
                     getgroupcall.call = N0.call;
                     getgroupcall.limit = 20;
-                    getConnectionsManager().sendRequest(getgroupcall, new oj(this, j3, o80Var, 5));
+                    getConnectionsManager().sendRequest(getgroupcall, new oj(this, j3, p80Var, 5));
                 }
             }
         }
@@ -14710,11 +14704,11 @@ public final class qp extends c1 implements ls {
         getConnectionsManager().sendRequest(tL_channels_deleteParticipantHistory, new q6(this, chat, user, chat2, 2));
     }
 
-    public final void k2(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var, boolean z9) {
-        TLRPC.TL_theme tL_theme = i6Var != null ? i6Var.r : k6Var.F;
-        String str = i6Var != null ? i6Var.o : k6Var.e;
-        boolean z10 = i6Var == null && k6Var.h;
-        boolean z11 = i6Var != null ? i6Var.q : k6Var.n;
+    public final void k2(org.telegram.ui.ActionBar.l6 l6Var, org.telegram.ui.ActionBar.j6 j6Var, boolean z9) {
+        TLRPC.TL_theme tL_theme = j6Var != null ? j6Var.r : l6Var.F;
+        String str = j6Var != null ? j6Var.o : l6Var.e;
+        boolean z10 = j6Var == null && l6Var.h;
+        boolean z11 = j6Var != null ? j6Var.q : l6Var.n;
         TL_account.installTheme installtheme = new TL_account.installTheme();
         installtheme.dark = z9;
         if (tL_theme != null) {
@@ -15719,7 +15713,7 @@ public final class qp extends c1 implements ls {
                             bp bpVar3 = bpVar2;
                             boolean z14 = z12;
                             if (bpVar3 == null) {
-                                org.telegram.ui.Components.v4.c0(qpVar2.currentAccount, tL_error, f2Var2, tLObject2, Boolean.valueOf(z14 && !z13));
+                                org.telegram.ui.Components.u4.c0(qpVar2.currentAccount, tL_error, f2Var2, tLObject2, Boolean.valueOf(z14 && !z13));
                             }
                             if (z14 && (inputUser instanceof TLRPC.TL_inputUserSelf)) {
                                 qpVar2.getNotificationCenter().k(qs.r, Integer.valueOf(TLObject.FLAG_13));
@@ -16140,7 +16134,7 @@ public final class qp extends c1 implements ls {
                     }
                 }
                 if (str != null) {
-                    Paint paint = org.telegram.ui.ActionBar.l6.G0;
+                    Paint paint = org.telegram.ui.ActionBar.m6.G0;
                     if (paint == null) {
                         paint = new Paint();
                         paint.setTypeface(g0.o());
@@ -16156,7 +16150,7 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, oc0 oc0Var) {
+    public final void o(TLRPC.Chat chat, org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, int i7, q0.a aVar, q0.a aVar2, pc0 pc0Var) {
         int size = arrayList.size();
         int[] iArr = {0};
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -16165,7 +16159,7 @@ public final class qp extends c1 implements ls {
         long j3 = chat2.id;
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i10);
-            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new jk(this, tL_messages_invitedUsers, iArr, size, chat2, oc0Var));
+            m(j3, user, i7, null, f2Var, false, new hi(24, aVar, user), new o(4, aVar2, user), new jk(this, tL_messages_invitedUsers, iArr, size, chat2, pc0Var));
             X3(user, false, false);
             chat2 = chat;
         }
@@ -25838,8 +25832,8 @@ public final class qp extends c1 implements ls {
         }
     }
 
-    public final void x4(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var, boolean z9, boolean z10) {
-        TLRPC.TL_theme tL_theme = i6Var != null ? i6Var.r : k6Var.F;
+    public final void x4(org.telegram.ui.ActionBar.l6 l6Var, org.telegram.ui.ActionBar.j6 j6Var, boolean z9, boolean z10) {
+        TLRPC.TL_theme tL_theme = j6Var != null ? j6Var.r : l6Var.F;
         if (tL_theme != null) {
             TL_account.saveTheme savetheme = new TL_account.saveTheme();
             TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
@@ -25853,7 +25847,7 @@ public final class qp extends c1 implements ls {
         if (z10) {
             return;
         }
-        k2(k6Var, i6Var, z9);
+        k2(l6Var, j6Var, z9);
     }
 
     public final boolean y(TLRPC.Dialog dialog) {
@@ -25961,7 +25955,7 @@ public final class qp extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void y4(org.telegram.ui.ActionBar.k6 k6Var, org.telegram.ui.ActionBar.i6 i6Var) {
+    public final void y4(org.telegram.ui.ActionBar.l6 l6Var, org.telegram.ui.ActionBar.j6 j6Var) {
         String str;
         File file;
         String str2;
@@ -25977,43 +25971,43 @@ public final class qp extends c1 implements ls {
         String str4;
         String str5;
         String str6;
-        if (k6Var == null) {
+        if (l6Var == null) {
             return;
         }
-        if (i6Var != 0) {
+        if (j6Var != 0) {
             File g12 = g0.g1();
             g12.mkdirs();
             Locale locale = Locale.US;
-            File file2 = new File(g12, i6Var.b.m() + "_" + i6Var.a + ".attheme");
-            SparseIntArray T0 = org.telegram.ui.ActionBar.l6.T0(null, i6Var.b.d, null);
+            File file2 = new File(g12, j6Var.b.m() + "_" + j6Var.a + ".attheme");
+            SparseIntArray T0 = org.telegram.ui.ActionBar.m6.T0(null, j6Var.b.d, null);
             SparseIntArray clone = T0.clone();
-            i6Var.d(T0, clone);
-            if (TextUtils.isEmpty(i6Var.o)) {
+            j6Var.d(T0, clone);
+            if (TextUtils.isEmpty(j6Var.o)) {
                 z9 = true;
                 i7 = 0;
                 str3 = null;
             } else {
                 StringBuilder sb2 = new StringBuilder();
-                if (i6Var.q) {
+                if (j6Var.q) {
                     sb2.append("motion");
                 }
-                int i10 = clone.get(org.telegram.ui.ActionBar.l6.Be);
+                int i10 = clone.get(org.telegram.ui.ActionBar.m6.Be);
                 if (i10 == 0) {
                     i10 = -1;
                 }
-                int i11 = clone.get(org.telegram.ui.ActionBar.l6.Ce);
+                int i11 = clone.get(org.telegram.ui.ActionBar.m6.Ce);
                 if (i11 == 0) {
                     i11 = 0;
                 }
-                int i12 = clone.get(org.telegram.ui.ActionBar.l6.De);
+                int i12 = clone.get(org.telegram.ui.ActionBar.m6.De);
                 if (i12 == 0) {
                     i12 = 0;
                 }
-                int i13 = clone.get(org.telegram.ui.ActionBar.l6.Ee);
+                int i13 = clone.get(org.telegram.ui.ActionBar.m6.Ee);
                 if (i13 == 0) {
                     i13 = 0;
                 }
-                int i14 = clone.get(org.telegram.ui.ActionBar.l6.Fe);
+                int i14 = clone.get(org.telegram.ui.ActionBar.m6.Fe);
                 if (i14 == 0) {
                     i14 = 45;
                 }
@@ -26067,7 +26061,7 @@ public final class qp extends c1 implements ls {
                 } else {
                     lowerCase = lowerCase + "~" + str4 + "~" + str5;
                 }
-                str3 = "https://attheme.org?slug=" + i6Var.o + "&intensity=" + ((int) (i6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
+                str3 = "https://attheme.org?slug=" + j6Var.o + "&intensity=" + ((int) (j6Var.p * 100.0f)) + "&bg_color=" + lowerCase;
                 if (sb2.length() > 0) {
                     StringBuilder j3 = rf.b.j(str3, "&mode=");
                     j3.append(sb2.toString());
@@ -26078,7 +26072,7 @@ public final class qp extends c1 implements ls {
             for (int i15 = i7; i15 < clone.size(); i15++) {
                 int keyAt = clone.keyAt(i15);
                 int valueAt = clone.valueAt(i15);
-                if (str3 == null || (org.telegram.ui.ActionBar.l6.Be != keyAt && org.telegram.ui.ActionBar.l6.Ce != keyAt && org.telegram.ui.ActionBar.l6.De != keyAt && org.telegram.ui.ActionBar.l6.Ee != keyAt)) {
+                if (str3 == null || (org.telegram.ui.ActionBar.m6.Be != keyAt && org.telegram.ui.ActionBar.m6.Ce != keyAt && org.telegram.ui.ActionBar.m6.De != keyAt && org.telegram.ui.ActionBar.m6.Ee != keyAt)) {
                     jg.g.x(sb4, keyAt, "=", valueAt, "\n");
                 }
             }
@@ -26104,13 +26098,13 @@ public final class qp extends c1 implements ls {
                                         }
                                     }
                                     str = file2.getAbsolutePath();
-                                    file = i6Var.e();
+                                    file = j6Var.e();
                                     str2 = str;
                                     if (str2 == null) {
                                         return;
                                     }
-                                    this.P2.put(str2, i6Var == 0 ? i6Var : k6Var);
-                                    Utilities.e.c(new mn(this, str2, file, i6Var, k6Var, 6));
+                                    this.P2.put(str2, j6Var == 0 ? j6Var : l6Var);
+                                    Utilities.e.c(new mn(this, str2, file, j6Var, l6Var, 6));
                                 } catch (Throwable th4) {
                                     th3 = th4;
                                     fileOutputStream = fileOutputStream2;
@@ -26141,7 +26135,7 @@ public final class qp extends c1 implements ls {
                         if (fileOutputStream2 != null) {
                         }
                         str = file2.getAbsolutePath();
-                        file = i6Var.e();
+                        file = j6Var.e();
                         str2 = str;
                         if (str2 == null) {
                         }
@@ -26162,17 +26156,17 @@ public final class qp extends c1 implements ls {
                 }
             }
             str = file2.getAbsolutePath();
-            file = i6Var.e();
+            file = j6Var.e();
         } else {
-            str = k6Var.b;
+            str = l6Var.b;
             file = null;
         }
         str2 = str;
         if (str2 == null || this.P2.containsKey(str2)) {
             return;
         }
-        this.P2.put(str2, i6Var == 0 ? i6Var : k6Var);
-        Utilities.e.c(new mn(this, str2, file, i6Var, k6Var, 6));
+        this.P2.put(str2, j6Var == 0 ? j6Var : l6Var);
+        Utilities.e.c(new mn(this, str2, file, j6Var, l6Var, 6));
     }
 
     public final void z(long j3, int i7, long j10) {
@@ -26237,7 +26231,7 @@ public final class qp extends c1 implements ls {
                     i7 = 1;
                 }
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                boolean z11 = !(Q instanceof org.telegram.ui.yw) || (Q instanceof le0);
+                boolean z11 = !(Q instanceof org.telegram.ui.zw) || (Q instanceof me0);
                 if (F1 == null) {
                     R4(F1, f2Var);
                     return;
@@ -26257,8 +26251,8 @@ public final class qp extends c1 implements ls {
                         f2Var.presentFragment(new org.telegram.ui.cn(bundle), !z11, true);
                         return;
                     } else {
-                        HashSet hashSet = y91.q1;
-                        f2Var.presentFragment(y91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
+                        HashSet hashSet = z91.q1;
+                        f2Var.presentFragment(z91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle), !z11, true);
                         return;
                     }
                 }
@@ -26270,8 +26264,8 @@ public final class qp extends c1 implements ls {
                     f2Var.presentFragment(cnVar, z10);
                     return;
                 }
-                HashSet hashSet2 = y91.q1;
-                org.telegram.ui.ActionBar.f2 I0 = y91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
+                HashSet hashSet2 = z91.q1;
+                org.telegram.ui.ActionBar.f2 I0 = z91.I0(f2Var.getMessagesController(), f2Var.getMessagesStorage(), bundle);
                 if (z9 && !z11) {
                     z10 = true;
                 }
@@ -26281,7 +26275,7 @@ public final class qp extends c1 implements ls {
         }
         z9 = false;
         org.telegram.ui.ActionBar.f2 Q2 = LaunchActivity.Q();
-        if (Q2 instanceof org.telegram.ui.yw) {
+        if (Q2 instanceof org.telegram.ui.zw) {
         }
         if (F1 == null) {
         }
@@ -26299,7 +26293,7 @@ public final class qp extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void z4(File file, org.telegram.ui.ActionBar.d6 d6Var, boolean z9, long j3) {
+    public final void z4(File file, org.telegram.ui.ActionBar.e6 e6Var, boolean z9, long j3) {
         TL_account.saveWallPaper savewallpaper;
         NativeByteBuffer nativeByteBuffer;
         TLRPC.WallPaper tL_wallPaper;
@@ -26310,9 +26304,9 @@ public final class qp extends c1 implements ls {
         int i12;
         NativeByteBuffer nativeByteBuffer2 = null;
         if (this.Q2 != null) {
-            File file2 = new File(t0.h(), d6Var.b);
+            File file2 = new File(t0.h(), e6Var.b);
             if (file != null && (file.getAbsolutePath().equals(this.Q2) || file.equals(file2))) {
-                this.R2 = d6Var;
+                this.R2 = e6Var;
                 return;
             } else {
                 getFileLoader().b(this.Q2, false);
@@ -26322,11 +26316,11 @@ public final class qp extends c1 implements ls {
         }
         if (file != null) {
             this.Q2 = file.getAbsolutePath();
-            this.R2 = d6Var;
+            this.R2 = e6Var;
             getFileLoader().h0(false, 16777216, this.Q2, true);
-        } else if (!"d".equals(d6Var.c) && !"c".equals(d6Var.c) && d6Var.l > 0 && !"t".equals(d6Var.c)) {
-            TLRPC.InputWallPaper r12 = r1(d6Var);
-            TLRPC.TL_wallPaperSettings g22 = g2(d6Var);
+        } else if (!"d".equals(e6Var.c) && !"c".equals(e6Var.c) && e6Var.l > 0 && !"t".equals(e6Var.c)) {
+            TLRPC.InputWallPaper r12 = r1(e6Var);
+            TLRPC.TL_wallPaperSettings g22 = g2(e6Var);
             if (z9) {
                 TL_account.installWallPaper installwallpaper = new TL_account.installWallPaper();
                 installwallpaper.wallpaper = r12;
@@ -26346,15 +26340,15 @@ public final class qp extends c1 implements ls {
                 }
                 try {
                     nativeByteBuffer.writeInt32(21);
-                    nativeByteBuffer.writeBool(d6Var.i);
-                    nativeByteBuffer.writeBool(d6Var.j);
-                    nativeByteBuffer.writeInt32(d6Var.d);
-                    nativeByteBuffer.writeInt32(d6Var.e);
-                    nativeByteBuffer.writeInt32(d6Var.h);
-                    nativeByteBuffer.writeDouble(d6Var.k);
+                    nativeByteBuffer.writeBool(e6Var.i);
+                    nativeByteBuffer.writeBool(e6Var.j);
+                    nativeByteBuffer.writeInt32(e6Var.d);
+                    nativeByteBuffer.writeInt32(e6Var.e);
+                    nativeByteBuffer.writeInt32(e6Var.h);
+                    nativeByteBuffer.writeDouble(e6Var.k);
                     nativeByteBuffer.writeBool(z9);
-                    nativeByteBuffer.writeString(d6Var.c);
-                    nativeByteBuffer.writeString(d6Var.b);
+                    nativeByteBuffer.writeString(e6Var.c);
+                    nativeByteBuffer.writeString(e6Var.b);
                     nativeByteBuffer.limit(nativeByteBuffer.position());
                 } catch (Exception e11) {
                     e = e11;
@@ -26363,29 +26357,29 @@ public final class qp extends c1 implements ls {
                     nativeByteBuffer = nativeByteBuffer2;
                     j3 = getMessagesStorage().z(nativeByteBuffer);
                     getConnectionsManager().sendRequest(savewallpaper, new pj(this, j3, 8));
-                    if ("c".equals(d6Var.c)) {
+                    if ("c".equals(e6Var.c)) {
                     }
-                    if ("c".equals(d6Var.c)) {
+                    if ("c".equals(e6Var.c)) {
                     }
-                    j10 = d6Var.l;
+                    j10 = e6Var.l;
                     if (j10 != 0) {
                     }
-                    tL_wallPaper.dark = ra0.j(d6Var.d, d6Var.e, d6Var.f, d6Var.g);
+                    tL_wallPaper.dark = qa0.j(e6Var.d, e6Var.e, e6Var.f, e6Var.g);
                     tL_wallPaper.flags |= 4;
                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
                     tL_wallPaper.settings = tL_wallPaperSettings;
-                    tL_wallPaperSettings.blur = d6Var.i;
-                    tL_wallPaperSettings.motion = d6Var.j;
-                    i7 = d6Var.d;
+                    tL_wallPaperSettings.blur = e6Var.i;
+                    tL_wallPaperSettings.motion = e6Var.j;
+                    i7 = e6Var.d;
                     if (i7 != 0) {
                     }
-                    i10 = d6Var.e;
+                    i10 = e6Var.e;
                     if (i10 != 0) {
                     }
-                    i11 = d6Var.f;
+                    i11 = e6Var.f;
                     if (i11 != 0) {
                     }
-                    i12 = d6Var.g;
+                    i12 = e6Var.g;
                     if (i12 != 0) {
                     }
                     ArrayList arrayList = new ArrayList();
@@ -26397,15 +26391,15 @@ public final class qp extends c1 implements ls {
             }
             getConnectionsManager().sendRequest(savewallpaper, new pj(this, j3, 8));
         }
-        if (!("c".equals(d6Var.c) && d6Var.f == 0) && d6Var.l <= 0) {
-            if ("c".equals(d6Var.c)) {
+        if (!("c".equals(e6Var.c) && e6Var.f == 0) && e6Var.l <= 0) {
+            if ("c".equals(e6Var.c)) {
                 tL_wallPaper = new TLRPC.TL_wallPaper();
-                tL_wallPaper.slug = d6Var.c;
+                tL_wallPaper.slug = e6Var.c;
                 tL_wallPaper.document = new TLRPC.TL_documentEmpty();
             } else {
                 tL_wallPaper = new TLRPC.TL_wallPaperNoFile();
             }
-            j10 = d6Var.l;
+            j10 = e6Var.l;
             if (j10 != 0) {
                 long nextLong = Utilities.b.nextLong();
                 tL_wallPaper.id = nextLong;
@@ -26415,32 +26409,32 @@ public final class qp extends c1 implements ls {
             } else {
                 tL_wallPaper.id = j10;
             }
-            tL_wallPaper.dark = ra0.j(d6Var.d, d6Var.e, d6Var.f, d6Var.g);
+            tL_wallPaper.dark = qa0.j(e6Var.d, e6Var.e, e6Var.f, e6Var.g);
             tL_wallPaper.flags |= 4;
             TLRPC.TL_wallPaperSettings tL_wallPaperSettings2 = new TLRPC.TL_wallPaperSettings();
             tL_wallPaper.settings = tL_wallPaperSettings2;
-            tL_wallPaperSettings2.blur = d6Var.i;
-            tL_wallPaperSettings2.motion = d6Var.j;
-            i7 = d6Var.d;
+            tL_wallPaperSettings2.blur = e6Var.i;
+            tL_wallPaperSettings2.motion = e6Var.j;
+            i7 = e6Var.d;
             if (i7 != 0) {
                 tL_wallPaperSettings2.background_color = i7;
                 int i13 = tL_wallPaperSettings2.flags;
-                tL_wallPaperSettings2.intensity = (int) (d6Var.k * 100.0f);
+                tL_wallPaperSettings2.intensity = (int) (e6Var.k * 100.0f);
                 tL_wallPaperSettings2.flags = i13 | 9;
             }
-            i10 = d6Var.e;
+            i10 = e6Var.e;
             if (i10 != 0) {
                 tL_wallPaperSettings2.second_background_color = i10;
-                tL_wallPaperSettings2.rotation = g0.s1(d6Var.h, true);
+                tL_wallPaperSettings2.rotation = g0.s1(e6Var.h, true);
                 tL_wallPaper.settings.flags |= 16;
             }
-            i11 = d6Var.f;
+            i11 = e6Var.f;
             if (i11 != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
                 wallPaperSettings.third_background_color = i11;
                 wallPaperSettings.flags |= 32;
             }
-            i12 = d6Var.g;
+            i12 = e6Var.g;
             if (i12 != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
                 wallPaperSettings2.fourth_background_color = i12;

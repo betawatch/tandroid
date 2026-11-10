@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class l extends a {
     public final HashMap h = new HashMap();
@@ -49,17 +49,17 @@ public abstract class l extends a {
         hashMap.clear();
     }
 
-    public abstract g0 u(Object obj, g0 g0Var);
+    public abstract f0 u(Object obj, f0 f0Var);
 
     public abstract void x(Object obj, a aVar, e2.l1 l1Var);
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v2, types: [x2.h0, x2.i] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [x2.g0, x2.i] */
     public final void y(final Integer num, a aVar) {
         HashMap hashMap = this.h;
         ia.f(!hashMap.containsKey(num));
-        ?? r12 = new h0() { // from class: x2.i
-            @Override // x2.h0
+        ?? r12 = new g0() { // from class: x2.i
+            @Override // x2.g0
             public final void a(a aVar2, e2.l1 l1Var) {
                 l.this.x(num, aVar2, l1Var);
             }
@@ -72,10 +72,10 @@ public abstract class l extends a {
         wa waVar = aVar.c;
         waVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) waVar.d;
-        j0 j0Var = new j0();
-        j0Var.a = handler;
-        j0Var.b = jVar;
-        copyOnWriteArrayList.add(j0Var);
+        i0 i0Var = new i0();
+        i0Var.a = handler;
+        i0Var.b = jVar;
+        copyOnWriteArrayList.add(i0Var);
         Handler handler2 = this.i;
         handler2.getClass();
         q2.j jVar2 = aVar.d;

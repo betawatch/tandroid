@@ -17,9 +17,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.bd0;
+import org.telegram.ui.tc0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f9 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -62,7 +62,7 @@ public final /* synthetic */ class f9 implements v10 {
                 Runnable[] runnableArr = (Runnable[]) this.e;
                 k0.b bVar = (k0.b) this.f;
                 Context context = (Context) this.g;
-                bd0 bd0Var = (bd0) this.h;
+                tc0 tc0Var = (tc0) this.h;
                 int i10 = this.b;
                 TLRPC.TL_auth_firebasePnvIntent tL_auth_firebasePnvIntent = (TLRPC.TL_auth_firebasePnvIntent) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -97,7 +97,7 @@ public final /* synthetic */ class f9 implements v10 {
                                 cancellationSignal.cancel();
                                 break;
                             } else {
-                                bVar.c(context, nVar, cancellationSignal, new d3.b(1), new h9(cancellationToken, taskCompletionSource, bd0Var, i10, runnableArr));
+                                bVar.c(context, nVar, cancellationSignal, new d3.b(1), new h9(cancellationToken, taskCompletionSource, tc0Var, i10, runnableArr));
                                 break;
                             }
                         }
@@ -293,7 +293,7 @@ public final /* synthetic */ class f9 implements v10 {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.hc.b0(org.telegram.ui.Wallet.d2.z(tL_error2, "widget sendTransfer"));
+                    org.telegram.ui.Components.gc.b0(org.telegram.ui.Wallet.d2.z(tL_error2, "widget sendTransfer"));
                     di.e eVar = (tL_error2 == null || tL_error2.code != 400) ? new di.e(27) : new di.e(26);
                     s2Var.d = false;
                     if (!s2Var.f) {
@@ -309,13 +309,13 @@ public final /* synthetic */ class f9 implements v10 {
         }
     }
 
-    public /* synthetic */ f9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, Runnable[] runnableArr, k0.b bVar, Context context, bd0 bd0Var, int i7) {
+    public /* synthetic */ f9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, Runnable[] runnableArr, k0.b bVar, Context context, tc0 tc0Var, int i7) {
         this.c = cancellationToken;
         this.d = taskCompletionSource;
         this.e = runnableArr;
         this.f = bVar;
         this.g = context;
-        this.h = bd0Var;
+        this.h = tc0Var;
         this.b = i7;
     }
 }

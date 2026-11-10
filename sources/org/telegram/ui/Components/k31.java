@@ -1,67 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class k31 extends ly {
-    public final /* synthetic */ u31 Y;
+public final class k31 extends g.p {
+    public final /* synthetic */ t31 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k31(u31 u31Var, int i7, j31 j31Var) {
-        super(5, i7, j31Var);
-        this.Y = u31Var;
+    public k31(t31 t31Var) {
+        this.c = t31Var;
     }
 
-    @Override // org.telegram.ui.Components.ly
-    public final boolean D1() {
-        u31 u31Var = this.Y;
-        return u31Var.n.getAdapter() == u31Var.w;
-    }
-
-    @Override // v4.b0
-    public final boolean Y0() {
-        return org.telegram.messenger.id.a0;
-    }
-
-    @Override // v4.s, v4.b0, v4.n0
-    public final int o0(int i7, v4.v0 v0Var, v4.a1 a1Var) {
-        int i10;
-        View m10;
-        u31 u31Var = this.Y;
-        if (u31Var.N) {
-            return super.o0(i7, v0Var, a1Var);
-        }
-        int i11 = 0;
-        if (u31Var.L != null) {
-            return 0;
-        }
-        if (u31Var.M) {
-            while (true) {
-                i10 = 1;
-                if (i11 >= r()) {
-                    break;
-                }
-                j31 j31Var = u31Var.n;
-                View q10 = q(i11);
-                j31Var.getClass();
-                int R = RecyclerView.R(q10);
-                if (R < 1) {
-                    i10 = R;
-                    break;
-                }
-                i11++;
+    @Override // g.p
+    public final int i(int i7) {
+        t31 t31Var = this.c;
+        v4.g0 adapter = t31Var.n.getAdapter();
+        s31 s31Var = t31Var.s;
+        if (adapter == s31Var) {
+            if ((s31Var.d.get(i7) instanceof Integer) || i7 >= s31Var.x) {
+                return s31Var.w;
             }
-            if (i10 == 0 && (m10 = u31Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
-                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
-            }
+            return 1;
         }
-        return super.o0(i7, v0Var, a1Var);
-    }
-
-    @Override // v4.s, v4.b0, v4.n0
-    public final boolean y0() {
-        return false;
+        jg.d2 d2Var = t31Var.w;
+        SparseArray sparseArray = d2Var.s;
+        if (i7 == d2Var.D || !(sparseArray.get(i7) == null || (sparseArray.get(i7) instanceof TLRPC.Document))) {
+            return d2Var.e.a();
+        }
+        return 1;
     }
 }

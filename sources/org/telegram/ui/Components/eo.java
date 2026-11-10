@@ -1,8 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.ui.WallpapersListActivity;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eo implements Runnable {
+public final /* synthetic */ class eo implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ vo b;
 
@@ -11,44 +16,72 @@ public final /* synthetic */ class eo implements Runnable {
         this.b = voVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        vo voVar = this.b;
+        switch (i7) {
             case 0:
-                this.b.n1.f();
-                break;
+                ci ciVar = voVar.R1;
+                if (ciVar.v2 != ciVar.d2) {
+                    voVar.T1.setText(org.telegram.messenger.id.M0(2131745537, null));
+                    ci ciVar2 = voVar.R1;
+                    ciVar2.F1(ciVar2.d2);
+                    break;
+                } else {
+                    voVar.T1.setText(org.telegram.messenger.id.M0(2131752138, null));
+                    ci ciVar3 = voVar.R1;
+                    if (ciVar3.l2 == null) {
+                        Context context = ciVar3.getContext();
+                        org.telegram.ui.ActionBar.h6 h6Var = ciVar3.I0;
+                        pi piVar = new pi(context, h6Var, ciVar3);
+                        piVar.r = org.telegram.messenger.g0.L(80.0f);
+                        piVar.x = 3;
+                        bi.q1 q1Var = new bi.q1(piVar, context, h6Var, 14);
+                        piVar.n = q1Var;
+                        ka kaVar = new ka(piVar, context);
+                        piVar.w = kaVar;
+                        q1Var.setAdapter(kaVar);
+                        q1Var.setClipToPadding(false);
+                        q1Var.setItemAnimator(null);
+                        q1Var.setLayoutAnimation(null);
+                        q1Var.setVerticalScrollBarEnabled(false);
+                        org.telegram.ui.ActionBar.t6.l(q1Var, 21, org.telegram.ui.ActionBar.m6.A5, h6Var);
+                        piVar.addView(q1Var, c8.ha.c(-1.0f, -1));
+                        q1Var.setOnScrollListener(new ai.b(piVar, 29));
+                        ei.h hVar = new ei.h(piVar, piVar.r, 2);
+                        piVar.s = hVar;
+                        hVar.O = new ai.l(piVar, 6);
+                        q1Var.setLayoutManager(hVar);
+                        ciVar3.l2 = piVar;
+                        piVar.setDelegate(new ra(ciVar3, 1));
+                    }
+                    ciVar3.F1(ciVar3.l2);
+                    pi piVar2 = voVar.R1.l2;
+                    boolean z9 = voVar.G1;
+                    ka kaVar2 = piVar2.w;
+                    ((ArrayList) kaVar2.e).clear();
+                    WallpapersListActivity.E0((ArrayList) kaVar2.e, z9);
+                    kaVar2.f();
+                    break;
+                }
             case 1:
-                this.b.K0(true);
-                break;
+                if (!voVar.P0()) {
+                    voVar.dismiss();
+                    break;
+                } else {
+                    voVar.T0(true);
+                    voVar.Z0(true);
+                    break;
+                }
             case 2:
-                vo voVar = this.b;
-                org.telegram.ui.cn cnVar = voVar.r1;
-                org.telegram.ui.ActionBar.f2 g02 = org.telegram.ui.d51.g0(cnVar.getMessagesController().M0(Long.valueOf(-cnVar.a())), true);
-                org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2();
-                d2Var.a = true;
-                g02.setResourceProvider(cnVar.getResourceProvider());
-                d2Var.c = new org.telegram.messenger.rc(28);
-                d2Var.d = new eo(voVar, 3);
-                d2Var.b = new eo(voVar, 4);
-                d2Var.e = true;
-                voVar.N1 = g02;
-                cnVar.showAsSheet(g02, d2Var);
-                break;
-            case 3:
-                this.b.O0();
-                break;
-            case 4:
-                this.b.N1 = null;
-                break;
-            case 5:
-                this.b.O0();
-                break;
-            case 6:
-                this.b.N1 = null;
+                if (voVar.M1 == null) {
+                    voVar.V0(!voVar.G1);
+                    break;
+                }
                 break;
             default:
-                vo voVar2 = this.b;
-                voVar2.K1.c(voVar2.w1);
+                voVar.K0(false);
                 break;
         }
     }

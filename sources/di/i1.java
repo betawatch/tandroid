@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.rm0;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i1 implements ti.m {
     public static i1 w;
@@ -154,7 +154,7 @@ public final class i1 implements ti.m {
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
         return false;
     }
 

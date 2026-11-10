@@ -7,22 +7,22 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o1 implements c20 {
-    public final /* synthetic */ y91 a;
-    public final /* synthetic */ yw b;
+    public final /* synthetic */ z91 a;
+    public final /* synthetic */ zw b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ o1(y91 y91Var, yw ywVar, long j3, int i7) {
-        this.a = y91Var;
-        this.b = ywVar;
+    public /* synthetic */ o1(z91 z91Var, zw zwVar, long j3, int i7) {
+        this.a = z91Var;
+        this.b = zwVar;
         this.c = j3;
         this.d = i7;
     }
@@ -33,13 +33,13 @@ public final /* synthetic */ class o1 implements c20 {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        y91 y91Var = this.a;
-        yw ywVar = this.b;
-        if (y91Var != null) {
-            y91Var.finishFragment();
-            ywVar.removeSelfFromStack();
+        z91 z91Var = this.a;
+        zw zwVar = this.b;
+        if (z91Var != null) {
+            z91Var.finishFragment();
+            zwVar.removeSelfFromStack();
         } else {
-            ywVar.finishFragment();
+            zwVar.finishFragment();
         }
         org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
         if (T == null) {
@@ -61,7 +61,7 @@ public final /* synthetic */ class o1 implements c20 {
                 chat = M0;
             }
         }
-        hc a02 = hc.a0(T);
+        gc a02 = gc.a0(T);
         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, bool.booleanValue() ? 2131752988 : 2131752987, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), X2, null, null).k(false);

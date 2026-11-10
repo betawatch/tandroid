@@ -4,34 +4,34 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.cp;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.vw0;
+import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class t6 extends x31 {
+public final class t6 extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        x31.h(new t6());
+        w31.h(new t6());
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        Object obj = y31Var.G;
-        if (obj instanceof vw0) {
-            vw0 vw0Var = (vw0) obj;
-            ((v6) view).b(y31Var.l, vw0Var.d, vw0Var.e, z9);
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
+        Object obj = x31Var.G;
+        if (obj instanceof xw0) {
+            xw0 xw0Var = (xw0) obj;
+            ((v6) view).b(x31Var.l, xw0Var.d, xw0Var.e, z9);
         } else if (obj instanceof cp) {
-            ((v6) view).a(y31Var.l, ((cp) obj).b, true, z9);
+            ((v6) view).a(x31Var.l, ((cp) obj).b, true, z9);
         }
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         return new v6(context);
     }
 }

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg implements qr0, sw {
+public final /* synthetic */ class bg implements rr0, tw {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -20,17 +20,17 @@ public final /* synthetic */ class bg implements qr0, sw {
         this.b = i7;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.qr0
+    @Override // org.telegram.ui.rr0
     public void a(TLRPC.MessageMedia messageMedia) {
         int i7;
         cn cnVar = (cn) this.c;
@@ -79,8 +79,8 @@ public final /* synthetic */ class bg implements qr0, sw {
         cnVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         String str = (String) this.d;
         String str2 = LaunchActivity.B1;
@@ -96,7 +96,7 @@ public final /* synthetic */ class bg implements qr0, sw {
             bundle.putLong("chat_id", -j3);
         }
         int i11 = this.b;
-        if (!org.telegram.messenger.qp.s1(i11).E(bundle, ywVar, null, null)) {
+        if (!org.telegram.messenger.qp.s1(i11).E(bundle, zwVar, null, null)) {
             return true;
         }
         org.telegram.messenger.qs.f(i11).k(org.telegram.messenger.qs.t, new Object[0]);

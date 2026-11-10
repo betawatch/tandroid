@@ -7,9 +7,9 @@ import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements c20 {
     public final /* synthetic */ int a;
@@ -39,12 +39,12 @@ public final /* synthetic */ class i implements c20 {
                 if (!oVar2.g0()) {
                     int editTextSelectionEnd = oVar2.h.getEditTextSelectionEnd();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(oVar2.h.getText());
-                    for (r5 r5Var : (r5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), r5.class)) {
-                        if (spannableStringBuilder.getSpanEnd(r5Var) == editTextSelectionEnd) {
-                            oVar2.H.remove(Long.valueOf(r5Var.documentId));
-                            oVar2.I.remove(Long.valueOf(r5Var.documentId));
-                            oVar2.b.A(Long.valueOf(r5Var.documentId));
-                            if (r5Var.documentId == -1 && (r8Var = oVar2.r) != null) {
+                    for (q5 q5Var : (q5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), q5.class)) {
+                        if (spannableStringBuilder.getSpanEnd(q5Var) == editTextSelectionEnd) {
+                            oVar2.H.remove(Long.valueOf(q5Var.documentId));
+                            oVar2.I.remove(Long.valueOf(q5Var.documentId));
+                            oVar2.b.A(Long.valueOf(q5Var.documentId));
+                            if (q5Var.documentId == -1 && (r8Var = oVar2.r) != null) {
                                 r8Var.setChecked(false);
                                 oVar2.h.setMaxLength(oVar2.N);
                             }
@@ -54,8 +54,8 @@ public final /* synthetic */ class i implements c20 {
                                 org.telegram.messenger.g0.i3(hVar, 350L);
                                 break;
                             } else {
-                                r5Var.setRemoved(new ai.e0(oVar2, r5Var, editTextSelectionEnd, 5));
-                                oVar2.c0(r5Var);
+                                q5Var.setRemoved(new ai.e0(oVar2, q5Var, editTextSelectionEnd, 5));
+                                oVar2.c0(q5Var);
                                 oVar2.e0(false);
                                 break;
                             }

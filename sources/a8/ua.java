@@ -14,15 +14,15 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.dt;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.xn;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.wn;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ea1;
-import org.telegram.ui.kx0;
+import org.telegram.ui.fa1;
+import org.telegram.ui.lx0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, o2.i, xn, wi.w0 {
+public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, o2.i, wn, wi.w0 {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -138,7 +138,7 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public void L() {
         int i7;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
@@ -150,8 +150,8 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         boolean z9 = sharedPreferences.getBoolean(sb2.toString(), true);
         boolean z10 = !z9;
         sharedPreferences.edit().putBoolean("sound_enabled_" + dt.v(j3, profileActivity.f1, false), z10).apply();
-        if (hc.a(profileActivity)) {
-            hc.S(z9 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        if (gc.a(profileActivity)) {
+            gc.S(z9 ? 1 : 0, profileActivity, profileActivity.z0).j();
         }
     }
 
@@ -160,23 +160,23 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         return ((f3.q) this.c).O1(i7, i10);
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public void R(int i7) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i7 == 0) {
             if (profileActivity.getMessagesController().r2(this.b, profileActivity.f1, null)) {
                 p();
             }
-            if (hc.a(profileActivity)) {
-                hc.z(profileActivity, 4, i7, profileActivity.z0).j();
+            if (gc.a(profileActivity)) {
+                gc.z(profileActivity, 4, i7, profileActivity.z0).j();
                 return;
             }
             return;
         }
         RectF rectF = ProfileActivity.V6;
         profileActivity.getNotificationsController().H(this.b, i7, profileActivity.f1);
-        if (hc.a(profileActivity)) {
-            hc.z(profileActivity, 5, i7, profileActivity.z0).j();
+        if (gc.a(profileActivity)) {
+            gc.z(profileActivity, 5, i7, profileActivity.z0).j();
         }
         profileActivity.y5();
         profileActivity.I5(true);
@@ -262,16 +262,16 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         ((f3.p) this.c).m(i7);
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public void n() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        ea1 ea1Var = new ea1(bundle);
-        ea1Var.d = new ArrayList();
-        ea1Var.e = new HashSet();
+        fa1 fa1Var = new fa1(bundle);
+        fa1Var.d = new ArrayList();
+        fa1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        ea1Var.e = profileActivity.j5;
-        profileActivity.presentFragment(ea1Var);
+        fa1Var.e = profileActivity.j5;
+        profileActivity.presentFragment(fa1Var);
     }
 
     @Override // o2.i
@@ -305,13 +305,13 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public void p() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         boolean z9 = !profileActivity.getMessagesController().r2(this.b, profileActivity.f1, null);
         profileActivity.getNotificationsController().G(this.b, profileActivity.f1, z9);
         if (profileActivity.fragmentView != null) {
-            hc.A(profileActivity, z9, null).j();
+            gc.A(profileActivity, z9, null).j();
         }
         profileActivity.y5();
         profileActivity.I5(true);
@@ -384,7 +384,7 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         return ((f3.j) this.c).a;
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public void y() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j3 = this.b;
@@ -392,7 +392,7 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j3);
             bundle.putLong("topic_id", profileActivity.f1);
-            profileActivity.presentFragment(new kx0(bundle, profileActivity.z0));
+            profileActivity.presentFragment(new lx0(bundle, profileActivity.z0));
         }
     }
 
@@ -426,7 +426,7 @@ public final /* synthetic */ class ua implements OnFailureListener, f3.p, f3.q, 
         }
     }
 
-    @Override // org.telegram.ui.Components.xn
+    @Override // org.telegram.ui.Components.wn
     public /* synthetic */ void dismiss() {
     }
 }

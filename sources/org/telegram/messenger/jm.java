@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jm implements Runnable {
     public final /* synthetic */ int a;
@@ -696,7 +696,7 @@ public final /* synthetic */ class jm implements Runnable {
     /* JADX WARN: Removed duplicated region for block: B:137:0x02e5  */
     /* JADX WARN: Type inference failed for: r0v2, types: [a0.h] */
     /* JADX WARN: Type inference failed for: r0v26, types: [a0.h] */
-    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.fx] */
+    /* JADX WARN: Type inference failed for: r10v22, types: [org.telegram.ui.Components.ex] */
     /* JADX WARN: Type inference failed for: r11v1, types: [org.telegram.messenger.c20] */
     /* JADX WARN: Type inference failed for: r18v4 */
     /* JADX WARN: Type inference failed for: r18v5 */
@@ -734,7 +734,7 @@ public final /* synthetic */ class jm implements Runnable {
                 ?? r11 = (c20) obj2;
                 TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj;
                 if (r11 == null) {
-                    org.telegram.ui.Components.v4.f(qpVar.currentAccount, qpVar.M0(Long.valueOf(j10)), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.u4.f(qpVar.currentAccount, qpVar.M0(Long.valueOf(j10)), tL_messages_invitedUsers);
                     return;
                 } else {
                     qpVar.getClass();
@@ -1209,7 +1209,7 @@ public final /* synthetic */ class jm implements Runnable {
             default:
                 k00 k00Var = (k00) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
-                ?? r10 = (org.telegram.ui.Components.fx) obj;
+                ?? r10 = (org.telegram.ui.Components.ex) obj;
                 k00Var.getClass();
                 ArrayList arrayList22 = new ArrayList();
                 if (tLObject2 instanceof TLRPC.TL_messages_forumTopics) {

@@ -1,119 +1,75 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class nx extends ky {
-    public final ot0 X;
-    public final /* synthetic */ hy Y;
+public final class nx extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final ImageView a;
+    public final TextView b;
+    public final RadialProgressView c;
+    public boolean d;
+    public final /* synthetic */ gy e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nx(hy hyVar) {
-        super(100, true);
-        this.Y = hyVar;
-        this.X = new ot0();
-        this.O = new ai.l(this, 8);
+    public nx(gy gyVar, Context context) {
+        super(context);
+        this.e = gyVar;
+        org.telegram.ui.ActionBar.s6 s6Var = org.telegram.ui.ActionBar.t6.a;
+        ImageView imageView = new ImageView(getContext());
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.gif_empty);
+        int i7 = org.telegram.ui.ActionBar.m6.Af;
+        org.telegram.ui.ActionBar.h6 h6Var = gyVar.Z1;
+        org.telegram.ui.ActionBar.t6.s(imageView, i7, h6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, c8.ha.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setText(org.telegram.messenger.id.M0(2131748207, null));
+        textView.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.t6.U(textView, i7, h6Var);
+        addView(textView, c8.ha.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
+        RadialProgressView radialProgressView = new RadialProgressView(context, h6Var);
+        this.c = radialProgressView;
+        radialProgressView.setVisibility(8);
+        radialProgressView.setProgressColor(gyVar.z(org.telegram.ui.ActionBar.m6.h6));
+        addView(radialProgressView, c8.ha.e(-2, -2, 17));
     }
 
-    @Override // v4.n0
-    public final int A() {
-        hy hyVar = this.Y;
-        v4.g0 adapter = hyVar.h0.getAdapter();
-        mx mxVar = hyVar.j0;
-        if (adapter == mxVar && mxVar.y.isEmpty()) {
-            return 0;
+    public final void a(boolean z9) {
+        if (this.d != z9) {
+            this.d = z9;
+            this.a.setVisibility(z9 ? 8 : 0);
+            this.b.setVisibility(z9 ? 8 : 0);
+            this.c.setVisibility(z9 ? 0 : 8);
         }
-        return B() - 1;
     }
 
-    @Override // org.telegram.ui.Components.ky
-    public final ot0 D1(int i7) {
-        ArrayList<TLRPC.DocumentAttribute> arrayList;
-        TLRPC.Document document;
-        hy hyVar = this.Y;
-        mx mxVar = hyVar.j0;
-        v4.g0 adapter = hyVar.h0.getAdapter();
-        mx mxVar2 = hyVar.n0;
-        TLRPC.Document document2 = null;
-        r4 = null;
-        ArrayList<TLRPC.DocumentAttribute> arrayList2 = null;
-        if (adapter != mxVar2) {
-            if (mxVar.y.isEmpty()) {
-                arrayList = null;
-                return F1(document2, arrayList);
-            }
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) mxVar.y.get(i7);
-            document = botInlineResult.document;
-            if (document != null) {
-                arrayList2 = document.attributes;
-            } else {
-                TLRPC.WebDocument webDocument = botInlineResult.content;
-                if (webDocument != null) {
-                    arrayList2 = webDocument.attributes;
-                } else {
-                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
-                    if (webDocument2 != null) {
-                        arrayList2 = webDocument2.attributes;
-                    }
-                }
-            }
-            arrayList = arrayList2;
-            document2 = document;
-            return F1(document2, arrayList);
-        }
-        int i10 = mxVar2.H;
-        if (i7 <= i10) {
-            if (i7 == i10) {
-                return null;
-            }
-            document2 = (TLRPC.Document) hyVar.i1.get(i7);
-            arrayList = document2.attributes;
-            return F1(document2, arrayList);
-        }
-        TLRPC.BotInlineResult botInlineResult2 = (TLRPC.BotInlineResult) mxVar2.y.get((i7 - i10) - 1);
-        document = botInlineResult2.document;
-        if (document != null) {
-            arrayList2 = document.attributes;
-        } else {
-            TLRPC.WebDocument webDocument3 = botInlineResult2.content;
-            if (webDocument3 != null) {
-                arrayList2 = webDocument3.attributes;
-            } else {
-                TLRPC.WebDocument webDocument4 = botInlineResult2.thumb;
-                if (webDocument4 != null) {
-                    arrayList2 = webDocument4.attributes;
-                }
-            }
-        }
-        arrayList = arrayList2;
-        document2 = document;
-        return F1(document2, arrayList);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.camera.q.y(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
     }
 
-    public final ot0 F1(TLRPC.Document document, List list) {
-        TLRPC.PhotoSize w10;
-        int i7;
-        int i10;
-        ot0 ot0Var = this.X;
-        ot0Var.b = 100.0f;
-        ot0Var.a = 100.0f;
-        if (document != null && (w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false)) != null && (i7 = w10.w) != 0 && (i10 = w10.h) != 0) {
-            ot0Var.a = i7;
-            ot0Var.b = i10;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        try {
+            this.c.setProgressColor(this.e.z(org.telegram.ui.ActionBar.m6.h6));
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        if (list != null) {
-            for (int i11 = 0; i11 < list.size(); i11++) {
-                TLRPC.DocumentAttribute documentAttribute = (TLRPC.DocumentAttribute) list.get(i11);
-                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                    ot0Var.a = documentAttribute.w;
-                    ot0Var.b = documentAttribute.h;
-                    break;
-                }
-            }
-        }
-        return ot0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

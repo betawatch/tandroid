@@ -22,11 +22,11 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.ri0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class x extends FrameLayout implements ls {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -43,7 +43,7 @@ public abstract class x extends FrameLayout implements ls {
     public final r c;
     public final v4.s d;
     public final p e;
-    public final si0 f;
+    public final ri0 f;
     public final w h;
     public final ArrayList n;
     public int r;
@@ -72,9 +72,9 @@ public abstract class x extends FrameLayout implements ls {
         int i10 = 0;
         sVar.O = new l(q0Var, i10);
         rVar.setLayoutManager(sVar);
-        si0 si0Var = new si0(rVar, sVar);
-        this.f = si0Var;
-        si0Var.i = new m(q0Var, i10);
+        ri0 ri0Var = new ri0(rVar, sVar);
+        this.f = ri0Var;
+        ri0Var.i = new m(q0Var, i10);
         rVar.setAdapter(pVar);
         rVar.setSelectorDrawableColor(0);
         rVar.setOnItemClickListener(new k(p0Var, 0));
@@ -102,7 +102,7 @@ public abstract class x extends FrameLayout implements ls {
     }
 
     public static boolean d(Drawable drawable) {
-        return (drawable instanceof i5) && ij.C4(((i5) drawable).e);
+        return (drawable instanceof h5) && ij.C4(((h5) drawable).e);
     }
 
     public final ArrayList a() {
@@ -253,14 +253,14 @@ public abstract class x extends FrameLayout implements ls {
                 long j11 = (i17 == 4 && j10 != j3 && hashMap.containsKey(Long.valueOf(j10))) ? j10 : K[i17];
                 TLRPC.Document document6 = (TLRPC.Document) hashMap.get(Long.valueOf(j11));
                 if (document6 == null) {
-                    document6 = i5.e(i11, j11);
+                    document6 = h5.e(i11, j11);
                 }
                 if (document6 != null) {
                     arrayList10.add(document6);
                     hashSet.add(Long.valueOf(document6.id));
                 } else if (this.G.add(Long.valueOf(j11))) {
-                    i5.g(i11).b(j11, new f5() { // from class: ai.j
-                        @Override // org.telegram.ui.Components.f5
+                    h5.g(i11).b(j11, new e5() { // from class: ai.j
+                        @Override // org.telegram.ui.Components.e5
                         public final void a(TLRPC.Document document7) {
                             org.telegram.messenger.g0.h3(new a1.e(8, x.this, document7));
                         }
@@ -304,7 +304,7 @@ public abstract class x extends FrameLayout implements ls {
                 i20 = i10;
             }
             if (document == null) {
-                document = i5.e(i11, longValue);
+                document = h5.e(i11, longValue);
             }
             if (document != null && str2.equals(document.mime_type) && hashSet2.add(Long.valueOf(document.id))) {
                 arrayList11.add(document);
@@ -322,7 +322,7 @@ public abstract class x extends FrameLayout implements ls {
             String str5 = (String) arrayList12.get(i21);
             if (str5 != null && str5.startsWith("animated_")) {
                 try {
-                    TLRPC.Document e10 = i5.e(i11, Long.parseLong(str5.substring(9)));
+                    TLRPC.Document e10 = h5.e(i11, Long.parseLong(str5.substring(9)));
                     if ((e10 != null && str2.equals(e10.mime_type)) && hashSet2.add(Long.valueOf(e10.id))) {
                         arrayList11.add(e10);
                     }

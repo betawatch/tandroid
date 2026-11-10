@@ -28,7 +28,6 @@ import li.f2;
 import li.g1;
 import li.i0;
 import li.m3;
-import li.s4;
 import li.t3;
 import li.x;
 import org.json.JSONObject;
@@ -48,30 +47,29 @@ import org.telegram.messenger.l0;
 import org.telegram.messenger.o0;
 import org.telegram.messenger.ta;
 import org.telegram.messenger.w10;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Cells.z8;
-import org.telegram.ui.Components.b8;
-import org.telegram.ui.Components.gm0;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.fm0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.s4;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.yl0;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.c61;
-import org.telegram.ui.jw;
-import org.telegram.ui.tz;
-import org.telegram.ui.zz;
+import org.telegram.ui.a00;
+import org.telegram.ui.d61;
+import org.telegram.ui.kw;
+import org.telegram.ui.uz;
 import w7.s;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.internal.p, jm0, t4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, mm0 {
+public final class g implements i6.a, a00, y1, com.google.android.gms.common.api.internal.p, im0, s4, i0, w, m.l, ce.c, o0.a, ta, ab, ue.a, lm0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -152,7 +150,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public void D() {
         int i7 = this.a;
     }
@@ -179,7 +177,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public void I0(CharSequence charSequence) {
-        m3 m3Var = ((s4) this.b).N;
+        m3 m3Var = ((li.s4) this.b).N;
         if (m3Var != null) {
             m3Var.getClass();
             if (charSequence == null || charSequence.length() <= 0) {
@@ -189,14 +187,14 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.t4
+    @Override // org.telegram.ui.Components.s4
     public void L(int i7, int i10, boolean z9) {
         ((b2) this.b).x0(i7, i10, z9);
     }
 
     @Override // li.i0
     public void L1() {
-        s4 s4Var = (s4) this.b;
+        li.s4 s4Var = (li.s4) this.b;
         m3 m3Var = s4Var.N;
         if (m3Var != null) {
             li.a aVar = s4Var.a;
@@ -218,7 +216,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public h9 S0() {
-        return (s4) this.b;
+        return (li.s4) this.b;
     }
 
     @Override // ue.a
@@ -234,7 +232,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public li.a V0() {
-        return ((s4) this.b).a;
+        return ((li.s4) this.b).a;
     }
 
     @Override // jg.y1
@@ -244,7 +242,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.im0
     public void a(float f10) {
         x xVar = (x) this.b;
         ij ijVar = xVar.P;
@@ -257,7 +255,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public boolean a1() {
-        s4 s4Var = (s4) this.b;
+        li.s4 s4Var = (li.s4) this.b;
         m3 m3Var = s4Var.N;
         if (m3Var == null) {
             return false;
@@ -281,7 +279,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0, li.f1
     public void b(g1 g1Var) {
-        m3 m3Var = ((s4) this.b).N;
+        m3 m3Var = ((li.s4) this.b).N;
         if (m3Var != null) {
             t3 t3Var = m3Var.a;
             t3.Q1(t3Var, g1Var);
@@ -328,7 +326,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.jm0
+    @Override // org.telegram.ui.Components.im0
     public void d(float f10) {
         ij ijVar = ((x) this.b).P;
         if (ijVar == null) {
@@ -339,7 +337,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public void d1(int i7, int i10) {
-        s4 s4Var = (s4) this.b;
+        li.s4 s4Var = (li.s4) this.b;
         m3 m3Var = s4Var.N;
         if (m3Var != null) {
             li.a aVar = s4Var.a;
@@ -350,19 +348,19 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.zz
-    public boolean f(tz tzVar) {
+    @Override // org.telegram.ui.a00
+    public boolean f(uz uzVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.zz
+    @Override // org.telegram.ui.a00
     public void g(ij ijVar) {
         ii.d0 d0Var = (ii.d0) this.b;
-        d0Var.q1.presentFragment(gm0.M(d0Var.a, ijVar));
+        d0Var.t1.presentFragment(fm0.M(d0Var.a, ijVar));
         d0Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public CharSequence getContentDescription() {
         w10 w10Var;
         switch (this.a) {
@@ -405,11 +403,11 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
                 }
             default:
                 StringBuilder sb3 = new StringBuilder();
-                b8 b8Var = (b8) this.b;
-                sb3.append(id.G(b8Var.t2 / 60, "Minutes", new Object[0]));
+                org.telegram.ui.Components.a8 a8Var = (org.telegram.ui.Components.a8) this.b;
+                sb3.append(id.G(a8Var.w2 / 60, "Minutes", new Object[0]));
                 sb3.append(' ');
-                sb3.append(id.G(b8Var.t2 % 60, "Seconds", new Object[0]));
-                return id.a0("AccDescrPlayerDuration", null, 2131754806, sb3.toString(), id.G(b8Var.u2 / 60, "Minutes", new Object[0]) + ' ' + id.G(b8Var.u2 % 60, "Seconds", new Object[0]));
+                sb3.append(id.G(a8Var.w2 % 60, "Seconds", new Object[0]));
+                return id.a0("AccDescrPlayerDuration", null, 2131754806, sb3.toString(), id.G(a8Var.x2 / 60, "Minutes", new Object[0]) + ' ' + id.G(a8Var.x2 % 60, "Seconds", new Object[0]));
         }
     }
 
@@ -418,14 +416,14 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         return ViewConfiguration.getLongPressTimeout();
     }
 
-    @Override // org.telegram.ui.zz
+    @Override // org.telegram.ui.a00
     public boolean i() {
         return false;
     }
 
     @Override // li.i0
     public void i1() {
-        s4 s4Var = (s4) this.b;
+        li.s4 s4Var = (li.s4) this.b;
         m3 m3Var = s4Var.N;
         if (m3Var != null) {
             li.a aVar = s4Var.a;
@@ -524,28 +522,28 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
     public boolean k1(int i7) {
         switch (this.a) {
             case 7:
-                return i7 == ((zl0) this.b).d0;
+                return i7 == ((yl0) this.b).d0;
             default:
                 return true;
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public void l(boolean z9, float f10) {
         int round;
         switch (this.a) {
             case 26:
-                c61 c61Var = (c61) ((org.telegram.ui.Cells.i0) this.b);
-                int i7 = (int) (l6.q * 100.0f);
+                d61 d61Var = (d61) ((org.telegram.ui.Cells.i0) this.b);
+                int i7 = (int) (m6.q * 100.0f);
                 int i10 = (int) (f10 * 100.0f);
-                l6.q = f10;
+                m6.q = f10;
                 if (i7 != i10) {
-                    ThemeActivity themeActivity = c61Var.f.e;
-                    yi0 yi0Var = (yi0) themeActivity.b.K(themeActivity.f0);
-                    if (yi0Var != null) {
-                        ((z8) yi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (l6.q * 100.0f))));
+                    ThemeActivity themeActivity = d61Var.f.e;
+                    xi0 xi0Var = (xi0) themeActivity.b.K(themeActivity.f0);
+                    if (xi0Var != null) {
+                        ((z8) xi0Var.a).setText(id.a0("AutoNightBrightnessInfo", null, 2131753794, Integer.valueOf((int) (m6.q * 100.0f))));
                     }
-                    l6.F(true);
+                    m6.F(true);
                     break;
                 }
                 break;
@@ -587,7 +585,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
                 }
                 ij ijVar = MediaController.B().u0;
                 if (ijVar != null && ijVar.I3()) {
-                    ((b8) this.b).b1(ijVar, false);
+                    ((org.telegram.ui.Components.a8) this.b).b1(ijVar, false);
                     break;
                 }
                 break;
@@ -598,15 +596,15 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
     public void m1(ArrayList arrayList) {
         switch (this.a) {
             case 7:
-                zl0 zl0Var = (zl0) this.b;
+                yl0 yl0Var = (yl0) this.b;
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                    zl0Var.J.add(((x1) arrayList.get(i7)).a);
+                    yl0Var.J.add(((x1) arrayList.get(i7)).a);
                 }
-                jw jwVar = zl0Var.U;
-                if (jwVar != null) {
-                    jwVar.d(zl0Var.D0 > 0, false);
+                kw kwVar = yl0Var.U;
+                if (kwVar != null) {
+                    kwVar.d(yl0Var.D0 > 0, false);
                 }
-                zl0Var.f();
+                yl0Var.f();
                 break;
         }
     }
@@ -641,24 +639,24 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
     public void q(int i7) {
         switch (this.a) {
             case 7:
-                zl0 zl0Var = (zl0) this.b;
-                zl0Var.D0--;
-                zl0Var.e0 = i7;
-                if (zl0Var.f0 != i7) {
-                    zl0Var.s.clear();
+                yl0 yl0Var = (yl0) this.b;
+                yl0Var.D0--;
+                yl0Var.e0 = i7;
+                if (yl0Var.f0 != i7) {
+                    yl0Var.s.clear();
                 }
-                if (zl0Var.g0 != i7) {
-                    zl0Var.I.clear();
+                if (yl0Var.g0 != i7) {
+                    yl0Var.I.clear();
                 }
-                zl0Var.N = true;
-                jw jwVar = zl0Var.U;
-                if (jwVar != null) {
-                    jwVar.d(zl0Var.D0 > 0, true);
+                yl0Var.N = true;
+                kw kwVar = yl0Var.U;
+                if (kwVar != null) {
+                    kwVar.d(yl0Var.D0 > 0, true);
                 }
-                zl0Var.f();
-                jw jwVar2 = zl0Var.U;
-                if (jwVar2 != null) {
-                    jwVar2.c();
+                yl0Var.f();
+                kw kwVar2 = yl0Var.U;
+                if (kwVar2 != null) {
+                    kwVar2.c();
                     break;
                 }
                 break;
@@ -668,7 +666,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public int q0() {
         switch (this.a) {
             case 26:
@@ -700,7 +698,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public void t() {
-        s4 s4Var = (s4) this.b;
+        li.s4 s4Var = (li.s4) this.b;
         m3 m3Var = s4Var.N;
         if (m3Var != null) {
             t3.T1(m3Var.a, s4Var.a);
@@ -722,7 +720,7 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
 
     @Override // li.i0
     public i9 w0() {
-        m3 m3Var = ((s4) this.b).N;
+        m3 m3Var = ((li.s4) this.b).N;
         if (m3Var != null) {
             return m3Var.a.getTextSelectionHelper();
         }
@@ -856,14 +854,14 @@ public final class g implements i6.a, zz, y1, com.google.android.gms.common.api.
     private final void v() {
     }
 
-    @Override // org.telegram.ui.zz
+    @Override // org.telegram.ui.a00
     public void e() {
     }
 
     private final /* synthetic */ void x(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.zz
+    @Override // org.telegram.ui.a00
     public void h(ij ijVar, View view, int i7) {
     }
 

@@ -6,9 +6,9 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements ValueCallback {
     public final /* synthetic */ int a;
@@ -55,11 +55,11 @@ public final /* synthetic */ class q1 implements ValueCallback {
                 return;
             default:
                 ui.i iVar = (ui.i) this.b;
-                s31 s31Var = (s31) this.d;
+                r31 r31Var = (r31) this.d;
                 WebView webView3 = this.c;
                 e5.f fVar = (e5.f) this.e;
                 String str = (String) obj;
-                org.telegram.messenger.g0.r(s31Var);
+                org.telegram.messenger.g0.r(r31Var);
                 synchronized (iVar.a) {
                     if (!iVar.u && iVar.o == webView3 && iVar.p == fVar && !iVar.r) {
                         if (!"true".equals(str)) {
@@ -83,10 +83,10 @@ public final /* synthetic */ class q1 implements ValueCallback {
         }
     }
 
-    public /* synthetic */ q1(ui.i iVar, s31 s31Var, WebView webView, e5.f fVar) {
+    public /* synthetic */ q1(ui.i iVar, r31 r31Var, WebView webView, e5.f fVar) {
         this.a = 2;
         this.b = iVar;
-        this.d = s31Var;
+        this.d = r31Var;
         this.c = webView;
         this.e = fVar;
     }

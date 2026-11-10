@@ -10,12 +10,12 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.gf;
-import org.telegram.ui.Components.tl;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.sl;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class m5 extends org.telegram.ui.Components.l9 {
+public final class m5 extends org.telegram.ui.Components.k9 {
     public final Paint G;
     public long H;
     public Drawable I;
@@ -29,13 +29,13 @@ public final class m5 extends org.telegram.ui.Components.l9 {
         this.G = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onDraw(Canvas canvas) {
         Bitmap bitmap;
         gf gfVar;
         Drawable drawable;
-        org.telegram.ui.Components.i5 i5Var = this.e;
-        ImageReceiver imageReceiver = i5Var != null ? i5Var.k : this.a;
+        org.telegram.ui.Components.h5 h5Var = this.e;
+        ImageReceiver imageReceiver = h5Var != null ? h5Var.k : this.a;
         if (imageReceiver == null) {
             return;
         }
@@ -69,7 +69,7 @@ public final class m5 extends org.telegram.ui.Components.l9 {
         }
         float f10 = q5Var.U;
         if (f10 != 1.0f && q5Var.S != null) {
-            int interpolation = (int) (xq.f.getInterpolation(1.0f - f10) * 255.0f);
+            int interpolation = (int) (wq.f.getInterpolation(1.0f - f10) * 255.0f);
             Paint paint = this.G;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(q5Var.S, 0.0f, 0.0f, paint);
@@ -89,7 +89,7 @@ public final class m5 extends org.telegram.ui.Components.l9 {
         }
         if (q5Var.s) {
             o5 o5Var = q5Var.V;
-            if ((o5Var == null || !((tl) ((org.telegram.ui.Components.u) o5Var).b).s) && (gfVar = q5Var.H) != null && gfVar.i() && q5Var.H.d()) {
+            if ((o5Var == null || !((sl) ((org.telegram.ui.Components.t) o5Var).b).s) && (gfVar = q5Var.H) != null && gfVar.i() && q5Var.H.d()) {
                 if (q5Var.H.j()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

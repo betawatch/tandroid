@@ -37,10 +37,10 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.h6;
 import org.telegram.ui.xf;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -266,12 +266,12 @@ public final class n implements OnSuccessListener, te.i {
     public n(int i7) {
         switch (i7) {
             case 4:
-                i6 i6Var = new i6(true, true, true);
-                this.d = i6Var;
+                h6 h6Var = new h6(true, true, true);
+                this.d = h6Var;
                 Paint paint = new Paint(1);
-                i6Var.w(g0.L(13.0f));
-                i6Var.u(-1);
-                i6Var.x(g0.o());
+                h6Var.w(g0.L(13.0f));
+                h6Var.u(-1);
+                h6Var.x(g0.o());
                 paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;

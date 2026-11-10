@@ -20,12 +20,12 @@ import java.lang.reflect.Field;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class i8 extends NestedScrollView implements k60 {
+public class i8 extends NestedScrollView implements j60 {
     public final org.telegram.ui.Cells.s9 W;
     public final r1.g a0;
     public final h8 b0;
@@ -51,7 +51,7 @@ public class i8 extends NestedScrollView implements k60 {
     public boolean v0;
     public boolean w0;
 
-    public i8(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public i8(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.q0 = -1;
@@ -63,7 +63,7 @@ public class i8 extends NestedScrollView implements k60 {
         qs.i(this);
         h8 h8Var = new h8(this, getContext());
         this.b0 = h8Var;
-        org.telegram.ui.Cells.s9 s9Var = new org.telegram.ui.Cells.s9(h8Var, g6Var);
+        org.telegram.ui.Cells.s9 s9Var = new org.telegram.ui.Cells.s9(h8Var, h6Var);
         this.W = s9Var;
         s9Var.h0 = false;
         frameLayout.addView(h8Var, -1, -2);
@@ -123,7 +123,7 @@ public class i8 extends NestedScrollView implements k60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new z7(this, scrollY, f10, 0));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(xq.f);
+            ofFloat.setInterpolator(wq.f);
             ofFloat.start();
         }
     }
@@ -136,7 +136,7 @@ public class i8 extends NestedScrollView implements k60 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new z7(this, scrollY, f10, 1));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(xq.f);
+            ofFloat.setInterpolator(wq.f);
             ofFloat.start();
         }
     }
@@ -295,7 +295,7 @@ public class i8 extends NestedScrollView implements k60 {
         this.W.w();
     }
 
-    @Override // org.telegram.ui.Components.k60
+    @Override // org.telegram.ui.Components.j60
     public final void g(RectF rectF) {
         g8 g8Var;
         h8 h8Var = this.b0;
@@ -345,7 +345,7 @@ public class i8 extends NestedScrollView implements k60 {
         return 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.k60
+    @Override // org.telegram.ui.Components.j60
     public final void h(Canvas canvas, float f10) {
         g8 g8Var;
         h8 h8Var = this.b0;
@@ -455,7 +455,7 @@ public class i8 extends NestedScrollView implements k60 {
         invalidate();
     }
 
-    public void F(org.telegram.ui.Components.r5 r5Var) {
+    public void F(org.telegram.ui.Components.q5 q5Var) {
     }
 
     public void I(c8 c8Var) {

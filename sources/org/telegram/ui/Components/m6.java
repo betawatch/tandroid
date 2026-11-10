@@ -1,26 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.OvershootInterpolator;
+import android.graphics.Typeface;
+import android.widget.TextView;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class m6 {
-    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
-    public static final k6 b = new k6("alpha", 0);
-    public static final org.telegram.ui.Cells.o8 c;
-    public static final k6 d;
-    public static final k6 e;
-    public static final org.telegram.ui.Cells.o8 f;
-    public static final org.telegram.ui.Cells.o8 g;
-    public static final org.telegram.ui.Cells.o8 h;
-
-    static {
-        new k6("color", 1);
-        c = new org.telegram.ui.Cells.o8("currentAlpha", 4);
-        d = new k6("alpha", 2);
-        e = new k6("alpha", 3);
-        f = new org.telegram.ui.Cells.o8("animationProgress", 5);
-        g = new org.telegram.ui.Cells.o8("animationValue", 6);
-        h = new org.telegram.ui.Cells.o8("clipProgress", 7);
+public final class m6 extends ya {
+    public m6(LaunchActivity launchActivity, org.telegram.ui.z80 z80Var) {
+        super(launchActivity, null);
+        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
+        TextView textView = new TextView(getContext());
+        addView(qVar, c8.ha.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.vj, null);
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, c8.ha.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        qVar.setImageDrawable(launchActivity.getDrawable(z80Var.b));
+        qVar.setOuterPadding(org.telegram.messenger.g0.L(8.0f));
+        qVar.setBackgroundOuterPadding(org.telegram.messenger.g0.L(24.0f));
+        qVar.setForeground(z80Var.c);
+        org.telegram.messenger.k5.r(null, null, 2131754238, new Object[]{org.telegram.messenger.id.M0(z80Var.d, null)}, textView);
     }
 }

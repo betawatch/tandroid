@@ -15,9 +15,9 @@ import org.telegram.messenger.ye;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.rd0;
+import org.telegram.ui.Components.qd0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y0 {
     public final long A;
@@ -207,12 +207,12 @@ public final class y0 {
         int i7 = 0;
         if (str4 != null) {
             SpannableString spannableString = new SpannableString(str4);
-            if (org.telegram.ui.ActionBar.l6.o2 == null) {
-                org.telegram.ui.ActionBar.l6.Q();
+            if (org.telegram.ui.ActionBar.m6.o2 == null) {
+                org.telegram.ui.ActionBar.m6.Q();
             }
-            CharSequence m10 = org.telegram.messenger.i6.m(spannableString, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), true, null, 0);
+            CharSequence m10 = org.telegram.messenger.i6.m(spannableString, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
             ij.b(m10, this.w, true, false, true, false, 0);
-            e7Var.C0 = ij.B5(m10, this.w, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false);
+            e7Var.C0 = ij.B5(m10, this.w, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
         } else {
             e7Var.C0 = "";
         }
@@ -389,10 +389,10 @@ public final class y0 {
             nativeByteBuffer.writeInt32(hfVar.n);
             nativeByteBuffer.writeFloat(hfVar.o);
             h2.c cVar = hfVar.p;
-            ((rd0) cVar.b).d(nativeByteBuffer);
-            ((rd0) cVar.c).d(nativeByteBuffer);
-            ((rd0) cVar.d).d(nativeByteBuffer);
-            ((rd0) cVar.e).d(nativeByteBuffer);
+            ((qd0) cVar.b).d(nativeByteBuffer);
+            ((qd0) cVar.c).d(nativeByteBuffer);
+            ((qd0) cVar.d).d(nativeByteBuffer);
+            ((qd0) cVar.e).d(nativeByteBuffer);
             nativeByteBuffer.writeFloat(hfVar.q);
             if (hfVar.r == null) {
                 nativeByteBuffer.writeInt32(TLRPC.TL_null.constructor);
@@ -615,10 +615,10 @@ public final class y0 {
                                 hfVar.n = nativeByteBuffer.readInt32(true);
                                 hfVar.o = nativeByteBuffer.readFloat(true);
                                 h2.c cVar = hfVar.p;
-                                ((rd0) cVar.b).c(nativeByteBuffer);
-                                ((rd0) cVar.c).c(nativeByteBuffer);
-                                ((rd0) cVar.d).c(nativeByteBuffer);
-                                ((rd0) cVar.e).c(nativeByteBuffer);
+                                ((qd0) cVar.b).c(nativeByteBuffer);
+                                ((qd0) cVar.c).c(nativeByteBuffer);
+                                ((qd0) cVar.d).c(nativeByteBuffer);
+                                ((qd0) cVar.e).c(nativeByteBuffer);
                                 hfVar.q = nativeByteBuffer.readFloat(true);
                                 if (nativeByteBuffer.readInt32(true) == 1450380236) {
                                     hfVar.r = null;

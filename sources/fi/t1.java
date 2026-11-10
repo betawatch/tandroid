@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t1 extends u1 implements ls {
     public final bi.q1 b;
@@ -42,7 +42,7 @@ public final class t1 extends u1 implements ls {
         q1Var.setOnItemClickListener(kVar);
         q1Var.setOnScrollListener(new ai.b(this, 10));
         addView(q1Var, c8.ha.d(-1, -1.0f, qs.E1, 0.0f, 58.0f, 0.0f, 40.0f));
-        int i10 = k2.y1;
+        int i10 = k2.B1;
         e2 e2Var = new e2(context, k2Var.I0);
         this.d = e2Var;
         e2Var.x = new ai.e(this, 16);
@@ -54,7 +54,7 @@ public final class t1 extends u1 implements ls {
     public final void a(int i7) {
         r1 r1Var = this.c;
         r1.E(r1Var, false);
-        if (this.n.isEmpty() && TextUtils.isEmpty(this.r.i1)) {
+        if (this.n.isEmpty() && TextUtils.isEmpty(this.r.l1)) {
             r1Var.G();
         }
         r1Var.H(null);
@@ -91,20 +91,20 @@ public final class t1 extends u1 implements ls {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i7 = k2.y1;
+        int i7 = k2.B1;
         qs.f(this.r.a).c(this, qs.X0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        int i7 = k2.y1;
+        int i7 = k2.B1;
         qs.f(this.r.a).n(this, qs.X0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        int i11 = k2.y1;
+        int i11 = k2.B1;
         int i12 = this.r.t0;
         setPadding(i12, 0, i12, org.telegram.messenger.g0.n);
         super.onMeasure(i7, i10);

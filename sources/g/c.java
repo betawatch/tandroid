@@ -23,23 +23,23 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.video.MP4Builder;
-import org.telegram.ui.ActionBar.m3;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.d40;
+import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.e40;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.f40;
-import org.telegram.ui.Components.h40;
+import org.telegram.ui.Components.g40;
+import org.telegram.ui.Components.n30;
 import org.telegram.ui.Components.o30;
+import org.telegram.ui.Components.o40;
 import org.telegram.ui.Components.p30;
-import org.telegram.ui.Components.p40;
-import org.telegram.ui.Components.q30;
-import org.telegram.ui.Components.y30;
+import org.telegram.ui.Components.x30;
 import s4.m0;
 import s4.n0;
 import s4.o0;
 import s4.p0;
 import s4.r0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final class c extends Handler {
         float f12;
         int i12;
         long j11;
-        y30 y30Var;
+        x30 x30Var;
         long j12;
         long j13;
         s4.o oVar;
@@ -115,18 +115,18 @@ public final class c extends Handler {
                 break;
             case 1:
                 int i16 = message.what;
-                h40 h40Var = (h40) this.b.get();
-                if (h40Var != null) {
+                g40 g40Var = (g40) this.b.get();
+                if (g40Var != null) {
                     if (i16 == 0) {
                         try {
                             if (r2.a) {
                                 a8.d("InstantCamera start encoder");
                             }
-                            h40.a(h40Var, message.arg1 == 1);
+                            g40.a(g40Var, message.arg1 == 1);
                             break;
                         } catch (Exception e10) {
                             a8.g(e10, true);
-                            h40.b(h40Var, 0, null);
+                            g40.b(g40Var, 0, null);
                             Looper.myLooper().quit();
                             return;
                         }
@@ -134,7 +134,7 @@ public final class c extends Handler {
                         if (r2.a) {
                             a8.d("InstantCamera stop encoder");
                         }
-                        h40.b(h40Var, message.arg1, (e40) message.obj);
+                        g40.b(g40Var, message.arg1, (d40) message.obj);
                         break;
                     } else {
                         int i17 = 5;
@@ -143,147 +143,147 @@ public final class c extends Handler {
                         if (i16 == 2) {
                             long j16 = (message.arg1 << 32) | (message.arg2 & 4294967295L);
                             Integer num = (Integer) message.obj;
-                            if (!h40Var.D0 && h40Var.H0.V) {
+                            if (!g40Var.D0 && g40Var.H0.V) {
                                 try {
-                                    h40Var.d(false);
+                                    g40Var.d(false);
                                 } catch (Exception e11) {
                                     a8.g(e11, true);
                                 }
-                                if (h40Var.w0.equals(num)) {
+                                if (g40Var.w0.equals(num)) {
                                     z9 = false;
                                 } else {
-                                    h40Var.w0 = num;
+                                    g40Var.w0 = num;
                                     z9 = true;
                                 }
-                                long j17 = h40Var.g0;
+                                long j17 = g40Var.g0;
                                 if (j17 >= 0) {
-                                    if (h40Var.f0 == -1) {
-                                        h40Var.f0 = j16 - j17;
+                                    if (g40Var.f0 == -1) {
+                                        g40Var.f0 = j16 - j17;
                                     }
-                                    j16 -= h40Var.f0;
+                                    j16 -= g40Var.f0;
                                 }
                                 if (!z9) {
-                                    long j18 = h40Var.S;
+                                    long j18 = g40Var.S;
                                     if (j18 != -1) {
                                         j3 = j16 - j18;
-                                        h40Var.S = j16;
+                                        g40Var.S = j16;
                                         j10 = j3;
                                         z12 = 3;
-                                        h40Var.Q = false;
-                                        h40Var.O = System.currentTimeMillis();
-                                        if (!h40Var.a0) {
-                                            long j19 = h40Var.Z + j3;
-                                            h40Var.Z = j19;
+                                        g40Var.Q = false;
+                                        g40Var.O = System.currentTimeMillis();
+                                        if (!g40Var.a0) {
+                                            long j19 = g40Var.Z + j3;
+                                            g40Var.Z = j19;
                                             if (j19 >= 200000000) {
-                                                h40Var.a0 = true;
+                                                g40Var.a0 = true;
                                             }
                                         }
-                                        h40Var.R += j3;
-                                        if (h40Var.c0 == -1) {
-                                            h40Var.c0 = j16 / 1000;
+                                        g40Var.R += j3;
+                                        if (g40Var.c0 == -1) {
+                                            g40Var.c0 = j16 / 1000;
                                             if (r2.a) {
-                                                jg.g.u(h40Var.c0, new StringBuilder("InstantCamera first video frame was at "));
+                                                jg.g.u(g40Var.c0, new StringBuilder("InstantCamera first video frame was at "));
                                             }
                                         }
-                                        h40Var.e0 = j16 - h40Var.d0;
-                                        h40Var.d0 = j16;
-                                        p40 p40Var = h40Var.H0;
-                                        floatBuffer = p40Var.I0;
-                                        floatBuffer2 = p40Var.H0;
-                                        FloatBuffer floatBuffer3 = p40Var.J0;
+                                        g40Var.e0 = j16 - g40Var.d0;
+                                        g40Var.d0 = j16;
+                                        o40 o40Var = g40Var.H0;
+                                        floatBuffer = o40Var.I0;
+                                        floatBuffer2 = o40Var.H0;
+                                        FloatBuffer floatBuffer3 = o40Var.J0;
                                         if (floatBuffer != null || floatBuffer2 == null) {
                                             a8.b("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
                                             break;
                                         } else {
-                                            q30 q30Var = h40Var.x0;
+                                            p30 p30Var = g40Var.x0;
                                             int i18 = 3553;
-                                            if (q30Var != null) {
+                                            if (p30Var != null) {
                                                 r43 = z12;
-                                                GLES20.glBindFramebuffer(36160, q30Var.j[0]);
-                                                GLES20.glFramebufferTexture2D(36160, 36064, 3553, q30Var.k[0], 0);
-                                                GLES20.glViewport(0, 0, q30Var.a, q30Var.b);
+                                                GLES20.glBindFramebuffer(36160, p30Var.j[0]);
+                                                GLES20.glFramebufferTexture2D(36160, 36064, 3553, p30Var.k[0], 0);
+                                                GLES20.glViewport(0, 0, p30Var.a, p30Var.b);
                                             } else {
                                                 r43 = z12;
                                             }
-                                            GLES20.glUseProgram(h40Var.m0);
+                                            GLES20.glUseProgram(g40Var.m0);
                                             GLES20.glActiveTexture(33984);
-                                            GLES20.glVertexAttribPointer(h40Var.p0, 3, 5126, false, 12, (Buffer) floatBuffer2);
-                                            GLES20.glEnableVertexAttribArray(h40Var.p0);
-                                            GLES20.glVertexAttribPointer(h40Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer);
-                                            GLES20.glEnableVertexAttribArray(h40Var.q0);
-                                            GLES20.glUniformMatrix4fv(h40Var.n0, 1, false, h40Var.H0.E0, 0);
-                                            GLES20.glUniform2f(h40Var.r0, h40Var.d, h40Var.e);
-                                            p40 p40Var2 = h40Var.H0;
-                                            if (p40Var2.b0[0] == 0 || floatBuffer3 == null || p40Var2.t0) {
+                                            GLES20.glVertexAttribPointer(g40Var.p0, 3, 5126, false, 12, (Buffer) floatBuffer2);
+                                            GLES20.glEnableVertexAttribArray(g40Var.p0);
+                                            GLES20.glVertexAttribPointer(g40Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer);
+                                            GLES20.glEnableVertexAttribArray(g40Var.q0);
+                                            GLES20.glUniformMatrix4fv(g40Var.n0, 1, false, g40Var.H0.E0, 0);
+                                            GLES20.glUniform2f(g40Var.r0, g40Var.d, g40Var.e);
+                                            o40 o40Var2 = g40Var.H0;
+                                            if (o40Var2.b0[0] == 0 || floatBuffer3 == null || o40Var2.t0) {
                                                 i7 = 33984;
                                                 i10 = 36197;
                                                 f10 = 1.0f;
                                             } else {
-                                                if (!h40Var.n) {
+                                                if (!g40Var.n) {
                                                     GLES20.glEnable(3042);
-                                                    h40Var.n = true;
+                                                    g40Var.n = true;
                                                 }
-                                                if (h40Var.H0.M0 != null) {
+                                                if (g40Var.H0.M0 != null) {
                                                     i7 = 33984;
-                                                    GLES20.glUniform2f(h40Var.s0, r4.getWidth(), h40Var.H0.M0.getHeight());
+                                                    GLES20.glUniform2f(g40Var.s0, r4.getWidth(), g40Var.H0.M0.getHeight());
                                                 } else {
                                                     i7 = 33984;
                                                 }
                                                 i10 = 36197;
                                                 f10 = 1.0f;
-                                                GLES20.glVertexAttribPointer(h40Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer3);
-                                                GLES20.glUniformMatrix4fv(h40Var.o0, 1, false, h40Var.H0.G0, 0);
-                                                GLES20.glUniform1f(h40Var.u0, 1.0f);
-                                                GLES20.glBindTexture(36197, h40Var.H0.b0[0]);
+                                                GLES20.glVertexAttribPointer(g40Var.q0, 2, 5126, false, 8, (Buffer) floatBuffer3);
+                                                GLES20.glUniformMatrix4fv(g40Var.o0, 1, false, g40Var.H0.G0, 0);
+                                                GLES20.glUniform1f(g40Var.u0, 1.0f);
+                                                GLES20.glBindTexture(36197, g40Var.H0.b0[0]);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                             }
-                                            p40 p40Var3 = h40Var.H0;
-                                            Size[] sizeArr = p40Var3.m0;
+                                            o40 o40Var3 = g40Var.H0;
+                                            Size[] sizeArr = o40Var3.m0;
                                             if (sizeArr != null) {
-                                                int i19 = h40Var.s0;
-                                                float width = sizeArr[p40Var3.j1].getWidth();
-                                                p40 p40Var4 = h40Var.H0;
+                                                int i19 = g40Var.s0;
+                                                float width = sizeArr[o40Var3.j1].getWidth();
+                                                o40 o40Var4 = g40Var.H0;
                                                 f11 = 2.0f;
-                                                GLES20.glUniform2f(i19, width, p40Var4.m0[p40Var4.j1].getHeight());
-                                                int i20 = h40Var.t0;
-                                                p40 p40Var5 = h40Var.H0;
-                                                float width2 = (f10 / p40Var5.m0[p40Var5.j1].getWidth()) / 2.0f;
-                                                p40 p40Var6 = h40Var.H0;
-                                                GLES20.glUniform2f(i20, width2, (f10 / p40Var6.m0[p40Var6.j1].getHeight()) / 2.0f);
+                                                GLES20.glUniform2f(i19, width, o40Var4.m0[o40Var4.j1].getHeight());
+                                                int i20 = g40Var.t0;
+                                                o40 o40Var5 = g40Var.H0;
+                                                float width2 = (f10 / o40Var5.m0[o40Var5.j1].getWidth()) / 2.0f;
+                                                o40 o40Var6 = g40Var.H0;
+                                                GLES20.glUniform2f(i20, width2, (f10 / o40Var6.m0[o40Var6.j1].getHeight()) / 2.0f);
                                             } else {
                                                 f11 = 2.0f;
                                             }
-                                            p40 p40Var7 = h40Var.H0;
-                                            int i21 = p40Var7.a0[p40Var7.j1];
+                                            o40 o40Var7 = g40Var.H0;
+                                            int i21 = o40Var7.a0[o40Var7.j1];
                                             if (i21 != Integer.MIN_VALUE) {
                                                 i11 = 0;
-                                                GLES20.glUniformMatrix4fv(h40Var.o0, 1, false, h40Var.H0.F0, 0);
-                                                GLES20.glUniform1f(h40Var.u0, h40Var.H0.c0);
+                                                GLES20.glUniformMatrix4fv(g40Var.o0, 1, false, g40Var.H0.F0, 0);
+                                                GLES20.glUniform1f(g40Var.u0, g40Var.H0.c0);
                                                 GLES20.glBindTexture(i10, i21);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                             } else {
                                                 i11 = 0;
                                             }
-                                            GLES20.glDisableVertexAttribArray(h40Var.p0);
-                                            GLES20.glDisableVertexAttribArray(h40Var.q0);
+                                            GLES20.glDisableVertexAttribArray(g40Var.p0);
+                                            GLES20.glDisableVertexAttribArray(g40Var.q0);
                                             GLES20.glBindTexture(i10, i11);
                                             GLES20.glUseProgram(i11);
-                                            q30 q30Var2 = h40Var.x0;
-                                            if (q30Var2 != null) {
+                                            p30 p30Var2 = g40Var.x0;
+                                            if (p30Var2 != null) {
                                                 GLES20.glDisable(3042);
-                                                e4.b bVar = q30Var2.c;
-                                                int[] iArr = q30Var2.k;
+                                                e4.b bVar = p30Var2.c;
+                                                int[] iArr = p30Var2.k;
                                                 GLES20.glFramebufferTexture2D(36160, 36064, 3553, iArr[1], i11);
                                                 GLES20.glViewport(i11, i11, 48, 48);
                                                 f12 = f10;
                                                 GLES20.glUseProgram(bVar.a);
                                                 int i22 = bVar.d;
-                                                FloatBuffer floatBuffer4 = q30Var2.g;
+                                                FloatBuffer floatBuffer4 = p30Var2.g;
                                                 GLES20.glVertexAttribPointer(i22, 3, 5126, false, 12, floatBuffer4.position(i11));
                                                 int i23 = bVar.d;
                                                 GLES20.glEnableVertexAttribArray(i23);
                                                 int i24 = bVar.e;
-                                                FloatBuffer floatBuffer5 = q30Var2.h;
+                                                FloatBuffer floatBuffer5 = p30Var2.h;
                                                 GLES20.glVertexAttribPointer(i24, 2, 5126, false, 8, floatBuffer5.position(i11));
                                                 int i25 = bVar.e;
                                                 GLES20.glEnableVertexAttribArray(i25);
@@ -297,22 +297,22 @@ public final class c extends Handler {
                                                 GLES20.glUseProgram(i11);
                                                 int i26 = i11;
                                                 for (int i27 = 2; i26 < i27; i27 = 2) {
-                                                    o30 o30Var = q30Var2.e;
+                                                    n30 n30Var = p30Var2.e;
                                                     GLES20.glFramebufferTexture2D(36160, 36064, i18, iArr[i26 == 0 ? i27 : 1], i11);
                                                     GLES20.glViewport(i11, i11, 48, 48);
-                                                    int i28 = o30Var.a;
-                                                    int i29 = o30Var.e;
-                                                    int i30 = o30Var.d;
+                                                    int i28 = n30Var.a;
+                                                    int i29 = n30Var.e;
+                                                    int i30 = n30Var.d;
                                                     GLES20.glUseProgram(i28);
-                                                    GLES20.glVertexAttribPointer(o30Var.d, 3, 5126, false, 12, floatBuffer4.position(i11));
+                                                    GLES20.glVertexAttribPointer(n30Var.d, 3, 5126, false, 12, floatBuffer4.position(i11));
                                                     GLES20.glEnableVertexAttribArray(i30);
-                                                    GLES20.glVertexAttribPointer(o30Var.e, 2, 5126, false, 8, floatBuffer5.position(i11));
+                                                    GLES20.glVertexAttribPointer(n30Var.e, 2, 5126, false, 8, floatBuffer5.position(i11));
                                                     GLES20.glEnableVertexAttribArray(i29);
                                                     GLES20.glActiveTexture(i7);
                                                     GLES20.glBindTexture(i18, iArr[i26 == 0 ? (char) 1 : (char) 2]);
                                                     i11 = 0;
-                                                    GLES20.glUniform1i(o30Var.f, 0);
-                                                    GLES20.glUniform2f(o30Var.g, i26 == 0 ? 0.020833334f : 0.0f, i26 == 1 ? 0.020833334f : 0.0f);
+                                                    GLES20.glUniform1i(n30Var.f, 0);
+                                                    GLES20.glUniform2f(n30Var.g, i26 == 0 ? 0.020833334f : 0.0f, i26 == 1 ? 0.020833334f : 0.0f);
                                                     GLES20.glDrawArrays(5, 0, 4);
                                                     GLES20.glBindTexture(3553, 0);
                                                     GLES20.glDisableVertexAttribArray(i29);
@@ -321,31 +321,31 @@ public final class c extends Handler {
                                                     i26++;
                                                     i18 = 3553;
                                                 }
-                                                p30 p30Var = q30Var2.f;
+                                                o30 o30Var = p30Var2.f;
                                                 GLES20.glBindFramebuffer(36160, i11);
                                                 GLES20.glFramebufferTexture2D(36160, 36064, i18, iArr[1], i11);
-                                                GLES20.glViewport(i11, i11, q30Var2.a, q30Var2.b);
-                                                GLES20.glUseProgram(p30Var.a);
-                                                GLES20.glVertexAttribPointer(p30Var.d, 3, 5126, false, 12, floatBuffer4.position(i11));
-                                                GLES20.glEnableVertexAttribArray(p30Var.d);
-                                                GLES20.glVertexAttribPointer(p30Var.e, 2, 5126, false, 8, floatBuffer5.position(i11));
-                                                GLES20.glEnableVertexAttribArray(p30Var.e);
+                                                GLES20.glViewport(i11, i11, p30Var2.a, p30Var2.b);
+                                                GLES20.glUseProgram(o30Var.a);
+                                                GLES20.glVertexAttribPointer(o30Var.d, 3, 5126, false, 12, floatBuffer4.position(i11));
+                                                GLES20.glEnableVertexAttribArray(o30Var.d);
+                                                GLES20.glVertexAttribPointer(o30Var.e, 2, 5126, false, 8, floatBuffer5.position(i11));
+                                                GLES20.glEnableVertexAttribArray(o30Var.e);
                                                 GLES20.glActiveTexture(33985);
                                                 GLES20.glBindTexture(3553, iArr[1]);
                                                 GLES20.glActiveTexture(i7);
                                                 GLES20.glBindTexture(3553, iArr[0]);
-                                                GLES20.glUniform1i(p30Var.f, 0);
-                                                GLES20.glUniform1i(p30Var.g, 1);
-                                                GLES20.glUniform2f(p30Var.h, q30Var2.a / f11, q30Var2.b / f11);
+                                                GLES20.glUniform1i(o30Var.f, 0);
+                                                GLES20.glUniform1i(o30Var.g, 1);
+                                                GLES20.glUniform2f(o30Var.h, p30Var2.a / f11, p30Var2.b / f11);
                                                 GLES20.glDrawArrays(5, 0, 4);
                                                 GLES20.glActiveTexture(33985);
                                                 GLES20.glBindTexture(3553, 0);
                                                 GLES20.glActiveTexture(i7);
                                                 GLES20.glBindTexture(3553, 0);
-                                                GLES20.glDisableVertexAttribArray(p30Var.e);
-                                                GLES20.glDisableVertexAttribArray(p30Var.d);
+                                                GLES20.glDisableVertexAttribArray(o30Var.e);
+                                                GLES20.glDisableVertexAttribArray(o30Var.d);
                                                 GLES20.glUseProgram(0);
-                                                e4.b bVar2 = q30Var2.d;
+                                                e4.b bVar2 = p30Var2.d;
                                                 GLES20.glEnable(3042);
                                                 int i31 = bVar2.a;
                                                 int i32 = bVar2.e;
@@ -361,8 +361,8 @@ public final class c extends Handler {
                                                         GLES20.glBindTexture(3553, iArr[r43]);
                                                         i12 = 4;
                                                     } else {
-                                                        int i35 = q30Var2.i;
-                                                        q30Var2.i = i35 + 1;
+                                                        int i35 = p30Var2.i;
+                                                        p30Var2.i = i35 + 1;
                                                         GLES20.glVertexAttribPointer(bVar2.d, 3, 5126, false, 12, floatBuffer4.position(24));
                                                         GLES20.glEnableVertexAttribArray(i33);
                                                         GLES20.glVertexAttribPointer(bVar2.e, 2, 5126, false, 8, floatBuffer5.position(((i35 % 27) * 8) + 16));
@@ -378,52 +378,52 @@ public final class c extends Handler {
                                                 }
                                                 GLES20.glUseProgram(0);
                                                 GLES20.glDisable(3042);
-                                                if (h40Var.n) {
+                                                if (g40Var.n) {
                                                     GLES20.glEnable(3042);
                                                 }
                                             } else {
                                                 f12 = f10;
                                             }
-                                            EGLExt.eglPresentationTimeANDROID(h40Var.s, h40Var.D, h40Var.R);
-                                            EGL14.eglSwapBuffers(h40Var.s, h40Var.D);
-                                            if (h40Var.B0 != null && iz.o() == 2 && h40Var.C0 % 33 == 0) {
-                                                h40Var.B0.postRunnable(new et(h40Var, i17));
+                                            EGLExt.eglPresentationTimeANDROID(g40Var.s, g40Var.D, g40Var.R);
+                                            EGL14.eglSwapBuffers(g40Var.s, g40Var.D);
+                                            if (g40Var.B0 != null && iz.o() == 2 && g40Var.C0 % 33 == 0) {
+                                                g40Var.B0.postRunnable(new dt(g40Var, i17));
                                             }
-                                            h40Var.C0++;
-                                            p40 p40Var8 = h40Var.H0;
-                                            if (p40Var8.b0[0] != 0) {
-                                                float f13 = p40Var8.c0;
-                                                if (f13 < f12 && !p40Var8.t0) {
+                                            g40Var.C0++;
+                                            o40 o40Var8 = g40Var.H0;
+                                            if (o40Var8.b0[0] != 0) {
+                                                float f13 = o40Var8.c0;
+                                                if (f13 < f12 && !o40Var8.t0) {
                                                     float f14 = (j10 / 2.0E8f) + f13;
-                                                    p40Var8.c0 = f14;
+                                                    o40Var8.c0 = f14;
                                                     if (f14 > f12) {
                                                         GLES20.glDisable(3042);
-                                                        h40Var.n = false;
-                                                        p40 p40Var9 = h40Var.H0;
-                                                        p40Var9.c0 = f12;
-                                                        GLES20.glDeleteTextures(1, p40Var9.b0, 0);
-                                                        p40 p40Var10 = h40Var.H0;
-                                                        p40Var10.b0[0] = 0;
-                                                        if (!p40Var10.J) {
-                                                            h40Var.H0.J = true;
-                                                            g0.h3(new f40(h40Var, 4));
+                                                        g40Var.n = false;
+                                                        o40 o40Var9 = g40Var.H0;
+                                                        o40Var9.c0 = f12;
+                                                        GLES20.glDeleteTextures(1, o40Var9.b0, 0);
+                                                        o40 o40Var10 = g40Var.H0;
+                                                        o40Var10.b0[0] = 0;
+                                                        if (!o40Var10.J) {
+                                                            g40Var.H0.J = true;
+                                                            g0.h3(new e40(g40Var, 4));
                                                             break;
                                                         }
                                                     }
                                                 }
                                             }
-                                            if (!p40Var8.J) {
-                                                h40Var.H0.J = true;
-                                                g0.h3(new f40(h40Var, i17));
+                                            if (!o40Var8.J) {
+                                                g40Var.H0.J = true;
+                                                g0.h3(new e40(g40Var, i17));
                                                 break;
                                             }
                                         }
                                     }
                                 }
-                                if (h40Var.R != 0 && !h40Var.Q) {
-                                    j3 = j16 - h40Var.S;
+                                if (g40Var.R != 0 && !g40Var.Q) {
+                                    j3 = j16 - g40Var.S;
                                     boolean z13 = 3;
-                                    long currentTimeMillis = (System.currentTimeMillis() - h40Var.O) * 1000000;
+                                    long currentTimeMillis = (System.currentTimeMillis() - g40Var.O) * 1000000;
                                     if (j3 < 0 || Math.abs(currentTimeMillis - j3) > 100000000) {
                                         j3 = currentTimeMillis;
                                     }
@@ -435,32 +435,32 @@ public final class c extends Handler {
                                 }
                                 j3 = 0;
                                 z11 = z10;
-                                h40Var.S = j16;
+                                g40Var.S = j16;
                                 j10 = 0;
                                 z12 = z11;
-                                h40Var.Q = false;
-                                h40Var.O = System.currentTimeMillis();
-                                if (!h40Var.a0) {
+                                g40Var.Q = false;
+                                g40Var.O = System.currentTimeMillis();
+                                if (!g40Var.a0) {
                                 }
-                                h40Var.R += j3;
-                                if (h40Var.c0 == -1) {
+                                g40Var.R += j3;
+                                if (g40Var.c0 == -1) {
                                 }
-                                h40Var.e0 = j16 - h40Var.d0;
-                                h40Var.d0 = j16;
-                                p40 p40Var11 = h40Var.H0;
-                                floatBuffer = p40Var11.I0;
-                                floatBuffer2 = p40Var11.H0;
-                                FloatBuffer floatBuffer32 = p40Var11.J0;
+                                g40Var.e0 = j16 - g40Var.d0;
+                                g40Var.d0 = j16;
+                                o40 o40Var11 = g40Var.H0;
+                                floatBuffer = o40Var11.I0;
+                                floatBuffer2 = o40Var11.H0;
+                                FloatBuffer floatBuffer32 = o40Var11.J0;
                                 if (floatBuffer != null) {
                                 }
                                 a8.b("InstantCamera handleVideoFrameAvailable skip frame " + floatBuffer + " " + floatBuffer2);
                             }
                         } else if (i16 == 3) {
-                            y30 y30Var2 = (y30) message.obj;
-                            if (!h40Var.D0 && !h40Var.l0) {
-                                h40Var.L.add(y30Var2);
-                                if (h40Var.h0 == -1) {
-                                    if (h40Var.c0 == -1) {
+                            x30 x30Var2 = (x30) message.obj;
+                            if (!g40Var.D0 && !g40Var.l0) {
+                                g40Var.L.add(x30Var2);
+                                if (g40Var.h0 == -1) {
+                                    if (g40Var.c0 == -1) {
                                         if (r2.a) {
                                             a8.b("InstantCamera video record not yet started");
                                             break;
@@ -468,87 +468,87 @@ public final class c extends Handler {
                                     } else {
                                         while (true) {
                                             int i36 = 0;
-                                            while (i36 < y30Var2.d) {
-                                                if (i36 != 0 || Math.abs(h40Var.c0 - y30Var2.b[i36]) <= 10000000) {
-                                                    long j20 = y30Var2.b[i36];
+                                            while (i36 < x30Var2.d) {
+                                                if (i36 != 0 || Math.abs(g40Var.c0 - x30Var2.b[i36]) <= 10000000) {
+                                                    long j20 = x30Var2.b[i36];
                                                     j11 = j15;
-                                                    if (j20 >= h40Var.c0) {
-                                                        y30Var2.e = i36;
-                                                        h40Var.h0 = j20;
+                                                    if (j20 >= g40Var.c0) {
+                                                        x30Var2.e = i36;
+                                                        g40Var.h0 = j20;
                                                         if (r2.a) {
-                                                            jg.g.u(y30Var2.b[i36], jg.g.n(i36, "InstantCamera found first audio frame at ", " timestamp = "));
+                                                            jg.g.u(x30Var2.b[i36], jg.g.n(i36, "InstantCamera found first audio frame at ", " timestamp = "));
                                                         }
                                                     } else {
                                                         if (r2.a) {
-                                                            jg.g.u(y30Var2.b[i36], jg.g.n(i36, "InstantCamera ignore first audio frame at ", " timestamp = "));
+                                                            jg.g.u(x30Var2.b[i36], jg.g.n(i36, "InstantCamera ignore first audio frame at ", " timestamp = "));
                                                         }
                                                         i36++;
                                                         j15 = j11;
                                                     }
                                                 } else {
-                                                    long j21 = h40Var.c0;
-                                                    long j22 = y30Var2.b[i36];
-                                                    h40Var.b0 = j21 - j22;
-                                                    h40Var.h0 = j22;
+                                                    long j21 = g40Var.c0;
+                                                    long j22 = x30Var2.b[i36];
+                                                    g40Var.b0 = j21 - j22;
+                                                    g40Var.h0 = j22;
                                                     if (r2.a) {
-                                                        jg.g.u(h40Var.b0, new StringBuilder("InstantCamera detected desync between audio and video "));
+                                                        jg.g.u(g40Var.b0, new StringBuilder("InstantCamera detected desync between audio and video "));
                                                     }
                                                 }
                                             }
                                             long j23 = j15;
                                             if (r2.a) {
-                                                jg.g.s(y30Var2.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                jg.g.s(x30Var2.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
-                                            h40Var.L.remove(y30Var2);
-                                            if (h40Var.L.isEmpty()) {
+                                            g40Var.L.remove(x30Var2);
+                                            if (g40Var.L.isEmpty()) {
                                                 break;
                                             } else {
-                                                y30Var2 = (y30) h40Var.L.get(0);
+                                                x30Var2 = (x30) g40Var.L.get(0);
                                                 j15 = j23;
                                             }
                                         }
-                                        if (h40Var.P == j11) {
-                                            h40Var.P = y30Var2.b[y30Var2.e];
+                                        if (g40Var.P == j11) {
+                                            g40Var.P = x30Var2.b[x30Var2.e];
                                         }
-                                        if (h40Var.L.size() > 1) {
-                                            y30Var2 = (y30) h40Var.L.get(0);
+                                        if (g40Var.L.size() > 1) {
+                                            x30Var2 = (x30) g40Var.L.get(0);
                                         }
-                                        y30Var = y30Var2;
-                                        h40Var.d(false);
+                                        x30Var = x30Var2;
+                                        g40Var.d(false);
                                         boolean z14 = false;
-                                        while (y30Var != null) {
+                                        while (x30Var != null) {
                                             try {
-                                                int dequeueInputBuffer = h40Var.F.dequeueInputBuffer(j14);
+                                                int dequeueInputBuffer = g40Var.F.dequeueInputBuffer(j14);
                                                 if (dequeueInputBuffer >= 0) {
-                                                    ByteBuffer inputBuffer = h40Var.F.getInputBuffer(dequeueInputBuffer);
-                                                    long[] jArr = y30Var.b;
-                                                    int i37 = y30Var.e;
+                                                    ByteBuffer inputBuffer = g40Var.F.getInputBuffer(dequeueInputBuffer);
+                                                    long[] jArr = x30Var.b;
+                                                    int i37 = x30Var.e;
                                                     long j24 = jArr[i37];
                                                     while (true) {
-                                                        int i38 = y30Var.d;
+                                                        int i38 = x30Var.d;
                                                         if (i37 <= i38) {
                                                             if (i37 < i38) {
                                                                 j12 = j14;
-                                                                j13 = y30Var.b[i37] - h40Var.P;
-                                                                if (h40Var.W || (y30Var.b[i37] < h40Var.d0 - h40Var.b0 && j13 < 60000000)) {
-                                                                    if (inputBuffer.remaining() < y30Var.c[i37]) {
-                                                                        y30Var.e = i37;
+                                                                j13 = x30Var.b[i37] - g40Var.P;
+                                                                if (g40Var.W || (x30Var.b[i37] < g40Var.d0 - g40Var.b0 && j13 < 60000000)) {
+                                                                    if (inputBuffer.remaining() < x30Var.c[i37]) {
+                                                                        x30Var.e = i37;
                                                                     } else {
-                                                                        inputBuffer.put(y30Var.a[i37]);
+                                                                        inputBuffer.put(x30Var.a[i37]);
                                                                     }
                                                                 }
                                                             } else {
                                                                 j12 = j14;
                                                             }
-                                                            if (i37 >= y30Var.d - 1) {
-                                                                h40Var.L.remove(y30Var);
-                                                                if (h40Var.W) {
-                                                                    h40Var.z0.put(y30Var);
+                                                            if (i37 >= x30Var.d - 1) {
+                                                                g40Var.L.remove(x30Var);
+                                                                if (g40Var.W) {
+                                                                    g40Var.z0.put(x30Var);
                                                                 }
-                                                                if (h40Var.L.isEmpty()) {
-                                                                    z14 = y30Var.f;
+                                                                if (g40Var.L.isEmpty()) {
+                                                                    z14 = x30Var.f;
                                                                 } else {
-                                                                    y30Var = (y30) h40Var.L.get(0);
+                                                                    x30Var = (x30) g40Var.L.get(0);
                                                                 }
                                                             }
                                                             i37++;
@@ -561,21 +561,21 @@ public final class c extends Handler {
                                                         if (j13 >= 60000000) {
                                                             a8.b("InstantCamera stop audio encoding because recorded time more than 60s");
                                                         } else {
-                                                            a8.b("InstantCamera stop audio encoding because of stoped video recording at " + y30Var.b[i37] + " last video " + h40Var.d0);
+                                                            a8.b("InstantCamera stop audio encoding because of stoped video recording at " + x30Var.b[i37] + " last video " + g40Var.d0);
                                                         }
                                                     }
-                                                    h40Var.l0 = true;
-                                                    h40Var.L.clear();
+                                                    g40Var.l0 = true;
+                                                    g40Var.L.clear();
                                                     z14 = true;
-                                                    y30Var = null;
-                                                    long j25 = j24 == j12 ? j12 : j24 - h40Var.P;
-                                                    long j26 = h40Var.k0;
+                                                    x30Var = null;
+                                                    long j25 = j24 == j12 ? j12 : j24 - g40Var.P;
+                                                    long j26 = g40Var.k0;
                                                     if (j26 >= j12) {
                                                         j25 += j26;
                                                     }
-                                                    h40Var.j0 = j25 - h40Var.i0;
-                                                    h40Var.i0 = j25;
-                                                    h40Var.F.queueInputBuffer(dequeueInputBuffer, 0, inputBuffer.position(), j25, z14 ? 4 : 0);
+                                                    g40Var.j0 = j25 - g40Var.i0;
+                                                    g40Var.i0 = j25;
+                                                    g40Var.F.queueInputBuffer(dequeueInputBuffer, 0, inputBuffer.position(), j25, z14 ? 4 : 0);
                                                 } else {
                                                     j12 = j14;
                                                 }
@@ -589,49 +589,49 @@ public final class c extends Handler {
                                     }
                                 }
                                 j11 = j15;
-                                if (h40Var.P == j11) {
+                                if (g40Var.P == j11) {
                                 }
-                                if (h40Var.L.size() > 1) {
+                                if (g40Var.L.size() > 1) {
                                 }
-                                y30Var = y30Var2;
-                                h40Var.d(false);
+                                x30Var = x30Var2;
+                                g40Var.d(false);
                                 boolean z142 = false;
-                                while (y30Var != null) {
+                                while (x30Var != null) {
                                 }
                             }
                         } else if (i16 == 4) {
                             if (r2.a) {
                                 a8.d("InstantCamera pause encoder");
                             }
-                            h40Var.D0 = true;
-                            File file = h40Var.H0.f0;
+                            g40Var.D0 = true;
+                            File file = g40Var.H0.f0;
                             if (file != null) {
                                 file.delete();
-                                h40Var.H0.f0 = null;
+                                g40Var.H0.f0 = null;
                             }
-                            p40 p40Var12 = h40Var.H0;
-                            p40Var12.f0 = e7.x(p40Var12.e, true);
+                            o40 o40Var12 = g40Var.H0;
+                            o40Var12.f0 = e7.x(o40Var12.e, true);
                             try {
                                 a8.b("InstantCamera handlePauseRecording drain encoders");
-                                h40Var.d(false);
+                                g40Var.d(false);
                             } catch (Exception e12) {
                                 a8.g(e12, true);
                             }
-                            MP4Builder mP4Builder = h40Var.K;
+                            MP4Builder mP4Builder = g40Var.K;
                             if (mP4Builder != null) {
                                 try {
-                                    mP4Builder.finishMovie(h40Var.H0.f0);
+                                    mP4Builder.finishMovie(g40Var.H0.f0);
                                 } catch (Exception e13) {
                                     a8.g(e13, true);
                                 }
                             }
-                            g0.h3(new f40(h40Var, i14));
+                            g0.h3(new e40(g40Var, i14));
                             break;
                         } else if (i16 == 5) {
                             if (r2.a) {
                                 a8.d("InstantCamera resume encoder");
                             }
-                            h40Var.D0 = false;
+                            g40Var.D0 = false;
                             break;
                         }
                     }
@@ -797,10 +797,10 @@ public final class c extends Handler {
                                         }
                                     }
                                 }
-                                m3 m3Var = r0Var.F;
-                                if (m3Var != null && (n0Var instanceof s4.q)) {
+                                n3 n3Var = r0Var.F;
+                                if (n3Var != null && (n0Var instanceof s4.q)) {
                                     s4.q qVar = (s4.q) n0Var;
-                                    s4.e eVar = (s4.e) ((qe.h) m3Var.b).c;
+                                    s4.e eVar = (s4.e) ((qe.h) n3Var.b).c;
                                     if (eVar.e == qVar) {
                                         eVar.i(eVar.c(), 2);
                                     }

@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class wi extends org.telegram.ui.Components.kn {
+public final class wi extends org.telegram.ui.Components.jn {
     public final /* synthetic */ cn A0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wi(cn cnVar, Context context, cn cnVar2, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, cnVar2, z9, g6Var);
+    public wi(cn cnVar, Context context, cn cnVar2, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, cnVar2, z9, h6Var);
         this.A0 = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.kn
+    @Override // org.telegram.ui.Components.jn
     public final boolean a() {
         boolean z9;
         cn cnVar = this.A0;
@@ -28,7 +28,7 @@ public final class wi extends org.telegram.ui.Components.kn {
         return !cnVar.ea() || cnVar.v4;
     }
 
-    @Override // org.telegram.ui.Components.kn
+    @Override // org.telegram.ui.Components.jn
     public final boolean d() {
         cn cnVar = this.A0;
         TLRPC.User user = cnVar.f;
@@ -44,13 +44,13 @@ public final class wi extends org.telegram.ui.Components.kn {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.kn
+    @Override // org.telegram.ui.Components.jn
     public final void f() {
         cn cnVar = this.A0;
         cnVar.Na(cnVar.da() ? "" : null);
     }
 
-    @Override // org.telegram.ui.Components.kn
+    @Override // org.telegram.ui.Components.jn
     public final boolean o() {
         return this.A0.f4 == 3;
     }

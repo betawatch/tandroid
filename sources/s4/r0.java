@@ -12,16 +12,16 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class r0 extends g3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public m0 D;
     public boolean E;
-    public m3 F;
+    public n3 F;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.y s;
     public final ArrayList w;
@@ -33,7 +33,7 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new vy(componentName, 15));
+        super(context, new uy(componentName, 15));
         this.w = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.y();

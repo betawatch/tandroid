@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.l21;
+import org.telegram.ui.Components.k21;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gn implements Runnable {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final /* synthetic */ class gn implements Runnable {
                     int i13 = qpVar.currentAccount;
                     Object[] objArr = new Object[i7];
                     objArr[0] = Boolean.FALSE;
-                    org.telegram.ui.Components.v4.c0(i13, tL_error, f2Var, tL_messages_migrateChat, objArr);
+                    org.telegram.ui.Components.u4.c0(i13, tL_error, f2Var, tL_messages_migrateChat, objArr);
                     break;
                 }
                 break;
@@ -114,7 +114,7 @@ public final /* synthetic */ class gn implements Runnable {
                     int i14 = qpVar2.currentAccount;
                     Object[] objArr2 = new Object[i10];
                     objArr2[0] = Boolean.FALSE;
-                    org.telegram.ui.Components.v4.c0(i14, tL_error2, f2Var2, tL_channels_convertToGigagroup, objArr2);
+                    org.telegram.ui.Components.u4.c0(i14, tL_error2, f2Var2, tL_channels_convertToGigagroup, objArr2);
                     break;
                 }
                 break;
@@ -323,7 +323,7 @@ public final /* synthetic */ class gn implements Runnable {
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj6;
                 f10Var.getClass();
                 storyItem.translatedLng = (String) obj5;
-                storyItem.translatedText = l21.P0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
+                storyItem.translatedText = k21.P0((TLRPC.TL_textWithEntities) obj4, (TLRPC.TL_textWithEntities) obj3);
                 f10Var.getMessagesController().P1().k.h(storyItem.dialogId, storyItem);
                 f10Var.J.remove((d10) obj2);
                 ((bi.r3) obj).run();

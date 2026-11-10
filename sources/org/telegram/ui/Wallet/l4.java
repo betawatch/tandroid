@@ -1,26 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l4 implements View.OnClickListener {
+public final /* synthetic */ class l4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] b;
+    public final /* synthetic */ z5 b;
 
-    public /* synthetic */ l4(org.telegram.ui.ActionBar.v2[] v2VarArr, int i7) {
+    public /* synthetic */ l4(z5 z5Var, int i7) {
         this.a = i7;
-        this.b = v2VarArr;
+        this.b = z5Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b[0].dismiss();
+                z5 z5Var = this.b;
+                z5Var.getClass();
+                z5Var.N0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                this.b[0].dismiss();
+                z5 z5Var2 = this.b;
+                z5Var2.getClass();
+                z5Var2.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z5Var2.U0();
                 break;
         }
     }

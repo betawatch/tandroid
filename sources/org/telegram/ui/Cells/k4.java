@@ -11,9 +11,9 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k4 implements org.telegram.messenger.x5 {
     public boolean D;
@@ -24,7 +24,7 @@ public final class k4 implements org.telegram.messenger.x5 {
     public final int I;
     public final int J;
     public int K;
-    public ny0 L;
+    public my0 L;
     public boolean M;
     public int a;
     public int b;
@@ -61,7 +61,7 @@ public final class k4 implements org.telegram.messenger.x5 {
         if (this.y) {
             int i11 = this.J;
             this.K = i11;
-            this.L = new ny0(org.telegram.messenger.g0.g0(i11, true, false), 12.0f, null);
+            this.L = new my0(org.telegram.messenger.g0.g0(i11, true, false), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(q1Var);
         this.f = imageReceiver;

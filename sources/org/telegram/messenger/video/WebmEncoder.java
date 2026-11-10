@@ -33,16 +33,16 @@ import org.telegram.messenger.t0;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
+import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.u5;
 import sg.b0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -155,8 +155,8 @@ public class WebmEncoder {
                 for (int i12 = (int) f12; i11 != i12; i12--) {
                     h20Var.J.r(true);
                 }
-                s5 s5Var = h20Var.J.w;
-                Bitmap bitmap3 = s5Var != null ? s5Var.b : null;
+                r5 r5Var = h20Var.J.w;
+                Bitmap bitmap3 = r5Var != null ? r5Var.b : null;
                 if (bitmap3 != null) {
                     canvas.drawBitmap(bitmap3, h20Var.H, this.bitmapPaint);
                     return;
@@ -212,11 +212,11 @@ public class WebmEncoder {
                 h20Var.F = a10 != null ? a10.a[1] / this.fps : 0.0f;
             } else if ((b10 & 4) != 0) {
                 h20Var.K = false;
-                v5 v5Var = new v5(new File(h20Var.j), true, 0L, 0, null, null, null, 0L, p10.s0, true, 512, 512, null, 0, true);
-                h20Var.J = v5Var;
-                h20Var.F = v5Var.d[5] / this.fps;
+                u5 u5Var = new u5(new File(h20Var.j), true, 0L, 0, null, null, null, 0L, p10.s0, true, 512, 512, null, 0, true);
+                h20Var.J = u5Var;
+                h20Var.F = u5Var.d[5] / this.fps;
                 h20Var.E = 1.0f;
-                v5Var.r(true);
+                u5Var.r(true);
             } else {
                 String str = h20Var.j;
                 if (!TextUtils.isEmpty(h20Var.t) && (h20Var.b & 16) != 0) {
@@ -292,8 +292,8 @@ public class WebmEncoder {
                     g20Var.b = h20Var2;
                     h20Var2.j = g20Var.a;
                     h20Var2.b = g20Var.c;
-                    r5 r5Var = new r5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
-                        @Override // org.telegram.ui.Components.r5, android.text.style.ReplacementSpan
+                    q5 q5Var = new q5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
+                        @Override // org.telegram.ui.Components.q5, android.text.style.ReplacementSpan
                         public void draw(Canvas canvas, CharSequence charSequence, int i11, int i12, float f10, int i13, int i14, int i15, Paint paint) {
                             super.draw(canvas, charSequence, i11, i12, f10, i13, i14, i15, paint);
                             h20 h20Var3 = h20Var;
@@ -327,7 +327,7 @@ public class WebmEncoder {
                         }
                     };
                     int i11 = g20Var.offset;
-                    spannableString.setSpan(r5Var, i11, g20Var.length + i11, 33);
+                    spannableString.setSpan(q5Var, i11, g20Var.length + i11, 33);
                 }
                 i7 = i10;
             }
@@ -370,13 +370,13 @@ public class WebmEncoder {
         }
 
         private void setupMatrix(h20 h20Var) {
-            v5 v5Var;
+            u5 u5Var;
             Matrix matrix = new Matrix();
             h20Var.H = matrix;
             Bitmap bitmap = h20Var.G;
-            if (bitmap == null && (v5Var = h20Var.J) != null) {
-                s5 s5Var = v5Var.w;
-                bitmap = s5Var != null ? s5Var.b : null;
+            if (bitmap == null && (u5Var = h20Var.J) != null) {
+                r5 r5Var = u5Var.w;
+                bitmap = r5Var != null ? r5Var.b : null;
             }
             if (bitmap != null) {
                 matrix.postScale(1.0f / bitmap.getWidth(), 1.0f / bitmap.getHeight());

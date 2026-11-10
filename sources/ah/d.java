@@ -35,14 +35,14 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.jd;
-import org.telegram.ui.Components.n20;
+import org.telegram.ui.Components.id;
+import org.telegram.ui.Components.m20;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.af;
+import org.telegram.ui.bf;
 import ug.w0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -72,20 +72,20 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 ((androidx.mediarouter.app.g) this.b).dismiss();
                 break;
             case 3:
-                ((n20) this.b).dismiss();
+                ((m20) this.b).dismiss();
                 break;
             case 4:
                 ((e1) this.b).dismiss();
                 break;
             case 5:
                 h1 h1Var = (h1) this.b;
-                cg.b bVar = h1Var.v1.a;
+                cg.b bVar = h1Var.y1.a;
                 cg.b bVar2 = cg.b.b;
                 if (bVar == bVar2) {
                     bVar2 = cg.b.a;
                 }
                 h1Var.J0(cg.a.i(0L, bVar2), true, false, true);
-                h1Var.j1.setText("");
+                h1Var.m1.setText("");
                 break;
             case 6:
                 ((w1) this.b).dismiss();
@@ -180,13 +180,13 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 26:
-                ((af) this.b).run();
+                ((bf) this.b).run();
                 break;
             case 27:
-                ((af) this.b).run();
+                ((bf) this.b).run();
                 break;
             case 28:
-                ChatActivityEnterView.e(((jd) ((k0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                ChatActivityEnterView.e(((id) ((k0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             default:
                 ((d0) this.b).run();

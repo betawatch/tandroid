@@ -14,10 +14,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.ie0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                         vaVar2.E2.addListener(new u9(vaVar2, 2));
                         vaVar2.E2.setStartDelay(80L);
                         vaVar2.E2.setDuration(z10 ? 320L : 450L);
-                        vaVar2.E2.setInterpolator(z10 ? xq.i : xq.h);
+                        vaVar2.E2.setInterpolator(z10 ? wq.i : wq.h);
                         vaVar2.E2.start();
                         vaVar2.n.addView(vaVar2.C2, new ViewGroup.LayoutParams(-1, -1));
                         org.telegram.messenger.g0.h3(new u8(vaVar2, 4));
@@ -126,11 +126,11 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
                         if (m3Var.getMeasuredWidth() < 0) {
                             m3Var.G = M0;
                         } else {
-                            org.telegram.ui.Components.i6 i6Var = m3Var.H;
+                            org.telegram.ui.Components.h6 h6Var = m3Var.H;
                             if (!id.a0 && z12) {
                                 z9 = true;
                             }
-                            i6Var.t(M0, z9, true);
+                            h6Var.t(M0, z9, true);
                         }
                         vaVar.k1.w();
                     }
@@ -142,7 +142,7 @@ public final /* synthetic */ class w8 implements View.OnClickListener {
             case 3:
                 boolean k10 = vaVar.X0.k();
                 vaVar.X0.x(-9982, k10);
-                ((ie0) vaVar.j1.c).a(!k10, true);
+                ((he0) vaVar.j1.c).a(!k10, true);
                 break;
             case 4:
                 if (vaVar.B0 != null && !vaVar.S1) {

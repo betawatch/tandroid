@@ -7,12 +7,12 @@ import android.graphics.Paint;
 import android.text.TextPaint;
 import fi.e5;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.ca;
+import org.telegram.ui.Components.ba;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q0 extends org.telegram.ui.Cells.t0 {
-    public final ca t2;
+    public final ba t2;
     public final TextPaint u2;
     public final /* synthetic */ s0 v2;
 
@@ -20,7 +20,7 @@ public final class q0 extends org.telegram.ui.Cells.t0 {
     public q0(s0 s0Var, Context context, t0 t0Var) {
         super(context, t0Var, false);
         this.v2 = s0Var;
-        this.t2 = new ca(s0Var.d, this, 10, false);
+        this.t2 = new ba(s0Var.d, this, 10, false);
         TextPaint textPaint = new TextPaint(1);
         this.u2 = textPaint;
         textPaint.setTypeface(org.telegram.messenger.g0.o());
@@ -37,19 +37,19 @@ public final class q0 extends org.telegram.ui.Cells.t0 {
             e5 e5Var = this.v2.h;
             e5Var.v0 = true;
             boolean z9 = e5Var.B0;
-            ca caVar = this.t2;
-            if (caVar.r != z9) {
-                caVar.r = z9;
-                if (caVar.i == 10) {
+            ba baVar = this.t2;
+            if (baVar.r != z9) {
+                baVar.r = z9;
+                if (baVar.i == 10) {
                     ColorMatrix colorMatrix = new ColorMatrix();
                     colorMatrix.setSaturation(1.6f);
-                    org.telegram.messenger.g0.n2(colorMatrix, caVar.r ? 0.97f : 0.92f);
-                    org.telegram.messenger.g0.h(colorMatrix, caVar.r ? 0.12f : -0.06f);
-                    caVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                    caVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    org.telegram.messenger.g0.n2(colorMatrix, baVar.r ? 0.97f : 0.92f);
+                    org.telegram.messenger.g0.h(colorMatrix, baVar.r ? 0.12f : -0.06f);
+                    baVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    baVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 }
             }
-            Paint c10 = caVar.c(1.0f);
+            Paint c10 = baVar.c(1.0f);
             if (c10 != null) {
                 return c10;
             }

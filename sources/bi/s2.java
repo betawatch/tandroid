@@ -1,9 +1,9 @@
 package bi;
 
 import android.text.style.ClickableSpan;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class s2 implements Runnable {
         }
     }
 
-    public /* synthetic */ s2(fi.m3 m3Var, y70 y70Var, ClickableSpan clickableSpan) {
+    public /* synthetic */ s2(fi.m3 m3Var, x70 x70Var, ClickableSpan clickableSpan) {
         this.a = 3;
         this.b = m3Var;
     }

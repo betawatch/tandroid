@@ -1,26 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class sm0 extends ob {
-    public int c;
+public final /* synthetic */ class sm0 implements r1.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bn0 b;
 
-    @Override // org.telegram.ui.Components.gb, org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        super.updateColors();
-        try {
-            int themedColor = getThemedColor(org.telegram.ui.ActionBar.l6.vj);
-            l9 l9Var = this.a;
-            if (l9Var != null && themedColor != this.c) {
-                this.c = themedColor;
-                l9Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN));
-            }
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    public /* synthetic */ sm0(bn0 bn0Var, int i7) {
+        this.a = i7;
+        this.b = bn0Var;
+    }
+
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                this.b.o.setScaleX(1.0f / f10);
+                break;
+            case 1:
+                this.b.o.setScaleY(1.0f / f10);
+                break;
+            case 2:
+                this.b.o.setScaleX(1.0f / f10);
+                break;
+            default:
+                this.b.o.setScaleY(1.0f / f10);
+                break;
         }
     }
 }

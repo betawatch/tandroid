@@ -1,31 +1,34 @@
 package org.telegram.ui;
 
 import android.os.Bundle;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q80 implements org.telegram.messenger.ep {
-    public final /* synthetic */ s10 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+    public final /* synthetic */ f10 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity h;
 
-    public q80(LaunchActivity launchActivity, s10 s10Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = s10Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
+    public q80(LaunchActivity launchActivity, f10 f10Var, String str, org.telegram.ui.ActionBar.f2 f2Var, long j3, Integer num, Bundle bundle) {
+        this.h = launchActivity;
+        this.a = f10Var;
+        this.b = str;
+        this.c = f2Var;
+        this.d = j3;
+        this.e = num;
+        this.f = bundle;
     }
 
     @Override // org.telegram.messenger.ep
     public final void a() {
-        LaunchActivity launchActivity = this.e;
+        LaunchActivity launchActivity = this.h;
         if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.v4.r0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity.d0), null, org.telegram.messenger.id.M0(2131749075, null), null);
+            org.telegram.ui.Components.u4.r0((org.telegram.ui.ActionBar.f2) jg.g.i(1, launchActivity.d0), null, org.telegram.messenger.id.M0(2131749075, null), null);
         }
         try {
             this.a.run();
@@ -41,14 +44,32 @@ public final class q80 implements org.telegram.messenger.ep {
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
-        if (this.b[0]) {
+        LaunchActivity launchActivity = this.h;
+        if (launchActivity.isFinishing()) {
             return;
         }
-        cn cnVar = new cn(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            cnVar.a6 = chatInvite;
+        String str = this.b;
+        long j3 = this.d;
+        org.telegram.ui.ActionBar.f2 f2Var = this.c;
+        if (str == null || !(f2Var instanceof cn) || ((cn) f2Var).a() != j3) {
+            if (f2Var instanceof cn) {
+                cn cnVar = (cn) f2Var;
+                if (cnVar.a() == j3 && this.e == null) {
+                    org.telegram.messenger.g0.G3(5.0f, cnVar.z0, null);
+                    org.telegram.messenger.p2.D.a();
+                    sj sjVar = cnVar.Z;
+                    for (int i7 = 0; i7 < sjVar.getChildCount(); i7++) {
+                        org.telegram.messenger.g0.G3(5.0f, sjVar.getChildAt(i7), null);
+                    }
+                    org.telegram.ui.ActionBar.l actionBar = cnVar.getActionBar();
+                    for (int i10 = 0; i10 < actionBar.getChildCount(); i10++) {
+                        org.telegram.messenger.g0.G3(5.0f, actionBar.getChildAt(i10), null);
+                    }
+                }
+            }
+            f2Var = new cn(this.f);
+            ((ActionBarLayout) launchActivity.M()).S(f2Var);
         }
-        ((ActionBarLayout) this.e.M()).S(cnVar);
+        org.telegram.messenger.g0.i3(new bi.w2(this, this.b, this.d, f2Var, 22), 150L);
     }
 }

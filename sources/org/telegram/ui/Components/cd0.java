@@ -1,39 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Path;
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class cd0 extends Path {
-    public int a;
-    public int b;
-    public int c;
+public final class cd0 extends k6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ fd0 c;
 
-    public final void a(int i7, int i10, int i11) {
-        if (this.a == i7 && this.b == i10 && this.c == i11) {
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cd0(fd0 fd0Var, int i7) {
+        super("thumbAnimationProgress", 0);
+        this.b = i7;
+        switch (i7) {
+            case 1:
+                this.c = fd0Var;
+                super("thumbImageVisibleProgress", 0);
+                break;
+            default:
+                this.c = fd0Var;
+                break;
         }
-        rewind();
-        RectF rectF = org.telegram.messenger.g0.P;
-        float f10 = i7 - i11;
-        float f11 = i10 + i11;
-        rectF.set(f10, i10 - i11, i7 + i11, f11);
-        arcTo(rectF, -180.0f, 270.0f, false);
-        float f12 = i11 / 81.0f;
-        float f13 = i7;
-        float f14 = f11 - (3.0f * f12);
-        cubicTo(f13 - (13.0f * f12), f11, f13 - (25.0f * f12), f14, f13 - (36.0f * f12), f11 - (8.42f * f12));
-        float f15 = f11 - f12;
-        cubicTo(f13 - (52.0f * f12), f15, f13 - (56.5f * f12), f15, f13 - (78.02f * f12), f15);
-        cubicTo(f13 - (80.0f * f12), f15, f13 - (81.0f * f12), f14, f13 - (79.52f * f12), f11 - (4.5f * f12));
-        float f16 = f13 - (63.73f * f12);
-        cubicTo(f13 - (78.0f * f12), f11 - (6.0f * f12), f16, f11 - (15.0f * f12), f16, f11 - (31.0f * f12));
-        float f17 = i10;
-        cubicTo(f13 - (74.5f * f12), f11 - (44.75f * f12), f10, (f12 * 18.87f) + f17, f10, f17);
-        close();
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
+    }
+
+    @Override // org.telegram.ui.Components.k6
+    public final void c(Object obj, float f10) {
+        switch (this.b) {
+            case 0:
+                this.c.r = f10;
+                ((fd0) obj).invalidate();
+                break;
+            default:
+                this.c.n = f10;
+                ((fd0) obj).invalidate();
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.r);
+            default:
+                return Float.valueOf(this.c.n);
+        }
     }
 }

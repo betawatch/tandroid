@@ -1,25 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ho0 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ so0 b;
+import android.graphics.Canvas;
 
-    public /* synthetic */ ho0(so0 so0Var, int i7) {
-        this.a = i7;
-        this.b = so0Var;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class ho0 implements ri.a, dh.b {
+    public final org.telegram.ui.Components.ba a;
+    public final /* synthetic */ PhotoViewer b;
+
+    public ho0(PhotoViewer photoViewer) {
+        this.b = photoViewer;
+        this.a = new org.telegram.ui.Components.ba(photoViewer.b0, photoViewer.e0, 0, false);
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                new org.telegram.ui.Components.hc(this.b.b.e0, null).m(org.telegram.ui.Components.gc.r, 1, -115203550, -1, null).j();
-                break;
-            default:
-                new org.telegram.ui.Components.hc(this.b.b.e0, null).m(org.telegram.ui.Components.gc.r, 1, -115203550, -1, null).j();
-                break;
-        }
+    @Override // dh.b
+    public final fh.g b() {
+        fh.g gVar = new fh.g(this, this, this);
+        this.b.Z.add(gVar);
+        return gVar;
+    }
+
+    @Override // ri.a
+    public final void e(Canvas canvas, float f10, float f11, float f12, float f13) {
+        canvas.save();
+        canvas.clipRect(f10, f11, f12, f13);
+        this.b.N0(canvas, this.a, -14277082, 855638016, false, true, true);
+        canvas.drawColor(637534208);
+        canvas.restore();
+    }
+
+    @Override // dh.b
+    public final /* synthetic */ void c(fh.g gVar) {
     }
 }

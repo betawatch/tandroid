@@ -5,62 +5,113 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class ly extends v4.s {
-    public final SparseArray Q;
-    public int R;
+public class ly extends v4.b0 {
+    public final SparseArray I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final RecyclerView N;
+    public boolean O;
+    public boolean P;
+    public final boolean Q;
+    public boolean R;
     public int S;
-    public int T;
-    public final int U;
-    public final qj0 V;
-    public boolean W;
-    public boolean X;
+    public final boolean T;
 
-    public ly(int i7, int i10, qj0 qj0Var) {
-        super(i7);
-        this.Q = new SparseArray();
-        this.R = -1;
-        this.W = true;
-        this.X = true;
-        this.V = qj0Var;
-        this.U = i10;
+    public ly(int i7, pj0 pj0Var) {
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = pj0Var;
+        this.M = i7;
     }
 
-    public final void B1() {
-        qj0 qj0Var;
-        v4.g0 adapter;
-        int i7;
-        qj0 qj0Var2;
-        if (this.S <= 0 || !D1() || (adapter = (qj0Var = this.V).getAdapter()) == null) {
-            return;
+    @Override // v4.n0
+    public final void P(View view) {
+        if (this.T) {
+            RecyclerView recyclerView = this.N;
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+                ((ViewGroup.MarginLayoutParams) ((v4.o0) view.getLayoutParams())).height = Math.max(this.J, 0);
+            }
         }
-        int i10 = this.J;
-        boolean z9 = true;
-        int b10 = adapter.b() - 1;
-        g.p pVar = this.O;
-        boolean z10 = true;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            i7 = this.U;
-            if (i11 >= b10) {
-                qj0Var2 = qj0Var;
-                break;
-            }
-            int i14 = pVar.i(i11);
-            i12 += i14;
-            if (i14 == i10 || i12 > i10) {
-                z10 = z9;
-                i12 = i14;
-            }
-            if (z10) {
+        super.P(view);
+    }
+
+    @Override // v4.n0
+    public final void Q() {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void V(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void W(RecyclerView recyclerView) {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void X(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void Y(RecyclerView recyclerView, int i7, int i10) {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void Z() {
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
+        p1();
+        p1();
+    }
+
+    @Override // v4.n0
+    public final void d0(v4.v0 v0Var, v4.a1 a1Var, int i7, int i10) {
+        int i11 = this.K;
+        this.L = View.MeasureSpec.getSize(i7);
+        int size = View.MeasureSpec.getSize(i10);
+        this.K = size;
+        if (i11 != size) {
+            p1();
+        }
+        super.d0(v0Var, a1Var, i7, i10);
+    }
+
+    @Override // v4.b0, v4.n0
+    public final boolean e() {
+        return this.Q;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void p1() {
+        RecyclerView recyclerView;
+        v4.g0 adapter;
+        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
+            int b10 = adapter.b() - 1;
+            int i7 = 0;
+            int i10 = 0;
+            for (int i11 = this.O; i11 < b10; i11++) {
                 int d = adapter.d(i11);
-                SparseArray sparseArray = this.Q;
+                SparseArray sparseArray = this.I;
                 v4.d1 d1Var = (v4.d1) sparseArray.get(d, null);
                 if (d1Var == null) {
-                    d1Var = adapter.a(qj0Var, d);
+                    d1Var = adapter.a(recyclerView, d);
                     View view = d1Var.a;
                     sparseArray.put(d, d1Var);
                     if (view.getLayoutParams() == null) {
@@ -68,110 +119,41 @@ public class ly extends v4.s {
                     }
                 }
                 View view2 = d1Var.a;
-                if (this.W) {
+                if (this.P) {
                     adapter.t(d1Var, i11);
                 }
                 v4.o0 o0Var = (v4.o0) view2.getLayoutParams();
-                qj0Var2 = qj0Var;
-                view2.measure(v4.n0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), v4.n0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
-                i13 += view2.getMeasuredHeight();
-                if (i13 >= (this.S - i7) - qj0Var2.getPaddingBottom()) {
-                    break;
-                } else {
-                    z10 = false;
+                view2.measure(v4.n0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), v4.n0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
+                i7 += view2.getMeasuredHeight();
+                if (i11 == 0) {
+                    i10 = view2.getMeasuredHeight();
                 }
-            } else {
-                qj0Var2 = qj0Var;
+                if (this.R) {
+                    if (i7 >= this.K + i10) {
+                        break;
+                    }
+                } else {
+                    if (i7 >= this.K) {
+                        break;
+                    }
+                }
             }
-            i11++;
-            qj0Var = qj0Var2;
-            z9 = true;
+            if (this.R) {
+                this.J = Math.max(this.S, (((this.K - i7) - this.M) - recyclerView.getPaddingBottom()) + i10);
+            } else {
+                this.J = Math.max(this.S, ((this.K - i7) - this.M) - recyclerView.getPaddingBottom());
+            }
         }
-        this.R = Math.max(0, ((this.S - i13) - i7) - qj0Var2.getPaddingBottom());
     }
 
-    public final void C1() {
-        this.W = false;
-    }
-
-    public boolean D1() {
-        return true;
-    }
-
-    @Override // v4.n0
-    public final void Q() {
-        this.Q.clear();
-        B1();
-    }
-
-    @Override // v4.s, v4.n0
-    public final void V(RecyclerView recyclerView, int i7, int i10) {
-        super.V(recyclerView, i7, i10);
-        B1();
-    }
-
-    @Override // v4.s, v4.n0
-    public final void W(RecyclerView recyclerView) {
-        this.Q.clear();
-        B1();
-        super.W(recyclerView);
-    }
-
-    @Override // v4.s, v4.n0
-    public final void X(RecyclerView recyclerView, int i7, int i10) {
-        super.X(recyclerView, i7, i10);
-        B1();
-    }
-
-    @Override // v4.s, v4.n0
-    public final void Y(RecyclerView recyclerView, int i7, int i10) {
-        super.Y(recyclerView, i7, i10);
-        B1();
-    }
-
-    @Override // v4.n0
-    public final void Z() {
-        B1();
-    }
-
-    @Override // v4.s, v4.n0
-    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
-        super.a0(recyclerView, i7, i10, obj);
-        B1();
-    }
-
-    @Override // v4.n0
-    public final void d0(v4.v0 v0Var, v4.a1 a1Var, int i7, int i10) {
-        int i11 = this.S;
-        this.T = View.MeasureSpec.getSize(i7);
-        int size = View.MeasureSpec.getSize(i10);
-        this.S = size;
-        if (i11 != size) {
-            B1();
-        }
-        super.d0(v0Var, a1Var, i7, i10);
-    }
-
-    @Override // v4.b0, v4.n0
-    public final boolean e() {
-        return this.X;
-    }
-
-    @Override // v4.s
-    public final void w1(int i7, View view, boolean z9) {
-        if (this.V.G(view).b() == B() - 1) {
-            ((ViewGroup.MarginLayoutParams) ((v4.o0) view.getLayoutParams())).height = Math.max(this.R, 0);
-        }
-        super.w1(i7, view, z9);
-    }
-
-    public ly(int i7, org.telegram.ui.m30 m30Var) {
-        super(i7, false);
-        this.Q = new SparseArray();
-        this.R = -1;
-        this.W = true;
-        this.X = true;
-        this.V = m30Var;
-        this.U = 0;
+    public ly(int i7, int i10, pj0 pj0Var) {
+        super(1, false);
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = pj0Var;
+        this.M = i7;
     }
 }

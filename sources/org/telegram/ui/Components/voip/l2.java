@@ -12,9 +12,9 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.o5;
+import org.telegram.ui.ActionBar.p5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l2 extends View {
     public StaticLayout a;
@@ -26,7 +26,7 @@ public final class l2 extends View {
     public int h;
     public boolean n;
     public final Drawable r;
-    public final o5 s;
+    public final p5 s;
 
     public l2(Activity activity) {
         super(activity);
@@ -39,7 +39,7 @@ public final class l2 extends View {
         this.f = textPaint;
         this.h = 4;
         this.n = false;
-        this.s = new o5(this, 7);
+        this.s = new p5(this, 7);
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
         textPaint.setColor(-1);
         paint.setColor(i0.a.o(-1, qs.F3));
@@ -50,8 +50,8 @@ public final class l2 extends View {
     }
 
     public final void a() {
-        o5 o5Var = this.s;
-        removeCallbacks(o5Var);
+        p5 p5Var = this.s;
+        removeCallbacks(p5Var);
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {
             return;
@@ -67,7 +67,7 @@ public final class l2 extends View {
             TextPaint textPaint = this.f;
             this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        postDelayed(o5Var, 300L);
+        postDelayed(p5Var, 300L);
         invalidate();
     }
 

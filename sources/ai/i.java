@@ -52,15 +52,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.he0;
 import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.ie0;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements c20 {
     public final /* synthetic */ int a;
@@ -143,17 +143,17 @@ public final /* synthetic */ class i implements c20 {
                 break;
             case 4:
                 bi.a1 a1Var = (bi.a1) this.b;
-                int i12 = bi.a1.p2[((Integer) obj).intValue()];
-                if (a1Var.g2 != i12) {
-                    a1Var.g2 = i12;
-                    a1Var.Y1.setText(id.G(i12 / 3600, "GiftOfferHours", new Object[0]));
+                int i12 = bi.a1.s2[((Integer) obj).intValue()];
+                if (a1Var.j2 != i12) {
+                    a1Var.j2 = i12;
+                    a1Var.b2.setText(id.G(i12 / 3600, "GiftOfferHours", new Object[0]));
                 }
                 a1Var.e1(true);
                 break;
             case 5:
                 w1 w1Var = (w1) this.b;
-                w1Var.a2.g();
-                w1Var.c2.O(true);
+                w1Var.d2.g();
+                w1Var.f2.O(true);
                 break;
             case 6:
                 j5 j5Var = (j5) this.b;
@@ -173,7 +173,7 @@ public final /* synthetic */ class i implements c20 {
                 ea.a((ea) this.b, (TL_stars.StarGifts) obj);
                 break;
             case 8:
-                ((v2) this.b).a(((Boolean) obj).booleanValue());
+                ((w2) this.b).a(((Boolean) obj).booleanValue());
                 break;
             case 9:
                 TextView textView = (TextView) this.b;
@@ -313,7 +313,7 @@ public final /* synthetic */ class i implements c20 {
                 if (view2 instanceof a4) {
                     w3Var.getClass();
                     int R = RecyclerView.R(view2);
-                    y31 G = w3Var.f3.G(R);
+                    x31 G = w3Var.f3.G(R);
                     if (G != null) {
                         a4 a4Var = (a4) view2;
                         a4Var.setPosition(b4Var.b(R));
@@ -347,7 +347,7 @@ public final /* synthetic */ class i implements c20 {
                 if (e7Var != null && vaVar.O1 != 1) {
                     boolean isEmpty = TextUtils.isEmpty(e7Var.y);
                     boolean z9 = !isEmpty;
-                    ((ie0) vaVar.j1.c).a(!vaVar.X0.k(), false);
+                    ((he0) vaVar.j1.c).a(!vaVar.X0.k(), false);
                     vaVar.j1.setVisibility(0);
                     vaVar.j1.animate().alpha(!isEmpty ? 1.0f : 0.0f).withEndAction(new bi.k1(9, x9Var, z9)).start();
                 }
@@ -378,10 +378,10 @@ public final /* synthetic */ class i implements c20 {
             case 25:
                 w6 w6Var = (w6) this.b;
                 Long l11 = (Long) obj;
-                w6Var.w2 = false;
+                w6Var.z2 = false;
                 TLRPC.User a22 = l11 != null ? qp.s1(w6Var.a).a2(l11) : null;
-                w6Var.v2 = a22;
-                w6Var.x2 = a22 == null;
+                w6Var.y2 = a22;
+                w6Var.A2 = a22 == null;
                 if (a22 != null) {
                     w6Var.g1();
                     break;
@@ -391,15 +391,15 @@ public final /* synthetic */ class i implements c20 {
                 m7 m7Var = (m7) this.b;
                 tg.h0 h0Var = (tg.h0) obj;
                 if (h0Var != null) {
-                    m7Var.g2 = h0Var.e;
-                    m7Var.f2 = h0Var.f;
+                    m7Var.j2 = h0Var.e;
+                    m7Var.i2 = h0Var.f;
                     break;
                 } else {
                     m7Var.e1();
                     break;
                 }
             case 27:
-                ((j8) this.b).n.W.y1 = ((Integer) obj).intValue();
+                ((j8) this.b).n.W.B1 = ((Integer) obj).intValue();
                 break;
             case 28:
                 ((r9) this.b).h((c20) obj);

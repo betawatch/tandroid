@@ -2,7 +2,7 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,11 +18,11 @@ public final /* synthetic */ class j1 implements Runnable {
         switch (this.a) {
             case 0:
                 View view = this.b;
-                if (view instanceof m5) {
-                    m5 m5Var = (m5) view;
-                    if (!m5Var.a) {
-                        m5Var.a = true;
-                        m5Var.invalidate();
+                if (view instanceof n5) {
+                    n5 n5Var = (n5) view;
+                    if (!n5Var.a) {
+                        n5Var.a = true;
+                        n5Var.invalidate();
                         break;
                     }
                 }

@@ -11,12 +11,12 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.tp0;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f8 implements Runnable {
     public final /* synthetic */ int a;
@@ -85,13 +85,13 @@ public final /* synthetic */ class f8 implements Runnable {
                 ((z9) this.b).c();
                 break;
             case 7:
-                ((di) this.b).hide();
+                ((ci) this.b).hide();
                 break;
             case 8:
                 ei.n nVar = (ei.n) this.b;
-                tp0 tp0Var = nVar.W;
+                sp0 sp0Var = nVar.W;
                 k6 k6Var = nVar.a;
-                tp0Var.a(k6Var == null ? "" : k6Var.E);
+                sp0Var.a(k6Var == null ? "" : k6Var.E);
                 break;
             case 9:
                 ab.q qVar = (ab.q) this.b;
@@ -126,7 +126,7 @@ public final /* synthetic */ class f8 implements Runnable {
                 break;
             case 16:
                 fi.c5 c5Var = (fi.c5) this.b;
-                cc.e();
+                bc.e();
                 ug.w0 w0Var = new ug.w0((org.telegram.ui.ActionBar.f2) new bi.w4(c5Var), 14, false);
                 w0Var.setOnDismissListener(new fi.d1(i10));
                 w0Var.show();
@@ -140,7 +140,7 @@ public final /* synthetic */ class f8 implements Runnable {
                 ArrayList arrayList2 = y1Var.s;
                 fi.z1 z1Var = y1Var.N;
                 fi.k2 k2Var = z1Var.s;
-                int i11 = fi.k2.y1;
+                int i11 = fi.k2.B1;
                 ui b02 = ui.b0(k2Var.a);
                 String str = y1Var.H;
                 if (!"premium".equalsIgnoreCase(str)) {

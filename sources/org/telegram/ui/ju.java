@@ -1,28 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ju implements org.telegram.messenger.c20 {
+public final /* synthetic */ class ju implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yw b;
+    public final /* synthetic */ zw b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ ju(yw ywVar, int i7) {
+    public /* synthetic */ ju(zw zwVar, float f10, int i7) {
         this.a = i7;
-        this.b = ywVar;
+        this.b = zwVar;
+        this.c = f10;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                yw ywVar = this.b;
-                ywVar.P1 = (Long) obj;
-                ywVar.g5();
+                zw.a0(this.b, this.c, valueAnimator);
                 break;
             default:
-                yw.f0(this.b, (TL_account.TL_birthday) obj);
+                zw.G0(this.b, this.c, valueAnimator);
                 break;
         }
     }

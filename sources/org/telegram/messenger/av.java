@@ -12,11 +12,11 @@ import android.view.View;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class av extends zu {
     public h6.m c0;
-    public org.telegram.ui.Components.ic d0;
+    public org.telegram.ui.Components.hc d0;
     public boolean e0;
     public boolean f0;
     public boolean g0;
@@ -45,8 +45,8 @@ public final class av extends zu {
 
     @Override // org.telegram.messenger.zu, org.telegram.messenger.fu
     public final void W(Canvas canvas) {
-        org.telegram.ui.Components.ic icVar = this.d0;
-        float a10 = icVar != null ? icVar.a(0.01f) : 1.0f;
+        org.telegram.ui.Components.hc hcVar = this.d0;
+        float a10 = hcVar != null ? hcVar.a(0.01f) : 1.0f;
         int i7 = this.c;
         if (a10 != 1.0f) {
             canvas.save();
@@ -106,11 +106,11 @@ public final class av extends zu {
             if (!Y) {
                 this.e0 = true;
                 if (this.d0 == null && (view = kvVar.Q) != null) {
-                    this.d0 = new org.telegram.ui.Components.ic(view);
+                    this.d0 = new org.telegram.ui.Components.hc(view);
                 }
-                org.telegram.ui.Components.ic icVar = this.d0;
-                if (icVar != null) {
-                    icVar.c(true);
+                org.telegram.ui.Components.hc hcVar = this.d0;
+                if (hcVar != null) {
+                    hcVar.c(true);
                     return true;
                 }
             }
@@ -118,9 +118,9 @@ public final class av extends zu {
             if (actionMasked != 1) {
                 if (actionMasked == 3) {
                     this.e0 = false;
-                    org.telegram.ui.Components.ic icVar2 = this.d0;
-                    if (icVar2 != null) {
-                        icVar2.c(false);
+                    org.telegram.ui.Components.hc hcVar2 = this.d0;
+                    if (hcVar2 != null) {
+                        hcVar2.c(false);
                     }
                 }
                 return this.e0;
@@ -129,9 +129,9 @@ public final class av extends zu {
                 return false;
             }
             this.e0 = false;
-            org.telegram.ui.Components.ic icVar3 = this.d0;
-            if (icVar3 != null) {
-                icVar3.c(false);
+            org.telegram.ui.Components.hc hcVar3 = this.d0;
+            if (hcVar3 != null) {
+                hcVar3.c(false);
             }
             View view2 = kvVar.Q;
             if (view2 != null) {
@@ -162,9 +162,9 @@ public final class av extends zu {
 
     @Override // org.telegram.messenger.fu
     public final float z() {
-        org.telegram.ui.Components.ic icVar = this.d0;
-        if (icVar != null) {
-            return icVar.a(0.01f);
+        org.telegram.ui.Components.hc hcVar = this.d0;
+        if (hcVar != null) {
+            return hcVar.a(0.01f);
         }
         return 1.0f;
     }

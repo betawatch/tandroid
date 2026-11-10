@@ -3,9 +3,9 @@ package li;
 import android.graphics.Rect;
 import android.text.Layout;
 import org.telegram.ui.Cells.t9;
-import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class a0 implements t9 {
     public final /* synthetic */ int a = 0;
@@ -54,7 +54,7 @@ public final class a0 implements t9 {
             case 0:
                 return 0;
             default:
-                return ((dk0) this.c).U;
+                return ((ck0) this.c).U;
         }
     }
 
@@ -82,8 +82,8 @@ public final class a0 implements t9 {
             case 0:
                 return 0;
             default:
-                dk0 dk0Var = (dk0) this.c;
-                return (dk0Var.S - dk0Var.j0) + ((org.telegram.utils.twidget.l1) this.b).b;
+                ck0 ck0Var = (ck0) this.c;
+                return (ck0Var.S - ck0Var.j0) + ((org.telegram.utils.twidget.l1) this.b).b;
         }
     }
 
@@ -93,12 +93,12 @@ public final class a0 implements t9 {
             case 0:
                 return 0;
             default:
-                return ((dk0) this.c).T + ((org.telegram.utils.twidget.l1) this.b).c;
+                return ((ck0) this.c).T + ((org.telegram.utils.twidget.l1) this.b).c;
         }
     }
 
-    public a0(dk0 dk0Var, org.telegram.utils.twidget.l1 l1Var) {
-        this.c = dk0Var;
+    public a0(ck0 ck0Var, org.telegram.utils.twidget.l1 l1Var) {
+        this.c = ck0Var;
         this.b = l1Var;
     }
 }

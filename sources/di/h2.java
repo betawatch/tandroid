@@ -5,14 +5,14 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.mj;
 import org.telegram.messenger.qp;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.ja0;
-import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.w90;
 import org.telegram.ui.cn;
 import org.telegram.ui.sm;
 import org.telegram.ui.vk;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h2 extends da {
     public final /* synthetic */ int a;
@@ -53,30 +53,30 @@ public final class h2 extends da {
                 cnVar.cd();
                 break;
             default:
-                da0 da0Var = (da0) this.b;
-                x90 x90Var = da0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = da0Var.s;
-                ja0 ja0Var = da0Var.c0;
-                if (ja0Var.s) {
+                ca0 ca0Var = (ca0) this.b;
+                w90 w90Var = ca0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = ca0Var.s;
+                ia0 ia0Var = ca0Var.c0;
+                if (ia0Var.s) {
                     if (!z9 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z9) {
-                        if (x90Var.v - x90Var.u <= qp.s1(ja0Var.x).o4) {
-                            org.telegram.ui.Cells.q9 q9Var2 = x90Var.W;
-                            ij c10 = da0Var.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null);
-                            mj mjVar = ja0Var.d;
+                        if (w90Var.v - w90Var.u <= qp.s1(ia0Var.x).o4) {
+                            org.telegram.ui.Cells.q9 q9Var2 = w90Var.W;
+                            ij c10 = ca0Var.c(q9Var2 != null ? ((org.telegram.ui.Cells.q1) q9Var2).getMessageObject() : null);
+                            mj mjVar = ia0Var.d;
                             if (mjVar.d == null) {
-                                int i7 = x90Var.u;
+                                int i7 = w90Var.u;
                                 mjVar.e = i7;
-                                int i10 = x90Var.v;
+                                int i10 = w90Var.v;
                                 mjVar.f = i10;
                                 mjVar.d = sm.b(i7, i10, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(da0Var.I);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(ca0Var.I);
                                 break;
                             }
                         } else {
-                            da0Var.g();
+                            ca0Var.g();
                             break;
                         }
                     }
@@ -87,15 +87,15 @@ public final class h2 extends da {
 
     @Override // c8.da
     public void b() {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
         switch (this.a) {
             case 1:
                 cn cnVar = (cn) this.b;
-                kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                    if (kVar2.w()) {
+                lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                if (lVar != null) {
+                    lVar2 = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                    if (lVar2.x()) {
                         cnVar.O7(false);
                     }
                 }

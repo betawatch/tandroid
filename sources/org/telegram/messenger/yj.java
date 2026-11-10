@@ -17,9 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yj implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class yj implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        org.telegram.ui.ActionBar.i6 i6Var;
+        org.telegram.ui.ActionBar.j6 j6Var;
         HashMap<String, String> hashMap;
         boolean z9;
         boolean z10;
@@ -79,7 +79,7 @@ public final /* synthetic */ class yj implements Runnable {
                 qp qpVar = (qp) this.b;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.c;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) this.d;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
                 File file = (File) this.f;
                 String str = (String) this.h;
                 if (qpVar.Q2 == null || qpVar.R2.s == null || wallPaper == null) {
@@ -87,10 +87,10 @@ public final /* synthetic */ class yj implements Runnable {
                 }
                 wallPaper.settings = tL_wallPaperSettings;
                 wallPaper.flags = 4 | wallPaper.flags;
-                d6Var.c = wallPaper.slug;
-                org.telegram.ui.ActionBar.k6 k6Var = d6Var.p;
-                if (k6Var != null && (((i6Var = d6Var.q) != null || k6Var.i0 == d6Var) && (i6Var == null || i6Var.y == d6Var))) {
-                    d6Var.c();
+                e6Var.c = wallPaper.slug;
+                org.telegram.ui.ActionBar.l6 l6Var = e6Var.p;
+                if (l6Var != null && (((j6Var = e6Var.q) != null || l6Var.i0 == e6Var) && (j6Var == null || j6Var.y == e6Var))) {
+                    e6Var.c();
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(wallPaper);
@@ -104,10 +104,10 @@ public final /* synthetic */ class yj implements Runnable {
                 }
                 qs.e().k(256, wallPaper.slug);
                 ArrayList arrayList2 = qpVar.R2.s;
-                if (arrayList2 == null || d6Var.n == 0) {
+                if (arrayList2 == null || e6Var.n == 0) {
                     return;
                 }
-                arrayList2.add(Integer.valueOf(d4.f(qpVar.currentAccount).u(d6Var.n, str, d6Var, null, null)));
+                arrayList2.add(Integer.valueOf(d4.f(qpVar.currentAccount).u(e6Var.n, str, e6Var, null, null)));
                 return;
             case 1:
                 long j11 = 0;
@@ -314,7 +314,7 @@ public final /* synthetic */ class yj implements Runnable {
                 int i12 = vvVar.a;
                 qp.s1(i12).Y3(arrayList8, true);
                 qp.s1(i12).S3(arrayList9, true);
-                org.telegram.ui.Components.i5.g(i12).d(arrayList10);
+                org.telegram.ui.Components.h5.g(i12).d(arrayList10);
                 for (int i13 = 0; i13 < arrayList11.size(); i13++) {
                     vvVar.j(((Long) arrayList11.get(i13)).longValue());
                 }
@@ -350,7 +350,7 @@ public final /* synthetic */ class yj implements Runnable {
                 int i17 = vvVar2.a;
                 qp.s1(i17).Y3(arrayList14, true);
                 qp.s1(i17).S3(arrayList15, true);
-                org.telegram.ui.Components.i5.g(i17).d(arrayList16);
+                org.telegram.ui.Components.h5.g(i17).d(arrayList16);
                 ArrayList arrayList18 = vvVar2.c;
                 arrayList18.clear();
                 arrayList18.addAll(arrayList17);
@@ -401,7 +401,7 @@ public final /* synthetic */ class yj implements Runnable {
                 String str5 = (String) this.c;
                 String str6 = (String) this.d;
                 ArrayList arrayList19 = (ArrayList) this.e;
-                jv0 jv0Var = (jv0) this.f;
+                iv0 iv0Var = (iv0) this.f;
                 bz bzVar = new bz(gzVar2);
                 bzVar.f = str4;
                 bzVar.e = str5;
@@ -425,14 +425,14 @@ public final /* synthetic */ class yj implements Runnable {
                     }
                     j3 = j10;
                     if (i7 == 0) {
-                        g0.h3(new ds(jv0Var, 10));
+                        g0.h3(new ds(iv0Var, 10));
                         return;
                     } else {
                         i7++;
                         j10 = j3;
                     }
                 }
-                g0.h3(new mn(gzVar2, bzVar, hashMap2, str5, jv0Var, 15));
+                g0.h3(new mn(gzVar2, bzVar, hashMap2, str5, iv0Var, 15));
                 return;
             case 10:
                 gz gzVar3 = (gz) this.b;

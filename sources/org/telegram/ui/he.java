@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class he implements Runnable {
                 break;
             case 5:
                 cnVar.getClass();
-                cnVar.presentFragment(new org.telegram.ui.Wallet.l9(str));
+                cnVar.presentFragment(new org.telegram.ui.Wallet.o9(str));
                 break;
             case 6:
                 String str2 = cnVar.getMessagesController().H6;
@@ -69,7 +69,7 @@ public final /* synthetic */ class he implements Runnable {
                 break;
             case 9:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.hc.a0(cnVar));
+                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.gc.a0(cnVar));
                 break;
             case 10:
                 cn.a0(cnVar, str);
@@ -79,7 +79,7 @@ public final /* synthetic */ class he implements Runnable {
                 break;
             case 12:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.hc.a0(cnVar));
+                org.telegram.messenger.camera.q.r(null, 2131747295, org.telegram.ui.Components.gc.a0(cnVar));
                 break;
             default:
                 vf.c.t(cnVar.getParentActivity(), "https://fragment.com/username/" + str);

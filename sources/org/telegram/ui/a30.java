@@ -1,29 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class a30 extends org.telegram.ui.Components.no0 {
-    public final /* synthetic */ e40 R2;
+public final class a30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a30(e40 e40Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.R2 = e40Var;
+    public /* synthetic */ a30(f40 f40Var, int i7) {
+        this.a = i7;
+        this.b = f40Var;
     }
 
-    @Override // org.telegram.ui.Components.no0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
-        if (z9) {
-            int m10 = hVar.m();
-            e40 e40Var = this.R2;
-            if (m10 == 1) {
-                e40Var.n1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i7), 41);
-            } else {
-                e40Var.n1().k(0L, 41, Integer.valueOf(i7), Integer.valueOf(hVar.m()), null, null);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                f40 f40Var = this.b;
+                f40Var.P1.setVisibility(4);
+                f40Var.Q1.setVisibility(4);
+                f40Var.O1.setVisibility(4);
+                break;
+            case 1:
+                this.b.b2 = null;
+                break;
+            default:
+                f40 f40Var2 = this.b;
+                f40Var2.b3 = null;
+                f40Var2.a3.setColor(f40Var2.N3 == 3 ? -1163700 : -12761513);
+                f40Var2.Z2.invalidate();
+                break;
         }
     }
 }

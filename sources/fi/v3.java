@@ -6,11 +6,11 @@ import java.util.Iterator;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.c20;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.cc1;
 import org.telegram.ui.cn;
-import org.telegram.ui.vp0;
+import org.telegram.ui.dc1;
+import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -133,21 +133,21 @@ public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 14:
-                org.telegram.ui.ActionBar.d3 d3Var = (org.telegram.ui.ActionBar.d3) this.b;
-                d3Var.getClass();
-                d3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = d3Var.I.iterator();
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
+                e3Var.getClass();
+                e3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Iterator it = e3Var.I.iterator();
                 while (it.hasNext()) {
                     ((Runnable) it.next()).run();
                 }
-                d3Var.invalidate();
+                e3Var.invalidate();
                 break;
             case 15:
-                org.telegram.ui.ActionBar.j3 j3Var = (org.telegram.ui.ActionBar.j3) this.b;
-                j3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                org.telegram.ui.ActionBar.k3 k3Var = j3Var.b;
-                if (k3Var != null) {
-                    k3Var.invalidate();
+                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.b;
+                k3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                org.telegram.ui.ActionBar.l3 l3Var = k3Var.b;
+                if (l3Var != null) {
+                    l3Var.invalidate();
                     break;
                 }
                 break;
@@ -163,11 +163,11 @@ public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateLis
                 o0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 18:
-                cc1 cc1Var = (cc1) this.b;
-                cc1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dc1 dc1Var = (dc1) this.b;
+                dc1Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int L = (org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(36.0f)) - org.telegram.messenger.g0.L(52.0f);
-                org.telegram.ui.Components.voip.x0 x0Var = cc1Var.c;
-                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L * cc1Var.E));
+                org.telegram.ui.Components.voip.x0 x0Var = dc1Var.c;
+                x0Var.getLayoutParams().width = org.telegram.messenger.g0.L(52.0f) + ((int) (L * dc1Var.E));
                 x0Var.requestLayout();
                 break;
             case 19:
@@ -205,7 +205,7 @@ public final /* synthetic */ class v3 implements ValueAnimator.AnimatorUpdateLis
                 l0Var.invalidate();
                 break;
             case 24:
-                ((vp0) ((tg.o0) this.b)).K.e0.invalidate();
+                ((wp0) ((tg.o0) this.b)).K.e0.invalidate();
                 break;
             case 25:
                 tg.h1 h1Var = (tg.h1) this.b;

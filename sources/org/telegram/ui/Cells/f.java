@@ -1,13 +1,13 @@
 package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -23,9 +23,9 @@ public final /* synthetic */ class f implements Runnable {
         switch (this.a) {
             case 0:
                 g gVar = (g) this.b;
-                b80 b80Var = gVar.d;
-                if (b80Var != null) {
-                    gVar.h.E.n(b80Var, true);
+                a80 a80Var = gVar.d;
+                if (a80Var != null) {
+                    gVar.h.E.n(a80Var, true);
                     break;
                 }
                 break;
@@ -50,11 +50,11 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 6:
                 g6 g6Var = (g6) this.b;
-                if (!(g6Var.getParent() instanceof qj0)) {
+                if (!(g6Var.getParent() instanceof pj0)) {
                     g6Var.callOnClick();
                     break;
                 } else {
-                    ((qj0) g6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(g6Var), g6Var);
+                    ((pj0) g6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(g6Var), g6Var);
                     break;
                 }
             case 7:
@@ -85,14 +85,14 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
             case 11:
-                yw ywVar = (yw) this.b;
-                cc.e();
-                ywVar.presentFragment(new SessionsActivity(0));
+                zw zwVar = (zw) this.b;
+                bc.e();
+                zwVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) this.b;
-                v2Var.b0 = true;
-                v2Var.c0 = true;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.b;
+                w2Var.b0 = true;
+                w2Var.c0 = true;
                 break;
         }
     }

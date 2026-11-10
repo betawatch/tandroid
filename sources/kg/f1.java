@@ -28,19 +28,19 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class f1 extends LinearLayout {
     public boolean D;
     public boolean E;
     public boolean F;
-    public final g6 a;
+    public final h6 a;
     public final TextView b;
     public final TextView[] c;
     public final ImageView d;
@@ -54,7 +54,7 @@ public abstract class f1 extends LinearLayout {
     public int x;
     public int y;
 
-    public f1(Context context, g6 g6Var) {
+    public f1(Context context, h6 h6Var) {
         super(context);
         this.c = new TextView[2];
         this.f = new ViewGroup[7];
@@ -63,7 +63,7 @@ public abstract class f1 extends LinearLayout {
         this.x = 1;
         this.y = 0;
         this.D = true;
-        this.a = g6Var;
+        this.a = h6Var;
         setOrientation(1);
         setClipChildren(false);
         int i7 = 0;
@@ -79,7 +79,7 @@ public abstract class f1 extends LinearLayout {
                 this.h[i7] = new TextView(context);
                 this.h[i7].setGravity(id.a0 ? 5 : 3);
                 this.h[i7].setTextSize(1, 13.0f);
-                s6.U(this.h[i7], l6.z6, g6Var);
+                t6.U(this.h[i7], m6.z6, h6Var);
                 b4Var.addView(this.h[i7], ha.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
                 LinearLayout linearLayout = new LinearLayout(context);
                 this.w = linearLayout;
@@ -89,14 +89,14 @@ public abstract class f1 extends LinearLayout {
                 for (int i11 = 0; i11 < 2; i11++) {
                     this.n[i7][i11] = new TextView(context);
                     this.n[i7][i11].setTextSize(1, 14.0f);
-                    s6.U(this.n[i7][i11], l6.z6, g6Var);
+                    t6.U(this.n[i7][i11], m6.z6, h6Var);
                     this.n[i7][i11].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.n[i7][i11], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
                 for (int i12 = 0; i12 < 2; i12++) {
                     this.c[i12] = new TextView(context);
                     this.c[i12].setTextSize(1, 14.0f);
-                    s6.U(this.c[i12], l6.z6, g6Var);
+                    t6.U(this.c[i12], m6.z6, h6Var);
                     this.c[i12].setGravity(id.a0 ? 3 : 5);
                     this.s.addView(this.c[i12], ha.i(-1.0f, -1.0f, qs.E1, 0.0f, 0.0f, 20.0f, 0.0f));
                 }
@@ -106,7 +106,7 @@ public abstract class f1 extends LinearLayout {
                 imageView.setScaleX(0.6f);
                 imageView.setScaleY(0.6f);
                 imageView.setImageResource(R.drawable.arrow_more);
-                s6.s(imageView, l6.z6, g6Var, PorterDuff.Mode.SRC_IN);
+                t6.s(imageView, m6.z6, h6Var, PorterDuff.Mode.SRC_IN);
                 this.s.addView(imageView, ha.h(20.0f, 20.0f, 8388629));
                 this.w.addView(this.s, new LinearLayout.LayoutParams(ha.z(-1.0f), ha.z(-1.0f), Gravity.getAbsoluteGravity(qs.E1, id.a0 ? 1 : 0)));
                 mp mpVar = new mp(context);
@@ -116,15 +116,15 @@ public abstract class f1 extends LinearLayout {
                 mpVar.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
                 mpVar.setGravity(id.a0 ? 3 : 5);
                 int L = org.telegram.messenger.g0.L(8.0f);
-                int i13 = l6.o6;
-                int w02 = l6.w0(i13, g6Var);
+                int i13 = m6.o6;
+                int w02 = m6.w0(i13, h6Var);
                 a(w02);
-                int r12 = l6.r1(0.1f, w02);
-                int w03 = l6.w0(i13, g6Var);
+                int r12 = m6.r1(0.1f, w02);
+                int w03 = m6.w0(i13, h6Var);
                 a(w03);
-                int r13 = l6.r1(0.22f, w03);
-                mpVar.setBackground(l6.k0(L, L, L, L, r12, r13, r13));
-                int w04 = l6.w0(i13, g6Var);
+                int r13 = m6.r1(0.22f, w03);
+                mpVar.setBackground(m6.k0(L, L, L, L, r12, r13, r13));
+                int w04 = m6.w0(i13, h6Var);
                 a(w04);
                 mpVar.setTextColor(w04);
                 mpVar.getDrawable().A = 0.6f;
@@ -140,14 +140,14 @@ public abstract class f1 extends LinearLayout {
                 ViewGroup f10 = k5.f(context, 0);
                 this.h[i7] = new TextView(context);
                 this.h[i7].setTextSize(1, 14.0f);
-                s6.U(this.h[i7], l6.G6, g6Var);
+                t6.U(this.h[i7], m6.G6, h6Var);
                 this.h[i7].setGravity(id.a0 ? 5 : 3);
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.n[i7] = new TextView[2];
                 for (int i14 = 0; i14 < 2; i14++) {
                     this.n[i7][i14] = new TextView(context);
                     this.n[i7][i14].setTextSize(1, 14.0f);
-                    s6.U(this.n[i7][i14], l6.z6, g6Var);
+                    t6.U(this.n[i7][i14], m6.z6, h6Var);
                     this.n[i7][i14].setGravity(id.a0 ? 3 : 5);
                     frameLayout2.addView(this.n[i7][i14], ha.e(-1, -1, qs.E1));
                 }
@@ -284,8 +284,8 @@ public abstract class f1 extends LinearLayout {
             textViewArr = this.n;
             if (z13) {
                 ViewPropertyAnimator duration = textViewArr2[0].animate().alpha((z19 || z21) ? 0.0f : 1.0f).setDuration(320L);
-                xq xqVar = xq.h;
-                duration.setInterpolator(xqVar).start();
+                wq wqVar = wq.h;
+                duration.setInterpolator(wqVar).start();
                 ViewPropertyAnimator animate = textViewArr2[1].animate();
                 if (z19 || !z21) {
                     z14 = false;
@@ -294,10 +294,10 @@ public abstract class f1 extends LinearLayout {
                     z14 = false;
                     f10 = 1.0f;
                 }
-                animate.alpha(f10).setDuration(320L).setInterpolator(xqVar).start();
-                textViewArr[z14 ? 1 : 0][z14 ? 1 : 0].animate().alpha(z19 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(xqVar).start();
-                textViewArr[z14 ? 1 : 0][1].animate().alpha(z19 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(xqVar).start();
-                imageView.animate().rotation(z19 ? 180.0f : 0.0f).setDuration(320L).setInterpolator(xqVar).start();
+                animate.alpha(f10).setDuration(320L).setInterpolator(wqVar).start();
+                textViewArr[z14 ? 1 : 0][z14 ? 1 : 0].animate().alpha(z19 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(wqVar).start();
+                textViewArr[z14 ? 1 : 0][1].animate().alpha(z19 ? 1.0f : 0.0f).setDuration(320L).setInterpolator(wqVar).start();
+                imageView.animate().rotation(z19 ? 180.0f : 0.0f).setDuration(320L).setInterpolator(wqVar).start();
             } else {
                 textViewArr2[0].setAlpha((z19 || z21) ? 0.0f : 1.0f);
                 textViewArr2[1].setAlpha((z19 || !z21) ? 0.0f : 1.0f);
@@ -313,7 +313,7 @@ public abstract class f1 extends LinearLayout {
                             if ((r62 == z20 ? z20 : z14) == z21) {
                                 f12 = 1.0f;
                                 if (this.D) {
-                                    textViewArr3[r62].animate().alpha(f12).setDuration(320L).setInterpolator(xq.h).start();
+                                    textViewArr3[r62].animate().alpha(f12).setDuration(320L).setInterpolator(wq.h).start();
                                 } else {
                                     textViewArr3[r62].setAlpha(f12);
                                 }
@@ -437,7 +437,7 @@ public abstract class f1 extends LinearLayout {
             String M0 = id.M0(!z15 ? 2131752742 : 2131752743, null);
             TextView textView = this.b;
             textView.setText(M0);
-            s6.U(textView, !z15 ? l6.l8 : l6.p7, this.a);
+            t6.U(textView, !z15 ? m6.l8 : m6.p7, this.a);
             int i35 = this.y;
             i12 = this.x;
             this.x = 1;
@@ -614,7 +614,7 @@ public abstract class f1 extends LinearLayout {
         String M02 = id.M0(!z15 ? 2131752742 : 2131752743, null);
         TextView textView3 = this.b;
         textView3.setText(M02);
-        s6.U(textView3, !z15 ? l6.l8 : l6.p7, this.a);
+        t6.U(textView3, !z15 ? m6.l8 : m6.p7, this.a);
         int i352 = this.y;
         i12 = this.x;
         this.x = 1;
@@ -639,9 +639,9 @@ public abstract class f1 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            Paint W0 = l6.W0("paintDivider", this.a);
+            Paint W0 = m6.W0("paintDivider", this.a);
             if (W0 == null) {
-                W0 = l6.k0;
+                W0 = m6.k0;
             }
             canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }

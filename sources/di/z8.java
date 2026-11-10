@@ -5,9 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.SurfaceView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.eh0;
+import org.telegram.ui.Components.dh0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class z8 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         j4 z9;
-        eh0 eh0Var;
+        dh0 dh0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -49,14 +49,14 @@ public final class z8 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     n9Var.c.O0(true, true);
                 }
-                if (n9Var.d != null && (z9 = q9Var.z()) != null && (eh0Var = z9.X0.d) != null) {
-                    eh0 eh0Var2 = n9Var.d;
-                    eh0Var2.getClass();
-                    eh0Var2.c = eh0Var.c;
-                    eh0Var2.f = eh0Var.f;
-                    eh0Var2.b = eh0Var.b;
-                    eh0Var2.a = System.currentTimeMillis();
-                    eh0Var2.c();
+                if (n9Var.d != null && (z9 = q9Var.z()) != null && (dh0Var = z9.X0.d) != null) {
+                    dh0 dh0Var2 = n9Var.d;
+                    dh0Var2.getClass();
+                    dh0Var2.c = dh0Var.c;
+                    dh0Var2.f = dh0Var.f;
+                    dh0Var2.b = dh0Var.b;
+                    dh0Var2.a = System.currentTimeMillis();
+                    dh0Var2.c();
                 }
                 i4 i4Var = q9Var.F0;
                 if (i4Var != null) {

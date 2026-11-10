@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class w implements TextWatcher {
     public final /* synthetic */ int a;
@@ -21,15 +21,15 @@ public final class w implements TextWatcher {
             case 0:
                 String obj = editable.toString();
                 d0 d0Var = this.b;
-                boolean isEmpty = TextUtils.isEmpty(d0Var.I1);
-                d0Var.I1 = obj;
-                d0Var.w1.h(0L, d0Var.l1, 0L, 0L, null, false, obj, isEmpty);
+                boolean isEmpty = TextUtils.isEmpty(d0Var.L1);
+                d0Var.L1 = obj;
+                d0Var.z1.h(0L, d0Var.o1, 0L, 0L, null, false, obj, isEmpty);
                 break;
             default:
                 String obj2 = editable.toString();
                 d0 d0Var2 = this.b;
-                d0Var2.J1 = obj2;
-                d0Var2.x1.f3.O(true);
+                d0Var2.M1 = obj2;
+                d0Var2.A1.f3.O(true);
                 break;
         }
     }

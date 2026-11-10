@@ -2,7 +2,7 @@ package bi;
 
 import org.telegram.messenger.sr;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements sr {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final /* synthetic */ class w0 implements sr {
                 a1 a1Var = (a1) this.b;
                 a1Var.getClass();
                 a1Var.f1(cg.a.i(0L, i7 == 0 ? cg.b.a : cg.b.b), true, false, true);
-                a1Var.W1.setText("");
+                a1Var.Z1.setText("");
                 break;
             case 1:
                 e1 e1Var = (e1) this.b;
                 e1Var.getClass();
                 e1Var.M0(cg.a.i(0L, i7 == 0 ? cg.b.a : cg.b.b), true, false, true);
-                e1Var.n1.setText("");
+                e1Var.q1.setText("");
                 break;
             default:
                 k6 k6Var = (k6) this.b;

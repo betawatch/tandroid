@@ -2,7 +2,7 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.c20;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements c20 {
     public final /* synthetic */ z1 a;
@@ -12,9 +12,9 @@ public final /* synthetic */ class f1 implements c20 {
     public final /* synthetic */ d2 e;
     public final /* synthetic */ x2 f;
     public final /* synthetic */ boolean[] g;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 h;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 h;
 
-    public /* synthetic */ f1(z1 z1Var, boolean[] zArr, fi.d dVar, fi.d dVar2, d2 d2Var, x2 x2Var, boolean[] zArr2, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ f1(z1 z1Var, boolean[] zArr, fi.d dVar, fi.d dVar2, d2 d2Var, x2 x2Var, boolean[] zArr2, org.telegram.ui.ActionBar.h6 h6Var) {
         this.a = z1Var;
         this.b = zArr;
         this.c = dVar;
@@ -22,7 +22,7 @@ public final /* synthetic */ class f1 implements c20 {
         this.e = d2Var;
         this.f = x2Var;
         this.g = zArr2;
-        this.h = g6Var;
+        this.h = h6Var;
     }
 
     @Override // org.telegram.messenger.c20

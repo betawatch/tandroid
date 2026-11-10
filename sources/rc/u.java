@@ -16,11 +16,11 @@ import java.util.List;
 import java.util.TreeMap;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 import org.telegram.ui.Wallet.x0;
 import org.telegram.ui.web.e1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -361,7 +361,7 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    vy vyVar = new vy(this, 13);
+                    uy uyVar = new uy(this, 13);
                     try {
                         String b10 = k.b(e1Var);
                         if (b10 == null || b10.length() == 0) {
@@ -380,7 +380,7 @@ public final class u {
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            vy.K(sb3.toString(), treeMap);
+                                            uy.K(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -391,7 +391,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                vy.K(sb3.toString(), treeMap);
+                                uy.K(sb3.toString(), treeMap);
                             }
                             if (z0Var.b != 101) {
                                 try {
@@ -517,7 +517,7 @@ public final class u {
                                                                                 throw new n(16, rf.b.i("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), z0Var);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) vyVar.b).c;
+                                                                            h hVar2 = ((u) uyVar.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
@@ -543,9 +543,9 @@ public final class u {
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) vyVar.b).l = arrayList3;
+                                                        ((u) uyVar.b).l = arrayList3;
                                                     }
-                                                    vyVar.S(z0Var, treeMap);
+                                                    uyVar.S(z0Var, treeMap);
                                                     this.h = e1Var;
                                                     this.i = yVar;
                                                     return treeMap;

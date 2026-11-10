@@ -6,10 +6,10 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 import android.util.Size;
 import android.view.Surface;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.i60;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.j60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ int a;
@@ -186,13 +186,13 @@ public final class f extends CameraCaptureSession.StateCallback {
                             k kVar8 = this.b;
                             kVar8.c.post(new a(kVar8, 9));
                             k kVar9 = this.b;
-                            rt rtVar = kVar9.k;
+                            qt qtVar = kVar9.k;
                             m0 m0Var = kVar9.F;
                             n0 n0Var = kVar9.H;
                             o0 o0Var = kVar9.I;
                             Size size = kVar9.q;
                             k kVar10 = this.b;
-                            ((t0) rtVar.b).i.post(new i60(rtVar, new h(m0Var, n0Var, o0Var, size, kVar10.N, kVar10.F()), z10, 18));
+                            ((t0) qtVar.b).i.post(new j60(qtVar, new h(m0Var, n0Var, o0Var, size, kVar10.N, kVar10.F()), z10, 18));
                             if (z9) {
                                 k.d(this.b);
                                 return;

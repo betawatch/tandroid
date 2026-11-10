@@ -1,31 +1,43 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class u20 implements fr0 {
-    public final /* synthetic */ e40 a;
+public final class u20 extends ir0 {
+    public final /* synthetic */ f40 T;
 
-    public u20(e40 e40Var) {
-        this.a = e40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u20(f40 f40Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = f40Var;
     }
 
-    @Override // org.telegram.ui.fr0
-    public final void I(org.telegram.messenger.ij ijVar) {
-        this.a.b.invalidate();
+    @Override // org.telegram.ui.ir0
+    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+        f40 f40Var = this.T;
+        e20 e20Var = f40Var.l1;
+        f20 f20Var = f40Var.w4;
+        if (f10 > 0.0f) {
+            float x10 = f40Var.b.getX() + f20Var.getX();
+            float y10 = f40Var.b.getY() + f20Var.getY();
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(x10, y10, e20Var.getMeasuredWidth() + x10, e20Var.getMeasuredHeight() + y10);
+            canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
+            canvas.translate(x10, y10);
+            f20Var.draw(canvas);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.ui.fr0
-    public final void I0(org.telegram.messenger.ij ijVar) {
-        e40 e40Var = this.a;
-        e40Var.H1.I0(true);
-        e40Var.T3.f.K0(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), 0, 0);
-        e40Var.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.fr0
-    public final /* synthetic */ TextureView l0() {
-        return null;
+    @Override // org.telegram.ui.ir0
+    public final void e() {
+        e20 e20Var = this.T.l1;
+        super.e();
+        for (int i7 = 0; i7 < e20Var.getChildCount(); i7++) {
+            e20Var.getChildAt(i7).invalidate();
+        }
     }
 }

@@ -3,9 +3,9 @@ package wg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d0 extends fi.d {
     public final RectF k0;
@@ -13,8 +13,8 @@ public final class d0 extends fi.d {
     public float m0;
     public final org.telegram.ui.Components.voip.n n0;
 
-    public d0(Context context, g6 g6Var) {
-        super(context, g6Var, true);
+    public d0(Context context, h6 h6Var) {
+        super(context, h6Var, true);
         this.k0 = new RectF();
         org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n();
         this.n0 = nVar;

@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v3 extends tt0 {
+public final class v3 extends st0 {
     public int f0;
     public final /* synthetic */ b4 g0;
 
@@ -19,19 +19,19 @@ public final class v3 extends tt0 {
         this.f0 = -1;
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.st0
     public final boolean O() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.st0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.st0
     public final void S() {
-        this.g0.k1.invalidate();
+        this.g0.n1.invalidate();
     }
 
     @Override // android.view.ViewGroup
@@ -42,12 +42,12 @@ public final class v3 extends tt0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         super.onLayout(z9, i7, i10, i11, i12);
         b4 b4Var = this.g0;
-        b4Var.a2.setTranslationY(((i12 - i10) - r4.getMeasuredHeight()) / 2.0f);
-        b4Var.c2.i0(b4Var.c2.getY() + b4Var.a2.getY(), getBackgroundSizeY());
+        b4Var.d2.setTranslationY(((i12 - i10) - r4.getMeasuredHeight()) / 2.0f);
+        b4Var.f2.i0(b4Var.f2.getY() + b4Var.d2.getY(), getBackgroundSizeY());
     }
 
     @Override // android.widget.FrameLayout, android.view.View

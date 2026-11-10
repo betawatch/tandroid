@@ -13,17 +13,17 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class PipRoundVideoView implements org.telegram.messenger.ls {
     public static PipRoundVideoView F;
     public DecelerateInterpolator D;
     public final RectF E = new RectF();
-    public fe0 a;
+    public ee0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public ge0 e;
+    public fe0 e;
     public Bitmap f;
     public int h;
     public int n;
@@ -39,10 +39,10 @@ public class PipRoundVideoView implements org.telegram.messenger.ls {
             i11 = org.telegram.messenger.g0.q.x;
         } else {
             i11 = org.telegram.messenger.g0.q.y - i10;
-            i10 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+            i10 = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
         }
         int L = i7 == 0 ? org.telegram.messenger.g0.L(10.0f) : i7 == 1 ? (i11 - i10) - org.telegram.messenger.g0.L(10.0f) : Math.round((r0 - org.telegram.messenger.g0.L(20.0f)) * f10) + org.telegram.messenger.g0.L(10.0f);
-        return !z9 ? org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + L : L;
+        return !z9 ? org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + L : L;
     }
 
     public final void a(boolean z9) {
@@ -93,12 +93,12 @@ public class PipRoundVideoView implements org.telegram.messenger.ls {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.ALPHA, z9 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.SCALE_X, z9 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.SCALE_Y, z9 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.ALPHA, z9 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.SCALE_X, z9 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.SCALE_Y, z9 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.D == null) {
             this.D = new DecelerateInterpolator();
         }
-        this.r.addListener(new t9(17, this, z9));
+        this.r.addListener(new s9(17, this, z9));
         this.r.setInterpolator(this.D);
         this.r.start();
     }
@@ -109,14 +109,14 @@ public class PipRoundVideoView implements org.telegram.messenger.ls {
         }
         F = this;
         this.s = runnable;
-        fe0 fe0Var = new fe0(this, launchActivity);
-        this.a = fe0Var;
-        fe0Var.setWillNotDraw(false);
+        ee0 ee0Var = new ee0(this, launchActivity);
+        this.a = ee0Var;
+        ee0Var.setWillNotDraw(false);
         this.h = org.telegram.messenger.g0.L(126.0f);
         this.n = org.telegram.messenger.g0.L(126.0f);
-        ge0 ge0Var = new ge0(0, launchActivity, this);
-        this.e = ge0Var;
-        ge0Var.setOutlineProvider(new bg.q0(13));
+        fe0 fe0Var = new fe0(0, launchActivity, this);
+        this.e = fe0Var;
+        fe0Var.setOutlineProvider(new bg.q0(13));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
         this.a.addView(this.e, c8.ha.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
@@ -165,11 +165,11 @@ public class PipRoundVideoView implements org.telegram.messenger.ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        ge0 ge0Var;
-        if (i7 != org.telegram.messenger.qs.e2 || (ge0Var = this.e) == null) {
+        fe0 fe0Var;
+        if (i7 != org.telegram.messenger.qs.e2 || (fe0Var = this.e) == null) {
             return;
         }
-        ge0Var.invalidate();
+        fe0Var.invalidate();
     }
 
     public final void e(boolean z9) {
@@ -179,12 +179,12 @@ public class PipRoundVideoView implements org.telegram.messenger.ls {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.ALPHA, z9 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.SCALE_X, z9 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<fe0, Float>) View.SCALE_Y, z9 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.ALPHA, z9 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.SCALE_X, z9 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<ee0, Float>) View.SCALE_Y, z9 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.D == null) {
             this.D = new DecelerateInterpolator();
         }
-        this.r.addListener(new he0(this, 0));
+        this.r.addListener(new ge0(this, 0));
         this.r.setInterpolator(this.D);
         this.r.start();
     }

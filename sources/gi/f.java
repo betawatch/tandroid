@@ -20,7 +20,6 @@ import bi.n0;
 import bi.pa;
 import bi.z;
 import c8.ha;
-import di.r4;
 import fi.v9;
 import hi.q3;
 import j$.util.Objects;
@@ -40,35 +39,36 @@ import org.telegram.messenger.v1;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.q4;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.kz;
+import org.telegram.ui.ActionBar.l;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.r4;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.jz;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.Wallet.u6;
-import org.telegram.ui.d61;
-import org.telegram.ui.n00;
-import org.telegram.ui.p00;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.Wallet.x6;
+import org.telegram.ui.e61;
+import org.telegram.ui.o00;
 import org.telegram.ui.q00;
+import org.telegram.ui.r00;
 import ug.q1;
 import v4.b0;
+import v4.k;
 import wg.f1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class f extends q00 implements ls {
+public final class f extends r00 implements ls {
     public FrameLayout R;
-    public u6 S;
+    public x6 S;
     public cd T;
-    public jt0 U;
+    public it0 U;
     public ec V;
     public View W;
     public te.a X;
@@ -82,11 +82,11 @@ public final class f extends q00 implements ls {
     public final boolean h0;
     public LinearLayout i0;
     public SpannableStringBuilder j0;
-    public j6 k0;
-    public j6 l0;
+    public i6 k0;
+    public i6 l0;
     public e5 m0;
     public fi.d n0;
-    public d61 o0;
+    public e61 o0;
     public fi.d p0;
     public fi.d q0;
     public boolean r0;
@@ -109,7 +109,7 @@ public final class f extends q00 implements ls {
     }
 
     public static void A0(f fVar, int i7) {
-        y31 G;
+        x31 G;
         hc hcVar = fVar.t0;
         if (hcVar == null || (G = hcVar.G(i7)) == null) {
             return;
@@ -136,53 +136,53 @@ public final class f extends q00 implements ls {
 
     public final void D0() {
         G0();
-        qj0 qj0Var = this.c;
-        if (qj0Var == null || this.U == null || qj0Var.getLayoutParams() == null) {
+        pj0 pj0Var = this.c;
+        if (pj0Var == null || this.U == null || pj0Var.getLayoutParams() == null) {
             return;
         }
         int C = q.C(48.0f, this.b0, -g0.L(8.0f));
         int C2 = q.C(48.0f, this.c0, -g0.L(8.0f));
         g0.B3(this.c, 0, C, 0, C2);
-        qj0 qj0Var2 = this.c;
+        pj0 pj0Var2 = this.c;
         int i7 = -C;
-        qj0Var2.setPadding(qj0Var2.getPaddingLeft(), i7, this.c.getPaddingRight(), this.c0 - C2);
+        pj0Var2.setPadding(pj0Var2.getPaddingLeft(), i7, this.c.getPaddingRight(), this.c0 - C2);
         this.U.z(i7, -C2);
     }
 
     public final void E0(ArrayList arrayList, m41 m41Var) {
-        qj0 qj0Var;
-        jt0 jt0Var = this.U;
-        boolean z9 = jt0Var != null && jt0Var.e0;
+        pj0 pj0Var;
+        it0 it0Var = this.U;
+        boolean z9 = it0Var != null && it0Var.e0;
         this.a0 = -1;
         if (getParentActivity() == null) {
             return;
         }
         ea y10 = ea.y(this.currentAccount, true);
-        n00 n00Var = (n00) super.o0(getParentActivity());
-        y31 y31Var = new y31(-2);
-        y31Var.c = n00Var;
-        arrayList.add(y31Var);
-        arrayList.add(y31.k(this.i0));
+        o00 o00Var = (o00) super.o0(getParentActivity());
+        x31 x31Var = new x31(-2);
+        x31Var.c = o00Var;
+        arrayList.add(x31Var);
+        arrayList.add(x31.k(this.i0));
         boolean z10 = this.h0;
         if (z10) {
-            arrayList.add(y31.C(id.M0(2131749514, null)));
+            arrayList.add(x31.C(id.M0(2131749514, null)));
         }
         boolean N = y10.N(0);
         this.r0 = N;
         if (!N) {
-            arrayList.add(y31.m(this.g0));
+            arrayList.add(x31.m(this.g0));
             return;
         }
         if (!z10) {
-            arrayList.add(y31.C(null));
+            arrayList.add(x31.C(null));
         }
         this.a0 = arrayList.size();
-        arrayList.add(y31.n(this.V, -2));
-        if (!z9 || (qj0Var = this.c) == null) {
+        arrayList.add(x31.n(this.V, -2));
+        if (!z9 || (pj0Var = this.c) == null) {
             return;
         }
         v9 v9Var = this.f0;
-        qj0Var.removeCallbacks(v9Var);
+        pj0Var.removeCallbacks(v9Var);
         this.c.post(v9Var);
     }
 
@@ -267,7 +267,7 @@ public final class f extends q00 implements ls {
         if (this.W == null) {
             return;
         }
-        int L = g0.L(44.0f) + k.getCurrentActionBarHeight() + this.b0;
+        int L = g0.L(44.0f) + l.getCurrentActionBarHeight() + this.b0;
         ViewGroup.LayoutParams layoutParams = this.W.getLayoutParams();
         if (layoutParams.height != L) {
             layoutParams.height = L;
@@ -284,33 +284,33 @@ public final class f extends q00 implements ls {
         te.a aVar = this.X;
         float f10 = aVar == null ? 0.0f : aVar.e;
         te.a aVar2 = this.Y;
-        view.setTranslationY(((-(1.0f - f10)) * k.getCurrentActionBarHeight()) - ((1.0f - (aVar2 != null ? aVar2.e : 0.0f)) * g0.L(44.0f)));
+        view.setTranslationY(((-(1.0f - f10)) * l.getCurrentActionBarHeight()) - ((1.0f - (aVar2 != null ? aVar2.e : 0.0f)) * g0.L(44.0f)));
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         final int i7 = 0;
         this.G = false;
         this.E = g0.L(238.0f);
-        jt0 jt0Var = new jt0(context);
-        this.U = jt0Var;
+        it0 it0Var = new it0(context);
+        this.U = it0Var;
         final int i10 = 1;
-        jt0Var.setCommonInsetsManagedExternally(true);
+        it0Var.setCommonInsetsManagedExternally(true);
         if (!this.d0) {
-            q4 q4Var = this.parentLayout;
-            this.b0 = (q4Var == null || !((ActionBarLayout) q4Var).S0) ? g0.m : 0;
+            r4 r4Var = this.parentLayout;
+            this.b0 = (r4Var == null || !((ActionBarLayout) r4Var).S0) ? g0.m : 0;
             this.c0 = g0.n;
         }
         this.U.setGeometry(new n(this, 29));
         this.U.z(-q.C(48.0f, this.b0, -g0.L(8.0f)), -q.C(48.0f, this.c0, -g0.L(8.0f)));
-        jt0 jt0Var2 = this.U;
-        jt0Var2.getClass();
-        this.V = new ec(25, context, jt0Var2);
+        it0 it0Var2 = this.U;
+        it0Var2.getClass();
+        this.V = new ec(25, context, it0Var2);
         this.T = new cd(context, this.currentAccount, true, 0L, getClassGuid(), getResourceProvider(), this.U);
         this.g0 = new ec(3, context, this);
         super.createView(context);
-        p00 p00Var = this.s;
-        getBaseSimpleGlass().f(p00Var, this.c, this.simpleActionBar, this.resourceProvider);
+        q00 q00Var = this.s;
+        getBaseSimpleGlass().f(q00Var, this.c, this.simpleActionBar, this.resourceProvider);
         this.simpleActionBar.setBackground(null);
         this.D.bringToFront();
         this.simpleActionBar.bringToFront();
@@ -318,21 +318,21 @@ public final class f extends q00 implements ls {
         this.c.setCaptureSectionsDecoratorAllowed(true);
         this.T.setGlassEngine(this.glassEngine);
         final int i11 = 2;
-        getBaseSimpleGlass().o = new g(i11, this, new bi.f(i11, p00Var));
+        getBaseSimpleGlass().o = new g(i11, this, new bi.f(i11, q00Var));
         View tabsContainer = this.T.getTabsContainer();
         View view = new View(getParentActivity());
         this.W = view;
         view.setAlpha(0.0f);
-        jt0 jt0Var3 = this.U;
-        jt0Var3.addView(this.W, jt0Var3.indexOfChild(tabsContainer), ha.e(-1, 0, 48));
+        it0 it0Var3 = this.U;
+        it0Var3.addView(this.W, it0Var3.indexOfChild(tabsContainer), ha.e(-1, 0, 48));
         this.W.setBackground(getBaseSimpleGlass().a(this.W));
         a aVar = new a(this, i7);
-        xq xqVar = xq.h;
-        te.a aVar2 = new te.a(0, aVar, xqVar, 380L, false);
+        wq wqVar = wq.h;
+        te.a aVar2 = new te.a(0, aVar, wqVar, 380L, false);
         this.X = aVar2;
-        this.Y = new te.a(1, new a(this, i10), xqVar, 380L, false);
-        this.Z = new te.a(2, new a(this, i11), xqVar, 380L, false);
-        aVar2.a(this.c.canScrollVertically(-1) || this.simpleActionBar.t(), false);
+        this.Y = new te.a(1, new a(this, i10), wqVar, 380L, false);
+        this.Z = new te.a(2, new a(this, i11), wqVar, 380L, false);
+        aVar2.a(this.c.canScrollVertically(-1) || this.simpleActionBar.u(), false);
         this.Y.a(this.U.e0, false);
         this.c.j(new ai.b(this, 13));
         G0();
@@ -341,38 +341,38 @@ public final class f extends q00 implements ls {
         c10.q(g0.L(9.66f));
         c10.r(g0.L(18.0f));
         tabsContainer.setBackground(c10);
-        q4 q4Var2 = this.parentLayout;
-        if (q4Var2 != null && ((ActionBarLayout) q4Var2).T0) {
+        r4 r4Var2 = this.parentLayout;
+        if (r4Var2 != null && ((ActionBarLayout) r4Var2).T0) {
             this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.R = frameLayout;
         frameLayout.setClickable(true);
-        u6 u6Var = new u6(qs.A2, context, false);
-        this.S = u6Var;
-        u6Var.setStarParticlesView(this.e);
+        x6 x6Var = new x6(qs.A2, context, false);
+        this.S = x6Var;
+        x6Var.setStarParticlesView(this.e);
         this.R.addView(this.S, ha.d(qs.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
         j0(id.M0(2131749512, null), g0.H2(g0.U2(id.M0(2131749513, null), new pa(context, 7)), true), this.R, null);
         this.c.setOverScrollMode(2);
-        v4.k kVar = new v4.k();
+        k kVar = new k();
         kVar.m = false;
         kVar.C = false;
-        kVar.o(xqVar);
+        kVar.o(wqVar);
         kVar.n(350L);
         this.c.setItemAnimator(kVar);
         this.c.setOnItemClickListener(new ai.k(this, 11));
-        this.s.addView(new kz(getParentActivity()), ha.c(-1.0f, -1));
+        this.s.addView(new jz(getParentActivity()), ha.c(-1.0f, -1));
         ea.y(this.currentAccount, true);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.i0 = linearLayout;
         linearLayout.setOrientation(1);
         this.i0.setPadding(0, g0.L(20.0f), 0, g0.L(10.0f));
-        j6 j6Var = new j6(getParentActivity(), false, true, false);
-        this.k0 = j6Var;
-        j6Var.setTypeface(g0.o());
+        i6 i6Var = new i6(getParentActivity(), false, true, false);
+        this.k0 = i6Var;
+        i6Var.setTypeface(g0.o());
         this.k0.setTextSize(g0.L(32.0f));
         this.k0.setGravity(17);
-        s6.Y(this.k0, l6.G6, this.resourceProvider);
+        t6.Y(this.k0, m6.G6, this.resourceProvider);
         this.j0 = new SpannableStringBuilder("S");
         wp wpVar = new wp(R.drawable.mini_gram_72, 0);
         wpVar.d = false;
@@ -382,12 +382,12 @@ public final class f extends q00 implements ls {
         wpVar.s = 0.0f;
         this.j0.setSpan(wpVar, 0, 1, 33);
         this.i0.addView(this.k0, ha.d(-1, 40.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
-        j6 j6Var2 = new j6(getParentActivity(), false, false, false);
-        this.l0 = j6Var2;
-        j6Var2.setTextSize(g0.L(14.0f));
+        i6 i6Var2 = new i6(getParentActivity(), false, false, false);
+        this.l0 = i6Var2;
+        i6Var2.setTextSize(g0.L(14.0f));
         this.l0.setGravity(17);
         this.l0.setText(id.M0(2131742789, null));
-        s6.Y(this.l0, l6.z6, this.resourceProvider);
+        t6.Y(this.l0, m6.z6, this.resourceProvider);
         this.i0.addView(this.l0, ha.d(-1, 20.0f, 17, 24.0f, 0.0f, 24.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
         e5 e5Var = new e5(5, getParentActivity(), this);
@@ -426,9 +426,9 @@ public final class f extends q00 implements ls {
             });
             this.m0.addView(this.n0, ha.e(-1, 48, qs.E1));
         }
-        d61 d61Var = new d61(4, getParentActivity(), this);
-        this.o0 = d61Var;
-        frameLayout2.addView(d61Var);
+        e61 e61Var = new e61(4, getParentActivity(), this);
+        this.o0 = e61Var;
+        frameLayout2.addView(e61Var);
         fi.d dVar2 = new fi.d(getParentActivity(), this.resourceProvider, true);
         dVar2.setRoundRadius(24);
         this.p0 = dVar2;
@@ -552,41 +552,41 @@ public final class f extends q00 implements ls {
 
     @Override // org.telegram.ui.ActionBar.f2
     public final int getNavigationBarColor() {
-        return l6.x0(null, l6.i5, false);
+        return m6.x0(null, m6.i5, false);
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final void h0() {
-        jt0 jt0Var;
+        it0 it0Var;
         super.h0();
-        if (this.e0 && (jt0Var = this.U) != null && this.a0 != -1) {
-            jt0Var.a();
+        if (this.e0 && (it0Var = this.U) != null && this.a0 != -1) {
+            it0Var.a();
         }
         this.e0 = false;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final void i0() {
         this.s.addView(this.U, ha.c(-1.0f, -1));
         this.U.u(this.c, new a(this, 3));
-        jt0 jt0Var = this.U;
+        it0 it0Var = this.U;
         cd cdVar = this.T;
-        w61 viewPager = cdVar.getViewPager();
+        v61 viewPager = cdVar.getViewPager();
         cd cdVar2 = this.T;
         Objects.requireNonNull(cdVar2);
-        jt0Var.x(cdVar, viewPager, new r4(cdVar2, 17));
+        it0Var.x(cdVar, viewPager, new di.r4(cdVar2, 17));
         this.U.y(this.T.getTabsContainer());
         this.T.getTabsContainer().setLayoutParams(ha.d(-1, -2.0f, 48, -4.0f, 0.0f, -4.0f, 0.0f));
         D0();
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        jt0 jt0Var = this.U;
-        return jt0Var == null || motionEvent == null || jt0Var.j(motionEvent.getX(), motionEvent.getY()) || !this.U.c() || this.T.getViewPager().b == 0;
+        it0 it0Var = this.U;
+        return it0Var == null || motionEvent == null || it0Var.j(motionEvent.getX(), motionEvent.getY()) || !this.U.c() || this.T.getViewPager().b == 0;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final v4.g0 k0() {
         hc hcVar = new hc(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new ai.e(this, 24), getResourceProvider(), 2);
         this.t0 = hcVar;
@@ -594,24 +594,24 @@ public final class f extends q00 implements ls {
         return hcVar;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final b0 l0(Context context) {
-        jt0 jt0Var = this.U;
-        jt0Var.getClass();
-        return new jg.i0(5, jt0Var, false);
+        it0 it0Var = this.U;
+        it0Var.getClass();
+        return new jg.i0(5, it0Var, false);
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final q1 m0() {
         return new gc(getParentActivity(), 75, 1, 1);
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final boolean n0() {
         return false;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final View o0(Context context) {
         throw null;
     }
@@ -632,9 +632,9 @@ public final class f extends q00 implements ls {
     @Override // org.telegram.ui.ActionBar.f2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        qj0 qj0Var = this.c;
-        if (qj0Var != null) {
-            qj0Var.removeCallbacks(this.f0);
+        pj0 pj0Var = this.c;
+        if (pj0Var != null) {
+            pj0Var.removeCallbacks(this.f0);
         }
         qs.f(this.currentAccount).n(this, qs.v3);
         qs.f(this.currentAccount).n(this, qs.y3);
@@ -643,7 +643,7 @@ public final class f extends q00 implements ls {
         qs.f(this.currentAccount).n(this, qs.C3);
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onInsets(int i7, int i10, int i11, int i12) {
         this.d0 = true;
         this.b0 = i10;
@@ -651,39 +651,39 @@ public final class f extends q00 implements ls {
         D0();
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onPause() {
         super.onPause();
-        u6 u6Var = this.S;
-        if (u6Var != null) {
-            u6Var.setPaused(true);
+        x6 x6Var = this.S;
+        if (x6Var != null) {
+            x6Var.setPaused(true);
         }
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final void onResume() {
         super.onResume();
-        u6 u6Var = this.S;
-        if (u6Var != null) {
-            u6Var.setPaused(false);
+        x6 x6Var = this.S;
+        if (x6Var != null) {
+            x6Var.setPaused(false);
         }
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final float q0() {
-        qj0 qj0Var = this.c;
-        if (qj0Var == null) {
+        pj0 pj0Var = this.c;
+        if (pj0Var == null) {
             return 0.0f;
         }
-        return qj0Var.getY();
+        return pj0Var.getY();
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final View r0() {
         return this.U;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final void s0(boolean z9) {
         te.a aVar = this.Z;
         if (aVar == null || aVar.f == z9) {
@@ -692,24 +692,24 @@ public final class f extends q00 implements ls {
         aVar.a(z9, true);
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final void t0(float f10) {
-        u6 u6Var = this.S;
-        if (u6Var != null) {
-            u6Var.setHeaderTilt(f10 * 70.0f);
+        x6 x6Var = this.S;
+        if (x6Var != null) {
+            x6Var.setHeaderTilt(f10 * 70.0f);
         }
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final void u0() {
         super.u0();
-        jt0 jt0Var = this.U;
-        this.e0 = jt0Var != null && jt0Var.e0;
-        qj0 qj0Var = this.c;
-        if (qj0Var == null || this.P < 0) {
+        it0 it0Var = this.U;
+        this.e0 = it0Var != null && it0Var.e0;
+        pj0 pj0Var = this.c;
+        if (pj0Var == null || this.P < 0) {
             return;
         }
-        this.Q -= qj0Var.getPaddingTop();
+        this.Q -= pj0Var.getPaddingTop();
     }
 
     @Override // org.telegram.ui.ActionBar.f2
@@ -717,7 +717,7 @@ public final class f extends q00 implements ls {
         return true;
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final boolean z0() {
         return true;
     }

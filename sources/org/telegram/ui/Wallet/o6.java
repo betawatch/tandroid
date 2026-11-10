@@ -1,27 +1,36 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements r1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u6 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ci;
 
-    public /* synthetic */ o6(u6 u6Var, int i7) {
-        this.a = i7;
-        this.b = u6Var;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes4.dex */
+public final class o6 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ci a;
+    public final /* synthetic */ x6 b;
+    public final /* synthetic */ p6 c;
+
+    public o6(p6 p6Var, ci ciVar, x6 x6Var) {
+        this.c = p6Var;
+        this.a = ciVar;
+        this.b = x6Var;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                u6 u6Var = this.b;
-                u6Var.c.setScaleX(f10);
-                u6Var.c.setScaleY(f10);
-                break;
-            default:
-                this.b.P = f11;
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        this.c.a(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.c.a(true);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        if (this.a != null) {
+            org.telegram.messenger.g0.v1(this.b);
         }
     }
 }

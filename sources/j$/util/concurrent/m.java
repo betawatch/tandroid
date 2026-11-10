@@ -1,13 +1,9 @@
 package j$.util.concurrent;
 
-/* loaded from: classes2.dex */
-public final class m extends l {
-    @Override // j$.util.concurrent.l
-    public final l a(int i7, Object obj) {
-        return null;
-    }
+import java.io.Serializable;
+import java.util.concurrent.locks.ReentrantLock;
 
-    public m() {
-        super(-3, null, null);
-    }
+/* loaded from: classes2.dex */
+public final class m extends ReentrantLock implements Serializable {
+    private static final long serialVersionUID = 2249069246763182397L;
 }

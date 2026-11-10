@@ -6,11 +6,11 @@ import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
 public final class s1 extends b {
-    public final j$.util.concurrent.t j;
+    public final j$.util.concurrent.s j;
 
-    public s1(j$.util.concurrent.t tVar, a aVar, Spliterator spliterator) {
+    public s1(j$.util.concurrent.s sVar, a aVar, Spliterator spliterator) {
         super(aVar, spliterator);
-        this.j = tVar;
+        this.j = sVar;
     }
 
     public s1(s1 s1Var, Spliterator spliterator) {

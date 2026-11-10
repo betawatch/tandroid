@@ -10,11 +10,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements x10 {
     public final /* synthetic */ l0 a;
-    public final /* synthetic */ e7 b;
+    public final /* synthetic */ h7 b;
     public final /* synthetic */ gz c;
     public final /* synthetic */ ij d;
     public final /* synthetic */ TL_wallet.walletTransaction e;
@@ -23,9 +23,9 @@ public final /* synthetic */ class u implements x10 {
     public final /* synthetic */ long h;
     public final /* synthetic */ TLRPC.User i;
 
-    public /* synthetic */ u(l0 l0Var, e7 e7Var, gz gzVar, ij ijVar, TL_wallet.walletTransaction wallettransaction, String str, k0 k0Var, long j3, TLRPC.User user) {
+    public /* synthetic */ u(l0 l0Var, h7 h7Var, gz gzVar, ij ijVar, TL_wallet.walletTransaction wallettransaction, String str, k0 k0Var, long j3, TLRPC.User user) {
         this.a = l0Var;
-        this.b = e7Var;
+        this.b = h7Var;
         this.c = gzVar;
         this.d = ijVar;
         this.e = wallettransaction;
@@ -42,11 +42,11 @@ public final /* synthetic */ class u implements x10 {
         String str2 = (String) obj3;
         l0 l0Var = this.a;
         int i7 = l0Var.a;
-        e7 e7Var = this.b;
+        h7 h7Var = this.b;
         gz gzVar = this.c;
         ij ijVar = this.d;
         if (sendtransfer == null) {
-            e7Var.run();
+            h7Var.run();
             gzVar.k(ijVar, null, false);
             if (str2 == null) {
                 str2 = "NULL_ERROR";
@@ -89,6 +89,6 @@ public final /* synthetic */ class u implements x10 {
         sendtransfer.user_id = qp.s1(i7).q1(this.i);
         l0Var.S();
         l0.H("prepared sendTransfer, sending");
-        ConnectionsManager.getInstance(i7).sendRequestTyped(sendtransfer, new d3.b(1), new bi.t3(l0Var, wallettransaction, gzVar, ijVar, e7Var, 4));
+        ConnectionsManager.getInstance(i7).sendRequestTyped(sendtransfer, new d3.b(1), new bi.t3(l0Var, wallettransaction, gzVar, ijVar, h7Var, 4));
     }
 }

@@ -200,11 +200,11 @@ public final class j implements java.util.Map, Serializable, Map {
             } else if (map instanceof ConcurrentMap) {
                 ConcurrentMap concurrentMap = (ConcurrentMap) map;
                 Objects.requireNonNull(biFunction);
-                j$.util.concurrent.t tVar = new j$.util.concurrent.t(0, concurrentMap, biFunction);
-                if (concurrentMap instanceof j$.util.concurrent.u) {
-                    ((j$.util.concurrent.u) concurrentMap).forEach(tVar);
+                j$.util.concurrent.s sVar = new j$.util.concurrent.s(0, concurrentMap, biFunction);
+                if (concurrentMap instanceof j$.util.concurrent.t) {
+                    ((j$.util.concurrent.t) concurrentMap).forEach(sVar);
                 } else {
-                    j$.com.android.tools.r8.a.g(concurrentMap, tVar);
+                    j$.com.android.tools.r8.a.g(concurrentMap, sVar);
                 }
             } else {
                 Map.-CC.$default$replaceAll(map, biFunction);

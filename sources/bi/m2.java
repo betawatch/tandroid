@@ -10,7 +10,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -54,8 +54,8 @@ public final /* synthetic */ class m2 implements Runnable {
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error != null) {
-                            if (z10 && k7Var.x2 != null && (F = ea.y(k7Var.a, false).F(k7Var.P1, false)) != null) {
-                                F.m(k7Var.x2, !savestargift.unsave);
+                            if (z10 && k7Var.A2 != null && (F = ea.y(k7Var.a, false).F(k7Var.S1, false)) != null) {
+                                F.m(k7Var.A2, !savestargift.unsave);
                             }
                             k7Var.k().t(org.telegram.messenger.id.a0(null, null, 2131743878, tL_error.text), null).k(false);
                             break;
@@ -67,10 +67,10 @@ public final /* synthetic */ class m2 implements Runnable {
                             ea.y(k7Var.a, false).P(w12);
                         }
                         if (w12 < 0) {
-                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750260 : 2131750258, null), org.telegram.messenger.id.M0(z9 ? 2131750261 : 2131750259, null)).j();
+                            org.telegram.ui.Components.gc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750260 : 2131750258, null), org.telegram.messenger.id.M0(z9 ? 2131750261 : 2131750259, null)).j();
                             break;
                         } else {
-                            org.telegram.ui.Components.hc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750123 : 2131750121, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(z9 ? 2131750124 : 2131750122, null), T instanceof ProfileActivity ? null : new k3(w12, T))).k(true);
+                            org.telegram.ui.Components.gc.a0(T).s(document, org.telegram.messenger.id.M0(z9 ? 2131750123 : 2131750121, null), org.telegram.messenger.g0.U2(org.telegram.messenger.id.M0(z9 ? 2131750124 : 2131750122, null), T instanceof ProfileActivity ? null : new k3(w12, T))).k(true);
                             break;
                         }
                     }

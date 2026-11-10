@@ -39,7 +39,7 @@ import m9.u;
 import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.j1;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.vf;
+import org.telegram.ui.Components.uf;
 import sg.i0;
 import y7.d6;
 import z7.k7;
@@ -50,7 +50,7 @@ import z7.ra;
 import z7.ta;
 import z7.va;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -224,7 +224,7 @@ public final /* synthetic */ class h implements Runnable {
                 ((Handler) this.d).post(new u(26, (t) this.c, obj));
                 return;
             case 9:
-                ((vf) this.d).J((File) this.c, (ArrayList) this.b);
+                ((uf) this.d).J((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 x4.e eVar = (x4.e) this.d;

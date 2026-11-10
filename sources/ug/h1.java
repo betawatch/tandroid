@@ -8,9 +8,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hc;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.t5;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h1 extends View {
     public final /* synthetic */ i1 a;
@@ -45,7 +45,7 @@ public final class h1 extends View {
         ImageReceiver imageReceiver2 = i1Var.c;
         ImageReceiver imageReceiver3 = i1Var.d;
         if (i1Var.s) {
-            imageReceiver2.q0(hc.b(i1Var.r), null, t5.f(i1Var.r, l6.a7, 0.5f, null), "webp", null, 1);
+            imageReceiver2.q0(hc.b(i1Var.r), null, t5.f(i1Var.r, m6.a7, 0.5f, null), "webp", null, 1);
             if (ij.X3(i1Var.r)) {
                 imageReceiver = imageReceiver3;
                 imageReceiver.t0(hc.d(ij.F1(i1Var.r), i1Var.r), "140_140", null, null, "tgs", null, 1);

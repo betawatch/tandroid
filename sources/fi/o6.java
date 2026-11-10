@@ -5,7 +5,7 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o6 extends p6 {
     public final /* synthetic */ TLRPC.Chat b;
@@ -33,9 +33,9 @@ public final class o6 extends p6 {
 
     @Override // fi.p6
     public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+        org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
         TLRPC.Chat chat = this.b;
-        w8Var.q(chat);
-        imageReceiver.i0(chat, w8Var, null);
+        v8Var.q(chat);
+        imageReceiver.i0(chat, v8Var, null);
     }
 }

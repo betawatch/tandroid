@@ -23,12 +23,12 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.z5;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Wallet.t6;
-import org.telegram.ui.Wallet.u6;
-import org.telegram.ui.d51;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Wallet.w6;
+import org.telegram.ui.Wallet.x6;
+import org.telegram.ui.e51;
 import tg.a2;
 import tg.k2;
 import ug.b0;
@@ -43,7 +43,7 @@ import vg.r;
 import wg.u;
 import wg.x;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -164,12 +164,12 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 14:
                 i0 i0Var = ((b0) this.b).c;
-                i0Var.o1.presentFragment(d51.g0(i0Var.n1(), true));
+                i0Var.r1.presentFragment(e51.g0(i0Var.n1(), true));
                 return;
             case 15:
-                dh0 dh0Var = ((p0) this.b).F;
-                dh0Var.getAnimatedDrawable().N(0, true, false);
-                dh0Var.d();
+                ch0 ch0Var = ((p0) this.b).F;
+                ch0Var.getAnimatedDrawable().N(0, true, false);
+                ch0Var.d();
                 return;
             case 16:
                 ((w0) ((v7) this.b).c).I0();
@@ -205,10 +205,10 @@ public final /* synthetic */ class b implements Runnable {
                 eVar2.w = null;
                 Choreographer.getInstance().removeFrameCallback(eVar2);
                 eVar2.F = 0L;
-                t6 t6Var = (t6) eVar2;
-                u6 u6Var = t6Var.L;
-                if (u6Var.d == t6Var) {
-                    u6.c(u6Var);
+                w6 w6Var = (w6) eVar2;
+                x6 x6Var = w6Var.L;
+                if (x6Var.d == w6Var) {
+                    x6.c(x6Var);
                     return;
                 }
                 return;
@@ -441,11 +441,11 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 return;
             case 25:
-                ((vh.g) this.b).V1.O(true);
+                ((vh.g) this.b).Y1.O(true);
                 return;
             case 26:
                 SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
-                hc X = hc.X();
+                gc X = gc.X();
                 if (X != null) {
                     X.Q(R.raw.forward, 30, spannableStringBuilder).j();
                     return;
@@ -455,7 +455,7 @@ public final /* synthetic */ class b implements Runnable {
                 ((x) this.b).a(null);
                 return;
             case 28:
-                ((fx) this.b).a(Collections.EMPTY_LIST);
+                ((ex) this.b).a(Collections.EMPTY_LIST);
                 return;
             default:
                 ((u) this.b).a(null);

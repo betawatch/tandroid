@@ -38,24 +38,25 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.a3;
+import org.telegram.ui.ActionBar.b3;
 import org.telegram.ui.ActionBar.d3;
+import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.l6;
 import org.telegram.ui.Cells.ea;
 import org.telegram.ui.Cells.ga;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.kt0;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.oe;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.vf;
-import org.telegram.ui.Wallet.w5;
+import org.telegram.ui.Components.a8;
+import org.telegram.ui.Components.an0;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.jt0;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ne;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.uf;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +79,7 @@ public final /* synthetic */ class z0 implements Runnable {
             case 0:
                 a1 a1Var = (a1) this.b;
                 h9.f0 f0Var = (h9.f0) this.c;
-                x2.g0 g0Var = (x2.g0) this.d;
+                x2.f0 f0Var2 = (x2.f0) this.d;
                 m2.e eVar = a1Var.c;
                 h9.t1 f10 = f0Var.f();
                 b8 b8Var = eVar.d;
@@ -87,30 +88,30 @@ public final /* synthetic */ class z0 implements Runnable {
                 b8Var.getClass();
                 b8Var.b = h9.i0.q(f10);
                 if (!f10.isEmpty()) {
-                    b8Var.e = (x2.g0) f10.get(0);
-                    g0Var.getClass();
-                    b8Var.f = g0Var;
+                    b8Var.e = (x2.f0) f10.get(0);
+                    f0Var2.getClass();
+                    b8Var.f = f0Var2;
                 }
-                if (((x2.g0) b8Var.d) == null) {
-                    b8Var.d = b8.f(c1Var, (h9.i0) b8Var.b, (x2.g0) b8Var.e, (e2.i1) b8Var.a);
+                if (((x2.f0) b8Var.d) == null) {
+                    b8Var.d = b8.f(c1Var, (h9.i0) b8Var.b, (x2.f0) b8Var.e, (e2.i1) b8Var.a);
                 }
                 b8Var.s(c1Var.y0());
                 return;
             case 1:
                 g1 g1Var = (g1) this.b;
                 Pair pair = (Pair) this.c;
-                g1Var.b.h.b(((Integer) pair.first).intValue(), (x2.g0) pair.second, (qb.a) this.d);
+                g1Var.b.h.b(((Integer) pair.first).intValue(), (x2.f0) pair.second, (qb.a) this.d);
                 return;
             case 2:
                 g1 g1Var2 = (g1) this.b;
                 Pair pair2 = (Pair) this.c;
-                g1Var2.b.h.K(((Integer) pair2.first).intValue(), (x2.g0) pair2.second, (Exception) this.d);
+                g1Var2.b.h.K(((Integer) pair2.first).intValue(), (x2.f0) pair2.second, (Exception) this.d);
                 return;
             case 3:
                 t3 t3Var = (t3) this.b;
-                l60 l60Var = (l60) this.c;
+                k60 k60Var = (k60) this.c;
                 m5 m5Var = (m5) this.d;
-                if (t3Var.q4 != l60Var) {
+                if (t3Var.q4 != k60Var) {
                     return;
                 }
                 t3Var.q4 = null;
@@ -244,9 +245,9 @@ public final /* synthetic */ class z0 implements Runnable {
             case 11:
                 SpannableString spannableString = (SpannableString) this.b;
                 j2.n nVar2 = (j2.n) this.c;
-                org.telegram.ui.ActionBar.p pVar = (org.telegram.ui.ActionBar.p) this.d;
+                org.telegram.ui.ActionBar.c cVar = (org.telegram.ui.ActionBar.c) this.d;
                 ni.m.a(spannableString, spannableString.length(), (com.google.android.gms.internal.play_billing.s0) nVar2.b);
-                pVar.run();
+                cVar.run();
                 return;
             case 12:
                 SpannableString spannableString2 = (SpannableString) this.b;
@@ -256,10 +257,10 @@ public final /* synthetic */ class z0 implements Runnable {
                 yaVar.a(spannableString2);
                 return;
             case 13:
-                ((VideoAds) this.b).lambda$show$3((cc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
+                ((VideoAds) this.b).lambda$show$3((bc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
                 return;
             case 14:
-                ((VideoAds) this.b).lambda$show$5((cc) this.c, (boolean[]) this.d);
+                ((VideoAds) this.b).lambda$show$5((bc) this.c, (boolean[]) this.d);
                 return;
             case 15:
                 ((VideoPlayerHolderBase) this.b).lambda$release$3((TLRPC.Document) this.c, (Runnable) this.d);
@@ -294,41 +295,41 @@ public final /* synthetic */ class z0 implements Runnable {
                 f2Var2.onBecomeFullyVisible();
                 return;
             case 19:
-                d3 d3Var = (d3) this.b;
+                e3 e3Var = (e3) this.b;
                 ((f2) this.c).presentFragment((cn) this.d);
-                d3Var.c = false;
+                e3Var.c = false;
                 return;
             case 20:
-                d3 d3Var2 = (d3) this.b;
+                e3 e3Var2 = (e3) this.b;
                 ArrayList arrayList4 = (ArrayList) this.c;
-                org.telegram.ui.ActionBar.c3 c3Var = (org.telegram.ui.ActionBar.c3) this.d;
-                d3Var2.getClass();
+                d3 d3Var = (d3) this.d;
+                e3Var2.getClass();
                 while (i7 < arrayList4.size()) {
-                    if (((a3) arrayList4.get(i7)).a == c3Var) {
+                    if (((b3) arrayList4.get(i7)).a == d3Var) {
                         arrayList4.remove(i7);
                         i7--;
                     }
                     i7++;
                 }
-                d3Var2.invalidate();
+                e3Var2.invalidate();
                 return;
             case 21:
-                k6 k6Var = (k6) this.b;
+                l6 l6Var = (l6) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                k6 k6Var2 = (k6) this.d;
+                l6 l6Var2 = (l6) this.d;
                 if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
-                    k6Var.s();
+                    l6Var.s();
                     return;
                 }
                 TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject;
-                k6Var.g0 = w7.r(null, tL_wallPaper.document);
-                qs.f(k6Var.E).b(k6Var, qs.Y1);
-                qs.f(k6Var.E).b(k6Var, qs.Z1);
-                w7.G(k6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
+                l6Var.g0 = w7.r(null, tL_wallPaper.document);
+                qs.f(l6Var.E).b(l6Var, qs.Y1);
+                qs.f(l6Var.E).b(l6Var, qs.Z1);
+                w7.G(l6Var2.E).W(tL_wallPaper.document, tL_wallPaper, 1, 1);
                 return;
             case 22:
                 org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) this.b;
-                w5.G0(t0Var.getContext(), t0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.m0) this.d, t0Var.g1);
+                org.telegram.ui.Wallet.z5.G0(t0Var.getContext(), t0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.m0) this.d, t0Var.g1);
                 return;
             case 23:
                 org.telegram.ui.Cells.t0 t0Var2 = (org.telegram.ui.Cells.t0) this.b;
@@ -336,16 +337,16 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 24:
                 ga gaVar = (ga) this.b;
-                k6 k6Var3 = (k6) this.c;
-                k6Var3.f = true ^ k6Var3.d((File) this.d, k6Var3.c);
-                org.telegram.messenger.g0.h3(new ea(8, gaVar, k6Var3));
+                l6 l6Var3 = (l6) this.c;
+                l6Var3.f = true ^ l6Var3.d((File) this.d, l6Var3.c);
+                org.telegram.messenger.g0.h3(new ea(8, gaVar, l6Var3));
                 return;
             case 25:
-                org.telegram.ui.Components.g0 g0Var2 = (org.telegram.ui.Components.g0) this.b;
-                v4.J((Context) this.c, g0Var2.d2, new org.telegram.ui.Components.n(g0Var2), (g6) this.d);
+                org.telegram.ui.Components.f0 f0Var3 = (org.telegram.ui.Components.f0) this.b;
+                u4.J((Context) this.c, f0Var3.g2, new org.telegram.ui.Components.m(f0Var3), (h6) this.d);
                 return;
             case 26:
-                org.telegram.ui.Components.b8 b8Var2 = (org.telegram.ui.Components.b8) this.b;
+                a8 a8Var = (a8) this.b;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 u1Var.dismiss();
@@ -357,32 +358,32 @@ public final /* synthetic */ class z0 implements Runnable {
                     tL_inputDocument.id = document.id;
                     tL_inputDocument.access_hash = document.access_hash;
                     tL_inputDocument.file_reference = document.file_reference;
-                    kp kpVar = b8Var2.m2;
+                    kp kpVar = a8Var.p2;
                     if (kpVar != null) {
                         kpVar.c.add(0, kpVar.d(document));
                         kpVar.e();
                     }
-                    b8Var2.n2.clear();
-                    b8Var2.n2.addAll(b8Var2.m2.c);
-                    b8Var2.q1.f();
-                    ConnectionsManager.getInstance(b8Var2.a).sendRequest(tL_account_saveMusic, null);
+                    a8Var.q2.clear();
+                    a8Var.q2.addAll(a8Var.p2.c);
+                    a8Var.t1.f();
+                    ConnectionsManager.getInstance(a8Var.a).sendRequest(tL_account_saveMusic, null);
                     return;
                 }
                 return;
             case 27:
-                oe oeVar = (oe) this.b;
-                kt0 kt0Var = (kt0) this.c;
-                bn0 bn0Var = (bn0) this.d;
-                oeVar.getClass();
-                kt0Var.getViewTreeObserver().removeOnDrawListener(oeVar);
-                bn0Var.a.setHideAvatar(true);
+                ne neVar = (ne) this.b;
+                jt0 jt0Var = (jt0) this.c;
+                an0 an0Var = (an0) this.d;
+                neVar.getClass();
+                jt0Var.getViewTreeObserver().removeOnDrawListener(neVar);
+                an0Var.a.setHideAvatar(true);
                 return;
             case 28:
-                vf vfVar = (vf) this.b;
+                uf ufVar = (uf) this.b;
                 Uri uri = (Uri) this.c;
                 File file = (File) this.d;
                 try {
-                    InputStream openInputStream = vfVar.getContext().getContentResolver().openInputStream(uri);
+                    InputStream openInputStream = ufVar.getContext().getContentResolver().openInputStream(uri);
                     FileOutputStream fileOutputStream = new FileOutputStream(file);
                     byte[] bArr = new byte[1024];
                     while (true) {
@@ -393,7 +394,7 @@ public final /* synthetic */ class z0 implements Runnable {
                             gf gfVar = new gf(-1, file.getAbsolutePath(), 0, false, 0, 0);
                             ArrayList arrayList5 = new ArrayList();
                             arrayList5.add(gfVar);
-                            org.telegram.messenger.g0.h3(new z0(vfVar, arrayList5, file, 29));
+                            org.telegram.messenger.g0.h3(new z0(ufVar, arrayList5, file, 29));
                             return;
                         }
                         fileOutputStream.write(bArr, 0, read);
@@ -404,7 +405,7 @@ public final /* synthetic */ class z0 implements Runnable {
                     return;
                 }
             default:
-                ((vf) this.b).J((File) this.d, (ArrayList) this.c);
+                ((uf) this.b).J((File) this.d, (ArrayList) this.c);
                 return;
         }
     }

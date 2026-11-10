@@ -7,9 +7,9 @@ import android.os.RemoteException;
 import android.util.Log;
 import c8.hc;
 import j$.util.Objects;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public final Context a;
@@ -150,15 +150,15 @@ public abstract class g3 {
         }
     }
 
-    public g3(Context context, vy vyVar) {
+    public g3(Context context, uy uyVar) {
         this.e = new android.support.v4.media.session.q(this, 12);
         if (context != null) {
             this.a = context;
-            if (vyVar == null) {
-                this.d = new vy(new ComponentName(context, getClass()), 15);
+            if (uyVar == null) {
+                this.d = new uy(new ComponentName(context, getClass()), 15);
                 return;
             } else {
-                this.d = vyVar;
+                this.d = uyVar;
                 return;
             }
         }

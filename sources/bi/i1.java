@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class i1 {
     public static final float[][] a;
@@ -93,7 +93,7 @@ public abstract class i1 {
         }
     }
 
-    public static void c(Canvas canvas, org.telegram.ui.Components.g5 g5Var, int i7, float f10, float f11, RectF rectF, float f12) {
+    public static void c(Canvas canvas, org.telegram.ui.Components.f5 f5Var, int i7, float f10, float f11, RectF rectF, float f12) {
         float f13;
         float f14;
         float f15;
@@ -167,13 +167,13 @@ public abstract class i1 {
             }
             float f52 = f27;
             if (i11 == 18 || i11 == 19 || i11 == 6 || i11 == 7) {
-                f14 = xq.i.getInterpolation(f14);
+                f14 = wq.i.getInterpolation(f14);
             }
             float[] fArr3 = fArr2;
             float f53 = f46;
             float v = com.google.android.recaptcha.internal.a.v(f53, f16, org.telegram.messenger.g0.L(12.0f), f48);
             if (f14 < f53) {
-                f47 = org.telegram.messenger.g0.T1(f19, f47, xq.i.getInterpolation(f14));
+                f47 = org.telegram.messenger.g0.T1(f19, f47, wq.i.getInterpolation(f14));
                 v = org.telegram.messenger.g0.T1(f20, v, f14);
                 N7 = org.telegram.messenger.g0.T1(org.telegram.messenger.g0.N(8.0f), N7, f14);
             }
@@ -188,9 +188,9 @@ public abstract class i1 {
             if (f14 < f53) {
                 l12 = org.telegram.messenger.g0.T1(0.0f, l12, f14);
             }
-            g5Var.setBounds((int) (f47 - N7), (int) (v - N7), (int) (f47 + N7), (int) (v + N7));
-            g5Var.w = (int) (l12 * 255.0f);
-            g5Var.draw(canvas);
+            f5Var.setBounds((int) (f47 - N7), (int) (v - N7), (int) (f47 + N7), (int) (v + N7));
+            f5Var.w = (int) (l12 * 255.0f);
+            f5Var.draw(canvas);
             i11 += 3;
             i10 += 2;
             f16 = f11;

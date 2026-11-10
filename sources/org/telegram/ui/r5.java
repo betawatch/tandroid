@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -33,7 +33,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.g6 g6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i10 = i7;
                 r5 r5Var = this.b;
                 switch (i10) {
@@ -42,13 +42,13 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.R;
                         org.telegram.messenger.e3 e3Var = t5Var2.U;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.T;
-                        int i11 = ug.i0.O2;
+                        int i11 = ug.i0.R2;
                         if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
                             ug.i0 i0Var = new ug.i0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
                             i0Var.A1(e3Var);
                             i0Var.z1(tL_premium_boostsStatus, true);
                             i0Var.B1(j3);
-                            i0Var.Y1 = null;
+                            i0Var.b2 = null;
                             t5Var2.showDialog(i0Var);
                             break;
                         }
@@ -57,9 +57,9 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, g6Var, j10, null);
-                        wg.l.l1.H0 = new q5(r5Var, 0);
+                        h6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, h6Var, j10, null);
+                        wg.l.o1.H0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
@@ -81,7 +81,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.g6 g6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i102 = i10;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -90,13 +90,13 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.R;
                         org.telegram.messenger.e3 e3Var = t5Var2.U;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.T;
-                        int i11 = ug.i0.O2;
+                        int i11 = ug.i0.R2;
                         if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
                             ug.i0 i0Var = new ug.i0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
                             i0Var.A1(e3Var);
                             i0Var.z1(tL_premium_boostsStatus, true);
                             i0Var.B1(j3);
-                            i0Var.Y1 = null;
+                            i0Var.b2 = null;
                             t5Var2.showDialog(i0Var);
                             break;
                         }
@@ -105,9 +105,9 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, g6Var, j10, null);
-                        wg.l.l1.H0 = new q5(r5Var, 0);
+                        h6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, h6Var, j10, null);
+                        wg.l.o1.H0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
@@ -129,7 +129,7 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.g6 g6Var;
+                org.telegram.ui.ActionBar.h6 h6Var;
                 int i102 = i11;
                 r5 r5Var = this.b;
                 switch (i102) {
@@ -138,13 +138,13 @@ public final class r5 extends FrameLayout {
                         long j3 = t5Var2.R;
                         org.telegram.messenger.e3 e3Var = t5Var2.U;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.T;
-                        int i112 = ug.i0.O2;
+                        int i112 = ug.i0.R2;
                         if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
                             ug.i0 i0Var = new ug.i0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
                             i0Var.A1(e3Var);
                             i0Var.z1(tL_premium_boostsStatus, true);
                             i0Var.B1(j3);
-                            i0Var.Y1 = null;
+                            i0Var.b2 = null;
                             t5Var2.showDialog(i0Var);
                             break;
                         }
@@ -153,9 +153,9 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.R;
-                        g6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, g6Var, j10, null);
-                        wg.l.l1.H0 = new q5(r5Var, 0);
+                        h6Var = ((org.telegram.ui.ActionBar.f2) t5Var3).resourceProvider;
+                        wg.l.I0(t5Var3, h6Var, j10, null);
+                        wg.l.o1.H0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;

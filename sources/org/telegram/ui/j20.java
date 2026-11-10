@@ -1,68 +1,45 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class j20 extends org.telegram.ui.Components.lt {
-    public final /* synthetic */ e40 V;
+public final class j20 implements nh.a {
+    public final /* synthetic */ f40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j20(e40 e40Var, LaunchActivity launchActivity, k30 k30Var, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(launchActivity, k30Var, f2Var, 5, true, g6Var);
-        this.V = e40Var;
+    public j20(f40 f40Var) {
+        this.a = f40Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != getEditText()) {
-            return super.drawChild(canvas, view, j3);
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
         }
-        canvas.save();
-        e40 e40Var = this.V;
-        e40Var.y1.getEditText().setTranslationY(view.getMeasuredHeight() - e40Var.s5.f);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.lt
-    public final void f() {
-        super.f();
-        org.telegram.ui.Components.hy emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(this.V.b.getPaddingBottom());
+        boolean z9 = Q instanceof ProfileActivity;
+        f40 f40Var = this.a;
+        if (z9 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
+            f40Var.dismiss();
+            return;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        te.c cVar = this.V.s5;
-        if (cVar.f == 0.0f) {
-            cVar.c(getMeasuredHeight());
+        int R0 = f40Var.R0();
+        Bundle bundle = new Bundle();
+        long j3 = groupCallMessage.fromId;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
         } else {
-            cVar.a(getMeasuredHeight());
+            bundle.putLong("chat_id", -j3);
         }
-    }
-
-    @Override // org.telegram.ui.Components.lt
-    public final void p() {
-        rh.h hVar = this.V.t3;
-        int max = this.e ? Math.max(0, getEmojiPadding()) : this.N ? Math.max(0, getKeyboardHeight()) : 0;
-        if (max > 0) {
-            hVar.g(max);
-        } else {
-            hVar.i(false);
+        boolean z10 = true;
+        if (groupCallMessage.fromId == org.telegram.messenger.p10.i(f40Var.n1.a).e()) {
+            bundle.putBoolean("my_profile", true);
         }
-    }
-
-    @Override // org.telegram.ui.Components.lt
-    public final void y() {
-        this.V.b.requestApplyInsets();
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (R0 > 0 && R0 != Integer.MAX_VALUE) {
+            z10 = false;
+        }
+        Q.presentFragment(profileActivity, false, z10);
+        f40Var.dismiss();
     }
 }

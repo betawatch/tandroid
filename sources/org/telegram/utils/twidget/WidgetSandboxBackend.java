@@ -33,12 +33,12 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.q71;
-import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.p71;
+import org.telegram.ui.Components.py;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 final class WidgetSandboxBackend implements y0, g {
     private static final int MAX_CANVAS_WORDS = 2097152;
@@ -981,7 +981,7 @@ final class WidgetSandboxBackend implements y0, g {
                 @Override // java.lang.Runnable
                 public final void run() {
                     v0 v0Var;
-                    q71 q71Var;
+                    p71 p71Var;
                     switch (i10) {
                         case 0:
                             i1 i1Var2 = i1Var;
@@ -1005,9 +1005,9 @@ final class WidgetSandboxBackend implements y0, g {
                         default:
                             i1 i1Var3 = i1Var;
                             String str3 = text;
-                            if (!i1Var3.w && (v0Var = i1Var3.L) != null && (q71Var = v0Var.h) != null) {
-                                if (q71Var.F || (q71Var.w && q71Var.E)) {
-                                    q71Var.a.f(str3);
+                            if (!i1Var3.w && (v0Var = i1Var3.L) != null && (p71Var = v0Var.h) != null) {
+                                if (p71Var.F || (p71Var.w && p71Var.E)) {
+                                    p71Var.a.f(str3);
                                     break;
                                 }
                             }
@@ -1093,7 +1093,7 @@ final class WidgetSandboxBackend implements y0, g {
                         if (str2.length() > 80) {
                             str2 = str2.substring(0, 80) + "…";
                         }
-                        hc.a0(T).Q(R.raw.copy, 36, id.a0(null, null, 2131742866, str2)).j();
+                        gc.a0(T).Q(R.raw.copy, 36, id.a0(null, null, 2131742866, str2)).j();
                     }
                 });
                 return;
@@ -1104,7 +1104,7 @@ final class WidgetSandboxBackend implements y0, g {
                     @Override // java.lang.Runnable
                     public final void run() {
                         v0 v0Var;
-                        q71 q71Var;
+                        p71 p71Var;
                         switch (i11) {
                             case 0:
                                 i1 i1Var2 = i1Var;
@@ -1128,9 +1128,9 @@ final class WidgetSandboxBackend implements y0, g {
                             default:
                                 i1 i1Var3 = i1Var;
                                 String str3 = text;
-                                if (!i1Var3.w && (v0Var = i1Var3.L) != null && (q71Var = v0Var.h) != null) {
-                                    if (q71Var.F || (q71Var.w && q71Var.E)) {
-                                        q71Var.a.f(str3);
+                                if (!i1Var3.w && (v0Var = i1Var3.L) != null && (p71Var = v0Var.h) != null) {
+                                    if (p71Var.F || (p71Var.w && p71Var.E)) {
+                                        p71Var.a.f(str3);
                                         break;
                                     }
                                 }
@@ -1174,7 +1174,7 @@ final class WidgetSandboxBackend implements y0, g {
             }
             if (i7 == 3) {
                 JSONObject jSONObject4 = new JSONObject(text);
-                i1Var.a.post(new qy(i1Var, jSONObject4.optBoolean("x"), jSONObject4.optBoolean("y"), jSONObject4.optBoolean("hold"), 2));
+                i1Var.a.post(new py(i1Var, jSONObject4.optBoolean("x"), jSONObject4.optBoolean("y"), jSONObject4.optBoolean("hold"), 2));
                 return;
             }
             if (i7 == 4) {

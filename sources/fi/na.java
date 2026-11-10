@@ -13,10 +13,10 @@ import bi.ec;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.j60;
-import org.telegram.ui.Components.td0;
+import org.telegram.ui.Components.i60;
+import org.telegram.ui.Components.sd0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class na extends FrameLayout {
     public float a;
@@ -44,7 +44,7 @@ public final class na extends FrameLayout {
 
     public final void c() {
         if (this.e.J == 0) {
-            setBackground(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(12.0f), -16777216));
+            setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(12.0f), -16777216));
         } else {
             setBackground(null);
         }
@@ -105,9 +105,9 @@ public final class na extends FrameLayout {
             iVar.layout(0, 0, vaVar.S, vaVar.T);
             vaVar.c1.y();
         }
-        td0 td0Var = vaVar.B1;
-        if (td0Var != null) {
-            td0Var.layout(0, 0, td0Var.getMeasuredWidth(), vaVar.B1.getMeasuredHeight());
+        sd0 sd0Var = vaVar.B1;
+        if (sd0Var != null) {
+            sd0Var.layout(0, 0, sd0Var.getMeasuredWidth(), vaVar.B1.getMeasuredHeight());
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
@@ -115,7 +115,7 @@ public final class na extends FrameLayout {
         }
         for (int i15 = 0; i15 < getChildCount(); i15++) {
             View childAt = getChildAt(i15);
-            if (childAt instanceof j60) {
+            if (childAt instanceof i60) {
                 childAt.layout(0, 0, measuredWidth, measuredHeight);
             }
         }
@@ -143,9 +143,9 @@ public final class na extends FrameLayout {
         if (iVar != null) {
             a(iVar, vaVar.S, vaVar.T);
         }
-        td0 td0Var = vaVar.B1;
-        if (td0Var != null) {
-            a(td0Var, size, size2);
+        sd0 sd0Var = vaVar.B1;
+        if (sd0Var != null) {
+            a(sd0Var, size, size2);
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
@@ -153,7 +153,7 @@ public final class na extends FrameLayout {
         }
         for (int i11 = 0; i11 < getChildCount(); i11++) {
             View childAt = getChildAt(i11);
-            if (childAt instanceof j60) {
+            if (childAt instanceof i60) {
                 a(childAt, size, size2);
             }
         }

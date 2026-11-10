@@ -2,141 +2,131 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.m8;
-import org.telegram.ui.Components.t8;
-import org.telegram.ui.Components.vh;
-import org.telegram.ui.ee0;
+import java.util.ArrayList;
+import org.telegram.ui.Components.cg;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.we;
+import org.telegram.ui.ag0;
+import org.telegram.ui.eg0;
+import org.telegram.ui.uf0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public boolean b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ KeyEvent.Callback e;
 
-    public /* synthetic */ g(Object obj, boolean z9, boolean z10, int i7) {
-        this.a = i7;
-        this.d = obj;
+    public g(l lVar, ArrayList arrayList, boolean z9, boolean z10) {
+        this.e = lVar;
+        this.d = arrayList;
         this.b = z9;
         this.c = z10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.b = true;
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
-                actionBarLayout.j1 = false;
-                actionBarLayout.s.setAlpha(1.0f);
-                ActionBarLayout.a(actionBarLayout, true);
-                actionBarLayout.n1 = null;
-                break;
-            case 2:
-            default:
-                super.onAnimationCancel(animator);
-                break;
-            case 3:
-                di diVar = (di) this.d;
-                if (animator.equals(diVar.G2)) {
-                    diVar.G2 = null;
-                    break;
-                }
-                break;
-            case 4:
-                ee0 ee0Var = (ee0) this.d;
-                AnimatorSet[] animatorSetArr = ee0Var.K;
-                boolean z9 = this.b;
-                if (animatorSetArr[!z9 ? 1 : 0] != null && animatorSetArr[!z9 ? 1 : 0].equals(animator)) {
-                    ee0Var.K[!z9 ? 1 : 0] = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        vh vhVar;
+        we weVar;
+        org.telegram.ui.Cells.q1 q1Var;
+        ViewGroup viewGroup;
+        uf0 uf0Var;
         switch (this.a) {
             case 0:
-                k kVar = (k) this.d;
-                l5[] l5VarArr = kVar.n;
-                l5 l5Var = l5VarArr[1];
-                if (l5Var != null && l5Var.getParent() != null) {
-                    ((ViewGroup) l5VarArr[1].getParent()).removeView(l5VarArr[1]);
-                }
-                l5VarArr[1] = null;
-                kVar.x0 = false;
-                if (this.b && this.c) {
-                    kVar.r.setVisibility(8);
-                }
-                kVar.requestLayout();
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
-                if (!this.b) {
-                    actionBarLayout.j1 = false;
-                    actionBarLayout.s.setAlpha(1.0f);
-                    ActionBarLayout.a(actionBarLayout, this.c);
-                    actionBarLayout.n1 = null;
-                    break;
-                }
-                break;
-            case 2:
-                t8 t8Var = (t8) this.d;
-                t8Var.G = null;
-                boolean z9 = this.b;
-                t8Var.n0(false, z9 ? 1.0f : 0.0f);
-                if (this.c) {
-                    m8 m8Var = t8Var.a;
-                    m8Var.x = -1.0f;
-                    m8Var.setExpanded(z9);
-                    break;
-                }
-                break;
-            case 3:
-                boolean z10 = this.b;
-                di diVar = (di) this.d;
-                if (animator.equals(diVar.G2)) {
-                    if (!z10) {
-                        if (!diVar.E1) {
-                            diVar.x2.setVisibility(4);
+                ArrayList arrayList = (ArrayList) this.d;
+                l lVar = (l) this.e;
+                int i7 = 0;
+                while (true) {
+                    int size = arrayList.size();
+                    boolean z9 = this.b;
+                    if (i7 >= size) {
+                        if (z9 && !this.c) {
+                            m5 m5Var = lVar.n[0];
+                            if (m5Var != null) {
+                                m5Var.setVisibility(8);
+                            }
+                            m5 m5Var2 = lVar.n[1];
+                            if (m5Var2 != null) {
+                                m5Var2.setVisibility(8);
+                            }
                         }
-                        diVar.B2.setVisibility(4);
-                    } else if (diVar.M2 && ((vhVar = diVar.s2) == null || vhVar.M())) {
-                        diVar.r3.setVisibility(4);
+                        k9 k9Var = lVar.f;
+                        if (k9Var != null && !z9) {
+                            k9Var.setVisibility(8);
+                            break;
+                        }
+                    } else {
+                        View view = (View) arrayList.get(i7);
+                        if (z9) {
+                            view.setVisibility(4);
+                            view.setAlpha(0.0f);
+                        } else {
+                            view.setAlpha(1.0f);
+                        }
+                        i7++;
                     }
-                    if (this.c) {
-                        diVar.Q1();
-                        diVar.I2.setVisibility(z10 ? 0 : 8);
-                    }
-                    diVar.G2 = null;
-                    break;
                 }
                 break;
             default:
-                ee0 ee0Var = (ee0) this.d;
-                AnimatorSet[] animatorSetArr = ee0Var.K;
-                boolean z11 = this.b;
-                if (animatorSetArr[!z11 ? 1 : 0] != null && animatorSetArr[!z11 ? 1 : 0].equals(animator) && !this.c && z11 && ee0Var.M.getAlpha() != 1.0f) {
-                    ee0Var.M.setAlpha(1.0f);
-                    ee0Var.M.setScaleX(1.0f);
-                    ee0Var.M.setScaleY(1.0f);
-                    ee0Var.M.setVisibility(0);
-                    break;
+                Runnable runnable = (Runnable) this.d;
+                eg0 eg0Var = (eg0) this.e;
+                ag0 ag0Var = eg0Var.J;
+                boolean z10 = this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                eg0Var.D = f10;
+                eg0Var.x = false;
+                eg0Var.y = false;
+                eg0Var.G.setAlpha(f10);
+                if (z10) {
+                    eg0Var.w = false;
+                    eg0Var.s = false;
+                }
+                we weVar2 = eg0Var.R;
+                if (weVar2 != null) {
+                    weVar2.setAlpha(1.0f);
+                }
+                org.telegram.ui.Cells.q1 q1Var2 = eg0Var.q0;
+                if (q1Var2 != null) {
+                    q1Var2.setVisibility(0);
+                }
+                cg cgVar = eg0Var.V;
+                if (cgVar != null && !eg0Var.r) {
+                    cgVar.setAlpha(1.0f);
+                }
+                if (!z10 && (uf0Var = eg0Var.W) != null) {
+                    uf0Var.setAlpha(0.0f);
+                }
+                if (!this.c && (viewGroup = eg0Var.Y) != null) {
+                    viewGroup.setAlpha(eg0Var.D);
+                }
+                ag0Var.invalidate();
+                ag0Var.setAlpha(eg0Var.D);
+                eg0Var.E.invalidate();
+                eg0Var.F.invalidate();
+                if (runnable != null) {
+                    if (!z10 && (q1Var = eg0Var.q0) != null && q1Var.isAttachedToWindow()) {
+                        eg0Var.q0.post(runnable);
+                        break;
+                    } else if (!z10 && (weVar = eg0Var.R) != null && weVar.isAttachedToWindow()) {
+                        eg0Var.R.post(runnable);
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.h3(runnable);
+                        break;
+                    }
                 }
                 break;
         }
     }
 
-    public g(ActionBarLayout actionBarLayout, boolean z9) {
-        this.a = 1;
-        this.d = actionBarLayout;
-        this.c = z9;
+    public g(eg0 eg0Var, boolean z9, boolean z10, Runnable runnable) {
+        this.e = eg0Var;
+        this.b = z9;
+        this.c = z10;
+        this.d = runnable;
     }
 }

@@ -8,16 +8,16 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class wo extends View {
     public final CheckBoxBase a;
     public Drawable b;
     public int c;
 
-    public wo(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public wo(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.a = new CheckBoxBase(i7, this, g6Var);
+        this.a = new CheckBoxBase(i7, this, h6Var);
     }
 
     public final void a(boolean z9, boolean z10) {
@@ -66,7 +66,7 @@ public class wo extends View {
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(1.2f));
-        paint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.U6, false));
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.U6, false));
         canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - org.telegram.messenger.g0.L(1.5f), paint);
     }
 
@@ -133,7 +133,7 @@ public class wo extends View {
             }
             Drawable mutate = getContext().getDrawable(i7).mutate();
             this.b = mutate;
-            org.telegram.ui.ActionBar.s6.x(this, mutate, org.telegram.ui.ActionBar.l6.U6, null, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.t6.x(this, mutate, org.telegram.ui.ActionBar.m6.U6, null, PorterDuff.Mode.MULTIPLY);
         }
     }
 

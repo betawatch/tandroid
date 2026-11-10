@@ -23,17 +23,17 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.qn;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.xn;
+import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.pn;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.wn;
 import org.telegram.ui.cn;
 import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        u51 u51Var;
+        t51 t51Var;
         switch (this.a) {
             case 0:
                 int i7 = this.b;
@@ -161,9 +161,9 @@ public final /* synthetic */ class r implements Runnable {
                 break;
             case 3:
                 MediaController mediaController = (MediaController) ((f5.u) this.d).c;
-                if (this.b == mediaController.k0 && this.c == 4 && (u51Var = mediaController.j0) != null) {
+                if (this.b == mediaController.k0 && this.c == 4 && (t51Var = mediaController.j0) != null) {
                     try {
-                        u51Var.m0();
+                        t51Var.m0();
                         mediaController.j0 = null;
                         break;
                     } catch (Exception e11) {
@@ -201,27 +201,27 @@ public final /* synthetic */ class r implements Runnable {
                 f2Var.presentFragment(new cn(bundle));
                 break;
             case 11:
-                xn xnVar = (xn) this.d;
+                wn wnVar = (wn) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences sharedPreferences = qp.s1(this.c).d7;
                     sharedPreferences.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", sharedPreferences.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                xnVar.R(i18);
+                wnVar.R(i18);
                 break;
             case 12:
-                qn qnVar = (qn) this.d;
+                pn pnVar = (pn) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences sharedPreferences2 = qp.s1(this.c).d7;
                     sharedPreferences2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", sharedPreferences2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                qnVar.a(Integer.valueOf(i19));
+                pnVar.a(Integer.valueOf(i19));
                 break;
             case 13:
-                da0 da0Var = (da0) ((bi.q1) this.d).f3;
-                View d = da0Var.d();
-                bi.q1 q1Var = da0Var.f;
+                ca0 ca0Var = (ca0) ((bi.q1) this.d).f3;
+                View d = ca0Var.d();
+                bi.q1 q1Var = ca0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;

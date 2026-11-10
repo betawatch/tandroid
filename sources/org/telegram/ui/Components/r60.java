@@ -1,18 +1,9 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class r60 extends v4.s0 {
-    public final /* synthetic */ u60 a;
-
-    public r60(u60 u60Var) {
-        this.a = u60Var;
-    }
-
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        u60.I0(this.a);
-    }
+public interface r60 {
+    void a(TLRPC.InputPeer inputPeer, boolean z9, boolean z10, boolean z11);
 }

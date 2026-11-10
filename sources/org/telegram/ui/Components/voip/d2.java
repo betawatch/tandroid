@@ -12,11 +12,11 @@ import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ic1;
+import org.telegram.ui.jc1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -118,7 +118,7 @@ public final class d2 extends FrameLayout {
                 Context context = getContext();
                 boolean z9 = context instanceof LaunchActivity;
                 if (z9 && !org.telegram.messenger.t0.x) {
-                    ic1.n((Activity) context, this.f.M);
+                    jc1.n((Activity) context, this.f.M);
                 } else if (z9) {
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.setAction("voip");
@@ -164,7 +164,7 @@ public final class d2 extends FrameLayout {
                     ofFloat4.addUpdateListener(this.f.Q);
                     this.f.O.playTogether(ofFloat4);
                 }
-                this.f.O.setDuration(150L).setInterpolator(xq.f);
+                this.f.O.setDuration(150L).setInterpolator(wq.f);
                 this.f.O.start();
             }
             this.f.K = false;

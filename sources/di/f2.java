@@ -11,19 +11,19 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.lz;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.xa;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.h41;
+import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.wa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.l41;
 import org.telegram.ui.m41;
+import org.telegram.ui.n41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -57,17 +57,17 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 if (m3Var != null) {
                     m3Var.f(true);
                 }
-                ji0 ji0Var = j4Var.a3;
-                if (ji0Var == null) {
-                    ji0 ji0Var2 = new ji0(2, j4Var.l2, j4Var.getContext(), LaunchActivity.Q(), new m2(4, j4Var.k0));
-                    j4Var.a3 = ji0Var2;
-                    ji0Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(22.0f));
+                ii0 ii0Var = j4Var.a3;
+                if (ii0Var == null) {
+                    ii0 ii0Var2 = new ii0(2, j4Var.l2, j4Var.getContext(), LaunchActivity.Q(), new m2(4, j4Var.k0));
+                    j4Var.a3 = ii0Var2;
+                    ii0Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(22.0f));
                     j4Var.addView(j4Var.a3, j4Var.getChildCount() - 1, ha.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     j4Var.a3.setVisibility(8);
                     j4Var.a3.setDelegate(new i3(j4Var));
                     j4Var.a3.p(null, null, true);
                 } else {
-                    j4Var.bringChildToFront(ji0Var);
+                    j4Var.bringChildToFront(ii0Var);
                     j4Var.a3.n();
                 }
                 j4Var.a3.setFragment(LaunchActivity.Q());
@@ -75,29 +75,29 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 j4Var.Z0(true);
                 break;
             case 1:
-                org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) obj;
-                fi.u4 u4Var = ((org.telegram.ui.Components.f0) obj2).n;
+                org.telegram.ui.Components.d0 d0Var = (org.telegram.ui.Components.d0) obj;
+                fi.u4 u4Var = ((org.telegram.ui.Components.e0) obj2).n;
                 if (u4Var != null) {
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.b8 b8Var = (org.telegram.ui.Components.b8) obj2;
+                org.telegram.ui.Components.a8 a8Var = (org.telegram.ui.Components.a8) obj2;
                 float f10 = MediaController.B().q0;
-                org.telegram.ui.ActionBar.v0 v0Var = b8Var.N1;
+                org.telegram.ui.ActionBar.v0 v0Var = a8Var.Q1;
                 v0Var.e(false, f10);
-                org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.G8, v0Var, (org.telegram.ui.ActionBar.g6) obj);
-                b8Var.a1(false);
-                org.telegram.ui.ActionBar.r0 r0Var = b8Var.L1;
+                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.G8, v0Var, (org.telegram.ui.ActionBar.h6) obj);
+                a8Var.a1(false);
+                org.telegram.ui.ActionBar.r0 r0Var = a8Var.O1;
                 r0Var.setDimMenu(0.15f);
                 r0Var.U(v0Var, null);
                 qp.f1().edit().putInt("speedhint", -15).apply();
                 break;
             case 3:
-                l60 l60Var = (l60) obj2;
-                ((m51) obj).run();
-                if (l60Var.J) {
-                    l60Var.u();
+                k60 k60Var = (k60) obj2;
+                ((h41) obj).run();
+                if (k60Var.J) {
+                    k60Var.u();
                     break;
                 }
                 break;
@@ -107,7 +107,7 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 ij ijVar = photoViewer.S4;
                 if (ijVar != null) {
                     if (org.telegram.messenger.g0.g(ijVar.R0)) {
-                        new hc(xa.a(photoViewer.E), bVar).k(false).j();
+                        new gc(wa.a(photoViewer.E), bVar).k(false).j();
                     }
                     break;
                 }
@@ -116,9 +116,9 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 final ProfileActivity profileActivity = (ProfileActivity) obj2;
                 ImageView imageView = (ImageView) obj;
                 RectF rectF = ProfileActivity.V6;
-                org.telegram.ui.ActionBar.g1 b10 = org.telegram.ui.Components.d9.b(profileActivity, imageView, profileActivity.a(), profileActivity.f1, profileActivity.z0);
+                org.telegram.ui.ActionBar.g1 b10 = org.telegram.ui.Components.c9.b(profileActivity, imageView, profileActivity.a(), profileActivity.f1, profileActivity.z0);
                 if (b10 != null) {
-                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.yt0
+                    b10.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.zt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i11;
@@ -148,9 +148,9 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 final ProfileActivity profileActivity2 = (ProfileActivity) obj2;
                 View view2 = (View) obj;
                 RectF rectF2 = ProfileActivity.V6;
-                org.telegram.ui.ActionBar.g1 b11 = org.telegram.ui.Components.d9.b(profileActivity2, view2, profileActivity2.a(), profileActivity2.f1, profileActivity2.z0);
+                org.telegram.ui.ActionBar.g1 b11 = org.telegram.ui.Components.c9.b(profileActivity2, view2, profileActivity2.a(), profileActivity2.f1, profileActivity2.z0);
                 if (b11 != null) {
-                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.yt0
+                    b11.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.zt0
                         @Override // android.widget.PopupWindow.OnDismissListener
                         public final void onDismiss() {
                             int i12 = i10;
@@ -177,27 +177,27 @@ public final /* synthetic */ class f2 implements View.OnLongClickListener {
                 }
                 break;
             default:
-                l41 l41Var = (l41) obj2;
+                m41 m41Var = (m41) obj2;
                 ng.f fVar = (ng.f) obj;
-                m41 m41Var = l41Var.d;
-                lz lzVar = l41Var.a;
-                if (lzVar.c) {
-                    m41Var.f();
-                    ArrayList arrayList = m41Var.n;
-                    lg.g gVar = m41Var.c;
+                n41 n41Var = m41Var.d;
+                kz kzVar = m41Var.a;
+                if (kzVar.c) {
+                    n41Var.f();
+                    ArrayList arrayList = n41Var.n;
+                    lg.g gVar = n41Var.c;
                     int size = arrayList.size();
                     for (int i12 = 0; i12 < size; i12++) {
-                        ((l41) arrayList.get(i12)).a.setChecked(false);
-                        ((l41) arrayList.get(i12)).b.n = false;
-                        if (m41Var.r.c > 0 && i12 < gVar.d.size()) {
+                        ((m41) arrayList.get(i12)).a.setChecked(false);
+                        ((m41) arrayList.get(i12)).b.n = false;
+                        if (n41Var.r.c > 0 && i12 < gVar.d.size()) {
                             ((ng.f) gVar.d.get(i12)).n = false;
                         }
                     }
-                    lzVar.setChecked(true);
+                    kzVar.setChecked(true);
                     fVar.n = true;
-                    m41Var.b.z();
-                    if (m41Var.r.c > 0) {
-                        ((ng.f) gVar.d.get(l41Var.c)).n = true;
+                    n41Var.b.z();
+                    if (n41Var.r.c > 0) {
+                        ((ng.f) gVar.d.get(m41Var.c)).n = true;
                         gVar.z();
                     }
                     break;

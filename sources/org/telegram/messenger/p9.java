@@ -4,7 +4,7 @@ import android.util.LongSparseArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p9 implements v10 {
     public final /* synthetic */ int a = 1;
@@ -44,7 +44,7 @@ public final /* synthetic */ class p9 implements v10 {
                 if (((TLRPC.Bool) obj) != null) {
                     qpVar.V2(0, j3, true);
                 }
-                int i10 = org.telegram.ui.Components.lr.z2;
+                int i10 = org.telegram.ui.Components.kr.C2;
                 break;
         }
     }

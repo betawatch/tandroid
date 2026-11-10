@@ -1,346 +1,257 @@
 package org.telegram.ui;
 
-import android.util.Log;
-import android.util.Xml;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.ref.ReferenceQueue;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicReference;
-import org.xmlpull.v1.XmlSerializer;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hx implements Runnable {
-    public final /* synthetic */ int a;
-    public Object b;
-    public final Object c;
+public final class hx extends org.telegram.ui.ActionBar.f2 {
+    public dx D;
+    public ex a;
+    public org.telegram.ui.Components.pj0 b;
+    public v4.y c;
+    public ImageView d;
+    public final ArrayList e;
+    public gx f;
+    public int h;
+    public int n;
+    public int r;
+    public int s;
+    public int w;
+    public final int x;
+    public final int y;
 
-    public /* synthetic */ hx(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.c = obj;
-        this.b = obj2;
+    public hx(int i7, int i10) {
+        super(null);
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.x = i7;
+        this.y = i10;
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        getMessagesStorage().q0(i10, i7, arrayList, arrayList2, arrayList3, true);
+        getMessagesController().Y3(arrayList2, true);
+        getMessagesController().S3(arrayList3, true);
+        e0();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x004c, code lost:
-    
-        r1 = r1 | java.lang.Thread.interrupted();
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x004e, code lost:
-    
-        ((java.lang.Runnable) r10.b).run();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x005a, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x007a, code lost:
-    
-        r10.b = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x007c, code lost:
-    
-        throw r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
-    
-        r3 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
-    
-        v9.i.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
-    
-        if (r1 == false) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:?, code lost:
-    
-        return;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0144  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void a() {
-        boolean z9 = false;
-        boolean z10 = false;
-        while (true) {
-            try {
-                synchronized (((v9.i) this.c).b) {
-                    if (!z9) {
-                        v9.i iVar = (v9.i) this.c;
-                        if (iVar.c != 4) {
-                            iVar.d++;
-                            iVar.c = 4;
-                            z9 = true;
-                        }
-                    }
-                    Runnable runnable = (Runnable) ((v9.i) this.c).b.poll();
-                    this.b = runnable;
-                    if (runnable == null) {
-                        ((v9.i) this.c).c = 1;
-                    }
+    public static void Z(hx hxVar, Context context, int i7) {
+        org.telegram.ui.Components.w50 w50Var;
+        float max;
+        int i10;
+        int i11;
+        int min;
+        if (i7 == hxVar.h) {
+            org.telegram.ui.Components.x50 x50Var = new org.telegram.ui.Components.x50(context, hxVar.currentAccount, null, 0L, hxVar, null);
+            x50Var.g2 = new zr(hxVar, 8);
+            org.telegram.messenger.qs.f(x50Var.a).c(x50Var, org.telegram.messenger.qs.s);
+            x50Var.h2 = new ArrayList(org.telegram.messenger.qp.s1(x50Var.a).E);
+            x50Var.T0();
+            ArrayList arrayList = hxVar.e;
+            int size = arrayList.size();
+            int i12 = 0;
+            while (true) {
+                w50Var = x50Var.O1;
+                if (i12 >= size) {
+                    break;
                 }
-                if (!z10) {
-                    return;
-                }
-            } finally {
-                if (z10) {
-                    Thread.currentThread().interrupt();
-                }
+                Long l10 = (Long) arrayList.get(i12);
+                long longValue = l10.longValue();
+                org.telegram.ui.Components.c20 c20Var = new org.telegram.ui.Components.c20(w50Var.getContext(), org.telegram.messenger.m5.z(longValue) ? org.telegram.messenger.qp.s1(x50Var.a).M0(Long.valueOf(-longValue)) : org.telegram.messenger.qp.s1(x50Var.a).a2(l10));
+                w50Var.a(c20Var, false);
+                c20Var.setOnClickListener(x50Var.l2);
+                i12++;
             }
+            x50Var.S0(false);
+            int childCount = w50Var.getChildCount();
+            Point point = org.telegram.messenger.g0.q;
+            boolean z9 = point.x < point.y;
+            if (org.telegram.messenger.g0.Q1() || z9) {
+                x50Var.m2 = org.telegram.messenger.g0.L(144.0f);
+            } else {
+                x50Var.m2 = org.telegram.messenger.g0.L(56.0f);
+            }
+            if (org.telegram.messenger.g0.Q1()) {
+                max = Math.min(point.x, point.y) * 0.8f;
+            } else {
+                if (z9) {
+                    i10 = point.x;
+                    int L = i10 - org.telegram.messenger.g0.L(26.0f);
+                    int L2 = org.telegram.messenger.g0.L(10.0f);
+                    int i13 = 0;
+                    for (i11 = 0; i11 < childCount; i11++) {
+                        View childAt = w50Var.getChildAt(i11);
+                        if (childAt instanceof org.telegram.ui.Components.c20) {
+                            childAt.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_30));
+                            if (childAt.getMeasuredWidth() + i13 > L) {
+                                L2 = org.telegram.messenger.k5.C(8.0f, childAt.getMeasuredHeight(), L2);
+                                i13 = 0;
+                            }
+                            i13 = org.telegram.messenger.k5.C(9.0f, childAt.getMeasuredWidth(), i13);
+                        }
+                    }
+                    int L3 = org.telegram.messenger.g0.L(42.0f) + L2;
+                    min = x50Var.g2 == null ? x50Var.a2 ? Math.min(x50Var.m2, L3) : 0 : jg.g.e(52.0f, Math.min(x50Var.m2, L3), 0);
+                    int i14 = x50Var.o2;
+                    int L4 = x50Var.Z1.m() > 0 ? org.telegram.messenger.g0.L(56.0f) : 0;
+                    x50Var.o2 = L4;
+                    if (min == x50Var.i2 || i14 != L4) {
+                        x50Var.i2 = min;
+                    }
+                    hxVar.showDialog(x50Var);
+                }
+                max = Math.max(point.x * 0.8f, Math.min(org.telegram.messenger.g0.L(480.0f), point.x));
+            }
+            i10 = (int) max;
+            int L5 = i10 - org.telegram.messenger.g0.L(26.0f);
+            int L22 = org.telegram.messenger.g0.L(10.0f);
+            int i132 = 0;
+            while (i11 < childCount) {
+            }
+            int L32 = org.telegram.messenger.g0.L(42.0f) + L22;
+            if (x50Var.g2 == null) {
+            }
+            int i142 = x50Var.o2;
+            if (x50Var.Z1.m() > 0) {
+            }
+            x50Var.o2 = L4;
+            if (min == x50Var.i2) {
+            }
+            x50Var.i2 = min;
+            hxVar.showDialog(x50Var);
         }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Exception exc;
-        FileOutputStream L;
-        boolean z9;
-        switch (this.a) {
-            case 0:
-                ((org.telegram.ui.Components.cc) this.b).j();
-                ((kx) this.c).E = null;
-                return;
-            case 1:
-                ReferenceQueue referenceQueue = (ReferenceQueue) this.b;
-                while (!((Set) this.c).isEmpty()) {
-                    try {
-                        pb.l lVar = (pb.l) referenceQueue.remove();
-                        if (lVar.a.remove(lVar)) {
-                            lVar.clear();
-                            lVar.b.getClass();
-                        }
-                    } catch (InterruptedException unused) {
-                    }
-                }
-                return;
-            case 2:
-                Callable callable = (Callable) this.b;
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
-                try {
-                    taskCompletionSource.setResult(callable.call());
-                    return;
-                } catch (lb.a e10) {
-                    taskCompletionSource.setException(e10);
-                    return;
-                } catch (Exception e11) {
-                    taskCompletionSource.setException(new lb.a("Internal error has occurred when executing ML Kit tasks", e11));
-                    return;
-                }
-            case 3:
-                pb.i iVar = (pb.i) this.b;
-                TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
-                int decrementAndGet = iVar.b.decrementAndGet();
-                q6.m.j(decrementAndGet >= 0);
-                if (decrementAndGet == 0) {
-                    iVar.c();
-                    iVar.c.set(false);
-                }
-                w7.n.a.clear();
-                w7.r.a.clear();
-                taskCompletionSource2.setResult(null);
-                return;
-            case 4:
-                ab.q qVar = (ab.q) this.b;
-                q6.m.j(((Thread) ((AtomicReference) qVar.d).getAndSet(Thread.currentThread())) == null);
-                try {
-                    ((Runnable) this.c).run();
-                    ((AtomicReference) qVar.d).set(null);
-                    qVar.F();
-                    return;
-                } finally {
-                }
-            case 5:
-                v4.u uVar = (v4.u) this.b;
-                v4.d1 d1Var = uVar.e;
-                v4.y yVar = (v4.y) this.c;
-                RecyclerView recyclerView = yVar.H;
-                if (recyclerView == null || !recyclerView.G || uVar.w || d1Var.b() == -1) {
-                    return;
-                }
-                v4.l0 itemAnimator = yVar.H.getItemAnimator();
-                if (itemAnimator == null || !itemAnimator.k()) {
-                    ArrayList arrayList = yVar.F;
-                    int size = arrayList.size();
-                    for (int i7 = 0; i7 < size; i7++) {
-                        if (((v4.u) arrayList.get(i7)).x) {
-                        }
-                    }
-                    yVar.y.q(d1Var);
-                    return;
-                }
-                yVar.H.post(this);
-                return;
-            case 6:
-                try {
-                    a();
-                    return;
-                } catch (Error e12) {
-                    synchronized (((v9.i) this.c).b) {
-                        ((v9.i) this.c).c = 1;
-                        throw e12;
-                    }
-                }
-            case 7:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.c;
-                ArrayList arrayList2 = (ArrayList) this.b;
-                shortcutInfoCompatSaverImpl.e(arrayList2);
-                File file = shortcutInfoCompatSaverImpl.f;
-                ky0 ky0Var = new ky0(file);
-                File file2 = (File) ky0Var.c;
-                FileOutputStream fileOutputStream = null;
-                try {
-                    L = ky0Var.L();
-                } catch (Exception e13) {
-                    exc = e13;
-                }
-                try {
-                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(L);
-                    XmlSerializer newSerializer = Xml.newSerializer();
-                    newSerializer.setOutput(bufferedOutputStream, "UTF_8");
-                    newSerializer.startDocument(null, Boolean.TRUE);
-                    newSerializer.startTag(null, "share_targets");
-                    int size2 = arrayList2.size();
-                    int i10 = 0;
-                    while (i10 < size2) {
-                        Object obj = arrayList2.get(i10);
-                        i10++;
-                        x4.d.h(newSerializer, (x4.f) obj);
-                    }
-                    newSerializer.endTag(null, "share_targets");
-                    newSerializer.endDocument();
-                    bufferedOutputStream.flush();
-                    L.flush();
-                    try {
-                        L.getFD().sync();
-                        z9 = true;
-                    } catch (IOException unused2) {
-                        z9 = false;
-                    }
-                    if (!z9) {
-                        Log.e("AtomicFile", "Failed to sync file output stream");
-                    }
-                    try {
-                        L.close();
-                    } catch (IOException e14) {
-                        Log.e("AtomicFile", "Failed to close file output stream", e14);
-                    }
-                    ky0.I(file2, file);
-                    return;
-                } catch (Exception e15) {
-                    exc = e15;
-                    fileOutputStream = L;
-                    Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, exc);
-                    if (fileOutputStream != null) {
-                        try {
-                            fileOutputStream.getFD().sync();
-                        } catch (IOException unused3) {
-                            Log.e("AtomicFile", "Failed to sync file output stream");
-                        }
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e16) {
-                            Log.e("AtomicFile", "Failed to close file output stream", e16);
-                        }
-                        if (!file2.delete()) {
-                            Log.e("AtomicFile", "Failed to delete new file " + file2);
-                        }
-                    }
-                    throw new RuntimeException("Failed to write to file " + file, exc);
-                }
-            case 8:
-                c0.m mVar = (c0.m) this.c;
-                try {
-                    ((c0.m) this.b).get();
-                    mVar.k(null);
-                    return;
-                } catch (Exception e17) {
-                    mVar.l(e17);
-                    return;
-                }
-            case 9:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl2 = (ShortcutInfoCompatSaverImpl) this.c;
-                a0.f fVar = shortcutInfoCompatSaverImpl2.b;
-                try {
-                    ShortcutInfoCompatSaverImpl.f((File) this.b);
-                    ShortcutInfoCompatSaverImpl.f(shortcutInfoCompatSaverImpl2.g);
-                    fVar.putAll(x4.d.c(shortcutInfoCompatSaverImpl2.f, shortcutInfoCompatSaverImpl2.a));
-                    shortcutInfoCompatSaverImpl2.e(new ArrayList(fVar.values()));
-                    return;
-                } catch (Exception e18) {
-                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e18);
-                    return;
-                }
-            case 10:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl3 = (ShortcutInfoCompatSaverImpl) this.c;
-                shortcutInfoCompatSaverImpl3.b.clear();
-                a0.f fVar2 = shortcutInfoCompatSaverImpl3.c;
-                Iterator it = ((a0.e) fVar2.values()).iterator();
-                while (it.hasNext()) {
-                    ((m9.y) it.next()).cancel(false);
-                }
-                fVar2.clear();
-                shortcutInfoCompatSaverImpl3.h((c0.m) this.b);
-                return;
-            case 11:
-                if (((c0.m) this.b).a instanceof c0.a) {
-                    return;
-                }
-                try {
-                    ((Runnable) this.c).run();
-                    ((c0.m) this.b).k(null);
-                    return;
-                } catch (Exception e19) {
-                    ((c0.m) this.b).l(e19);
-                    return;
-                }
-            default:
-                ((zd.m) this.c).D((zd.v0) this.b);
-                return;
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void addThemeColorKeys(HashSet hashSet) {
+        super.addThemeColorKeys(hashSet);
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.B6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.b7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.i6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.t8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.v8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.s8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(false);
+        org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
+        if (r4Var != null && ((ActionBarLayout) r4Var).S0) {
+            this.actionBar.setOccupyStatusBar(false);
         }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 6:
-                Runnable runnable = (Runnable) this.b;
-                if (runnable != null) {
-                    return "SequentialExecutorWorker{running=" + runnable + "}";
-                }
-                StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
-                int i7 = ((v9.i) this.c).c;
-                sb2.append(i7 != 1 ? i7 != 2 ? i7 != 3 ? i7 != 4 ? "null" : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
-                sb2.append("}");
-                return sb2.toString();
-            default:
-                return super.toString();
+        if (this.x == 0) {
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131742877, null));
+        } else {
+            this.actionBar.setTitle(org.telegram.messenger.id.M0(2131742868, null));
         }
-    }
-
-    public /* synthetic */ hx(Object obj, Object obj2, boolean z9, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-    }
-
-    public hx(v9.i iVar) {
-        this.a = 6;
-        this.c = iVar;
-    }
-
-    public hx(v4.y yVar, v4.u uVar, int i7) {
-        this.a = 5;
+        this.actionBar.s().e(1, org.telegram.messenger.id.M0(2131751354, null).toUpperCase());
+        this.actionBar.setActionBarMenuOnItemClick(new w9(this, 28));
+        this.a = new ex(this, context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, frameLayout, null);
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
+        this.b = pj0Var;
+        pj0Var.setLayoutManager(new v4.b0(1, false));
+        this.b.setVerticalScrollBarEnabled(false);
+        this.b.setAdapter(this.a);
+        ((v4.k) this.b.getItemAnimator()).C = false;
+        frameLayout.addView(this.b, c8.ha.c(-1.0f, -1));
+        v4.y yVar = new v4.y(new fx(this));
         this.c = yVar;
-        this.b = uVar;
+        yVar.h(this.b);
+        this.b.setOnItemClickListener(new di.q4(17, this, context));
+        this.b.setOnItemLongClickListener(new j2.n(this));
+        return this.fragmentView;
+    }
+
+    public final void d0() {
+        if (getParentActivity() == null) {
+            return;
+        }
+        getParentActivity().finish();
+        org.telegram.messenger.g0.i3(new dh(this, 26), 1000L);
+    }
+
+    public final void e0() {
+        this.w = 2;
+        this.h = 1;
+        ArrayList arrayList = this.e;
+        if (arrayList.isEmpty()) {
+            this.n = -1;
+            this.r = -1;
+        } else {
+            int i7 = this.w;
+            this.n = i7;
+            int size = arrayList.size() + i7;
+            this.w = size;
+            this.r = size;
+        }
+        int i10 = this.w;
+        this.w = i10 + 1;
+        this.s = i10;
+        ex exVar = this.a;
+        if (exVar != null) {
+            exVar.f();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.actionBar, TLObject.FLAG_31, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.G8));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.actionBar, TLObject.FLAG_30, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.E8));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.actionBar, 1073741832, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.F8));
+        int i7 = org.telegram.ui.ActionBar.m6.q6;
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.b, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.b, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean onBackPressed(boolean z9) {
+        if (this.D != null) {
+            return super.onBackPressed(z9);
+        }
+        if (!z9) {
+            return false;
+        }
+        d0();
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f2
+    public final boolean onFragmentCreate() {
+        zw.u4(org.telegram.messenger.c.a(this.currentAccount));
+        getMediaDataController().M0(true);
+        return super.onFragmentCreate();
     }
 }

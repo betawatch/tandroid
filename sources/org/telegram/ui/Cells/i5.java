@@ -18,13 +18,13 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.kf;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.ra0;
-import org.telegram.ui.t71;
-import org.telegram.ui.w71;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.u71;
+import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i5 extends org.telegram.ui.Components.l9 implements org.telegram.messenger.x5 {
+public final class i5 extends org.telegram.ui.Components.k9 implements org.telegram.messenger.x5 {
     public RectF G;
     public RadialProgress2 H;
     public TLRPC.TL_wallPaper I;
@@ -36,9 +36,9 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
     public int O;
     public int P;
     public Paint Q;
-    public ra0 R;
+    public qa0 R;
     public int S;
-    public t71 T;
+    public u71 T;
     public int U;
 
     @Override // org.telegram.messenger.x5
@@ -83,7 +83,7 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
         v(tL_wallPaper2, false, true);
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         w(false);
@@ -103,66 +103,66 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
     /* JADX WARN: Removed duplicated region for block: B:65:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0040  */
     /* JADX WARN: Removed duplicated region for block: B:7:0x003c  */
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onDraw(Canvas canvas) {
         int i7;
         int i10;
-        w71 w71Var;
+        x71 x71Var;
         int i11;
         int i12;
-        w71 w71Var2;
+        x71 x71Var2;
         int i13;
         int i14;
-        w71 w71Var3;
+        x71 x71Var3;
         int i15;
-        ra0 ra0Var;
+        qa0 qa0Var;
         BlendMode blendMode;
         RadialProgress2 radialProgress2 = this.H;
         RectF rectF = this.G;
         Paint paint = this.Q;
-        t71 t71Var = this.T;
-        float f10 = t71Var.a.d.m1;
+        u71 u71Var = this.T;
+        float f10 = u71Var.a.d.m1;
         this.a.Z(null);
-        w71 w71Var4 = t71Var.a.d;
-        if (w71Var4.b == 2) {
-            i7 = w71Var4.a1;
+        x71 x71Var4 = u71Var.a.d;
+        if (x71Var4.b == 2) {
+            i7 = x71Var4.a1;
         } else {
-            int E0 = org.telegram.ui.ActionBar.l6.E0(org.telegram.ui.ActionBar.l6.Be);
-            i7 = (int) w71Var4.w.j;
+            int E0 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Be);
+            i7 = (int) x71Var4.w.j;
             if (i7 == 0) {
                 i10 = E0;
-                w71Var = t71Var.a.d;
-                if (w71Var.b != 2) {
-                    i11 = w71Var.c1;
+                x71Var = u71Var.a.d;
+                if (x71Var.b != 2) {
+                    i11 = x71Var.c1;
                 } else {
-                    int E02 = org.telegram.ui.ActionBar.l6.E0(org.telegram.ui.ActionBar.l6.Ce);
-                    i11 = (int) w71Var.w.k;
+                    int E02 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Ce);
+                    i11 = (int) x71Var.w.k;
                     if (i11 == 0) {
                         i12 = E02;
-                        w71Var2 = t71Var.a.d;
-                        if (w71Var2.b == 2) {
-                            i13 = w71Var2.d1;
+                        x71Var2 = u71Var.a.d;
+                        if (x71Var2.b == 2) {
+                            i13 = x71Var2.d1;
                         } else {
-                            int E03 = org.telegram.ui.ActionBar.l6.E0(org.telegram.ui.ActionBar.l6.De);
-                            i13 = (int) w71Var2.w.l;
+                            int E03 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.De);
+                            i13 = (int) x71Var2.w.l;
                             if (i13 == 0) {
                                 i14 = E03;
-                                w71Var3 = t71Var.a.d;
-                                if (w71Var3.b != 2) {
-                                    i15 = w71Var3.e1;
+                                x71Var3 = u71Var.a.d;
+                                if (x71Var3.b != 2) {
+                                    i15 = x71Var3.e1;
                                 } else {
-                                    int E04 = org.telegram.ui.ActionBar.l6.E0(org.telegram.ui.ActionBar.l6.Ee);
-                                    i15 = (int) w71Var3.w.m;
+                                    int E04 = org.telegram.ui.ActionBar.m6.E0(org.telegram.ui.ActionBar.m6.Ee);
+                                    i15 = (int) x71Var3.w.m;
                                     if (i15 == 0) {
                                         i15 = E04;
                                     }
                                 }
-                                w71 w71Var5 = t71Var.a.d;
-                                int i16 = w71Var5.b != 2 ? w71Var5.i1 : w71Var5.w.n;
-                                int i17 = w71Var5.l1;
+                                x71 x71Var5 = u71Var.a.d;
+                                int i16 = x71Var5.b != 2 ? x71Var5.i1 : x71Var5.w.n;
+                                int i17 = x71Var5.l1;
                                 if (i12 != 0) {
                                     this.K = null;
                                     this.R = null;
@@ -175,15 +175,15 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
                                     this.P = i16;
                                     if (i14 != 0) {
                                         this.K = null;
-                                        ra0 ra0Var2 = this.R;
-                                        if (ra0Var2 != null) {
-                                            ra0Var2.o(i10, i12, i14, i15, 0, false);
+                                        qa0 qa0Var2 = this.R;
+                                        if (qa0Var2 != null) {
+                                            qa0Var2.o(i10, i12, i14, i15, 0, false);
                                         } else {
                                             int i18 = i10;
-                                            ra0 ra0Var3 = new ra0(true, i18, i12, i14, i15);
+                                            qa0 qa0Var3 = new qa0(true, i18, i12, i14, i15);
                                             i10 = i18;
-                                            this.R = ra0Var3;
-                                            ra0Var3.v(org.telegram.messenger.g0.L(6.0f));
+                                            this.R = qa0Var3;
+                                            qa0Var3.v(org.telegram.messenger.g0.L(6.0f));
                                             this.R.q(this);
                                         }
                                         if (f10 < 0.0f) {
@@ -195,19 +195,19 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
                                                 blendMode = BlendMode.SOFT_LIGHT;
                                                 imageReceiver.Z(blendMode);
                                             } else {
-                                                this.a.o1 = new PorterDuffColorFilter(t71Var.a.d.k1, PorterDuff.Mode.SRC_IN);
+                                                this.a.o1 = new PorterDuffColorFilter(u71Var.a.d.k1, PorterDuff.Mode.SRC_IN);
                                             }
                                         }
                                     } else {
-                                        Rect e10 = org.telegram.ui.Components.k9.e(org.telegram.ui.Components.k9.d(i16), getMeasuredWidth(), getMeasuredHeight());
+                                        Rect e10 = org.telegram.ui.Components.j9.e(org.telegram.ui.Components.j9.d(i16), getMeasuredWidth(), getMeasuredHeight());
                                         this.K = new LinearGradient(e10.left, e10.top, e10.right, e10.bottom, new int[]{i10, i12}, (float[]) null, Shader.TileMode.CLAMP);
                                         this.R = null;
                                         this.a.m0(null);
                                     }
                                 }
-                                ra0Var = this.R;
-                                if (ra0Var == null) {
-                                    ra0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                                qa0Var = this.R;
+                                if (qa0Var == null) {
+                                    qa0Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
                                     this.R.draw(canvas);
                                 } else {
                                     paint.setShader(this.K);
@@ -227,17 +227,17 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
                             }
                         }
                         i14 = i13;
-                        w71Var3 = t71Var.a.d;
-                        if (w71Var3.b != 2) {
+                        x71Var3 = u71Var.a.d;
+                        if (x71Var3.b != 2) {
                         }
-                        w71 w71Var52 = t71Var.a.d;
-                        if (w71Var52.b != 2) {
+                        x71 x71Var52 = u71Var.a.d;
+                        if (x71Var52.b != 2) {
                         }
-                        int i172 = w71Var52.l1;
+                        int i172 = x71Var52.l1;
                         if (i12 != 0) {
                         }
-                        ra0Var = this.R;
-                        if (ra0Var == null) {
+                        qa0Var = this.R;
+                        if (qa0Var == null) {
                         }
                         super.onDraw(canvas);
                         if (radialProgress2.i.q == 4) {
@@ -245,21 +245,21 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
                     }
                 }
                 i12 = i11;
-                w71Var2 = t71Var.a.d;
-                if (w71Var2.b == 2) {
+                x71Var2 = u71Var.a.d;
+                if (x71Var2.b == 2) {
                 }
                 i14 = i13;
-                w71Var3 = t71Var.a.d;
-                if (w71Var3.b != 2) {
+                x71Var3 = u71Var.a.d;
+                if (x71Var3.b != 2) {
                 }
-                w71 w71Var522 = t71Var.a.d;
-                if (w71Var522.b != 2) {
+                x71 x71Var522 = u71Var.a.d;
+                if (x71Var522.b != 2) {
                 }
-                int i1722 = w71Var522.l1;
+                int i1722 = x71Var522.l1;
                 if (i12 != 0) {
                 }
-                ra0Var = this.R;
-                if (ra0Var == null) {
+                qa0Var = this.R;
+                if (qa0Var == null) {
                 }
                 super.onDraw(canvas);
                 if (radialProgress2.i.q == 4) {
@@ -267,25 +267,25 @@ public final class i5 extends org.telegram.ui.Components.l9 implements org.teleg
             }
         }
         i10 = i7;
-        w71Var = t71Var.a.d;
-        if (w71Var.b != 2) {
+        x71Var = u71Var.a.d;
+        if (x71Var.b != 2) {
         }
         i12 = i11;
-        w71Var2 = t71Var.a.d;
-        if (w71Var2.b == 2) {
+        x71Var2 = u71Var.a.d;
+        if (x71Var2.b == 2) {
         }
         i14 = i13;
-        w71Var3 = t71Var.a.d;
-        if (w71Var3.b != 2) {
+        x71Var3 = u71Var.a.d;
+        if (x71Var3.b != 2) {
         }
-        w71 w71Var5222 = t71Var.a.d;
-        if (w71Var5222.b != 2) {
+        x71 x71Var5222 = u71Var.a.d;
+        if (x71Var5222.b != 2) {
         }
-        int i17222 = w71Var5222.l1;
+        int i17222 = x71Var5222.l1;
         if (i12 != 0) {
         }
-        ra0Var = this.R;
-        if (ra0Var == null) {
+        qa0Var = this.R;
+        if (qa0Var == null) {
         }
         super.onDraw(canvas);
         if (radialProgress2.i.q == 4) {

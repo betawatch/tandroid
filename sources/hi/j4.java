@@ -25,11 +25,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.Wallet.x5;
-import org.telegram.ui.Wallet.y5;
+import org.telegram.ui.Wallet.b6;
+import org.telegram.ui.Wallet.d6;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j4 implements Runnable {
     public final /* synthetic */ int a;
@@ -327,8 +327,8 @@ public final /* synthetic */ class j4 implements Runnable {
                 ((org.telegram.ui.Cells.q1) obj).invalidate();
                 break;
             default:
-                y5 y5Var = (y5) obj;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((org.telegram.ui.Wallet.a6) obj3, new x5(((Context) obj2).getApplicationContext(), i11, i10, y5Var), y5Var, 15));
+                b6 b6Var = (b6) obj;
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((d6) obj3, new org.telegram.ui.Wallet.a6(((Context) obj2).getApplicationContext(), i11, i10, b6Var), b6Var, 16));
                 break;
         }
     }
@@ -360,12 +360,12 @@ public final /* synthetic */ class j4 implements Runnable {
         this.f = q1Var;
     }
 
-    public /* synthetic */ j4(org.telegram.ui.Wallet.a6 a6Var, Context context, int i7, int i10, y5 y5Var) {
+    public /* synthetic */ j4(d6 d6Var, Context context, int i7, int i10, b6 b6Var) {
         this.a = 10;
-        this.d = a6Var;
+        this.d = d6Var;
         this.e = context;
         this.b = i7;
         this.c = i10;
-        this.f = y5Var;
+        this.f = b6Var;
     }
 }

@@ -10,16 +10,16 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class AnimatedPhoneNumberEditText extends w20 {
+public class AnimatedPhoneNumberEditText extends v20 {
     public final ArrayList J1;
     public final ArrayList K1;
     public final TextPaint L1;
     public ObjectAnimator M1;
     public float N1;
     public String O1;
-    public final c6 P1;
+    public final b6 P1;
     public final ArrayList Q1;
     public final ArrayList R1;
     public Boolean S1;
@@ -32,7 +32,7 @@ public class AnimatedPhoneNumberEditText extends w20 {
         this.K1 = new ArrayList();
         this.L1 = new TextPaint(1);
         this.O1 = "";
-        this.P1 = new c6(this, 0);
+        this.P1 = new b6(this, 0);
         this.Q1 = new ArrayList();
         this.R1 = new ArrayList();
     }
@@ -53,7 +53,7 @@ public class AnimatedPhoneNumberEditText extends w20 {
         super.setHintText(str);
     }
 
-    @Override // org.telegram.ui.Components.w20
+    @Override // org.telegram.ui.Components.v20
     public String getHintText() {
         return this.T1;
     }
@@ -62,7 +62,7 @@ public class AnimatedPhoneNumberEditText extends w20 {
         return this.N1;
     }
 
-    @Override // org.telegram.ui.Components.w20
+    @Override // org.telegram.ui.Components.v20
     public void setHintText(String str) {
         boolean isEmpty;
         boolean isEmpty2 = TextUtils.isEmpty(str);
@@ -117,7 +117,7 @@ public class AnimatedPhoneNumberEditText extends w20 {
                 gVar.c = true;
                 arrayList2.add(gVar);
                 arrayList.add(Float.valueOf(f11));
-                postDelayed(new xf(gVar, 7), i10 * 5);
+                postDelayed(new wf(gVar, 7), i10 * 5);
             }
             this.U1 = u7Var;
             postDelayed(u7Var, (length * 5) + 150);
@@ -166,7 +166,7 @@ public class AnimatedPhoneNumberEditText extends w20 {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", -1.0f, 0.0f);
             this.M1 = ofFloat;
             ofFloat.setDuration(150L);
-            this.M1.addListener(new z5(this, i10));
+            this.M1.addListener(new y5(this, i10));
             this.M1.start();
         }
         this.O1 = str;
@@ -181,19 +181,19 @@ public class AnimatedPhoneNumberEditText extends w20 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.dt, android.widget.TextView
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView
     public void setTextColor(int i7) {
         super.setTextColor(i7);
         this.L1.setColor(i7);
     }
 
-    @Override // org.telegram.ui.Components.w20, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    @Override // org.telegram.ui.Components.v20, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
     public final void setTextSize(int i7, float f10) {
         super.setTextSize(i7, f10);
         this.L1.setTextSize(TypedValue.applyDimension(i7, f10, getResources().getDisplayMetrics()));
     }
 
-    @Override // org.telegram.ui.Components.w20
+    @Override // org.telegram.ui.Components.v20
     public final void z(int i7) {
         ArrayList arrayList = this.Q1;
         if (i7 < arrayList.size()) {

@@ -56,10 +56,10 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.d80;
+import org.telegram.ui.e80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class gz extends c1 implements ls {
     public static final p5 I = new p5("mediaSendQueue");
@@ -337,7 +337,7 @@ public final class gz extends c1 implements ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void K(ArrayList arrayList, final long j3, boolean z9, boolean z10, boolean z11, final c cVar, long j10, final ij ijVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final ij ijVar2, final ij ijVar3, final boolean z12, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final hw hwVar, final long j11, final boolean z13, final long j12, final long j13, final nj njVar, final sh.g gVar, boolean z14, org.telegram.ui.Components.rt rtVar, final boolean z15) {
+    public static void K(ArrayList arrayList, final long j3, boolean z9, boolean z10, boolean z11, final c cVar, long j10, final ij ijVar, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final ij ijVar2, final ij ijVar3, final boolean z12, final int i7, final int i10, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final hw hwVar, final long j11, final boolean z13, final long j12, final long j13, final nj njVar, final sh.g gVar, boolean z14, org.telegram.ui.Components.qt qtVar, final boolean z15) {
         String str;
         String str2;
         ?? r52;
@@ -1351,7 +1351,7 @@ public final class gz extends c1 implements ls {
                             str29 = (Build.VERSION.SDK_INT < 30 || !"content".equals(uri2.getScheme())) ? g0.T0(fzVar5.a) : null;
                             str28 = fzVar5.a.toString();
                         }
-                        if (rtVar == null || fzVar5.a == null || !rtVar.h0().hasMimeType("image/png")) {
+                        if (qtVar == null || fzVar5.a == null || !qtVar.h0().hasMimeType("image/png")) {
                             obj12 = "masks";
                             str30 = str28;
                             str31 = str7;
@@ -3063,8 +3063,8 @@ public final class gz extends c1 implements ls {
         if (j32 != j31 && !z14) {
             z(cVar2, j32, i7);
         }
-        if (rtVar != null) {
-            ((t0.h) rtVar.b).i();
+        if (qtVar != null) {
+            ((t0.h) qtVar.b).i();
         }
         if (arrayList20 != null && !arrayList20.isEmpty()) {
             int i48 = 1;
@@ -3865,7 +3865,7 @@ public final class gz extends c1 implements ls {
         C(cVar.a).r0(c11);
     }
 
-    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, ij ijVar, ij ijVar2, TL_stories.StoryItem storyItem, org.telegram.ui.sm smVar, boolean z9, org.telegram.ui.Components.rt rtVar, hw hwVar) {
+    public static void T(c cVar, String str, String str2, Uri uri, String str3, String str4, long j3, ij ijVar, ij ijVar2, TL_stories.StoryItem storyItem, org.telegram.ui.sm smVar, boolean z9, org.telegram.ui.Components.qt qtVar, hw hwVar) {
         ArrayList arrayList;
         if ((str == null || str2 == null) && uri == null) {
             return;
@@ -3883,7 +3883,7 @@ public final class gz extends c1 implements ls {
             arrayList2.add(str);
             arrayList3.add(str2);
         }
-        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, ijVar, ijVar2, null, null, hwVar, storyItem, smVar, rtVar, null, z9, false);
+        V(0, j3, 0L, 0L, 0L, str3, str4, arrayList2, arrayList3, arrayList4, null, null, null, cVar, ijVar, ijVar2, null, null, hwVar, storyItem, smVar, qtVar, null, z9, false);
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(8:292|293|(7:295|296|297|298|299|300|301)(1:349)|(3:310|311|(3:313|314|(4:316|304|305|306)))|303|304|305|306) */
@@ -5721,7 +5721,7 @@ public final class gz extends c1 implements ls {
         return 1;
     }
 
-    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final ij ijVar, final ij ijVar2, final ij ijVar3, final nj njVar, final hw hwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final org.telegram.ui.Components.rt rtVar, final sh.g gVar, final boolean z9, final boolean z10) {
+    public static void V(final int i7, final long j3, final long j10, final long j11, final long j12, final String str, final String str2, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final ArrayList arrayList4, final ArrayList arrayList5, final ArrayList arrayList6, final c cVar, final ij ijVar, final ij ijVar2, final ij ijVar3, final nj njVar, final hw hwVar, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final org.telegram.ui.Components.qt qtVar, final sh.g gVar, final boolean z9, final boolean z10) {
         if (arrayList == null && arrayList2 == null && arrayList3 == null) {
             return;
         }
@@ -5760,9 +5760,9 @@ public final class gz extends c1 implements ls {
                     ArrayList arrayList9 = arrayList4;
                     ij ijVar6 = ijVar3;
                     boolean z13 = z9;
-                    org.telegram.ui.Components.rt rtVar2 = rtVar;
+                    org.telegram.ui.Components.qt qtVar2 = qtVar;
                     hw hwVar2 = hwVar;
-                    org.telegram.ui.Components.rt rtVar3 = rtVar2;
+                    org.telegram.ui.Components.qt qtVar3 = qtVar2;
                     int i14 = i13;
                     long j17 = j10;
                     boolean z14 = z10;
@@ -5778,7 +5778,7 @@ public final class gz extends c1 implements ls {
                         int i16 = 0;
                         z11 = true;
                         while (i15 < size) {
-                            org.telegram.ui.Components.rt rtVar4 = rtVar3;
+                            org.telegram.ui.Components.qt qtVar4 = qtVar3;
                             String str8 = i15 == 0 ? str7 : null;
                             boolean z15 = z14;
                             if (C || size <= 1 || i16 % 10 != 0 || gVar2 != null) {
@@ -5814,7 +5814,7 @@ public final class gz extends c1 implements ls {
                             String str11 = str6;
                             ArrayList arrayList10 = i15 == 0 ? arrayList7 : null;
                             String str12 = str7;
-                            boolean z16 = rtVar4 == null;
+                            boolean z16 = qtVar4 == null;
                             long j23 = j18;
                             if (!z11) {
                                 j18 = 0;
@@ -5848,7 +5848,7 @@ public final class gz extends c1 implements ls {
                             arrayList9 = arrayList13;
                             str7 = str12;
                             j18 = j23;
-                            rtVar3 = rtVar4;
+                            qtVar3 = qtVar4;
                             i15 = i22;
                             z14 = z15;
                             size = i20;
@@ -5864,7 +5864,7 @@ public final class gz extends c1 implements ls {
                     nj njVar5 = njVar3;
                     String str13 = str6;
                     ArrayList arrayList15 = arrayList9;
-                    org.telegram.ui.Components.rt rtVar5 = rtVar3;
+                    org.telegram.ui.Components.qt qtVar5 = qtVar3;
                     int i23 = i14;
                     String str14 = str7;
                     long j26 = j18;
@@ -5895,7 +5895,7 @@ public final class gz extends c1 implements ls {
                             long j28 = jArr[0];
                             boolean z19 = (gVar2 == null && i26 == 10) || i24 == size2 + (-1);
                             Uri uri2 = (Uri) arrayList16.get(i24);
-                            boolean z20 = rtVar5 == null;
+                            boolean z20 = qtVar5 == null;
                             if (z11) {
                                 i11 = size2;
                                 cVar2 = cVar5;
@@ -5941,8 +5941,8 @@ public final class gz extends c1 implements ls {
                     }
                     c cVar6 = cVar5;
                     int i31 = i10;
-                    if (rtVar5 != null) {
-                        ((t0.h) rtVar5.b).i();
+                    if (qtVar5 != null) {
+                        ((t0.h) qtVar5.b).i();
                     }
                     if (i31 != 0) {
                         g0.h3(new x0(i31, cVar6, 12));
@@ -5970,7 +5970,7 @@ public final class gz extends c1 implements ls {
         V(i7, j3, 0L, 0L, 0L, charSequence2 != null ? charSequence2.toString() : null, str, arrayList, arrayList2, arrayList3, arrayList4, null, null, cVar2, ijVar, ijVar2, null, null, null, null, null, null, null, z9, false);
     }
 
-    public static void X(final c cVar, final ArrayList arrayList, final long j3, final ij ijVar, final ij ijVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final boolean z9, boolean z10, final ij ijVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z11, final int i7, final int i10, final boolean z12, final org.telegram.ui.Components.rt rtVar, final hw hwVar, final long j10, final boolean z13, final long j11, final long j12, final nj njVar, final sh.g gVar, final boolean z14) {
+    public static void X(final c cVar, final ArrayList arrayList, final long j3, final ij ijVar, final ij ijVar2, final TL_stories.StoryItem storyItem, final org.telegram.ui.sm smVar, final boolean z9, boolean z10, final ij ijVar3, final TLRPC.TL_inputPollAnswer tL_inputPollAnswer, final boolean z11, final int i7, final int i10, final boolean z12, final org.telegram.ui.Components.qt qtVar, final hw hwVar, final long j10, final boolean z13, final long j11, final long j12, final nj njVar, final sh.g gVar, final boolean z14) {
         final boolean z15;
         if (arrayList.isEmpty()) {
             return;
@@ -5994,16 +5994,16 @@ public final class gz extends c1 implements ls {
         I.c(new Runnable() { // from class: org.telegram.messenger.qw
             @Override // java.lang.Runnable
             public final void run() {
-                gz.K(arrayList, j3, z9, z15, z16, cVar, j13, ijVar3, tL_inputPollAnswer, ijVar, ijVar2, z11, i7, i10, storyItem, smVar, hwVar, j10, z13, j11, j12, njVar, gVar, z14, rtVar, z12);
+                gz.K(arrayList, j3, z9, z15, z16, cVar, j13, ijVar3, tL_inputPollAnswer, ijVar, ijVar2, z11, i7, i10, storyItem, smVar, hwVar, j10, z13, j11, j12, njVar, gVar, z14, qtVar, z12);
             }
         });
     }
 
-    public static void Y(c cVar, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.Components.rt rtVar, ij ijVar3, boolean z9, int i7, hw hwVar) {
-        Z(cVar, null, null, uri, j3, ijVar, ijVar2, null, null, null, rtVar, 0, ijVar3, null, z9, i7, false, null, hwVar, 0L, 0L, 0L, null);
+    public static void Y(c cVar, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.Components.qt qtVar, ij ijVar3, boolean z9, int i7, hw hwVar) {
+        Z(cVar, null, null, uri, j3, ijVar, ijVar2, null, null, null, qtVar, 0, ijVar3, null, z9, i7, false, null, hwVar, 0L, 0L, 0L, null);
     }
 
-    public static void Z(c cVar, String str, String str2, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.sm smVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.rt rtVar, int i7, ij ijVar3, j20 j20Var, boolean z9, int i10, boolean z10, CharSequence charSequence, hw hwVar, long j10, long j11, long j12, nj njVar) {
+    public static void Z(c cVar, String str, String str2, Uri uri, long j3, ij ijVar, ij ijVar2, org.telegram.ui.sm smVar, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.Components.qt qtVar, int i7, ij ijVar3, j20 j20Var, boolean z9, int i10, boolean z10, CharSequence charSequence, hw hwVar, long j10, long j11, long j12, nj njVar) {
         fz fzVar = new fz();
         fzVar.c = str;
         fzVar.e = str2;
@@ -6019,7 +6019,7 @@ public final class gz extends c1 implements ls {
         fzVar.k = j20Var;
         ArrayList arrayList3 = new ArrayList();
         arrayList3.add(fzVar);
-        X(cVar, arrayList3, j3, ijVar, ijVar2, null, smVar, z10, false, ijVar3, null, z9, i10, 0, false, rtVar, hwVar, j10, false, j11, j12, njVar, null, false);
+        X(cVar, arrayList3, j3, ijVar, ijVar2, null, smVar, z10, false, ijVar3, null, z9, i10, 0, false, qtVar, hwVar, j10, false, j11, j12, njVar, null, false);
     }
 
     public static void a0(c cVar, CharSequence charSequence, long j3, long j10, boolean z9, int i7, int i10) {
@@ -6505,8 +6505,8 @@ public final class gz extends c1 implements ls {
 
     public static boolean h(CharSequence charSequence) {
         if (charSequence instanceof Spannable) {
-            for (org.telegram.ui.Components.r5 r5Var : (org.telegram.ui.Components.r5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.r5.class)) {
-                if (r5Var.fromEmojiKeyboard) {
+            for (org.telegram.ui.Components.q5 q5Var : (org.telegram.ui.Components.q5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.q5.class)) {
+                if (q5Var.fromEmojiKeyboard) {
                     return true;
                 }
             }
@@ -6796,12 +6796,12 @@ public final class gz extends c1 implements ls {
 
     public static Bitmap s(String str, long j3, int[] iArr, boolean z9) {
         if (z9) {
-            org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(new File(str), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
-            Bitmap q10 = v5Var.q(j3, z9);
+            org.telegram.ui.Components.u5 u5Var = new org.telegram.ui.Components.u5(new File(str), true, 0L, 0, null, null, null, 0L, 0, true, 0, 0, null, 0, true);
+            Bitmap q10 = u5Var.q(j3, z9);
             if (iArr != null) {
-                iArr[0] = v5Var.d[2];
+                iArr[0] = u5Var.d[2];
             }
-            v5Var.u();
+            u5Var.u();
             return q10 == null ? s(str, j3, iArr, false) : q10;
         }
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
@@ -8032,20 +8032,20 @@ public final class gz extends c1 implements ls {
         }
     }
 
-    public final void Q(long j3, Uri uri, ArrayList arrayList, d80 d80Var) {
+    public final void Q(long j3, Uri uri, ArrayList arrayList, e80 e80Var) {
         if (this.D.f(j3) != null) {
-            d80Var.run(0L);
+            e80Var.run(0L);
             return;
         }
         if (m5.z(j3)) {
             long j10 = -j3;
             TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(j10));
             if (M0 != null && !M0.megagroup) {
-                getMessagesController().T(null, j10, null, new nh(this, uri, arrayList, d80Var), null);
+                getMessagesController().T(null, j10, null, new nh(this, uri, arrayList, e80Var), null);
                 return;
             }
         }
-        new Thread(new lm(this, arrayList, j3, uri, d80Var, 3)).start();
+        new Thread(new lm(this, arrayList, j3, uri, e80Var, 3)).start();
     }
 
     public final void a(TLRPC.TL_messages_forwardMessages tL_messages_forwardMessages, long j3) {
@@ -8986,7 +8986,7 @@ public final class gz extends c1 implements ls {
                 bi.z9 z9Var2 = y10.N;
                 int e12 = ijVar2.e1();
                 bi.y9 y9Var = z9Var2.p;
-                org.telegram.ui.Components.wb wbVar = z9Var2.d;
+                org.telegram.ui.Components.vb vbVar = z9Var2.d;
                 i11 = i15;
                 HashSet hashSet = z9Var2.k;
                 j3 = B0;
@@ -9020,7 +9020,7 @@ public final class gz extends c1 implements ls {
                             g0.r(y9Var);
                             g0.i3(y9Var, 3000L);
                         }
-                        org.telegram.ui.Components.j6 j6Var = wbVar.b;
+                        org.telegram.ui.Components.i6 i6Var = vbVar.b;
                         int i17 = z9Var2.g;
                         if (i17 == 1) {
                             G = id.M0(2131747703, null);
@@ -9029,9 +9029,9 @@ public final class gz extends c1 implements ls {
                             i12 = 0;
                             G = id.G(i17, "PaidMessageSentTitle", new Object[0]);
                         }
-                        j6Var.setText(G);
-                        wbVar.c.setText(g0.X2(id.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) z9Var2.h))));
-                        wbVar.a.d();
+                        i6Var.setText(G);
+                        vbVar.c.setText(g0.X2(id.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) z9Var2.h))));
+                        vbVar.a.d();
                     }
                 }
             }
@@ -10062,7 +10062,7 @@ public final class gz extends c1 implements ls {
             N1 = m5.k(gzVar2.getMessagesController().J2(j20));
         }
         if (N1 != j10) {
-            org.telegram.ui.Components.v4.X(gzVar2.currentAccount, Math.max(1, arrayList.size()), j20, new c20() { // from class: org.telegram.messenger.rx
+            org.telegram.ui.Components.u4.X(gzVar2.currentAccount, Math.max(1, arrayList.size()), j20, new c20() { // from class: org.telegram.messenger.rx
                 @Override // org.telegram.messenger.c20
                 public final void a(Object obj) {
                     gz gzVar3 = gz.this;

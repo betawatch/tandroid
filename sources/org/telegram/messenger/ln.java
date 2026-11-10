@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ln implements Runnable {
     public final /* synthetic */ int a;
@@ -436,7 +436,7 @@ public final /* synthetic */ class ln implements Runnable {
         int i22 = 1;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.v4.c0(((qp) this.c).currentAccount, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.f2) this.e, (TLRPC.TL_channels_editBanned) this.f, Boolean.valueOf(this.b));
+                org.telegram.ui.Components.u4.c0(((qp) this.c).currentAccount, (TLRPC.TL_error) this.d, (org.telegram.ui.ActionBar.f2) this.e, (TLRPC.TL_channels_editBanned) this.f, Boolean.valueOf(this.b));
                 return;
             case 1:
                 yr yrVar4 = (yr) this.c;
@@ -947,7 +947,7 @@ public final /* synthetic */ class ln implements Runnable {
                     Utilities.d.c(new x4(r32, x6Var, tLObject));
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                     if (T != null && ((isEmpty = TextUtils.isEmpty(tL_textWithEntities.text)) || !z14)) {
-                        k5.o(null, isEmpty ? 2131750853 : 2131750851, org.telegram.ui.Components.hc.a0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
+                        k5.o(null, isEmpty ? 2131750853 : 2131750851, org.telegram.ui.Components.gc.a0(T), isEmpty ? R.raw.ic_delete : R.raw.contact_check, 36);
                     }
                 }
                 u1Var.dismiss();

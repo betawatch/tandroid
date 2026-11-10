@@ -1,75 +1,59 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import org.telegram.ui.ThemeActivity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a61 implements org.telegram.ui.Components.cj0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class a61 extends View {
+    public static final /* synthetic */ int c = 0;
+    public final Paint a;
+    public int[] b;
 
-    public /* synthetic */ a61(Object obj, Object obj2, Object obj3, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public a61(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new int[7];
     }
 
-    @Override // org.telegram.ui.Components.cj0
-    public final void c(int i7, View view) {
-        switch (this.a) {
-            case 0:
-                g61 g61Var = (g61) this.b;
-                i61 i61Var = (i61) this.c;
-                f61 f61Var = (f61) this.d;
-                ThemeActivity themeActivity = g61Var.e;
-                int i10 = themeActivity.f;
-                org.telegram.ui.ActionBar.k6 D0 = i10 == 1 ? org.telegram.ui.ActionBar.l6.J : org.telegram.ui.ActionBar.l6.D0();
-                if (i7 == i61Var.b() - 1) {
-                    themeActivity.presentFragment(new w71(D0, false, 1, false, i10 == 1));
-                } else {
-                    org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) i61Var.e.get(i7);
-                    if (!TextUtils.isEmpty(i6Var.o) && i6Var.a != org.telegram.ui.ActionBar.l6.n) {
-                        org.telegram.ui.ActionBar.f6.a(false);
-                    }
-                    int i11 = D0.Y;
-                    int i12 = i6Var.a;
-                    if (i11 != i12) {
-                        org.telegram.ui.ActionBar.l6.K1(D0, i10 == 1, i12, view);
-                        org.telegram.ui.ActionBar.r3.q(D0, i6Var.a);
-                        org.telegram.ui.ActionBar.l6.M1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new w71(D0, false, 1, i12 >= 100, i10 == 1));
-                    }
-                }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int L = org.telegram.messenger.g0.L(52.0f);
-                int i13 = left - L;
-                if (i13 < 0) {
-                    f61Var.w0(i13, 0, null);
-                } else {
-                    int i14 = right + L;
-                    if (i14 > f61Var.getMeasuredWidth()) {
-                        f61Var.w0(i14 - f61Var.getMeasuredWidth(), 0, null);
-                    }
-                }
-                int childCount = f61Var.getChildCount();
-                for (int i15 = 0; i15 < childCount; i15++) {
-                    View childAt = f61Var.getChildAt(i15);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
-                    }
-                }
-                break;
-            default:
-                kx0.a0((kx0) this.b, (Context) this.c, (String) this.d, view, i7);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() * 0.5f;
+        float measuredHeight = getMeasuredHeight() * 0.5f;
+        float L = org.telegram.messenger.g0.L(5.0f);
+        float L2 = org.telegram.messenger.g0.L(20.0f) - L;
+        Paint.Style style = Paint.Style.FILL;
+        Paint paint = this.a;
+        paint.setStyle(style);
+        int i7 = 0;
+        paint.setColor(this.b[0]);
+        canvas.drawCircle(measuredWidth, measuredHeight, L, paint);
+        double d = 0.0d;
+        while (i7 < 6) {
+            float sin = (((float) Math.sin(d)) * L2) + measuredWidth;
+            float cos = measuredHeight - (((float) Math.cos(d)) * L2);
+            i7++;
+            paint.setColor(this.b[i7]);
+            canvas.drawCircle(sin, cos, L, paint);
+            d += 1.0471975511965976d;
         }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(org.telegram.messenger.id.M0(2131752015, "ColorPickerMainColor"));
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(62.0f), TLObject.FLAG_30));
     }
 }

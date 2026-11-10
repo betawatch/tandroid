@@ -1,53 +1,42 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class wr implements TextWatcher {
-    public final /* synthetic */ EditTextBoldCursor a;
+public final class wr extends v4.s0 {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ ContactsActivity c;
 
-    public wr(EditTextBoldCursor editTextBoldCursor) {
-        this.a = editTextBoldCursor;
+    public wr(ContactsActivity contactsActivity) {
+        this.c = contactsActivity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        try {
-            String obj = editable.toString();
-            if (obj.isEmpty()) {
-                return;
-            }
-            int intValue = Utilities.z(obj).intValue();
-            EditTextBoldCursor editTextBoldCursor = this.a;
-            if (intValue < 0) {
-                editTextBoldCursor.setText("0");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (intValue > 300) {
-                editTextBoldCursor.setText("300");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (obj.equals("" + intValue)) {
-                return;
-            }
-            editTextBoldCursor.setText("" + intValue);
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        if (i7 != 1) {
+            this.b = false;
+            return;
         }
+        ContactsActivity contactsActivity = this.c;
+        if (contactsActivity.D && contactsActivity.y) {
+            org.telegram.messenger.g0.v1(contactsActivity.getParentActivity().getCurrentFocus());
+        }
+        this.b = true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        ContactsActivity contactsActivity = this.c;
+        if (contactsActivity.s == null || contactsActivity.D) {
+            return;
+        }
+        boolean z9 = i10 > 0;
+        if (i10 != 0 && this.a && (z9 || this.b)) {
+            contactsActivity.w = !z9;
+            ContactsActivity.g0(contactsActivity);
+        }
+        this.a = true;
     }
 }

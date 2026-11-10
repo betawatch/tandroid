@@ -1,82 +1,46 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qr0 implements jg.y1, org.telegram.ui.Cells.z4 {
-    public final /* synthetic */ sr0 a;
+public final /* synthetic */ class qr0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rr0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ qr0(sr0 sr0Var) {
-        this.a = sr0Var;
+    public /* synthetic */ qr0(rr0 rr0Var, String str, int i7) {
+        this.a = i7;
+        this.b = rr0Var;
+        this.c = str;
     }
 
-    @Override // jg.y1
-    public /* synthetic */ a0.h X0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.z4
-    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z9) {
-        int intValue = ((Integer) a5Var.getTag()).intValue();
-        sr0 sr0Var = this.a;
-        TLObject E = sr0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = org.telegram.messenger.ij.B1(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return sr0Var.s.F1.h(tL_chatChannelParticipant, true, !z9, a5Var);
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ boolean k1(int i7) {
-        return true;
-    }
-
-    @Override // jg.y1
-    public void q(int i7) {
-        sr0 sr0Var = this.a;
-        sr0Var.f();
-        if (i7 != 1) {
-            return;
-        }
-        int i10 = sr0Var.r - 1;
-        sr0Var.r = i10;
-        if (i10 != 0) {
-            return;
-        }
-        int i11 = 0;
-        while (true) {
-            zs0 zs0Var = sr0Var.s;
-            ur0[] ur0VarArr = zs0Var.m0;
-            if (i11 >= ur0VarArr.length) {
-                return;
-            }
-            ur0 ur0Var = ur0VarArr[i11];
-            if (ur0Var.E == 7) {
-                if (sr0Var.h == 0) {
-                    ur0Var.w.e(false, true);
-                } else {
-                    zs0Var.D(ur0Var.h, 0, null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                rr0 rr0Var = this.b;
+                String str = this.c;
+                rr0Var.getClass();
+                org.telegram.messenger.g0.h3(new qr0(rr0Var, str, 1));
+                break;
+            default:
+                rr0 rr0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                rr0Var2.f = null;
+                if (!org.telegram.messenger.t3.T(rr0Var2.n) && rr0Var2.s.f1 != null) {
+                    arrayList = new ArrayList(rr0Var2.s.f1.participants.participants);
                 }
-            }
-            i11++;
+                rr0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.g.c(new mg(rr0Var2, str2, arrayList, 22));
+                } else {
+                    rr0Var2.r = 1;
+                }
+                rr0Var2.e.g(str2, false, false, true, false, org.telegram.messenger.t3.T(rr0Var2.n) ? rr0Var2.n.id : 0L, false, 2, 1);
+                break;
         }
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ a0.h v0() {
-        return null;
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ void m1(ArrayList arrayList) {
     }
 }

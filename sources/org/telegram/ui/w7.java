@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w7 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -47,9 +47,9 @@ public final class w7 extends FrameLayout {
                 int i16 = this.b;
                 if (i16 > 0 && i16 != i15) {
                     setVisibility(8);
-                    org.telegram.ui.Components.q10 q10Var = (org.telegram.ui.Components.q10) this.c;
-                    q10Var.y = false;
-                    q10Var.a();
+                    org.telegram.ui.Components.p10 p10Var = (org.telegram.ui.Components.p10) this.c;
+                    p10Var.y = false;
+                    p10Var.a();
                 }
                 this.b = i15;
                 break;

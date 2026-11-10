@@ -1,126 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class t0 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ t4 b;
 
-    public /* synthetic */ t0(Object obj, int i7) {
+    public /* synthetic */ t0(int i7, t4 t4Var) {
         this.a = i7;
-        this.b = obj;
+        this.b = t4Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.m6 m6Var = (org.telegram.ui.m6) this.b;
-                if (i7 == 6) {
-                    m6Var.run();
-                    break;
-                }
+                t4 t4Var = this.b;
+                t4Var.requestFocus();
+                org.telegram.messenger.g0.K3(t4Var);
                 break;
             case 1:
-                ik ikVar = (ik) this.b;
-                if (i7 != 6) {
-                    ikVar.getClass();
-                    break;
-                } else {
-                    fi.d dVar = ikVar.o0;
-                    if (dVar.c0) {
-                        dVar.performClick();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                org.telegram.ui.Cells.i3 i3Var = ((org.telegram.ui.Cells.k3) this.b).d;
-                if (i7 == 5) {
-                    i3Var.requestFocus();
-                    i3Var.setSelection(i3Var.length());
-                    break;
-                }
-                break;
-            case 3:
-                iq iqVar = (iq) this.b;
-                if (i7 == 6) {
-                    iqVar.run();
-                    break;
-                }
-                break;
-            case 4:
-                fc0 fc0Var = (fc0) this.b;
-                if (i7 != 6) {
-                    fc0Var.getClass();
-                    break;
-                } else {
-                    fc0Var.n(false);
-                    break;
-                }
-            case 5:
-                k4 k4Var = (k4) this.b;
-                if (i7 == 6) {
-                    k4Var.i1.a.callOnClick();
-                    break;
-                }
-                break;
-            case 6:
-                ah.i iVar = ((fl0) this.b).d;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        iVar.m();
-                        org.telegram.messenger.g0.v1(iVar);
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                no0 no0Var = (no0) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(no0Var.q2.r);
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.b;
-                if (i7 == 5) {
-                    alertDialog$Builder.a.d(-1).callOnClick();
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
-                if (i7 == 6) {
-                    u1Var.d(-1).callOnClick();
-                    break;
-                }
-                break;
-            case 10:
-                wz0 wz0Var = (wz0) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(wz0Var.b);
-                        break;
-                    }
-                }
+                t4 t4Var2 = this.b;
+                t4Var2.requestFocus();
+                org.telegram.messenger.g0.K3(t4Var2);
                 break;
             default:
-                b51 b51Var = (b51) this.b;
-                if (keyEvent != null) {
-                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
-                        org.telegram.messenger.g0.v1(b51Var.J);
-                        break;
-                    }
-                }
+                org.telegram.messenger.g0.h3(new wf(this.b, 2));
                 break;
         }
-        return false;
     }
 }

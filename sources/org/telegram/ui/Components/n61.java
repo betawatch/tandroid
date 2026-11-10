@@ -1,33 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class n61 {
-    public abstract void b(View view, int i7, int i10);
+public final /* synthetic */ class n61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public boolean c(int i7) {
-        return false;
+    public /* synthetic */ n61(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public abstract View d(int i7);
-
-    public abstract int e();
-
-    public CharSequence g(int i7) {
-        return "";
-    }
-
-    public int h(int i7) {
-        return 0;
-    }
-
-    public void a(ArrayList arrayList) {
-    }
-
-    public int f(int i7) {
-        return i7;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                u61 u61Var = (u61) this.b;
+                u61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u61Var.setAnimationIdicatorProgress(floatValue);
+                t61 t61Var = u61Var.D;
+                if (t61Var != null) {
+                    ((m) t61Var).y(floatValue);
+                    break;
+                }
+                break;
+            default:
+                k60 k60Var = (k60) this.b;
+                k60Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i60 i60Var = k60Var.x;
+                if (i60Var != null) {
+                    i60Var.setProgress(floatValue2);
+                    break;
+                }
+                break;
+        }
     }
 }

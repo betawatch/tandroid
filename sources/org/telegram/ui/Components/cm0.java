@@ -1,11 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface cm0 {
-    void A(float f10);
+public final class cm0 extends NumberTextView {
+    public int w;
 
-    void O(org.telegram.ui.Cells.t2 t2Var);
-
-    void finish();
+    @Override // org.telegram.ui.Components.NumberTextView
+    public final void setTextColor(int i7) {
+        super.setTextColor(i7);
+        this.w = i7;
+    }
 }

@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class i6 {
     public static final HashMap a = new HashMap();
@@ -528,15 +528,15 @@ public abstract class i6 {
         if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.r5.class);
+        org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.q5.class);
         org.telegram.ui.Components.wp[] wpVarArr = (org.telegram.ui.Components.wp[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.wp.class);
         int i13 = (iz.o() >= 2 ? 100 : 50) - i10;
         for (int i14 = 0; i14 < j3.size(); i14++) {
             try {
                 g6 g6Var = (g6) j3.get(i14);
-                if (r5VarArr != null && r5VarArr.length > 0) {
-                    for (org.telegram.ui.Components.r5 r5Var : r5VarArr) {
-                        i12 = (r5Var != null && newSpannable.getSpanStart(r5Var) == g6Var.a && newSpannable.getSpanEnd(r5Var) == g6Var.b) ? 0 : i12 + 1;
+                if (q5VarArr != null && q5VarArr.length > 0) {
+                    for (org.telegram.ui.Components.q5 q5Var : q5VarArr) {
+                        i12 = (q5Var != null && newSpannable.getSpanStart(q5Var) == g6Var.a && newSpannable.getSpanEnd(q5Var) == g6Var.b) ? 0 : i12 + 1;
                     }
                 }
                 if (wpVarArr != null && wpVarArr.length > 0) {
@@ -575,7 +575,7 @@ public abstract class i6 {
     public static CharSequence o(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i7, Runnable runnable) {
         g6 g6Var;
         TLRPC.Document document;
-        org.telegram.ui.Components.r5 r5Var;
+        org.telegram.ui.Components.q5 q5Var;
         int i10;
         if (iz.U0 || charSequence == null || charSequence.length() == 0) {
             return charSequence;
@@ -589,14 +589,14 @@ public abstract class i6 {
         if (j3.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.r5.class);
+        org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.q5.class);
         int i12 = iz.o() >= 2 ? 100 : 50;
         for (int i13 = 0; i13 < j3.size(); i13++) {
             try {
                 g6Var = (g6) j3.get(i13);
-                if (r5VarArr != null) {
-                    for (org.telegram.ui.Components.r5 r5Var2 : r5VarArr) {
-                        i10 = (r5Var2 != null && newSpannable.getSpanStart(r5Var2) == g6Var.a && newSpannable.getSpanEnd(r5Var2) == g6Var.b) ? 0 : i10 + 1;
+                if (q5VarArr != null) {
+                    for (org.telegram.ui.Components.q5 q5Var2 : q5VarArr) {
+                        i10 = (q5Var2 != null && newSpannable.getSpanStart(q5Var2) == g6Var.a && newSpannable.getSpanEnd(q5Var2) == g6Var.b) ? 0 : i10 + 1;
                     }
                 }
                 if (l02 != null) {
@@ -613,14 +613,14 @@ public abstract class i6 {
                     }
                 }
                 document = null;
-                r5Var = document != null ? new org.telegram.ui.Components.r5(document, fontMetricsInt) : new org.telegram.ui.Components.r5(0L, fontMetricsInt);
-                r5Var.emoji = g6Var.c.toString();
+                q5Var = document != null ? new org.telegram.ui.Components.q5(document, fontMetricsInt) : new org.telegram.ui.Components.q5(0L, fontMetricsInt);
+                q5Var.emoji = g6Var.c.toString();
             } catch (Exception e10) {
                 e = e10;
             }
             try {
-                r5Var.cacheType = i7;
-                newSpannable.setSpan(r5Var, g6Var.a, g6Var.b, 33);
+                q5Var.cacheType = i7;
+                newSpannable.setSpan(q5Var, g6Var.a, g6Var.b, 33);
             } catch (Exception e11) {
                 e = e11;
                 a8.g(e, true);

@@ -9,20 +9,20 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h2 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final q50 a;
+    public final r50 a;
     public final e4 b;
     public z2 c;
     public final int d;
     public int e;
     public TL_iv.pageBlockRelatedArticles f;
 
-    public h2(Context context, q50 q50Var, e4 e4Var) {
+    public h2(Context context, r50 r50Var, e4 e4Var) {
         super(context);
         this.d = org.telegram.messenger.g0.L(18.0f);
-        this.a = q50Var;
+        this.a = r50Var;
         this.b = e4Var;
     }
 

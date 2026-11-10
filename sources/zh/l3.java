@@ -24,66 +24,66 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.na;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.ma;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.Components.zs;
-import org.telegram.ui.mx;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l3 extends na {
-    public static final /* synthetic */ int c2 = 0;
-    public final String P1;
-    public final k3 Q1;
-    public final HorizontalScrollView R1;
-    public final u2 S1;
-    public final u2 T1;
-    public final u2 U1;
+public final class l3 extends ma {
+    public static final /* synthetic */ int f2 = 0;
+    public final String S1;
+    public final k3 T1;
+    public final HorizontalScrollView U1;
     public final u2 V1;
-    public final j5 W1;
-    public bi.n2 X1;
-    public final HashSet Y1;
-    public boolean Z1;
-    public hc a2;
-    public boolean b2;
+    public final u2 W1;
+    public final u2 X1;
+    public final u2 Y1;
+    public final j5 Z1;
+    public bi.n2 a2;
+    public final HashSet b2;
+    public boolean c2;
+    public hc d2;
+    public boolean e2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l3(final Context context, String str, final k3 k3Var) {
-        super(2, context, (g6) null, false);
+        super(2, context, (h6) null, false);
         final int i7 = 2;
         final int i10 = 0;
-        this.Y1 = new HashSet();
-        this.B1 = org.telegram.messenger.g0.L(12.0f);
+        this.b2 = new HashSet();
+        this.E1 = org.telegram.messenger.g0.L(12.0f);
         N();
-        this.P1 = str;
-        this.Q1 = k3Var;
-        this.l1.setTitle(O0());
+        this.S1 = str;
+        this.T1 = k3Var;
+        this.o1.setTitle(O0());
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(6.0f));
         linearLayout.setOrientation(0);
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
-        this.R1 = horizontalScrollView;
+        this.U1 = horizontalScrollView;
         horizontalScrollView.setHorizontalScrollBarEnabled(false);
         horizontalScrollView.setClipChildren(false);
         horizontalScrollView.setClipToPadding(false);
         horizontalScrollView.addView(linearLayout);
         u2 u2Var = new u2(context, this.I0, false);
-        this.S1 = u2Var;
+        this.V1 = u2Var;
         u2Var.setSorting(k3Var.c.p);
         linearLayout.addView(u2Var, ha.t(-2, -2, 16, 0, 0, 6, 0));
-        u2Var.setOnClickListener(new wg.z0(8, this, k3Var));
+        u2Var.setOnClickListener(new wg.a1(7, this, k3Var));
         u2 u2Var2 = new u2(context, this.I0, false);
-        this.T1 = u2Var2;
+        this.W1 = u2Var2;
         u2Var2.setValue(id.M0(2131750387, null));
         linearLayout.addView(u2Var2, ha.t(-2, -2, 16, 0, 0, 6, 0));
         u2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: zh.i3
@@ -104,12 +104,12 @@ public final class l3 extends na {
                     case 0:
                         c3 c3Var = k3Var2.c;
                         if (!c3Var.f.isEmpty()) {
-                            final l60 l60Var = new l60(l3Var.c, l3Var.I0, l3Var.T1, false, true, false);
-                            l60Var.t = false;
-                            l60Var.Y = true;
-                            l60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var.R = true;
-                            l60Var.p = new li.h(l60Var, 8);
+                            final k60 k60Var = new k60(l3Var.c, l3Var.I0, l3Var.W1, false, true, false);
+                            k60Var.t = false;
+                            k60Var.Y = true;
+                            k60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var.R = true;
+                            k60Var.p = new li.h(k60Var, 8);
                             final String[] strArr = {""};
                             final ArrayList arrayList = new ArrayList(c3Var.f);
                             final int i14 = 2;
@@ -186,7 +186,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var2.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -220,7 +220,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -255,7 +255,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -278,10 +278,10 @@ public final class l3 extends na {
                             a20 a20Var = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var2 = k3Var2.c;
                                             HashSet hashSet = c3Var2.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -302,10 +302,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var2.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         case 1:
-                                            int i18 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i18 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var3 = k3Var2.c;
                                             HashSet hashSet2 = c3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i18))) {
@@ -326,10 +326,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i18));
                                             }
                                             c3Var3.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -350,55 +350,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var = l3Var.I0;
+                            h6 h6Var = l3Var.I0;
                             Context context2 = context;
-                            mx mxVar = new mx(context2, i15, 0, false, v10Var, a20Var, null, g6Var, 6);
-                            mxVar.f3.r = false;
+                            nx nxVar = new nx(context2, i15, 0, false, v10Var, a20Var, null, h6Var, 6);
+                            nxVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
                             imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout.addView(imageView, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar = new zs(context2, l3Var.I0);
-                            zsVar.setTextSize(1, 16.0f);
-                            zsVar.setInputType(573441);
-                            zsVar.setRawInputType(573441);
-                            s6.D(zsVar, l6.A6, l3Var.I0);
-                            s6.l(zsVar, 30, l6.G6, l3Var.I0);
-                            zsVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar.setCursorWidth(1.5f);
-                            zsVar.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar, l6.E8, l3Var.I0);
-                            zsVar.setBackground(null);
-                            frameLayout.addView(zsVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar.addTextChangedListener(new h7(strArr, mxVar, false, 15));
+                            ys ysVar = new ys(context2, l3Var.I0);
+                            ysVar.setTextSize(1, 16.0f);
+                            ysVar.setInputType(573441);
+                            ysVar.setRawInputType(573441);
+                            t6.D(ysVar, m6.A6, l3Var.I0);
+                            t6.l(ysVar, 30, m6.G6, l3Var.I0);
+                            ysVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar.setCursorWidth(1.5f);
+                            ysVar.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar, m6.E8, l3Var.I0);
+                            ysVar.setBackground(null);
+                            frameLayout.addView(ysVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar.addTextChangedListener(new h7(strArr, nxVar, false, 15));
                             if (arrayList.size() > 8) {
-                                l60Var.r(frameLayout, ha.o(-1, 44));
-                                l60Var.k();
+                                k60Var.r(frameLayout, ha.o(-1, 44));
+                                k60Var.k();
                             }
                             if (!c3Var.j.isEmpty()) {
-                                l60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
+                                k60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
                             }
-                            l60Var.q(mxVar);
-                            l60Var.Z();
+                            k60Var.q(nxVar);
+                            k60Var.Z();
                             break;
                         }
                         break;
                     case 1:
                         c3 c3Var2 = k3Var2.c;
                         if (!c3Var2.g.isEmpty()) {
-                            final l60 l60Var2 = new l60(l3Var.c, l3Var.I0, l3Var.U1, false, true, false);
-                            l60Var2.t = false;
-                            l60Var2.Y = true;
-                            l60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var2.R = true;
-                            l60Var2.p = new li.h(l60Var2, 6);
+                            final k60 k60Var2 = new k60(l3Var.c, l3Var.I0, l3Var.X1, false, true, false);
+                            k60Var2.t = false;
+                            k60Var2.Y = true;
+                            k60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var2.R = true;
+                            k60Var2.p = new li.h(k60Var2, 6);
                             final String[] strArr2 = {""};
                             final ArrayList arrayList2 = new ArrayList(c3Var2.g);
                             final int i17 = 0;
@@ -474,7 +474,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i19 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -508,7 +508,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var3.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -543,7 +543,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -566,10 +566,10 @@ public final class l3 extends na {
                             a20 a20Var2 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -590,10 +590,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var3 = k3Var2.c;
                                             HashSet hashSet2 = c3Var3.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -614,10 +614,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var3.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -638,55 +638,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var2 = l3Var.I0;
+                            h6 h6Var2 = l3Var.I0;
                             Context context3 = context;
-                            mx mxVar2 = new mx(context3, i18, 0, false, v10Var2, a20Var2, null, g6Var2, 7);
-                            mxVar2.f3.r = false;
+                            nx nxVar2 = new nx(context3, i18, 0, false, v10Var2, a20Var2, null, h6Var2, 7);
+                            nxVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
                             imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView2, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView2, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout2.addView(imageView2, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar2 = new zs(context3, l3Var.I0);
-                            zsVar2.setTextSize(1, 16.0f);
-                            zsVar2.setInputType(573441);
-                            zsVar2.setRawInputType(573441);
-                            s6.D(zsVar2, l6.A6, l3Var.I0);
-                            s6.l(zsVar2, 30, l6.G6, l3Var.I0);
-                            zsVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar2.setCursorWidth(1.5f);
-                            zsVar2.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar2, l6.E8, l3Var.I0);
-                            zsVar2.setBackground(null);
-                            frameLayout2.addView(zsVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar2.addTextChangedListener(new h7(strArr2, mxVar2, false, 16));
+                            ys ysVar2 = new ys(context3, l3Var.I0);
+                            ysVar2.setTextSize(1, 16.0f);
+                            ysVar2.setInputType(573441);
+                            ysVar2.setRawInputType(573441);
+                            t6.D(ysVar2, m6.A6, l3Var.I0);
+                            t6.l(ysVar2, 30, m6.G6, l3Var.I0);
+                            ysVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar2.setCursorWidth(1.5f);
+                            ysVar2.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar2, m6.E8, l3Var.I0);
+                            ysVar2.setBackground(null);
+                            frameLayout2.addView(ysVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar2.addTextChangedListener(new h7(strArr2, nxVar2, false, 16));
                             if (arrayList2.size() > 8) {
-                                l60Var2.r(frameLayout2, ha.o(-1, 44));
-                                l60Var2.k();
+                                k60Var2.r(frameLayout2, ha.o(-1, 44));
+                                k60Var2.k();
                             }
                             if (!c3Var2.k.isEmpty()) {
-                                l60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
+                                k60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
                             }
-                            l60Var2.q(mxVar2);
-                            l60Var2.Z();
+                            k60Var2.q(nxVar2);
+                            k60Var2.Z();
                             break;
                         }
                         break;
                     default:
                         c3 c3Var3 = k3Var2.c;
                         if (!c3Var3.h.isEmpty()) {
-                            final l60 l60Var3 = new l60(l3Var.c, l3Var.I0, l3Var.V1, false, true, false);
-                            l60Var3.t = false;
-                            l60Var3.Y = true;
-                            l60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var3.R = true;
-                            l60Var3.p = new li.h(l60Var3, 7);
+                            final k60 k60Var3 = new k60(l3Var.c, l3Var.I0, l3Var.Y1, false, true, false);
+                            k60Var3.t = false;
+                            k60Var3.Y = true;
+                            k60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var3.R = true;
+                            k60Var3.p = new li.h(k60Var3, 7);
                             final String[] strArr3 = {""};
                             final ArrayList arrayList3 = new ArrayList(c3Var3.h);
                             Collections.sort(arrayList3, new Comparator() { // from class: zh.h3
@@ -761,7 +761,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -795,7 +795,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -830,7 +830,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -853,10 +853,10 @@ public final class l3 extends na {
                             a20 a20Var3 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -877,10 +877,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -901,10 +901,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -925,43 +925,43 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var3 = l3Var.I0;
+                            h6 h6Var3 = l3Var.I0;
                             Context context4 = context;
-                            mx mxVar3 = new mx(context4, i19, 0, false, v10Var3, a20Var3, null, g6Var3, 8);
-                            mxVar3.f3.r = false;
+                            nx nxVar3 = new nx(context4, i19, 0, false, v10Var3, a20Var3, null, h6Var3, 8);
+                            nxVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
                             imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView3, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView3, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout3.addView(imageView3, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar3 = new zs(context4, l3Var.I0);
-                            zsVar3.setTextSize(1, 16.0f);
-                            zsVar3.setInputType(573441);
-                            zsVar3.setRawInputType(573441);
-                            s6.D(zsVar3, l6.A6, l3Var.I0);
-                            s6.l(zsVar3, 30, l6.G6, l3Var.I0);
-                            zsVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar3.setCursorWidth(1.5f);
-                            zsVar3.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar3, l6.E8, l3Var.I0);
-                            zsVar3.setBackground(null);
-                            frameLayout3.addView(zsVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar3.addTextChangedListener(new h7(strArr3, mxVar3, false, 17));
+                            ys ysVar3 = new ys(context4, l3Var.I0);
+                            ysVar3.setTextSize(1, 16.0f);
+                            ysVar3.setInputType(573441);
+                            ysVar3.setRawInputType(573441);
+                            t6.D(ysVar3, m6.A6, l3Var.I0);
+                            t6.l(ysVar3, 30, m6.G6, l3Var.I0);
+                            ysVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar3.setCursorWidth(1.5f);
+                            ysVar3.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar3, m6.E8, l3Var.I0);
+                            ysVar3.setBackground(null);
+                            frameLayout3.addView(ysVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar3.addTextChangedListener(new h7(strArr3, nxVar3, false, 17));
                             if (arrayList3.size() > 8) {
-                                l60Var3.r(frameLayout3, ha.o(-1, 44));
-                                l60Var3.k();
+                                k60Var3.r(frameLayout3, ha.o(-1, 44));
+                                k60Var3.k();
                             }
                             if (!c3Var3.l.isEmpty()) {
-                                l60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
+                                k60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
                             }
-                            l60Var3.q(mxVar3);
-                            l60Var3.Z();
+                            k60Var3.q(nxVar3);
+                            k60Var3.Z();
                             break;
                         }
                         break;
@@ -969,7 +969,7 @@ public final class l3 extends na {
             }
         });
         u2 u2Var3 = new u2(context, this.I0, false);
-        this.U1 = u2Var3;
+        this.X1 = u2Var3;
         u2Var3.setValue(id.M0(2131750388, null));
         linearLayout.addView(u2Var3, ha.t(-2, -2, 16, 0, 0, 6, 0));
         final int i11 = 1;
@@ -991,12 +991,12 @@ public final class l3 extends na {
                     case 0:
                         c3 c3Var = k3Var2.c;
                         if (!c3Var.f.isEmpty()) {
-                            final l60 l60Var = new l60(l3Var.c, l3Var.I0, l3Var.T1, false, true, false);
-                            l60Var.t = false;
-                            l60Var.Y = true;
-                            l60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var.R = true;
-                            l60Var.p = new li.h(l60Var, 8);
+                            final k60 k60Var = new k60(l3Var.c, l3Var.I0, l3Var.W1, false, true, false);
+                            k60Var.t = false;
+                            k60Var.Y = true;
+                            k60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var.R = true;
+                            k60Var.p = new li.h(k60Var, 8);
                             final String[] strArr = {""};
                             final ArrayList arrayList = new ArrayList(c3Var.f);
                             final int i14 = 2;
@@ -1073,7 +1073,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1107,7 +1107,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1142,7 +1142,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1165,10 +1165,10 @@ public final class l3 extends na {
                             a20 a20Var = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1189,10 +1189,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1213,10 +1213,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1237,55 +1237,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var = l3Var.I0;
+                            h6 h6Var = l3Var.I0;
                             Context context2 = context;
-                            mx mxVar = new mx(context2, i15, 0, false, v10Var, a20Var, null, g6Var, 6);
-                            mxVar.f3.r = false;
+                            nx nxVar = new nx(context2, i15, 0, false, v10Var, a20Var, null, h6Var, 6);
+                            nxVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
                             imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout.addView(imageView, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar = new zs(context2, l3Var.I0);
-                            zsVar.setTextSize(1, 16.0f);
-                            zsVar.setInputType(573441);
-                            zsVar.setRawInputType(573441);
-                            s6.D(zsVar, l6.A6, l3Var.I0);
-                            s6.l(zsVar, 30, l6.G6, l3Var.I0);
-                            zsVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar.setCursorWidth(1.5f);
-                            zsVar.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar, l6.E8, l3Var.I0);
-                            zsVar.setBackground(null);
-                            frameLayout.addView(zsVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar.addTextChangedListener(new h7(strArr, mxVar, false, 15));
+                            ys ysVar = new ys(context2, l3Var.I0);
+                            ysVar.setTextSize(1, 16.0f);
+                            ysVar.setInputType(573441);
+                            ysVar.setRawInputType(573441);
+                            t6.D(ysVar, m6.A6, l3Var.I0);
+                            t6.l(ysVar, 30, m6.G6, l3Var.I0);
+                            ysVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar.setCursorWidth(1.5f);
+                            ysVar.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar, m6.E8, l3Var.I0);
+                            ysVar.setBackground(null);
+                            frameLayout.addView(ysVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar.addTextChangedListener(new h7(strArr, nxVar, false, 15));
                             if (arrayList.size() > 8) {
-                                l60Var.r(frameLayout, ha.o(-1, 44));
-                                l60Var.k();
+                                k60Var.r(frameLayout, ha.o(-1, 44));
+                                k60Var.k();
                             }
                             if (!c3Var.j.isEmpty()) {
-                                l60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
+                                k60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
                             }
-                            l60Var.q(mxVar);
-                            l60Var.Z();
+                            k60Var.q(nxVar);
+                            k60Var.Z();
                             break;
                         }
                         break;
                     case 1:
                         c3 c3Var2 = k3Var2.c;
                         if (!c3Var2.g.isEmpty()) {
-                            final l60 l60Var2 = new l60(l3Var.c, l3Var.I0, l3Var.U1, false, true, false);
-                            l60Var2.t = false;
-                            l60Var2.Y = true;
-                            l60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var2.R = true;
-                            l60Var2.p = new li.h(l60Var2, 6);
+                            final k60 k60Var2 = new k60(l3Var.c, l3Var.I0, l3Var.X1, false, true, false);
+                            k60Var2.t = false;
+                            k60Var2.Y = true;
+                            k60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var2.R = true;
+                            k60Var2.p = new li.h(k60Var2, 6);
                             final String[] strArr2 = {""};
                             final ArrayList arrayList2 = new ArrayList(c3Var2.g);
                             final int i17 = 0;
@@ -1361,7 +1361,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1395,7 +1395,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1430,7 +1430,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1453,10 +1453,10 @@ public final class l3 extends na {
                             a20 a20Var2 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1477,10 +1477,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1501,10 +1501,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1525,55 +1525,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var2 = l3Var.I0;
+                            h6 h6Var2 = l3Var.I0;
                             Context context3 = context;
-                            mx mxVar2 = new mx(context3, i18, 0, false, v10Var2, a20Var2, null, g6Var2, 7);
-                            mxVar2.f3.r = false;
+                            nx nxVar2 = new nx(context3, i18, 0, false, v10Var2, a20Var2, null, h6Var2, 7);
+                            nxVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
                             imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView2, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView2, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout2.addView(imageView2, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar2 = new zs(context3, l3Var.I0);
-                            zsVar2.setTextSize(1, 16.0f);
-                            zsVar2.setInputType(573441);
-                            zsVar2.setRawInputType(573441);
-                            s6.D(zsVar2, l6.A6, l3Var.I0);
-                            s6.l(zsVar2, 30, l6.G6, l3Var.I0);
-                            zsVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar2.setCursorWidth(1.5f);
-                            zsVar2.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar2, l6.E8, l3Var.I0);
-                            zsVar2.setBackground(null);
-                            frameLayout2.addView(zsVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar2.addTextChangedListener(new h7(strArr2, mxVar2, false, 16));
+                            ys ysVar2 = new ys(context3, l3Var.I0);
+                            ysVar2.setTextSize(1, 16.0f);
+                            ysVar2.setInputType(573441);
+                            ysVar2.setRawInputType(573441);
+                            t6.D(ysVar2, m6.A6, l3Var.I0);
+                            t6.l(ysVar2, 30, m6.G6, l3Var.I0);
+                            ysVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar2.setCursorWidth(1.5f);
+                            ysVar2.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar2, m6.E8, l3Var.I0);
+                            ysVar2.setBackground(null);
+                            frameLayout2.addView(ysVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar2.addTextChangedListener(new h7(strArr2, nxVar2, false, 16));
                             if (arrayList2.size() > 8) {
-                                l60Var2.r(frameLayout2, ha.o(-1, 44));
-                                l60Var2.k();
+                                k60Var2.r(frameLayout2, ha.o(-1, 44));
+                                k60Var2.k();
                             }
                             if (!c3Var2.k.isEmpty()) {
-                                l60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
+                                k60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
                             }
-                            l60Var2.q(mxVar2);
-                            l60Var2.Z();
+                            k60Var2.q(nxVar2);
+                            k60Var2.Z();
                             break;
                         }
                         break;
                     default:
                         c3 c3Var3 = k3Var2.c;
                         if (!c3Var3.h.isEmpty()) {
-                            final l60 l60Var3 = new l60(l3Var.c, l3Var.I0, l3Var.V1, false, true, false);
-                            l60Var3.t = false;
-                            l60Var3.Y = true;
-                            l60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var3.R = true;
-                            l60Var3.p = new li.h(l60Var3, 7);
+                            final k60 k60Var3 = new k60(l3Var.c, l3Var.I0, l3Var.Y1, false, true, false);
+                            k60Var3.t = false;
+                            k60Var3.Y = true;
+                            k60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var3.R = true;
+                            k60Var3.p = new li.h(k60Var3, 7);
                             final String[] strArr3 = {""};
                             final ArrayList arrayList3 = new ArrayList(c3Var3.h);
                             Collections.sort(arrayList3, new Comparator() { // from class: zh.h3
@@ -1648,7 +1648,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1682,7 +1682,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -1717,7 +1717,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -1740,10 +1740,10 @@ public final class l3 extends na {
                             a20 a20Var3 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -1764,10 +1764,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -1788,10 +1788,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -1812,43 +1812,43 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var3 = l3Var.I0;
+                            h6 h6Var3 = l3Var.I0;
                             Context context4 = context;
-                            mx mxVar3 = new mx(context4, i19, 0, false, v10Var3, a20Var3, null, g6Var3, 8);
-                            mxVar3.f3.r = false;
+                            nx nxVar3 = new nx(context4, i19, 0, false, v10Var3, a20Var3, null, h6Var3, 8);
+                            nxVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
                             imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView3, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView3, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout3.addView(imageView3, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar3 = new zs(context4, l3Var.I0);
-                            zsVar3.setTextSize(1, 16.0f);
-                            zsVar3.setInputType(573441);
-                            zsVar3.setRawInputType(573441);
-                            s6.D(zsVar3, l6.A6, l3Var.I0);
-                            s6.l(zsVar3, 30, l6.G6, l3Var.I0);
-                            zsVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar3.setCursorWidth(1.5f);
-                            zsVar3.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar3, l6.E8, l3Var.I0);
-                            zsVar3.setBackground(null);
-                            frameLayout3.addView(zsVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar3.addTextChangedListener(new h7(strArr3, mxVar3, false, 17));
+                            ys ysVar3 = new ys(context4, l3Var.I0);
+                            ysVar3.setTextSize(1, 16.0f);
+                            ysVar3.setInputType(573441);
+                            ysVar3.setRawInputType(573441);
+                            t6.D(ysVar3, m6.A6, l3Var.I0);
+                            t6.l(ysVar3, 30, m6.G6, l3Var.I0);
+                            ysVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar3.setCursorWidth(1.5f);
+                            ysVar3.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar3, m6.E8, l3Var.I0);
+                            ysVar3.setBackground(null);
+                            frameLayout3.addView(ysVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar3.addTextChangedListener(new h7(strArr3, nxVar3, false, 17));
                             if (arrayList3.size() > 8) {
-                                l60Var3.r(frameLayout3, ha.o(-1, 44));
-                                l60Var3.k();
+                                k60Var3.r(frameLayout3, ha.o(-1, 44));
+                                k60Var3.k();
                             }
                             if (!c3Var3.l.isEmpty()) {
-                                l60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
+                                k60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
                             }
-                            l60Var3.q(mxVar3);
-                            l60Var3.Z();
+                            k60Var3.q(nxVar3);
+                            k60Var3.Z();
                             break;
                         }
                         break;
@@ -1856,7 +1856,7 @@ public final class l3 extends na {
             }
         });
         u2 u2Var4 = new u2(context, this.I0, false);
-        this.V1 = u2Var4;
+        this.Y1 = u2Var4;
         u2Var4.setValue(id.M0(2131750380, null));
         linearLayout.addView(u2Var4, ha.t(-2, -2, 16, 0, 0, 0, 0));
         u2Var4.setOnClickListener(new View.OnClickListener(this) { // from class: zh.i3
@@ -1877,12 +1877,12 @@ public final class l3 extends na {
                     case 0:
                         c3 c3Var = k3Var2.c;
                         if (!c3Var.f.isEmpty()) {
-                            final l60 l60Var = new l60(l3Var.c, l3Var.I0, l3Var.T1, false, true, false);
-                            l60Var.t = false;
-                            l60Var.Y = true;
-                            l60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var.R = true;
-                            l60Var.p = new li.h(l60Var, 8);
+                            final k60 k60Var = new k60(l3Var.c, l3Var.I0, l3Var.W1, false, true, false);
+                            k60Var.t = false;
+                            k60Var.Y = true;
+                            k60Var.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var.R = true;
+                            k60Var.p = new li.h(k60Var, 8);
                             final String[] strArr = {""};
                             final ArrayList arrayList = new ArrayList(c3Var.f);
                             final int i14 = 2;
@@ -1959,7 +1959,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -1993,7 +1993,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2028,7 +2028,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2051,10 +2051,10 @@ public final class l3 extends na {
                             a20 a20Var = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i16) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2075,10 +2075,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2099,10 +2099,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2123,55 +2123,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var.u();
+                                            k60Var.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var = l3Var.I0;
+                            h6 h6Var = l3Var.I0;
                             Context context2 = context;
-                            mx mxVar = new mx(context2, i15, 0, false, v10Var, a20Var, null, g6Var, 6);
-                            mxVar.f3.r = false;
+                            nx nxVar = new nx(context2, i15, 0, false, v10Var, a20Var, null, h6Var, 6);
+                            nxVar.f3.r = false;
                             FrameLayout frameLayout = new FrameLayout(context2);
                             ImageView imageView = new ImageView(context2);
                             imageView.setScaleType(ImageView.ScaleType.CENTER);
                             imageView.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout.addView(imageView, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar = new zs(context2, l3Var.I0);
-                            zsVar.setTextSize(1, 16.0f);
-                            zsVar.setInputType(573441);
-                            zsVar.setRawInputType(573441);
-                            s6.D(zsVar, l6.A6, l3Var.I0);
-                            s6.l(zsVar, 30, l6.G6, l3Var.I0);
-                            zsVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar.setCursorWidth(1.5f);
-                            zsVar.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar, l6.E8, l3Var.I0);
-                            zsVar.setBackground(null);
-                            frameLayout.addView(zsVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar.addTextChangedListener(new h7(strArr, mxVar, false, 15));
+                            ys ysVar = new ys(context2, l3Var.I0);
+                            ysVar.setTextSize(1, 16.0f);
+                            ysVar.setInputType(573441);
+                            ysVar.setRawInputType(573441);
+                            t6.D(ysVar, m6.A6, l3Var.I0);
+                            t6.l(ysVar, 30, m6.G6, l3Var.I0);
+                            ysVar.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar.setCursorWidth(1.5f);
+                            ysVar.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar, m6.E8, l3Var.I0);
+                            ysVar.setBackground(null);
+                            frameLayout.addView(ysVar, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar.addTextChangedListener(new h7(strArr, nxVar, false, 15));
                             if (arrayList.size() > 8) {
-                                l60Var.r(frameLayout, ha.o(-1, 44));
-                                l60Var.k();
+                                k60Var.r(frameLayout, ha.o(-1, 44));
+                                k60Var.k();
                             }
                             if (!c3Var.j.isEmpty()) {
-                                l60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
+                                k60Var.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 0), false);
                             }
-                            l60Var.q(mxVar);
-                            l60Var.Z();
+                            k60Var.q(nxVar);
+                            k60Var.Z();
                             break;
                         }
                         break;
                     case 1:
                         c3 c3Var2 = k3Var2.c;
                         if (!c3Var2.g.isEmpty()) {
-                            final l60 l60Var2 = new l60(l3Var.c, l3Var.I0, l3Var.U1, false, true, false);
-                            l60Var2.t = false;
-                            l60Var2.Y = true;
-                            l60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var2.R = true;
-                            l60Var2.p = new li.h(l60Var2, 6);
+                            final k60 k60Var2 = new k60(l3Var.c, l3Var.I0, l3Var.X1, false, true, false);
+                            k60Var2.t = false;
+                            k60Var2.Y = true;
+                            k60Var2.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var2.R = true;
+                            k60Var2.p = new li.h(k60Var2, 6);
                             final String[] strArr2 = {""};
                             final ArrayList arrayList2 = new ArrayList(c3Var2.g);
                             final int i17 = 0;
@@ -2247,7 +2247,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2281,7 +2281,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2316,7 +2316,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2339,10 +2339,10 @@ public final class l3 extends na {
                             a20 a20Var2 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i13) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2363,10 +2363,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2387,10 +2387,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2411,55 +2411,55 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var2.u();
+                                            k60Var2.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var2 = l3Var.I0;
+                            h6 h6Var2 = l3Var.I0;
                             Context context3 = context;
-                            mx mxVar2 = new mx(context3, i18, 0, false, v10Var2, a20Var2, null, g6Var2, 7);
-                            mxVar2.f3.r = false;
+                            nx nxVar2 = new nx(context3, i18, 0, false, v10Var2, a20Var2, null, h6Var2, 7);
+                            nxVar2.f3.r = false;
                             FrameLayout frameLayout2 = new FrameLayout(context3);
                             ImageView imageView2 = new ImageView(context3);
                             imageView2.setScaleType(ImageView.ScaleType.CENTER);
                             imageView2.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView2, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView2, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout2.addView(imageView2, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar2 = new zs(context3, l3Var.I0);
-                            zsVar2.setTextSize(1, 16.0f);
-                            zsVar2.setInputType(573441);
-                            zsVar2.setRawInputType(573441);
-                            s6.D(zsVar2, l6.A6, l3Var.I0);
-                            s6.l(zsVar2, 30, l6.G6, l3Var.I0);
-                            zsVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar2.setCursorWidth(1.5f);
-                            zsVar2.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar2, l6.E8, l3Var.I0);
-                            zsVar2.setBackground(null);
-                            frameLayout2.addView(zsVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar2.addTextChangedListener(new h7(strArr2, mxVar2, false, 16));
+                            ys ysVar2 = new ys(context3, l3Var.I0);
+                            ysVar2.setTextSize(1, 16.0f);
+                            ysVar2.setInputType(573441);
+                            ysVar2.setRawInputType(573441);
+                            t6.D(ysVar2, m6.A6, l3Var.I0);
+                            t6.l(ysVar2, 30, m6.G6, l3Var.I0);
+                            ysVar2.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar2.setCursorWidth(1.5f);
+                            ysVar2.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar2, m6.E8, l3Var.I0);
+                            ysVar2.setBackground(null);
+                            frameLayout2.addView(ysVar2, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar2.addTextChangedListener(new h7(strArr2, nxVar2, false, 16));
                             if (arrayList2.size() > 8) {
-                                l60Var2.r(frameLayout2, ha.o(-1, 44));
-                                l60Var2.k();
+                                k60Var2.r(frameLayout2, ha.o(-1, 44));
+                                k60Var2.k();
                             }
                             if (!c3Var2.k.isEmpty()) {
-                                l60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
+                                k60Var2.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 1), false);
                             }
-                            l60Var2.q(mxVar2);
-                            l60Var2.Z();
+                            k60Var2.q(nxVar2);
+                            k60Var2.Z();
                             break;
                         }
                         break;
                     default:
                         c3 c3Var3 = k3Var2.c;
                         if (!c3Var3.h.isEmpty()) {
-                            final l60 l60Var3 = new l60(l3Var.c, l3Var.I0, l3Var.V1, false, true, false);
-                            l60Var3.t = false;
-                            l60Var3.Y = true;
-                            l60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
-                            l60Var3.R = true;
-                            l60Var3.p = new li.h(l60Var3, 7);
+                            final k60 k60Var3 = new k60(l3Var.c, l3Var.I0, l3Var.Y1, false, true, false);
+                            k60Var3.t = false;
+                            k60Var3.Y = true;
+                            k60Var3.a0(0.0f, org.telegram.messenger.g0.L(-8.0f));
+                            k60Var3.R = true;
+                            k60Var3.p = new li.h(k60Var3, 7);
                             final String[] strArr3 = {""};
                             final ArrayList arrayList3 = new ArrayList(c3Var3.h);
                             Collections.sort(arrayList3, new Comparator() { // from class: zh.h3
@@ -2534,7 +2534,7 @@ public final class l3 extends na {
                                                     Integer num = (Integer) c3Var22.m.get(Long.valueOf(stargiftattributemodel.document.id));
                                                     int intValue = num == null ? 0 : num.intValue();
                                                     int i192 = w2.b;
-                                                    y31 K = y31.K(w2.class);
+                                                    x31 K = x31.K(w2.class);
                                                     K.G = stargiftattributemodel;
                                                     K.l = lowerCase;
                                                     K.z = intValue;
@@ -2568,7 +2568,7 @@ public final class l3 extends na {
                                                     Integer num2 = (Integer) c3Var32.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                                                     int intValue2 = num2 == null ? 0 : num2.intValue();
                                                     int i21 = p2.b;
-                                                    y31 K2 = y31.K(p2.class);
+                                                    x31 K2 = x31.K(p2.class);
                                                     K2.G = stargiftattributebackdrop;
                                                     K2.l = lowerCase2;
                                                     K2.z = intValue2;
@@ -2603,7 +2603,7 @@ public final class l3 extends na {
                                                     Integer num3 = (Integer) c3Var4.o.get(Long.valueOf(stargiftattributepattern.document.id));
                                                     ?? intValue3 = num3 == null ? z12 : num3.intValue();
                                                     int i23 = z2.b;
-                                                    y31 K3 = y31.K(z2.class);
+                                                    x31 K3 = x31.K(z2.class);
                                                     K3.G = stargiftattributepattern;
                                                     K3.l = lowerCase3;
                                                     K3.z = intValue3;
@@ -2626,10 +2626,10 @@ public final class l3 extends na {
                             a20 a20Var3 = new a20() { // from class: zh.e3
                                 @Override // org.telegram.messenger.a20
                                 public final void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-                                    y31 y31Var = (y31) obj;
+                                    x31 x31Var = (x31) obj;
                                     switch (i12) {
                                         case 0:
-                                            long j3 = ((TL_stars.starGiftAttributeModel) y31Var.G).document.id;
+                                            long j3 = ((TL_stars.starGiftAttributeModel) x31Var.G).document.id;
                                             c3 c3Var22 = k3Var2.c;
                                             HashSet hashSet = c3Var22.j;
                                             if (hashSet.contains(Long.valueOf(j3))) {
@@ -2650,10 +2650,10 @@ public final class l3 extends na {
                                                 hashSet.add(Long.valueOf(j3));
                                             }
                                             c3Var22.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         case 1:
-                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) y31Var.G).backdrop_id;
+                                            int i182 = ((TL_stars.starGiftAttributeBackdrop) x31Var.G).backdrop_id;
                                             c3 c3Var32 = k3Var2.c;
                                             HashSet hashSet2 = c3Var32.k;
                                             if (hashSet2.contains(Integer.valueOf(i182))) {
@@ -2674,10 +2674,10 @@ public final class l3 extends na {
                                                 hashSet2.add(Integer.valueOf(i182));
                                             }
                                             c3Var32.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                         default:
-                                            long j11 = ((TL_stars.starGiftAttributePattern) y31Var.G).document.id;
+                                            long j11 = ((TL_stars.starGiftAttributePattern) x31Var.G).document.id;
                                             c3 c3Var4 = k3Var2.c;
                                             HashSet hashSet3 = c3Var4.l;
                                             if (hashSet3.contains(Long.valueOf(j11))) {
@@ -2698,43 +2698,43 @@ public final class l3 extends na {
                                                 hashSet3.add(Long.valueOf(j11));
                                             }
                                             c3Var4.h();
-                                            l60Var3.u();
+                                            k60Var3.u();
                                             break;
                                     }
                                 }
                             };
-                            g6 g6Var3 = l3Var.I0;
+                            h6 h6Var3 = l3Var.I0;
                             Context context4 = context;
-                            mx mxVar3 = new mx(context4, i19, 0, false, v10Var3, a20Var3, null, g6Var3, 8);
-                            mxVar3.f3.r = false;
+                            nx nxVar3 = new nx(context4, i19, 0, false, v10Var3, a20Var3, null, h6Var3, 8);
+                            nxVar3.f3.r = false;
                             FrameLayout frameLayout3 = new FrameLayout(context4);
                             ImageView imageView3 = new ImageView(context4);
                             imageView3.setScaleType(ImageView.ScaleType.CENTER);
                             imageView3.setImageResource(R.drawable.smiles_inputsearch);
-                            s6.s(imageView3, l6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
+                            t6.s(imageView3, m6.F8, l3Var.I0, PorterDuff.Mode.SRC_IN);
                             frameLayout3.addView(imageView3, ha.d(24, 24.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
-                            zs zsVar3 = new zs(context4, l3Var.I0);
-                            zsVar3.setTextSize(1, 16.0f);
-                            zsVar3.setInputType(573441);
-                            zsVar3.setRawInputType(573441);
-                            s6.D(zsVar3, l6.A6, l3Var.I0);
-                            s6.l(zsVar3, 30, l6.G6, l3Var.I0);
-                            zsVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
-                            zsVar3.setCursorWidth(1.5f);
-                            zsVar3.setHint(id.M0(2131750009, null));
-                            s6.U(zsVar3, l6.E8, l3Var.I0);
-                            zsVar3.setBackground(null);
-                            frameLayout3.addView(zsVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
-                            zsVar3.addTextChangedListener(new h7(strArr3, mxVar3, false, 17));
+                            ys ysVar3 = new ys(context4, l3Var.I0);
+                            ysVar3.setTextSize(1, 16.0f);
+                            ysVar3.setInputType(573441);
+                            ysVar3.setRawInputType(573441);
+                            t6.D(ysVar3, m6.A6, l3Var.I0);
+                            t6.l(ysVar3, 30, m6.G6, l3Var.I0);
+                            ysVar3.setCursorSize(org.telegram.messenger.g0.L(19.0f));
+                            ysVar3.setCursorWidth(1.5f);
+                            ysVar3.setHint(id.M0(2131750009, null));
+                            t6.U(ysVar3, m6.E8, l3Var.I0);
+                            ysVar3.setBackground(null);
+                            frameLayout3.addView(ysVar3, ha.d(-1, -2.0f, 19, 43.0f, 0.0f, 8.0f, 0.0f));
+                            ysVar3.addTextChangedListener(new h7(strArr3, nxVar3, false, 17));
                             if (arrayList3.size() > 8) {
-                                l60Var3.r(frameLayout3, ha.o(-1, 44));
-                                l60Var3.k();
+                                k60Var3.r(frameLayout3, ha.o(-1, 44));
+                                k60Var3.k();
                             }
                             if (!c3Var3.l.isEmpty()) {
-                                l60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
+                                k60Var3.c(R.drawable.msg_select, id.M0(2131745670, null), new f3(k3Var2, 2), false);
                             }
-                            l60Var3.q(mxVar3);
-                            l60Var3.Z();
+                            k60Var3.q(nxVar3);
+                            k60Var3.Z();
                             break;
                         }
                         break;
@@ -2744,19 +2744,19 @@ public final class l3 extends na {
         getContext();
         v4.s sVar = new v4.s(3);
         sVar.O = new ai.l(this, 17);
-        this.k1.setLayoutManager(sVar);
-        this.k1.setOnItemClickListener(new j3(this, k3Var));
-        this.k1.setPadding(org.telegram.messenger.g0.L(8.0f) + this.t0, 0, org.telegram.messenger.g0.L(8.0f) + this.t0, 0);
-        this.k1.setOnScrollListener(new yh.f(this, i7));
+        this.n1.setLayoutManager(sVar);
+        this.n1.setOnItemClickListener(new j3(this, k3Var));
+        this.n1.setPadding(org.telegram.messenger.g0.L(8.0f) + this.t0, 0, org.telegram.messenger.g0.L(8.0f) + this.t0, 0);
+        this.n1.setOnScrollListener(new yh.f(this, i7));
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
-        kVar.o(xq.h);
+        kVar.o(wq.h);
         kVar.n(350L);
-        this.k1.setItemAnimator(kVar);
-        this.k1.setItemSelectorColorProvider(new z3.j(4));
+        this.n1.setItemAnimator(kVar);
+        this.n1.setItemSelectorColorProvider(new z3.j(4));
         j5 j5Var = new j5(context);
-        this.W1 = j5Var;
+        this.Z1 = j5Var;
         int L = org.telegram.messenger.g0.L(20.0f);
         int L2 = org.telegram.messenger.g0.L(9.0f);
         j5Var.h = L;
@@ -2766,27 +2766,27 @@ public final class l3 extends na {
         org.telegram.messenger.g0.m2(new ai.i(j5Var, 6), 12.0f, 12, new ArrayList());
         j5Var.setPivotY(0.0f);
         this.c.addView(j5Var, ha.e(-1, -2, 55));
-        this.a2.O(false);
+        this.d2.O(false);
         k3Var.d = new g3(this, i11);
     }
 
-    @Override // org.telegram.ui.Components.na
-    public final pj0 L0(qj0 qj0Var) {
-        hc hcVar = new hc(this, qj0Var, getContext(), this.a, new p0(this, 3), this.I0, 5);
-        this.a2 = hcVar;
+    @Override // org.telegram.ui.Components.ma
+    public final oj0 L0(pj0 pj0Var) {
+        hc hcVar = new hc(this, pj0Var, getContext(), this.a, new p0(this, 3), this.I0, 5);
+        this.d2 = hcVar;
         return hcVar;
     }
 
-    @Override // org.telegram.ui.Components.na
+    @Override // org.telegram.ui.Components.ma
     public final CharSequence O0() {
-        String str = this.P1;
+        String str = this.S1;
         return str != null ? str : id.M0(2131749771, null);
     }
 
-    @Override // org.telegram.ui.Components.na
+    @Override // org.telegram.ui.Components.ma
     public final void T0(float f10) {
         float y10 = this.b.getY() + f10;
-        j5 j5Var = this.W1;
+        j5 j5Var = this.Z1;
         float measuredHeight = y10 - j5Var.getMeasuredHeight();
         float l10 = 1.0f - Utilities.l(Math.max(0.0f, (-measuredHeight) + org.telegram.messenger.g0.L(8.0f)) / j5Var.getMeasuredHeight());
         float height = this.c.getHeight() / 2.0f;
@@ -2801,17 +2801,17 @@ public final class l3 extends na {
 
     public final void d1() {
         int R;
-        y31 G;
+        x31 G;
         int i7 = 0;
         boolean z9 = false;
         boolean z10 = false;
         while (true) {
-            qj0 qj0Var = this.k1;
-            if (i7 >= qj0Var.getChildCount()) {
+            pj0 pj0Var = this.n1;
+            if (i7 >= pj0Var.getChildCount()) {
                 break;
             }
-            View childAt = qj0Var.getChildAt(i7);
-            if ((childAt instanceof mz) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.a2.G(R)) != null) {
+            View childAt = pj0Var.getChildAt(i7);
+            if ((childAt instanceof lz) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.d2.G(R)) != null) {
                 if (G.d < 10) {
                     z9 = true;
                 } else {
@@ -2820,7 +2820,7 @@ public final class l3 extends na {
             }
             i7++;
         }
-        k3 k3Var = this.Q1;
+        k3 k3Var = this.T1;
         if (z9) {
             k3Var.b.a();
         }

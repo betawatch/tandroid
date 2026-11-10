@@ -12,9 +12,9 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class g {
     public static boolean A(String str, String str2, String str3) {
@@ -125,9 +125,9 @@ public abstract /* synthetic */ class g {
         return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
     }
 
-    public static yi0 r(View view, View view2, int i7, int i10) {
+    public static xi0 r(View view, View view2, int i7, int i10) {
         view.setLayoutParams(new v4.o0(i7, i10));
-        return new yi0(view2);
+        return new xi0(view2);
     }
 
     public static void s(int i7, StringBuilder sb2) {

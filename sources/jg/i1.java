@@ -50,26 +50,26 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.f5;
 import org.telegram.ui.Cells.h2;
 import org.telegram.ui.Cells.x7;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.b90;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.sm;
+import org.telegram.ui.Components.v8;
 import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.xi0;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.yi0;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i1 extends pj0 implements ls {
+public final class i1 extends oj0 implements ls {
     public ArrayList A0;
     public HashMap B0;
     public a0.h D;
@@ -81,7 +81,7 @@ public final class i1 extends pj0 implements ls {
     public g1 G;
     public cn G0;
     public g1 H;
-    public final g6 H0;
+    public final h6 H0;
     public ArrayList I;
     public ArrayList J;
     public final ab.b0 J0;
@@ -97,7 +97,7 @@ public final class i1 extends pj0 implements ls {
     public long S;
     public TLRPC.TL_inlineBotSwitchPM T;
     public TLRPC.TL_inlineBotWebView U;
-    public final c90 V;
+    public final b90 V;
     public a0.h W;
     public int X;
     public int Y;
@@ -144,10 +144,10 @@ public final class i1 extends pj0 implements ls {
     public boolean L0 = false;
     public int M0 = -1;
 
-    public i1(Context context, long j3, long j10, c90 c90Var, g6 g6Var, boolean z9) {
-        this.H0 = g6Var;
+    public i1(Context context, long j3, long j10, b90 b90Var, h6 h6Var, boolean z9) {
+        this.H0 = h6Var;
         this.h = context;
-        this.V = c90Var;
+        this.V = b90Var;
         this.n = j3;
         this.s = z9;
         this.r = j10;
@@ -182,7 +182,7 @@ public final class i1 extends pj0 implements ls {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return (this.w0 == null || this.h0) && this.A0 == null;
     }
@@ -486,7 +486,7 @@ public final class i1 extends pj0 implements ls {
         TLRPC.Chat chat;
         this.t0 = 0;
         this.I0.p();
-        c90 c90Var = this.V;
+        b90 b90Var = this.V;
         if (user == null || !user.bot || user.bot_inline_placeholder == null) {
             this.w0 = null;
             this.T = null;
@@ -504,7 +504,7 @@ public final class i1 extends pj0 implements ls {
                 this.h0 = t6;
                 if (!t6) {
                     f();
-                    c90Var.a(true);
+                    b90Var.a(true);
                     return;
                 }
             }
@@ -529,8 +529,8 @@ public final class i1 extends pj0 implements ls {
             this.v0 = true;
             this.T = null;
         } else {
-            if (c90Var != null) {
-                c90Var.b(true);
+            if (b90Var != null) {
+                b90Var.b(true);
             }
             T(true, this.w0, this.r0, "");
         }
@@ -550,12 +550,12 @@ public final class i1 extends pj0 implements ls {
         TLRPC.User user = this.w0;
         if (user == null || (str4 = user.username) == null || !str4.equals(str) || (str5 = this.r0) == null || !str5.equals(str2)) {
             TLRPC.User user2 = this.w0;
-            c90 c90Var = this.V;
+            b90 b90Var = this.V;
             if (user2 != null) {
                 if (!this.h0 && str != null && str2 != null) {
                     return;
                 } else {
-                    c90Var.a(false);
+                    b90Var.a(false);
                 }
             }
             z0 z0Var = this.y0;
@@ -579,19 +579,19 @@ public final class i1 extends pj0 implements ls {
                 this.r0 = null;
                 this.I0.p();
                 this.v0 = false;
-                if (c90Var != null) {
-                    c90Var.b(false);
+                if (b90Var != null) {
+                    b90Var.b(false);
                 }
                 if (str != null) {
                 }
             }
             if (str2 != null) {
-                if (c90Var != null) {
+                if (b90Var != null) {
                     if (this.w0 != null) {
-                        c90Var.b(true);
+                        b90Var.b(true);
                     } else if (str.equals("gif")) {
                         this.q0 = "gif";
-                        c90Var.b(false);
+                        b90Var.b(false);
                     }
                 }
                 qp s12 = qp.s1(this.f);
@@ -607,8 +607,8 @@ public final class i1 extends pj0 implements ls {
                 this.u0 = 0;
             }
             this.r0 = null;
-            if (c90Var != null) {
-                c90Var.b(false);
+            if (b90Var != null) {
+                b90Var.b(false);
             }
         }
     }
@@ -620,9 +620,9 @@ public final class i1 extends pj0 implements ls {
             this.u0 = 0;
         }
         if (!this.h0 || !this.d) {
-            c90 c90Var = this.V;
-            if (c90Var != null) {
-                c90Var.b(false);
+            b90 b90Var = this.V;
+            if (b90Var != null) {
+                b90Var.b(false);
                 return;
             }
             return;
@@ -747,7 +747,7 @@ public final class i1 extends pj0 implements ls {
     /* JADX WARN: Type inference failed for: r11v58 */
     /* JADX WARN: Type inference failed for: r11v81 */
     /* JADX WARN: Type inference failed for: r11v82 */
-    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.c90] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.b90] */
     /* JADX WARN: Type inference failed for: r27v0, types: [java.lang.Object, jg.i1, v4.g0] */
     /* JADX WARN: Type inference failed for: r3v24, types: [jg.g1] */
     /* JADX WARN: Type inference failed for: r6v18 */
@@ -889,8 +889,8 @@ public final class i1 extends pj0 implements ls {
         }
         boolean z16 = (z15 && (i6.h(str2) || i6.h(this.D0))) ? z11 : false;
         if (z16 && (charSequence instanceof Spanned)) {
-            r5[] r5VarArr = (r5[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), r5.class);
-            z16 = (r5VarArr == null || r5VarArr.length == 0) ? z11 : false;
+            q5[] q5VarArr = (q5[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), q5.class);
+            z16 = (q5VarArr == null || q5VarArr.length == 0) ? z11 : false;
         }
         if (this.c && z16 && (chat4 == null || t3.t(chat4))) {
             ArrayList arrayList5 = this.C0;
@@ -1608,7 +1608,7 @@ public final class i1 extends pj0 implements ls {
         String str;
         String str2;
         int i7 = this.M0;
-        c90 c90Var = this.V;
+        b90 b90Var = this.V;
         int i10 = 0;
         if (i7 != -1 && this.K0 != null) {
             int K = K();
@@ -1643,15 +1643,15 @@ public final class i1 extends pj0 implements ls {
             }
             p(min, i7 - min);
             o(min, K - min);
-            if (z9 && c90Var != null) {
-                c90Var.c();
+            if (z9 && b90Var != null) {
+                b90Var.c();
             }
             this.K0 = objArr;
             return;
         }
-        if (c90Var != null) {
+        if (b90Var != null) {
             this.M0 = K();
-            c90Var.c();
+            b90Var.c();
         }
         super.f();
         int K2 = K();
@@ -1685,42 +1685,42 @@ public final class i1 extends pj0 implements ls {
             TLRPC.Document document = h1Var.a;
             Object obj = h1Var.b;
             ug.z0 z0Var = x7Var.n;
-            l9 l9Var = x7Var.a;
+            k9 k9Var = x7Var.a;
             x7Var.c = obj;
             boolean X3 = ij.X3(document);
             x7Var.s = X3;
             if (X3) {
-                z0Var.setColor(l6.x0(null, l6.d6, false));
+                z0Var.setColor(m6.x0(null, m6.d6, false));
                 z0Var.H = true;
                 z0Var.I = false;
                 z0Var.invalidate();
             }
             TLRPC.PhotoSize w10 = w7.w(document.thumbs, 90, false, null, false);
-            rz f11 = t5.f(document, l6.a7, 1.0f, x7Var.w);
+            rz f11 = t5.f(document, m6.a7, 1.0f, x7Var.w);
             if (!ij.p(document)) {
                 f10 = 1.0f;
                 if (f11 == null) {
-                    l9Var.k(hc.c(w10, document), null, "webp", null, x7Var.c);
+                    k9Var.k(hc.c(w10, document), null, "webp", null, x7Var.c);
                 } else if (w10 != null) {
-                    l9Var.k(hc.c(w10, document), null, "webp", f11, x7Var.c);
+                    k9Var.k(hc.c(w10, document), null, "webp", f11, x7Var.c);
                 } else {
-                    l9Var.k(hc.b(document), null, "webp", f11, x7Var.c);
+                    k9Var.k(hc.b(document), null, "webp", f11, x7Var.c);
                 }
             } else if (f11 != null) {
-                l9Var.k(hc.b(document), "80_80", null, f11, x7Var.c);
+                k9Var.k(hc.b(document), "80_80", null, f11, x7Var.c);
                 f10 = 1.0f;
             } else if (w10 != null) {
                 f10 = 1.0f;
-                l9Var.l(hc.b(document), "80_80", hc.c(w10, document), null, 0, x7Var.c);
+                k9Var.l(hc.b(document), "80_80", hc.c(w10, document), null, 0, x7Var.c);
             } else {
                 f10 = 1.0f;
-                l9Var.k(hc.b(document), "80_80", null, null, x7Var.c);
+                k9Var.k(hc.b(document), "80_80", null, null, x7Var.c);
             }
             x7Var.b = document;
             Drawable background = x7Var.getBackground();
             if (background != null) {
                 background.setAlpha(qs.G3);
-                s6.x(x7Var, background, l6.qf, null, PorterDuff.Mode.MULTIPLY);
+                t6.x(x7Var, background, m6.qf, null, PorterDuff.Mode.MULTIPLY);
             }
             if (x7Var.s) {
                 x7Var.r = true;
@@ -1841,25 +1841,25 @@ public final class i1 extends pj0 implements ls {
                         String str3 = (String) this.J.get(i10);
                         md mdVar = f5Var.b;
                         TextView textView2 = f5Var.c;
-                        w8 w8Var = f5Var.d;
-                        l9 l9Var2 = f5Var.a;
+                        v8 v8Var = f5Var.d;
+                        k9 k9Var2 = f5Var.a;
                         f5Var.a();
                         if (user != null) {
-                            l9Var2.setVisibility(0);
-                            w8Var.r(user);
+                            k9Var2.setVisibility(0);
+                            v8Var.r(user);
                             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
                             if (userProfilePhoto == null || userProfilePhoto.photo_small == null) {
-                                l9Var2.setImageDrawable(w8Var);
+                                k9Var2.setImageDrawable(v8Var);
                             } else {
-                                l9Var2.e(user, w8Var);
+                                k9Var2.e(user, v8Var);
                             }
                         } else {
-                            l9Var2.setVisibility(4);
+                            k9Var2.setVisibility(4);
                         }
                         textView2.setVisibility(0);
                         if (booleanValue) {
                             wp wpVar = new wp(R.drawable.mini_ephemeral_hidden_14, 0);
-                            wpVar.a(l6.A6);
+                            wpVar.a(m6.A6);
                             wpVar.n = 1;
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str3);
                             spannableStringBuilder.append((CharSequence) " *");
@@ -1884,7 +1884,7 @@ public final class i1 extends pj0 implements ls {
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         View view;
         View view2;
-        g6 g6Var = this.H0;
+        h6 h6Var = this.H0;
         Context context = this.h;
         if (i7 != 0) {
             if (i7 != 1) {
@@ -1893,7 +1893,7 @@ public final class i1 extends pj0 implements ls {
                     TextView textView = new TextView(context);
                     g0Var.a = textView;
                     textView.setTextSize(1, 15.0f);
-                    s6.U(textView, l6.rf, null);
+                    t6.U(textView, m6.rf, null);
                     textView.setTypeface(org.telegram.messenger.g0.o());
                     textView.setSingleLine(true);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -1905,52 +1905,52 @@ public final class i1 extends pj0 implements ls {
                     TextView textView2 = new TextView(context);
                     textView2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
                     textView2.setTextSize(1, 14.0f);
-                    s6.U(textView2, l6.z6, g6Var);
+                    t6.U(textView2, m6.z6, h6Var);
                     view2 = textView2;
                 } else if (i7 != 5) {
                     boolean z9 = this.s;
                     if (i7 == 6) {
-                        view2 = new g1(context, g6Var, z9);
+                        view2 = new g1(context, h6Var, z9);
                     } else if (i7 != 7) {
                         x7 x7Var = new x7(context);
-                        x7Var.w = g6Var;
-                        l9 l9Var = new l9(context);
-                        x7Var.a = l9Var;
-                        l9Var.setAspectFit(true);
-                        l9Var.setLayerNum(1);
-                        x7Var.addView(l9Var, ha.d(66, 66.0f, 1, 0.0f, 5.0f, 0.0f, 0.0f));
+                        x7Var.w = h6Var;
+                        k9 k9Var = new k9(context);
+                        x7Var.a = k9Var;
+                        k9Var.setAspectFit(true);
+                        k9Var.setLayerNum(1);
+                        x7Var.addView(k9Var, ha.d(66, 66.0f, 1, 0.0f, 5.0f, 0.0f, 0.0f));
                         x7Var.setFocusable(true);
                         ug.z0 z0Var = new ug.z0(1, context, null);
                         x7Var.n = z0Var;
                         z0Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-                        z0Var.setImageReceiver(l9Var.getImageReceiver());
+                        z0Var.setImageReceiver(k9Var.getImageReceiver());
                         x7Var.addView(z0Var, ha.d(24, 24.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
                         view2 = x7Var;
                     } else {
-                        View tmVar = new tm(context, 5);
-                        ColorDrawable colorDrawable = new ColorDrawable(z9 ? l6.r1(0.15f, -1) : l6.w0(l6.a7, g6Var));
+                        View smVar = new sm(context, 5);
+                        ColorDrawable colorDrawable = new ColorDrawable(z9 ? m6.r1(0.15f, -1) : m6.w0(m6.a7, h6Var));
                         if (!z9) {
-                            s6.x(tmVar, colorDrawable, l6.a7, g6Var, PorterDuff.Mode.SRC_IN);
+                            t6.x(smVar, colorDrawable, m6.a7, h6Var, PorterDuff.Mode.SRC_IN);
                         }
-                        xp xpVar = new xp(colorDrawable, l6.X0(context, R.drawable.greydivider, l6.w0(l6.b7, g6Var)), 0, 0);
+                        xp xpVar = new xp(colorDrawable, m6.X0(context, R.drawable.greydivider, m6.w0(m6.b7, h6Var)), 0, 0);
                         xpVar.x = true;
-                        tmVar.setBackground(xpVar);
-                        view = tmVar;
+                        smVar.setBackground(xpVar);
+                        view = smVar;
                     }
                 } else {
-                    view = new kg.p1(context, g6Var, false);
+                    view = new kg.p1(context, h6Var, false);
                 }
             } else {
                 h2 h2Var = new h2(context);
                 h2Var.setDelegate(new u0(this));
                 view2 = h2Var;
             }
-            return new yi0(view2);
+            return new xi0(view2);
         }
-        f5 f5Var = new f5(context, g6Var);
+        f5 f5Var = new f5(context, h6Var);
         f5Var.setIsDarkTheme(false);
         view = f5Var;
         view2 = view;
-        return new yi0(view2);
+        return new xi0(view2);
     }
 }

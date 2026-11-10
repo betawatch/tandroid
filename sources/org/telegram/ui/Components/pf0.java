@@ -1,13 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface pf0 {
-    void a();
-
-    void b(boolean z9);
-
-    void c();
-
-    void d();
+public final class pf0 {
+    public boolean a;
+    public qf0 b;
+    public nf0 c;
 }

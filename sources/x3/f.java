@@ -5,7 +5,6 @@ import aa.c0;
 import android.util.Pair;
 import android.util.SparseArray;
 import c4.k;
-import e2.m;
 import e2.p0;
 import e2.q0;
 import e2.r;
@@ -41,9 +40,9 @@ import java.util.Map;
 import java.util.UUID;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.n;
+import org.telegram.ui.Components.m;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -142,7 +141,7 @@ public final class f implements o {
         this.L = -1L;
         this.M = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new n(this);
+        bVar.d = new m(this);
         this.f = kVar;
         this.C = new SparseArray();
         this.d = (i7 & 1) == 0;
@@ -415,7 +414,7 @@ public final class f implements o {
         t tVar;
         boolean i12;
         int i13;
-        m mVar;
+        e2.m mVar;
         byte[] bArr;
         int i14;
         String str4;
@@ -494,9 +493,9 @@ public final class f implements o {
                         bVar.g = r82.b(pVar3, false, z9, 8);
                         bVar.e = 2;
                     }
-                    n nVar = bVar.d;
+                    m mVar2 = bVar.d;
                     int i21 = bVar.f;
-                    Object obj2 = nVar.a;
+                    Object obj2 = mVar2.a;
                     switch (i21) {
                         case qs.P1 /* 131 */:
                         case qs.S1 /* 136 */:
@@ -624,7 +623,7 @@ public final class f implements o {
                         if (j12 > 8) {
                             throw t0.a(null, "Invalid integer size: " + bVar.g);
                         }
-                        nVar.w(i21, bVar.a(pVar3, (int) j12));
+                        mVar2.w(i21, bVar.a(pVar3, (int) j12));
                         z10 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -646,12 +645,12 @@ public final class f implements o {
                             r15 = 0;
                             str = new String(bArr3, 0, i22);
                         }
-                        nVar.B(i21, str);
+                        mVar2.B(i21, str);
                         bVar.e = r15;
                         z10 = r15;
                         pVar2 = pVar3;
                     } else if (i7 == 4) {
-                        nVar.p(i21, (int) bVar.g, pVar3);
+                        mVar2.p(i21, (int) bVar.g, pVar3);
                         z10 = false;
                         bVar.e = 0;
                         pVar2 = pVar3;
@@ -665,7 +664,7 @@ public final class f implements o {
                         }
                         int i23 = (int) j14;
                         double intBitsToFloat = i23 == 4 ? Float.intBitsToFloat((int) r4) : Double.longBitsToDouble(bVar.a(pVar3, i23));
-                        f fVar2 = (f) nVar.a;
+                        f fVar2 = (f) mVar2.a;
                         if (i21 == 181) {
                             fVar2.h(i21);
                             fVar2.y.S = (int) intBitsToFloat;
@@ -735,9 +734,9 @@ public final class f implements o {
                         pVar2 = pVar3;
                     }
                 } else {
-                    n nVar2 = bVar.d;
+                    m mVar3 = bVar.d;
                     int i24 = ((a) arrayDeque.pop()).a;
-                    f fVar3 = (f) nVar2.a;
+                    f fVar3 = (f) mVar3.a;
                     ?? r83 = fVar3.C;
                     ?? r92 = fVar3.c;
                     fVar3.j0.getClass();
@@ -1096,7 +1095,7 @@ public final class f implements o {
                                                     int i30 = eVar.C;
                                                     int i31 = eVar.B;
                                                     int i32 = eVar.p;
-                                                    mVar = new m(i29, i30, i31, bArr, i32, i32);
+                                                    mVar = new e2.m(i29, i30, i31, bArr, i32, i32);
                                                 } else {
                                                     mVar = null;
                                                 }

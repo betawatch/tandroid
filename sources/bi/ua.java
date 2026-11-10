@@ -10,10 +10,10 @@ import org.telegram.messenger.yr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.js0;
-import org.telegram.ui.qq;
+import org.telegram.ui.ks0;
+import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final /* synthetic */ class ua implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(qp.s1(i7).N0(j10));
-                            T.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(qp.s1(i7).N0(j10));
+                            T.presentFragment(rqVar);
                             break;
                         } else {
-                            T.presentFragment(new js0(j10));
+                            T.presentFragment(new ks0(j10));
                             break;
                         }
                     } else {

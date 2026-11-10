@@ -8,9 +8,9 @@ import h2.m0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
-import x2.g0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class g {
     public static final q h = new q(4);
@@ -62,7 +62,7 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final f c(int i7, g0 g0Var) {
+    public final f c(int i7, f0 f0Var) {
         long j3;
         long j10;
         long j11;
@@ -71,9 +71,9 @@ public final class g {
         long j12 = Long.MAX_VALUE;
         for (f fVar2 : hashMap.values()) {
             long j13 = fVar2.c;
-            g0 g0Var2 = fVar2.d;
-            if (j13 == -1 && i7 == fVar2.b && g0Var != null) {
-                long j14 = g0Var.d;
+            f0 f0Var2 = fVar2.d;
+            if (j13 == -1 && i7 == fVar2.b && f0Var != null) {
+                long j14 = f0Var.d;
                 g gVar = fVar2.g;
                 j3 = -1;
                 f fVar3 = (f) gVar.c.get(gVar.f);
@@ -87,23 +87,23 @@ public final class g {
             } else {
                 j3 = -1;
             }
-            if (g0Var != null) {
-                long j15 = g0Var.d;
+            if (f0Var != null) {
+                long j15 = f0Var.d;
                 if (j15 != j3) {
-                    if (g0Var2 == null) {
-                        if (!g0Var.b() && j15 == fVar2.c) {
+                    if (f0Var2 == null) {
+                        if (!f0Var.b() && j15 == fVar2.c) {
                             j10 = fVar2.c;
                             if (j10 == j3 || j10 < j12) {
                                 fVar = fVar2;
                                 j12 = j10;
                             } else if (j10 == j12) {
                                 String str = m0.a;
-                                if (fVar.d != null && g0Var2 != null) {
+                                if (fVar.d != null && f0Var2 != null) {
                                     fVar = fVar2;
                                 }
                             }
                         }
-                    } else if (j15 == g0Var2.d && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
+                    } else if (j15 == f0Var2.d && f0Var.b == f0Var2.b && f0Var.c == f0Var2.c) {
                         j10 = fVar2.c;
                         if (j10 == j3) {
                         }
@@ -124,20 +124,20 @@ public final class g {
             return fVar;
         }
         String str2 = (String) h.get();
-        f fVar4 = new f(this, str2, i7, g0Var);
+        f fVar4 = new f(this, str2, i7, f0Var);
         hashMap.put(str2, fVar4);
         return fVar4;
     }
 
-    public final synchronized String d(l1 l1Var, g0 g0Var) {
-        return c(l1Var.g(g0Var.a, this.b).c, g0Var).a;
+    public final synchronized String d(l1 l1Var, f0 f0Var) {
+        return c(l1Var.g(f0Var.a, this.b).c, f0Var).a;
     }
 
     public final void e(a aVar) {
-        g0 g0Var;
+        f0 f0Var;
         l1 l1Var = aVar.b;
         int i7 = aVar.c;
-        g0 g0Var2 = aVar.d;
+        f0 f0Var2 = aVar.d;
         boolean p10 = l1Var.p();
         HashMap hashMap = this.c;
         if (p10) {
@@ -151,15 +151,15 @@ public final class g {
             return;
         }
         f fVar2 = (f) hashMap.get(this.f);
-        this.f = c(i7, g0Var2).a;
+        this.f = c(i7, f0Var2).a;
         f(aVar);
-        if (g0Var2 != null) {
-            long j3 = g0Var2.d;
-            if (g0Var2.b()) {
-                if (fVar2 != null && fVar2.c == j3 && (g0Var = fVar2.d) != null && g0Var.b == g0Var2.b && g0Var.c == g0Var2.c) {
+        if (f0Var2 != null) {
+            long j3 = f0Var2.d;
+            if (f0Var2.b()) {
+                if (fVar2 != null && fVar2.c == j3 && (f0Var = fVar2.d) != null && f0Var.b == f0Var2.b && f0Var.c == f0Var2.c) {
                     return;
                 }
-                c(i7, new g0(g0Var2.a, j3));
+                c(i7, new f0(f0Var2.a, j3));
                 this.d.getClass();
             }
         }
@@ -175,9 +175,9 @@ public final class g {
         if (aVar.b.p()) {
             return;
         }
-        g0 g0Var = aVar.d;
-        if (g0Var != null) {
-            long j10 = g0Var.d;
+        f0 f0Var = aVar.d;
+        if (f0Var != null) {
+            long j10 = f0Var.d;
             if (j10 != -1) {
                 f fVar = (f) this.c.get(this.f);
                 if (fVar != null) {
@@ -201,10 +201,10 @@ public final class g {
         if (this.f == null) {
             this.f = c10.a;
         }
-        g0 g0Var2 = aVar.d;
-        if (g0Var2 != null && g0Var2.b()) {
-            g0 g0Var3 = aVar.d;
-            f c11 = c(aVar.c, new g0(g0Var3.a, g0Var3.d, g0Var3.b));
+        f0 f0Var2 = aVar.d;
+        if (f0Var2 != null && f0Var2.b()) {
+            f0 f0Var3 = aVar.d;
+            f c11 = c(aVar.c, new f0(f0Var3.a, f0Var3.d, f0Var3.b));
             if (!c11.e) {
                 c11.e = true;
                 aVar.b.g(aVar.d.a, this.b);

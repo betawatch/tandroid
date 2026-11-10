@@ -1,25 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qs implements org.telegram.messenger.u10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class qs extends h6 {
+    public final /* synthetic */ int d0;
+    public final /* synthetic */ ys e0;
 
-    public /* synthetic */ qs(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qs(ys ysVar, int i7) {
+        super(false, false, false);
+        this.d0 = i7;
+        this.e0 = ysVar;
     }
 
-    @Override // org.telegram.messenger.u10
-    public final Object run() {
-        switch (this.a) {
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.d0) {
             case 0:
-                return Boolean.valueOf(((EditTextBoldCursor) this.b).w());
-            case 1:
-                return ((j30) this.b).getCloseIntoObject();
+                this.e0.invalidate();
+                break;
             default:
-                return Boolean.valueOf(((zs) this.b).w());
+                this.e0.invalidate();
+                break;
         }
     }
 }

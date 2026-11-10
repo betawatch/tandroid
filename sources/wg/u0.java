@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.c20;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements c20 {
     public final /* synthetic */ int a;
@@ -24,11 +24,11 @@ public final /* synthetic */ class u0 implements c20 {
             case 0:
                 List list = (List) obj;
                 w0 w0Var = this.b;
-                ArrayList arrayList = w0Var.Y1;
+                ArrayList arrayList = w0Var.b2;
                 if (this.c) {
-                    w0Var.Z1.addAll(list);
+                    w0Var.c2.addAll(list);
                 }
-                if (w0Var.j2 == 1) {
+                if (w0Var.m2 == 1) {
                     arrayList.clear();
                     arrayList.addAll(list);
                     w0Var.n1(true, true);

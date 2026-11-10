@@ -15,15 +15,15 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.ui.Cells.ma;
-import org.telegram.ui.Components.vs;
-import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.vt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.rc;
-import org.telegram.ui.ty0;
+import org.telegram.ui.uy0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements c20 {
     public final /* synthetic */ int a;
@@ -67,10 +67,10 @@ public final /* synthetic */ class e implements c20 {
                 org.telegram.messenger.p5 p5Var = gz.I;
                 break;
             case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.d3.K;
+                HashMap hashMap = org.telegram.ui.ActionBar.e3.K;
                 break;
             case 7:
-                int i7 = org.telegram.ui.ActionBar.b3.r;
+                int i7 = org.telegram.ui.ActionBar.c3.r;
                 break;
             case 8:
                 int i10 = ma.n;
@@ -94,12 +94,12 @@ public final /* synthetic */ class e implements c20 {
                 }
                 break;
             case 12:
-                wt wtVar = wt.O1;
+                vt vtVar = vt.R1;
                 break;
             case 13:
                 View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.o2) {
-                    ((org.telegram.ui.ActionBar.o2) view6).getTextView().invalidate();
+                if (view6 instanceof org.telegram.ui.ActionBar.p2) {
+                    ((org.telegram.ui.ActionBar.p2) view6).getTextView().invalidate();
                     break;
                 } else {
                     view6.invalidate();
@@ -147,7 +147,7 @@ public final /* synthetic */ class e implements c20 {
                         break;
                     }
                 } else {
-                    org.telegram.messenger.g0.h3(new vs(26));
+                    org.telegram.messenger.g0.h3(new us(26));
                     break;
                 }
                 break;
@@ -168,7 +168,7 @@ public final /* synthetic */ class e implements c20 {
             case 23:
                 HashSet hashSet = (HashSet) obj;
                 String str = id.E0().B.f;
-                hashSet.addAll(ty0.d0());
+                hashSet.addAll(uy0.d0());
                 SharedPreferences.Editor edit = qp.e1().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -176,7 +176,7 @@ public final /* synthetic */ class e implements c20 {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                ty0.s = false;
+                uy0.s = false;
                 for (int i11 = 0; i11 < 4; i11++) {
                     try {
                         qp.s1(i11).s7.g();

@@ -9,9 +9,9 @@ import android.widget.TextView;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class p7 extends FrameLayout implements o2 {
     public final o7 a;
@@ -151,7 +151,7 @@ public abstract class p7 extends FrameLayout implements o2 {
         this.w = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 4));
         this.w.setDuration(320L);
-        this.w.setInterpolator(xq.h);
+        this.w.setInterpolator(wq.h);
         this.w.start();
     }
 

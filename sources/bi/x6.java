@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class x6 extends FrameLayout {
     public final h2 a;
@@ -20,16 +20,16 @@ public final class x6 extends FrameLayout {
     public final h6.m f;
     public final RectF h;
 
-    public x6(Context context, org.telegram.ui.ActionBar.g6 g6Var, h2 h2Var) {
+    public x6(Context context, org.telegram.ui.ActionBar.h6 h6Var, h2 h2Var) {
         super(context);
         this.f = new h6.m(28);
         this.h = new RectF();
         this.a = h2Var;
-        w6 w6Var = new w6(context, g6Var);
+        w6 w6Var = new w6(context, h6Var);
         this.b = w6Var;
-        w6 w6Var2 = new w6(context, g6Var);
+        w6 w6Var2 = new w6(context, h6Var);
         this.c = w6Var2;
-        w6 w6Var3 = new w6(context, g6Var);
+        w6 w6Var3 = new w6(context, h6Var);
         this.d = w6Var3;
         addView(w6Var, c8.ha.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
         addView(w6Var2, c8.ha.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));

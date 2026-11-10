@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public float a;
@@ -42,7 +42,7 @@ public final class o0 {
         float f12 = (this.a * 0.4f) + 0.8f;
         if (this.e || this.d != 0.0f) {
             canvas.save();
-            float interpolation = xq.f.getInterpolation(this.d) * f12;
+            float interpolation = wq.f.getInterpolation(this.d) * f12;
             canvas.scale(interpolation, interpolation, f10, f11);
             float f13 = this.a;
             float f14 = this.i;

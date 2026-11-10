@@ -1,17 +1,21 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public interface i3 {
-    Context getContext();
+    void a(boolean z9);
 
-    RectF getRect();
+    void b(boolean z9);
 
-    void setDrawingFromOverlay(boolean z9);
+    d3 c();
 
-    float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11);
+    j3 d();
+
+    int e(int i7);
+
+    boolean g();
+
+    boolean i(a3 a3Var);
+
+    void release();
 }

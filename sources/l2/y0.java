@@ -3,10 +3,10 @@ package l2;
 import a8.ia;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class y0 {
-    public final x2.g0 a;
+    public final x2.f0 a;
     public final long b;
     public final long c;
     public final long d;
@@ -18,7 +18,7 @@ public final class y0 {
     public final boolean j;
     public final boolean k;
 
-    public y0(x2.g0 g0Var, long j3, long j10, long j11, long j12, long j13, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13) {
+    public y0(x2.f0 f0Var, long j3, long j10, long j11, long j12, long j13, boolean z9, boolean z10, boolean z11, boolean z12, boolean z13) {
         boolean z14 = true;
         ia.f(!z13 || z11);
         ia.f(!z12 || z11);
@@ -26,7 +26,7 @@ public final class y0 {
             z14 = false;
         }
         ia.f(z14);
-        this.a = g0Var;
+        this.a = f0Var;
         this.b = j3;
         this.c = j10;
         this.d = j11;

@@ -3,9 +3,9 @@ package di;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.bc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class a0 implements Runnable {
             case 1:
                 g2 g2Var2 = this.b;
                 org.telegram.messenger.g0.r(g2Var2.d0);
-                cc ccVar = g2Var2.W;
-                if (ccVar != null) {
-                    ccVar.b();
+                bc bcVar = g2Var2.W;
+                if (bcVar != null) {
+                    bcVar.b();
                     g2Var2.W = null;
                 }
                 long j3 = g2Var2.R;

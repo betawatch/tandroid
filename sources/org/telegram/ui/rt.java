@@ -1,23 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class rt extends org.telegram.ui.Components.no0 {
-    public final /* synthetic */ st R2;
+public final /* synthetic */ class rt implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rt(st stVar, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.R2 = stVar;
+    public /* synthetic */ rt(int i7, int i10) {
+        this.a = i10;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.no0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
-        if (z9) {
-            org.telegram.messenger.g0.i3(new org.telegram.ui.Components.m51(this, hVar, i7), 250L);
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i7) {
+        switch (this.a) {
+            case 0:
+                int i10 = 2 - i7;
+                if (i10 != this.b) {
+                    org.telegram.messenger.iz.w(i10);
+                    break;
+                } else {
+                    org.telegram.messenger.iz.w(-1);
+                    break;
+                }
+            default:
+                int i11 = 2 - i7;
+                if (i11 != this.b) {
+                    org.telegram.messenger.iz.w(i11);
+                    break;
+                } else {
+                    org.telegram.messenger.iz.w(-1);
+                    break;
+                }
         }
     }
 }

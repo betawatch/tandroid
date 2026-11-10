@@ -38,10 +38,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c3;
 import org.telegram.ui.ActionBar.d3;
+import org.telegram.ui.ActionBar.e3;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
@@ -53,7 +53,7 @@ import sa.d;
 import sg.i0;
 import v6.e;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static i0 a;
@@ -542,27 +542,27 @@ public abstract class c {
     }
 
     public static void o(String str) {
-        d3 O;
-        c3 c3Var;
+        e3 O;
+        d3 d3Var;
         k3[] k3VarArr;
         k3 k3Var;
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && (O = launchActivity.O()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<c3> tabs = O.getTabs();
+                ArrayList<d3> tabs = O.getTabs();
                 for (int i7 = 0; i7 < tabs.size(); i7++) {
-                    c3Var = tabs.get(i7);
-                    g4 g4Var = c3Var.J;
+                    d3Var = tabs.get(i7);
+                    g4 g4Var = d3Var.J;
                     if (g4Var != null && !g4Var.d0.isEmpty()) {
-                        Object i10 = g.i(1, c3Var.J.d0);
+                        Object i10 = g.i(1, d3Var.J.d0);
                         if (i10 instanceof x2) {
                             u0 u0Var = ((x2) i10).b;
-                            if (u0Var == null && (k3VarArr = c3Var.J.u0) != null && (k3Var = k3VarArr[0]) != null) {
+                            if (u0Var == null && (k3VarArr = d3Var.J.u0) != null && (k3Var = k3VarArr[0]) != null) {
                                 u0Var = k3Var.getWebView();
                             }
                             if (u0Var != null) {
-                                if (TextUtils.equals(d3.p(u0Var.canGoBack() ? u0Var.getUrl() : u0Var.getOpenURL()), d3.p(str))) {
-                                    O.e(c3Var);
+                                if (TextUtils.equals(e3.p(u0Var.canGoBack() ? u0Var.getUrl() : u0Var.getOpenURL()), e3.p(str))) {
+                                    O.e(d3Var);
                                     break;
                                 }
                             } else {
@@ -574,8 +574,8 @@ public abstract class c {
                     }
                 }
             }
-            c3Var = null;
-            if (c3Var != null) {
+            d3Var = null;
+            if (d3Var != null) {
                 return;
             }
         }
@@ -888,7 +888,7 @@ public abstract class c {
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
                         z21 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", l6.x0(null, l6.S8, false));
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", m6.x0(null, m6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
                         String M02 = id.M0(2131745459, null);

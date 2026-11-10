@@ -10,10 +10,10 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.r3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.e40;
-import org.telegram.ui.oe;
+import org.telegram.ui.f40;
+import org.telegram.ui.pe;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class g {
     public static boolean a;
@@ -43,11 +43,11 @@ public abstract class g {
             arrayList.add(new f(new ti.l(2, R.drawable.pip_camera_off, id.M0(2131743238, null), org.telegram.messenger.t0.b.checkSelfPermission("android.permission.CAMERA") == 0 && (!z9 || ((r3Var = sharedInstance.groupCall) != null && r3Var.c()))), 60, 1));
         }
         arrayList.add(new f(new ti.l(3, R.drawable.msg_endcall, id.M0(z9 ? 2131743364 : 2131743412, null), true), 80, 2));
-        Collections.sort(arrayList, new oe(21));
+        Collections.sort(arrayList, new pe(21));
         while (arrayList.size() > i7) {
             a8.p0.z(1, arrayList);
         }
-        Collections.sort(arrayList, new oe(22));
+        Collections.sort(arrayList, new pe(22));
         int size = arrayList.size();
         while (i10 < size) {
             Object obj = arrayList.get(i10);
@@ -81,7 +81,7 @@ public abstract class g {
         if (i7 != 2) {
             if (i7 == 3) {
                 if (z9) {
-                    e40.w1(org.telegram.messenger.t0.b, null, false, true);
+                    f40.w1(org.telegram.messenger.t0.b, null, false, true);
                     return;
                 } else {
                     sharedInstance.hangUp();

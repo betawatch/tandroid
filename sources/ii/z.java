@@ -8,18 +8,18 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.messenger.t3;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.l9;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.v8;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class z extends b0 {
-    public final l9 h;
-    public final w8 n;
+    public final k9 h;
+    public final v8 n;
     public final /* synthetic */ d0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -35,39 +35,39 @@ public final class z extends b0 {
         r41Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, org.telegram.messenger.g0.L(60.0f) + org.telegram.messenger.g0.n);
         org.telegram.messenger.g0.E2(this.b);
-        this.c.addView(d0Var.w1, ha.g());
+        this.c.addView(d0Var.z1, ha.g());
         this.c.addView(this.d, ha.g());
-        this.c.addView(d0Var.y1, ha.g());
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d0Var.I0);
-        this.a = kVar;
-        kVar.setOccupyStatusBar(false);
-        s6.l(this.a, 5, l6.G6, d0Var.I0);
-        s6.l(this.a, 3, l6.z8, d0Var.I0);
+        this.c.addView(d0Var.B1, ha.g());
+        org.telegram.ui.ActionBar.l lVar = new org.telegram.ui.ActionBar.l(context, d0Var.I0);
+        this.a = lVar;
+        lVar.setOccupyStatusBar(false);
+        t6.l(this.a, 5, m6.G6, d0Var.I0);
+        t6.l(this.a, 3, m6.z8, d0Var.I0);
         this.a.setBackButtonImage(R.drawable.ic_ab_back);
-        s6.l(this.a, 1, l6.y8, d0Var.I0);
-        this.a.setTitle(m5.m(d0Var.m1));
+        t6.l(this.a, 1, m6.y8, d0Var.I0);
+        this.a.setTitle(m5.m(d0Var.p1));
         this.a.getTitleTextView().setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         this.a.setActionBarMenuOnItemClick(new bi.s(this, 9));
-        w8 w8Var = new w8(d0Var.m1);
-        this.n = w8Var;
-        l9 l9Var = new l9(getContext());
-        this.h = l9Var;
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(9.0f));
-        l9Var.e(d0Var.m1, w8Var);
-        this.a.addView(l9Var, ha.b(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
+        v8 v8Var = new v8(d0Var.p1);
+        this.n = v8Var;
+        k9 k9Var = new k9(getContext());
+        this.h = k9Var;
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(9.0f));
+        k9Var.e(d0Var.p1, v8Var);
+        this.a.addView(k9Var, ha.b(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
         this.c.addView(this.a, ha.e(-1, 56, 48));
-        this.c.addView(d0Var.u1, ha.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
-        org.telegram.ui.ActionBar.y r10 = this.a.r();
-        r10.setGlassMode(true);
-        r10.setTranslationX(-org.telegram.messenger.g0.L(7.0f));
-        r10.a(3, R.drawable.outline_header_search);
+        this.c.addView(d0Var.x1, ha.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
+        org.telegram.ui.ActionBar.y s5 = this.a.s();
+        s5.setGlassMode(true);
+        s5.setTranslationX(-org.telegram.messenger.g0.L(7.0f));
+        s5.a(3, R.drawable.outline_header_search);
         int i10 = 2;
-        if (t3.N(d0Var.m1)) {
-            r10.a(2, R.drawable.msg_download_settings);
+        if (t3.N(d0Var.p1)) {
+            s5.a(2, R.drawable.msg_download_settings);
         }
         fi.d dVar = new fi.d(getContext(), d0Var.I0, true);
         dVar.f();
-        if (t3.w(27, d0Var.m1)) {
+        if (t3.w(27, d0Var.p1)) {
             wp wpVar = new wp(R.drawable.filled_add_album, 0);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
             spannableStringBuilder.append((CharSequence) id.M0(2131751989, null));
@@ -76,7 +76,7 @@ public final class z extends b0 {
         } else {
             dVar.setText(id.M0(2131747831, null));
         }
-        d0Var.o1 = dVar;
+        d0Var.r1 = dVar;
         dVar.setOnClickListener(new g(this, i10));
         this.c.addView(dVar, ha.f(48.0f, -1, 80, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.n));
         a();
@@ -84,12 +84,12 @@ public final class z extends b0 {
 
     @Override // ii.b0
     public final float b() {
-        return j7.a(this.r.i1.e) * super.b();
+        return j7.a(this.r.l1.e) * super.b();
     }
 
     @Override // ii.b0
     public final void c() {
         super.c();
-        this.r.u1.setTranslationY(Math.max(org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m, b() + org.telegram.messenger.g0.L(4.0f)));
+        this.r.x1.setTranslationY(Math.max(org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m, b() + org.telegram.messenger.g0.L(4.0f)));
     }
 }

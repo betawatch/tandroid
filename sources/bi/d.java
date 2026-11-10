@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -39,11 +39,11 @@ public final /* synthetic */ class d implements Runnable {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) zVar.r0).append((CharSequence) z.w0(zVar.P - currentTime));
                     zVar.a0.g(spannableStringBuilder, true);
-                    org.telegram.ui.Components.cc ccVar = zVar.j0;
-                    if (ccVar != null) {
-                        org.telegram.ui.Components.gb gbVar = ccVar.e;
-                        if ((gbVar instanceof org.telegram.ui.Components.kb) && gbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{z.w0(zVar.P - currentTime)}, ((org.telegram.ui.Components.kb) zVar.j0.e).b);
+                    org.telegram.ui.Components.bc bcVar = zVar.j0;
+                    if (bcVar != null) {
+                        org.telegram.ui.Components.fb fbVar = bcVar.e;
+                        if ((fbVar instanceof org.telegram.ui.Components.jb) && fbVar.isAttachedToWindow()) {
+                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{z.w0(zVar.P - currentTime)}, ((org.telegram.ui.Components.jb) zVar.j0.e).b);
                         }
                     }
                     org.telegram.messenger.g0.r(dVar);

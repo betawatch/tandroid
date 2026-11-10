@@ -1,61 +1,96 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import a8.ia;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.qs;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public abstract class s extends e2.l1 {
-    public final e2.l1 e;
+public final class s implements j2.h {
+    public final j2.h a;
+    public final int b;
+    public final s0 c;
+    public final byte[] d;
+    public int e;
 
-    public s(e2.l1 l1Var) {
-        this.e = l1Var;
+    public s(j2.h hVar, int i7, s0 s0Var) {
+        ia.f(i7 > 0);
+        this.a = hVar;
+        this.b = i7;
+        this.c = s0Var;
+        this.d = new byte[1];
+        this.e = i7;
     }
 
-    @Override // e2.l1
-    public final int a(boolean z9) {
-        return this.e.a(z9);
+    @Override // j2.h
+    public final void addTransferListener(j2.d0 d0Var) {
+        d0Var.getClass();
+        this.a.addTransferListener(d0Var);
     }
 
-    @Override // e2.l1
-    public int b(Object obj) {
-        return this.e.b(obj);
+    @Override // j2.h
+    public final void close() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // e2.l1
-    public final int c(boolean z9) {
-        return this.e.c(z9);
+    @Override // j2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
     }
 
-    @Override // e2.l1
-    public int e(int i7, int i10, boolean z9) {
-        return this.e.e(i7, i10, z9);
+    @Override // j2.h
+    public final Uri getUri() {
+        return this.a.getUri();
     }
 
-    @Override // e2.l1
-    public e2.i1 f(int i7, e2.i1 i1Var, boolean z9) {
-        return this.e.f(i7, i1Var, z9);
+    @Override // j2.h
+    public final long open(j2.m mVar) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // e2.l1
-    public final int h() {
-        return this.e.h();
-    }
-
-    @Override // e2.l1
-    public int k(int i7, int i10, boolean z9) {
-        return this.e.k(i7, i10, z9);
-    }
-
-    @Override // e2.l1
-    public Object l(int i7) {
-        return this.e.l(i7);
-    }
-
-    @Override // e2.l1
-    public e2.k1 m(int i7, e2.k1 k1Var, long j3) {
-        return this.e.m(i7, k1Var, j3);
-    }
-
-    @Override // e2.l1
-    public final int o() {
-        return this.e.o();
+    @Override // e2.n
+    public final int read(byte[] bArr, int i7, int i10) {
+        int i11 = this.e;
+        j2.h hVar = this.a;
+        if (i11 == 0) {
+            byte[] bArr2 = this.d;
+            int i12 = 0;
+            if (hVar.read(bArr2, 0, 1) != -1) {
+                int i13 = (bArr2[0] & qs.e4) << 4;
+                if (i13 != 0) {
+                    byte[] bArr3 = new byte[i13];
+                    int i14 = i13;
+                    while (i14 > 0) {
+                        int read = hVar.read(bArr3, i12, i14);
+                        if (read != -1) {
+                            i12 += read;
+                            i14 -= read;
+                        }
+                    }
+                    while (i13 > 0 && bArr3[i13 - 1] == 0) {
+                        i13--;
+                    }
+                    if (i13 > 0) {
+                        h2.x xVar = new h2.x(bArr3, i13);
+                        s0 s0Var = this.c;
+                        long max = !s0Var.x ? s0Var.r : Math.max(s0Var.y.s(true), s0Var.r);
+                        int a10 = xVar.a();
+                        f3.j0 j0Var = s0Var.w;
+                        j0Var.getClass();
+                        j0Var.b(a10, xVar);
+                        j0Var.c(max, 1, a10, 0, null);
+                        s0Var.x = true;
+                    }
+                }
+                this.e = this.b;
+            }
+            return -1;
+        }
+        int read2 = hVar.read(bArr, i7, Math.min(this.e, i10));
+        if (read2 != -1) {
+            this.e -= read2;
+        }
+        return read2;
     }
 }

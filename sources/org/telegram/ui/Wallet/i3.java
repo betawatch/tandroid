@@ -1,36 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.ui.Components.hc;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i3 implements Runnable {
+public final /* synthetic */ class i3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
+    public final /* synthetic */ p3 b;
 
-    public /* synthetic */ i3(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+    public /* synthetic */ i3(p3 p3Var, int i7) {
         this.a = i7;
-        this.b = f2Var;
+        this.b = p3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        org.telegram.ui.ActionBar.f2 f2Var = this.b;
-        switch (i7) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                w5.I0(f2Var.getContext(), f2Var.getResourceProvider());
-                break;
-            case 1:
-                f2Var.presentFragment(new w5());
+                p3 p3Var = this.b;
+                p3Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p3Var.Q = floatValue;
+                p3Var.r.setUseGyroscope(floatValue);
                 break;
             default:
-                if (hc.a(f2Var)) {
-                    hc.a0(f2Var).I(R.raw.contact_check, id.M0(2131743150, null), id.M0(2131743149, null)).j();
-                    break;
-                }
+                p3 p3Var2 = this.b;
+                p3Var2.getClass();
+                p3Var2.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p3Var2.e();
                 break;
         }
     }

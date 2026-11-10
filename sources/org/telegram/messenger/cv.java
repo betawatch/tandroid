@@ -15,9 +15,9 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.vg0;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class cv extends fu {
     public final jv W;
@@ -84,7 +84,7 @@ public final class cv extends fu {
         if (kvVar.F()) {
             canvas.save();
             canvas.translate(-jvVar.f, 0.0f);
-            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, jvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
+            org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, jvVar.x, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas.restore();
         }
         if (i02 != 0) {
@@ -118,8 +118,8 @@ public final class cv extends fu {
         canvas.translate(i02 - jvVar.f, 0.0f);
         int color = textPaint.getColor();
         textPaint.setColor(-1);
-        textPaint.linkColor = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Vc : org.telegram.ui.ActionBar.l6.Uc, kvVar.D);
-        vg0.b(canvas, jvVar.b, i7, f10, new o(5, this, this.V));
+        textPaint.linkColor = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.Vc : org.telegram.ui.ActionBar.m6.Uc, kvVar.D);
+        wg0.b(canvas, jvVar.b, i7, f10, new o(5, this, this.V));
         canvas.restore();
         textPaint.setColor(color);
         j0();
@@ -159,7 +159,7 @@ public final class cv extends fu {
         }
     }
 
-    @Override // org.telegram.messenger.fu, org.telegram.ui.tg0
+    @Override // org.telegram.messenger.fu, org.telegram.ui.ug0
     public final Layout a() {
         return this.W.b;
     }
@@ -176,10 +176,10 @@ public final class cv extends fu {
 
     public final void j0() {
         kv kvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.Tc : org.telegram.ui.ActionBar.m6.Sc, kvVar.D);
         if (this.Z == null || this.Y != w02) {
             this.Y = w02;
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.l6.r1(0.7f, w02), org.telegram.ui.ActionBar.l6.r1(0.25f, w02), org.telegram.ui.ActionBar.l6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{org.telegram.ui.ActionBar.m6.r1(0.7f, w02), org.telegram.ui.ActionBar.m6.r1(0.25f, w02), org.telegram.ui.ActionBar.m6.r1(0.7f, w02)}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.REPEAT);
             this.Z = linearGradient;
             Paint paint = this.b0;
             paint.setShader(linearGradient);

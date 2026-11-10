@@ -15,14 +15,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.p2;
 import org.telegram.messenger.r2;
-import org.telegram.ui.Components.ot0;
-import org.telegram.ui.Components.qp0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w {
-    public static final xq B = new xq(0.0d, 0.5d, 0.0d, 1.0d);
+    public static final wq B = new wq(0.0d, 0.5d, 0.0d, 1.0d);
     public h A;
     public final v0 a;
     public boolean b;
@@ -270,13 +270,13 @@ public final class w {
                                             sb2.append(y0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.h3(new qp0(c1Var3, y0Var, i20, f11, 22));
+                                        org.telegram.messenger.g0.h3(new pp0(c1Var3, y0Var, i20, f11, 22));
                                         c1Var3.j.set(false);
                                     }
                                     y0Var = null;
                                     if (r2.a) {
                                     }
-                                    org.telegram.messenger.g0.h3(new qp0(c1Var3, y0Var, i20, f11, 22));
+                                    org.telegram.messenger.g0.h3(new pp0(c1Var3, y0Var, i20, f11, 22));
                                     c1Var3.j.set(false);
                                 }
                             } finally {
@@ -554,13 +554,13 @@ public final class w {
                                             sb2.append(y0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.h3(new qp0(c1Var3, y0Var, i20, f11, 22));
+                                        org.telegram.messenger.g0.h3(new pp0(c1Var3, y0Var, i20, f11, 22));
                                         c1Var3.j.set(false);
                                     }
                                     y0Var = null;
                                     if (r2.a) {
                                     }
-                                    org.telegram.messenger.g0.h3(new qp0(c1Var3, y0Var, i20, f11, 22));
+                                    org.telegram.messenger.g0.h3(new pp0(c1Var3, y0Var, i20, f11, 22));
                                     c1Var3.j.set(false);
                                 }
                             } finally {
@@ -652,15 +652,15 @@ public final class w {
             if (z9 && (u0Var = v0Var.a) != null) {
                 u0Var.d0();
             }
-            ot0 ot0Var = v0Var.getPainting().g;
+            nt0 nt0Var = v0Var.getPainting().g;
             n0 n0Var = this.g;
             float a10 = r9.a((float) n0Var.a, (float) n0Var.b, 0.0f, 0.0f);
             n0 n0Var2 = this.g;
-            float max = Math.max(a10, r9.a((float) n0Var2.a, (float) n0Var2.b, ot0Var.a, 0.0f));
+            float max = Math.max(a10, r9.a((float) n0Var2.a, (float) n0Var2.b, nt0Var.a, 0.0f));
             n0 n0Var3 = this.g;
-            float a11 = r9.a((float) n0Var3.a, (float) n0Var3.b, 0.0f, ot0Var.b);
+            float a11 = r9.a((float) n0Var3.a, (float) n0Var3.b, 0.0f, nt0Var.b);
             n0 n0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a11, r9.a((float) n0Var4.a, (float) n0Var4.b, ot0Var.a, ot0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a11, r9.a((float) n0Var4.a, (float) n0Var4.b, nt0Var.a, nt0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -698,7 +698,7 @@ public final class w {
             });
             this.x.addListener(new v(this, n0Var6, max2, hVar, z9, p0Var));
             this.x.setDuration(450L);
-            this.x.setInterpolator(xq.h);
+            this.x.setInterpolator(wq.h);
             this.x.start();
             if (z9) {
                 p2.h.a();

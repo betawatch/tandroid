@@ -28,21 +28,21 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.k60;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class e0 extends FrameLayout implements k60 {
+public abstract class e0 extends FrameLayout implements j60 {
     public static final /* synthetic */ int x0 = 0;
     public final int D;
     public final LinearGradient E;
     public final Matrix F;
-    public final org.telegram.ui.Components.y9 G;
+    public final org.telegram.ui.Components.x9 G;
     public final a0 H;
-    public final org.telegram.ui.Components.w5 I;
-    public final org.telegram.ui.Components.w5[] J;
-    public final org.telegram.ui.Components.w5 K;
+    public final org.telegram.ui.Components.v5 I;
+    public final org.telegram.ui.Components.v5[] J;
+    public final org.telegram.ui.Components.v5 K;
     public final float[] L;
     public final float[] M;
     public Object N;
@@ -92,7 +92,7 @@ public abstract class e0 extends FrameLayout implements k60 {
     public final Path x;
     public final float[] y;
 
-    public e0(Context context, org.telegram.ui.Components.y9 y9Var, FrameLayout frameLayout, di.b bVar) {
+    public e0(Context context, org.telegram.ui.Components.x9 x9Var, FrameLayout frameLayout, di.b bVar) {
         super(context);
         this.c = new b6(new a0(this, 1));
         this.f = new t(".");
@@ -104,10 +104,10 @@ public abstract class e0 extends FrameLayout implements k60 {
         this.x = new Path();
         this.y = new float[8];
         this.H = new a0(this, 2);
-        xq xqVar = xq.h;
-        this.I = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
-        this.J = new org.telegram.ui.Components.w5[]{new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar), new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar), new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar), new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar), new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar)};
-        this.K = new org.telegram.ui.Components.w5(this, 0L, 320L, xqVar);
+        wq wqVar = wq.h;
+        this.I = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
+        this.J = new org.telegram.ui.Components.v5[]{new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar), new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar), new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar), new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar), new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar)};
+        this.K = new org.telegram.ui.Components.v5(this, 0L, 320L, wqVar);
         this.L = new float[5];
         this.M = new float[5];
         this.P = new RectF();
@@ -116,7 +116,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         this.q0 = true;
         this.t0 = true;
         this.w0 = new a0(this, 3);
-        this.G = y9Var;
+        this.G = x9Var;
         this.a = frameLayout;
         this.b = bVar;
         setBackgroundColor(-14737633);
@@ -191,7 +191,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         drawable.draw(canvas);
         if (f10 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.l6.r1(drawable.getAlpha() * f10, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.m6.r1(drawable.getAlpha() * f10, -16777216));
         }
         canvas.restore();
     }
@@ -236,7 +236,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         float f12;
         RectF rectF;
         float f13;
-        org.telegram.ui.Components.y9 y9Var;
+        org.telegram.ui.Components.x9 x9Var;
         d0 d0Var;
         int i7;
         if (this.N == null || Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
@@ -248,13 +248,13 @@ public abstract class e0 extends FrameLayout implements k60 {
         }
         super.dispatchDraw(canvas2);
         boolean j3 = j();
-        org.telegram.ui.Components.w5 w5Var = this.I;
-        org.telegram.ui.Components.w5[] w5VarArr = this.J;
+        org.telegram.ui.Components.v5 v5Var = this.I;
+        org.telegram.ui.Components.v5[] v5VarArr = this.J;
         float f14 = 0.0f;
         if (!j3 && !this.f0 && !this.e0) {
-            float f15 = w5Var.c;
+            float f15 = v5Var.c;
             t tVar = this.f;
-            if (f15 == tVar.c && w5VarArr[0].c == tVar.d[0]) {
+            if (f15 == tVar.c && v5VarArr[0].c == tVar.d[0]) {
                 b6 b6Var = this.c;
                 if (!b6Var.b && b6Var.d.c <= 0.0f) {
                     setCameraNeedsBlur(false);
@@ -268,7 +268,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         }
         canvas2.drawColor(-14737633);
         float d2 = this.K.d(this.e0);
-        float e11 = w5Var.e(false, this.f.c);
+        float e11 = v5Var.e(false, this.f.c);
         int i10 = 0;
         while (true) {
             double d10 = i10;
@@ -286,10 +286,10 @@ public abstract class e0 extends FrameLayout implements k60 {
         int i11 = this.f.c;
         while (true) {
             f10 = 1.0f;
-            if (i11 >= w5VarArr.length) {
+            if (i11 >= v5VarArr.length) {
                 break;
             }
-            w5VarArr[i11].e(false, 1.0f);
+            v5VarArr[i11].e(false, 1.0f);
             i11++;
         }
         int i12 = 0;
@@ -310,8 +310,8 @@ public abstract class e0 extends FrameLayout implements k60 {
             float f17 = d2;
             int i14 = sVar.b;
             float f18 = e11;
-            org.telegram.ui.Components.w5[] w5VarArr2 = w5VarArr;
-            float e12 = w5VarArr[i13].e(false, sVar.a.d[i13]);
+            org.telegram.ui.Components.v5[] v5VarArr2 = v5VarArr;
+            float e12 = v5VarArr[i13].e(false, sVar.a.d[i13]);
             if (this.f0 || this.e0) {
                 i7 = i13;
                 org.telegram.messenger.g0.Z1(d0Var2.j, d0Var2.k, d0Var2.l, rectF);
@@ -333,11 +333,11 @@ public abstract class e0 extends FrameLayout implements k60 {
             f14 = f12;
             d2 = f17;
             e11 = f18;
-            w5VarArr = w5VarArr2;
+            v5VarArr = v5VarArr2;
         }
         float f19 = d2;
         float f20 = e11;
-        org.telegram.ui.Components.w5[] w5VarArr3 = w5VarArr;
+        org.telegram.ui.Components.v5[] v5VarArr3 = v5VarArr;
         int i15 = 0;
         while (true) {
             ArrayList arrayList2 = this.n;
@@ -349,7 +349,7 @@ public abstract class e0 extends FrameLayout implements k60 {
             int i16 = sVar2.c;
             int i17 = sVar2.b;
             int i18 = i15;
-            float e13 = w5VarArr3[i16].e(false, i16 >= this.f.d.length ? f11 : r13[i16]);
+            float e13 = v5VarArr3[i16].e(false, i16 >= this.f.d.length ? f11 : r13[i16]);
             rectF.set((getMeasuredWidth() / e13) * i17, (getMeasuredHeight() / f20) * i16, (getMeasuredWidth() / e13) * (i17 + 1), (i16 + 1) * (getMeasuredHeight() / f20));
             fArr2[i16] = Math.min(fArr2[i16], rectF.left);
             fArr[i16] = Math.max(fArr[i16], rectF.right);
@@ -388,7 +388,7 @@ public abstract class e0 extends FrameLayout implements k60 {
             s sVar3 = d0Var.h;
             int i20 = sVar3.c;
             int i21 = sVar3.b;
-            float e14 = w5VarArr3[i20].e(false, this.f.d[i20]);
+            float e14 = v5VarArr3[i20].e(false, this.f.d[i20]);
             if (this.e0) {
                 org.telegram.messenger.g0.Z1(d0Var.j, d0Var.k, d0Var.l, rectF);
             } else {
@@ -407,7 +407,7 @@ public abstract class e0 extends FrameLayout implements k60 {
                 int i23 = sVar4.c;
                 int i24 = sVar4.c;
                 int i25 = sVar4.b;
-                float e16 = w5VarArr3[i23].e(false, sVar4.a.d[i23]);
+                float e16 = v5VarArr3[i23].e(false, sVar4.a.d[i23]);
                 if (this.f0 || this.e0) {
                     org.telegram.messenger.g0.Z1(d0Var4.j, d0Var4.k, d0Var4.l, rectF);
                 } else {
@@ -451,8 +451,8 @@ public abstract class e0 extends FrameLayout implements k60 {
                 canvas2.drawPath(path, paint);
             }
         }
-        if (z9 && (y9Var = this.G) != null) {
-            y9Var.d();
+        if (z9 && (x9Var = this.G) != null) {
+            x9Var.d();
         }
         i(canvas);
     }
@@ -467,7 +467,7 @@ public abstract class e0 extends FrameLayout implements k60 {
     */
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         ArrayList arrayList;
-        org.telegram.ui.Components.w5[] w5VarArr;
+        org.telegram.ui.Components.v5[] v5VarArr;
         RectF rectF;
         boolean z9;
         d0 d0Var;
@@ -483,13 +483,13 @@ public abstract class e0 extends FrameLayout implements k60 {
         }
         float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
-        org.telegram.ui.Components.w5 w5Var = this.I;
-        float f10 = w5Var.c;
+        org.telegram.ui.Components.v5 v5Var = this.I;
+        float f10 = v5Var.c;
         int i7 = 0;
         while (true) {
             arrayList = this.h;
             int size = arrayList.size();
-            w5VarArr = this.J;
+            v5VarArr = this.J;
             rectF = this.P;
             if (i7 >= size) {
                 z9 = z10;
@@ -500,7 +500,7 @@ public abstract class e0 extends FrameLayout implements k60 {
             s sVar = d0Var.h;
             int i10 = sVar.c;
             int i11 = sVar.b;
-            float f11 = w5VarArr[i10].c;
+            float f11 = v5VarArr[i10].c;
             z9 = z10;
             rectF.set((getMeasuredWidth() / f11) * i11, (getMeasuredHeight() / f10) * i10, (getMeasuredWidth() / f11) * (i11 + 1), (getMeasuredHeight() / f10) * (i10 + 1));
             if (rectF.contains(x10, y10)) {
@@ -544,7 +544,7 @@ public abstract class e0 extends FrameLayout implements k60 {
             } else if (this.e0 && this.h0 != null) {
                 float x11 = motionEvent.getX();
                 float y11 = motionEvent.getY();
-                float f12 = w5Var.c;
+                float f12 = v5Var.c;
                 int i12 = 0;
                 while (true) {
                     if (i12 >= arrayList.size()) {
@@ -554,7 +554,7 @@ public abstract class e0 extends FrameLayout implements k60 {
                     s sVar2 = ((d0) arrayList.get(i12)).h;
                     int i13 = sVar2.c;
                     int i14 = sVar2.b;
-                    float f13 = w5VarArr[i13].c;
+                    float f13 = v5VarArr[i13].c;
                     rectF.set((getMeasuredWidth() / f13) * i14, (getMeasuredHeight() / f12) * i13, (getMeasuredWidth() / f13) * (i14 + 1), (getMeasuredHeight() / f12) * (i13 + 1));
                     if (rectF.contains(x11, y11)) {
                         break;
@@ -571,7 +571,7 @@ public abstract class e0 extends FrameLayout implements k60 {
                     s sVar3 = this.h0.h;
                     int i15 = sVar3.c;
                     int i16 = sVar3.b;
-                    float f15 = w5VarArr[i15].c;
+                    float f15 = v5VarArr[i15].c;
                     rectF.set((getMeasuredWidth() / f15) * i16, (getMeasuredHeight() / f14) * i15, (getMeasuredWidth() / f15) * (i16 + 1), (getMeasuredHeight() / f14) * (i15 + 1));
                     this.a0 = this.c0;
                     this.b0 = this.d0;
@@ -633,15 +633,15 @@ public abstract class e0 extends FrameLayout implements k60 {
             return;
         }
         if (d0Var == this.h0) {
-            org.telegram.ui.Components.w5 w5Var = this.K;
-            if (w5Var.c > 0.0f) {
+            org.telegram.ui.Components.v5 v5Var = this.K;
+            if (v5Var.c > 0.0f) {
                 canvas.save();
                 Path path = this.Q;
                 path.rewind();
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 rectF2.set(rectF);
-                rectF2.inset(org.telegram.messenger.g0.L(10.0f) * w5Var.c, org.telegram.messenger.g0.L(10.0f) * w5Var.c);
-                float L = org.telegram.messenger.g0.L(12.0f) * w5Var.c;
+                rectF2.inset(org.telegram.messenger.g0.L(10.0f) * v5Var.c, org.telegram.messenger.g0.L(10.0f) * v5Var.c);
+                float L = org.telegram.messenger.g0.L(12.0f) * v5Var.c;
                 path.addRoundRect(rectF2, L, L, Path.Direction.CW);
                 canvas.clipPath(path);
                 z9 = true;
@@ -739,15 +739,15 @@ public abstract class e0 extends FrameLayout implements k60 {
             view.draw(canvas);
         }
         if (f10 > 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.l6.r1(view.getAlpha() * f10, -16777216));
+            canvas.drawColor(org.telegram.ui.ActionBar.m6.r1(view.getAlpha() * f10, -16777216));
         }
         canvas.restore();
         if (view != this.d || (b6Var = this.c) == null) {
             return;
         }
         Paint paint = b6Var.i;
-        org.telegram.ui.Components.w5[] w5VarArr = b6Var.h;
-        org.telegram.ui.Components.w5[] w5VarArr2 = b6Var.g;
+        org.telegram.ui.Components.v5[] v5VarArr = b6Var.h;
+        org.telegram.ui.Components.v5[] v5VarArr2 = b6Var.g;
         Path path = b6Var.j;
         a6 a6Var = b6Var.c;
         if (a6Var == null || a6Var.b.length <= 0) {
@@ -778,24 +778,24 @@ public abstract class e0 extends FrameLayout implements k60 {
                 PointF pointF = pointFArr[i11];
                 int i14 = min;
                 PointF pointF2 = pointFArr[i10];
-                org.telegram.ui.Components.w5[] w5VarArr3 = w5VarArr;
+                org.telegram.ui.Components.v5[] v5VarArr3 = v5VarArr;
                 PointF pointF3 = pointFArr[i13];
-                org.telegram.ui.Components.w5[] w5VarArr4 = w5VarArr2;
+                org.telegram.ui.Components.v5[] v5VarArr4 = v5VarArr2;
                 float f11 = d;
-                float width2 = (rectF.width() * (w5VarArr4[i11].e(false, pointF.x - a6Var2.c) + e10)) + rectF.left;
-                float height2 = (rectF.height() * (w5VarArr3[i11].e(false, pointF.y - b6Var.c.d) + e11)) + rectF.top;
-                float width3 = (rectF.width() * (w5VarArr4[i10].e(false, pointF2.x - b6Var.c.c) + e10)) + rectF.left;
-                float height3 = (rectF.height() * (w5VarArr3[i10].e(false, pointF2.y - b6Var.c.d) + e11)) + rectF.top;
-                float width4 = (rectF.width() * (w5VarArr4[i13].e(false, pointF3.x - b6Var.c.c) + e10)) + rectF.left;
-                float height4 = ((rectF.height() * (w5VarArr3[i13].e(false, pointF3.y - b6Var.c.d) + e11)) + rectF.top) - height3;
+                float width2 = (rectF.width() * (v5VarArr4[i11].e(false, pointF.x - a6Var2.c) + e10)) + rectF.left;
+                float height2 = (rectF.height() * (v5VarArr3[i11].e(false, pointF.y - b6Var.c.d) + e11)) + rectF.top;
+                float width3 = (rectF.width() * (v5VarArr4[i10].e(false, pointF2.x - b6Var.c.c) + e10)) + rectF.left;
+                float height3 = (rectF.height() * (v5VarArr3[i10].e(false, pointF2.y - b6Var.c.d) + e11)) + rectF.top;
+                float width4 = (rectF.width() * (v5VarArr4[i13].e(false, pointF3.x - b6Var.c.c) + e10)) + rectF.left;
+                float height4 = ((rectF.height() * (v5VarArr3[i13].e(false, pointF3.y - b6Var.c.d) + e11)) + rectF.top) - height3;
                 path.moveTo(((width2 - width3) * 0.18f) + width3, ((height2 - height3) * 0.18f) + height3);
                 path.lineTo(width3, height3);
                 path.lineTo(((width4 - width3) * 0.18f) + width3, (height4 * 0.18f) + height3);
-                w5VarArr2 = w5VarArr4;
+                v5VarArr2 = v5VarArr4;
                 i7 = 0;
                 i10 = i12;
                 min = i14;
-                w5VarArr = w5VarArr3;
+                v5VarArr = v5VarArr3;
                 d = f11;
             }
             paint.setAlpha((int) (d * 255.0f));
@@ -804,7 +804,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.k60
+    @Override // org.telegram.ui.Components.j60
     public final void g(RectF rectF) {
         d0 d0Var = this.j0;
         if (d0Var == null) {
@@ -964,7 +964,7 @@ public abstract class e0 extends FrameLayout implements k60 {
         return this.h.size();
     }
 
-    @Override // org.telegram.ui.Components.k60
+    @Override // org.telegram.ui.Components.j60
     public final void h(Canvas canvas, float f10) {
         d0 d0Var = this.j0;
         if (d0Var != null) {
@@ -1325,9 +1325,9 @@ public abstract class e0 extends FrameLayout implements k60 {
         ArrayList arrayList = this.h;
         int i7 = 0;
         if (z9) {
-            org.telegram.ui.Components.y9 y9Var = this.G;
-            if (y9Var != null) {
-                y9Var.d();
+            org.telegram.ui.Components.x9 x9Var = this.G;
+            if (x9Var != null) {
+                x9Var.d();
             }
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 ((d0) arrayList.get(i10)).a = i10;

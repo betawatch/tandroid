@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -166,17 +166,17 @@ public final /* synthetic */ class a implements Runnable {
                 }
             case 9:
                 TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.b;
-                ArrayList arrayList2 = org.telegram.ui.ActionBar.l6.F;
+                ArrayList arrayList2 = org.telegram.ui.ActionBar.m6.F;
                 int size = arrayList2.size();
                 for (int i12 = 0; i12 < size; i12++) {
-                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.k6) arrayList2.get(i12)).F;
+                    TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.l6) arrayList2.get(i12)).F;
                     if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                         TLRPC.Document document2 = tL_theme2.document;
                         if (document2 == null || (document = tL_theme.document) == null) {
                             return;
                         }
                         document2.file_reference = document.file_reference;
-                        org.telegram.ui.ActionBar.l6.y1(true, false);
+                        org.telegram.ui.ActionBar.m6.y1(true, false);
                         return;
                     }
                 }
@@ -252,7 +252,7 @@ public final /* synthetic */ class a implements Runnable {
                 qs.e().k(qs.P4, 0, (TLRPC.Document) this.b, 7);
                 return;
             case 22:
-                ((org.telegram.ui.Components.ac) this.b).f();
+                ((org.telegram.ui.Components.zb) this.b).f();
                 return;
             case 23:
                 TLObject tLObject = (TLObject) this.b;
@@ -280,7 +280,7 @@ public final /* synthetic */ class a implements Runnable {
             case 25:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
                 if (tL_error != null) {
-                    org.telegram.ui.Components.hc.d0(tL_error);
+                    org.telegram.ui.Components.gc.d0(tL_error);
                     return;
                 }
                 return;

@@ -15,14 +15,14 @@ import c8.j9;
 import fi.f9;
 import fi.v9;
 import org.telegram.messenger.k9;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.mt0;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class b4 extends FrameLayout {
-    public static final nt0 b0 = new nt0(new g2.c(29), new x3(0));
+    public static final mt0 b0 = new mt0(new g2.c(29), new x3(0));
     public Runnable D;
     public Runnable E;
     public a4 F;
@@ -45,7 +45,7 @@ public abstract class b4 extends FrameLayout {
     public float W;
     public Object a;
     public float a0;
-    public final vy b;
+    public final uy b;
     public boolean c;
     public boolean d;
     public float e;
@@ -60,7 +60,7 @@ public abstract class b4 extends FrameLayout {
 
     public b4(Context context) {
         super(context);
-        this.e = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        this.e = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
         this.f = 0.0f;
         this.h = -1.0f;
         this.n = -2.14748365E9f;
@@ -70,7 +70,7 @@ public abstract class b4 extends FrameLayout {
         this.S = false;
         this.T = org.telegram.messenger.g0.L(60.0f);
         this.U = true;
-        this.b = new vy(context, new z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        this.b = new uy(context, new z3(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
         Point point = org.telegram.messenger.g0.q;
         this.H = org.telegram.messenger.g0.L(point.x > point.y ? 8.0f : 64.0f);
     }
@@ -97,9 +97,9 @@ public abstract class b4 extends FrameLayout {
         if (runnable != null) {
             runnable.run();
         }
-        cc ccVar = cc.w;
-        if (ccVar != null) {
-            ccVar.l();
+        bc bcVar = bc.w;
+        if (bcVar != null) {
+            bcVar.l();
         }
     }
 

@@ -1,82 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.content.Context;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class ic {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public final float h;
-    public boolean i;
-    public float j;
+public class ic extends w70 {
+    public final Path L;
+    public final RectF M;
+    public jc N;
+    public jc O;
 
-    public ic(View view) {
-        this(view, 1.0f, 5.0f);
+    public ic(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.L = new Path();
+        this.M = new RectF();
     }
 
-    public final float a(float f10) {
-        return com.google.android.recaptcha.internal.a.z(1.0f, this.j, f10, 1.0f - f10) * this.h;
-    }
-
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        if (this.O == null || getMeasuredWidth() <= 0) {
+            return;
         }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
+        SpannableString spannableString = new SpannableString(" btn");
+        spannableString.setSpan(this.O, 1, spannableString.length(), 33);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.O.a()) - org.telegram.messenger.g0.L(4.0f), TextUtils.TruncateAt.END));
+        spannableStringBuilder.append((CharSequence) spannableString);
+        setText(spannableStringBuilder);
+        this.O = null;
     }
 
-    public final void c(boolean z9) {
-        if (this.i != z9) {
-            this.i = z9;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+    @Override // org.telegram.ui.Components.w70, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        Layout layout;
+        jc jcVar;
+        Runnable runnable;
+        jc jcVar2;
+        int action = motionEvent.getAction();
+        float x10 = motionEvent.getX() - getPaddingLeft();
+        int y10 = ((int) motionEvent.getY()) - getPaddingTop();
+        if ((getText() instanceof Spanned) && (layout = getLayout()) != null && y10 >= 0 && y10 < layout.getHeight()) {
+            int lineForVertical = layout.getLineForVertical(y10);
+            Spanned spanned = (Spanned) getText();
+            jc[] jcVarArr = (jc[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), jc.class);
+            for (int i7 = 0; i7 < jcVarArr.length; i7++) {
+                jcVar = jcVarArr[i7];
+                int spanStart = spanned.getSpanStart(jcVar);
+                int spanEnd = spanned.getSpanEnd(jcVar);
+                Path path = this.L;
+                layout.getSelectionPath(spanStart, spanEnd, path);
+                RectF rectF = this.M;
+                path.computeBounds(rectF, true);
+                if (rectF.contains(x10, y10)) {
+                    break;
+                }
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z9 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new e6(this, 7));
-            this.g.addListener(new t9(1, this, z9));
-            if (this.i) {
-                this.g.setInterpolator(xq.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
         }
+        jcVar = null;
+        if (action == 0) {
+            this.N = jcVar;
+            if (jcVar != null) {
+                jcVar.c(this, true);
+                return true;
+            }
+        } else if (action == 1 || action == 3) {
+            jc jcVar3 = this.N;
+            if (jcVar3 != null) {
+                jcVar3.c(this, false);
+                if (action == 1 && (runnable = this.N.d) != null) {
+                    runnable.run();
+                }
+            }
+            this.N = null;
+        } else if (action == 2 && (jcVar2 = this.N) != null && jcVar2 != jcVar) {
+            jcVar2.c(this, false);
+            this.N = null;
+        }
+        return this.N != null || super.onTouchEvent(motionEvent);
     }
 
-    public ic(View view, float f10, float f11) {
-        this.e = 0L;
-        this.h = 1.0f;
-        this.a = view;
-        this.c = f10;
-        this.b = f10;
-        this.d = f11;
-    }
-
-    public ic(fi.m5 m5Var) {
-        this.e = 0L;
-        this.h = 1.0f;
-        this.a = m5Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
+    public ic(Context context) {
+        super(context, null);
+        this.L = new Path();
+        this.M = new RectF();
     }
 }

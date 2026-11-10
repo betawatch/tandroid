@@ -11,20 +11,20 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s0 extends View {
     public float D;
     public boolean E;
-    public final org.telegram.ui.Components.w5 F;
+    public final org.telegram.ui.Components.v5 F;
     public boolean G;
     public float H;
-    public final org.telegram.ui.Components.w5 I;
-    public final org.telegram.ui.Components.w5 J;
+    public final org.telegram.ui.Components.v5 I;
+    public final org.telegram.ui.Components.v5 J;
     public final RectF K;
     public final RectF L;
     public final RectF M;
@@ -38,8 +38,8 @@ public final class s0 extends View {
     public final Paint d;
     public final Paint e;
     public final Paint f;
-    public final ic h;
-    public ah0 n;
+    public final hc h;
+    public zg0 n;
     public final StaticLayout r;
     public final float s;
     public final float w;
@@ -60,13 +60,13 @@ public final class s0 extends View {
         this.e = paint3;
         Paint paint4 = new Paint(1);
         this.f = paint4;
-        this.h = new ic(this);
+        this.h = new hc(this);
         this.E = false;
-        this.F = new org.telegram.ui.Components.w5(0.0f, this, 0L, 350L, xq.h);
+        this.F = new org.telegram.ui.Components.v5(0.0f, this, 0L, 350L, wq.h);
         this.G = true;
         this.H = 0.0f;
-        this.I = new org.telegram.ui.Components.w5(this);
-        this.J = new org.telegram.ui.Components.w5(this);
+        this.I = new org.telegram.ui.Components.v5(this);
+        this.J = new org.telegram.ui.Components.v5(this);
         this.K = new RectF();
         this.L = new RectF();
         this.M = new RectF();
@@ -106,14 +106,14 @@ public final class s0 extends View {
     }
 
     public final void b(int i7, int i10, CharSequence charSequence) {
-        ah0 ah0Var = this.n;
-        if (ah0Var != null) {
-            ah0Var.setCallback(null);
+        zg0 zg0Var = this.n;
+        if (zg0Var != null) {
+            zg0Var.setCallback(null);
             this.n.C(true);
         }
-        ah0 ah0Var2 = new ah0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
-        this.n = ah0Var2;
-        ah0Var2.setCallback(this);
+        zg0 zg0Var2 = new zg0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f));
+        this.n = zg0Var2;
+        zg0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.x = staticLayout;
@@ -216,9 +216,9 @@ public final class s0 extends View {
         }
         if (e11 > 0.0f) {
             float f14 = e11 * e10;
-            ah0 ah0Var = this.n;
-            if (ah0Var != null) {
-                ah0Var.setAlpha((int) (f14 * f11));
+            zg0 zg0Var = this.n;
+            if (zg0Var != null) {
+                zg0Var.setAlpha((int) (f14 * f11));
                 this.n.setBounds((int) (rectF.left + org.telegram.messenger.g0.L(9.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(6.0f)), (int) (rectF.left + org.telegram.messenger.g0.L(45.0f)), (int) (rectF.top + org.telegram.messenger.g0.L(f10)));
                 this.n.draw(canvas2);
             }
@@ -242,13 +242,13 @@ public final class s0 extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean contains = this.M.contains(motionEvent.getX(), motionEvent.getY());
         int action = motionEvent.getAction();
-        ic icVar = this.h;
+        hc hcVar = this.h;
         if (action == 0 && (this.G || contains)) {
-            icVar.c(contains);
+            hcVar.c(contains);
             return true;
         }
         if (motionEvent.getAction() == 1) {
-            if (icVar.i) {
+            if (hcVar.i) {
                 if (contains) {
                     if (this.G) {
                         Runnable runnable = this.Q;
@@ -259,11 +259,11 @@ public final class s0 extends View {
                         a();
                     }
                 }
-                icVar.c(false);
+                hcVar.c(false);
                 return true;
             }
         } else if (motionEvent.getAction() == 3) {
-            icVar.c(false);
+            hcVar.c(false);
             return true;
         }
         return super.onTouchEvent(motionEvent);

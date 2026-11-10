@@ -12,33 +12,33 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ae {
     public int a;
     public final RectF b;
-    public final org.telegram.ui.Components.w5 c;
-    public final org.telegram.ui.Components.w5 d;
-    public final org.telegram.ui.Components.w5 e;
+    public final org.telegram.ui.Components.v5 c;
+    public final org.telegram.ui.Components.v5 d;
+    public final org.telegram.ui.Components.v5 e;
     public LinearGradient f;
     public final Matrix g;
     public final Paint h;
     public final boolean i;
     public long j;
     public final ImageReceiver k;
-    public final org.telegram.ui.Components.w8 l;
-    public final org.telegram.ui.Components.w8 m;
-    public ny0 n;
-    public ny0 o;
+    public final org.telegram.ui.Components.v8 l;
+    public final org.telegram.ui.Components.v8 m;
+    public my0 n;
+    public my0 o;
     public boolean p;
-    public final org.telegram.ui.Components.ic q;
+    public final org.telegram.ui.Components.hc q;
     public int r;
     public Drawable s;
     public Drawable t;
-    public ny0 u;
+    public my0 u;
     public int v;
     public final /* synthetic */ be w;
 
@@ -47,39 +47,39 @@ public final class ae {
         ce ceVar = beVar.w;
         this.w = beVar;
         this.b = new RectF();
-        xq xqVar = xq.h;
-        this.c = new org.telegram.ui.Components.w5(beVar, 0L, 600L, xqVar);
-        this.d = new org.telegram.ui.Components.w5(beVar, 0L, 200L, xqVar);
-        this.e = new org.telegram.ui.Components.w5(beVar, 0L, 350L, xqVar);
+        wq wqVar = wq.h;
+        this.c = new org.telegram.ui.Components.v5(beVar, 0L, 600L, wqVar);
+        this.d = new org.telegram.ui.Components.v5(beVar, 0L, 200L, wqVar);
+        this.e = new org.telegram.ui.Components.v5(beVar, 0L, 350L, wqVar);
         this.f = null;
         this.g = new Matrix();
         this.h = new Paint(1);
         ImageReceiver imageReceiver = new ImageReceiver(beVar);
         this.k = imageReceiver;
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
-        this.l = w8Var;
-        org.telegram.ui.Components.w8 w8Var2 = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
-        this.m = w8Var2;
-        this.q = new org.telegram.ui.Components.ic(beVar);
+        org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        this.l = v8Var;
+        org.telegram.ui.Components.v8 v8Var2 = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        this.m = v8Var2;
+        this.q = new org.telegram.ui.Components.hc(beVar);
         this.i = z9;
         this.j = j3;
         if (j3 >= 0) {
-            TLRPC.User a22 = qp.s1(ceVar.j1).a2(Long.valueOf(j3));
+            TLRPC.User a22 = qp.s1(ceVar.m1).a2(Long.valueOf(j3));
             str = t10.k(a22);
-            w8Var.r(a22);
-            imageReceiver.i0(a22, w8Var, null);
+            v8Var.r(a22);
+            imageReceiver.i0(a22, v8Var, null);
         } else {
-            TLRPC.Chat M0 = qp.s1(ceVar.j1).M0(Long.valueOf(-j3));
+            TLRPC.Chat M0 = qp.s1(ceVar.m1).M0(Long.valueOf(-j3));
             str = M0 == null ? "" : M0.title;
-            w8Var.q(M0);
-            imageReceiver.i0(M0, w8Var, null);
+            v8Var.q(M0);
+            imageReceiver.i0(M0, v8Var, null);
         }
         imageReceiver.J0(org.telegram.messenger.g0.L(56.0f));
         imageReceiver.P();
         imageReceiver.A0 = true;
-        w8Var2.g(21);
-        w8Var2.h(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.c8, ceVar.i1));
-        this.n = new ny0(str, 12.0f, null);
+        v8Var2.g(21);
+        v8Var2.h(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.c8, ceVar.l1));
+        this.n = new my0(str, 12.0f, null);
     }
 
     public final void a(Canvas canvas) {
@@ -129,11 +129,11 @@ public final class ae {
                 int L6 = i11 - (org.telegram.messenger.g0.L(56.0f) / 2);
                 int L7 = (org.telegram.messenger.g0.L(56.0f) / 2) + i10;
                 int L8 = (org.telegram.messenger.g0.L(56.0f) / 2) + i11;
-                org.telegram.ui.Components.w8 w8Var = this.m;
-                w8Var.setBounds(L5, L6, L7, L8);
-                w8Var.y = (int) (d * f12 * d2);
-                w8Var.draw(canvas);
-                w8Var.y = qs.e4;
+                org.telegram.ui.Components.v8 v8Var = this.m;
+                v8Var.setBounds(L5, L6, L7, L8);
+                v8Var.y = (int) (d * f12 * d2);
+                v8Var.draw(canvas);
+                v8Var.y = qs.e4;
             }
         } else {
             f10 = 40.0f;
@@ -153,11 +153,11 @@ public final class ae {
             this.f.setLocalMatrix(matrix);
         }
         canvas.drawRoundRect(rectF, rectF.height() / f11, rectF.height() / f11, paint);
-        ny0 ny0Var = this.o;
-        ny0Var.c(L - (ny0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
-        ny0 ny0Var2 = this.n;
-        ny0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
-        ny0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, beVar.w.i1), canvas);
+        my0 my0Var = this.o;
+        my0Var.c(L - (my0Var.c / f11), org.telegram.messenger.g0.L(23.0f) + L2, d, -1, canvas);
+        my0 my0Var2 = this.n;
+        my0Var2.p = width - org.telegram.messenger.g0.L(4.0f);
+        my0Var2.c(L - (this.n.k() / f11), org.telegram.messenger.g0.L(42.0f) + L2, d, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, beVar.w.l1), canvas);
         if (this.v > 0) {
             int i13 = (int) L;
             int i14 = (int) L2;
@@ -167,8 +167,8 @@ public final class ae {
             this.s.setAlpha(i12);
             this.t.draw(canvas);
             this.s.draw(canvas);
-            ny0 ny0Var3 = this.u;
-            ny0Var3.c(L - (ny0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
+            my0 my0Var3 = this.u;
+            my0Var3.c(L - (my0Var3.c / f11), L2 - org.telegram.messenger.g0.L(27.0f), d, -1, canvas);
         }
         canvas.restore();
     }
@@ -179,31 +179,31 @@ public final class ae {
         be beVar = this.w;
         ce ceVar = beVar.w;
         if (this.i) {
-            if ((this.p ? 2666000L : this.j == p10.i(ceVar.j1).e() ? 0L : this.j) != j3) {
+            if ((this.p ? 2666000L : this.j == p10.i(ceVar.m1).e() ? 0L : this.j) != j3) {
                 this.p = j3 == 2666000;
                 if (j3 == 0 || j3 == 2666000) {
-                    j3 = p10.i(ceVar.j1).e();
+                    j3 = p10.i(ceVar.m1).e();
                 }
                 this.j = j3;
                 if (this.p) {
                     str2 = org.telegram.messenger.id.M0(2131745048, null);
                 } else {
                     ImageReceiver imageReceiver = this.k;
-                    org.telegram.ui.Components.w8 w8Var = this.l;
+                    org.telegram.ui.Components.v8 v8Var = this.l;
                     if (j3 >= 0) {
-                        TLRPC.User a22 = qp.s1(ceVar.j1).a2(Long.valueOf(this.j));
+                        TLRPC.User a22 = qp.s1(ceVar.m1).a2(Long.valueOf(this.j));
                         str = t10.k(a22);
-                        w8Var.r(a22);
-                        imageReceiver.i0(a22, w8Var, null);
+                        v8Var.r(a22);
+                        imageReceiver.i0(a22, v8Var, null);
                     } else {
-                        TLRPC.Chat M0 = qp.s1(ceVar.j1).M0(Long.valueOf(-this.j));
+                        TLRPC.Chat M0 = qp.s1(ceVar.m1).M0(Long.valueOf(-this.j));
                         str = M0 == null ? "" : M0.title;
-                        w8Var.q(M0);
-                        imageReceiver.i0(M0, w8Var, null);
+                        v8Var.q(M0);
+                        imageReceiver.i0(M0, v8Var, null);
                     }
                     str2 = str;
                 }
-                this.n = new ny0(str2, 12.0f, null);
+                this.n = new my0(str2, 12.0f, null);
                 beVar.invalidate();
             }
         }

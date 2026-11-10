@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -23,29 +23,29 @@ public final /* synthetic */ class s implements Runnable {
         final z zVar = this.b;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.v1(zVar.k1);
+                org.telegram.messenger.g0.v1(zVar.n1);
                 break;
             case 1:
-                qs.f(p10.s0).k(qs.V2, zVar.T1, Boolean.TRUE);
+                qs.f(p10.s0).k(qs.V2, zVar.W1, Boolean.TRUE);
                 break;
             case 2:
-                qs.f(p10.s0).k(qs.V2, zVar.T1, Boolean.FALSE);
+                qs.f(p10.s0).k(qs.V2, zVar.W1, Boolean.FALSE);
                 break;
             case 3:
-                ug.f1 f1Var = new ug.f1(zVar.o1, zVar.a, null, zVar.I0);
+                ug.f1 f1Var = new ug.f1(zVar.r1, zVar.a, null, zVar.I0);
                 f1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.v
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         switch (i10) {
                             case 0:
-                                yg.r rVar = zVar.Y1.r;
+                                yg.r rVar = zVar.b2.r;
                                 if (rVar != null) {
                                     rVar.setPaused(false);
                                     break;
                                 }
                                 break;
                             default:
-                                yg.r rVar2 = zVar.Y1.r;
+                                yg.r rVar2 = zVar.b2.r;
                                 if (rVar2 != null) {
                                     rVar2.setPaused(false);
                                     break;
@@ -59,14 +59,14 @@ public final /* synthetic */ class s implements Runnable {
                     public final void onShow(DialogInterface dialogInterface) {
                         switch (i10) {
                             case 0:
-                                yg.r rVar = zVar.Y1.r;
+                                yg.r rVar = zVar.b2.r;
                                 if (rVar != null) {
                                     rVar.setPaused(true);
                                     break;
                                 }
                                 break;
                             default:
-                                yg.r rVar2 = zVar.Y1.r;
+                                yg.r rVar2 = zVar.b2.r;
                                 if (rVar2 != null) {
                                     rVar2.setPaused(true);
                                     break;
@@ -78,20 +78,20 @@ public final /* synthetic */ class s implements Runnable {
                 f1Var.show();
                 break;
             default:
-                ug.f1 f1Var2 = new ug.f1(zVar.o1, zVar.a, null, zVar.I0);
+                ug.f1 f1Var2 = new ug.f1(zVar.r1, zVar.a, null, zVar.I0);
                 f1Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.v
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         switch (i11) {
                             case 0:
-                                yg.r rVar = zVar.Y1.r;
+                                yg.r rVar = zVar.b2.r;
                                 if (rVar != null) {
                                     rVar.setPaused(false);
                                     break;
                                 }
                                 break;
                             default:
-                                yg.r rVar2 = zVar.Y1.r;
+                                yg.r rVar2 = zVar.b2.r;
                                 if (rVar2 != null) {
                                     rVar2.setPaused(false);
                                     break;
@@ -105,14 +105,14 @@ public final /* synthetic */ class s implements Runnable {
                     public final void onShow(DialogInterface dialogInterface) {
                         switch (i11) {
                             case 0:
-                                yg.r rVar = zVar.Y1.r;
+                                yg.r rVar = zVar.b2.r;
                                 if (rVar != null) {
                                     rVar.setPaused(true);
                                     break;
                                 }
                                 break;
                             default:
-                                yg.r rVar2 = zVar.Y1.r;
+                                yg.r rVar2 = zVar.b2.r;
                                 if (rVar2 != null) {
                                     rVar2.setPaused(true);
                                     break;

@@ -5,22 +5,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.ij;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.p40;
+import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.o40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class u7 extends c5.a {
     public final /* synthetic */ Context c;
     public final /* synthetic */ q9 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
     public final /* synthetic */ w f;
 
-    public u7(w wVar, Context context, q9 q9Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public u7(w wVar, Context context, q9 q9Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.f = wVar;
         this.c = context;
         this.d = q9Var;
-        this.e = g6Var;
+        this.e = h6Var;
     }
 
     @Override // c5.a
@@ -57,17 +57,17 @@ public final class u7 extends c5.a {
                 t7Var.K1.P0();
                 t7Var.K1.setAlpha(1.0f - t7Var.N3);
             }
-            ji0 ji0Var = t7Var.O1;
-            if (ji0Var != null) {
-                ji0Var.n();
+            ii0 ii0Var = t7Var.O1;
+            if (ii0Var != null) {
+                ii0Var.n();
             }
-            ji0 ji0Var2 = t7Var.a3;
-            if (ji0Var2 != null) {
-                ji0Var2.n();
+            ii0 ii0Var2 = t7Var.a3;
+            if (ii0Var2 != null) {
+                ii0Var2.n();
             }
-            p40 p40Var = t7Var.s2;
-            if (p40Var != null) {
-                org.telegram.messenger.g0.E2(p40Var);
+            o40 o40Var = t7Var.s2;
+            if (o40Var != null) {
+                org.telegram.messenger.g0.E2(o40Var);
                 t7Var.s2.d(true);
                 t7Var.s2 = null;
             }

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class yt implements x5 {
     public static ColorMatrixColorFilter U;
@@ -113,6 +113,7 @@ public final class yt implements x5 {
         if (photo != null && (photoSize = this.n) != null) {
             TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.r;
             hc i7 = tL_photoStrippedSize != null ? hc.i(tL_photoStrippedSize, photo) : null;
+            imageReceiver.N = hc.i(photoSize, photo);
             if (z9) {
                 imageReceiver.u0(null, null, hc.i(photoSize, photo), null, i7, "b1", null, photoSize.size, null, kvVar.b, 1);
                 return;
@@ -127,6 +128,7 @@ public final class yt implements x5 {
             hc c10 = tL_photoStrippedSize2 != null ? hc.c(tL_photoStrippedSize2, document) : null;
             TLRPC.PhotoSize photoSize2 = this.w;
             hc c11 = photoSize2 != null ? hc.c(photoSize2, document) : null;
+            imageReceiver.N = hc.b(document);
             if (!z9 || !this.y || (!a() && !this.R)) {
                 imageReceiver.u0(null, null, c11, null, c10, "b1", null, document.size, "mp4", kvVar.b, 1);
                 return;
@@ -491,7 +493,7 @@ public final class yt implements x5 {
             return;
         }
         ImageReceiver imageReceiver = this.c;
-        org.telegram.ui.Components.v5 m10 = imageReceiver.m();
+        org.telegram.ui.Components.u5 m10 = imageReceiver.m();
         boolean z10 = m10 != null && (m10.s() || imageReceiver.M());
         boolean e10 = e();
         boolean z11 = this.D;

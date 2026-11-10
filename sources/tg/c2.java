@@ -61,18 +61,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.ez0;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.ln0;
-import org.telegram.ui.o41;
-import org.telegram.ui.p61;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.mn0;
+import org.telegram.ui.p41;
+import org.telegram.ui.q61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c2 extends FrameLayout implements ls {
     public static final /* synthetic */ int r0 = 0;
@@ -91,16 +91,16 @@ public final class c2 extends FrameLayout implements ls {
     public float P;
     public float Q;
     public float R;
-    public ez0 S;
+    public dz0 S;
     public int T;
     public int U;
     public boolean V;
     public a2 W;
     public int a;
-    public final g6 a0;
-    public final w5 b;
+    public final h6 a0;
+    public final v5 b;
     public s1 b0;
-    public final w5 c;
+    public final v5 c;
     public String c0;
     public final Paint d;
     public fi.s0 d0;
@@ -127,12 +127,12 @@ public final class c2 extends FrameLayout implements ls {
     public final Path x;
     public volatile boolean y;
 
-    public c2(ContextThemeWrapper contextThemeWrapper, g6 g6Var) {
+    public c2(ContextThemeWrapper contextThemeWrapper, h6 h6Var) {
         super(contextThemeWrapper);
         this.a = -1;
-        xq xqVar = xq.h;
-        this.b = new w5(0.0f, (View) null, 0L, 420L, xqVar);
-        this.c = new w5(0.0f, (View) null, 0L, 420L, xqVar);
+        wq wqVar = wq.h;
+        this.b = new v5(0.0f, (View) null, 0L, 420L, wqVar);
+        this.c = new v5(0.0f, (View) null, 0L, 420L, wqVar);
         Paint paint = new Paint(1);
         this.d = paint;
         Paint paint2 = new Paint(1);
@@ -152,7 +152,7 @@ public final class c2 extends FrameLayout implements ls {
         this.m0 = new RectF();
         this.p0 = new ArrayList();
         this.q0 = new Rect();
-        this.a0 = g6Var;
+        this.a0 = h6Var;
         paint.setColor(-1);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
@@ -192,7 +192,7 @@ public final class c2 extends FrameLayout implements ls {
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.b(0.33f, 10.0f);
         m1Var.setBrushWeight(this.F);
-        m1Var.setValueOverride(new org.telegram.ui.Components.n(this));
+        m1Var.setValueOverride(new org.telegram.ui.Components.m(this));
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.setAlpha(0.0f);
         addView(m1Var, ha.c(-1.0f, -1));
@@ -444,10 +444,10 @@ public final class c2 extends FrameLayout implements ls {
                 BlurMaskFilter.Blur blur = BlurMaskFilter.Blur.NORMAL;
                 paint.setMaskFilter(new BlurMaskFilter(L, blur));
                 paint4.setStyle(style);
-                paint4.setColor(l6.r1(0.04f, -1));
+                paint4.setColor(m6.r1(0.04f, -1));
                 paint4.setStrokeCap(cap);
                 paint4.setStrokeWidth(org.telegram.messenger.g0.L(20.0f));
-                paint4.setColor(l6.r1(0.04f, -1));
+                paint4.setColor(m6.r1(0.04f, -1));
                 paint4.setMaskFilter(new BlurMaskFilter(org.telegram.messenger.g0.L(60.0f), blur));
                 return;
             }
@@ -495,7 +495,7 @@ public final class c2 extends FrameLayout implements ls {
         if (a2Var.m != null) {
             h();
             a2Var.m.a(a2Var.b, a2Var.e.document);
-            org.telegram.messenger.g0.i3(new p61(18), 250L);
+            org.telegram.messenger.g0.i3(new q61(18), 250L);
             return;
         }
         final int i11 = 0;
@@ -2463,7 +2463,7 @@ public final class c2 extends FrameLayout implements ls {
             tL_documentAttributeSticker.alt = a2Var3.c;
             tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
             tL_messages_uploadMedia.media.attributes.add(tL_documentAttributeSticker);
-            ConnectionsManager.getInstance(p10.s0).sendRequest(tL_messages_uploadMedia, new o41(7, this, a2Var3), 2);
+            ConnectionsManager.getInstance(p10.s0).sendRequest(tL_messages_uploadMedia, new p41(7, this, a2Var3), 2);
             return;
         }
         if (i7 == qs.W1) {
@@ -2620,15 +2620,15 @@ public final class c2 extends FrameLayout implements ls {
         setClickable(false);
         TextView textView = this.M;
         textView.animate().cancel();
-        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(xq.h).start();
+        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(wq.h).start();
     }
 
     public final void g(Canvas canvas, boolean z9, ViewGroup viewGroup, boolean z10) {
-        w5 w5Var = this.c;
-        w5Var.a = viewGroup;
+        v5 v5Var = this.c;
+        v5Var.a = viewGroup;
         boolean z11 = this.i0;
-        if (z11 || w5Var.c > 0.0f) {
-            float d = viewGroup == null ? 1.0f : w5Var.d(z11 && !z10);
+        if (z11 || v5Var.c > 0.0f) {
+            float d = viewGroup == null ? 1.0f : v5Var.d(z11 && !z10);
             z1[] z1VarArr = this.H;
             if (z1VarArr != null) {
                 for (z1 z1Var : z1VarArr) {
@@ -2679,14 +2679,14 @@ public final class c2 extends FrameLayout implements ls {
         return this.I;
     }
 
-    public ez0 getThanosEffect() {
-        if (!ez0.c()) {
+    public dz0 getThanosEffect() {
+        if (!dz0.c()) {
             return null;
         }
         if (this.S == null) {
-            ez0 ez0Var = new ez0(getContext(), new t1(this, 1));
-            this.S = ez0Var;
-            addView(ez0Var, ha.c(-1.0f, -1));
+            dz0 dz0Var = new dz0(getContext(), new t1(this, 1));
+            this.S = dz0Var;
+            addView(dz0Var, ha.c(-1.0f, -1));
         }
         return this.S;
     }
@@ -2761,7 +2761,7 @@ public final class c2 extends FrameLayout implements ls {
         }
     }
 
-    public final void m(Bitmap bitmap, int i7, int i10, int i11, ln0 ln0Var) {
+    public final void m(Bitmap bitmap, int i7, int i10, int i11, mn0 mn0Var) {
         vb.c cVar;
         int i12 = i10 <= 0 ? org.telegram.messenger.g0.q.x : i10;
         int i13 = i11 <= 0 ? org.telegram.messenger.g0.q.y : i11;
@@ -2773,7 +2773,7 @@ public final class c2 extends FrameLayout implements ls {
         this.I = bitmap;
         this.J = i7;
         this.c0 = null;
-        d4 d4Var = new d4(this, i7, ln0Var, 5);
+        d4 d4Var = new d4(this, i7, mn0Var, 5);
         this.y = true;
         ia.a aVar = new ia.a();
         aVar.b = true;
@@ -2787,7 +2787,7 @@ public final class c2 extends FrameLayout implements ls {
             b2Var.e = min;
             b2Var.d = min;
             b2Var.a = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
-            new Canvas(b2Var.a).drawRect(0.0f, 0.0f, b2Var.d, b2Var.e, l6.Dm);
+            new Canvas(b2Var.a).drawRect(0.0f, 0.0f, b2Var.d, b2Var.e, m6.Dm);
             b2Var.b = (bitmap2.getWidth() - b2Var.d) / 2;
             b2Var.c = (bitmap2.getHeight() - b2Var.e) / 2;
             arrayList.add(b2Var);
@@ -2795,7 +2795,7 @@ public final class c2 extends FrameLayout implements ls {
             return;
         }
         ub.a a11 = ub.a.a(i7, bitmap);
-        a10.g(a11).addOnSuccessListener(new m3(d4Var, 24)).addOnFailureListener(new i6(this, bitmap, i7, ln0Var, d4Var, 5));
+        a10.g(a11).addOnSuccessListener(new n3(d4Var, 24)).addOnFailureListener(new i6(this, bitmap, i7, mn0Var, d4Var, 5));
         if (this.c0 == null) {
             xb.a aVar2 = xb.a.b;
             q6.m.h(aVar2, "options cannot be null");
@@ -2810,7 +2810,7 @@ public final class c2 extends FrameLayout implements ls {
             b8 b8Var = new b8();
             b8Var.c = y7.b;
             pb.m.a.execute(new pa(taVar, new wa(b8Var, 1), a8.c, taVar.b(), 0));
-            new ImageLabelerImpl((pb.e) cVar2.a.R0(aVar2), (Executor) cVar2.b.a.get(), new n6.c("vision.ica", 1L)).g(a11).addOnSuccessListener(new m3(this, 25)).addOnFailureListener(new s0.b(19));
+            new ImageLabelerImpl((pb.e) cVar2.a.R0(aVar2), (Executor) cVar2.b.a.get(), new n6.c("vision.ica", 1L)).g(a11).addOnSuccessListener(new n3(this, 25)).addOnFailureListener(new s0.b(19));
         }
         ArrayList arrayList2 = ui.b0(this.a).n;
         for (int i14 = 0; i14 < Math.min(arrayList2.size(), 9); i14++) {
@@ -2822,7 +2822,7 @@ public final class c2 extends FrameLayout implements ls {
         if (tL_error == null || "PACK_TITLE_INVALID".equals(tL_error.text)) {
             return;
         }
-        new hc((FrameLayout) getParent(), this.a0).t(tL_error.text, null).j();
+        new gc((FrameLayout) getParent(), this.a0).t(tL_error.text, null).j();
     }
 
     public final void o() {
@@ -3035,7 +3035,7 @@ public final class c2 extends FrameLayout implements ls {
             return;
         }
         this.i0 = z9;
-        this.h0.animate().alpha(z9 ? 1.0f : 0.0f).translationX(z9 ? 0.0f : org.telegram.messenger.g0.L(-18.0f)).setInterpolator(xq.h).setDuration(320L).start();
+        this.h0.animate().alpha(z9 ? 1.0f : 0.0f).translationX(z9 ? 0.0f : org.telegram.messenger.g0.L(-18.0f)).setInterpolator(wq.h).setDuration(320L).start();
         if (getParent() instanceof View) {
             ((View) getParent()).invalidate();
         }

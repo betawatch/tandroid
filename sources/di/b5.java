@@ -15,9 +15,9 @@ import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b5 extends FrameLayout {
     public final LinearLayout a;
@@ -30,7 +30,7 @@ public final class b5 extends FrameLayout {
     public final RectF n;
     public float r;
     public int s;
-    public final yj0 w;
+    public final xj0 w;
     public ValueAnimator x;
     public final /* synthetic */ l5 y;
 
@@ -44,24 +44,24 @@ public final class b5 extends FrameLayout {
         this.e = new RectF();
         this.n = new RectF();
         this.r = 1.0f;
-        int i10 = org.telegram.ui.ActionBar.l6.i6;
+        int i10 = org.telegram.ui.ActionBar.m6.i6;
         b bVar = l5Var.s;
-        paint.setColor(org.telegram.ui.ActionBar.l6.w0(i10, bVar));
+        paint.setColor(org.telegram.ui.ActionBar.m6.w0(i10, bVar));
         LinearLayout linearLayout = new LinearLayout(context);
         final int i11 = 0;
         linearLayout.setOrientation(0);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setText(id.M0(2131754286, null));
-        int i12 = org.telegram.ui.ActionBar.l6.j5;
-        org.telegram.ui.ActionBar.s6.U(textView, i12, bVar);
+        int i12 = org.telegram.ui.ActionBar.m6.j5;
+        org.telegram.ui.ActionBar.t6.U(textView, i12, bVar);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setText(id.M0(2131751780, null));
-        org.telegram.ui.ActionBar.s6.U(textView2, i12, bVar);
+        org.telegram.ui.ActionBar.t6.U(textView2, i12, bVar);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(4.0f));
@@ -71,18 +71,18 @@ public final class b5 extends FrameLayout {
         LinearLayout linearLayout2 = new LinearLayout(getContext());
         this.a = linearLayout2;
         linearLayout2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), 0);
-        ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(26.0f), org.telegram.ui.ActionBar.l6.w0(i10, bVar));
-        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i10);
+        ShapeDrawable d02 = org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(26.0f), org.telegram.ui.ActionBar.m6.w0(i10, bVar));
+        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i10);
         linearLayout2.setBackground(d02);
-        org.telegram.ui.ActionBar.s6.j(linearLayout2, d02, M, null, bVar);
+        org.telegram.ui.ActionBar.t6.j(linearLayout2, d02, M, null, bVar);
         linearLayout2.setOrientation(0);
-        yj0 yj0Var = new yj0(getContext());
-        this.w = yj0Var;
-        yj0Var.r = true;
-        yj0Var.a(R.drawable.menu_views_reactions3, false);
+        xj0 xj0Var = new xj0(getContext());
+        this.w = xj0Var;
+        xj0Var.r = true;
+        xj0Var.a(R.drawable.menu_views_reactions3, false);
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(yj0Var);
+        imageView.setImageDrawable(xj0Var);
         imageView.setPadding(org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f));
         linearLayout2.addView(imageView, ha.o(26, 26));
         ImageView imageView2 = new ImageView(getContext());

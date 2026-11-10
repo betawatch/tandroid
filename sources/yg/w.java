@@ -14,66 +14,66 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.c80;
-import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
     public final Drawable b;
     public final Drawable c;
-    public final j6 d;
-    public final j6 e;
+    public final i6 d;
+    public final i6 e;
     public final TextView f;
     public final SpannableString h;
     public final SpannableString n;
     public TL_stars.TL_starsGiveawayOption r;
     public int s;
-    public final w5 w;
+    public final v5 w;
 
-    public w(Context context, g6 g6Var) {
+    public w(Context context, h6 h6Var) {
         super(context);
-        this.w = new w5(this, 0L, 500L, xq.h);
+        this.w = new v5(this, 0L, 500L, wq.h);
         Drawable h = jg.g.h(context, R.drawable.star_small_outline);
         this.b = h;
-        s6.x(this, h, l6.h5, g6Var, PorterDuff.Mode.SRC_IN);
+        t6.x(this, h, m6.h5, h6Var, PorterDuff.Mode.SRC_IN);
         this.c = jg.g.h(context, R.drawable.star_small_inner);
         setWillNotDraw(false);
-        j6 j6Var = new j6(context, false, false, false);
-        this.d = j6Var;
-        s6.Y(j6Var, l6.G6, g6Var);
-        j6Var.setTypeface(g0.o());
-        j6Var.setTextSize(g0.L(16.0f));
-        addView(j6Var, ha.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
+        i6 i6Var = new i6(context, false, false, false);
+        this.d = i6Var;
+        t6.Y(i6Var, m6.G6, h6Var);
+        i6Var.setTypeface(g0.o());
+        i6Var.setTextSize(g0.L(16.0f));
+        addView(i6Var, ha.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new c80(g0.L(90.0f), j6Var), 0, 1, 33);
-        j6 j6Var2 = new j6(context, false, true, true);
-        this.e = j6Var2;
-        int i7 = l6.z6;
-        s6.Y(j6Var2, i7, g6Var);
-        j6Var2.setTextSize(g0.L(13.0f));
-        addView(j6Var2, ha.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
+        spannableString.setSpan(new b80(g0.L(90.0f), i6Var), 0, 1, 33);
+        i6 i6Var2 = new i6(context, false, true, true);
+        this.e = i6Var2;
+        int i7 = m6.z6;
+        t6.Y(i6Var2, i7, h6Var);
+        i6Var2.setTextSize(g0.L(13.0f));
+        addView(i6Var2, ha.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new c80(g0.L(70.0f), j6Var2), 0, 1, 33);
+        spannableString2.setSpan(new b80(g0.L(70.0f), i6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        s6.U(textView, i7, g6Var);
+        t6.U(textView, i7, h6Var);
         textView.setTextSize(1, 16.0f);
         textView.setGravity(5);
         addView(textView, ha.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(g0.L(20.0f));
-        s6.O(radioButton, l6.j7, l6.E5, g6Var);
+        t6.O(radioButton, m6.j7, m6.E5, h6Var);
         addView(radioButton, ha.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 

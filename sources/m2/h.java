@@ -53,9 +53,10 @@ import java.util.concurrent.Executor;
 import li.j3;
 import u2.n;
 import u2.p;
-import x2.c0;
+import x2.b0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class h implements b {
     public v0 E;
@@ -648,15 +649,15 @@ public final class h implements b {
     }
 
     @Override // m2.b
-    public final void b(c0 c0Var) {
-        this.M = c0Var.a;
+    public final void b(b0 b0Var) {
+        this.M = b0Var.a;
     }
 
     @Override // m2.b
     public final void d(a aVar, int i7, long j3) {
-        x2.g0 g0Var = aVar.d;
-        if (g0Var != null) {
-            String d = this.c.d(aVar.b, g0Var);
+        f0 f0Var = aVar.d;
+        if (f0Var != null) {
+            String d = this.c.d(aVar.b, f0Var);
             HashMap hashMap = this.r;
             Long l10 = (Long) hashMap.get(d);
             HashMap hashMap2 = this.n;
@@ -707,10 +708,10 @@ public final class h implements b {
         return this.d.getSessionId();
     }
 
-    public final void l(l1 l1Var, x2.g0 g0Var) {
+    public final void l(l1 l1Var, f0 f0Var) {
         int b10;
         PlaybackMetrics.Builder builder = this.w;
-        if (g0Var == null || (b10 = l1Var.b(g0Var.a)) == -1) {
+        if (f0Var == null || (b10 = l1Var.b(f0Var.a)) == -1) {
             return;
         }
         i1 i1Var = this.h;
@@ -719,9 +720,9 @@ public final class h implements b {
         int i10 = i1Var.c;
         k1 k1Var = this.f;
         l1Var.n(i10, k1Var);
-        e2.g0 g0Var2 = k1Var.c.b;
-        if (g0Var2 != null) {
-            int K = m0.K(g0Var2.a, g0Var2.b);
+        e2.g0 g0Var = k1Var.c.b;
+        if (g0Var != null) {
+            int K = m0.K(g0Var.a, g0Var.b);
             i7 = K != 0 ? K != 1 ? K != 2 ? 1 : 4 : 5 : 3;
         }
         builder.setStreamType(i7);
@@ -733,18 +734,18 @@ public final class h implements b {
     }
 
     public final void m(a aVar, String str) {
-        x2.g0 g0Var = aVar.d;
-        if (g0Var == null || !g0Var.b()) {
+        f0 f0Var = aVar.d;
+        if (f0Var == null || !f0Var.b()) {
             j();
             this.s = str;
             this.w = new PlaybackMetrics.Builder().setPlayerName("AndroidXMedia3").setPlayerVersion("1.10.1");
-            l(aVar.b, g0Var);
+            l(aVar.b, f0Var);
         }
     }
 
     public final void n(a aVar, String str) {
-        x2.g0 g0Var = aVar.d;
-        if ((g0Var == null || !g0Var.b()) && str.equals(this.s)) {
+        f0 f0Var = aVar.d;
+        if ((f0Var == null || !f0Var.b()) && str.equals(this.s)) {
             j();
         }
         this.n.remove(str);
@@ -821,18 +822,18 @@ public final class h implements b {
     }
 
     @Override // m2.b
-    public final void r(a aVar, c0 c0Var) {
-        x2.g0 g0Var = aVar.d;
-        if (g0Var == null) {
+    public final void r(a aVar, b0 b0Var) {
+        f0 f0Var = aVar.d;
+        if (f0Var == null) {
             return;
         }
-        u uVar = c0Var.c;
+        u uVar = b0Var.c;
         uVar.getClass();
-        int i7 = c0Var.d;
+        int i7 = b0Var.d;
         l1 l1Var = aVar.b;
-        g0Var.getClass();
-        wa waVar = new wa(uVar, i7, this.c.d(l1Var, g0Var));
-        int i10 = c0Var.b;
+        f0Var.getClass();
+        wa waVar = new wa(uVar, i7, this.c.d(l1Var, f0Var));
+        int i10 = b0Var.b;
         if (i10 != 0) {
             if (i10 == 1) {
                 this.G = waVar;

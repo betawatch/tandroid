@@ -6,9 +6,9 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.iz;
 import org.telegram.ui.Components.m41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class s1 implements g6 {
+public final class s1 implements h6 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -18,71 +18,71 @@ public final class s1 implements g6 {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final boolean a() {
         switch (this.a) {
         }
-        return l6.I.q();
+        return m6.I.q();
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final void b(float f10, float f11, int i7, int i10) {
         switch (this.a) {
             case 0:
-                l6.r(f10, f11, i7, i10);
+                m6.r(f10, f11, i7, i10);
                 break;
             case 1:
-                l6.r(f10, f11, i7, i10);
+                m6.r(f10, f11, i7, i10);
                 break;
             default:
-                l6.r(f10, f11, i7, i10);
+                m6.r(f10, f11, i7, i10);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final ColorFilter c() {
         switch (this.a) {
         }
-        return l6.v3;
+        return m6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final Paint d(String str) {
         switch (this.a) {
         }
-        return l6.V0(str);
+        return m6.V0(str);
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final boolean e() {
         switch (this.a) {
         }
         return iz.H0;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final int f(int i7) {
         switch (this.a) {
         }
         return h(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final /* synthetic */ boolean g() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final /* synthetic */ Drawable getDrawable(String str) {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final int h(int i7) {
         switch (this.a) {
             case 0:
@@ -94,12 +94,12 @@ public final class s1 implements g6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final /* synthetic */ void i(int i7, int i10) {
         int i11 = this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
+    @Override // org.telegram.ui.ActionBar.h6
     public final int j(int i7) {
         switch (this.a) {
         }

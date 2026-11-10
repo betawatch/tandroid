@@ -1,14 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class i5 extends ShapeDrawable.ShaderFactory {
-    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
-    public final Shader resize(int i7, int i10) {
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i10, -765355, -2148011, Shader.TileMode.CLAMP);
+public final class i5 implements bi.i7 {
+    public final /* synthetic */ TL_wallet.nftItem a;
+    public final /* synthetic */ z5 b;
+
+    public i5(z5 z5Var, TL_wallet.nftItem nftitem) {
+        this.b = z5Var;
+        this.a = nftitem;
     }
 }

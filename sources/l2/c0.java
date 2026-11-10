@@ -7,9 +7,9 @@ import android.view.TextureView;
 import e2.w1;
 import java.util.ArrayList;
 import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.t51;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c0 implements d3.h0, n2.s, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ i0 a;
@@ -41,7 +41,7 @@ public final class c0 implements d3.h0, n2.s, SurfaceHolder.Callback, TextureVie
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            if (((u51) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+            if (((t51) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
@@ -80,7 +80,7 @@ public final class c0 implements d3.h0, n2.s, SurfaceHolder.Callback, TextureVie
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ((u51) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+            ((t51) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

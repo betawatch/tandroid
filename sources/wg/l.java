@@ -12,86 +12,86 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.bc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l extends v2 {
-    public static l l1;
-    public final j i1;
-    public final w0 j1;
-    public boolean k1;
+public final class l extends w2 {
+    public static l o1;
+    public final j l1;
+    public final w0 m1;
+    public boolean n1;
 
-    public l(Activity activity, z zVar, w0 w0Var, g6 g6Var, boolean z9) {
-        super(1, (Context) activity, g6Var, true);
-        this.j1 = w0Var;
+    public l(Activity activity, z zVar, w0 w0Var, h6 h6Var, boolean z9) {
+        super(1, (Context) activity, h6Var, true);
+        this.m1 = w0Var;
         this.v0 = false;
         this.u0 = false;
         this.T0 = false;
         v0(0);
         N();
-        org.telegram.messenger.g0.q3(this, i0.a.h(l6.w0(l6.h5, this.I0)) > 0.699999988079071d);
-        this.k1 = getContext().getResources().getConfiguration().orientation == 2;
-        j jVar = new j(this, getContext(), w0Var, g6Var, zVar);
-        this.i1 = jVar;
+        org.telegram.messenger.g0.q3(this, i0.a.h(m6.w0(m6.h5, this.I0)) > 0.699999988079071d);
+        this.n1 = getContext().getResources().getConfiguration().orientation == 2;
+        j jVar = new j(this, getContext(), w0Var, h6Var, zVar);
+        this.l1 = jVar;
         jVar.setOverScrollMode(2);
         jVar.setClipToPadding(false);
         jVar.setAdapter(new g5(zVar, w0Var));
         jVar.setPosition(0);
         this.N = jVar;
-        zVar.l2 = new i(this, 0);
-        zVar.j2 = new sg.i0(this, w0Var, false, 9);
-        w0Var.m2 = new k(this, zVar, g6Var);
-        w0Var.k2 = new i(this, 1);
+        zVar.o2 = new i(this, 0);
+        zVar.m2 = new sg.i0(this, w0Var, false, 9);
+        w0Var.p2 = new k(this, zVar, h6Var);
+        w0Var.n2 = new i(this, 1);
         if (!z9) {
             qp.s1(this.a).P1().U();
         }
-        cc.a(this.c, new r7(13));
+        bc.a(this.c, new r7(13));
     }
 
-    public static void I0(f2 f2Var, g6 g6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        if (l1 != null) {
+    public static void I0(f2 f2Var, h6 h6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        if (o1 != null) {
             return;
         }
-        boolean z9 = g6Var instanceof di.b;
+        boolean z9 = h6Var instanceof di.b;
         f2 w4Var = z9 ? new w4(f2Var) : f2Var;
         l lVar = new l(f2Var.getParentActivity(), new z(w4Var, j3, prepaidGiveaway), new w0(w4Var, j3), w4Var.getResourceProvider(), z9);
         lVar.show();
-        l1 = lVar;
+        o1 = lVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void K() {
         super.K();
-        l1 = null;
+        o1 = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void c0(Configuration configuration) {
-        this.j1.c0(configuration);
-        this.k1 = getContext().getResources().getConfiguration().orientation == 2;
+        this.m1.c0(configuration);
+        this.n1 = getContext().getResources().getConfiguration().orientation == 2;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void onBackPressed() {
-        j jVar = this.i1;
+        j jVar = this.l1;
         if (jVar.getCurrentPosition() <= 0) {
             super.onBackPressed();
             return;
         }
-        w0 w0Var = this.j1;
-        HashSet hashSet = w0Var.W1;
+        w0 w0Var = this.m1;
+        HashSet hashSet = w0Var.Z1;
         int size = hashSet.size();
-        HashSet hashSet2 = w0Var.X1;
+        HashSet hashSet2 = w0Var.a2;
         if (size == hashSet2.size() && hashSet2.containsAll(hashSet) && hashSet.containsAll(hashSet2)) {
             if (this.d) {
                 org.telegram.messenger.g0.v1(w0Var.b);
@@ -99,12 +99,12 @@ public final class l extends v2 {
             jVar.E(0);
             return;
         }
-        int i7 = w0Var.j2;
+        int i7 = w0Var.m2;
         Context context = w0Var.getContext();
-        g6 g6Var = w0Var.I0;
+        h6 h6Var = w0Var.I0;
         r0 r0Var = new r0(w0Var, 0);
         r0 r0Var2 = new r0(w0Var, 6);
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, g6Var);
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, h6Var);
         String M0 = id.M0(2131743835, "UnsavedChanges");
         u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;

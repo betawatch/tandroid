@@ -5,17 +5,17 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class s2 extends org.telegram.ui.web.x0 {
     public final /* synthetic */ int T0;
     public final /* synthetic */ Object U0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s2(Object obj, Context context, g6 g6Var, int i7, int i10) {
-        super(i7, context, g6Var, true);
+    public /* synthetic */ s2(Object obj, Context context, h6 h6Var, int i7, int i10) {
+        super(i7, context, h6Var, true);
         this.T0 = i10;
         this.U0 = obj;
     }

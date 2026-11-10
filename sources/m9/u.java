@@ -30,12 +30,12 @@ import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.uo;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.kq;
-import org.telegram.ui.mq;
+import org.telegram.ui.lq;
 import org.telegram.ui.nl;
-import org.telegram.ui.qq;
+import org.telegram.ui.nq;
+import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -504,8 +504,8 @@ public final class u implements Runnable {
                 q8 q8Var = (q8) this.b;
                 boolean z19 = q8Var.d.h;
                 q8Var.setChecked(!z19);
-                qq qqVar = ((mq) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = qqVar.D;
+                rq rqVar = ((nq) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = rqVar.D;
                 tL_chatBannedRights.send_media = z19;
                 tL_chatBannedRights.send_gifs = z19;
                 tL_chatBannedRights.send_inline = z19;
@@ -520,10 +520,10 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z19;
                 tL_chatBannedRights.send_polls = z19;
                 tL_chatBannedRights.send_reactions = z19;
-                org.telegram.messenger.g0.b4(qqVar.c);
-                kq B0 = qqVar.B0();
-                qqVar.G0();
-                qqVar.F0(B0);
+                org.telegram.messenger.g0.b4(rqVar.c);
+                lq B0 = rqVar.B0();
+                rqVar.G0();
+                rqVar.F0(B0);
                 return;
         }
     }

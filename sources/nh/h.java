@@ -18,10 +18,10 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h extends RecyclerView {
     public final e S0;
@@ -51,7 +51,7 @@ public final class h extends RecyclerView {
         f fVar = new f(this);
         fVar.m = false;
         fVar.C = false;
-        fVar.o(xq.h);
+        fVar.o(wq.h);
         fVar.n(320L);
         setItemAnimator(fVar);
     }

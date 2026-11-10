@@ -13,13 +13,13 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.wz;
-import org.telegram.ui.ln0;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.mn0;
 import org.telegram.ui.n6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements c20 {
     public final /* synthetic */ int a;
@@ -58,16 +58,16 @@ public final /* synthetic */ class d4 implements c20 {
                 n6Var.a(Float.valueOf((j9.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f11)) + (f10 / f11)), Boolean.FALSE);
                 break;
             case 4:
-                wz wzVar = (wz) this.c;
+                vz vzVar = (vz) this.c;
                 c20 c20Var = (c20) this.d;
                 int i10 = this.b;
-                wzVar.getClass();
-                wzVar.s2 = ((Boolean) obj).booleanValue();
-                wzVar.dismiss();
+                vzVar.getClass();
+                vzVar.v2 = ((Boolean) obj).booleanValue();
+                vzVar.dismiss();
                 c20Var.a(Integer.valueOf(i10));
                 break;
             case 5:
-                Utilities.i.c(new ub((tg.c2) this.c, this.b, (List) obj, new ArrayList(), (ln0) this.d, 25));
+                Utilities.i.c(new ub((tg.c2) this.c, this.b, (List) obj, new ArrayList(), (mn0) this.d, 25));
                 break;
             default:
                 zh.d2 d2Var = (zh.d2) this.c;
@@ -85,13 +85,13 @@ public final /* synthetic */ class d4 implements c20 {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            cc R = hc.a0(f2Var2).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750393, k7.z1(savedStarGift.gift), c10.title)));
+                            bc R = gc.a0(f2Var2).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(id.a0(null, null, 2131750393, k7.z1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;
                         }
                     } else {
-                        cc R2 = hc.a0(f2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), org.telegram.messenger.g0.X2(id.K("Gift2AddedToCollectionMany", arrayList.size(), ',', c10.title)));
+                        bc R2 = gc.a0(f2Var2).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), org.telegram.messenger.g0.X2(id.K("Gift2AddedToCollectionMany", arrayList.size(), ',', c10.title)));
                         R2.r = false;
                         R2.j();
                         break;

@@ -1,224 +1,136 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ClippingImageView;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class bq0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ClippingImageView[] a;
-    public final /* synthetic */ ViewGroup.LayoutParams b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ yq0 d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ wq0 f;
-    public final /* synthetic */ ArrayList h;
-    public final /* synthetic */ Integer n;
-    public final /* synthetic */ PhotoViewer r;
+public final class bq0 extends qq0 {
+    public final org.telegram.messenger.jc a;
+    public final /* synthetic */ xq0 b;
+    public final /* synthetic */ org.telegram.messenger.ij c;
+    public final /* synthetic */ org.telegram.messenger.gf d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ PhotoViewer g;
 
-    public bq0(PhotoViewer photoViewer, ClippingImageView[] clippingImageViewArr, ViewGroup.LayoutParams layoutParams, float f10, yq0 yq0Var, float f11, wq0 wq0Var, ArrayList arrayList, Integer num) {
-        this.r = photoViewer;
-        this.a = clippingImageViewArr;
-        this.b = layoutParams;
-        this.c = f10;
-        this.d = yq0Var;
-        this.e = f11;
-        this.f = wq0Var;
-        this.h = arrayList;
-        this.n = num;
+    public bq0(PhotoViewer photoViewer, xq0 xq0Var, org.telegram.messenger.ij ijVar, org.telegram.messenger.gf gfVar, boolean z9, boolean z10) {
+        this.g = photoViewer;
+        this.b = xq0Var;
+        this.c = ijVar;
+        this.d = gfVar;
+        this.e = z9;
+        this.f = z10;
+        this.a = photoViewer.B4.p();
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i7;
-        float w10;
-        float f10;
-        float f11;
-        boolean z9;
-        PhotoViewer photoViewer = this.r;
-        Rect rect = photoViewer.s2;
-        PhotoViewer.BackgroundDrawable backgroundDrawable = photoViewer.L0;
-        float[][] fArr = photoViewer.j4;
-        ClippingImageView[] clippingImageViewArr = this.a;
-        if (clippingImageViewArr.length > 1) {
-            clippingImageViewArr[1].setAlpha(1.0f);
-            clippingImageViewArr[1].setAdditionalTranslationX(-rect.left);
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        xq0 xq0Var = this.b;
+        if (xq0Var != null) {
+            return xq0Var.E(this.c, null, 0, z9, false);
         }
-        ClippingImageView clippingImageView = clippingImageViewArr[0];
-        clippingImageView.setTranslationX(clippingImageView.getTranslationX() + rect.left);
-        photoViewer.g0.getViewTreeObserver().removeOnPreDrawListener(this);
-        int i10 = photoViewer.c2;
-        ViewGroup.LayoutParams layoutParams = this.b;
-        if (i10 == 1) {
-            float f12 = !photoViewer.s ? org.telegram.messenger.g0.m : 0;
-            float measuredHeight = (photoViewer.C1.getMeasuredHeight() - org.telegram.messenger.g0.L(64.0f)) - f12;
-            i7 = 0;
-            float min = Math.min(photoViewer.C1.getMeasuredWidth(), measuredHeight) - (org.telegram.messenger.g0.L(16.0f) * 2);
-            float measuredWidth = photoViewer.C1.getMeasuredWidth() / 2.0f;
-            float f13 = (measuredHeight / 2.0f) + f12;
-            float f14 = min / 2.0f;
-            float f15 = f13 - f14;
-            float f16 = (f13 + f14) - f15;
-            f10 = Math.max(((measuredWidth + f14) - (measuredWidth - f14)) / layoutParams.width, f16 / layoutParams.height);
-            w10 = ((f16 - (layoutParams.height * f10)) / 2.0f) + f15;
-            int measuredWidth2 = photoViewer.g0.getMeasuredWidth();
-            f11 = com.google.android.recaptcha.internal.a.w(layoutParams.width, f10, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
-        } else {
-            i7 = 0;
-            float measuredWidth3 = photoViewer.g0.getMeasuredWidth() / layoutParams.width;
-            Point point = org.telegram.messenger.g0.q;
-            float min2 = Math.min(measuredWidth3, (point.y + (!photoViewer.s ? org.telegram.messenger.g0.m : 0)) / layoutParams.height);
-            if (photoViewer.c2 == 11) {
-                min2 = photoViewer.o2(true) * min2;
+        return null;
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final void M(org.telegram.messenger.j20 j20Var) {
+        org.telegram.messenger.gf gfVar = this.d;
+        if (gfVar.w || gfVar.v || gfVar.u || j20Var != null || !TextUtils.isEmpty(gfVar.a)) {
+            d0(j20Var, false, 0, true, false);
+        }
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final org.telegram.messenger.ij V() {
+        return this.c;
+    }
+
+    public final void d0(org.telegram.messenger.j20 j20Var, boolean z9, int i7, boolean z10, boolean z11) {
+        PhotoViewer photoViewer = this.g;
+        if (photoViewer.k4 != null) {
+            sm smVar = null;
+            org.telegram.messenger.ij ijVar = this.c;
+            org.telegram.messenger.ij ijVar2 = z10 ? ijVar : null;
+            org.telegram.messenger.gf gfVar = this.d;
+            if (ijVar2 != null && !TextUtils.isEmpty(gfVar.a)) {
+                ijVar2.w1 = gfVar.a;
+                ijVar2.x1 = gfVar.n;
             }
-            w10 = com.google.android.recaptcha.internal.a.w(layoutParams.height, min2, point.y + (!photoViewer.s ? org.telegram.messenger.g0.m : 0), 2.0f);
-            float w11 = com.google.android.recaptcha.internal.a.w(layoutParams.width, min2, photoViewer.g0.getMeasuredWidth(), 2.0f);
-            photoViewer.a6 = 0.0f;
-            photoViewer.e6 = 0.0f;
-            f10 = min2;
-            f11 = w11;
-        }
-        yq0 yq0Var = this.d;
-        int abs = (int) Math.abs(this.c - yq0Var.a.K0);
-        float f17 = yq0Var.a.L0;
-        float f18 = this.e;
-        int abs2 = (int) Math.abs(f18 - f17);
-        if (yq0Var.a.R0) {
-            abs = i7;
-        }
-        int[] iArr = new int[2];
-        int i11 = 2;
-        yq0Var.d.getLocationInWindow(iArr);
-        float f19 = yq0Var.c + f18;
-        int i12 = (int) ((iArr[1] - f19) + yq0Var.j);
-        if (i12 < 0) {
-            i12 = i7;
-        }
-        int height = (int) (((f19 + layoutParams.height) - (yq0Var.d.getHeight() + r10)) + yq0Var.i);
-        if (height < 0) {
-            height = i7;
-        }
-        int max = Math.max(i12, abs2);
-        int max2 = Math.max(height, abs2);
-        fArr[i7][i7] = photoViewer.h0.getScaleX();
-        fArr[i7][1] = photoViewer.h0.getScaleY();
-        fArr[i7][2] = photoViewer.h0.getTranslationX();
-        fArr[i7][3] = photoViewer.h0.getTranslationY();
-        float[] fArr2 = fArr[i7];
-        float f20 = abs;
-        float f21 = yq0Var.k;
-        fArr2[4] = f20 * f21;
-        fArr2[5] = max * f21;
-        float f22 = max2 * f21;
-        int i13 = 6;
-        fArr2[6] = f22;
-        int[] radius = photoViewer.h0.getRadius();
-        int i14 = i7;
-        while (i14 < 4) {
-            int i15 = i13;
-            fArr[i7][i14 + 7] = radius != null ? radius[i14] : 0.0f;
-            i14++;
-            i13 = i15;
-        }
-        int i16 = i13;
-        float[] fArr3 = fArr[i7];
-        float f23 = yq0Var.k;
-        fArr3[11] = abs2 * f23;
-        fArr3[12] = f20 * f23;
-        float[] fArr4 = fArr[1];
-        fArr4[i7] = f10;
-        fArr4[1] = f10;
-        fArr4[2] = f11;
-        fArr4[3] = w10;
-        fArr4[4] = 0.0f;
-        fArr4[5] = 0.0f;
-        fArr4[i16] = 0.0f;
-        fArr4[7] = 0.0f;
-        fArr4[8] = 0.0f;
-        fArr4[9] = 0.0f;
-        fArr4[10] = 0.0f;
-        fArr4[11] = 0.0f;
-        fArr4[12] = 0.0f;
-        for (int i17 = i7; i17 < clippingImageViewArr.length; i17++) {
-            clippingImageViewArr[i17].setAnimationProgress(0.0f);
-        }
-        backgroundDrawable.setAlpha(i7);
-        photoViewer.e0.setAlpha(0.0f);
-        photoViewer.j0.setAlpha(0.0f);
-        org.telegram.ui.Components.o10 o10Var = new org.telegram.ui.Components.o10(this, clippingImageViewArr, this.h, this.n, this.f, 23);
-        photoViewer.o4 = o10Var;
-        if (photoViewer.l2) {
-            o10Var.run();
-            photoViewer.o4 = null;
-            photoViewer.e0.setAlpha(1.0f);
-            backgroundDrawable.setAlpha(org.telegram.messenger.qs.e4);
-            for (ClippingImageView clippingImageView2 : clippingImageViewArr) {
-                clippingImageView2.setAnimationProgress(1.0f);
+            if (z10 || ijVar == null) {
+                cn cnVar = photoViewer.k4;
+                ijVar = cnVar.D5;
+                smVar = cnVar.B5;
             }
-            if (photoViewer.c2 == 1) {
-                photoViewer.C1.setAlpha(1.0f);
-            }
-        } else {
-            AnimatorSet animatorSet = new AnimatorSet();
-            ArrayList arrayList = new ArrayList((photoViewer.c2 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
-            int i18 = 0;
-            while (i18 < clippingImageViewArr.length) {
-                float[] fArr5 = new float[i11];
-                // fill-array-data instruction
-                fArr5[0] = 0.0f;
-                fArr5[1] = 1.0f;
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i18], org.telegram.ui.Components.m6.f, fArr5);
-                if (i18 == 0) {
-                    ofFloat.addUpdateListener(new a3(this, 21));
+            sm smVar2 = smVar;
+            org.telegram.messenger.ij ijVar3 = ijVar;
+            if (!gfVar.b) {
+                org.telegram.messenger.ij ijVar4 = ijVar2;
+                if (gfVar.h != null) {
+                    org.telegram.messenger.c accountInstance = photoViewer.k4.getAccountInstance();
+                    String str = gfVar.h;
+                    String str2 = gfVar.c;
+                    long a10 = photoViewer.k4.a();
+                    cn cnVar2 = photoViewer.k4;
+                    org.telegram.messenger.gz.Z(accountInstance, str, str2, null, a10, ijVar3, cnVar2.l4, smVar2, gfVar.n, gfVar.r, null, gfVar.x, ijVar4, j20Var, z9, i7, z11, gfVar.a, cnVar2.X8(), 0L, 0L, photoViewer.k4.i9(), photoViewer.k4.w5);
+                    return;
                 }
-                arrayList.add(ofFloat);
-                i18++;
-                i11 = 2;
+                if (gfVar.I != null) {
+                    org.telegram.messenger.c accountInstance2 = photoViewer.k4.getAccountInstance();
+                    String str3 = gfVar.I;
+                    String str4 = gfVar.c;
+                    long a11 = photoViewer.k4.a();
+                    cn cnVar3 = photoViewer.k4;
+                    org.telegram.messenger.gz.Z(accountInstance2, str3, str4, null, a11, ijVar3, cnVar3.l4, smVar2, gfVar.n, gfVar.r, null, gfVar.x, ijVar4, j20Var, z9, i7, z11, gfVar.a, cnVar3.X8(), 0L, 0L, photoViewer.k4.i9(), photoViewer.k4.w5);
+                    return;
+                }
+                return;
             }
-            if (clippingImageViewArr.length > 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.h0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
+            if (j20Var != null) {
+                org.telegram.messenger.c accountInstance3 = photoViewer.k4.getAccountInstance();
+                String str5 = gfVar.I;
+                long a12 = photoViewer.k4.a();
+                cn cnVar4 = photoViewer.k4;
+                org.telegram.messenger.ij ijVar5 = cnVar4.l4;
+                ArrayList arrayList = gfVar.n;
+                org.telegram.messenger.ij ijVar6 = ijVar2;
+                org.telegram.messenger.gz.b0(gfVar.x, i7, 0, a12, 0L, 0L, photoViewer.k4.i9(), gfVar.a, str5, null, arrayList, accountInstance3, ijVar3, ijVar5, ijVar6, photoViewer.k4.w5, cnVar4.X8(), j20Var, null, null, smVar2, z9, z11, gfVar.M);
+                return;
             }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.m6.d, 0, org.telegram.messenger.qs.e4));
-            rq0 rq0Var = photoViewer.e0;
-            Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(rq0Var, (Property<rq0, Float>) property, 0.0f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
-            if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.gd0, Float>) property, 0.0f, 1.0f));
-            }
-            animatorSet.playTogether(arrayList);
-            animatorSet.setDuration(200L);
-            animatorSet.addListener(new f30(this, 16));
-            photoViewer.e0.setLayerType(2, null);
-            photoViewer.v2(false);
-            photoViewer.n4 = System.currentTimeMillis();
-            org.telegram.messenger.g0.h3(new sn0(5, this, animatorSet));
+            org.telegram.messenger.ij ijVar7 = ijVar2;
+            org.telegram.messenger.c accountInstance4 = photoViewer.k4.getAccountInstance();
+            String str6 = gfVar.I;
+            long a13 = photoViewer.k4.a();
+            cn cnVar5 = photoViewer.k4;
+            org.telegram.messenger.ij ijVar8 = cnVar5.l4;
+            ArrayList arrayList2 = gfVar.n;
+            org.telegram.messenger.gz.b0(gfVar.x, i7, 0, a13, 0L, 0L, photoViewer.k4.i9(), gfVar.a, str6, null, arrayList2, accountInstance4, ijVar3, ijVar8, ijVar7, photoViewer.k4.w5, cnVar5.X8(), null, null, null, smVar2, z9, z11, gfVar.M);
         }
-        backgroundDrawable.d = new sn0(i16, this, yq0Var);
-        cn cnVar = photoViewer.k4;
-        if (cnVar == null || cnVar.getFragmentView() == null) {
-            return true;
-        }
-        cn cnVar2 = photoViewer.k4;
-        cnVar2.g8();
-        UndoView undoView = cnVar2.M3;
-        if (undoView != null) {
-            z9 = true;
-            undoView.d(1, false);
-        } else {
-            z9 = true;
-        }
-        photoViewer.k4.getFragmentView().invalidate();
-        return z9;
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final org.telegram.messenger.jc j(int i7) {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
+        d0(j20Var, z9, i10, false, z10);
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final boolean p() {
+        return this.b != null && this.e;
+    }
+
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final boolean r() {
+        return this.b != null && this.f;
     }
 }

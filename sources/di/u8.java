@@ -39,15 +39,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.cn;
-import org.telegram.ui.jx;
 import org.telegram.ui.kx;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class u8 extends FrameLayout implements View.OnClickListener {
-    public final org.telegram.ui.Components.w5 D;
+    public final org.telegram.ui.Components.v5 D;
     public final Path E;
     public Bitmap F;
     public boolean G;
@@ -58,14 +58,14 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
     public final Matrix e;
     public final float[] f;
     public final View h;
-    public final org.telegram.ui.ActionBar.g6 n;
+    public final org.telegram.ui.ActionBar.h6 n;
     public ArrayList r;
     public final Rect s;
     public final RectF w;
     public final Paint x;
-    public final org.telegram.ui.Components.w5 y;
+    public final org.telegram.ui.Components.v5 y;
 
-    public u8(Context context, View view, org.telegram.ui.ActionBar.g6 g6Var) {
+    public u8(Context context, View view, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.a = null;
         this.b = null;
@@ -81,9 +81,9 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
         this.E = new Path();
         this.G = false;
         this.h = view;
-        this.n = g6Var;
-        this.y = new org.telegram.ui.Components.w5(view, 0L, 120L, new LinearInterpolator());
-        this.D = new org.telegram.ui.Components.w5(view, 0L, 360L, xq.h);
+        this.n = h6Var;
+        this.y = new org.telegram.ui.Components.v5(view, 0L, 120L, new LinearInterpolator());
+        this.D = new org.telegram.ui.Components.v5(view, 0L, 360L, wq.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -106,7 +106,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
 
     public abstract void b(boolean z9);
 
-    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, kx kxVar) {
+    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, lx lxVar) {
         FrameLayout frameLayout;
         View view;
         ArrayList arrayList2 = this.r;
@@ -145,7 +145,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
             TL_stories.MediaArea mediaArea = (TL_stories.MediaArea) arrayList.get(i10);
             if (mediaArea != null && mediaArea.coordinates != null) {
                 if (mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                    x8 x8Var = new x8(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, kxVar);
+                    x8 x8Var = new x8(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, lxVar);
                     if (storyItem != null) {
                         x8Var.c(storyItem.views, false);
                     }
@@ -174,8 +174,8 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
         frameLayout.bringToFront();
     }
 
-    public final void d(TL_stories.StoryItem storyItem, kx kxVar) {
-        c(storyItem, storyItem != null ? storyItem.media_areas : null, kxVar);
+    public final void d(TL_stories.StoryItem storyItem, lx lxVar) {
+        c(storyItem, storyItem != null ? storyItem.media_areas : null, lxVar);
     }
 
     @Override // android.view.ViewGroup
@@ -194,13 +194,13 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                 rectF = rectF2;
                 canvas2 = canvas;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), qs.e4, 31);
-                canvas2.drawColor(org.telegram.ui.ActionBar.l6.r1(d, 402653184));
+                canvas2.drawColor(org.telegram.ui.ActionBar.m6.r1(d, 402653184));
                 for (int i7 = 0; i7 < getChildCount(); i7++) {
                     View childAt = getChildAt(i7);
                     if (childAt != frameLayout) {
-                        org.telegram.ui.Components.w5 w5Var = ((s8) childAt).a;
+                        org.telegram.ui.Components.v5 v5Var = ((s8) childAt).a;
                         s8 s8Var3 = this.b;
-                        float d10 = w5Var.d(childAt == s8Var3 && s8Var3.s);
+                        float d10 = v5Var.d(childAt == s8Var3 && s8Var3.s);
                         if (d10 > 0.0f) {
                             canvas2.save();
                             rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
@@ -223,7 +223,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                     this.F = ((f3) this).I.getPlayingBitmap();
                 }
                 if (this.F != null) {
-                    canvas2.drawColor(org.telegram.ui.ActionBar.l6.r1(d2, 805306368));
+                    canvas2.drawColor(org.telegram.ui.ActionBar.m6.r1(d2, 805306368));
                     canvas2.save();
                     Path path = this.E;
                     path.rewind();
@@ -337,17 +337,17 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                 }
                 x8Var.performHapticFeedback(3);
                 x8Var.K.a.P0(false);
-                kx kxVar = j4Var.T0;
-                Random random = kxVar.h;
-                FrameLayout frameLayout = kxVar.G;
-                ArrayList arrayList2 = kxVar.F;
+                lx lxVar = j4Var.T0;
+                Random random = lxVar.h;
+                FrameLayout frameLayout = lxVar.G;
+                ArrayList arrayList2 = lxVar.F;
                 if (arrayList2.size() > 12) {
                     return;
                 }
                 ch.o0 d2 = ch.o0.d(mediaArea.reaction);
                 String str = d2.f;
                 if (str == null) {
-                    str = ij.U(org.telegram.ui.Components.i5.e(kxVar.b, d2.g));
+                    str = ij.U(org.telegram.ui.Components.h5.e(lxVar.b, d2.g));
                 }
                 float measuredHeight = x8Var.getMeasuredHeight();
                 float measuredWidth = x8Var.getMeasuredWidth();
@@ -359,7 +359,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                     f10 = measuredHeight;
                     f11 = measuredWidth;
                 }
-                String p10 = kx.p(str);
+                String p10 = lx.p(str);
                 int hashCode = x8Var.hashCode();
                 boolean z13 = x8Var.getTranslationX() > ((float) frameLayout.getMeasuredWidth()) / 2.0f;
                 if (d2.f != null) {
@@ -367,23 +367,23 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                     f12 = f11;
                     f13 = f10;
                     z11 = z13;
-                    if (kxVar.d(p10, hashCode, null, null, -1, false, false, f11, f10, z13)) {
+                    if (lxVar.d(p10, hashCode, null, null, -1, false, false, f11, f10, z13)) {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        jx jxVar = (jx) jg.g.i(1, arrayList);
-                        jxVar.getClass();
-                        jxVar.e = f13;
-                        jxVar.d = f12;
-                        jxVar.a = x8Var.getTranslationX() - (jxVar.d / 2.0f);
+                        kx kxVar = (kx) jg.g.i(1, arrayList);
+                        kxVar.getClass();
+                        kxVar.e = f13;
+                        kxVar.d = f12;
+                        kxVar.a = x8Var.getTranslationX() - (kxVar.d / 2.0f);
                         float translationY = x8Var.getTranslationY();
-                        float f15 = jxVar.d;
-                        jxVar.b = translationY - (1.5f * f15);
-                        if (jxVar.m) {
-                            jxVar.a = ((-f15) * 1.8f) + jxVar.a;
+                        float f15 = kxVar.d;
+                        kxVar.b = translationY - (1.5f * f15);
+                        if (kxVar.m) {
+                            kxVar.a = ((-f15) * 1.8f) + kxVar.a;
                             return;
                         } else {
-                            jxVar.a = ((-f15) * 0.2f) + jxVar.a;
+                            kxVar.a = ((-f15) * 0.2f) + kxVar.a;
                             return;
                         }
                     }
@@ -401,7 +401,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                 while (i7 < arrayList.size()) {
                     float f16 = f14;
                     Random random2 = random;
-                    if (((jx) arrayList.get(i7)).k == d2.g) {
+                    if (((kx) arrayList.get(i7)).k == d2.g) {
                         i10++;
                     }
                     i7++;
@@ -413,27 +413,27 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                 if (i10 >= 4) {
                     return;
                 }
-                jx jxVar2 = new jx();
-                jxVar2.j = ch.d.a(x8Var.getAnimatedEmojiDrawable(), true, true);
-                if (!jxVar2.i) {
-                    jxVar2.f = ((random3.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
-                    jxVar2.g = ((random3.nextInt() % 101) / 100.0f) * (f13 / 4.0f);
+                kx kxVar2 = new kx();
+                kxVar2.j = ch.d.a(x8Var.getAnimatedEmojiDrawable(), true, true);
+                if (!kxVar2.i) {
+                    kxVar2.f = ((random3.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
+                    kxVar2.g = ((random3.nextInt() % 101) / 100.0f) * (f13 / 4.0f);
                 }
-                jxVar2.p = hashCode;
-                jxVar2.q = null;
-                jxVar2.k = d2.g;
-                jxVar2.m = z11;
-                jxVar2.e = f13;
-                jxVar2.d = f12;
-                jxVar2.a = x8Var.getTranslationX() - (jxVar2.d / f17);
+                kxVar2.p = hashCode;
+                kxVar2.q = null;
+                kxVar2.k = d2.g;
+                kxVar2.m = z11;
+                kxVar2.e = f13;
+                kxVar2.d = f12;
+                kxVar2.a = x8Var.getTranslationX() - (kxVar2.d / f17);
                 float translationY2 = x8Var.getTranslationY();
-                float f18 = jxVar2.d;
-                jxVar2.b = translationY2 - (1.5f * f18);
-                jxVar2.a = ((-f18) * 1.8f) + jxVar2.a;
-                if (kxVar.n) {
-                    jxVar2.j.f(frameLayout);
+                float f18 = kxVar2.d;
+                kxVar2.b = translationY2 - (1.5f * f18);
+                kxVar2.a = ((-f18) * 1.8f) + kxVar2.a;
+                if (lxVar.n) {
+                    kxVar2.j.f(frameLayout);
                 }
-                arrayList.add(jxVar2);
+                arrayList.add(kxVar2);
                 return;
             }
             if (this.b == view) {
@@ -528,7 +528,7 @@ public abstract class u8 extends FrameLayout implements View.OnClickListener {
                     int length = spannableStringBuilder.length();
                     spannableStringBuilder.append(TextUtils.ellipsize(tL_mediaAreaUrl.url, this.c.getTextPaint(), org.telegram.messenger.g0.q.x * 0.6f, TextUtils.TruncateAt.END));
                     spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.l6.r1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.m6.r1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.setSpan(new r8(0), length, spannableStringBuilder.length(), 33);
                     m3Var2.n(11.0f, 7.0f, 11.0f, 7.0f);
                     z9 = true;

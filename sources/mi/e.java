@@ -3,9 +3,9 @@ package mi;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.pn;
+import org.telegram.ui.Components.on;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ q1 a;
@@ -29,9 +29,9 @@ public final class e extends AnimatorListenerAdapter {
         q1 q1Var = this.a;
         q1Var.getTransitionParams().e();
         q1Var.getPhotoImage().y0(this.b, this.c, this.d, this.e);
-        pn pnVar = this.f.P;
-        if (pnVar != null) {
-            pnVar.h.setAlpha(1.0f);
+        on onVar = this.f.P;
+        if (onVar != null) {
+            onVar.h.setAlpha(1.0f);
         }
         q1Var.invalidate();
     }

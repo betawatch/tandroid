@@ -63,10 +63,10 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final /* synthetic */ class h implements Runnable {
                 if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                     k2 k2Var = t1Var.r;
-                    int i13 = k2.y1;
+                    int i13 = k2.B1;
                     qp.s1(k2Var.a).Y3(tL_contacts_resolvedPeer.users, false);
                     qp.s1(k2Var.a).S3(tL_contacts_resolvedPeer.chats, false);
                     yr.a0(k2Var.a).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
@@ -212,16 +212,16 @@ public final /* synthetic */ class h implements Runnable {
                 pVar.x.addUpdateListener(new j6(pVar, k6Var.getScaleX(), width, ((r1Var2.getWidth() / 2.0f) + r1Var2.getX()) - ((k6Var.getWidth() / 2.0f) + k6Var.getX()), ((r1Var2.getHeight() / 2.0f) + r1Var2.getY()) - ((k6Var.getHeight() / 2.0f) + k6Var.getY()), 0));
                 pVar.x.addListener(new ah.l(i10, pVar, r1Var2));
                 pVar.x.setDuration(320L);
-                pVar.x.setInterpolator(xq.h);
+                pVar.x.setInterpolator(wq.h);
                 pVar.w = r1Var2;
                 pVar.x.start();
                 return;
             case 13:
                 w6 w6Var = (w6) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                ArrayList arrayList = w6Var.U1;
-                w6Var.n2 = false;
-                w6Var.m2 = false;
+                ArrayList arrayList = w6Var.X1;
+                w6Var.q2 = false;
+                w6Var.p2 = false;
                 if (tLObject2 instanceof TLRPC.messages_Messages) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
                     qp.s1(w6Var.a).Y3(messages_messages.users, false);
@@ -237,20 +237,20 @@ public final /* synthetic */ class h implements Runnable {
                     if ((messages_messages instanceof TLRPC.TL_messages_messagesSlice) && arrayList.size() < messages_messages.count) {
                         r9 = true;
                     }
-                    w6Var.l2 = r9;
-                    w6Var.k2 = messages_messages.next_rate;
+                    w6Var.o2 = r9;
+                    w6Var.n2 = messages_messages.next_rate;
                 } else {
-                    w6Var.l2 = false;
-                    w6Var.k2 = 0;
+                    w6Var.o2 = false;
+                    w6Var.n2 = 0;
                 }
-                w6Var.h2.O(true);
+                w6Var.k2.O(true);
                 return;
             case 14:
                 w6 w6Var2 = (w6) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
-                w6Var2.C2 = false;
-                w6Var2.T1.addAll(arrayList3);
-                w6Var2.h2.O(true);
+                w6Var2.F2 = false;
+                w6Var2.W1.addAll(arrayList3);
+                w6Var2.k2.O(true);
                 return;
             case 15:
                 e7 e7Var2 = (e7) this.b;
@@ -294,20 +294,20 @@ public final /* synthetic */ class h implements Runnable {
                         tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia2;
                         if (tL_messageMediaWebPage == null) {
                             TLRPC.WebPage webPage = tL_messageMediaWebPage.webpage;
-                            m7Var.Y1 = webPage;
+                            m7Var.b2 = webPage;
                             if (m7.g1(webPage)) {
-                                TLRPC.WebPage webPage2 = m7Var.Y1;
-                                m7Var.X1 = webPage2 == null ? 0L : webPage2.id;
-                                m7Var.Y1 = null;
+                                TLRPC.WebPage webPage2 = m7Var.b2;
+                                m7Var.a2 = webPage2 == null ? 0L : webPage2.id;
+                                m7Var.b2 = null;
                             } else {
-                                m7Var.X1 = 0L;
+                                m7Var.a2 = 0L;
                             }
                         } else {
-                            m7Var.Y1 = null;
-                            m7Var.X1 = 0L;
+                            m7Var.b2 = null;
+                            m7Var.a2 = 0L;
                         }
-                        m7Var.Z1 = m7Var.X1 != 0;
-                        o0Var = m7Var.P1;
+                        m7Var.c2 = m7Var.a2 != 0;
+                        o0Var = m7Var.S1;
                         if (o0Var == null) {
                             o0Var.O(true);
                             return;
@@ -318,17 +318,17 @@ public final /* synthetic */ class h implements Runnable {
                 tL_messageMediaWebPage = null;
                 if (tL_messageMediaWebPage == null) {
                 }
-                m7Var.Z1 = m7Var.X1 != 0;
-                o0Var = m7Var.P1;
+                m7Var.c2 = m7Var.a2 != 0;
+                o0Var = m7Var.S1;
                 if (o0Var == null) {
                 }
             case 17:
                 m7 m7Var2 = (m7) this.b;
                 TextView textView = (TextView) this.c;
                 ClipboardManager clipboardManager = (ClipboardManager) m7Var2.getContext().getSystemService("clipboard");
-                i3 i3Var = m7Var2.Q1.d;
+                i3 i3Var = m7Var2.T1.d;
                 r8 = ((TextUtils.isEmpty(i3Var.getText()) || TextUtils.equals(i3Var.getText(), "https://") || TextUtils.isEmpty(i3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) ? 1 : 0;
-                org.telegram.messenger.camera.q.l(textView.animate().alpha(r8 != 0 ? 1.0f : 0.0f).scaleX(r8 != 0 ? 1.0f : 0.7f).scaleY(r8 == 0 ? 0.7f : 1.0f), xq.h, 300L);
+                org.telegram.messenger.camera.q.l(textView.animate().alpha(r8 != 0 ? 1.0f : 0.0f).scaleX(r8 != 0 ? 1.0f : 0.7f).scaleY(r8 == 0 ? 0.7f : 1.0f), wq.h, 300L);
                 return;
             case 18:
                 s8 s8Var = (s8) this.b;
@@ -341,10 +341,10 @@ public final /* synthetic */ class h implements Runnable {
             case 19:
                 s8 s8Var2 = (s8) this.b;
                 HashMap hashMap = (HashMap) this.c;
-                if (s8Var2.G1 == null) {
-                    s8Var2.G1 = new HashMap();
+                if (s8Var2.J1 == null) {
+                    s8Var2.J1 = new HashMap();
                 }
-                s8Var2.G1.putAll(hashMap);
+                s8Var2.J1.putAll(hashMap);
                 return;
             case 20:
                 fi.d dVar2 = (fi.d) this.b;

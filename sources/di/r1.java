@@ -14,9 +14,9 @@ import c8.ka;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r1 extends View {
     public long D;
@@ -27,9 +27,9 @@ public final class r1 extends View {
     public final RectF b;
     public final Path c;
     public final ud d;
-    public final org.telegram.ui.Components.w5 e;
-    public final org.telegram.ui.Components.w5 f;
-    public final org.telegram.ui.Components.i6 h;
+    public final org.telegram.ui.Components.v5 e;
+    public final org.telegram.ui.Components.v5 f;
+    public final org.telegram.ui.Components.h6 h;
     public final Paint n;
     public final Paint r;
     public final Drawable s;
@@ -41,9 +41,9 @@ public final class r1 extends View {
         super(context);
         this.b = new RectF();
         this.c = new Path();
-        xq xqVar = xq.h;
-        this.e = new org.telegram.ui.Components.w5(this, 320L, xqVar);
-        this.f = new org.telegram.ui.Components.w5(this, 320L, xqVar);
+        wq wqVar = wq.h;
+        this.e = new org.telegram.ui.Components.v5(this, 320L, wqVar);
+        this.f = new org.telegram.ui.Components.v5(this, 320L, wqVar);
         Paint paint = new Paint(1);
         this.n = paint;
         Paint paint2 = new Paint(1);
@@ -57,13 +57,13 @@ public final class r1 extends View {
         this.w = jVar;
         jVar.a = bVar;
         jVar.a();
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true);
-        this.h = i6Var;
-        i6Var.u(-9866632);
-        i6Var.w(org.telegram.messenger.g0.L(9.0f));
-        i6Var.setCallback(this);
-        i6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        i6Var.J = true;
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(false, true, true);
+        this.h = h6Var;
+        h6Var.u(-9866632);
+        h6Var.w(org.telegram.messenger.g0.L(9.0f));
+        h6Var.setCallback(this);
+        h6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        h6Var.J = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         wp wpVar = new wp(R.drawable.star, 0);
@@ -120,9 +120,9 @@ public final class r1 extends View {
         if (d2 > 0.0f) {
             float L3 = org.telegram.messenger.g0.L(12.0f);
             float L4 = org.telegram.messenger.g0.L(6.0f);
-            org.telegram.ui.Components.i6 i6Var = this.h;
-            float max = Math.max(L3, i6Var.c() + L4);
-            float i13 = i6Var.i() * this.G * d2;
+            org.telegram.ui.Components.h6 h6Var = this.h;
+            float max = Math.max(L3, h6Var.c() + L4);
+            float i13 = h6Var.i() * this.G * d2;
             canvas.save();
             RectF rectF2 = org.telegram.messenger.g0.P;
             rectF2.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
@@ -131,9 +131,9 @@ public final class r1 extends View {
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, this.r);
             rectF2.set(getWidth() - max, 0.0f, getWidth(), org.telegram.messenger.g0.L(13.0f));
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
-            canvas.translate(((max - i6Var.c()) / 2.0f) + rectF2.left, org.telegram.messenger.g0.L(6.33f));
-            i6Var.u(i0.a.f(d, -9866632, -1));
-            i6Var.draw(canvas);
+            canvas.translate(((max - h6Var.c()) / 2.0f) + rectF2.left, org.telegram.messenger.g0.L(6.33f));
+            h6Var.u(i0.a.f(d, -9866632, -1));
+            h6Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -146,11 +146,11 @@ public final class r1 extends View {
 
     public void setCount(int i7) {
         this.x = i7;
-        org.telegram.ui.Components.i6 i6Var = this.h;
+        org.telegram.ui.Components.h6 h6Var = this.h;
         if (i7 > 50000) {
-            i6Var.t(org.telegram.messenger.g0.o0(i7, 0), true, true);
+            h6Var.t(org.telegram.messenger.g0.o0(i7, 0), true, true);
         } else {
-            i6Var.t(id.E(i7, ','), true, true);
+            h6Var.t(id.E(i7, ','), true, true);
         }
         invalidate();
         requestLayout();

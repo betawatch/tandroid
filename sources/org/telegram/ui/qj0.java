@@ -1,86 +1,119 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qj0 implements Runnable {
+public final /* synthetic */ class qj0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rj0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ sj0 b;
 
-    public /* synthetic */ qj0(rj0 rj0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 0;
-        this.b = rj0Var;
-        this.d = tLObject;
-        this.c = tL_error;
+    public /* synthetic */ qj0(sj0 sj0Var, int i7) {
+        this.a = i7;
+        this.b = sj0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                rj0 rj0Var = this.b;
-                TLObject tLObject = this.d;
-                TLRPC.TL_error tL_error = this.c;
-                dk0 dk0Var = rj0Var.e;
-                if (tLObject instanceof Vector) {
-                    dk0Var.D = new TL_account.authorizationForm();
-                    Vector vector = (Vector) tLObject;
-                    int size = vector.objects.size();
-                    for (int i7 = 0; i7 < size; i7++) {
-                        dk0Var.D.values.add((TLRPC.TL_secureValue) vector.objects.get(i7));
-                    }
-                    rj0Var.a();
-                    break;
-                } else {
-                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.v4.u0(dk0Var.getParentActivity(), org.telegram.messenger.id.M0(2131743820, null), true);
-                    } else {
-                        dk0Var.Q1(org.telegram.messenger.id.M0(R.string.AppName, null), tL_error.text);
-                    }
-                    dk0Var.R1(true, false);
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new rj0(this.b, tLObject, tL_error));
+                break;
             case 1:
-                rj0 rj0Var2 = this.b;
-                TLRPC.TL_error tL_error2 = this.c;
-                TLObject tLObject2 = this.d;
-                if (tL_error2 == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    rj0Var2.e.J = password;
-                    TwoStepVerificationActivity.r0(password);
-                    rj0Var2.b();
-                    break;
-                } else {
-                    rj0Var2.getClass();
-                    break;
-                }
+                final int i7 = 1;
+                final sj0 sj0Var = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.pj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i10;
+                        int i11;
+                        switch (i7) {
+                            case 0:
+                                sj0 sj0Var2 = sj0Var;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                ek0 ek0Var = sj0Var2.e;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i10 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
+                                    ConnectionsManager.getInstance(i10).sendRequest(getpassword, new qj0(sj0Var2, 4), 8);
+                                    break;
+                                } else {
+                                    if (ek0Var.D == null) {
+                                        ek0Var.D = new TL_account.authorizationForm();
+                                    }
+                                    sj0Var2.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                sj0 sj0Var3 = sj0Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i11 = ((org.telegram.ui.ActionBar.f2) sj0Var3.e).currentAccount;
+                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword2, new qj0(sj0Var3, 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new pc0(sj0Var3, sj0Var3.b, sj0Var3.d, 14));
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 2:
+                final int i10 = 0;
+                final sj0 sj0Var2 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.pj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i102;
+                        int i11;
+                        switch (i10) {
+                            case 0:
+                                sj0 sj0Var22 = sj0Var2;
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                ek0 ek0Var = sj0Var22.e;
+                                if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
+                                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                                    i102 = ((org.telegram.ui.ActionBar.f2) ek0Var).currentAccount;
+                                    ConnectionsManager.getInstance(i102).sendRequest(getpassword, new qj0(sj0Var22, 4), 8);
+                                    break;
+                                } else {
+                                    if (ek0Var.D == null) {
+                                        ek0Var.D = new TL_account.authorizationForm();
+                                    }
+                                    sj0Var22.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                sj0 sj0Var3 = sj0Var2;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null && "SRP_ID_INVALID".equals(tL_error3.text)) {
+                                    TL_account.getPassword getpassword2 = new TL_account.getPassword();
+                                    i11 = ((org.telegram.ui.ActionBar.f2) sj0Var3.e).currentAccount;
+                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword2, new qj0(sj0Var3, 3), 8);
+                                    break;
+                                } else {
+                                    Utilities.e.c(new pc0(sj0Var3, sj0Var3.b, sj0Var3.d, 14));
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new rj0(this.b, tL_error, tLObject, 1));
+                break;
             default:
-                rj0 rj0Var3 = this.b;
-                TLRPC.TL_error tL_error3 = this.c;
-                TLObject tLObject3 = this.d;
-                if (tL_error3 == null) {
-                    TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    rj0Var3.e.J = password2;
-                    TwoStepVerificationActivity.r0(password2);
-                    Utilities.e.c(new oc0(rj0Var3, rj0Var3.b, rj0Var3.d, 14));
-                    break;
-                }
+                org.telegram.messenger.g0.h3(new rj0(this.b, tL_error, tLObject, 2));
                 break;
         }
-    }
-
-    public /* synthetic */ qj0(rj0 rj0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i7) {
-        this.a = i7;
-        this.b = rj0Var;
-        this.c = tL_error;
-        this.d = tLObject;
     }
 }

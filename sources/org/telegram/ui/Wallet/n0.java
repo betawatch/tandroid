@@ -2,15 +2,15 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.nk0;
+import org.telegram.ui.ok0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class n0 {
     public static final long[] j = {500, 1000, 3000, 5000, 10000};
     public final int a;
     public final String b;
-    public final nk0 c;
+    public final ok0 c;
     public boolean d;
     public int e;
     public int f;
@@ -20,7 +20,7 @@ public final class n0 {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.m0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.m0] */
-    public n0(int i7, String str, nk0 nk0Var) {
+    public n0(int i7, String str, ok0 ok0Var) {
         final int i10 = 0;
         this.h = new Runnable(this) { // from class: org.telegram.ui.Wallet.m0
             public final /* synthetic */ n0 b;
@@ -52,7 +52,7 @@ public final class n0 {
                             TL_wallet.getTransactionsByMsgHash gettransactionsbymsghash = new TL_wallet.getTransactionsByMsgHash();
                             gettransactionsbymsghash.msg_hash.add(n0Var2.b);
                             org.telegram.messenger.g0.i3(n0Var2.h, 30000L);
-                            n0Var2.g = ConnectionsManager.getInstance(n0Var2.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new org.telegram.ui.Components.q(n0Var2, i11, 1));
+                            n0Var2.g = ConnectionsManager.getInstance(n0Var2.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new org.telegram.ui.Components.p(n0Var2, i11, 1));
                             break;
                         }
                         break;
@@ -90,7 +90,7 @@ public final class n0 {
                             TL_wallet.getTransactionsByMsgHash gettransactionsbymsghash = new TL_wallet.getTransactionsByMsgHash();
                             gettransactionsbymsghash.msg_hash.add(n0Var2.b);
                             org.telegram.messenger.g0.i3(n0Var2.h, 30000L);
-                            n0Var2.g = ConnectionsManager.getInstance(n0Var2.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new org.telegram.ui.Components.q(n0Var2, i112, 1));
+                            n0Var2.g = ConnectionsManager.getInstance(n0Var2.a).sendRequestTyped(gettransactionsbymsghash, new d3.b(1), new org.telegram.ui.Components.p(n0Var2, i112, 1));
                             break;
                         }
                         break;
@@ -99,7 +99,7 @@ public final class n0 {
         };
         this.a = i7;
         this.b = str;
-        this.c = nk0Var;
+        this.c = ok0Var;
     }
 
     public final void a() {

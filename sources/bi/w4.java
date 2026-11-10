@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.regex.Pattern;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.bv0;
+import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.ht;
-import org.telegram.ui.Components.jt;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.nb0;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.x80;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.yw;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mb0;
+import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.xw;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wx;
+import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public final /* synthetic */ int a;
@@ -47,54 +47,54 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 9:
                 this.actionBar.setAllowOverlayTitle(true);
                 int i7 = 16;
-                this.actionBar.setActionBarMenuOnItemClick(new wx(this, i7));
+                this.actionBar.setActionBarMenuOnItemClick(new xx(this, i7));
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-                org.telegram.ui.ActionBar.k kVar = this.actionBar;
-                x80 x80Var = (x80) this.b;
-                kVar.setTitle(org.telegram.messenger.id.M0(x80Var.a ? 2131744436 : 2131748635, null));
-                org.telegram.ui.ActionBar.r0 a10 = this.actionBar.r().a(0, R.drawable.outline_header_search);
+                org.telegram.ui.ActionBar.l lVar = this.actionBar;
+                w80 w80Var = (w80) this.b;
+                lVar.setTitle(org.telegram.messenger.id.M0(w80Var.a ? 2131744436 : 2131748635, null));
+                org.telegram.ui.ActionBar.r0 a10 = this.actionBar.s().a(0, R.drawable.outline_header_search);
                 a10.N();
                 a10.H = new kg.v1(this, i7);
                 a10.setSearchFieldHint(org.telegram.messenger.id.M0(2131745836, null));
                 a10.setVisibility(8);
-                org.telegram.ui.ActionBar.f2 f2Var = x80Var.g;
-                if (x80Var.m == null) {
+                org.telegram.ui.ActionBar.f2 f2Var = w80Var.g;
+                if (w80Var.m == null) {
                     FrameLayout frameLayout = new FrameLayout(f2Var.getParentActivity());
-                    x80Var.m = frameLayout;
-                    org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.a7, frameLayout, f2Var.getResourceProvider());
-                    mz b10 = x80Var.b();
-                    x80Var.q = b10;
-                    x80Var.m.addView(b10, -1, -1);
-                    cv0 c10 = x80Var.c();
-                    x80Var.o = c10;
-                    x80Var.m.addView(c10, -1, -1);
-                    cv0 a11 = x80Var.a();
-                    x80Var.n = a11;
-                    x80Var.m.addView(a11, c8.ha.c(-1.0f, -1));
+                    w80Var.m = frameLayout;
+                    org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.a7, frameLayout, f2Var.getResourceProvider());
+                    lz b10 = w80Var.b();
+                    w80Var.q = b10;
+                    w80Var.m.addView(b10, -1, -1);
+                    bv0 c10 = w80Var.c();
+                    w80Var.o = c10;
+                    w80Var.m.addView(c10, -1, -1);
+                    bv0 a11 = w80Var.a();
+                    w80Var.n = a11;
+                    w80Var.m.addView(a11, c8.ha.c(-1.0f, -1));
                     f2Var.getParentActivity();
                     v4.b0 b0Var = new v4.b0();
-                    qj0 qj0Var = new qj0(f2Var.getParentActivity(), null);
-                    x80Var.p = qj0Var;
-                    qj0Var.setAdapter(x80Var.f);
-                    x80Var.p.r1();
-                    x80Var.p.setLayoutManager(b0Var);
-                    x80Var.p.setOnItemClickListener(new ai.k(x80Var, 24));
-                    x80Var.p.setOnScrollListener(x80Var.D);
-                    org.telegram.ui.ActionBar.s6.J(x80Var.p, org.telegram.ui.ActionBar.l6.i6, f2Var.getResourceProvider());
-                    x80Var.m.addView(x80Var.p, -1, -1);
-                    v4.k kVar2 = new v4.k();
-                    kVar2.n(350L);
-                    kVar2.o(xq.h);
-                    kVar2.C = false;
-                    kVar2.m = false;
-                    x80Var.p.setItemAnimator(kVar2);
+                    pj0 pj0Var = new pj0(f2Var.getParentActivity(), null);
+                    w80Var.p = pj0Var;
+                    pj0Var.setAdapter(w80Var.f);
+                    w80Var.p.r1();
+                    w80Var.p.setLayoutManager(b0Var);
+                    w80Var.p.setOnItemClickListener(new ai.k(w80Var, 24));
+                    w80Var.p.setOnScrollListener(w80Var.D);
+                    org.telegram.ui.ActionBar.t6.J(w80Var.p, org.telegram.ui.ActionBar.m6.i6, f2Var.getResourceProvider());
+                    w80Var.m.addView(w80Var.p, -1, -1);
+                    v4.k kVar = new v4.k();
+                    kVar.n(350L);
+                    kVar.o(wq.h);
+                    kVar.C = false;
+                    kVar.m = false;
+                    w80Var.p.setItemAnimator(kVar);
                 }
-                FrameLayout frameLayout2 = x80Var.m;
-                org.telegram.ui.ActionBar.k kVar3 = this.actionBar;
-                qj0 qj0Var2 = x80Var.p;
-                kVar3.getClass();
-                kVar3.C(qj0Var2, org.telegram.ui.ActionBar.l6.a7, org.telegram.ui.ActionBar.l6.s8);
-                x80Var.e();
+                FrameLayout frameLayout2 = w80Var.m;
+                org.telegram.ui.ActionBar.l lVar2 = this.actionBar;
+                pj0 pj0Var2 = w80Var.p;
+                lVar2.getClass();
+                lVar2.D(pj0Var2, org.telegram.ui.ActionBar.m6.a7, org.telegram.ui.ActionBar.m6.s8);
+                w80Var.e();
                 this.fragmentView = frameLayout2;
                 return frameLayout2;
             default:
@@ -116,7 +116,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 4:
                 return ((fi.o5) this.b).getContext();
             case 5:
-                return ((jt) this.b).a.getContext();
+                return ((ht) this.b).a.getContext();
         }
     }
 
@@ -141,7 +141,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 6:
                 return this.currentAccount;
             case 7:
-                return ((yw) this.b).G.c1;
+                return ((xw) this.b).G.c1;
             case 11:
                 return this.currentAccount;
         }
@@ -153,11 +153,11 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
         Object obj = this.b;
         switch (i7) {
             case 6:
-                ru ruVar = ((nu) obj).y;
-                Pattern pattern = ru.M1;
-                return ruVar.b;
+                qu quVar = ((mu) obj).y;
+                Pattern pattern = qu.P1;
+                return quVar.b;
             case 7:
-                return ((yw) obj).G.r;
+                return ((xw) obj).G.r;
             case 11:
                 return ((ug.f1) obj).b;
             default:
@@ -171,13 +171,13 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
         Object obj = this.b;
         switch (i7) {
             case 6:
-                ru ruVar = ((nu) obj).y;
-                Pattern pattern = ru.M1;
-                return (FrameLayout) ruVar.b;
+                qu quVar = ((mu) obj).y;
+                Pattern pattern = qu.P1;
+                return (FrameLayout) quVar.b;
             case 7:
-                return ((yw) obj).G.r;
+                return ((xw) obj).G.r;
             case 11:
-                return ((ug.f1) obj).E2;
+                return ((ug.f1) obj).H2;
             default:
                 return super.getLayoutContainer();
         }
@@ -217,7 +217,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             case 10:
                 return ((org.telegram.ui.web.x0) this.b).W;
             case 11:
-                org.telegram.ui.ActionBar.f2 f2Var = ((ug.f1) this.b).l2;
+                org.telegram.ui.ActionBar.f2 f2Var = ((ug.f1) this.b).o2;
                 if (f2Var == null) {
                     return null;
                 }
@@ -235,7 +235,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public org.telegram.ui.ActionBar.g6 getResourceProvider() {
+    public org.telegram.ui.ActionBar.h6 getResourceProvider() {
         int i7 = this.a;
         Object obj = this.b;
         switch (i7) {
@@ -254,11 +254,11 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
             default:
                 return super.getResourceProvider();
             case 6:
-                ru ruVar = ((nu) obj).y;
-                Pattern pattern = ru.M1;
-                return ruVar.I0;
+                qu quVar = ((mu) obj).y;
+                Pattern pattern = qu.P1;
+                return quVar.I0;
             case 7:
-                return ((yw) obj).G.Z1;
+                return ((xw) obj).G.Z1;
             case 10:
                 return new di.m2(9, ((org.telegram.ui.web.x0) obj).e);
             case 12:
@@ -272,7 +272,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public Dialog getVisibleDialog() {
         switch (this.a) {
             case 5:
-                return new ht(this, ((jt) this.b).a.getContext());
+                return new gt(this, ((ht) this.b).a.getContext());
             default:
                 return super.getVisibleDialog();
         }
@@ -298,7 +298,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public boolean onBackPressed(boolean z9) {
         switch (this.a) {
             case 9:
-                yh.l lVar = ((x80) this.b).s;
+                yh.l lVar = ((w80) this.b).s;
                 if (lVar == null) {
                     return true;
                 }
@@ -317,7 +317,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
         switch (this.a) {
             case 8:
                 if (z9 && z10) {
-                    ((nb0) this.b).dismiss();
+                    ((mb0) this.b).dismiss();
                     break;
                 }
                 break;
@@ -385,7 +385,7 @@ public final class w4 extends org.telegram.ui.ActionBar.f2 {
     public w4(long j3) {
         super(null);
         this.a = 9;
-        this.b = new x80(this, this, getLayoutContainer(), j3);
+        this.b = new w80(this, this, getLayoutContainer(), j3);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

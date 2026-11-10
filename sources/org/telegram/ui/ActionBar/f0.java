@@ -8,13 +8,13 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.vp;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.y70;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.b20;
-import org.telegram.ui.bb1;
-import org.telegram.ui.zo0;
+import org.telegram.ui.ap0;
+import org.telegram.ui.c20;
+import org.telegram.ui.cb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f0 extends ImageView {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final class f0 extends ImageView {
         switch (this.a) {
             case 2:
                 super.invalidate();
-                b20 b20Var = (b20) this.b;
-                b20Var.f0.invalidate();
-                b20Var.invalidate();
+                c20 c20Var = (c20) this.b;
+                c20Var.f0.invalidate();
+                c20Var.invalidate();
                 break;
             default:
                 super.invalidate();
@@ -88,7 +88,7 @@ public final class f0 extends ImageView {
             case 4:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((bb1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((cb1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -100,7 +100,7 @@ public final class f0 extends ImageView {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 2:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(l.getCurrentActionBarHeight(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -137,13 +137,13 @@ public final class f0 extends ImageView {
                         ((fi.m3) obj).setTranslationY(f10);
                     }
                 }
-                zo0 zo0Var = photoViewer.g1;
-                if (zo0Var != null) {
-                    zo0Var.setTranslationY(f10);
+                ap0 ap0Var = photoViewer.g1;
+                if (ap0Var != null) {
+                    ap0Var.setTranslationY(f10);
                 }
-                z70 z70Var = photoViewer.f1;
-                if (z70Var != null) {
-                    z70Var.setTranslationY(f10);
+                y70 y70Var = photoViewer.f1;
+                if (y70Var != null) {
+                    y70Var.setTranslationY(f10);
                     break;
                 }
                 break;

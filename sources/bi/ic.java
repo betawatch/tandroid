@@ -5,9 +5,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ic extends org.telegram.ui.Components.l9 {
+public final class ic extends org.telegram.ui.Components.k9 {
     public xh.e G;
     public Path H;
     public RectF I;
@@ -39,7 +39,7 @@ public final class ic extends org.telegram.ui.Components.l9 {
         drawable.draw(canvas2);
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onAttachedToWindow() {
         xh.e eVar = this.G;
         if (eVar != null) {
@@ -48,7 +48,7 @@ public final class ic extends org.telegram.ui.Components.l9 {
         super.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onDetachedFromWindow() {
         xh.e eVar = this.G;
         if (eVar != null) {

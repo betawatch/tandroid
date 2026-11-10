@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.ji0;
+import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.yv0;
+import org.telegram.ui.zv0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -107,10 +107,10 @@ public final class t5 extends AnimatorListenerAdapter {
                 break;
             case 11:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                yv0 yv0Var = profileStoriesView.h;
+                zv0 zv0Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                yv0Var.R = 1.0f;
-                yv0Var.invalidate();
+                zv0Var.R = 1.0f;
+                zv0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 12:
@@ -175,7 +175,7 @@ public final class t5 extends AnimatorListenerAdapter {
                 m3Var.invalidate();
                 break;
             case 20:
-                org.telegram.messenger.g0.E2((ji0) obj);
+                org.telegram.messenger.g0.E2((ii0) obj);
                 break;
             case 21:
                 super.onAnimationEnd(animator);
@@ -236,9 +236,9 @@ public final class t5 extends AnimatorListenerAdapter {
             case 14:
                 super.onAnimationStart(animator);
                 di.d7 d7Var = (di.d7) this.b;
-                ah0 ah0Var = ((di.c7) d7Var.a.get(d7Var.d)).c;
-                ah0Var.L = 2;
-                ah0Var.start();
+                zg0 zg0Var = ((di.c7) d7Var.a.get(d7Var.d)).c;
+                zg0Var.L = 2;
+                zg0Var.start();
                 break;
             default:
                 super.onAnimationStart(animator);

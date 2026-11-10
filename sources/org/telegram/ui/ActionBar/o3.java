@@ -1,30 +1,151 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.a8;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class o3 {
-    public static final o3 a;
-    public static final o3 b;
-    public static final o3 c;
-    public static final /* synthetic */ o3[] d;
+public final class o3 extends FrameLayout {
+    public r4 a;
+    public ActionBarLayout b;
+    public boolean c;
+    public final Paint d;
+    public r0.k1 e;
+    public i0.b f;
+    public i0.b h;
 
-    static {
-        o3 o3Var = new o3("NONE", 0);
-        a = o3Var;
-        o3 o3Var2 = new o3("VERTICAL", 1);
-        b = o3Var2;
-        o3 o3Var3 = new o3("FULL", 2);
-        c = o3Var3;
-        d = new o3[]{o3Var, o3Var2, o3Var3};
+    public o3(Activity activity) {
+        super(activity);
+        this.d = new Paint(1);
+        i0.b bVar = i0.b.e;
+        this.f = bVar;
+        this.h = bVar;
+        n3 n3Var = new n3(this, 0);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.i(this, n3Var);
+        setSystemUiVisibility(1280);
     }
 
-    public static o3 valueOf(String str) {
-        return (o3) Enum.valueOf(o3.class, str);
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i7, layoutParams);
+        r0.k1 k1Var = this.e;
+        if (k1Var != null) {
+            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
+                r0.i0.b(view, k1Var);
+            }
+        }
     }
 
-    public static o3[] values() {
-        return (o3[]) d.clone();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ActionBarLayout actionBarLayout = this.b;
+        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
+            this.b.Q(canvas, this);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    public Paint getInternalNavbarPaint() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return ((ActionBarLayout) this.a).i();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        this.c = true;
+        int childCount = getChildCount();
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = getChildAt(i13);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                try {
+                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    boolean z10 = org.telegram.messenger.r2.a;
+                    throw e10;
+                }
+            }
+        }
+        this.c = false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        int size2 = View.MeasureSpec.getSize(i10);
+        setMeasuredDimension(size, size2);
+        i0.b bVar = this.f;
+        int i11 = (size - bVar.a) - bVar.c;
+        int i12 = (size2 - bVar.b) - bVar.d;
+        Point point = org.telegram.messenger.g0.q;
+        point.x = i11;
+        point.y = i12;
+        int childCount = getChildCount();
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt = getChildAt(i13);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
+                int i14 = layoutParams.height;
+                int makeMeasureSpec2 = i14 > 0 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
+                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).i0()) {
+                    childAt.forceLayout();
+                }
+                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
+        this.b = actionBarLayout;
+    }
+
+    public void setInternalNavigationBarColor(int i7) {
+        Paint paint = this.d;
+        if (paint.getColor() != i7) {
+            paint.setColor(i7);
+            invalidate();
+            int childCount = getChildCount();
+            for (int i10 = 0; i10 < childCount; i10++) {
+                getChildAt(i10).invalidate();
+            }
+        }
+    }
+
+    public void setParentActionBarLayout(r4 r4Var) {
+        this.a = r4Var;
     }
 }

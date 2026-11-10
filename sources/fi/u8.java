@@ -13,9 +13,9 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -344,7 +344,7 @@ public final /* synthetic */ class u8 implements Runnable {
             case 19:
                 ua uaVar2 = vaVar.n;
                 di.b bVar = vaVar.a;
-                new hc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744581, null), org.telegram.ui.ActionBar.l6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
+                new gc(uaVar2, bVar).Q(R.raw.voip_invite, 36, org.telegram.messenger.g0.S2(id.M0(2131744581, null), org.telegram.ui.ActionBar.m6.Uc, 0, new u8(vaVar, 27), bVar)).k(true);
                 break;
             case 20:
                 s8 s8Var = vaVar.q0;

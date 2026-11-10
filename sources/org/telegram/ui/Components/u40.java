@@ -1,81 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.TextureView;
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class u40 extends FrameLayout {
-    public q40 a;
-    public t40 b;
-    public s40 c;
-    public boolean d;
+public final class u40 {
+    public final int a;
+    public final int b;
 
-    public static boolean e(int i7) {
-        xi.a aVar = xi.e.d;
-        aVar.a();
-        if (!aVar.c) {
-            return !((org.telegram.messenger.h0) org.telegram.messenger.qp.s1(i7).x7.g0.b).c;
+    public u40(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        aVar.a();
-        return aVar.d;
-    }
-
-    public abstract void a(boolean z9);
-
-    public abstract void b(float f10, int i7);
-
-    public abstract void c(boolean z9);
-
-    public abstract void d(boolean z9);
-
-    public abstract boolean f();
-
-    public abstract void g(float f10);
-
-    public abstract View getButtonsLayout();
-
-    public abstract r40 getCameraContainer();
-
-    public abstract RectF getCameraRect();
-
-    public abstract View getMuteImageView();
-
-    public abstract Paint getPaint();
-
-    public abstract TextureView getTextureView();
-
-    public abstract void h(int i7, int i10, int i11, long j3, long j10, boolean z9);
-
-    public abstract void i(dh.c cVar, org.telegram.ui.qi qiVar);
-
-    public abstract void j(boolean z9);
-
-    public abstract void k();
-
-    public final void setAnimationCallback(q40 q40Var) {
-        this.a = q40Var;
-    }
-
-    public abstract void setInternalPadding(int i7);
-
-    public abstract void setIsMessageTransition(boolean z9);
-
-    public final void setRecordingUiFrameCallback(s40 s40Var) {
-        this.c = s40Var;
-        if (s40Var != null) {
-            boolean z9 = this.d;
-            org.telegram.ui.sj sjVar = ((org.telegram.ui.yi) s40Var).a.Z;
-            if (sjVar != null) {
-                sjVar.setRoundVideoUiFrameClockActive(z9);
+        if (obj != null && u40.class == obj.getClass()) {
+            u40 u40Var = (u40) obj;
+            if (this.a == u40Var.a && this.b == u40Var.b) {
+                return true;
             }
         }
+        return false;
     }
 
-    public final void setTrimCallback(t40 t40Var) {
-        this.b = t40Var;
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("IntSize(");
+        sb2.append(this.a);
+        sb2.append(", ");
+        return a8.p0.n(this.b, ")", sb2);
     }
 }

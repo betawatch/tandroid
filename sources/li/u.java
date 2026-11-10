@@ -6,7 +6,7 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.m41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class u implements TextWatcher {
     public final /* synthetic */ v a;
@@ -18,11 +18,11 @@ public final class u implements TextWatcher {
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         v vVar = this.a;
-        TL_iv.RichMessage richMessage = vVar.a2;
+        TL_iv.RichMessage richMessage = vVar.d2;
         if (richMessage != null && richMessage != null) {
-            vVar.a2 = null;
-            vVar.X1.i(id.M0(2131754059, null), true, true);
-            m41 m41Var = vVar.R1;
+            vVar.d2 = null;
+            vVar.a2.i(id.M0(2131754059, null), true, true);
+            m41 m41Var = vVar.U1;
             if (m41Var != null) {
                 m41Var.O(true);
             }

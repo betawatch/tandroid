@@ -2,14 +2,14 @@ package yh;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.lz;
 import v4.b0;
 import v4.s0;
 import zh.l3;
 import zh.m3;
 import zh.o3;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f extends s0 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final class f extends s0 {
             case 1:
                 m3 m3Var = (m3) this.b;
                 for (int i11 = 0; i11 < m3Var.f.getChildCount(); i11++) {
-                    if (m3Var.f.getChildAt(i11) instanceof mz) {
+                    if (m3Var.f.getChildAt(i11) instanceof lz) {
                         m3Var.d.g(false);
                         break;
                     }
@@ -50,7 +50,7 @@ public final class f extends s0 {
             default:
                 o3 o3Var = (o3) this.b;
                 if (o3Var.e1()) {
-                    o3Var.Q1.a();
+                    o3Var.T1.a();
                     break;
                 }
                 break;

@@ -1,8 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class mi0 extends Drawable {
+public final /* synthetic */ class mi0 {
+    public final /* synthetic */ ri0 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+
+    public /* synthetic */ mi0(ri0 ri0Var, int i7, int i10, boolean z9) {
+        this.a = ri0Var;
+        this.b = i7;
+        this.c = i10;
+        this.d = z9;
+    }
 }

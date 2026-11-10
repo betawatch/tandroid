@@ -1,68 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class pu0 {
-    public final g5 a;
-    public Drawable b;
-
-    public pu0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+public abstract class pu0 extends Drawable {
+    public final void a() {
+        bg.k d = bg.k.d();
+        d.getClass();
+        bg.k.c();
+        d.d.add(this);
     }
 
-    public final g5 a(TLObject tLObject, int i7, boolean z9) {
-        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i7, z9) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i7, z9) : b(null, null, i7, z9);
-    }
+    public abstract void b(int i7);
 
-    public final g5 b(TLRPC.User user, TLRPC.Chat chat, int i7, boolean z9) {
-        g5 g5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new xp(org.telegram.ui.ActionBar.l6.f1, org.telegram.ui.ActionBar.l6.i1);
-            }
-            this.b = drawable;
-            g5Var.g(drawable, z9);
-            g5Var.k(null);
-            return g5Var;
-        }
-        if (chat != null && org.telegram.messenger.m5.f(chat.emoji_status) != 0) {
-            g5Var.j(org.telegram.messenger.m5.f(chat.emoji_status), z9);
-            g5Var.k(Integer.valueOf(i7));
-            return g5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new xp(org.telegram.ui.ActionBar.l6.f1, org.telegram.ui.ActionBar.l6.i1);
-            }
-            this.b = drawable2;
-            g5Var.g(drawable2, z9);
-            g5Var.k(null);
-            return g5Var;
-        }
-        if (user != null && org.telegram.messenger.m5.f(user.emoji_status) != 0) {
-            g5Var.j(org.telegram.messenger.m5.f(user.emoji_status), z9);
-            g5Var.k(Integer.valueOf(i7));
-            return g5Var;
-        }
-        if (user == null || !user.premium) {
-            g5Var.g(null, z9);
-            g5Var.k(null);
-            return g5Var;
-        }
-        g5Var.g((Drawable) ia.e.d().f, z9);
-        g5Var.k(Integer.valueOf(i7));
-        return g5Var;
-    }
+    public abstract void c(boolean z9);
 
-    public pu0(int i7, View view) {
-        this.a = new g5(org.telegram.messenger.g0.L(i7), view);
-    }
+    public abstract void d();
+
+    public abstract void e();
 }

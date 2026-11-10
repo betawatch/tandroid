@@ -11,45 +11,45 @@ import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.mo0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class x4 extends no0 {
-    public final /* synthetic */ k7 R2;
+public final class x4 extends mo0 {
+    public final /* synthetic */ k7 U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x4(k7 k7Var, Context context, String str, String str2, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, true, null, g6Var);
-        this.R2 = k7Var;
-        this.S1 = true;
+    public x4(k7 k7Var, Context context, String str, String str2, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, null, null, str, null, false, str2, null, false, false, true, null, h6Var);
+        this.U2 = k7Var;
+        this.V1 = true;
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.mo0
     public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z9) {
         if (z9) {
-            org.telegram.ui.Components.hc k10 = k();
+            org.telegram.ui.Components.gc k10 = k();
             if (hVar.m() == 1) {
                 long j3 = hVar.j(0);
                 if (j3 == p10.i(this.a).n) {
-                    org.telegram.ui.Components.cc G = k10.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748886, new Object[0])));
+                    org.telegram.ui.Components.bc G = k10.G(R.raw.saved_messages, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748886, new Object[0])));
                     G.r = false;
                     G.t = true;
                     G.j();
                 } else if (j3 < 0) {
-                    org.telegram.ui.Components.cc G2 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748890, tL_forumTopic != null ? tL_forumTopic.title : qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
+                    org.telegram.ui.Components.bc G2 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748890, tL_forumTopic != null ? tL_forumTopic.title : qp.s1(this.a).M0(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.t = true;
                     G2.j();
                 } else {
-                    org.telegram.ui.Components.cc G3 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748890, qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
+                    org.telegram.ui.Components.bc G3 = k10.G(R.raw.forward, 5000, org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131748890, qp.s1(this.a).a2(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.t = true;
                     G3.j();
                 }
             } else {
-                org.telegram.ui.Components.cc Q = k10.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hVar.m(), "LinkSharedToManyChats", Integer.valueOf(hVar.m()))));
+                org.telegram.ui.Components.bc Q = k10.Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(hVar.m(), "LinkSharedToManyChats", Integer.valueOf(hVar.m()))));
                 Q.r = false;
                 Q.t = true;
                 Q.j();
@@ -61,7 +61,7 @@ public final class x4 extends no0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.no0
+    @Override // org.telegram.ui.Components.mo0
     public final void S0(final View view) {
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity == null) {
@@ -69,8 +69,8 @@ public final class x4 extends no0 {
         }
         fi.oa b10 = view instanceof org.telegram.ui.Cells.d7 ? fi.qa.b((org.telegram.ui.Cells.d7) view) : null;
         ArrayList arrayList = new ArrayList();
-        final k7 k7Var = this.R2;
-        ij ijVar = k7Var.z2;
+        final k7 k7Var = this.U2;
+        ij ijVar = k7Var.C2;
         if (ijVar != null) {
             arrayList.add(ijVar);
         } else {
@@ -104,10 +104,10 @@ public final class x4 extends no0 {
                     k7 k7Var2 = k7.this;
                     org.telegram.messenger.g0.h3(new a1.e(27, k7Var2, l10));
                     vaVar.X(null);
-                    x4 x4Var = k7Var2.R2;
+                    x4 x4Var = k7Var2.U2;
                     if (x4Var != null) {
                         x4Var.dismiss();
-                        k7Var2.R2 = null;
+                        k7Var2.U2 = null;
                     }
                 } else {
                     View view2 = view;

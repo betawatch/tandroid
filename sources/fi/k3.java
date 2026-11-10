@@ -4,24 +4,24 @@ import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k3 extends View implements o2 {
-    public final org.telegram.ui.Components.i6 a;
+    public final org.telegram.ui.Components.h6 a;
 
     public k3(Activity activity) {
         super(activity);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(true, true, true);
-        this.a = i6Var;
-        i6Var.n(0.35f, 300L, xq.h);
-        i6Var.u(-1);
-        i6Var.w(org.telegram.messenger.g0.L(14.0f));
-        i6Var.s(org.telegram.messenger.g0.L(1.4f), org.telegram.messenger.g0.L(0.4f), 1275068416);
-        i6Var.b = 1;
-        i6Var.setCallback(this);
-        i6Var.M = org.telegram.messenger.g0.q.x;
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(true, true, true);
+        this.a = h6Var;
+        h6Var.n(0.35f, 300L, wq.h);
+        h6Var.u(-1);
+        h6Var.w(org.telegram.messenger.g0.L(14.0f));
+        h6Var.s(org.telegram.messenger.g0.L(1.4f), org.telegram.messenger.g0.L(0.4f), 1275068416);
+        h6Var.b = 1;
+        h6Var.setCallback(this);
+        h6Var.M = org.telegram.messenger.g0.q.x;
     }
 
     @Override // android.view.View
@@ -29,9 +29,9 @@ public final class k3 extends View implements o2 {
         super.draw(canvas);
         int width = getWidth();
         int height = getHeight();
-        org.telegram.ui.Components.i6 i6Var = this.a;
-        i6Var.setBounds(0, 0, width, height);
-        i6Var.draw(canvas);
+        org.telegram.ui.Components.h6 h6Var = this.a;
+        h6Var.setBounds(0, 0, width, height);
+        h6Var.draw(canvas);
     }
 
     @Override // android.view.View

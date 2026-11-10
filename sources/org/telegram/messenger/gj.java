@@ -11,11 +11,11 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.ug0;
-import org.telegram.ui.Components.vg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class gj {
     public final CharSequence a;
@@ -168,19 +168,19 @@ public final class gj {
             z21 = qp.s1(ijVar.I1).A2(ij.B0(ijVar.k));
         }
         boolean z22 = z21;
-        boolean z23 = ijVar != null && ijVar.P2() && !ijVar.P3() && textPaint == org.telegram.ui.ActionBar.l6.o2;
+        boolean z23 = ijVar != null && ijVar.P2() && !ijVar.P3() && textPaint == org.telegram.ui.ActionBar.m6.o2;
         boolean z24 = charSequence4 instanceof Spanned;
         this.f = z24 && ((ni.j[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ni.j.class)).length > 0;
-        this.i = z24 && ((ug0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ug0.class)).length > 0;
+        this.i = z24 && ((tg0[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), tg0.class)).length > 0;
         this.k = false;
         this.h = false;
         if (z24) {
             Spanned spanned = (Spanned) charSequence4;
-            vg0[] vg0VarArr = (vg0[]) spanned.getSpans(0, spanned.length(), vg0.class);
-            for (vg0 vg0Var : vg0VarArr) {
-                vg0Var.b = false;
+            ug0[] ug0VarArr = (ug0[]) spanned.getSpans(0, spanned.length(), ug0.class);
+            for (ug0 ug0Var : ug0VarArr) {
+                ug0Var.b = false;
             }
-            this.k = vg0VarArr.length == 1 && spanned.getSpanStart(vg0VarArr[0]) == 0 && spanned.getSpanEnd(vg0VarArr[0]) == spanned.length();
+            this.k = ug0VarArr.length == 1 && spanned.getSpanStart(ug0VarArr[0]) == 0 && spanned.getSpanEnd(ug0VarArr[0]) == spanned.length();
             ni.j[] jVarArr = (ni.j[]) spanned.getSpans(0, spanned.length(), ni.j.class);
             this.h = jVarArr.length == 1 && spanned.getSpanStart(jVarArr[0]) == 0 && spanned.getSpanEnd(jVarArr[0]) == spanned.length();
         }
@@ -331,7 +331,7 @@ public final class gj {
                                                         z15 = z14;
                                                         int i31 = i30 - i29;
                                                         staticLayout = staticLayout6;
-                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.l6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.l6.q2 : org.telegram.ui.ActionBar.l6.p2;
+                                                        textPaint2 = i31 > 220 ? org.telegram.ui.ActionBar.m6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.m6.q2 : org.telegram.ui.ActionBar.m6.p2;
                                                     }
                                                     if (!fjVar.I) {
                                                         c10 = g0.L(f11);
@@ -614,9 +614,9 @@ public final class gj {
                                                         if (fjVar.U) {
                                                             this.c = Math.max(this.c, i11);
                                                         } else {
-                                                            ny0 ny0Var = fjVar.L;
-                                                            if (ny0Var != null) {
-                                                                this.c = (int) Math.max(this.c, Math.min(ny0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
+                                                            my0 my0Var = fjVar.L;
+                                                            if (my0Var != null) {
+                                                                this.c = (int) Math.max(this.c, Math.min(my0Var.c + g0.L(f10), fjVar.e == null ? f14 : r5.getWidth()));
                                                             }
                                                         }
                                                         if (ijVar != null && !ijVar.L0 && !ijVar.I2) {

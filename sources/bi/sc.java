@@ -13,9 +13,9 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c80;
+import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class sc extends LinearLayout implements ls {
     public long a;
@@ -25,7 +25,7 @@ public final class sc extends LinearLayout implements ls {
     public long e;
     public ValueAnimator f;
 
-    public sc(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public sc(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.e = -1L;
         this.b = i7;
@@ -33,8 +33,8 @@ public final class sc extends LinearLayout implements ls {
         setOrientation(1);
         setGravity(21);
         TextView textView = new TextView(context);
-        int i10 = org.telegram.ui.ActionBar.l6.G6;
-        org.telegram.ui.ActionBar.s6.U(textView, i10, g6Var);
+        int i10 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(textView, i10, h6Var);
         jg.g.v(textView, 1, 13.0f, null, 2131745155);
         textView.setGravity(5);
         textView.setTypeface(org.telegram.messenger.g0.o());
@@ -44,7 +44,7 @@ public final class sc extends LinearLayout implements ls {
         rcVar.n = true;
         rcVar.getDrawable().r(false, true);
         rcVar.setTypeface(org.telegram.messenger.g0.o());
-        org.telegram.ui.ActionBar.s6.Y(rcVar, i10, g6Var);
+        org.telegram.ui.ActionBar.t6.Y(rcVar, i10, h6Var);
         rcVar.setTextSize(org.telegram.messenger.g0.L(13.0f));
         rcVar.setGravity(5);
         rcVar.setPadding(org.telegram.messenger.g0.L(19.0f), 0, 0, 0);
@@ -93,7 +93,7 @@ public final class sc extends LinearLayout implements ls {
         if (this.d == null) {
             SpannableString spannableString = new SpannableString("x");
             this.d = spannableString;
-            spannableString.setSpan(new c80(org.telegram.messenger.g0.L(48.0f), rcVar), 0, this.d.length(), 33);
+            spannableString.setSpan(new b80(org.telegram.messenger.g0.L(48.0f), rcVar), 0, this.d.length(), 33);
         }
         rcVar.c(this.d, z9, true);
         this.e = -1L;
@@ -127,7 +127,7 @@ public final class sc extends LinearLayout implements ls {
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), TLObject.FLAG_30));
     }
 
     public void setDialogId(long j3) {

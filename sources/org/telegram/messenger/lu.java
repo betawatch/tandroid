@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class lu extends fu {
     public final TL_iv.pageBlockDetails W;
@@ -20,7 +20,7 @@ public final class lu extends fu {
     public final jv[] Y;
     public final AnimatedArrowDrawable Z;
     public final Paint a0;
-    public org.telegram.ui.Components.ic b0;
+    public org.telegram.ui.Components.hc b0;
     public boolean c0;
     public float d0;
     public float e0;
@@ -32,7 +32,7 @@ public final class lu extends fu {
         jv jvVar = new jv(kvVar, spannableStringBuilder, jg.g.e(16.0f, this.c - g0.L(53.0f), 0));
         this.X = jvVar;
         this.Y = new jv[]{jvVar};
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.sl : org.telegram.ui.ActionBar.l6.rl, kvVar.D));
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.sl : org.telegram.ui.ActionBar.m6.rl, kvVar.D));
         this.Z = animatedArrowDrawable;
         animatedArrowDrawable.setAnimationProgress(pageblockdetails.open ? 0.0f : 1.0f);
     }
@@ -105,8 +105,8 @@ public final class lu extends fu {
 
     @Override // org.telegram.messenger.fu
     public final void W(Canvas canvas) {
-        org.telegram.ui.Components.ic icVar = this.b0;
-        float a10 = icVar != null ? icVar.a(0.02f) : 1.0f;
+        org.telegram.ui.Components.hc hcVar = this.b0;
+        float a10 = hcVar != null ? hcVar.a(0.02f) : 1.0f;
         kv kvVar = this.a;
         float f10 = -kvVar.S;
         int i7 = kvVar.C + kvVar.T;
@@ -116,7 +116,7 @@ public final class lu extends fu {
             canvas.save();
             canvas.scale(a10, a10, (f10 + f11) / 2.0f, i0() / 2.0f);
         }
-        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.sl : org.telegram.ui.ActionBar.l6.rl, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.sl : org.telegram.ui.ActionBar.m6.rl, kvVar.D);
         AnimatedArrowDrawable animatedArrowDrawable = this.Z;
         animatedArrowDrawable.a.setColor(w02);
         animatedArrowDrawable.invalidateSelf();
@@ -135,7 +135,7 @@ public final class lu extends fu {
         if (this.W.open || kvVar.s) {
             return;
         }
-        int w03 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.ul : org.telegram.ui.ActionBar.l6.tl, kvVar.D);
+        int w03 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.ul : org.telegram.ui.ActionBar.m6.tl, kvVar.D);
         Paint paint = this.a0;
         paint.setColor(w03);
         canvas.drawRect(f10, i0() - 1.0f, f11, i0(), paint);
@@ -149,20 +149,20 @@ public final class lu extends fu {
         if (actionMasked == 0) {
             this.c0 = true;
             if (this.b0 == null && (view = kvVar.Q) != null) {
-                this.b0 = new org.telegram.ui.Components.ic(view);
+                this.b0 = new org.telegram.ui.Components.hc(view);
             }
-            org.telegram.ui.Components.ic icVar = this.b0;
-            if (icVar != null) {
-                icVar.c(true);
+            org.telegram.ui.Components.hc hcVar = this.b0;
+            if (hcVar != null) {
+                hcVar.c(true);
             }
             return true;
         }
         if (actionMasked != 1) {
             if (actionMasked == 3) {
                 this.c0 = false;
-                org.telegram.ui.Components.ic icVar2 = this.b0;
-                if (icVar2 != null) {
-                    icVar2.c(false);
+                org.telegram.ui.Components.hc hcVar2 = this.b0;
+                if (hcVar2 != null) {
+                    hcVar2.c(false);
                 }
             }
             return this.c0;
@@ -171,9 +171,9 @@ public final class lu extends fu {
             return false;
         }
         this.c0 = false;
-        org.telegram.ui.Components.ic icVar3 = this.b0;
-        if (icVar3 != null) {
-            icVar3.c(false);
+        org.telegram.ui.Components.hc hcVar3 = this.b0;
+        if (hcVar3 != null) {
+            hcVar3.c(false);
         }
         View view2 = kvVar.Q;
         if (view2 != null) {

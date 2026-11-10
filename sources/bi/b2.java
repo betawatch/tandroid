@@ -7,12 +7,12 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ve;
-import org.telegram.ui.ys;
-import org.telegram.ui.yw;
-import org.telegram.ui.zv;
+import org.telegram.ui.aw;
+import org.telegram.ui.we;
+import org.telegram.ui.zs;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements c20 {
     public final /* synthetic */ int a;
@@ -41,14 +41,14 @@ public final /* synthetic */ class b2 implements c20 {
                     G0.b(j3, tL_premium_boostsStatus, new r2(k7Var, tL_premium_boostsStatus, j3, qpVar, 0));
                     break;
                 } else {
-                    k7Var.c2.setLoading(false);
+                    k7Var.f2.setLoading(false);
                     k7Var.t2(true);
                     break;
                 }
             case 1:
                 DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
                 Long l10 = (Long) obj;
-                org.telegram.messenger.g0.r((ys) this.d);
+                org.telegram.messenger.g0.r((zs) this.d);
                 dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
                 dataSettingsActivity.X = l10.longValue();
                 dataSettingsActivity.W = false;
@@ -58,13 +58,13 @@ public final /* synthetic */ class b2 implements c20 {
                 }
                 break;
             case 2:
-                zv zvVar = (zv) this.c;
+                aw awVar = (aw) this.c;
                 Runnable runnable = (Runnable) obj;
                 ((org.telegram.ui.ActionBar.u1) this.d).r(150L);
-                yw ywVar = zvVar.b;
-                Boolean bool = ywVar.G.bot_participant;
+                zw zwVar = awVar.b;
+                Boolean bool = zwVar.G.bot_participant;
                 if (bool != null && bool.booleanValue()) {
-                    ywVar.getMessagesController().m(this.b, ywVar.getMessagesController().a2(Long.valueOf(ywVar.H)), 0, null, ywVar, false, runnable, new ve(6, runnable), null);
+                    zwVar.getMessagesController().m(this.b, zwVar.getMessagesController().a2(Long.valueOf(zwVar.H)), 0, null, zwVar, false, runnable, new we(6, runnable), null);
                     break;
                 } else {
                     runnable.run();

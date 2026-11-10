@@ -1,30 +1,60 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cy implements org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public abstract class cy extends FrameLayout {
+    public float[] D;
+    public FrameLayout a;
+    public org.telegram.ui.ActionBar.m5 b;
+    public org.telegram.ui.ActionBar.m5 c;
+    public ImageView d;
+    public ay e;
+    public bi.md f;
+    public bi.md h;
+    public TextView n;
+    public org.telegram.ui.ActionBar.f2 r;
+    public String s;
+    public float w;
+    public ValueAnimator x;
+    public org.telegram.ui.ActionBar.g1 y;
 
-    public /* synthetic */ cy(EditTextBoldCursor editTextBoldCursor, int i7) {
-        this.a = i7;
-        this.b = editTextBoldCursor;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
+    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
+        float f10 = 0.0f;
+        float f11 = 0.0f;
+        while (frameLayout != frameLayout2) {
+            float y10 = frameLayout.getY() + f10;
+            f11 += frameLayout.getX();
+            if (frameLayout instanceof ScrollView) {
+                y10 -= frameLayout.getScrollY();
+            }
+            f10 = y10;
+            if (!(frameLayout.getParent() instanceof View)) {
+                break;
+            }
+            frameLayout = (View) frameLayout.getParent();
+            if (!(frameLayout instanceof ViewGroup)) {
+                return;
+            }
+        }
+        fArr[0] = f11 - frameLayout2.getPaddingLeft();
+        fArr[1] = f10 - frameLayout2.getPaddingTop();
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            case 1:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-            default:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(127.0f), TLObject.FLAG_30));
     }
 }

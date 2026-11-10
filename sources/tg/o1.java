@@ -11,10 +11,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import fi.v3;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.b50;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.c50;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class o1 extends View {
     public Bitmap a;
@@ -37,16 +37,16 @@ public abstract class o1 extends View {
         }
         this.w = true;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
-        duration.setInterpolator(xq.f);
+        duration.setInterpolator(wq.f);
         duration.addUpdateListener(new v3(this, 26));
-        duration.addListener(new b50(14, this, z9));
+        duration.addListener(new c50(14, this, z9));
         duration.start();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ((sg.i) this).D.o1.c();
+        ((sg.i) this).D.r1.c();
         this.a.recycle();
         this.a = null;
     }

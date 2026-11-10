@@ -1,32 +1,47 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ue extends org.telegram.ui.dg0 {
-    public final /* synthetic */ Object A0;
-    public final /* synthetic */ int z0;
+public final class ue extends hi.u {
+    public boolean s;
+    public final /* synthetic */ ChatActivityEnterView w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ue(Object obj, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7) {
-        super(context, g6Var);
-        this.z0 = i7;
-        this.A0 = obj;
+    public ue(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.w = chatActivityEnterView;
+        this.a = null;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.f = true;
+        this.b = new e2.r0();
+        bi.q1 q1Var = new bi.q1(4, context, this);
+        this.c = q1Var;
+        q1Var.setOverScrollMode(2);
+        q1Var.setClipToPadding(false);
+        q1Var.setClipToOutline(true);
+        q1Var.j(new ai.b(this, 14));
+        addView(q1Var);
+        paint.setColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.wj, false));
+        fh.g gVar = this.r;
+        if (gVar != null) {
+            gVar.updateColors();
+        }
+        invalidate();
+        setClipChildren(false);
+        this.s = false;
     }
 
-    @Override // org.telegram.ui.dg0
-    public final void l(long j3) {
-        switch (this.z0) {
-            case 0:
-                ((ChatActivityEnterView) this.A0).setEffectId(j3);
-                break;
-            default:
-                di diVar = (di) this.A0;
-                lh lhVar = diVar.C2;
-                diVar.H2 = j3;
-                lhVar.setEffect(j3);
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        if (this.s) {
+            return;
         }
+        this.s = true;
+        this.w.E1();
     }
 }

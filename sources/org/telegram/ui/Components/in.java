@@ -1,25 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class in extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ kn o;
+public final class in extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public in(kn knVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = knVar;
+    public /* synthetic */ in(jn jnVar, int i7) {
+        this.a = i7;
+        this.b = jnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        org.telegram.ui.cn cnVar = this.o.G;
-        if (cnVar != null) {
-            cnVar.getClass();
-            cnVar.w8(false, true, 0.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.Q = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                jn jnVar = this.b;
+                if (jnVar.Q == animator) {
+                    jnVar.getSubtitleTextView().setVisibility(4);
+                    jnVar.Q = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.Q = null;
+                break;
         }
     }
 }

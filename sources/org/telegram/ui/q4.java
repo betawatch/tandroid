@@ -14,9 +14,9 @@ import android.text.TextPaint;
 import android.view.View;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class q4 extends View implements org.telegram.ui.Components.pf0 {
+public abstract class q4 extends View implements org.telegram.ui.Components.of0 {
     public final GradientDrawable[] D;
     public final boolean[] E;
     public final float[] F;
@@ -29,7 +29,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
     public int M;
     public float N;
     public int O;
-    public org.telegram.ui.Components.tf0 P;
+    public org.telegram.ui.Components.sf0 P;
     public final TextPaint Q;
     public float R;
     public int S;
@@ -91,7 +91,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
         paint3.setAlpha(66);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(250L);
-        ofFloat.setInterpolator(org.telegram.ui.Components.xq.j);
+        ofFloat.setInterpolator(org.telegram.ui.Components.wq.j);
         ofFloat.addUpdateListener(new a3(this, i7));
         ofFloat.addListener(new m.a(this, 15));
         TextPaint textPaint = new TextPaint(1);
@@ -110,24 +110,24 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
         return this.T;
     }
 
-    @Override // org.telegram.ui.Components.pf0
+    @Override // org.telegram.ui.Components.of0
     public final void a() {
         Arrays.fill(this.E, false);
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.pf0
+    @Override // org.telegram.ui.Components.of0
     public final void b(boolean z9) {
         this.E[!z9 ? 1 : 0] = true;
         postInvalidateOnAnimation();
     }
 
-    @Override // org.telegram.ui.Components.pf0
+    @Override // org.telegram.ui.Components.of0
     public final void d() {
         invalidate();
     }
 
-    public org.telegram.ui.Components.tf0 getProfileGalleryView() {
+    public org.telegram.ui.Components.sf0 getProfileGalleryView() {
         return this.P;
     }
 
@@ -265,7 +265,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
                     if (i14 != this.M) {
                         this.H[i14] = 0.75f;
                     } else if (this.b == 3) {
-                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.xq.j.getInterpolation(this.H[i14]), i10, org.telegram.messenger.qs.e4) * this.G));
+                        paint6.setAlpha((int) (org.telegram.messenger.g0.W1(org.telegram.ui.Components.wq.j.getInterpolation(this.H[i14]), i10, org.telegram.messenger.qs.e4) * this.G));
                     }
                     canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(1.0f), i14 != this.M ? paint3 : paint6);
                     i14++;
@@ -441,7 +441,7 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
 
     @Override // android.view.View
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
         Rect rect = this.c;
         rect.set(0, 0, i7, (int) (currentActionBarHeight * 0.5f));
         Rect rect2 = this.d;
@@ -454,8 +454,8 @@ public abstract class q4 extends View implements org.telegram.ui.Components.pf0 
         gradientDrawableArr[1].setBounds(i7 - i13, 0, i7, i10);
     }
 
-    public void setProfileGalleryView(org.telegram.ui.Components.tf0 tf0Var) {
-        this.P = tf0Var;
+    public void setProfileGalleryView(org.telegram.ui.Components.sf0 sf0Var) {
+        this.P = sf0Var;
     }
 
     public void c() {

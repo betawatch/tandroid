@@ -9,16 +9,16 @@ import java.nio.ByteOrder;
 import java.security.MessageDigest;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.nw;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.wf;
-import org.telegram.ui.Components.xe;
-import org.telegram.ui.Components.yx;
+import org.telegram.ui.Components.mw;
+import org.telegram.ui.Components.nc;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.vf;
+import org.telegram.ui.Components.we;
+import org.telegram.ui.Components.xx;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class w0 implements r0.m0, nw {
+public final class w0 implements r0.m0, mw {
     public boolean a;
     public int b;
     public Object c;
@@ -49,18 +49,18 @@ public final class w0 implements r0.m0, nw {
     }
 
     public boolean d() {
-        yx yxVar;
-        xe xeVar;
+        xx xxVar;
+        we weVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.x3) {
-            return (chatActivityEnterView.z3 || (xeVar = chatActivityEnterView.E0) == null || xeVar.length() <= 0) && (yxVar = chatActivityEnterView.U0.y0) != null && yxVar.b() > 0 && !chatActivityEnterView.k3;
+            return (chatActivityEnterView.z3 || (weVar = chatActivityEnterView.E0) == null || weVar.length() <= 0) && (xxVar = chatActivityEnterView.U0.y0) != null && xxVar.b() > 0 && !chatActivityEnterView.k3;
         }
         return false;
     }
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        tt0 tt0Var = chatActivityEnterView.m1;
+        st0 st0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -70,7 +70,7 @@ public final class w0 implements r0.m0, nw {
             this.a = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
             qs.e().k(qs.j1, 1);
-            int height = ((((tt0Var.getHeight() - org.telegram.messenger.g0.m) - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((st0Var.getHeight() - org.telegram.messenger.g0.m) - org.telegram.messenger.g0.n) - org.telegram.messenger.g0.L(6.0f)) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int L = org.telegram.messenger.g0.L(175.0f);
@@ -81,14 +81,14 @@ public final class w0 implements r0.m0, nw {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            tt0Var.requestLayout();
+            st0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                tt0Var.setForeground(new oc(chatActivityEnterView));
+                st0Var.setForeground(new nc(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
-            wf wfVar = chatActivityEnterView.Z2;
-            if (wfVar != null) {
-                wfVar.h1();
+            vf vfVar = chatActivityEnterView.Z2;
+            if (vfVar != null) {
+                vfVar.h1();
             }
         }
     }

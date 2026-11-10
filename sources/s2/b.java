@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b implements b3.j {
     public final Uri a;
@@ -42,18 +42,18 @@ public final class b implements b3.j {
 
     @Override // b3.j
     public final void M0(b3.l lVar, long j3, long j10, int i7) {
-        x2.u uVar;
+        x2.t tVar;
         b3.r rVar = (b3.r) lVar;
         if (i7 == 0) {
             long j11 = rVar.a;
-            uVar = new x2.u(rVar.b, j3);
+            tVar = new x2.t(rVar.b, j3);
         } else {
             long j12 = rVar.a;
             j2.m mVar = rVar.b;
             c0 c0Var = rVar.d;
-            uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+            tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         }
-        this.y.f.t(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
+        this.y.f.t(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
     }
 
     public final Uri a() {
@@ -127,7 +127,7 @@ public final class b implements b3.j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(m mVar, x2.u uVar) {
+    public final void d(m mVar, x2.t tVar) {
         boolean z9;
         CopyOnWriteArrayList copyOnWriteArrayList;
         boolean z10;
@@ -261,10 +261,10 @@ public final class b implements b3.j {
                     }
                     if (lVar2 != null) {
                         this.w = lVar2;
-                        f5.u uVar2 = new f5.u(lVar2, z10 ? 1 : 0, 2);
+                        f5.u uVar = new f5.u(lVar2, z10 ? 1 : 0, 2);
                         Iterator it2 = copyOnWriteArrayList.iterator();
                         while (it2.hasNext()) {
-                            ((u) it2.next()).d(uri, uVar2, z11);
+                            ((u) it2.next()).d(uri, uVar, z11);
                         }
                     }
                 }
@@ -280,7 +280,7 @@ public final class b implements b3.j {
                             j19 /= 2;
                         }
                     }
-                    this.n = (m0.h0(j16) + elapsedRealtime) - uVar.e;
+                    this.n = (m0.h0(j16) + elapsedRealtime) - tVar.e;
                     if (this.e.o) {
                         return;
                     }
@@ -294,7 +294,7 @@ public final class b implements b3.j {
                     j19 /= 2;
                 }
                 j16 = j19;
-                this.n = (m0.h0(j16) + elapsedRealtime) - uVar.e;
+                this.n = (m0.h0(j16) + elapsedRealtime) - tVar.e;
                 if (this.e.o) {
                 }
             }
@@ -317,7 +317,7 @@ public final class b implements b3.j {
         if (!lVar3.e) {
         }
         j162 = j192;
-        this.n = (m0.h0(j162) + elapsedRealtime) - uVar.e;
+        this.n = (m0.h0(j162) + elapsedRealtime) - tVar.e;
         if (this.e.o) {
         }
     }
@@ -330,7 +330,7 @@ public final class b implements b3.j {
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
         Uri uri = c0Var.c;
-        x2.u uVar = new x2.u(mVar, uri, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, uri, c0Var.d, j3, j10, c0Var.b);
         boolean z9 = uri.getQueryParameter("_HLS_msn") != null;
         boolean z10 = iOException instanceof r;
         b3.i iVar = b3.o.e;
@@ -343,24 +343,24 @@ public final class b implements b3.j {
                 c(uri2);
                 wa waVar = dVar.f;
                 String str = m0.a;
-                waVar.r(uVar, i10, iOException, true);
+                waVar.r(tVar, i10, iOException, true);
                 return iVar;
             }
         }
-        f5.u uVar2 = new f5.u(iOException, i7, 2);
+        f5.u uVar = new f5.u(iOException, i7, 2);
         Iterator it = dVar.e.iterator();
         boolean z11 = false;
         while (it.hasNext()) {
-            z11 |= !((u) it.next()).d(uri2, uVar2, false);
+            z11 |= !((u) it.next()).d(uri2, uVar, false);
         }
         pb.b bVar = dVar.c;
         if (z11) {
             bVar.getClass();
-            long a12 = pb.b.a1(uVar2);
+            long a12 = pb.b.a1(uVar);
             iVar = a12 != -9223372036854775807L ? new b3.i(0, a12, false) : b3.o.f;
         }
         boolean a10 = iVar.a();
-        dVar.f.r(uVar, i10, iOException, !a10);
+        dVar.f.r(tVar, i10, iOException, !a10);
         if (!a10) {
             bVar.getClass();
         }
@@ -373,14 +373,14 @@ public final class b implements b3.j {
         q qVar = (q) rVar.f;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         if (qVar instanceof m) {
-            d((m) qVar, uVar);
-            this.y.f.p(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+            d((m) qVar, tVar);
+            this.y.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         } else {
             t0 b10 = t0.b("Loaded playlist has unexpected type.", null);
             this.w = b10;
-            this.y.f.r(uVar, 4, b10, true);
+            this.y.f.r(tVar, 4, b10, true);
         }
         this.y.c.getClass();
     }
@@ -391,9 +391,9 @@ public final class b implements b3.j {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         d dVar = this.y;
         dVar.c.getClass();
-        dVar.f.o(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        dVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

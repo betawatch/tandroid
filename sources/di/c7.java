@@ -8,14 +8,14 @@ import android.graphics.RectF;
 import android.text.TextPaint;
 import android.util.TypedValue;
 import android.view.View;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c7 extends View {
     public final String a;
     public final String b;
-    public final ah0 c;
+    public final zg0 c;
     public final Paint d;
     public final TextPaint e;
     public final TextPaint f;
@@ -28,10 +28,10 @@ public final class c7 extends View {
         this.r = new Rect();
         this.a = str;
         this.b = str2;
-        ah0 ah0Var = new ah0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f), true, null);
-        this.c = ah0Var;
-        ah0Var.K(1);
-        ah0Var.R(this);
+        zg0 zg0Var = new zg0(i7, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(36.0f), true, null);
+        this.c = zg0Var;
+        zg0Var.K(1);
+        zg0Var.R(this);
         Paint paint = new Paint(1);
         this.d = paint;
         paint.setColor(383310040);
@@ -56,9 +56,9 @@ public final class c7 extends View {
         int i7 = L2 / 2;
         int i10 = L - i7;
         int i11 = measuredHeight - i7;
-        ah0 ah0Var = this.c;
-        ah0Var.setBounds(i10, i11, i10 + L2, L2 + i11);
-        ah0Var.draw(canvas);
+        zg0 zg0Var = this.c;
+        zg0Var.setBounds(i10, i11, i10 + L2, L2 + i11);
+        zg0Var.draw(canvas);
         if (this.n > 0.0f) {
             float N = (1.0f - this.n) * org.telegram.messenger.g0.N(4.0f);
             float f10 = N * 2.0f;

@@ -5,9 +5,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.e40;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class cd implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startGroupCall$29(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                e40 e40Var = (e40) this.d;
-                g0.h3(new org.telegram.messenger.voip.k0(this.b, 6, e40Var, tLObject, this.c));
+                f40 f40Var = (f40) this.d;
+                g0.h3(new org.telegram.messenger.voip.k0(this.b, 6, f40Var, tLObject, this.c));
                 break;
         }
     }

@@ -12,13 +12,13 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.cg;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.cn;
-import org.telegram.ui.dg0;
+import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class s4 implements View.OnLongClickListener {
 
     @Override // android.view.View.OnLongClickListener
     public final boolean onLongClick(View view) {
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         int i7 = this.a;
         Object obj = this.b;
         int i10 = 1;
@@ -64,7 +64,7 @@ public final /* synthetic */ class s4 implements View.OnLongClickListener {
                     vaVar.o();
                     vaVar.E0.setSelected(true);
                     vaVar.s.e(0.85f, 240L, null);
-                    l60 F = l60.F(vaVar.r, vaVar.a, vaVar.E0);
+                    k60 F = k60.F(vaVar.r, vaVar.a, vaVar.E0);
                     y6 y6Var = new y6(activity, 1);
                     y6Var.d(vaVar.s.o);
                     y6Var.h = new v8(vaVar, 21);
@@ -94,27 +94,27 @@ public final /* synthetic */ class s4 implements View.OnLongClickListener {
             case 4:
                 li.p pVar = ((li.l) obj).a;
                 li.y3 y3Var = pVar.s;
-                org.telegram.ui.ActionBar.g6 g6Var2 = pVar.a;
-                di diVar = pVar.b;
+                org.telegram.ui.ActionBar.h6 h6Var2 = pVar.a;
+                ci ciVar = pVar.b;
                 li.t3 t3Var = pVar.r;
                 int i13 = pVar.n;
                 if (!p10.i(i13).q()) {
-                    new ug.w0(diVar.W1, pVar.getContext(), pVar.n, 43, true).show();
+                    new ug.w0(ciVar.Z1, pVar.getContext(), pVar.n, 43, true).show();
                 } else if (t3Var.n3() && !t3Var.p3()) {
                     if (t3Var.P3()) {
                         ArrayList<TL_iv.PageBlock> c32 = t3Var.c3();
                         if (!c32.isEmpty()) {
-                            org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
+                            org.telegram.ui.ActionBar.f2 f2Var = ciVar.Z1;
                             cn cnVar = f2Var instanceof cn ? (cn) f2Var : null;
-                            dg0 dg0Var = pVar.O;
-                            if (dg0Var != null) {
-                                dg0Var.g(false);
+                            eg0 eg0Var = pVar.O;
+                            if (eg0Var != null) {
+                                eg0Var.g(false);
                                 pVar.O = null;
                             }
-                            dg0 dg0Var2 = new dg0(pVar.getContext(), g6Var2);
-                            pVar.O = dg0Var2;
-                            dg0Var2.setOnDismissListener(new bi.eb(pVar, 7));
-                            long b12 = diVar.b1();
+                            eg0 eg0Var2 = new eg0(pVar.getContext(), h6Var2);
+                            pVar.O = eg0Var2;
+                            eg0Var2.setOnDismissListener(new bi.eb(pVar, 7));
+                            long b12 = ciVar.b1();
                             ij ijVar = cnVar != null ? cnVar.D5 : null;
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();
                             tL_message.id = 0;
@@ -142,21 +142,21 @@ public final /* synthetic */ class s4 implements View.OnLongClickListener {
                             ijVar2.n0(null);
                             ijVar2.u1 = true;
                             pVar.O.p(org.telegram.messenger.k5.k(ijVar2));
-                            dg sendButton = y3Var.getSendButton();
+                            cg sendButton = y3Var.getSendButton();
                             sendButton.setScaleX(1.0f);
                             sendButton.setScaleY(1.0f);
-                            dg q10 = pVar.O.q(sendButton, true, new ii.g(pVar, 10));
+                            cg q10 = pVar.O.q(sendButton, true, new ii.g(pVar, 10));
                             if (q10 != null) {
-                                g6Var = g6Var2;
-                                q10.setBackground(new li.a2(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(22.0f), org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, g6Var))));
-                                dg0 dg0Var3 = pVar.O;
+                                h6Var = h6Var2;
+                                q10.setBackground(new li.a2(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(22.0f), org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, h6Var))));
+                                eg0 eg0Var3 = pVar.O;
                                 int L = org.telegram.messenger.g0.L(44.0f);
-                                dg0Var3.l0 = true;
-                                dg0Var3.X = L;
+                                eg0Var3.l0 = true;
+                                eg0Var3.X = L;
                             } else {
-                                g6Var = g6Var2;
+                                h6Var = h6Var2;
                             }
-                            l60 F2 = l60.F(pVar, g6Var, sendButton);
+                            k60 F2 = k60.F(pVar, h6Var, sendButton);
                             boolean z10 = cnVar != null && t10.B(cnVar.j());
                             if (cnVar != null && cnVar.S6()) {
                                 int i14 = 0;

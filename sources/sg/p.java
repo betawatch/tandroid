@@ -5,13 +5,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.l2;
-import org.telegram.ui.cj0;
+import org.telegram.ui.Components.k2;
+import org.telegram.ui.dj0;
 import org.telegram.ui.t4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p extends LinearLayout {
     public final t4 a;
@@ -52,7 +52,7 @@ public final class p extends LinearLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(l6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
+        editTextBoldCursor.setBackground(m6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -60,9 +60,9 @@ public final class p extends LinearLayout {
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setImeActionLabel(id.M0(2131751354, null), 6);
         editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
-        editTextBoldCursor.addTextChangedListener(new cj0(this));
+        editTextBoldCursor.addTextChangedListener(new dj0(this));
         editTextBoldCursor.setOnFocusChangeListener(new bi.n(this, 7));
-        editTextBoldCursor.setOnEditorActionListener(new l2(5));
+        editTextBoldCursor.setOnEditorActionListener(new k2(5));
         linearLayout.addView(editTextBoldCursor, ha.o(72, 36));
     }
 }

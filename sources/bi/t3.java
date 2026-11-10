@@ -17,18 +17,18 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.kk0;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.cn;
 import org.telegram.ui.ge;
 import org.telegram.ui.he;
 import org.telegram.ui.ji;
 import org.telegram.ui.ke;
 import org.telegram.ui.nm;
-import org.telegram.ui.p61;
-import org.telegram.ui.wb1;
+import org.telegram.ui.q61;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t3 implements v10 {
     public final /* synthetic */ int a;
@@ -48,20 +48,20 @@ public final /* synthetic */ class t3 implements v10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x02e2  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x032c  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0344  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x0363  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x030b  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01df  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x02e0  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0342  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0361  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0309  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x01d2  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x01de  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01f2  */
     @Override // org.telegram.messenger.v10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Object obj, Object obj2) {
-        Runnable p61Var;
+        Runnable q61Var;
         long j3;
         boolean z9;
         long j10;
@@ -82,6 +82,8 @@ public final /* synthetic */ class t3 implements v10 {
         int i12 = 2;
         int i13 = 6;
         int i14 = 1;
+        r10 = true;
+        boolean z13 = true;
         switch (this.a) {
             case 0:
                 k7 k7Var = (k7) this.c;
@@ -98,14 +100,14 @@ public final /* synthetic */ class t3 implements v10 {
                             ai.e eVar = new ai.e(textView, 6);
                             try {
                                 boolean[] zArr2 = new boolean[1];
-                                x10.m0(new org.telegram.ui.Wallet.e7(x10, zArr2, eVar, org.telegram.ui.Wallet.l0.h(stargiftdepositpayload), 5));
-                                p61Var = new org.telegram.ui.Wallet.l(zArr2, 3);
+                                x10.m0(new org.telegram.ui.Wallet.h7(x10, zArr2, eVar, org.telegram.ui.Wallet.l0.h(stargiftdepositpayload), 5));
+                                q61Var = new org.telegram.ui.Wallet.l(zArr2, 3);
                             } catch (Exception e10) {
                                 org.telegram.ui.Wallet.l0.k("emulateDepositNFT: invalid payload", e10);
-                                org.telegram.messenger.g0.h3(new wb1(5, eVar, e10));
-                                p61Var = new p61(i12);
+                                org.telegram.messenger.g0.h3(new sb1(6, eVar, e10));
+                                q61Var = new q61(i12);
                             }
-                            runnableArr[0] = p61Var;
+                            runnableArr[0] = q61Var;
                             break;
                         } else {
                             textView.setVisibility(8);
@@ -149,9 +151,9 @@ public final /* synthetic */ class t3 implements v10 {
                         i14 = 0;
                         j10 = 0;
                         j11 = 0;
-                        l60 I = l60.I(cnVar2, q1Var);
-                        kk0 kk0Var = new kk0(cnVar2.getParentActivity(), cnVar2.za);
-                        I.p = new ge(kk0Var, r11 ? 1 : 0);
+                        k60 I = k60.I(cnVar2, q1Var);
+                        jk0 jk0Var = new jk0(cnVar2.getParentActivity(), cnVar2.za);
+                        I.p = new ge(jk0Var, r11);
                         i7 = (j10 > j11 ? 1 : (j10 == j11 ? 0 : -1));
                         if (i7 == 0) {
                             int i15 = z9 ? R.drawable.msg_channel : R.drawable.msg_discussion;
@@ -165,7 +167,7 @@ public final /* synthetic */ class t3 implements v10 {
                             z10 = z9;
                             z11 = false;
                         }
-                        I.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, kk0Var, str4, 3), z11);
+                        I.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, jk0Var, str4, 3), z11);
                         int i17 = 13;
                         if (bool.booleanValue()) {
                             I.c(R.drawable.outline_gram_24, org.telegram.messenger.id.M0(2131752653, null), new he(cnVar2, str4, i17), z11);
@@ -178,9 +180,9 @@ public final /* synthetic */ class t3 implements v10 {
                             charSequence = null;
                             I.p(13, org.telegram.messenger.g0.L(200.0f), org.telegram.messenger.id.M0(2131748133, null));
                         }
-                        kk0Var.e(I);
-                        kk0Var.f(q1Var, characterStyle, charSequence, false);
-                        cnVar2.showDialog(kk0Var);
+                        jk0Var.e(I);
+                        jk0Var.f(q1Var, characterStyle, charSequence, false);
+                        cnVar2.showDialog(jk0Var);
                         break;
                     } else {
                         TLRPC.Chat chat = (TLRPC.Chat) tLObject;
@@ -195,22 +197,22 @@ public final /* synthetic */ class t3 implements v10 {
                     z9 = false;
                 }
                 j11 = j3;
-                l60 I2 = l60.I(cnVar2, q1Var);
-                kk0 kk0Var2 = new kk0(cnVar2.getParentActivity(), cnVar2.za);
-                I2.p = new ge(kk0Var2, r11 ? 1 : 0);
+                k60 I2 = k60.I(cnVar2, q1Var);
+                jk0 jk0Var2 = new jk0(cnVar2.getParentActivity(), cnVar2.za);
+                I2.p = new ge(jk0Var2, r11);
                 i7 = (j10 > j11 ? 1 : (j10 == j11 ? 0 : -1));
                 if (i7 == 0) {
                 }
-                I2.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, kk0Var2, str4, 3), z11);
+                I2.c(R.drawable.msg_copy, org.telegram.messenger.id.M0(2131746678, null), new ke(cnVar2, jk0Var2, str4, 3), z11);
                 int i172 = 13;
                 if (bool.booleanValue()) {
                 }
                 I2.k();
                 if (i10 == 0) {
                 }
-                kk0Var2.e(I2);
-                kk0Var2.f(q1Var, characterStyle, charSequence, false);
-                cnVar2.showDialog(kk0Var2);
+                jk0Var2.e(I2);
+                jk0Var2.f(q1Var, characterStyle, charSequence, false);
+                cnVar2.showDialog(jk0Var2);
             case 3:
                 cn cnVar3 = (cn) this.c;
                 ji jiVar = (ji) this.b;
@@ -252,7 +254,7 @@ public final /* synthetic */ class t3 implements v10 {
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
                 gz gzVar = (gz) this.d;
                 ij ijVar2 = (ij) this.e;
-                org.telegram.ui.Wallet.e7 e7Var = (org.telegram.ui.Wallet.e7) this.f;
+                org.telegram.ui.Wallet.h7 h7Var = (org.telegram.ui.Wallet.h7) this.f;
                 TLRPC.Updates updates = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TL_update.TL_updateSentWalletTransaction A = org.telegram.ui.Wallet.l0.A(updates);
@@ -260,16 +262,20 @@ public final /* synthetic */ class t3 implements v10 {
                     String str5 = A.msg_hash;
                     if (!TextUtils.isEmpty(str5) && org.telegram.ui.Wallet.l0.g0(str5) != null) {
                         objArr = true;
-                        gzVar.k(ijVar2, updates, !objArr == true || (wallettransaction.pending && !wallettransaction.failed && !TextUtils.isEmpty(wallettransaction.id)) == true);
+                        Object[] objArr2 = (!wallettransaction.pending || wallettransaction.failed || TextUtils.isEmpty(wallettransaction.id)) ? false : true;
+                        if (objArr == false && objArr2 == false) {
+                            z13 = false;
+                        }
+                        gzVar.k(ijVar2, updates, z13);
                         if (updates != null) {
-                            Utilities.d.c(new wb1(i14, l0Var, updates));
+                            Utilities.d.c(new sb1(i12, l0Var, updates));
                         }
                         if (objArr != true) {
                             org.telegram.ui.Wallet.l0.H("transfer is sent, msg_hash=" + A.msg_hash + ", gasless=" + A.gasless);
                             l0Var.d(wallettransaction, A);
                             break;
                         } else {
-                            e7Var.run();
+                            h7Var.run();
                             if (tL_error != null && (str = tL_error.text) != null) {
                                 str3 = str;
                             }
@@ -279,7 +285,12 @@ public final /* synthetic */ class t3 implements v10 {
                     }
                 }
                 objArr = false;
-                gzVar.k(ijVar2, updates, !objArr == true || (wallettransaction.pending && !wallettransaction.failed && !TextUtils.isEmpty(wallettransaction.id)) == true);
+                if (!wallettransaction.pending) {
+                }
+                if (objArr == false) {
+                    z13 = false;
+                }
+                gzVar.k(ijVar2, updates, z13);
                 if (updates != null) {
                 }
                 if (objArr != true) {
@@ -287,7 +298,7 @@ public final /* synthetic */ class t3 implements v10 {
                 break;
             case 5:
                 org.telegram.ui.Wallet.l0 l0Var2 = (org.telegram.ui.Wallet.l0) this.c;
-                org.telegram.ui.Wallet.e7 e7Var2 = (org.telegram.ui.Wallet.e7) this.b;
+                org.telegram.ui.Wallet.h7 h7Var2 = (org.telegram.ui.Wallet.h7) this.b;
                 org.telegram.ui.Wallet.g0 g0Var = (org.telegram.ui.Wallet.g0) this.d;
                 org.telegram.ui.Wallet.i0 i0Var = (org.telegram.ui.Wallet.i0) this.e;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.f;
@@ -295,7 +306,7 @@ public final /* synthetic */ class t3 implements v10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 TL_update.TL_updateSentWalletTransaction A2 = org.telegram.ui.Wallet.l0.A(updates2);
                 if (updates2 != null) {
-                    Utilities.d.c(new wb1(i14, l0Var2, updates2));
+                    Utilities.d.c(new sb1(i12, l0Var2, updates2));
                 }
                 if (A2 != null) {
                     String str6 = A2.msg_hash;
@@ -314,7 +325,7 @@ public final /* synthetic */ class t3 implements v10 {
                         break;
                     }
                 }
-                e7Var2.run();
+                h7Var2.run();
                 if (tL_error2 != null && (str2 = tL_error2.text) != null) {
                     str3 = str2;
                 }
@@ -338,7 +349,7 @@ public final /* synthetic */ class t3 implements v10 {
                         i19++;
                         z12 |= update instanceof TL_update.TL_updateSentWalletTransaction;
                     }
-                    Utilities.d.c(new wb1(i13, d2Var, updates3));
+                    Utilities.d.c(new sb1(7, d2Var, updates3));
                 } else {
                     z12 = false;
                 }
@@ -349,7 +360,7 @@ public final /* synthetic */ class t3 implements v10 {
                     c20Var.a(org.telegram.ui.Wallet.d2.z(tL_error3, "sendTransfer"));
                     break;
                 } else {
-                    d2Var.y(z1Var, i0Var2, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 == null ? null : org.telegram.ui.Wallet.d2.z(tL_error3, "sendTransfer"), c20Var);
+                    d2Var.y(z1Var, i0Var2, tL_error3 == null ? Base64.encodeToString(sendtransfer.data_normal, 2) : null, tL_error3 == null ? -1 : 0, tL_error3 != null ? org.telegram.ui.Wallet.d2.z(tL_error3, "sendTransfer") : null, c20Var);
                     break;
                 }
                 break;

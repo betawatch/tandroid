@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements ls {
     public static final boolean w = !TextUtils.isEmpty(g0.k1("ro.miui.ui.version.code"));
@@ -461,13 +461,13 @@ public class MusicPlayerService extends Service implements ls {
         if (z9) {
             return null;
         }
-        org.telegram.ui.ActionBar.l6.T(this);
-        org.telegram.ui.Components.w8 w8Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.w8(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.w8((TLRPC.Chat) tLObject);
-        w8Var.r = 1;
+        org.telegram.ui.ActionBar.m6.T(this);
+        org.telegram.ui.Components.v8 v8Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.v8(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.v8((TLRPC.Chat) tLObject);
+        v8Var.r = 1;
         float f12 = i7;
         Bitmap createBitmap = Bitmap.createBitmap(g0.L(f12), g0.L(f12), Bitmap.Config.ARGB_8888);
-        w8Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-        w8Var.draw(new Canvas(createBitmap));
+        v8Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+        v8Var.draw(new Canvas(createBitmap));
         return createBitmap;
     }
 

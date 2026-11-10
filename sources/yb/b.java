@@ -23,30 +23,30 @@ import java.util.ArrayList;
 import org.telegram.messenger.camera.q;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.r0;
-import org.telegram.ui.ActionBar.s4;
+import org.telegram.ui.ActionBar.t4;
 import pb.j;
 import q6.m;
 import zh.m3;
 import zh.u2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class b implements a, s4 {
+public final class b implements a, t4 {
     public boolean a;
     public Object b;
     public Object c;
     public Object d;
     public Object e;
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public boolean b(r0 r0Var, RectF rectF) {
         float L = g0.L(6.0f);
         rectF.set(L, L, ((FrameLayout) this.b).getWidth() - r4, ((FrameLayout) this.b).getHeight() - r4);
@@ -115,13 +115,18 @@ public final class b implements a, s4 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
-    public boolean d() {
+    @Override // org.telegram.ui.ActionBar.t4
+    public /* synthetic */ boolean d() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
-    public g e(j5 j5Var) {
+    @Override // org.telegram.ui.ActionBar.t4
+    public boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.t4
+    public g f(j5 j5Var) {
         m3 m3Var = (m3) this.e;
         g c10 = m3Var.getBaseSimpleGlass().d.c(j5Var, null, false);
         c10.p(m3Var.M);
@@ -129,52 +134,52 @@ public final class b implements a, s4 {
         return c10;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
-    public void f(j5 j5Var, r0 r0Var) {
+    @Override // org.telegram.ui.ActionBar.t4
+    public void g(j5 j5Var, r0 r0Var) {
         boolean z9 = j5Var != null;
         this.a = z9;
         ((FrameLayout) this.b).setVisibility(z9 ? 4 : 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public int getButtonsGlassBackgroundColor() {
         gh.e eVar = ((m3) this.e).M;
         return eVar.a(eVar.e);
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public gh.a getButtonsGlassColorProvider() {
         return ((m3) this.e).M;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public gh.a getMenuGlassColorProvider() {
         return ((m3) this.e).M;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public View getMenuHostView() {
         return (FrameLayout) this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
-    public g6 getMenuResourcesProvider() {
-        g6 g6Var;
-        g6Var = ((f2) ((m3) this.e)).resourceProvider;
-        return g6Var;
+    @Override // org.telegram.ui.ActionBar.t4
+    public h6 getMenuResourcesProvider() {
+        h6 h6Var;
+        h6Var = ((f2) ((m3) this.e)).resourceProvider;
+        return h6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public int getMenuRise() {
         return g0.L(8.0f);
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public View getMenuView() {
         return (u2) this.c;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public j5 getOpenMenuOverlay() {
         if (this.a) {
             return (j5) this.d;
@@ -182,7 +187,7 @@ public final class b implements a, s4 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.s4
+    @Override // org.telegram.ui.ActionBar.t4
     public void setMenuGlassFrostedProgress(float f10) {
         ri.d dVar = ((m3) this.e).getBaseSimpleGlass().e;
         if (dVar != null) {

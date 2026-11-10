@@ -8,18 +8,18 @@ import android.view.ViewPropertyAnimator;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.ye;
-import org.telegram.ui.Components.ie0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.he0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class x9 extends o5 {
     public boolean i2;
     public final /* synthetic */ va j2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x9(va vaVar, Context context, boolean z9, File file, boolean z10, boolean z11, ua uaVar, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, e7 e7Var, int i11, int i12, ye yeVar, org.telegram.ui.Components.y9 y9Var, di.b bVar, x5 x5Var, ja jaVar) {
-        super(context, z9, file, z10, z11, uaVar, activity, i7, bitmap, bitmap2, i10, arrayList, e7Var, i11, i12, yeVar, y9Var, bVar, x5Var, jaVar);
+    public x9(va vaVar, Context context, boolean z9, File file, boolean z10, boolean z11, ua uaVar, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, e7 e7Var, int i11, int i12, ye yeVar, org.telegram.ui.Components.x9 x9Var, di.b bVar, x5 x5Var, ja jaVar) {
+        super(context, z9, file, z10, z11, uaVar, activity, i7, bitmap, bitmap2, i10, arrayList, e7Var, i11, i12, yeVar, x9Var, bVar, x5Var, jaVar);
         this.j2 = vaVar;
     }
 
@@ -35,11 +35,11 @@ public final class x9 extends o5 {
         vaVar.v1.L0(false);
         vaVar.c1.clearAnimation();
         ViewPropertyAnimator duration = vaVar.c1.animate().alpha(0.0f).setDuration(180L);
-        xq xqVar = xq.g;
-        duration.setInterpolator(xqVar).start();
+        wq wqVar = wq.g;
+        duration.setInterpolator(wqVar).start();
         if (vaVar.g0 != 2) {
             vaVar.Y0.clearAnimation();
-            vaVar.Y0.animate().alpha(0.0f).setDuration(180L).setInterpolator(xqVar).start();
+            vaVar.Y0.animate().alpha(0.0f).setDuration(180L).setInterpolator(wqVar).start();
         }
         S0(p(), false);
     }
@@ -49,12 +49,12 @@ public final class x9 extends o5 {
         if (!z9) {
             vaVar.p1.a(false, z10);
             vaVar.p1.clearAnimation();
-            vaVar.p1.animate().alpha(0.0f).withEndAction(new v9(this, 1)).setDuration(180L).setInterpolator(xq.g).setStartDelay(z10 ? 500L : 0L).start();
+            vaVar.p1.animate().alpha(0.0f).withEndAction(new v9(this, 1)).setDuration(180L).setInterpolator(wq.g).setStartDelay(z10 ? 500L : 0L).start();
         } else {
             vaVar.p1.setVisibility(0);
             vaVar.p1.setAlpha(0.0f);
             vaVar.p1.clearAnimation();
-            vaVar.p1.animate().alpha(1.0f).setDuration(180L).setInterpolator(xq.g).start();
+            vaVar.p1.animate().alpha(1.0f).setDuration(180L).setInterpolator(wq.g).start();
         }
     }
 
@@ -74,12 +74,12 @@ public final class x9 extends o5 {
         va vaVar = this.j2;
         vaVar.c1.clearAnimation();
         ViewPropertyAnimator duration = vaVar.c1.animate().alpha(vaVar.g0 == -1 ? 1.0f : 0.0f).setDuration(180L);
-        xq xqVar = xq.g;
-        duration.setInterpolator(xqVar).start();
+        wq wqVar = wq.g;
+        duration.setInterpolator(wqVar).start();
         vaVar.Y0.clearAnimation();
         ViewPropertyAnimator animate = vaVar.Y0.animate();
         int i7 = vaVar.g0;
-        animate.alpha((i7 == -1 || i7 == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(xqVar).start();
+        animate.alpha((i7 == -1 || i7 == 2) ? 1.0f : 0.0f).setDuration(180L).setInterpolator(wqVar).start();
         S0(false, z9);
         if (z9 && (jVar = this.s0) != null) {
             z0(jVar);
@@ -133,7 +133,7 @@ public final class x9 extends o5 {
             jaVar.x(6, z9);
             p5 p5Var = vaVar.j1;
             if (p5Var != null) {
-                ((ie0) p5Var.c).a(vaVar.X0.k(), true);
+                ((he0) p5Var.c).a(vaVar.X0.k(), true);
             }
         }
         la laVar = vaVar.c1;

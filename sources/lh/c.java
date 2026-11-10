@@ -13,33 +13,33 @@ import c8.ka;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.qi;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
-    public final g6 a;
+    public final h6 a;
     public final r7 b;
     public final r7 c;
     public float d;
 
-    public c(Context context, g6 g6Var, qi qiVar, dh.c cVar) {
+    public c(Context context, h6 h6Var, qi qiVar, dh.c cVar) {
         super(context);
         r7 r7Var = new r7(this);
         this.b = r7Var;
         r7 r7Var2 = new r7(this);
         this.c = r7Var2;
-        this.a = g6Var;
-        kh.a c10 = kh.a.c(context, cVar, qiVar, g6Var);
+        this.a = h6Var;
+        kh.a c10 = kh.a.c(context, cVar, qiVar, h6Var);
         r7Var.b = c10;
         int i7 = 5;
         c10.setOnClickListener(new l1(i7));
         ka.b((kh.a) r7Var.b, 0.065f, 2.0f);
-        kh.a c11 = kh.a.c(context, cVar, qiVar, g6Var);
+        kh.a c11 = kh.a.c(context, cVar, qiVar, h6Var);
         r7Var2.b = c11;
         c11.setOnClickListener(new l1(i7));
         ka.b((kh.a) r7Var2.b, 0.065f, 2.0f);
@@ -58,12 +58,12 @@ public final class c extends LinearLayout {
         textView.setTextSize(1, 15.0f);
         textView.setPadding(g0.L(21.0f), 0, g0.L(21.0f), 0);
         textView.setCompoundDrawablePadding(g0.L(6.0f));
-        int i10 = l6.Ll;
-        g6 g6Var = this.a;
-        s6.U(textView, i10, g6Var);
+        int i10 = m6.Ll;
+        h6 h6Var = this.a;
+        t6.U(textView, i10, h6Var);
         textView.setTypeface(g0.o());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
-        s6.x(this, mutate, l6.Kl, g6Var, PorterDuff.Mode.MULTIPLY);
+        t6.x(this, mutate, m6.Kl, h6Var, PorterDuff.Mode.MULTIPLY);
         Drawable drawable = z9 ? mutate : null;
         if (z9) {
             mutate = null;

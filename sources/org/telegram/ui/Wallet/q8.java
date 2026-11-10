@@ -1,91 +1,162 @@
 package org.telegram.ui.Wallet;
 
-import android.view.KeyEvent;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.sf;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q8 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class q8 extends FrameLayout {
+    public final ImageView a;
+    public final c4 b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int h;
+    public float n;
+    public float r;
+    public boolean s;
+    public ValueAnimator w;
+    public r1.g x;
 
-    public /* synthetic */ q8(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public q8(Context context) {
+        super(context);
+        this.e = 1.0f;
+        this.h = -1;
+        setClipChildren(false);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setImageResource(R.drawable.mini_gram_72);
+        imageView.setScaleX(0.7407407f);
+        imageView.setScaleY(0.7407407f);
+        addView(imageView, c8.ha.c(-1.0f, -1));
+        c4 c4Var = new c4(this, context, new l(this, 11));
+        this.b = c4Var;
+        addView(c4Var, c8.ha.c(-1.0f, -1));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                r8 r8Var = (r8) this.b;
-                if (i7 != 3) {
-                    r8Var.getClass();
-                    return false;
+    public final void a(float f10) {
+        if (this.x == null) {
+            r1.g gVar = new r1.g(new r1.f(this.e));
+            this.x = gVar;
+            r1.h hVar = new r1.h(f10);
+            hVar.a(0.55f);
+            hVar.b(280.0f);
+            gVar.m = hVar;
+            this.x.f(0.001f);
+            this.x.b(new q3(this, 1));
+        }
+        this.x.c(f10);
+    }
+
+    public final void b() {
+        this.h = -1;
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+        }
+        this.f = (float) Math.IEEEremainder((this.f + this.c) - c(), 6.283185307179586d);
+        float IEEEremainder = (float) Math.IEEEremainder(this.d, 6.283185307179586d);
+        this.s = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.w = ofFloat;
+        ofFloat.setDuration(350L);
+        this.w.setInterpolator(wq.h);
+        this.w.addUpdateListener(new sf(this, IEEEremainder, 6));
+        this.w.start();
+        a(1.0f);
+    }
+
+    public final float c() {
+        return ((float) (((SystemClock.uptimeMillis() / 1000.0d) * 0.5961171984672546d) % 6.283185307179586d)) + this.f;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b.setPaused(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        this.b.setPaused(true);
+        ValueAnimator valueAnimator = this.w;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        r1.g gVar = this.x;
+        if (gVar != null) {
+            gVar.d();
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        c4 c4Var = this.b;
+        if (c4Var.n && c4Var.getVisibility() == 0) {
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked == 0) {
+                if (!this.s && this.e <= 1.001f) {
+                    this.c = c();
+                    this.d = 0.0f;
                 }
-                org.telegram.messenger.g0.v1(r8Var.b);
+                ValueAnimator valueAnimator = this.w;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.w = null;
+                }
+                this.s = false;
+                this.h = motionEvent.getPointerId(0);
+                this.n = motionEvent.getX();
+                this.r = motionEvent.getY();
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                a(3.0f);
                 return true;
-            case 1:
-                l9 l9Var = (l9) this.b;
-                if (i7 == 6) {
-                    fi.d dVar = l9Var.d0;
-                    if (dVar.c0) {
-                        dVar.performClick();
+            }
+            if (actionMasked != 1) {
+                if (actionMasked == 2) {
+                    int i7 = this.h;
+                    if (i7 != -1) {
+                        int findPointerIndex = motionEvent.findPointerIndex(i7);
+                        if (findPointerIndex < 0) {
+                            b();
+                            return true;
+                        }
+                        float radians = ((float) Math.toRadians(0.800000011920929d)) / org.telegram.messenger.g0.p;
+                        this.c = com.google.android.recaptcha.internal.a.z(motionEvent.getX(findPointerIndex), this.n, radians, this.c);
+                        this.d = com.google.android.recaptcha.internal.a.z(motionEvent.getY(findPointerIndex), this.r, radians, this.d);
+                        this.n = motionEvent.getX(findPointerIndex);
+                        this.r = motionEvent.getY(findPointerIndex);
                         return true;
                     }
-                } else {
-                    l9Var.getClass();
-                }
-                return false;
-            default:
-                ma maVar = (ma) this.b;
-                EditText editText = maVar.a;
-                boolean z9 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i7 != 5 && !z9) {
-                    return false;
-                }
-                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
-                    String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !maVar.b()) {
-                        String str = null;
-                        if (!lowerCase.isEmpty()) {
-                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
-                            int length = mnemonicWordlist.length;
-                            int i10 = 0;
-                            while (true) {
-                                if (i10 < length) {
-                                    String str2 = mnemonicWordlist[i10];
-                                    if (str2.startsWith(lowerCase)) {
-                                        str = str2;
-                                    } else {
-                                        i10++;
-                                    }
-                                }
-                            }
+                } else if (actionMasked != 3) {
+                    if (actionMasked != 6) {
+                        if (this.h != -1) {
                         }
-                        if (str != null) {
-                            editText.setText(str);
-                            editText.setSelection(str.length());
-                            maVar.setError(false);
-                            maVar.a();
-                            Runnable runnable = maVar.r;
-                            if (runnable != null) {
-                                editText.post(runnable);
-                            }
-                        } else {
-                            maVar.setError(true);
-                        }
-                    } else {
-                        maVar.setError(false);
-                        maVar.a();
-                        Runnable runnable2 = maVar.r;
-                        if (runnable2 != null) {
-                            editText.post(runnable2);
-                        }
+                    } else if (motionEvent.getPointerId(motionEvent.getActionIndex()) == this.h) {
+                        int i10 = motionEvent.getActionIndex() == 0 ? 1 : 0;
+                        this.h = motionEvent.getPointerId(i10);
+                        this.n = motionEvent.getX(i10);
+                        this.r = motionEvent.getY(i10);
+                        return true;
                     }
+                    return true;
                 }
-                return true;
+            }
+            if (this.h != -1) {
+                b();
+            }
+            return true;
         }
+        return false;
     }
 }

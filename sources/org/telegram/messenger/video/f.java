@@ -15,22 +15,22 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Wallet.a5;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Wallet.d5;
 import org.telegram.ui.Wallet.y2;
 import org.telegram.ui.a3;
-import org.telegram.ui.e40;
-import org.telegram.ui.o20;
+import org.telegram.ui.f40;
 import org.telegram.ui.p20;
-import org.telegram.ui.r20;
-import org.telegram.ui.t10;
+import org.telegram.ui.q20;
+import org.telegram.ui.s20;
+import org.telegram.ui.u10;
 import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,15 +42,15 @@ public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ f(fi.d dVar, a5 a5Var, x10 x10Var, String[] strArr, boolean[] zArr, y2[] y2VarArr, g6 g6Var) {
+    public /* synthetic */ f(fi.d dVar, d5 d5Var, x10 x10Var, String[] strArr, boolean[] zArr, y2[] y2VarArr, h6 h6Var) {
         this.a = 2;
         this.b = dVar;
-        this.c = a5Var;
+        this.c = d5Var;
         this.d = x10Var;
         this.e = strArr;
         this.h = zArr;
         this.n = y2VarArr;
-        this.f = g6Var;
+        this.f = h6Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -65,45 +65,45 @@ public final /* synthetic */ class f implements View.OnClickListener {
         Object obj7 = this.b;
         switch (i7) {
             case 0:
-                ((VideoAds) obj7).lambda$show$17((cc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (g6) obj, (VideoAds.AdLayout) obj3, (e) obj2, view);
+                ((VideoAds) obj7).lambda$show$17((bc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (h6) obj, (VideoAds.AdLayout) obj3, (e) obj2, view);
                 break;
             case 1:
-                e40 e40Var = (e40) obj7;
-                ib0 ib0Var = (ib0) obj6;
-                o20 o20Var = (o20) obj5;
-                p20 p20Var = (p20) obj4;
+                f40 f40Var = (f40) obj7;
+                hb0 hb0Var = (hb0) obj6;
+                p20 p20Var = (p20) obj5;
+                q20 q20Var = (q20) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 org.telegram.messenger.c cVar = (org.telegram.messenger.c) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
-                t10 t10Var = e40Var.V2;
+                u10 u10Var = f40Var.Y2;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                e40Var.O2 = ofFloat;
+                f40Var.R2 = ofFloat;
                 ofFloat.setDuration(600L);
-                e40Var.O2.addUpdateListener(new a3(e40Var, 12));
-                e40Var.O2.addListener(new r20(e40Var));
-                e40Var.O2.start();
-                if (t3.W(e40Var.Q2)) {
-                    t10Var.b(id.M0(2131743447, null), true);
+                f40Var.R2.addUpdateListener(new a3(f40Var, 12));
+                f40Var.R2.addListener(new s20(f40Var));
+                f40Var.R2.start();
+                if (t3.W(f40Var.T2)) {
+                    u10Var.b(id.M0(2131743447, null), true);
                 } else {
-                    t10Var.b(id.M0(2131743306, null), true);
+                    u10Var.b(id.M0(2131743306, null), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = v4.g(null, null, 0L, 604800L, 3, ib0Var, o20Var, p20Var);
-                calendar.setTimeInMillis((ib0Var.getValue() * 86400000) + System.currentTimeMillis());
+                boolean g10 = u4.g(null, null, 0L, 604800L, 3, hb0Var, p20Var, q20Var);
+                calendar.setTimeInMillis((hb0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i10 = 11;
-                calendar.set(11, o20Var.getValue());
-                calendar.set(12, p20Var.getValue());
+                calendar.set(11, p20Var.getValue());
+                calendar.set(12, q20Var.getValue());
                 if (g10) {
                     calendar.set(13, 0);
                 }
-                e40Var.b4 = (int) (calendar.getTimeInMillis() / 1000);
-                e40Var.R1(false);
+                f40Var.e4 = (int) (calendar.getTimeInMillis() / 1000);
+                f40Var.R1(false);
                 TL_phone.createGroupCall creategroupcall = new TL_phone.createGroupCall();
                 creategroupcall.peer = qp.l1(chat);
                 creategroupcall.random_id = Utilities.b.nextInt();
-                creategroupcall.schedule_date = e40Var.b4;
+                creategroupcall.schedule_date = f40Var.e4;
                 creategroupcall.flags |= 2;
-                ConnectionsManager.getInstance(cVar.a).sendRequest(creategroupcall, new z9(e40Var, chat, inputPeer, i10), 2);
+                ConnectionsManager.getInstance(cVar.a).sendRequest(creategroupcall, new z9(f40Var, chat, inputPeer, i10), 2);
                 break;
             default:
                 fi.d dVar = (fi.d) obj7;
@@ -112,14 +112,14 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 String[] strArr = (String[]) obj4;
                 boolean[] zArr = (boolean[]) obj3;
                 y2[] y2VarArr = (y2[]) obj2;
-                g6 g6Var = (g6) obj;
+                h6 h6Var = (h6) obj;
                 if (!dVar.Q) {
                     if (editTextBoldCursor != null && editTextBoldCursor.getText().toString().getBytes(StandardCharsets.UTF_8).length > 960) {
                         g0.H3(editTextBoldCursor);
                         break;
                     } else {
                         dVar.setLoading(true);
-                        x10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.m(dVar, y2VarArr, g6Var, 5));
+                        x10Var.a(strArr[0], Boolean.valueOf(zArr[0]), new org.telegram.ui.Wallet.m(dVar, y2VarArr, h6Var, 5));
                         break;
                     }
                 }

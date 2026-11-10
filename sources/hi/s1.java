@@ -13,16 +13,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l5;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.v8;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class s1 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -47,28 +47,28 @@ public abstract class s1 {
         FrameLayout frameLayout2 = new FrameLayout(activity);
         int L = org.telegram.messenger.g0.L(28.0f);
         int L2 = org.telegram.messenger.g0.L(28.0f);
-        int i10 = l6.Qi;
-        ShapeDrawable e02 = l6.e0(L, L2, l6.x0(null, i10, false));
-        o6 M = s6.M(i10);
+        int i10 = m6.Qi;
+        ShapeDrawable e02 = m6.e0(L, L2, m6.x0(null, i10, false));
+        p6 M = t6.M(i10);
         frameLayout2.setBackground(e02);
-        s6.j(frameLayout2, e02, M, null, null);
-        l9 l9Var = new l9(activity);
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
-        w8 w8Var = new w8((g6) null);
-        w8Var.l(chat);
-        l9Var.e(chat, w8Var);
-        frameLayout2.addView(l9Var, ha.e(28, 28, 51));
-        l9 l9Var2 = new l9(activity);
-        l9Var2.setEmojiColorFilter(new PorterDuffColorFilter(l6.x0(null, l6.z9, false), PorterDuff.Mode.SRC_IN));
-        l9Var2.setAnimatedEmojiDrawable(i5.m(i7, botVerifierSettings.icon, null, 3));
-        frameLayout2.addView(l9Var2, ha.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
-        l5 l5Var = new l5(activity);
-        s6.X(l5Var, l6.j5, null);
-        l5Var.setTextSize(13);
-        l5Var.setEllipsizeByGradient(true);
-        l5Var.l(str, false);
-        l5Var.setWidthWrapContent(true);
-        frameLayout2.addView(l5Var, ha.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        t6.j(frameLayout2, e02, M, null, null);
+        k9 k9Var = new k9(activity);
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
+        v8 v8Var = new v8((h6) null);
+        v8Var.l(chat);
+        k9Var.e(chat, v8Var);
+        frameLayout2.addView(k9Var, ha.e(28, 28, 51));
+        k9 k9Var2 = new k9(activity);
+        k9Var2.setEmojiColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.z9, false), PorterDuff.Mode.SRC_IN));
+        k9Var2.setAnimatedEmojiDrawable(h5.m(i7, botVerifierSettings.icon, null, 3));
+        frameLayout2.addView(k9Var2, ha.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        m5 m5Var = new m5(activity);
+        t6.X(m5Var, m6.j5, null);
+        m5Var.setTextSize(13);
+        m5Var.setEllipsizeByGradient(true);
+        m5Var.l(str, false);
+        m5Var.setWidthWrapContent(true);
+        frameLayout2.addView(m5Var, ha.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
         frameLayout.addView(frameLayout2, ha.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
         final boolean[] zArr = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);

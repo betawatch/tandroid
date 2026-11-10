@@ -5,12 +5,12 @@ import android.os.Handler;
 import java.nio.ByteBuffer;
 import li.b6;
 import org.telegram.messenger.qs;
+import org.telegram.ui.Components.h41;
 import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.s51;
 import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class x0 extends f2.o {
     public final b6 i;
@@ -34,18 +34,18 @@ public final class x0 extends f2.o {
         float[] fArr2 = (float[]) b6Var.d;
         n1 n1Var = (n1) b6Var.c;
         ByteBuffer byteBuffer2 = (ByteBuffer) b6Var.e;
-        u51 u51Var = (u51) b6Var.f;
-        n51 n51Var = u51Var.K;
-        Handler handler = u51Var.a0;
-        if (n51Var != null) {
+        t51 t51Var = (t51) b6Var.f;
+        m51 m51Var = t51Var.K;
+        Handler handler = t51Var.a0;
+        if (m51Var != null) {
             int i7 = 0;
-            if (order == f2.n.a || !u51Var.I) {
-                handler.postDelayed(new t51(b6Var, 0), 80L);
-            } else if (n51Var.s()) {
+            if (order == f2.n.a || !t51Var.I) {
+                handler.postDelayed(new s51(b6Var, 0), 80L);
+            } else if (m51Var.s()) {
                 int limit = order.limit();
                 if (limit > 8192) {
                     handler.removeCallbacksAndMessages(null);
-                    u51Var.K.F(false, null);
+                    t51Var.K.F(false, null);
                 } else {
                     byteBuffer2.put(order);
                     int i10 = b6Var.a + limit;
@@ -167,7 +167,7 @@ public final class x0 extends f2.o {
                         }
                         if (System.currentTimeMillis() - b6Var.b >= 64) {
                             b6Var.b = System.currentTimeMillis();
-                            handler.postDelayed(new m51(1, b6Var, fArr6), 130L);
+                            handler.postDelayed(new h41(2, b6Var, fArr6), 130L);
                         }
                     }
                 }

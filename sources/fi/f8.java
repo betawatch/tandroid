@@ -6,9 +6,9 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.zu0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f8 implements c20 {
     public final /* synthetic */ int a;
@@ -62,10 +62,10 @@ public final /* synthetic */ class f8 implements c20 {
                 }
                 break;
             default:
-                av0 av0Var = (av0) this.c;
+                zu0 zu0Var = (zu0) this.c;
                 TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
                 if (tL_messages_emojiGroups != null) {
-                    qs.f(p10.s0).d(new bi.d3(av0Var, tL_messages_emojiGroups, this.b, 25));
+                    qs.f(p10.s0).d(new bi.d3(zu0Var, tL_messages_emojiGroups, this.b, 25));
                     break;
                 }
                 break;

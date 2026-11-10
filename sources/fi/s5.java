@@ -7,9 +7,9 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public View a;
@@ -52,7 +52,7 @@ public final class s5 extends FrameLayout {
             this.s.setInterpolator(new LinearInterpolator());
         } else {
             this.s.setDuration(350L);
-            this.s.setInterpolator(xq.h);
+            this.s.setInterpolator(wq.h);
         }
         this.s.start();
     }
@@ -92,7 +92,7 @@ public final class s5 extends FrameLayout {
             View childAt = getChildAt(i7);
             float f10 = this.n;
             if (this.r) {
-                f10 = xq.h.getInterpolation(org.telegram.messenger.g0.s(f10, i7 - 1, getChildCount() - 1, 3.0f));
+                f10 = wq.h.getInterpolation(org.telegram.messenger.g0.s(f10, i7 - 1, getChildCount() - 1, 3.0f));
             }
             childAt.setAlpha(f10);
             childAt.setTranslationY((1.0f - f10) * org.telegram.messenger.g0.L(24.0f));

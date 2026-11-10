@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class t {
     public Context a;
@@ -109,17 +109,17 @@ public final class t {
         jVar.a = q5.a.a(o5.m.a);
         e.a aVar = new e.a(context);
         jVar.b = aVar;
-        jVar.c = q5.a.a(new j2.n(aVar, new rt(aVar, 7), false, 23));
+        jVar.c = q5.a.a(new j2.n(aVar, new qt(aVar, 7), false, 23));
         e.a aVar2 = jVar.b;
-        jVar.d = new vy(aVar2, 27);
-        fd.a a10 = q5.a.a(new sg.i0(6, jVar.d, q5.a.a(new org.telegram.ui.Components.n(aVar2))));
+        jVar.d = new uy(aVar2, 27);
+        fd.a a10 = q5.a.a(new sg.i0(6, jVar.d, q5.a.a(new org.telegram.ui.Components.m(aVar2))));
         jVar.e = a10;
         sa.d dVar = new sa.d(24);
         e.a aVar3 = jVar.b;
-        ky0 ky0Var = new ky0(aVar3, a10, dVar, 16);
+        ly0 ly0Var = new ly0(aVar3, a10, dVar, 16);
         fd.a aVar4 = jVar.a;
         fd.a aVar5 = jVar.c;
-        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, ky0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, ky0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, ky0Var, a10, 14), 17));
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, ly0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, ly0Var, aVar4, a10, a10, 5), new ab.b0(aVar4, a10, ly0Var, a10, 14), 17));
         return jVar;
     }
 

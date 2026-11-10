@@ -1,118 +1,76 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ac extends ya implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.g6 a;
-    public Runnable b;
-    public Runnable c;
-    public cc d;
-    public final TextView e;
-    public boolean f;
-    public final Drawable h;
-    public final Drawable n;
+public final class ac extends ya {
+    public final y8 a;
+    public final w70 b;
+    public final w70 c;
+    public final LinearLayout d;
 
-    public ac(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, boolean z10) {
-        super(context);
-        this.a = g6Var;
-        int i7 = org.telegram.ui.ActionBar.l6.uj;
-        int h = g6Var != null ? g6Var.h(i7) : org.telegram.ui.ActionBar.l6.x0(null, i7, false);
+    public ac(Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
+        super(context, h6Var);
+        y8 y8Var = new y8(context, false);
+        this.a = y8Var;
+        y8Var.setStyle(11);
+        y8Var.setAvatarsTextSize(org.telegram.messenger.g0.L(18.0f));
+        addView(y8Var, c8.ha.i(56.0f, 48.0f, 8388627, 12.0f, 0.0f, 0.0f, 0.0f));
         if (z9) {
-            TextView textView = new TextView(context);
-            this.e = textView;
-            textView.setBackground(org.telegram.ui.ActionBar.l6.h0((h & 16777215) | 419430400, 7, -1));
-            this.h = textView.getBackground();
-            com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
-            org.telegram.messenger.camera.q.o(textView, i7, g6Var, null, 2131743885);
-            textView.setGravity(16);
-            float f10 = z10 ? 34.0f : 12.0f;
-            boolean z11 = org.telegram.messenger.id.a0;
-            c8.sa.a(textView, z11 ? 12.0f : f10, 8.0f, z11 ? f10 : 12.0f, 8.0f);
-            addView(textView, c8.ha.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+            LinearLayout linearLayout = new LinearLayout(getContext());
+            this.d = linearLayout;
+            linearLayout.setOrientation(1);
+            addView(linearLayout, c8.ha.i(-1.0f, -2.0f, 8388627, 76.0f, 6.0f, 12.0f, 6.0f));
+            ib ibVar = new ib(2, context, null);
+            this.b = ibVar;
+            org.telegram.messenger.qs.i(ibVar);
+            Typeface typeface = Typeface.SANS_SERIF;
+            ibVar.setTypeface(typeface);
+            ibVar.setTextSize(1, 14.0f);
+            ibVar.setTypeface(org.telegram.messenger.g0.o());
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            ibVar.setEllipsize(truncateAt);
+            ibVar.setMaxLines(1);
+            linearLayout.addView(ibVar);
+            w70 w70Var = new w70(context, null);
+            this.c = w70Var;
+            w70Var.setTypeface(typeface);
+            w70Var.setTextSize(1, 12.0f);
+            w70Var.setEllipsize(truncateAt);
+            w70Var.setSingleLine(false);
+            w70Var.setMaxLines(3);
+            org.telegram.ui.ActionBar.t6.G(w70Var, org.telegram.ui.ActionBar.m6.uj, h6Var);
+            linearLayout.addView(w70Var, c8.ha.t(-2, -2, 0, 0, 0, 0, 0));
+        } else {
+            ib ibVar2 = new ib(1, context, null);
+            this.b = ibVar2;
+            org.telegram.messenger.qs.i(ibVar2);
+            ibVar2.setTypeface(Typeface.SANS_SERIF);
+            ibVar2.setTextSize(1, 15.0f);
+            ibVar2.setEllipsize(TextUtils.TruncateAt.END);
+            ibVar2.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+            ibVar2.setGravity(org.telegram.messenger.id.a0 ? 5 : 3);
+            addView(ibVar2, c8.ha.i(-2.0f, -2.0f, 8388627, 70.0f, 0.0f, 12.0f, 0.0f));
         }
-        if (z10) {
-            ImageView imageView = new ImageView(getContext());
-            imageView.setImageResource(R.drawable.chats_undo);
-            org.telegram.ui.ActionBar.s6.s(imageView, i7, g6Var, PorterDuff.Mode.MULTIPLY);
-            if (!z9) {
-                imageView.setBackground(org.telegram.ui.ActionBar.l6.h0((h & 16777215) | 419430400, 1, -1));
-                this.n = imageView.getBackground();
-            }
-            c8.sa.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
-            addView(imageView, c8.ha.h(56.0f, 48.0f, 16));
+        org.telegram.ui.ActionBar.t6.G(this.b, org.telegram.ui.ActionBar.m6.uj, h6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.m6.vj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.m6.tj));
+    }
+
+    @Override // org.telegram.ui.Components.fb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
+    }
+
+    public void setTextColor(int i7) {
+        this.b.setTextColor(i7);
+        w70 w70Var = this.c;
+        if (w70Var != null) {
+            w70Var.setTextColor(i7);
         }
-        setOnClickListener(new h0(this, 4));
-    }
-
-    @Override // org.telegram.ui.Components.db
-    public final void c(cc ccVar) {
-        this.d = ccVar;
-    }
-
-    @Override // org.telegram.ui.Components.db
-    public final void d() {
-        this.d = null;
-        Runnable runnable = this.c;
-        if (runnable == null || this.f) {
-            return;
-        }
-        runnable.run();
-    }
-
-    public final void e(CharSequence charSequence) {
-        TextView textView = this.e;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-    }
-
-    public final void f() {
-        if (this.d != null) {
-            this.f = true;
-            Runnable runnable = this.b;
-            if (runnable != null) {
-                runnable.run();
-            }
-            cc ccVar = this.d;
-            if (ccVar != null) {
-                ccVar.b();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        Drawable drawable;
-        try {
-            int i7 = org.telegram.ui.ActionBar.l6.uj;
-            org.telegram.ui.ActionBar.g6 g6Var = this.a;
-            int h = ((g6Var != null ? g6Var.h(i7) : org.telegram.ui.ActionBar.l6.x0(null, i7, false)) & 16777215) | 419430400;
-            TextView textView = this.e;
-            if (textView != null && (drawable = this.h) != null && textView.getBackground() == drawable) {
-                org.telegram.ui.ActionBar.l6.H1(drawable, h, true);
-            }
-            Drawable drawable2 = this.n;
-            if (drawable2 != null) {
-                org.telegram.ui.ActionBar.l6.H1(drawable2, h, true);
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
-    }
-
-    public ac(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
-        this(context, g6Var, z9, !z9);
     }
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v7 implements di.m9, org.telegram.messenger.qr {
     public final /* synthetic */ h8 a;
@@ -25,20 +25,20 @@ public final class v7 implements di.m9, org.telegram.messenger.qr {
 
     @Override // org.telegram.messenger.qr
     public void k(boolean z9) {
-        org.telegram.ui.ActionBar.q4 q4Var;
-        org.telegram.ui.ActionBar.q4 q4Var2;
-        org.telegram.ui.ActionBar.q4 q4Var3;
-        org.telegram.ui.ActionBar.q4 q4Var4;
+        org.telegram.ui.ActionBar.r4 r4Var;
+        org.telegram.ui.ActionBar.r4 r4Var2;
+        org.telegram.ui.ActionBar.r4 r4Var3;
+        org.telegram.ui.ActionBar.r4 r4Var4;
         h8 h8Var = this.a;
         h8Var.finishFragment();
-        q4Var = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
-        if (q4Var != null) {
-            q4Var2 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
-            if (q4Var2.getFragmentStack().size() >= 2) {
-                q4Var3 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
-                List fragmentStack = q4Var3.getFragmentStack();
-                q4Var4 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
-                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) fragmentStack.get(q4Var4.getFragmentStack().size() - 2);
+        r4Var = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
+        if (r4Var != null) {
+            r4Var2 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
+            if (r4Var2.getFragmentStack().size() >= 2) {
+                r4Var3 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
+                List fragmentStack = r4Var3.getFragmentStack();
+                r4Var4 = ((org.telegram.ui.ActionBar.f2) h8Var).parentLayout;
+                org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) fragmentStack.get(r4Var4.getFragmentStack().size() - 2);
                 if (f2Var instanceof cn) {
                     ((cn) f2Var).i8(h8Var.P, h8Var.Q + 86400, z9);
                     return;

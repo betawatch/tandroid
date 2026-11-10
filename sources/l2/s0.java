@@ -1,18 +1,18 @@
 package l2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final m2.j a;
     public final e2.l1 b;
-    public final x2.g0 c;
+    public final x2.f0 c;
     public final long d;
     public final float e;
 
-    public s0(m2.j jVar, e2.l1 l1Var, x2.g0 g0Var, long j3, float f10, boolean z9, long j10) {
+    public s0(m2.j jVar, e2.l1 l1Var, x2.f0 f0Var, long j3, float f10, boolean z9, long j10) {
         this.a = jVar;
         this.b = l1Var;
-        this.c = g0Var;
+        this.c = f0Var;
         this.d = j3;
         this.e = f10;
     }

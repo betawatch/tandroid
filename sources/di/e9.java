@@ -21,14 +21,14 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class e9 extends tt0 {
+public final class e9 extends st0 {
     public float f0;
     public float g0;
     public float h0;
@@ -66,7 +66,7 @@ public final class e9 extends tt0 {
     /* JADX WARN: Type inference failed for: r17v0 */
     /* JADX WARN: Type inference failed for: r17v1 */
     /* JADX WARN: Type inference failed for: r17v6 */
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -105,7 +105,7 @@ public final class e9 extends tt0 {
         o7 o7Var3;
         int i11;
         j4 z10;
-        eh0 eh0Var;
+        dh0 dh0Var;
         boolean z11;
         float f24;
         q9 q9Var = this.r0;
@@ -469,13 +469,13 @@ public final class e9 extends tt0 {
                             q9Var.d = false;
                             q9.w1 = true;
                             q9Var.b0 = q9Var.W;
-                            if (n9Var.d != null && (z10 = q9Var.z()) != null && (eh0Var = z10.X0.d) != null) {
-                                eh0 eh0Var2 = n9Var.d;
-                                eh0Var.c = eh0Var2.c;
-                                eh0Var.f = eh0Var2.f;
-                                eh0Var.b = eh0Var2.b;
-                                eh0Var.a = System.currentTimeMillis();
-                                eh0Var.c();
+                            if (n9Var.d != null && (z10 = q9Var.z()) != null && (dh0Var = z10.X0.d) != null) {
+                                dh0 dh0Var2 = n9Var.d;
+                                dh0Var.c = dh0Var2.c;
+                                dh0Var.f = dh0Var2.f;
+                                dh0Var.b = dh0Var2.b;
+                                dh0Var.a = System.currentTimeMillis();
+                                dh0Var.c();
                             }
                             q9Var.E = true;
                             float[] fArr3 = new float[i10];
@@ -497,7 +497,7 @@ public final class e9 extends tt0 {
                             q9Var.F.addListener(new z8(q9Var, i11));
                             q9Var.F.setStartDelay(40L);
                             q9Var.F.setDuration(250L);
-                            q9Var.F.setInterpolator(xq.f);
+                            q9Var.F.setInterpolator(wq.f);
                             q9Var.F.start();
                             if (!arrayList.isEmpty()) {
                                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
@@ -592,7 +592,7 @@ public final class e9 extends tt0 {
         boolean z10;
         g9 g9Var;
         int i7;
-        ji0 ji0Var;
+        ii0 ii0Var;
         q9 q9Var = this.r0;
         float[] fArr = q9Var.o0;
         j4 currentPeerView = q9Var.n0.getCurrentPeerView();
@@ -610,7 +610,7 @@ public final class e9 extends tt0 {
         }
         float f10 = 0.0f;
         int i10 = 0;
-        if (q9Var.o1 && currentPeerView != null && (ji0Var = currentPeerView.a3) != null) {
+        if (q9Var.o1 && currentPeerView != null && (ii0Var = currentPeerView.a3) != null) {
             float f11 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f10 += view.getX();
@@ -622,14 +622,14 @@ public final class e9 extends tt0 {
                 return true;
             }
             Rect rect = org.telegram.messenger.g0.Q;
-            ji0Var.getHitRect(rect);
+            ii0Var.getHitRect(rect);
             rect.offset((int) f10, (int) f11);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.Z0(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            ji0Var.dispatchTouchEvent(motionEvent);
+            ii0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -642,7 +642,7 @@ public final class e9 extends tt0 {
                 ofFloat.addUpdateListener(new b9(this, i10));
                 q9Var.G.addListener(new c9(this, i10));
                 q9Var.G.setDuration(250L);
-                q9Var.G.setInterpolator(xq.f);
+                q9Var.G.setInterpolator(wq.f);
                 q9Var.G.start();
             }
             if (q9Var.V >= 0.3f) {
@@ -750,7 +750,7 @@ public final class e9 extends tt0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         q9 q9Var = this.r0;
@@ -766,7 +766,7 @@ public final class e9 extends tt0 {
         qs.f(q9Var.h).c(q9Var, qs.w5);
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setTag(R.id.bulletin_delegate_tag, null);
@@ -960,7 +960,7 @@ public final class e9 extends tt0 {
                 ofFloat.addUpdateListener(new b9(this, i7));
                 q9Var.G.addListener(new c9(this, i7));
                 q9Var.G.setDuration(150L);
-                q9Var.G.setInterpolator(xq.f);
+                q9Var.G.setInterpolator(wq.f);
                 q9Var.G.start();
             }
             j4 z9 = q9Var.z();

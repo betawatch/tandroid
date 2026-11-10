@@ -34,11 +34,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.AnimatedFileNative;
-import org.telegram.ui.Components.h31;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.g31;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -226,7 +226,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 s8 s8Var = n8Var.W;
                 n8Var.w.setLoading(false);
                 if (tLObject3 != null) {
-                    int i15 = s8.U1;
+                    int i15 = s8.X1;
                     ArrayList O0 = s8Var.O0();
                     for (int i16 = 0; i16 < O0.size(); i16++) {
                         TLRPC.User user = (TLRPC.User) O0.get(i16);
@@ -238,12 +238,12 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                 }
                 s8Var.M0();
-                if (s8Var.Q1) {
+                if (s8Var.T1) {
                     s8Var.N0(new q8(1, s8Var.a, (ArrayList) null), new di.x3(s8Var, i12), false);
                     return;
                 } else {
                     s8Var.M0();
-                    s8Var.i1.E(0);
+                    s8Var.l1.E(0);
                     return;
                 }
             case 7:
@@ -357,7 +357,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.b;
                 hi.a3 a3Var = v2Var.d;
                 if (!(tLObject5 instanceof TLRPC.TL_boolTrue)) {
-                    new hc(a3Var.q0, a3Var.F).Y(tL_error).k(true);
+                    new gc(a3Var.q0, a3Var.F).Y(tL_error).k(true);
                     return;
                 }
                 hi.s2 s2Var = a3Var.D;
@@ -369,7 +369,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.b;
                 TLRPC.User user3 = (TLRPC.User) this.d;
                 org.telegram.messenger.g0.g(connectedbotstarref.url);
-                hc.a0(q3Var).I(R.raw.copy, id.M0(2131754333, null), org.telegram.messenger.g0.X2(id.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user3)))).j();
+                gc.a0(q3Var).I(R.raw.copy, id.M0(2131754333, null), org.telegram.messenger.g0.X2(id.a0(null, null, 2131754334, hi.j.J0(connectedbotstarref.commission_permille), t10.p(user3)))).j();
                 return;
             case 15:
                 hi.q3.D0((hi.q3) this.c, (TLObject) this.d, (org.telegram.ui.ActionBar.u1) this.b);
@@ -489,12 +489,12 @@ public final /* synthetic */ class x1 implements Runnable {
                 String str7 = tL_messages_searchStickerSets.q;
                 jg.d2 d2Var = b2Var.a;
                 String str8 = d2Var.R;
-                h31 h31Var = d2Var.e;
+                g31 g31Var = d2Var.e;
                 if (str7.equals(str8)) {
                     b2Var.a();
-                    h31Var.b.h.getProgressDrawable().e = false;
+                    g31Var.b.h.getProgressDrawable().e = false;
                     d2Var.N = 0;
-                    h31Var.b(true);
+                    g31Var.b(true);
                     d2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     d2Var.f();
                     return;
@@ -506,14 +506,14 @@ public final /* synthetic */ class x1 implements Runnable {
                 TLObject tLObject7 = (TLObject) this.d;
                 if (tL_error2 != null) {
                     cVar.a.b(false);
-                    hc.d0(tL_error2);
+                    gc.d0(tL_error2);
                     return;
                 } else if (!(tLObject7 instanceof TLRPC.TL_boolFalse)) {
                     cVar.finishFragment();
                     return;
                 } else {
                     cVar.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(cVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, gc.a0(cVar), null);
                     return;
                 }
             case 23:
@@ -522,11 +522,11 @@ public final /* synthetic */ class x1 implements Runnable {
                 TLObject tLObject8 = (TLObject) this.d;
                 if (tL_error3 != null) {
                     mVar.f.b(false);
-                    hc.d0(tL_error3);
+                    gc.d0(tL_error3);
                     return;
                 } else if (tLObject8 instanceof TLRPC.TL_boolFalse) {
                     mVar.f.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(mVar), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, gc.a0(mVar), null);
                     return;
                 } else {
                     if (mVar.E != null) {
@@ -567,7 +567,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 tL_connectedBot.recipients = tL_businessBotRecipients;
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
-                    hc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(i0Var.Q1))).j();
+                    gc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(i0Var.T1))).j();
                     return;
                 }
                 return;
@@ -577,14 +577,14 @@ public final /* synthetic */ class x1 implements Runnable {
                 TLObject tLObject10 = (TLObject) this.d;
                 if (tL_error4 != null) {
                     s0Var.a.b(false);
-                    hc.d0(tL_error4);
+                    gc.d0(tL_error4);
                     return;
                 } else if (!(tLObject10 instanceof TLRPC.TL_boolFalse)) {
                     s0Var.finishFragment();
                     return;
                 } else {
                     s0Var.a.b(false);
-                    org.telegram.messenger.k5.p(null, 2131743879, hc.a0(s0Var), null);
+                    org.telegram.messenger.k5.p(null, 2131743879, gc.a0(s0Var), null);
                     return;
                 }
             case 28:

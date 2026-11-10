@@ -31,22 +31,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.i4;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.h4;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.o41;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v extends o41 implements ls {
     public static org.telegram.ui.ActionBar.u1 e;
@@ -81,37 +81,37 @@ public final class v extends o41 implements ls {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
-    public static void g0(Activity activity, int i7, TL_account.TL_businessChatLink tL_businessChatLink, g6 g6Var) {
+    public static void g0(Activity activity, int i7, TL_account.TL_businessChatLink tL_businessChatLink, h6 h6Var) {
         f2 Q = LaunchActivity.Q();
         Activity W = org.telegram.messenger.g0.W(activity);
         View currentFocus = W != null ? W.getCurrentFocus() : null;
         int i10 = 1;
         int i11 = 0;
-        boolean z9 = Q != null && (Q.getFragmentView() instanceof tt0) && ((tt0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
+        boolean z9 = Q != null && (Q.getFragmentView() instanceof st0) && ((st0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
         org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-        ?? w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, g6Var) : new AlertDialog$Builder(0, activity, g6Var);
+        ?? w1Var = z9 ? new org.telegram.ui.ActionBar.w1(0, activity, h6Var) : new AlertDialog$Builder(0, activity, h6Var);
         String M0 = id.M0(2131752699, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
-        s sVar = new s(activity, g6Var);
+        s sVar = new s(activity, h6Var);
         ui.b0(i7).M(org.telegram.messenger.g0.G0(), true);
         sVar.setInputType(49153);
         sVar.setTextSize(1, 18.0f);
         sVar.setText(tL_businessChatLink.title);
-        int i12 = l6.j5;
-        s6.U(sVar, i12, g6Var);
-        s6.l(sVar, 34, l6.Li, g6Var);
-        s6.l(sVar, 30, l6.Ke, null);
+        int i12 = m6.j5;
+        t6.U(sVar, i12, h6Var);
+        t6.l(sVar, 34, m6.Li, h6Var);
+        t6.l(sVar, 30, m6.Ke, null);
         sVar.setHintText(id.M0(2131752701, null));
         sVar.setSingleLine(true);
         sVar.setFocusable(true);
-        s6.F(sVar, l6.k6, l6.l6, l6.p7, g6Var);
+        t6.F(sVar, m6.k6, m6.l6, m6.p7, h6Var);
         sVar.setImeOptions(6);
         sVar.setBackgroundDrawable(null);
         sVar.setPadding(0, 0, org.telegram.messenger.g0.L(42.0f), 0);
         LinearLayout e10 = k5.e(activity, 1);
         TextView textView = new TextView(activity);
-        s6.U(textView, i12, g6Var);
+        t6.U(textView, i12, h6Var);
         textView.setTextSize(1, 16.0f);
         textView.setText(id.M0(2131752700, null));
         e10.addView(textView, ha.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
@@ -140,18 +140,18 @@ public final class v extends o41 implements ls {
 
     @Override // org.telegram.ui.Components.o41
     public final void Z(ArrayList arrayList, m41 m41Var) {
-        vy0 vy0Var = null;
+        uy0 uy0Var = null;
         String M0 = id.M0(2131752710, null);
         String M02 = id.M0(2131752703, null);
-        y31 y31Var = new y31(2);
-        y31Var.l = M0;
-        y31Var.o = M02;
-        y31Var.k = R.raw.biz_links;
-        arrayList.add(y31Var);
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.k = R.raw.biz_links;
+        arrayList.add(x31Var);
         m41Var.V();
         y d = y.d(this.currentAccount);
         if (d.b.size() < qp.s1(d.a).H5) {
-            y31 c10 = y31.c(1, R.drawable.menu_link_create, id.M0(2131752709, null));
+            x31 c10 = x31.c(1, R.drawable.menu_link_create, id.M0(2131752709, null));
             c10.q = true;
             arrayList.add(c10);
         }
@@ -164,9 +164,9 @@ public final class v extends o41 implements ls {
             i10++;
             u uVar = new u();
             uVar.a = (TL_account.TL_businessChatLink) obj;
-            y31 y31Var2 = new y31(29);
-            y31Var2.G = uVar;
-            arrayList.add(y31Var2);
+            x31 x31Var2 = new x31(29);
+            x31Var2.G = uVar;
+            arrayList.add(x31Var2);
         }
         m41Var.U();
         TLRPC.User f10 = p10.i(this.currentAccount).f();
@@ -195,12 +195,12 @@ public final class v extends o41 implements ls {
             String str = (String) obj2;
             int indexOf = a02.indexOf(str);
             if (indexOf > -1) {
-                i4 i4Var = new i4(rf.b.i("https://", str), vy0Var);
-                i4Var.f = this;
-                spannableString.setSpan(i4Var, indexOf, str.length() + indexOf, 33);
+                h4 h4Var = new h4(rf.b.i("https://", str), uy0Var);
+                h4Var.f = this;
+                spannableString.setSpan(h4Var, indexOf, str.length() + indexOf, 33);
             }
         }
-        arrayList.add(y31.C(spannableString));
+        arrayList.add(x31.C(spannableString));
     }
 
     @Override // org.telegram.ui.Components.o41
@@ -209,8 +209,8 @@ public final class v extends o41 implements ls {
     }
 
     @Override // org.telegram.ui.Components.o41
-    public final void b0(y31 y31Var, View view) {
-        if (y31Var.d == 1) {
+    public final void b0(x31 x31Var, View view) {
+        if (x31Var.d == 1) {
             y d = y.d(this.currentAccount);
             TL_account.createBusinessChatLink createbusinesschatlink = new TL_account.createBusinessChatLink();
             TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
@@ -219,8 +219,8 @@ public final class v extends o41 implements ls {
             ConnectionsManager.getInstance(d.a).sendRequest(createbusinesschatlink, new x(d, 1));
             return;
         }
-        if (y31Var.a == 29) {
-            Object obj = y31Var.G;
+        if (x31Var.a == 29) {
+            Object obj = x31Var.G;
             if (obj instanceof u) {
                 Bundle f10 = rf.b.f(6, "chatMode");
                 f10.putString("business_link", ((u) obj).a.link);
@@ -230,13 +230,13 @@ public final class v extends o41 implements ls {
     }
 
     @Override // org.telegram.ui.Components.o41
-    public final boolean c0(y31 y31Var, View view) {
+    public final boolean c0(x31 x31Var, View view) {
         final int i7 = 0;
-        if (y31Var.a == 29) {
-            Object obj = y31Var.G;
+        if (x31Var.a == 29) {
+            Object obj = x31Var.G;
             if (obj instanceof u) {
                 final TL_account.TL_businessChatLink tL_businessChatLink = ((u) obj).a;
-                l60 H = l60.H(this, view);
+                k60 H = k60.H(this, view);
                 H.c(R.drawable.msg_copy, id.M0(2131751767, null), new v9(tL_businessChatLink, 22), false);
                 H.c(R.drawable.msg_share, id.M0(2131748925, null), new Runnable(this) { // from class: kg.o
                     public final /* synthetic */ v b;
@@ -273,7 +273,7 @@ public final class v extends o41 implements ls {
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
-                                    s6.U(textView, l6.q7, vVar.getResourceProvider());
+                                    t6.U(textView, m6.q7, vVar.getResourceProvider());
                                     break;
                                 }
                                 break;
@@ -316,7 +316,7 @@ public final class v extends o41 implements ls {
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
-                                    s6.U(textView, l6.q7, vVar.getResourceProvider());
+                                    t6.U(textView, m6.q7, vVar.getResourceProvider());
                                     break;
                                 }
                                 break;
@@ -359,7 +359,7 @@ public final class v extends o41 implements ls {
                                 vVar.showDialog(u1Var);
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
-                                    s6.U(textView, l6.q7, vVar.getResourceProvider());
+                                    t6.U(textView, m6.q7, vVar.getResourceProvider());
                                     break;
                                 }
                                 break;
@@ -410,7 +410,7 @@ public final class v extends o41 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -454,7 +454,7 @@ public final class v extends o41 implements ls {
         getNotificationCenter().n(this, qs.K1);
         getNotificationCenter().n(this, qs.L1);
         getNotificationCenter().n(this, qs.k0);
-        cc.e();
+        bc.e();
         super.onFragmentDestroy();
     }
 

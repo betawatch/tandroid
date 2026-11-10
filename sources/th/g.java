@@ -7,10 +7,10 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g extends sh.d {
     public final ij b;
@@ -32,7 +32,7 @@ public final class g extends sh.d {
                 radialProgress2.h(t02);
             }
         }
-        radialProgress2.g(l6.We, l6.Xe, l6.id, l6.jd);
+        radialProgress2.g(m6.We, m6.Xe, m6.id, m6.jd);
     }
 
     @Override // sh.d

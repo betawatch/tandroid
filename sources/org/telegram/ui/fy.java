@@ -1,74 +1,31 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class fy implements TextWatcher {
+public final /* synthetic */ class fy implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public boolean b;
-    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ EditTextBoldCursor b;
 
     public /* synthetic */ fy(EditTextBoldCursor editTextBoldCursor, int i7) {
         this.a = i7;
-        this.c = editTextBoldCursor;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                if (!this.b && editable.length() > 32) {
-                    this.b = true;
-                    editable.delete(32, editable.length());
-                    EditTextBoldCursor editTextBoldCursor = this.c;
-                    org.telegram.messenger.g0.F3(editTextBoldCursor);
-                    try {
-                        editTextBoldCursor.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    this.b = false;
-                    break;
-                }
+                org.telegram.messenger.g0.v1(this.b);
+                break;
+            case 1:
+                org.telegram.messenger.g0.v1(this.b);
                 break;
             default:
-                if (!this.b && editable.length() > 40) {
-                    this.b = true;
-                    editable.delete(40, editable.length());
-                    EditTextBoldCursor editTextBoldCursor2 = this.c;
-                    org.telegram.messenger.g0.F3(editTextBoldCursor2);
-                    try {
-                        editTextBoldCursor2.performHapticFeedback(3, 2);
-                    } catch (Exception unused2) {
-                    }
-                    this.b = false;
-                    break;
-                }
+                org.telegram.messenger.g0.v1(this.b);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

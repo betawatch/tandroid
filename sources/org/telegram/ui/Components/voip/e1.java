@@ -8,13 +8,13 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.v8;
 import org.webrtc.JavaI420Buffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e1 {
     public final ImageReceiver a;
@@ -25,16 +25,16 @@ public final class e1 {
         this.a = imageReceiver;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         TLRPC.Chat chat = sharedInstance != null ? sharedInstance.getChat() : null;
-        w8 w8Var = new w8((g6) null);
+        v8 v8Var = new v8((h6) null);
         if (chat != null) {
             sharedInstance.getAccount();
-            w8Var.q(chat);
+            v8Var.q(chat);
             imageReceiver.d = sharedInstance.getAccount();
         }
         imageReceiver.J0(60);
-        imageReceiver.g1 = new m3(this, 3);
+        imageReceiver.g1 = new n3(this, 3);
         imageReceiver.P();
-        imageReceiver.q0(chat != null ? hc.a(1, chat) : null, "100_100", w8Var, null, chat, 0);
+        imageReceiver.q0(chat != null ? hc.a(1, chat) : null, "100_100", v8Var, null, chat, 0);
         a();
     }
 

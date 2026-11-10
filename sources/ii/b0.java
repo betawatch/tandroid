@@ -5,16 +5,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
 import v4.d1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class b0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.k a;
+    public org.telegram.ui.ActionBar.l a;
     public final lh.f b;
     public final FrameLayout c;
     public r41 d;
@@ -32,7 +32,7 @@ public abstract class b0 extends FrameLayout {
         addView(frameLayout, ha.e(-1, -1, qs.E1));
         lh.f fVar = new lh.f(getContext());
         this.b = fVar;
-        fVar.setupColorKey(l6.a7);
+        fVar.setupColorKey(m6.a7);
         fVar.setFadeZoneBottom(org.telegram.messenger.g0.L(72.0f) + org.telegram.messenger.g0.n);
         fVar.setFadeHeightBottom(org.telegram.messenger.g0.L(24.0f));
         fVar.setFadeZoneTop(org.telegram.messenger.g0.L(64.0f) + org.telegram.messenger.g0.m);
@@ -44,7 +44,7 @@ public abstract class b0 extends FrameLayout {
         this.d.j(new ai.b(this, 18));
         a0 a0Var = new a0(this);
         a0Var.n(350L);
-        a0Var.o(xq.h);
+        a0Var.o(wq.h);
         a0Var.C = false;
         a0Var.m = false;
         this.d.setItemAnimator(a0Var);
@@ -56,7 +56,7 @@ public abstract class b0 extends FrameLayout {
             View childAt = this.d.getChildAt(i7);
             d1 T = this.d.T(childAt);
             if (T != null) {
-                y31 G = this.d.f3.G(T.b());
+                x31 G = this.d.f3.G(T.b());
                 if (G != null && G.d != 99) {
                     f10 = Math.min(childAt.getY() + this.c.getPaddingTop(), f10);
                 }
@@ -67,9 +67,9 @@ public abstract class b0 extends FrameLayout {
 
     public void c() {
         float b10 = b();
-        org.telegram.ui.ActionBar.k kVar = this.a;
-        if (kVar != null) {
-            kVar.setTranslationY(Math.max(org.telegram.messenger.g0.m, b10));
+        org.telegram.ui.ActionBar.l lVar = this.a;
+        if (lVar != null) {
+            lVar.setTranslationY(Math.max(org.telegram.messenger.g0.m, b10));
         }
     }
 }

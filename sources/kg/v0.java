@@ -8,10 +8,10 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.ra0;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.sa0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         a1 a1Var = this.b;
-        y31 y31Var = (y31) obj;
-        int i7 = y31Var.d;
+        x31 x31Var = (x31) obj;
+        int i7 = x31Var.d;
         int i10 = 3;
-        if (i7 != 1 && y31Var.c != a1Var.f) {
+        if (i7 != 1 && x31Var.c != a1Var.f) {
             if (i7 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a1Var.getParentActivity());
                 alertDialog$Builder.a.R = id.M0(2131752694, null);
@@ -63,26 +63,26 @@ public final /* synthetic */ class v0 implements a20, org.telegram.ui.ActionBar.
             }
             return;
         }
-        if (a1Var.x != null && y31Var.c != a1Var.f) {
+        if (a1Var.x != null && x31Var.c != a1Var.f) {
             a1Var.x = null;
             a1Var.a.f3.O(true);
             return;
         }
-        ra0 ra0Var = new ra0(8);
+        sa0 sa0Var = new sa0(8);
         if (a1Var.x != null) {
             TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
             tL_channelLocation.address = a1Var.y;
             tL_channelLocation.geo_point = a1Var.x;
-            ra0Var.C0 = tL_channelLocation;
+            sa0Var.C0 = tL_channelLocation;
         }
-        ra0Var.G0 = new ab.g(21, a1Var, ra0Var);
+        sa0Var.G0 = new ab.g(21, a1Var, sa0Var);
         if (a1Var.x != null || TextUtils.isEmpty(a1Var.y)) {
-            a1Var.presentFragment(ra0Var);
+            a1Var.presentFragment(sa0Var);
             return;
         }
         org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, a1Var.getParentActivity(), null);
         u1Var.i0 = false;
         u1Var.r(200L);
-        Utilities.g.c(new t0(a1Var, ra0Var, u1Var));
+        Utilities.g.c(new t0(a1Var, sa0Var, u1Var));
     }
 }

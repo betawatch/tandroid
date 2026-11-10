@@ -1,36 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class lh extends dg {
-    public final /* synthetic */ di n0;
+public final class lh implements vi {
+    public final /* synthetic */ ci a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lh(Context context, org.telegram.ui.ActionBar.g6 g6Var, di diVar) {
-        super(R.drawable.send_plane_24, context, g6Var, false);
-        this.n0 = diVar;
+    public lh(ci ciVar) {
+        this.a = ciVar;
     }
 
-    @Override // org.telegram.ui.Components.dg
-    public final boolean b() {
-        return false;
+    @Override // org.telegram.ui.Components.vi
+    public final void a(TLRPC.User user, boolean z9, int i7, long j3) {
+        org.telegram.ui.cn cnVar = (org.telegram.ui.cn) this.a.Z1;
+        if (cnVar.u7()) {
+            org.telegram.messenger.ez g10 = org.telegram.messenger.ez.g(user, cnVar.j6, cnVar.D5, cnVar.l4, null, null, z9, i7, 0);
+            g10.K = cnVar.X8();
+            g10.O = 0L;
+            g10.L = false;
+            g10.Q = j3;
+            g10.R = cnVar.i9();
+            g10.T = cnVar.w5;
+            cnVar.getSendMessagesHelper().r0(g10);
+            cnVar.L6();
+        }
     }
 
-    @Override // org.telegram.ui.Components.dg
-    public final boolean c() {
-        return !this.n0.O2;
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final boolean d() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.dg
-    public final int getFillColor() {
-        return org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.S5, this.n0.I0);
+    @Override // org.telegram.ui.Components.vi
+    public final void b(ArrayList arrayList, String str, boolean z9, int i7, long j3, boolean z10) {
+        ((org.telegram.ui.cn) this.a.Z1).Ib(arrayList, str, z9, i7, j3, z10);
     }
 }

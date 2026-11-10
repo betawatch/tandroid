@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -294,7 +294,7 @@ public final class n0 extends g.u {
         uVar.getClass();
         s4.x.b();
         for (s4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            org.telegram.ui.Components.n b10 = this.r.b(vVar);
+            org.telegram.ui.Components.m b10 = this.r.b(vVar);
             if (b10 != null) {
                 s4.o oVar = (s4.o) b10.a;
                 if (oVar != null && oVar.d) {

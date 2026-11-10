@@ -15,61 +15,60 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.cp;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.z4;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.y4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class t extends FrameLayout {
     public final Paint a;
     public final Paint b;
-    public final w5 c;
-    public final z4 d;
+    public final v5 c;
+    public final y4 d;
     public wa e;
     public final r[] f;
     public r h;
     public c20 n;
     public Runnable r;
 
-    public t(Context context, g6 g6Var) {
+    public t(Context context, h6 h6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        xq xqVar = xq.h;
-        this.c = new w5(this, 0L, 320L, xqVar);
-        this.d = new z4(this, 320L, xqVar, 0);
+        wq wqVar = wq.h;
+        this.c = new v5(this, 0L, 320L, wqVar);
+        this.d = new y4(this, 320L, wqVar, 0);
         wa waVar = new wa((char) 0, 11);
         waVar.c = new s();
         waVar.d = new s();
         this.e = waVar;
         this.f = new r[]{new r(this), new r(this)};
         setWillNotDraw(false);
-        paint2.setColor(l6.r1(0.1f, -16777216));
+        paint2.setColor(m6.r1(0.1f, -16777216));
         wa waVar2 = this.e;
-        int w02 = l6.w0(l6.d6, g6Var);
+        int w02 = m6.w0(m6.d6, h6Var);
         waVar2.b = w02;
         paint.setColor(w02);
     }
 
-    public static void b(i6 i6Var, s sVar, boolean z9) {
-        i6Var.a();
+    public static void b(org.telegram.ui.Components.h6 h6Var, s sVar, boolean z9) {
+        h6Var.a();
         if (sVar.f == 0) {
-            i6Var.t(sVar.e, z9, true);
+            h6Var.t(sVar.e, z9, true);
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
         spannableStringBuilder.append((CharSequence) sVar.e);
-        spannableStringBuilder.setSpan(new r5(sVar.f, 1.4f, i6Var.a.getFontMetricsInt()), 0, 1, 33);
-        i6Var.t(spannableStringBuilder, z9, true);
+        spannableStringBuilder.setSpan(new q5(sVar.f, 1.4f, h6Var.a.getFontMetricsInt()), 0, 1, 33);
+        h6Var.t(spannableStringBuilder, z9, true);
     }
 
     public final r a(float f10, float f11) {
@@ -90,7 +89,7 @@ public abstract class t extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        i6 i6Var;
+        org.telegram.ui.Components.h6 h6Var;
         float f10;
         float e10;
         float f11;
@@ -124,34 +123,34 @@ public abstract class t extends FrameLayout {
             r rVar = rVarArr[i11];
             wa waVar = this.e;
             s sVar = (s) (i11 == 0 ? waVar.c : waVar.d);
-            w5 w5Var = rVar.b;
+            v5 v5Var = rVar.b;
             org.telegram.ui.Components.voip.n nVar = rVar.p;
             Paint paint2 = rVar.k;
-            w5 w5Var2 = rVar.e;
-            w5 w5Var3 = rVar.d;
-            w5 w5Var4 = rVar.c;
+            v5 v5Var2 = rVar.e;
+            v5 v5Var3 = rVar.d;
+            v5 v5Var4 = rVar.c;
             org.telegram.ui.Cells.y yVar2 = rVar.n;
             r[] rVarArr2 = rVarArr;
             cp cpVar = rVar.o;
             float f14 = f13;
-            z4 z4Var = rVar.g;
+            y4 y4Var = rVar.g;
             int i12 = i10;
-            i6 i6Var2 = rVar.l;
+            org.telegram.ui.Components.h6 h6Var2 = rVar.l;
             int i13 = i11;
             RectF rectF = rVar.a;
-            float d = w5Var.d(sVar.a);
+            float d = v5Var.d(sVar.a);
             if (sVar.a) {
                 wa waVar2 = this.e;
-                i6Var = i6Var2;
+                h6Var = h6Var2;
                 if (((s) waVar2.d).a && ((s) waVar2.c).a) {
                     f10 = (!"left".equalsIgnoreCase(str2) ? !(!"right".equalsIgnoreCase(str2) || i13 == 0) : i13 == 0) ? 0 : 1;
                 } else {
                     f10 = 0.0f;
                 }
-                e10 = w5Var4.e(false, f10);
+                e10 = v5Var4.e(false, f10);
             } else {
-                e10 = w5Var4.c;
-                i6Var = i6Var2;
+                e10 = v5Var4.c;
+                h6Var = h6Var2;
             }
             if (sVar.a) {
                 wa waVar3 = this.e;
@@ -160,15 +159,15 @@ public abstract class t extends FrameLayout {
                 } else {
                     f11 = 0.0f;
                 }
-                e11 = w5Var3.e(false, f11);
+                e11 = v5Var3.e(false, f11);
             } else {
-                e11 = w5Var3.c;
+                e11 = v5Var3.c;
             }
             if (sVar.a) {
                 wa waVar4 = this.e;
-                e12 = w5Var2.e(false, (((s) waVar4.d).a && ((s) waVar4.c).a && ("left".equalsIgnoreCase(str2) || "right".equalsIgnoreCase(str2))) ? 0.0f : 1.0f);
+                e12 = v5Var2.e(false, (((s) waVar4.d).a && ((s) waVar4.c).a && ("left".equalsIgnoreCase(str2) || "right".equalsIgnoreCase(str2))) ? 0.0f : 1.0f);
             } else {
-                e12 = w5Var2.c;
+                e12 = v5Var2.c;
             }
             float T1 = org.telegram.messenger.g0.T1((getWidth() - org.telegram.messenger.g0.L(26.0f)) / 2.0f, getWidth() - org.telegram.messenger.g0.L(16.0f), e12);
             float L = org.telegram.messenger.g0.L(44.0f);
@@ -182,7 +181,7 @@ public abstract class t extends FrameLayout {
             canvas.save();
             float T13 = org.telegram.messenger.g0.T1(0.7f, 1.0f, d) * rVar.j.a(0.02f);
             canvas.scale(T13, T13, T12, W1);
-            paint2.setColor(l6.r1(d, rVar.f.a(sVar.g, false)));
+            paint2.setColor(m6.r1(d, rVar.f.a(sVar.g, false)));
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), paint2);
             if (d2 < 1.0f) {
                 canvas.save();
@@ -191,18 +190,18 @@ public abstract class t extends FrameLayout {
                 canvas.scale(T14, T14, T12, W1);
                 canvas.translate(0.0f, org.telegram.messenger.g0.L(-10.0f) * d2);
                 float f18 = f17 * d;
-                int r12 = l6.r1(f18, z4Var.a(sVar.h, false));
-                i6 i6Var3 = i6Var;
-                if (i6Var3.Z != r12) {
-                    i6Var3.Z = r12;
+                int r12 = m6.r1(f18, y4Var.a(sVar.h, false));
+                org.telegram.ui.Components.h6 h6Var3 = h6Var;
+                if (h6Var3.Z != r12) {
+                    h6Var3.Z = r12;
                     str = str2;
-                    i6Var3.a0 = new PorterDuffColorFilter(r12, PorterDuff.Mode.SRC_IN);
+                    h6Var3.a0 = new PorterDuffColorFilter(r12, PorterDuff.Mode.SRC_IN);
                 } else {
                     str = str2;
                 }
-                i6Var3.u(l6.r1(f18, z4Var.a(sVar.h, false)));
-                i6Var3.p(rectF);
-                i6Var3.draw(canvas);
+                h6Var3.u(m6.r1(f18, y4Var.a(sVar.h, false)));
+                h6Var3.p(rectF);
+                h6Var3.draw(canvas);
                 canvas.restore();
             } else {
                 str = str2;
@@ -213,7 +212,7 @@ public abstract class t extends FrameLayout {
                 float T15 = org.telegram.messenger.g0.T1(0.75f, 1.0f, d2);
                 canvas.scale(T15, T15, T12, W1);
                 canvas.translate(0.0f, (1.0f - d2) * org.telegram.messenger.g0.L(10.0f));
-                cpVar.b(l6.r1(d2 * d, z4Var.a(sVar.h, false)));
+                cpVar.b(m6.r1(d2 * d, y4Var.a(sVar.h, false)));
                 cpVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                 cpVar.draw(canvas);
                 canvas.restore();
@@ -224,17 +223,17 @@ public abstract class t extends FrameLayout {
             }
             if (d10 > f12) {
                 z9 = false;
-                nVar.b(l6.r1(d * d10, z4Var.a(sVar.h, false)), 64);
+                nVar.b(m6.r1(d * d10, y4Var.a(sVar.h, false)), 64);
                 nVar.a(org.telegram.messenger.g0.L(8.0f), canvas, rectF, this);
             } else {
                 z9 = false;
             }
-            if (rVar.m != l6.r1(0.15f, sVar.h)) {
-                int r13 = l6.r1(0.15f, sVar.h);
+            if (rVar.m != m6.r1(0.15f, sVar.h)) {
+                int r13 = m6.r1(0.15f, sVar.h);
                 rVar.m = r13;
                 yVar = yVar2;
                 i7 = 1;
-                l6.H1(yVar, r13, true);
+                m6.H1(yVar, r13, true);
             } else {
                 yVar = yVar2;
                 i7 = 1;

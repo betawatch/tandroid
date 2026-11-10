@@ -4,12 +4,12 @@ import android.os.Bundle;
 import org.telegram.messenger.id;
 import org.telegram.messenger.m5;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.jz;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o2 extends cn {
     public boolean td;
@@ -31,12 +31,12 @@ public final class o2 extends cn {
             return;
         }
         this.td = true;
-        cc O = hc.a0(this).O(this.ud.getDocument(), id.M0(2131752885, null), id.a0(null, null, 2131752886, m5.s(this.currentAccount, this.vd)));
+        bc O = gc.a0(this).O(this.ud.getDocument(), id.M0(2131752885, null), id.a0(null, null, 2131752886, m5.s(this.currentAccount, this.vd)));
         O.r = false;
         O.j();
-        kz kzVar = this.H9;
-        if (kzVar != null) {
-            kzVar.c(true);
+        jz jzVar = this.H9;
+        if (jzVar != null) {
+            jzVar.c(true);
         }
     }
 }

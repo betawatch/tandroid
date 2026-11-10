@@ -33,33 +33,33 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.o7;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.tp0;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class r extends FrameLayout implements b6, ls {
+public abstract class r extends FrameLayout implements c6, ls {
     public static LongSparseArray E;
     public static LongSparseArray F;
     public int D;
     public final f2 a;
     public final int b;
-    public final g6 c;
+    public final h6 c;
     public final long d;
     public final k6 e;
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final v61 r;
+    public final u61 r;
     public Boolean s;
     public int w;
     public float x;
@@ -75,10 +75,10 @@ public abstract class r extends FrameLayout implements b6, ls {
         this.a = f2Var;
         int currentAccount = f2Var.getCurrentAccount();
         this.b = currentAccount;
-        g6 resourceProvider = f2Var.getResourceProvider();
+        h6 resourceProvider = f2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
-        setBackgroundColor(l6.w(l6.w0(l6.d6, resourceProvider), l6.r1(0.04f, l6.w0(l6.G6, resourceProvider))));
+        setBackgroundColor(m6.w(m6.w0(m6.d6, resourceProvider), m6.r1(0.04f, m6.w0(m6.G6, resourceProvider))));
         if (F == null) {
             F = new LongSparseArray();
         }
@@ -97,16 +97,16 @@ public abstract class r extends FrameLayout implements b6, ls {
             k6Var = k6Var2;
         }
         this.e = k6Var;
-        tp0 tp0Var = (tp0) this;
-        a aVar = new a(tp0Var, context);
+        sp0 sp0Var = (sp0) this;
+        a aVar = new a(sp0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new g5(1, context, tp0Var));
+        aVar.setAdapter(new g5(1, context, sp0Var));
         addView(aVar, ha.e(-1, -1, qs.E1));
-        v61 n10 = aVar.n(9, true);
+        u61 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new r4(tp0Var, 6));
+        n10.setPreTabClick(new r4(sp0Var, 6));
         addView(n10, ha.e(-1, 42, 48));
         i(false);
     }
@@ -116,15 +116,15 @@ public abstract class r extends FrameLayout implements b6, ls {
         if (f2Var == null || f2Var.getParentActivity() == null) {
             return;
         }
-        di diVar = new di(f2Var.getParentActivity(), this.a, false, false, false, this.c);
-        diVar.y1(1, false);
-        diVar.N2 = true;
-        diVar.M2 = false;
-        diVar.d3.setText(id.M0(2131752121, null));
-        diVar.a2.i0();
-        diVar.T3 = new a0((FrameLayout) this, (Object) diVar, (Serializable) str, 21);
-        diVar.e1();
-        diVar.show();
+        ci ciVar = new ci(f2Var.getParentActivity(), this.a, false, false, false, this.c);
+        ciVar.y1(1, false);
+        ciVar.Q2 = true;
+        ciVar.P2 = false;
+        ciVar.g3.setText(id.M0(2131752121, null));
+        ciVar.d2.i0();
+        ciVar.W3 = new a0((FrameLayout) this, (Object) ciVar, (Serializable) str, 21);
+        ciVar.e1();
+        ciVar.show();
     }
 
     public final void b(String str) {
@@ -320,7 +320,7 @@ public abstract class r extends FrameLayout implements b6, ls {
         return k6Var;
     }
 
-    public qj0 getCurrentListView() {
+    public pj0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof n) {
             return ((n) currentView).f;
@@ -422,9 +422,9 @@ public abstract class r extends FrameLayout implements b6, ls {
         wpVar.I = 0.9f;
         wpVar.G = 0.85f;
         spannableString.setSpan(wpVar, 0, 1, 33);
-        v61 v61Var = this.r;
-        v61Var.a(-1, spannableString);
-        v61Var.y.f();
+        u61 u61Var = this.r;
+        u61Var.a(-1, spannableString);
+        u61Var.y.f();
         boolean z10 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z10) {
@@ -435,7 +435,7 @@ public abstract class r extends FrameLayout implements b6, ls {
             this.s = Boolean.valueOf(z10);
             if (!z9) {
                 this.x = z10 ? 1.0f : 0.0f;
-                v61Var.setTranslationY(g0.L(z10 ? 0.0f : -42.0f));
+                u61Var.setTranslationY(g0.L(z10 ? 0.0f : -42.0f));
                 aVar.setTranslationY(g0.L(z10 ? 42.0f : 0.0f));
                 return;
             }
@@ -444,7 +444,7 @@ public abstract class r extends FrameLayout implements b6, ls {
             ofFloat.addUpdateListener(new ah.h(this, 24));
             this.y.addListener(new y(4, this, z10));
             this.y.setDuration(320L);
-            this.y.setInterpolator(xq.h);
+            this.y.setInterpolator(wq.h);
             this.y.start();
         }
     }
@@ -513,18 +513,18 @@ public abstract class r extends FrameLayout implements b6, ls {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        g6 g6Var = this.c;
+        h6 h6Var = this.c;
         try {
-            setBackgroundColor(l6.w(l6.w0(l6.d6, g6Var), l6.r1(0.04f, l6.w0(l6.G6, g6Var))));
+            setBackgroundColor(m6.w(m6.w0(m6.d6, h6Var), m6.r1(0.04f, m6.w0(m6.G6, h6Var))));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

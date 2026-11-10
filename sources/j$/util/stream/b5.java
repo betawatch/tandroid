@@ -202,7 +202,7 @@ public abstract class b5 extends a implements Stream {
             I0 = I0(new f4(w6.REFERENCE, collector.combiner(), collector.accumulator(), supplier, collector2));
         } else {
             I0 = collector.supplier().get();
-            forEach(new j$.util.concurrent.t(7, collector.accumulator(), I0));
+            forEach(new j$.util.concurrent.s(7, collector.accumulator(), I0));
             collector2 = collector;
         }
         return collector2.characteristics().contains(g.IDENTITY_FINISH) ? I0 : collector2.finisher().apply(I0);

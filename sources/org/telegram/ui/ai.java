@@ -1,24 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ai extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ org.telegram.ui.Components.ji0 o;
+    public final /* synthetic */ org.telegram.ui.Components.ii0 o;
     public final /* synthetic */ cn p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai(cn cnVar, xa xaVar, org.telegram.ui.Components.ji0 ji0Var) {
+    public ai(cn cnVar, xa xaVar, org.telegram.ui.Components.ii0 ii0Var) {
         super(xaVar, -2, -2);
         this.p = cnVar;
-        this.o = ji0Var;
+        this.o = ii0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.g1
     public final void d(boolean z9) {
         super.d(z9);
-        org.telegram.ui.Components.ji0 ji0Var = this.o;
-        if (ji0Var != null) {
-            ji0Var.d(z9);
+        org.telegram.ui.Components.ii0 ii0Var = this.o;
+        if (ii0Var != null) {
+            ii0Var.d(z9);
         }
     }
 
@@ -29,10 +29,10 @@ public final class ai extends org.telegram.ui.ActionBar.g1 {
         if (cnVar.e9 != this) {
             return;
         }
-        org.telegram.ui.Components.cc ccVar = org.telegram.ui.Components.cc.w;
-        org.telegram.ui.Components.cc ccVar2 = cnVar.B1;
-        if (ccVar == ccVar2 && ccVar2 != null) {
-            ccVar2.b();
+        org.telegram.ui.Components.bc bcVar = org.telegram.ui.Components.bc.w;
+        org.telegram.ui.Components.bc bcVar2 = cnVar.B1;
+        if (bcVar == bcVar2 && bcVar2 != null) {
+            bcVar2.b();
             cnVar.B1 = null;
         }
         cnVar.e9 = null;

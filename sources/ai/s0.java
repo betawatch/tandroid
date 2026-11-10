@@ -46,14 +46,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.jb;
-import org.telegram.ui.Components.x70;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.ib;
+import org.telegram.ui.Components.w70;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ei0;
+import org.telegram.ui.fi0;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class s0 extends f2 {
     public boolean D;
@@ -155,26 +155,26 @@ public class s0 extends f2 {
             return;
         }
         zh.g1 g1Var = new zh.g1(s0Var.getParentActivity(), s0Var.currentAccount, s0Var.getUserConfig().e(), null, null);
-        if (!g1Var.l2) {
-            g1Var.l2 = true;
-            gc gcVar = g1Var.n2;
+        if (!g1Var.o2) {
+            g1Var.o2 = true;
+            gc gcVar = g1Var.q2;
             if (gcVar != null && (gcVar.getParent() instanceof ViewGroup)) {
-                ViewGroup viewGroup = (ViewGroup) g1Var.n2.getParent();
-                int indexOfChild = viewGroup.indexOfChild(g1Var.n2);
-                viewGroup.removeView(g1Var.n2);
+                ViewGroup viewGroup = (ViewGroup) g1Var.q2.getParent();
+                int indexOfChild = viewGroup.indexOfChild(g1Var.q2);
+                viewGroup.removeView(g1Var.q2);
                 gc gcVar2 = new gc(g1Var.getContext(), qs.Z3, 2, 0);
-                g1Var.n2 = gcVar2;
+                g1Var.q2 = gcVar2;
                 viewGroup.addView(gcVar2, indexOfChild, ha.c(-1.0f, -1));
             }
-            x70 x70Var = g1Var.o2;
-            if (x70Var != null) {
+            w70 w70Var = g1Var.r2;
+            if (w70Var != null) {
                 String M0 = id.M0(2131750288, null);
-                jb jbVar = g1Var.c2;
-                jbVar.setText(M0);
-                jbVar.setBreakStrategy(2);
-                x70Var.setVisibility(8);
+                ib ibVar = g1Var.f2;
+                ibVar.setText(M0);
+                ibVar.setBreakStrategy(2);
+                w70Var.setVisibility(8);
             }
-            g1Var.Q1.O(false);
+            g1Var.T1.O(false);
         }
         g1Var.show();
     }
@@ -259,7 +259,7 @@ public class s0 extends f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.ActionBar.k createActionBar(Context context) {
+    public final org.telegram.ui.ActionBar.l createActionBar(Context context) {
         return null;
     }
 
@@ -306,11 +306,11 @@ public class s0 extends f2 {
             }
         }
         Activity parentActivity = getParentActivity();
-        ei0 ei0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).s1 : null;
-        if (ei0Var != null && this.c == null) {
-            org.telegram.ui.f fVar2 = new org.telegram.ui.f(ei0Var, 27);
-            ei0Var.b.add(fVar2);
-            ei0Var.a();
+        fi0 fi0Var = parentActivity instanceof LaunchActivity ? ((LaunchActivity) parentActivity).s1 : null;
+        if (fi0Var != null && this.c == null) {
+            org.telegram.ui.f fVar2 = new org.telegram.ui.f(fi0Var, 27);
+            fi0Var.b.add(fVar2);
+            fi0Var.a();
             this.c = fVar2;
         }
         int i10 = this.currentAccount;
@@ -834,9 +834,9 @@ public class s0 extends f2 {
         l0();
         org.telegram.ui.f fVar = this.c;
         if (fVar != null) {
-            ei0 ei0Var = (ei0) fVar.b;
-            if (ei0Var.b.remove(fVar)) {
-                ei0Var.a();
+            fi0 fi0Var = (fi0) fVar.b;
+            if (fi0Var.b.remove(fVar)) {
+                fi0Var.a();
             }
             this.c = null;
         }
@@ -909,8 +909,8 @@ public class s0 extends f2 {
         alertDialog$Builder.a.T = org.telegram.messenger.g0.X2(id.M0(2131746503, null));
         alertDialog$Builder.k(id.M0(2131747300, null), new j0(this));
         alertDialog$Builder.h(id.M0(2131751772, null), null);
-        int i10 = l6.L5;
-        alertDialog$Builder.m(R.raw.permission_request_camera, 72, l6.x0(null, i10, false), null);
+        int i10 = m6.L5;
+        alertDialog$Builder.m(R.raw.permission_request_camera, 72, m6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
         alertDialog$Builder.p();
     }

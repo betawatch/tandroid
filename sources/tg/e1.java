@@ -16,17 +16,17 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.Components.jg;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.ig;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements ls {
     public static final List x = Arrays.asList(new b1(0, 1, 20, 0), new b1(0, 2, 20, 40), new b1(1, 0, 0, 20), new b1(1, 2, 60, 40), new b1(2, 0, 40, 20), new b1(2, 1, 40, 60));
     public int a;
-    public final dh0 b;
+    public final ch0 b;
     public final ImageView c;
     public final ImageView d;
     public final View e;
@@ -74,17 +74,17 @@ public final class e1 extends FrameLayout implements ls {
             }
         });
         addView(view, ha.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
-        dh0 dh0Var = new dh0(context);
-        this.b = dh0Var;
-        dh0Var.f(R.raw.photo_text_allign, 24, 24, null);
-        ah0 animatedDrawable = dh0Var.getAnimatedDrawable();
+        ch0 ch0Var = new ch0(context);
+        this.b = ch0Var;
+        ch0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        zg0 animatedDrawable = ch0Var.getAnimatedDrawable();
         final int i10 = 1;
         animatedDrawable.h = true;
         animatedDrawable.P(20);
         animatedDrawable.M(20);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        dh0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        dh0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
+        ch0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        ch0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
 
             {
@@ -113,8 +113,8 @@ public final class e1 extends FrameLayout implements ls {
                 }
             }
         });
-        dh0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        addView(dh0Var, ha.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        ch0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        addView(ch0Var, ha.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -154,7 +154,7 @@ public final class e1 extends FrameLayout implements ls {
         this.d = imageView2;
         imageView2.setImageResource(R.drawable.msg_add);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(l6.h0(1090519039, 1, -1));
+        imageView2.setBackground(m6.h0(1090519039, 1, -1));
         final int i12 = 3;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
@@ -252,9 +252,9 @@ public final class e1 extends FrameLayout implements ls {
         int i10 = this.a;
         this.a = i7;
         List list = x;
-        dh0 dh0Var = this.b;
+        ch0 ch0Var = this.b;
         if (i10 == i7) {
-            ah0 animatedDrawable = dh0Var.getAnimatedDrawable();
+            zg0 animatedDrawable = ch0Var.getAnimatedDrawable();
             b1 b1Var = (b1) list.get(0);
             Iterator it = list.iterator();
             while (true) {
@@ -287,7 +287,7 @@ public final class e1 extends FrameLayout implements ls {
                 break;
             }
         }
-        ah0 animatedDrawable2 = dh0Var.getAnimatedDrawable();
+        zg0 animatedDrawable2 = ch0Var.getAnimatedDrawable();
         animatedDrawable2.M(b1Var3.c);
         animatedDrawable2.P(b1Var3.d);
         animatedDrawable2.start();
@@ -324,7 +324,7 @@ public final class e1 extends FrameLayout implements ls {
         return this.e;
     }
 
-    public jg getEmojiButton() {
+    public ig getEmojiButton() {
         return null;
     }
 

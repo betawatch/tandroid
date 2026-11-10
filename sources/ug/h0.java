@@ -26,16 +26,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.v8;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.cn;
-import org.telegram.ui.l40;
+import org.telegram.ui.m40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h0 extends LinearLayout {
     public TextView a;
@@ -51,7 +51,7 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:229:0x0555, code lost:
     
-        r0 = r44.v2;
+        r0 = r44.y2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:230:0x055d, code lost:
     
@@ -59,11 +59,11 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:231:0x055f, code lost:
     
-        r0 = r44.u2;
+        r0 = r44.x2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:232:0x0568, code lost:
     
-        r3 = new org.telegram.ui.Components.z8(r45, false);
+        r3 = new org.telegram.ui.Components.y8(r45, false);
         r3.a.q = org.telegram.messenger.g0.L(3.33f);
         r3.setSize(org.telegram.messenger.g0.L(72.0f));
         r3.setStepFactor(0.4f);
@@ -89,14 +89,14 @@ public final class h0 extends LinearLayout {
         r4 = new android.widget.TextView(r45);
         r4.setGravity(17);
         org.telegram.messenger.camera.q.m(r4, r26, 20.0f);
-        r5 = org.telegram.ui.ActionBar.l6.j5;
-        org.telegram.ui.ActionBar.s6.U(r4, r5, r44.I0);
+        r5 = org.telegram.ui.ActionBar.m6.j5;
+        org.telegram.ui.ActionBar.t6.U(r4, r5, r44.I0);
         r4.setText(org.telegram.messenger.id.L0(2131749128));
         addView(r4, c8.ha.t(-1, -2, 1, 32, 0, 32, 9));
         r4 = new android.widget.TextView(r45);
         r4.setGravity(17);
         r4.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.s6.U(r4, r5, r44.I0);
+        org.telegram.ui.ActionBar.t6.U(r4, r5, r44.I0);
         addView(r4, c8.ha.t(-1, -2, 1, 32, 0, 32, 19));
      */
     /* JADX WARN: Code restructure failed: missing block: B:237:0x0624, code lost:
@@ -109,7 +109,7 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:239:0x0629, code lost:
     
-        r9 = r44.u2;
+        r9 = r44.x2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:240:0x062d, code lost:
     
@@ -117,9 +117,9 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:241:0x062f, code lost:
     
-        r9 = r44.u2;
+        r9 = r44.x2;
         r9 = r9.size();
-        r10 = r44.v2;
+        r10 = r44.y2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:242:0x063f, code lost:
     
@@ -148,7 +148,7 @@ public final class h0 extends LinearLayout {
     /* JADX WARN: Code restructure failed: missing block: B:249:0x07b4, code lost:
     
         r4.setText(org.telegram.messenger.g0.X2(r0));
-        r0 = r44.v2;
+        r0 = r44.y2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:250:0x07bf, code lost:
     
@@ -160,7 +160,7 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:252:0x07cb, code lost:
     
-        r3 = r44.u2;
+        r3 = r44.x2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:253:0x07cf, code lost:
     
@@ -184,7 +184,7 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:261:0x07e6, code lost:
     
-        if (r44.Q1 == false) goto L307;
+        if (r44.T1 == false) goto L307;
      */
     /* JADX WARN: Code restructure failed: missing block: B:262:0x07e8, code lost:
     
@@ -195,7 +195,7 @@ public final class h0 extends LinearLayout {
         addView(r0, c8.ha.k((r44.t0 / org.telegram.messenger.g0.p) + 4.0f, 0.0f, (r44.t0 / org.telegram.messenger.g0.p) + 4.0f, 18.0f, -1, 48));
         r0 = new ei.k(r43, r45);
         r0.setGravity(17);
-        org.telegram.ui.ActionBar.s6.U(r0, org.telegram.ui.ActionBar.l6.z6, r44.I0);
+        org.telegram.ui.ActionBar.t6.U(r0, org.telegram.ui.ActionBar.m6.z6, r44.I0);
         r0.setText(" " + org.telegram.messenger.id.L0(2131749131) + " ");
         r0.setTextSize(14.0f);
         addView(r0, c8.ha.t(org.telegram.messenger.qs.U2, -2, 1, 12, 0, 12, 20));
@@ -203,14 +203,14 @@ public final class h0 extends LinearLayout {
         r0.setGravity(17);
         r0.setTypeface(org.telegram.messenger.g0.o());
         r0.setTextSize(1, 20.0f);
-        org.telegram.ui.ActionBar.s6.U(r0, r5, r44.I0);
+        org.telegram.ui.ActionBar.t6.U(r0, r5, r44.I0);
         r0.setText(org.telegram.messenger.id.L0(2131749171));
         addView(r0, c8.ha.t(-1, -2, 1, 32, 0, 32, 9));
         r0 = new android.widget.TextView(r45);
         r0.setGravity(17);
         r0.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.s6.U(r0, r5, r44.I0);
-        r2 = r44.v2;
+        org.telegram.ui.ActionBar.t6.U(r0, r5, r44.I0);
+        r2 = r44.y2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:263:0x08ba, code lost:
     
@@ -239,16 +239,16 @@ public final class h0 extends LinearLayout {
     /* JADX WARN: Code restructure failed: missing block: B:269:0x08e3, code lost:
     
         ((android.view.ViewGroup.MarginLayoutParams) r4.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(8.0f);
-        r44.b2 = true;
+        r44.e2 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:270:0x07d3, code lost:
     
-        r3 = r44.u2;
+        r3 = r44.x2;
         r3 = r3.size();
      */
     /* JADX WARN: Code restructure failed: missing block: B:271:0x07c3, code lost:
     
-        r0 = r44.v2;
+        r0 = r44.y2;
         r0 = r0.size();
      */
     /* JADX WARN: Code restructure failed: missing block: B:272:0x0651, code lost:
@@ -331,9 +331,9 @@ public final class h0 extends LinearLayout {
     
         r6 = org.telegram.messenger.id.G(r0.size() - 2, r6, org.telegram.messenger.t10.k(org.telegram.messenger.qp.s1(r44.a).a2((java.lang.Long) r0.get(0))), org.telegram.messenger.t10.k(org.telegram.messenger.qp.s1(r44.a).a2((java.lang.Long) r0.get(1))));
         r0 = r0.size() - 2;
-        r9 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, r44.I0);
-        r3.b = new ug.y0(org.telegram.ui.ActionBar.l6.zk, org.telegram.ui.ActionBar.l6.Ak, -1, -1, null);
-        r3.c = new org.telegram.ui.Components.ny0(jg.g.j(r0, "+"), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
+        r9 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, r44.I0);
+        r3.b = new ug.y0(org.telegram.ui.ActionBar.m6.zk, org.telegram.ui.ActionBar.m6.Ak, -1, -1, null);
+        r3.c = new org.telegram.ui.Components.my0(jg.g.j(r0, "+"), 12.0f, org.telegram.messenger.g0.o1("fonts/num.otf"));
         r0 = new android.graphics.Paint(1);
         r3.d = r0;
         r0.setColor(r9);
@@ -361,7 +361,7 @@ public final class h0 extends LinearLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:299:0x0564, code lost:
     
-        r0 = r44.v2;
+        r0 = r44.y2;
      */
     /* JADX WARN: Code restructure failed: missing block: B:303:0x0553, code lost:
     
@@ -438,14 +438,14 @@ public final class h0 extends LinearLayout {
         float f11;
         float f12;
         float f13;
-        f2 f2Var = i0Var.o1;
+        f2 f2Var = i0Var.r1;
         this.e = i0Var;
         setOrientation(1);
-        int i17 = i0.O2;
+        int i17 = i0.R2;
         setPadding(org.telegram.messenger.g0.L(6.0f) + i0Var.t0, 0, org.telegram.messenger.g0.L(6.0f) + i0Var.t0, 0);
-        int i18 = i0Var.Z1;
+        int i18 = i0Var.c2;
         androidx.emoji2.text.p o12 = i0.o1(i18, i0Var.a);
-        i0Var.E2 = o12;
+        i0Var.H2 = o12;
         int i19 = o12.a;
         qp s12 = qp.s1(i0Var.a);
         boolean D3 = s12.D3();
@@ -455,16 +455,16 @@ public final class h0 extends LinearLayout {
         } else if (i18 == 32) {
             str = i0Var.l1(true);
         } else if (i18 == 19) {
-            org.telegram.ui.Cells.q1 q1Var = i0Var.Y1;
+            org.telegram.ui.Cells.q1 q1Var = i0Var.b2;
             if (q1Var != null) {
                 int i20 = q1Var.getMessageObject().k.from_boosts_applied;
                 TLRPC.Chat n1 = i0Var.n1();
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) id.G(i20, "GroupBoostedByUserWithTimes", t10.j(i0Var.Y1.getCurrentUser(), true)));
+                spannableStringBuilder.append((CharSequence) id.G(i20, "GroupBoostedByUserWithTimes", t10.j(i0Var.b2.getCurrentUser(), true)));
                 spannableStringBuilder.append((CharSequence) " ");
                 spannableStringBuilder.append((CharSequence) id.a0(null, null, 2131749497, n1 == null ? "" : n1.title));
                 str = spannableStringBuilder.toString();
-            } else if (f2Var instanceof l40) {
+            } else if (f2Var instanceof m40) {
                 str = id.G(wg.r.g(), "BoostingGroupBoostWhatAreBoostsDescription", new Object[0]);
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(i0Var.l1(true));
@@ -474,7 +474,7 @@ public final class h0 extends LinearLayout {
                 str = spannableStringBuilder2.toString();
             }
         } else if (i18 == 18) {
-            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus4 = i0Var.T1;
+            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus4 = i0Var.W1;
             if (tL_premium_boostsStatus4.level == 0) {
                 int i21 = r12 ? 2131749421 : 2131752353;
                 int i22 = tL_premium_boostsStatus4.next_level_boosts;
@@ -483,7 +483,7 @@ public final class h0 extends LinearLayout {
                 int i23 = r12 ? 2131749419 : 2131752351;
                 int i24 = tL_premium_boostsStatus4.next_level_boosts;
                 int i25 = tL_premium_boostsStatus4.boosts;
-                str = id.a0(null, null, i23, id.G(i24 - i25, "MoreBoosts", Integer.valueOf(i24 - i25)), id.G(i0Var.T1.level + 1, "BoostStories", new Object[0]));
+                str = id.a0(null, null, i23, id.G(i24 - i25, "MoreBoosts", Integer.valueOf(i24 - i25)), id.G(i0Var.W1.level + 1, "BoostStories", new Object[0]));
             }
         } else if (i18 == 20) {
             str = id.a0(null, null, r12 ? 2131749418 : 2131752349, Integer.valueOf(i0Var.j1()));
@@ -508,62 +508,62 @@ public final class h0 extends LinearLayout {
         } else if (i18 == 23) {
             str = id.a0(null, null, r12 ? 2131749416 : 2131752348, Integer.valueOf(r12 ? s12.z5 : s12.u5));
         } else if (i18 == 21) {
-            int i26 = i0Var.J2;
+            int i26 = i0Var.M2;
             str = id.G(i26, "ReactionReachLvlForReaction", Integer.valueOf(i26));
         } else if (i18 == 11) {
-            if (i0Var.Q1) {
-                if (t3.V(i0Var.G2)) {
-                    arrayList9 = i0Var.t2;
+            if (i0Var.T1) {
+                if (t3.V(i0Var.J2)) {
+                    arrayList9 = i0Var.w2;
                     if (arrayList9.size() == 1) {
-                        arrayList12 = i0Var.t2;
+                        arrayList12 = i0Var.w2;
                         G = id.Z(2131749155, g5.p((TLRPC.User) arrayList12.get(0)));
                     } else {
-                        arrayList10 = i0Var.t2;
+                        arrayList10 = i0Var.w2;
                         int size = arrayList10.size();
-                        arrayList11 = i0Var.t2;
+                        arrayList11 = i0Var.w2;
                         G = id.G(size, "InviteChannelRestrictedUsers", Integer.valueOf(arrayList11.size()));
                     }
                 } else {
-                    arrayList5 = i0Var.t2;
+                    arrayList5 = i0Var.w2;
                     if (arrayList5.size() == 1) {
-                        arrayList8 = i0Var.t2;
+                        arrayList8 = i0Var.w2;
                         G = id.Z(2131749120, g5.p((TLRPC.User) arrayList8.get(0)));
                     } else {
-                        arrayList6 = i0Var.t2;
+                        arrayList6 = i0Var.w2;
                         int size2 = arrayList6.size();
-                        arrayList7 = i0Var.t2;
+                        arrayList7 = i0Var.w2;
                         G = id.G(size2, "InviteRestrictedUsers", Integer.valueOf(arrayList7.size()));
                     }
                 }
-            } else if (t3.V(i0Var.G2)) {
-                arrayList17 = i0Var.t2;
+            } else if (t3.V(i0Var.J2)) {
+                arrayList17 = i0Var.w2;
                 if (arrayList17.size() == 1) {
-                    arrayList20 = i0Var.t2;
+                    arrayList20 = i0Var.w2;
                     G = id.Z(2131749158, g5.p((TLRPC.User) arrayList20.get(0)));
                 } else {
-                    arrayList18 = i0Var.t2;
+                    arrayList18 = i0Var.w2;
                     int size3 = arrayList18.size();
-                    arrayList19 = i0Var.t2;
+                    arrayList19 = i0Var.w2;
                     G = id.G(size3, "InviteChannelRestrictedUsers2", Integer.valueOf(arrayList19.size()));
                 }
             } else {
-                arrayList13 = i0Var.t2;
+                arrayList13 = i0Var.w2;
                 if (arrayList13.size() == 1) {
-                    arrayList16 = i0Var.t2;
+                    arrayList16 = i0Var.w2;
                     G = id.Z(2131749123, g5.p((TLRPC.User) arrayList16.get(0)));
                 } else {
-                    arrayList14 = i0Var.t2;
+                    arrayList14 = i0Var.w2;
                     int size4 = arrayList14.size();
-                    arrayList15 = i0Var.t2;
+                    arrayList15 = i0Var.w2;
                     G = id.G(size4, "InviteRestrictedUsers2", Integer.valueOf(arrayList15.size()));
                 }
             }
             str2 = G;
             z9 = true;
-            androidx.emoji2.text.p pVar = i0Var.E2;
+            androidx.emoji2.text.p pVar = i0Var.H2;
             int i27 = pVar.b;
             int i28 = pVar.c;
-            i7 = i0Var.o2;
+            i7 = i0Var.r2;
             if (i18 != 3) {
                 i7 = qp.s1(i0Var.a).P0.size() - 1;
             } else if (i18 == 7) {
@@ -580,7 +580,7 @@ public final class h0 extends LinearLayout {
                     }
                 }
                 i7 = i29;
-                if (!p10.i(i0Var.a).q() || i0Var.F2) {
+                if (!p10.i(i0Var.a).q() || i0Var.I2) {
                     i7 = i28;
                     f10 = 1.0f;
                 } else {
@@ -602,15 +602,15 @@ public final class h0 extends LinearLayout {
                 int i31 = (i18 != 18 || i18 == 20 || i18 == 24 || i18 == 25 || i18 == 26 || i18 == 29 || i18 == 22 || i18 == 23 || i18 == 19 || i18 == 30 || i18 == 35 || i18 == 21 || i18 == 27 || i18 == 28 || i18 == 32) ? i10 : 0;
                 i7 = i31 != 0 ? 0 : i7;
                 if ((i18 != 11 || i18 == 34) && !qp.s1(i0Var.a).D3()) {
-                    arrayList21 = i0Var.v2;
+                    arrayList21 = i0Var.y2;
                     if (arrayList21 != null) {
-                        arrayList25 = i0Var.v2;
+                        arrayList25 = i0Var.y2;
                     }
-                    arrayList22 = i0Var.u2;
+                    arrayList22 = i0Var.x2;
                     if (arrayList22 != null) {
-                        arrayList23 = i0Var.u2;
+                        arrayList23 = i0Var.x2;
                         int size6 = arrayList23.size();
-                        arrayList24 = i0Var.t2;
+                        arrayList24 = i0Var.w2;
                         i11 = i7;
                     }
                 }
@@ -620,49 +620,49 @@ public final class h0 extends LinearLayout {
                 } else {
                     i12 = 8;
                     g0 g0Var = new g0(this, context, i19, i11, i28, f14, i0Var.I0);
-                    i0Var.p2 = g0Var;
+                    i0Var.s2 = g0Var;
                     if (i31 != 0) {
-                        tL_premium_boostsStatus2 = i0Var.T1;
+                        tL_premium_boostsStatus2 = i0Var.W1;
                         if (tL_premium_boostsStatus2 != null) {
-                            g0 g0Var2 = i0Var.p2;
-                            tL_premium_boostsStatus3 = i0Var.T1;
-                            e3 e3Var = i0Var.U1;
+                            g0 g0Var2 = i0Var.s2;
+                            tL_premium_boostsStatus3 = i0Var.W1;
+                            e3 e3Var = i0Var.X1;
                             g0Var2.g(tL_premium_boostsStatus3, e3Var != null && e3Var.l);
                         }
                     } else {
                         g0Var.setBagePosition(f10);
-                        i0Var.p2.setType(i18);
-                        i0Var.p2.x.setVisibility(8);
+                        i0Var.s2.setType(i18);
+                        i0Var.s2.x.setVisibility(8);
                         if (z9) {
-                            g0 g0Var3 = i0Var.p2;
+                            g0 g0Var3 = i0Var.s2;
                             g0Var3.I.setVisibility(8);
                             r rVar = g0Var3.e;
                             if (rVar != null) {
                                 rVar.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(3.0f));
                             }
                             g0Var3.J = true;
-                        } else if (p10.i(i0Var.a).q() || i0Var.F2) {
-                            i0Var.p2.w.setVisibility(8);
+                        } else if (p10.i(i0Var.a).q() || i0Var.I2) {
+                            i0Var.s2.w.setVisibility(8);
                             if (i18 == 6) {
-                                i0Var.p2.x.setText("2 GB");
+                                i0Var.s2.x.setText("2 GB");
                             } else {
-                                i0Var.p2.x.setText(Integer.toString(i27));
+                                i0Var.s2.x.setText(Integer.toString(i27));
                             }
                             z10 = false;
-                            i0Var.p2.x.setVisibility(0);
+                            i0Var.s2.x.setVisibility(0);
                             i16 = 2;
                             if (i18 != i16 || i18 == 5) {
-                                i0Var.p2.H = z10;
+                                i0Var.s2.H = z10;
                             }
-                            addView(i0Var.p2, ha.q(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                            addView(i0Var.s2, ha.q(-1, -2, 0.0f, 0, -4, 0, -4, 0));
                         }
                     }
                     i16 = 2;
                     z10 = false;
                     if (i18 != i16) {
                     }
-                    i0Var.p2.H = z10;
-                    addView(i0Var.p2, ha.q(-1, -2, 0.0f, 0, -4, 0, -4, 0));
+                    i0Var.s2.H = z10;
+                    addView(i0Var.s2, ha.q(-1, -2, 0.0f, 0, -4, 0, -4, 0));
                 }
                 if (i18 == 31) {
                     FrameLayout frameLayout = new FrameLayout(context);
@@ -670,11 +670,11 @@ public final class h0 extends LinearLayout {
                     imageView.setImageDrawable(f0.d.d(getContext(), R.drawable.large_boosts));
                     frameLayout.addView(imageView, ha.e(-2, -2, 17));
                     int L = org.telegram.messenger.g0.L(79.0f);
-                    int i32 = l6.Ci;
-                    ShapeDrawable L2 = l6.L(L, l6.v0(i32));
-                    o6 M = s6.M(i32);
+                    int i32 = m6.Ci;
+                    ShapeDrawable L2 = m6.L(L, m6.v0(i32));
+                    p6 M = t6.M(i32);
                     frameLayout.setBackground(L2);
-                    s6.j(frameLayout, L2, M, null, null);
+                    t6.j(frameLayout, L2, M, null, null);
                     addView(frameLayout, ha.t(79, 79, 1, 0, 23, 0, 0));
                 }
                 TextView textView = new TextView(context);
@@ -685,7 +685,7 @@ public final class h0 extends LinearLayout {
                 } else if (i18 == 32) {
                     this.a.setText(i0Var.m1());
                 } else if (i18 == 19) {
-                    if (f2Var instanceof l40) {
+                    if (f2Var instanceof m40) {
                         this.a.setText(id.L0(2131753353));
                     } else {
                         this.a.setText(i0Var.m1());
@@ -697,7 +697,7 @@ public final class h0 extends LinearLayout {
                 } else {
                     i13 = 18;
                     if (i18 == 18) {
-                        tL_premium_boostsStatus = i0Var.T1;
+                        tL_premium_boostsStatus = i0Var.W1;
                         if (tL_premium_boostsStatus.level == 0) {
                             this.a.setText(id.L0(2131753529));
                         } else {
@@ -724,7 +724,7 @@ public final class h0 extends LinearLayout {
                                 if (i18 == 22 || i18 == 23) {
                                     this.a.setText(id.L0(2131753526));
                                 } else if (i18 == 11) {
-                                    if (i0Var.Q1) {
+                                    if (i0Var.T1) {
                                         this.a.setText(id.L0(2131752402));
                                     } else {
                                         this.a.setText(id.L0(2131752400));
@@ -733,39 +733,39 @@ public final class h0 extends LinearLayout {
                                     this.a.setText(id.L0(2131752621));
                                 } else if (i18 == 6) {
                                     this.a.setText(id.L0(2131750827));
-                                } else if (i18 != 14 || i0Var.P1 <= 1) {
+                                } else if (i18 != 14 || i0Var.S1 <= 1) {
                                     this.a.setText(id.L0(2131748978));
                                 } else {
                                     this.a.setText(id.L0(2131751718));
                                 }
                                 this.a.setTextSize(1, 20.0f);
                                 TextView textView2 = this.a;
-                                int i33 = l6.G6;
-                                s6.U(textView2, i33, i0Var.I0);
+                                int i33 = m6.G6;
+                                t6.U(textView2, i33, i0Var.I0);
                                 this.a.setGravity(17);
                                 if (i18 != 19 || i18 == 32 || i0Var.s1()) {
                                     wg.b bVar = new wg.b(context);
                                     this.c = bVar;
-                                    bVar.a(i0Var.U1.i, false);
+                                    bVar.a(i0Var.X1.i, false);
                                     if (i18 == 32) {
                                         bVar.setVisibility(i12);
                                     }
-                                    if (i0Var.W1) {
+                                    if (i0Var.Z1) {
                                         addView(this.a, ha.t(-2, -2, 1, 0, z9 ? i12 : 22, 0, 0));
                                         LinearLayout linearLayout = new LinearLayout(getContext());
                                         linearLayout.setOrientation(0);
                                         linearLayout.setClipChildren(false);
                                         FrameLayout frameLayout2 = new FrameLayout(getContext());
                                         int L3 = org.telegram.messenger.g0.L(14.0f);
-                                        int i34 = l6.a7;
-                                        s6.B(frameLayout2, l6.d0(L3, l6.w0(i34, i0Var.I0)), s6.M(i34), i0Var.I0);
-                                        l9 l9Var = new l9(getContext());
-                                        l9Var.setRoundRadius(org.telegram.messenger.g0.L(14.0f));
-                                        TLRPC.Chat M0 = qp.s1(i0Var.a).M0(Long.valueOf(-i0Var.S1));
-                                        w8 w8Var = new w8();
-                                        w8Var.q(M0);
-                                        l9Var.e(M0, w8Var);
-                                        frameLayout2.addView(l9Var, ha.c(28.0f, 28));
+                                        int i34 = m6.a7;
+                                        t6.B(frameLayout2, m6.d0(L3, m6.w0(i34, i0Var.I0)), t6.M(i34), i0Var.I0);
+                                        k9 k9Var = new k9(getContext());
+                                        k9Var.setRoundRadius(org.telegram.messenger.g0.L(14.0f));
+                                        TLRPC.Chat M0 = qp.s1(i0Var.a).M0(Long.valueOf(-i0Var.V1));
+                                        v8 v8Var = new v8();
+                                        v8Var.q(M0);
+                                        k9Var.e(M0, v8Var);
+                                        frameLayout2.addView(k9Var, ha.c(28.0f, 28));
                                         TextView textView3 = new TextView(getContext());
                                         if (M0 != null) {
                                             textView3.setText(M0.title);
@@ -774,7 +774,7 @@ public final class h0 extends LinearLayout {
                                         textView3.setMaxLines(1);
                                         textView3.setEllipsize(TextUtils.TruncateAt.END);
                                         textView3.setTextSize(1, 13.0f);
-                                        s6.U(textView3, i33, i0Var.I0);
+                                        t6.U(textView3, i33, i0Var.I0);
                                         frameLayout2.addView(textView3, ha.d(-2, -2.0f, 16, 36.0f, 0.0f, 12.0f, 0.0f));
                                         linearLayout.addView(frameLayout2, ha.t(-2, 28, 80, 18, 0, 18, 0));
                                         LayoutTransition layoutTransition = new LayoutTransition();
@@ -796,7 +796,7 @@ public final class h0 extends LinearLayout {
                                             public final void onClick(View view) {
                                                 switch (i15) {
                                                     case 0:
-                                                        f2 f2Var2 = this.b.e.C2;
+                                                        f2 f2Var2 = this.b.e.F2;
                                                         if (f2Var2 != null) {
                                                             d2 d2Var = new d2();
                                                             d2Var.a = true;
@@ -806,7 +806,7 @@ public final class h0 extends LinearLayout {
                                                         break;
                                                     default:
                                                         i0 i0Var2 = this.b.e;
-                                                        i0Var2.o1.presentFragment(cn.ta(i0Var2.S1));
+                                                        i0Var2.r1.presentFragment(cn.ta(i0Var2.V1));
                                                         i0Var2.dismiss();
                                                         break;
                                                 }
@@ -820,11 +820,11 @@ public final class h0 extends LinearLayout {
                                         TextView textView5 = this.b;
                                         textView5.setLineSpacing(textView5.getLineSpacingExtra(), this.b.getLineSpacingMultiplier() * 1.1f);
                                         if (i18 == i13) {
-                                            s6.U(this.b, i33, i0Var.I0);
+                                            t6.U(this.b, i33, i0Var.I0);
                                         } else if (i0Var.I0 instanceof di.b) {
-                                            s6.U(this.b, l6.y6, i0Var.I0);
+                                            t6.U(this.b, m6.y6, i0Var.I0);
                                         } else {
-                                            s6.U(this.b, i33, i0Var.I0);
+                                            t6.U(this.b, i33, i0Var.I0);
                                         }
                                         if (i18 != 19) {
                                             addView(this.b, ha.t(-2, -2, 1, 24, -2, 24, 17));
@@ -871,50 +871,50 @@ public final class h0 extends LinearLayout {
                         i14 = 22;
                         this.a.setTextSize(1, 20.0f);
                         TextView textView22 = this.a;
-                        int i332 = l6.G6;
-                        s6.U(textView22, i332, i0Var.I0);
+                        int i332 = m6.G6;
+                        t6.U(textView22, i332, i0Var.I0);
                         this.a.setGravity(17);
                         if (i18 != 19) {
                         }
                         wg.b bVar2 = new wg.b(context);
                         this.c = bVar2;
-                        bVar2.a(i0Var.U1.i, false);
+                        bVar2.a(i0Var.X1.i, false);
                         if (i18 == 32) {
                         }
-                        if (i0Var.W1) {
+                        if (i0Var.Z1) {
                         }
                     }
                     i14 = 22;
                     this.a.setTextSize(1, 20.0f);
                     TextView textView222 = this.a;
-                    int i3322 = l6.G6;
-                    s6.U(textView222, i3322, i0Var.I0);
+                    int i3322 = m6.G6;
+                    t6.U(textView222, i3322, i0Var.I0);
                     this.a.setGravity(17);
                     if (i18 != 19) {
                     }
                     wg.b bVar22 = new wg.b(context);
                     this.c = bVar22;
-                    bVar22.a(i0Var.U1.i, false);
+                    bVar22.a(i0Var.X1.i, false);
                     if (i18 == 32) {
                     }
-                    if (i0Var.W1) {
+                    if (i0Var.Z1) {
                     }
                 }
                 i14 = 22;
                 i13 = 18;
                 this.a.setTextSize(1, 20.0f);
                 TextView textView2222 = this.a;
-                int i33222 = l6.G6;
-                s6.U(textView2222, i33222, i0Var.I0);
+                int i33222 = m6.G6;
+                t6.U(textView2222, i33222, i0Var.I0);
                 this.a.setGravity(17);
                 if (i18 != 19) {
                 }
                 wg.b bVar222 = new wg.b(context);
                 this.c = bVar222;
-                bVar222.a(i0Var.U1.i, false);
+                bVar222.a(i0Var.X1.i, false);
                 if (i18 == 32) {
                 }
-                if (i0Var.W1) {
+                if (i0Var.Z1) {
                 }
             }
             i10 = 1;
@@ -929,10 +929,10 @@ public final class h0 extends LinearLayout {
             }
             if (i18 != 11) {
             }
-            arrayList21 = i0Var.v2;
+            arrayList21 = i0Var.y2;
             if (arrayList21 != null) {
             }
-            arrayList22 = i0Var.u2;
+            arrayList22 = i0Var.x2;
             if (arrayList22 != null) {
             }
             i11 = i7;
@@ -950,40 +950,40 @@ public final class h0 extends LinearLayout {
             i13 = 18;
             this.a.setTextSize(1, 20.0f);
             TextView textView22222 = this.a;
-            int i332222 = l6.G6;
-            s6.U(textView22222, i332222, i0Var.I0);
+            int i332222 = m6.G6;
+            t6.U(textView22222, i332222, i0Var.I0);
             this.a.setGravity(17);
             if (i18 != 19) {
             }
             wg.b bVar2222 = new wg.b(context);
             this.c = bVar2222;
-            bVar2222.a(i0Var.U1.i, false);
+            bVar2222.a(i0Var.X1.i, false);
             if (i18 == 32) {
             }
-            if (i0Var.W1) {
+            if (i0Var.Z1) {
             }
         } else if (i18 == 34) {
-            arrayList = i0Var.t2;
+            arrayList = i0Var.w2;
             if (arrayList.size() == 1) {
-                arrayList4 = i0Var.t2;
+                arrayList4 = i0Var.w2;
                 str = id.Z(2131749163, g5.p((TLRPC.User) arrayList4.get(0)));
             } else {
-                arrayList2 = i0Var.t2;
+                arrayList2 = i0Var.w2;
                 int size7 = arrayList2.size();
-                arrayList3 = i0Var.t2;
+                arrayList3 = i0Var.w2;
                 str = id.G(size7, "InviteCallRestrictedUsers", Integer.valueOf(arrayList3.size()));
             }
         } else if (D3) {
-            str = (String) i0Var.E2.f;
+            str = (String) i0Var.H2.f;
         } else {
-            str = (String) ((p10.i(i0Var.a).q() || i0Var.F2) ? i0Var.E2.e : i0Var.E2.d);
+            str = (String) ((p10.i(i0Var.a).q() || i0Var.I2) ? i0Var.H2.e : i0Var.H2.d);
         }
         str2 = str;
         z9 = D3;
-        androidx.emoji2.text.p pVar2 = i0Var.E2;
+        androidx.emoji2.text.p pVar2 = i0Var.H2;
         int i272 = pVar2.b;
         int i282 = pVar2.c;
-        i7 = i0Var.o2;
+        i7 = i0Var.r2;
         if (i18 != 3) {
         }
         i10 = 1;
@@ -998,10 +998,10 @@ public final class h0 extends LinearLayout {
         }
         if (i18 != 11) {
         }
-        arrayList21 = i0Var.v2;
+        arrayList21 = i0Var.y2;
         if (arrayList21 != null) {
         }
-        arrayList22 = i0Var.u2;
+        arrayList22 = i0Var.x2;
         if (arrayList22 != null) {
         }
         i11 = i7;
@@ -1019,17 +1019,17 @@ public final class h0 extends LinearLayout {
         i13 = 18;
         this.a.setTextSize(1, 20.0f);
         TextView textView222222 = this.a;
-        int i3322222 = l6.G6;
-        s6.U(textView222222, i3322222, i0Var.I0);
+        int i3322222 = m6.G6;
+        t6.U(textView222222, i3322222, i0Var.I0);
         this.a.setGravity(17);
         if (i18 != 19) {
         }
         wg.b bVar22222 = new wg.b(context);
         this.c = bVar22222;
-        bVar22222.a(i0Var.U1.i, false);
+        bVar22222.a(i0Var.X1.i, false);
         if (i18 == 32) {
         }
-        if (i0Var.W1) {
+        if (i0Var.Z1) {
         }
     }
 }

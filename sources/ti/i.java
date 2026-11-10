@@ -20,22 +20,22 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.rm0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.t81;
+import org.telegram.ui.Components.mt0;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.u81;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class i {
-    public static final nt0 Q = new nt0(new s0.b(20), new s0.b(21));
-    public static final nt0 R = new nt0(new s0.b(22), new s0.b(23));
+    public static final mt0 Q = new mt0(new s0.b(20), new s0.b(21));
+    public static final mt0 R = new mt0(new s0.b(22), new s0.b(23));
     public float B;
     public float C;
     public r1.g D;
     public r1.g E;
-    public rm0 G;
+    public qm0 G;
     public boolean H;
     public float I;
     public float J;
@@ -56,7 +56,7 @@ public final class i {
     public ImageView n;
     public b3 o;
     public ScaleGestureDetector p;
-    public rt q;
+    public qt q;
     public boolean r;
     public boolean s;
     public View t;
@@ -242,9 +242,9 @@ public final class i {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(z9 ? 0.0f : 1.0f, z9 ? 1.0f : 0.0f).setDuration(200L);
         this.v = duration;
-        duration.setInterpolator(xq.f);
+        duration.setInterpolator(wq.f);
         this.v.addUpdateListener(new d(this, 0));
-        this.v.addListener(new t81(this, 17));
+        this.v.addListener(new u81(this, 17));
         this.v.start();
     }
 

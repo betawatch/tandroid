@@ -1,178 +1,177 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import org.telegram.tgnet.ConnectionsManager;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class ky extends v4.s {
-    public final boolean Q;
-    public final SparseIntArray R;
-    public final SparseIntArray S;
+    public final SparseArray Q;
+    public int R;
+    public int S;
     public int T;
-    public int U;
-    public int V;
-    public int W;
+    public final int U;
+    public final pj0 V;
+    public boolean W;
+    public boolean X;
 
-    public ky(int i7, boolean z9) {
+    public ky(int i7, int i10, pj0 pj0Var) {
         super(i7);
-        this.R = new SparseIntArray();
-        this.S = new SparseIntArray();
-        this.Q = z9;
-    }
-
-    public static ot0 C1(ot0 ot0Var) {
-        if (ot0Var == null) {
-            return null;
-        }
-        if (ot0Var.a == 0.0f) {
-            ot0Var.a = 100.0f;
-        }
-        if (ot0Var.b == 0.0f) {
-            ot0Var.b = 100.0f;
-        }
-        float f10 = ot0Var.a;
-        float f11 = ot0Var.b;
-        float f12 = f10 / f11;
-        if (f12 <= 4.0f && f12 >= 0.2f) {
-            return ot0Var;
-        }
-        float max = Math.max(f10, f11);
-        ot0Var.a = max;
-        ot0Var.b = max;
-        return ot0Var;
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = pj0Var;
+        this.U = i10;
     }
 
     public final void B1() {
+        pj0 pj0Var;
+        v4.g0 adapter;
         int i7;
-        int min;
-        boolean z9;
-        float f10;
-        SparseIntArray sparseIntArray = this.R;
-        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
+        pj0 pj0Var2;
+        if (this.S <= 0 || !D1() || (adapter = (pj0Var = this.V).getAdapter()) == null) {
             return;
         }
-        int i10 = this.m;
-        this.W = i10;
-        float f11 = i10;
-        if (f11 == 0.0f) {
-            f11 = 100.0f;
-        }
-        sparseIntArray.clear();
-        SparseIntArray sparseIntArray2 = this.S;
-        sparseIntArray2.clear();
-        boolean z10 = false;
-        this.V = 0;
-        this.U = 0;
-        int A = A();
-        this.T = A;
-        if (A == 0) {
-            return;
-        }
-        int L = org.telegram.messenger.g0.L(100.0f);
-        int i11 = this.J;
-        boolean z11 = this.Q;
-        int i12 = A + (z11 ? 1 : 0);
+        int i10 = this.J;
+        boolean z9 = true;
+        int b10 = adapter.b() - 1;
+        g.p pVar = this.O;
+        boolean z10 = true;
+        int i11 = 0;
+        int i12 = 0;
         int i13 = 0;
-        int i14 = 0;
-        int i15 = i11;
-        while (i13 < i12) {
-            ot0 C1 = i13 < A ? C1(D1(i13)) : null;
-            if (C1 == null) {
-                z9 = i14 != 0 ? true : z10;
-                i7 = L;
-                min = i11;
-            } else {
-                i7 = L;
-                min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * L) / f11) * i11));
-                boolean z12 = i15 < min || (min > 33 && i15 < min + (-15));
-                if (C1.c) {
-                    sparseIntArray.put(i13, i15);
-                    this.V++;
-                    f10 = f11;
-                    i15 = i11;
-                    i14 = 0;
-                    i13++;
-                    L = i7;
-                    f11 = f10;
-                    z10 = false;
-                } else {
-                    z9 = z12;
-                }
+        while (true) {
+            i7 = this.U;
+            if (i11 >= b10) {
+                pj0Var2 = pj0Var;
+                break;
             }
-            if (z9) {
-                if (i15 == 0 || i14 == 0) {
-                    f10 = f11;
-                } else {
-                    int i16 = i15 / i14;
-                    int i17 = i13 - i14;
-                    f10 = f11;
-                    int i18 = i17;
-                    while (true) {
-                        int i19 = i17 + i14;
-                        if (i18 >= i19) {
-                            break;
-                        }
-                        if (i18 == i19 - 1) {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i15);
-                        } else {
-                            sparseIntArray.put(i18, sparseIntArray.get(i18) + i16);
-                        }
-                        i15 -= i16;
-                        i18++;
+            int i14 = pVar.i(i11);
+            i12 += i14;
+            if (i14 == i10 || i12 > i10) {
+                z10 = z9;
+                i12 = i14;
+            }
+            if (z10) {
+                int d = adapter.d(i11);
+                SparseArray sparseArray = this.Q;
+                v4.d1 d1Var = (v4.d1) sparseArray.get(d, null);
+                if (d1Var == null) {
+                    d1Var = adapter.a(pj0Var, d);
+                    View view = d1Var.a;
+                    sparseArray.put(d, d1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
                     }
-                    sparseIntArray2.put(i13 - 1, this.V);
                 }
-                if (i13 == A) {
+                View view2 = d1Var.a;
+                if (this.W) {
+                    adapter.t(d1Var, i11);
+                }
+                v4.o0 o0Var = (v4.o0) view2.getLayoutParams();
+                pj0Var2 = pj0Var;
+                view2.measure(v4.n0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), v4.n0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
+                i13 += view2.getMeasuredHeight();
+                if (i13 >= (this.S - i7) - pj0Var2.getPaddingBottom()) {
                     break;
+                } else {
+                    z10 = false;
                 }
-                this.V++;
-                i15 = i11;
-                i14 = 0;
             } else {
-                f10 = f11;
-                if (i15 < min) {
-                    min = i15;
-                }
+                pj0Var2 = pj0Var;
             }
-            if (this.V == 0) {
-                this.U = Math.max(this.U, i13);
-            }
-            if (i13 == A - 1 && !z11) {
-                sparseIntArray2.put(i13, this.V);
-            }
-            i14++;
-            i15 -= min;
-            sparseIntArray.put(i13, min);
-            i13++;
-            L = i7;
-            f11 = f10;
-            z10 = false;
+            i11++;
+            pj0Var = pj0Var2;
+            z9 = true;
         }
-        this.V++;
+        this.R = Math.max(0, ((this.S - i13) - i7) - pj0Var2.getPaddingBottom());
     }
 
-    public ot0 D1(int i7) {
-        return new ot0(100.0f, 100.0f);
+    public final void C1() {
+        this.W = false;
     }
 
-    public final boolean E1(int i7) {
+    public boolean D1() {
+        return true;
+    }
+
+    @Override // v4.n0
+    public final void Q() {
+        this.Q.clear();
         B1();
-        return this.S.get(i7, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
     }
 
     @Override // v4.s, v4.n0
-    public final int I(v4.v0 v0Var, v4.a1 a1Var) {
-        return a1Var.b();
+    public final void V(RecyclerView recyclerView, int i7, int i10) {
+        super.V(recyclerView, i7, i10);
+        B1();
     }
 
     @Override // v4.s, v4.n0
-    public final int u(v4.v0 v0Var, v4.a1 a1Var) {
-        return 1;
+    public final void W(RecyclerView recyclerView) {
+        this.Q.clear();
+        B1();
+        super.W(recyclerView);
     }
 
-    @Override // v4.s, v4.b0, v4.n0
-    public boolean y0() {
-        return false;
+    @Override // v4.s, v4.n0
+    public final void X(RecyclerView recyclerView, int i7, int i10) {
+        super.X(recyclerView, i7, i10);
+        B1();
+    }
+
+    @Override // v4.s, v4.n0
+    public final void Y(RecyclerView recyclerView, int i7, int i10) {
+        super.Y(recyclerView, i7, i10);
+        B1();
+    }
+
+    @Override // v4.n0
+    public final void Z() {
+        B1();
+    }
+
+    @Override // v4.s, v4.n0
+    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
+        super.a0(recyclerView, i7, i10, obj);
+        B1();
+    }
+
+    @Override // v4.n0
+    public final void d0(v4.v0 v0Var, v4.a1 a1Var, int i7, int i10) {
+        int i11 = this.S;
+        this.T = View.MeasureSpec.getSize(i7);
+        int size = View.MeasureSpec.getSize(i10);
+        this.S = size;
+        if (i11 != size) {
+            B1();
+        }
+        super.d0(v0Var, a1Var, i7, i10);
+    }
+
+    @Override // v4.b0, v4.n0
+    public final boolean e() {
+        return this.X;
+    }
+
+    @Override // v4.s
+    public final void w1(int i7, View view, boolean z9) {
+        if (this.V.G(view).b() == B() - 1) {
+            ((ViewGroup.MarginLayoutParams) ((v4.o0) view.getLayoutParams())).height = Math.max(this.R, 0);
+        }
+        super.w1(i7, view, z9);
+    }
+
+    public ky(int i7, org.telegram.ui.n30 n30Var) {
+        super(i7, false);
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = n30Var;
+        this.U = 0;
     }
 }

@@ -1,30 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class t10 extends org.telegram.ui.Components.w7 {
-    public final /* synthetic */ Activity D;
-    public final /* synthetic */ e40 E;
+public final class t10 implements Runnable {
+    public final /* synthetic */ f40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t10(e40 e40Var, LaunchActivity launchActivity, Activity activity) {
-        super(launchActivity);
-        this.E = e40Var;
-        this.D = activity;
+    public t10(f40 f40Var) {
+        this.a = f40Var;
     }
 
-    @Override // org.telegram.ui.Components.w7
-    public final TextView a() {
-        TextView textView = new TextView(this.D);
-        org.telegram.messenger.k5.n(textView, org.telegram.ui.ActionBar.l6.Vg, null, 1, 20.0f);
-        textView.setGravity(51);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new org.telegram.ui.Components.u41(16, this, textView));
-        return textView;
+    @Override // java.lang.Runnable
+    public final void run() {
+        f40 f40Var = this.a;
+        org.telegram.ui.ActionBar.m5 m5Var = f40Var.O1;
+        m30 m30Var = f40Var.P1;
+        if (m30Var == null || f40Var.I) {
+            return;
+        }
+        org.telegram.messenger.r3 r3Var = f40Var.U2;
+        int i7 = r3Var != null ? r3Var.b.schedule_date : f40Var.e4;
+        if (i7 == 0) {
+            return;
+        }
+        int currentTime = i7 - ConnectionsManager.getInstance(f40Var.n1.a).getCurrentTime();
+        if (currentTime >= 86400) {
+            m30Var.l(org.telegram.messenger.id.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
+        } else {
+            m30Var.l(org.telegram.messenger.g0.j0(Math.abs(currentTime)), false);
+            if (currentTime < 0 && m5Var.getTag() == null) {
+                m5Var.setTag(1);
+                m5Var.l(org.telegram.messenger.id.M0(2131743441, null), false);
+            }
+        }
+        f40Var.Q1.l(org.telegram.messenger.id.W(3, i7, true), false);
+        org.telegram.messenger.g0.i3(f40Var.q4, 1000L);
     }
 }

@@ -3,26 +3,26 @@ package kg;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.lj;
-import org.telegram.ui.Components.my;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.rm;
-import org.telegram.ui.Components.sk;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.vh;
-import org.telegram.ui.Components.wk;
+import org.telegram.ui.Components.kj;
+import org.telegram.ui.Components.ly;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qm;
+import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.vk;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class c0 extends my {
+public final class c0 extends ly {
     public final /* synthetic */ int U;
-    public final /* synthetic */ vh V;
+    public final /* synthetic */ uh V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c0(vh vhVar, int i7, qj0 qj0Var, int i10) {
-        super(i7, 0, qj0Var);
+    public /* synthetic */ c0(uh uhVar, int i7, pj0 pj0Var, int i10) {
+        super(i7, 0, pj0Var);
         this.U = i10;
-        this.V = vhVar;
+        this.V = uhVar;
     }
 
     @Override // v4.n0
@@ -52,24 +52,24 @@ public final class c0 extends my {
                 w0(b0Var);
                 break;
             case 1:
-                ti tiVar = new ti(this, recyclerView.getContext());
-                tiVar.a = i7;
-                w0(tiVar);
+                si siVar = new si(this, recyclerView.getContext());
+                siVar.a = i7;
+                w0(siVar);
                 break;
             case 2:
-                lj ljVar = new lj(this, recyclerView.getContext());
-                ljVar.a = i7;
-                w0(ljVar);
+                kj kjVar = new kj(this, recyclerView.getContext());
+                kjVar.a = i7;
+                w0(kjVar);
                 break;
             case 3:
-                sk skVar = new sk(this, recyclerView.getContext());
-                skVar.a = i7;
-                w0(skVar);
+                rk rkVar = new rk(this, recyclerView.getContext());
+                rkVar.a = i7;
+                w0(rkVar);
                 break;
             default:
-                rm rmVar = new rm(this, recyclerView.getContext());
-                rmVar.a = i7;
-                w0(rmVar);
+                qm qmVar = new qm(this, recyclerView.getContext());
+                qmVar.a = i7;
+                w0(qmVar);
                 break;
         }
     }
@@ -79,7 +79,7 @@ public final class c0 extends my {
         switch (this.U) {
             case 3:
                 super.z0(a1Var, iArr);
-                iArr[1] = Math.max(iArr[1], ((wk) this.V).L.getHeight());
+                iArr[1] = Math.max(iArr[1], ((vk) this.V).L.getHeight());
                 break;
             default:
                 super.z0(a1Var, iArr);
@@ -88,9 +88,9 @@ public final class c0 extends my {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(wk wkVar, bi.q1 q1Var) {
+    public c0(vk vkVar, bi.q1 q1Var) {
         super(0, 0, q1Var);
         this.U = 3;
-        this.V = wkVar;
+        this.V = vkVar;
     }
 }

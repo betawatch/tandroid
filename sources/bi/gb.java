@@ -2,17 +2,17 @@ package bi;
 
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2[] c;
 
-    public /* synthetic */ gb(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.v2[] v2VarArr, int i7) {
+    public /* synthetic */ gb(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.w2[] w2VarArr, int i7) {
         this.a = i7;
         this.b = editTextBoldCursor;
-        this.c = v2VarArr;
+        this.c = w2VarArr;
     }
 
     @Override // java.lang.Runnable
@@ -35,9 +35,9 @@ public final /* synthetic */ class gb implements Runnable {
         }
     }
 
-    public /* synthetic */ gb(org.telegram.ui.ActionBar.v2[] v2VarArr, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ gb(org.telegram.ui.ActionBar.w2[] w2VarArr, EditTextBoldCursor editTextBoldCursor) {
         this.a = 0;
-        this.c = v2VarArr;
+        this.c = w2VarArr;
         this.b = editTextBoldCursor;
     }
 }

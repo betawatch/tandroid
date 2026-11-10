@@ -32,12 +32,12 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o5;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.wn0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.Components.sm;
+import org.telegram.ui.xn0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class j extends FrameLayout {
     public final h D;
@@ -62,7 +62,7 @@ public final class j extends FrameLayout {
     public final ImageView n;
     public final TextView r;
     public final TextView s;
-    public final tm w;
+    public final sm w;
     public final w3 x;
     public final ArrayList y;
 
@@ -87,7 +87,7 @@ public final class j extends FrameLayout {
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
         this.e = frameLayout2;
-        org.telegram.ui.Cells.y b02 = l6.b0(this.G, this.I, 15, 15);
+        org.telegram.ui.Cells.y b02 = m6.b0(this.G, this.I, 15, 15);
         this.c = b02;
         frameLayout2.setBackground(b02);
         ka.b(frameLayout2, 0.04f, 1.25f);
@@ -100,7 +100,7 @@ public final class j extends FrameLayout {
         ka.a(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
-        org.telegram.ui.Cells.y b03 = l6.b0(0, 0, 6, 6);
+        org.telegram.ui.Cells.y b03 = m6.b0(0, 0, 6, 6);
         this.h = b03;
         imageView2.setBackground(b03);
         frameLayout2.addView(imageView2, ha.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
@@ -120,10 +120,10 @@ public final class j extends FrameLayout {
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         linearLayout.addView(textView2, ha.t(-1, -2, 55, 0, 0, 0, 0));
-        this.D = new h(null, i7, new o5(this, 9));
-        this.w = new tm(activity, 27);
-        int i11 = l6.Dl;
-        c(l6.x0(null, i11, false), org.telegram.messenger.g0.B(l6.x0(null, i11, false)) >= 0.721f ? -16777216 : -1);
+        this.D = new h(null, i7, new p5(this, 9));
+        this.w = new sm(activity, 27);
+        int i11 = m6.Dl;
+        c(m6.x0(null, i11, false), org.telegram.messenger.g0.B(m6.x0(null, i11, false)) >= 0.721f ? -16777216 : -1);
         setOpenProgress(0.0f);
         setImportantForAccessibility(4);
     }
@@ -204,7 +204,7 @@ public final class j extends FrameLayout {
                     }
                 }
                 sharedPreferences = sharedPreferences2;
-                Collections.sort(arrayList, new wn0(10));
+                Collections.sort(arrayList, new xn0(10));
             } catch (Exception e12) {
                 e = e12;
                 sharedPreferences = sharedPreferences2;
@@ -256,28 +256,28 @@ public final class j extends FrameLayout {
         this.I = i0.a.f(org.telegram.messenger.g0.T1(0.12f, 0.22f, f10), i7, i10);
         int i11 = this.G;
         org.telegram.ui.Cells.y yVar = this.c;
-        l6.H1(yVar, i11, false);
-        l6.H1(yVar, this.I, true);
+        m6.H1(yVar, i11, false);
+        m6.H1(yVar, this.I, true);
         this.e.invalidate();
         this.r.setTextColor(i10);
-        this.s.setTextColor(l6.r1(0.6f, i10));
+        this.s.setTextColor(m6.r1(0.6f, i10));
         ImageView imageView = this.f;
         if (imageView.getColorFilter() != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
         }
         this.n.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
-        l6.H1(this.h, l6.r1(1.5f, this.I), true);
-        int w10 = l6.w(i7, l6.r1(0.05f, i10));
-        int w11 = l6.w(i7, l6.r1(0.55f, i10));
+        m6.H1(this.h, m6.r1(1.5f, this.I), true);
+        int w10 = m6.w(i7, m6.r1(0.05f, i10));
+        int w11 = m6.w(i7, m6.r1(0.55f, i10));
         g5 g5Var = this.a;
         SparseIntArray sparseIntArray = (SparseIntArray) g5Var.b;
         SparseIntArray sparseIntArray2 = (SparseIntArray) g5Var.b;
-        sparseIntArray.put(l6.d6, this.F);
-        sparseIntArray2.put(l6.G6, i10);
-        sparseIntArray2.put(l6.e7, w10);
-        sparseIntArray2.put(l6.f7, w11);
-        sparseIntArray2.put(l6.G8, l6.r1(0.2f, i10));
-        sparseIntArray2.put(l6.i6, l6.r1(org.telegram.messenger.g0.T1(0.05f, 0.12f, f10), i10));
+        sparseIntArray.put(m6.d6, this.F);
+        sparseIntArray2.put(m6.G6, i10);
+        sparseIntArray2.put(m6.e7, w10);
+        sparseIntArray2.put(m6.f7, w11);
+        sparseIntArray2.put(m6.G8, m6.r1(0.2f, i10));
+        sparseIntArray2.put(m6.i6, m6.r1(org.telegram.messenger.g0.T1(0.05f, 0.12f, f10), i10));
         this.x.g1();
     }
 

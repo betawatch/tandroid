@@ -2,31 +2,31 @@ package m2;
 
 import e2.l1;
 import j$.util.Objects;
-import x2.g0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
     public final l1 b;
     public final int c;
-    public final g0 d;
+    public final f0 d;
     public final long e;
     public final l1 f;
     public final int g;
-    public final g0 h;
+    public final f0 h;
     public final long i;
     public final long j;
 
-    public a(long j3, l1 l1Var, int i7, g0 g0Var, long j10, l1 l1Var2, int i10, g0 g0Var2, long j11, long j12) {
+    public a(long j3, l1 l1Var, int i7, f0 f0Var, long j10, l1 l1Var2, int i10, f0 f0Var2, long j11, long j12) {
         this.a = j3;
         this.b = l1Var;
         this.c = i7;
-        this.d = g0Var;
+        this.d = f0Var;
         this.e = j10;
         this.f = l1Var2;
         this.g = i10;
-        this.h = g0Var2;
+        this.h = f0Var2;
         this.i = j11;
         this.j = j12;
     }

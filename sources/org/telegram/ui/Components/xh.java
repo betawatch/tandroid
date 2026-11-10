@@ -1,52 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class xh extends yh {
-    public int b;
-    public final /* synthetic */ di c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xh(di diVar, Context context) {
-        super(context);
-        this.c = diVar;
-        setWillNotDraw(false);
-        setFocusable(true);
-        int i7 = di.E4;
-        org.telegram.ui.ActionBar.g6 g6Var = diVar.I0;
-        qh.b bVar = new qh.b(context);
-        bVar.d = g6Var;
-        bVar.Q = true;
-        TextView textView = bVar.a;
-        textView.setTextSize(1, 11.0f);
-        textView.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
-        bVar.b(false);
-        bVar.b.setLayoutParams(c8.ha.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.x = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ql, g6Var);
-        bVar.s = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ol, g6Var);
-        bVar.w = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Pl, g6Var);
-        bVar.a();
-        this.a = bVar;
-        addView(bVar, c8.ha.c(-1.0f, -1));
-    }
-
-    public final void a(int i7, String str, qh.a aVar) {
-        this.a.setText(str);
-        this.a.setTabAnimation(aVar);
-        this.b = i7;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.f(((long) this.b) == this.c.Q2, false);
-    }
+public abstract class xh extends FrameLayout {
+    public qh.b a;
 }

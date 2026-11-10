@@ -36,10 +36,10 @@ import n2.u0;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.rt;
-import x2.g0;
+import org.telegram.ui.Components.qt;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class r extends l2.b {
     public static final byte[] Y0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -834,7 +834,7 @@ public abstract class r extends l2.b {
             Trace.beginSection("createCodec:" + str);
             l Y = this.J.Y(T);
             this.d0 = Y;
-            this.s0 = Y.l(new rt(this, 18));
+            this.s0 = Y.l(new qt(this, 18));
             Trace.endSection();
             this.h.getClass();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
@@ -1565,7 +1565,7 @@ public abstract class r extends l2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void u(e2.u[] uVarArr, long j3, long j10, g0 g0Var) {
+    public void u(e2.u[] uVarArr, long j3, long j10, f0 f0Var) {
         if (this.P0.c == -9223372036854775807L) {
             t0(new q(-9223372036854775807L, j3, j10));
             if (this.S0) {

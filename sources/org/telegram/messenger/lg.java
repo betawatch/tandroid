@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ int a;
@@ -1140,7 +1140,7 @@ public final /* synthetic */ class lg implements Runnable {
                 f2Var.showDialog(u1VarArr[0]);
                 return;
             case 6:
-                ((qp) this.b).getNotificationCenter().k(qs.N2, (org.telegram.ui.ActionBar.k6) this.c, (org.telegram.ui.ActionBar.i6) this.d);
+                ((qp) this.b).getNotificationCenter().k(qs.N2, (org.telegram.ui.ActionBar.l6) this.c, (org.telegram.ui.ActionBar.j6) this.d);
                 return;
             case 7:
                 qp qpVar = (qp) this.b;

@@ -34,13 +34,13 @@ import o5.i;
 import o5.l;
 import o5.n;
 import org.json.JSONObject;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.ly0;
 import org.telegram.ui.web.a0;
 import p1.g;
 import w7.s;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -236,7 +236,7 @@ public final class c {
                 if (bArr2 != null) {
                     v5.c cVar4 = (v5.c) cVar2.i;
                     Objects.requireNonNull(cVar4);
-                    r5.a aVar3 = (r5.a) gVar.f(new m3(cVar4, 27));
+                    r5.a aVar3 = (r5.a) gVar.f(new n3(cVar4, 27));
                     e0 e0Var = new e0();
                     e0Var.f = new HashMap();
                     e0Var.d = Long.valueOf(((x5.a) cVar2.g).s());
@@ -244,11 +244,11 @@ public final class c {
                     e0Var.a = "GDT_CLIENT_METRICS";
                     l5.c cVar5 = new l5.c("proto");
                     aVar3.getClass();
-                    ky0 ky0Var = n.a;
-                    ky0Var.getClass();
+                    ly0 ly0Var = n.a;
+                    ly0Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        ky0Var.q(aVar3, byteArrayOutputStream);
+                        ly0Var.q(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     e0Var.c = new l(cVar5, byteArrayOutputStream.toByteArray());
@@ -425,7 +425,7 @@ public final class c {
             i11 = aVar2.a;
             if (i11 != i10) {
                 gVar.f(new bg.e0(this, iterable, iVar, j3, 6));
-                ((ky0) this.d).J(iVar, i7 + 1, true);
+                ((ly0) this.d).J(iVar, i7 + 1, true);
                 return;
             }
             cVar2 = this;
@@ -435,7 +435,7 @@ public final class c {
             if (i11 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new m3(cVar2, 29));
+                    gVar.f(new n3(cVar2, 29));
                 }
             } else if (i11 == 4) {
                 HashMap hashMap2 = new HashMap();

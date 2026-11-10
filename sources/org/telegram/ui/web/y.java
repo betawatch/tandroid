@@ -9,14 +9,14 @@ import org.telegram.messenger.xr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.rg0;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.sg0;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y implements rg0, sw {
+public final /* synthetic */ class y implements sg0, tw {
     public final /* synthetic */ x0 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ String c;
@@ -31,17 +31,17 @@ public final /* synthetic */ class y implements rg0, sw {
         this.e = p7Var;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.rg0
+    @Override // org.telegram.ui.sg0
     public void a(ArrayList arrayList) {
         if (arrayList.isEmpty()) {
             return;
@@ -64,8 +64,8 @@ public final /* synthetic */ class y implements rg0, sw {
         ConnectionsManager.getInstance(x0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new r(x0Var, this.e, str, 2));
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         if (!arrayList.isEmpty()) {
             int i11 = 0;
             this.b[0] = true;
@@ -89,7 +89,7 @@ public final /* synthetic */ class y implements rg0, sw {
             }
             ConnectionsManager.getInstance(x0Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer, new d3.b(1), new r(x0Var, this.e, str, 1));
         }
-        ywVar.finishFragment();
+        zwVar.finishFragment();
         return true;
     }
 }

@@ -12,20 +12,20 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class xd extends LinearLayout {
     public final LinearLayout a;
     public final LinearLayout[] b;
-    public final org.telegram.ui.Components.q5[] c;
+    public final org.telegram.ui.Components.p5[] c;
     public final TextView[] d;
     public final TextView e;
     public final DecimalFormat f;
 
-    public xd(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public xd(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.b = new LinearLayout[2];
-        this.c = new org.telegram.ui.Components.q5[2];
+        this.c = new org.telegram.ui.Components.p5[2];
         this.d = new TextView[2];
         setOrientation(1);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -36,20 +36,20 @@ public final class xd extends LinearLayout {
             this.b[i7] = new LinearLayout(context);
             this.b[i7].setOrientation(0);
             this.a.addView(this.b[i7], c8.ha.p(-1, -2, 1.0f, org.telegram.messenger.qs.E1));
-            this.c[i7] = new org.telegram.ui.Components.q5(context);
+            this.c[i7] = new org.telegram.ui.Components.p5(context);
             this.c[i7].setTypeface(org.telegram.messenger.g0.o());
             this.c[i7].setTextSize(1, 16.0f);
-            org.telegram.ui.ActionBar.s6.U(this.c[i7], org.telegram.ui.ActionBar.l6.G6, g6Var);
+            org.telegram.ui.ActionBar.t6.U(this.c[i7], org.telegram.ui.ActionBar.m6.G6, h6Var);
             this.b[i7].addView(this.c[i7], c8.ha.t(-2, -2, 80, 0, 0, 5, 0));
-            this.d[i7] = new org.telegram.ui.Components.q5(context);
+            this.d[i7] = new org.telegram.ui.Components.p5(context);
             this.d[i7].setTextSize(1, 11.5f);
-            org.telegram.ui.ActionBar.s6.U(this.d[i7], org.telegram.ui.ActionBar.l6.y6, g6Var);
+            org.telegram.ui.ActionBar.t6.U(this.d[i7], org.telegram.ui.ActionBar.m6.y6, h6Var);
             this.b[i7].addView(this.d[i7], c8.ha.r(-2, -2, 80));
         }
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.y6, g6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.y6, h6Var);
         addView(textView, c8.ha.t(-1, -2, 55, 22, 5, 22, 9));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');

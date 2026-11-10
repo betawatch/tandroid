@@ -1,29 +1,45 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.c20 b;
-    public final /* synthetic */ HashMap c;
+public final /* synthetic */ class y1 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ y1(org.telegram.messenger.c20 c20Var, HashMap hashMap, int i7) {
-        this.a = i7;
-        this.b = c20Var;
-        this.c = hashMap;
+    public /* synthetic */ y1(Runnable runnable, boolean[] zArr) {
+        this.c = runnable;
+        this.b = zArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.a(this.c);
+                Runnable runnable = this.c;
+                if (runnable != null && this.b[0]) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                this.b.a(this.c);
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    Runnable runnable2 = this.c;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ y1(boolean[] zArr, Runnable runnable) {
+        this.b = zArr;
+        this.c = runnable;
     }
 }

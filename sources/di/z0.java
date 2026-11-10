@@ -34,10 +34,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.x70;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -485,9 +485,9 @@ public final /* synthetic */ class z0 implements Runnable {
                     view.performHapticFeedback(0);
                 } catch (Exception unused) {
                 }
-                ic icVar = o7Var.H;
-                if (icVar != null) {
-                    icVar.c(false);
+                hc hcVar = o7Var.H;
+                if (hcVar != null) {
+                    hcVar.c(false);
                 }
                 ViewParent parent = view.getParent();
                 if (parent instanceof ViewGroup) {
@@ -498,12 +498,12 @@ public final /* synthetic */ class z0 implements Runnable {
                 return;
             case 23:
                 g8 g8Var = (g8) this.b;
-                y70 y70Var = (y70) this.c;
-                y70 y70Var2 = g8Var.a;
-                if (y70Var != y70Var2 || y70Var2 == null) {
+                x70 x70Var = (x70) this.c;
+                x70 x70Var2 = g8Var.a;
+                if (x70Var != x70Var2 || x70Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = y70Var2.i;
+                CharacterStyle characterStyle = x70Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     h8 h8Var = g8Var.v;
                     n2.n0 n0Var = g8Var.c;

@@ -12,7 +12,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class s41 extends View {
     public final TextPaint D;
@@ -48,7 +48,7 @@ public class s41 extends View {
         TextPaint textPaint2 = new TextPaint(1);
         this.D = textPaint2;
         this.G = 1.0f;
-        this.M = org.telegram.ui.ActionBar.l6.pf;
+        this.M = org.telegram.ui.ActionBar.m6.pf;
         textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint2.setTextSize(org.telegram.messenger.g0.L(15.0f));
@@ -81,7 +81,7 @@ public class s41 extends View {
         this.G = 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.F = ofFloat;
-        ofFloat.addUpdateListener(new d60(this, 28));
+        ofFloat.addUpdateListener(new c60(this, 28));
         this.F.setDuration(150L);
         this.F.start();
     }
@@ -95,7 +95,7 @@ public class s41 extends View {
         }
     }
 
-    public org.telegram.ui.ActionBar.g6 getResourceProvider() {
+    public org.telegram.ui.ActionBar.h6 getResourceProvider() {
         return null;
     }
 
@@ -118,21 +118,21 @@ public class s41 extends View {
         float f11;
         float f12;
         StaticLayout staticLayout = this.s;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(isEnabled() ? this.M : org.telegram.ui.ActionBar.l6.y6, getResourceProvider());
+        int w02 = org.telegram.ui.ActionBar.m6.w0(isEnabled() ? this.M : org.telegram.ui.ActionBar.m6.y6, getResourceProvider());
         int i7 = this.I;
         TextPaint textPaint = this.D;
         if (i7 != w02) {
             this.I = w02;
             textPaint.setColor(w02);
         }
-        int w03 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ge, getResourceProvider());
+        int w03 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ge, getResourceProvider());
         int i10 = this.J;
         TextPaint textPaint2 = this.d;
         if (i10 != w03) {
             this.J = w03;
             textPaint2.setColor(w03);
         }
-        int w04 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.hg, getResourceProvider());
+        int w04 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.hg, getResourceProvider());
         int i11 = this.K;
         Paint paint = this.e;
         if (i11 != w04) {
@@ -142,11 +142,11 @@ public class s41 extends View {
         if (getParent() != null) {
             int measuredWidth = getMeasuredWidth();
             int measuredWidth2 = (getMeasuredWidth() - measuredWidth) / 2;
-            if (this.n != org.telegram.ui.ActionBar.l6.w0(this.M, getResourceProvider()) || this.E == null) {
+            if (this.n != org.telegram.ui.ActionBar.m6.w0(this.M, getResourceProvider()) || this.E == null) {
                 int L = org.telegram.messenger.g0.L(60.0f);
-                int w05 = org.telegram.ui.ActionBar.l6.w0(this.M, getResourceProvider());
+                int w05 = org.telegram.ui.ActionBar.m6.w0(this.M, getResourceProvider());
                 this.n = w05;
-                org.telegram.ui.Cells.y j02 = org.telegram.ui.ActionBar.l6.j0(L, 0, i0.a.o(w05, 26));
+                org.telegram.ui.Cells.y j02 = org.telegram.ui.ActionBar.m6.j0(L, 0, i0.a.o(w05, 26));
                 this.E = j02;
                 j02.setCallback(this);
             }

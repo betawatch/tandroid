@@ -9,9 +9,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g4 {
     public final Paint a;
@@ -33,8 +33,8 @@ public final class g4 {
     public final Drawable q;
     public final Drawable r;
     public final Drawable s;
-    public final ah0 t;
-    public final ah0 u;
+    public final zg0 t;
+    public final zg0 u;
 
     public g4(Context context) {
         new RectF();
@@ -49,11 +49,11 @@ public final class g4 {
         this.q = context.getDrawable(R.drawable.media_more);
         this.r = context.getDrawable(R.drawable.menu_stream_pip);
         this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new ah0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        ah0 ah0Var = new ah0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
-        this.t = ah0Var;
-        ah0Var.N(20, false, true);
-        ah0Var.stop();
+        this.u = new zg0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        zg0 zg0Var = new zg0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        this.t = zg0Var;
+        zg0Var.N(20, false, true);
+        zg0Var.stop();
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setColor(1442840575);
@@ -70,25 +70,25 @@ public final class g4 {
     }
 
     public final void a(boolean z9, boolean z10) {
-        ah0 ah0Var = this.u;
+        zg0 zg0Var = this.u;
         if (!z10) {
-            ah0Var.N(z9 ? 20 : 0, false, false);
-            ah0Var.P(z9 ? 20 : 0);
+            zg0Var.N(z9 ? 20 : 0, false, false);
+            zg0Var.P(z9 ? 20 : 0);
             return;
         }
         if (z9) {
-            if (ah0Var.a0 > 20) {
-                ah0Var.N(0, false, false);
+            if (zg0Var.a0 > 20) {
+                zg0Var.N(0, false, false);
             }
-            ah0Var.P(20);
-            ah0Var.start();
+            zg0Var.P(20);
+            zg0Var.start();
             return;
         }
-        int i7 = ah0Var.a0;
+        int i7 = zg0Var.a0;
         if (i7 == 0 || i7 >= 43) {
             return;
         }
-        ah0Var.P(43);
-        ah0Var.start();
+        zg0Var.P(43);
+        zg0Var.start();
     }
 }

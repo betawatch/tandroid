@@ -6,9 +6,9 @@ import com.google.android.gms.internal.cast.y;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Callable;
-import org.telegram.ui.hx;
+import org.telegram.ui.ix;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Object b = new Object();
@@ -40,7 +40,7 @@ public final class f {
 
     public static Task b(Callable callable) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        m.a.execute(new hx(callable, taskCompletionSource, false, 2));
+        m.a.execute(new ix(callable, taskCompletionSource, false, 2));
         return taskCompletionSource.getTask();
     }
 }

@@ -4,13 +4,13 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p8 {
     public final g4 a;
-    public final org.telegram.ui.Components.w5 b;
+    public final org.telegram.ui.Components.v5 b;
     public final TextPaint c;
     public final StaticLayout d;
     public final float e;
@@ -21,7 +21,7 @@ public final class p8 {
 
     public p8(j4 j4Var, g4 g4Var) {
         this.a = g4Var;
-        this.b = new org.telegram.ui.Components.w5(j4Var, 0L, 360L, xq.h);
+        this.b = new org.telegram.ui.Components.v5(j4Var, 0L, 360L, wq.h);
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));

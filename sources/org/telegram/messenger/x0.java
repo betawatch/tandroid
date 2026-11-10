@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.l71;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,8 +57,8 @@ public final /* synthetic */ class x0 implements Runnable {
         long j10;
         long j11;
         File[] fileArr;
-        m71 m71Var;
-        m71 m71Var2;
+        l71 l71Var;
+        l71 l71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         int i12 = 3;
@@ -377,11 +377,11 @@ public final /* synthetic */ class x0 implements Runnable {
                     } else if (mediaController.J()) {
                         mediaController.B0(2, 0, false, false);
                     }
-                    org.telegram.ui.Components.wt wtVar = org.telegram.ui.Components.wt.O1;
-                    if (wtVar != null && (m71Var2 = wtVar.j1) != null && m71Var2.x) {
-                        m71Var2.a.g0();
-                        m71Var2.n();
-                        m71Var2.f0.d(true, true);
+                    org.telegram.ui.Components.vt vtVar = org.telegram.ui.Components.vt.R1;
+                    if (vtVar != null && (l71Var2 = vtVar.m1) != null && l71Var2.x) {
+                        l71Var2.a.g0();
+                        l71Var2.n();
+                        l71Var2.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;
@@ -391,11 +391,11 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
                 if (i39 == 2) {
-                    org.telegram.ui.Components.wt wtVar2 = org.telegram.ui.Components.wt.O1;
-                    if (wtVar2 != null && (m71Var = wtVar2.j1) != null && m71Var.x) {
-                        m71Var.a.g0();
-                        m71Var.n();
-                        m71Var.f0.d(true, true);
+                    org.telegram.ui.Components.vt vtVar2 = org.telegram.ui.Components.vt.R1;
+                    if (vtVar2 != null && (l71Var = vtVar2.m1) != null && l71Var.x) {
+                        l71Var.a.g0();
+                        l71Var.n();
+                        l71Var.f0.d(true, true);
                     }
                     mediaController.W = true;
                     return;

@@ -11,30 +11,30 @@ import android.widget.TextView;
 import org.telegram.messenger.id;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements v10 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ fi.d c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ g6 e;
+    public final /* synthetic */ h6 e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object i;
     public final /* synthetic */ KeyEvent.Callback j;
 
-    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, g6 g6Var, boolean z9, int[] iArr, fi.d dVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
+    public /* synthetic */ c(String str, String[] strArr, ImageView imageView, h6 h6Var, boolean z9, int[] iArr, fi.d dVar, HorizontalScrollView horizontalScrollView, boolean[] zArr) {
         this.f = str;
         this.g = strArr;
         this.h = imageView;
-        this.e = g6Var;
+        this.e = h6Var;
         this.d = z9;
         this.i = iArr;
         this.c = dVar;
@@ -45,7 +45,7 @@ public final /* synthetic */ class c implements v10 {
     @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
-        g6 g6Var = this.e;
+        h6 h6Var = this.e;
         KeyEvent.Callback callback = this.j;
         Object obj3 = this.i;
         Object obj4 = this.h;
@@ -63,14 +63,14 @@ public final /* synthetic */ class c implements v10 {
                 Boolean bool = (Boolean) obj2;
                 if (TextUtils.equals((String) obj6, ((String[]) obj5)[0])) {
                     if (bool.booleanValue()) {
-                        s6.s(imageView, l6.q7, g6Var, PorterDuff.Mode.SRC_IN);
+                        t6.s(imageView, m6.q7, h6Var, PorterDuff.Mode.SRC_IN);
                         if (!z9) {
                             int i10 = -iArr[0];
                             iArr[0] = i10;
                             org.telegram.messenger.g0.G3(i10, imageView, null);
                         }
                     } else {
-                        s6.s(imageView, l6.G6, g6Var, PorterDuff.Mode.SRC_IN);
+                        t6.s(imageView, m6.G6, h6Var, PorterDuff.Mode.SRC_IN);
                     }
                     if (bitmap != null) {
                         imageView.setImageBitmap(bitmap);
@@ -104,7 +104,7 @@ public final /* synthetic */ class c implements v10 {
                         if (str == null) {
                             org.telegram.ui.Wallet.d2.m("preview", M0);
                         }
-                        hc.c0(M0, x2Var.E, g6Var);
+                        gc.c0(M0, x2Var.E, h6Var);
                         break;
                     }
                 }
@@ -112,7 +112,7 @@ public final /* synthetic */ class c implements v10 {
         }
     }
 
-    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.z1 z1Var, boolean[] zArr2, fi.d dVar, boolean z9, org.telegram.ui.Wallet.l0 l0Var, TextView textView, org.telegram.ui.Wallet.x2 x2Var, g6 g6Var) {
+    public /* synthetic */ c(boolean[] zArr, org.telegram.ui.Wallet.z1 z1Var, boolean[] zArr2, fi.d dVar, boolean z9, org.telegram.ui.Wallet.l0 l0Var, TextView textView, org.telegram.ui.Wallet.x2 x2Var, h6 h6Var) {
         this.b = zArr;
         this.f = z1Var;
         this.g = zArr2;
@@ -121,6 +121,6 @@ public final /* synthetic */ class c implements v10 {
         this.h = l0Var;
         this.i = textView;
         this.j = x2Var;
-        this.e = g6Var;
+        this.e = h6Var;
     }
 }

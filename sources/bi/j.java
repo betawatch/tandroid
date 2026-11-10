@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new fi.x1((kg.y) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, false, 24));
                 break;
             case 20:
-                org.telegram.messenger.g0.h3(new ha.b(17, (kg.i0) this.b, (org.telegram.ui.Components.r2) this.c));
+                org.telegram.messenger.g0.h3(new ha.b(17, (kg.i0) this.b, (org.telegram.ui.Components.q2) this.c));
                 break;
             case 21:
                 org.telegram.messenger.g0.h3(new fi.x1((kg.x1) this.b, tLObject, (SharedPreferences) this.c, false, 29));
@@ -156,7 +156,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                 ((VoIPService) this.b).lambda$startConferenceGroupCall$32((org.telegram.messenger.c) this.c, tLObject, tL_error);
                 break;
             case 26:
-                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.b;
+                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 if (tLObject instanceof Vector) {
                     Vector vector = (Vector) tLObject;
@@ -167,7 +167,7 @@ public final /* synthetic */ class j implements RequestDelegate {
                     while (true) {
                         boolean z9 = true;
                         if (i7 >= size) {
-                            org.telegram.messenger.g0.h3(new u7(f6Var, arrayList4, z9, 13));
+                            org.telegram.messenger.g0.h3(new u7(g6Var, arrayList4, z9, 13));
                             break;
                         } else {
                             TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) vector.objects.get(i7);
@@ -182,34 +182,34 @@ public final /* synthetic */ class j implements RequestDelegate {
                                     int i10 = 0;
                                     ?? r13 = str2;
                                     while (i10 < size2) {
-                                        org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) arrayList3.get(i10);
-                                        if (i6Var.o.equals(tL_wallPaper.slug)) {
+                                        org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) arrayList3.get(i10);
+                                        if (j6Var.o.equals(tL_wallPaper.slug)) {
                                             if (r14 == null) {
                                                 r14 = Boolean.valueOf(J.exists());
                                             }
                                             if (r13 != 0 || r14.booleanValue()) {
                                                 arrayList2 = arrayList3;
-                                                r13 = org.telegram.ui.ActionBar.f6.b(r13, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, i6Var);
+                                                r13 = org.telegram.ui.ActionBar.g6.b(r13, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), J, j6Var);
                                                 if (arrayList4 == null) {
                                                     arrayList4 = new ArrayList();
                                                 }
-                                                arrayList4.add(i6Var);
+                                                arrayList4.add(j6Var);
                                             } else {
                                                 String r10 = org.telegram.messenger.w7.r(null, tL_wallPaper.document);
-                                                if (f6Var.b == null) {
-                                                    f6Var.b = new HashMap();
+                                                if (g6Var.b == null) {
+                                                    g6Var.b = new HashMap();
                                                 }
-                                                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) f6Var.b.get(r10);
-                                                if (e6Var == null) {
-                                                    e6Var = new org.telegram.ui.ActionBar.e6();
+                                                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) g6Var.b.get(r10);
+                                                if (f6Var == null) {
+                                                    f6Var = new org.telegram.ui.ActionBar.f6();
                                                     arrayList2 = arrayList3;
-                                                    e6Var.b = new ArrayList();
-                                                    e6Var.a = tL_wallPaper;
-                                                    f6Var.b.put(r10, e6Var);
+                                                    f6Var.b = new ArrayList();
+                                                    f6Var.a = tL_wallPaper;
+                                                    g6Var.b.put(r10, f6Var);
                                                 } else {
                                                     arrayList2 = arrayList3;
                                                 }
-                                                e6Var.b.add(i6Var);
+                                                f6Var.b.add(j6Var);
                                             }
                                         } else {
                                             arrayList2 = arrayList3;
@@ -236,13 +236,13 @@ public final /* synthetic */ class j implements RequestDelegate {
                 }
                 break;
             case 27:
-                org.telegram.messenger.g0.h3(new l2.z0((org.telegram.ui.ActionBar.k6) this.b, tLObject, (org.telegram.ui.ActionBar.k6) this.c, 21));
+                org.telegram.messenger.g0.h3(new l2.z0((org.telegram.ui.ActionBar.l6) this.b, tLObject, (org.telegram.ui.ActionBar.l6) this.c, 21));
                 break;
             case 28:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.m6((org.telegram.ui.h8) this.b, tL_error, tLObject, (Calendar) this.c, 2));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.o1((org.telegram.ui.pc) this.b, tLObject, (org.telegram.ui.ActionBar.k6) this.c, 10));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.o1((org.telegram.ui.pc) this.b, tLObject, (org.telegram.ui.ActionBar.l6) this.c, 10));
                 break;
         }
     }

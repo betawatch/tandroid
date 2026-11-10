@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.v10;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class db implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -13,14 +13,14 @@ public final /* synthetic */ class db implements View.OnClickListener {
     public final /* synthetic */ v10 c;
     public final /* synthetic */ fi.d d;
     public final /* synthetic */ EditTextBoldCursor e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.v2[] f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2[] f;
 
-    public /* synthetic */ db(boolean[] zArr, v10 v10Var, fi.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.v2[] v2VarArr) {
+    public /* synthetic */ db(boolean[] zArr, v10 v10Var, fi.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.w2[] w2VarArr) {
         this.b = zArr;
         this.c = v10Var;
         this.d = dVar;
         this.e = editTextBoldCursor;
-        this.f = v2VarArr;
+        this.f = w2VarArr;
     }
 
     @Override // android.view.View.OnClickListener
@@ -49,11 +49,11 @@ public final /* synthetic */ class db implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ db(boolean[] zArr, v10 v10Var, EditTextBoldCursor editTextBoldCursor, fi.d dVar, org.telegram.ui.ActionBar.v2[] v2VarArr) {
+    public /* synthetic */ db(boolean[] zArr, v10 v10Var, EditTextBoldCursor editTextBoldCursor, fi.d dVar, org.telegram.ui.ActionBar.w2[] w2VarArr) {
         this.b = zArr;
         this.c = v10Var;
         this.e = editTextBoldCursor;
         this.d = dVar;
-        this.f = v2VarArr;
+        this.f = w2VarArr;
     }
 }

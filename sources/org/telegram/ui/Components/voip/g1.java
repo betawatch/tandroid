@@ -15,15 +15,15 @@ import org.telegram.messenger.r3;
 import org.telegram.messenger.s3;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.rm0;
-import org.telegram.ui.Components.vs;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.us;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.e40;
+import org.telegram.ui.f40;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g1 implements ti.m, ls {
     public static g1 w;
@@ -36,7 +36,7 @@ public final class g1 implements ti.m, ls {
     public final int r;
     public long s;
     public final d1 b = new d1(this);
-    public final et n = new et(this, 20);
+    public final dt n = new dt(this, 20);
 
     public g1(int i7) {
         this.r = i7;
@@ -81,23 +81,23 @@ public final class g1 implements ti.m, ls {
             g1Var.b.a = q0Var;
             g1Var.a();
             g1Var.s = SystemClock.elapsedRealtime();
-            et etVar = g1Var.n;
-            org.telegram.messenger.g0.r(etVar);
-            org.telegram.messenger.g0.i3(etVar, 700L);
-            e40 e40Var = e40.u5;
-            if (e40Var != null) {
-                e40Var.dismiss();
+            dt dtVar = g1Var.n;
+            org.telegram.messenger.g0.r(dtVar);
+            org.telegram.messenger.g0.i3(dtVar, 700L);
+            f40 f40Var = f40.x5;
+            if (f40Var != null) {
+                f40Var.dismiss();
             }
-            org.telegram.messenger.g0.h3(new vs(13));
+            org.telegram.messenger.g0.h3(new us(13));
         }
     }
 
     public static void n(boolean z9) {
-        e40 e40Var = e40.u5;
-        if (e40Var == null || e40Var.getWindow() == null) {
+        f40 f40Var = f40.x5;
+        if (f40Var == null || f40Var.getWindow() == null) {
             return;
         }
-        e40Var.getWindow().getDecorView().setVisibility(z9 ? 4 : 0);
+        f40Var.getWindow().getDecorView().setVisibility(z9 ? 4 : 0);
     }
 
     public static void o() {
@@ -154,8 +154,8 @@ public final class g1 implements ti.m, ls {
 
     @Override // ti.m
     public final boolean E() {
-        e40 e40Var = e40.u5;
-        return e40Var != null && e40.v5 && e40Var.u1();
+        f40 f40Var = f40.x5;
+        return f40Var != null && f40.y5 && f40Var.u1();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x002a  */
@@ -212,12 +212,12 @@ public final class g1 implements ti.m, ls {
             n(false);
         }
         m();
-        org.telegram.messenger.g0.h3(new vs(13));
-        org.telegram.messenger.g0.h3(new vs(12));
+        org.telegram.messenger.g0.h3(new us(13));
+        org.telegram.messenger.g0.h3(new us(12));
     }
 
     @Override // ti.m
-    public final /* synthetic */ boolean R(boolean z9, float f10, rm0 rm0Var) {
+    public final /* synthetic */ boolean R(boolean z9, float f10, qm0 qm0Var) {
         return false;
     }
 
@@ -246,8 +246,8 @@ public final class g1 implements ti.m, ls {
             }
             return;
         }
-        if (e40.u5 == null) {
-            e40.e1(launchActivity, org.telegram.messenger.c.a(sharedInstance.getAccount()), null, null, false, null);
+        if (f40.x5 == null) {
+            f40.e1(launchActivity, org.telegram.messenger.c.a(sharedInstance.getAccount()), null, null, false, null);
         }
         if (this.a == null) {
             return;
@@ -255,8 +255,8 @@ public final class g1 implements ti.m, ls {
         q0 q0Var = this.e;
         this.e = null;
         this.b.a = null;
-        this.a.a(new fx(7, this, q0Var));
-        org.telegram.messenger.g0.h3(new vs(13));
+        this.a.a(new ex(7, this, q0Var));
+        org.telegram.messenger.g0.h3(new us(13));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x002a A[RETURN] */
@@ -360,9 +360,9 @@ public final class g1 implements ti.m, ls {
         this.b.a = q0Var;
         a();
         this.s = SystemClock.elapsedRealtime();
-        et etVar = this.n;
-        org.telegram.messenger.g0.r(etVar);
-        org.telegram.messenger.g0.i3(etVar, 700L);
+        dt dtVar = this.n;
+        org.telegram.messenger.g0.r(dtVar);
+        org.telegram.messenger.g0.i3(dtVar, 700L);
     }
 
     @Override // ti.m

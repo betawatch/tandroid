@@ -23,7 +23,7 @@ import android.widget.EditText;
 import c8.pb;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class z {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -38,7 +38,7 @@ public class z {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((m4.d0) ((org.telegram.ui.Components.n) this.c).a).getClass();
+        ((m4.d0) ((org.telegram.ui.Components.m) this.c).a).getClass();
         if (keyListener instanceof t1.e) {
             return keyListener;
         }
@@ -91,12 +91,12 @@ public class z {
     }
 
     public t1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        org.telegram.ui.Components.n nVar = (org.telegram.ui.Components.n) this.c;
+        org.telegram.ui.Components.m mVar = (org.telegram.ui.Components.m) this.c;
         if (inputConnection == null) {
-            nVar.getClass();
+            mVar.getClass();
             inputConnection = null;
         } else {
-            m4.d0 d0Var = (m4.d0) nVar.a;
+            m4.d0 d0Var = (m4.d0) mVar.a;
             d0Var.getClass();
             if (!(inputConnection instanceof t1.b)) {
                 inputConnection = new t1.b((EditText) d0Var.a, inputConnection, editorInfo);
@@ -106,7 +106,7 @@ public class z {
     }
 
     public void d(boolean z9) {
-        t1.i iVar = (t1.i) ((m4.d0) ((org.telegram.ui.Components.n) this.c).a).b;
+        t1.i iVar = (t1.i) ((m4.d0) ((org.telegram.ui.Components.m) this.c).a).b;
         if (iVar.c != z9) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a10 = androidx.emoji2.text.l.a();
@@ -177,6 +177,6 @@ public class z {
 
     public z(EditText editText) {
         this.b = editText;
-        this.c = new org.telegram.ui.Components.n(editText);
+        this.c = new org.telegram.ui.Components.m(editText);
     }
 }

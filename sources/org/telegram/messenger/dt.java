@@ -65,7 +65,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class dt extends c1 implements ls {
     public static String j0;
@@ -305,7 +305,7 @@ public final class dt extends c1 implements ls {
                 TLRPC.User user = (TLRPC.User) obj;
                 c10 = 2;
                 try {
-                    paint2.setShader(new LinearGradient(size, size2, size, size2 + f11, new int[]{org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.p8[org.telegram.ui.Components.w8.e(user.id)], false), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.q8[org.telegram.ui.Components.w8.e(user.id)], false)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+                    paint2.setShader(new LinearGradient(size, size2, size, size2 + f11, new int[]{org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.p8[org.telegram.ui.Components.v8.e(user.id)], false), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q8[org.telegram.ui.Components.v8.e(user.id)], false)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                     canvas.drawCircle(f13, f14, f12, paint2);
                     if (textPaint == null) {
                         try {
@@ -336,7 +336,7 @@ public final class dt extends c1 implements ls {
                         z9 = true;
                     }
                     StringBuilder sb2 = new StringBuilder();
-                    org.telegram.ui.Components.w8.a(user.first_name, user.last_name, null, sb2);
+                    org.telegram.ui.Components.v8.a(user.first_name, user.last_name, null, sb2);
                     String sb3 = sb2.toString();
                     try {
                         textPaint.getTextBounds(sb3, 0, sb3.length(), rect);

@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class db extends mi.l {
     public int W;
-    public iq0 X;
+    public jq0 X;
     public final /* synthetic */ mb Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db(mb mbVar, org.telegram.ui.Components.qj0 qj0Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(null, qj0Var, g6Var);
+    public db(mb mbVar, org.telegram.ui.Components.pj0 pj0Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(null, pj0Var, h6Var);
         this.Y = mbVar;
         this.W = -1;
     }
@@ -17,13 +17,13 @@ public final class db extends mi.l {
     @Override // mi.l, v4.k
     public final void N() {
         super.N();
-        iq0 iq0Var = this.X;
-        if (iq0Var != null) {
-            org.telegram.messenger.g0.r(iq0Var);
+        jq0 jq0Var = this.X;
+        if (jq0Var != null) {
+            org.telegram.messenger.g0.r(jq0Var);
         }
-        iq0 iq0Var2 = new iq0(this, 20);
-        this.X = iq0Var2;
-        org.telegram.messenger.g0.h3(iq0Var2);
+        jq0 jq0Var2 = new jq0(this, 20);
+        this.X = jq0Var2;
+        org.telegram.messenger.g0.h3(jq0Var2);
     }
 
     @Override // mi.l
@@ -31,9 +31,9 @@ public final class db extends mi.l {
         if (this.W == -1) {
             this.W = this.Y.getNotificationCenter().q(mb.R0, this.W, false);
         }
-        iq0 iq0Var = this.X;
-        if (iq0Var != null) {
-            org.telegram.messenger.g0.r(iq0Var);
+        jq0 jq0Var = this.X;
+        if (jq0Var != null) {
+            org.telegram.messenger.g0.r(jq0Var);
             this.X = null;
         }
         if (org.telegram.messenger.r2.a) {

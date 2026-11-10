@@ -1,20 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class f31 extends ww0 {
-    public final /* synthetic */ n31 G;
+public final /* synthetic */ class f31 implements org.telegram.messenger.a20, org.telegram.messenger.b20, r0.m {
+    public final /* synthetic */ o31 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f31(n31 n31Var, n31 n31Var2, Context context) {
-        super(context, n31Var2);
-        this.G = n31Var;
+    public /* synthetic */ f31(o31 o31Var) {
+        this.a = o31Var;
     }
 
-    @Override // v4.g0
-    public final void f() {
-        this.G.c.f3.O(true);
+    @Override // r0.m
+    public r0.k1 S0(View view, r0.k1 k1Var) {
+        i0.b I0 = org.telegram.messenger.g0.I0(k1Var, false);
+        int i7 = I0.d;
+        o31 o31Var = this.a;
+        o31Var.c0 = i7;
+        int i10 = I0.b;
+        if (o31Var.P != null) {
+            int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + i10;
+            ViewGroup.LayoutParams layoutParams = o31Var.P.getLayoutParams();
+            if (layoutParams.height != currentActionBarHeight) {
+                layoutParams.height = currentActionBarHeight;
+                o31Var.P.setLayoutParams(layoutParams);
+            }
+        }
+        oi.a.e(o31Var.c, i10, i7, org.telegram.messenger.g0.L(12.0f), o31Var.d0);
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.messenger.b20
+    public Boolean a(org.telegram.ui.Components.x31 x31Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(o31.Z(this.a, x31Var, view));
+    }
+
+    @Override // org.telegram.messenger.a20
+    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        o31.h0(this.a, (org.telegram.ui.Components.x31) obj);
     }
 }

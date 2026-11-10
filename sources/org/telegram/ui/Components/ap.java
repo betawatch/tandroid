@@ -5,9 +5,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ap extends qu0 {
+public final class ap extends pu0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -29,7 +29,7 @@ public final class ap extends qu0 {
         paint.setStrokeWidth(org.telegram.messenger.g0.N(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.qu0
+    @Override // org.telegram.ui.Components.pu0
     public final void b(int i7) {
         switch (this.a) {
             case 0:
@@ -49,7 +49,7 @@ public final class ap extends qu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qu0
+    @Override // org.telegram.ui.Components.pu0
     public final void c(boolean z9) {
         switch (this.a) {
             case 0:
@@ -60,7 +60,7 @@ public final class ap extends qu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qu0
+    @Override // org.telegram.ui.Components.pu0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -83,15 +83,15 @@ public final class ap extends qu0 {
         switch (this.a) {
             case 0:
                 float min = Math.min(this.e, 1.0f);
-                float interpolation = xq.i.getInterpolation(min < 0.3f ? min / 0.3f : 1.0f);
-                xq xqVar = xq.g;
-                float interpolation2 = xqVar.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
+                float interpolation = wq.i.getInterpolation(min < 0.3f ? min / 0.3f : 1.0f);
+                wq wqVar = wq.g;
+                float interpolation2 = wqVar.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
                 if (this.d) {
                     L = com.google.android.recaptcha.internal.a.z(1.0f, interpolation, org.telegram.messenger.g0.L(7.0f) - org.telegram.messenger.g0.L(2.1f), org.telegram.messenger.g0.L(2.1f) * interpolation);
-                    N = (1.0f - xqVar.getInterpolation(this.e / 2.0f)) * org.telegram.messenger.g0.N(1.5f);
+                    N = (1.0f - wqVar.getInterpolation(this.e / 2.0f)) * org.telegram.messenger.g0.N(1.5f);
                 } else {
                     L = ((org.telegram.messenger.g0.L(7.0f) - org.telegram.messenger.g0.L(2.1f)) * interpolation) + ((1.0f - interpolation) * org.telegram.messenger.g0.L(2.1f));
-                    N = org.telegram.messenger.g0.N(1.5f) * xq.h.getInterpolation(this.e / 2.0f);
+                    N = org.telegram.messenger.g0.N(1.5f) * wq.h.getInterpolation(this.e / 2.0f);
                 }
                 float f10 = 11.0f;
                 float L2 = org.telegram.messenger.g0.L(11.0f) / 2.0f;
@@ -99,11 +99,11 @@ public final class ap extends qu0 {
                 float N3 = (org.telegram.messenger.g0.N(0.5f) * interpolation) - (org.telegram.messenger.g0.N(0.5f) * interpolation2);
                 Paint paint = this.g;
                 if (paint == null) {
-                    paint = org.telegram.ui.ActionBar.l6.d2;
+                    paint = org.telegram.ui.ActionBar.m6.d2;
                 }
                 Paint paint2 = (Paint) this.h;
                 if (paint2 == null) {
-                    paint2 = org.telegram.ui.ActionBar.l6.c2;
+                    paint2 = org.telegram.ui.ActionBar.m6.c2;
                 }
                 if (paint.getStrokeWidth() != org.telegram.messenger.g0.L(0.8f)) {
                     paint.setStrokeWidth(org.telegram.messenger.g0.L(0.8f));
@@ -141,7 +141,7 @@ public final class ap extends qu0 {
                 RectF rectF2 = (RectF) this.h;
                 Paint paint3 = this.g;
                 if (paint3 == null) {
-                    paint3 = org.telegram.ui.ActionBar.l6.d2;
+                    paint3 = org.telegram.ui.ActionBar.m6.d2;
                 }
                 Paint paint4 = paint3;
                 if (paint4.getStrokeWidth() != org.telegram.messenger.g0.L(2.0f)) {
@@ -185,7 +185,7 @@ public final class ap extends qu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qu0
+    @Override // org.telegram.ui.Components.pu0
     public final void e() {
         switch (this.a) {
             case 0:

@@ -17,16 +17,16 @@ import fi.a3;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.l9;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.k9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class g extends FrameLayout implements b6 {
-    public final g6 a;
-    public final l9 b;
+public final class g extends FrameLayout implements c6 {
+    public final h6 a;
+    public final k9 b;
     public final LinearLayout c;
     public final FrameLayout.LayoutParams d;
     public final TextView e;
@@ -38,15 +38,15 @@ public final class g extends FrameLayout implements b6 {
     public final Paint w;
     public boolean x;
 
-    public g(Context context, g6 g6Var) {
+    public g(Context context, h6 h6Var) {
         super(context);
         this.w = new Paint(1);
-        this.a = g6Var;
+        this.a = h6Var;
         ka.b(this, 0.03f, 1.25f);
-        l9 l9Var = new l9(context);
-        this.b = l9Var;
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
-        addView(l9Var, ha.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        k9 k9Var = new k9(context);
+        this.b = k9Var;
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+        addView(k9Var, ha.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
@@ -79,18 +79,18 @@ public final class g extends FrameLayout implements b6 {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
         addView(imageView, ha.d(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
-        a3 a3Var = new a3(this, getContext(), g6Var, 2);
+        a3 a3Var = new a3(this, getContext(), h6Var, 2);
         this.r = a3Var;
-        a3Var.b(-1, l6.d6, l6.k7);
+        a3Var.b(-1, m6.d6, m6.k7);
         a3Var.setDrawUnchecked(false);
         a3Var.setDrawBackgroundAsArc(3);
         addView(a3Var, ha.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(l6.d6));
-        hashSet.add(Integer.valueOf(l6.G6));
+        hashSet.add(Integer.valueOf(m6.d6));
+        hashSet.add(Integer.valueOf(m6.G6));
     }
 
     @Override // android.view.View
@@ -110,18 +110,18 @@ public final class g extends FrameLayout implements b6 {
         this.r.a(z9, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = l6.d6;
-        g6 g6Var = this.a;
-        int w02 = l6.w0(i7, g6Var);
-        int w03 = l6.w0(l6.G6, g6Var);
+        int i7 = m6.d6;
+        h6 h6Var = this.a;
+        int w02 = m6.w0(i7, h6Var);
+        int w03 = m6.w0(m6.G6, h6Var);
         this.s = w03;
         this.e.setTextColor(w03);
-        this.f.setTextColor(l6.w(w02, l6.r1(0.55f, w03)));
-        this.h.setTextColor(l6.r1(0.55f, w03));
-        this.n.setColorFilter(new PorterDuffColorFilter(l6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
-        this.w.setColor(l6.r1(0.1f, w03));
+        this.f.setTextColor(m6.w(w02, m6.r1(0.55f, w03)));
+        this.h.setTextColor(m6.r1(0.55f, w03));
+        this.n.setColorFilter(new PorterDuffColorFilter(m6.r1(0.6f, w03), PorterDuff.Mode.SRC_IN));
+        this.w.setColor(m6.r1(0.1f, w03));
         this.b.invalidate();
     }
 }

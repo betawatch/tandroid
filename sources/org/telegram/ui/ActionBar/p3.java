@@ -1,44 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Point;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.hc;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p3 implements c20 {
-    public final /* synthetic */ c20 a;
-    public final /* synthetic */ TLRPC.WallPaper b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+public final class p3 {
+    public static final p3 a;
+    public static final p3 b;
+    public static final p3 c;
+    public static final /* synthetic */ p3[] d;
 
-    public /* synthetic */ p3(c20 c20Var, TLRPC.WallPaper wallPaper, int i7, int i10, long j3) {
-        this.a = c20Var;
-        this.b = wallPaper;
-        this.c = i7;
-        this.d = i10;
-        this.e = j3;
+    static {
+        p3 p3Var = new p3("NONE", 0);
+        a = p3Var;
+        p3 p3Var2 = new p3("VERTICAL", 1);
+        b = p3Var2;
+        p3 p3Var3 = new p3("FULL", 2);
+        c = p3Var3;
+        d = new p3[]{p3Var, p3Var2, p3Var3};
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        gg.a aVar = (gg.a) obj;
-        c20 c20Var = this.a;
-        if (aVar != null) {
-            c20Var.a(aVar);
-            return;
-        }
-        TLRPC.WallPaper wallPaper = this.b;
-        hc b10 = hc.b(wallPaper.document);
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        imageReceiver.z1 = false;
-        Point point = org.telegram.messenger.g0.q;
-        imageReceiver.q0(b10, (Math.min(point.x, point.y) / org.telegram.messenger.g0.p) + "_" + (Math.max(point.x, point.y) / org.telegram.messenger.g0.p) + "_f", null, ".jpg", wallPaper, 1);
-        imageReceiver.g1 = new org.telegram.tgnet.f(this.c, this.d, this.e, c20Var);
-        gc.D().M(imageReceiver, null);
+    public static p3 valueOf(String str) {
+        return (p3) Enum.valueOf(p3.class, str);
+    }
+
+    public static p3[] values() {
+        return (p3[]) d.clone();
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public long D;
@@ -50,7 +50,7 @@ public final class t5 extends FrameLayout {
         this.h = m5Var;
         Drawable h = jg.g.h(context, R.drawable.sheet_shadow_round);
         this.s = h;
-        org.telegram.ui.ActionBar.s6.x(this, h, org.telegram.ui.ActionBar.l6.h5, bVar, PorterDuff.Mode.MULTIPLY);
+        org.telegram.ui.ActionBar.t6.x(this, h, org.telegram.ui.ActionBar.m6.h5, bVar, PorterDuff.Mode.MULTIPLY);
         r5 r5Var = new r5(this, context);
         this.e = r5Var;
         n5 n5Var = new n5(this, context);

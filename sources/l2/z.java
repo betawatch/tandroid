@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.t2;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.cn;
@@ -30,11 +30,11 @@ import org.telegram.ui.gl;
 import org.telegram.ui.ll;
 import org.telegram.ui.nm;
 import org.telegram.ui.q8;
-import org.telegram.ui.ww;
 import org.telegram.ui.xw;
 import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -208,32 +208,32 @@ public final /* synthetic */ class z implements Runnable {
                 }
                 break;
             default:
-                final ww wwVar = (ww) obj2;
+                final xw xwVar = (xw) obj2;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) obj;
-                xw xwVar = wwVar.g;
-                yw ywVar = wwVar.h;
-                ArrayList arrayList2 = ywVar.S1;
+                yw ywVar = xwVar.g;
+                zw zwVar = xwVar.h;
+                ArrayList arrayList2 = zwVar.S1;
                 if (arrayList2 != null) {
                     arrayList2.remove(dialog);
                     int i17 = dialog.pinnedNum;
-                    ywVar.X0 = null;
-                    xwVar.a.invalidate();
-                    int N0 = xwVar.c.N0();
+                    zwVar.X0 = null;
+                    ywVar.a.invalidate();
+                    int N0 = ywVar.c.N0();
                     if (N0 == i12 - 1) {
-                        xwVar.c.m(N0).requestLayout();
+                        ywVar.c.m(N0).requestLayout();
                     }
-                    if (ywVar.getMessagesController().C2(dialog.id, false)) {
-                        ywVar.getMessagesController().j2();
-                        xwVar.y.D();
-                        xwVar.q(true);
+                    if (zwVar.getMessagesController().C2(dialog.id, false)) {
+                        zwVar.getMessagesController().j2();
+                        ywVar.y.D();
+                        ywVar.q(true);
                         break;
                     } else {
-                        int d = ywVar.getMessagesController().d(ywVar.X2 == 0 ? 1 : 0, -1, dialog.id);
+                        int d = zwVar.getMessagesController().d(zwVar.X2 == 0 ? 1 : 0, -1, dialog.id);
                         if (d != 2 || i13 != 0) {
-                            xwVar.y.D();
-                            xwVar.q(true);
+                            ywVar.y.D();
+                            ywVar.q(true);
                         }
-                        if (ywVar.X2 == 0) {
+                        if (zwVar.X2 == 0) {
                             if (d == 2) {
                                 boolean z9 = iz.q1;
                                 if (z9) {
@@ -242,36 +242,36 @@ public final /* synthetic */ class z implements Runnable {
                                     edit.putBoolean("archiveHidden", iz.q1);
                                     edit.apply();
                                 }
-                                xwVar.y.D();
+                                ywVar.y.D();
                                 if (i13 == 0) {
-                                    ywVar.M4(true, true);
-                                    xwVar.q(true);
-                                    ywVar.z3();
+                                    zwVar.M4(true, true);
+                                    ywVar.q(true);
+                                    zwVar.z3();
                                 } else {
-                                    xwVar.q(true);
-                                    if (!iz.q1 && xwVar.c.L0() == 0) {
-                                        ywVar.f2 = true;
-                                        xwVar.a.w0(0, -org.telegram.messenger.g0.L(iz.p1 ? 76.0f : 70.0f), null);
+                                    ywVar.q(true);
+                                    if (!iz.q1 && ywVar.c.L0() == 0) {
+                                        zwVar.f2 = true;
+                                        ywVar.a.w0(0, -org.telegram.messenger.g0.L(iz.p1 ? 76.0f : 70.0f), null);
                                     }
                                 }
-                                i7 = ((f2) ywVar).currentAccount;
-                                ywVar.S1.add(0, (TLRPC.Dialog) ywVar.d4(i7, xwVar.s, ywVar.X2, false).get(0));
-                                xwVar.q(true);
-                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.vw
+                                i7 = ((f2) zwVar).currentAccount;
+                                zwVar.S1.add(0, (TLRPC.Dialog) zwVar.d4(i7, ywVar.s, zwVar.X2, false).get(0));
+                                ywVar.q(true);
+                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.ww
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (r2) {
                                             case 0:
-                                                wwVar.h.M4(false, true);
+                                                xwVar.h.M4(false, true);
                                                 break;
                                             default:
-                                                wwVar.h.M4(false, true);
+                                                xwVar.h.M4(false, true);
                                                 break;
                                         }
                                     }
                                 }, 300L);
                             } else if (d == 1) {
-                                v4.d1 K = xwVar.a.K(0);
+                                v4.d1 K = ywVar.a.K(0);
                                 if (K != null) {
                                     View view = K.a;
                                     if (view instanceof t2) {
@@ -279,21 +279,21 @@ public final /* synthetic */ class z implements Runnable {
                                         if (t2Var.a2.n == 2) {
                                             t2Var.b2 = true;
                                             t2Var.c2 = 0.0f;
-                                            l6.u1.T(true, 0.0f);
-                                            l6.u1.start();
+                                            m6.u1.T(true, 0.0f);
+                                            m6.u1.start();
                                             t2Var.invalidate();
                                         }
                                     }
                                 }
-                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.vw
+                                org.telegram.messenger.g0.i3(new Runnable() { // from class: org.telegram.ui.ww
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         switch (i11) {
                                             case 0:
-                                                wwVar.h.M4(false, true);
+                                                xwVar.h.M4(false, true);
                                                 break;
                                             default:
-                                                wwVar.h.M4(false, true);
+                                                xwVar.h.M4(false, true);
                                                 break;
                                         }
                                     }
@@ -304,14 +304,14 @@ public final /* synthetic */ class z implements Runnable {
                             if (r6 == 0) {
                                 e12.edit().putBoolean("archivehint_l", true).commit();
                             }
-                            UndoView k42 = ywVar.k4();
+                            UndoView k42 = zwVar.k4();
                             if (k42 != null) {
-                                k42.l(dialog.id, r6 != 0 ? 2 : 3, null, new q8(wwVar, dialog, i17, 29));
+                                k42.l(dialog.id, r6 != 0 ? 2 : 3, null, new q8(xwVar, dialog, i17, 29));
                             }
                         }
-                        if (ywVar.X2 != 0 && ywVar.S1.isEmpty()) {
-                            xwVar.a.setEmptyView(null);
-                            xwVar.x.setVisibility(4);
+                        if (zwVar.X2 != 0 && zwVar.S1.isEmpty()) {
+                            ywVar.a.setEmptyView(null);
+                            ywVar.x.setVisibility(4);
                             break;
                         }
                     }

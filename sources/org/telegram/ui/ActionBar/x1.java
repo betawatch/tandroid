@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class x1 extends u1 {
     public static final int[] u1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
@@ -32,8 +32,8 @@ public final class x1 extends u1 {
     public long s1;
     public final l2.a0 t1;
 
-    public x1(int i7, Context context, g6 g6Var) {
-        super(i7, context, g6Var);
+    public x1(int i7, Context context, h6 h6Var) {
+        super(i7, context, h6Var);
         this.r1 = false;
         this.s1 = 0L;
         this.t1 = new l2.a0(this, 20);
@@ -132,7 +132,7 @@ public final class x1 extends u1 {
         frameLayout.setOnClickListener(new ii.g(this, 14));
         View view = new View(getContext());
         this.o1 = view;
-        view.setBackgroundColor(l6.r1(attributes.dimAmount, -16777216));
+        view.setBackgroundColor(m6.r1(attributes.dimAmount, -16777216));
         frameLayout.addView(this.o1, new FrameLayout.LayoutParams(-1, -1));
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.addView(this.n1, new FrameLayout.LayoutParams(-1, -2, 17));

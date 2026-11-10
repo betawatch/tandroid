@@ -58,25 +58,25 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.z9;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.dg0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.s4;
 import org.telegram.ui.ee;
-import org.telegram.ui.hr0;
+import org.telegram.ui.eg0;
+import org.telegram.ui.ir0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class f1 implements g9.k, com.google.android.gms.common.api.internal.p, jg.y1, m.f2, li.i0, t4, li.f1, l.i, n2.v, o0.a, b3.j, va, lc, j51, org.telegram.ui.Cells.l1, te.d, e90 {
+public final class f1 implements g9.k, com.google.android.gms.common.api.internal.p, jg.y1, m.f2, li.i0, s4, li.f1, l.i, n2.v, o0.a, b3.j, va, lc, j51, org.telegram.ui.Cells.l1, te.d, d90 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -244,13 +244,13 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         return false;
     }
 
-    @Override // org.telegram.ui.Components.t4
+    @Override // org.telegram.ui.Components.s4
     public void L(int i7, int i10, boolean z9) {
         li.b2 b2Var = (li.b2) this.b;
         b2Var.x0(i7, i10, z9);
-        dg0 dg0Var = b2Var.O0;
-        if (dg0Var != null) {
-            dg0Var.h();
+        eg0 eg0Var = b2Var.O0;
+        if (eg0Var != null) {
+            eg0Var.h();
             b2Var.O0 = null;
         }
     }
@@ -267,19 +267,19 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
 
     @Override // b3.j
     public void M0(b3.l lVar, long j3, long j10, int i7) {
-        x2.u uVar;
+        x2.t tVar;
         b3.r rVar = (b3.r) lVar;
         o2.h hVar = (o2.h) this.b;
         if (i7 == 0) {
             long j11 = rVar.a;
-            uVar = new x2.u(rVar.b, j3);
+            tVar = new x2.t(rVar.b, j3);
         } else {
             long j12 = rVar.a;
             j2.m mVar = rVar.b;
             j2.c0 c0Var = rVar.d;
-            uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+            tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         }
-        hVar.q.t(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
+        hVar.q.t(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
     }
 
     public long M1(TimeUnit timeUnit) {
@@ -287,7 +287,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hr0 N1() {
+    public /* synthetic */ ir0 N1() {
         return null;
     }
 
@@ -325,9 +325,9 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         return false;
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.d90
     public Paint.FontMetricsInt R0() {
-        return ((di) this.b).y2.getEditText().getPaint().getFontMetricsInt();
+        return ((ci) this.b).B2.getEditText().getPaint().getFontMetricsInt();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -472,11 +472,11 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
 
     @Override // te.d
     public void Y0() {
-        ((b9) this.b).a.invalidate();
+        ((a9) this.b).a.invalidate();
     }
 
     public void Y1() {
-        ((v2) this.b).o0 = false;
+        ((w2) this.b).o0 = false;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -515,7 +515,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     }
 
     public void a2(ee eeVar) {
-        ((v2) this.b).H0 = eeVar;
+        ((w2) this.b).H0 = eeVar;
     }
 
     @Override // com.google.android.gms.common.api.internal.p
@@ -897,7 +897,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n0(r5 r5Var) {
+    public /* synthetic */ boolean n0(q5 q5Var) {
         return false;
     }
 
@@ -914,7 +914,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         j2.c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         int i10 = rVar.c;
         hVar.m.getClass();
         for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
@@ -925,7 +925,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         }
         min = Math.min((i7 - 1) * 1000, 5000);
         b3.i iVar = min == -9223372036854775807L ? b3.o.f : new b3.i(0, min, false);
-        hVar.q.r(uVar, i10, iOException, !iVar.a());
+        hVar.q.r(tVar, i10, iOException, !iVar.a());
         return iVar;
     }
 
@@ -937,9 +937,9 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         long j12 = rVar.a;
         j2.m mVar = rVar.b;
         j2.c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         hVar.m.getClass();
-        hVar.q.p(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        hVar.q.p(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         p2.c cVar = (p2.c) rVar.f;
         p2.c cVar2 = hVar.G;
         int size = cVar2 == null ? 0 : cVar2.m.size();
@@ -1086,20 +1086,20 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         return null;
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.d90
     public void z1(int i7, int i10, CharSequence charSequence, boolean z9) {
-        di diVar = (di) this.b;
-        if (diVar.a1() == null) {
+        ci ciVar = (ci) this.b;
+        if (ciVar.a1() == null) {
             return;
         }
         try {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(diVar.a1().getText());
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ciVar.a1().getText());
             spannableStringBuilder.replace(i7, i10 + i7, charSequence);
             if (z9) {
-                i6.l(spannableStringBuilder, diVar.a1().getEditText().getPaint().getFontMetricsInt(), false);
+                i6.l(spannableStringBuilder, ciVar.a1().getEditText().getPaint().getFontMetricsInt(), false);
             }
-            diVar.a1().setText(spannableStringBuilder);
-            diVar.a1().setSelection(i7 + charSequence.length());
+            ciVar.a1().setText(spannableStringBuilder);
+            ciVar.a1().setSelection(i7 + charSequence.length());
         } catch (Exception e10) {
             a8.g(e10, true);
         }
@@ -1146,11 +1146,11 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
         this.b = new org.telegram.messenger.l0(str, j3);
     }
 
-    public f1(Context context, g6 g6Var) {
+    public f1(Context context, h6 h6Var) {
         this.a = 25;
-        v2 v2Var = new v2(1, context, g6Var, false);
-        this.b = v2Var;
-        v2Var.N();
+        w2 w2Var = new w2(1, context, h6Var, false);
+        this.b = w2Var;
+        w2Var.N();
     }
 
     @Override // te.d
@@ -1221,7 +1221,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     public /* synthetic */ void G0(org.telegram.ui.Cells.q1 q1Var) {
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.d90
     public /* synthetic */ void G1(String str) {
     }
 
@@ -1381,7 +1381,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     public /* synthetic */ void K(org.telegram.ui.Cells.q1 q1Var, TLRPC.Document document, RectF rectF) {
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.d90
     public /* synthetic */ void M(TLRPC.BotInlineResult botInlineResult, boolean z9, int i7) {
     }
 
@@ -1389,7 +1389,7 @@ public final class f1 implements g9.k, com.google.android.gms.common.api.interna
     public /* synthetic */ void N0(org.telegram.ui.Cells.q1 q1Var, CharacterStyle characterStyle, boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.e90
+    @Override // org.telegram.ui.Components.d90
     public /* synthetic */ void e1(TLRPC.TL_document tL_document, String str, Object obj) {
     }
 

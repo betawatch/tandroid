@@ -8,14 +8,14 @@ import android.view.View;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class kb extends View implements o2 {
     public Paint a;
     public Paint b;
-    public org.telegram.ui.Components.i6 c;
+    public org.telegram.ui.Components.h6 c;
     public boolean d;
-    public org.telegram.ui.Components.w5 e;
+    public org.telegram.ui.Components.v5 e;
 
     public final void a(long j3, boolean z9) {
         long j10 = j3 % 60;
@@ -44,11 +44,11 @@ public final class kb extends View implements o2 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.b;
-        org.telegram.ui.Components.i6 i6Var = this.c;
+        org.telegram.ui.Components.h6 h6Var = this.c;
         super.onDraw(canvas);
         float e10 = this.e.e(false, this.d ? 1.0f : 0.0f);
         float L = org.telegram.messenger.g0.L(12.66f) * e10;
-        float c10 = i6Var.c() + L;
+        float c10 = h6Var.c() + L;
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(((getWidth() - c10) / 2.0f) - org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(18.0f), ((getWidth() + c10) / 2.0f) + org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(40.0f));
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(18.0f), this.a);
@@ -57,8 +57,8 @@ public final class kb extends View implements o2 {
             invalidate();
             canvas.drawCircle(rectF.left + org.telegram.messenger.g0.L(10.66f), rectF.centerY(), org.telegram.messenger.g0.L(4.0f) * e10, paint);
         }
-        i6Var.setBounds((int) (rectF.left + L), ((int) rectF.top) - org.telegram.messenger.g0.L(1.0f), (int) rectF.right, (int) rectF.bottom);
-        i6Var.draw(canvas);
+        h6Var.setBounds((int) (rectF.left + L), ((int) rectF.top) - org.telegram.messenger.g0.L(1.0f), (int) rectF.right, (int) rectF.bottom);
+        h6Var.draw(canvas);
     }
 
     @Override // android.view.View

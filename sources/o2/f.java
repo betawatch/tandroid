@@ -4,9 +4,9 @@ import a8.wa;
 import b3.r;
 import j2.c0;
 import java.io.IOException;
-import x2.u;
+import x2.t;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f implements b3.j {
     public final /* synthetic */ h a;
@@ -19,7 +19,7 @@ public final class f implements b3.j {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        waVar.r(new u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b), rVar.c, iOException, true);
+        waVar.r(new t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b), rVar.c, iOException, true);
         hVar.m.getClass();
         hVar.y(iOException);
         return b3.o.e;
@@ -32,9 +32,9 @@ public final class f implements b3.j {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        u uVar = new u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        t tVar = new t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         hVar.m.getClass();
-        hVar.q.p(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        hVar.q.p(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         hVar.K = ((Long) rVar.f).longValue() - j3;
         hVar.z(true);
     }

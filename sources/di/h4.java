@@ -11,9 +11,9 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.l21;
+import org.telegram.ui.Components.k21;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h4 {
     public TL_stories.StoryItem a = null;
@@ -334,7 +334,7 @@ public final class h4 {
         }
         TL_stories.StoryItem storyItem = h4Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, l21.M0())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, k21.M0())) {
                 String str = h4Var.a.caption;
                 this.h = str;
                 CharSequence m11 = org.telegram.messenger.i6.m(str, n3Var.b0.getPaint().getFontMetricsInt(), false, null, 0);

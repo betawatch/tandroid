@@ -5,11 +5,11 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ji0;
+import org.telegram.ui.Components.ii0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rw implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class rw implements Runnable {
                 break;
             case 1:
                 org.telegram.ui.cn cnVar = (org.telegram.ui.cn) obj2;
-                ji0 ji0Var = (ji0) obj;
+                ii0 ii0Var = (ii0) obj;
                 org.telegram.ui.ActionBar.g1 g1Var = cnVar.e9;
                 if (g1Var != null && cnVar.fragmentView != null && !g1Var.isShowing()) {
                     Activity parentActivity = cnVar.getParentActivity();
@@ -57,8 +57,8 @@ public final /* synthetic */ class rw implements Runnable {
                     if (parentActivity != null && !parentActivity.isDestroyed() && !parentActivity.isFinishing()) {
                         cnVar.e9.showAtLocation(cnVar.z0, 51, i12, i11);
                         cnVar.ha(cnVar.e9);
-                        if (z9 && ji0Var != null) {
-                            ji0Var.r(true);
+                        if (z9 && ii0Var != null) {
+                            ii0Var.r(true);
                         }
                         g0.i3(new org.telegram.ui.xf(cnVar, i10), 420L);
                         break;
@@ -66,7 +66,7 @@ public final /* synthetic */ class rw implements Runnable {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.mb mbVar = (org.telegram.ui.Components.mb) obj2;
+                org.telegram.ui.Components.lb lbVar = (org.telegram.ui.Components.lb) obj2;
                 ch.o0 o0Var = (ch.o0) obj;
                 org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
                 long j3 = o0Var.g;
@@ -76,10 +76,10 @@ public final /* synthetic */ class rw implements Runnable {
                         e10 = tL_availableReaction.activate_animation;
                     }
                 } else {
-                    e10 = org.telegram.ui.Components.i5.e(p10.s0, j3);
+                    e10 = org.telegram.ui.Components.h5.e(p10.s0, j3);
                 }
                 if (e10 != null && Q != null) {
-                    org.telegram.ui.Components.hc.a0(Q).y(mbVar.a.h, e10, z9 ? new jg.r(i12, i11, Q, 10) : null).k(true);
+                    org.telegram.ui.Components.gc.a0(Q).y(lbVar.a.h, e10, z9 ? new jg.r(i12, i11, Q, 10) : null).k(true);
                     break;
                 }
                 break;
@@ -116,16 +116,16 @@ public final /* synthetic */ class rw implements Runnable {
         }
     }
 
-    public /* synthetic */ rw(org.telegram.ui.cn cnVar, int i7, int i10, boolean z9, ji0 ji0Var) {
+    public /* synthetic */ rw(org.telegram.ui.cn cnVar, int i7, int i10, boolean z9, ii0 ii0Var) {
         this.e = cnVar;
         this.b = i7;
         this.c = i10;
         this.d = z9;
-        this.f = ji0Var;
+        this.f = ii0Var;
     }
 
-    public /* synthetic */ rw(org.telegram.ui.Components.mb mbVar, ch.o0 o0Var, boolean z9, int i7, int i10) {
-        this.e = mbVar;
+    public /* synthetic */ rw(org.telegram.ui.Components.lb lbVar, ch.o0 o0Var, boolean z9, int i7, int i10) {
+        this.e = lbVar;
         this.f = o0Var;
         this.d = z9;
         this.b = i7;

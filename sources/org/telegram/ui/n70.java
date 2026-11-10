@@ -1,34 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class n70 implements org.telegram.messenger.c20 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+import android.content.DialogInterface;
 
-    public /* synthetic */ n70(zh.r3 r3Var, int i7) {
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class n70 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+
+    public /* synthetic */ n70(LaunchActivity launchActivity, int i7) {
         this.a = i7;
-        this.b = r3Var;
+        this.b = launchActivity;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         int i7 = this.a;
-        Runnable runnable = this.b;
-        String str = (String) obj;
+        LaunchActivity launchActivity = this.b;
         switch (i7) {
             case 0:
-                String str2 = LaunchActivity.B1;
-                if (runnable != null && "paid".equals(str)) {
-                    runnable.run();
-                    break;
-                }
+                launchActivity.v1 = false;
+                break;
+            case 1:
+                String str = LaunchActivity.B1;
+                org.telegram.messenger.g0.i3(new v60(launchActivity, 7), 30000L);
                 break;
             default:
-                if (runnable != null && "paid".equals(str)) {
-                    runnable.run();
-                    break;
-                }
+                String str2 = LaunchActivity.B1;
+                org.telegram.messenger.g0.i3(new v60(launchActivity, 10), 30000L);
                 break;
         }
     }

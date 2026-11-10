@@ -1,49 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
+import android.util.Property;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class k6 extends l6 {
-    public final /* synthetic */ int b;
+public abstract class k6 extends Property {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k6(String str, int i7) {
-        super(str, 1);
-        this.b = i7;
-    }
-
-    @Override // org.telegram.ui.Components.l6
-    public final void b(int i7, Object obj) {
-        switch (this.b) {
-            case 0:
-                ((Paint) obj).setAlpha(i7);
-                break;
+    public k6(String str, int i7) {
+        super(Float.class, str);
+        this.a = i7;
+        switch (i7) {
             case 1:
-                ((Paint) obj).setColor(i7);
-                break;
-            case 2:
-                ((Drawable) obj).setAlpha(i7);
+                super(Integer.class, str);
                 break;
             default:
-                ((ShapeDrawable) obj).getPaint().setAlpha(i7);
                 break;
         }
     }
 
+    public void a(Object obj, Float f10) {
+        c(obj, f10.floatValue());
+    }
+
+    public abstract void b(int i7, Object obj);
+
+    public abstract void c(Object obj, float f10);
+
     @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                return Integer.valueOf(((Paint) obj).getAlpha());
-            case 1:
-                return Integer.valueOf(((Paint) obj).getColor());
-            case 2:
-                return Integer.valueOf(((Drawable) obj).getAlpha());
+                c(obj, ((Float) obj2).floatValue());
+                break;
             default:
-                return Integer.valueOf(((ShapeDrawable) obj).getPaint().getAlpha());
+                b(((Integer) obj2).intValue(), obj);
+                break;
         }
     }
 }

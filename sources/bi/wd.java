@@ -6,9 +6,9 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.ui.Components.h10;
+import org.telegram.ui.Components.g10;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -46,14 +46,14 @@ public final /* synthetic */ class wd implements ValueAnimator.AnimatorUpdateLis
                 zdVar.invalidate();
                 break;
             case 1:
-                h10 h10Var = (h10) view;
-                h10Var.L = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i13, i12);
-                h10Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
-                h10Var.F.setColorFilter(new PorterDuffColorFilter(h10Var.L, PorterDuff.Mode.MULTIPLY));
-                h10Var.E.setColor(h10Var.L);
-                h10Var.r.setColor(h10Var.M);
-                h10Var.J.d(i0.a.o(h10Var.M, 38));
-                h10Var.invalidate();
+                g10 g10Var = (g10) view;
+                g10Var.L = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i13, i12);
+                g10Var.M = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                g10Var.F.setColorFilter(new PorterDuffColorFilter(g10Var.L, PorterDuff.Mode.MULTIPLY));
+                g10Var.E.setColor(g10Var.L);
+                g10Var.r.setColor(g10Var.M);
+                g10Var.J.d(i0.a.o(g10Var.M, 38));
+                g10Var.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.y yVar = (org.telegram.ui.Components.voip.y) view;

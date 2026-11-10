@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final RectF a;
@@ -25,11 +25,11 @@ public final class v extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         b0 b0Var = this.c;
-        w wVar = b0Var.S1;
+        w wVar = b0Var.V1;
         FrameLayout frameLayout = wVar.b;
         RectF rectF = this.a;
         if (jh.k.c(frameLayout, this, rectF)) {
-            TextView textView = b0Var.T1;
+            TextView textView = b0Var.W1;
             RectF rectF2 = this.b;
             if (jh.k.c(textView, this, rectF2)) {
                 float L = rectF2.right - org.telegram.messenger.g0.L(32.0f);

@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class rc implements Runnable {
                     return;
                 }
             case 6:
-                org.telegram.ui.ActionBar.l6.F(false);
+                org.telegram.ui.ActionBar.m6.F(false);
                 break;
             case 7:
                 qs.e().k(qs.d4, new Object[0]);
@@ -113,7 +113,7 @@ public final /* synthetic */ class rc implements Runnable {
                 rz.y = null;
                 break;
             case 13:
-                org.telegram.ui.ActionBar.l6.F(false);
+                org.telegram.ui.ActionBar.m6.F(false);
                 break;
             case 14:
                 int i13 = org.telegram.ui.cn.kd;
@@ -136,17 +136,17 @@ public final /* synthetic */ class rc implements Runnable {
                 }
                 break;
             case 18:
-                Pattern pattern = org.telegram.ui.Components.v4.a;
+                Pattern pattern = org.telegram.ui.Components.u4.a;
                 break;
             case 19:
-                g0.r(org.telegram.ui.Components.i5.w);
+                g0.r(org.telegram.ui.Components.h5.w);
                 try {
-                    if (org.telegram.ui.Components.i5.r != null) {
-                        for (int i14 = 0; i14 < org.telegram.ui.Components.i5.r.size(); i14++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.i5.r.valueAt(i14);
+                    if (org.telegram.ui.Components.h5.r != null) {
+                        for (int i14 = 0; i14 < org.telegram.ui.Components.h5.r.size(); i14++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.h5.r.valueAt(i14);
                             int i15 = 0;
                             while (i15 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.i5) longSparseArray.valueAt(i15)).a) {
+                                if (!((org.telegram.ui.Components.h5) longSparseArray.valueAt(i15)).a) {
                                     longSparseArray.removeAt(i15);
                                     i15--;
                                 }
@@ -161,7 +161,7 @@ public final /* synthetic */ class rc implements Runnable {
                 }
                 break;
             case 20:
-                org.telegram.ui.Components.b8 b8Var = org.telegram.ui.Components.b8.P2;
+                org.telegram.ui.Components.a8 a8Var = org.telegram.ui.Components.a8.S2;
                 break;
             case 21:
                 vv.h();
@@ -194,7 +194,7 @@ public final /* synthetic */ class rc implements Runnable {
             case 26:
                 break;
             case 27:
-                int i16 = org.telegram.ui.Components.bn.r1;
+                int i16 = org.telegram.ui.Components.an.r1;
                 break;
             case 28:
                 PhotoViewer.p1().z0(false, false);

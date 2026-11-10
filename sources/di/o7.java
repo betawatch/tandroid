@@ -11,19 +11,19 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class o7 {
     public int A;
     public boolean D;
     public final boolean E;
     public float G;
-    public ic H;
-    public org.telegram.ui.ActionBar.g6 J;
+    public hc H;
+    public org.telegram.ui.ActionBar.h6 J;
     public float K;
     public boolean L;
     public float M;
@@ -63,9 +63,9 @@ public class o7 {
     public final RectF F = new RectF();
     public boolean I = false;
 
-    public o7(org.telegram.ui.ActionBar.g6 g6Var, boolean z9) {
+    public o7(org.telegram.ui.ActionBar.h6 h6Var, boolean z9) {
         this.E = z9;
-        this.J = g6Var;
+        this.J = h6Var;
     }
 
     public final boolean a(View view, MotionEvent motionEvent) {
@@ -98,11 +98,11 @@ public class o7 {
                     z9 = z10;
                 }
                 if (this.x != p10.i(p10.s0).n && z9) {
-                    ic icVar = this.H;
-                    if (icVar == null) {
-                        this.H = new ic(view, 1.5f, 5.0f);
+                    hc hcVar = this.H;
+                    if (hcVar == null) {
+                        this.H = new hc(view, 1.5f, 5.0f);
                     } else {
-                        icVar.a = view;
+                        hcVar.a = view;
                     }
                     view.getParent().requestDisallowInterceptTouchEvent(true);
                     this.H.c(true);
@@ -124,10 +124,10 @@ public class o7 {
         }
         if (motionEvent.getAction() == 2 && this.N) {
             if (Math.abs(this.O - motionEvent.getX()) > org.telegram.messenger.g0.e || Math.abs(this.P - motionEvent.getY()) > org.telegram.messenger.g0.e) {
-                ic icVar2 = this.H;
-                if (icVar2 != null) {
-                    icVar2.a = view;
-                    icVar2.c(false);
+                hc hcVar2 = this.H;
+                if (hcVar2 != null) {
+                    hcVar2.a = view;
+                    hcVar2.c(false);
                 }
                 z0 z0Var3 = this.Q;
                 if (z0Var3 != null) {
@@ -137,10 +137,10 @@ public class o7 {
                 this.N = false;
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            ic icVar3 = this.H;
-            if (icVar3 != null) {
-                icVar3.a = view;
-                icVar3.c(false);
+            hc hcVar3 = this.H;
+            if (hcVar3 != null) {
+                hcVar3.a = view;
+                hcVar3.c(false);
             }
             if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
                 qp s12 = qp.s1(p10.s0);
@@ -180,11 +180,11 @@ public class o7 {
     }
 
     public final float b() {
-        ic icVar = this.H;
-        if (icVar == null) {
+        hc hcVar = this.H;
+        if (hcVar == null) {
             return 1.0f;
         }
-        return icVar.a(0.08f);
+        return hcVar.a(0.08f);
     }
 
     public boolean c(TLRPC.Chat chat, TLRPC.User user) {
@@ -202,7 +202,7 @@ public class o7 {
         }
         Q.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        Q.getOrCreateStoryViewer().J(Q.getContext(), j3, parent instanceof RecyclerView ? i7.a((qj0) parent) : null);
+        Q.getOrCreateStoryViewer().J(Q.getContext(), j3, parent instanceof RecyclerView ? i7.a((pj0) parent) : null);
     }
 
     public final void g() {

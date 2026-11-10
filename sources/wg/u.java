@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.messenger.c20;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements c20 {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final /* synthetic */ class u implements c20 {
                 break;
             case 1:
                 z zVar2 = this.b;
-                zVar2.i2.b(false);
+                zVar2.l2.b(false);
                 h.j(zVar2.getContext(), (TLRPC.TL_error) obj);
                 break;
             case 2:
                 z zVar3 = this.b;
-                zVar3.f2 = zVar3.Q1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
+                zVar3.i2 = zVar3.T1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
                 zVar3.k1(true, true);
                 zVar3.j1(true);
                 break;
@@ -42,19 +42,19 @@ public final /* synthetic */ class u implements c20 {
                 break;
             case 4:
                 z zVar5 = this.b;
-                zVar5.i2.b(false);
+                zVar5.l2.b(false);
                 h.j(zVar5.getContext(), (TLRPC.TL_error) obj);
                 break;
             case 5:
                 z zVar6 = this.b;
-                ArrayList arrayList = zVar6.X1;
+                ArrayList arrayList = zVar6.a2;
                 arrayList.clear();
                 arrayList.addAll((List) obj);
                 zVar6.k1(true, true);
                 break;
             default:
                 z zVar7 = this.b;
-                zVar7.i2.b(false);
+                zVar7.l2.b(false);
                 h.j(zVar7.getContext(), (TLRPC.TL_error) obj);
                 break;
         }

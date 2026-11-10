@@ -8,25 +8,25 @@ import android.view.ActionMode;
 import android.view.Menu;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.wy0;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i3 extends zs {
+public final class i3 extends ys {
     public final /* synthetic */ int Y1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 Z1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 Z1;
     public final /* synthetic */ boolean a2;
     public final /* synthetic */ k3 b2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i3(k3 k3Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i7, org.telegram.ui.ActionBar.g6 g6Var2, boolean z9) {
-        super(context, g6Var);
+    public i3(k3 k3Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7, org.telegram.ui.ActionBar.h6 h6Var2, boolean z9) {
+        super(context, h6Var);
         this.b2 = k3Var;
         this.Y1 = i7;
-        this.Z1 = g6Var2;
+        this.Z1 = h6Var2;
         this.a2 = z9;
     }
 
@@ -34,7 +34,7 @@ public final class i3 extends zs {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         k3 k3Var = this.b2;
-        k3Var.y.u(k3Var.w.a(org.telegram.ui.ActionBar.l6.w0(k3Var.x <= 0 ? org.telegram.ui.ActionBar.l6.p7 : org.telegram.ui.ActionBar.l6.P5, this.Z1), false));
+        k3Var.y.u(k3Var.w.a(org.telegram.ui.ActionBar.m6.w0(k3Var.x <= 0 ? org.telegram.ui.ActionBar.m6.p7 : org.telegram.ui.ActionBar.m6.P5, this.Z1), false));
         k3Var.y.setBounds(getScrollX(), getHeight() - Math.min(org.telegram.messenger.g0.L(52.0f), getHeight()), org.telegram.messenger.g0.L(42.0f) + ((getWidth() + getScrollX()) - getPaddingRight()), getHeight());
         k3Var.y.draw(canvas);
     }
@@ -44,21 +44,21 @@ public final class i3 extends zs {
         if (this.a2 && menu.findItem(R.id.menu_bold) == null) {
             menu.removeItem(android.R.id.shareText);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(id.M0(2131753671, null));
-            spannableStringBuilder.setSpan(new v31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(id.M0(2131749087, null));
-            spannableStringBuilder2.setSpan(new v31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
+            spannableStringBuilder2.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf")), 0, spannableStringBuilder2.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(id.M0(2131744437, null));
-            vy0 vy0Var = new vy0();
-            vy0Var.a |= 8;
-            spannableStringBuilder3.setSpan(new wy0(vy0Var, 0), 0, spannableStringBuilder3.length(), 33);
+            uy0 uy0Var = new uy0();
+            uy0Var.a |= 8;
+            spannableStringBuilder3.setSpan(new vy0(uy0Var, 0), 0, spannableStringBuilder3.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, id.M0(2131746337, null));
         }
     }
 
-    @Override // org.telegram.ui.Components.zs, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.ys, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
@@ -66,15 +66,15 @@ public final class i3 extends zs {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.dt, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
         super.onTextChanged(charSequence, i7, i10, i11);
         k3 k3Var = this.b2;
-        org.telegram.ui.Components.i6 i6Var = k3Var.y;
-        if (i6Var == null || this.Y1 <= 0) {
+        org.telegram.ui.Components.h6 h6Var = k3Var.y;
+        if (h6Var == null || this.Y1 <= 0) {
             return;
         }
-        i6Var.a();
+        h6Var.a();
         k3Var.c();
     }
 

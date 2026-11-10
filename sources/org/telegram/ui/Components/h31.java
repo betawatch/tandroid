@@ -1,50 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class h31 {
-    public final /* synthetic */ q31 a;
-    public final /* synthetic */ u31 b;
+public final class h31 extends el0 {
+    public final /* synthetic */ t31 f;
 
-    public h31(u31 u31Var, q31 q31Var) {
-        this.b = u31Var;
-        this.a = q31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h31(t31 t31Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, 14.0f, h6Var);
+        this.f = t31Var;
     }
 
-    public final int a() {
-        return this.b.s.w;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z9) {
-        u31 u31Var = this.b;
-        j31 j31Var = u31Var.n;
-        if (z9) {
-            v4.g0 adapter = j31Var.getAdapter();
-            jg.d2 d2Var = u31Var.w;
-            if (adapter != d2Var) {
-                j31Var.setAdapter(d2Var);
-                if (j31Var.getAdapter().b() <= 0) {
-                    u31Var.r.i1(0, org.telegram.messenger.g0.L(58.0f) + (-j31Var.getPaddingTop()) + u31Var.E, false);
-                    return;
-                }
-                return;
-            }
+    @Override // org.telegram.ui.Components.el0
+    public final void a(String str) {
+        jg.d2 d2Var = this.f.w;
+        jg.b2 b2Var = d2Var.S;
+        int i7 = d2Var.c;
+        if (d2Var.N != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.N, true);
+            d2Var.N = 0;
         }
-        if (z9) {
-            return;
+        if (d2Var.O != 0) {
+            ConnectionsManager.getInstance(i7).cancelRequest(d2Var.O, true);
+            d2Var.O = 0;
         }
-        v4.g0 adapter2 = j31Var.getAdapter();
-        t31 t31Var = u31Var.s;
-        if (adapter2 == t31Var) {
-            return;
+        if (TextUtils.isEmpty(str)) {
+            d2Var.R = null;
+            d2Var.F.clear();
+            d2Var.I.clear();
+            d2Var.E.clear();
+            d2Var.e.b(false);
+            d2Var.f();
+        } else {
+            d2Var.R = str.toLowerCase();
         }
-        j31Var.setAdapter(t31Var);
-        if (j31Var.getAdapter().b() <= 0) {
-        }
+        org.telegram.messenger.g0.r(b2Var);
+        org.telegram.messenger.g0.i3(b2Var, 300L);
     }
 }

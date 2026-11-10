@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, sw {
+public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, tw {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
     public final /* synthetic */ Object c;
@@ -38,13 +38,13 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, s
         this.f = c20Var;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         return false;
     }
 
@@ -74,14 +74,14 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, s
         }
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final LaunchActivity launchActivity = (LaunchActivity) this.b;
         final TLRPC.User user = (TLRPC.User) this.c;
         final String str = (String) this.d;
         final String str2 = (String) this.e;
-        final yw ywVar2 = (yw) this.f;
+        final zw zwVar2 = (zw) this.f;
         String str3 = LaunchActivity.B1;
         final long j3 = ((xr) arrayList.get(0)).a;
         final TLRPC.Chat M0 = qp.s1(launchActivity.O).M0(Long.valueOf(-j3));
@@ -93,7 +93,7 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, s
             u1Var.R = M02;
             u1Var.T = org.telegram.messenger.g0.X2(id.a0("AddMembersAlertNamesText", null, 2131754399, t10.p(user), M0 == null ? "" : M0.title));
             alertDialog$Builder.h(id.M0(2131752589, null), null);
-            alertDialog$Builder.k(id.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.h70
+            alertDialog$Builder.k(id.M0(2131754463, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.i70
                 @Override // org.telegram.ui.ActionBar.r1
                 public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i12) {
                     String str4 = LaunchActivity.B1;
@@ -109,23 +109,23 @@ public final /* synthetic */ class j1 implements org.telegram.ui.ActionBar.r1, s
             });
             alertDialog$Builder.p();
         } else {
-            qp.s1(i11).K(M0, user, new dp() { // from class: org.telegram.ui.g70
+            qp.s1(i11).K(M0, user, new dp() { // from class: org.telegram.ui.h70
                 @Override // org.telegram.messenger.dp
                 public final void a(boolean z11, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str4) {
                     String str5 = LaunchActivity.B1;
-                    org.telegram.messenger.g0.h3(new org.telegram.messenger.gi(LaunchActivity.this, str, tL_chatAdminRights2, z11, str2, i11, M0, ywVar2, user, j3, str4));
+                    org.telegram.messenger.g0.h3(new org.telegram.messenger.gi(LaunchActivity.this, str, tL_chatAdminRights2, z11, str2, i11, M0, zwVar2, user, j3, str4));
                 }
             });
         }
         return true;
     }
 
-    public /* synthetic */ j1(LaunchActivity launchActivity, int i7, TLRPC.User user, String str, String str2, yw ywVar) {
+    public /* synthetic */ j1(LaunchActivity launchActivity, int i7, TLRPC.User user, String str, String str2, zw zwVar) {
         this.b = launchActivity;
         this.a = i7;
         this.c = user;
         this.d = str;
         this.e = str2;
-        this.f = ywVar;
+        this.f = zwVar;
     }
 }

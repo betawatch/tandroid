@@ -1,66 +1,119 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uz0 b;
+public final class pz0 extends FrameLayout {
+    public float a;
+    public final boolean b;
+    public final boolean c;
+    public boolean d;
+    public int e;
+    public final r1.f f;
+    public final r1.g h;
+    public final q0 n;
+    public final /* synthetic */ SecretMediaViewer r;
 
-    public /* synthetic */ pz0(uz0 uz0Var, int i7) {
-        this.a = i7;
-        this.b = uz0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pz0(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.r = secretMediaViewer;
+        this.a = 1.0f;
+        this.b = true;
+        this.c = true;
+        r1.f fVar = new r1.f(0.0f);
+        this.f = fVar;
+        r1.g gVar = new r1.g(fVar);
+        gVar.m = org.telegram.ui.Cells.f1.o(0.0f, 750.0f, 1.0f);
+        gVar.b(new db0(this, 5));
+        this.h = gVar;
+        this.n = new q0("progress", 7);
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                uz0 uz0Var = this.b;
-                pz0 pz0Var = uz0Var.Z;
-                if (uz0Var.x != null) {
-                    uz0Var.a0 = r2.S() / uz0Var.x.U();
-                    sz0 sz0Var = uz0Var.N;
-                    if (sz0Var != null) {
-                        sz0Var.oc = (uz0Var.x.U() - uz0Var.x.S()) / 1000;
-                        uz0Var.N.S3();
-                        org.telegram.ui.Components.qm0 seekBarWaveform = uz0Var.N.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f10 = uz0Var.a0;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.q1 q1Var = seekBarWaveform.n;
-                            if (q1Var != null) {
-                                q1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (uz0Var.x.d0()) {
-                        org.telegram.messenger.g0.r(pz0Var);
-                        org.telegram.messenger.g0.i3(pz0Var, 16L);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 2:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            default:
-                uz0 uz0Var2 = this.b;
-                if (uz0Var2.d == null) {
-                    org.telegram.messenger.g0.h3(new pz0(uz0Var2, 2));
-                    org.telegram.ui.Cells.q1 q1Var2 = uz0Var2.O;
-                    if (q1Var2 != null) {
-                        q1Var2.setVisibility(0);
-                        uz0Var2.O.invalidate();
-                    }
-                }
-                MediaController.B().F0();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.a = 0.0f;
+        this.e = 0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        SecretMediaViewer secretMediaViewer = this.r;
+        secretMediaViewer.O.h(false, secretMediaViewer.D != null ? r3.S() / secretMediaViewer.D.U() : 0.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002a, code lost:
+    
+        if (r12 == (-9223372036854775807L)) goto L6;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i7, int i10) {
+        long j3;
+        this.d = true;
+        SecretMediaViewer secretMediaViewer = this.r;
+        ((FrameLayout.LayoutParams) secretMediaViewer.Q.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(12.0f);
+        this.d = false;
+        super.onMeasure(i7, i10);
+        np0 np0Var = secretMediaViewer.D;
+        if (np0Var != null) {
+            j3 = np0Var.U();
         }
+        j3 = 0;
+        int ceil = (int) Math.ceil(secretMediaViewer.Q.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j3 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
+        r1.g gVar = this.h;
+        gVar.d();
+        int i11 = this.e;
+        r1.f fVar = this.f;
+        if (i11 != 0) {
+            float f10 = ceil;
+            if (fVar.a != f10) {
+                gVar.m.i = f10;
+                gVar.h();
+                this.e = ceil;
+            }
+        }
+        org.telegram.ui.Components.v51 v51Var = secretMediaViewer.O;
+        int z9 = org.telegram.messenger.k5.z(16.0f, getMeasuredWidth(), ceil);
+        int measuredHeight = getMeasuredHeight();
+        v51Var.h = z9;
+        v51Var.i = measuredHeight;
+        View view = v51Var.v;
+        if (view != null) {
+            view.invalidate();
+        }
+        fVar.a = ceil;
+        this.e = ceil;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.a < 1.0f) {
+            return false;
+        }
+        SecretMediaViewer secretMediaViewer = this.r;
+        if (secretMediaViewer.O.e(motionEvent.getX() - org.telegram.messenger.g0.L(2.0f), motionEvent.getY(), motionEvent.getAction())) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+            secretMediaViewer.P.invalidate();
+        }
+        return true;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.d) {
+            return;
+        }
+        super.requestLayout();
     }
 }

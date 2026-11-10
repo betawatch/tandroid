@@ -1,15 +1,15 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.ui.tr;
+import org.telegram.ui.ur;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p1 implements y1 {
-    public final /* synthetic */ tr a;
+    public final /* synthetic */ ur a;
 
-    public p1(tr trVar) {
-        this.a = trVar;
+    public p1(ur urVar) {
+        this.a = urVar;
     }
 
     @Override // jg.y1
@@ -24,10 +24,10 @@ public final class p1 implements y1 {
 
     @Override // jg.y1
     public final void q(int i7) {
-        tr trVar = this.a;
-        trVar.f();
+        ur urVar = this.a;
+        urVar.f();
         if (i7 != 0) {
-            trVar.F();
+            urVar.F();
         }
     }
 

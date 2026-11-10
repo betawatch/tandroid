@@ -18,17 +18,17 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class o5 extends ViewGroup {
     public final RectF D;
     public final RectF E;
     public final Path F;
-    public final org.telegram.ui.Components.w5 G;
+    public final org.telegram.ui.Components.v5 G;
     public int H;
     public boolean I;
     public boolean J;
@@ -39,7 +39,7 @@ public final class o5 extends ViewGroup {
     public int O;
     public int P;
     public e6 a;
-    public final g6 b;
+    public final h6 b;
     public int[] c;
     public int[] d;
     public int[] e;
@@ -52,7 +52,7 @@ public final class o5 extends ViewGroup {
     public final Paint x;
     public final Paint y;
 
-    public o5(Context context, g6 g6Var) {
+    public o5(Context context, h6 h6Var) {
         super(context);
         this.c = new int[0];
         this.d = new int[0];
@@ -69,7 +69,7 @@ public final class o5 extends ViewGroup {
         this.D = new RectF();
         this.E = new RectF();
         this.F = new Path();
-        this.b = g6Var;
+        this.b = h6Var;
         setClipChildren(false);
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -80,7 +80,7 @@ public final class o5 extends ViewGroup {
         paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint2.setStrokeJoin(Paint.Join.ROUND);
         paint2.setStrokeCap(Paint.Cap.ROUND);
-        this.G = new org.telegram.ui.Components.w5(this, 0L, 220L, xq.h);
+        this.G = new org.telegram.ui.Components.v5(this, 0L, 220L, wq.h);
         b();
     }
 
@@ -127,27 +127,27 @@ public final class o5 extends ViewGroup {
     }
 
     public final void b() {
-        int i7 = l6.ei;
-        g6 g6Var = this.b;
-        this.n.setColor(l6.w0(i7, g6Var));
-        int w02 = l6.w0(l6.M6, g6Var);
+        int i7 = m6.ei;
+        h6 h6Var = this.b;
+        this.n.setColor(m6.w0(i7, h6Var));
+        int w02 = m6.w0(m6.M6, h6Var);
         int red = Color.red(w02);
         int green = Color.green(w02);
         int blue = Color.blue(w02);
-        this.r.setColor(l6.w0(l6.di, g6Var));
+        this.r.setColor(m6.w0(m6.di, h6Var));
         this.s.setColor(Color.argb(20, red, green, blue));
         this.H = qs.e4;
-        int i10 = l6.Ci;
-        this.w.setColor(l6.w0(i10, g6Var));
+        int i10 = m6.Ci;
+        this.w.setColor(m6.w0(i10, h6Var));
         Paint.Style style = Paint.Style.FILL;
         Paint paint = this.x;
         paint.setStyle(style);
-        this.O = l6.w0(l6.E6, g6Var);
-        this.P = l6.w0(l6.Gi, g6Var);
+        this.O = m6.w0(m6.E6, h6Var);
+        this.P = m6.w0(m6.Gi, h6Var);
         paint.setColor(this.O);
         Paint paint2 = this.y;
         paint2.setStyle(style);
-        paint2.setColor(l6.w0(i10, g6Var));
+        paint2.setColor(m6.w0(i10, h6Var));
         invalidate();
     }
 

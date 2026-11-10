@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k2 implements c5.g {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final class k2 implements c5.g {
                 o2Var.d.invalidate();
                 break;
             case 1:
-                ((w50) this.b).H = i7;
+                ((x50) this.b).H = i7;
                 break;
             default:
-                ((w71) this.b).b0.invalidate();
+                ((x71) this.b).b0.invalidate();
                 break;
         }
     }
@@ -43,14 +43,14 @@ public final class k2 implements c5.g {
                 }
                 break;
             case 1:
-                w50 w50Var = (w50) this.b;
-                org.telegram.ui.Components.ea eaVar = w50Var.e;
-                eaVar.b = f10;
-                eaVar.c = i7;
-                eaVar.invalidate();
-                float measuredWidth2 = w50Var.d.getMeasuredWidth();
+                x50 x50Var = (x50) this.b;
+                org.telegram.ui.Components.da daVar = x50Var.e;
+                daVar.b = f10;
+                daVar.c = i7;
+                daVar.invalidate();
+                float measuredWidth2 = x50Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i7 * measuredWidth2) + i10) - (w50Var.H * measuredWidth2)) / measuredWidth2);
+                    Intro.setScrollOffset((((i7 * measuredWidth2) + i10) - (x50Var.H * measuredWidth2)) / measuredWidth2);
                     break;
                 }
                 break;
@@ -61,21 +61,21 @@ public final class k2 implements c5.g {
     public final void c(int i7) {
         switch (this.a) {
             case 1:
-                w50 w50Var = (w50) this.b;
+                x50 x50Var = (x50) this.b;
                 if (i7 != 1) {
                     if (i7 == 0 || i7 == 2) {
-                        if (w50Var.K) {
-                            w50Var.K = false;
+                        if (x50Var.K) {
+                            x50Var.K = false;
                         }
-                        if (w50Var.x != w50Var.d.getCurrentItem()) {
-                            w50Var.x = w50Var.d.getCurrentItem();
+                        if (x50Var.x != x50Var.d.getCurrentItem()) {
+                            x50Var.x = x50Var.d.getCurrentItem();
                             break;
                         }
                     }
                 } else {
-                    w50Var.K = true;
-                    w50Var.d.getCurrentItem();
-                    w50Var.d.getMeasuredWidth();
+                    x50Var.K = true;
+                    x50Var.d.getCurrentItem();
+                    x50Var.d.getMeasuredWidth();
                     break;
                 }
                 break;

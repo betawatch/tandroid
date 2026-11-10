@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class yh implements org.telegram.ui.Components.fj0 {
+public final class yh implements org.telegram.ui.Components.ej0 {
     public final /* synthetic */ cn a;
 
     public yh(cn cnVar) {
@@ -14,14 +14,14 @@ public final class yh implements org.telegram.ui.Components.fj0 {
 
     /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.fj0
+    @Override // org.telegram.ui.Components.ej0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean f(float f10, float f11, int i7, View view) {
         boolean z9;
         boolean z10;
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         View view2;
         boolean z11;
         cn cnVar = this.a;
@@ -36,8 +36,8 @@ public final class yh implements org.telegram.ui.Components.fj0 {
                     if (messageObject != null) {
                         if (!(messageObject.k.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && t0Var.getMessageObject().D != 21 && !t0Var.getMessageObject().X4() && t0Var.getMessageObject().D != 30) {
                             z10 = false;
-                            kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                            if (!kVar.w() || (cnVar.X9() && !z10)) {
+                            lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                            if (!lVar.x() || (cnVar.X9() && !z10)) {
                                 view2 = view;
                                 cn.k2(cnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
                                 z11 = true;
@@ -57,8 +57,8 @@ public final class yh implements org.telegram.ui.Components.fj0 {
                     }
                 }
                 z10 = true;
-                kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                if (kVar.w()) {
+                lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                if (lVar.x()) {
                 }
                 view2 = view;
                 cn.k2(cnVar, view2, view2 instanceof org.telegram.ui.Cells.q1 ? !((org.telegram.ui.Cells.q1) view2).B2(f10) : false, f10, f11);
@@ -71,11 +71,11 @@ public final class yh implements org.telegram.ui.Components.fj0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fj0
+    @Override // org.telegram.ui.Components.ej0
     public final /* synthetic */ void q(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.fj0
+    @Override // org.telegram.ui.Components.ej0
     public final /* synthetic */ void i() {
     }
 }

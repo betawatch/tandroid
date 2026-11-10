@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qp;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.u4;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -48,23 +48,23 @@ public final /* synthetic */ class m implements Runnable {
                 } else if (z9) {
                     i10 = 2131751916;
                 }
-                v4.s0(pVar, M0, id.M0(i10, null), id.M0(2131746321, null), true, new h(pVar, j3, 0));
+                u4.s0(pVar, M0, id.M0(i10, null), id.M0(2131746321, null), true, new h(pVar, j3, 0));
                 break;
             case 1:
                 d0 d0Var = (d0) lsVar;
                 Context context = d0Var.getContext();
-                g6 g6Var = d0Var.I0;
+                h6 h6Var = d0Var.I0;
                 String M02 = id.M0(2131751915, null);
                 if (z10) {
                     i10 = 2131751917;
                 } else if (z9) {
                     i10 = 2131751916;
                 }
-                u1 M = v4.M(context, g6Var, M02, id.M0(i10, null), id.M0(2131746321, null), new r3(d0Var, j3, 10));
+                u1 M = u4.M(context, h6Var, M02, id.M0(i10, null), id.M0(2131746321, null), new r3(d0Var, j3, 10));
                 M.show();
                 TextView textView = (TextView) M.d(-1);
                 if (textView != null) {
-                    s6.U(textView, l6.q7, null);
+                    t6.U(textView, m6.q7, null);
                     break;
                 }
                 break;

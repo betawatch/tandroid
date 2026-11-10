@@ -14,15 +14,15 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.hy;
-import org.telegram.ui.Components.ji0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.gy;
+import org.telegram.ui.Components.ii0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ua extends tt0 {
-    public final rt f0;
+public final class ua extends st0 {
+    public final qt f0;
     public final ScaleGestureDetector g0;
     public boolean h0;
     public boolean i0;
@@ -37,7 +37,7 @@ public final class ua extends tt0 {
         super(activity, null);
         this.n0 = vaVar;
         this.j0 = false;
-        this.f0 = new rt(activity, new sa(this));
+        this.f0 = new qt(activity, new sa(this));
         this.g0 = new ScaleGestureDetector(activity, new ta(this));
     }
 
@@ -98,7 +98,7 @@ public final class ua extends tt0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -294,7 +294,7 @@ public final class ua extends tt0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tt0
+    @Override // org.telegram.ui.Components.st0
     public int getBottomPadding() {
         int height = getHeight();
         va vaVar = this.n0;
@@ -311,10 +311,10 @@ public final class ua extends tt0 {
         return (height - vaVar.b0) - vaVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.st0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         int i13;
-        hy emojiView;
+        gy emojiView;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
         va vaVar = this.n0;
@@ -360,14 +360,14 @@ public final class ua extends tt0 {
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
-            hy hyVar = x9Var.Y1;
-            if (hyVar != null) {
-                hyVar.layout(vaVar.Y, (measuredHeight - vaVar.b0) - hyVar.getMeasuredHeight(), measuredWidth - vaVar.a0, measuredHeight - vaVar.b0);
+            gy gyVar = x9Var.Y1;
+            if (gyVar != null) {
+                gyVar.layout(vaVar.Y, (measuredHeight - vaVar.b0) - gyVar.getMeasuredHeight(), measuredWidth - vaVar.a0, measuredHeight - vaVar.b0);
             }
-            ji0 ji0Var = vaVar.v1.I1;
-            if (ji0Var != null) {
+            ii0 ii0Var = vaVar.v1.I1;
+            if (ii0Var != null) {
                 int i20 = vaVar.Y;
-                ji0Var.layout(i20, vaVar.Z, ji0Var.getMeasuredWidth() + i20, vaVar.v1.I1.getMeasuredHeight() + vaVar.Z);
+                ii0Var.layout(i20, vaVar.Z, ii0Var.getMeasuredWidth() + i20, vaVar.v1.I1.getMeasuredHeight() + vaVar.Z);
                 bi.x5 x5Var = vaVar.v1.I1.getReactionsWindow() != null ? vaVar.v1.I1.getReactionsWindow().c : null;
                 if (x5Var != null) {
                     int i21 = vaVar.Y;
@@ -391,7 +391,7 @@ public final class ua extends tt0 {
             View childAt = getChildAt(i22);
             if (childAt instanceof s0) {
                 childAt.layout(0, 0, measuredWidth, measuredHeight);
-            } else if (childAt instanceof org.telegram.ui.Components.ua) {
+            } else if (childAt instanceof org.telegram.ui.Components.ta) {
                 childAt.layout(0, i14, childAt.getMeasuredWidth(), childAt.getMeasuredHeight() + i14);
             }
         }
@@ -434,7 +434,7 @@ public final class ua extends tt0 {
         }
         la laVar = vaVar.c1;
         if (laVar != null) {
-            hy emojiView = laVar.f.getEmojiView();
+            gy emojiView = laVar.f.getEmojiView();
             Q();
             org.telegram.messenger.g0.L(20.0f);
             if (emojiView != null) {
@@ -443,13 +443,13 @@ public final class ua extends tt0 {
         }
         x9 x9Var = vaVar.v1;
         if (x9Var != null) {
-            hy hyVar = x9Var.Y1;
-            if (hyVar != null) {
-                hyVar.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vaVar.v1.Y1.getLayoutParams().height, TLObject.FLAG_30));
+            gy gyVar = x9Var.Y1;
+            if (gyVar != null) {
+                gyVar.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vaVar.v1.Y1.getLayoutParams().height, TLObject.FLAG_30));
             }
-            ji0 ji0Var = vaVar.v1.I1;
-            if (ji0Var != null) {
-                measureChild(ji0Var, i7, i10);
+            ii0 ii0Var = vaVar.v1.I1;
+            if (ii0Var != null) {
+                measureChild(ii0Var, i7, i10);
                 if (vaVar.v1.I1.getReactionsWindow() != null) {
                     measureChild(vaVar.v1.I1.getReactionsWindow().c, i7, i10);
                 }
@@ -459,7 +459,7 @@ public final class ua extends tt0 {
             View childAt = getChildAt(i16);
             if (childAt instanceof s0) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-            } else if (childAt instanceof org.telegram.ui.Components.ua) {
+            } else if (childAt instanceof org.telegram.ui.Components.ta) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(340.0f), size2 - (vaVar.V ? 0 : i12)), TLObject.FLAG_30));
             }
         }

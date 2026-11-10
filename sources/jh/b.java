@@ -5,9 +5,9 @@ import java.util.HashSet;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements v10 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class b implements v10 {
                 int i10 = qp.C8;
                 break;
             case 4:
-                int i11 = lr.z2;
+                int i11 = kr.C2;
                 break;
             default:
                 Boolean bool = (Boolean) obj;

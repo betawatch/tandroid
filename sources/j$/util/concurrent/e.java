@@ -54,7 +54,7 @@ public final class e extends b implements Set, j$.util.Set {
         return this.a.f(entry.getKey(), entry.getValue(), false) == null;
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection
+    @Override // j$.util.concurrent.b, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
         Map.Entry entry;
         Object key;
@@ -66,7 +66,7 @@ public final class e extends b implements Set, j$.util.Set {
         return value == obj2 || value.equals(obj2);
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection
+    @Override // j$.util.concurrent.b, java.util.Collection, java.util.Set
     public final boolean remove(Object obj) {
         Map.Entry entry;
         Object key;
@@ -74,12 +74,12 @@ public final class e extends b implements Set, j$.util.Set {
         return (obj instanceof Map.Entry) && (key = (entry = (Map.Entry) obj).getKey()) != null && (value = entry.getValue()) != null && this.a.remove(key, value);
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
+    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new d(lVarArr, length, length, concurrentHashMap);
+        k[] kVarArr = concurrentHashMap.a;
+        int length = kVarArr == null ? 0 : kVarArr.length;
+        return new d(kVarArr, length, length, concurrentHashMap);
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -99,12 +99,12 @@ public final class e extends b implements Set, j$.util.Set {
     public final boolean removeIf(Predicate predicate) {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
-        l[] lVarArr = concurrentHashMap.a;
+        k[] kVarArr = concurrentHashMap.a;
         boolean z9 = false;
-        if (lVarArr != null) {
-            p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+        if (kVarArr != null) {
+            o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
             while (true) {
-                l a10 = pVar.a();
+                k a10 = oVar.a();
                 if (a10 == null) {
                     break;
                 }
@@ -120,12 +120,12 @@ public final class e extends b implements Set, j$.util.Set {
 
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
-        l[] lVarArr = this.a.a;
+        k[] kVarArr = this.a.a;
         int i7 = 0;
-        if (lVarArr != null) {
-            p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+        if (kVarArr != null) {
+            o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
             while (true) {
-                l a10 = pVar.a();
+                k a10 = oVar.a();
                 if (a10 == null) {
                     break;
                 }
@@ -151,25 +151,25 @@ public final class e extends b implements Set, j$.util.Set {
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
         long j3 = concurrentHashMap.j();
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new f(lVarArr, length, 0, length, j3 >= 0 ? j3 : 0L, concurrentHashMap);
+        k[] kVarArr = concurrentHashMap.a;
+        int length = kVarArr == null ? 0 : kVarArr.length;
+        return new f(kVarArr, length, 0, length, j3 >= 0 ? j3 : 0L, concurrentHashMap);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection
     public final void forEach(Consumer consumer) {
         consumer.getClass();
-        l[] lVarArr = this.a.a;
-        if (lVarArr == null) {
+        k[] kVarArr = this.a.a;
+        if (kVarArr == null) {
             return;
         }
-        p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
+        o oVar = new o(kVarArr, kVarArr.length, 0, kVarArr.length);
         while (true) {
-            l a10 = pVar.a();
+            k a10 = oVar.a();
             if (a10 == null) {
                 return;
             } else {
-                consumer.x(new k(a10.b, a10.c, this.a));
+                consumer.x(new j(a10.b, a10.c, this.a));
             }
         }
     }

@@ -6,11 +6,11 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.we;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.az0;
+import org.telegram.ui.bz0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class s extends org.telegram.ui.ActionBar.j {
+public final class s extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -19,13 +19,13 @@ public final class s extends org.telegram.ui.ActionBar.j {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
+    @Override // org.telegram.ui.ActionBar.k
     public final void b(int i7) {
         int i10;
         int i11;
-        org.telegram.ui.ActionBar.g6 g6Var;
-        org.telegram.ui.ActionBar.y4 y4Var;
-        org.telegram.ui.ActionBar.y4 y4Var2;
+        org.telegram.ui.ActionBar.h6 h6Var;
+        org.telegram.ui.ActionBar.z4 z4Var;
+        org.telegram.ui.ActionBar.z4 z4Var2;
         int i12 = this.a;
         int i13 = 2;
         Object obj = this.b;
@@ -92,18 +92,18 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 ii.d0 d0Var = ((ii.y) obj).n;
                 if (i7 != -1) {
                     if (i7 == 3) {
-                        d0Var.j1.a(true, true);
+                        d0Var.m1.a(true, true);
                         d0Var.u0(false);
-                        d0Var.J1 = null;
-                        d0Var.x1.f3.O(true);
-                        d0Var.v1.r.getText().clear();
-                        d0Var.v1.r.requestFocus();
-                        org.telegram.messenger.g0.K3(d0Var.v1.r);
+                        d0Var.M1 = null;
+                        d0Var.A1.f3.O(true);
+                        d0Var.y1.r.getText().clear();
+                        d0Var.y1.r.requestFocus();
+                        org.telegram.messenger.g0.K3(d0Var.y1.r);
                         break;
                     }
-                } else if (!d0Var.E1) {
-                    d0Var.r1.d.f3.O(false);
-                    d0Var.k1.E(0);
+                } else if (!d0Var.H1) {
+                    d0Var.u1.d.f3.O(false);
+                    d0Var.n1.E(0);
                     break;
                 } else {
                     d0Var.dismiss();
@@ -114,20 +114,20 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 ii.d0 d0Var2 = ((ii.z) obj).r;
                 if (i7 != 2) {
                     if (i7 == 3) {
-                        d0Var2.i1.a(true, true);
+                        d0Var2.l1.a(true, true);
                         d0Var2.u0(false);
-                        TextUtils.isEmpty(d0Var2.I1);
-                        d0Var2.I1 = null;
-                        d0Var2.w1.h(0L, d0Var2.l1, 0L, 0L, null, false, null, true);
-                        d0Var2.u1.r.getText().clear();
-                        d0Var2.u1.r.requestFocus();
-                        org.telegram.messenger.g0.K3(d0Var2.u1.r);
+                        TextUtils.isEmpty(d0Var2.L1);
+                        d0Var2.L1 = null;
+                        d0Var2.z1.h(0L, d0Var2.o1, 0L, 0L, null, false, null, true);
+                        d0Var2.x1.r.getText().clear();
+                        d0Var2.x1.r.requestFocus();
+                        org.telegram.messenger.g0.K3(d0Var2.x1.r);
                         break;
                     }
                 } else {
                     Bundle bundle = new Bundle();
-                    bundle.putLong("community_id", d0Var2.l1);
-                    d0Var2.q1.presentFragment(new ii.p(bundle));
+                    bundle.putLong("community_id", d0Var2.o1);
+                    d0Var2.t1.presentFragment(new ii.p(bundle));
                     d0Var2.dismiss();
                     break;
                 }
@@ -135,8 +135,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
             case 10:
                 ii.d0 d0Var3 = ((ii.y) obj).n;
                 if (i7 == -1) {
-                    d0Var3.r1.d.f3.O(false);
-                    d0Var3.k1.E(0);
+                    d0Var3.u1.d.f3.O(false);
+                    d0Var3.n1.E(0);
                     break;
                 }
                 break;
@@ -241,8 +241,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         if (c10 != null) {
                             Activity parentActivity = q1Var.getParentActivity();
                             i11 = ((org.telegram.ui.ActionBar.f2) q1Var).currentAccount;
-                            g6Var = ((org.telegram.ui.ActionBar.f2) q1Var).resourceProvider;
-                            kg.q1.i0(parentActivity, i11, null, c10, g6Var, new fi.t3(this, intValue, i13));
+                            h6Var = ((org.telegram.ui.ActionBar.f2) q1Var).resourceProvider;
+                            kg.q1.i0(parentActivity, i11, null, c10, h6Var, new fi.t3(this, intValue, i13));
                             break;
                         }
                     }
@@ -280,7 +280,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 break;
             case 23:
                 if (i7 == -1) {
-                    ((az0) obj).finishFragment();
+                    ((bz0) obj).finishFragment();
                     break;
                 }
                 break;
@@ -314,8 +314,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         break;
                     }
                 } else {
-                    y4Var = ((org.telegram.ui.ActionBar.f2) y6Var).simpleActionBar;
-                    if (!y4Var.t()) {
+                    z4Var = ((org.telegram.ui.ActionBar.f2) y6Var).simpleActionBar;
+                    if (!z4Var.u()) {
                         y6Var.finishFragment();
                         break;
                     } else {
@@ -361,8 +361,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
                         break;
                     }
                 } else {
-                    y4Var2 = ((org.telegram.ui.ActionBar.f2) i9Var).simpleActionBar;
-                    if (!y4Var2.t()) {
+                    z4Var2 = ((org.telegram.ui.ActionBar.f2) i9Var).simpleActionBar;
+                    if (!z4Var2.u()) {
                         i9Var.finishFragment();
                         break;
                     } else {

@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qt implements DialogInterface.OnClickListener {
+public final /* synthetic */ class qt implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ tt b;
 
-    public /* synthetic */ qt(int i7, int i10) {
-        this.a = i10;
-        this.b = i7;
+    public /* synthetic */ qt(tt ttVar, int i7) {
+        this.a = i7;
+        this.b = ttVar;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i7) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                int i10 = 2 - i7;
-                if (i10 != this.b) {
-                    org.telegram.messenger.iz.w(i10);
-                    break;
-                } else {
-                    org.telegram.messenger.iz.w(-1);
-                    break;
-                }
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                tt ttVar = this.b;
+                ttVar.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new qt(ttVar, 1));
+                break;
             default:
-                int i11 = 2 - i7;
-                if (i11 != this.b) {
-                    org.telegram.messenger.iz.w(i11);
-                    break;
-                } else {
-                    org.telegram.messenger.iz.w(-1);
-                    break;
-                }
+                this.b.getMessagesController().R2(true);
+                break;
         }
     }
 }

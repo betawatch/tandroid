@@ -1,46 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class av0 implements jp {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ mp b;
-    public final /* synthetic */ ProfileActivity c;
+public final class av0 extends v4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public av0(ProfileActivity profileActivity, TLRPC.Chat chat, mp mpVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = mpVar;
+    public /* synthetic */ av0(ProfileActivity profileActivity, int i7) {
+        this.a = i7;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.jp
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.L.m(-profileActivity.e1, user, profileActivity.D2.megagroup ? 10 : 9);
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        View m10;
+        switch (this.a) {
+            case 0:
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.F0 && i7 != 2) {
+                    profileActivity.F0 = false;
+                }
+                if (i7 == 0 && !profileActivity.F1 && (m10 = profileActivity.c.m(0)) != null) {
+                    ProfileActivity.R0(profileActivity, m10, 0.0f);
+                }
+                org.telegram.ui.ActionBar.g5 g5Var = profileActivity.T0;
+                if (g5Var != null) {
+                    boolean z9 = i7 != 0;
+                    profileActivity.y1 = z9;
+                    g5Var.setEnabled((z9 || profileActivity.o2) ? false : true);
+                }
+                yv0 yv0Var = profileActivity.N;
+                boolean z10 = profileActivity.a.I1;
+                yv0Var.getClass();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.jp
-    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User a22 = profileActivity.getMessagesController().a2(Long.valueOf(profileActivity.d1));
-        if (a22 == null || (chat = this.a) == null || profileActivity.d1 == 0) {
-            return;
-        }
-        mp mpVar = this.b;
-        if (!mpVar.Q || mpVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.f2 f2Var : mpVar.getParentLayout().getFragmentStack()) {
-            if (f2Var instanceof mb) {
-                mb mbVar = (mb) f2Var;
-                mbVar.a1();
-                org.telegram.messenger.g0.h3(new oc0(mbVar, a22, chat, 28));
-                return;
-            }
+    @Override // v4.s0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                fi.m3 m3Var = profileActivity.W;
+                if (m3Var != null) {
+                    m3Var.f(true);
+                }
+                profileActivity.O3();
+                if (profileActivity.B1 != null && !profileActivity.C1 && profileActivity.c.N0() > profileActivity.u4 - 8) {
+                    profileActivity.h4(false);
+                }
+                yv0 yv0Var = profileActivity.N;
+                yv0Var.setPinnedToTop(yv0Var.getY() <= 0.0f);
+                profileActivity.s5();
+                break;
         }
     }
 }

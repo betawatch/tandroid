@@ -12,11 +12,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.qp0;
+import org.telegram.ui.Components.pp0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.n80;
+import org.telegram.ui.o80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gi implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -546,7 +546,7 @@ public final /* synthetic */ class gi implements Runnable {
                 TLRPC.TL_chatAdminRights tL_chatAdminRights3 = (TLRPC.TL_chatAdminRights) obj6;
                 String str2 = (String) obj5;
                 TLRPC.Chat chat = (TLRPC.Chat) obj4;
-                org.telegram.ui.yw ywVar = (org.telegram.ui.yw) obj3;
+                org.telegram.ui.zw zwVar = (org.telegram.ui.zw) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 String str3 = (String) obj;
                 String str4 = LaunchActivity.B1;
@@ -628,17 +628,17 @@ public final /* synthetic */ class gi implements Runnable {
                 int i20 = giVar.c;
                 if (!z15 || tL_chatAdminRights != null || TextUtils.isEmpty(str2)) {
                     org.telegram.ui.mp mpVar = new org.telegram.ui.mp(user.id, -giVar.d, tL_chatAdminRights2, null, null, str3, 2, true, !z15, str2);
-                    mpVar.X0 = new n80(ywVar, i20);
+                    mpVar.X0 = new o80(zwVar, i20);
                     ((ActionBarLayout) launchActivity.M()).T(mpVar, false);
                     break;
                 } else {
-                    qp.s1(launchActivity.O).m(chat.id, user, 0, str2, ywVar, true, new qp0(launchActivity, i20, chat, ywVar, 8), null, null);
+                    qp.s1(launchActivity.O).m(chat.id, user, 0, str2, zwVar, true, new pp0(launchActivity, i20, chat, zwVar, 8), null, null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ gi(LaunchActivity launchActivity, String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z9, String str2, int i7, TLRPC.Chat chat, org.telegram.ui.yw ywVar, TLRPC.User user, long j3, String str3) {
+    public /* synthetic */ gi(LaunchActivity launchActivity, String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z9, String str2, int i7, TLRPC.Chat chat, org.telegram.ui.zw zwVar, TLRPC.User user, long j3, String str3) {
         this.e = launchActivity;
         this.f = str;
         this.h = tL_chatAdminRights;
@@ -646,7 +646,7 @@ public final /* synthetic */ class gi implements Runnable {
         this.n = str2;
         this.c = i7;
         this.r = chat;
-        this.s = ywVar;
+        this.s = zwVar;
         this.w = user;
         this.d = j3;
         this.x = str3;

@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.vd0;
+import org.telegram.ui.wd0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q9 implements v10 {
     public final /* synthetic */ int a;
@@ -46,16 +46,16 @@ public final /* synthetic */ class q9 implements v10 {
                 break;
             default:
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
-                vd0 vd0Var = (vd0) this.d;
+                wd0 wd0Var = (wd0) this.d;
                 TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 u1Var.dismiss();
                 long j3 = this.b;
                 if (tL_error3 == null) {
-                    vd0Var.a(Long.valueOf(j3), auth_authorization, null);
+                    wd0Var.a(Long.valueOf(j3), auth_authorization, null);
                     break;
                 } else {
-                    vd0Var.a(Long.valueOf(j3), null, tL_error3.text);
+                    wd0Var.a(Long.valueOf(j3), null, tL_error3.text);
                     break;
                 }
         }

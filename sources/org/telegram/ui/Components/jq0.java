@@ -1,62 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class jq0 extends org.telegram.ui.cn {
-    public boolean td;
-    public final /* synthetic */ int ud;
-    public final /* synthetic */ zs0 vd;
+public final class jq0 extends v4.s0 {
+    public final /* synthetic */ zp0 a;
+    public final /* synthetic */ aq0 b;
+    public final /* synthetic */ ys0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jq0(zs0 zs0Var, Bundle bundle, int i7) {
-        super(bundle);
-        this.vd = zs0Var;
-        this.ud = i7;
-        this.td = true;
+    public jq0(ys0 ys0Var, zp0 zp0Var, aq0 aq0Var) {
+        this.c = ys0Var;
+        this.a = zp0Var;
+        this.b = aq0Var;
     }
 
-    @Override // org.telegram.ui.cn, org.telegram.ui.ActionBar.f2
-    public final void onTransitionAnimationStart(boolean z9, boolean z10) {
-        zs0 zs0Var = this.vd;
-        ls0 ls0Var = zs0Var.U;
-        if (this.td) {
-            if (this.j0 != null) {
-                Na("");
-                this.j0.P(ls0Var.x, false);
-            }
-            org.telegram.ui.ck ckVar = this.C1;
-            if (ckVar != null) {
-                ckVar.e(ls0Var.y, false);
-            }
-            org.telegram.messenger.ui mediaDataController = zs0Var.x1.getMediaDataController();
-            int classGuid = getClassGuid();
-            ch.o0 o0Var = ls0Var.y;
-            String str = ls0Var.x;
-            ArrayList arrayList = ls0Var.n;
-            ArrayList arrayList2 = ls0Var.h;
-            int i7 = ls0Var.w;
-            boolean z11 = ls0Var.s;
-            mediaDataController.Q0 = o0Var;
-            mediaDataController.d1 = str;
-            boolean[] zArr = mediaDataController.X0;
-            zArr[0] = z11;
-            zArr[1] = true;
-            ArrayList arrayList3 = mediaDataController.Z0;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            mediaDataController.a1.clear();
-            mediaDataController.a1.addAll(arrayList);
-            mediaDataController.k2();
-            int[] iArr = mediaDataController.W0;
-            iArr[0] = i7;
-            iArr[1] = 0;
-            mediaDataController.e1 = this.ud;
-            mediaDataController.getNotificationCenter().k(org.telegram.messenger.qs.H0, Integer.valueOf(classGuid), 0, Integer.valueOf(mediaDataController.c0()), Long.valueOf(mediaDataController.getUserConfig().e()), Integer.valueOf(mediaDataController.e1), Integer.valueOf(mediaDataController.j0()), Boolean.TRUE);
-            this.td = false;
+    @Override // v4.s0
+    public final void a(RecyclerView recyclerView, int i7) {
+        this.c.d1 = i7 != 0;
+    }
+
+    @Override // v4.s0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        int i11;
+        int i12;
+        ys0 ys0Var = this.c;
+        ns0[] ns0VarArr = ys0Var.v1;
+        aq0 aq0Var = this.b;
+        zp0 zp0Var = this.a;
+        ys0Var.O(zp0Var, (pj0) recyclerView, aq0Var);
+        if (i10 != 0 && ((i12 = ys0Var.m0[0].E) == 0 || i12 == 5)) {
+            ns0VarArr[0].a.isEmpty();
         }
-        super.onTransitionAnimationStart(z9, z10);
+        if (i10 != 0 && ((i11 = zp0Var.E) == 0 || ys0.z0(i11))) {
+            ys0.s(zp0Var, ns0VarArr, true);
+        }
+        zp0Var.h.L0(true);
+        if (zp0Var.F != null) {
+            zp0Var.invalidate();
+        }
     }
 }

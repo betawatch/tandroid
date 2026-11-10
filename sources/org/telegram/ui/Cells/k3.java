@@ -11,13 +11,13 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public boolean D;
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.h6 a;
     public int b;
     public boolean c;
     public final i3 d;
@@ -27,27 +27,27 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public boolean n;
     public boolean r;
     public boolean s;
-    public final org.telegram.ui.Components.z4 w;
+    public final org.telegram.ui.Components.y4 w;
     public int x;
-    public final org.telegram.ui.Components.i6 y;
+    public final org.telegram.ui.Components.h6 y;
 
-    public k3(Context context, String str, boolean z9, boolean z10, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    public k3(Context context, String str, boolean z9, boolean z10, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.h = -1;
-        this.w = new org.telegram.ui.Components.z4(this);
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true);
-        this.y = i6Var;
-        i6Var.n(0.2f, 160L, xq.h);
-        i6Var.w(org.telegram.messenger.g0.L(15.33f));
-        i6Var.b = 5;
+        this.w = new org.telegram.ui.Components.y4(this);
+        org.telegram.ui.Components.h6 h6Var2 = new org.telegram.ui.Components.h6(false, true, true);
+        this.y = h6Var2;
+        h6Var2.n(0.2f, 160L, wq.h);
+        h6Var2.w(org.telegram.messenger.g0.L(15.33f));
+        h6Var2.b = 5;
         this.e = i7;
-        i3 i3Var = new i3(this, context, g6Var, i7, g6Var, z10);
+        i3 i3Var = new i3(this, context, h6Var, i7, h6Var, z10);
         this.d = i3Var;
-        i6Var.setCallback(i3Var);
+        h6Var2.setCallback(i3Var);
         i3Var.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.s6.D(i3Var, org.telegram.ui.ActionBar.l6.H6, g6Var);
-        int i10 = org.telegram.ui.ActionBar.l6.G6;
-        org.telegram.ui.ActionBar.s6.U(i3Var, i10, g6Var);
+        org.telegram.ui.ActionBar.t6.D(i3Var, org.telegram.ui.ActionBar.m6.H6, h6Var);
+        int i10 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(i3Var, i10, h6Var);
         i3Var.setBackground(null);
         if (z9) {
             i3Var.setMaxLines(5);
@@ -61,8 +61,8 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         i3Var.setInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setRawInputType((z9 ? 131072 : 0) | 573441);
         i3Var.setHint(str);
-        this.a = g6Var;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(i10, g6Var);
+        this.a = h6Var;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(i10, h6Var);
         this.b = w02;
         i3Var.setCursorColor(w02);
         i3Var.setCursorSize(org.telegram.messenger.g0.L(19.0f));
@@ -102,7 +102,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.D) {
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
@@ -135,14 +135,14 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
         this.c = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         i3 i3Var = this.d;
         if (i3Var == null) {
             return;
         }
         try {
-            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.G6, this.a);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, this.a);
             if (w02 != this.b) {
                 this.b = w02;
                 i3Var.setCursorColor(w02);
@@ -164,7 +164,7 @@ public class k3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public void a(boolean z9) {
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

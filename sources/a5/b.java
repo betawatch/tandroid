@@ -6,10 +6,10 @@ import bi.u6;
 import ch.m0;
 import li.r0;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.rm0;
-import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.r11;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -47,10 +47,10 @@ public final class b implements Drawable.Callback {
                 ((np) this.b).invalidateSelf();
                 break;
             case 7:
-                ((rm0) this.b).b.run();
+                ((qm0) this.b).b.run();
                 break;
             case 8:
-                ((s11) this.b).invalidateSelf();
+                ((r11) this.b).invalidateSelf();
                 break;
             case 9:
                 ((zg.a) this.b).c.invalidate();

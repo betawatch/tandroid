@@ -1,52 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.SparseArray;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class p20 extends zs0 {
-    public final /* synthetic */ s20 w2;
+public final class p20 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r20 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p20(s20 s20Var, Context context, rs0 rs0Var, s20 s20Var2, o20 o20Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, 0L, rs0Var, 0, null, null, null, 8, 0, s20Var2, o20Var, 0, g6Var, null);
-        this.w2 = s20Var;
+    public /* synthetic */ p20(r20 r20Var, int i7) {
+        this.a = i7;
+        this.b = r20Var;
     }
 
-    @Override // org.telegram.ui.Components.zs0
-    public final boolean G0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final int getInitialTab() {
-        return 8;
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final String getStoriesHashtag() {
-        return this.w2.b;
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final String getStoriesHashtagUsername() {
-        return this.w2.c;
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final void P0(SparseArray sparseArray) {
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final void X0(boolean z9) {
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final void Z0(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.zs0
-    public final void q1(boolean z9) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.dn dnVar;
+        bi.q1 q1Var;
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r20 r20Var = this.b;
+                r20Var.x = floatValue;
+                r20Var.e.setTranslationY(floatValue * org.telegram.messenger.g0.L(48.0f));
+                r20Var.e.setPadding(0, 0, 0, (int) (r20Var.x * org.telegram.messenger.g0.L(48.0f)));
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r20 r20Var2 = this.b;
+                r20Var2.E = floatValue2;
+                r20Var2.n.setScaleX(org.telegram.messenger.g0.T1(0.95f, 1.0f, floatValue2));
+                r20Var2.n.setScaleY(org.telegram.messenger.g0.T1(0.95f, 1.0f, r20Var2.E));
+                org.telegram.ui.oj ojVar = r20Var2.f;
+                if (ojVar != null && (dnVar = ojVar.a) != null && (q1Var = dnVar.Z3) != null) {
+                    q1Var.setScaleX(org.telegram.messenger.g0.T1(1.0f, 0.95f, r20Var2.E));
+                    r20Var2.f.a.Z3.setScaleY(org.telegram.messenger.g0.T1(1.0f, 0.95f, r20Var2.E));
+                }
+                r20Var2.h.setAlpha(r20Var2.E);
+                break;
+        }
     }
 }

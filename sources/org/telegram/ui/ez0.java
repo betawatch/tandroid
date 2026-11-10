@@ -1,39 +1,46 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ez0 extends org.telegram.ui.Components.j6 {
-    public boolean s;
-    public final org.telegram.ui.Components.w5 w;
-    public final /* synthetic */ SaveToGallerySettingsActivity x;
+public final class ez0 extends rg.a {
+    public final org.telegram.messenger.qv c;
+    public final String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ez0(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.x = saveToGallerySettingsActivity;
-        this.w = new org.telegram.ui.Components.w5(this);
-        getDrawable().J = true;
+    public ez0(int i7) {
+        super(i7, false);
+        this.c = null;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f10 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.w5 w5Var = this.w;
-        w5Var.e(false, f10);
-        int i7 = org.telegram.ui.ActionBar.l6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.x;
-        setTextColor(i0.a.f(w5Var.c, saveToGallerySettingsActivity.getThemedColor(i7), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.l6.n6)));
-        super.dispatchDraw(canvas);
-    }
-
-    public final void e(boolean z9, boolean z10) {
-        if (this.s != z9) {
-            this.s = z9;
-            this.w.e(z10, z9 ? 1.0f : 0.0f);
-            invalidate();
+    public final boolean equals(Object obj) {
+        org.telegram.messenger.qv qvVar;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || ez0.class != obj.getClass()) {
+            return false;
+        }
+        ez0 ez0Var = (ez0) obj;
+        if (this.a != ez0Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, ez0Var.d);
+        }
+        org.telegram.messenger.qv qvVar2 = this.c;
+        return qvVar2 == null || (qvVar = ez0Var.c) == null || qvVar2.d == qvVar.d;
+    }
+
+    public ez0(org.telegram.messenger.qv qvVar) {
+        super(2, false);
+        this.c = qvVar;
+    }
+
+    public ez0(int i7, String str) {
+        super(i7, false);
+        this.d = str;
+        this.c = null;
     }
 }

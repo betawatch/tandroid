@@ -1,96 +1,321 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.TextureView;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.drawable.Drawable;
+import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.ui.Components.ThemeEditorView.EditorAlert;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ez0 extends TextureView {
-    public static Boolean f;
-    public cz0 a;
-    public final yy0 b;
-    public final ArrayList c;
-    public Runnable d;
-    public boolean e;
+public final class ez0 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public float a;
+    public float b;
+    public boolean c;
+    public final /* synthetic */ ThemeEditorView d;
 
-    public ez0(Context context, Runnable runnable) {
-        super(context);
-        this.b = new yy0(this, 0);
-        this.c = new ArrayList();
-        this.d = runnable;
-        setOpaque(false);
-        setSurfaceTextureListener(new x30(this, 1));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ez0(ThemeEditorView themeEditorView, Activity activity) {
+        super(activity);
+        this.d = themeEditorView;
     }
 
-    public static void b(Runnable runnable) {
-        if (runnable == null) {
-            return;
-        }
-        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
-            org.telegram.messenger.g0.h3(runnable);
-        } else {
-            runnable.run();
-        }
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
     }
 
-    public static boolean c() {
-        if (f == null) {
-            f = Boolean.valueOf(org.telegram.messenger.qp.e1().getBoolean("nothanos", false));
-        }
-        Boolean bool = f;
-        return bool == null || !bool.booleanValue();
-    }
-
-    public final void a(View view) {
-        int i7 = 0;
-        int i10 = 0;
-        boolean z9 = false;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            dz0 dz0Var = (dz0) arrayList.get(i10);
-            if (dz0Var.a == view) {
-                Runnable runnable = dz0Var.d;
-                if (runnable != null) {
-                    b(runnable);
-                    dz0Var.d = null;
-                }
-                arrayList.remove(i10);
-                i10--;
-                z9 = true;
-            }
-            i10++;
-        }
-        if (z9) {
-            return;
-        }
-        cz0 cz0Var = this.a;
-        ArrayList arrayList2 = cz0Var.W;
-        if (cz0Var.b.get()) {
-            Handler handler = cz0Var.getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(5, view));
-                return;
-            }
-            while (i7 < arrayList2.size()) {
-                bz0 bz0Var = (bz0) arrayList2.get(i7);
-                if (bz0Var.a.contains(view)) {
-                    Runnable runnable2 = bz0Var.f;
-                    if (runnable2 != null) {
-                        b(runnable2);
-                        bz0Var.f = null;
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x008a, code lost:
+    
+        if (r15.getFragmentStack().isEmpty() != false) goto L33;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x035e  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x03ca  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0407 A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x01c5  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.r4 r4Var;
+        ArrayList<org.telegram.ui.ActionBar.v6> arrayList;
+        boolean z9;
+        ArrayList arrayList2;
+        boolean z10;
+        boolean z11;
+        int i7;
+        float f10;
+        ThemeEditorView themeEditorView = this.d;
+        int i10 = themeEditorView.g;
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        int i11 = 4;
+        Property property = View.ALPHA;
+        int i12 = 0;
+        boolean z12 = true;
+        if (action == 0) {
+            this.a = rawX;
+            this.b = rawY;
+        } else if (motionEvent.getAction() != 2 || this.c) {
+            if (motionEvent.getAction() == 1 && !this.c && themeEditorView.n == null) {
+                LaunchActivity launchActivity = (LaunchActivity) themeEditorView.d;
+                if (org.telegram.messenger.g0.Q1()) {
+                    r4Var = launchActivity.p0;
+                    if (r4Var != null && r4Var.getFragmentStack().isEmpty()) {
+                        r4Var = null;
                     }
-                    arrayList2.remove(i7);
-                    i7--;
+                    if (r4Var == null) {
+                        r4Var = launchActivity.q0;
+                        if (r4Var != null) {
+                        }
+                    }
+                    if (r4Var == null) {
+                        r4Var = launchActivity.M();
+                    }
+                    if (r4Var != null) {
+                        org.telegram.ui.ActionBar.f2 f2Var = !r4Var.getFragmentStack().isEmpty() ? (org.telegram.ui.ActionBar.f2) r4Var.getFragmentStack().get(r4Var.getFragmentStack().size() - 1) : null;
+                        if (f2Var != null) {
+                            ArrayList arrayList3 = new ArrayList();
+                            HashSet hashSet = new HashSet();
+                            try {
+                                arrayList = f2Var.getThemeDescriptions();
+                            } catch (Exception e10) {
+                                org.telegram.messenger.a8.g(e10, true);
+                                arrayList = null;
+                            }
+                            if (arrayList != null) {
+                                for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                                    org.telegram.ui.ActionBar.v6 v6Var = arrayList.get(i13);
+                                    if (v6Var != null) {
+                                        arrayList3.add(v6Var);
+                                        hashSet.add(Integer.valueOf(v6Var.e));
+                                    }
+                                }
+                            }
+                            HashSet<Integer> r10 = org.telegram.ui.ActionBar.t6.r();
+                            try {
+                                f2Var.addThemeColorKeys(r10);
+                            } catch (Exception e11) {
+                                org.telegram.messenger.a8.g(e11, true);
+                            }
+                            ArrayList arrayList4 = new ArrayList(r10);
+                            Collections.sort(arrayList4, new org.telegram.ui.pe(18));
+                            int i14 = 0;
+                            while (i14 < arrayList4.size()) {
+                                Integer num = (Integer) arrayList4.get(i14);
+                                int intValue = num.intValue();
+                                boolean z13 = z12;
+                                if (intValue >= 0 && intValue < org.telegram.ui.ActionBar.m6.f5 && hashSet.add(num)) {
+                                    arrayList3.add(new org.telegram.ui.ActionBar.v6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, intValue));
+                                }
+                                i14++;
+                                z12 = z13;
+                            }
+                            z9 = z12;
+                            if (!arrayList3.isEmpty()) {
+                                ThemeEditorView.EditorAlert editorAlert = themeEditorView.new EditorAlert(themeEditorView.d, arrayList3);
+                                themeEditorView.n = editorAlert;
+                                editorAlert.setOnDismissListener(new fi.d1(i11));
+                                themeEditorView.n.setOnDismissListener(new o0(this, 10));
+                                themeEditorView.n.show();
+                                if (themeEditorView.d != null) {
+                                    try {
+                                        AnimatorSet animatorSet = new AnimatorSet();
+                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) property, 1.0f, 0.0f);
+                                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) View.SCALE_X, 1.0f, 0.0f);
+                                        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) View.SCALE_Y, 1.0f, 0.0f);
+                                        Animator[] animatorArr = new Animator[3];
+                                        animatorArr[0] = ofFloat;
+                                        animatorArr[z9 ? 1 : 0] = ofFloat2;
+                                        animatorArr[2] = ofFloat3;
+                                        animatorSet.playTogether(animatorArr);
+                                        animatorSet.setInterpolator(themeEditorView.k);
+                                        animatorSet.setDuration(150L);
+                                        animatorSet.addListener(new gz0(themeEditorView, i12));
+                                        animatorSet.start();
+                                    } catch (Exception unused) {
+                                    }
+                                }
+                            }
+                            if (this.c) {
+                                float f11 = 1.0f;
+                                if (motionEvent.getAction() == 2) {
+                                    float f12 = rawX - this.a;
+                                    float f13 = rawY - this.b;
+                                    WindowManager.LayoutParams layoutParams = themeEditorView.i;
+                                    int i15 = (int) (layoutParams.x + f12);
+                                    layoutParams.x = i15;
+                                    layoutParams.y = (int) (layoutParams.y + f13);
+                                    int i16 = i10 / 2;
+                                    int i17 = -i16;
+                                    if (i15 < i17) {
+                                        layoutParams.x = i17;
+                                    } else {
+                                        int i18 = (org.telegram.messenger.g0.q.x - layoutParams.width) + i16;
+                                        if (i15 > i18) {
+                                            layoutParams.x = i18;
+                                        }
+                                    }
+                                    int i19 = layoutParams.x;
+                                    if (i19 < 0) {
+                                        f11 = com.google.android.recaptcha.internal.a.c(i19, i16, 0.5f, 1.0f);
+                                    } else {
+                                        if (i19 > org.telegram.messenger.g0.q.x - layoutParams.width) {
+                                            f11 = org.telegram.messenger.camera.q.v((i19 - r9) + r7, i16, 0.5f, 1.0f);
+                                        }
+                                    }
+                                    if (themeEditorView.c.getAlpha() != f11) {
+                                        themeEditorView.c.setAlpha(f11);
+                                    }
+                                    WindowManager.LayoutParams layoutParams2 = themeEditorView.i;
+                                    int i20 = layoutParams2.y;
+                                    if (i20 < 0) {
+                                        layoutParams2.y = 0;
+                                    } else {
+                                        int i21 = org.telegram.messenger.g0.q.y - layoutParams2.height;
+                                        if (i20 > i21) {
+                                            layoutParams2.y = i21;
+                                        }
+                                    }
+                                    themeEditorView.j.updateViewLayout(themeEditorView.c, layoutParams2);
+                                    this.a = rawX;
+                                    this.b = rawY;
+                                } else {
+                                    boolean z14 = z9;
+                                    if (motionEvent.getAction() != z14) {
+                                        return z14;
+                                    }
+                                    this.c = false;
+                                    int c10 = ThemeEditorView.c(0.0f, 0, i10, z14);
+                                    int c11 = ThemeEditorView.c(0.0f, z14 ? 1 : 0, i10, z14);
+                                    int i22 = themeEditorView.h;
+                                    int c12 = ThemeEditorView.c(0.0f, 0, i22, false);
+                                    int c13 = ThemeEditorView.c(0.0f, z14 ? 1 : 0, i22, false);
+                                    SharedPreferences.Editor edit = themeEditorView.l.edit();
+                                    int L = org.telegram.messenger.g0.L(20.0f);
+                                    if (Math.abs(c10 - themeEditorView.i.x) <= L || ((i7 = themeEditorView.i.x) < 0 && i7 > (-i10) / 4)) {
+                                        arrayList2 = new ArrayList();
+                                        edit.putInt("sidex", 0);
+                                        if (themeEditorView.c.getAlpha() != 1.0f) {
+                                            arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) property, 1.0f));
+                                        }
+                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c10));
+                                    } else {
+                                        if (Math.abs(c11 - i7) > L) {
+                                            int i23 = themeEditorView.i.x;
+                                            Point point = org.telegram.messenger.g0.q;
+                                            f10 = 1.0f;
+                                            int i24 = point.x;
+                                            if (i23 <= i24 - i10 || i23 >= i24 - ((i10 / 4) * 3)) {
+                                                if (themeEditorView.c.getAlpha() != 1.0f) {
+                                                    ArrayList arrayList5 = new ArrayList();
+                                                    if (themeEditorView.i.x < 0) {
+                                                        arrayList5.add(ObjectAnimator.ofInt(themeEditorView, "x", -i10));
+                                                    } else {
+                                                        arrayList5.add(ObjectAnimator.ofInt(themeEditorView, "x", point.x));
+                                                    }
+                                                    arrayList2 = arrayList5;
+                                                    z10 = true;
+                                                } else {
+                                                    edit.putFloat("px", (themeEditorView.i.x - c10) / (c11 - c10));
+                                                    edit.putInt("sidex", 2);
+                                                    z10 = false;
+                                                    arrayList2 = null;
+                                                }
+                                                if (!z10) {
+                                                    if (Math.abs(c12 - themeEditorView.i.y) <= L || themeEditorView.i.y <= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) {
+                                                        if (arrayList2 == null) {
+                                                            arrayList2 = new ArrayList();
+                                                        }
+                                                        edit.putInt("sidey", 0);
+                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c12));
+                                                    } else if (Math.abs(c13 - themeEditorView.i.y) <= L) {
+                                                        if (arrayList2 == null) {
+                                                            arrayList2 = new ArrayList();
+                                                        }
+                                                        edit.putInt("sidey", 1);
+                                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "y", c13));
+                                                    } else {
+                                                        edit.putFloat("py", (themeEditorView.i.y - c12) / (c13 - c12));
+                                                        edit.putInt("sidey", 2);
+                                                    }
+                                                    edit.commit();
+                                                }
+                                                if (arrayList2 != null) {
+                                                    return true;
+                                                }
+                                                if (themeEditorView.k == null) {
+                                                    themeEditorView.k = new DecelerateInterpolator();
+                                                }
+                                                AnimatorSet animatorSet2 = new AnimatorSet();
+                                                animatorSet2.setInterpolator(themeEditorView.k);
+                                                animatorSet2.setDuration(150L);
+                                                if (z10) {
+                                                    z11 = true;
+                                                    arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) property, 0.0f));
+                                                    animatorSet2.addListener(new gz0(themeEditorView, 1 == true ? 1 : 0));
+                                                } else {
+                                                    z11 = true;
+                                                }
+                                                animatorSet2.playTogether(arrayList2);
+                                                animatorSet2.start();
+                                                return z11;
+                                            }
+                                        } else {
+                                            f10 = 1.0f;
+                                        }
+                                        arrayList2 = new ArrayList();
+                                        edit.putInt("sidex", 1);
+                                        if (themeEditorView.c.getAlpha() != f10) {
+                                            arrayList2.add(ObjectAnimator.ofFloat(themeEditorView.c, (Property<ez0, Float>) property, f10));
+                                        }
+                                        arrayList2.add(ObjectAnimator.ofInt(themeEditorView, "x", c11));
+                                    }
+                                    z10 = false;
+                                    if (!z10) {
+                                    }
+                                    if (arrayList2 != null) {
+                                    }
+                                }
+                            }
+                            return z9;
+                        }
+                    }
                 }
-                i7++;
+                r4Var = null;
+                if (r4Var == null) {
+                }
+                if (r4Var != null) {
+                }
             }
+        } else if (Math.abs(this.a - rawX) >= org.telegram.messenger.g0.a1(true, 0.3f) || Math.abs(this.b - rawY) >= org.telegram.messenger.g0.a1(false, 0.3f)) {
+            this.c = true;
+            this.a = rawX;
+            this.b = rawY;
         }
+        z9 = true;
+        if (this.c) {
+        }
+        return z9;
     }
 }

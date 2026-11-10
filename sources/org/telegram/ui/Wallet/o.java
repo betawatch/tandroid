@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wb1;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class o implements Runnable {
                         d2Var.a = true;
                         boolean[] zArr = {false};
                         y yVar = new y(zArr, c20Var);
-                        yVar.V = new wb1(3, zArr, oVar);
+                        yVar.V = new sb1(4, zArr, oVar);
                         T.showAsSheet(yVar, d2Var);
                         break;
                     }
@@ -165,7 +165,7 @@ public final /* synthetic */ class o implements Runnable {
                         }
                         TL_wallet.nftItem nftitem4 = nftitem2;
                         k0 k0Var2 = k0Var;
-                        e7 e7Var = new e7(l0Var5, wallettransaction, nftitem4, k0Var2, 3);
+                        h7 h7Var = new h7(l0Var5, wallettransaction, nftitem4, k0Var2, 3);
                         long nextLong = Utilities.b.nextLong();
                         wallettransaction.random_id = nextLong;
                         l0Var5.p.add(0, wallettransaction);
@@ -207,7 +207,7 @@ public final /* synthetic */ class o implements Runnable {
                                 l0.H("prepare sending");
                                 String str10 = str9;
                                 long j13 = j10;
-                                final u uVar = new u(l0Var4, e7Var, C, ijVar, wallettransaction, str8, k0Var2, j13, user2);
+                                final u uVar = new u(l0Var4, h7Var, C, ijVar, wallettransaction, str8, k0Var2, j13, user2);
                                 if (c2Var2 == null) {
                                     final int i10 = 0;
                                     l0Var4.b.prepareTonConnectTransfer(i0Var, c2Var2, a8.p0.o(j13, "deposit:"), new v10() { // from class: org.telegram.ui.Wallet.v
@@ -273,7 +273,7 @@ public final /* synthetic */ class o implements Runnable {
                         l0.H("prepare sending");
                         String str102 = str92;
                         long j132 = j10;
-                        final u uVar2 = new u(l0Var4, e7Var, C, ijVar, wallettransaction, str8, k0Var2, j132, user2);
+                        final u uVar2 = new u(l0Var4, h7Var, C, ijVar, wallettransaction, str8, k0Var2, j132, user2);
                         if (c2Var2 == null) {
                         }
                     }

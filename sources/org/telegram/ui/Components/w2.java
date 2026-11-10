@@ -1,47 +1,78 @@
 package org.telegram.ui.Components;
 
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Base64;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ Runnable d;
+public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
 
-    public /* synthetic */ w2(int i7, int[] iArr, org.telegram.ui.s10 s10Var) {
-        this.b = i7;
-        this.c = iArr;
-        this.d = s10Var;
+    public /* synthetic */ w2(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = i7;
+        this.b = f2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        Runnable runnable = this.d;
-        int[] iArr = this.c;
-        int i10 = this.b;
-        switch (i7) {
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0098  */
+    @Override // org.telegram.ui.ActionBar.r1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        TLRPC.User user;
+        String string;
+        switch (this.a) {
             case 0:
-                iArr[0] = i10;
-                runnable.run();
-                break;
-            default:
-                String str = LaunchActivity.B1;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                org.telegram.ui.ActionBar.f2 f2Var = this.b;
+                int currentAccount = f2Var.getCurrentAccount();
+                SharedPreferences sharedPreferences = org.telegram.messenger.qp.s1(currentAccount).e7;
+                long b12 = org.telegram.messenger.g0.b1(sharedPreferences, "support_id2", 0L);
+                if (b12 != 0) {
+                    user = org.telegram.messenger.qp.s1(currentAccount).a2(Long.valueOf(b12));
+                    if (user == null && (string = sharedPreferences.getString("support_user", null)) != null) {
+                        try {
+                            byte[] decode = Base64.decode(string, 0);
+                            if (decode != null) {
+                                SerializedData serializedData = new SerializedData(decode);
+                                TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+                                if (TLdeserialize != null && TLdeserialize.id == 333000) {
+                                    TLdeserialize = null;
+                                }
+                                serializedData.cleanup();
+                                user = TLdeserialize;
+                            }
+                        } catch (Exception e10) {
+                            org.telegram.messenger.a8.g(e10, true);
+                        }
+                    }
+                    if (user == null) {
+                        org.telegram.messenger.qp.s1(currentAccount).X3(user, true, false);
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("user_id", user.id);
+                        f2Var.presentFragment(new org.telegram.ui.cn(bundle));
+                        break;
+                    } else {
+                        org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, f2Var.getParentActivity(), null);
+                        u1Var2.i0 = false;
+                        u1Var2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new di.j8(sharedPreferences, u1Var2, currentAccount, f2Var, 3));
+                        break;
+                    }
+                }
+                user = null;
+                if (user == null) {
                 }
                 break;
+            default:
+                org.telegram.ui.ActionBar.f2 f2Var2 = this.b;
+                org.telegram.messenger.qp.s1(f2Var2.getCurrentAccount()).y3("spambot", f2Var2, 1, null);
+                break;
         }
-    }
-
-    public /* synthetic */ w2(int[] iArr, int i7, Runnable runnable) {
-        this.c = iArr;
-        this.b = i7;
-        this.d = runnable;
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
     public final EditTextBoldCursor a;
@@ -18,8 +18,8 @@ public final class l3 extends FrameLayout {
         super(context);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.a = editTextBoldCursor;
-        org.telegram.ui.ActionBar.s6.U(editTextBoldCursor, org.telegram.ui.ActionBar.l6.G6, null);
-        org.telegram.ui.ActionBar.s6.D(editTextBoldCursor, org.telegram.ui.ActionBar.l6.H6, null);
+        org.telegram.ui.ActionBar.t6.U(editTextBoldCursor, org.telegram.ui.ActionBar.m6.G6, null);
+        org.telegram.ui.ActionBar.t6.D(editTextBoldCursor, org.telegram.ui.ActionBar.m6.H6, null);
         editTextBoldCursor.setTextSize(1, 16.0f);
         editTextBoldCursor.setLines(1);
         editTextBoldCursor.setMaxLines(1);

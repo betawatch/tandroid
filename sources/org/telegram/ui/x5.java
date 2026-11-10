@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class x5 extends org.telegram.ui.ActionBar.f2 {
     public v5 a;
-    public org.telegram.ui.Components.qj0 b;
+    public org.telegram.ui.Components.pj0 b;
     public final ArrayList c;
     public ArrayList d;
     public int e;
@@ -67,19 +67,19 @@ public class x5 extends org.telegram.ui.ActionBar.f2 {
         this.simpleActionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.y1(false));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 25));
         this.simpleActionBar.setTitle(org.telegram.messenger.id.M0(2131747912, null));
-        org.telegram.ui.Components.qj0 qj0Var = new org.telegram.ui.Components.qj0(context, null);
-        this.b = qj0Var;
-        qj0Var.r1();
+        org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
+        this.b = pj0Var;
+        pj0Var.r1();
         this.b.setSectionsDrawBackground(true);
         v4.k kVar = new v4.k();
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
         this.b.setLayoutManager(new v4.b0());
-        org.telegram.ui.Components.qj0 qj0Var2 = this.b;
+        org.telegram.ui.Components.pj0 pj0Var2 = this.b;
         v5 v5Var = new v5(this);
         this.a = v5Var;
-        qj0Var2.setAdapter(v5Var);
+        pj0Var2.setAdapter(v5Var);
         this.b.setOnItemClickListener(new w0(this, 7));
         frameLayout.addView(this.b);
         Z();
@@ -87,7 +87,7 @@ public class x5 extends org.telegram.ui.ActionBar.f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.Components.qj0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.pj0 getListViewForSimpleGlass() {
         return this.b;
     }
 

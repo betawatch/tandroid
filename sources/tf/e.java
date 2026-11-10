@@ -2,21 +2,21 @@ package tf;
 
 import java.io.EOFException;
 import java.io.InputStream;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class e {
     public static final b7.j e = new b7.j(4);
     public final uf.a a;
     public final h b;
     public final f c;
-    public final vy d;
+    public final uy d;
 
     public e(InputStream inputStream, long j3, int i7, h hVar, f fVar) {
         uf.a aVar = new uf.a(inputStream, j3, i7);
         this.a = aVar;
-        this.d = new vy(aVar, 19);
+        this.d = new uy(aVar, 19);
         this.b = hVar;
         this.c = fVar;
     }
@@ -78,12 +78,12 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i10 = 0;
         while (true) {
-            vy vyVar = this.d;
+            uy uyVar = this.d;
             if (i10 >= i7) {
-                vyVar.getClass();
+                uyVar.getClass();
                 return a(bArr2, i7, bVar, true);
             }
-            int read = ((ab.d) vyVar.b).read(bArr2, i10, i7 - i10);
+            int read = ((ab.d) uyVar.b).read(bArr2, i10, i7 - i10);
             if (read <= 0) {
                 throw new EOFException();
             }

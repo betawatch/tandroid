@@ -15,10 +15,10 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
     public final k2 a;
@@ -79,7 +79,7 @@ public final class m extends FrameLayout {
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(l6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        imageView.setBackground(m6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
         addView(imageView, ha.d(28, 28.0f, 51, 6.0f, 6.0f, 0.0f, 0.0f));
     }
 

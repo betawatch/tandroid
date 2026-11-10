@@ -1,18 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hx0 {
-    public final int a;
-    public final int b;
+public final class hx0 extends ViewGroup.MarginLayoutParams {
+    public jx0 a;
+    public jx0 b;
 
-    public hx0(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
-    }
-
-    public final int a() {
-        return this.b - this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hx0() {
+        super(-2, -2);
+        jx0 jx0Var = jx0.e;
+        this.a = jx0Var;
+        this.b = jx0Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = jx0Var;
+        this.b = jx0Var;
     }
 
     public final boolean equals(Object obj) {
@@ -23,10 +28,10 @@ public final class hx0 {
             return false;
         }
         hx0 hx0Var = (hx0) obj;
-        return this.b == hx0Var.b && this.a == hx0Var.a;
+        return this.b.equals(hx0Var.b) && this.a.equals(hx0Var.a);
     }
 
     public final int hashCode() {
-        return (this.a * 31) + this.b;
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

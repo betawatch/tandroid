@@ -2,38 +2,39 @@ package org.telegram.ui.Wallet;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.y31;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class o5 extends x31 {
-    public static final /* synthetic */ int b = 0;
+public final class o5 extends FrameLayout {
+    public View a;
+    public float b;
+    public int c;
+    public final m5 d;
+    public final /* synthetic */ z5 e;
 
-    static {
-        x31.h(new o5());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o5(z5 z5Var, Context context) {
+        super(context);
+        this.e = z5Var;
+        this.d = new m5(1, this);
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
-        ((p5) view).a(y31Var.k, y31Var.l, y31Var.m);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.d);
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
-        return new p5(context, g6Var);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.d);
+        super.onDetachedFromWindow();
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.x31
-    public final boolean g() {
-        return true;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
+        super.onLayout(z9, i7, i10, i11, i12);
+        this.e.U0();
     }
 }

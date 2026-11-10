@@ -1,69 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
+import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wk b;
+public final /* synthetic */ class jk implements org.telegram.ui.ActionBar.m0, org.telegram.messenger.bb, org.telegram.messenger.db, org.telegram.ui.ActionBar.r1, jg.b {
+    public final /* synthetic */ vk a;
 
-    public /* synthetic */ jk(wk wkVar, int i7) {
-        this.a = i7;
-        this.b = wkVar;
+    public /* synthetic */ jk(vk vkVar) {
+        this.a = vkVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Location location;
-        switch (this.a) {
-            case 0:
-                wk.S(this.b);
-                break;
-            case 1:
-                wk.U(this.b);
-                break;
-            case 2:
-                wk wkVar = this.b;
-                double[] dArr = wkVar.b.u4;
-                wkVar.h0(dArr[0], dArr[1]);
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new jk(this.b, 6));
-                break;
-            case 4:
-                wk wkVar2 = this.b;
-                jg.r0 r0Var = wkVar2.K;
-                if (!wkVar2.k0) {
-                    org.telegram.messenger.fa faVar = wkVar2.D;
-                    if (faVar != null && (location = wkVar2.i0) != null) {
-                        location.setLatitude(((org.telegram.messenger.cb) faVar.d().b).a);
-                        wkVar2.i0.setLongitude(((org.telegram.messenger.cb) wkVar2.D.d().b).b);
-                    }
-                    r0Var.L(wkVar2.i0);
-                    r0Var.H();
-                    break;
-                } else {
-                    wkVar2.k0 = false;
-                    break;
-                }
-                break;
-            case 5:
-                View view = this.b.I;
-                if (view.getTag() == null) {
-                    view.animate().alpha(0.0f).setDuration(180L).start();
-                    break;
-                }
-                break;
-            case 6:
-                View view2 = this.b.I;
-                view2.setTag(1);
-                view2.animate().alpha(0.0f).setDuration(180L).start();
-                break;
-            default:
-                this.b.h0(0.0d, 0.0d);
-                break;
+    @Override // jg.b
+    public void a() {
+        vk vkVar = this.a;
+        vkVar.e0 = false;
+        vkVar.j0();
+    }
+
+    @Override // org.telegram.messenger.bb
+    public boolean b(MotionEvent motionEvent, org.telegram.messenger.ia iaVar) {
+        MotionEvent motionEvent2;
+        vk vkVar = this.a;
+        if (vkVar.G != 0.0f) {
+            motionEvent = MotionEvent.obtain(motionEvent);
+            motionEvent.offsetLocation(0.0f, (-vkVar.G) / 2.0f);
+            motionEvent2 = motionEvent;
+        } else {
+            motionEvent2 = null;
+        }
+        boolean booleanValue = iaVar.a(motionEvent).booleanValue();
+        if (motionEvent2 != null) {
+            motionEvent2.recycle();
+        }
+        return booleanValue;
+    }
+
+    @Override // org.telegram.messenger.db
+    public void c(int i7) {
+        View childAt;
+        vk vkVar = this.a;
+        bi.q1 q1Var = vkVar.L;
+        if (i7 != 1 || vkVar.H || q1Var.getChildCount() <= 0 || (childAt = q1Var.getChildAt(0)) == null) {
+            return;
+        }
+        View F = q1Var.F(childAt);
+        v4.d1 T = F == null ? null : q1Var.T(F);
+        if (T == null || T.b() != 0) {
+            return;
+        }
+        int L = vkVar.o0 == 0 ? 0 : org.telegram.messenger.g0.L(66.0f);
+        int top = childAt.getTop();
+        if (top < (-L)) {
+            fi.y4 d = vkVar.D.d();
+            vkVar.F = ((nb.a) org.telegram.messenger.t0.k()).newCameraUpdateLatLngZoom((org.telegram.messenger.cb) d.b, d.c);
+            q1Var.w0(0, top + L, null);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        vk.Q(this.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.m0
+    public void i(int i7) {
+        org.telegram.messenger.fa faVar = this.a.D;
+        if (faVar == null) {
+            return;
+        }
+        if (i7 == 2) {
+            faVar.j(0);
+        } else if (i7 == 3) {
+            faVar.j(1);
+        } else if (i7 == 4) {
+            faVar.j(2);
         }
     }
 }

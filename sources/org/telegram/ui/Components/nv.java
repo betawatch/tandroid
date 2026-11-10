@@ -1,23 +1,64 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class nv extends ux {
-    public final /* synthetic */ hy H;
+public final class nv extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ gy b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nv(hy hyVar, Context context) {
-        super(hyVar, context, 2);
-        this.H = hyVar;
+    public nv(gy gyVar, Context context, boolean z9) {
+        super(context);
+        this.b = gyVar;
+        this.a = z9;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            super.setTranslationY(f10);
-            this.H.g0.invalidate();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        gy gyVar = this.b;
+        tv tvVar = gyVar.B0;
+        pv pvVar = gyVar.D0;
+        sv svVar = gyVar.G0;
+        if (this.a || !(view == pvVar || view == svVar)) {
+            return super.drawChild(canvas, view, j3);
+        }
+        canvas.save();
+        float y10 = tvVar.getY() + tvVar.getMeasuredHeight() + 1.0f;
+        if (view == pvVar) {
+            y10 = Math.max(y10, svVar.getY() + svVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y10 - (org.telegram.messenger.g0.L(16.0f) * gyVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        gy gyVar = this.b;
+        gyVar.K0 = true;
+        gyVar.Z();
+        jg.e1 e1Var = gyVar.T0;
+        if (e1Var != null) {
+            e1Var.a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        gy gyVar = this.b;
+        gyVar.K0 = false;
+        gyVar.Z();
+        jg.e1 e1Var = gyVar.T0;
+        if (e1Var != null) {
+            e1Var.a();
         }
     }
 }

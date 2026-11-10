@@ -3,7 +3,7 @@ package bi;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s3 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,12 +26,12 @@ public final /* synthetic */ class s3 implements Runnable {
         k7 k7Var = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
+                org.telegram.ui.Components.bc I = org.telegram.ui.Components.gc.a0(cnVar).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
                 I.t = true;
                 I.j();
                 break;
             default:
-                org.telegram.ui.Components.cc I2 = org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
+                org.telegram.ui.Components.bc I2 = org.telegram.ui.Components.gc.a0(cnVar).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
                 I2.t = true;
                 I2.j();
                 break;

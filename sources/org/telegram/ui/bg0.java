@@ -1,48 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class bg0 extends mi.l {
-    public Runnable W;
+public final /* synthetic */ class bg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cg0 b;
 
-    @Override // mi.l, v4.k
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.W = null;
-        }
-        ag0 ag0Var = new ag0(this, 0);
-        this.W = ag0Var;
-        org.telegram.messenger.g0.h3(ag0Var);
+    public /* synthetic */ bg0(cg0 cg0Var, int i7) {
+        this.a = i7;
+        this.b = cg0Var;
     }
 
-    @Override // mi.l
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.W = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.W = null;
+                if (org.telegram.messenger.r2.a) {
+                    org.telegram.messenger.a8.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            default:
+                this.b.W = null;
+                if (org.telegram.messenger.r2.a) {
+                    org.telegram.messenger.a8.b("chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
         }
-        if (org.telegram.messenger.r2.a) {
-            org.telegram.messenger.a8.b("chatItemAnimator disable notifications");
-        }
-    }
-
-    @Override // mi.l, v4.k, v4.l0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-        }
-        ag0 ag0Var = new ag0(this, 1);
-        this.W = ag0Var;
-        org.telegram.messenger.g0.h3(ag0Var);
-    }
-
-    @Override // v4.k
-    public final void F() {
     }
 }

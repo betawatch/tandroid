@@ -10,13 +10,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.iz;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.ri0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class m1 extends qj0 {
-    public si0 e3;
+public final class m1 extends pj0 {
+    public ri0 e3;
     public boolean f3;
     public float g3;
     public float h3;
@@ -57,7 +57,7 @@ public final class m1 extends qj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -198,10 +198,10 @@ public final class m1 extends qj0 {
         super.setLayoutManager(n0Var);
         this.e3 = null;
         if (n0Var instanceof v4.b0) {
-            si0 si0Var = new si0(this, (v4.b0) n0Var);
-            this.e3 = si0Var;
-            si0Var.i = new ai.m(this, 1);
-            si0Var.h = new di.r4(this, 10);
+            ri0 ri0Var = new ri0(this, (v4.b0) n0Var);
+            this.e3 = ri0Var;
+            ri0Var.i = new ai.m(this, 1);
+            ri0Var.h = new di.r4(this, 10);
         }
     }
 }

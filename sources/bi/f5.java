@@ -6,11 +6,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.v61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class f5 extends w61 {
+public final class f5 extends v61 {
     public final /* synthetic */ k7 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class f5 extends w61 {
         this.V = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.v61
     public final void F(View view, float f10) {
         View view2;
         i5 i5Var;
@@ -42,15 +42,15 @@ public final class f5 extends w61 {
             FrameLayout frameLayout = (FrameLayout) view;
             if (frameLayout.getChildCount() > 0) {
                 view2 = frameLayout.getChildAt(0);
-                i5Var = k7Var.U1;
-                if (i5Var != null && view2 == i5Var.Q1 && (j5Var3 = i5Var.W1) != null) {
+                i5Var = k7Var.X1;
+                if (i5Var != null && view2 == i5Var.T1 && (j5Var3 = i5Var.Z1) != null) {
                     j5Var3.invalidate();
                 }
-                if (view2 == k7Var.Q1 && (j5Var2 = k7Var.W1) != null) {
+                if (view2 == k7Var.T1 && (j5Var2 = k7Var.Z1) != null) {
                     j5Var2.invalidate();
                 }
-                i5Var2 = k7Var.V1;
-                if (i5Var2 == null && view2 == i5Var2.Q1 && (j5Var = i5Var2.W1) != null) {
+                i5Var2 = k7Var.Y1;
+                if (i5Var2 == null && view2 == i5Var2.T1 && (j5Var = i5Var2.Z1) != null) {
                     j5Var.invalidate();
                     return;
                 }
@@ -58,20 +58,20 @@ public final class f5 extends w61 {
             }
         }
         view2 = null;
-        i5Var = k7Var.U1;
+        i5Var = k7Var.X1;
         if (i5Var != null) {
             j5Var3.invalidate();
         }
-        if (view2 == k7Var.Q1) {
+        if (view2 == k7Var.T1) {
             j5Var2.invalidate();
         }
-        i5Var2 = k7Var.V1;
+        i5Var2 = k7Var.Y1;
         if (i5Var2 == null) {
         }
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.v61
     public final void G() {
         super.G();
         int i7 = this.b;
@@ -81,9 +81,9 @@ public final class f5 extends w61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.v61
     public final boolean b(MotionEvent motionEvent) {
-        g6 g6Var = this.V.T2;
+        g6 g6Var = this.V.W2;
         return g6Var == null || g6Var.c(0);
     }
 
@@ -96,7 +96,7 @@ public final class f5 extends w61 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.w61
+    @Override // org.telegram.ui.Components.v61
     public final float getAvailableTranslationX() {
         return Math.max(1, getMeasuredWidth() - (this.V.t0 * 2));
     }

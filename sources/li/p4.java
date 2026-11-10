@@ -8,9 +8,9 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class p4 implements View.OnClickListener {
                     List n10 = s4Var.n();
                     if (indexOf >= 0 && indexOf < n10.size() && indexOf < arrayList.size()) {
                         final s sVar = (s) n10.get(indexOf);
-                        l60 J = s4Var.N.a.o3.J((View) arrayList.get(indexOf));
+                        k60 J = s4Var.N.a.o3.J((View) arrayList.get(indexOf));
                         boolean z9 = sVar.n;
                         J.c(z9 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, id.M0(z9 ? 2131751430 : 2131751154, null), new Runnable() { // from class: li.q4
                             @Override // java.lang.Runnable

@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.aj;
 import org.telegram.messenger.dj;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k extends v4.m0 {
     public final /* synthetic */ int a;
@@ -156,38 +156,38 @@ public final class k extends v4.m0 {
                 }
                 break;
             case 9:
-                yi0 yi0Var = (yi0) recyclerView.T(view);
-                if (yi0Var == null) {
+                xi0 xi0Var = (xi0) recyclerView.T(view);
+                if (xi0Var == null) {
                     rect.left = org.telegram.messenger.g0.L(4.0f);
                     rect.right = org.telegram.messenger.g0.L(4.0f);
                     break;
                 } else {
-                    int b14 = yi0Var.b() % 4;
+                    int b14 = xi0Var.b() % 4;
                     rect.left = b14 == 0 ? 0 : org.telegram.messenger.g0.L(4.0f);
                     rect.right = b14 != 3 ? org.telegram.messenger.g0.L(4.0f) : 0;
                     break;
                 }
             case 10:
-                yi0 yi0Var2 = (yi0) recyclerView.T(view);
-                if (yi0Var2 == null) {
+                xi0 xi0Var2 = (xi0) recyclerView.T(view);
+                if (xi0Var2 == null) {
                     rect.left = org.telegram.messenger.g0.L(4.0f);
                     rect.right = org.telegram.messenger.g0.L(4.0f);
                     break;
                 } else {
-                    int b15 = yi0Var2.b() % 4;
+                    int b15 = xi0Var2.b() % 4;
                     rect.left = b15 == 0 ? 0 : org.telegram.messenger.g0.L(4.0f);
                     rect.right = b15 != 3 ? org.telegram.messenger.g0.L(4.0f) : 0;
                     break;
                 }
             case 11:
-                yi0 yi0Var3 = (yi0) recyclerView.T(view);
-                if (yi0Var3 == null) {
+                xi0 xi0Var3 = (xi0) recyclerView.T(view);
+                if (xi0Var3 == null) {
                     rect.left = org.telegram.messenger.g0.L(4.0f);
                     rect.right = org.telegram.messenger.g0.L(4.0f);
                     break;
                 } else {
-                    if (yi0Var3.f == 5) {
-                        int b16 = yi0Var3.b() % 4;
+                    if (xi0Var3.f == 5) {
+                        int b16 = xi0Var3.b() % 4;
                         rect.left = b16 == 0 ? 0 : org.telegram.messenger.g0.L(4.0f);
                         rect.right = b16 != 3 ? org.telegram.messenger.g0.L(4.0f) : 0;
                         break;
@@ -307,7 +307,7 @@ public final class k extends v4.m0 {
                     View childAt2 = i10 < childCount + (-2) ? recyclerView.getChildAt(i10 + 1) : null;
                     if (RecyclerView.R(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.x3) && !(childAt2 instanceof org.telegram.ui.Cells.x3)) {
                         float bottom = childAt.getBottom();
-                        canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), bottom, width - (id.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), bottom, org.telegram.ui.ActionBar.l6.k0);
+                        canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(72.0f), bottom, width - (id.a0 ? org.telegram.messenger.g0.L(72.0f) : 0), bottom, org.telegram.ui.ActionBar.m6.k0);
                     }
                     i10++;
                 }

@@ -10,10 +10,10 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.d61;
-import org.telegram.ui.jw;
+import org.telegram.ui.e61;
+import org.telegram.ui.kw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final /* synthetic */ class u implements Runnable {
                             }
                         }
                         zVar.f(h0Var.s, h0Var.v0);
-                        jw jwVar = h0Var.U;
-                        if (jwVar != null) {
-                            jwVar.d(h0Var.D0 > 0, true);
+                        kw kwVar = h0Var.U;
+                        if (kwVar != null) {
+                            kwVar.d(h0Var.D0 > 0, true);
                             h0Var.U.c();
                         }
                         h0Var.f();
@@ -162,10 +162,10 @@ public final /* synthetic */ class u implements Runnable {
                             }
                         }
                         zVar2.f(h0Var2.s, h0Var2.v0);
-                        jw jwVar2 = h0Var2.U;
-                        if (jwVar2 != null) {
+                        kw kwVar2 = h0Var2.U;
+                        if (kwVar2 != null) {
                             i10 = 1;
-                            jwVar2.d(h0Var2.D0 > 0, true);
+                            kwVar2.d(h0Var2.D0 > 0, true);
                             h0Var2.U.c();
                         } else {
                             i10 = 1;
@@ -174,10 +174,10 @@ public final /* synthetic */ class u implements Runnable {
                         h0Var2.H0 = i10;
                         i7 = 0;
                         h0Var2.d = false;
-                        d61 d61Var = h0Var2.E0;
-                        if (d61Var != null) {
+                        e61 e61Var = h0Var2.E0;
+                        if (e61Var != null) {
                             String str3 = h0Var2.Z;
-                            TextView textView = (TextView) d61Var.b;
+                            TextView textView = (TextView) e61Var.b;
                             Object[] objArr = new Object[i10];
                             objArr[0] = str3;
                             textView.setText(id.a0(null, null, 2131745750, objArr));

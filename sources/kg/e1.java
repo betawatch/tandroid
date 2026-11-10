@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e1 extends f2 {
     public final CharSequence a;
@@ -69,7 +69,7 @@ public final class e1 extends f2 {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.n;
     }
 
@@ -112,7 +112,7 @@ public final class e1 extends f2 {
                 for (int i7 = 0; i7 < this.n.getChildCount(); i7++) {
                     View childAt = this.n.getChildAt(i7);
                     if ((childAt instanceof r8) && ((r8) childAt).b == -1) {
-                        s6.h(this.r ? l6.f6 : l6.e6, childAt, null);
+                        t6.h(this.r ? m6.f6 : m6.e6, childAt, null);
                     }
                 }
             }

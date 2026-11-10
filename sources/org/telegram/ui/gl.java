@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class gl implements org.telegram.ui.Cells.q0 {
     public final /* synthetic */ ll a;
@@ -42,17 +42,17 @@ public final class gl implements org.telegram.ui.Cells.q0 {
             int i11 = 0;
             int i12 = 0;
             while (i10 < arrayList.size()) {
-                if (((jx) arrayList.get(i10)).p == t0Var.getMessageObject().e1()) {
+                if (((kx) arrayList.get(i10)).p == t0Var.getMessageObject().e1()) {
                     i11++;
-                    if (((jx) arrayList.get(i10)).r.B() == null || ((jx) arrayList.get(i10)).r.B().y()) {
+                    if (((kx) arrayList.get(i10)).r.B() == null || ((kx) arrayList.get(i10)).r.B().y()) {
                         return;
                     }
                 }
-                if (((jx) arrayList.get(i10)).q == null || document == null) {
+                if (((kx) arrayList.get(i10)).q == null || document == null) {
                     i7 = i10;
                 } else {
                     i7 = i10;
-                    if (((jx) arrayList.get(i10)).q.id == document.id) {
+                    if (((kx) arrayList.get(i10)).q.id == document.id) {
                         i12++;
                     }
                 }
@@ -61,16 +61,16 @@ public final class gl implements org.telegram.ui.Cells.q0 {
             if (i11 >= 4) {
                 return;
             }
-            jx jxVar = new jx();
-            jxVar.h = true;
-            if (!jxVar.i) {
-                jxVar.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
-                jxVar.g = ((random.nextInt() % 101) / 100.0f) * (f10 / 4.0f);
+            kx kxVar = new kx();
+            kxVar.h = true;
+            if (!kxVar.i) {
+                kxVar.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
+                kxVar.g = ((random.nextInt() % 101) / 100.0f) * (f10 / 4.0f);
             }
-            jxVar.p = t0Var.getMessageObject().e1();
-            jxVar.m = true;
-            jxVar.r.t0 = true;
-            int f12 = kx.f();
+            kxVar.p = t0Var.getMessageObject().e1();
+            kxVar.m = true;
+            kxVar.r.t0 = true;
+            int f12 = lx.f();
             if (i12 > 0) {
                 Integer num = (Integer) hashMap.get(Long.valueOf(document.id));
                 int intValue = num == null ? 0 : num.intValue();
@@ -78,22 +78,22 @@ public final class gl implements org.telegram.ui.Cells.q0 {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(intValue);
                 sb2.append("_");
-                jxVar.r.v1 = a8.p0.n(jxVar.p, "_", sb2);
+                kxVar.r.v1 = a8.p0.n(kxVar.p, "_", sb2);
             }
-            jxVar.q = document;
-            jxVar.r.q0(org.telegram.messenger.hc.d(videoSize, document), com.google.android.recaptcha.internal.a.j(f12, "_", f12), null, "tgs", bkVar.c, 1);
-            jxVar.r.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
-            jxVar.r.W(0);
-            if (jxVar.r.B() != null) {
-                if (jxVar.h) {
-                    jxVar.r.B().N(0, false, true);
+            kxVar.q = document;
+            kxVar.r.q0(org.telegram.messenger.hc.d(videoSize, document), com.google.android.recaptcha.internal.a.j(f12, "_", f12), null, "tgs", bkVar.c, 1);
+            kxVar.r.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
+            kxVar.r.W(0);
+            if (kxVar.r.B() != null) {
+                if (kxVar.h) {
+                    kxVar.r.B().N(0, false, true);
                 }
-                jxVar.r.B().start();
+                kxVar.r.B().start();
             }
-            arrayList.add(jxVar);
+            arrayList.add(kxVar);
             if (bkVar.n) {
-                jxVar.r.P();
-                jxVar.r.H0(frameLayout);
+                kxVar.r.P();
+                kxVar.r.H0(frameLayout);
             }
             frameLayout.invalidate();
         }
@@ -127,14 +127,14 @@ public final class gl implements org.telegram.ui.Cells.q0 {
         if (str != null) {
             c(t0Var);
             vf.b bVar = cnVar.cc;
-            wg.g0 g0Var = wg.g0.K2;
+            wg.g0 g0Var = wg.g0.N2;
             wg.c0.e1(LaunchActivity.Q(), str, bVar);
             return;
         }
         i7 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
         ug.f1 f1Var = new ug.f1(cnVar, i7, cnVar.j(), new ug.j(tL_premiumGiftOption), null, cnVar.za);
-        f1Var.B2 = false;
-        f1Var.U1 = t0Var.getMessageObject().N3();
+        f1Var.E2 = false;
+        f1Var.X1 = t0Var.getMessageObject().N3();
         cnVar.showDialog(f1Var);
     }
 
@@ -277,30 +277,30 @@ public final class gl implements org.telegram.ui.Cells.q0 {
                 if (wallPaper2.pattern || wallPaper2.document == null) {
                     String str2 = wallPaper2.slug;
                     TLRPC.WallPaperSettings wallPaperSettings = wallPaper2.settings;
-                    sc1 sc1Var = new sc1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, org.telegram.messenger.g0.s1(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
-                    wallPaper = sc1Var;
+                    tc1 tc1Var = new tc1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, org.telegram.messenger.g0.s1(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
+                    wallPaper = tc1Var;
                     if (wallPaper2 instanceof TLRPC.TL_wallPaper) {
-                        sc1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
-                        wallPaper = sc1Var;
+                        tc1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
+                        wallPaper = tc1Var;
                     }
                 } else {
                     wallPaper = wallPaper2;
                 }
-                boolean q10 = org.telegram.ui.ActionBar.l6.I.q();
-                g71 g71Var = new g71(wallPaper, cnVar, q10);
+                boolean q10 = org.telegram.ui.ActionBar.m6.I.q();
+                h71 h71Var = new h71(wallPaper, cnVar, q10);
                 TLRPC.WallPaperSettings wallPaperSettings2 = wallPaper2.settings;
                 if (wallPaperSettings2 != null) {
                     boolean z9 = wallPaperSettings2.blur;
                     boolean z10 = wallPaperSettings2.motion;
-                    g71Var.G1 = z9;
-                    g71Var.F1 = z10;
-                    g71Var.o1 = wallPaperSettings2.intensity / 100.0f;
+                    h71Var.G1 = z9;
+                    h71Var.F1 = z10;
+                    h71Var.o1 = wallPaperSettings2.intensity / 100.0f;
                 }
-                g71Var.r0 = messageObject;
-                g71Var.h1(org.telegram.messenger.ij.B0(messageObject.k));
-                g71Var.a.a = cnVar.za;
-                g71Var.q1 = new h71(cnVar, q10);
-                cnVar.presentFragment(g71Var);
+                h71Var.r0 = messageObject;
+                h71Var.h1(org.telegram.messenger.ij.B0(messageObject.k));
+                h71Var.a.a = cnVar.za;
+                h71Var.q1 = new i71(cnVar, q10);
+                cnVar.presentFragment(h71Var);
                 return;
             }
             return;
@@ -344,11 +344,11 @@ public final class gl implements org.telegram.ui.Cells.q0 {
             return;
         }
         if (videoSize2 != null) {
-            org.telegram.ui.Components.k30 k30Var = new org.telegram.ui.Components.k30(0, true, true);
-            k30Var.a = cnVar;
-            k30Var.e();
-            k30Var.c.a2.u0(null, videoSize2, 0L);
-            k30Var.b = new bg.e0(cnVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], cnVar.getUserConfig().e(), 0);
+            org.telegram.ui.Components.j30 j30Var = new org.telegram.ui.Components.j30(0, true, true);
+            j30Var.a = cnVar;
+            j30Var.e();
+            j30Var.c.d2.u0(null, videoSize2, 0L);
+            j30Var.b = new bg.e0(cnVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], cnVar.getUserConfig().e(), 0);
             return;
         }
         ArrayList arrayList3 = new ArrayList();
@@ -380,10 +380,10 @@ public final class gl implements org.telegram.ui.Cells.q0 {
         } else {
             PhotoViewer.p1().L2(org.telegram.messenger.id.M0(2131744375, null));
         }
-        org.telegram.ui.Components.i30 i30Var = new org.telegram.ui.Components.i30(1, cnVar.getUserConfig().f());
-        i30Var.e = videoSize != null;
-        i30Var.b = cnVar.getMessagesController().a2(Long.valueOf(cnVar.j6));
-        PhotoViewer.p1().u2(i30Var);
+        org.telegram.ui.Components.h30 h30Var = new org.telegram.ui.Components.h30(1, cnVar.getUserConfig().f());
+        h30Var.e = videoSize != null;
+        h30Var.b = cnVar.getMessagesController().a2(Long.valueOf(cnVar.j6));
+        PhotoViewer.p1().u2(h30Var);
     }
 
     @Override // org.telegram.ui.Cells.q0
@@ -412,7 +412,7 @@ public final class gl implements org.telegram.ui.Cells.q0 {
             cnVar.showDialog(u1Var);
             TextView textView = (TextView) u1Var.d(-1);
             if (textView != null) {
-                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.q7, cnVar.getResourceProvider());
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, cnVar.getResourceProvider());
             }
         }
     }

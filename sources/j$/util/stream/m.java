@@ -31,9 +31,9 @@ public final class m extends z4 {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        j$.util.concurrent.t tVar = new j$.util.concurrent.t(4, atomicBoolean, concurrentHashMap);
-        Objects.requireNonNull(tVar);
-        new o0(tVar, false).a(t3Var, spliterator);
+        j$.util.concurrent.s sVar = new j$.util.concurrent.s(4, atomicBoolean, concurrentHashMap);
+        Objects.requireNonNull(sVar);
+        new o0(sVar, false).a(t3Var, spliterator);
         Collection keySet = concurrentHashMap.keySet();
         if (atomicBoolean.get()) {
             HashSet hashSet = new HashSet(keySet);

@@ -11,14 +11,14 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public final q1 a;
-    public final org.telegram.ui.Components.w8[] b;
+    public final org.telegram.ui.Components.v8[] b;
     public final ImageReceiver[] c;
     public final TextPaint d;
     public final CharSequence e;
@@ -27,10 +27,10 @@ public final class k0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final ny0 k;
+    public final my0 k;
     public boolean l;
     public boolean m;
-    public final ic n;
+    public final hc n;
     public final TLObject o;
 
     public k0(q1 q1Var, TLObject[] tLObjectArr, int i7) {
@@ -43,17 +43,17 @@ public final class k0 {
         this.o = tLObjectArr[0];
         this.n = new j0(q1Var, q1Var, 0);
         this.c = new ImageReceiver[3];
-        this.b = new org.telegram.ui.Components.w8[3];
+        this.b = new org.telegram.ui.Components.v8[3];
         for (int i10 = 0; i10 < 3; i10++) {
             this.c[i10] = new ImageReceiver(q1Var);
             this.c[i10].H0(q1Var);
             this.c[i10].J0(org.telegram.messenger.g0.L(54.0f));
-            this.b[i10] = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+            this.b[i10] = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
             if (i10 >= tLObjectArr.length || (tLObject = tLObjectArr[i10]) == null) {
                 Paint paint = new Paint(1);
-                int[] iArr = {org.telegram.ui.ActionBar.l6.w(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.ra, q1Var.Pb), org.telegram.ui.ActionBar.l6.r1(0.5f, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.y6, q1Var.Pb)))};
+                int[] iArr = {org.telegram.ui.ActionBar.m6.w(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.ra, q1Var.Pb), org.telegram.ui.ActionBar.m6.r1(0.5f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.y6, q1Var.Pb)))};
                 paint.setColor(iArr[0]);
-                this.c[i10].w0(new org.telegram.ui.ActionBar.u2(q1Var, iArr, paint));
+                this.c[i10].w0(new org.telegram.ui.ActionBar.v2(q1Var, iArr, paint));
             } else {
                 this.b[i10].p(tLObject);
                 this.c[i10].i0(tLObjectArr[i10], this.b[i10], null);
@@ -71,7 +71,7 @@ public final class k0 {
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new ny0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new my0(jg.g.j(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 
@@ -118,11 +118,11 @@ public final class k0 {
         if (q1Var.N0) {
             a();
         }
-        org.telegram.ui.Components.w8[] w8VarArr = {r3};
-        this.b = w8VarArr;
-        org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
-        w8Var.p(tLObject);
-        imageReceiverArr[0].i0(tLObject, w8VarArr[0], null);
+        org.telegram.ui.Components.v8[] v8VarArr = {r3};
+        this.b = v8VarArr;
+        org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        v8Var.p(tLObject);
+        imageReceiverArr[0].i0(tLObject, v8VarArr[0], null);
         textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
@@ -142,7 +142,7 @@ public final class k0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new ny0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
+            this.k = new my0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
         }
     }
 }

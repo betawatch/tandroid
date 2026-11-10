@@ -10,9 +10,9 @@ import com.google.android.gms.internal.vision.d3;
 import com.google.android.gms.internal.vision.f3;
 import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n extends b1 {
     public final t2 b;
@@ -28,13 +28,13 @@ public final class n extends b1 {
         this.b.l();
     }
 
-    public final SparseArray e1(ky0 ky0Var) {
+    public final SparseArray e1(ly0 ly0Var) {
         m[] mVarArr;
-        if (ky0Var == null) {
+        if (ly0Var == null) {
             throw new IllegalArgumentException("No frame supplied.");
         }
-        f3 b10 = f3.b(ky0Var);
-        Bitmap bitmap = (Bitmap) ky0Var.d;
+        f3 b10 = f3.b(ly0Var);
+        Bitmap bitmap = (Bitmap) ly0Var.d;
         t2 t2Var = this.b;
         if (bitmap != null) {
             if (t2Var.k()) {
@@ -61,7 +61,7 @@ public final class n extends b1 {
                 throw new IllegalArgumentException("Internal barcode detector error; check logcat output.");
             }
         } else {
-            ByteBuffer y10 = ky0Var.y();
+            ByteBuffer y10 = ly0Var.y();
             q6.m.g(y10);
             if (t2Var.k()) {
                 try {

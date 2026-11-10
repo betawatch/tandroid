@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final q50 a;
+    public final r50 a;
     public final e4 b;
     public z2 c;
     public z2 d;
@@ -23,17 +23,17 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
     public int h;
     public TL_iv.pageBlockBlockquote n;
 
-    public z0(Context context, q50 q50Var, e4 e4Var) {
+    public z0(Context context, r50 r50Var, e4 e4Var) {
         super(context);
-        this.a = q50Var;
+        this.a = r50Var;
         this.b = e4Var;
     }
 
     @Override // org.telegram.ui.c3
     public int getBoundLeft() {
         int i7;
-        q50 q50Var = this.a;
-        q50Var.getClass();
+        r50 r50Var = this.a;
+        r50Var.getClass();
         float f10 = 18;
         int L = org.telegram.messenger.g0.L(f10);
         z2 z2Var = this.c;
@@ -49,15 +49,15 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         if (i7 == Integer.MAX_VALUE) {
             return -1;
         }
-        q50Var.getClass();
+        r50Var.getClass();
         return i7 - org.telegram.messenger.g0.L(f10);
     }
 
     @Override // org.telegram.ui.c3
     public int getBoundRight() {
         int i7;
-        q50 q50Var = this.a;
-        q50Var.getClass();
+        r50 r50Var = this.a;
+        r50Var.getClass();
         float f10 = 18;
         int L = org.telegram.messenger.g0.L(f10);
         z2 z2Var = this.c;
@@ -73,7 +73,7 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         if (i7 == Integer.MIN_VALUE) {
             return -1;
         }
-        q50Var.getClass();
+        r50Var.getClass();
         return org.telegram.messenger.g0.L(f10) + i7;
     }
 
@@ -82,10 +82,10 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         int m10;
         int L;
         z2 z2Var = this.d;
-        q50 q50Var = this.a;
+        r50 r50Var = this.a;
         if (z2Var != null) {
             m10 = z2Var.m() + z2Var.s;
-            q50Var.getClass();
+            r50Var.getClass();
             L = org.telegram.messenger.g0.L(18);
         } else {
             z2 z2Var2 = this.c;
@@ -93,7 +93,7 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
                 return -1;
             }
             m10 = z2Var2.m() + z2Var2.s;
-            q50Var.getClass();
+            r50Var.getClass();
             L = org.telegram.messenger.g0.L(18);
         }
         return L + m10;
@@ -147,12 +147,12 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
             return;
         }
         z2 z2Var = this.c;
-        q50 q50Var = this.a;
+        r50 r50Var = this.a;
         int i7 = 0;
         if (z2Var != null) {
             canvas.save();
             canvas.translate(this.f, this.h);
-            g4.t(q50Var, canvas, this, 0);
+            g4.t(r50Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
             i7 = 1;
@@ -160,21 +160,21 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.f, this.e);
-            g4.t(q50Var, canvas, this, i7);
+            g4.t(r50Var, canvas, this, i7);
             this.d.d(canvas, this);
             canvas.restore();
         }
         e4 e4Var = this.b;
         if (e4Var == null || !e4Var.G) {
-            q50Var.getClass();
+            r50Var.getClass();
             float L = org.telegram.messenger.g0.L((this.n.level * 14) + 18);
             float L2 = org.telegram.messenger.g0.L(6.0f);
-            q50Var.getClass();
+            r50Var.getClass();
             canvas.drawRect(L, L2, org.telegram.messenger.g0.L((this.n.level * 14) + 20), getMeasuredHeight() - org.telegram.messenger.g0.L(6.0f), g4.r1);
         } else {
             canvas.drawRect(getMeasuredWidth() - org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(2.0f) + r2, getMeasuredHeight() - org.telegram.messenger.g0.L(6.0f), g4.r1);
         }
-        g4.s(canvas, q50Var, this.n, getMeasuredHeight());
+        g4.s(canvas, r50Var, this.n, getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -189,12 +189,12 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         z2 z2Var = this.c;
         e4 e4Var = this.b;
-        q50 q50Var = this.a;
-        if (z2Var != null && (h7 = g4.h(q50Var, e4Var, z2Var)) != null) {
+        r50 r50Var = this.a;
+        if (z2Var != null && (h7 = g4.h(r50Var, e4Var, z2Var)) != null) {
             spannableStringBuilder.append(h7);
         }
         z2 z2Var2 = this.d;
-        if (z2Var2 != null && (h = g4.h(q50Var, e4Var, z2Var2)) != null) {
+        if (z2Var2 != null && (h = g4.h(r50Var, e4Var, z2Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -212,12 +212,12 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
         int i11;
         int i12;
         int size = View.MeasureSpec.getSize(i7);
-        q50 q50Var = this.a;
-        q50Var.getClass();
+        r50 r50Var = this.a;
+        r50Var.getClass();
         float f10 = 8;
         this.h = org.telegram.messenger.g0.L(f10);
         if (this.n != null) {
-            q50Var.getClass();
+            r50Var.getClass();
             int L = size - org.telegram.messenger.g0.L(50);
             if (this.n.level > 0) {
                 L -= org.telegram.messenger.g0.L(r2 * 14);
@@ -227,7 +227,7 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
             z2 o4 = g4.o(this.a, this, null, pageblockblockquote.text, i13, this.h, pageblockblockquote, this.b);
             this.c = o4;
             if (o4 != null) {
-                q50Var.getClass();
+                r50Var.getClass();
                 i12 = this.c.d.getHeight() + org.telegram.messenger.g0.L(f10);
             } else {
                 i12 = 0;
@@ -238,29 +238,29 @@ public final class z0 extends View implements org.telegram.ui.Cells.h9, c3 {
             if (i14 > 0) {
                 if (e4Var == null || !e4Var.G) {
                     int L2 = org.telegram.messenger.g0.L(i14 * 14);
-                    q50Var.getClass();
+                    r50Var.getClass();
                     this.f = org.telegram.messenger.g0.L(32) + L2;
                 } else {
                     this.f = org.telegram.messenger.g0.L((i14 * 14) + 14);
                 }
             } else if (e4Var == null || !e4Var.G) {
-                q50Var.getClass();
+                r50Var.getClass();
                 this.f = org.telegram.messenger.g0.L(32);
             } else {
                 this.f = org.telegram.messenger.g0.L(14.0f);
             }
-            q50Var.getClass();
+            r50Var.getClass();
             int L3 = org.telegram.messenger.g0.L(f10) + i11;
             this.e = L3;
             TL_iv.pageBlockBlockquote pageblockblockquote2 = this.n;
             z2 o10 = g4.o(this.a, this, null, pageblockblockquote2.caption, i13, L3, pageblockblockquote2, this.b);
             this.d = o10;
             if (o10 != null) {
-                q50Var.getClass();
+                r50Var.getClass();
                 i11 += this.d.d.getHeight() + org.telegram.messenger.g0.L(f10);
             }
             if (i11 != 0) {
-                q50Var.getClass();
+                r50Var.getClass();
                 i11 += org.telegram.messenger.g0.L(f10);
             }
             z2 z2Var = this.c;

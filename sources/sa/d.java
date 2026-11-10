@@ -49,26 +49,26 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q0;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Components.bl;
+import org.telegram.ui.Components.al;
+import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gb;
-import org.telegram.ui.Components.pa;
-import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.oa;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.qa;
 import org.telegram.ui.Components.ra;
 import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.ta;
-import org.telegram.ui.Components.xf;
-import org.telegram.ui.hr0;
-import org.telegram.ui.hx;
+import org.telegram.ui.Components.wf;
+import org.telegram.ui.ir0;
+import org.telegram.ui.ix;
 import pb.l;
 import s2.m;
 import s2.s;
 import s2.t;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class d implements SuccessContinuation, androidx.car.app.messaging.model.b, b7.e, q, eg.a, fg.a, j2.g, gh.a, p, u9.d, q5.b, fb, l1, q0, OnFailureListener, t, u4.c {
+public final class d implements SuccessContinuation, androidx.car.app.messaging.model.b, b7.e, q, eg.a, fg.a, j2.g, gh.a, p, u9.d, q5.b, eb, l1, q0, OnFailureListener, t, u4.c {
     public static d b;
     public final /* synthetic */ int a;
 
@@ -105,17 +105,17 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
         return 872415231;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public void B(gb gbVar, ra raVar, xf xfVar, bl blVar) {
-        gbVar.setInOutOffset(gbVar.getMeasuredHeight());
-        blVar.accept(Float.valueOf(gbVar.getTranslationY()));
-        r1.g gVar = new r1.g((Object) gbVar, gb.IN_OUT_OFFSET_Y, 0.0f);
+    @Override // org.telegram.ui.Components.eb
+    public void B(fb fbVar, qa qaVar, wf wfVar, al alVar) {
+        fbVar.setInOutOffset(fbVar.getMeasuredHeight());
+        alVar.accept(Float.valueOf(fbVar.getTranslationY()));
+        r1.g gVar = new r1.g((Object) fbVar, fb.IN_OUT_OFFSET_Y, 0.0f);
         gVar.m.a(0.8f);
         gVar.m.b(400.0f);
-        gVar.a(new y3(1, gbVar, xfVar));
-        gVar.b(new eb(blVar, gbVar, 1));
+        gVar.a(new y3(1, fbVar, wfVar));
+        gVar.b(new db(alVar, fbVar, 1));
         gVar.h();
-        raVar.run();
+        qaVar.run();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -183,7 +183,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hr0 N1() {
+    public /* synthetic */ ir0 N1() {
         return null;
     }
 
@@ -295,15 +295,15 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public void c(gb gbVar, ra raVar, pa paVar, sa saVar) {
-        r1.g gVar = new r1.g(gbVar, gb.IN_OUT_OFFSET_Y, gbVar.getHeight());
+    @Override // org.telegram.ui.Components.eb
+    public void c(fb fbVar, qa qaVar, oa oaVar, ra raVar) {
+        r1.g gVar = new r1.g(fbVar, fb.IN_OUT_OFFSET_Y, fbVar.getHeight());
         gVar.m.a(0.8f);
         gVar.m.b(400.0f);
-        gVar.a(new ta(paVar, 1));
-        gVar.b(new eb(saVar, gbVar, 0));
+        gVar.a(new sa(oaVar, 1));
+        gVar.b(new db(raVar, fbVar, 0));
         gVar.h();
-        raVar.run();
+        qaVar.run();
     }
 
     @Override // j2.g
@@ -323,7 +323,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
         ReferenceQueue referenceQueue = aVar.a;
         Set set = aVar.b;
         set.add(new l(aVar, referenceQueue, set, nVar));
-        Thread thread = new Thread(new hx(referenceQueue, set, false, 1), "MlKitCleaner");
+        Thread thread = new Thread(new ix(referenceQueue, set, false, 1), "MlKitCleaner");
         thread.setDaemon(true);
         thread.start();
         return aVar;
@@ -478,7 +478,7 @@ public final class d implements SuccessContinuation, androidx.car.app.messaging.
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n0(r5 r5Var) {
+    public /* synthetic */ boolean n0(q5 q5Var) {
         return false;
     }
 

@@ -1,9 +1,9 @@
 package li;
 
 import org.telegram.messenger.p10;
-import org.telegram.ui.dg0;
+import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 p pVar = this.b;
                 pVar.L(true, 2147483646, 0, 0L, false);
-                dg0 dg0Var = pVar.O;
-                if (dg0Var != null) {
-                    dg0Var.g(false);
+                eg0 eg0Var = pVar.O;
+                if (eg0Var != null) {
+                    eg0Var.g(false);
                     pVar.O = null;
                     break;
                 }
@@ -30,9 +30,9 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 p pVar2 = this.b;
                 pVar2.L(false, 0, 0, 0L, false);
-                dg0 dg0Var2 = pVar2.O;
-                if (dg0Var2 != null) {
-                    dg0Var2.g(true);
+                eg0 eg0Var2 = pVar2.O;
+                if (eg0Var2 != null) {
+                    eg0Var2.g(true);
                     pVar2.O = null;
                     break;
                 }
@@ -40,7 +40,7 @@ public final /* synthetic */ class d implements Runnable {
             case 2:
                 p pVar3 = this.b;
                 if (!p10.i(pVar3.n).q()) {
-                    new ug.w0(pVar3.b.W1, pVar3.getContext(), pVar3.n, 43, true).show();
+                    new ug.w0(pVar3.b.Z1, pVar3.getContext(), pVar3.n, 43, true).show();
                     break;
                 }
                 break;

@@ -9,7 +9,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public final /* synthetic */ class xf implements Runnable {
             case 12:
                 org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, cnVar.getParentActivity(), cnVar.za);
                 cnVar.Rb = u1Var;
-                u1Var.setOnShowListener(new ye(cnVar, 1));
+                u1Var.setOnShowListener(new ze(cnVar, 1));
                 cnVar.Rb.setOnCancelListener(cnVar.Ha);
                 cnVar.Rb.r(500L);
                 break;
@@ -191,7 +191,7 @@ public final /* synthetic */ class xf implements Runnable {
                 break;
             case 19:
                 cnVar.P7(true);
-                org.telegram.messenger.k5.o(null, 2131743970, org.telegram.ui.Components.hc.a0(cnVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.k5.o(null, 2131743970, org.telegram.ui.Components.gc.a0(cnVar), R.raw.chats_infotip, 36);
                 break;
             case 20:
                 cnVar.C0.M.clear();

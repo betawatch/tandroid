@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.qa0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, ResultCallback {
     public final /* synthetic */ boolean a;
@@ -47,34 +47,34 @@ public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, R
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
         org.telegram.ui.an anVar = (org.telegram.ui.an) this.c;
-        org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) this.d;
-        ra0 ra0Var = (ra0) this.e;
+        org.telegram.ui.ActionBar.s3 s3Var = (org.telegram.ui.ActionBar.s3) this.d;
+        qa0 qa0Var = (qa0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((gg.a) pair.second).a;
-        org.telegram.ui.ActionBar.r3 r3Var2 = anVar.f;
-        if (r3Var2 == null || longValue != r3Var2.h(anVar.q ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.s3 s3Var2 = anVar.f;
+        if (s3Var2 == null || longValue != s3Var2.h(anVar.q ? 1 : 0) || bitmap == null) {
             return;
         }
         ValueAnimator valueAnimator = anVar.i;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        int i7 = r3Var.j(this.a ? 1 : 0).settings.intensity;
+        int i7 = s3Var.j(this.a ? 1 : 0).settings.intensity;
         List list = ((gg.a) pair.second).b;
-        ra0Var.R = list;
+        qa0Var.R = list;
         long j3 = anVar.G.mb;
         if (list != null) {
-            ra0Var.S = new Random(j3).nextInt(ra0Var.R.size());
+            qa0Var.S = new Random(j3).nextInt(qa0Var.R.size());
         }
-        ra0Var.s(i7, bitmap);
-        ra0Var.t(this.b);
+        qa0Var.s(i7, bitmap);
+        qa0Var.t(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         anVar.i = ofFloat;
-        ofFloat.addUpdateListener(new org.telegram.ui.wm(ra0Var, 2));
+        ofFloat.addUpdateListener(new org.telegram.ui.wm(qa0Var, 2));
         anVar.i.setDuration(250L);
         anVar.i.start();
     }
@@ -84,11 +84,11 @@ public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.r1, R
         org.telegram.tgnet.k.a(this, th2);
     }
 
-    public /* synthetic */ r6(org.telegram.ui.an anVar, org.telegram.ui.ActionBar.r3 r3Var, boolean z9, ra0 ra0Var, int i7) {
+    public /* synthetic */ r6(org.telegram.ui.an anVar, org.telegram.ui.ActionBar.s3 s3Var, boolean z9, qa0 qa0Var, int i7) {
         this.c = anVar;
-        this.d = r3Var;
+        this.d = s3Var;
         this.a = z9;
-        this.e = ra0Var;
+        this.e = qa0Var;
         this.b = i7;
     }
 

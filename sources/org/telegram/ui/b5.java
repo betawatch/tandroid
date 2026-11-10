@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class b5 extends FrameLayout implements org.telegram.messenger.ls {
     public static final /* synthetic */ int F = 0;
@@ -27,7 +27,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
     public final t4 c;
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final u4 e;
-    public final org.telegram.ui.ActionBar.g6 f;
+    public final org.telegram.ui.ActionBar.h6 f;
     public final ri.b h;
     public AnimatorSet n;
     public boolean r;
@@ -36,7 +36,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
     public boolean x;
     public String y;
 
-    public b5(Context context, org.telegram.ui.ActionBar.g6 g6Var, u4 u4Var) {
+    public b5(Context context, org.telegram.ui.ActionBar.h6 h6Var, u4 u4Var) {
         super(context);
         this.a = new OvershootInterpolator(1.02f);
         ri.b bVar = new ri.b();
@@ -44,7 +44,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
         dh.c cVar = new dh.c(bVar, bVar, bVar);
         new Matrix();
         this.e = u4Var;
-        this.f = g6Var;
+        this.f = h6Var;
         cVar.h = new jh.k(this);
         cVar.i = this;
         View view = new View(context);
@@ -54,7 +54,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
         k0 k0Var = new k0(2, context, this);
         this.b = k0Var;
         addView(k0Var, c8.ha.c(-1.0f, -1));
-        t4 t4Var = new t4(context, g6Var);
+        t4 t4Var = new t4(context, h6Var);
         this.c = t4Var;
         float L = org.telegram.messenger.g0.L(12.0f);
         bg.q0 q0Var = bg.u0.a;
@@ -66,10 +66,10 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
             t4Var.setOutlineSpotShadowColor(TLObject.FLAG_31);
             t4Var.setOutlineAmbientShadowColor(TLObject.FLAG_31);
         }
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, g6Var);
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, h6Var);
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
         fh.g c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, false);
-        c10.p(c8.g0.k(g6Var));
+        c10.p(c8.g0.k(h6Var));
         c10.q(org.telegram.messenger.g0.L(8.0f));
         c10.Q.e = true;
         c10.r(org.telegram.messenger.g0.L(12.0f));
@@ -111,10 +111,10 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
         String str2 = w4Var.d;
         BitmapDrawable bitmapDrawable = w4Var.g;
         Object obj = w4Var.h;
-        org.telegram.ui.Components.l9 l9Var = (org.telegram.ui.Components.l9) t4Var.d;
-        l9Var.getImageReceiver().d = i7;
-        l9Var.getImageReceiver().u0(hcVar, str, hcVar2, null, hcVar3, str2, bitmapDrawable, 0L, null, obj, 1);
-        l9Var.d();
+        org.telegram.ui.Components.k9 k9Var = (org.telegram.ui.Components.k9) t4Var.d;
+        k9Var.getImageReceiver().d = i7;
+        k9Var.getImageReceiver().u0(hcVar, str, hcVar2, null, hcVar3, str2, bitmapDrawable, 0L, null, obj, 1);
+        k9Var.d();
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;
         actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         int i10 = 0;
@@ -140,7 +140,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
         }
         this.r = z9;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.setInterpolator(z9 ? this.a : org.telegram.ui.Components.xq.h);
+        ofFloat.setInterpolator(z9 ? this.a : org.telegram.ui.Components.wq.h);
         final int i7 = 0;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.z4
             public final /* synthetic */ b5 b;
@@ -298,7 +298,7 @@ public abstract class b5 extends FrameLayout implements org.telegram.messenger.l
     public final void onSizeChanged(int i7, int i10, int i11, int i12) {
         if (i7 != 0 && i10 != 0 && this.r) {
             this.w.setBackground(null);
-            org.telegram.messenger.g0.h3(new iq0(this, 12));
+            org.telegram.messenger.g0.h3(new jq0(this, 12));
         }
         ih.d.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

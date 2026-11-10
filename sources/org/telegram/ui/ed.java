@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ed implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class ed implements Runnable {
             case 1:
                 ed edVar = zdVar.f1;
                 bi.v vVar = zdVar.O0;
-                org.telegram.ui.Components.cc.e();
+                org.telegram.ui.Components.bc.e();
                 if (zdVar.D0.amount < org.telegram.messenger.qp.s1(i10).R5) {
                     zdVar.M0 = true;
                     zdVar.N0 = zdVar.D0.amount;
@@ -64,11 +64,11 @@ public final /* synthetic */ class ed implements Runnable {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) zdVar.e1).append((CharSequence) bi.z.w0(zdVar.B0 - currentTime));
                     pdVar.g(spannableStringBuilder, true);
-                    org.telegram.ui.Components.cc ccVar = zdVar.P0;
-                    if (ccVar != null) {
-                        org.telegram.ui.Components.gb gbVar = ccVar.e;
-                        if ((gbVar instanceof org.telegram.ui.Components.kb) && gbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{bi.z.w0(zdVar.B0 - currentTime)}, ((org.telegram.ui.Components.kb) zdVar.P0.e).b);
+                    org.telegram.ui.Components.bc bcVar = zdVar.P0;
+                    if (bcVar != null) {
+                        org.telegram.ui.Components.fb fbVar = bcVar.e;
+                        if ((fbVar instanceof org.telegram.ui.Components.jb) && fbVar.isAttachedToWindow()) {
+                            org.telegram.messenger.k5.r(null, null, 2131752952, new Object[]{bi.z.w0(zdVar.B0 - currentTime)}, ((org.telegram.ui.Components.jb) zdVar.P0.e).b);
                         }
                     }
                     org.telegram.messenger.g0.r(edVar2);

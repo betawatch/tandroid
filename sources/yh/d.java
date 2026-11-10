@@ -16,13 +16,13 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.y8;
+import org.telegram.ui.Components.x8;
 import org.telegram.ui.fe;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d {
     public final f2 a;
@@ -80,7 +80,7 @@ public final class d {
             FrameLayout frameLayout = new FrameLayout(f2Var.getParentActivity());
             this.d = frameLayout;
             final int i7 = 0;
-            frameLayout.setBackground(l6.N0(false));
+            frameLayout.setBackground(m6.N0(false));
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a
                 public final /* synthetic */ d b;
 
@@ -116,9 +116,9 @@ public final class d {
             u uVar = new u(i10, f2Var.getParentActivity(), 0 == true ? 1 : 0);
             this.e = uVar;
             uVar.setAvatarsTextSize(g0.L(18.0f));
-            y8 y8Var = this.e.a;
-            for (int i11 = 0; i11 < y8Var.c.length; i11++) {
-                y8Var.j(0, 0, null);
+            x8 x8Var = this.e.a;
+            for (int i11 = 0; i11 < x8Var.c.length; i11++) {
+                x8Var.j(0, 0, null);
             }
             this.f.addView(this.e, ha.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(f2Var.getParentActivity());
@@ -127,19 +127,19 @@ public final class d {
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            s6.U(this.g, l6.Te, f2Var.getResourceProvider());
+            t6.U(this.g, m6.Te, f2Var.getResourceProvider());
             this.g.setTypeface(g0.o());
             this.f.addView(this.g, ha.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.h = new ImageView(f2Var.getParentActivity());
-            int i12 = l6.x7;
+            int i12 = m6.x7;
             int themedColor = f2Var.getThemedColor(i12);
-            y h02 = l6.h0(436207615 & themedColor, 1, g0.L(14.0f));
+            y h02 = m6.h0(436207615 & themedColor, 1, g0.L(14.0f));
             if ((themedColor >>> 24) == 255) {
-                s6.Q(this.h, h02, null, s6.g(i12, 25), f2Var.getResourceProvider());
+                t6.Q(this.h, h02, null, t6.g(i12, 25), f2Var.getResourceProvider());
             } else {
                 this.h.setBackground(h02);
             }
-            s6.s(this.h, l6.Re, f2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
+            t6.s(this.h, m6.Re, f2Var.getResourceProvider(), PorterDuff.Mode.MULTIPLY);
             this.h.setContentDescription(id.M0(2131752041, null));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);

@@ -10,17 +10,17 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ye;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public final og.g D;
     public boolean E;
     public final y5 a;
     public tg.n1 b;
-    public final org.telegram.ui.Components.w5 c;
-    public final org.telegram.ui.Components.w5 d;
+    public final org.telegram.ui.Components.v5 c;
+    public final org.telegram.ui.Components.v5 d;
     public final l0 e;
     public final FrameLayout f;
     public final g0 h;
@@ -42,9 +42,9 @@ public abstract class m0 extends FrameLayout {
         this.a = y5Var;
         l0 l0Var = new l0(this, context);
         this.e = l0Var;
-        xq xqVar = xq.h;
-        this.c = new org.telegram.ui.Components.w5(l0Var, 0L, 320L, xqVar);
-        this.d = new org.telegram.ui.Components.w5(l0Var, 0L, 320L, xqVar);
+        wq wqVar = wq.h;
+        this.c = new org.telegram.ui.Components.v5(l0Var, 0L, 320L, wqVar);
+        this.d = new org.telegram.ui.Components.v5(l0Var, 0L, 320L, wqVar);
         final int i10 = 1;
         g0 g0Var = new g0(this, context, i10);
         this.h = g0Var;
@@ -63,7 +63,7 @@ public abstract class m0 extends FrameLayout {
         TextView textView = new TextView(context);
         com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
         final int i11 = 0;
-        textView.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
+        textView.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView.setTextColor(-1);
         textView.setText(id.M0(2131752589, null));
         textView.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
@@ -111,7 +111,7 @@ public abstract class m0 extends FrameLayout {
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
-        textView2.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
+        textView2.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView2.setTextColor(-1);
         textView2.setText(id.M0(2131751696, null));
         textView2.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
@@ -159,7 +159,7 @@ public abstract class m0 extends FrameLayout {
         TextView textView3 = new TextView(context);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
-        textView3.setBackground(org.telegram.ui.ActionBar.l6.h0(-12763843, 0, -1));
+        textView3.setBackground(org.telegram.ui.ActionBar.m6.h0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
         textView3.setText(id.M0(2131744688, null));
         textView3.setPadding(org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f), 0);
@@ -263,18 +263,18 @@ public abstract class m0 extends FrameLayout {
         float rotation = g0Var.getRotation();
         og.f fVar = this.n;
         fVar.setRotation(rotation);
-        org.telegram.ui.Components.w5 w5Var = this.c;
+        org.telegram.ui.Components.v5 v5Var = this.c;
         if (yeVar != null) {
             fVar.b(yeVar.d);
             fVar.setRotated(yeVar.k != 0);
             fVar.setMirrored(yeVar.l);
-            w5Var.f(yeVar.l, false);
+            v5Var.f(yeVar.l, false);
         } else {
             fVar.b(0.0f);
             fVar.setRotated(false);
             fVar.setMirrored(false);
-            w5Var.getClass();
-            w5Var.e(false, 0.0f);
+            v5Var.getClass();
+            v5Var.e(false, 0.0f);
         }
         g0Var.r(false);
         l0 l0Var = this.e;

@@ -14,13 +14,13 @@ import org.telegram.messenger.k5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.hi0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.gi0;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.cj;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public final /* synthetic */ f2 a;
@@ -155,9 +155,9 @@ public final class h0 extends FrameLayout {
             invalidate();
             return;
         }
-        hi0 hi0Var = k0Var2.t;
-        if (hi0Var != null) {
-            hi0Var.a.setAlpha(0.0f);
+        gi0 gi0Var = k0Var2.t;
+        if (gi0Var != null) {
+            gi0Var.a.setAlpha(0.0f);
             this.y.t.c.setAlpha(0.0f);
         }
         f2 f2Var = this.a;
@@ -269,16 +269,16 @@ public final class h0 extends FrameLayout {
                 f27 = (getMeasuredWidth() + this.y.j[0]) - this.f;
             }
         }
-        xq xqVar = xq.f;
-        float interpolation = xqVar.getInterpolation(this.y.h);
+        wq wqVar = wq.f;
+        float interpolation = wqVar.getInterpolation(this.y.h);
         if (this.h == 2) {
-            f13 = xq.h.getInterpolation(interpolation);
-            f14 = xqVar.getInterpolation(interpolation);
+            f13 = wq.h.getInterpolation(interpolation);
+            f14 = wqVar.getInterpolation(interpolation);
             k0Var = null;
         } else if (this.n) {
             k0Var = null;
-            f13 = xq.h.getInterpolation(this.y.g);
-            f14 = xqVar.getInterpolation(this.y.g);
+            f13 = wq.h.getInterpolation(this.y.g);
+            f14 = wqVar.getInterpolation(this.y.g);
         } else {
             k0Var = null;
             f13 = this.y.g;
@@ -365,7 +365,7 @@ public final class h0 extends FrameLayout {
                     if (!this.y.x.isEmpty()) {
                         i0 i0Var3 = this.y.b;
                         if (i0Var3.G) {
-                            ah0 B = i0Var3.getImageReceiver().B();
+                            zg0 B = i0Var3.getImageReceiver().B();
                             int i15 = 0;
                             while (i15 < this.y.x.size()) {
                                 j0 j0Var = (j0) this.y.x.get(i15);

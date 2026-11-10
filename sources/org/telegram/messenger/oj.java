@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -306,9 +306,9 @@ public final /* synthetic */ class oj implements RequestDelegate {
             case 10:
                 k00 k00Var = (k00) this.c;
                 long j19 = this.b;
-                org.telegram.ui.Components.fx fxVar = (org.telegram.ui.Components.fx) this.d;
+                org.telegram.ui.Components.ex exVar = (org.telegram.ui.Components.ex) this.d;
                 k00Var.getClass();
-                g0.h3(new jm(k00Var, tLObject, j19, fxVar, 19));
+                g0.h3(new jm(k00Var, tLObject, j19, exVar, 19));
                 break;
             case 11:
                 g0.h3(new lm((f10) this.c, (z00) this.d, tLObject, tL_error, this.b, 6));

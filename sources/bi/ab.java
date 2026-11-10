@@ -11,10 +11,10 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.cn;
-import org.telegram.ui.rv;
-import org.telegram.ui.yw;
+import org.telegram.ui.sv;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab implements Runnable {
     public final /* synthetic */ int a;
@@ -125,12 +125,12 @@ public final /* synthetic */ class ab implements Runnable {
                 r0.a.postVsyncCallback((d3.c0) this.b);
                 return;
             case 14:
-                yw ywVar = ((rv) this.b).O0;
-                if (ywVar.L && ywVar.j4().I()) {
-                    ywVar.E0.h();
+                zw zwVar = ((sv) this.b).O0;
+                if (zwVar.L && zwVar.j4().I()) {
+                    zwVar.E0.h();
                     return;
                 } else {
-                    ywVar.J4(true, true);
+                    zwVar.J4(true, true);
                     return;
                 }
             case 15:

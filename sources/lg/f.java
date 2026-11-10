@@ -15,14 +15,13 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.i7;
 import org.telegram.messenger.p5;
 import org.telegram.messenger.x7;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.l0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f {
     public int a;
@@ -95,11 +94,11 @@ public final class f {
         RectF rectF = l0Var.a;
         rectF.set(0.0f, 0.0f, f10, f11);
         canvas.saveLayerAlpha(rectF, (int) (f12 * 255.0f), 31);
-        i6 i6Var = (i6) this.d;
-        float i7 = i6Var.i();
-        i6 i6Var2 = (i6) this.e;
-        float i10 = i6Var2.i();
-        TextPaint textPaint = i6Var2.a;
+        h6 h6Var = (h6) this.d;
+        float i7 = h6Var.i();
+        h6 h6Var2 = (h6) this.e;
+        float i10 = h6Var2.i();
+        TextPaint textPaint = h6Var2.a;
         float f13 = i10 * i7;
         canvas.save();
         float f14 = 0.82f * f11;
@@ -107,15 +106,15 @@ public final class f {
         canvas.translate(0.0f, (-g0.L(4.0f)) * f13);
         float T1 = g0.T1(1.0f, 0.86f, f13) * l0Var.G;
         canvas.scale(T1, T1, 0.0f, 0.0f);
-        i6Var.o(0.0f, 0.0f, f10, f11);
-        i6Var.draw(canvas);
+        h6Var.o(0.0f, 0.0f, f10, f11);
+        h6Var.draw(canvas);
         canvas.restore();
-        float d = ((w5) this.f).d(this.c);
+        float d = ((v5) this.f).d(this.c);
         canvas.save();
         canvas.translate(0.0f, com.google.android.recaptcha.internal.a.v(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.G) * f14 * f13) + (-g0.L(1.0f))));
         float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.G;
         canvas.scale(T12, T12, 0.0f, 0.0f);
-        i6Var2.u(i0.a.f(d, this.a, l6.x0(null, l6.q7, false)));
+        h6Var2.u(i0.a.f(d, this.a, m6.x0(null, m6.q7, false)));
         if (d > 0.0f) {
             if (this.b != textPaint.getColor()) {
                 int color = textPaint.getColor();
@@ -126,8 +125,8 @@ public final class f {
             drawable.setBounds(0, ((int) (f11 - g0.L(16.0f))) / 2, g0.L(16.0f), ((int) (g0.L(16.0f) + f11)) / 2);
             drawable.draw(canvas);
         }
-        i6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
-        i6Var2.draw(canvas);
+        h6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
+        h6Var2.draw(canvas);
         canvas.restore();
         rectF.set(f10 - g0.L(12.0f), 0.0f, f10, f11);
         l0Var.r0.m(canvas, rectF, 2, 1.0f);
@@ -138,7 +137,7 @@ public final class f {
         Canvas canvas;
         Paint paint = (Paint) this.g;
         RectF rectF = (RectF) this.f;
-        int w02 = l6.w0(l6.d6, (g6) this.h);
+        int w02 = m6.w0(m6.d6, (org.telegram.ui.ActionBar.h6) this.h);
         int i11 = (i7 + i10) << 10;
         if (i11 != this.a || this.c) {
             this.c = false;
@@ -160,28 +159,28 @@ public final class f {
 
     public f(l0 l0Var) {
         this.h = l0Var;
-        i6 i6Var = new i6(true, true, true);
-        this.d = i6Var;
-        i6 i6Var2 = new i6(true, true, true);
-        this.e = i6Var2;
-        this.f = new w5(l0Var, 0L, 300L, xq.h);
+        h6 h6Var = new h6(true, true, true);
+        this.d = h6Var;
+        h6 h6Var2 = new h6(true, true, true);
+        this.e = h6Var2;
+        this.f = new v5(l0Var, 0L, 300L, wq.h);
         this.c = false;
-        i6Var.K = true;
-        i6Var.w(g0.L(18.33f));
-        i6Var.A = 0.6f;
-        i6Var.x(g0.o());
-        i6Var.q(false);
-        i6Var.setCallback(l0Var);
-        i6Var.M = 9999999;
-        i6Var2.K = true;
-        i6Var2.w(g0.L(14.0f));
-        i6Var2.q(false);
-        i6Var2.setCallback(l0Var);
-        i6Var2.M = 9999999;
+        h6Var.K = true;
+        h6Var.w(g0.L(18.33f));
+        h6Var.A = 0.6f;
+        h6Var.x(g0.o());
+        h6Var.q(false);
+        h6Var.setCallback(l0Var);
+        h6Var.M = 9999999;
+        h6Var2.K = true;
+        h6Var2.w(g0.L(14.0f));
+        h6Var2.q(false);
+        h6Var2.setCallback(l0Var);
+        h6Var2.M = 9999999;
         this.g = l0Var.getContext().getResources().getDrawable(R.drawable.warning_sign).mutate();
     }
 
-    public f(g6 g6Var) {
+    public f(org.telegram.ui.ActionBar.h6 h6Var) {
         this.f = new RectF();
         Paint paint = new Paint(1);
         this.g = paint;
@@ -189,6 +188,6 @@ public final class f {
         this.c = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.h = g6Var;
+        this.h = h6Var;
     }
 }

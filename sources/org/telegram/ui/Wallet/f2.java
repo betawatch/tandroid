@@ -4,14 +4,14 @@ import android.animation.ValueAnimator;
 import android.content.ClipboardManager;
 import java.util.ArrayList;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.cx;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.f10;
-import org.telegram.ui.j60;
-import org.telegram.ui.wp0;
+import org.telegram.ui.Components.bx;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.h10;
+import org.telegram.ui.k60;
+import org.telegram.ui.xp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,28 +37,28 @@ public final /* synthetic */ class f2 implements Runnable {
                 qs.f(i12).n((e2) obj, qs.a4);
                 break;
             case 1:
-                x5 x5Var = (x5) obj;
-                org.telegram.messenger.g0.h3(new f10(x5Var, i12, x5.h(x5Var.R, i12), 16));
+                a6 a6Var = (a6) obj;
+                org.telegram.messenger.g0.h3(new h10(a6Var, i12, a6.h(a6Var.R, i12), 16));
                 break;
             case 2:
-                u6 u6Var = (u6) obj;
-                if (u6Var.r && !u6Var.y && i12 == u6Var.k0) {
-                    u6Var.postDelayed(u6Var.l0, 500L);
+                x6 x6Var = (x6) obj;
+                if (x6Var.r && !x6Var.y && i12 == x6Var.k0) {
+                    x6Var.postDelayed(x6Var.l0, 500L);
                     break;
                 }
                 break;
             case 3:
-                d8 d8Var = (d8) obj;
-                ArrayList arrayList = d8Var.w;
+                g8 g8Var = (g8) obj;
+                ArrayList arrayList = g8Var.w;
                 try {
-                    ClipboardManager clipboardManager = (ClipboardManager) d8Var.getParentActivity().getSystemService("clipboard");
+                    ClipboardManager clipboardManager = (ClipboardManager) g8Var.getParentActivity().getSystemService("clipboard");
                     if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
                         String[] split = text.toString().trim().toLowerCase().split("\\s+");
                         for (int i13 = 0; i12 < arrayList.size() && i13 < split.length; i13++) {
-                            ((ma) arrayList.get(i12)).setText(split[i13]);
+                            ((pa) arrayList.get(i12)).setText(split[i13]);
                             i12++;
                         }
-                        d8Var.d0();
+                        g8Var.d0();
                         break;
                     }
                 } catch (Exception unused) {
@@ -66,15 +66,15 @@ public final /* synthetic */ class f2 implements Runnable {
                 }
                 break;
             case 4:
-                v9 v9Var = (v9) obj;
-                if (!v9Var.r && i12 == v9Var.J) {
-                    v9Var.L = false;
-                    v9Var.a.f3.O(true);
+                y9 y9Var = (y9) obj;
+                if (!y9Var.r && i12 == y9Var.J) {
+                    y9Var.L = false;
+                    y9Var.a.f3.O(true);
                     break;
                 }
                 break;
             case 5:
-                ((cx) obj).w0(i12, 0, null);
+                ((bx) obj).w0(i12, 0, null);
                 break;
             case 6:
                 tg.j jVar = (tg.j) obj;
@@ -95,15 +95,15 @@ public final /* synthetic */ class f2 implements Runnable {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 jVar.P = duration;
-                duration.setInterpolator(xq.f);
+                duration.setInterpolator(wq.f);
                 jVar.P.addUpdateListener(new tg.f(jVar, 5));
                 jVar.P.addListener(new tg.g(jVar, i14));
                 jVar.P.start();
                 break;
             case 7:
-                wp0 wp0Var = (wp0) obj;
-                sg.i1 i1Var = wp0Var.t1;
-                wp0Var.s0(i1Var, null);
+                xp0 xp0Var = (xp0) obj;
+                sg.i1 i1Var = xp0Var.t1;
+                xp0Var.s0(i1Var, null);
                 sg.l0.e(i12).j(i1Var.c);
                 break;
             case 8:
@@ -115,7 +115,7 @@ public final /* synthetic */ class f2 implements Runnable {
                 org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
                 if (u1Var != null) {
                     try {
-                        u1Var.setOnCancelListener(new j60(i12, i11));
+                        u1Var.setOnCancelListener(new k60(i12, i11));
                         u1VarArr[0].show();
                         break;
                     } catch (Exception unused3) {
@@ -124,10 +124,10 @@ public final /* synthetic */ class f2 implements Runnable {
                 }
                 break;
             case 10:
-                x70 x70Var = ((wg.p0) obj).e;
+                w70 w70Var = ((wg.p0) obj).e;
                 try {
-                    if (x70Var.getLayout().getLineForOffset(i12) == 0) {
-                        x70Var.getEditableText().insert(i12, "\n");
+                    if (w70Var.getLayout().getLineForOffset(i12) == 0) {
+                        w70Var.getEditableText().insert(i12, "\n");
                         break;
                     }
                 } catch (Exception e10) {

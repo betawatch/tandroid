@@ -11,14 +11,14 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f3 {
-    public final g5 a;
+    public final f5 a;
     public ValueAnimator b;
     public int c;
     public int d;
@@ -45,11 +45,11 @@ public final class f3 {
         if (!e10 || m10 == 0) {
             return;
         }
-        g5 g5Var = new g5(i7, 13, r2Var, false);
-        this.a = g5Var;
-        g5Var.j(m10, false);
-        g5Var.k(-16777216);
-        g5Var.w = this.m;
+        f5 f5Var = new f5(i7, 13, r2Var, false);
+        this.a = f5Var;
+        f5Var.j(m10, false);
+        f5Var.k(-16777216);
+        f5Var.w = this.m;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.b = ofFloat;
         ofFloat.addUpdateListener(new de(21, this, r2Var));
@@ -64,8 +64,8 @@ public final class f3 {
     }
 
     public final void a(Canvas canvas) {
-        g5 g5Var = this.a;
-        if (g5Var == null) {
+        f5 f5Var = this.a;
+        if (f5Var == null) {
             return;
         }
         canvas.save();
@@ -75,16 +75,16 @@ public final class f3 {
         int i7 = this.g;
         int i10 = this.h;
         int i11 = this.l;
-        g5Var.setBounds(i7, i10, i7 + i11, i11 + i10);
-        g5Var.w = this.m;
-        g5Var.draw(canvas);
+        f5Var.setBounds(i7, i10, i7 + i11, i11 + i10);
+        f5Var.w = this.m;
+        f5Var.draw(canvas);
         canvas.restore();
     }
 
     public final void b(int i7, int i10) {
         di.z2 z2Var;
-        g5 g5Var = this.a;
-        if (g5Var == null) {
+        f5 f5Var = this.a;
+        if (f5Var == null) {
             return;
         }
         this.i = i7;
@@ -94,13 +94,13 @@ public final class f3 {
             return;
         }
         int i11 = 0;
-        Drawable drawable = g5Var.f[0];
-        if (!(drawable instanceof i5) || ((z2Var = ((i5) drawable).k) != null && z2Var.J())) {
+        Drawable drawable = f5Var.f[0];
+        if (!(drawable instanceof h5) || ((z2Var = ((h5) drawable).k) != null && z2Var.J())) {
             int i12 = 1;
             this.q = true;
             this.p = this.i > this.o / 2 ? org.telegram.messenger.g0.L(12) : -org.telegram.messenger.g0.L(12);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.setInterpolator(new xq(0.34d, 1.36d, 0.64d, 1.0d));
+            ofFloat.setInterpolator(new wq(0.34d, 1.36d, 0.64d, 1.0d));
             ofFloat.addUpdateListener(new d3(this, i11));
             long j3 = 350;
             ofFloat.setDuration(j3);
@@ -108,7 +108,7 @@ public final class f3 {
             ofFloat.setStartDelay(j10);
             ofFloat.start();
             ValueAnimator ofInt = ValueAnimator.ofInt(0, qs.e4, qs.e4);
-            ofInt.setInterpolator(xq.f);
+            ofInt.setInterpolator(wq.f);
             ofInt.addUpdateListener(new d3(this, i12));
             ofInt.setStartDelay(j10);
             ofInt.setDuration(j3);

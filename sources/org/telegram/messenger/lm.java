@@ -16,10 +16,10 @@ import java.util.zip.ZipInputStream;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.l21;
-import org.telegram.ui.d80;
+import org.telegram.ui.Components.k21;
+import org.telegram.ui.e80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lm implements Runnable {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class lm implements Runnable {
                     c20Var.a(tL_messages_invitedUsers);
                     return;
                 } else {
-                    org.telegram.ui.Components.v4.f(qpVar.currentAccount, qpVar.M0(Long.valueOf(j3)), tL_messages_invitedUsers);
+                    org.telegram.ui.Components.u4.f(qpVar.currentAccount, qpVar.M0(Long.valueOf(j3)), tL_messages_invitedUsers);
                     return;
                 }
             case 1:
@@ -169,7 +169,7 @@ public final /* synthetic */ class lm implements Runnable {
                 ArrayList arrayList5 = (ArrayList) this.d;
                 long j12 = this.c;
                 Uri uri2 = (Uri) this.e;
-                final d80 d80Var = (d80) this.f;
+                final e80 e80Var = (e80) this.f;
                 if (arrayList5 == null) {
                     arrayList5 = new ArrayList();
                 }
@@ -193,15 +193,15 @@ public final /* synthetic */ class lm implements Runnable {
                                 public final void run() {
                                     switch (i13) {
                                         case 0:
-                                            d80Var.run(0L);
+                                            e80Var.run(0L);
                                             break;
                                         case 1:
-                                            d80Var.run(0L);
+                                            e80Var.run(0L);
                                             break;
                                         default:
-                                            d80 d80Var2 = d80Var;
+                                            e80 e80Var2 = e80Var;
                                             Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
-                                            d80Var2.run(0L);
+                                            e80Var2.run(0L);
                                             break;
                                     }
                                 }
@@ -347,15 +347,15 @@ public final /* synthetic */ class lm implements Runnable {
                                                 public final void run() {
                                                     switch (i14) {
                                                         case 0:
-                                                            d80Var.run(0L);
+                                                            e80Var.run(0L);
                                                             break;
                                                         case 1:
-                                                            d80Var.run(0L);
+                                                            e80Var.run(0L);
                                                             break;
                                                         default:
-                                                            d80 d80Var2 = d80Var;
+                                                            e80 e80Var2 = e80Var;
                                                             Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
-                                                            d80Var2.run(0L);
+                                                            e80Var2.run(0L);
                                                             break;
                                                     }
                                                 }
@@ -375,15 +375,15 @@ public final /* synthetic */ class lm implements Runnable {
                                     public final void run() {
                                         switch (i15) {
                                             case 0:
-                                                d80Var.run(0L);
+                                                e80Var.run(0L);
                                                 break;
                                             case 1:
-                                                d80Var.run(0L);
+                                                e80Var.run(0L);
                                                 break;
                                             default:
-                                                d80 d80Var2 = d80Var;
+                                                e80 e80Var2 = e80Var;
                                                 Toast.makeText(t0.b, id.M0(2131749250, null), 0).show();
-                                                d80Var2.run(0L);
+                                                e80Var2.run(0L);
                                                 break;
                                         }
                                     }
@@ -395,19 +395,19 @@ public final /* synthetic */ class lm implements Runnable {
                     i12 = i7 + 1;
                     uri2 = uri;
                 }
-                g0.h3(new lm(gzVar, hashMap, j12, xyVar, d80Var, 4));
+                g0.h3(new lm(gzVar, hashMap, j12, xyVar, e80Var, 4));
                 return;
             case 4:
                 gz gzVar2 = (gz) this.b;
                 HashMap hashMap2 = (HashMap) this.d;
                 long j13 = this.c;
                 xy xyVar2 = (xy) this.e;
-                d80 d80Var2 = (d80) this.f;
+                e80 e80Var2 = (e80) this.f;
                 gzVar2.y.putAll(hashMap2);
                 gzVar2.D.k(xyVar2, j13);
                 gzVar2.getFileLoader().g0(xyVar2.a, false, true, 0L, 67108864, true);
                 gzVar2.getNotificationCenter().k(qs.v1, Long.valueOf(j13));
-                d80Var2.run(j13);
+                e80Var2.run(j13);
                 try {
                     t0.b.startService(new Intent(t0.b, (Class<?>) ImportingService.class));
                     return;
@@ -451,7 +451,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 tL_textWithEntities = arrayList7.get(i16);
                                 i16++;
                             }
-                            c10Var3.a = l21.P0(c10Var.a, tL_textWithEntities);
+                            c10Var3.a = k21.P0(c10Var.a, tL_textWithEntities);
                         }
                         if (c10Var.b.size() != (c10Var2 == null ? 0 : c10Var2.b.size())) {
                             ArrayList arrayList9 = c10Var.b;
@@ -494,7 +494,7 @@ public final /* synthetic */ class lm implements Runnable {
                                 i16++;
                                 tL_textWithEntities2 = tL_textWithEntities6;
                             }
-                            c10Var3.c = l21.P0(c10Var.c, tL_textWithEntities2);
+                            c10Var3.c = k21.P0(c10Var.c, tL_textWithEntities2);
                         }
                         arrayList8.add(c10Var3);
                         size2 = i10;

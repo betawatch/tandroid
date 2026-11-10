@@ -128,10 +128,10 @@ public abstract class t3 implements b8 {
         return new l7((j$.util.u0) spliterator, j3, Z);
     }
 
-    public static j$.util.concurrent.t B0(r1 r1Var, Predicate predicate) {
+    public static j$.util.concurrent.s B0(r1 r1Var, Predicate predicate) {
         Objects.requireNonNull(predicate);
         Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.t(w6.REFERENCE, r1Var, new j$.util.concurrent.t(5, r1Var, predicate));
+        return new j$.util.concurrent.s(w6.REFERENCE, r1Var, new j$.util.concurrent.s(5, r1Var, predicate));
     }
 
     public static x2 i0(w6 w6Var) {
@@ -151,10 +151,10 @@ public abstract class t3 implements b8 {
         throw new IllegalStateException("Unknown shape " + w6Var);
     }
 
-    public static j$.util.concurrent.t w0(r1 r1Var) {
+    public static j$.util.concurrent.s w0(r1 r1Var) {
         Objects.requireNonNull(null);
         Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.t(w6.INT_VALUE, r1Var, new l1(r1Var, 1));
+        return new j$.util.concurrent.s(w6.INT_VALUE, r1Var, new l1(r1Var, 1));
     }
 
     public static l5 C0(b5 b5Var, long j3, long j10) {
@@ -201,20 +201,20 @@ public abstract class t3 implements b8 {
         return new l2((y1) e2Var, (y1) e2Var2);
     }
 
-    public static j$.util.concurrent.t y0(r1 r1Var) {
+    public static j$.util.concurrent.s y0(r1 r1Var) {
         Objects.requireNonNull(null);
         Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.t(w6.LONG_VALUE, r1Var, new l1(r1Var, 0));
+        return new j$.util.concurrent.s(w6.LONG_VALUE, r1Var, new l1(r1Var, 0));
     }
 
     public static void J() {
         throw new IllegalStateException("called wrong accept method");
     }
 
-    public static j$.util.concurrent.t u0(r1 r1Var) {
+    public static j$.util.concurrent.s u0(r1 r1Var) {
         Objects.requireNonNull(null);
         Objects.requireNonNull(r1Var);
-        return new j$.util.concurrent.t(w6.DOUBLE_VALUE, r1Var, new l1(r1Var, 2));
+        return new j$.util.concurrent.s(w6.DOUBLE_VALUE, r1Var, new l1(r1Var, 2));
     }
 
     public static void K() {

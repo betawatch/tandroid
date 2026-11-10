@@ -6,9 +6,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class uj extends org.telegram.ui.Components.xc {
+public final class uj extends org.telegram.ui.Components.wc {
     public org.telegram.ui.Cells.y e;
     public int f;
     public final /* synthetic */ boolean h;
@@ -21,16 +21,16 @@ public final class uj extends org.telegram.ui.Components.xc {
         this.h = z9;
     }
 
-    @Override // org.telegram.ui.Components.xc
+    @Override // org.telegram.ui.Components.wc
     public final void d() {
         try {
-            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.l6.kf);
+            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.m6.kf);
             if (this.e != null) {
                 Drawable background = getBackground();
                 Drawable drawable = this.e;
                 if (background == drawable) {
                     if (themedColor != this.f) {
-                        org.telegram.ui.ActionBar.l6.H1(drawable, themedColor & 436207615, true);
+                        org.telegram.ui.ActionBar.m6.H1(drawable, themedColor & 436207615, true);
                     }
                     if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
                         getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
@@ -42,7 +42,7 @@ public final class uj extends org.telegram.ui.Components.xc {
                     return;
                 }
             }
-            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.l6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
+            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.m6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
             this.e = Y;
             setBackground(Y);
             if (getImageView() != null) {
@@ -56,7 +56,7 @@ public final class uj extends org.telegram.ui.Components.xc {
         }
     }
 
-    @Override // org.telegram.ui.Components.xc
+    @Override // org.telegram.ui.Components.wc
     public final void setEditButton(boolean z9) {
         super.setEditButton(z9);
         if (this.h) {

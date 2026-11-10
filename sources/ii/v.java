@@ -1,9 +1,9 @@
 package ii;
 
 import android.os.Bundle;
-import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.r00;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -19,28 +19,28 @@ public final /* synthetic */ class v implements Runnable {
         switch (this.a) {
             case 0:
                 d0 d0Var = this.b;
-                d0Var.r1.d.e3.h1(1, d0Var.L1.b);
-                d0Var.i1.a(false, true);
+                d0Var.u1.d.e3.h1(1, d0Var.O1.b);
+                d0Var.l1.a(false, true);
                 d0Var.q0 = true;
-                s00 s00Var = d0Var.u1;
-                org.telegram.messenger.g0.v1(s00Var.r);
-                s00Var.r.clearFocus();
+                r00 r00Var = d0Var.x1;
+                org.telegram.messenger.g0.v1(r00Var.r);
+                r00Var.r.clearFocus();
                 break;
             case 1:
                 d0 d0Var2 = this.b;
-                d0Var2.t1.d.e3.h1(1, d0Var2.L1.b);
-                d0Var2.j1.a(false, true);
+                d0Var2.w1.d.e3.h1(1, d0Var2.O1.b);
+                d0Var2.m1.a(false, true);
                 d0Var2.q0 = true;
-                s00 s00Var2 = d0Var2.v1;
-                org.telegram.messenger.g0.v1(s00Var2.r);
-                s00Var2.r.clearFocus();
+                r00 r00Var2 = d0Var2.y1;
+                org.telegram.messenger.g0.v1(r00Var2.r);
+                r00Var2.r.clearFocus();
                 break;
             default:
                 d0 d0Var3 = this.b;
                 d0Var3.getClass();
                 Bundle bundle = new Bundle();
-                bundle.putLong("community_id", d0Var3.l1);
-                d0Var3.q1.presentFragment(new p(bundle));
+                bundle.putLong("community_id", d0Var3.o1);
+                d0Var3.t1.presentFragment(new p(bundle));
                 d0Var3.dismiss();
                 break;
         }

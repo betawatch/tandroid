@@ -27,10 +27,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.tf0;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.sf0;
+import org.telegram.ui.Components.up0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.Wallet.s;
 import yh.l;
@@ -38,7 +39,7 @@ import yh.m;
 import zh.y0;
 import zh.z1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -176,12 +177,12 @@ public final /* synthetic */ class b implements Runnable {
                         z9 = true;
                         f2Var = f2Var2;
                     } else if (mVar.s == null) {
-                        l lVar = new l(mVar, f2Var2.getParentActivity(), (qj0) e5Var.getParent(), f2Var2.getResourceProvider(), mVar.a);
+                        l lVar = new l(mVar, f2Var2.getParentActivity(), (pj0) e5Var.getParent(), f2Var2.getResourceProvider(), mVar.a);
                         mVar.s = lVar;
                         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = mVar.r;
-                        l9 avatarImageView = e5Var.getAvatarImageView();
+                        k9 avatarImageView = e5Var.getAvatarImageView();
                         TextView textView = lVar.e;
-                        tf0 tf0Var = lVar.h;
+                        sf0 sf0Var = lVar.h;
                         lVar.r = tL_chatInviteImporter;
                         lVar.w = avatarImageView;
                         TLRPC.User a22 = qp.s1(i15).a2(Long.valueOf(tL_chatInviteImporter.user_id));
@@ -190,9 +191,9 @@ public final /* synthetic */ class b implements Runnable {
                         if (qp.s1(i15).b2(tL_chatInviteImporter.user_id) == null) {
                             qp.s1(i15).g3(a22, false, 0);
                         }
-                        tf0Var.setParentAvatarImage(avatarImageView);
-                        tf0Var.M(tL_chatInviteImporter.user_id, true);
-                        tf0Var.H(null, m10, m11, true);
+                        sf0Var.setParentAvatarImage(avatarImageView);
+                        sf0Var.M(tL_chatInviteImporter.user_id, true);
+                        sf0Var.H(null, m10, m11, true);
                         lVar.d.setText(t10.p((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
                         textView.setText(tL_chatInviteImporter.about);
                         textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
@@ -230,14 +231,14 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 9:
-                vp0 vp0Var = (vp0) this.b;
+                up0 up0Var = (up0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                vp0Var.h(tL_starGiftCollection.title, new s(17, vp0Var, tL_starGiftCollection));
+                up0Var.h(tL_starGiftCollection.title, new s(17, up0Var, tL_starGiftCollection));
                 break;
             default:
                 z1 z1Var = (z1) this.b;
                 g0.g((String) this.c);
-                org.telegram.ui.Components.hc.a0(z1Var.a.a).k(false).j();
+                gc.a0(z1Var.a.a).k(false).j();
                 break;
         }
     }

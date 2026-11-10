@@ -1,40 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class te implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ cn b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ te(cn cnVar, org.telegram.ui.Cells.t0 t0Var, int i7) {
+    public /* synthetic */ te(cn cnVar, long j3, long j10, int i7) {
         this.a = i7;
         this.b = cnVar;
-        this.c = t0Var;
+        this.c = j3;
+        this.d = j10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                cn cnVar = this.b;
-                cnVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cnVar.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue;
-                cnVar.L9();
-                this.c.setAlpha(floatValue);
+                cn.p0(this.b, this.c, this.d);
                 break;
             default:
-                cn cnVar2 = this.b;
-                cnVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cnVar2.V9 = org.telegram.messenger.g0.L(30.0f) * floatValue2;
-                cnVar2.L9();
-                cnVar2.N9();
-                this.c.setAlpha(floatValue2);
+                cn.G1(this.b, this.c, this.d);
                 break;
         }
     }

@@ -13,14 +13,14 @@ import java.net.IDN;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.ui.Cells.c1;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.s70;
-import org.telegram.ui.Components.u70;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.r70;
+import org.telegram.ui.Components.ro;
+import org.telegram.ui.Components.t70;
+import org.telegram.ui.Components.x70;
 import org.telegram.ui.z2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n0 {
     public int a;
@@ -41,32 +41,32 @@ public final class n0 {
         return Objects.equals(((e2.u) n0Var.c).s, "audio/raw");
     }
 
-    public static b80 k(Layout layout, CharacterStyle characterStyle, float f10) {
+    public static a80 k(Layout layout, CharacterStyle characterStyle, float f10) {
         if (layout == null || characterStyle == null || !(layout.getText() instanceof Spanned)) {
             return null;
         }
         Spanned spanned = (Spanned) layout.getText();
-        s70 s70Var = new s70(0);
+        r70 r70Var = new r70(0);
         int spanStart = spanned.getSpanStart(characterStyle);
         int spanEnd = spanned.getSpanEnd(characterStyle);
-        s70Var.d(layout, spanStart, f10);
-        layout.getSelectionPath(spanStart, spanEnd, s70Var);
-        b80 b80Var = new b80();
-        b80Var.y = s70Var;
-        b80Var.D = true;
-        b80Var.k(4.0f);
-        b80Var.l();
-        return b80Var;
+        r70Var.d(layout, spanStart, f10);
+        layout.getSelectionPath(spanStart, spanEnd, r70Var);
+        a80 a80Var = new a80();
+        a80Var.y = r70Var;
+        a80Var.D = true;
+        a80Var.k(4.0f);
+        a80Var.l();
+        return a80Var;
     }
 
-    public void b(y70 y70Var, Object obj) {
-        ((ArrayList) this.e).add(new Pair(y70Var, obj));
+    public void b(x70 x70Var, Object obj) {
+        ((ArrayList) this.e).add(new Pair(x70Var, obj));
         this.a++;
         j(obj, true);
     }
 
-    public void c(b80 b80Var, Object obj) {
-        ((ArrayList) this.f).add(new Pair(b80Var, obj));
+    public void c(a80 a80Var, Object obj) {
+        ((ArrayList) this.f).add(new Pair(a80Var, obj));
         this.b++;
         j(obj, true);
     }
@@ -118,7 +118,7 @@ public final class n0 {
             }
         } else if (this.a > 0) {
             for (int i10 = 0; i10 < this.a; i10++) {
-                ((y70) ((Pair) arrayList.get(i10)).first).c();
+                ((x70) ((Pair) arrayList.get(i10)).first).c();
                 j(((Pair) arrayList.get(i10)).second, false);
             }
             arrayList.clear();
@@ -137,12 +137,12 @@ public final class n0 {
         int i7 = 0;
         boolean z9 = false;
         while (i7 < this.b) {
-            ((b80) ((Pair) ((ArrayList) this.f).get(i7)).first).draw(canvas);
+            ((a80) ((Pair) ((ArrayList) this.f).get(i7)).first).draw(canvas);
             i7++;
             z9 = true;
         }
         for (int i10 = 0; i10 < this.a; i10++) {
-            z9 = ((y70) ((Pair) ((ArrayList) this.e).get(i10)).first).a(canvas) || z9;
+            z9 = ((x70) ((Pair) ((ArrayList) this.e).get(i10)).first).a(canvas) || z9;
         }
         return z9;
     }
@@ -153,13 +153,13 @@ public final class n0 {
         boolean z9 = false;
         for (int i7 = 0; i7 < this.b; i7++) {
             if (((Pair) arrayList2.get(i7)).second == obj) {
-                ((b80) ((Pair) arrayList2.get(i7)).first).draw(canvas);
+                ((a80) ((Pair) arrayList2.get(i7)).first).draw(canvas);
                 z9 = true;
             }
         }
         for (int i10 = 0; i10 < this.a; i10++) {
             if (((Pair) arrayList.get(i10)).second == obj) {
-                z9 = ((y70) ((Pair) arrayList.get(i10)).first).a(canvas) || z9;
+                z9 = ((x70) ((Pair) arrayList.get(i10)).first).a(canvas) || z9;
             }
         }
         j(obj, false);
@@ -191,18 +191,18 @@ public final class n0 {
             return;
         }
         Pair pair = (Pair) arrayList.get(i7);
-        y70 y70Var = (y70) pair.first;
-        if (y70Var.p < 0) {
-            y70Var.p = Math.max(y70Var.o + y70Var.q, SystemClock.elapsedRealtime());
+        x70 x70Var = (x70) pair.first;
+        if (x70Var.p < 0) {
+            x70Var.p = Math.max(x70Var.o + x70Var.q, SystemClock.elapsedRealtime());
             j(pair.second, true);
-            org.telegram.messenger.g0.i3(new u70(this, y70Var, 1), Math.max(0L, (y70Var.p - SystemClock.elapsedRealtime()) + 175));
+            org.telegram.messenger.g0.i3(new t70(this, x70Var, 1), Math.max(0L, (x70Var.p - SystemClock.elapsedRealtime()) + 175));
         }
     }
 
-    public void m(y70 y70Var, boolean z9) {
+    public void m(x70 x70Var, boolean z9) {
         Pair pair;
         ArrayList arrayList = (ArrayList) this.e;
-        if (y70Var == null) {
+        if (x70Var == null) {
             return;
         }
         int i7 = 0;
@@ -211,7 +211,7 @@ public final class n0 {
                 pair = null;
                 break;
             } else {
-                if (((Pair) arrayList.get(i7)).first == y70Var) {
+                if (((Pair) arrayList.get(i7)).first == x70Var) {
                     pair = (Pair) arrayList.get(i7);
                     break;
                 }
@@ -223,24 +223,24 @@ public final class n0 {
         }
         if (!z9) {
             arrayList.remove(pair);
-            y70Var.c();
+            x70Var.c();
             this.a = arrayList.size();
             j(pair.second, true);
             return;
         }
-        if (y70Var.p < 0) {
-            y70Var.p = Math.max(y70Var.o + y70Var.q, SystemClock.elapsedRealtime());
+        if (x70Var.p < 0) {
+            x70Var.p = Math.max(x70Var.o + x70Var.q, SystemClock.elapsedRealtime());
             j(pair.second, true);
-            org.telegram.messenger.g0.i3(new u70(this, y70Var, 0), Math.max(0L, (y70Var.p - SystemClock.elapsedRealtime()) + 175));
+            org.telegram.messenger.g0.i3(new t70(this, x70Var, 0), Math.max(0L, (x70Var.p - SystemClock.elapsedRealtime()) + 175));
         }
     }
 
-    public void n(b80 b80Var, boolean z9) {
-        if (b80Var == null) {
+    public void n(a80 a80Var, boolean z9) {
+        if (a80Var == null) {
             return;
         }
         for (int i7 = 0; i7 < this.b; i7++) {
-            if (((Pair) ((ArrayList) this.f).get(i7)).first == b80Var) {
+            if (((Pair) ((ArrayList) this.f).get(i7)).first == a80Var) {
                 o(i7, z9);
                 return;
             }
@@ -253,23 +253,23 @@ public final class n0 {
         if (i7 < 0 || i7 >= this.b || (pair = (Pair) arrayList.get(i7)) == null) {
             return;
         }
-        b80 b80Var = (b80) pair.first;
+        a80 a80Var = (a80) pair.first;
         if (!z9) {
             arrayList.remove(pair);
-            b80Var.b = -1L;
-            b80Var.c = -1L;
+            a80Var.b = -1L;
+            a80Var.c = -1L;
             this.b = arrayList.size();
             j(pair.second, true);
             return;
         }
-        if (b80Var.c()) {
-            n(b80Var, false);
+        if (a80Var.c()) {
+            n(a80Var, false);
             return;
         }
-        if (!b80Var.d()) {
-            b80Var.a();
+        if (!a80Var.d()) {
+            a80Var.a();
         }
-        org.telegram.messenger.g0.i3(new fq(28, this, b80Var), b80Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - b80Var.c) : 0L);
+        org.telegram.messenger.g0.i3(new ro(29, this, a80Var), a80Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - a80Var.c) : 0L);
     }
 
     public void p(int i7) {

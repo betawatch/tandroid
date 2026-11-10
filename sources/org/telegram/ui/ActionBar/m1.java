@@ -8,13 +8,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ls;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.wd0;
-import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.vd0;
+import org.telegram.ui.Components.x50;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.dk0;
-import org.telegram.ui.ee0;
+import org.telegram.ui.ek0;
+import org.telegram.ui.fe0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -51,26 +51,26 @@ public final class m1 extends ScrollView {
     public void onMeasure(int i7, int i10) {
         switch (this.a) {
             case 1:
-                y50 y50Var = (y50) this.b;
+                x50 x50Var = (x50) this.b;
                 int size = View.MeasureSpec.getSize(i7);
                 int size2 = View.MeasureSpec.getSize(i10);
                 if (org.telegram.messenger.g0.Q1() || size2 > size) {
-                    y50Var.j2 = org.telegram.messenger.g0.L(144.0f);
+                    x50Var.m2 = org.telegram.messenger.g0.L(144.0f);
                 } else {
-                    y50Var.j2 = org.telegram.messenger.g0.L(56.0f);
+                    x50Var.m2 = org.telegram.messenger.g0.L(56.0f);
                 }
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(y50Var.j2, TLObject.FLAG_31));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(x50Var.m2, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i7, i10);
-                setMeasuredDimension(((wd0) this.b).getMeasuredWidth(), getMeasuredHeight());
+                setMeasuredDimension(((vd0) this.b).getMeasuredWidth(), getMeasuredHeight());
                 break;
             case 3:
             default:
                 super.onMeasure(i7, i10);
                 break;
             case 4:
-                ((dk0) this.b).s0 = View.MeasureSpec.getSize(i10) - org.telegram.messenger.g0.L(30.0f);
+                ((ek0) this.b).s0 = View.MeasureSpec.getSize(i10) - org.telegram.messenger.g0.L(30.0f);
                 super.onMeasure(i7, i10);
                 break;
         }
@@ -90,13 +90,13 @@ public final class m1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z9) {
         switch (this.a) {
             case 3:
-                int i7 = ((ee0) this.b).a;
+                int i7 = ((fe0) this.b).a;
                 if (i7 == 1 || i7 == 2 || i7 == 4) {
                     rect.bottom = org.telegram.messenger.g0.L(40.0f) + rect.bottom;
                 }
                 break;
             case 4:
-                int i10 = ((dk0) this.b).I1;
+                int i10 = ((ek0) this.b).I1;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = org.telegram.messenger.g0.L(40.0f) + rect.bottom;
                 }
@@ -117,9 +117,9 @@ public final class m1 extends ScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m1(Context context, wd0 wd0Var) {
+    public m1(Context context, vd0 vd0Var) {
         super(context, null, 0, R.style.scrollbarShapeStyle);
         this.a = 2;
-        this.b = wd0Var;
+        this.b = vd0Var;
     }
 }

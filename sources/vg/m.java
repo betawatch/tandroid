@@ -25,14 +25,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.iz;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.Components.voip.h0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import ug.q1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class m extends TextureView implements TextureView.SurfaceTextureListener, b6 {
+public class m extends TextureView implements TextureView.SurfaceTextureListener, c6 {
     public volatile int D;
     public int E;
     public int F;
@@ -482,7 +482,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.b.i, f11);
                     ofFloat2.addUpdateListener(gVar2);
                     ofFloat2.setDuration(3000L);
-                    ofFloat2.setInterpolator(xq.h);
+                    ofFloat2.setInterpolator(wq.h);
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f11, 0.0f);
                     ofFloat3.addUpdateListener(gVar2);
                     ofFloat3.setDuration(1000L);
@@ -494,7 +494,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.b.i, f12);
                     ofFloat4.addUpdateListener(gVar);
                     ofFloat4.setDuration(2300L);
-                    ofFloat4.setInterpolator(xq.h);
+                    ofFloat4.setInterpolator(wq.h);
                     ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f12, 0.0f);
                     ofFloat5.addUpdateListener(gVar);
                     ofFloat5.setDuration(500L);
@@ -511,7 +511,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat6 = ValueAnimator.ofFloat(this.b.d, 360.0f);
                 ofFloat6.addUpdateListener(gVar2);
                 ofFloat6.setDuration(8000L);
-                ofFloat6.setInterpolator(xq.f);
+                ofFloat6.setInterpolator(wq.f);
                 this.d0.playTogether(ofFloat6);
                 this.d0.addListener(new j(this, 0));
                 this.d0.start();
@@ -522,13 +522,13 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat7 = ValueAnimator.ofFloat(this.b.d, 180.0f);
                 ofFloat7.addUpdateListener(gVar2);
                 ofFloat7.setDuration(600L);
-                xq xqVar = xq.f;
-                ofFloat7.setInterpolator(xqVar);
+                wq wqVar = wq.f;
+                ofFloat7.setInterpolator(wqVar);
                 ValueAnimator ofFloat8 = ValueAnimator.ofFloat(180.0f, 360.0f);
                 ofFloat8.addUpdateListener(gVar2);
                 ofFloat8.setDuration(600L);
                 ofFloat8.setStartDelay(2000L);
-                ofFloat8.setInterpolator(xqVar);
+                ofFloat8.setInterpolator(wqVar);
                 this.d0.playTogether(ofFloat7, ofFloat8);
                 this.d0.addListener(new j(this, 2));
                 this.d0.start();
@@ -538,12 +538,12 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
             ValueAnimator ofFloat9 = ValueAnimator.ofFloat(this.b.d, 184.0f);
             ofFloat9.addUpdateListener(gVar2);
             ofFloat9.setDuration(600L);
-            xq xqVar2 = xq.g;
-            ofFloat9.setInterpolator(xqVar2);
+            wq wqVar2 = wq.g;
+            ofFloat9.setInterpolator(wqVar2);
             ValueAnimator ofFloat10 = ValueAnimator.ofFloat(this.b.i, 50.0f);
             ofFloat10.addUpdateListener(gVar);
             ofFloat10.setDuration(600L);
-            ofFloat10.setInterpolator(xqVar2);
+            ofFloat10.setInterpolator(wqVar2);
             ValueAnimator ofFloat11 = ValueAnimator.ofFloat(180.0f, 0.0f);
             ofFloat11.addUpdateListener(gVar2);
             ofFloat11.setDuration(800L);
@@ -675,7 +675,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
         this.R = q1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
             f fVar = this.b;
@@ -687,7 +687,7 @@ public class m extends TextureView implements TextureView.SurfaceTextureListener
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

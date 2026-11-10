@@ -6,9 +6,9 @@ import c8.xb;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new t0(4);
@@ -65,22 +65,22 @@ public final class i extends l {
     }
 
     public final String toString() {
-        ky0 ky0Var = new ky0(getClass().getSimpleName(), 9);
+        ly0 ly0Var = new ly0(getClass().getSimpleName(), 9);
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        ky0Var.N(k0Var.c(p10.length, p10), "keyHandle");
+        ly0Var.N(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        ky0Var.N(k0Var.c(p11.length, p11), "clientDataJSON");
+        ly0Var.N(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        ky0Var.N(k0Var.c(p12.length, p12), "authenticatorData");
+        ly0Var.N(k0Var.c(p12.length, p12), "authenticatorData");
         byte[] p13 = this.d.p();
-        ky0Var.N(k0Var.c(p13.length, p13), "signature");
+        ly0Var.N(k0Var.c(p13.length, p13), "signature");
         q7.s0 s0Var = this.e;
         byte[] p14 = s0Var == null ? null : s0Var.p();
         if (p14 != null) {
-            ky0Var.N(k0Var.c(p14.length, p14), "userHandle");
+            ly0Var.N(k0Var.c(p14.length, p14), "userHandle");
         }
-        return ky0Var.toString();
+        return ly0Var.toString();
     }
 
     @Override // android.os.Parcelable

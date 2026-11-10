@@ -16,13 +16,13 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.s70;
+import org.telegram.ui.Components.r70;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j5 extends View {
     public final TextPaint a;
-    public final s70 b;
+    public final r70 b;
     public final Paint c;
     public final Paint d;
     public StaticLayout e;
@@ -48,7 +48,7 @@ public final class j5 extends View {
         Paint paint2 = new Paint(1);
         this.d = paint2;
         paint2.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(9.66f)));
-        this.b = new s70(0);
+        this.b = new r70(0);
     }
 
     public final void a(int i7, CharSequence charSequence) {
@@ -57,14 +57,14 @@ public final class j5 extends View {
             return;
         }
         this.e = new StaticLayout(charSequence, this.a, i7 - org.telegram.messenger.g0.L(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        s70 s70Var = this.b;
-        s70Var.rewind();
+        r70 r70Var = this.b;
+        r70Var.rewind();
         int i10 = this.h;
         int i11 = this.n;
-        s70Var.e = i10;
-        s70Var.f = i11;
+        r70Var.e = i10;
+        r70Var.f = i11;
         if (this.f) {
-            s70Var.e(null, 0, 0.0f, 0.0f);
+            r70Var.e(null, 0, 0.0f, 0.0f);
             float f10 = Float.MAX_VALUE;
             float width = this.e.getWidth();
             float f11 = Float.MIN_VALUE;
@@ -77,10 +77,10 @@ public final class j5 extends View {
             }
             this.b.addRect(width, f11, f12, this.e.getHeight(), Path.Direction.CW);
         } else {
-            s70Var.e(this.e, 0, 0.0f, 0.0f);
+            r70Var.e(this.e, 0, 0.0f, 0.0f);
             StaticLayout staticLayout = this.e;
-            staticLayout.getSelectionPath(0, staticLayout.getText().length(), s70Var);
-            s70Var.a();
+            staticLayout.getSelectionPath(0, staticLayout.getText().length(), r70Var);
+            r70Var.a();
         }
         invalidate();
     }
@@ -124,12 +124,12 @@ public final class j5 extends View {
                 this.r.setLocalMatrix(this.s);
             }
             Paint paint = this.c;
-            s70 s70Var = this.b;
-            canvas.drawPath(s70Var, paint);
-            int r12 = org.telegram.ui.ActionBar.l6.r1(0.35f, -16777216);
+            r70 r70Var = this.b;
+            canvas.drawPath(r70Var, paint);
+            int r12 = org.telegram.ui.ActionBar.m6.r1(0.35f, -16777216);
             Paint paint2 = this.d;
             paint2.setColor(r12);
-            canvas.drawPath(s70Var, paint2);
+            canvas.drawPath(r70Var, paint2);
             this.e.draw(canvas);
             canvas.restore();
         }

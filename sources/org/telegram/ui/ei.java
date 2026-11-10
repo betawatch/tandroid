@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ei implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ fi b;
     public final /* synthetic */ int c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.ji0 e;
+    public final /* synthetic */ org.telegram.ui.Components.ii0 e;
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
     public final /* synthetic */ ch.o0 n;
 
-    public /* synthetic */ ei(fi fiVar, int i7, boolean z9, org.telegram.ui.Components.ji0 ji0Var, float f10, float f11, ch.o0 o0Var, int i10) {
+    public /* synthetic */ ei(fi fiVar, int i7, boolean z9, org.telegram.ui.Components.ii0 ii0Var, float f10, float f11, ch.o0 o0Var, int i10) {
         this.a = i10;
         this.b = fiVar;
         this.c = i7;
         this.d = z9;
-        this.e = ji0Var;
+        this.e = ii0Var;
         this.f = f10;
         this.h = f11;
         this.n = o0Var;

@@ -1,24 +1,77 @@
 package x2;
 
-import h9.t1;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class r1 extends e2.t0 {
-    public final h9.i0 c;
+public abstract class r1 extends l {
+    public final a k;
 
-    public r1(String str, t1 t1Var) {
-        super(str, null, false, 1);
-        this.c = h9.i0.q(t1Var);
+    public r1(a aVar) {
+        this.k = aVar;
     }
 
-    @Override // e2.t0, java.lang.Throwable
-    public final String getMessage() {
-        String message = super.getMessage();
-        h9.i0 i0Var = this.c;
-        if (i0Var.isEmpty()) {
-            return message;
-        }
-        return message + "\nsniff failures: " + i0Var;
+    public abstract void A(e2.l1 l1Var);
+
+    public final void B() {
+        y(null, this.k);
+    }
+
+    public void C() {
+        B();
+    }
+
+    @Override // x2.a
+    public boolean a(e2.l0 l0Var) {
+        return this.k.a(l0Var);
+    }
+
+    @Override // x2.a
+    public e2.l1 h() {
+        return this.k.h();
+    }
+
+    @Override // x2.a
+    public final e2.l0 i() {
+        return this.k.i();
+    }
+
+    @Override // x2.a
+    public boolean j() {
+        return this.k.j();
+    }
+
+    @Override // x2.a
+    public final void m(j2.d0 d0Var) {
+        this.j = d0Var;
+        this.i = h2.m0.q(null);
+        C();
+    }
+
+    @Override // x2.a
+    public void t(e2.l0 l0Var) {
+        this.k.t(l0Var);
+    }
+
+    @Override // x2.l
+    public final f0 u(Object obj, f0 f0Var) {
+        return z(f0Var);
+    }
+
+    @Override // x2.l
+    public final long v(Object obj, long j3) {
+        return j3;
+    }
+
+    @Override // x2.l
+    public final int w(int i7, Object obj) {
+        return i7;
+    }
+
+    @Override // x2.l
+    public final void x(Object obj, a aVar, e2.l1 l1Var) {
+        A(l1Var);
+    }
+
+    public f0 z(f0 f0Var) {
+        return f0Var;
     }
 }

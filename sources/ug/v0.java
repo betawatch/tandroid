@@ -8,17 +8,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ha;
 import org.telegram.messenger.k5;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.xs0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.ys0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v0 extends LinearLayout {
     public int a;
     public final TextView b;
-    public final x70 c;
+    public final w70 c;
     public LinearLayout d;
     public final l0 e;
     public final ViewGroup f;
@@ -36,8 +36,8 @@ public final class v0 extends LinearLayout {
         a aVar;
         this.n = w0Var;
         setOrientation(1);
-        xs0 xs0Var = (xs0) w0Var.k1.get(i7);
-        int i10 = xs0Var.a;
+        ys0 ys0Var = (ys0) w0Var.n1.get(i7);
+        int i10 = ys0Var.a;
         if (i10 == 0) {
             a bVar = new b(context, w0Var.I0);
             bVar.b.setOnScrollListener(new r0(w0Var, 1));
@@ -47,7 +47,7 @@ public final class v0 extends LinearLayout {
             iVar.b.setOnScrollListener(new r0(w0Var, 0));
             aVar = iVar;
         } else {
-            aVar = i10 == 5 ? new s0(context, w0Var.a) : i10 == 10 ? new n0(context, w0Var.I0) : new t1(context, w0Var.t1, w0Var.a, xs0Var.a, w0Var.I0);
+            aVar = i10 == 5 ? new s0(context, w0Var.a) : i10 == 10 ? new n0(context, w0Var.I0) : new t1(context, w0Var.w1, w0Var.a, ys0Var.a, w0Var.I0);
         }
         this.f = aVar;
         addView(aVar);
@@ -55,18 +55,18 @@ public final class v0 extends LinearLayout {
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setGravity(1);
-        int i11 = l6.j5;
+        int i11 = m6.j5;
         k5.n(textView, i11, w0Var.I0, 1, 20.0f);
         addView(textView, ha.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-        x70 x70Var = new x70(context, null);
-        this.c = x70Var;
-        x70Var.setGravity(1);
-        x70Var.setTextSize(1, 15.0f);
-        s6.U(x70Var, i11, w0Var.I0);
-        if (!w0Var.v1) {
-            x70Var.setLines(2);
+        w70 w70Var = new w70(context, null);
+        this.c = w70Var;
+        w70Var.setGravity(1);
+        w70Var.setTextSize(1, 15.0f);
+        t6.U(w70Var, i11, w0Var.I0);
+        if (!w0Var.y1) {
+            w70Var.setLines(2);
         }
-        addView(x70Var, ha.t(-1, -2, 1, 21, 10, 21, 16));
+        addView(w70Var, ha.t(-1, -2, 1, 21, 10, 21, 16));
         setImportantForAccessibility(2);
         setClipChildren(false);
     }
@@ -80,7 +80,7 @@ public final class v0 extends LinearLayout {
         if (z9) {
             setTranslationY(0.0f);
         } else {
-            setTranslationY(this.n.C1);
+            setTranslationY(this.n.F1);
         }
         if (z9) {
             return super.drawChild(canvas, view, j3);
@@ -100,18 +100,18 @@ public final class v0 extends LinearLayout {
         boolean z9 = viewGroup instanceof a;
         w0 w0Var = this.n;
         if (z9) {
-            ((a) viewGroup).setTopOffset(w0Var.C1);
+            ((a) viewGroup).setTopOffset(w0Var.F1);
         }
-        viewGroup.getLayoutParams().height = w0Var.q1;
-        x70 x70Var = this.c;
-        x70Var.setVisibility(0);
+        viewGroup.getLayoutParams().height = w0Var.t1;
+        w70 w70Var = this.c;
+        w70Var.setVisibility(0);
         ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
         super.onMeasure(i7, i10);
         if (this.h) {
             viewGroup.getLayoutParams().height = getMeasuredHeight() - org.telegram.messenger.g0.L(16.0f);
             ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
             textView.setVisibility(8);
-            x70Var.setVisibility(8);
+            w70Var.setVisibility(8);
             super.onMeasure(i7, i10);
         }
     }

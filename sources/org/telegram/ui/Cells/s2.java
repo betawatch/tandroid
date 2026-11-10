@@ -12,9 +12,9 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s2 {
     public final t2 a;
@@ -41,7 +41,7 @@ public final class s2 {
             s2Var.d = false;
             s2Var.e = false;
             s2Var.b = e12;
-            TextPaint textPaint = org.telegram.ui.ActionBar.l6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.m6.F0[0];
             if (chat != null) {
                 ArrayList l10 = qp.s1(i7).q7.l(chat.id);
                 boolean z10 = true;
@@ -122,12 +122,12 @@ public final class s2 {
                 }
                 if (i10 > 0) {
                     Typeface o10 = org.telegram.messenger.g0.o();
-                    int i14 = org.telegram.ui.ActionBar.l6.X8;
-                    v31 v31Var = new v31();
-                    v31Var.a = o10;
-                    v31Var.c = i14;
-                    v31Var.b = org.telegram.ui.ActionBar.l6.v0(i14);
-                    spannableStringBuilder.setSpan(v31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
+                    int i14 = org.telegram.ui.ActionBar.m6.X8;
+                    u31 u31Var = new u31();
+                    u31Var.a = o10;
+                    u31Var.c = i14;
+                    u31Var.b = org.telegram.ui.ActionBar.m6.v0(i14);
+                    spannableStringBuilder.setSpan(u31Var, 0, Math.min(spannableStringBuilder.length(), i10 + 2), 0);
                 }
                 s2Var.g = spannableStringBuilder;
             }

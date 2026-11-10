@@ -14,16 +14,16 @@ import c8.ha;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f4 extends FrameLayout {
     public final d4 a;
     public final e4 b;
     public final TextView[] c;
-    public eh0 d;
+    public dh0 d;
     public final h4 e;
     public Paint f;
     public float h;
@@ -88,12 +88,12 @@ public final class f4 extends FrameLayout {
             }
             z10 = false;
         }
-        eh0 eh0Var = this.d;
+        dh0 dh0Var = this.d;
         d4 d4Var = this.a;
-        if (eh0Var == null) {
-            eh0 eh0Var2 = new eh0(d4Var);
-            this.d = eh0Var2;
-            eh0Var2.d(null, true, false);
+        if (dh0Var == null) {
+            dh0 dh0Var2 = new dh0(d4Var);
+            this.d = dh0Var2;
+            dh0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = d4Var.getImageReceiver();
@@ -107,9 +107,9 @@ public final class f4 extends FrameLayout {
             if (f10 != 1.0f) {
                 Paint t6 = s7.t(imageReceiver, false);
                 t6.setAlpha((int) (this.h * 255.0f));
-                eh0 eh0Var3 = this.d;
-                eh0Var3.t = t6;
-                eh0Var3.a(canvas);
+                dh0 dh0Var3 = this.d;
+                dh0Var3.t = t6;
+                dh0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -120,9 +120,9 @@ public final class f4 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f10 * this.h));
-            eh0 eh0Var4 = this.d;
-            eh0Var4.t = this.f;
-            eh0Var4.a(canvas);
+            dh0 dh0Var4 = this.d;
+            dh0Var4.t = this.f;
+            dh0Var4.a(canvas);
         }
     }
 
@@ -154,7 +154,7 @@ public final class f4 extends FrameLayout {
         this.s = ofFloat;
         ofFloat.addUpdateListener(new ah.h(this, 18));
         this.s.addListener(new bi.t5(this, 10));
-        this.s.setInterpolator(xq.h);
+        this.s.setInterpolator(wq.h);
         this.s.setDuration(340L);
         this.s.start();
     }
@@ -171,7 +171,7 @@ public final class f4 extends FrameLayout {
         TextView[] textViewArr = this.c;
         textViewArr[0].setOnClickListener(onClickListener);
         textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.l6.h0(822083583, 7, -1));
+        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.m6.h0(822083583, 7, -1));
     }
 
     public void setSubtitle(CharSequence charSequence) {

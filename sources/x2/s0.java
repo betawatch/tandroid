@@ -1,60 +1,156 @@
 package x2;
 
-import java.util.concurrent.atomic.AtomicReference;
+import a8.ia;
+import a8.wa;
+import android.net.Uri;
+import java.io.InterruptedIOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class s0 implements f3.j0 {
-    public final b1 a;
-    public final b1 b;
-    public final f3.n c = new f3.n();
-    public final AtomicReference d = new AtomicReference(r0.a);
+public final class s0 implements b3.l {
+    public final Uri a;
+    public final j2.c0 b;
+    public final ly0 c;
+    public final v0 d;
+    public final h2.i e;
+    public volatile boolean h;
+    public long r;
+    public j2.m s;
+    public f3.j0 w;
+    public boolean x;
+    public final /* synthetic */ v0 y;
+    public final f3.s f = new f3.s();
+    public boolean n = true;
 
-    public s0(b1 b1Var) {
-        this.a = b1Var;
-        this.b = b1Var;
+    public s0(v0 v0Var, Uri uri, j2.h hVar, ly0 ly0Var, v0 v0Var2, h2.i iVar) {
+        this.y = v0Var;
+        this.a = uri;
+        this.b = new j2.c0(hVar);
+        this.c = ly0Var;
+        this.d = v0Var2;
+        this.e = iVar;
+        t.g.getAndIncrement();
+        this.s = b(0L, null);
     }
 
-    @Override // f3.j0
-    public final void a(h2.x xVar, int i7, int i10) {
-        h().a(xVar, i7, i10);
-    }
-
-    @Override // f3.j0
-    public final void b(int i7, h2.x xVar) {
-        h().b(i7, xVar);
-    }
-
-    @Override // f3.j0
-    public final void c(long j3, int i7, int i10, int i11, f3.i0 i0Var) {
-        h().c(j3, i7, i10, i11, i0Var);
-        AtomicReference atomicReference = this.d;
-        if (atomicReference.get() == r0.b) {
-            this.b.G(false);
-            atomicReference.set(r0.c);
+    @Override // b3.l
+    public final void a() {
+        j2.h hVar;
+        f3.o oVar;
+        int i7;
+        int i10 = 0;
+        String str = null;
+        while (i10 == 0 && !this.h) {
+            try {
+                long j3 = this.f.a;
+                j2.m b10 = b(j3, str);
+                this.s = b10;
+                long open = this.b.open(b10);
+                if (this.h) {
+                    if (i10 != 1 && this.c.x() != -1) {
+                        this.f.a = this.c.x();
+                    }
+                    c8.p0.a(this.b);
+                    return;
+                }
+                List list = (List) this.b.a.getResponseHeaders().get("ETag");
+                str = (list == null || list.isEmpty()) ? null : (String) list.get(0);
+                if (open != -1) {
+                    open += j3;
+                    v0 v0Var = this.y;
+                    v0Var.H.post(new o0(v0Var, 0));
+                }
+                long j10 = open;
+                this.y.J = s3.b.d(this.b.a.getResponseHeaders());
+                j2.c0 c0Var = this.b;
+                s3.b bVar = this.y.J;
+                if (bVar == null || (i7 = bVar.f) == -1) {
+                    hVar = c0Var;
+                } else {
+                    hVar = new s(c0Var, i7, this);
+                    f3.j0 x10 = this.y.x(new u0(0, true));
+                    this.w = x10;
+                    x10.g(v0.j0);
+                }
+                this.c.E(hVar, this.a, this.b.a.getResponseHeaders(), j3, j10, this.d);
+                if (this.y.J != null && (oVar = (f3.o) this.c.c) != null) {
+                    f3.o a10 = oVar.a();
+                    if (a10 instanceof y3.d) {
+                        ((y3.d) a10).t = true;
+                    }
+                }
+                if (this.n) {
+                    ly0 ly0Var = this.c;
+                    long j11 = this.r;
+                    f3.o oVar2 = (f3.o) ly0Var.c;
+                    oVar2.getClass();
+                    oVar2.d(j3, j11);
+                    this.n = false;
+                }
+                while (i10 == 0 && !this.h) {
+                    try {
+                        h2.i iVar = this.e;
+                        synchronized (iVar) {
+                            while (!iVar.b) {
+                                iVar.a.getClass();
+                                iVar.wait();
+                            }
+                        }
+                        ly0 ly0Var2 = this.c;
+                        f3.s sVar = this.f;
+                        f3.o oVar3 = (f3.o) ly0Var2.c;
+                        oVar3.getClass();
+                        f3.l lVar = (f3.l) ly0Var2.d;
+                        lVar.getClass();
+                        i10 = oVar3.f(lVar, sVar);
+                        long x11 = this.c.x();
+                        if (x11 > this.y.s + j3) {
+                            this.e.d();
+                            v0 v0Var2 = this.y;
+                            v0Var2.H.post(v0Var2.G);
+                            j3 = x11;
+                        }
+                    } catch (InterruptedException unused) {
+                        throw new InterruptedIOException();
+                    }
+                }
+                if (i10 == 1) {
+                    i10 = 0;
+                } else if (this.c.x() != -1) {
+                    this.f.a = this.c.x();
+                }
+                c8.p0.a(this.b);
+            } catch (Throwable th2) {
+                if (i10 != 1 && this.c.x() != -1) {
+                    this.f.a = this.c.x();
+                }
+                c8.p0.a(this.b);
+                throw th2;
+            }
         }
     }
 
-    @Override // f3.j0
-    public final int e(e2.n nVar, int i7, boolean z9) {
-        return h().e(nVar, i7, z9);
+    public final j2.m b(long j3, String str) {
+        Map map = v0.i0;
+        if (str != null && !str.startsWith("W/")) {
+            wa waVar = new wa(4, 10);
+            waVar.w(map.entrySet());
+            waVar.v("If-Range", str);
+            map = waVar.e();
+        }
+        Map map2 = Collections.EMPTY_MAP;
+        String str2 = this.y.r;
+        Uri uri = this.a;
+        ia.k(uri, "The uri must be set.");
+        return new j2.m(uri, 1, null, map, j3, -1L, str2, 6);
     }
 
-    @Override // f3.j0
-    public final int f(e2.n nVar, int i7, boolean z9) {
-        return h().f(nVar, i7, z9);
-    }
-
-    @Override // f3.j0
-    public final void g(e2.u uVar) {
-        this.a.g(uVar);
-    }
-
-    public final f3.j0 h() {
-        return this.d.get() == r0.c ? this.c : this.b;
-    }
-
-    @Override // f3.j0
-    public final void d(long j3) {
+    @Override // b3.l
+    public final void q0() {
+        this.h = true;
     }
 }

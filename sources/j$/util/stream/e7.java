@@ -56,7 +56,7 @@ public final class e7 implements Spliterator, Consumer {
 
     @Override // j$.util.Spliterator
     public final void forEachRemaining(Consumer consumer) {
-        this.a.forEachRemaining(new j$.util.concurrent.t(8, this, consumer));
+        this.a.forEachRemaining(new j$.util.concurrent.s(8, this, consumer));
     }
 
     @Override // j$.util.Spliterator

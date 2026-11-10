@@ -10,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
                         frameLayout.addView(textView, c8.ha.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        l60 F = l60.F(e0Var.a, e0Var.b, e0Var);
+                        k60 F = k60.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             y6 y6Var = new y6(e0Var.getContext(), 0);
                             y6Var.b = 0.0f;

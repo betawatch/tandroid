@@ -34,11 +34,11 @@ import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.j9;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.r5;
-import org.telegram.ui.hr0;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.ir0;
 import sg.k1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l1, q6.l, k1, x5.a {
     public static s b;
@@ -236,7 +236,7 @@ public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hr0 N1() {
+    public /* synthetic */ ir0 N1() {
         switch (this.a) {
         }
         return null;
@@ -595,7 +595,7 @@ public class s implements s0, b7.e, c4.k, i0, eg.a, l5.e, fg.a, ja.a, w, u9.d, l
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean n0(r5 r5Var) {
+    public /* synthetic */ boolean n0(q5 q5Var) {
         switch (this.a) {
         }
         return false;

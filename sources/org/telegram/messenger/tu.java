@@ -21,9 +21,9 @@ import android.view.ViewConfiguration;
 import android.widget.OverScroller;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class tu extends fu {
     public final jv W;
@@ -39,7 +39,7 @@ public final class tu extends fu {
     public int g0;
     public final Paint h0;
     public final Path i0;
-    public final ny0 j0;
+    public final my0 j0;
     public Drawable k0;
     public int l0;
     public boolean m0;
@@ -116,7 +116,7 @@ public final class tu extends fu {
         this.W = jvVar;
         this.X = new jv[]{jvVar};
         if (!TextUtils.isEmpty(this.p0)) {
-            this.j0 = new ny0(this.p0, Math.max(8, iz.W0 - 4), null);
+            this.j0 = new my0(this.p0, Math.max(8, iz.W0 - 4), null);
         }
         int L = g0.L(28.0f) + g0.L(14.0f) + (this.j0 != null ? g0.L(12.0f) + ((int) Math.ceil(r4.c)) : 0);
         int D = k5.D(14.0f, 2, Math.max(0, jvVar.h - jvVar.f));
@@ -347,14 +347,14 @@ public final class tu extends fu {
         jvVar.e = i11;
     }
 
-    @Override // org.telegram.messenger.fu, org.telegram.ui.tg0
+    @Override // org.telegram.messenger.fu, org.telegram.ui.ug0
     public final Layout a() {
         return this.W.b;
     }
 
     public final void i0(Canvas canvas) {
         kv kvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.ml : org.telegram.ui.ActionBar.l6.ll, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.ml : org.telegram.ui.ActionBar.m6.ll, kvVar.D);
         Paint paint = this.h0;
         paint.setColor(w02);
         RectF rectF = g0.P;
@@ -365,10 +365,10 @@ public final class tu extends fu {
     public final void j0(Canvas canvas) {
         Canvas canvas2;
         kv kvVar = this.a;
-        int r12 = org.telegram.ui.ActionBar.l6.r1(0.5f, org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D));
-        ny0 ny0Var = this.j0;
-        if (ny0Var != null) {
-            ny0Var.p = m0() - g0.L(54.0f);
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.5f, org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.Tc : org.telegram.ui.ActionBar.m6.Sc, kvVar.D));
+        my0 my0Var = this.j0;
+        if (my0Var != null) {
+            my0Var.p = m0() - g0.L(54.0f);
             canvas2 = canvas;
             this.j0.c(g0.L(14.0f), g0.L(17.0f), 1.0f, r12, canvas2);
         } else {

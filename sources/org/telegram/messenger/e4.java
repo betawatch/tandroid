@@ -18,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class e4 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -99,7 +99,7 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence3;
         CharSequence charSequence4;
-        org.telegram.ui.Components.w8 w8Var;
+        org.telegram.ui.Components.v8 v8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         ArrayList arrayList = this.a;
         Context context = this.b;
@@ -207,19 +207,19 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
             Canvas canvas = new Canvas(createBitmap);
             if (decodeFile == null) {
                 if (user != null) {
-                    w8Var = new org.telegram.ui.Components.w8(0, user);
+                    v8Var = new org.telegram.ui.Components.v8(0, user);
                     if (t10.z(user)) {
-                        w8Var.g(12);
+                        v8Var.g(12);
                     } else if (t10.B(user)) {
-                        w8Var.g(1);
+                        v8Var.g(1);
                     }
                 } else {
-                    w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+                    v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
                     int i16 = cVar.a;
-                    w8Var.q(chat);
+                    v8Var.q(chat);
                 }
-                w8Var.setBounds(0, 0, L, L);
-                w8Var.draw(canvas);
+                v8Var.setBounds(0, 0, L, L);
+                v8Var.draw(canvas);
             } else {
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -386,9 +386,9 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                                 objArr2[0] = replace;
                                 objArr2[c11] = M04;
                                 SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
-                                valueOf2.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.l6.o9, null), M04.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.m6.o9, null), M04.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.l6.k9, null), 0, M04.length() + 1, 33);
+                                spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.m6.k9, null), 0, M04.length() + 1, 33);
                                 charSequence3 = spannableStringBuilder;
                             }
                             c12 = ' ';
@@ -399,12 +399,12 @@ public final class e4 implements RemoteViewsService.RemoteViewsFactory {
                             objArr22[0] = replace2;
                             objArr22[c11] = M04;
                             SpannableStringBuilder valueOf22 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr22));
-                            valueOf22.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.l6.o9, null), M04.length() + 2, valueOf22.length(), 33);
+                            valueOf22.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.m6.o9, null), M04.length() + 2, valueOf22.length(), 33);
                             spannableStringBuilder = valueOf22;
-                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.l6.k9, null), 0, M04.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.m6.k9, null), 0, M04.length() + 1, 33);
                             charSequence3 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.yz(org.telegram.ui.ActionBar.l6.k9, null), 0, M04.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.xz(org.telegram.ui.ActionBar.m6.k9, null), 0, M04.length() + 1, 33);
                         charSequence3 = spannableStringBuilder;
                     } catch (Exception e10) {
                         a8.g(e10, true);

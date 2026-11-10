@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements x10 {
     public final /* synthetic */ int a;
@@ -350,12 +350,12 @@ public final /* synthetic */ class b0 implements x10 {
                 }
             default:
                 org.telegram.ui.Wallet.l0 l0Var3 = (org.telegram.ui.Wallet.l0) this.b;
-                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
+                org.telegram.ui.Wallet.l8 l8Var = (org.telegram.ui.Wallet.l8) this.c;
                 TL_wallet.WalletState walletState2 = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 if (tL_error3 == null) {
                     l0Var3.l0(walletState2);
-                    i8Var.a(null);
+                    l8Var.a(null);
                     return;
                 }
                 String str7 = tL_error3.text;
@@ -364,7 +364,7 @@ public final /* synthetic */ class b0 implements x10 {
                 }
                 org.telegram.ui.Wallet.l0.j("failed to disable backup: ".concat(str7));
                 String str8 = tL_error3.text;
-                i8Var.a(str8 != null ? str8 : "NULL_ERROR");
+                l8Var.a(str8 != null ? str8 : "NULL_ERROR");
                 return;
         }
     }

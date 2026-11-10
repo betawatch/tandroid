@@ -1,7 +1,7 @@
 package j$.sun.misc;
 
-import j$.util.concurrent.l;
-import j$.util.concurrent.q;
+import j$.util.concurrent.k;
+import j$.util.concurrent.p;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import sun.misc.Unsafe;
@@ -38,15 +38,15 @@ public final class a {
         }
     }
 
-    public final int e(q qVar, long j3) {
+    public final int e(p pVar, long j3) {
         while (true) {
-            int intVolatile = this.a.getIntVolatile(qVar, j3);
-            q qVar2 = qVar;
+            int intVolatile = this.a.getIntVolatile(pVar, j3);
+            p pVar2 = pVar;
             long j10 = j3;
-            if (this.a.compareAndSwapInt(qVar2, j10, intVolatile, intVolatile - 4)) {
+            if (this.a.compareAndSwapInt(pVar2, j10, intVolatile, intVolatile - 4)) {
                 return intVolatile;
             }
-            qVar = qVar2;
+            pVar = pVar2;
             j3 = j10;
         }
     }
@@ -75,8 +75,8 @@ public final class a {
         return this.a.getObjectVolatile(obj, j3);
     }
 
-    public final void j(Object obj, long j3, l lVar) {
-        this.a.putObjectVolatile(obj, j3, lVar);
+    public final void j(Object obj, long j3, k kVar) {
+        this.a.putObjectVolatile(obj, j3, kVar);
     }
 
     public final boolean c(Object obj, long j3, int i7, int i10) {

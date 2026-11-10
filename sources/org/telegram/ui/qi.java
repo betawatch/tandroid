@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class qi extends gh.b {
     public final /* synthetic */ int s;
     public final /* synthetic */ cn w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qi(cn cnVar, org.telegram.ui.ActionBar.g6 g6Var, int i7, int i10) {
-        super(i7, g6Var);
+    public /* synthetic */ qi(cn cnVar, org.telegram.ui.ActionBar.h6 h6Var, int i7, int i10) {
+        super(i7, h6Var);
         this.s = i10;
         this.w = cnVar;
     }
@@ -22,7 +22,7 @@ public final class qi extends gh.b {
                 cn cnVar = this.w;
                 i7 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
                 if (!c8.g0.c(i7, cnVar.za)) {
-                    return i0.a.o(cnVar.getThemedColor(org.telegram.ui.ActionBar.l6.Ge), org.telegram.messenger.qs.e4);
+                    return i0.a.o(cnVar.getThemedColor(org.telegram.ui.ActionBar.m6.Ge), org.telegram.messenger.qs.e4);
                 }
                 an anVar = cnVar.za;
                 if (anVar == null || anVar.a()) {
@@ -37,7 +37,7 @@ public final class qi extends gh.b {
                 cn cnVar2 = this.w;
                 i10 = ((org.telegram.ui.ActionBar.f2) cnVar2).currentAccount;
                 if (!c8.g0.c(i10, cnVar2.za)) {
-                    return i0.a.o(cnVar2.getThemedColor(org.telegram.ui.ActionBar.l6.d6), org.telegram.messenger.qs.e4);
+                    return i0.a.o(cnVar2.getThemedColor(org.telegram.ui.ActionBar.m6.d6), org.telegram.messenger.qs.e4);
                 }
                 an anVar2 = cnVar2.za;
                 if (anVar2 == null || anVar2.a()) {

@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.r51;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class z5 extends c1 implements ls {
     public static volatile z5[] T = new z5[4];
@@ -558,7 +558,7 @@ public final class z5 extends c1 implements ls {
         char c10;
         int e10;
         y5 n10;
-        s51 s51Var;
+        r51 r51Var;
         long p12;
         if (ijVar == null || (message = ijVar.k) == null) {
             return 0;
@@ -617,12 +617,12 @@ public final class z5 extends c1 implements ls {
                 long[] jArr = n10.b;
                 int i10 = iArr[c10];
                 long max = i7 == 2 ? Math.max(524288L, jArr[x(i7)]) : jArr[x(i7)];
-                s51Var = ijVar.e3;
-                if (s51Var != null) {
-                    p12 = s51Var.g.size;
+                r51Var = ijVar.e3;
+                if (r51Var != null) {
+                    p12 = r51Var.g.size;
                 } else {
-                    s51 s51Var2 = ijVar.f3;
-                    p12 = s51Var2 != null ? s51Var2.g.size : ij.p1(ij.n1(message));
+                    r51 r51Var2 = ijVar.f3;
+                    p12 = r51Var2 != null ? r51Var2.g.size : ij.p1(ij.n1(message));
                 }
                 return (L4 || !n10.c || p12 <= max || max <= 2097152) ? ((i7 != 1 || (p12 != 0 && p12 <= max)) && (i7 == 2 || (i10 & i7) != 0)) ? 1 : 0 : (i10 & i7) != 0 ? 2 : 0;
             }
@@ -635,8 +635,8 @@ public final class z5 extends c1 implements ls {
             int i102 = iArr2[c10];
             if (i7 == 2) {
             }
-            s51Var = ijVar.e3;
-            if (s51Var != null) {
+            r51Var = ijVar.e3;
+            if (r51Var != null) {
             }
             if (L4) {
             }
@@ -650,8 +650,8 @@ public final class z5 extends c1 implements ls {
         int i1022 = iArr22[c10];
         if (i7 == 2) {
         }
-        s51Var = ijVar.e3;
-        if (s51Var != null) {
+        r51Var = ijVar.e3;
+        if (r51Var != null) {
         }
         if (L4) {
         }

@@ -35,9 +35,9 @@ import l2.q1;
 import l2.s1;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.f1;
-import x2.c1;
+import x2.b1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class l extends u2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1860,13 +1860,13 @@ public final class l extends u2.r {
         K0();
     }
 
-    public final void S0(x2.g0 g0Var) {
+    public final void S0(x2.f0 f0Var) {
         l1 l1Var = this.F;
         if (l1Var.p()) {
             this.P1 = -9223372036854775807L;
             return;
         }
-        int b10 = l1Var.b(g0Var.a);
+        int b10 = l1Var.b(f0Var.a);
         if (b10 == -1) {
             this.P1 = -9223372036854775807L;
         } else {
@@ -2539,9 +2539,9 @@ public final class l extends u2.r {
             if (k()) {
                 f10 = this.D;
             } else {
-                c1 c1Var = this.r;
-                c1Var.getClass();
-                f10 = c1Var.f();
+                b1 b1Var = this.r;
+                b1Var.getClass();
+                f10 = b1Var.f();
             }
             if (!f10) {
                 if (!(this.v0 >= 0)) {
@@ -2800,9 +2800,9 @@ public final class l extends u2.r {
     }
 
     @Override // u2.r, l2.b
-    public final void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
-        super.u(uVarArr, j3, j10, g0Var);
-        S0(g0Var);
+    public final void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
+        super.u(uVarArr, j3, j10, f0Var);
+        S0(f0Var);
         z zVar = this.i1;
         if (zVar != null) {
             zVar.b();
@@ -2936,9 +2936,9 @@ public final class l extends u2.r {
 
     @Override // l2.b
     public final void v() {
-        x2.g0 g0Var = this.G;
-        if (g0Var != null) {
-            S0(g0Var);
+        x2.f0 f0Var = this.G;
+        if (f0Var != null) {
+            S0(f0Var);
         }
     }
 

@@ -40,13 +40,13 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q9 implements ls, org.telegram.ui.ActionBar.b2 {
     public static boolean C1;
@@ -238,7 +238,7 @@ public final class q9 implements ls, org.telegram.ui.ActionBar.b2 {
 
     public static void g(q9 q9Var) {
         md mdVar;
-        zs editField;
+        ys editField;
         j4 currentPeerView = q9Var.n0.getCurrentPeerView();
         if (currentPeerView == null || currentPeerView.K1 == null || (((mdVar = currentPeerView.K2) != null && mdVar.getVisibility() == 0) || (editField = currentPeerView.K1.getEditField()) == null)) {
             q9Var.m();
@@ -501,8 +501,8 @@ public final class q9 implements ls, org.telegram.ui.ActionBar.b2 {
             Paint paint = new Paint(1);
             y7Var.a = paint;
             y7Var.c = new ra(y7Var, 22);
-            y7Var.d = new org.telegram.ui.Components.w5(y7Var);
-            y7Var.e = new org.telegram.ui.Components.w5(y7Var);
+            y7Var.d = new org.telegram.ui.Components.v5(y7Var);
+            y7Var.e = new org.telegram.ui.Components.v5(y7Var);
             paint.setColor(-1);
             this.c1 = y7Var;
             this.w.addView(y7Var, ha.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
@@ -1239,7 +1239,7 @@ public final class q9 implements ls, org.telegram.ui.ActionBar.b2 {
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public final /* synthetic */ hc k() {
+    public final /* synthetic */ gc k() {
         return null;
     }
 
@@ -1327,10 +1327,10 @@ public final class q9 implements ls, org.telegram.ui.ActionBar.b2 {
             this.u1.addListener(new ch.y(i7, this, z9));
             if (z9) {
                 this.u1.setDuration(350L);
-                this.u1.setInterpolator(xq.h);
+                this.u1.setInterpolator(wq.h);
             } else {
                 this.u1.setDuration(350L);
-                this.u1.setInterpolator(xq.f);
+                this.u1.setInterpolator(wq.f);
             }
             this.u1.start();
         }

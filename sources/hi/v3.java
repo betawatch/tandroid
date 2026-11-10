@@ -6,29 +6,29 @@ import android.graphics.Paint;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.nt0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.mt0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public class v3 extends View implements b6 {
-    public final nt0 a;
+public class v3 extends View implements c6 {
+    public final mt0 a;
     public final Paint b;
     public float c;
     public r1.g d;
-    public final g6 e;
+    public final h6 e;
 
-    public v3(Context context, g6 g6Var) {
+    public v3(Context context, h6 h6Var) {
         super(context);
-        nt0 nt0Var = new nt0(new g2.c(27), new g2.c(28));
-        nt0Var.c = 100.0f;
-        this.a = nt0Var;
+        mt0 mt0Var = new mt0(new g2.c(27), new g2.c(28));
+        mt0Var.c = 100.0f;
+        this.a = mt0Var;
         Paint paint = new Paint(1);
         this.b = paint;
-        this.e = g6Var;
-        paint.setColor(l6.w0(l6.Ci, g6Var));
+        this.e = h6Var;
+        paint.setColor(m6.w0(m6.Ci, h6Var));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         paint.setStrokeCap(Paint.Cap.ROUND);
@@ -78,17 +78,17 @@ public class v3 extends View implements b6 {
         gVar.h();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.b.setColor(l6.w0(l6.Ci, this.e));
+            this.b.setColor(m6.w0(m6.Ci, this.e));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

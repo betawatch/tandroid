@@ -7,12 +7,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
 import org.telegram.ui.Components.c51;
-import org.telegram.ui.Components.gb;
+import org.telegram.ui.Components.fb;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class o8 extends org.telegram.ui.Components.l6 {
+public final class o8 extends org.telegram.ui.Components.k6 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,7 +21,7 @@ public final class o8 extends org.telegram.ui.Components.l6 {
         this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.l6
+    @Override // org.telegram.ui.Components.k6
     public final void c(Object obj, float f10) {
         switch (this.b) {
             case 0:
@@ -40,10 +40,10 @@ public final class o8 extends org.telegram.ui.Components.l6 {
                 b9Var.invalidate();
                 break;
             case 3:
-                org.telegram.ui.Components.a6 a6Var = (org.telegram.ui.Components.a6) obj;
-                if (a6Var.e != f10) {
-                    a6Var.e = f10;
-                    a6Var.g.invalidate();
+                org.telegram.ui.Components.z5 z5Var = (org.telegram.ui.Components.z5) obj;
+                if (z5Var.e != f10) {
+                    z5Var.e = f10;
+                    z5Var.g.invalidate();
                     break;
                 }
                 break;
@@ -60,7 +60,7 @@ public final class o8 extends org.telegram.ui.Components.l6 {
                 ((t2) obj).setClipProgress(f10);
                 break;
             case 8:
-                ((gb) obj).setInOutOffset(f10);
+                ((fb) obj).setInOutOffset(f10);
                 break;
             case 9:
                 ((PollVotesAlert$UserCell) obj).setPlaceholderAlpha(f10);
@@ -175,7 +175,7 @@ public final class o8 extends org.telegram.ui.Components.l6 {
             case 2:
                 return Float.valueOf(((b9) obj).f);
             case 3:
-                return Float.valueOf(((org.telegram.ui.Components.a6) obj).e);
+                return Float.valueOf(((org.telegram.ui.Components.z5) obj).e);
             case 4:
                 return Float.valueOf(((ImageReceiver) obj).h1);
             case 5:
@@ -185,11 +185,11 @@ public final class o8 extends org.telegram.ui.Components.l6 {
             case 7:
                 return Float.valueOf(((t2) obj).getClipProgress());
             case 8:
-                return Float.valueOf(((gb) obj).inOutOffset);
+                return Float.valueOf(((fb) obj).inOutOffset);
             case 9:
                 return Float.valueOf(((PollVotesAlert$UserCell) obj).getPlaceholderAlpha());
             case 10:
-                return Float.valueOf(((c51) obj).v1);
+                return Float.valueOf(((c51) obj).y1);
             case 11:
                 return Float.valueOf(((wh.h) obj).G);
             default:

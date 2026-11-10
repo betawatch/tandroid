@@ -9,10 +9,10 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b extends ReplacementSpan {
     public final TextPaint a;
@@ -21,15 +21,15 @@ public final class b extends ReplacementSpan {
     public float d;
     public float e;
     public int f;
-    public final g6 h;
+    public final h6 h;
 
-    public b(g6 g6Var) {
+    public b(h6 h6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new RectF();
-        this.h = g6Var;
+        this.h = h6Var;
         textPaint.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        textPaint.setColor(l6.w0(l6.C6, g6Var));
+        textPaint.setColor(m6.w0(m6.C6, h6Var));
     }
 
     public final void a() {
@@ -44,7 +44,7 @@ public final class b extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         a();
-        this.a.setColor(l6.w0(l6.C6, this.h));
+        this.a.setColor(m6.w0(m6.C6, this.h));
         Rect clipBounds = canvas.getClipBounds();
         RectF rectF = this.b;
         rectF.set(clipBounds);

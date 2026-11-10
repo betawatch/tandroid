@@ -47,13 +47,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.nk0;
-import org.telegram.ui.wn0;
+import org.telegram.ui.ok0;
+import org.telegram.ui.xn0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public static volatile l0[] O = new l0[4];
@@ -1744,7 +1744,7 @@ public final class l0 {
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj2;
                 if (wallettransaction2.pending && !TextUtils.isEmpty(wallettransaction2.messageHash) && !hashMap.containsKey(wallettransaction2)) {
                     String str = wallettransaction2.messageHash;
-                    n0 n0Var = new n0(i7, str, new nk0(24, this, wallettransaction2));
+                    n0 n0Var = new n0(i7, str, new ok0(24, this, wallettransaction2));
                     hashMap.put(wallettransaction2, n0Var);
                     if (!n0Var.d && !TextUtils.isEmpty(str)) {
                         n0Var.d = true;
@@ -1841,7 +1841,7 @@ public final class l0 {
             u(str, null);
             k0((c0) this.N.get(str));
         }
-        Collections.sort(this.G, new wn0(6));
+        Collections.sort(this.G, new xn0(6));
     }
 
     public final void X() {
@@ -2189,7 +2189,7 @@ public final class l0 {
                     return D;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(D);
-                spannableStringBuilder.setSpan(new v31(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
+                spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o1("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
                 return spannableStringBuilder;
             }
         }

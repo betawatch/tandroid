@@ -4,12 +4,12 @@ import bi.v9;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.hp0;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.gp0;
+import org.telegram.ui.Components.k60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class n3 extends org.telegram.ui.ActionBar.j {
+public final class n3 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ org.telegram.ui.ActionBar.r0 a;
     public final /* synthetic */ long b;
     public final /* synthetic */ o3 c;
@@ -20,12 +20,12 @@ public final class n3 extends org.telegram.ui.ActionBar.j {
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
+    @Override // org.telegram.ui.ActionBar.k
     public final void b(int i7) {
         org.telegram.ui.ActionBar.z0 z0Var;
         org.telegram.ui.ActionBar.z0 z0Var2;
         o3 o3Var = this.c;
-        v9 v9Var = o3Var.Q1;
+        v9 v9Var = o3Var.T1;
         if (i7 != 1) {
             if (i7 == -1) {
                 o3Var.dismiss();
@@ -33,12 +33,12 @@ public final class n3 extends org.telegram.ui.ActionBar.j {
             }
             return;
         }
-        l60 l60Var = o3Var.V1;
-        if (l60Var != null) {
-            l60Var.u();
+        k60 k60Var = o3Var.Y1;
+        if (k60Var != null) {
+            k60Var.u();
         }
-        l60 F = l60.F(o3Var.c, o3Var.I0, this.a);
-        o3Var.V1 = F;
+        k60 F = k60.F(o3Var.c, o3Var.I0, this.a);
+        o3Var.Y1 = F;
         long e10 = p10.i(o3Var.a).e();
         long j3 = this.b;
         boolean w10 = j3 == e10 ? true : j3 >= 0 ? false : org.telegram.messenger.t3.w(5, qp.s1(o3Var.a).M0(Long.valueOf(-j3)));
@@ -65,16 +65,16 @@ public final class n3 extends org.telegram.ui.ActionBar.j {
             z0Var = null;
             z0Var2 = null;
         }
-        hp0 hp0Var = new hp0(this, z0Var3, h, h7, h10, h11, w10, z0Var, z0Var2);
-        hp0Var.run();
-        z0Var3.setOnClickListener(new wg.z0(10, this, hp0Var));
-        d2.j(h, v9Var, hp0Var, 1);
-        d2.j(h7, v9Var, hp0Var, 2);
-        d2.j(h10, v9Var, hp0Var, 4);
-        d2.j(h11, v9Var, hp0Var, 8);
+        gp0 gp0Var = new gp0(this, z0Var3, h, h7, h10, h11, w10, z0Var, z0Var2);
+        gp0Var.run();
+        z0Var3.setOnClickListener(new wg.a1(9, this, gp0Var));
+        d2.j(h, v9Var, gp0Var, 1);
+        d2.j(h7, v9Var, gp0Var, 2);
+        d2.j(h10, v9Var, gp0Var, 4);
+        d2.j(h11, v9Var, gp0Var, 8);
         if (w10) {
-            d2.j(z0Var, v9Var, hp0Var, 256);
-            d2.j(z0Var2, v9Var, hp0Var, 512);
+            d2.j(z0Var, v9Var, gp0Var, 256);
+            d2.j(z0Var2, v9Var, gp0Var, 512);
         }
         F.Y = true;
         F.J = false;

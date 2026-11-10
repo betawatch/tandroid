@@ -14,10 +14,10 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements c20 {
     public final /* synthetic */ int a = 1;
@@ -38,7 +38,7 @@ public final /* synthetic */ class d3 implements c20 {
         int i7;
         ch.k0 k0Var;
         TLRPC.Document e10;
-        hc hcVar;
+        gc gcVar;
         int i10;
         int i11;
         int i12 = this.a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class d3 implements c20 {
                     a10.Q = l10.longValue();
                     gz.C(j4Var.l2).r0(a10);
                 } else {
-                    e10 = org.telegram.ui.Components.i5.e(j4Var.l2, o0Var.g);
+                    e10 = org.telegram.ui.Components.h5.e(j4Var.l2, o0Var.g);
                     String V = ij.V(e10, null, null);
                     if (V == null) {
                         if (j4Var.O1.getReactionsWindow() != null) {
@@ -101,7 +101,7 @@ public final /* synthetic */ class d3 implements c20 {
                     }
                 }
                 if (l10.longValue() <= 0) {
-                    cc r10 = new hc(j4Var.L0, j4Var.k0).r(e10, id.M0(2131746389, null), id.M0(2131743552, null), new ab(e3Var, 19));
+                    bc r10 = new gc(j4Var.L0, j4Var.k0).r(e10, id.M0(2131746389, null), id.M0(2131743552, null), new ab(e3Var, 19));
                     r10.j = 5000;
                     r10.j();
                 }
@@ -112,7 +112,7 @@ public final /* synthetic */ class d3 implements c20 {
                 break;
             case 1:
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 j4 j4Var2 = ((a4) obj4).x;
                 j3 j3Var = j4Var2.L0;
                 if (((Boolean) obj).booleanValue()) {
@@ -120,25 +120,25 @@ public final /* synthetic */ class d3 implements c20 {
                     boolean z10 = j4Var2.l1;
                     i10 = R.raw.chats_archived;
                     if (z10) {
-                        hc hcVar2 = new hc(j3Var, g6Var);
+                        gc gcVar2 = new gc(j3Var, h6Var);
                         if (z9) {
                             i10 = R.raw.contact_check;
                         }
-                        hcVar2.Q(i10, 36, id.M0(z9 ? 2131744582 : 2131744727, null)).j();
+                        gcVar2.Q(i10, 36, id.M0(z9 ? 2131744582 : 2131744727, null)).j();
                         break;
                     } else if (z9) {
-                        new hc(j3Var, g6Var).I(R.raw.contact_check, id.M0(2131744584, null), id.M0(2131744583, null)).j();
+                        new gc(j3Var, h6Var).I(R.raw.contact_check, id.M0(2131744584, null), id.M0(2131744583, null)).j();
                         break;
                     } else {
-                        hcVar = new hc(j3Var, g6Var);
+                        gcVar = new gc(j3Var, h6Var);
                         i11 = 2131744454;
                     }
                 } else {
-                    hcVar = new hc(j3Var, g6Var);
+                    gcVar = new gc(j3Var, h6Var);
                     i10 = R.raw.error;
                     i11 = 2131743879;
                 }
-                org.telegram.messenger.k5.o(null, i11, hcVar, i10, 36);
+                org.telegram.messenger.k5.o(null, i11, gcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
@@ -151,11 +151,11 @@ public final /* synthetic */ class d3 implements c20 {
         }
     }
 
-    public /* synthetic */ d3(a4 a4Var, TL_stories.StoryItem storyItem, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ d3(a4 a4Var, TL_stories.StoryItem storyItem, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
         this.c = a4Var;
         this.d = storyItem;
         this.b = z9;
-        this.e = g6Var;
+        this.e = h6Var;
     }
 
     public /* synthetic */ d3(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.u1 u1Var, TLRPC.User user, boolean z9) {

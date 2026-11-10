@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mn implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.tr, oa0, org.telegram.messenger.qr {
+public final /* synthetic */ class mn implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.tr, pa0, org.telegram.messenger.qr {
     public final /* synthetic */ int a;
     public final /* synthetic */ rn b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class mn implements org.telegram.ui.ActionBar.r1, o
         this.b = rnVar;
     }
 
-    @Override // org.telegram.ui.oa0
+    @Override // org.telegram.ui.pa0
     public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3) {
         TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
         tL_channelLocation.address = messageMedia.address;

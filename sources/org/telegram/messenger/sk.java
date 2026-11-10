@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import java.util.function.ToLongFunction;
-import org.telegram.ui.a51;
+import org.telegram.ui.b51;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sk implements ToLongFunction {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class sk implements ToLongFunction {
             case 3:
                 return ((ij) obj).Z0();
             case 4:
-                if (((a51) obj).b == null) {
+                if (((b51) obj).b == null) {
                     return 0L;
                 }
                 return r3.k.date;
             case 5:
-                return ((org.telegram.ui.Wallet.z7) obj).I;
+                return ((org.telegram.ui.Wallet.c8) obj).I;
             default:
-                return ((org.telegram.ui.Wallet.z7) obj).J;
+                return ((org.telegram.ui.Wallet.c8) obj).J;
         }
     }
 }

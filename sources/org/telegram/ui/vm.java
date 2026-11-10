@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vm implements Runnable {
     public final /* synthetic */ int a;
@@ -15,22 +15,22 @@ public final /* synthetic */ class vm implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.q4 q4Var;
-        org.telegram.ui.ActionBar.q4 q4Var2;
+        org.telegram.ui.ActionBar.r4 r4Var;
+        org.telegram.ui.ActionBar.r4 r4Var2;
         switch (this.a) {
             case 0:
                 SparseIntArray sparseIntArray = new SparseIntArray();
                 an anVar = this.b;
                 anVar.e = sparseIntArray;
                 cn cnVar = anVar.G;
-                org.telegram.ui.ActionBar.t4 t4Var = (org.telegram.ui.ActionBar.t4) cnVar.getThemedDrawable("drawableMsgOut");
-                anVar.t = t4Var;
-                q4Var = ((org.telegram.ui.ActionBar.f2) cnVar).parentLayout;
-                t4Var.J = q4Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.t4 t4Var2 = (org.telegram.ui.ActionBar.t4) cnVar.getThemedDrawable("drawableMsgOutMedia");
-                anVar.u = t4Var2;
-                q4Var2 = ((org.telegram.ui.ActionBar.f2) cnVar).parentLayout;
-                t4Var2.J = q4Var2.getMessageDrawableOutMediaStart();
+                org.telegram.ui.ActionBar.u4 u4Var = (org.telegram.ui.ActionBar.u4) cnVar.getThemedDrawable("drawableMsgOut");
+                anVar.t = u4Var;
+                r4Var = ((org.telegram.ui.ActionBar.f2) cnVar).parentLayout;
+                u4Var.J = r4Var.getMessageDrawableOutStart();
+                org.telegram.ui.ActionBar.u4 u4Var2 = (org.telegram.ui.ActionBar.u4) cnVar.getThemedDrawable("drawableMsgOutMedia");
+                anVar.u = u4Var2;
+                r4Var2 = ((org.telegram.ui.ActionBar.f2) cnVar).parentLayout;
+                u4Var2.J = r4Var2.getMessageDrawableOutMediaStart();
                 anVar.t.K = 0.0f;
                 anVar.u.K = 0.0f;
                 cnVar.bd();

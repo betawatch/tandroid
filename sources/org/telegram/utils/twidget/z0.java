@@ -24,7 +24,7 @@ import org.json.JSONArray;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class z0 {
     public final Paint a = new Paint(1);
@@ -1181,12 +1181,11 @@ public final class z0 {
 
     public final void g(a4.k kVar, float f10) {
         Object obj;
-        int i7;
         x0 x0Var = (x0) org.telegram.ui.Cells.f1.k(1, (ArrayList) kVar.f);
         while (true) {
-            int i10 = kVar.b;
+            int i7 = kVar.b;
             obj = x0Var.c;
-            if (i10 <= ((obj == null && x0Var.f == null) ? x0Var.b : 0)) {
+            if (i7 <= ((obj == null && x0Var.f == null) ? x0Var.b : 0)) {
                 break;
             } else {
                 kVar.q();
@@ -1199,26 +1198,7 @@ public final class z0 {
             Bitmap bitmap = x0Var.f;
             if (bitmap != null) {
                 r7 r7Var = x0Var.i;
-                int[] iArr = (int[]) r7Var.b;
-                StringBuilder sb2 = new StringBuilder("[");
-                for (i7 = 0; i7 < iArr.length; i7++) {
-                    if (i7 > 0) {
-                        sb2.append(',');
-                    }
-                    sb2.append('[');
-                    sb2.append(iArr[i7]);
-                    sb2.append(',');
-                    sb2.append(((float[]) r7Var.d)[i7]);
-                    sb2.append(',');
-                    sb2.append(((float[]) r7Var.e)[i7]);
-                    sb2.append(',');
-                    sb2.append(((float[]) r7Var.f)[i7]);
-                    sb2.append(',');
-                    sb2.append(((int[]) r7Var.c)[i7] & 4294967295L);
-                    sb2.append(']');
-                }
-                sb2.append(']');
-                WidgetSandboxNative.filterPixels(bitmap, sb2.toString().getBytes(StandardCharsets.UTF_8), x0Var.h);
+                WidgetClientNative.filterPixels(bitmap, (int[]) r7Var.b, (float[]) r7Var.d, (float[]) r7Var.e, (float[]) r7Var.f, (int[]) r7Var.c, x0Var.h);
                 kVar.c = x0Var.a;
                 Matrix matrix = new Matrix();
                 if (x0Var.g.invert(matrix)) {

@@ -11,9 +11,9 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class u0 extends View {
     public final Paint a;
@@ -24,7 +24,7 @@ public final class u0 extends View {
     public final Path f;
     public di.f8 h;
     public boolean n;
-    public final org.telegram.ui.Components.w5 r;
+    public final org.telegram.ui.Components.v5 r;
 
     public u0(Context context) {
         super(context);
@@ -33,8 +33,8 @@ public final class u0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
         this.f = new Path();
-        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(this);
-        this.r = w5Var;
+        org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(this);
+        this.r = v5Var;
         paint.setColor(-869783512);
         paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.L(6.0f)));
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
@@ -43,7 +43,7 @@ public final class u0 extends View {
         this.c = staticLayout;
         this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
         this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        w5Var.e(true, 0.0f);
+        v5Var.e(true, 0.0f);
     }
 
     public final void a(boolean z9) {
@@ -63,8 +63,8 @@ public final class u0 extends View {
             return;
         }
         canvas.save();
-        canvas.translate(0.0f, (this.n ? xq.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
-        float interpolation = xq.h.getInterpolation(d);
+        canvas.translate(0.0f, (this.n ? wq.k.getInterpolation(d) : 1.0f) * org.telegram.messenger.g0.L(12.0f));
+        float interpolation = wq.h.getInterpolation(d);
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         float L = org.telegram.messenger.g0.L(22.0f) + this.d;

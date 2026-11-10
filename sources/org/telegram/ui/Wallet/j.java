@@ -20,13 +20,13 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.hk0;
-import org.telegram.ui.qw0;
+import org.telegram.ui.ik0;
+import org.telegram.ui.sw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements v10 {
     public final /* synthetic */ int a;
@@ -92,31 +92,31 @@ public final /* synthetic */ class j implements v10 {
                 break;
             case 1:
                 l0 l0Var2 = (l0) obj3;
-                i8 i8Var = (i8) obj5;
+                l8 l8Var = (l8) obj5;
                 g0 g0Var = (g0) obj4;
                 i0 i0Var = (i0) obj;
                 String str5 = (String) obj2;
                 int i14 = l0Var2.a;
                 if (i0Var == null) {
                     l0.j("disable backup: no current phrase ".concat(str5 == null ? "NULL_ERROR" : str5));
-                    i8Var.a(str5 != null ? str5 : "NULL_ERROR");
+                    l8Var.a(str5 != null ? str5 : "NULL_ERROR");
                     break;
                 } else {
                     l0.H("disable backup: ready!");
                     if (l0Var2.b == null) {
                         l0.j("disable backup: no engine");
-                        i8Var.a("NULL_ENGINE");
+                        l8Var.a("NULL_ENGINE");
                         break;
                     } else {
                         String t6 = l0Var2.t();
                         byte[] y10 = l0Var2.y();
                         if (TextUtils.isEmpty(t6)) {
                             l0.j("disable backup: empty address");
-                            i8Var.a("NULL_ADDRESS");
+                            l8Var.a("NULL_ADDRESS");
                             break;
                         } else if (y10 == null || y10.length <= 0) {
                             l0.j("disable backup: no public key");
-                            i8Var.a("NULL_PUBLIC_KEY");
+                            l8Var.a("NULL_PUBLIC_KEY");
                             break;
                         } else {
                             try {
@@ -133,7 +133,7 @@ public final /* synthetic */ class j implements v10 {
                                 TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
                                 wallettransactionpeeraddress.address = t6;
                                 wallettransaction.peer = wallettransactionpeeraddress;
-                                e7 e7Var = new e7(l0Var2, b10, wallettransaction, B, 4);
+                                h7 h7Var = new h7(l0Var2, b10, wallettransaction, B, 4);
                                 TL_wallet.sendTransfer sendtransfer = g0Var.a;
                                 wallettransaction.gasless = sendtransfer.data_gasless != null;
                                 wallettransaction.random_id = sendtransfer.random_id;
@@ -143,12 +143,12 @@ public final /* synthetic */ class j implements v10 {
                                 B.k();
                                 B.i();
                                 l0Var2.S();
-                                i8Var.a(null);
+                                l8Var.a(null);
                                 l0.H("disable backup: prepared sendTransfer, sending");
-                                ConnectionsManager.getInstance(i14).sendRequestTyped(g0Var.a, new d3.b(1), new bi.t3(l0Var2, e7Var, g0Var, b10, wallettransaction, 5));
+                                ConnectionsManager.getInstance(i14).sendRequestTyped(g0Var.a, new d3.b(1), new bi.t3(l0Var2, h7Var, g0Var, b10, wallettransaction, 5));
                                 break;
                             } catch (IllegalStateException unused) {
-                                i8Var.a("CANCELLED");
+                                l8Var.a("CANCELLED");
                                 return;
                             }
                         }
@@ -183,7 +183,7 @@ public final /* synthetic */ class j implements v10 {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new qw0(obj3, obj, obj5, obj4, (String) obj2, 3));
+                org.telegram.messenger.g0.h3(new sw0(obj3, obj, obj5, obj4, (String) obj2, 3));
                 break;
             case 4:
                 l0 l0Var4 = (l0) obj3;
@@ -233,7 +233,7 @@ public final /* synthetic */ class j implements v10 {
                             c20Var.a("STORAGE_CHANGED");
                             break;
                         } else {
-                            l0Var5.c.p(p10.i(l0Var5.a).e(), tL_walletState.public_key, i0Var3, new fx(29, i0Var3.b(), c20Var));
+                            l0Var5.c.p(p10.i(l0Var5.a).e(), tL_walletState.public_key, i0Var3, new ex(29, i0Var3.b(), c20Var));
                             break;
                         }
                     } else {
@@ -304,11 +304,11 @@ public final /* synthetic */ class j implements v10 {
                     if (tL_error4 != null && (str3 = tL_error4.text) != null) {
                         str = str3;
                     }
-                    hc.b0(str);
+                    gc.b0(str);
                     break;
                 } else if (vector.objects.size() <= 0) {
                     c20Var2.a("NO_PROVIDERS");
-                    hc.b0("NO_PROVIDERS");
+                    gc.b0("NO_PROVIDERS");
                     break;
                 } else {
                     ArrayList<T> arrayList = vector.objects;
@@ -329,7 +329,7 @@ public final /* synthetic */ class j implements v10 {
                                 break;
                             } else {
                                 c20Var2.a("NO_SUITABLE_PROVIDER");
-                                hc.b0("NO_SUITABLE_PROVIDER");
+                                gc.b0("NO_SUITABLE_PROVIDER");
                                 break;
                             }
                         }
@@ -339,21 +339,21 @@ public final /* synthetic */ class j implements v10 {
                 }
                 break;
             default:
-                final m8 m8Var = (m8) obj5;
+                final p8 p8Var = (p8) obj5;
                 final l0 l0Var8 = (l0) obj3;
                 final Long l10 = (Long) obj;
                 String str12 = (String) obj2;
                 ((org.telegram.ui.ActionBar.u1) obj4).dismiss();
                 if (l10 != null) {
-                    Activity parentActivity = m8Var.getParentActivity();
+                    Activity parentActivity = p8Var.getParentActivity();
                     if (parentActivity != null) {
-                        final org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, m8Var.getResourceProvider());
-                        int i15 = org.telegram.ui.ActionBar.l6.i6;
-                        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.l6.h0(m8Var.getThemedColor(i15), 7, org.telegram.messenger.g0.L(12.0f));
-                        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i15);
-                        org.telegram.ui.ActionBar.g6 resourceProvider = m8Var.getResourceProvider();
+                        final org.telegram.ui.Cells.c2 c2Var = new org.telegram.ui.Cells.c2(1, parentActivity, p8Var.getResourceProvider());
+                        int i15 = org.telegram.ui.ActionBar.m6.i6;
+                        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(p8Var.getThemedColor(i15), 7, org.telegram.messenger.g0.L(12.0f));
+                        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i15);
+                        org.telegram.ui.ActionBar.h6 resourceProvider = p8Var.getResourceProvider();
                         c2Var.setBackground(h02);
-                        org.telegram.ui.ActionBar.s6.j(c2Var, h02, null, M, resourceProvider);
+                        org.telegram.ui.ActionBar.t6.j(c2Var, h02, null, M, resourceProvider);
                         c2Var.e(id.M0(2131742969, null), "", false, false, false);
                         c2Var.setMultiline(true);
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c2Var.getCheckBoxView().getLayoutParams();
@@ -363,23 +363,23 @@ public final /* synthetic */ class j implements v10 {
                         c2Var.setPadding(id.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), id.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
                         TextView textView = new TextView(parentActivity);
                         textView.setTextSize(1, 14.0f);
-                        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.j5, m8Var.getResourceProvider());
+                        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, p8Var.getResourceProvider());
                         textView.setGravity(17);
                         int L = org.telegram.messenger.g0.L(10.0f);
-                        int i16 = org.telegram.ui.ActionBar.l6.a7;
-                        ShapeDrawable d02 = org.telegram.ui.ActionBar.l6.d0(L, m8Var.getThemedColor(i16));
-                        org.telegram.ui.ActionBar.o6 M2 = org.telegram.ui.ActionBar.s6.M(i16);
-                        org.telegram.ui.ActionBar.g6 resourceProvider2 = m8Var.getResourceProvider();
+                        int i16 = org.telegram.ui.ActionBar.m6.a7;
+                        ShapeDrawable d02 = org.telegram.ui.ActionBar.m6.d0(L, p8Var.getThemedColor(i16));
+                        org.telegram.ui.ActionBar.p6 M2 = org.telegram.ui.ActionBar.t6.M(i16);
+                        org.telegram.ui.ActionBar.h6 resourceProvider2 = p8Var.getResourceProvider();
                         textView.setBackground(d02);
-                        org.telegram.ui.ActionBar.s6.j(textView, d02, M2, null, resourceProvider2);
+                        org.telegram.ui.ActionBar.t6.j(textView, d02, M2, null, resourceProvider2);
                         textView.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(12.0f));
                         textView.setText(l10.longValue() > 0 ? id.V(null, null, 2131742967, l0.n(l10.longValue(), false), l0Var8.m(l10.longValue(), true)) : id.M0(2131742968, null));
                         textView.setVisibility(8);
-                        c2Var.setOnClickListener(new hk0(22, c2Var, textView));
+                        c2Var.setOnClickListener(new ik0(21, c2Var, textView));
                         LinearLayout e11 = org.telegram.messenger.k5.e(parentActivity, 1);
                         e11.addView(c2Var, c8.ha.t(-1, -2, 83, 8, 0, 8, 0));
                         e11.addView(textView, c8.ha.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, m8Var.getResourceProvider());
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, p8Var.getResourceProvider());
                         String M0 = id.M0(2131743131, null);
                         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                         u1Var.R = M0;
@@ -388,7 +388,7 @@ public final /* synthetic */ class j implements v10 {
                         alertDialog$Builder.o(e11);
                         u1Var.a = org.telegram.messenger.g0.L(312.0f);
                         alertDialog$Builder.h(id.M0(2131752589, null), null);
-                        alertDialog$Builder.k(id.M0(2131743136, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.Wallet.j8
+                        alertDialog$Builder.k(id.M0(2131743136, null), new org.telegram.ui.ActionBar.r1() { // from class: org.telegram.ui.Wallet.m8
                             @Override // org.telegram.ui.ActionBar.r1
                             public final void g(org.telegram.ui.ActionBar.u1 u1Var2, int i17) {
                                 org.telegram.ui.Cells.c2 c2Var2 = c2Var;
@@ -397,40 +397,40 @@ public final /* synthetic */ class j implements v10 {
                                     c2Var2.setEnabled(false);
                                     vf.b h = u1Var2.h(i17, true, true);
                                     h.d();
-                                    m8 m8Var2 = m8.this;
+                                    p8 p8Var2 = p8.this;
                                     l0 l0Var9 = l0Var8;
                                     if (!b11) {
-                                        l0Var9.z(new f8(m8Var2, h, l0Var9, 0), false, true);
+                                        l0Var9.z(new i8(p8Var2, h, l0Var9, 0), false, true);
                                         return;
                                     }
                                     long v = l0Var9.v();
                                     Long l11 = l10;
                                     if (v >= l11.longValue()) {
-                                        f8 f8Var = new f8(m8Var2, h, l0Var9, 1);
+                                        i8 i8Var = new i8(p8Var2, h, l0Var9, 1);
                                         l0.H("prepare disable backup");
-                                        l0Var9.z(new bi.p5(24, l0Var9, f8Var), true, false);
+                                        l0Var9.z(new bi.p5(24, l0Var9, i8Var), true, false);
                                         return;
                                     }
-                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, m8Var2.getParentActivity(), m8Var2.getResourceProvider());
+                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, p8Var2.getParentActivity(), p8Var2.getResourceProvider());
                                     String M02 = id.M0(2131743066, null);
                                     org.telegram.ui.ActionBar.u1 u1Var3 = alertDialog$Builder2.a;
                                     u1Var3.R = M02;
                                     u1Var3.T = id.V(null, null, 2131742966, l0.n(l11.longValue(), false), l0Var9.m(l11.longValue(), true));
                                     alertDialog$Builder2.h(id.M0(2131743064, null), new v0.j(15));
-                                    alertDialog$Builder2.k(id.M0(2131742990, null), new c3(m8Var2, 6));
+                                    alertDialog$Builder2.k(id.M0(2131742990, null), new c3(p8Var2, 6));
                                     alertDialog$Builder2.p();
                                 }
                             }
                         });
-                        m8Var.showDialog(u1Var);
+                        p8Var.showDialog(u1Var);
                         TextView textView2 = (TextView) u1Var.d(-1);
                         if (textView2 != null) {
-                            org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.q7, u1Var.i1);
+                            org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.q7, u1Var.i1);
                             break;
                         }
                     }
                 } else {
-                    hc.a0(m8Var).e0(str12 != null ? str12 : "NULL_ERROR", false);
+                    gc.a0(p8Var).e0(str12 != null ? str12 : "NULL_ERROR", false);
                     break;
                 }
                 break;
@@ -458,9 +458,9 @@ public final /* synthetic */ class j implements v10 {
         this.d = str2;
     }
 
-    public /* synthetic */ j(m8 m8Var, org.telegram.ui.ActionBar.u1 u1Var, l0 l0Var) {
+    public /* synthetic */ j(p8 p8Var, org.telegram.ui.ActionBar.u1 u1Var, l0 l0Var) {
         this.a = 11;
-        this.c = m8Var;
+        this.c = p8Var;
         this.d = u1Var;
         this.b = l0Var;
     }

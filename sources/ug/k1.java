@@ -18,13 +18,13 @@ import org.telegram.messenger.k9;
 import org.telegram.messenger.r2;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.Components.xo;
-import org.telegram.ui.ys0;
+import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class k1 extends ViewGroup {
     public final Paint D;
@@ -44,7 +44,7 @@ public class k1 extends ViewGroup {
     public final TextView e;
     public final int f;
     public final int h;
-    public ys0 n;
+    public zs0 n;
     public final TextView r;
     public final int s;
     public final int w;
@@ -55,20 +55,20 @@ public class k1 extends ViewGroup {
         super(context);
         this.f = 12;
         this.h = 8;
-        this.s = l6.d6;
-        this.w = l6.a7;
+        this.s = m6.d6;
+        this.w = m6.a7;
         this.D = new Paint();
         this.H = new Matrix();
         wo woVar = new wo(24, context, null);
         this.a = woVar;
         woVar.setDrawBackgroundAsArc(10);
-        int i7 = l6.g7;
-        woVar.b(i7, i7, l6.k7);
+        int i7 = m6.g7;
+        woVar.b(i7, i7, m6.k7);
         addView(woVar);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        s6.U(textView, l6.G6, null);
+        t6.U(textView, m6.G6, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setSingleLine();
         addView(textView, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
@@ -82,21 +82,21 @@ public class k1 extends ViewGroup {
         TextView textView3 = new TextView(context);
         this.d = textView3;
         textView3.setTextSize(1, 14.0f);
-        int i10 = l6.y6;
-        s6.U(textView3, i10, null);
+        int i10 = m6.y6;
+        t6.U(textView3, i10, null);
         textView3.getPaint().setStrikeThruText(true);
         textView3.setSingleLine();
         addView(textView3, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView4 = new TextView(context);
         this.e = textView4;
         textView4.setTextSize(1, 14.0f);
-        s6.U(textView4, i10, null);
+        t6.U(textView4, i10, null);
         textView4.setSingleLine();
         addView(textView4, ha.d(-2, -2.0f, (id.a0 ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView5 = new TextView(context);
         this.c = textView5;
         textView5.setTextSize(1, 15.0f);
-        s6.U(textView5, i10, null);
+        t6.U(textView5, i10, null);
         textView5.setSingleLine();
         addView(textView5, ha.e(-2, -2, 8388613));
         setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(8.0f));
@@ -113,12 +113,12 @@ public class k1 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(ys0 ys0Var, boolean z9) {
+    public final void a(zs0 zs0Var, boolean z9) {
         boolean z10;
         String f10;
-        this.n = ys0Var;
+        this.n = zs0Var;
         this.M = z9;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = ys0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = zs0Var.a;
         int i7 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i7 == 1) {
@@ -132,7 +132,7 @@ public class k1 extends ViewGroup {
         }
         if (!r2.b()) {
             if (org.telegram.messenger.r1.i().k()) {
-                ys0Var.a();
+                zs0Var.a();
             }
             z10 = true;
             this.L = z10;
@@ -141,30 +141,30 @@ public class k1 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z10) {
-                if (ys0Var.c() <= 0) {
+                if (zs0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(id.a0(null, null, 2131749664, Integer.valueOf(ys0Var.c())));
+                    textView4.setText(id.a0(null, null, 2131749664, Integer.valueOf(zs0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
                 if (r2.b() || tL_premiumSubscriptionOption.store_product == null) {
-                    f10 = org.telegram.messenger.r1.i().f(ys0Var.e, ys0Var.b());
-                } else if (ys0Var.f == null) {
+                    f10 = org.telegram.messenger.r1.i().f(zs0Var.e, zs0Var.b());
+                } else if (zs0Var.f == null) {
                     f10 = "";
                 } else {
                     org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
-                    long j3 = ys0Var.e;
-                    String b10 = ys0Var.b();
+                    long j3 = zs0Var.e;
+                    String b10 = zs0Var.b();
                     i10.getClass();
                     f10 = org.telegram.messenger.r1.g(b10, 6, j3, false);
                 }
                 textView3.setText(f10);
-                textView5.setText(id.a0(null, null, 2131746872, ys0Var.f()));
-                textView2.setText(id.a0(null, null, 2131746873, ys0Var.e()));
+                textView5.setText(id.a0(null, null, 2131746872, zs0Var.f()));
+                textView2.setText(id.a0(null, null, 2131746873, zs0Var.e()));
                 if (tL_premiumSubscriptionOption.current) {
                     textView5.setVisibility(0);
                     textView5.setText(id.M0(2131742824, null));
@@ -213,8 +213,8 @@ public class k1 extends ViewGroup {
             k1Var.d();
             return;
         }
-        int x02 = l6.x0(null, this.s, false);
-        int x03 = l6.x0(null, this.w, false);
+        int x02 = m6.x0(null, this.s, false);
+        int x03 = m6.x0(null, this.w, false);
         if (this.G == x03 && this.F == x02) {
             return;
         }
@@ -281,7 +281,7 @@ public class k1 extends ViewGroup {
         }
     }
 
-    public ys0 getTier() {
+    public zs0 getTier() {
         return this.n;
     }
 
@@ -292,9 +292,9 @@ public class k1 extends ViewGroup {
             boolean z9 = id.a0;
             TextView textView = this.b;
             if (z9) {
-                canvas.drawLine(0.0f, getHeight() - 1, textView.getRight(), getHeight() - 1, l6.k0);
+                canvas.drawLine(0.0f, getHeight() - 1, textView.getRight(), getHeight() - 1, m6.k0);
             } else {
-                canvas.drawLine(textView.getLeft(), getHeight() - 1, getWidth(), getHeight() - 1, l6.k0);
+                canvas.drawLine(textView.getLeft(), getHeight() - 1, getWidth(), getHeight() - 1, m6.k0);
             }
         }
     }

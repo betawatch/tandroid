@@ -8,31 +8,31 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class w4 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.ActionBar.g6 a;
+public final class w4 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.ActionBar.h6 a;
     public final FrameLayout b;
     public int c;
     public boolean d;
 
-    public w4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public w4(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.a = g6Var;
+        this.a = h6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        frameLayout.setBackground(org.telegram.ui.ActionBar.a6.e(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, g6Var), 8.0f));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.b6.e(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, h6Var), 8.0f));
         addView(frameLayout, c8.ha.d(-1, 48.0f, 51, 16.0f, 10.0f, 16.0f, 0.0f));
-        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
-        l5Var.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
-        l5Var.setGravity(17);
-        l5Var.setDrawablePadding(org.telegram.messenger.g0.L(8.0f));
-        org.telegram.ui.ActionBar.s6.X(l5Var, org.telegram.ui.ActionBar.l6.Gi, g6Var);
-        l5Var.setTextSize(14);
-        l5Var.l(id.M0(2131751436, null), false);
-        l5Var.setLeftDrawable(R.drawable.filled_directions);
-        l5Var.setTypeface(org.telegram.messenger.g0.o());
-        frameLayout.addView(l5Var, c8.ha.c(-1.0f, -1));
+        org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
+        m5Var.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
+        m5Var.setGravity(17);
+        m5Var.setDrawablePadding(org.telegram.messenger.g0.L(8.0f));
+        org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.Gi, h6Var);
+        m5Var.setTextSize(14);
+        m5Var.l(id.M0(2131751436, null), false);
+        m5Var.setLeftDrawable(R.drawable.filled_directions);
+        m5Var.setTypeface(org.telegram.messenger.g0.o());
+        frameLayout.addView(m5Var, c8.ha.c(-1.0f, -1));
         frameLayout.setOutlineProvider(bg.u0.b);
         frameLayout.setClipToOutline(true);
         c8.ka.b(frameLayout, 0.02f, 1.2f);
@@ -47,20 +47,20 @@ public final class w4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.b.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Ci, this.a);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Ci, this.a);
             FrameLayout frameLayout = this.b;
             if (frameLayout != null) {
                 if (w02 == this.c) {
-                    if (this.d != org.telegram.ui.ActionBar.l6.I.q()) {
+                    if (this.d != org.telegram.ui.ActionBar.m6.I.q()) {
                     }
                 }
-                this.d = org.telegram.ui.ActionBar.l6.I.q();
+                this.d = org.telegram.ui.ActionBar.m6.I.q();
                 this.c = w02;
-                org.telegram.ui.ActionBar.l6.H1(frameLayout.getBackground(), w02, false);
-                org.telegram.ui.ActionBar.l6.H1(frameLayout.getBackground(), org.telegram.ui.ActionBar.a6.b(w02), true);
+                org.telegram.ui.ActionBar.m6.H1(frameLayout.getBackground(), w02, false);
+                org.telegram.ui.ActionBar.m6.H1(frameLayout.getBackground(), org.telegram.ui.ActionBar.b6.b(w02), true);
                 frameLayout.invalidate();
             }
             invalidate();
@@ -69,7 +69,7 @@ public final class w4 extends FrameLayout implements org.telegram.ui.ActionBar.b
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

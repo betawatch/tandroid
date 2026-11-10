@@ -5,11 +5,11 @@ import java.net.Socket;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.ui.Components.gp;
-import org.telegram.ui.gc0;
-import org.telegram.ui.gf0;
-import org.telegram.ui.jz;
+import org.telegram.ui.hc0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.kz;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h2 extends TimerTask {
     public final /* synthetic */ int a;
@@ -52,13 +52,13 @@ public final class h2 extends TimerTask {
                 org.telegram.messenger.g0.h3(new gp(this, 22));
                 break;
             case 3:
-                if (((gc0) this.b).N != null) {
-                    org.telegram.messenger.g0.h3(new jz(this, 25));
+                if (((hc0) this.b).N != null) {
+                    org.telegram.messenger.g0.h3(new kz(this, 25));
                     break;
                 }
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new gf0(this, 8));
+                org.telegram.messenger.g0.h3(new hf0(this, 8));
                 break;
             default:
                 try {

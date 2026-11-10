@@ -15,12 +15,12 @@ import fi.e5;
 import fi.x5;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ca;
+import org.telegram.ui.Components.ba;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r0 extends org.telegram.ui.Cells.q1 {
-    public final ca ld;
+    public final ba ld;
     public final float[] md;
     public final Path nd;
     public final Paint od;
@@ -32,7 +32,7 @@ public final class r0 extends org.telegram.ui.Cells.q1 {
     public r0(s0 s0Var, Context context, int i7, t0 t0Var) {
         super(context, i7, false, null, t0Var);
         this.rd = s0Var;
-        this.ld = new ca(s0Var.d, this, 10, false);
+        this.ld = new ba(s0Var.d, this, 10, false);
         this.md = new float[8];
         this.nd = new Path();
         Paint paint = new Paint();

@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class v0 {
     public int a;
@@ -374,9 +374,9 @@ public final class v0 {
                 }
             } else {
                 d1 U2 = RecyclerView.U(view);
-                ky0 ky0Var = recyclerView.e;
-                ua uaVar = (ua) ky0Var.c;
-                int indexOfChild = ((RecyclerView) ((vy) ky0Var.b).b).indexOfChild(view);
+                ly0 ly0Var = recyclerView.e;
+                ua uaVar = (ua) ly0Var.c;
+                int indexOfChild = ((RecyclerView) ((uy) ly0Var.b).b).indexOfChild(view);
                 if (indexOfChild < 0) {
                     throw new IllegalArgumentException("view is not a child, cannot hide " + view);
                 }
@@ -384,10 +384,10 @@ public final class v0 {
                     throw new RuntimeException("trying to unhide a view that was not hidden" + view);
                 }
                 uaVar.A(indexOfChild);
-                ky0Var.M(view);
-                ky0 ky0Var2 = recyclerView.e;
-                ua uaVar2 = (ua) ky0Var2.c;
-                int indexOfChild2 = ((RecyclerView) ((vy) ky0Var2.b).b).indexOfChild(view);
+                ly0Var.M(view);
+                ly0 ly0Var2 = recyclerView.e;
+                ua uaVar2 = (ua) ly0Var2.c;
+                int indexOfChild2 = ((RecyclerView) ((uy) ly0Var2.b).b).indexOfChild(view);
                 int B = (indexOfChild2 == -1 || uaVar2.E(indexOfChild2)) ? -1 : indexOfChild2 - uaVar2.B(indexOfChild2);
                 if (B == -1) {
                     throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + U2 + recyclerView.C());

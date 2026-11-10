@@ -5,26 +5,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class uk implements org.telegram.ui.Components.bi {
+public final class uk implements org.telegram.ui.Components.ai {
     public final /* synthetic */ cn a;
 
     public uk(cn cnVar) {
         this.a = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void F0() {
         this.a.Z.L();
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ boolean G1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void Y0(TLRPC.User user) {
         String n10 = org.telegram.messenger.t10.n(user);
         cn cnVar = this.a;
@@ -35,17 +35,17 @@ public final class uk implements org.telegram.ui.Components.bi {
         cnVar.Z.H0();
     }
 
-    @Override // org.telegram.ui.Components.bi
-    public final void c0(org.telegram.ui.Components.qg qgVar) {
-        this.a.x8(qgVar);
+    @Override // org.telegram.ui.Components.ai
+    public final void c0(org.telegram.ui.Components.pg pgVar) {
+        this.a.x8(pgVar);
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final boolean f0() {
         return this.a.ra();
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void o1(int i7, boolean z9, boolean z10, int i10, int i11, long j3, boolean z11, boolean z12, long j10) {
         di.u2 u2Var;
         HashMap<Object, Object> hashMap;
@@ -64,13 +64,13 @@ public final class uk implements org.telegram.ui.Components.bi {
         if (cnVar.getParentActivity() == null || (u2Var = cnVar.X1) == null) {
             return;
         }
-        boolean z16 = u2Var.x1;
-        org.telegram.messenger.ij ijVar = u2Var.B3;
+        boolean z16 = u2Var.A1;
+        org.telegram.messenger.ij ijVar = u2Var.E3;
         cnVar.F5 = ijVar;
         if (ijVar != null && (message = ijVar.k) != null) {
             message.invert_media = z11;
         }
-        if (i7 != 8 && i7 != 7 && (i7 != 4 || u2Var.a2.getSelectedPhotos().isEmpty())) {
+        if (i7 != 8 && i7 != 7 && (i7 != 4 || u2Var.d2.getSelectedPhotos().isEmpty())) {
             di.u2 u2Var2 = cnVar.X1;
             if (u2Var2 != null) {
                 u2Var2.L(i7);
@@ -82,8 +82,8 @@ public final class uk implements org.telegram.ui.Components.bi {
         if (u2Var3 != null && i7 != 8) {
             u2Var3.a(true);
         }
-        HashMap<Object, Object> selectedPhotos = cnVar.X1.a2.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = cnVar.X1.a2.getSelectedPhotosOrder();
+        HashMap<Object, Object> selectedPhotos = cnVar.X1.d2.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = cnVar.X1.d2.getSelectedPhotosOrder();
         if (selectedPhotos.isEmpty()) {
             hashMap = selectedPhotos;
         } else {
@@ -207,15 +207,15 @@ public final class uk implements org.telegram.ui.Components.bi {
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void M0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void t0() {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
     }
 }

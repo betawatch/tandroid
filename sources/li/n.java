@@ -5,32 +5,32 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.mj;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.lj;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class n implements mj {
-    public final /* synthetic */ di a;
+public final class n implements lj {
+    public final /* synthetic */ ci a;
     public final /* synthetic */ p b;
 
-    public n(p pVar, di diVar) {
+    public n(p pVar, ci ciVar) {
         this.b = pVar;
-        this.a = diVar;
+        this.a = ciVar;
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void A() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
             intent.setType("*/*");
-            this.b.b.W1.startActivityForResult(intent, 21);
+            this.b.b.Z1.startActivityForResult(intent, 21);
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
         t3 t3Var = this.b.r;
         if (!arrayList.isEmpty()) {
@@ -47,11 +47,11 @@ public final class n implements mj {
         this.a.a(true);
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void S() {
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void p(ArrayList arrayList, boolean z9, int i7, long j3) {
     }
 }

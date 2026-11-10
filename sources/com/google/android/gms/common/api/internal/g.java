@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class g implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -233,7 +233,7 @@ public final class g implements Handler.Callback {
                 s b12 = t.b();
                 b12.d = new n6.c[]{n7.b.b};
                 b12.b = false;
-                b12.c = new vy(rVar, 16);
+                b12.c = new uy(rVar, 16);
                 dVar2.e(2, b12.a());
                 return true;
             }

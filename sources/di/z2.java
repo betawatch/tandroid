@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.xf;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wf;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.fn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z2 extends ImageReceiver {
     public final /* synthetic */ int J1;
@@ -47,7 +47,7 @@ public final class z2 extends ImageReceiver {
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.o5
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.n5
     public void invalidate() {
         int i7 = this.J1;
         Object obj = this.K1;
@@ -60,7 +60,7 @@ public final class z2 extends ImageReceiver {
                 }
                 break;
             case 4:
-                ((org.telegram.ui.Components.i5) obj).j();
+                ((org.telegram.ui.Components.h5) obj).j();
                 super.invalidate();
                 break;
             case 5:
@@ -69,9 +69,9 @@ public final class z2 extends ImageReceiver {
                 break;
             case 6:
                 super.invalidate();
-                org.telegram.ui.Wallet.a8 a8Var = ((org.telegram.ui.Wallet.z7) obj).d0;
-                int i10 = org.telegram.ui.Wallet.a8.G1;
-                a8Var.f0();
+                org.telegram.ui.Wallet.d8 d8Var = ((org.telegram.ui.Wallet.c8) obj).d0;
+                int i10 = org.telegram.ui.Wallet.d8.G1;
+                d8Var.f0();
                 break;
         }
     }
@@ -92,7 +92,7 @@ public final class z2 extends ImageReceiver {
                 return x02;
             case 1:
                 if (drawable != null && i7 != 1) {
-                    org.telegram.messenger.camera.q.l(((kg.a1) ((d4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), xq.k, 250L);
+                    org.telegram.messenger.camera.q.l(((kg.a1) ((d4) obj).H).h.animate().alpha(1.0f).translationY(0.0f), wq.k, 250L);
                 }
                 return super.x0(drawable, str, i7, z9, i10);
             case 2:
@@ -101,12 +101,12 @@ public final class z2 extends ImageReceiver {
             default:
                 return super.x0(drawable, str, i7, z9, i10);
             case 4:
-                org.telegram.ui.Components.i5 i5Var = (org.telegram.ui.Components.i5) obj;
-                i5Var.j();
+                org.telegram.ui.Components.h5 h5Var = (org.telegram.ui.Components.h5) obj;
+                h5Var.j();
                 boolean x03 = super.x0(drawable, str, i7, z9, i10);
-                if (i5Var.m && J()) {
-                    i5Var.m = false;
-                    org.telegram.messenger.g0.h3(new xf(i5Var, 4));
+                if (h5Var.m && J()) {
+                    h5Var.m = false;
+                    org.telegram.messenger.g0.h3(new wf(h5Var, 4));
                 }
                 return x03;
             case 5:

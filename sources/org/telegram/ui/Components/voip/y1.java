@@ -43,19 +43,19 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.o9;
+import org.telegram.ui.Components.t60;
+import org.telegram.ui.Components.u4;
 import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.u60;
-import org.telegram.ui.Components.v4;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.e40;
-import org.telegram.ui.tu0;
+import org.telegram.ui.f40;
+import org.telegram.ui.uu0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class y1 {
     public static long a;
@@ -91,7 +91,7 @@ public abstract class y1 {
             }
             if (z13 && chat != null && !z12 && (N02 = qp.s1(cVar.a).N0(chat.id)) != null && (peer = N02.groupcall_default_join_as) != null) {
                 final TLRPC.InputPeer j12 = qp.s1(cVar.a).j1(ij.B1(peer));
-                u60.J0(activity, -chat.id, cVar, new qr() { // from class: org.telegram.ui.Components.voip.q1
+                t60.J0(activity, -chat.id, cVar, new qr() { // from class: org.telegram.ui.Components.voip.q1
                     @Override // org.telegram.messenger.qr
                     public final void k(boolean z16) {
                         String str2 = str;
@@ -116,7 +116,7 @@ public abstract class y1 {
                 return;
             }
             if (z13 && chat != null) {
-                u60.K0(activity, -chat.id, cVar, f2Var, !z12 ? 1 : 0, null, new r1(z12, activity, cVar, chat, str, user, z10, z11, f2Var));
+                t60.K0(activity, -chat.id, cVar, f2Var, !z12 ? 1 : 0, null, new r1(z12, activity, cVar, chat, str, user, z10, z11, f2Var));
                 return;
             }
             if (z14 && !z9 && (inputPeer instanceof TLRPC.TL_inputPeerUser) && chat != null && (tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.anonymous && (!t3.T(chat) || chat.megagroup)) {
@@ -155,7 +155,7 @@ public abstract class y1 {
                 }
             }
             if (chat != null && !z12 && (g12 = qp.s1(cVar.a).g1(chat.id, false, null)) != null && g12.j()) {
-                e40.e1((LaunchActivity) activity, cVar, chat, inputPeer, z9, str);
+                f40.e1((LaunchActivity) activity, cVar, chat, inputPeer, z9, str);
                 return;
             }
             a = SystemClock.elapsedRealtime();
@@ -253,7 +253,7 @@ public abstract class y1 {
                     if (!TextUtils.isEmpty(str)) {
                         sharedInstance.setGroupCallHash(str);
                     }
-                    e40.e1((LaunchActivity) activity, org.telegram.messenger.c.a(p10.s0), null, null, false, null);
+                    f40.e1((LaunchActivity) activity, org.telegram.messenger.c.a(p10.s0), null, null, false, null);
                     return;
                 }
             } else {
@@ -374,8 +374,8 @@ public abstract class y1 {
             alertDialog$Builder.h(id.M0(2131751772, null), null);
             u1Var.setOnDismissListener(new org.telegram.ui.ActionBar.j2(1, runnable));
             int i11 = z9 ? R.raw.permission_request_camera : R.raw.permission_request_microphone;
-            int i12 = l6.L5;
-            alertDialog$Builder.m(i11, 72, l6.x0(null, i12, false), null);
+            int i12 = m6.L5;
+            alertDialog$Builder.m(i11, 72, m6.x0(null, i12, false), null);
             alertDialog$Builder.n(i12, null);
             alertDialog$Builder.p();
         }
@@ -388,7 +388,7 @@ public abstract class y1 {
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 15.0f);
         textView.setText("Please only change these settings if you know exactly what they do.");
-        s6.U(textView, l6.j5, null);
+        t6.U(textView, m6.j5, null);
         e10.addView(textView, ha.k(16.0f, 8.0f, 16.0f, 8.0f, -1, -2));
         final r8 r8Var = new r8(activity);
         final int i10 = 0;
@@ -530,7 +530,7 @@ public abstract class y1 {
         }
     }
 
-    public static void k(final Context context, tu0 tu0Var, boolean z9, final long j3, final long j10, final int i7, final boolean z10) {
+    public static void k(final Context context, uu0 uu0Var, boolean z9, final long j3, final long j10, final int i7, final boolean z10) {
         File file;
         String M0;
         String str;
@@ -558,16 +558,16 @@ public abstract class y1 {
         f10.setPadding(L, L, L, 0);
         final TextView textView = new TextView(context);
         textView.setTextSize(2, 16.0f);
-        s6.U(textView, l6.j5, null);
+        t6.U(textView, m6.j5, null);
         k5.m(textView, 17, null, 2131743256);
         f10.addView(textView);
-        final p9 p9Var = new p9(context);
-        p9Var.c = new Paint();
-        p9Var.d = 5;
-        p9Var.e = 0;
-        p9Var.a = BitmapFactory.decodeResource(p9Var.getResources(), R.drawable.ic_rating_star_filled).extractAlpha();
-        p9Var.b = BitmapFactory.decodeResource(p9Var.getResources(), R.drawable.ic_rating_star).extractAlpha();
-        f10.addView(p9Var, ha.t(-2, -2, 1, 0, 16, 0, 0));
+        final o9 o9Var = new o9(context);
+        o9Var.c = new Paint();
+        o9Var.d = 5;
+        o9Var.e = 0;
+        o9Var.a = BitmapFactory.decodeResource(o9Var.getResources(), R.drawable.ic_rating_star_filled).extractAlpha();
+        o9Var.b = BitmapFactory.decodeResource(o9Var.getResources(), R.drawable.ic_rating_star).extractAlpha();
+        f10.addView(o9Var, ha.t(-2, -2, 1, 0, 16, 0, 0));
         final LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         bi.l1 l1Var = new bi.l1(13);
@@ -632,10 +632,10 @@ public abstract class y1 {
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         editTextBoldCursor.setHint(id.M0(2131743407, null));
         editTextBoldCursor.setInputType(147457);
-        s6.U(editTextBoldCursor, l6.j5, null);
-        s6.D(editTextBoldCursor, l6.t5, null);
+        t6.U(editTextBoldCursor, m6.j5, null);
+        t6.D(editTextBoldCursor, m6.t5, null);
         editTextBoldCursor.setBackground(null);
-        s6.F(editTextBoldCursor, l6.u5, l6.v5, l6.q7, null);
+        t6.F(editTextBoldCursor, m6.u5, m6.v5, m6.q7, null);
         editTextBoldCursor.setPadding(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setVisibility(8);
@@ -649,7 +649,7 @@ public abstract class y1 {
         f10.addView(c2Var2, ha.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
-        org.telegram.messenger.camera.q.o(textView2, l6.r5, null, null, 2131752603);
+        org.telegram.messenger.camera.q.o(textView2, m6.r5, null, null, 2131752603);
         textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f), 0);
         textView2.setOnClickListener(u41Var);
         f10.addView(textView2);
@@ -663,23 +663,23 @@ public abstract class y1 {
         alertDialog$Builder.o(f10);
         alertDialog$Builder.k(id.M0(2131745640, null), new v0.j(15));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
-        alertDialog$Builder.a.setOnDismissListener(new org.telegram.ui.ActionBar.j2(2, tu0Var));
+        alertDialog$Builder.a.setOnDismissListener(new org.telegram.ui.ActionBar.j2(2, uu0Var));
         final org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         if (org.telegram.messenger.r2.a && file4.exists()) {
-            org.telegram.ui.Components.f2 f2Var = new org.telegram.ui.Components.f2(23, context, file4);
+            org.telegram.ui.Components.e2 e2Var = new org.telegram.ui.Components.e2(23, context, file4);
             u1Var.r0 = "Send log";
-            u1Var.s0 = f2Var;
+            u1Var.s0 = e2Var;
         }
         u1Var.show();
         u1Var.getWindow().setSoftInputMode(3);
         final View d = u1Var.d(-1);
         d.setEnabled(false);
-        p9Var.setOnRatingChangeListener(new o1(d));
+        o9Var.setOnRatingChangeListener(new o1(d));
         d.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.p1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                p9 p9Var2 = p9.this;
-                int rating = p9Var2.getRating();
+                o9 o9Var2 = o9.this;
+                int rating = o9Var2.getRating();
                 LinearLayout linearLayout2 = linearLayout;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
                 File file5 = file4;
@@ -688,7 +688,7 @@ public abstract class y1 {
                     int[] iArr2 = iArr;
                     if (iArr2[0] != 1) {
                         iArr2[0] = 1;
-                        p9Var2.setVisibility(8);
+                        o9Var2.setVisibility(8);
                         textView.setVisibility(8);
                         u1Var2.setTitle(id.M0(2131752605, null));
                         editTextBoldCursor2.setVisibility(0);
@@ -703,7 +703,7 @@ public abstract class y1 {
                 }
                 int i12 = p10.s0;
                 TL_phone.setCallRating setcallrating = new TL_phone.setCallRating();
-                setcallrating.rating = p9Var2.getRating();
+                setcallrating.rating = o9Var2.getRating();
                 ArrayList arrayList = new ArrayList();
                 for (int i13 = 0; i13 < linearLayout2.getChildCount(); i13++) {
                     org.telegram.ui.Cells.c2 c2Var3 = (org.telegram.ui.Cells.c2) linearLayout2.getChildAt(i13);
@@ -767,7 +767,7 @@ public abstract class y1 {
             return;
         }
         if (userFull != null && userFull.phone_calls_private) {
-            v4.i0(activity, cVar.a, user.id);
+            u4.i0(activity, cVar.a, user.id);
             return;
         }
         int i7 = 0;

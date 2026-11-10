@@ -5,20 +5,20 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import org.telegram.ui.Components.h90;
+import org.telegram.ui.Components.g90;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class q2 extends h90 {
+public final class q2 extends g90 {
     public final /* synthetic */ j4 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q2(j4 j4Var, Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, j3, 0L, f2Var, g6Var);
+    public q2(j4 j4Var, Context context, long j3, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, j3, 0L, f2Var, h6Var);
         this.V = j4Var;
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void f(Canvas canvas, Rect rect, float f10) {
         j4 j4Var = this.V;
         a8.b8 b8Var = j4Var.y1;

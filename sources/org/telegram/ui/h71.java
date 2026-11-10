@@ -1,31 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class h71 implements o71 {
-    public boolean a;
-    public final /* synthetic */ cn b;
+public final class h71 extends x71 {
+    public final /* synthetic */ cn l2;
+    public final /* synthetic */ boolean m2;
 
-    public h71(cn cnVar, boolean z9) {
-        this.b = cnVar;
-        this.a = z9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h71(Object obj, cn cnVar, boolean z9) {
+        super(obj, null, true);
+        this.l2 = cnVar;
+        this.m2 = z9;
     }
 
-    @Override // org.telegram.ui.o71
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.o71
-    public final boolean a1() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.o71
-    public final void t1(boolean z9) {
-        boolean z10 = !this.a;
-        this.a = z10;
-        an anVar = this.b.za;
-        anVar.r(anVar.f, anVar.g, z9, Boolean.valueOf(z10), false);
+    @Override // org.telegram.ui.ActionBar.f2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        an anVar = this.l2.za;
+        anVar.r(anVar.f, anVar.g, false, Boolean.valueOf(this.m2), false);
     }
 }

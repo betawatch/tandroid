@@ -13,21 +13,21 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.ac;
-import org.telegram.ui.Components.ah0;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.w5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.xa;
 import org.telegram.ui.Components.ya;
-import org.telegram.ui.Components.za;
+import org.telegram.ui.Components.zb;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class e0 extends za {
-    public final g6 a;
+public final class e0 extends ya {
+    public final h6 a;
     public final c0 b;
     public final d0 c;
     public final TextView d;
@@ -35,12 +35,12 @@ public final class e0 extends za {
     public f0 f;
     public int h;
 
-    public e0(Context context, g6 g6Var) {
-        super(context, g6Var);
+    public e0(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.h = 0;
-        this.a = g6Var;
+        this.a = h6Var;
         c0 c0Var = new c0(org.telegram.messenger.g0.L(10.0f));
-        c0Var.a.setColor(l6.w0(l6.tj, g6Var));
+        c0Var.a.setColor(m6.w0(m6.tj, h6Var));
         this.b = c0Var;
         setBackground(c0Var);
         ImageView imageView = new ImageView(context);
@@ -55,13 +55,13 @@ public final class e0 extends za {
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
-        int i7 = l6.vj;
-        s6.U(textView, i7, g6Var);
+        int i7 = m6.vj;
+        t6.U(textView, i7, h6Var);
         textView.setTypeface(org.telegram.messenger.g0.o());
         TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, ha.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = f10;
         f10.setTextSize(1, 13.0f);
-        s6.U(f10, i7, g6Var);
+        t6.U(f10, i7, h6Var);
         linearLayout.addView(f10, ha.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
@@ -71,16 +71,16 @@ public final class e0 extends za {
         }
         this.h = i7;
         if (i7 == 0) {
-            setButton((ya) null);
+            setButton((xa) null);
             return;
         }
-        g6 g6Var = this.a;
+        h6 h6Var = this.a;
         final int i10 = 1;
         if (i7 == 1) {
-            ac acVar = new ac(getContext(), g6Var, true);
-            acVar.e(id.M0(2131753074, null));
+            zb zbVar = new zb(getContext(), h6Var, true);
+            zbVar.e(id.M0(2131753074, null));
             final int i11 = 0;
-            acVar.b = new Runnable(this) { // from class: hi.b0
+            zbVar.b = new Runnable(this) { // from class: hi.b0
                 public final /* synthetic */ e0 b;
 
                 {
@@ -93,7 +93,7 @@ public final class e0 extends za {
                     switch (i11) {
                         case 0:
                             e0 e0Var = this.b;
-                            cc bulletin = e0Var.getBulletin();
+                            bc bulletin = e0Var.getBulletin();
                             if (bulletin != null) {
                                 bulletin.j = 2750;
                                 bulletin.i(true);
@@ -106,7 +106,7 @@ public final class e0 extends za {
                             break;
                         default:
                             e0 e0Var2 = this.b;
-                            cc bulletin2 = e0Var2.getBulletin();
+                            bc bulletin2 = e0Var2.getBulletin();
                             if (bulletin2 != null) {
                                 bulletin2.b();
                             }
@@ -121,15 +121,15 @@ public final class e0 extends za {
                 }
             };
             if (getBulletin() != null) {
-                acVar.d = getBulletin();
+                zbVar.d = getBulletin();
             }
-            setButton(acVar);
+            setButton(zbVar);
             return;
         }
         if (i7 == 2) {
-            ac acVar2 = new ac(getContext(), g6Var, true);
-            acVar2.e(id.M0(2131753073, null));
-            acVar2.b = new Runnable(this) { // from class: hi.b0
+            zb zbVar2 = new zb(getContext(), h6Var, true);
+            zbVar2.e(id.M0(2131753073, null));
+            zbVar2.b = new Runnable(this) { // from class: hi.b0
                 public final /* synthetic */ e0 b;
 
                 {
@@ -142,7 +142,7 @@ public final class e0 extends za {
                     switch (i10) {
                         case 0:
                             e0 e0Var = this.b;
-                            cc bulletin = e0Var.getBulletin();
+                            bc bulletin = e0Var.getBulletin();
                             if (bulletin != null) {
                                 bulletin.j = 2750;
                                 bulletin.i(true);
@@ -155,7 +155,7 @@ public final class e0 extends za {
                             break;
                         default:
                             e0 e0Var2 = this.b;
-                            cc bulletin2 = e0Var2.getBulletin();
+                            bc bulletin2 = e0Var2.getBulletin();
                             if (bulletin2 != null) {
                                 bulletin2.b();
                             }
@@ -170,9 +170,9 @@ public final class e0 extends za {
                 }
             };
             if (getBulletin() != null) {
-                acVar2.d = getBulletin();
+                zbVar2.d = getBulletin();
             }
-            setButton(acVar2);
+            setButton(zbVar2);
         }
     }
 
@@ -180,19 +180,19 @@ public final class e0 extends za {
         f0 f0Var2 = this.f;
         d0 d0Var = this.c;
         if (f0Var2 != f0Var) {
-            w5 w5Var = d0Var.k;
+            v5 v5Var = d0Var.k;
             d0Var.h = false;
-            w5Var.getClass();
-            w5Var.e(true, 0.0f);
-            ah0 ah0Var = d0Var.l;
-            if (ah0Var != null) {
-                ah0Var.C(true);
+            v5Var.getClass();
+            v5Var.e(true, 0.0f);
+            zg0 zg0Var = d0Var.l;
+            if (zg0Var != null) {
+                zg0Var.C(true);
                 d0Var.l = null;
             }
-            w5 w5Var2 = d0Var.i;
+            v5 v5Var2 = d0Var.i;
             d0Var.f = false;
-            w5Var2.getClass();
-            w5Var2.e(true, 0.0f);
+            v5Var2.getClass();
+            v5Var2.e(true, 0.0f);
         }
         this.f = f0Var;
         this.d.setText(f0Var.c);
@@ -218,7 +218,7 @@ public final class e0 extends za {
             return false;
         }
         if (f0Var.i) {
-            cc bulletin = getBulletin();
+            bc bulletin = getBulletin();
             if (bulletin != null) {
                 bulletin.b();
             }
@@ -229,14 +229,14 @@ public final class e0 extends za {
             setButton(2);
             if (!d0Var.h) {
                 d0Var.h = true;
-                ah0 ah0Var2 = new ah0(R.raw.contact_check, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
-                d0Var.l = ah0Var2;
-                ah0Var2.R(d0Var.a);
+                zg0 zg0Var2 = new zg0(R.raw.contact_check, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
+                d0Var.l = zg0Var2;
+                zg0Var2.R(d0Var.a);
                 d0Var.l.J(true);
                 d0Var.l.start();
                 d0Var.g = 1.0f;
             }
-            cc bulletin2 = getBulletin();
+            bc bulletin2 = getBulletin();
             if (bulletin2 != null) {
                 bulletin2.i(false);
                 bulletin2.j = 5000;
@@ -246,7 +246,7 @@ public final class e0 extends za {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.za, android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.ya, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(68.0f), TLObject.FLAG_30));
     }
@@ -262,13 +262,13 @@ public final class e0 extends za {
         c0Var.invalidateSelf();
     }
 
-    @Override // org.telegram.ui.Components.gb, org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.Components.fb, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         super.updateColors();
         c0 c0Var = this.b;
         if (c0Var != null) {
             try {
-                c0Var.a.setColor(l6.w0(l6.tj, this.a));
+                c0Var.a.setColor(m6.w0(m6.tj, this.a));
                 c0Var.invalidateSelf();
             } catch (Exception e10) {
                 a8.g(e10, true);

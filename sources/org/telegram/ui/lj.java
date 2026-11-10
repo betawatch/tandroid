@@ -8,20 +8,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class lj extends org.telegram.ui.Components.h90 {
+public final class lj extends org.telegram.ui.Components.g90 {
     public boolean V;
     public final /* synthetic */ cn W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lj(cn cnVar, Context context, long j3, long j10, cn cnVar2, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, j3, j10, cnVar2, g6Var);
+    public lj(cn cnVar, Context context, long j3, long j10, cn cnVar2, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, j3, j10, cnVar2, h6Var);
         this.W = cnVar;
         this.V = true;
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final boolean a() {
         cn cnVar = this.W;
         return cnVar.S.getVisibility() != 0 || cnVar.B3;
@@ -35,12 +35,12 @@ public final class lj extends org.telegram.ui.Components.h90 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void j() {
         this.W.Zc();
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void k(TLRPC.BotInlineResult botInlineResult) {
         cn cnVar = this.W;
         if (cnVar.getParentActivity() == null || botInlineResult.content == null) {
@@ -58,10 +58,10 @@ public final class lj extends org.telegram.ui.Components.h90 {
         }
         String str2 = botInlineResult.description;
         String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.wt.N0(cnVar, null, thVar, str, str2, str3, str3, g12[0], g12[1], -1, cnVar.U9());
+        org.telegram.ui.Components.vt.N0(cnVar, null, thVar, str, str2, str3, str3, g12[0], g12[1], -1, cnVar.U9());
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void l(boolean z9) {
         String M0;
         cn cnVar = this.W;
@@ -76,21 +76,21 @@ public final class lj extends org.telegram.ui.Components.h90 {
                 M0 = (str == null || !str.equals("gif")) ? null : org.telegram.messenger.id.M0(2131745764, null);
             }
             sjVar.setCaption(M0);
-            org.telegram.ui.Components.fe feVar = cnVar.Z.P1;
-            if (feVar == null) {
+            org.telegram.ui.Components.ee eeVar = cnVar.Z.P1;
+            if (eeVar == null) {
                 return;
             }
             if (!z9) {
-                feVar.e = false;
+                eeVar.e = false;
                 return;
             }
-            feVar.e = true;
-            feVar.b = System.currentTimeMillis();
-            feVar.invalidateSelf();
+            eeVar.e = true;
+            eeVar.b = System.currentTimeMillis();
+            eeVar.invalidateSelf();
         }
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void m() {
         cn cnVar = this.W;
         if (cnVar.p5 && ((getAdapter().R == null || cnVar.q5 || cnVar.r5) && cnVar.h != null && getAdapter().R != null)) {
@@ -109,7 +109,7 @@ public final class lj extends org.telegram.ui.Components.h90 {
         cnVar.Zc();
     }
 
-    @Override // org.telegram.ui.Components.h90
+    @Override // org.telegram.ui.Components.g90
     public final void n(boolean z9) {
         if (this.V != z9) {
             cn cnVar = this.W;

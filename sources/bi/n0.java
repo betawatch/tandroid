@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public static volatile n0[] m = new n0[4];
@@ -135,7 +135,7 @@ public final class n0 {
             return tL_payments_starsRevenueStats;
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.l6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.m6.I.q();
         int i7 = this.a;
         tL_payments_getStarsRevenueStats.peer = qp.s1(i7).j1(j3);
         ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueStats, new a0(this, j3, 0));
@@ -160,7 +160,7 @@ public final class n0 {
         }
         TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
         tL_payments_getStarsRevenueStats.ton = true;
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.l6.I.q();
+        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.m6.I.q();
         int i7 = this.a;
         tL_payments_getStarsRevenueStats.peer = qp.s1(i7).j1(j3);
         TLRPC.ChatFull N0 = qp.s1(i7).N0(-j3);

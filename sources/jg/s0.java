@@ -6,26 +6,26 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.v4;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class s0 extends c {
     public final Context x;
-    public final g6 y;
+    public final h6 y;
 
-    public s0(Context context, g6 g6Var, boolean z9, boolean z10) {
+    public s0(Context context, h6 h6Var, boolean z9, boolean z10) {
         super(z9, z10);
         this.x = context;
-        this.y = g6Var;
-        new mz(context, null).setIsSingleCell(true);
+        this.y = h6Var;
+        new lz(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -64,8 +64,8 @@ public abstract class s0 extends c {
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        g6 g6Var = this.y;
+        h6 h6Var = this.y;
         Context context = this.x;
-        return new yi0(i7 == 0 ? new v4(context, g6Var) : new x3(context, g6Var));
+        return new xi0(i7 == 0 ? new v4(context, h6Var) : new x3(context, h6Var));
     }
 }

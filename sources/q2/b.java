@@ -23,17 +23,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import m4.d0;
-import org.telegram.ui.ActionBar.o5;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
     public final q b;
     public final d0 c;
-    public final vy d;
+    public final uy d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -54,13 +54,13 @@ public final class b implements g {
     public byte[] v;
     public byte[] w;
     public o x;
-    public rt y;
+    public qt y;
     public p z;
 
-    public b(UUID uuid, q qVar, d0 d0Var, vy vyVar, List list, boolean z9, boolean z10, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, pb.b bVar, m2.j jVar) {
+    public b(UUID uuid, q qVar, d0 d0Var, uy uyVar, List list, boolean z9, boolean z10, byte[] bArr, HashMap hashMap, ab.q qVar2, Looper looper, pb.b bVar, m2.j jVar) {
         this.l = uuid;
         this.c = d0Var;
-        this.d = vyVar;
+        this.d = uyVar;
         this.b = qVar;
         this.e = z9;
         this.f = z10;
@@ -174,14 +174,14 @@ public final class b implements g {
                 jVar.e();
             }
         }
-        vy vyVar = this.d;
+        uy uyVar = this.d;
         int i11 = this.q;
-        e eVar = (e) vyVar.b;
+        e eVar = (e) uyVar.b;
         if (i11 == 1 && eVar.E > 0 && eVar.w != -9223372036854775807L) {
             eVar.D.add(this);
             Handler handler = eVar.J;
             handler.getClass();
-            handler.postAtTime(new o5(this, 19), this, SystemClock.uptimeMillis() + eVar.w);
+            handler.postAtTime(new p5(this, 19), this, SystemClock.uptimeMillis() + eVar.w);
         } else if (i11 == 0) {
             eVar.x.remove(this);
             if (eVar.G == this) {
@@ -204,7 +204,7 @@ public final class b implements g {
                     String str2 = m0.a;
                     q10.getClass();
                     fVar.getClass();
-                    fVar.obtainMessage(1, new a(x2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), q10)).sendToTarget();
+                    fVar.obtainMessage(1, new a(x2.t.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), q10)).sendToTarget();
                 }
             }
             if (eVar.w != -9223372036854775807L) {
@@ -461,7 +461,7 @@ public final class b implements g {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new rt(9);
+                    this.y = new qt(9);
                     List list = this.a;
                     if (list != null) {
                         i0.q(list);
@@ -476,7 +476,7 @@ public final class b implements g {
             String str = m0.a;
             l02.getClass();
             fVar.getClass();
-            fVar.obtainMessage(2, new a(x2.u.g.getAndIncrement(), z9, SystemClock.elapsedRealtime(), l02)).sendToTarget();
+            fVar.obtainMessage(2, new a(x2.t.g.getAndIncrement(), z9, SystemClock.elapsedRealtime(), l02)).sendToTarget();
         } catch (Exception | NoSuchMethodError e10) {
             m(e10, true);
         }

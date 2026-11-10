@@ -14,12 +14,12 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.cj;
 import org.telegram.ui.cn;
 import org.telegram.ui.nj;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final int[] D;
@@ -172,7 +172,7 @@ public final class r extends FrameLayout {
                     if (!z9) {
                         this.n = this.r;
                     }
-                    float interpolation = (xq.f.getInterpolation(this.n) * this.s) + y10;
+                    float interpolation = (wq.f.getInterpolation(this.n) * this.s) + y10;
                     q qVar3 = this.b;
                     if (qVar3 == null) {
                         return;

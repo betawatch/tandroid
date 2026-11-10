@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ep implements Runnable {
     public final /* synthetic */ int a;
@@ -35,19 +35,19 @@ public final /* synthetic */ class ep implements Runnable {
                 } else {
                     cn cnVar = new cn(k10);
                     mpVar.presentFragment(cnVar, true);
-                    if (org.telegram.ui.Components.hc.a(cnVar)) {
+                    if (org.telegram.ui.Components.gc.a(cnVar)) {
                         boolean z9 = mpVar.Z0;
                         if (!z9 || !mpVar.K) {
                             if (!z9 && !mpVar.L && mpVar.K) {
-                                org.telegram.ui.Components.hc.C(user.first_name, cnVar).j();
+                                org.telegram.ui.Components.gc.C(user.first_name, cnVar).j();
                                 break;
                             }
                         } else {
                             String str = user.first_name;
-                            org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(cnVar.getParentActivity(), cnVar.za);
-                            kbVar.d(R.raw.ic_admin, "Shield");
-                            org.telegram.messenger.k5.r("UserAddedAsAdminHint", null, 2131743768, new Object[]{str}, kbVar.b);
-                            org.telegram.ui.Components.cc.g(cnVar, kbVar, 1500).j();
+                            org.telegram.ui.Components.jb jbVar = new org.telegram.ui.Components.jb(cnVar.getParentActivity(), cnVar.za);
+                            jbVar.d(R.raw.ic_admin, "Shield");
+                            org.telegram.messenger.k5.r("UserAddedAsAdminHint", null, 2131743768, new Object[]{str}, jbVar.b);
+                            org.telegram.ui.Components.bc.g(cnVar, jbVar, 1500).j();
                             break;
                         }
                     }

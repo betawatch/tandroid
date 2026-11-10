@@ -11,18 +11,18 @@ import di.w5;
 import fi.va;
 import hi.b4;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.ab;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.gb;
-import org.telegram.ui.Components.q7;
-import org.telegram.ui.Components.ql;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.fb;
+import org.telegram.ui.Components.p7;
+import org.telegram.ui.Components.pl;
 import org.telegram.ui.Components.v80;
-import org.telegram.ui.Components.zv0;
+import org.telegram.ui.Components.yv0;
+import org.telegram.ui.Components.za;
 import org.telegram.ui.web.x0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v implements ab {
+public final class v implements za {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -31,21 +31,21 @@ public final class v implements ab {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final void b(cc ccVar) {
+    @Override // org.telegram.ui.Components.za
+    public final void b(bc bcVar) {
         c4 c4Var;
         switch (this.a) {
             case 0:
                 break;
             case 1:
-                if (ccVar.a == 2 && (c4Var = ((j3) this.b).y.z1) != null) {
+                if (bcVar.a == 2 && (c4Var = ((j3) this.b).y.z1) != null) {
                     q9 q9Var = ((h9) c4Var).d;
                     q9Var.X0 = true;
                     q9Var.V();
@@ -63,9 +63,9 @@ public final class v implements ab {
             case 10:
                 break;
             default:
-                gb gbVar = ccVar.e;
+                fb fbVar = bcVar.e;
                 zh.h0 h0Var = (zh.h0) this.b;
-                fh.g c10 = h0Var.l1.c(gbVar, null, true);
+                fh.g c10 = h0Var.o1.c(fbVar, null, true);
                 gh.e eVar = new gh.e(h0Var.I0);
                 eVar.e = new g2.c(9);
                 float N = org.telegram.messenger.g0.N(0.5f);
@@ -74,22 +74,22 @@ public final class v implements ab {
                 eVar.h = N2;
                 c10.p(eVar);
                 c10.r(org.telegram.messenger.g0.L(16.0f));
-                gbVar.setCustomBackground(c10);
+                fbVar.setCustomBackground(c10);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final void d(cc ccVar) {
+    @Override // org.telegram.ui.Components.za
+    public final void d(bc bcVar) {
         c4 c4Var;
         switch (this.a) {
             case 1:
-                if (ccVar.a == 2 && (c4Var = ((j3) this.b).y.z1) != null) {
+                if (bcVar.a == 2 && (c4Var = ((j3) this.b).y.z1) != null) {
                     q9 q9Var = ((h9) c4Var).d;
                     q9Var.X0 = false;
                     q9Var.V();
@@ -99,14 +99,14 @@ public final class v implements ab {
         }
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final int f(int i7) {
         int editTextHeight;
         int L;
@@ -128,16 +128,16 @@ public final class v implements ab {
                 L = org.telegram.messenger.g0.L(12.0f);
                 break;
             case 5:
-                return ((q7) this.b).e.u1.getHeight();
+                return ((p7) this.b).e.x1.getHeight();
             case 6:
-                ab abVar = (ab) this.b;
-                if (abVar == null) {
+                za zaVar = (za) this.b;
+                if (zaVar == null) {
                     return 0;
                 }
-                return abVar.f(i7);
+                return zaVar.f(i7);
             case 7:
                 editTextHeight = org.telegram.messenger.g0.L(126.0f);
-                L = ((ql) this.b).c.b.Q();
+                L = ((pl) this.b).c.b.Q();
                 break;
             case 8:
                 bVar = ((f2) ((v80) this.b)).mSystemInsets;
@@ -145,7 +145,7 @@ public final class v implements ab {
                 L = org.telegram.messenger.g0.L(72.0f);
                 break;
             case 9:
-                FrameLayout frameLayout = ((zv0) this.b).s1;
+                FrameLayout frameLayout = ((yv0) this.b).v1;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
@@ -163,7 +163,7 @@ public final class v implements ab {
         return L + editTextHeight;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final boolean g(int i7) {
         switch (this.a) {
             case 1:
@@ -171,15 +171,15 @@ public final class v implements ab {
                 }
                 break;
             case 6:
-                ab abVar = (ab) this.b;
-                if (abVar == null || !abVar.g(i7)) {
+                za zaVar = (za) this.b;
+                if (zaVar == null || !zaVar.g(i7)) {
                 }
                 break;
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final int h(int i7) {
         switch (this.a) {
             case 0:
@@ -195,8 +195,8 @@ public final class v implements ab {
             case 5:
                 return 0;
             case 6:
-                ab abVar = (ab) this.b;
-                return abVar == null ? org.telegram.messenger.g0.m : abVar.h(i7);
+                za zaVar = (za) this.b;
+                return zaVar == null ? org.telegram.messenger.g0.m : zaVar.h(i7);
             case 7:
                 return 0;
             case 8:
@@ -210,49 +210,49 @@ public final class v implements ab {
         }
     }
 
-    private final /* synthetic */ void A(cc ccVar) {
+    private final /* synthetic */ void A(bc bcVar) {
     }
 
-    private final /* synthetic */ void B(cc ccVar) {
+    private final /* synthetic */ void B(bc bcVar) {
     }
 
-    private final /* synthetic */ void C(cc ccVar) {
+    private final /* synthetic */ void C(bc bcVar) {
     }
 
-    private final /* synthetic */ void D(cc ccVar) {
+    private final /* synthetic */ void D(bc bcVar) {
     }
 
-    private final /* synthetic */ void E(cc ccVar) {
+    private final /* synthetic */ void E(bc bcVar) {
     }
 
-    private final /* synthetic */ void F(cc ccVar) {
+    private final /* synthetic */ void F(bc bcVar) {
     }
 
-    private final /* synthetic */ void G(cc ccVar) {
+    private final /* synthetic */ void G(bc bcVar) {
     }
 
-    private final /* synthetic */ void H(cc ccVar) {
+    private final /* synthetic */ void H(bc bcVar) {
     }
 
-    private final /* synthetic */ void I(cc ccVar) {
+    private final /* synthetic */ void I(bc bcVar) {
     }
 
-    private final /* synthetic */ void J(cc ccVar) {
+    private final /* synthetic */ void J(bc bcVar) {
     }
 
-    private final /* synthetic */ void K(cc ccVar) {
+    private final /* synthetic */ void K(bc bcVar) {
     }
 
-    private final /* synthetic */ void L(cc ccVar) {
+    private final /* synthetic */ void L(bc bcVar) {
     }
 
-    private final /* synthetic */ void M(cc ccVar) {
+    private final /* synthetic */ void M(bc bcVar) {
     }
 
-    private final /* synthetic */ void N(cc ccVar) {
+    private final /* synthetic */ void N(bc bcVar) {
     }
 
-    private final /* synthetic */ void O(cc ccVar) {
+    private final /* synthetic */ void O(bc bcVar) {
     }
 
     private final /* synthetic */ void i(float f10) {
@@ -291,21 +291,21 @@ public final class v implements ab {
     private final /* synthetic */ void t(float f10) {
     }
 
-    private final /* synthetic */ void u(cc ccVar) {
+    private final /* synthetic */ void u(bc bcVar) {
     }
 
-    private final /* synthetic */ void v(cc ccVar) {
+    private final /* synthetic */ void v(bc bcVar) {
     }
 
-    private final /* synthetic */ void w(cc ccVar) {
+    private final /* synthetic */ void w(bc bcVar) {
     }
 
-    private final /* synthetic */ void x(cc ccVar) {
+    private final /* synthetic */ void x(bc bcVar) {
     }
 
-    private final /* synthetic */ void y(cc ccVar) {
+    private final /* synthetic */ void y(bc bcVar) {
     }
 
-    private final /* synthetic */ void z(cc ccVar) {
+    private final /* synthetic */ void z(bc bcVar) {
     }
 }

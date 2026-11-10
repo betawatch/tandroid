@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.q31;
+import org.telegram.ui.r31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,13 +69,13 @@ public final /* synthetic */ class d0 implements Runnable {
                 fi.d dVar = (fi.d) this.d;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.e;
                 int i12 = this.b;
-                org.telegram.ui.ActionBar.v2[] v2VarArr = (org.telegram.ui.ActionBar.v2[]) this.f;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.f;
                 long j10 = this.c;
                 dVar.setLoading(true);
                 TL_stars.TL_fulfillStarsSubscription tL_fulfillStarsSubscription = new TL_stars.TL_fulfillStarsSubscription();
                 tL_fulfillStarsSubscription.subscription_id = starsSubscription.id;
                 tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
-                ConnectionsManager.getInstance(i12).sendRequest(tL_fulfillStarsSubscription, new b0(i12, 1, j10, dVar, v2VarArr));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_fulfillStarsSubscription, new b0(i12, 1, j10, dVar, w2VarArr));
                 break;
             case 2:
                 di.z6 z6Var = (di.z6) this.d;
@@ -200,7 +200,7 @@ public final /* synthetic */ class d0 implements Runnable {
                     i1Var.d();
                     break;
                 } else {
-                    org.telegram.utils.twidget.a1.a.execute(new q31(i1Var, j13, 2));
+                    org.telegram.utils.twidget.a1.a.execute(new r31(i1Var, j13, 2));
                     break;
                 }
                 break;

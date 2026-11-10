@@ -1,95 +1,84 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.c20;
-import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.messenger.v10;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i8 implements c20 {
+public final /* synthetic */ class i8 implements v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m8 b;
+    public final /* synthetic */ p8 b;
     public final /* synthetic */ vf.b c;
+    public final /* synthetic */ l0 d;
 
-    public /* synthetic */ i8(m8 m8Var, vf.b bVar, int i7) {
+    public /* synthetic */ i8(p8 p8Var, vf.b bVar, l0 l0Var, int i7) {
         this.a = i7;
-        this.b = m8Var;
+        this.b = p8Var;
         this.c = bVar;
+        this.d = l0Var;
     }
 
-    @Override // org.telegram.messenger.c20
-    public final void a(Object obj) {
-        int i7 = this.a;
-        vf.b bVar = this.c;
-        m8 m8Var = this.b;
-        String str = (String) obj;
-        switch (i7) {
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                m8Var.getClass();
-                bVar.b();
-                if (!TextUtils.isEmpty(str)) {
-                    hc.a0(m8Var).e0(str, false);
-                    break;
-                }
-                break;
-            case 1:
-                bVar.c(false);
-                org.telegram.ui.ActionBar.q4 parentLayout = m8Var.getParentLayout();
-                if (parentLayout != null) {
-                    ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj2 = arrayList.get(i10);
-                        i10++;
-                        org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                        if ((f2Var instanceof v9) || (f2Var instanceof t8) || (f2Var instanceof da)) {
-                            ((ActionBarLayout) parentLayout).d0(f2Var, false);
-                        }
+                i0 i0Var = (i0) obj;
+                String str = (String) obj2;
+                this.c.c(false);
+                p8 p8Var = this.b;
+                if (i0Var != null) {
+                    w8 w8Var = new w8();
+                    w8Var.h = true;
+                    ArrayList arrayList = w8Var.a;
+                    arrayList.clear();
+                    if (!i0Var.d()) {
+                        arrayList.addAll(i0Var.f());
                     }
-                }
-                if (str == null) {
-                    cc I = hc.a0(m8Var).I(R.raw.contact_check, id.M0(2131743191, null), id.M0(2131743189, null));
-                    I.j = 5000;
-                    I.j();
+                    w8Var.a0();
+                    w8Var.f = new sb1(23, p8Var, this.d);
+                    p8Var.presentFragment(w8Var);
                     break;
                 } else {
-                    hc.a0(m8Var).e0(str, false);
+                    gc a02 = gc.a0(p8Var);
+                    if (str == null) {
+                        str = "NULL_ERROR";
+                    }
+                    a02.e0(str, false);
                     break;
                 }
             default:
-                m8Var.getClass();
-                bVar.b();
-                if (str == null) {
-                    org.telegram.ui.ActionBar.q4 parentLayout2 = m8Var.getParentLayout();
-                    if (parentLayout2 != null) {
-                        ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
-                        int size2 = arrayList2.size();
-                        int i11 = 0;
-                        while (i11 < size2) {
-                            Object obj3 = arrayList2.get(i11);
-                            i11++;
-                            org.telegram.ui.ActionBar.f2 f2Var2 = (org.telegram.ui.ActionBar.f2) obj3;
-                            if ((f2Var2 instanceof v9) || (f2Var2 instanceof t8) || (f2Var2 instanceof da) || (f2Var2 instanceof m8)) {
-                                ((ActionBarLayout) parentLayout2).d0(f2Var2, false);
-                            }
+                g0 g0Var = (g0) obj;
+                String str2 = (String) obj2;
+                this.c.c(false);
+                p8 p8Var2 = this.b;
+                if (g0Var != null) {
+                    if (!p8Var2.f) {
+                        p8Var2.e.add(g0Var);
+                        w8 w8Var2 = new w8();
+                        i0 i0Var2 = g0Var.b;
+                        ArrayList arrayList2 = w8Var2.a;
+                        arrayList2.clear();
+                        if (!i0Var2.d()) {
+                            arrayList2.addAll(i0Var2.f());
                         }
-                        m8Var.finishFragment();
+                        w8Var2.a0();
+                        w8Var2.f = new g(p8Var2, this.d, g0Var, 22);
+                        p8Var2.presentFragment(w8Var2);
                         break;
                     } else {
-                        m8Var.finishFragment();
+                        g0Var.close();
                         break;
                     }
                 } else {
-                    hc.a0(m8Var).e0(str, false);
+                    gc a03 = gc.a0(p8Var2);
+                    if (str2 == null) {
+                        str2 = "NULL_ERROR";
+                    }
+                    a03.e0(str2, false);
                     break;
                 }
-                break;
         }
     }
 }

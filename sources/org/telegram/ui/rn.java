@@ -38,9 +38,9 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.Components.j30, org.telegram.messenger.ls {
+public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.Components.i30, org.telegram.messenger.ls {
     public TLRPC.TL_chatBannedRights A0;
     public final long B0;
     public TLRPC.User C0;
@@ -60,7 +60,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public boolean J0;
     public org.telegram.ui.Cells.m8 K;
     public TLRPC.ChatReactions K0;
-    public pl0 L;
+    public ql0 L;
     public TL_stories.TL_premium_boostsStatus L0;
     public org.telegram.ui.Cells.m8 M;
     public boolean M0;
@@ -73,7 +73,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public org.telegram.ui.Cells.m8 Q;
     public final pn Q0;
     public LinearLayout R;
-    public org.telegram.ui.Components.ah0 R0;
+    public org.telegram.ui.Components.zg0 R0;
     public LinearLayout S;
     public ValueAnimator S0;
     public org.telegram.ui.Cells.m8 T;
@@ -83,7 +83,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public org.telegram.ui.Cells.m8 X;
     public org.telegram.ui.Cells.m8 Y;
     public org.telegram.ui.Cells.m8 Z;
-    public org.telegram.ui.ActionBar.b5 a;
+    public org.telegram.ui.ActionBar.c5 a;
     public org.telegram.ui.Cells.m8 a0;
     public org.telegram.ui.ActionBar.u1 b;
     public qn b0;
@@ -108,18 +108,18 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public org.telegram.ui.Cells.m8 o0;
     public org.telegram.ui.Cells.m8 p0;
     public org.telegram.ui.Cells.m8 q0;
-    public final org.telegram.ui.Components.w8 r;
+    public final org.telegram.ui.Components.v8 r;
     public org.telegram.ui.Cells.z8 r0;
-    public final org.telegram.ui.Components.k30 s;
+    public final org.telegram.ui.Components.j30 s;
     public org.telegram.ui.Cells.z8 s0;
     public org.telegram.ui.Cells.m8 t0;
     public TLRPC.FileLocation u0;
     public long v0;
-    public org.telegram.ui.Components.lt w;
+    public org.telegram.ui.Components.kt w;
     public TLRPC.Chat w0;
-    public org.telegram.ui.Components.hm0 x;
+    public org.telegram.ui.Components.gm0 x;
     public TLRPC.ChatFull x0;
-    public org.telegram.ui.Components.im0 y;
+    public org.telegram.ui.Components.hm0 y;
     public TLRPC.TL_chatAdminRights y0;
     public TLRPC.TL_chatBannedRights z0;
 
@@ -127,14 +127,14 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         super(bundle);
         this.P0 = new ArrayList();
         this.Q0 = new pn(this);
-        this.r = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+        this.r = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
         this.v0 = bundle.getLong("chat_id", 0L);
         this.B0 = bundle.getLong("user_id", 0L);
         if (this.v0 == 0) {
-            this.s = new org.telegram.ui.Components.k30(0, false, false);
+            this.s = new org.telegram.ui.Components.j30(0, false, false);
         } else {
             TLRPC.Chat M0 = getMessagesController().M0(Long.valueOf(this.v0));
-            this.s = new org.telegram.ui.Components.k30((M0 == null || !org.telegram.messenger.t3.V(M0)) ? 2 : 1, true, true);
+            this.s = new org.telegram.ui.Components.j30((M0 == null || !org.telegram.messenger.t3.V(M0)) ? 2 : 1, true, true);
         }
     }
 
@@ -142,7 +142,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         int i7 = 3;
         if (!rnVar.F0) {
             TLRPC.ChatFull chatFull = rnVar.x0;
-            org.telegram.ui.Components.hc.a0(rnVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(rnVar.getMessagesController().c5, "ChannelTopicsForbidden", new Object[0])) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131752280, "ChannelTopicsDiscussionForbidden"))).j();
+            org.telegram.ui.Components.gc.a0(rnVar).Q(R.raw.topics, 36, (chatFull == null || chatFull.linked_chat_id == 0) ? org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(rnVar.getMessagesController().c5, "ChannelTopicsForbidden", new Object[0])) : org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131752280, "ChannelTopicsDiscussionForbidden"))).j();
             try {
                 frameLayout.performHapticFeedback(3);
                 return;
@@ -151,18 +151,18 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             }
         }
         long j3 = -rnVar.v0;
-        px pxVar = new px(null);
-        pxVar.a = j3;
-        pxVar.setResourceProvider(rnVar.resourceProvider);
+        qx qxVar = new qx(null);
+        qxVar.a = j3;
+        qxVar.setResourceProvider(rnVar.resourceProvider);
         boolean z9 = rnVar.E0;
         boolean z10 = rnVar.G0;
         boolean z11 = rnVar.H0;
         di.b0 b0Var = new di.b0(i7, rnVar, view);
-        pxVar.c = z9;
-        pxVar.d = z10;
-        pxVar.e = z11;
-        pxVar.h = b0Var;
-        rnVar.presentFragment(pxVar);
+        qxVar.c = z9;
+        qxVar.d = z10;
+        qxVar.e = z11;
+        qxVar.h = b0Var;
+        rnVar.presentFragment(qxVar);
     }
 
     public static /* synthetic */ void a0(rn rnVar) {
@@ -179,12 +179,12 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         }
         rnVar.s0(false, true);
         di.d4 d4Var = rnVar.e;
-        org.telegram.ui.Components.w8 w8Var = rnVar.r;
+        org.telegram.ui.Components.v8 v8Var = rnVar.r;
         Object obj = rnVar.C0;
         if (obj == null) {
             obj = rnVar.w0;
         }
-        d4Var.j(null, null, w8Var, obj);
+        d4Var.j(null, null, v8Var, obj);
         rnVar.R0.M(0);
         rnVar.b0.e.d();
     }
@@ -203,10 +203,10 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         }
         Bundle h = org.telegram.ui.Cells.f1.h(16, "onlySelect", "dialogsType", true);
         h.putBoolean("resetDelegate", false);
-        yw ywVar = new yw(h);
-        ywVar.setCurrentAccount(i7);
-        ywVar.D2 = new hi.n1(ywVar, i7, j3, botVerifierSettings);
-        T.presentFragment(ywVar);
+        zw zwVar = new zw(h);
+        zwVar.setCurrentAccount(i7);
+        zwVar.D2 = new hi.n1(zwVar, i7, j3, botVerifierSettings);
+        T.presentFragment(zwVar);
     }
 
     public static void d0(rn rnVar, org.telegram.ui.ActionBar.u1 u1Var, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, long j3, org.telegram.messenger.e3 e3Var) {
@@ -220,7 +220,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         i0Var.B1(j3);
         TLRPC.Chat M0 = rnVar.getMessagesController().M0(Long.valueOf(-j3));
         if (M0 != null) {
-            i0Var.I2 = new rf(19, rnVar, M0);
+            i0Var.L2 = new oe(20, rnVar, M0);
         }
         rnVar.showDialog(i0Var);
     }
@@ -242,11 +242,11 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public static SpannableStringBuilder i0(String str) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
         spannableStringBuilder.append((CharSequence) "  d");
-        gz gzVar = new gz(10);
-        gzVar.a.setTypeface(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        gzVar.f = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.zk, false);
-        gzVar.n = false;
-        spannableStringBuilder.setSpan(gzVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+        hz hzVar = new hz(10);
+        hzVar.a.setTypeface(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        hzVar.f = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.zk, false);
+        hzVar.n = false;
+        spannableStringBuilder.setSpan(hzVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
         return spannableStringBuilder;
     }
 
@@ -269,7 +269,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final void H(float f10) {
         RadialProgressView radialProgressView = this.n;
         if (radialProgressView == null) {
@@ -278,7 +278,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         radialProgressView.setProgress(f10);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final void O(boolean z9, boolean z10) {
         RadialProgressView radialProgressView = this.n;
         if (radialProgressView == null) {
@@ -287,7 +287,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         radialProgressView.setProgress(0.0f);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final void U(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z9, TLRPC.VideoSize videoSize) {
         org.telegram.messenger.g0.h3(new ii.l(this, photoSize2, inputFile, inputFile2, videoSize, photoSize, d, str));
     }
@@ -295,24 +295,24 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.f2
     public final void addThemeColorKeys(HashSet hashSet) {
         super.addThemeColorKeys(hashSet);
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.m6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.vj));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.uj));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.tj));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.U7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.T7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.S7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.R7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Q7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.P7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.O7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.J7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.B6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.b7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.z6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.t8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.A8));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.v8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.m6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.vj));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.uj));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.tj));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.U7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.T7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.S7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.R7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Q7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.P7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.O7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.J7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.B6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.b7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.t8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.A8));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.v8));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:378:0x0455, code lost:
@@ -349,12 +349,12 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         ?? r22;
         int i7;
         Context context2;
-        org.telegram.ui.Components.hm0 hm0Var;
+        org.telegram.ui.Components.gm0 gm0Var;
         final rn rnVar;
         int i10;
         int i11;
-        org.telegram.ui.Components.hm0 hm0Var2;
-        org.telegram.ui.ActionBar.o6 o6Var;
+        org.telegram.ui.Components.gm0 gm0Var2;
+        org.telegram.ui.ActionBar.p6 p6Var;
         int i12;
         boolean z9;
         CharSequence a12;
@@ -362,7 +362,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         TL_bots.BotInfo botInfo2;
         TLRPC.Chat chat;
         TLRPC.User user;
-        org.telegram.ui.Components.hm0 hm0Var3;
+        org.telegram.ui.Components.gm0 gm0Var3;
         final rn rnVar2;
         TLRPC.Chat chat2;
         TLRPC.ChatFull chatFull;
@@ -385,32 +385,32 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         TLRPC.ChatFull chatFull4;
         final int i16 = 1;
         setHasOwnBackground(true);
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar != null) {
-            ltVar.o();
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar != null) {
+            ktVar.o();
         }
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setActionBarMenuOnItemClick(new w9(this, 5));
         xc xcVar = new xc(i16, context, this);
         xcVar.setOnTouchListener(new ei.b(9));
         this.fragmentView = xcVar;
-        org.telegram.ui.Components.hm0 hm0Var4 = new org.telegram.ui.Components.hm0(context);
-        this.x = hm0Var4;
-        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, this.x, this.resourceProvider, false);
-        this.y = im0Var;
-        im0Var.setFillViewport(true);
+        org.telegram.ui.Components.gm0 gm0Var4 = new org.telegram.ui.Components.gm0(context);
+        this.x = gm0Var4;
+        org.telegram.ui.Components.hm0 hm0Var = new org.telegram.ui.Components.hm0(context, this.x, this.resourceProvider, false);
+        this.y = hm0Var;
+        hm0Var.setFillViewport(true);
         this.y.setDrawBackground(true);
         xcVar.addView(this.y, c8.ha.c(-1.0f, -1));
-        this.y.addView(hm0Var4, new FrameLayout.LayoutParams(-1, -2));
-        hm0Var4.setOrientation(1);
+        this.y.addView(gm0Var4, new FrameLayout.LayoutParams(-1, -2));
+        gm0Var4.setOrientation(1);
         this.simpleActionBar.setTitle(org.telegram.messenger.id.L0(2131752415));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         LinearLayout linearLayout2 = this.d;
-        int i17 = org.telegram.ui.ActionBar.l6.d6;
-        org.telegram.ui.ActionBar.s6.h(i17, linearLayout2, null);
-        hm0Var4.addView(this.d, c8.ha.o(-1, -2));
+        int i17 = org.telegram.ui.ActionBar.m6.d6;
+        org.telegram.ui.ActionBar.t6.h(i17, linearLayout2, null);
+        gm0Var4.addView(this.d, c8.ha.o(-1, -2));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d.addView(frameLayout2, c8.ha.o(-1, -2));
         int i18 = 6;
@@ -453,9 +453,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -505,9 +505,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -524,7 +524,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -554,22 +554,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -621,19 +621,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -641,16 +641,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -703,41 +703,41 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             boolean z15 = org.telegram.messenger.id.a0;
             frameLayout2.addView(d4Var3, c8.ha.d(64, 64.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 16.0f, 12.0f, z15 ? 16.0f : 0.0f, 12.0f));
         }
-        org.telegram.ui.Components.lt ltVar2 = new org.telegram.ui.Components.lt(context, xcVar, this);
-        this.w = ltVar2;
+        org.telegram.ui.Components.kt ktVar2 = new org.telegram.ui.Components.kt(context, xcVar, this);
+        this.w = ktVar2;
         long j3 = this.B0;
         if (j3 != 0) {
             r22 = 0;
-            ltVar2.setHint(org.telegram.messenger.id.L0(2131753021));
+            ktVar2.setHint(org.telegram.messenger.id.L0(2131753021));
         } else if (this.I0) {
-            ltVar2.setHint(org.telegram.messenger.id.M0(2131751124, "EnterChannelName"));
+            ktVar2.setHint(org.telegram.messenger.id.M0(2131751124, "EnterChannelName"));
             r22 = false;
         } else {
-            ltVar2.setHint(org.telegram.messenger.id.M0(2131749422, "GroupName"));
+            ktVar2.setHint(org.telegram.messenger.id.M0(2131749422, "GroupName"));
             r22 = false;
         }
-        org.telegram.ui.Components.lt ltVar3 = this.w;
+        org.telegram.ui.Components.kt ktVar3 = this.w;
         TLRPC.Chat chat3 = this.w0;
-        ltVar3.setEnabled((chat3 != null || org.telegram.messenger.t3.d(chat3)) ? true : r22);
-        org.telegram.ui.Components.lt ltVar4 = this.w;
-        ltVar4.setFocusable(ltVar4.isEnabled());
+        ktVar3.setEnabled((chat3 != null || org.telegram.messenger.t3.d(chat3)) ? true : r22);
+        org.telegram.ui.Components.kt ktVar4 = this.w;
+        ktVar4.setFocusable(ktVar4.isEnabled());
         this.w.getEditText().addTextChangedListener(new m0(this, i19));
         InputFilter[] inputFilterArr = new InputFilter[1];
         inputFilterArr[r22] = new InputFilter.LengthFilter(128);
         this.w.setFilters(inputFilterArr);
-        org.telegram.ui.Components.lt ltVar5 = this.w;
+        org.telegram.ui.Components.kt ktVar5 = this.w;
         boolean z16 = org.telegram.messenger.id.a0;
-        frameLayout2.addView(ltVar5, c8.ha.d(-1, -2.0f, 16, z16 ? 5.0f : 96.0f, 0.0f, z16 ? 96.0f : 5.0f, 0.0f));
+        frameLayout2.addView(ktVar5, c8.ha.d(-1, -2.0f, 16, z16 ? 5.0f : 96.0f, 0.0f, z16 ? 96.0f : 5.0f, 0.0f));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.D = linearLayout3;
         linearLayout3.setOrientation(1);
-        hm0Var4.addView(this.D, c8.ha.o(-1, -2));
+        gm0Var4.addView(this.D, c8.ha.o(-1, -2));
         final int i20 = 12;
         if (this.C0 != null || org.telegram.messenger.t3.d(this.w0)) {
             qn qnVar = new qn(context);
             this.b0 = qnVar;
-            org.telegram.ui.ActionBar.s6.R(qnVar, org.telegram.ui.ActionBar.l6.N0(r22), null, org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
-            this.b0.g(org.telegram.ui.ActionBar.l6.v6, org.telegram.ui.ActionBar.l6.u6);
+            org.telegram.ui.ActionBar.t6.R(qnVar, org.telegram.ui.ActionBar.m6.N0(r22), null, org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
+            this.b0.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
             this.b0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
 
@@ -754,9 +754,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -806,9 +806,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -825,7 +825,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -855,22 +855,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -922,19 +922,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -942,16 +942,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -1004,10 +1004,10 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.E = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.s6.E(this.E, org.telegram.ui.ActionBar.l6.H6);
+        org.telegram.ui.ActionBar.t6.E(this.E, org.telegram.ui.ActionBar.m6.H6);
         EditTextBoldCursor editTextBoldCursor2 = this.E;
-        int i21 = org.telegram.ui.ActionBar.l6.G6;
-        org.telegram.ui.ActionBar.s6.U(editTextBoldCursor2, i21, null);
+        int i21 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.t6.U(editTextBoldCursor2, i21, null);
         int i22 = r22;
         this.E.setPadding(i22, i22, i22, org.telegram.messenger.g0.L(6.0f));
         this.E.setBackgroundDrawable(null);
@@ -1019,7 +1019,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         editTextBoldCursor3.setFocusable(editTextBoldCursor3.isEnabled());
         this.E.setFilters(new InputFilter[]{new InputFilter.LengthFilter(org.telegram.messenger.qs.e4)});
         this.E.setHint(org.telegram.messenger.id.M0(2131751460, "DescriptionOptionalPlaceholder"));
-        org.telegram.ui.ActionBar.s6.u(this.E, i21);
+        org.telegram.ui.ActionBar.t6.u(this.E, i21);
         this.E.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         this.E.setCursorWidth(1.5f);
         if (this.E.isEnabled()) {
@@ -1031,11 +1031,11 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         this.E.addTextChangedListener(new ad(1));
         org.telegram.ui.Cells.y6 y6Var = new org.telegram.ui.Cells.y6(context);
         this.G = y6Var;
-        hm0Var4.addView(y6Var, c8.ha.o(-1, -2));
+        gm0Var4.addView(y6Var, c8.ha.o(-1, -2));
         LinearLayout linearLayout4 = new LinearLayout(context);
         this.F = linearLayout4;
         linearLayout4.setOrientation(1);
-        hm0Var4.addView(this.F, c8.ha.o(-1, -2));
+        gm0Var4.addView(this.F, c8.ha.o(-1, -2));
         TLRPC.Chat chat4 = this.w0;
         if (chat4 != null) {
             final int i23 = 15;
@@ -1043,7 +1043,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 org.telegram.ui.Cells.m8 m8Var7 = new org.telegram.ui.Cells.m8(context);
                 this.H = m8Var7;
                 z11 = true;
-                org.telegram.ui.ActionBar.s6.R(m8Var7, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i17), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var7, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i17), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 this.F.addView(this.H, c8.ha.o(-1, -2));
                 this.H.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.gn
                     public final /* synthetic */ rn b;
@@ -1061,9 +1061,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", rnVar3.v0);
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                qq qqVar = new qq(bundle);
-                                qqVar.C0(rnVar3.x0);
-                                rnVar3.presentFragment(qqVar);
+                                rq rqVar = new rq(bundle);
+                                rqVar.C0(rnVar3.x0);
+                                rnVar3.presentFragment(rqVar);
                                 break;
                             case 1:
                                 rn rnVar4 = this.b;
@@ -1113,9 +1113,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", rnVar5.v0);
                                 bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                qq qqVar2 = new qq(bundle2);
-                                qqVar2.C0(rnVar5.x0);
-                                rnVar5.presentFragment(qqVar2);
+                                rq rqVar2 = new rq(bundle2);
+                                rqVar2.C0(rnVar5.x0);
+                                rnVar5.presentFragment(rqVar2);
                                 break;
                             case 3:
                                 rn rnVar6 = this.b;
@@ -1132,7 +1132,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 rn rnVar9 = this.b;
-                                rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                 break;
                             case 7:
                                 rn rnVar10 = this.b;
@@ -1162,22 +1162,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 14:
                                 rn rnVar12 = this.b;
-                                org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                 break;
                             case 15:
                                 rn rnVar13 = this.b;
                                 if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                    ra0 ra0Var = new ra0(4);
-                                    ra0Var.l0 = -rnVar13.v0;
+                                    sa0 sa0Var = new sa0(4);
+                                    sa0Var.l0 = -rnVar13.v0;
                                     TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                     if (chatFull6 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    ra0Var.G0 = new mn(rnVar13, 6);
-                                    rnVar13.presentFragment(ra0Var);
+                                    sa0Var.G0 = new mn(rnVar13, 6);
+                                    rnVar13.presentFragment(sa0Var);
                                     break;
                                 }
                                 break;
@@ -1229,19 +1229,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 rn rnVar16 = this.b;
-                                js0 js0Var = new js0(rnVar16.v0);
-                                js0Var.s = new mn(rnVar16, 4);
-                                rnVar16.presentFragment(js0Var);
+                                ks0 ks0Var = new ks0(rnVar16.v0);
+                                ks0Var.s = new mn(rnVar16, 4);
+                                rnVar16.presentFragment(ks0Var);
                                 break;
                             case 19:
                                 rn.e0(this.b);
                                 break;
                             case 20:
                                 rn rnVar17 = this.b;
-                                l40 l40Var = new l40(-rnVar17.w0.id);
-                                l40Var.c = rnVar17.L0;
-                                l40Var.l0 = rnVar17;
-                                rnVar17.presentFragment(l40Var);
+                                m40 m40Var = new m40(-rnVar17.w0.id);
+                                m40Var.c = rnVar17.L0;
+                                m40Var.l0 = rnVar17;
+                                rnVar17.presentFragment(m40Var);
                                 break;
                             case 21:
                                 rn rnVar18 = this.b;
@@ -1249,16 +1249,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle4 = new Bundle();
                                 bundle4.putLong("chat_id", rnVar18.v0);
                                 bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                qq qqVar3 = new qq(bundle4);
-                                qqVar3.C0(rnVar18.x0);
-                                rnVar18.presentFragment(qqVar3);
+                                rq rqVar3 = new rq(bundle4);
+                                rqVar3.C0(rnVar18.x0);
+                                rnVar18.presentFragment(rqVar3);
                                 break;
                             case 22:
                                 rn rnVar19 = this.b;
-                                ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                 TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                rnVar19.presentFragment(ef0Var);
+                                ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                rnVar19.presentFragment(ff0Var);
                                 break;
                             case 23:
                                 rn rnVar20 = this.b;
@@ -1312,7 +1312,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             if (this.w0.creator && ((chatFull3 = this.x0) == null || chatFull3.can_set_username)) {
                 org.telegram.ui.Cells.m8 m8Var8 = new org.telegram.ui.Cells.m8(context);
                 this.I = m8Var8;
-                org.telegram.ui.ActionBar.s6.R(m8Var8, org.telegram.ui.ActionBar.l6.N0(z11), org.telegram.ui.ActionBar.s6.M(i17), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var8, org.telegram.ui.ActionBar.m6.N0(z11), org.telegram.ui.ActionBar.t6.M(i17), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 this.F.addView(this.I, c8.ha.o(-1, -2));
                 final int i24 = 16;
                 this.I.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.gn
@@ -1331,9 +1331,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", rnVar3.v0);
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                qq qqVar = new qq(bundle);
-                                qqVar.C0(rnVar3.x0);
-                                rnVar3.presentFragment(qqVar);
+                                rq rqVar = new rq(bundle);
+                                rqVar.C0(rnVar3.x0);
+                                rnVar3.presentFragment(rqVar);
                                 break;
                             case 1:
                                 rn rnVar4 = this.b;
@@ -1383,9 +1383,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", rnVar5.v0);
                                 bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                qq qqVar2 = new qq(bundle2);
-                                qqVar2.C0(rnVar5.x0);
-                                rnVar5.presentFragment(qqVar2);
+                                rq rqVar2 = new rq(bundle2);
+                                rqVar2.C0(rnVar5.x0);
+                                rnVar5.presentFragment(rqVar2);
                                 break;
                             case 3:
                                 rn rnVar6 = this.b;
@@ -1402,7 +1402,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 rn rnVar9 = this.b;
-                                rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                 break;
                             case 7:
                                 rn rnVar10 = this.b;
@@ -1432,22 +1432,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 14:
                                 rn rnVar12 = this.b;
-                                org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                 break;
                             case 15:
                                 rn rnVar13 = this.b;
                                 if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                    ra0 ra0Var = new ra0(4);
-                                    ra0Var.l0 = -rnVar13.v0;
+                                    sa0 sa0Var = new sa0(4);
+                                    sa0Var.l0 = -rnVar13.v0;
                                     TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                     if (chatFull6 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    ra0Var.G0 = new mn(rnVar13, 6);
-                                    rnVar13.presentFragment(ra0Var);
+                                    sa0Var.G0 = new mn(rnVar13, 6);
+                                    rnVar13.presentFragment(sa0Var);
                                     break;
                                 }
                                 break;
@@ -1499,19 +1499,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 rn rnVar16 = this.b;
-                                js0 js0Var = new js0(rnVar16.v0);
-                                js0Var.s = new mn(rnVar16, 4);
-                                rnVar16.presentFragment(js0Var);
+                                ks0 ks0Var = new ks0(rnVar16.v0);
+                                ks0Var.s = new mn(rnVar16, 4);
+                                rnVar16.presentFragment(ks0Var);
                                 break;
                             case 19:
                                 rn.e0(this.b);
                                 break;
                             case 20:
                                 rn rnVar17 = this.b;
-                                l40 l40Var = new l40(-rnVar17.w0.id);
-                                l40Var.c = rnVar17.L0;
-                                l40Var.l0 = rnVar17;
-                                rnVar17.presentFragment(l40Var);
+                                m40 m40Var = new m40(-rnVar17.w0.id);
+                                m40Var.c = rnVar17.L0;
+                                m40Var.l0 = rnVar17;
+                                rnVar17.presentFragment(m40Var);
                                 break;
                             case 21:
                                 rn rnVar18 = this.b;
@@ -1519,16 +1519,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle4 = new Bundle();
                                 bundle4.putLong("chat_id", rnVar18.v0);
                                 bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                qq qqVar3 = new qq(bundle4);
-                                qqVar3.C0(rnVar18.x0);
-                                rnVar18.presentFragment(qqVar3);
+                                rq rqVar3 = new rq(bundle4);
+                                rqVar3.C0(rnVar18.x0);
+                                rnVar18.presentFragment(rqVar3);
                                 break;
                             case 22:
                                 rn rnVar19 = this.b;
-                                ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                 TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                rnVar19.presentFragment(ef0Var);
+                                ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                rnVar19.presentFragment(ff0Var);
                                 break;
                             case 23:
                                 rn rnVar20 = this.b;
@@ -1584,7 +1584,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 }
                 org.telegram.ui.Cells.m8 m8Var9 = new org.telegram.ui.Cells.m8(context);
                 this.J = m8Var9;
-                org.telegram.ui.ActionBar.s6.R(m8Var9, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i17), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var9, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i17), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 this.F.addView(this.J, c8.ha.o(-1, -2));
                 final int i25 = 17;
                 this.J.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.gn
@@ -1603,9 +1603,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", rnVar3.v0);
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                qq qqVar = new qq(bundle);
-                                qqVar.C0(rnVar3.x0);
-                                rnVar3.presentFragment(qqVar);
+                                rq rqVar = new rq(bundle);
+                                rqVar.C0(rnVar3.x0);
+                                rnVar3.presentFragment(rqVar);
                                 break;
                             case 1:
                                 rn rnVar4 = this.b;
@@ -1655,9 +1655,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", rnVar5.v0);
                                 bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                qq qqVar2 = new qq(bundle2);
-                                qqVar2.C0(rnVar5.x0);
-                                rnVar5.presentFragment(qqVar2);
+                                rq rqVar2 = new rq(bundle2);
+                                rqVar2.C0(rnVar5.x0);
+                                rnVar5.presentFragment(rqVar2);
                                 break;
                             case 3:
                                 rn rnVar6 = this.b;
@@ -1674,7 +1674,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 rn rnVar9 = this.b;
-                                rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                 break;
                             case 7:
                                 rn rnVar10 = this.b;
@@ -1704,22 +1704,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 14:
                                 rn rnVar12 = this.b;
-                                org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                 break;
                             case 15:
                                 rn rnVar13 = this.b;
                                 if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                    ra0 ra0Var = new ra0(4);
-                                    ra0Var.l0 = -rnVar13.v0;
+                                    sa0 sa0Var = new sa0(4);
+                                    sa0Var.l0 = -rnVar13.v0;
                                     TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                     if (chatFull6 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    ra0Var.G0 = new mn(rnVar13, 6);
-                                    rnVar13.presentFragment(ra0Var);
+                                    sa0Var.G0 = new mn(rnVar13, 6);
+                                    rnVar13.presentFragment(sa0Var);
                                     break;
                                 }
                                 break;
@@ -1771,19 +1771,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 rn rnVar16 = this.b;
-                                js0 js0Var = new js0(rnVar16.v0);
-                                js0Var.s = new mn(rnVar16, 4);
-                                rnVar16.presentFragment(js0Var);
+                                ks0 ks0Var = new ks0(rnVar16.v0);
+                                ks0Var.s = new mn(rnVar16, 4);
+                                rnVar16.presentFragment(ks0Var);
                                 break;
                             case 19:
                                 rn.e0(this.b);
                                 break;
                             case 20:
                                 rn rnVar17 = this.b;
-                                l40 l40Var = new l40(-rnVar17.w0.id);
-                                l40Var.c = rnVar17.L0;
-                                l40Var.l0 = rnVar17;
-                                rnVar17.presentFragment(l40Var);
+                                m40 m40Var = new m40(-rnVar17.w0.id);
+                                m40Var.c = rnVar17.L0;
+                                m40Var.l0 = rnVar17;
+                                rnVar17.presentFragment(m40Var);
                                 break;
                             case 21:
                                 rn rnVar18 = this.b;
@@ -1791,16 +1791,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle4 = new Bundle();
                                 bundle4.putLong("chat_id", rnVar18.v0);
                                 bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                qq qqVar3 = new qq(bundle4);
-                                qqVar3.C0(rnVar18.x0);
-                                rnVar18.presentFragment(qqVar3);
+                                rq rqVar3 = new rq(bundle4);
+                                rqVar3.C0(rnVar18.x0);
+                                rnVar18.presentFragment(rqVar3);
                                 break;
                             case 22:
                                 rn rnVar19 = this.b;
-                                ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                 TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                rnVar19.presentFragment(ef0Var);
+                                ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                rnVar19.presentFragment(ff0Var);
                                 break;
                             case 23:
                                 rn rnVar20 = this.b;
@@ -1851,7 +1851,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 if (org.telegram.messenger.t3.V(this.w0) && this.I0 && org.telegram.messenger.t3.y(1, this.w0)) {
                     org.telegram.ui.Cells.m8 m8Var10 = new org.telegram.ui.Cells.m8(context);
                     this.K = m8Var10;
-                    org.telegram.ui.ActionBar.s6.R(m8Var10, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i17), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    org.telegram.ui.ActionBar.t6.R(m8Var10, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i17), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     this.K.s(org.telegram.messenger.id.L0(2131747096), "", R.drawable.msg_markunread, true);
                     this.F.addView(this.K, c8.ha.o(-1, -2));
                     final int i26 = 18;
@@ -1871,9 +1871,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -1923,9 +1923,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -1942,7 +1942,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -1972,22 +1972,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -2039,19 +2039,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -2059,16 +2059,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -2121,9 +2121,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     i7 = i17;
                 } else {
                     i7 = i17;
-                    pl0 pl0Var = new pl0(this.currentAccount, -this.w0.id, context, getResourceProvider());
-                    this.L = pl0Var;
-                    org.telegram.ui.ActionBar.s6.R(pl0Var, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    ql0 ql0Var = new ql0(this.currentAccount, -this.w0.id, context, getResourceProvider());
+                    this.L = ql0Var;
+                    org.telegram.ui.ActionBar.t6.R(ql0Var, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     this.F.addView(this.L, c8.ha.o(-1, -2));
                     final int i27 = 19;
                     this.L.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.gn
@@ -2142,9 +2142,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -2194,9 +2194,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -2213,7 +2213,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -2243,22 +2243,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -2310,19 +2310,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -2330,16 +2330,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -2391,15 +2391,15 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 if (org.telegram.messenger.t3.V(this.w0) || org.telegram.messenger.t3.Y(this.w0)) {
                     context3 = context;
                     frameLayout = frameLayout2;
-                    hm0Var = hm0Var4;
+                    gm0Var = gm0Var4;
                     rnVar = this;
                 } else {
                     long j10 = -this.w0.id;
-                    hm0Var = hm0Var4;
+                    gm0Var = gm0Var4;
                     org.telegram.ui.Cells.m8 m8Var11 = new org.telegram.ui.Cells.m8(23, context, this.resourceProvider, false, true);
                     context3 = context;
                     this.M = m8Var11;
-                    org.telegram.ui.ActionBar.s6.R(m8Var11, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    org.telegram.ui.ActionBar.t6.R(m8Var11, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     this.M.n(R.drawable.msg_translate, org.telegram.messenger.id.L0(2131752458), this.w0.autotranslation);
                     final int i28 = 0;
                     getMessagesController().G0().a(j10, new org.telegram.messenger.c20(this) { // from class: org.telegram.ui.kn
@@ -2437,7 +2437,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 if (!rnVar.I0 && org.telegram.messenger.t3.w(2, rnVar.w0) && (org.telegram.messenger.t3.T(rnVar.w0) || rnVar.w0.creator)) {
                     org.telegram.ui.Cells.m8 m8Var12 = new org.telegram.ui.Cells.m8(context3);
                     rnVar.N = m8Var12;
-                    org.telegram.ui.ActionBar.s6.R(m8Var12, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    org.telegram.ui.ActionBar.t6.R(m8Var12, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     rnVar.F.addView(rnVar.N, c8.ha.o(-1, -2));
                     rnVar.N.setOnClickListener(new org.telegram.ui.ActionBar.l1(14, rnVar, context3));
                 }
@@ -2470,9 +2470,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             }
                         }
                     });
-                    pl0 pl0Var2 = new pl0(rnVar.currentAccount, -rnVar.w0.id, context3, rnVar.getResourceProvider());
-                    rnVar.L = pl0Var2;
-                    org.telegram.ui.ActionBar.s6.R(pl0Var2, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    ql0 ql0Var2 = new ql0(rnVar.currentAccount, -rnVar.w0.id, context3, rnVar.getResourceProvider());
+                    rnVar.L = ql0Var2;
+                    org.telegram.ui.ActionBar.t6.R(ql0Var2, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     rnVar.F.addView(rnVar.L, c8.ha.o(-1, -2));
                     final int i30 = 20;
                     rnVar.L.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
@@ -2491,9 +2491,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -2543,9 +2543,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -2562,7 +2562,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -2592,22 +2592,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -2659,19 +2659,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -2679,16 +2679,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -2741,7 +2741,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     org.telegram.ui.Cells.m8 m8Var13 = new org.telegram.ui.Cells.m8(23, context, null, false, true);
                     context2 = context;
                     rnVar.Q = m8Var13;
-                    org.telegram.ui.ActionBar.s6.R(m8Var13, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    org.telegram.ui.ActionBar.t6.R(m8Var13, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     rnVar.Q.n(R.drawable.msg_topics, org.telegram.messenger.id.L0(2131752281), rnVar.E0);
                     rnVar.Q.getCheckBox().setIcon(!rnVar.F0 ? 0 : R.drawable.permission_locked);
                     rnVar.F.addView(rnVar.Q, c8.ha.c(-2.0f, -1));
@@ -2754,7 +2754,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             if (org.telegram.messenger.t3.V(this.w0)) {
                 org.telegram.ui.Cells.m8 m8Var102 = new org.telegram.ui.Cells.m8(context);
                 this.K = m8Var102;
-                org.telegram.ui.ActionBar.s6.R(m8Var102, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i17), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var102, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i17), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 this.K.s(org.telegram.messenger.id.L0(2131747096), "", R.drawable.msg_markunread, true);
                 this.F.addView(this.K, c8.ha.o(-1, -2));
                 final int i262 = 18;
@@ -2774,9 +2774,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", rnVar3.v0);
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                qq qqVar = new qq(bundle);
-                                qqVar.C0(rnVar3.x0);
-                                rnVar3.presentFragment(qqVar);
+                                rq rqVar = new rq(bundle);
+                                rqVar.C0(rnVar3.x0);
+                                rnVar3.presentFragment(rqVar);
                                 break;
                             case 1:
                                 rn rnVar4 = this.b;
@@ -2826,9 +2826,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", rnVar5.v0);
                                 bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                qq qqVar2 = new qq(bundle2);
-                                qqVar2.C0(rnVar5.x0);
-                                rnVar5.presentFragment(qqVar2);
+                                rq rqVar2 = new rq(bundle2);
+                                rqVar2.C0(rnVar5.x0);
+                                rnVar5.presentFragment(rqVar2);
                                 break;
                             case 3:
                                 rn rnVar6 = this.b;
@@ -2845,7 +2845,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 rn rnVar9 = this.b;
-                                rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                 break;
                             case 7:
                                 rn rnVar10 = this.b;
@@ -2875,22 +2875,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 14:
                                 rn rnVar12 = this.b;
-                                org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                 break;
                             case 15:
                                 rn rnVar13 = this.b;
                                 if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                    ra0 ra0Var = new ra0(4);
-                                    ra0Var.l0 = -rnVar13.v0;
+                                    sa0 sa0Var = new sa0(4);
+                                    sa0Var.l0 = -rnVar13.v0;
                                     TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                     if (chatFull6 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    ra0Var.G0 = new mn(rnVar13, 6);
-                                    rnVar13.presentFragment(ra0Var);
+                                    sa0Var.G0 = new mn(rnVar13, 6);
+                                    rnVar13.presentFragment(sa0Var);
                                     break;
                                 }
                                 break;
@@ -2942,19 +2942,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 rn rnVar16 = this.b;
-                                js0 js0Var = new js0(rnVar16.v0);
-                                js0Var.s = new mn(rnVar16, 4);
-                                rnVar16.presentFragment(js0Var);
+                                ks0 ks0Var = new ks0(rnVar16.v0);
+                                ks0Var.s = new mn(rnVar16, 4);
+                                rnVar16.presentFragment(ks0Var);
                                 break;
                             case 19:
                                 rn.e0(this.b);
                                 break;
                             case 20:
                                 rn rnVar17 = this.b;
-                                l40 l40Var = new l40(-rnVar17.w0.id);
-                                l40Var.c = rnVar17.L0;
-                                l40Var.l0 = rnVar17;
-                                rnVar17.presentFragment(l40Var);
+                                m40 m40Var = new m40(-rnVar17.w0.id);
+                                m40Var.c = rnVar17.L0;
+                                m40Var.l0 = rnVar17;
+                                rnVar17.presentFragment(m40Var);
                                 break;
                             case 21:
                                 rn rnVar18 = this.b;
@@ -2962,16 +2962,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle4 = new Bundle();
                                 bundle4.putLong("chat_id", rnVar18.v0);
                                 bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                qq qqVar3 = new qq(bundle4);
-                                qqVar3.C0(rnVar18.x0);
-                                rnVar18.presentFragment(qqVar3);
+                                rq rqVar3 = new rq(bundle4);
+                                rqVar3.C0(rnVar18.x0);
+                                rnVar18.presentFragment(rqVar3);
                                 break;
                             case 22:
                                 rn rnVar19 = this.b;
-                                ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                 TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                rnVar19.presentFragment(ef0Var);
+                                ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                rnVar19.presentFragment(ff0Var);
                                 break;
                             case 23:
                                 rn rnVar20 = this.b;
@@ -3027,12 +3027,12 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             }
             context3 = context;
             frameLayout = frameLayout2;
-            hm0Var = hm0Var4;
+            gm0Var = gm0Var4;
             rnVar = this;
             if (!rnVar.I0) {
                 org.telegram.ui.Cells.m8 m8Var122 = new org.telegram.ui.Cells.m8(context3);
                 rnVar.N = m8Var122;
-                org.telegram.ui.ActionBar.s6.R(m8Var122, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var122, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 rnVar.F.addView(rnVar.N, c8.ha.o(-1, -2));
                 rnVar.N.setOnClickListener(new org.telegram.ui.ActionBar.l1(14, rnVar, context3));
             }
@@ -3065,9 +3065,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         }
                     }
                 });
-                pl0 pl0Var22 = new pl0(rnVar.currentAccount, -rnVar.w0.id, context3, rnVar.getResourceProvider());
-                rnVar.L = pl0Var22;
-                org.telegram.ui.ActionBar.s6.R(pl0Var22, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                ql0 ql0Var22 = new ql0(rnVar.currentAccount, -rnVar.w0.id, context3, rnVar.getResourceProvider());
+                rnVar.L = ql0Var22;
+                org.telegram.ui.ActionBar.t6.R(ql0Var22, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 rnVar.F.addView(rnVar.L, c8.ha.o(-1, -2));
                 final int i302 = 20;
                 rnVar.L.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
@@ -3086,9 +3086,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", rnVar3.v0);
                                 bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                qq qqVar = new qq(bundle);
-                                qqVar.C0(rnVar3.x0);
-                                rnVar3.presentFragment(qqVar);
+                                rq rqVar = new rq(bundle);
+                                rqVar.C0(rnVar3.x0);
+                                rnVar3.presentFragment(rqVar);
                                 break;
                             case 1:
                                 rn rnVar4 = this.b;
@@ -3138,9 +3138,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putLong("chat_id", rnVar5.v0);
                                 bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                qq qqVar2 = new qq(bundle2);
-                                qqVar2.C0(rnVar5.x0);
-                                rnVar5.presentFragment(qqVar2);
+                                rq rqVar2 = new rq(bundle2);
+                                rqVar2.C0(rnVar5.x0);
+                                rnVar5.presentFragment(rqVar2);
                                 break;
                             case 3:
                                 rn rnVar6 = this.b;
@@ -3157,7 +3157,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 rn rnVar9 = this.b;
-                                rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                 break;
                             case 7:
                                 rn rnVar10 = this.b;
@@ -3187,22 +3187,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 14:
                                 rn rnVar12 = this.b;
-                                org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                 break;
                             case 15:
                                 rn rnVar13 = this.b;
                                 if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                    ra0 ra0Var = new ra0(4);
-                                    ra0Var.l0 = -rnVar13.v0;
+                                    sa0 sa0Var = new sa0(4);
+                                    sa0Var.l0 = -rnVar13.v0;
                                     TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                     if (chatFull6 != null) {
                                         TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                         if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                            ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                            sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                         }
                                     }
-                                    ra0Var.G0 = new mn(rnVar13, 6);
-                                    rnVar13.presentFragment(ra0Var);
+                                    sa0Var.G0 = new mn(rnVar13, 6);
+                                    rnVar13.presentFragment(sa0Var);
                                     break;
                                 }
                                 break;
@@ -3254,19 +3254,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 rn rnVar16 = this.b;
-                                js0 js0Var = new js0(rnVar16.v0);
-                                js0Var.s = new mn(rnVar16, 4);
-                                rnVar16.presentFragment(js0Var);
+                                ks0 ks0Var = new ks0(rnVar16.v0);
+                                ks0Var.s = new mn(rnVar16, 4);
+                                rnVar16.presentFragment(ks0Var);
                                 break;
                             case 19:
                                 rn.e0(this.b);
                                 break;
                             case 20:
                                 rn rnVar17 = this.b;
-                                l40 l40Var = new l40(-rnVar17.w0.id);
-                                l40Var.c = rnVar17.L0;
-                                l40Var.l0 = rnVar17;
-                                rnVar17.presentFragment(l40Var);
+                                m40 m40Var = new m40(-rnVar17.w0.id);
+                                m40Var.c = rnVar17.L0;
+                                m40Var.l0 = rnVar17;
+                                rnVar17.presentFragment(m40Var);
                                 break;
                             case 21:
                                 rn rnVar18 = this.b;
@@ -3274,16 +3274,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 Bundle bundle4 = new Bundle();
                                 bundle4.putLong("chat_id", rnVar18.v0);
                                 bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                qq qqVar3 = new qq(bundle4);
-                                qqVar3.C0(rnVar18.x0);
-                                rnVar18.presentFragment(qqVar3);
+                                rq rqVar3 = new rq(bundle4);
+                                rqVar3.C0(rnVar18.x0);
+                                rnVar18.presentFragment(rqVar3);
                                 break;
                             case 22:
                                 rn rnVar19 = this.b;
-                                ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                 TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                rnVar19.presentFragment(ef0Var);
+                                ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                rnVar19.presentFragment(ff0Var);
                                 break;
                             case 23:
                                 rn rnVar20 = this.b;
@@ -3336,7 +3336,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 org.telegram.ui.Cells.m8 m8Var132 = new org.telegram.ui.Cells.m8(23, context, null, false, true);
                 context2 = context;
                 rnVar.Q = m8Var132;
-                org.telegram.ui.ActionBar.s6.R(m8Var132, org.telegram.ui.ActionBar.l6.N0(true), org.telegram.ui.ActionBar.s6.M(i7), org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                org.telegram.ui.ActionBar.t6.R(m8Var132, org.telegram.ui.ActionBar.m6.N0(true), org.telegram.ui.ActionBar.t6.M(i7), org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                 rnVar.Q.n(R.drawable.msg_topics, org.telegram.messenger.id.L0(2131752281), rnVar.E0);
                 rnVar.Q.getCheckBox().setIcon(!rnVar.F0 ? 0 : R.drawable.permission_locked);
                 rnVar.F.addView(rnVar.Q, c8.ha.c(-2.0f, -1));
@@ -3348,15 +3348,15 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         } else {
             i7 = i17;
             context2 = context;
-            hm0Var = hm0Var4;
+            gm0Var = gm0Var4;
             rnVar = this;
         }
-        rnVar.simpleActionBar.p();
+        rnVar.simpleActionBar.q();
         if (rnVar.C0 != null || org.telegram.messenger.t3.d(rnVar.w0) || rnVar.N != null) {
-            rnVar.a = rnVar.simpleActionBar.o(org.telegram.messenger.id.L0(2131745946));
+            rnVar.a = rnVar.simpleActionBar.p(org.telegram.messenger.id.L0(2131745946));
         }
         if (rnVar.H == null && rnVar.N == null && rnVar.I == null && rnVar.J == null && rnVar.Q == null) {
-            hm0Var2 = hm0Var;
+            gm0Var2 = gm0Var;
             i10 = -2;
             i11 = -1;
         } else {
@@ -3369,20 +3369,20 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             }
             i10 = -2;
             i11 = -1;
-            hm0Var2 = hm0Var;
-            hm0Var2.addView(rnVar.P, c8.ha.o(-1, -2));
+            gm0Var2 = gm0Var;
+            gm0Var2.addView(rnVar.P, c8.ha.o(-1, -2));
         }
         LinearLayout linearLayout5 = new LinearLayout(context2);
         rnVar.R = linearLayout5;
         linearLayout5.setOrientation(1);
-        hm0Var2.addView(rnVar.R, c8.ha.o(i11, i10));
+        gm0Var2.addView(rnVar.R, c8.ha.o(i11, i10));
         if (rnVar.w0 != null) {
             org.telegram.ui.Cells.m8 m8Var14 = new org.telegram.ui.Cells.m8(context2);
             rnVar.X = m8Var14;
-            org.telegram.ui.Cells.y N0 = org.telegram.ui.ActionBar.l6.N0(false);
-            int i31 = org.telegram.ui.ActionBar.l6.i6;
-            o6Var = null;
-            org.telegram.ui.ActionBar.s6.R(m8Var14, N0, null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.Cells.y N0 = org.telegram.ui.ActionBar.m6.N0(false);
+            int i31 = org.telegram.ui.ActionBar.m6.i6;
+            p6Var = null;
+            org.telegram.ui.ActionBar.t6.R(m8Var14, N0, null, org.telegram.ui.ActionBar.t6.M(i31));
             org.telegram.ui.Cells.m8 m8Var15 = rnVar.X;
             if (!org.telegram.messenger.t3.T(rnVar.w0)) {
                 TLRPC.Chat chat5 = rnVar.w0;
@@ -3406,9 +3406,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -3458,9 +3458,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -3477,7 +3477,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -3507,22 +3507,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -3574,19 +3574,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -3594,16 +3594,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -3653,7 +3653,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     });
                     org.telegram.ui.Cells.m8 m8Var16 = new org.telegram.ui.Cells.m8(context2);
                     rnVar.V = m8Var16;
-                    org.telegram.ui.ActionBar.s6.R(m8Var16, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                    org.telegram.ui.ActionBar.t6.R(m8Var16, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                     final int i33 = 22;
                     rnVar.V.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                         public final /* synthetic */ rn b;
@@ -3671,9 +3671,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -3723,9 +3723,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -3742,7 +3742,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -3772,22 +3772,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -3839,19 +3839,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -3859,16 +3859,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -3918,7 +3918,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     });
                     org.telegram.ui.Cells.m8 m8Var17 = new org.telegram.ui.Cells.m8(context2);
                     rnVar.O = m8Var17;
-                    org.telegram.ui.ActionBar.s6.R(m8Var17, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                    org.telegram.ui.ActionBar.t6.R(m8Var17, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                     final int i34 = 23;
                     rnVar.O.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                         public final /* synthetic */ rn b;
@@ -3936,9 +3936,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -3988,9 +3988,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -4007,7 +4007,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -4037,22 +4037,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -4104,19 +4104,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -4124,16 +4124,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -4184,7 +4184,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     if (org.telegram.messenger.t3.y(28, rnVar.w0)) {
                         org.telegram.ui.Cells.m8 m8Var18 = new org.telegram.ui.Cells.m8(context2);
                         rnVar.e0 = m8Var18;
-                        org.telegram.ui.ActionBar.s6.R(m8Var18, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                        org.telegram.ui.ActionBar.t6.R(m8Var18, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                         final int i35 = 24;
                         rnVar.e0.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                             public final /* synthetic */ rn b;
@@ -4202,9 +4202,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("chat_id", rnVar3.v0);
                                         bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                        qq qqVar = new qq(bundle);
-                                        qqVar.C0(rnVar3.x0);
-                                        rnVar3.presentFragment(qqVar);
+                                        rq rqVar = new rq(bundle);
+                                        rqVar.C0(rnVar3.x0);
+                                        rnVar3.presentFragment(rqVar);
                                         break;
                                     case 1:
                                         rn rnVar4 = this.b;
@@ -4254,9 +4254,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle2 = new Bundle();
                                         bundle2.putLong("chat_id", rnVar5.v0);
                                         bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                        qq qqVar2 = new qq(bundle2);
-                                        qqVar2.C0(rnVar5.x0);
-                                        rnVar5.presentFragment(qqVar2);
+                                        rq rqVar2 = new rq(bundle2);
+                                        rqVar2.C0(rnVar5.x0);
+                                        rnVar5.presentFragment(rqVar2);
                                         break;
                                     case 3:
                                         rn rnVar6 = this.b;
@@ -4273,7 +4273,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         rn rnVar9 = this.b;
-                                        rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                        rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                         break;
                                     case 7:
                                         rn rnVar10 = this.b;
@@ -4303,22 +4303,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 14:
                                         rn rnVar12 = this.b;
-                                        org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                        org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                         break;
                                     case 15:
                                         rn rnVar13 = this.b;
                                         if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                            ra0 ra0Var = new ra0(4);
-                                            ra0Var.l0 = -rnVar13.v0;
+                                            sa0 sa0Var = new sa0(4);
+                                            sa0Var.l0 = -rnVar13.v0;
                                             TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                             if (chatFull6 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            ra0Var.G0 = new mn(rnVar13, 6);
-                                            rnVar13.presentFragment(ra0Var);
+                                            sa0Var.G0 = new mn(rnVar13, 6);
+                                            rnVar13.presentFragment(sa0Var);
                                             break;
                                         }
                                         break;
@@ -4370,19 +4370,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         rn rnVar16 = this.b;
-                                        js0 js0Var = new js0(rnVar16.v0);
-                                        js0Var.s = new mn(rnVar16, 4);
-                                        rnVar16.presentFragment(js0Var);
+                                        ks0 ks0Var = new ks0(rnVar16.v0);
+                                        ks0Var.s = new mn(rnVar16, 4);
+                                        rnVar16.presentFragment(ks0Var);
                                         break;
                                     case 19:
                                         rn.e0(this.b);
                                         break;
                                     case 20:
                                         rn rnVar17 = this.b;
-                                        l40 l40Var = new l40(-rnVar17.w0.id);
-                                        l40Var.c = rnVar17.L0;
-                                        l40Var.l0 = rnVar17;
-                                        rnVar17.presentFragment(l40Var);
+                                        m40 m40Var = new m40(-rnVar17.w0.id);
+                                        m40Var.c = rnVar17.L0;
+                                        m40Var.l0 = rnVar17;
+                                        rnVar17.presentFragment(m40Var);
                                         break;
                                     case 21:
                                         rn rnVar18 = this.b;
@@ -4390,16 +4390,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle4 = new Bundle();
                                         bundle4.putLong("chat_id", rnVar18.v0);
                                         bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                        qq qqVar3 = new qq(bundle4);
-                                        qqVar3.C0(rnVar18.x0);
-                                        rnVar18.presentFragment(qqVar3);
+                                        rq rqVar3 = new rq(bundle4);
+                                        rqVar3.C0(rnVar18.x0);
+                                        rnVar18.presentFragment(rqVar3);
                                         break;
                                     case 22:
                                         rn rnVar19 = this.b;
-                                        ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                        ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                         TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                        ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                        rnVar19.presentFragment(ef0Var);
+                                        ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                        rnVar19.presentFragment(ff0Var);
                                         break;
                                     case 23:
                                         rn rnVar20 = this.b;
@@ -4452,7 +4452,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     org.telegram.ui.Cells.m8 m8Var19 = new org.telegram.ui.Cells.m8(context2);
                     rnVar.W = m8Var19;
                     final int i36 = 0;
-                    org.telegram.ui.ActionBar.s6.R(m8Var19, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                    org.telegram.ui.ActionBar.t6.R(m8Var19, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                     rnVar.W.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                         public final /* synthetic */ rn b;
 
@@ -4469,9 +4469,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -4521,9 +4521,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -4540,7 +4540,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -4570,22 +4570,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -4637,19 +4637,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -4657,16 +4657,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -4716,7 +4716,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     });
                     org.telegram.ui.Cells.m8 m8Var20 = new org.telegram.ui.Cells.m8(context2);
                     rnVar.T = m8Var20;
-                    org.telegram.ui.ActionBar.s6.R(m8Var20, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                    org.telegram.ui.ActionBar.t6.R(m8Var20, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                     final int i37 = 2;
                     rnVar.T.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                         public final /* synthetic */ rn b;
@@ -4734,9 +4734,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -4786,9 +4786,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -4805,7 +4805,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -4835,22 +4835,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -4902,19 +4902,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -4922,16 +4922,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -4982,7 +4982,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     if (!org.telegram.messenger.t3.V(rnVar.w0)) {
                         org.telegram.ui.Cells.m8 m8Var21 = new org.telegram.ui.Cells.m8(context2);
                         rnVar.U = m8Var21;
-                        org.telegram.ui.ActionBar.s6.R(m8Var21, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                        org.telegram.ui.ActionBar.t6.R(m8Var21, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                         final int i38 = 3;
                         rnVar.U.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                             public final /* synthetic */ rn b;
@@ -5000,9 +5000,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("chat_id", rnVar3.v0);
                                         bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                        qq qqVar = new qq(bundle);
-                                        qqVar.C0(rnVar3.x0);
-                                        rnVar3.presentFragment(qqVar);
+                                        rq rqVar = new rq(bundle);
+                                        rqVar.C0(rnVar3.x0);
+                                        rnVar3.presentFragment(rqVar);
                                         break;
                                     case 1:
                                         rn rnVar4 = this.b;
@@ -5052,9 +5052,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle2 = new Bundle();
                                         bundle2.putLong("chat_id", rnVar5.v0);
                                         bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                        qq qqVar2 = new qq(bundle2);
-                                        qqVar2.C0(rnVar5.x0);
-                                        rnVar5.presentFragment(qqVar2);
+                                        rq rqVar2 = new rq(bundle2);
+                                        rqVar2.C0(rnVar5.x0);
+                                        rnVar5.presentFragment(rqVar2);
                                         break;
                                     case 3:
                                         rn rnVar6 = this.b;
@@ -5071,7 +5071,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         rn rnVar9 = this.b;
-                                        rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                        rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                         break;
                                     case 7:
                                         rn rnVar10 = this.b;
@@ -5101,22 +5101,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 14:
                                         rn rnVar12 = this.b;
-                                        org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                        org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                         break;
                                     case 15:
                                         rn rnVar13 = this.b;
                                         if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                            ra0 ra0Var = new ra0(4);
-                                            ra0Var.l0 = -rnVar13.v0;
+                                            sa0 sa0Var = new sa0(4);
+                                            sa0Var.l0 = -rnVar13.v0;
                                             TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                             if (chatFull6 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            ra0Var.G0 = new mn(rnVar13, 6);
-                                            rnVar13.presentFragment(ra0Var);
+                                            sa0Var.G0 = new mn(rnVar13, 6);
+                                            rnVar13.presentFragment(sa0Var);
                                             break;
                                         }
                                         break;
@@ -5168,19 +5168,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         rn rnVar16 = this.b;
-                                        js0 js0Var = new js0(rnVar16.v0);
-                                        js0Var.s = new mn(rnVar16, 4);
-                                        rnVar16.presentFragment(js0Var);
+                                        ks0 ks0Var = new ks0(rnVar16.v0);
+                                        ks0Var.s = new mn(rnVar16, 4);
+                                        rnVar16.presentFragment(ks0Var);
                                         break;
                                     case 19:
                                         rn.e0(this.b);
                                         break;
                                     case 20:
                                         rn rnVar17 = this.b;
-                                        l40 l40Var = new l40(-rnVar17.w0.id);
-                                        l40Var.c = rnVar17.L0;
-                                        l40Var.l0 = rnVar17;
-                                        rnVar17.presentFragment(l40Var);
+                                        m40 m40Var = new m40(-rnVar17.w0.id);
+                                        m40Var.c = rnVar17.L0;
+                                        m40Var.l0 = rnVar17;
+                                        rnVar17.presentFragment(m40Var);
                                         break;
                                     case 21:
                                         rn rnVar18 = this.b;
@@ -5188,16 +5188,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle4 = new Bundle();
                                         bundle4.putLong("chat_id", rnVar18.v0);
                                         bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                        qq qqVar3 = new qq(bundle4);
-                                        qqVar3.C0(rnVar18.x0);
-                                        rnVar18.presentFragment(qqVar3);
+                                        rq rqVar3 = new rq(bundle4);
+                                        rqVar3.C0(rnVar18.x0);
+                                        rnVar18.presentFragment(rqVar3);
                                         break;
                                     case 22:
                                         rn rnVar19 = this.b;
-                                        ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                        ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                         TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                        ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                        rnVar19.presentFragment(ef0Var);
+                                        ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                        rnVar19.presentFragment(ff0Var);
                                         break;
                                     case 23:
                                         rn rnVar20 = this.b;
@@ -5249,7 +5249,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     org.telegram.ui.Cells.m8 m8Var22 = new org.telegram.ui.Cells.m8(context2);
                     rnVar.Z = m8Var22;
                     m8Var22.o(R.drawable.menu_feature_premium, i0(org.telegram.messenger.id.L0(2131752471)), false);
-                    org.telegram.ui.ActionBar.s6.R(rnVar.Z, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                    org.telegram.ui.ActionBar.t6.R(rnVar.Z, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                     final int i39 = 4;
                     rnVar.Z.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                         public final /* synthetic */ rn b;
@@ -5267,9 +5267,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -5319,9 +5319,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -5338,7 +5338,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -5368,22 +5368,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -5435,19 +5435,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -5455,16 +5455,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -5517,7 +5517,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         org.telegram.ui.Cells.m8 m8Var23 = new org.telegram.ui.Cells.m8(context2);
                         rnVar.Y = m8Var23;
                         m8Var23.o(R.drawable.msg_log, org.telegram.messenger.id.L0(2131751079), false);
-                        org.telegram.ui.ActionBar.s6.R(rnVar.Y, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                        org.telegram.ui.ActionBar.t6.R(rnVar.Y, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                         final int i40 = 5;
                         rnVar.Y.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                             public final /* synthetic */ rn b;
@@ -5535,9 +5535,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("chat_id", rnVar3.v0);
                                         bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                        qq qqVar = new qq(bundle);
-                                        qqVar.C0(rnVar3.x0);
-                                        rnVar3.presentFragment(qqVar);
+                                        rq rqVar = new rq(bundle);
+                                        rqVar.C0(rnVar3.x0);
+                                        rnVar3.presentFragment(rqVar);
                                         break;
                                     case 1:
                                         rn rnVar4 = this.b;
@@ -5587,9 +5587,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle2 = new Bundle();
                                         bundle2.putLong("chat_id", rnVar5.v0);
                                         bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                        qq qqVar2 = new qq(bundle2);
-                                        qqVar2.C0(rnVar5.x0);
-                                        rnVar5.presentFragment(qqVar2);
+                                        rq rqVar2 = new rq(bundle2);
+                                        rqVar2.C0(rnVar5.x0);
+                                        rnVar5.presentFragment(rqVar2);
                                         break;
                                     case 3:
                                         rn rnVar6 = this.b;
@@ -5606,7 +5606,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         rn rnVar9 = this.b;
-                                        rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                        rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                         break;
                                     case 7:
                                         rn rnVar10 = this.b;
@@ -5636,22 +5636,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 14:
                                         rn rnVar12 = this.b;
-                                        org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                        org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                         break;
                                     case 15:
                                         rn rnVar13 = this.b;
                                         if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                            ra0 ra0Var = new ra0(4);
-                                            ra0Var.l0 = -rnVar13.v0;
+                                            sa0 sa0Var = new sa0(4);
+                                            sa0Var.l0 = -rnVar13.v0;
                                             TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                             if (chatFull6 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            ra0Var.G0 = new mn(rnVar13, 6);
-                                            rnVar13.presentFragment(ra0Var);
+                                            sa0Var.G0 = new mn(rnVar13, 6);
+                                            rnVar13.presentFragment(sa0Var);
                                             break;
                                         }
                                         break;
@@ -5703,19 +5703,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         rn rnVar16 = this.b;
-                                        js0 js0Var = new js0(rnVar16.v0);
-                                        js0Var.s = new mn(rnVar16, 4);
-                                        rnVar16.presentFragment(js0Var);
+                                        ks0 ks0Var = new ks0(rnVar16.v0);
+                                        ks0Var.s = new mn(rnVar16, 4);
+                                        rnVar16.presentFragment(ks0Var);
                                         break;
                                     case 19:
                                         rn.e0(this.b);
                                         break;
                                     case 20:
                                         rn rnVar17 = this.b;
-                                        l40 l40Var = new l40(-rnVar17.w0.id);
-                                        l40Var.c = rnVar17.L0;
-                                        l40Var.l0 = rnVar17;
-                                        rnVar17.presentFragment(l40Var);
+                                        m40 m40Var = new m40(-rnVar17.w0.id);
+                                        m40Var.c = rnVar17.L0;
+                                        m40Var.l0 = rnVar17;
+                                        rnVar17.presentFragment(m40Var);
                                         break;
                                     case 21:
                                         rn rnVar18 = this.b;
@@ -5723,16 +5723,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle4 = new Bundle();
                                         bundle4.putLong("chat_id", rnVar18.v0);
                                         bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                        qq qqVar3 = new qq(bundle4);
-                                        qqVar3.C0(rnVar18.x0);
-                                        rnVar18.presentFragment(qqVar3);
+                                        rq rqVar3 = new rq(bundle4);
+                                        rqVar3.C0(rnVar18.x0);
+                                        rnVar18.presentFragment(rqVar3);
                                         break;
                                     case 22:
                                         rn rnVar19 = this.b;
-                                        ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                        ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                         TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                        ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                        rnVar19.presentFragment(ef0Var);
+                                        ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                        rnVar19.presentFragment(ff0Var);
                                         break;
                                     case 23:
                                         rn rnVar20 = this.b;
@@ -5785,7 +5785,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         org.telegram.ui.Cells.m8 m8Var24 = new org.telegram.ui.Cells.m8(context2);
                         rnVar.a0 = m8Var24;
                         m8Var24.o(R.drawable.msg_stats, org.telegram.messenger.id.L0(2131744891), true);
-                        org.telegram.ui.ActionBar.s6.R(rnVar.a0, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+                        org.telegram.ui.ActionBar.t6.R(rnVar.a0, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
                         final int i41 = 6;
                         rnVar.a0.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                             public final /* synthetic */ rn b;
@@ -5803,9 +5803,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("chat_id", rnVar3.v0);
                                         bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                        qq qqVar = new qq(bundle);
-                                        qqVar.C0(rnVar3.x0);
-                                        rnVar3.presentFragment(qqVar);
+                                        rq rqVar = new rq(bundle);
+                                        rqVar.C0(rnVar3.x0);
+                                        rnVar3.presentFragment(rqVar);
                                         break;
                                     case 1:
                                         rn rnVar4 = this.b;
@@ -5855,9 +5855,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle2 = new Bundle();
                                         bundle2.putLong("chat_id", rnVar5.v0);
                                         bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                        qq qqVar2 = new qq(bundle2);
-                                        qqVar2.C0(rnVar5.x0);
-                                        rnVar5.presentFragment(qqVar2);
+                                        rq rqVar2 = new rq(bundle2);
+                                        rqVar2.C0(rnVar5.x0);
+                                        rnVar5.presentFragment(rqVar2);
                                         break;
                                     case 3:
                                         rn rnVar6 = this.b;
@@ -5874,7 +5874,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         rn rnVar9 = this.b;
-                                        rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                        rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                         break;
                                     case 7:
                                         rn rnVar10 = this.b;
@@ -5904,22 +5904,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 14:
                                         rn rnVar12 = this.b;
-                                        org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                        org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                         break;
                                     case 15:
                                         rn rnVar13 = this.b;
                                         if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                            ra0 ra0Var = new ra0(4);
-                                            ra0Var.l0 = -rnVar13.v0;
+                                            sa0 sa0Var = new sa0(4);
+                                            sa0Var.l0 = -rnVar13.v0;
                                             TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                             if (chatFull6 != null) {
                                                 TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                                 if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                    ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                    sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                                 }
                                             }
-                                            ra0Var.G0 = new mn(rnVar13, 6);
-                                            rnVar13.presentFragment(ra0Var);
+                                            sa0Var.G0 = new mn(rnVar13, 6);
+                                            rnVar13.presentFragment(sa0Var);
                                             break;
                                         }
                                         break;
@@ -5971,19 +5971,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         rn rnVar16 = this.b;
-                                        js0 js0Var = new js0(rnVar16.v0);
-                                        js0Var.s = new mn(rnVar16, 4);
-                                        rnVar16.presentFragment(js0Var);
+                                        ks0 ks0Var = new ks0(rnVar16.v0);
+                                        ks0Var.s = new mn(rnVar16, 4);
+                                        rnVar16.presentFragment(ks0Var);
                                         break;
                                     case 19:
                                         rn.e0(this.b);
                                         break;
                                     case 20:
                                         rn rnVar17 = this.b;
-                                        l40 l40Var = new l40(-rnVar17.w0.id);
-                                        l40Var.c = rnVar17.L0;
-                                        l40Var.l0 = rnVar17;
-                                        rnVar17.presentFragment(l40Var);
+                                        m40 m40Var = new m40(-rnVar17.w0.id);
+                                        m40Var.c = rnVar17.L0;
+                                        m40Var.l0 = rnVar17;
+                                        rnVar17.presentFragment(m40Var);
                                         break;
                                     case 21:
                                         rn rnVar18 = this.b;
@@ -5991,16 +5991,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                         Bundle bundle4 = new Bundle();
                                         bundle4.putLong("chat_id", rnVar18.v0);
                                         bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                        qq qqVar3 = new qq(bundle4);
-                                        qqVar3.C0(rnVar18.x0);
-                                        rnVar18.presentFragment(qqVar3);
+                                        rq rqVar3 = new rq(bundle4);
+                                        rqVar3.C0(rnVar18.x0);
+                                        rnVar18.presentFragment(rqVar3);
                                         break;
                                     case 22:
                                         rn rnVar19 = this.b;
-                                        ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                        ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                         TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                        ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                        rnVar19.presentFragment(ef0Var);
+                                        ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                        rnVar19.presentFragment(ff0Var);
                                         break;
                                     case 23:
                                         rn rnVar20 = this.b;
@@ -6118,9 +6118,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -6170,9 +6170,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -6189,7 +6189,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -6219,22 +6219,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -6286,19 +6286,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -6306,16 +6306,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -6365,7 +6365,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.m8 m8Var162 = new org.telegram.ui.Cells.m8(context2);
             rnVar.V = m8Var162;
-            org.telegram.ui.ActionBar.s6.R(m8Var162, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(m8Var162, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             final int i332 = 22;
             rnVar.V.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -6383,9 +6383,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -6435,9 +6435,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -6454,7 +6454,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -6484,22 +6484,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -6551,19 +6551,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -6571,16 +6571,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -6630,7 +6630,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.m8 m8Var172 = new org.telegram.ui.Cells.m8(context2);
             rnVar.O = m8Var172;
-            org.telegram.ui.ActionBar.s6.R(m8Var172, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(m8Var172, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             final int i342 = 23;
             rnVar.O.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -6648,9 +6648,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -6700,9 +6700,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -6719,7 +6719,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -6749,22 +6749,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -6816,19 +6816,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -6836,16 +6836,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -6898,7 +6898,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             org.telegram.ui.Cells.m8 m8Var192 = new org.telegram.ui.Cells.m8(context2);
             rnVar.W = m8Var192;
             final int i362 = 0;
-            org.telegram.ui.ActionBar.s6.R(m8Var192, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(m8Var192, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             rnVar.W.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
 
@@ -6915,9 +6915,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -6967,9 +6967,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -6986,7 +6986,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -7016,22 +7016,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -7083,19 +7083,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -7103,16 +7103,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -7162,7 +7162,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.m8 m8Var202 = new org.telegram.ui.Cells.m8(context2);
             rnVar.T = m8Var202;
-            org.telegram.ui.ActionBar.s6.R(m8Var202, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(m8Var202, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             final int i372 = 2;
             rnVar.T.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -7180,9 +7180,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -7232,9 +7232,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -7251,7 +7251,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -7281,22 +7281,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -7348,19 +7348,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -7368,16 +7368,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -7430,7 +7430,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             org.telegram.ui.Cells.m8 m8Var222 = new org.telegram.ui.Cells.m8(context2);
             rnVar.Z = m8Var222;
             m8Var222.o(R.drawable.menu_feature_premium, i0(org.telegram.messenger.id.L0(2131752471)), false);
-            org.telegram.ui.ActionBar.s6.R(rnVar.Z, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(rnVar.Z, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             final int i392 = 4;
             rnVar.Z.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -7448,9 +7448,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -7500,9 +7500,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -7519,7 +7519,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -7549,22 +7549,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -7616,19 +7616,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -7636,16 +7636,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -7699,7 +7699,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             org.telegram.ui.Cells.m8 m8Var232 = new org.telegram.ui.Cells.m8(context2);
             rnVar.Y = m8Var232;
             m8Var232.o(R.drawable.msg_log, org.telegram.messenger.id.L0(2131751079), false);
-            org.telegram.ui.ActionBar.s6.R(rnVar.Y, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i31));
+            org.telegram.ui.ActionBar.t6.R(rnVar.Y, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i31));
             final int i402 = 5;
             rnVar.Y.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -7717,9 +7717,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -7769,9 +7769,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -7788,7 +7788,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -7818,22 +7818,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -7885,19 +7885,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -7905,16 +7905,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -8002,14 +8002,14 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             if (m8Var6 != null) {
             }
         } else {
-            o6Var = null;
+            p6Var = null;
         }
         if (rnVar.C0 != null) {
             org.telegram.ui.Cells.m8 m8Var26 = new org.telegram.ui.Cells.m8(context2);
             rnVar.k0 = m8Var26;
-            org.telegram.ui.Cells.y N02 = org.telegram.ui.ActionBar.l6.N0(false);
-            int i42 = org.telegram.ui.ActionBar.l6.i6;
-            org.telegram.ui.ActionBar.s6.R(m8Var26, N02, o6Var, org.telegram.ui.ActionBar.s6.M(i42));
+            org.telegram.ui.Cells.y N02 = org.telegram.ui.ActionBar.m6.N0(false);
+            int i42 = org.telegram.ui.ActionBar.m6.i6;
+            org.telegram.ui.ActionBar.t6.R(m8Var26, N02, p6Var, org.telegram.ui.ActionBar.t6.M(i42));
             rnVar.k0.setPrioritizeTitleOverValue(true);
             rnVar.R.addView(rnVar.k0, c8.ha.o(-1, -2));
             final int i43 = 7;
@@ -8029,9 +8029,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -8081,9 +8081,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -8100,7 +8100,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -8130,22 +8130,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -8197,19 +8197,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -8217,16 +8217,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -8277,7 +8277,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             rnVar.w0();
             org.telegram.ui.Cells.m8 m8Var27 = new org.telegram.ui.Cells.m8(context2);
             rnVar.n0 = m8Var27;
-            org.telegram.ui.ActionBar.s6.R(m8Var27, org.telegram.ui.ActionBar.l6.N0(false), o6Var, org.telegram.ui.ActionBar.s6.M(i42));
+            org.telegram.ui.ActionBar.t6.R(m8Var27, org.telegram.ui.ActionBar.m6.N0(false), p6Var, org.telegram.ui.ActionBar.t6.M(i42));
             rnVar.n0.s(i0(org.telegram.messenger.id.L0(2131754346)), "", R.drawable.msg_shareout, true);
             rnVar.R.addView(rnVar.n0, c8.ha.o(-1, -2));
             final int i44 = 8;
@@ -8297,9 +8297,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -8349,9 +8349,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -8368,7 +8368,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -8398,22 +8398,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -8465,19 +8465,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -8485,16 +8485,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -8560,7 +8560,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             }
             org.telegram.ui.Cells.m8 m8Var29 = new org.telegram.ui.Cells.m8(context2);
             rnVar.o0 = m8Var29;
-            org.telegram.ui.ActionBar.s6.R(m8Var29, org.telegram.ui.ActionBar.l6.N0(false), o6Var, org.telegram.ui.ActionBar.s6.M(i42));
+            org.telegram.ui.ActionBar.t6.R(m8Var29, org.telegram.ui.ActionBar.m6.N0(false), p6Var, org.telegram.ui.ActionBar.t6.M(i42));
             rnVar.o0.o(R.drawable.msg_log, org.telegram.messenger.id.L0(2131753092), true);
             rnVar.R.addView(rnVar.o0, c8.ha.o(-1, -2));
             final int i45 = 9;
@@ -8580,9 +8580,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -8632,9 +8632,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -8651,7 +8651,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -8681,22 +8681,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -8748,19 +8748,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -8768,16 +8768,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -8827,7 +8827,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.m8 m8Var30 = new org.telegram.ui.Cells.m8(context2);
             rnVar.p0 = m8Var30;
-            org.telegram.ui.ActionBar.s6.R(m8Var30, org.telegram.ui.ActionBar.l6.N0(false), o6Var, org.telegram.ui.ActionBar.s6.M(i42));
+            org.telegram.ui.ActionBar.t6.R(m8Var30, org.telegram.ui.ActionBar.m6.N0(false), p6Var, org.telegram.ui.ActionBar.t6.M(i42));
             rnVar.p0.o(R.drawable.msg_media, org.telegram.messenger.id.L0(2131753093), true);
             rnVar.R.addView(rnVar.p0, c8.ha.o(-1, -2));
             final int i46 = 10;
@@ -8847,9 +8847,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -8899,9 +8899,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -8918,7 +8918,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -8948,22 +8948,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -9015,19 +9015,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -9035,16 +9035,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -9094,7 +9094,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.m8 m8Var31 = new org.telegram.ui.Cells.m8(context2);
             rnVar.q0 = m8Var31;
-            org.telegram.ui.ActionBar.s6.R(m8Var31, org.telegram.ui.ActionBar.l6.N0(false), o6Var, org.telegram.ui.ActionBar.s6.M(i42));
+            org.telegram.ui.ActionBar.t6.R(m8Var31, org.telegram.ui.ActionBar.m6.N0(false), p6Var, org.telegram.ui.ActionBar.t6.M(i42));
             rnVar.q0.o(R.drawable.msg_bot, org.telegram.messenger.id.L0(2131753101), true);
             rnVar.R.addView(rnVar.q0, c8.ha.o(-1, -2));
             final int i47 = 11;
@@ -9114,9 +9114,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -9166,9 +9166,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -9185,7 +9185,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -9215,22 +9215,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -9282,19 +9282,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -9302,16 +9302,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -9366,7 +9366,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 rnVar.R.setVisibility(8);
                 rnVar.G.setVisibility(8);
             }
-            hm0Var2.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
+            gm0Var2.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
         } else if (rnVar.C0 != null) {
             rnVar.r0 = new org.telegram.ui.Cells.z8(12, context2, rnVar.resourceProvider);
             String L0 = org.telegram.messenger.id.L0(2131753052);
@@ -9376,18 +9376,18 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 valueOf.setSpan(new bi.b5(1), indexOf, indexOf + 10, 33);
             }
             rnVar.r0.setText(valueOf);
-            hm0Var2.addView(rnVar.r0, c8.ha.o(-1, -2));
+            gm0Var2.addView(rnVar.r0, c8.ha.o(-1, -2));
             org.telegram.ui.Cells.m8 m8Var32 = new org.telegram.ui.Cells.m8(context2);
             rnVar.t0 = m8Var32;
-            org.telegram.ui.Cells.y N03 = org.telegram.ui.ActionBar.l6.N0(true);
-            org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i7);
-            int i48 = org.telegram.ui.ActionBar.l6.i6;
-            org.telegram.ui.ActionBar.s6.R(m8Var32, N03, M, org.telegram.ui.ActionBar.s6.M(i48));
+            org.telegram.ui.Cells.y N03 = org.telegram.ui.ActionBar.m6.N0(true);
+            org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i7);
+            int i48 = org.telegram.ui.ActionBar.m6.i6;
+            org.telegram.ui.ActionBar.t6.R(m8Var32, N03, M, org.telegram.ui.ActionBar.t6.M(i48));
             rnVar.t0.o(R.drawable.menu_factcheck, org.telegram.messenger.id.L0(2131752929), false);
             org.telegram.ui.Cells.m8 m8Var33 = rnVar.t0;
-            int i49 = org.telegram.ui.ActionBar.l6.q6;
+            int i49 = org.telegram.ui.ActionBar.m6.q6;
             m8Var33.g(i49, i49);
-            hm0Var2.addView(rnVar.t0, c8.ha.o(-1, -2));
+            gm0Var2.addView(rnVar.t0, c8.ha.o(-1, -2));
             final int i50 = 13;
             rnVar.t0.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.gn
                 public final /* synthetic */ rn b;
@@ -9405,9 +9405,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -9457,9 +9457,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -9476,7 +9476,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -9506,22 +9506,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -9573,19 +9573,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -9593,16 +9593,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -9653,7 +9653,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             org.telegram.ui.Cells.z8 z8Var2 = new org.telegram.ui.Cells.z8(12, context2, rnVar.resourceProvider);
             rnVar.s0 = z8Var2;
             z8Var2.setFixedSize(12);
-            hm0Var2.addView(rnVar.s0, c8.ha.o(-1, -2));
+            gm0Var2.addView(rnVar.s0, c8.ha.o(-1, -2));
             org.telegram.ui.Cells.m8 m8Var34 = rnVar.t0;
             TLRPC.UserFull userFull2 = rnVar.D0;
             m8Var34.setVisibility((userFull2 == null || (botInfo2 = userFull2.bot_info) == null || botInfo2.verifier_settings == null) ? 8 : 0);
@@ -9665,13 +9665,13 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 LinearLayout linearLayout6 = new LinearLayout(context2);
                 rnVar.S = linearLayout6;
                 linearLayout6.setOrientation(1);
-                hm0Var2.addView(rnVar.S, c8.ha.o(-1, -2));
+                gm0Var2.addView(rnVar.S, c8.ha.o(-1, -2));
                 org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(context2);
                 n4Var.setText(org.telegram.messenger.id.L0(2131753112));
                 rnVar.S.addView(n4Var, c8.ha.o(-1, -2));
                 org.telegram.ui.Cells.m8 m8Var35 = new org.telegram.ui.Cells.m8(context2);
                 rnVar.l0 = m8Var35;
-                org.telegram.ui.ActionBar.s6.R(m8Var35, org.telegram.ui.ActionBar.l6.N0(false), o6Var, org.telegram.ui.ActionBar.s6.M(i48));
+                org.telegram.ui.ActionBar.t6.R(m8Var35, org.telegram.ui.ActionBar.m6.N0(false), p6Var, org.telegram.ui.ActionBar.t6.M(i48));
                 rnVar.l0.setPrioritizeTitleOverValue(true);
                 rnVar.S.addView(rnVar.l0, c8.ha.o(-1, -2));
                 final bi.n0 g10 = bi.n0.g(rnVar.currentAccount);
@@ -9728,14 +9728,14 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     rnVar.l0.s(org.telegram.messenger.id.L0(2131753110), spannableStringBuilder, R.drawable.outline_gram_24, true);
                 } else {
                     SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
-                    spannableStringBuilder2.setSpan(new org.telegram.ui.Components.c80(org.telegram.messenger.g0.L(30.0f), rnVar.l0.c), 0, spannableStringBuilder2.length(), 33);
+                    spannableStringBuilder2.setSpan(new org.telegram.ui.Components.b80(org.telegram.messenger.g0.L(30.0f), rnVar.l0.c), 0, spannableStringBuilder2.length(), 33);
                     rnVar.l0.s(org.telegram.messenger.id.L0(2131753110), spannableStringBuilder2, R.drawable.outline_gram_24, false);
                     i12 = i48;
                 }
                 rnVar.l0.setVisibility(g10.b(j3) ? 0 : 8);
                 org.telegram.ui.Cells.m8 m8Var36 = new org.telegram.ui.Cells.m8(context);
                 rnVar.m0 = m8Var36;
-                org.telegram.ui.ActionBar.s6.R(m8Var36, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i12));
+                org.telegram.ui.ActionBar.t6.R(m8Var36, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i12));
                 final int i53 = 1;
                 rnVar.m0.setPrioritizeTitleOverValue(true);
                 rnVar.S.addView(rnVar.m0, c8.ha.o(-1, -2));
@@ -9781,7 +9781,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     m8Var37.s(L02, a12, R.drawable.menu_premium_main, z9);
                 } else {
                     SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder("x");
-                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.c80(org.telegram.messenger.g0.L(30.0f), rnVar.m0.c), 0, spannableStringBuilder3.length(), 33);
+                    spannableStringBuilder3.setSpan(new org.telegram.ui.Components.b80(org.telegram.messenger.g0.L(30.0f), rnVar.m0.c), 0, spannableStringBuilder3.length(), 33);
                     rnVar.m0.s(org.telegram.messenger.id.L0(2131753111), spannableStringBuilder3, R.drawable.menu_premium_main, false);
                 }
                 rnVar.m0.setVisibility(g10.a(j3) ? 0 : 8);
@@ -9789,7 +9789,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 org.telegram.ui.Cells.z8 z8Var4 = new org.telegram.ui.Cells.z8(12, context2, rnVar.getResourceProvider());
                 z8Var4.setFixedSize(12);
                 z8Var4.setTag(R.id.fit_width_tag, 1);
-                hm0Var2.addView(z8Var4, c8.ha.o(-1, 12));
+                gm0Var2.addView(z8Var4, c8.ha.o(-1, 12));
                 rnVar.S.setVisibility((rnVar.m0.getVisibility() == 0 || rnVar.l0.getVisibility() == 0) ? 0 : 8);
                 chat = rnVar.w0;
                 if ((chat == null && chat.creator) || ((user = rnVar.C0) != null && user.bot && user.bot_can_edit)) {
@@ -9802,9 +9802,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         bVar.a(rnVar.currentAccount, rnVar.getMessagesController().M0(Long.valueOf(j11)));
                         ji.b bVar2 = rnVar.g0;
                         final int i54 = 0;
-                        org.telegram.ui.Cells.y N04 = org.telegram.ui.ActionBar.l6.N0(false);
-                        int i55 = org.telegram.ui.ActionBar.l6.i6;
-                        org.telegram.ui.ActionBar.s6.R(bVar2, N04, null, org.telegram.ui.ActionBar.s6.M(i55));
+                        org.telegram.ui.Cells.y N04 = org.telegram.ui.ActionBar.m6.N0(false);
+                        int i55 = org.telegram.ui.ActionBar.m6.i6;
+                        org.telegram.ui.ActionBar.t6.R(bVar2, N04, null, org.telegram.ui.ActionBar.t6.M(i55));
                         rnVar.g0.setOnClickListener(new View.OnClickListener(rnVar) { // from class: org.telegram.ui.in
                             public final /* synthetic */ rn b;
 
@@ -9836,41 +9836,41 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                 }
                             }
                         });
-                        hm0Var2.addView(rnVar.g0, c8.ha.o(-1, -2));
+                        gm0Var2.addView(rnVar.g0, c8.ha.o(-1, -2));
                         org.telegram.ui.Cells.m8 m8Var38 = new org.telegram.ui.Cells.m8(context2);
                         rnVar.i0 = m8Var38;
                         m8Var38.o(R.drawable.outline_community_remove_24, org.telegram.messenger.id.L0(z17 ? 2131751884 : rnVar.I0 ? 2131751883 : 2131751882), false);
                         org.telegram.ui.Cells.m8 m8Var39 = rnVar.i0;
-                        int i56 = org.telegram.ui.ActionBar.l6.p7;
+                        int i56 = org.telegram.ui.ActionBar.m6.p7;
                         m8Var39.g(i56, i56);
-                        org.telegram.ui.ActionBar.s6.R(rnVar.i0, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(i55));
-                        org.telegram.ui.Components.hm0 hm0Var5 = hm0Var2;
+                        org.telegram.ui.ActionBar.t6.R(rnVar.i0, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(i55));
+                        org.telegram.ui.Components.gm0 gm0Var5 = gm0Var2;
                         final boolean z18 = z17;
                         rnVar2 = rnVar;
-                        hm0Var3 = hm0Var5;
+                        gm0Var3 = gm0Var5;
                         rnVar.i0.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.jn
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 String M0 = org.telegram.messenger.id.M0(2131751915, null);
                                 rn rnVar3 = rn.this;
-                                org.telegram.ui.Components.v4.s0(rnVar3, M0, org.telegram.messenger.id.M0(z18 ? 2131751917 : rnVar3.I0 ? 2131751916 : 2131751914, null), org.telegram.messenger.id.M0(2131746321, null), true, new org.telegram.messenger.xk(rnVar3, j12, j11, 1));
+                                org.telegram.ui.Components.u4.s0(rnVar3, M0, org.telegram.messenger.id.M0(z18 ? 2131751917 : rnVar3.I0 ? 2131751916 : 2131751914, null), org.telegram.messenger.id.M0(2131746321, null), true, new org.telegram.messenger.xk(rnVar3, j12, j11, 1));
                             }
                         });
-                        hm0Var3.addView(rnVar2.i0, c8.ha.o(-1, -2));
+                        gm0Var3.addView(rnVar2.i0, c8.ha.o(-1, -2));
                         org.telegram.ui.Cells.z8 z8Var5 = new org.telegram.ui.Cells.z8(12, context2, rnVar2.getResourceProvider());
                         rnVar2.j0 = z8Var5;
                         z8Var5.setFixedSize(14);
                         rnVar2.j0.setTag(R.id.fit_width_tag, 1);
-                        hm0Var3.addView(rnVar2.j0, c8.ha.o(-1, 14));
+                        gm0Var3.addView(rnVar2.j0, c8.ha.o(-1, 14));
                     } else {
-                        hm0Var3 = hm0Var2;
+                        gm0Var3 = gm0Var2;
                         rnVar2 = rnVar;
                         boolean z19 = z17;
                         org.telegram.ui.Cells.m8 m8Var40 = new org.telegram.ui.Cells.m8(context2);
                         rnVar2.f0 = m8Var40;
-                        m8Var40.g(org.telegram.ui.ActionBar.l6.v6, org.telegram.ui.ActionBar.l6.u6);
-                        org.telegram.ui.ActionBar.s6.W(rnVar2.f0.getTextView(), org.telegram.ui.ActionBar.l6.Wl);
-                        org.telegram.ui.ActionBar.s6.R(rnVar2.f0, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                        m8Var40.g(org.telegram.ui.ActionBar.m6.v6, org.telegram.ui.ActionBar.m6.u6);
+                        org.telegram.ui.ActionBar.t6.W(rnVar2.f0.getTextView(), org.telegram.ui.ActionBar.m6.Wl);
+                        org.telegram.ui.ActionBar.t6.R(rnVar2.f0, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                         rnVar2.f0.o(R.drawable.msg_groups, org.telegram.messenger.id.L0(z19 ? 2131751981 : rnVar2.I0 ? 2131751979 : 2131751976), false);
                         final int i57 = 1;
                         rnVar2.f0.setOnClickListener(new View.OnClickListener(rnVar2) { // from class: org.telegram.ui.in
@@ -9907,22 +9907,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         org.telegram.ui.Cells.z8 z8Var6 = new org.telegram.ui.Cells.z8(12, context2, rnVar2.resourceProvider);
                         rnVar2.h0 = z8Var6;
                         z8Var6.setText(org.telegram.messenger.id.L0(z19 ? 2131751980 : rnVar2.I0 ? 2131751978 : 2131751975));
-                        hm0Var3.addView(rnVar2.f0, c8.ha.o(-1, -2));
-                        hm0Var3.addView(rnVar2.h0, c8.ha.o(-1, -2));
+                        gm0Var3.addView(rnVar2.f0, c8.ha.o(-1, -2));
+                        gm0Var3.addView(rnVar2.h0, c8.ha.o(-1, -2));
                     }
                 } else {
-                    hm0Var3 = hm0Var2;
+                    gm0Var3 = gm0Var2;
                     rnVar2 = rnVar;
                 }
                 chat2 = rnVar2.w0;
                 if (chat2 != null && chat2.creator) {
                     FrameLayout frameLayout3 = new FrameLayout(context2);
                     rnVar2.c0 = frameLayout3;
-                    hm0Var3.addView(frameLayout3, c8.ha.o(-1, -2));
+                    gm0Var3.addView(frameLayout3, c8.ha.o(-1, -2));
                     org.telegram.ui.Cells.w9 w9Var = new org.telegram.ui.Cells.w9(context2);
                     rnVar2.d0 = w9Var;
-                    org.telegram.ui.ActionBar.s6.U(w9Var.getTextView(), org.telegram.ui.ActionBar.l6.p7, null);
-                    org.telegram.ui.ActionBar.s6.R(rnVar2.d0, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+                    org.telegram.ui.ActionBar.t6.U(w9Var.getTextView(), org.telegram.ui.ActionBar.m6.p7, null);
+                    org.telegram.ui.ActionBar.t6.R(rnVar2.d0, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
                     if (rnVar2.C0 == null) {
                         rnVar2.d0.b(org.telegram.messenger.id.L0(2131751566), false);
                     } else if (rnVar2.I0) {
@@ -9948,9 +9948,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle = new Bundle();
                                     bundle.putLong("chat_id", rnVar3.v0);
                                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                    qq qqVar = new qq(bundle);
-                                    qqVar.C0(rnVar3.x0);
-                                    rnVar3.presentFragment(qqVar);
+                                    rq rqVar = new rq(bundle);
+                                    rqVar.C0(rnVar3.x0);
+                                    rnVar3.presentFragment(rqVar);
                                     break;
                                 case 1:
                                     rn rnVar4 = this.b;
@@ -10000,9 +10000,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", rnVar5.v0);
                                     bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                                    qq qqVar2 = new qq(bundle2);
-                                    qqVar2.C0(rnVar5.x0);
-                                    rnVar5.presentFragment(qqVar2);
+                                    rq rqVar2 = new rq(bundle2);
+                                    rqVar2.C0(rnVar5.x0);
+                                    rnVar5.presentFragment(rqVar2);
                                     break;
                                 case 3:
                                     rn rnVar6 = this.b;
@@ -10019,7 +10019,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     rn rnVar9 = this.b;
-                                    rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                                    rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                                     break;
                                 case 7:
                                     rn rnVar10 = this.b;
@@ -10049,22 +10049,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 14:
                                     rn rnVar12 = this.b;
-                                    org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                                    org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                                     break;
                                 case 15:
                                     rn rnVar13 = this.b;
                                     if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                        ra0 ra0Var = new ra0(4);
-                                        ra0Var.l0 = -rnVar13.v0;
+                                        sa0 sa0Var = new sa0(4);
+                                        sa0Var.l0 = -rnVar13.v0;
                                         TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                         if (chatFull6 != null) {
                                             TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                             if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                                ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                                sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                             }
                                         }
-                                        ra0Var.G0 = new mn(rnVar13, 6);
-                                        rnVar13.presentFragment(ra0Var);
+                                        sa0Var.G0 = new mn(rnVar13, 6);
+                                        rnVar13.presentFragment(sa0Var);
                                         break;
                                     }
                                     break;
@@ -10116,19 +10116,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     rn rnVar16 = this.b;
-                                    js0 js0Var = new js0(rnVar16.v0);
-                                    js0Var.s = new mn(rnVar16, 4);
-                                    rnVar16.presentFragment(js0Var);
+                                    ks0 ks0Var = new ks0(rnVar16.v0);
+                                    ks0Var.s = new mn(rnVar16, 4);
+                                    rnVar16.presentFragment(ks0Var);
                                     break;
                                 case 19:
                                     rn.e0(this.b);
                                     break;
                                 case 20:
                                     rn rnVar17 = this.b;
-                                    l40 l40Var = new l40(-rnVar17.w0.id);
-                                    l40Var.c = rnVar17.L0;
-                                    l40Var.l0 = rnVar17;
-                                    rnVar17.presentFragment(l40Var);
+                                    m40 m40Var = new m40(-rnVar17.w0.id);
+                                    m40Var.c = rnVar17.L0;
+                                    m40Var.l0 = rnVar17;
+                                    rnVar17.presentFragment(m40Var);
                                     break;
                                 case 21:
                                     rn rnVar18 = this.b;
@@ -10136,16 +10136,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                                     Bundle bundle4 = new Bundle();
                                     bundle4.putLong("chat_id", rnVar18.v0);
                                     bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                                    qq qqVar3 = new qq(bundle4);
-                                    qqVar3.C0(rnVar18.x0);
-                                    rnVar18.presentFragment(qqVar3);
+                                    rq rqVar3 = new rq(bundle4);
+                                    rqVar3.C0(rnVar18.x0);
+                                    rnVar18.presentFragment(rqVar3);
                                     break;
                                 case 22:
                                     rn rnVar19 = this.b;
-                                    ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                                    ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                                     TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                                    ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                                    rnVar19.presentFragment(ef0Var);
+                                    ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                                    rnVar19.presentFragment(ff0Var);
                                     break;
                                 case 23:
                                     rn rnVar20 = this.b;
@@ -10193,16 +10193,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             }
                         }
                     });
-                    hm0Var3.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
+                    gm0Var3.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
                 }
                 UndoView undoView = new UndoView(context2);
                 rnVar2.c = undoView;
                 xcVar.addView(undoView, c8.ha.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
-                org.telegram.ui.Components.lt ltVar6 = rnVar2.w;
+                org.telegram.ui.Components.kt ktVar6 = rnVar2.w;
                 TLRPC.User user3 = rnVar2.C0;
-                ltVar6.setText(org.telegram.messenger.i6.l(user3 == null ? org.telegram.messenger.g5.p(user3) : rnVar2.w0.title, rnVar2.w.getEditText().getPaint().getFontMetricsInt(), true));
-                org.telegram.ui.Components.lt ltVar7 = rnVar2.w;
-                ltVar7.setSelection(ltVar7.n());
+                ktVar6.setText(org.telegram.messenger.i6.l(user3 == null ? org.telegram.messenger.g5.p(user3) : rnVar2.w0.title, rnVar2.w.getEditText().getPaint().getFontMetricsInt(), true));
+                org.telegram.ui.Components.kt ktVar7 = rnVar2.w;
+                ktVar7.setSelection(ktVar7.n());
                 chatFull = rnVar2.x0;
                 if (chatFull == null) {
                     rnVar2.E.setText(chatFull.about);
@@ -10220,17 +10220,17 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         chat = rnVar.w0;
         if (chat == null) {
         }
-        hm0Var3 = hm0Var2;
+        gm0Var3 = gm0Var2;
         rnVar2 = rnVar;
         chat2 = rnVar2.w0;
         if (chat2 != null) {
             FrameLayout frameLayout32 = new FrameLayout(context2);
             rnVar2.c0 = frameLayout32;
-            hm0Var3.addView(frameLayout32, c8.ha.o(-1, -2));
+            gm0Var3.addView(frameLayout32, c8.ha.o(-1, -2));
             org.telegram.ui.Cells.w9 w9Var2 = new org.telegram.ui.Cells.w9(context2);
             rnVar2.d0 = w9Var2;
-            org.telegram.ui.ActionBar.s6.U(w9Var2.getTextView(), org.telegram.ui.ActionBar.l6.p7, null);
-            org.telegram.ui.ActionBar.s6.R(rnVar2.d0, org.telegram.ui.ActionBar.l6.N0(false), null, org.telegram.ui.ActionBar.s6.M(org.telegram.ui.ActionBar.l6.i6));
+            org.telegram.ui.ActionBar.t6.U(w9Var2.getTextView(), org.telegram.ui.ActionBar.m6.p7, null);
+            org.telegram.ui.ActionBar.t6.R(rnVar2.d0, org.telegram.ui.ActionBar.m6.N0(false), null, org.telegram.ui.ActionBar.t6.M(org.telegram.ui.ActionBar.m6.i6));
             if (rnVar2.C0 == null) {
             }
             rnVar2.c0.addView(rnVar2.d0, c8.ha.c(-2.0f, -1));
@@ -10251,9 +10251,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", rnVar3.v0);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                            qq qqVar = new qq(bundle);
-                            qqVar.C0(rnVar3.x0);
-                            rnVar3.presentFragment(qqVar);
+                            rq rqVar = new rq(bundle);
+                            rqVar.C0(rnVar3.x0);
+                            rnVar3.presentFragment(rqVar);
                             break;
                         case 1:
                             rn rnVar4 = this.b;
@@ -10303,9 +10303,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle2 = new Bundle();
                             bundle2.putLong("chat_id", rnVar5.v0);
                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 2);
-                            qq qqVar2 = new qq(bundle2);
-                            qqVar2.C0(rnVar5.x0);
-                            rnVar5.presentFragment(qqVar2);
+                            rq rqVar2 = new rq(bundle2);
+                            rqVar2.C0(rnVar5.x0);
+                            rnVar5.presentFragment(rqVar2);
                             break;
                         case 3:
                             rn rnVar6 = this.b;
@@ -10322,7 +10322,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 6:
                             rn rnVar9 = this.b;
-                            rnVar9.presentFragment(d51.g0(rnVar9.w0, false));
+                            rnVar9.presentFragment(e51.g0(rnVar9.w0, false));
                             break;
                         case 7:
                             rn rnVar10 = this.b;
@@ -10352,22 +10352,22 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 14:
                             rn rnVar12 = this.b;
-                            org.telegram.ui.Components.v4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
+                            org.telegram.ui.Components.u4.r(rnVar12, false, rnVar12.w0, null, false, true, true, false, new mn(rnVar12, 7));
                             break;
                         case 15:
                             rn rnVar13 = this.b;
                             if (org.telegram.messenger.g0.J1(rnVar13)) {
-                                ra0 ra0Var = new ra0(4);
-                                ra0Var.l0 = -rnVar13.v0;
+                                sa0 sa0Var = new sa0(4);
+                                sa0Var.l0 = -rnVar13.v0;
                                 TLRPC.ChatFull chatFull6 = rnVar13.x0;
                                 if (chatFull6 != null) {
                                     TLRPC.ChannelLocation channelLocation = chatFull6.location;
                                     if (channelLocation instanceof TLRPC.TL_channelLocation) {
-                                        ra0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
+                                        sa0Var.C0 = (TLRPC.TL_channelLocation) channelLocation;
                                     }
                                 }
-                                ra0Var.G0 = new mn(rnVar13, 6);
-                                rnVar13.presentFragment(ra0Var);
+                                sa0Var.G0 = new mn(rnVar13, 6);
+                                rnVar13.presentFragment(sa0Var);
                                 break;
                             }
                             break;
@@ -10419,19 +10419,19 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             break;
                         case 18:
                             rn rnVar16 = this.b;
-                            js0 js0Var = new js0(rnVar16.v0);
-                            js0Var.s = new mn(rnVar16, 4);
-                            rnVar16.presentFragment(js0Var);
+                            ks0 ks0Var = new ks0(rnVar16.v0);
+                            ks0Var.s = new mn(rnVar16, 4);
+                            rnVar16.presentFragment(ks0Var);
                             break;
                         case 19:
                             rn.e0(this.b);
                             break;
                         case 20:
                             rn rnVar17 = this.b;
-                            l40 l40Var = new l40(-rnVar17.w0.id);
-                            l40Var.c = rnVar17.L0;
-                            l40Var.l0 = rnVar17;
-                            rnVar17.presentFragment(l40Var);
+                            m40 m40Var = new m40(-rnVar17.w0.id);
+                            m40Var.c = rnVar17.L0;
+                            m40Var.l0 = rnVar17;
+                            rnVar17.presentFragment(m40Var);
                             break;
                         case 21:
                             rn rnVar18 = this.b;
@@ -10439,16 +10439,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             Bundle bundle4 = new Bundle();
                             bundle4.putLong("chat_id", rnVar18.v0);
                             bundle4.putInt(TeXSymbolParser.TYPE_ATTR, ((rnVar18.I0 || rnVar18.w0.gigagroup) && !org.telegram.messenger.t3.Y(rnVar18.w0)) ? 0 : 3);
-                            qq qqVar3 = new qq(bundle4);
-                            qqVar3.C0(rnVar18.x0);
-                            rnVar18.presentFragment(qqVar3);
+                            rq rqVar3 = new rq(bundle4);
+                            rqVar3.C0(rnVar18.x0);
+                            rnVar18.presentFragment(rqVar3);
                             break;
                         case 22:
                             rn rnVar19 = this.b;
-                            ef0 ef0Var = new ef0(rnVar19.v0, 0, 0L);
+                            ff0 ff0Var = new ff0(rnVar19.v0, 0, 0L);
                             TLRPC.ChatFull chatFull8 = rnVar19.x0;
-                            ef0Var.m0(chatFull8, chatFull8.exported_invite);
-                            rnVar19.presentFragment(ef0Var);
+                            ff0Var.m0(chatFull8, chatFull8.exported_invite);
+                            rnVar19.presentFragment(ff0Var);
                             break;
                         case 23:
                             rn rnVar20 = this.b;
@@ -10496,16 +10496,16 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     }
                 }
             });
-            hm0Var3.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
+            gm0Var3.addView(new org.telegram.ui.Cells.y6(context2), c8.ha.o(-1, -2));
         }
         UndoView undoView2 = new UndoView(context2);
         rnVar2.c = undoView2;
         xcVar.addView(undoView2, c8.ha.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
-        org.telegram.ui.Components.lt ltVar62 = rnVar2.w;
+        org.telegram.ui.Components.kt ktVar62 = rnVar2.w;
         TLRPC.User user32 = rnVar2.C0;
-        ltVar62.setText(org.telegram.messenger.i6.l(user32 == null ? org.telegram.messenger.g5.p(user32) : rnVar2.w0.title, rnVar2.w.getEditText().getPaint().getFontMetricsInt(), true));
-        org.telegram.ui.Components.lt ltVar72 = rnVar2.w;
-        ltVar72.setSelection(ltVar72.n());
+        ktVar62.setText(org.telegram.messenger.i6.l(user32 == null ? org.telegram.messenger.g5.p(user32) : rnVar2.w0.title, rnVar2.w.getEditText().getPaint().getFontMetricsInt(), true));
+        org.telegram.ui.Components.kt ktVar72 = rnVar2.w;
+        ktVar72.setSelection(ktVar72.n());
         chatFull = rnVar2.x0;
         if (chatFull == null) {
         }
@@ -10616,8 +10616,8 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             if ((tL_chatAdminRights == null || tL_chatAdminRights.equals(chat.admin_rights)) && (((tL_chatBannedRights = this.z0) == null || tL_chatBannedRights.equals(chat.banned_rights)) && ((tL_chatBannedRights2 = this.A0) == null || tL_chatBannedRights2.equals(chat.default_banned_rights)))) {
                 return;
             }
-            org.telegram.ui.ActionBar.q4 q4Var = this.parentLayout;
-            if (q4Var == null || q4Var.getLastFragment() != this) {
+            org.telegram.ui.ActionBar.r4 r4Var = this.parentLayout;
+            if (r4Var == null || r4Var.getLastFragment() != this) {
                 removeSelfFromStack();
                 return;
             } else {
@@ -10651,8 +10651,8 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     return;
                 }
                 if (i7 == org.telegram.messenger.qs.y1 && (-this.v0) == ((Long) objArr[0]).longValue()) {
-                    org.telegram.ui.ActionBar.q4 q4Var2 = this.parentLayout;
-                    if (q4Var2 == null || q4Var2.getLastFragment() != this) {
+                    org.telegram.ui.ActionBar.r4 r4Var2 = this.parentLayout;
+                    if (r4Var2 == null || r4Var2.getLastFragment() != this) {
                         removeSelfFromStack();
                         return;
                     } else {
@@ -10723,23 +10723,23 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         return dialog != this.s.c && super.dismissDialogOnPause(dialog);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.j30
-    public final /* synthetic */ yq0 getCloseIntoObject() {
+    @Override // org.telegram.ui.Components.i30
+    public final /* synthetic */ zq0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final String getInitialSearchString() {
         return this.w.getText().toString();
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.Components.im0 getScrollViewForSimpleGlass() {
+    public final org.telegram.ui.Components.hm0 getScrollViewForSimpleGlass() {
         return this.y;
     }
 
@@ -10747,42 +10747,42 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         qn qnVar = this.b0;
-        int i7 = org.telegram.ui.ActionBar.l6.i6;
-        arrayList.add(new org.telegram.ui.ActionBar.u6(qnVar, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.b0, 4, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, org.telegram.ui.ActionBar.l6.u6));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.b0, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, org.telegram.ui.ActionBar.l6.v6));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.T, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.W, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.V, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
+        int i7 = org.telegram.ui.ActionBar.m6.i6;
+        arrayList.add(new org.telegram.ui.ActionBar.v6(qnVar, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.b0, 4, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.u6));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.b0, 0, new Class[]{org.telegram.ui.Cells.m8.class}, new String[]{"imageView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.v6));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.T, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.W, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.V, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
         org.telegram.ui.Cells.m8 m8Var = this.U;
         if (m8Var != null) {
-            arrayList.add(new org.telegram.ui.ActionBar.u6(m8Var, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
+            arrayList.add(new org.telegram.ui.ActionBar.v6(m8Var, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
         }
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.X, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.Y, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.I, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.N, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.H, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.w, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, org.telegram.ui.ActionBar.l6.k6));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.w, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, org.telegram.ui.ActionBar.l6.l6));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.X, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.Y, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.I, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.N, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.H, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.w, 32, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.k6));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.w, 65568, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.l6));
         LinearLayout linearLayout = this.D;
-        int i10 = org.telegram.ui.ActionBar.l6.d6;
-        arrayList.add(new org.telegram.ui.ActionBar.u6(linearLayout, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.F, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.c0, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.u6((View) null, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.R, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.d0, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.d0, 4, new Class[]{org.telegram.ui.Cells.w9.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, org.telegram.ui.ActionBar.l6.p7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6((View) null, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
-        arrayList.add(new org.telegram.ui.ActionBar.u6(this.O, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
+        int i10 = org.telegram.ui.ActionBar.m6.d6;
+        arrayList.add(new org.telegram.ui.ActionBar.v6(linearLayout, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.F, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.c0, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.v6((View) null, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.R, 1, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.d0, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.d0, 4, new Class[]{org.telegram.ui.Cells.w9.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, org.telegram.ui.ActionBar.m6.p7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6((View) null, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
+        arrayList.add(new org.telegram.ui.ActionBar.v6(this.O, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
         org.telegram.ui.Cells.m8 m8Var2 = this.K;
         if (m8Var2 != null) {
-            arrayList.add(new org.telegram.ui.ActionBar.u6(m8Var2, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
+            arrayList.add(new org.telegram.ui.ActionBar.v6(m8Var2, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
         }
         org.telegram.ui.Cells.m8 m8Var3 = this.a0;
         if (m8Var3 != null) {
-            arrayList.add(new org.telegram.ui.ActionBar.u6(m8Var3, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.t6) null, i7));
+            arrayList.add(new org.telegram.ui.ActionBar.v6(m8Var3, TLObject.FLAG_12, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.u6) null, i7));
         }
         return arrayList;
     }
@@ -10793,7 +10793,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     }
 
     public final boolean j0(boolean z9) {
-        org.telegram.ui.Components.lt ltVar;
+        org.telegram.ui.Components.kt ktVar;
         EditTextBoldCursor editTextBoldCursor;
         String str;
         EditTextBoldCursor editTextBoldCursor2;
@@ -10806,8 +10806,8 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             if (userFull != null && (str2 = userFull.about) != null) {
                 str3 = str2;
             }
-            org.telegram.ui.Components.lt ltVar2 = this.w;
-            if ((ltVar2 != null && !this.C0.first_name.equals(ltVar2.getText().toString())) || ((editTextBoldCursor2 = this.E) != null && !str3.equals(editTextBoldCursor2.getText().toString()))) {
+            org.telegram.ui.Components.kt ktVar2 = this.w;
+            if ((ktVar2 != null && !this.C0.first_name.equals(ktVar2.getText().toString())) || ((editTextBoldCursor2 = this.E) != null && !str3.equals(editTextBoldCursor2.getText().toString()))) {
                 if (z9) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
                     String M0 = org.telegram.messenger.id.M0(2131743726, null);
@@ -10827,7 +10827,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         if (chatFull != null && (str = chatFull.about) != null) {
             str3 = str;
         }
-        if ((chatFull != null && org.telegram.messenger.t3.T(this.w0) && this.x0.hidden_prehistory != this.J0) || (((ltVar = this.w) != null && !this.w0.title.equals(ltVar.getText().toString())) || (((editTextBoldCursor = this.E) != null && !str3.equals(editTextBoldCursor.getText().toString())) || this.E0 != this.w0.forum))) {
+        if ((chatFull != null && org.telegram.messenger.t3.T(this.w0) && this.x0.hidden_prehistory != this.J0) || (((ktVar = this.w) != null && !this.w0.title.equals(ktVar.getText().toString())) || (((editTextBoldCursor = this.E) != null && !str3.equals(editTextBoldCursor.getText().toString())) || this.E0 != this.w0.forum))) {
             if (z9) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
                 String M02 = org.telegram.messenger.id.M0(2131743726, "UserRestrictionsApplyChanges");
@@ -10882,13 +10882,13 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     }
 
     public final void o0() {
-        org.telegram.ui.Components.lt ltVar;
+        org.telegram.ui.Components.kt ktVar;
         String str;
         String str2;
-        if (this.N0 || (ltVar = this.w) == null) {
+        if (this.N0 || (ktVar = this.w) == null) {
             return;
         }
-        if (ltVar.a.length() == 0) {
+        if (ktVar.a.length() == 0) {
             Vibrator vibrator = (Vibrator) getParentActivity().getSystemService("vibrator");
             if (vibrator != null) {
                 vibrator.vibrate(200L);
@@ -10977,9 +10977,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         ((ActionBarLayout) getParentLayout()).b0(i10);
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.v0);
-                        org.telegram.ui.ActionBar.q4 parentLayout = getParentLayout();
-                        HashSet hashSet = y91.q1;
-                        ((ActionBarLayout) parentLayout).c(i10, y91.I0(getMessagesController(), getMessagesStorage(), bundle));
+                        org.telegram.ui.ActionBar.r4 parentLayout = getParentLayout();
+                        HashSet hashSet = z91.q1;
+                        ((ActionBarLayout) parentLayout).c(i10, z91.I0(getMessagesController(), getMessagesStorage(), bundle));
                     }
                 }
             }
@@ -10997,14 +10997,14 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
 
     @Override // org.telegram.ui.ActionBar.f2
     public final boolean onBackPressed(boolean z9) {
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar == null || !ltVar.e) {
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar == null || !ktVar.e) {
             return j0(z9);
         }
         if (!z9) {
             return false;
         }
-        ltVar.k(true);
+        ktVar.k(true);
         return false;
     }
 
@@ -11060,12 +11060,12 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 return false;
             }
             chat = this.w0;
-            org.telegram.ui.Components.w8 w8Var = this.r;
+            org.telegram.ui.Components.v8 v8Var = this.r;
             if (chat == null) {
             }
-            org.telegram.ui.Components.k30 k30Var = this.s;
-            k30Var.a = this;
-            k30Var.b = this;
+            org.telegram.ui.Components.j30 j30Var = this.s;
+            j30Var.a = this;
+            j30Var.b = this;
             getNotificationCenter().c(this, org.telegram.messenger.qs.r);
             getNotificationCenter().c(this, org.telegram.messenger.qs.y1);
             getNotificationCenter().c(this, org.telegram.messenger.qs.b1);
@@ -11088,12 +11088,12 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             return false;
         }
         chat = this.w0;
-        org.telegram.ui.Components.w8 w8Var2 = this.r;
+        org.telegram.ui.Components.v8 v8Var2 = this.r;
         if (chat == null) {
             this.y0 = TLRPC.TL_chatAdminRights.clone(chat.admin_rights);
             this.z0 = TLRPC.TL_chatBannedRights.clone(this.w0.banned_rights);
             this.A0 = TLRPC.TL_chatBannedRights.clone(this.w0.default_banned_rights);
-            w8Var2.k(5L, this.w0.title, null, null);
+            v8Var2.k(5L, this.w0.title, null, null);
             this.I0 = org.telegram.messenger.t3.T(this.w0) && !this.w0.megagroup;
             TLRPC.Chat chat2 = this.w0;
             boolean z10 = chat2.forum;
@@ -11120,7 +11120,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             getNotificationCenter().c(this, org.telegram.messenger.qs.X4);
             getNotificationCenter().c(this, org.telegram.messenger.qs.L3);
         } else {
-            w8Var2.k(5L, this.C0.first_name, null, null);
+            v8Var2.k(5L, this.C0.first_name, null, null);
             this.I0 = false;
             this.E0 = false;
             this.G0 = false;
@@ -11131,9 +11131,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 getNotificationCenter().c(this, org.telegram.messenger.qs.C3);
             }
         }
-        org.telegram.ui.Components.k30 k30Var2 = this.s;
-        k30Var2.a = this;
-        k30Var2.b = this;
+        org.telegram.ui.Components.j30 j30Var2 = this.s;
+        j30Var2.a = this;
+        j30Var2.b = this;
         getNotificationCenter().c(this, org.telegram.messenger.qs.r);
         getNotificationCenter().c(this, org.telegram.messenger.qs.y1);
         getNotificationCenter().c(this, org.telegram.messenger.qs.b1);
@@ -11146,9 +11146,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.f2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        org.telegram.ui.Components.k30 k30Var = this.s;
-        if (k30Var != null) {
-            k30Var.d();
+        org.telegram.ui.Components.j30 j30Var = this.s;
+        if (j30Var != null) {
+            j30Var.d();
         }
         if (this.w0 != null) {
             getNotificationCenter().n(this, org.telegram.messenger.qs.T);
@@ -11164,9 +11164,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         getNotificationCenter().n(this, org.telegram.messenger.qs.r);
         getNotificationCenter().n(this, org.telegram.messenger.qs.y1);
         getNotificationCenter().n(this, org.telegram.messenger.qs.b1);
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar != null) {
-            ltVar.o();
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar != null) {
+            ktVar.o();
         }
     }
 
@@ -11187,11 +11187,11 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ((org.telegram.ui.Components.i5) obj).o(null);
+            ((org.telegram.ui.Components.h5) obj).o(null);
         }
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar != null) {
-            ltVar.r();
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar != null) {
+            ktVar.r();
         }
         UndoView undoView = this.c;
         if (undoView != null) {
@@ -11208,9 +11208,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.f2
     public final void onResume() {
         super.onResume();
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar != null) {
-            ltVar.s();
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar != null) {
+            ktVar.s();
             this.w.getEditText().requestFocus();
         }
         t0();
@@ -11225,7 +11225,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
             super.onThemeColorsChanged();
             EditTextBoldCursor editTextBoldCursor = this.E;
             if (editTextBoldCursor != null) {
-                org.telegram.ui.ActionBar.s6.l(editTextBoldCursor, 30, org.telegram.ui.ActionBar.l6.G6, null);
+                org.telegram.ui.ActionBar.t6.l(editTextBoldCursor, 30, org.telegram.ui.ActionBar.m6.G6, null);
             }
             di.d4 d4Var = this.e;
             if (d4Var != null) {
@@ -11253,14 +11253,14 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         }
         this.C0 = a22;
         this.w0 = M0;
-        org.telegram.ui.Components.w8 w8Var = this.r;
+        org.telegram.ui.Components.v8 v8Var = this.r;
         if (a22 == null ? M0.photo == null : a22.photo == null) {
-            this.e.setImageDrawable(w8Var);
+            this.e.setImageDrawable(v8Var);
         } else {
             TLRPC.Chat chat = a22 != null ? a22 : M0;
             this.u0 = a22 != null ? a22.photo.photo_small : M0.photo.photo_small;
             org.telegram.messenger.hc m10 = org.telegram.messenger.hc.m(this.currentAccount, 1, chat);
-            this.e.e(chat, w8Var);
+            this.e.e(chat, v8Var);
             if (m10 != null) {
                 z9 = true;
                 if (this.b0 != null) {
@@ -11270,7 +11270,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         this.b0.o(R.drawable.msg_addphoto, org.telegram.messenger.id.M0(2131752212, "ChatSetPhotoOrVideo"), true);
                     }
                     if (this.R0 == null) {
-                        this.R0 = new org.telegram.ui.Components.ah0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
+                        this.R0 = new org.telegram.ui.Components.zg0(R.raw.camera_outline, org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f), false, null);
                     }
                     this.b0.e.setTranslationX(-org.telegram.messenger.g0.L(8.0f));
                     this.b0.e.setAnimation(this.R0);
@@ -11296,7 +11296,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     }
 
     public final void q0(TLRPC.ChatFull chatFull) {
-        org.telegram.ui.Components.i5 m10;
+        org.telegram.ui.Components.h5 m10;
         this.x0 = chatFull;
         if (chatFull != null) {
             if (this.w0 == null) {
@@ -11322,10 +11322,10 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         if (reaction2 instanceof TLRPC.TL_reactionEmoji) {
                             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ui.b0(org.telegram.messenger.p10.s0).r.get(((TLRPC.TL_reactionEmoji) reaction2).emoticon);
                             if (tL_availableReaction != null) {
-                                m10 = org.telegram.ui.Components.i5.l(org.telegram.messenger.p10.s0, org.telegram.ui.Components.i5.f(), tL_availableReaction.activate_animation);
+                                m10 = org.telegram.ui.Components.h5.l(org.telegram.messenger.p10.s0, org.telegram.ui.Components.h5.f(), tL_availableReaction.activate_animation);
                             }
                         } else {
-                            m10 = reaction2 instanceof TLRPC.TL_reactionCustomEmoji ? org.telegram.ui.Components.i5.m(org.telegram.messenger.p10.s0, ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id, null, org.telegram.ui.Components.i5.f()) : null;
+                            m10 = reaction2 instanceof TLRPC.TL_reactionCustomEmoji ? org.telegram.ui.Components.h5.m(org.telegram.messenger.p10.s0, ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id, null, org.telegram.ui.Components.h5.f()) : null;
                         }
                         if (m10 != null) {
                             arrayList2.add(m10);
@@ -11341,7 +11341,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                         i10++;
                         TLRPC.TL_availableReaction tL_availableReaction2 = (TLRPC.TL_availableReaction) obj;
                         if (tL_availableReaction2 != null) {
-                            org.telegram.ui.Components.i5 l10 = org.telegram.ui.Components.i5.l(org.telegram.messenger.p10.s0, org.telegram.ui.Components.i5.f(), tL_availableReaction2.activate_animation);
+                            org.telegram.ui.Components.h5 l10 = org.telegram.ui.Components.h5.l(org.telegram.messenger.p10.s0, org.telegram.ui.Components.h5.f(), tL_availableReaction2.activate_animation);
                             arrayList2.add(l10);
                             l10.b(null);
                         }
@@ -11388,9 +11388,9 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
 
     @Override // org.telegram.ui.ActionBar.f2
     public final void restoreSelfArgs(Bundle bundle) {
-        org.telegram.ui.Components.k30 k30Var = this.s;
-        if (k30Var != null) {
-            k30Var.f = bundle.getString("path");
+        org.telegram.ui.Components.j30 j30Var = this.s;
+        if (j30Var != null) {
+            j30Var.f = bundle.getString("path");
         }
     }
 
@@ -11439,13 +11439,13 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     @Override // org.telegram.ui.ActionBar.f2
     public final void saveSelfArgs(Bundle bundle) {
         String str;
-        org.telegram.ui.Components.k30 k30Var = this.s;
-        if (k30Var != null && (str = k30Var.f) != null) {
+        org.telegram.ui.Components.j30 j30Var = this.s;
+        if (j30Var != null && (str = j30Var.f) != null) {
             bundle.putString("path", str);
         }
-        org.telegram.ui.Components.lt ltVar = this.w;
-        if (ltVar != null) {
-            String obj = ltVar.getText().toString();
+        org.telegram.ui.Components.kt ktVar = this.w;
+        if (ktVar != null) {
+            String obj = ktVar.getText().toString();
             if (obj.length() != 0) {
                 bundle.putString("nameTextView", obj);
             }
@@ -11456,52 +11456,52 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         org.telegram.ui.Cells.m8 m8Var;
         org.telegram.ui.Cells.m8 m8Var2;
         int i7;
-        em0 em0Var;
+        fm0 fm0Var;
         int w02;
         ArrayList<Integer> arrayList;
-        pl0 pl0Var = this.L;
-        if (pl0Var != null) {
+        ql0 ql0Var = this.L;
+        if (ql0Var != null) {
             TLRPC.Chat chat = this.w0;
             org.telegram.ui.Cells.m8 m8Var3 = this.N;
             boolean z9 = (m8Var3 != null && m8Var3.getVisibility() == 0) || ((m8Var = this.Q) != null && m8Var.getVisibility() == 0) || ((org.telegram.messenger.t3.n0(this.w0) && org.telegram.messenger.t3.N(this.w0)) || ((m8Var2 = this.M) != null && m8Var2.getVisibility() == 0));
-            Paint paint = pl0Var.n;
-            int i10 = pl0Var.a;
-            org.telegram.ui.ActionBar.g6 g6Var = pl0Var.d;
+            Paint paint = ql0Var.n;
+            int i10 = ql0Var.a;
+            org.telegram.ui.ActionBar.h6 h6Var = ql0Var.d;
             if (chat == null) {
                 return;
             }
-            pl0Var.w = z9;
-            pl0Var.r = new org.telegram.ui.Components.ny0(org.telegram.messenger.i6.m(chat.title, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
-            em0 em0Var2 = pl0Var.x;
-            if (em0Var2 != null) {
-                em0Var2.e(null);
+            ql0Var.w = z9;
+            ql0Var.r = new org.telegram.ui.Components.my0(org.telegram.messenger.i6.m(chat.title, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0), 13.0f, org.telegram.messenger.g0.o());
+            fm0 fm0Var2 = ql0Var.x;
+            if (fm0Var2 != null) {
+                fm0Var2.e(null);
             }
             TLRPC.EmojiStatus emojiStatus = chat.emoji_status;
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
-                int i11 = em0.j;
+                int i11 = fm0.j;
                 int i12 = tL_emojiStatusCollectible.center_color | (-16777216);
                 i7 = -16777216;
-                pl0Var.x = new em0(i12, i12, i12, tL_emojiStatusCollectible.document_id);
+                ql0Var.x = new fm0(i12, i12, i12, tL_emojiStatusCollectible.document_id);
             } else {
                 i7 = -16777216;
                 if (org.telegram.messenger.t3.I(chat) >= 0) {
-                    em0Var = em0.c(i10, org.telegram.messenger.t3.I(chat));
-                    em0Var.a = org.telegram.messenger.g0.L(11.0f);
-                    em0Var.d();
+                    fm0Var = fm0.c(i10, org.telegram.messenger.t3.I(chat));
+                    fm0Var.a = org.telegram.messenger.g0.L(11.0f);
+                    fm0Var.d();
                 } else {
-                    em0Var = null;
+                    fm0Var = null;
                 }
-                pl0Var.x = em0Var;
+                ql0Var.x = fm0Var;
             }
-            em0 em0Var3 = pl0Var.x;
-            if (em0Var3 != null) {
-                em0Var3.e(pl0Var);
+            fm0 fm0Var3 = ql0Var.x;
+            if (fm0Var3 != null) {
+                fm0Var3.e(ql0Var);
             }
             TLRPC.PeerColor peerColor = chat.color;
             if (peerColor instanceof TLRPC.TL_peerColorCollectible) {
                 TLRPC.TL_peerColorCollectible tL_peerColorCollectible = (TLRPC.TL_peerColorCollectible) peerColor;
-                boolean a10 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.l6.I.q();
+                boolean a10 = h6Var != null ? h6Var.a() : org.telegram.ui.ActionBar.m6.I.q();
                 int i13 = (!a10 || (tL_peerColorCollectible.flags & 1) == 0) ? tL_peerColorCollectible.accent_color : tL_peerColorCollectible.dark_accent_color;
                 if (!a10 || (arrayList = tL_peerColorCollectible.dark_colors) == null) {
                     arrayList = tL_peerColorCollectible.colors;
@@ -11509,39 +11509,39 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                 int intValue = arrayList.get(0).intValue() | i7;
                 int intValue2 = arrayList.size() >= 2 ? arrayList.get(1).intValue() | i7 : intValue;
                 int intValue3 = arrayList.size() >= 3 ? arrayList.get(2).intValue() | i7 : intValue;
-                pl0Var.r.n(i13);
-                paint.setColor(org.telegram.ui.ActionBar.l6.r1(0.1f, i13));
-                em0 em0Var4 = new em0(intValue, intValue2, intValue3, tL_peerColorCollectible.gift_emoji_id);
-                em0Var4.a = org.telegram.messenger.g0.L(11.0f);
-                em0Var4.d();
-                pl0Var.y = em0Var4;
-                em0Var4.e(pl0Var);
+                ql0Var.r.n(i13);
+                paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.1f, i13));
+                fm0 fm0Var4 = new fm0(intValue, intValue2, intValue3, tL_peerColorCollectible.gift_emoji_id);
+                fm0Var4.a = org.telegram.messenger.g0.L(11.0f);
+                fm0Var4.d();
+                ql0Var.y = fm0Var4;
+                fm0Var4.e(ql0Var);
                 return;
             }
             int F = org.telegram.messenger.t3.F(chat);
             if (F < 7) {
-                int i14 = org.telegram.ui.ActionBar.l6.r8[F];
-                pl0Var.s = i14;
-                w02 = org.telegram.ui.ActionBar.l6.w0(i14, g6Var);
+                int i14 = org.telegram.ui.ActionBar.m6.r8[F];
+                ql0Var.s = i14;
+                w02 = org.telegram.ui.ActionBar.m6.w0(i14, h6Var);
             } else {
                 org.telegram.messenger.gp gpVar = org.telegram.messenger.qp.s1(org.telegram.messenger.p10.s0).q4;
                 org.telegram.messenger.fp d = gpVar == null ? null : gpVar.d(F);
                 if (d != null) {
-                    pl0Var.s = -1;
+                    ql0Var.s = -1;
                     w02 = d.f();
                 } else {
-                    int i15 = org.telegram.ui.ActionBar.l6.r8[0];
-                    pl0Var.s = i15;
-                    w02 = org.telegram.ui.ActionBar.l6.w0(i15, g6Var);
+                    int i15 = org.telegram.ui.ActionBar.m6.r8[0];
+                    ql0Var.s = i15;
+                    w02 = org.telegram.ui.ActionBar.m6.w0(i15, h6Var);
                 }
             }
-            pl0Var.r.n(w02);
-            paint.setColor(org.telegram.ui.ActionBar.l6.r1(0.1f, w02));
-            em0 a11 = em0.a(i10, F);
+            ql0Var.r.n(w02);
+            paint.setColor(org.telegram.ui.ActionBar.m6.r1(0.1f, w02));
+            fm0 a11 = fm0.a(i10, F);
             a11.a = org.telegram.messenger.g0.L(11.0f);
             a11.d();
-            pl0Var.y = a11;
-            a11.e(pl0Var);
+            ql0Var.y = a11;
+            a11.e(ql0Var);
         }
     }
 
@@ -11741,7 +11741,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     ofFloat.addUpdateListener(new bi.de(11, this, arrayList));
                     this.S0.addListener(new ai.g0(this, z13, arrayList, 7));
                     this.S0.setDuration(320L);
-                    this.S0.setInterpolator(org.telegram.ui.Components.xq.h);
+                    this.S0.setInterpolator(org.telegram.ui.Components.wq.h);
                     this.S0.start();
                 } else {
                     this.N.setAlpha(z13 ? 1.0f : 0.0f);
@@ -11792,7 +11792,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                             if (!tL_chatBannedRights.edit_rank) {
                                 i22++;
                             }
-                            i10 = qq.s0(tL_chatBannedRights) + i22;
+                            i10 = rq.s0(tL_chatBannedRights) + i22;
                             TLRPC.TL_chatBannedRights tL_chatBannedRights2 = this.w0.default_banned_rights;
                             if (!tL_chatBannedRights2.pin_messages) {
                                 i10++;
@@ -11927,8 +11927,8 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
     }
 
     public final void v0(boolean z9) {
-        yw ywVar;
-        uv uvVar;
+        zw zwVar;
+        vv vvVar;
         if (getParentLayout() == null) {
             return;
         }
@@ -11946,18 +11946,18 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
                     if (z9 && !this.G0) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.v0);
-                        ((ActionBarLayout) getParentLayout()).c(i7, new y91(bundle));
+                        ((ActionBarLayout) getParentLayout()).c(i7, new z91(bundle));
                         i7++;
                     }
                 }
-            } else if (z9 && this.G0 && (fragmentStack.get(i7) instanceof y91)) {
-                y91 y91Var = (y91) fragmentStack.get(i7);
-                if (y91Var.g() != null && y91Var.g().id == this.v0) {
-                    ((ActionBarLayout) getParentLayout()).d0(y91Var, false);
+            } else if (z9 && this.G0 && (fragmentStack.get(i7) instanceof z91)) {
+                z91 z91Var = (z91) fragmentStack.get(i7);
+                if (z91Var.g() != null && z91Var.g().id == this.v0) {
+                    ((ActionBarLayout) getParentLayout()).d0(z91Var, false);
                     i7--;
                 }
-            } else if (z9 && this.G0 && (fragmentStack.get(i7) instanceof yw) && (ywVar = (yw) fragmentStack.get(i7)) != null && (uvVar = ywVar.G3) != null && uvVar.c()) {
-                ywVar.G3.a();
+            } else if (z9 && this.G0 && (fragmentStack.get(i7) instanceof zw) && (zwVar = (zw) fragmentStack.get(i7)) != null && (vvVar = zwVar.G3) != null && vvVar.c()) {
+                zwVar.G3.a();
             }
             i7++;
         }
@@ -11985,7 +11985,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         this.k0.u(org.telegram.messenger.id.M0(2131753004, null), org.telegram.messenger.id.a0(null, null, 2131753003, Integer.valueOf(i7), Integer.valueOf(this.C0.usernames.size())), false, R.drawable.msg_link2, true);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final /* synthetic */ boolean x() {
         return false;
     }
@@ -12056,7 +12056,7 @@ public class rn extends org.telegram.ui.ActionBar.f2 implements org.telegram.ui.
         this.K.u(org.telegram.messenger.id.M0(2131747096, null), bi.dd.a1(false, org.telegram.messenger.id.a0(null, null, 2131747068, Long.valueOf(j3)), 0.66f, null), false, R.drawable.msg_markunread, true);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public final /* synthetic */ void T() {
     }
 }

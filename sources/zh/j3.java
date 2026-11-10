@@ -10,13 +10,13 @@ import org.telegram.messenger.p10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.y31;
-import org.telegram.ui.ll0;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.x31;
+import org.telegram.ui.ml0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j3 implements dj0, ni.p {
+public final /* synthetic */ class j3 implements cj0, ni.p {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -27,15 +27,15 @@ public final /* synthetic */ class j3 implements dj0, ni.p {
 
     @Override // ni.p
     public void b(j2.n nVar) {
-        org.telegram.messenger.g0.h3(new l2.z0((SpannableString) this.a, nVar, (org.telegram.ui.ActionBar.p) this.b, 11));
+        org.telegram.messenger.g0.h3(new l2.z0((SpannableString) this.a, nVar, (org.telegram.ui.ActionBar.c) this.b, 11));
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public void f(float f10, float f11, int i7, View view) {
         TL_stars.SavedStarGift savedStarGift;
         l3 l3Var = (l3) this.a;
         k3 k3Var = (k3) this.b;
-        y31 G = l3Var.a2.G(i7 - 1);
+        x31 G = l3Var.d2.G(i7 - 1);
         if (G == null) {
             return;
         }
@@ -43,7 +43,7 @@ public final /* synthetic */ class j3 implements dj0, ni.p {
         if (obj instanceof TL_stars.StarGift) {
             TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
             boolean z9 = G.r;
-            if (!TextUtils.isEmpty(starGift.gift_address) && l3Var.Z1) {
+            if (!TextUtils.isEmpty(starGift.gift_address) && l3Var.c2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, l3Var.getContext(), l3Var.I0);
                 String M0 = id.M0(2131749792, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
@@ -58,7 +58,7 @@ public final /* synthetic */ class j3 implements dj0, ni.p {
                 u1Var2.r(400L);
                 long e10 = p10.i(l3Var.a).e();
                 cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
-                ea.x(l3Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new ll0(l3Var, u1Var2, bVar, tL_starGiftUnique, e10));
+                ea.x(l3Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new ml0(l3Var, u1Var2, bVar, tL_starGiftUnique, e10));
                 return;
             }
             if (!z9) {
@@ -87,17 +87,17 @@ public final /* synthetic */ class j3 implements dj0, ni.p {
                     return;
                 }
             }
-            l3Var.X1.a(starGift);
+            l3Var.a2.a(starGift);
             l3Var.dismiss();
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

@@ -1,108 +1,116 @@
 package org.telegram.ui.Wallet;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.os.SystemClock;
+import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
+import android.text.Editable;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import java.util.ArrayList;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class j9 {
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final float e;
-    public final boolean f;
-    public final long g;
-    public final /* synthetic */ k9 h;
+public final class j9 extends EditTextBoldCursor {
+    public final org.telegram.ui.Components.v5 G1;
+    public final org.telegram.ui.Components.v5 H1;
+    public float I1;
+    public float J1;
+    public final /* synthetic */ n9 K1;
 
-    public j9(k9 k9Var, j9 j9Var, float f10, boolean z9) {
-        float z10;
-        this.h = k9Var;
-        this.f = z9;
-        this.b = f10;
-        this.a = j9Var != null ? j9Var.a : f10;
-        this.g = (j9Var == null || z9) ? SystemClock.uptimeMillis() : j9Var.g;
-        float f11 = 0.0f;
-        float a10 = (j9Var == null || !z9) ? 0.0f : j9Var.a();
-        if (j9Var != null) {
-            float f12 = j9Var.c;
-            f11 = com.google.android.recaptcha.internal.a.z(1.0f, f12, a10, f12);
-        }
-        this.c = f11;
-        if (j9Var == null) {
-            z10 = k9Var.O;
-        } else {
-            float f13 = j9Var.d;
-            z10 = com.google.android.recaptcha.internal.a.z(1.0f, f13, a10, f13);
-        }
-        this.d = z10;
-        this.e = j9Var == null ? (-org.telegram.messenger.g0.N(44.0f)) * 0.1f : j9Var.e * (1.0f - a10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j9(n9 n9Var, Context context) {
+        super(context);
+        this.K1 = n9Var;
+        this.G1 = new org.telegram.ui.Components.v5(this, 180L, wq.h);
+        this.H1 = new org.telegram.ui.Components.v5(this, 320L, n9.S);
+        this.I1 = 1.0f;
     }
 
-    public final float a() {
-        if (this.h.I >= 1.0f) {
-            return 1.0f;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void n(Canvas canvas, GradientDrawable gradientDrawable) {
+        gradientDrawable.setCornerRadius(org.telegram.messenger.g0.N(1.5f));
+        int lineBaseline = getLayout().getLineBaseline(0);
+        Rect bounds = gradientDrawable.getBounds();
+        float f10 = lineBaseline;
+        int round = Math.round(((bounds.top - lineBaseline) * this.I1) + f10);
+        int round2 = Math.round(((bounds.bottom - lineBaseline) * this.I1) + f10);
+        int i7 = bounds.left;
+        int width = bounds.width();
+        if (this.J1 > 0.0f) {
+            float f11 = i7;
+            i7 = Math.round((((((((getWidth() + getScrollX()) - getCompoundPaddingLeft()) - getCompoundPaddingRight()) - getPaint().measureText("0")) - width) - f11) * this.J1) + f11);
         }
-        return k9.S.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - this.g) / 320.0f));
+        gradientDrawable.setBounds(i7, round, width + i7, round2);
+        gradientDrawable.draw(canvas);
     }
 
-    public final void b(Canvas canvas, Paint paint, String str, float f10, int i7) {
-        float a10 = a();
-        boolean z9 = this.f;
-        float f11 = z9 ? 0.0f : 1.0f;
-        float f12 = this.c;
-        float z10 = com.google.android.recaptcha.internal.a.z(f11, f12, a10, f12);
-        if (z10 <= 0.0f) {
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ct, android.widget.TextView, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        float lineLeft;
+        int size;
+        Editable text = getText();
+        int max = Math.max(TextUtils.indexOf((CharSequence) text, '.'), TextUtils.indexOf((CharSequence) text, ','));
+        int i7 = 0;
+        this.I1 = this.G1.e(false, (max < 0 || getSelectionStart() <= max) ? 1.0f : 0.6363636f);
+        this.J1 = this.H1.d(length() == 0);
+        super.onDraw(canvas);
+        n9 n9Var = this.K1;
+        if (n9Var.I >= 1.0f) {
             return;
         }
-        int alpha = paint.getAlpha();
-        float measureText = paint.measureText(str);
-        canvas.save();
-        float d = d() + f10;
-        float f13 = i7;
-        float f14 = this.e;
-        canvas.translate(d, com.google.android.recaptcha.internal.a.z(z9 ? org.telegram.messenger.g0.N(44.0f) * 0.1f : 0.0f, f14, a10, f13 + f14));
-        float f15 = z9 ? this.h.O : 1.0f;
-        float f16 = this.d;
-        float z11 = com.google.android.recaptcha.internal.a.z(f15, f16, a10, f16);
-        canvas.scale(z11, z11, measureText / 2.0f, (paint.descent() + paint.ascent()) / 2.0f);
-        paint.setAlpha(Math.round(alpha * z10));
-        canvas.drawText(str, 0.0f, 0.0f, paint);
-        paint.setAlpha(alpha);
-        canvas.restore();
+        TextPaint paint = getPaint();
+        float textSize = paint.getTextSize();
+        float compoundPaddingLeft = getCompoundPaddingLeft();
+        if (length() != 0) {
+            if (getLayout() != null) {
+                lineLeft = getLayout().getLineLeft(0);
+            }
+            float f10 = compoundPaddingLeft;
+            int baseline = getBaseline();
+            ArrayList arrayList = n9Var.L;
+            size = arrayList.size();
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                l9 l9Var = (l9) obj;
+                paint.setTextSize(l9Var.b ? (28.0f * textSize) / 44.0f : textSize);
+                l9Var.c.b(canvas, paint, l9Var.a, f10, baseline);
+            }
+            paint.setTextSize(textSize);
+        }
+        lineLeft = getScrollX() + n9Var.N;
+        compoundPaddingLeft += lineLeft;
+        float f102 = compoundPaddingLeft;
+        int baseline2 = getBaseline();
+        ArrayList arrayList2 = n9Var.L;
+        size = arrayList2.size();
+        while (i7 < size) {
+        }
+        paint.setTextSize(textSize);
     }
 
-    public final j9 c() {
-        k9 k9Var = this.h;
-        return k9Var.I >= 1.0f ? new j9(k9Var, d()) : new j9(k9Var, d(), this);
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView
+    public final void onSelectionChanged(int i7, int i10) {
+        super.onSelectionChanged(i7, i10);
+        if (i7 != i10) {
+            this.K1.b();
+        }
     }
 
-    public final float d() {
-        float f10 = this.b;
-        float f11 = this.a;
-        return (k9.S.getInterpolation(this.h.I) * (f10 - f11)) + f11;
-    }
-
-    public j9(k9 k9Var, float f10) {
-        this.h = k9Var;
-        this.f = false;
-        this.b = f10;
-        this.a = f10;
-        this.c = 1.0f;
-        this.d = 1.0f;
-        this.e = 0.0f;
-        this.g = SystemClock.uptimeMillis();
-    }
-
-    public j9(k9 k9Var, float f10, j9 j9Var) {
-        this.h = k9Var;
-        this.f = j9Var.f;
-        this.b = f10;
-        this.a = f10;
-        this.c = j9Var.c;
-        this.d = j9Var.d;
-        this.e = j9Var.e;
-        this.g = j9Var.g;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            this.K1.b();
+            this.H1.a(length() == 0);
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

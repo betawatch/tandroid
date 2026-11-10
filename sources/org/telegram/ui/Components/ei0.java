@@ -1,36 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class ei0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hi0 b;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-    public /* synthetic */ ei0(hi0 hi0Var, int i7) {
-        this.a = i7;
-        this.b = hi0Var;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class ei0 extends ImageReceiver {
+    public final /* synthetic */ int J1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ei0(int i7, View view) {
+        super(view);
+        this.J1 = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean x0(Drawable drawable, String str, int i7, boolean z9, int i10) {
+        switch (this.J1) {
             case 0:
-                if (this.b.a.getImageReceiver().B() != null && !this.b.a.getImageReceiver().B().k0 && !this.b.a.getImageReceiver().B().y()) {
-                    this.b.a.getImageReceiver().B().start();
+                if (drawable instanceof zg0) {
+                    ((zg0) drawable).N(0, false, true);
                 }
-                this.b.E = false;
-                break;
+                return super.x0(drawable, str, i7, z9, i10);
             default:
-                hi0 hi0Var = this.b;
-                ji0 ji0Var = hi0Var.P;
-                try {
-                    hi0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
+                boolean x02 = super.x0(drawable, str, i7, z9, i10);
+                if (x02 && (drawable instanceof zg0)) {
+                    zg0 zg0Var = (zg0) drawable;
+                    zg0Var.N(0, false, true);
+                    zg0Var.stop();
                 }
-                ji0Var.m0 = ji0Var.T.indexOf(hi0Var.e);
-                ji0Var.l0 = hi0Var.e;
-                ji0Var.invalidate();
-                break;
+                return x02;
         }
     }
 }

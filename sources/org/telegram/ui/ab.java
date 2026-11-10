@@ -4,17 +4,17 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ab extends pq0 {
+public final class ab extends qq0 {
     public final /* synthetic */ mb a;
 
     public ab(mb mbVar) {
         this.a = mbVar;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
-    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         org.telegram.ui.Cells.t0 t0Var;
         org.telegram.messenger.ij messageObject;
         org.telegram.ui.Cells.q1 q1Var;
@@ -55,15 +55,15 @@ public final class ab extends pq0 {
             if (imageReceiver != null) {
                 int[] iArr = new int[2];
                 childAt.getLocationInWindow(iArr);
-                yq0 yq0Var = new yq0();
-                yq0Var.b = iArr[0];
-                yq0Var.c = iArr[1];
-                yq0Var.d = mbVar.w;
-                yq0Var.a = imageReceiver;
-                yq0Var.e = imageReceiver.p();
-                yq0Var.h = imageReceiver.E();
-                yq0Var.l = true;
-                return yq0Var;
+                zq0 zq0Var = new zq0();
+                zq0Var.b = iArr[0];
+                zq0Var.c = iArr[1];
+                zq0Var.d = mbVar.w;
+                zq0Var.a = imageReceiver;
+                zq0Var.e = imageReceiver.p();
+                zq0Var.h = imageReceiver.E();
+                zq0Var.l = true;
+                return zq0Var;
             }
             i10++;
         }

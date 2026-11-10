@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class yn extends org.telegram.ui.ActionBar.j {
+public final class yn extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ Context a;
     public final /* synthetic */ io b;
 
@@ -15,7 +15,7 @@ public final class yn extends org.telegram.ui.ActionBar.j {
         this.a = context;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
+    @Override // org.telegram.ui.ActionBar.k
     public final void b(int i7) {
         io ioVar = this.b;
         if (i7 == -1) {
@@ -23,8 +23,8 @@ public final class yn extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i7 == 1) {
-            org.telegram.ui.ActionBar.b5 b5Var = ioVar.r;
-            if (b5Var == null || !b5Var.y.f) {
+            org.telegram.ui.ActionBar.c5 c5Var = ioVar.r;
+            if (c5Var == null || !c5Var.y.f) {
                 String K = org.telegram.messenger.t3.K(ioVar.X, false);
                 if (!ioVar.V || TextUtils.isEmpty(K)) {
                     ioVar.e0();

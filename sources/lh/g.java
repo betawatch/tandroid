@@ -13,19 +13,19 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g1;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.ActionBar.z0;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.af;
+import org.telegram.ui.Components.uk0;
+import org.telegram.ui.bf;
 import org.telegram.ui.cn;
 import org.telegram.ui.e0;
 import org.telegram.ui.fe;
-import org.telegram.ui.nu0;
+import org.telegram.ui.ou0;
 import org.telegram.ui.ql;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -40,9 +40,9 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
 
     @Override // android.view.View.OnLongClickListener
     public final boolean onLongClick(View view) {
-        af afVar;
+        bf bfVar;
         boolean z9;
-        vk0 vk0Var;
+        uk0 uk0Var;
         int i7 = this.a;
         int i10 = this.b;
         FrameLayout frameLayout = this.c;
@@ -53,25 +53,25 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 if (bVar != null) {
                     cn cnVar = ((fe) bVar).b;
                     if (i10 == 2) {
-                        afVar = new af(cnVar, 10);
+                        bfVar = new bf(cnVar, 10);
                         z9 = true;
                     } else if (i10 == 3) {
-                        afVar = new af(cnVar, 11);
+                        bfVar = new bf(cnVar, 11);
                         z9 = false;
                     } else if (i10 == 4) {
-                        afVar = new af(cnVar, 12);
+                        bfVar = new bf(cnVar, 12);
                         z9 = 2;
                     }
                     Activity parentActivity = cnVar.getParentActivity();
-                    q4 parentLayout = cnVar.getParentLayout();
+                    r4 parentLayout = cnVar.getParentLayout();
                     ql qlVar = cnVar.l1;
-                    g6 resourceProvider = cnVar.getResourceProvider();
+                    h6 resourceProvider = cnVar.getResourceProvider();
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(parentActivity, null);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setMinimumWidth(g0.L(200.0f));
                     z0 z0Var = new z0(0, parentActivity, resourceProvider, true, true);
                     z0Var.setMinimumWidth(g0.L(200.0f));
                     z0Var.j(!z9 ? id.M0(2131746372, null) : z9 ? id.M0(2131746374, null) : id.M0(2131746373, null), R.drawable.msg_seen, null);
-                    z0Var.setOnClickListener(new nu0(1, afVar));
+                    z0Var.setOnClickListener(new ou0(1, bfVar));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.addView(z0Var);
                     g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
                     g1Var.e = true;
@@ -106,7 +106,7 @@ public final /* synthetic */ class g implements View.OnLongClickListener {
                 return false;
             default:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) frameLayout;
-                return (scrollSlidingTextTabStrip.n0 || (vk0Var = scrollSlidingTextTabStrip.b) == null || !vk0Var.m1(i10, view)) ? false : true;
+                return (scrollSlidingTextTabStrip.n0 || (uk0Var = scrollSlidingTextTabStrip.b) == null || !uk0Var.m1(i10, view)) ? false : true;
         }
     }
 }

@@ -5,17 +5,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.nc0;
-import org.telegram.ui.Components.ng;
+import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.mg;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.i60;
+import org.telegram.ui.an0;
+import org.telegram.ui.j60;
 import org.telegram.ui.nm;
 import org.telegram.ui.nn;
 import org.telegram.ui.rn;
 import org.telegram.ui.xn;
-import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class d3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 0));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new ng((nc0) this.c, tL_error, tLObject, this.b));
+                org.telegram.messenger.g0.h3(new mg((mc0) this.c, tL_error, tLObject, this.b));
                 break;
             case 7:
                 org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 9));
@@ -86,9 +86,9 @@ public final /* synthetic */ class d3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 13));
                 break;
             case 10:
-                zm0 zm0Var = (zm0) this.c;
+                an0 an0Var = (an0) this.c;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.h3(new i60(zm0Var, tLObject, this.b, 5));
+                    org.telegram.messenger.g0.h3(new j60(an0Var, tLObject, this.b, 5));
                     break;
                 }
                 break;
@@ -96,7 +96,7 @@ public final /* synthetic */ class d3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new xn(this.c, (Object) tL_error, (Object) tLObject, this.b, 14));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new i60((WallpapersListActivity) this.c, tLObject, this.b, 14));
+                org.telegram.messenger.g0.h3(new j60((WallpapersListActivity) this.c, tLObject, this.b, 14));
                 break;
         }
     }

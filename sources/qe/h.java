@@ -21,15 +21,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.f10;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.h10;
 import s4.n;
 import s4.r0;
 import s4.u;
 import s4.x;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -326,7 +326,7 @@ public final class h {
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new f10(this, i7, serializable, 24));
+        ((Executor) this.b).execute(new h10(this, i7, serializable, 24));
     }
 
     public void o() {
@@ -383,7 +383,7 @@ public final class h {
                     }
                     if (i12 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new m3(this, r0Var);
+                        r0Var.F = new n3(this, r0Var);
                         if (!r0Var.x) {
                             r0Var.x = true;
                             r0Var.r();
@@ -444,7 +444,7 @@ public final class h {
     public h(Context context, s4.e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.f(this, 12);
-        this.h = new et(this, 27);
+        this.h = new dt(this, 27);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();

@@ -1,37 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class z20 extends AnimatorListenerAdapter {
+public final class z20 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e40 b;
+    public final /* synthetic */ f40 b;
 
-    public /* synthetic */ z20(e40 e40Var, int i7) {
+    public /* synthetic */ z20(f40 f40Var, int i7) {
         this.a = i7;
-        this.b = e40Var;
+        this.b = f40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                e40 e40Var = this.b;
-                e40Var.M1.setVisibility(4);
-                e40Var.N1.setVisibility(4);
-                e40Var.L1.setVisibility(4);
-                break;
-            case 1:
-                this.b.Y1 = null;
+                f40 f40Var = this.b;
+                f40Var.K1.getViewTreeObserver().removeOnPreDrawListener(this);
+                f40Var.U3.j(null);
+                org.telegram.messenger.g0.b4(f40Var.g4);
+                f40Var.b.requestLayout();
                 break;
             default:
-                e40 e40Var2 = this.b;
-                e40Var2.Y2 = null;
-                e40Var2.X2.setColor(e40Var2.K3 == 3 ? -1163700 : -12761513);
-                e40Var2.W2.invalidate();
+                f40 f40Var2 = this.b;
+                f40Var2.K1.getViewTreeObserver().removeOnPreDrawListener(this);
+                f40Var2.U3.j(null);
+                org.telegram.messenger.g0.b4(f40Var2.g4);
+                f40Var2.b.requestLayout();
                 break;
         }
+        return false;
     }
 }

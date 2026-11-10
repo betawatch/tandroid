@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -70,7 +70,7 @@ public final /* synthetic */ class v8 implements Runnable {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
                             fi.s8 s8Var = vaVar.q0;
                             if (s8Var != null) {
-                                new org.telegram.ui.Components.hc(s8Var.c, bVar).f0(tL_error, true);
+                                new org.telegram.ui.Components.gc(s8Var.c, bVar).f0(tL_error, true);
                                 f8Var.run();
                                 break;
                             }

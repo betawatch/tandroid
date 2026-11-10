@@ -3,10 +3,10 @@ package di;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ga0;
-import org.telegram.ui.ra0;
+import org.telegram.ui.ha0;
+import org.telegram.ui.sa0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class c6 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new bi.d3((z6) this.c, this.b, tLObject, 5));
                 break;
             default:
-                ra0 ra0Var = (ra0) this.c;
+                sa0 sa0Var = (sa0) this.c;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.h3(new ga0(ra0Var, tLObject, this.b, 0));
+                    org.telegram.messenger.g0.h3(new ha0(sa0Var, tLObject, this.b, 0));
                     break;
                 }
                 break;

@@ -1,27 +1,34 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class b50 extends v4.s0 {
-    public final /* synthetic */ v4.b0 a;
-    public final /* synthetic */ n50 b;
+public final class b50 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    public b50(n50 n50Var, v4.b0 b0Var) {
-        this.b = n50Var;
-        this.a = b0Var;
+    public b50(org.telegram.ui.ActionBar.w2[] w2VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = w2VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // v4.s0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        n50 n50Var = this.b;
-        n50.I0(n50Var);
-        if (!n50Var.I1 || n50Var.H1) {
-            return;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(ProfileActivity.D4(this.b.user_id));
         }
-        if (n50Var.J1 - this.a.N0() < 10) {
-            n50Var.K0();
-        }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

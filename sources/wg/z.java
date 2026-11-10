@@ -21,64 +21,64 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.na;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ma;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class z extends na implements ls {
-    public final ArrayList P1;
-    public final List Q1;
-    public final List R1;
-    public final List S1;
-    public final TLRPC.Chat T1;
-    public final ArrayList U1;
-    public final ArrayList V1;
-    public final ArrayList W1;
+public final class z extends ma implements ls {
+    public final ArrayList S1;
+    public final List T1;
+    public final List U1;
+    public final List V1;
+    public final TLRPC.Chat W1;
     public final ArrayList X1;
-    public xg.c Y1;
-    public int Z1;
-    public int a2;
-    public int b2;
-    public boolean c2;
+    public final ArrayList Y1;
+    public final ArrayList Z1;
+    public final ArrayList a2;
+    public xg.c b2;
+    public int c2;
     public int d2;
-    public long e2;
-    public int f2;
+    public int e2;
+    public boolean f2;
     public int g2;
     public long h2;
-    public final yg.a i2;
-    public sg.i0 j2;
-    public int k2;
-    public i l2;
-    public final TL_stories.PrepaidGiveaway m2;
-    public String n2;
-    public boolean o2;
-    public boolean p2;
-    public final s q2;
+    public int i2;
+    public int j2;
+    public long k2;
+    public final yg.a l2;
+    public sg.i0 m2;
+    public int n2;
+    public i o2;
+    public final TL_stories.PrepaidGiveaway p2;
+    public String q2;
+    public boolean r2;
+    public boolean s2;
+    public final s t2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public z(f2 f2Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
         super(f2Var, false);
         int i7 = 5;
-        this.P1 = new ArrayList();
-        this.Q1 = r.h() ? Arrays.asList(1, 3, 5, 7, 10, 25, 50) : Arrays.asList(1, 3, 5, 7, 10, 25, 50, 100);
-        this.R1 = r.h() ? Arrays.asList(1, 3, 5, 7, 10, 25, 50) : Arrays.asList(1, 3, 5, 7, 10, 25, 50, 100);
-        this.S1 = Arrays.asList(750, 10000, 50000);
-        this.U1 = new ArrayList();
-        this.V1 = new ArrayList();
-        this.W1 = new ArrayList();
+        this.S1 = new ArrayList();
+        this.T1 = r.h() ? Arrays.asList(1, 3, 5, 7, 10, 25, 50) : Arrays.asList(1, 3, 5, 7, 10, 25, 50, 100);
+        this.U1 = r.h() ? Arrays.asList(1, 3, 5, 7, 10, 25, 50) : Arrays.asList(1, 3, 5, 7, 10, 25, 50, 100);
+        this.V1 = Arrays.asList(750, 10000, 50000);
         this.X1 = new ArrayList();
+        this.Y1 = new ArrayList();
+        this.Z1 = new ArrayList();
+        this.a2 = new ArrayList();
         int i10 = yg.d.w;
-        this.Z1 = 2;
-        this.a2 = 0;
+        this.c2 = 2;
+        this.d2 = 0;
         int i11 = yg.u.w;
-        this.b2 = 0;
-        this.d2 = 12;
+        this.e2 = 0;
+        this.g2 = 12;
         long time = new Date().getTime() + 259200000;
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(time);
@@ -89,77 +89,77 @@ public final class z extends na implements ls {
             i12++;
         }
         calendar.set(12, i12);
-        this.e2 = calendar.getTimeInMillis();
-        this.f2 = 2;
-        this.g2 = 2;
-        this.n2 = "";
-        this.p2 = true;
-        this.q2 = new s(this, 0);
-        this.m2 = prepaidGiveaway;
-        this.r1 = 0.15f;
+        this.h2 = calendar.getTimeInMillis();
+        this.i2 = 2;
+        this.j2 = 2;
+        this.q2 = "";
+        this.s2 = true;
+        this.t2 = new s(this, 0);
+        this.p2 = prepaidGiveaway;
+        this.u1 = 0.15f;
         this.u0 = false;
         this.v0 = false;
         this.T0 = false;
         this.t0 = 0;
         b1();
-        ((ViewGroup.MarginLayoutParams) this.l1.getLayoutParams()).leftMargin = 0;
-        ((ViewGroup.MarginLayoutParams) this.l1.getLayoutParams()).rightMargin = 0;
+        ((ViewGroup.MarginLayoutParams) this.o1.getLayoutParams()).leftMargin = 0;
+        ((ViewGroup.MarginLayoutParams) this.o1.getLayoutParams()).rightMargin = 0;
         if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
             int i13 = yg.d.w;
-            this.Z1 = 3;
+            this.c2 = 3;
         }
         v4.k kVar = new v4.k();
         kVar.n(350L);
-        kVar.o(xq.h);
+        kVar.o(wq.h);
         kVar.C = false;
         kVar.m = false;
-        this.k1.setItemAnimator(kVar);
-        qj0 qj0Var = this.k1;
+        this.n1.setItemAnimator(kVar);
+        pj0 pj0Var = this.n1;
         int i14 = this.t0;
-        qj0Var.setPadding(i14, 0, i14, org.telegram.messenger.g0.L(68.0f));
-        this.k1.setOnScrollListener(new y());
-        this.k1.setOnItemClickListener(new q4(23, this, f2Var));
+        pj0Var.setPadding(i14, 0, i14, org.telegram.messenger.g0.L(68.0f));
+        this.n1.setOnScrollListener(new y());
+        this.n1.setOnItemClickListener(new q4(23, this, f2Var));
         TLRPC.Chat M0 = qp.s1(this.a).M0(Long.valueOf(-j3));
-        this.T1 = M0;
-        xg.c cVar = this.Y1;
-        ArrayList arrayList = this.P1;
-        qj0 qj0Var2 = this.k1;
+        this.W1 = M0;
+        xg.c cVar = this.b2;
+        ArrayList arrayList = this.S1;
+        pj0 pj0Var2 = this.n1;
         t tVar = new t(this);
         t tVar2 = new t(this);
         t tVar3 = new t(this);
         cVar.e = arrayList;
         cVar.w = M0;
-        cVar.f = qj0Var2;
+        cVar.f = pj0Var2;
         cVar.h = tVar;
         cVar.n = tVar2;
         cVar.s = tVar3;
         k1(false, false);
         yg.a aVar = new yg.a(getContext(), this.I0);
-        this.i2 = aVar;
-        aVar.setOnClickListener(new rq(this, prepaidGiveaway, j3, f2Var));
+        this.l2 = aVar;
+        aVar.setOnClickListener(new qq(this, prepaidGiveaway, j3, f2Var));
         j1(false);
         this.b.addView(aVar, ha.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         r.j(this.a, M0, new u(this, i7));
         qs.f(this.a).c(this, qs.x3);
     }
 
-    @Override // org.telegram.ui.Components.na
-    public final pj0 L0(qj0 qj0Var) {
+    @Override // org.telegram.ui.Components.ma
+    public final oj0 L0(pj0 pj0Var) {
         xg.c cVar = new xg.c(this.I0);
-        this.Y1 = cVar;
+        this.b2 = cVar;
         return cVar;
     }
 
-    @Override // org.telegram.ui.Components.na
+    @Override // org.telegram.ui.Components.ma
     public final CharSequence O0() {
-        int i7 = this.a2;
+        int i7 = this.d2;
         int i10 = yg.d.w;
         return i7 == 1 ? id.M0(2131749680, null) : id.a0("BoostingStartGiveaway", null, 2131753193, new Object[0]);
     }
 
-    @Override // org.telegram.ui.Components.na
+    @Override // org.telegram.ui.Components.ma
     public final void R0(Canvas canvas, int i7) {
-        this.k2 = i7;
+        this.n2 = i7;
     }
 
     public final ArrayList d1(long j3) {
@@ -180,15 +180,15 @@ public final class z extends na implements ls {
 
     @Override // org.telegram.messenger.ls
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        qj0 qj0Var;
-        if (i7 == qs.x3 && (qj0Var = this.k1) != null && qj0Var.G) {
+        pj0 pj0Var;
+        if (i7 == qs.x3 && (pj0Var = this.n1) != null && pj0Var.G) {
             k1(true, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
-        i iVar = this.l2;
+        i iVar = this.o2;
         if (iVar != null) {
             iVar.run();
         }
@@ -196,32 +196,32 @@ public final class z extends na implements ls {
     }
 
     public final int e1() {
-        int i7 = this.Z1;
+        int i7 = this.c2;
         int i10 = yg.d.w;
         if (i7 == 2) {
-            return ((Integer) this.Q1.get(this.f2)).intValue();
+            return ((Integer) this.T1.get(this.i2)).intValue();
         }
         List h12 = h1();
-        int i11 = this.g2;
+        int i11 = this.j2;
         if (i11 < 0 || i11 >= h12.size()) {
-            this.g2 = 0;
+            this.j2 = 0;
         }
-        if (this.g2 >= h12.size()) {
+        if (this.j2 >= h12.size()) {
             return 0;
         }
-        return ((Integer) h12.get(this.g2)).intValue();
+        return ((Integer) h12.get(this.j2)).intValue();
     }
 
     public final int f1() {
         int e12;
         int g10;
-        int i7 = this.Z1;
+        int i7 = this.c2;
         int i10 = yg.d.w;
         if (i7 == 2) {
-            e12 = ((Integer) this.Q1.get(this.f2)).intValue();
+            e12 = ((Integer) this.T1.get(this.i2)).intValue();
             g10 = r.g();
         } else {
-            TL_stars.TL_starsGiveawayOption g12 = g1(this.h2);
+            TL_stars.TL_starsGiveawayOption g12 = g1(this.k2);
             if (g12 != null) {
                 return g12.yearly_boosts;
             }
@@ -246,13 +246,13 @@ public final class z extends na implements ls {
     }
 
     public final List h1() {
-        int i7 = this.Z1;
+        int i7 = this.c2;
         int i10 = yg.d.w;
         if (i7 == 2) {
-            return this.Q1;
+            return this.T1;
         }
         ArrayList arrayList = new ArrayList();
-        TL_stars.TL_starsGiveawayOption g12 = g1(this.h2);
+        TL_stars.TL_starsGiveawayOption g12 = g1(this.k2);
         if (g12 != null) {
             for (int i11 = 0; i11 < g12.winners.size(); i11++) {
                 TL_stars.TL_starsGiveawayWinnersOption tL_starsGiveawayWinnersOption = g12.winners.get(i11);
@@ -265,14 +265,14 @@ public final class z extends na implements ls {
     }
 
     public final boolean i1() {
-        return this.m2 != null;
+        return this.p2 != null;
     }
 
     public final void j1(boolean z9) {
         boolean i12 = i1();
-        yg.a aVar = this.i2;
+        yg.a aVar = this.l2;
         if (i12) {
-            TL_stories.PrepaidGiveaway prepaidGiveaway = this.m2;
+            TL_stories.PrepaidGiveaway prepaidGiveaway = this.p2;
             if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
                 aVar.a(prepaidGiveaway.quantity, z9);
                 return;
@@ -281,13 +281,13 @@ public final class z extends na implements ls {
                 return;
             }
         }
-        int i7 = this.a2;
+        int i7 = this.d2;
         int i10 = yg.d.w;
         if (i7 == 0) {
             aVar.a(f1(), z9);
             return;
         }
-        ArrayList arrayList = this.V1;
+        ArrayList arrayList = this.Y1;
         int g10 = r.g() * arrayList.size();
         boolean z10 = arrayList.size() > 0;
         aVar.e = true;
@@ -297,7 +297,7 @@ public final class z extends na implements ls {
         dVar.setEnabled(z10);
         dVar.c(g10, z9);
         dVar.i(id.M0(2131749680, null), z9, true);
-        s6.h(l6.h5, aVar.b, aVar.c);
+        t6.h(m6.h5, aVar.b, aVar.c);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x0705  */
@@ -334,42 +334,42 @@ public final class z extends na implements ls {
         int i11;
         int i12;
         long longValue;
-        ArrayList arrayList = this.P1;
+        ArrayList arrayList = this.S1;
         ArrayList arrayList2 = new ArrayList(arrayList);
         arrayList.clear();
-        int i13 = this.Z1;
+        int i13 = this.c2;
         int i14 = yg.d.w;
         boolean z12 = i13 == 3;
         xg.b bVar = new xg.b(0, false);
         bVar.g = z12;
         arrayList.add(bVar);
         boolean i15 = i1();
-        ArrayList arrayList3 = this.V1;
-        TL_stories.PrepaidGiveaway prepaidGiveaway = this.m2;
+        ArrayList arrayList3 = this.Y1;
+        TL_stories.PrepaidGiveaway prepaidGiveaway = this.p2;
         if (i15) {
             xg.b bVar2 = new xg.b(14, false);
             bVar2.f = prepaidGiveaway;
             arrayList.add(bVar2);
         } else {
             int size = arrayList3.size();
-            xg.b bVar3 = new xg.b(2, this.Z1 == 2);
+            xg.b bVar3 = new xg.b(2, this.c2 == 2);
             bVar3.l = 2;
             bVar3.i = size;
             bVar3.f = null;
             arrayList.add(bVar3);
             int size2 = arrayList3.size();
-            xg.b bVar4 = new xg.b(2, this.Z1 == 3);
+            xg.b bVar4 = new xg.b(2, this.c2 == 3);
             bVar4.l = 3;
             bVar4.i = size2;
             bVar4.f = null;
             arrayList.add(bVar4);
         }
         arrayList.add(new xg.b(4, false));
-        TLRPC.Chat chat = this.T1;
+        TLRPC.Chat chat = this.W1;
         boolean V = t3.V(chat);
-        int i16 = this.Z1;
-        ArrayList arrayList4 = this.W1;
-        ArrayList arrayList5 = this.U1;
+        int i16 = this.c2;
+        ArrayList arrayList4 = this.Z1;
+        ArrayList arrayList5 = this.X1;
         if (i16 == 3) {
             if (!i1()) {
                 String M0 = id.M0(2131753200, null);
@@ -392,36 +392,36 @@ public final class z extends na implements ls {
                 for (int i19 = 0; i19 < arrayList6.size(); i19 = i11 + 1) {
                     TL_stars.TL_starsGiveawayOption g12 = g1(((Long) arrayList6.get(i19)).longValue());
                     if (!g12.missingStorePrice) {
-                        if (this.h2 == 0 && g12.isDefault) {
-                            this.h2 = g12.stars;
+                        if (this.k2 == 0 && g12.isDefault) {
+                            this.k2 = g12.stars;
                         }
-                        if (!g12.extended || this.c2) {
+                        if (!g12.extended || this.f2) {
                             int i20 = i18 + 1;
-                            int i21 = this.c2 ? i19 : i19 + 2;
+                            int i21 = this.f2 ? i19 : i19 + 2;
                             long j3 = g12.stars;
                             ArrayList d12 = d1(j3);
                             if (d12.isEmpty()) {
                                 float f10 = j3;
                                 i11 = i19;
                                 i12 = i20;
-                                ArrayList d13 = d1(this.h2);
-                                int i22 = this.g2;
+                                ArrayList d13 = d1(this.k2);
+                                int i22 = this.j2;
                                 if (i22 < 0 || i22 >= d13.size()) {
-                                    this.g2 = 0;
+                                    this.j2 = 0;
                                 }
-                                longValue = Math.round(f10 / (this.g2 >= d13.size() ? 1L : ((Long) d13.get(this.g2)).longValue()));
+                                longValue = Math.round(f10 / (this.j2 >= d13.size() ? 1L : ((Long) d13.get(this.j2)).longValue()));
                             } else {
                                 i11 = i19;
                                 i12 = i20;
-                                longValue = ((Long) d12.get(Utilities.j(this.g2, d12.size() - 1, 0))).longValue();
+                                longValue = ((Long) d12.get(Utilities.j(this.j2, d12.size() - 1, 0))).longValue();
                             }
-                            arrayList.add(xg.b.d(g12, i21, longValue, this.h2 == g12.stars, true));
+                            arrayList.add(xg.b.d(g12, i21, longValue, this.k2 == g12.stars, true));
                             i18 = i12;
                         }
                     }
                     i11 = i19;
                 }
-                if (!this.c2 && i18 < arrayList6.size()) {
+                if (!this.f2 && i18 < arrayList6.size()) {
                     arrayList.add(new xg.b(18, false));
                 }
                 if (i18 <= 0) {
@@ -432,14 +432,14 @@ public final class z extends na implements ls {
                 bVar5.i = f1();
                 arrayList.add(xg.b.c(id.M0(2131753199, null), false));
                 List h12 = h1();
-                int i23 = this.g2;
+                int i23 = this.j2;
                 if (i23 < 0 || i23 >= h12.size()) {
-                    this.g2 = 0;
+                    this.j2 = 0;
                 }
                 if (h12.size() > 1) {
                     arrayList.add(xg.b.f(id.M0(2131753195, null)));
                     List h13 = h1();
-                    int i24 = this.g2;
+                    int i24 = this.j2;
                     xg.b bVar6 = new xg.b(5, false);
                     bVar6.k = h13;
                     bVar6.i = i24;
@@ -447,7 +447,7 @@ public final class z extends na implements ls {
                     arrayList.add(xg.b.c(id.M0(2131753194, null), false));
                 }
             } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway) {
-                this.h2 = ((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars;
+                this.k2 = ((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars;
             }
             arrayList.add(xg.b.f(id.M0(2131753558, null)));
             if (!i1()) {
@@ -485,12 +485,12 @@ public final class z extends na implements ls {
             arrayList.add(xg.b.c(id.M0(2131753553, null), r103));
             arrayList.add(xg.b.f(id.M0(2131753536, null)));
             int i26 = yg.u.w;
-            arrayList.add(xg.b.e(r103, this.b2, true, arrayList4));
-            arrayList.add(xg.b.e(1, this.b2, r103, arrayList4));
+            arrayList.add(xg.b.e(r103, this.e2, true, arrayList4));
+            arrayList.add(xg.b.e(1, this.e2, r103, arrayList4));
             arrayList.add(xg.b.c(id.M0(V ? 2131753551 : 2131753550, null), r103));
         } else {
             String str2 = null;
-            if (this.a2 == 0) {
+            if (this.d2 == 0) {
                 if (!i1()) {
                     String M02 = id.M0(2131753323, null);
                     int f14 = f1();
@@ -498,9 +498,9 @@ public final class z extends na implements ls {
                     bVar8.c = M02;
                     bVar8.i = f14;
                     arrayList.add(bVar8);
-                    int i27 = this.f2;
+                    int i27 = this.i2;
                     xg.b bVar9 = new xg.b(5, false);
-                    bVar9.k = this.Q1;
+                    bVar9.k = this.T1;
                     bVar9.i = i27;
                     arrayList.add(bVar9);
                     str2 = null;
@@ -542,25 +542,25 @@ public final class z extends na implements ls {
                 arrayList.add(xg.b.c(id.M0(2131753553, null), r10));
                 arrayList.add(xg.b.f(id.M0(2131753536, null)));
                 int i29 = yg.u.w;
-                arrayList.add(xg.b.e(r10, this.b2, true, arrayList4));
-                arrayList.add(xg.b.e(1, this.b2, r10, arrayList4));
+                arrayList.add(xg.b.e(r10, this.e2, true, arrayList4));
+                arrayList.add(xg.b.e(1, this.e2, r10, arrayList4));
                 str2 = null;
                 arrayList.add(xg.b.c(id.M0(V ? 2131753551 : 2131753550, null), r10));
             }
             if (!i1()) {
                 arrayList.add(xg.b.f(id.M0(2131753537, str2)));
-                int i30 = this.a2;
+                int i30 = this.d2;
                 int i31 = yg.d.w;
-                ArrayList b10 = r.b(i30 == 0 ? e1() : arrayList3.size(), this.X1);
+                ArrayList b10 = r.b(i30 == 0 ? e1() : arrayList3.size(), this.a2);
                 int i32 = 0;
                 while (i32 < b10.size()) {
                     TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) b10.get(i32);
                     int i33 = tL_premiumGiftCodeOption.months;
-                    int i34 = this.a2;
+                    int i34 = this.d2;
                     int i35 = yg.d.w;
                     int e12 = i34 == 0 ? e1() : arrayList3.size();
                     long j10 = tL_premiumGiftCodeOption.amount;
-                    int i36 = this.d2;
+                    int i36 = this.g2;
                     String str3 = tL_premiumGiftCodeOption.currency;
                     boolean z13 = i32 != b10.size() + (-1);
                     ArrayList arrayList7 = b10;
@@ -579,54 +579,54 @@ public final class z extends na implements ls {
             }
             if (!i1()) {
                 i7 = 3;
-                arrayList.add(xg.b.c(org.telegram.messenger.g0.S2(id.M0(2131753187, null), l6.Uc, 0, new s(this, i7), this.I0), true));
-                i10 = this.Z1;
+                arrayList.add(xg.b.c(org.telegram.messenger.g0.S2(id.M0(2131753187, null), m6.Uc, 0, new s(this, i7), this.I0), true));
+                i10 = this.c2;
                 int i38 = yg.d.w;
-                if (i10 != i7 || this.a2 == 0) {
+                if (i10 != i7 || this.d2 == 0) {
                     String M03 = id.M0(2131753484, null);
-                    boolean z14 = this.o2;
+                    boolean z14 = this.r2;
                     int i39 = yg.y.L;
                     xg.b bVar12 = new xg.b(15, z14);
                     bVar12.c = M03;
                     bVar12.g = z14;
                     bVar12.l = 1;
                     arrayList.add(bVar12);
-                    if (this.o2) {
+                    if (this.r2) {
                         z11 = false;
                         str = null;
-                        arrayList.add(xg.b.c(id.M0(this.Z1 == 3 ? 2131753237 : 2131753485, null), false));
+                        arrayList.add(xg.b.c(id.M0(this.c2 == 3 ? 2131753237 : 2131753485, null), false));
                     } else {
                         int e13 = i1() ? prepaidGiveaway.quantity : e1();
                         z11 = false;
                         xg.b bVar13 = new xg.b(16, false);
                         bVar13.i = e13;
                         arrayList.add(bVar13);
-                        String G = id.G(this.d2, "BoldMonths", new Object[0]);
-                        if (this.Z1 == 3) {
-                            if (this.n2.isEmpty()) {
-                                arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
+                        String G = id.G(this.g2, "BoldMonths", new Object[0]);
+                        if (this.c2 == 3) {
+                            if (this.q2.isEmpty()) {
+                                arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G((int) this.k2, "BoostingStarsGiveawayAdditionPrizeCountHint", new Object[0])), false));
                             } else {
-                                arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G((int) this.h2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(e13), this.n2)), false));
+                                arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G((int) this.k2, "BoostingStarsGiveawayAdditionPrizeCountNameHint", Integer.valueOf(e13), this.q2)), false));
                             }
-                        } else if (this.n2.isEmpty()) {
+                        } else if (this.q2.isEmpty()) {
                             arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G(e13, "BoostingGiveawayAdditionPrizeCountHint", G)), false));
                         } else {
-                            arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G(e13, "BoostingGiveawayAdditionPrizeCountNameHint", this.n2, G)), false));
+                            arrayList.add(xg.b.c(org.telegram.messenger.g0.X2(id.G(e13, "BoostingGiveawayAdditionPrizeCountNameHint", this.q2, G)), false));
                         }
                         str = null;
                     }
                     arrayList.add(xg.b.f(id.M0(2131753538, str)));
-                    long j11 = this.e2;
+                    long j11 = this.h2;
                     xg.b bVar14 = new xg.b(10, z11);
                     bVar14.h = j11;
                     arrayList.add(bVar14);
-                    if (this.Z1 != 3) {
+                    if (this.c2 != 3) {
                         if (i1()) {
                             r102 = 0;
-                            arrayList.add(xg.b.c(id.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", id.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(xg.b.c(id.G(prepaidGiveaway.quantity, V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", id.G((int) this.k2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         } else {
                             r102 = 0;
-                            arrayList.add(xg.b.c(id.G(e1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", id.G((int) this.h2, "BoostingStarsChooseRandomStars", new Object[0])), false));
+                            arrayList.add(xg.b.c(id.G(e1(), V ? "BoostingStarsChooseRandom" : "BoostingStarsChooseRandomGroup", id.G((int) this.k2, "BoostingStarsChooseRandomStars", new Object[0])), false));
                         }
                     } else {
                         r102 = 0;
@@ -638,7 +638,7 @@ public final class z extends na implements ls {
                         }
                     }
                     String M04 = id.M0(2131753368, null);
-                    xg.b bVar15 = new xg.b(15, this.p2);
+                    xg.b bVar15 = new xg.b(15, this.s2);
                     bVar15.c = M04;
                     bVar15.g = r102;
                     bVar15.l = r102;
@@ -648,11 +648,11 @@ public final class z extends na implements ls {
                     } else {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(id.M0(2131753367, null));
-                        sb2.append(this.Z1 != 3 ? jg.g.l(2131753187, null, new StringBuilder("\n\n")) : "");
-                        arrayList.add(xg.b.c(org.telegram.messenger.g0.S2(sb2.toString(), l6.Uc, 0, new s(this, 4), this.I0), true));
+                        sb2.append(this.c2 != 3 ? jg.g.l(2131753187, null, new StringBuilder("\n\n")) : "");
+                        arrayList.add(xg.b.c(org.telegram.messenger.g0.S2(sb2.toString(), m6.Uc, 0, new s(this, 4), this.I0), true));
                     }
                 }
-                cVar = this.Y1;
+                cVar = this.b2;
                 if (cVar != null && z10) {
                     if (z9) {
                         cVar.f();
@@ -666,36 +666,36 @@ public final class z extends na implements ls {
             }
         }
         i7 = 3;
-        i10 = this.Z1;
+        i10 = this.c2;
         int i382 = yg.d.w;
         if (i10 != i7) {
         }
         String M032 = id.M0(2131753484, null);
-        boolean z142 = this.o2;
+        boolean z142 = this.r2;
         int i392 = yg.y.L;
         xg.b bVar122 = new xg.b(15, z142);
         bVar122.c = M032;
         bVar122.g = z142;
         bVar122.l = 1;
         arrayList.add(bVar122);
-        if (this.o2) {
+        if (this.r2) {
         }
         arrayList.add(xg.b.f(id.M0(2131753538, str)));
-        long j112 = this.e2;
+        long j112 = this.h2;
         xg.b bVar142 = new xg.b(10, z11);
         bVar142.h = j112;
         arrayList.add(bVar142);
-        if (this.Z1 != 3) {
+        if (this.c2 != 3) {
         }
         String M042 = id.M0(2131753368, null);
-        xg.b bVar152 = new xg.b(15, this.p2);
+        xg.b bVar152 = new xg.b(15, this.s2);
         bVar152.c = M042;
         bVar152.g = r102;
         bVar152.l = r102;
         arrayList.add(bVar152);
         if (i1()) {
         }
-        cVar = this.Y1;
+        cVar = this.b2;
         if (cVar != null) {
             if (z9) {
             }

@@ -30,11 +30,10 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.Cells.e1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.r1;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cn;
 import org.telegram.ui.ii;
@@ -46,7 +45,7 @@ import org.telegram.ui.ql;
 import org.telegram.ui.ud;
 import org.telegram.ui.vd;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +69,7 @@ public final /* synthetic */ class m0 implements Runnable {
             case 0:
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", p10.i(i12).n);
-                ((q4) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
+                ((r4) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 1:
                 ConnectionsManager.getInstance(((ea) obj).a).cancelRequest(i12, true);
@@ -292,7 +291,7 @@ public final /* synthetic */ class m0 implements Runnable {
                 break;
             default:
                 qs.f(i12).k(4, new Object[0]);
-                org.telegram.messenger.g0.i3(new r1((qr) obj, 1), 250L);
+                org.telegram.messenger.g0.i3(new org.telegram.ui.Components.q1((qr) obj, 1), 250L);
                 break;
         }
     }

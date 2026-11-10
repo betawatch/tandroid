@@ -12,13 +12,13 @@ public abstract class b implements Collection, Serializable {
     private static final long serialVersionUID = 7249069246763182397L;
     public final ConcurrentHashMap a;
 
-    @Override // java.util.Collection
+    @Override // java.util.Collection, java.util.Set
     public abstract boolean contains(Object obj);
 
-    @Override // java.util.Collection, java.lang.Iterable
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
     public abstract Iterator iterator();
 
-    @Override // java.util.Collection
+    @Override // java.util.Collection, java.util.Set
     public abstract boolean remove(Object obj);
 
     public b(ConcurrentHashMap concurrentHashMap) {
@@ -139,12 +139,12 @@ public abstract class b implements Collection, Serializable {
     @Override // java.util.Collection
     public boolean removeAll(Collection collection) {
         collection.getClass();
-        l[] lVarArr = this.a.a;
+        k[] kVarArr = this.a.a;
         boolean z9 = false;
-        if (lVarArr == null) {
+        if (kVarArr == null) {
             return false;
         }
-        if ((collection instanceof Set) && collection.size() > lVarArr.length) {
+        if ((collection instanceof Set) && collection.size() > kVarArr.length) {
             Iterator it = iterator();
             while (it.hasNext()) {
                 if (collection.contains(it.next())) {

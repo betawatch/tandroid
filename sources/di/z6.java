@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z6 {
     public static final Comparator X = Comparator$-CC.comparingInt(new bg.d(8));
@@ -637,9 +637,9 @@ public final class z6 {
                                 org.telegram.messenger.w7.G(i7).W(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
-                            org.telegram.ui.Components.i5 i5Var = new org.telegram.ui.Components.i5(1, i7, d.g);
-                            i5Var.m = true;
-                            i5Var.u();
+                            org.telegram.ui.Components.h5 h5Var = new org.telegram.ui.Components.h5(1, i7, d.g);
+                            h5Var.m = true;
+                            h5Var.u();
                         }
                     }
                 }
@@ -1144,11 +1144,11 @@ public final class z6 {
         ConnectionsManager.getInstance(i7).sendRequest(tL_stories_sendReaction, new v5(1));
     }
 
-    public final void k(long j3, c20 c20Var, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
+    public final void k(long j3, c20 c20Var, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         int i7 = this.a;
         tL_stories_canSendStory.peer = qp.s1(i7).j1(j3);
-        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new bi.k(this, z9, j3, c20Var, g6Var), 1024);
+        ConnectionsManager.getInstance(i7).sendRequest(tL_stories_canSendStory, new bi.k(this, z9, j3, c20Var, h6Var), 1024);
     }
 
     public final void l(ArrayList arrayList) {

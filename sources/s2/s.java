@@ -29,9 +29,9 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class s implements b3.q {
     public final p a;
@@ -185,7 +185,7 @@ public final class s implements b3.q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m d(p pVar, m mVar, ky0 ky0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
+    public static m d(p pVar, m mVar, ly0 ly0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
         HashMap hashMap;
         Iterator it;
         g gVar;
@@ -291,7 +291,7 @@ public final class s implements b3.q {
             int i23 = i18;
             String str19 = "POINT";
             l lVar2 = lVar;
-            if (!ky0Var.C()) {
+            if (!ly0Var.C()) {
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
                 ArrayList arrayList18 = arrayList14;
@@ -368,7 +368,7 @@ public final class s implements b3.q {
                 }
                 return new m(i21, uri.toString(), arrayList19, j15, z13, j19, z12, i19, j17, i22, j16, j14, z11, z14, j19 != 0, rVar6, arrayList16, arrayList17, lVar2, hashMap6, arrayList21, jVar2);
             }
-            String F2 = ky0Var.F();
+            String F2 = ly0Var.F();
             HashMap hashMap7 = hashMap4;
             if (F2.startsWith("#EXT")) {
                 arrayList15.add(F2);
@@ -1709,7 +1709,7 @@ public final class s implements b3.q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p e(ky0 ky0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
+    public static p e(ly0 ly0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
         int i7;
         char c10;
         ArrayList arrayList;
@@ -1762,7 +1762,7 @@ public final class s implements b3.q {
         boolean z10 = false;
         boolean z11 = false;
         while (true) {
-            boolean C = ky0Var.C();
+            boolean C = ly0Var.C();
             Pattern pattern = l0;
             ArrayList arrayList17 = arrayList13;
             boolean z12 = z10;
@@ -2038,7 +2038,7 @@ public final class s implements b3.q {
                 }
                 return new p(uri.toString(), arrayList19, arrayList25, arrayList20, arrayList21, arrayList22, arrayList17, uVar2, z12 ? Collections.EMPTY_LIST : arrayList27, z13, hashMap5, arrayList23);
             }
-            String F2 = ky0Var.F();
+            String F2 = ly0Var.F();
             ArrayList arrayList34 = arrayList12;
             if (F2.startsWith("#EXT")) {
                 arrayList16.add(F2);
@@ -2198,10 +2198,10 @@ public final class s implements b3.q {
                         if (startsWith) {
                             g10 = h2.e.g(uri2, j(F2, pattern, hashMap5, vVar));
                         } else {
-                            if (!ky0Var.C()) {
+                            if (!ly0Var.C()) {
                                 throw t0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            g10 = h2.e.g(uri2, k(ky0Var.F(), hashMap5, vVar));
+                            g10 = h2.e.g(uri2, k(ly0Var.F(), hashMap5, vVar));
                         }
                         Uri uri4 = g10;
                         e2.t tVar2 = new e2.t();
@@ -2498,7 +2498,7 @@ public final class s implements b3.q {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            p e10 = e(new ky0(arrayDeque, bufferedReader), uri, vVar);
+                            p e10 = e(new ly0(arrayDeque, bufferedReader), uri, vVar);
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -2508,7 +2508,7 @@ public final class s implements b3.q {
                     }
                 }
                 arrayDeque.add(trim);
-                m d2 = d(this.a, this.b, new ky0(arrayDeque, bufferedReader), uri, vVar);
+                m d2 = d(this.a, this.b, new ly0(arrayDeque, bufferedReader), uri, vVar);
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

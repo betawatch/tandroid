@@ -11,10 +11,10 @@ import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class x7 extends FrameLayout {
-    public org.telegram.ui.Components.l9 a;
+    public org.telegram.ui.Components.k9 a;
     public TLRPC.Document b;
     public Object c;
     public long d;
@@ -24,7 +24,7 @@ public final class x7 extends FrameLayout {
     public ug.z0 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.ActionBar.g6 w;
+    public org.telegram.ui.ActionBar.h6 w;
 
     static {
         new AccelerateInterpolator(0.5f);
@@ -34,8 +34,8 @@ public final class x7 extends FrameLayout {
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         boolean z9;
         boolean drawChild = super.drawChild(canvas, view, j3);
-        org.telegram.ui.Components.l9 l9Var = this.a;
-        if (view == l9Var && (((z9 = this.e) && this.f != 0.8f) || (!z9 && this.f != 1.0f))) {
+        org.telegram.ui.Components.k9 k9Var = this.a;
+        if (view == k9Var && (((z9 = this.e) && this.f != 0.8f) || (!z9 && this.f != 1.0f))) {
             long currentTimeMillis = System.currentTimeMillis();
             long j10 = currentTimeMillis - this.d;
             this.d = currentTimeMillis;
@@ -47,9 +47,9 @@ public final class x7 extends FrameLayout {
                     if (f11 < 0.8f) {
                         this.f = 0.8f;
                     }
-                    l9Var.setScaleX(this.f);
-                    l9Var.setScaleY(this.f);
-                    l9Var.invalidate();
+                    k9Var.setScaleX(this.f);
+                    k9Var.setScaleY(this.f);
+                    k9Var.invalidate();
                     invalidate();
                 }
             }
@@ -58,9 +58,9 @@ public final class x7 extends FrameLayout {
             if (f12 > 1.0f) {
                 this.f = 1.0f;
             }
-            l9Var.setScaleX(this.f);
-            l9Var.setScaleY(this.f);
-            l9Var.invalidate();
+            k9Var.setScaleX(this.f);
+            k9Var.setScaleY(this.f);
+            k9Var.invalidate();
             invalidate();
         }
         return drawChild;
@@ -71,13 +71,13 @@ public final class x7 extends FrameLayout {
     }
 
     public ej getSendAnimationData() {
-        org.telegram.ui.Components.l9 l9Var = this.a;
-        ImageReceiver imageReceiver = l9Var.getImageReceiver();
+        org.telegram.ui.Components.k9 k9Var = this.a;
+        ImageReceiver imageReceiver = k9Var.getImageReceiver();
         if (!imageReceiver.L()) {
             return null;
         }
         ej ejVar = new ej();
-        l9Var.getLocationInWindow(new int[2]);
+        k9Var.getLocationInWindow(new int[2]);
         ejVar.a = imageReceiver.r() + r3[0];
         ejVar.b = imageReceiver.s() + r3[1];
         ejVar.c = imageReceiver.M0;
@@ -123,10 +123,10 @@ public final class x7 extends FrameLayout {
 
     @Override // android.view.View
     public void setPressed(boolean z9) {
-        org.telegram.ui.Components.l9 l9Var = this.a;
-        if ((l9Var.getImageReceiver().e1 != 0) != z9) {
-            l9Var.getImageReceiver().e1 = z9 ? 1 : 0;
-            l9Var.invalidate();
+        org.telegram.ui.Components.k9 k9Var = this.a;
+        if ((k9Var.getImageReceiver().e1 != 0) != z9) {
+            k9Var.getImageReceiver().e1 = z9 ? 1 : 0;
+            k9Var.invalidate();
         }
         super.setPressed(z9);
     }

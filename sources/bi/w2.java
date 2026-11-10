@@ -41,25 +41,25 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.i20;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.h20;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.bd0;
 import org.telegram.ui.cn;
-import org.telegram.ui.e40;
-import org.telegram.ui.iz;
-import org.telegram.ui.o80;
+import org.telegram.ui.f40;
+import org.telegram.ui.jz;
 import org.telegram.ui.p80;
+import org.telegram.ui.q80;
+import org.telegram.ui.tn0;
 import org.telegram.ui.tp;
-import org.telegram.ui.x60;
-import org.telegram.ui.xw;
+import org.telegram.ui.y60;
 import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,25 +77,25 @@ public final /* synthetic */ class w2 implements Runnable {
     }
 
     private final void a() {
-        e40 e40Var = (e40) this.b;
+        f40 f40Var = (f40) this.b;
         org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.d;
         TLRPC.User user = (TLRPC.User) this.e;
-        org.telegram.messenger.r3 r3Var = e40Var.R2;
-        if (r3Var == null || e40Var.j2) {
+        org.telegram.messenger.r3 r3Var = f40Var.U2;
+        if (r3Var == null || f40Var.m2) {
             return;
         }
         r3Var.a(this.c);
-        e40Var.Q0(true);
-        i20 i20Var = e40Var.v3;
-        if (i20Var != null) {
-            i20Var.dismiss();
+        f40Var.Q0(true);
+        h20 h20Var = f40Var.y3;
+        if (h20Var != null) {
+            h20Var.dismiss();
         }
         try {
             u1VarArr[0].dismiss();
         } catch (Throwable unused) {
         }
         u1VarArr[0] = null;
-        e40Var.n1().k(0L, 34, user, e40Var.Q2, null, null);
+        f40Var.n1().k(0L, 34, user, f40Var.T2, null, null);
     }
 
     private final void b() {
@@ -114,8 +114,8 @@ public final /* synthetic */ class w2 implements Runnable {
     }
 
     private final void c() {
-        p80 p80Var = (p80) this.b;
-        LaunchActivity launchActivity = p80Var.h;
+        q80 q80Var = (q80) this.b;
+        LaunchActivity launchActivity = q80Var.h;
         String str = (String) this.d;
         org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.e;
         if (str != null) {
@@ -133,9 +133,9 @@ public final /* synthetic */ class w2 implements Runnable {
             TLRPC.ChatFull N0 = qp.s1(i7).N0(j10);
             if (N0 != null) {
                 if (N0.call != null) {
-                    qp.s1(i7).g1(j10, true, new o80(p80Var, a10, j3, f2Var, 0));
+                    qp.s1(i7).g1(j10, true, new p80(q80Var, a10, j3, f2Var, 0));
                 } else if (f2Var.getParentActivity() != null) {
-                    org.telegram.messenger.k5.o(null, 2131749152, org.telegram.ui.Components.hc.a0(f2Var), R.raw.linkbroken, 36);
+                    org.telegram.messenger.k5.o(null, 2131749152, org.telegram.ui.Components.gc.a0(f2Var), R.raw.linkbroken, 36);
                 }
             }
         }
@@ -150,7 +150,7 @@ public final /* synthetic */ class w2 implements Runnable {
         r2 r2Var = new r2(photoViewer, str, gfVar, j3, 6);
         if (photoViewer.D2) {
             Bitmap createBitmap = Bitmap.createBitmap(photoViewer.C2.getWidth(), photoViewer.C2.getHeight(), Bitmap.Config.ARGB_8888);
-            org.telegram.messenger.g0.A0(photoViewer.C2, createBitmap, new bd0(29, r2Var, createBitmap));
+            org.telegram.messenger.g0.A0(photoViewer.C2, createBitmap, new tn0(0, r2Var, createBitmap));
             return;
         }
         TextureView textureView = photoViewer.B2;
@@ -373,7 +373,7 @@ public final /* synthetic */ class w2 implements Runnable {
                     k7Var.r1(j3, c20Var);
                     return;
                 }
-                org.telegram.ui.Components.cc Q = k7Var.k().Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743878, "NO_BALANCE"));
+                org.telegram.ui.Components.bc Q = k7Var.k().Q(R.raw.error, 36, org.telegram.messenger.id.a0(null, null, 2131743878, "NO_BALANCE"));
                 Q.t = true;
                 Q.j();
                 return;
@@ -381,9 +381,9 @@ public final /* synthetic */ class w2 implements Runnable {
                 k7 k7Var2 = (k7) this.b;
                 long j10 = this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
-                yw ywVar = (yw) this.e;
+                zw zwVar = (zw) this.e;
                 org.telegram.messenger.d4.f(k7Var2.a).s(j10, new ig.b(null, tL_starGiftUnique.slug), null, true);
-                ywVar.presentFragment(cn.ta(j10), true);
+                zwVar.presentFragment(cn.ta(j10), true);
                 return;
             case 2:
                 k7 k7Var3 = (k7) this.b;
@@ -392,7 +392,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 c20 c20Var2 = (c20) this.e;
                 k7Var3.getClass();
                 zArr[0] = true;
-                k7Var3.c2.setLoading(false);
+                k7Var3.f2.setLoading(false);
                 k7Var3.r1(j11, c20Var2);
                 return;
             case 3:
@@ -416,7 +416,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 long j13 = this.c;
-                org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(cnVar);
+                org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(cnVar);
                 TLRPC.Document document = starGift2.sticker;
                 String M0 = org.telegram.messenger.id.M0(2131745109, null);
                 if (charSequence == null) {
@@ -589,7 +589,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 di.h6 h6Var = (di.h6) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
                 long j16 = this.c;
-                x60 x60Var = (x60) this.e;
+                y60 y60Var = (y60) this.e;
                 di.z6 z6Var2 = h6Var.c;
                 int i15 = z6Var2.a;
                 if (tLObject2 != null) {
@@ -603,14 +603,14 @@ public final /* synthetic */ class w2 implements Runnable {
                                 a0.h hVar3 = z6Var2.E;
                                 obj = (TL_stories.StoryItem) peerStories3.stories.get(i16);
                                 hVar3.k(obj, j16);
-                                x60Var.a(obj);
+                                y60Var.a(obj);
                                 return;
                             }
                         }
                     }
                 }
                 obj = null;
-                x60Var.a(obj);
+                y60Var.a(obj);
                 return;
             case 10:
                 di.i6 i6Var = (di.i6) this.b;
@@ -839,38 +839,38 @@ public final /* synthetic */ class w2 implements Runnable {
                 ((CameraController) this.b).lambda$finishRecordingVideo$15((File) this.d, (Bitmap) this.e, this.c);
                 return;
             case 16:
-                di diVar = (di) this.b;
+                ci ciVar = (ci) this.b;
                 long j22 = this.c;
                 cn cnVar2 = (cn) this.d;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.e;
-                Context context = diVar.getContext();
-                int i19 = diVar.D3;
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) this.e;
+                Context context = ciVar.getContext();
+                int i19 = ciVar.G3;
                 nj njVar = cnVar2.w5;
                 if (njVar == null) {
                     njVar = nj.a();
                 }
-                new e1(context, i19, j22, njVar, cnVar2, g6Var, 0, new org.telegram.messenger.voip.k(24, diVar, cnVar2)).show();
+                new e1(context, i19, j22, njVar, cnVar2, h6Var2, 0, new org.telegram.messenger.voip.k(24, ciVar, cnVar2)).show();
                 return;
             case 17:
-                n11 n11Var = (n11) this.b;
-                l60 l60Var = (l60) this.d;
+                m11 m11Var = (m11) this.b;
+                k60 k60Var = (k60) this.d;
                 long j23 = this.c;
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.e;
-                l60Var.u();
-                TLRPC.User a23 = qp.s1(n11Var.e).a2(Long.valueOf(j23));
+                k60Var.u();
+                TLRPC.User a23 = qp.s1(m11Var.e).a2(Long.valueOf(j23));
                 if (a23 != null) {
-                    cn cnVar3 = n11Var.s;
-                    org.telegram.ui.Components.v4.q(cnVar3, -1, a23, chat2, true, new di.c1(n11Var, j23, i11), cnVar3.getResourceProvider());
+                    cn cnVar3 = m11Var.s;
+                    org.telegram.ui.Components.u4.q(cnVar3, -1, a23, chat2, true, new di.c1(m11Var, j23, i11), cnVar3.getResourceProvider());
                     return;
                 }
                 return;
             case 18:
-                n11 n11Var2 = (n11) this.b;
+                m11 m11Var2 = (m11) this.b;
                 HashSet hashSet = (HashSet) this.d;
                 ArrayList arrayList16 = (ArrayList) this.e;
                 long j24 = this.c;
-                n11Var2.k0.removeAll(hashSet);
-                n11Var2.q();
+                m11Var2.k0.removeAll(hashSet);
+                m11Var2.q();
                 int size = arrayList16.size();
                 int i20 = 0;
                 while (i20 < size) {
@@ -878,38 +878,38 @@ public final /* synthetic */ class w2 implements Runnable {
                     i20++;
                     long intValue = ((Integer) obj3).intValue();
                     if (j24 == intValue) {
-                        n11Var2.n(intValue, false);
+                        m11Var2.n(intValue, false);
                         return;
                     }
                 }
                 return;
             case 19:
-                yw ywVar2 = (yw) this.b;
+                zw zwVar2 = (zw) this.b;
                 vo voVar = (vo) this.d;
                 TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
                 long j25 = this.c;
                 int i21 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 if (voVar != null) {
                     LongSparseIntArray longSparseIntArray = voVar.j;
-                    if (ywVar2.s4(dialog)) {
+                    if (zwVar2.s4(dialog)) {
                         int size2 = longSparseIntArray.size();
                         for (int i22 = 0; i22 < size2; i22++) {
                             i21 = Math.min(i21, longSparseIntArray.valueAt(i22));
                         }
-                        i21 -= ywVar2.P2;
+                        i21 -= zwVar2.P2;
                     }
                 }
                 int i23 = i21;
-                TLRPC.EncryptedChat a12 = org.telegram.messenger.m5.C(j25) ? ywVar2.getMessagesController().a1(Integer.valueOf((int) (4294967295L & j25))) : null;
-                UndoView k42 = ywVar2.k4();
+                TLRPC.EncryptedChat a12 = org.telegram.messenger.m5.C(j25) ? zwVar2.getMessagesController().a1(Integer.valueOf((int) (4294967295L & j25))) : null;
+                UndoView k42 = zwVar2.k4();
                 if (k42 == null) {
                     return;
                 }
-                if (ywVar2.s4(dialog)) {
-                    ywVar2.E4(j25, false, voVar, i23, true);
+                if (zwVar2.s4(dialog)) {
+                    zwVar2.E4(j25, false, voVar, i23, true);
                     k42.k(0L, 79, 1, 1600, null, null);
                 } else {
-                    ywVar2.E4(j25, true, voVar, i23, true);
+                    zwVar2.E4(j25, true, voVar, i23, true);
                     k42.k(0L, 78, 1, 1600, null, null);
                     if (voVar != null) {
                         if (a12 != null) {
@@ -922,23 +922,23 @@ public final /* synthetic */ class w2 implements Runnable {
                     }
                 }
                 if (voVar != null) {
-                    iz.z0(voVar, voVar.g, voVar.b, voVar.c, voVar.n, voVar.m, voVar.h, voVar.i, voVar.j, false, false, true, true, false, ywVar2, null);
-                    ywVar2 = ywVar2;
+                    jz.z0(voVar, voVar.g, voVar.b, voVar.c, voVar.n, voVar.m, voVar.h, voVar.i, voVar.j, false, false, true, true, false, zwVar2, null);
+                    zwVar2 = zwVar2;
                 }
-                ywVar2.getMessagesController().m4(ywVar2.X2, 0L, null);
-                ywVar2.f5(true);
-                if (ywVar2.e0 != null) {
+                zwVar2.getMessagesController().m4(zwVar2.X2, 0L, null);
+                zwVar2.f5(true);
+                if (zwVar2.e0 != null) {
                     int i24 = 0;
                     while (true) {
-                        xw[] xwVarArr = ywVar2.e0;
-                        if (i24 < xwVarArr.length) {
-                            xwVarArr[i24].d.H = false;
+                        yw[] ywVarArr = zwVar2.e0;
+                        if (i24 < ywVarArr.length) {
+                            ywVarArr[i24].d.H = false;
                             i24++;
                         }
                     }
                 }
                 int i25 = qp.C8;
-                ywVar2.u5(196608, true);
+                zwVar2.u5(196608, true);
                 return;
             case 20:
                 a();

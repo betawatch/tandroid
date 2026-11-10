@@ -1,29 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.widget.ImageView;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class tb extends za {
-    public float a;
-    public sb b;
-    public l9 c;
-    public j6 d;
-    public boolean e;
+public class tb extends ya {
+    public final ImageView a;
+    public final w70 b;
 
-    @Override // org.telegram.ui.Components.gb
+    public tb(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        int i7 = org.telegram.ui.ActionBar.m6.vj;
+        getThemedColor(i7);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        org.telegram.ui.ActionBar.t6.s(imageView, i7, h6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, c8.ha.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
+        w70 w70Var = new w70(context, null);
+        this.b = w70Var;
+        w70Var.setDisablePaddingsOffsetY(true);
+        w70Var.setSingleLine();
+        org.telegram.ui.ActionBar.t6.U(w70Var, i7, h6Var);
+        w70Var.setTypeface(Typeface.SANS_SERIF);
+        w70Var.setTextSize(1, 15.0f);
+        addView(w70Var, c8.ha.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    }
+
+    @Override // org.telegram.ui.Components.fb
     public CharSequence getAccessibilityText() {
-        return this.d.getText();
-    }
-
-    public void setProgress(float f10) {
-        if (this.e != (f10 < 1.0f)) {
-            this.e = f10 < 1.0f;
-            this.c.animate().scaleX(this.e ? 0.78f : 1.0f).scaleY(this.e ? 0.78f : 1.0f).setDuration(320L).setInterpolator(xq.h).start();
-        }
-        this.a = f10;
-        this.b.invalidate();
-    }
-
-    public void setTextColor(int i7) {
-        this.d.setTextColor(i7);
+        return this.b.getText();
     }
 }

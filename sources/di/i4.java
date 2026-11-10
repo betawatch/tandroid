@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ru;
+import org.telegram.ui.su;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i4 {
     public boolean a;
@@ -38,10 +38,10 @@ public final class i4 {
         }
     }
 
-    public static void c(ru ruVar) {
+    public static void c(su suVar) {
         i4 i4Var = new i4();
         i4Var.b = new org.telegram.messenger.h5(i4Var, 0);
-        i4Var.d = ruVar;
+        i4Var.d = suVar;
         int i7 = p10.s0;
         i4Var.g = new org.telegram.messenger.a(i4Var, 6);
         i4Var.f = org.telegram.messenger.g5.r(i7);
@@ -114,9 +114,9 @@ public final class i4 {
             }
             this.a = true;
         }
-        ru ruVar = (ru) this.d;
-        LaunchActivity launchActivity = (LaunchActivity) ruVar.b;
-        Intent intent = (Intent) ruVar.c;
+        su suVar = (su) this.d;
+        LaunchActivity launchActivity = (LaunchActivity) suVar.b;
+        Intent intent = (Intent) suVar.c;
         String str = LaunchActivity.B1;
         launchActivity.W(intent, true, false, false, null, true, false);
         return true;

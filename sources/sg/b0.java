@@ -15,10 +15,10 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.p61;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.q61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b0 {
     public static final b0 e;
@@ -203,7 +203,7 @@ public final class b0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new p61(15));
+            Utilities.i.c(new q61(15));
         }
         return f;
     }
@@ -230,6 +230,6 @@ public final class b0 {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new m4.d0((Object) new m3(font, 16), false);
+        this.d = new m4.d0((Object) new n3(font, 16), false);
     }
 }

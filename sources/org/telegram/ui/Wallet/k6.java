@@ -1,20 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class k6 extends vg.r {
-    public final /* synthetic */ m6 D;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(m6 m6Var, Context context, i6 i6Var) {
-        super(context, i6Var, 2);
-        this.D = m6Var;
-    }
-
-    @Override // vg.r
-    public final void a() {
-        this.D.s = true;
-    }
+public final class k6 {
+    public boolean a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public long h;
+    public long i;
+    public long j;
 }

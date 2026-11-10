@@ -2,9 +2,9 @@ package u7;
 
 import android.os.Parcel;
 import com.google.android.gms.location.LocationResult;
-import org.telegram.ui.Components.vy;
+import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class i extends a8.q implements j8.j {
     public static final /* synthetic */ int c = 0;
@@ -21,7 +21,7 @@ public final class i extends a8.q implements j8.j {
         if (i7 == 1) {
             LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
             d.b(parcel);
-            nVar.g().a(new org.telegram.ui.Components.n(locationResult));
+            nVar.g().a(new org.telegram.ui.Components.m(locationResult));
             return true;
         }
         if (i7 != 2) {
@@ -37,7 +37,7 @@ public final class i extends a8.q implements j8.j {
     }
 
     public final void m1() {
-        this.b.g().a(new vy(this, 23));
+        this.b.g().a(new uy(this, 23));
     }
 
     public final void n1(com.google.android.gms.common.api.internal.o oVar) {

@@ -23,10 +23,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.wo;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m7 extends FrameLayout {
-    public final org.telegram.ui.Components.l9 a;
+    public final org.telegram.ui.Components.k9 a;
     public final TextView b;
     public final n5 c;
     public final View d;
@@ -44,11 +44,11 @@ public final class m7 extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
         addView(frameLayout, c8.ha.c(-1.0f, -1));
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.a = l9Var;
-        l9Var.getImageReceiver().F0 = true;
-        l9Var.getImageReceiver().G0 = true;
-        frameLayout.addView(l9Var, c8.ha.c(-1.0f, -1));
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.a = k9Var;
+        k9Var.getImageReceiver().F0 = true;
+        k9Var.getImageReceiver().G0 = true;
+        frameLayout.addView(k9Var, c8.ha.c(-1.0f, -1));
         n5 n5Var = new n5(context, 1);
         n5Var.b = new RectF();
         this.c = n5Var;
@@ -67,12 +67,12 @@ public final class m7 extends FrameLayout {
         n5Var.addView(textView, c8.ha.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.l6.N0(false));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.m6.N0(false));
         addView(view, c8.ha.c(-1.0f, -1));
         wo woVar = new wo(21, context, null);
         this.e = woVar;
         woVar.setVisibility(4);
-        woVar.b(-1, org.telegram.ui.ActionBar.l6.zi, org.telegram.ui.ActionBar.l6.k7);
+        woVar.b(-1, org.telegram.ui.ActionBar.m6.zi, org.telegram.ui.ActionBar.m6.k7);
         woVar.setDrawUnchecked(false);
         woVar.setDrawBackgroundAsArc(1);
         addView(woVar, c8.ha.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
@@ -91,8 +91,8 @@ public final class m7 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (!this.e.a.q) {
-            org.telegram.ui.Components.l9 l9Var = this.a;
-            if (l9Var.getImageReceiver().I() && l9Var.getImageReceiver().h1 == 1.0f && !PhotoViewer.L1(this.n)) {
+            org.telegram.ui.Components.k9 k9Var = this.a;
+            if (k9Var.getImageReceiver().I() && k9Var.getImageReceiver().h1 == 1.0f && !PhotoViewer.L1(this.n)) {
                 return;
             }
         }

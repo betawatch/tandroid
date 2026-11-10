@@ -20,9 +20,9 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class a extends View implements org.telegram.ui.ActionBar.b6 {
+public final class a extends View implements org.telegram.ui.ActionBar.c6 {
     public final ImageReceiver a;
     public final String b;
     public final String c;
@@ -34,9 +34,9 @@ public final class a extends View implements org.telegram.ui.ActionBar.b6 {
     public StaticLayout r;
     public float s;
     public float w;
-    public final org.telegram.ui.ActionBar.g6 x;
+    public final org.telegram.ui.ActionBar.h6 x;
 
-    public a(Context context, gf gfVar, String str, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    public a(Context context, gf gfVar, String str, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -45,15 +45,15 @@ public final class a extends View implements org.telegram.ui.ActionBar.b6 {
         this.d = textPaint;
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
-        this.x = g6Var;
+        this.x = h6Var;
         setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.l6.N0(false));
+        setBackground(org.telegram.ui.ActionBar.m6.N0(false));
         setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i10 = org.telegram.ui.ActionBar.l6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(i10, g6Var));
+        int i10 = org.telegram.ui.ActionBar.m6.E8;
+        textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.l6.w0(i10, g6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.m6.w0(i10, h6Var));
         textPaint2.setAlpha(qs.n1);
         textPaint2.setTextSize(org.telegram.messenger.g0.L(13.0f));
         String str3 = "";
@@ -63,7 +63,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.b6 {
         imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        xp xpVar = new xp(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
+        xp xpVar = new xp(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(6.0f), -13750737), mutate);
         xpVar.x = false;
         int L = org.telegram.messenger.g0.L(18.0f);
         int L2 = org.telegram.messenger.g0.L(18.0f);
@@ -160,11 +160,11 @@ public final class a extends View implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         TextPaint textPaint = this.n;
         try {
-            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.E8, this.x);
+            int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.E8, this.x);
             this.d.setColor(w02);
             textPaint.setColor(w02);
             textPaint.setAlpha(qs.n1);
@@ -174,7 +174,7 @@ public final class a extends View implements org.telegram.ui.ActionBar.b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

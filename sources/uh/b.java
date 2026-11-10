@@ -28,14 +28,14 @@ import org.telegram.messenger.x5;
 import org.telegram.messenger.z5;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.b9;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.a9;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.wq;
 import te.g;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements x5 {
     public final te.a D;
@@ -47,8 +47,8 @@ public final class b extends Drawable implements x5 {
     public boolean J;
     public int K;
     public int L;
-    public final i6 a;
-    public final b9 b;
+    public final h6 a;
+    public final a9 b;
     public final ImageReceiver c;
     public final View d;
     public final int e;
@@ -68,13 +68,13 @@ public final class b extends Drawable implements x5 {
         this.G = new wa((char) 0, 18);
         this.e = i7;
         this.d = view;
-        this.D = new te.a(view, xq.h, 380L);
-        i6 i6Var = new i6(false, false, false);
-        this.a = i6Var;
-        i6Var.b = 21;
-        i6Var.w(g0.L(11.0f));
-        i6Var.setCallback(view);
-        this.b = new b9(i7, view, g0.L(18.0f), g0.L(8.33f), g0.N(1.0f));
+        this.D = new te.a(view, wq.h, 380L);
+        h6 h6Var = new h6(false, false, false);
+        this.a = h6Var;
+        h6Var.b = 21;
+        h6Var.w(g0.L(11.0f));
+        h6Var.setCallback(view);
+        this.b = new a9(i7, view, g0.L(18.0f), g0.L(8.33f), g0.N(1.0f));
         ImageReceiver imageReceiver = new ImageReceiver(view);
         this.c = imageReceiver;
         imageReceiver.J0(g0.L(5.0f));
@@ -113,15 +113,15 @@ public final class b extends Drawable implements x5 {
             int i7 = (int) gVar.f.a;
             int W1 = (bounds.right - L) - g0.W1(f10, g0.L(2.0f), g0.L(4.0f) + i7);
             if (f10 > 0.0f) {
-                b9 b9Var = this.b;
-                b9Var.i = (int) (this.D.e * 255.0f);
-                b9Var.setBounds((bounds.right - L) - i7, bounds.bottom - g0.L(31.33f), bounds.right - L, bounds.bottom);
+                a9 a9Var = this.b;
+                a9Var.i = (int) (this.D.e * 255.0f);
+                a9Var.setBounds((bounds.right - L) - i7, bounds.bottom - g0.L(31.33f), bounds.right - L, bounds.bottom);
                 this.b.c(canvas);
             }
             int L2 = bounds.bottom - g0.L(21.33f);
-            i6 i6Var = this.a;
-            i6Var.B = (int) (this.D.e * 255.0f);
-            i6Var.setBounds(bounds.left, g0.L(15.0f) + L2, W1, L2 - g0.L(15.0f));
+            h6 h6Var = this.a;
+            h6Var.B = (int) (this.D.e * 255.0f);
+            h6Var.setBounds(bounds.left, g0.L(15.0f) + L2, W1, L2 - g0.L(15.0f));
             this.a.draw(canvas);
         }
         if (this.h) {
@@ -139,7 +139,7 @@ public final class b extends Drawable implements x5 {
                 if (!this.n || this.r) {
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.x);
                 } else {
-                    this.y.setColor(i0.a.o(l6.x0(null, this.F.P3() ? l6.Tc : l6.Sc, false), 16));
+                    this.y.setColor(i0.a.o(m6.x0(null, this.F.P3() ? m6.Tc : m6.Sc, false), 16));
                     canvas.drawRoundRect(rectF, g0.L(5.0f), g0.L(5.0f), this.y);
                 }
             }
@@ -152,7 +152,7 @@ public final class b extends Drawable implements x5 {
                 if (this.r) {
                     x02 = -1;
                 } else {
-                    x02 = l6.x0(null, this.F.P3() ? l6.gc : l6.be, false);
+                    x02 = m6.x0(null, this.F.P3() ? m6.gc : m6.be, false);
                 }
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 waVar.getClass();
@@ -173,9 +173,9 @@ public final class b extends Drawable implements x5 {
     }
 
     public final float d(float f10) {
-        b9 b9Var = this.b;
-        float c10 = this.a.c() + b9Var.c.d.f.a;
-        float L = b9Var.c.d.c.a * g0.L(4.0f);
+        a9 a9Var = this.b;
+        float c10 = this.a.c() + a9Var.c.d.f.a;
+        float L = a9Var.c.d.c.a * g0.L(4.0f);
         float f11 = this.D.e;
         return (f10 * f11) + (L * f11) + c10;
     }
@@ -263,7 +263,7 @@ public final class b extends Drawable implements x5 {
                                 boolean z12 = ij.u4(document) || ij.N4(document);
                                 boolean K2 = ij.K2(document, true);
                                 if (z12 || K2) {
-                                    imageReceiver.p0(hc.b(document), "36_36", t5.f(document, l6.Zc, 1.0f, null), document.size, z12 ? "webp" : null, ijVar2, 1);
+                                    imageReceiver.p0(hc.b(document), "36_36", t5.f(document, m6.Zc, 1.0f, null), document.size, z12 ? "webp" : null, ijVar2, 1);
                                 }
                                 z10 = false;
                             }
@@ -285,16 +285,16 @@ public final class b extends Drawable implements x5 {
                     z11 = this.w;
                     RadialProgress2 radialProgress2 = this.E;
                     if (z11) {
-                        radialProgress2.setColors(0, 0, l6.x0(null, l6.bf, false), l6.x0(null, l6.cf, false));
+                        radialProgress2.setColors(0, 0, m6.x0(null, m6.bf, false), m6.x0(null, m6.cf, false));
                     } else {
-                        int i10 = l6.Ze;
-                        int x02 = l6.x0(null, i10, false);
-                        int i11 = l6.af;
-                        int x03 = l6.x0(null, i11, false);
-                        int i12 = l6.bf;
-                        int x04 = l6.x0(null, i12, false);
-                        int i13 = l6.cf;
-                        radialProgress2.setColors(x02, x03, x04, l6.x0(null, i13, false));
+                        int i10 = m6.Ze;
+                        int x02 = m6.x0(null, i10, false);
+                        int i11 = m6.af;
+                        int x03 = m6.x0(null, i11, false);
+                        int i12 = m6.bf;
+                        int x04 = m6.x0(null, i12, false);
+                        int i13 = m6.cf;
+                        radialProgress2.setColors(x02, x03, x04, m6.x0(null, i13, false));
                         radialProgress2.g(i10, i11, i12, i13);
                     }
                     if (!TextUtils.equals(str2, this.H)) {

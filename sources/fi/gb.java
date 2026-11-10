@@ -16,16 +16,16 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class gb extends View implements o2 {
     public final Path a;
     public final Paint b;
     public final Paint c;
     public boolean d;
-    public final org.telegram.ui.Components.w5 e;
+    public final org.telegram.ui.Components.v5 e;
     public Drawable f;
     public Bitmap h;
     public int n;
@@ -38,7 +38,7 @@ public class gb extends View implements o2 {
         this.b = paint;
         Paint paint2 = new Paint(3);
         this.c = paint2;
-        this.e = new org.telegram.ui.Components.w5(this, 0L, 380L, xq.h);
+        this.e = new org.telegram.ui.Components.v5(this, 0L, 380L, wq.h);
         paint.setColor(-1);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }

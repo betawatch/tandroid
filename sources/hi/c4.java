@@ -19,18 +19,18 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.vh;
-import org.telegram.ui.Components.xa;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.wa;
 import org.telegram.ui.cn;
-import org.telegram.ui.ry0;
+import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class c4 extends vh implements ls {
+public final class c4 extends uh implements ls {
     public int D;
     public long E;
     public int F;
@@ -61,7 +61,7 @@ public final class c4 extends vh implements ls {
     /* JADX WARN: Removed duplicated region for block: B:11:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -96,8 +96,8 @@ public final class c4 extends vh implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.vh
-    public final void H(vh vhVar) {
+    @Override // org.telegram.ui.Components.uh
+    public final void H(uh uhVar) {
         s2 s2Var = this.n;
         CharSequence p10 = t10.p(qp.s1(this.F).a2(Long.valueOf(this.w)));
         try {
@@ -106,13 +106,13 @@ public final class c4 extends vh implements ls {
             p10 = i6.m(p10, textPaint.getFontMetricsInt(), false, null, 0);
         } catch (Exception unused) {
         }
-        di diVar = this.b;
-        diVar.R2.setTitle(p10);
+        ci ciVar = this.b;
+        ciVar.U2.setTitle(p10);
         this.J.setSwipeOffsetY(0.0f);
         if (s2Var.getWebView() != null) {
             s2Var.getWebView().scrollTo(0, 0);
         }
-        org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
+        org.telegram.ui.ActionBar.f2 f2Var = ciVar.Z1;
         if (f2Var != null) {
             s2Var.setParentActivity(f2Var.getParentActivity());
         }
@@ -120,10 +120,10 @@ public final class c4 extends vh implements ls {
         if (s2Var.R) {
             return;
         }
-        org.telegram.messenger.g0.R3(diVar.R2.getBackButton(), R.drawable.ic_close_white);
+        org.telegram.messenger.g0.R3(ciVar.U2.getBackButton(), R.drawable.ic_close_white);
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void I() {
         if (this.n.N) {
             P();
@@ -132,13 +132,13 @@ public final class c4 extends vh implements ls {
         org.telegram.messenger.g0.h3(new s3(this, 0));
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void J() {
         r2 r2Var = this.J;
         r2Var.e(r2Var.getTopActionBarOffsetY() + (-r2Var.getOffsetY()));
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final boolean M() {
         return false;
     }
@@ -157,20 +157,20 @@ public final class c4 extends vh implements ls {
         alertDialog$Builder.k(id.M0(2131752916, null), new u3(this));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
         u1Var.show();
-        s6.U((TextView) u1Var.d(-1), l6.q7, this.a);
+        t6.U((TextView) u1Var.d(-1), m6.q7, this.a);
         return false;
     }
 
     public final void P() {
-        di diVar = this.b;
-        org.telegram.ui.ActionBar.f2 f2Var = diVar.W1;
+        ci ciVar = this.b;
+        org.telegram.ui.ActionBar.f2 f2Var = ciVar.Z1;
         if ((f2Var instanceof cn) && ((cn) f2Var).l1.Q() > org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.messenger.g0.v1(diVar.W1.getFragmentView());
+            org.telegram.messenger.g0.v1(ciVar.Z1.getFragmentView());
             org.telegram.messenger.g0.i3(new s3(this, 1), 250L);
         } else {
-            diVar.getWindow().setSoftInputMode(20);
+            ciVar.getWindow().setSoftInputMode(20);
             setFocusable(true);
-            diVar.A0(true);
+            ciVar.A0(true);
         }
     }
 
@@ -179,7 +179,7 @@ public final class c4 extends vh implements ls {
         s2 s2Var = this.n;
         if (i7 != qs.z1) {
             if (i7 == qs.n4) {
-                s2Var.n.b(l6.w0(l6.h5, this.a), qs.j2);
+                s2Var.n.b(m6.w0(m6.h5, this.a), qs.j2);
                 return;
             }
             return;
@@ -191,38 +191,38 @@ public final class c4 extends vh implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final boolean g() {
         return this.V;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getButtonsHideOffset() {
         return org.telegram.messenger.g0.L(12.0f) + ((int) this.J.getTopActionBarOffsetY());
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getCurrentItemTop() {
         r2 r2Var = this.J;
         return (int) (r2Var.getOffsetY() + r2Var.getSwipeOffsetY());
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getCustomActionBarBackground() {
         return this.W;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getCustomBackground() {
         return this.R;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getFirstOffset() {
         return org.telegram.messenger.g0.L(56.0f) + getListTopPadding();
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public int getListTopPadding() {
         return (int) this.J.getOffsetY();
     }
@@ -235,17 +235,17 @@ public final class c4 extends vh implements ls {
         return this.n;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final boolean h() {
         return this.Q;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final int j() {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final boolean k() {
         if (this.n.D()) {
             return true;
@@ -263,17 +263,17 @@ public final class c4 extends vh implements ls {
         }
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void p() {
         qs.f(this.F).n(this, qs.z1);
         qs.e().n(this, qs.n4);
-        org.telegram.ui.ActionBar.y r10 = this.b.R2.r();
+        org.telegram.ui.ActionBar.y s5 = this.b.U2.s();
         org.telegram.ui.ActionBar.r0 r0Var = this.K;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = r0Var.b;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         }
-        r10.removeView(r0Var);
+        s5.removeView(r0Var);
         this.n.h();
         this.T = true;
         org.telegram.messenger.g0.r(this.U);
@@ -287,7 +287,7 @@ public final class c4 extends vh implements ls {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final boolean s() {
         O();
         return false;
@@ -326,31 +326,31 @@ public final class c4 extends vh implements ls {
         this.b.b.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void t() {
-        di diVar = this.b;
-        diVar.A0(false);
-        diVar.getWindow().setSoftInputMode(48);
+        ci ciVar = this.b;
+        ciVar.A0(false);
+        ciVar.getWindow().setSoftInputMode(48);
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void u() {
         this.K.setVisibility(8);
         this.P = false;
         s2 s2Var = this.n;
         boolean z9 = s2Var.R;
-        di diVar = this.b;
+        ci ciVar = this.b;
         if (!z9) {
-            org.telegram.messenger.g0.R3(diVar.R2.getBackButton(), R.drawable.ic_ab_back);
+            org.telegram.messenger.g0.R3(ciVar.U2.getBackButton(), R.drawable.ic_ab_back);
         }
-        diVar.R2.setBackground(null);
+        ciVar.U2.setBackground(null);
         if (s2Var.T) {
             s2Var.h();
             this.H = true;
         }
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void w(int i7) {
         v3 v3Var = this.I;
         s2 s2Var = this.n;
@@ -361,12 +361,12 @@ public final class c4 extends vh implements ls {
             O();
             return;
         }
-        di diVar = this.b;
+        ci ciVar = this.b;
         if (i7 == R.id.menu_open_bot) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.w);
-            diVar.W1.presentFragment(new cn(bundle));
-            diVar.dismiss();
+            ciVar.Z1.presentFragment(new cn(bundle));
+            ciVar.dismiss();
             return;
         }
         int i10 = 0;
@@ -391,7 +391,7 @@ public final class c4 extends vh implements ls {
                 i10++;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                 if (tL_attachMenuBot2.bot_id == this.w) {
-                    diVar.k1(tL_attachMenuBot2, qp.s1(this.F).a2(Long.valueOf(this.w)));
+                    ciVar.k1(tL_attachMenuBot2, qp.s1(this.F).a2(Long.valueOf(this.w)));
                     return;
                 }
             }
@@ -413,15 +413,15 @@ public final class c4 extends vh implements ls {
             if (i7 == R.id.menu_report_bot) {
                 int i11 = this.F;
                 Context context = getContext();
-                hc hcVar = new hc(xa.a(getContext()), this.a);
+                gc gcVar = new gc(wa.a(getContext()), this.a);
                 long j3 = this.w;
-                int i12 = ry0.s1;
-                ry0.J0(i11, context, j3, false, false, new ArrayList(), hcVar, null, new byte[0], null, null);
+                int i12 = sy0.v1;
+                sy0.J0(i11, context, j3, false, false, new ArrayList(), gcVar, null, new byte[0], null, null);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void y() {
         this.O = false;
         this.J.setSwipeOffsetAnimationDisallowed(false);
@@ -429,7 +429,7 @@ public final class c4 extends vh implements ls {
         requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.vh
+    @Override // org.telegram.ui.Components.uh
     public final void z(int i7, boolean z9) {
         boolean z10;
         s2 s2Var = this.n;
@@ -443,7 +443,7 @@ public final class c4 extends vh implements ls {
             } else {
                 z10 = false;
             }
-            int Q = this.b.l3.Q() + i7;
+            int Q = this.b.o3.Q() + i7;
             setMeasuredDimension(getMeasuredWidth(), i7);
             this.O = true;
             r2Var.setSwipeOffsetAnimationDisallowed(true);

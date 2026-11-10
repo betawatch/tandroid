@@ -11,9 +11,9 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.os.Build;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e extends aa {
     public final float a = g0.N(0.55f);
@@ -57,14 +57,14 @@ public final class e extends aa {
         if (!this.d.hasDisplayList() || this.h) {
             e();
         }
-        int r12 = l6.r1(this.d.getAlpha() * gVar.V, gVar.x);
+        int r12 = m6.r1(this.d.getAlpha() * gVar.V, gVar.x);
         int alpha = Color.alpha(r12);
         Paint paint = this.f;
         if (alpha != 0) {
             paint.setShadowLayer(gVar.T, 0.0f, gVar.U, r12);
             fVar.d(canvas, paint, gVar.S);
         }
-        int r13 = l6.r1(this.d.getAlpha() * gVar.V, gVar.F);
+        int r13 = m6.r1(this.d.getAlpha() * gVar.V, gVar.F);
         if (Color.alpha(r13) != 0) {
             paint.setShadowLayer(this.a, 0.0f, 0.0f, r13);
             fVar.d(canvas, paint, gVar.S);

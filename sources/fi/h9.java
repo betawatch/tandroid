@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -64,28 +64,28 @@ public final /* synthetic */ class h9 implements Runnable {
                 qs.f(vaVar.c).k(qs.G2, Long.valueOf(inputGroupCall.id));
                 break;
             default:
-                yw ywVar = (yw) lsVar;
+                zw zwVar = (zw) lsVar;
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
                 TLRPC.User user = (TLRPC.User) tLObject;
                 long j10 = this.b;
                 boolean z10 = this.c;
                 if (chat == null) {
-                    ywVar.getMessagesController().X(0, j10, z10);
+                    zwVar.getMessagesController().X(0, j10, z10);
                     if (user != null && user.bot && this.d) {
-                        ywVar.getMessagesController().w(user.id);
+                        zwVar.getMessagesController().w(user.id);
                     }
                 } else if (org.telegram.messenger.t3.r0(chat)) {
-                    ywVar.getMessagesController().X(0, j10, z10);
+                    zwVar.getMessagesController().X(0, j10, z10);
                 } else {
-                    ywVar.getMessagesController().g0(-j10, ywVar.getMessagesController().a2(Long.valueOf(ywVar.getUserConfig().e())), null, z10, z10);
+                    zwVar.getMessagesController().g0(-j10, zwVar.getMessagesController().a2(Long.valueOf(zwVar.getUserConfig().e())), null, z10, z10);
                 }
-                ywVar.getMessagesController().J(ywVar.X2);
+                zwVar.getMessagesController().J(zwVar.X2);
                 break;
         }
     }
 
-    public /* synthetic */ h9(yw ywVar, TLRPC.Chat chat, long j3, boolean z9, TLRPC.User user, boolean z10) {
-        this.e = ywVar;
+    public /* synthetic */ h9(zw zwVar, TLRPC.Chat chat, long j3, boolean z9, TLRPC.User user, boolean z10) {
+        this.e = zwVar;
         this.f = chat;
         this.b = j3;
         this.c = z9;

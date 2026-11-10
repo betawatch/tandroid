@@ -4,14 +4,14 @@ import a8.ua;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import e2.r0;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.ly0;
 import v4.d1;
 import v4.f1;
 import v4.n0;
 import v4.v0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g {
     public final RecyclerView a;
@@ -63,14 +63,14 @@ public final class g {
         n0 n0Var = recyclerView.y;
         View view = d1Var.a;
         v0 v0Var = recyclerView.b;
-        ky0 ky0Var = n0Var.a;
-        vy vyVar = (vy) ky0Var.b;
-        int indexOfChild = ((RecyclerView) vyVar.b).indexOfChild(view);
+        ly0 ly0Var = n0Var.a;
+        uy uyVar = (uy) ly0Var.b;
+        int indexOfChild = ((RecyclerView) uyVar.b).indexOfChild(view);
         if (indexOfChild >= 0) {
-            if (((ua) ky0Var.c).G(indexOfChild)) {
-                ky0Var.M(view);
+            if (((ua) ly0Var.c).G(indexOfChild)) {
+                ly0Var.M(view);
             }
-            vyVar.Q(indexOfChild);
+            uyVar.Q(indexOfChild);
         }
         v0Var.g(view);
     }

@@ -1,9 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public interface do0 {
-    void C0();
+import android.content.Context;
 
-    void W();
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class do0 extends org.telegram.ui.Cells.d7 {
+    public final /* synthetic */ fo0 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public do0(fo0 fo0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(0, context, h6Var);
+        this.N = fo0Var;
+    }
+
+    @Override // org.telegram.ui.Cells.d7
+    public final String a() {
+        return this.N.f.V1 ? org.telegram.messenger.id.M0(2131746184, null) : org.telegram.messenger.id.M0(2131750488, null);
+    }
 }

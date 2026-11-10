@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mn implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pn b;
-    public final /* synthetic */ TLRPC.Document c;
+public final class mn implements org.telegram.messenger.lc {
+    public boolean a;
+    public final /* synthetic */ kg.g b;
+    public final /* synthetic */ on c;
 
-    public /* synthetic */ mn(pn pnVar, TLRPC.Document document, int i7) {
-        this.a = i7;
-        this.b = pnVar;
-        this.c = document;
+    public mn(kg.i iVar, kg.g gVar) {
+        this.c = iVar;
+        this.b = gVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                on onVar = this.b.d;
-                if (onVar != null) {
-                    onVar.b(this.c);
-                    break;
-                }
-                break;
-            default:
-                on onVar2 = this.b.d;
-                if (onVar2 != null) {
-                    onVar2.b(this.c);
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.lc
+    public final void t0(int i7, Drawable drawable) {
+        zg0 zg0Var;
+        bg.i iVar;
+        if (this.a) {
+            return;
         }
+        if ((i7 == 0 || i7 == 3) && drawable != null) {
+            this.a = true;
+            boolean z9 = drawable instanceof zg0;
+            kg.g gVar = this.b;
+            if (z9 && (iVar = (zg0Var = (zg0) drawable).B0) != null && iVar.g()) {
+                zg0Var.A0 = new org.telegram.ui.fq(28, this, gVar);
+            } else {
+                on.a(this.c);
+                gVar.run();
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.lc
+    public final /* synthetic */ void O(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.lc
+    public final void f0(ImageReceiver imageReceiver, boolean z9, boolean z10, boolean z11) {
     }
 }

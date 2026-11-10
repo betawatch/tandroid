@@ -14,20 +14,20 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c extends f2 implements ls {
     public int D;
     public int E;
     public int F;
-    public b5 a;
+    public c5 a;
     public r41 b;
     public a0 c;
     public boolean d;
@@ -44,61 +44,61 @@ public final class c extends f2 implements ls {
     public static void Z(c cVar, ArrayList arrayList, m41 m41Var) {
         String M0 = id.M0(2131752838, null);
         String M02 = id.M0(2131752835, null);
-        y31 y31Var = new y31(2);
-        y31Var.l = M0;
-        y31Var.o = M02;
-        y31Var.m = "RestrictedEmoji";
-        y31Var.n = "💤";
-        arrayList.add(y31Var);
-        y31 i7 = y31.i(1, id.M0(2131752821, null));
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.m = "RestrictedEmoji";
+        x31Var.n = "💤";
+        arrayList.add(x31Var);
+        x31 i7 = x31.i(1, id.M0(2131752821, null));
         i7.L(cVar.r);
         arrayList.add(i7);
-        arrayList.add(y31.C(null));
+        arrayList.add(x31.C(null));
         if (cVar.r) {
             s1 d = t1.f(cVar.currentAccount).d("away");
             if (d != null) {
-                y31 y31Var2 = new y31(17);
-                y31Var2.G = d;
-                arrayList.add(y31Var2);
+                x31 x31Var2 = new x31(17);
+                x31Var2.G = d;
+                arrayList.add(x31Var2);
             } else {
-                y31 c10 = y31.c(2, R.drawable.msg2_chats_add, id.M0(2131752837, null));
+                x31 c10 = x31.c(2, R.drawable.msg2_chats_add, id.M0(2131752837, null));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(y31.C(null));
-            arrayList.add(y31.u(id.M0(2131752830, null)));
-            y31 x10 = y31.x(3, id.M0(2131752829, null));
+            arrayList.add(x31.C(null));
+            arrayList.add(x31.u(id.M0(2131752830, null)));
+            x31 x10 = x31.x(3, id.M0(2131752829, null));
             x10.L(cVar.x == 0);
             arrayList.add(x10);
             if (cVar.d) {
-                y31 x11 = y31.x(4, id.M0(2131752822, null));
+                x31 x11 = x31.x(4, id.M0(2131752822, null));
                 x11.L(cVar.x == 1);
                 arrayList.add(x11);
             }
-            y31 x12 = y31.x(5, id.M0(2131752828, null));
+            x31 x12 = x31.x(5, id.M0(2131752828, null));
             x12.L(cVar.x == 2);
             arrayList.add(x12);
             if (cVar.x == 2) {
-                arrayList.add(y31.C(null));
-                arrayList.add(y31.u(id.M0(2131752830, null)));
-                arrayList.add(y31.f(id.M0(2131752824, null), id.Q(cVar.E), 8));
-                arrayList.add(y31.f(id.M0(2131752827, null), id.Q(cVar.F), 9));
+                arrayList.add(x31.C(null));
+                arrayList.add(x31.u(id.M0(2131752830, null)));
+                arrayList.add(x31.f(id.M0(2131752824, null), id.Q(cVar.E), 8));
+                arrayList.add(x31.f(id.M0(2131752827, null), id.Q(cVar.F), 9));
             }
-            arrayList.add(y31.C(null));
-            y31 i10 = y31.i(10, id.M0(2131752832, null));
+            arrayList.add(x31.C(null));
+            x31 i10 = x31.i(10, id.M0(2131752832, null));
             i10.L(cVar.w);
             arrayList.add(i10);
-            arrayList.add(y31.C(id.M0(2131752831, null)));
-            arrayList.add(y31.u(id.M0(2131752688, null)));
-            y31 x13 = y31.x(6, id.M0(2131752781, null));
+            arrayList.add(x31.C(id.M0(2131752831, null)));
+            arrayList.add(x31.u(id.M0(2131752688, null)));
+            x31 x13 = x31.x(6, id.M0(2131752781, null));
             x13.L(cVar.s);
             arrayList.add(x13);
-            y31 x14 = y31.x(7, id.M0(2131752776, null));
+            x31 x14 = x31.x(7, id.M0(2131752776, null));
             x14.L(!cVar.s);
             arrayList.add(x14);
-            arrayList.add(y31.C(null));
+            arrayList.add(x31.C(null));
             cVar.c.a(arrayList, m41Var, true);
-            arrayList.add(y31.C(null));
+            arrayList.add(x31.C(null));
         }
     }
 
@@ -195,7 +195,7 @@ public final class c extends f2 implements ls {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752838, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 11));
-        this.a = this.simpleActionBar.o(id.M0(2131745946, null));
+        this.a = this.simpleActionBar.p(id.M0(2131745946, null));
         int i7 = 0;
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -296,7 +296,7 @@ public final class c extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.b;
     }
 

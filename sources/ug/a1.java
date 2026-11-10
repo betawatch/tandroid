@@ -2,7 +2,7 @@ package ug;
 
 import org.telegram.messenger.qp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class a1 implements Runnable {
         switch (this.a) {
             case 0:
                 f1 f1Var = this.b;
-                vf.c.t(f1Var.getContext(), "https://" + qp.s1(f1Var.Q1).U2 + "/nft/" + f1Var.v2.slug);
+                vf.c.t(f1Var.getContext(), "https://" + qp.s1(f1Var.T1).U2 + "/nft/" + f1Var.y2.slug);
                 break;
             case 1:
                 f1 f1Var2 = this.b;
@@ -26,10 +26,10 @@ public final /* synthetic */ class a1 implements Runnable {
                     f1Var2.c.performHapticFeedback(3, 2);
                 } catch (Exception unused) {
                 }
-                f1Var2.g2.c(f1Var2.C2);
+                f1Var2.j2.c(f1Var2.F2);
                 break;
             default:
-                this.b.G2[0].setVisibility(8);
+                this.b.J2[0].setVisibility(8);
                 break;
         }
     }

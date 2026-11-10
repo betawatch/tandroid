@@ -7,9 +7,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.qp0;
+import org.telegram.ui.Components.pp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                     i0Var.getClass();
                     break;
                 } else {
-                    org.telegram.messenger.g0.h3(i0Var.z2);
+                    org.telegram.messenger.g0.h3(i0Var.C2);
                     break;
                 }
             default:
@@ -45,7 +45,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                     while (true) {
                         i0 i0Var2 = this.b;
                         if (i10 >= min) {
-                            org.telegram.messenger.g0.h3(new qp0(i0Var2, arrayList, min, tL_messages_inactiveChats, 25));
+                            org.telegram.messenger.g0.h3(new pp0(i0Var2, arrayList, min, tL_messages_inactiveChats, 25));
                             break;
                         } else {
                             TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i10);

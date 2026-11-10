@@ -39,15 +39,15 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.zr;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.r51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.j9;
 import org.telegram.ui.r9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
+public final /* synthetic */ class u implements r9, q51, h2.d, u2.u, g0 {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -64,7 +64,7 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
         if (A == null) {
             return null;
         }
-        return s9.c(A, new m3(this, 13));
+        return s9.c(A, new n3(this, 13));
     }
 
     @Override // u2.u
@@ -97,7 +97,7 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
 
     @Override // h2.d
     public m9.y W(byte[] bArr) {
-        return s9.c(((h2.d) this.c).W(bArr), new m3(this, 13));
+        return s9.c(((h2.d) this.c).W(bArr), new n3(this, 13));
     }
 
     @Override // u2.u
@@ -392,16 +392,16 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         org.telegram.messenger.g0.h3(new jg.r(this, this.b, i7, 3));
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -562,7 +562,7 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
     }
 
@@ -636,15 +636,15 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
     public /* synthetic */ void V0(zr zrVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -666,11 +666,11 @@ public final /* synthetic */ class u implements r9, r51, h2.d, u2.u, g0 {
         this.b = (z9 || z10 || z11) ? 1 : 0;
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public void onError(u51 u51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
     }
 }

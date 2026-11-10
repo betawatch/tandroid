@@ -1,28 +1,28 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.c20;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.v60;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.w60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l1 implements c20 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ fi.d b;
     public final /* synthetic */ fi.d c;
     public final /* synthetic */ x2 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 e;
     public final /* synthetic */ z1 f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ l1(fi.d dVar, fi.d dVar2, d2 d2Var, z1 z1Var, x2 x2Var, org.telegram.ui.ActionBar.g6 g6Var, g gVar) {
+    public /* synthetic */ l1(fi.d dVar, fi.d dVar2, d2 d2Var, z1 z1Var, x2 x2Var, org.telegram.ui.ActionBar.h6 h6Var, g gVar) {
         this.b = dVar;
         this.c = dVar2;
         this.g = d2Var;
         this.f = z1Var;
         this.d = x2Var;
-        this.e = g6Var;
+        this.e = h6Var;
         this.h = gVar;
     }
 
@@ -40,9 +40,9 @@ public final /* synthetic */ class l1 implements c20 {
                 (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
                 boolean booleanValue = bool.booleanValue();
                 x2 x2Var = this.d;
-                org.telegram.ui.ActionBar.g6 g6Var = this.e;
+                org.telegram.ui.ActionBar.h6 h6Var = this.e;
                 z1 z1Var = this.f;
-                d2Var.f(z1Var, booleanValue, new v60(dVar, dVar2, x2Var, g6Var, gVar, z1Var, 3));
+                d2Var.f(z1Var, booleanValue, new w60(dVar, dVar2, x2Var, h6Var, gVar, z1Var, 3));
                 break;
             default:
                 boolean[] zArr = (boolean[]) this.g;
@@ -56,7 +56,7 @@ public final /* synthetic */ class l1 implements c20 {
                 x2 x2Var2 = this.d;
                 if (str != null) {
                     if (!zArr[0]) {
-                        hc.c0(str, x2Var2.E, this.e);
+                        gc.c0(str, x2Var2.E, this.e);
                         z1 z1Var2 = this.f;
                         dVar3.setEnabled(!z1Var2.n && zArr2[0]);
                         if (!z1Var2.n && !z1Var2.o) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class l1 implements c20 {
                         dVar4.setEnabled(z9);
                         break;
                     } else {
-                        hc.b0(str);
+                        gc.b0(str);
                         break;
                     }
                 } else {
@@ -76,12 +76,12 @@ public final /* synthetic */ class l1 implements c20 {
         }
     }
 
-    public /* synthetic */ l1(fi.d dVar, fi.d dVar2, x2 x2Var, boolean[] zArr, org.telegram.ui.ActionBar.g6 g6Var, z1 z1Var, boolean[] zArr2) {
+    public /* synthetic */ l1(fi.d dVar, fi.d dVar2, x2 x2Var, boolean[] zArr, org.telegram.ui.ActionBar.h6 h6Var, z1 z1Var, boolean[] zArr2) {
         this.b = dVar;
         this.c = dVar2;
         this.d = x2Var;
         this.g = zArr;
-        this.e = g6Var;
+        this.e = h6Var;
         this.f = z1Var;
         this.h = zArr2;
     }

@@ -20,28 +20,28 @@ import org.telegram.messenger.m5;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.v8;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class b extends FrameLayout implements b6 {
-    public final g6 a;
-    public final l9 b;
+public final class b extends FrameLayout implements c6 {
+    public final h6 a;
+    public final k9 b;
     public final TextView c;
     public final TextView d;
     public final ImageView e;
 
-    public b(Context context, g6 g6Var) {
+    public b(Context context, h6 h6Var) {
         super(context);
-        this.a = g6Var;
-        l9 l9Var = new l9(context);
-        this.b = l9Var;
-        l9Var.setRoundRadius(g0.L(7.3125f));
-        addView(l9Var, ha.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        this.a = h6Var;
+        k9 k9Var = new k9(context);
+        this.b = k9Var;
+        k9Var.setRoundRadius(g0.L(7.3125f));
+        addView(k9Var, ha.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -74,25 +74,25 @@ public final class b extends FrameLayout implements b6 {
         TLRPC.ChatFull N0 = qp.s1(i7).N0(chat.id);
         setTitle(m5.u(chat));
         setSubtitle(id.G(N0 != null ? N0.linked_peers.size() : 0, "CommunityWithChats", new Object[0]));
-        this.b.e(chat, new w8(chat));
+        this.b.e(chat, new v8(chat));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(l6.z6));
-        hashSet.add(Integer.valueOf(l6.G6));
+        hashSet.add(Integer.valueOf(m6.z6));
+        hashSet.add(Integer.valueOf(m6.G6));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = l6.S0;
-        l9 l9Var = this.b;
-        s.a(canvas, drawable, (l9Var.getWidth() / 2.0f) + l9Var.getLeft(), (l9Var.getHeight() / 2.0f) + l9Var.getTop(), l9Var.getHeight());
+        Drawable drawable = m6.S0;
+        k9 k9Var = this.b;
+        s.a(canvas, drawable, (k9Var.getWidth() / 2.0f) + k9Var.getLeft(), (k9Var.getHeight() / 2.0f) + k9Var.getTop(), k9Var.getHeight());
         super.dispatchDraw(canvas);
-        g6 g6Var = this.a;
-        Paint d = g6Var != null ? g6Var.d("paintDivider") : null;
+        h6 h6Var = this.a;
+        Paint d = h6Var != null ? h6Var.d("paintDivider") : null;
         if (d == null) {
-            d = l6.k0;
+            d = m6.k0;
         }
         canvas.drawLine(g0.L(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, d);
     }
@@ -110,12 +110,12 @@ public final class b extends FrameLayout implements b6 {
         this.c.setText(charSequence);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = l6.z6;
-        g6 g6Var = this.a;
-        this.e.setColorFilter(l6.w0(i7, g6Var));
-        this.c.setTextColor(l6.w0(l6.G6, g6Var));
-        this.d.setTextColor(l6.w0(i7, g6Var));
+        int i7 = m6.z6;
+        h6 h6Var = this.a;
+        this.e.setColorFilter(m6.w0(i7, h6Var));
+        this.c.setTextColor(m6.w0(m6.G6, h6Var));
+        this.d.setTextColor(m6.w0(i7, h6Var));
     }
 }

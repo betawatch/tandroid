@@ -7,7 +7,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements v10 {
     public final /* synthetic */ int a = 0;
@@ -68,7 +68,7 @@ public final /* synthetic */ class u1 implements v10 {
                                     }
                                 }
                             } else if (d2Var.A(z1Var) && !d2Var.j(z1Var)) {
-                                Utilities.e.c(new e7(d2Var, i0Var, z1Var, sVar, 9));
+                                Utilities.e.c(new h7(d2Var, i0Var, z1Var, sVar, 9));
                                 break;
                             } else {
                                 d2Var.y(z1Var, i0Var, null, 0, "Request expired or wallet changed", sVar);

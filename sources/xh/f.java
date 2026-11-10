@@ -40,15 +40,15 @@ import org.telegram.messenger.sc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i2;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.yo;
-import org.telegram.ui.t81;
+import org.telegram.ui.u81;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f extends Drawable {
     public static final int A;
@@ -105,7 +105,7 @@ public final class f extends Drawable {
         this.h = new ArrayList();
         this.n = -1.0f;
         this.s = qs.e4;
-        this.t = new qc(1);
+        this.t = new pc(1);
         this.z = new RectF();
         for (int i7 = 0; i7 < fArr.length; i7++) {
             this.a[i7] = new Paint();
@@ -130,11 +130,11 @@ public final class f extends Drawable {
         if (layout == null) {
             return;
         }
-        wy0[] wy0VarArr = (wy0[]) spanned.getSpans(0, layout.getText().length(), wy0.class);
-        for (int i13 = 0; i13 < Math.min(100, wy0VarArr.length); i13++) {
-            if (wy0VarArr[i13].c()) {
-                int spanStart = spanned.getSpanStart(wy0VarArr[i13]);
-                int spanEnd = spanned.getSpanEnd(wy0VarArr[i13]);
+        vy0[] vy0VarArr = (vy0[]) spanned.getSpans(0, layout.getText().length(), vy0.class);
+        for (int i13 = 0; i13 < Math.min(100, vy0VarArr.length); i13++) {
+            if (vy0VarArr[i13].c()) {
+                int spanStart = spanned.getSpanStart(vy0VarArr[i13]);
+                int spanEnd = spanned.getSpanEnd(vy0VarArr[i13]);
                 if (i7 == -1 && i10 == -1) {
                     int lineForOffset = layout.getLineForOffset(spanEnd);
                     int i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -184,7 +184,7 @@ public final class f extends Drawable {
     }
 
     public static void f(Canvas canvas, Layout layout) {
-        if (!(canvas instanceof rt0)) {
+        if (!(canvas instanceof qt0)) {
             layout.draw(canvas);
             return;
         }
@@ -211,7 +211,7 @@ public final class f extends Drawable {
     public static void g(View view, boolean z9, int i7, int i10, AtomicReference atomicReference, int i11, Layout layout, List list, Canvas canvas, boolean z10) {
         StaticLayout staticLayout;
         AtomicReference atomicReference2;
-        wy0[] wy0VarArr;
+        vy0[] vy0VarArr;
         int i12;
         if (list == null || list.isEmpty()) {
             f(canvas, layout);
@@ -223,36 +223,36 @@ public final class f extends Drawable {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(layout.getText());
             if (layout.getText() instanceof Spanned) {
                 Spanned spanned = (Spanned) layout.getText();
-                wy0[] wy0VarArr2 = (wy0[]) spanned.getSpans(0, spanned.length(), wy0.class);
+                vy0[] vy0VarArr2 = (vy0[]) spanned.getSpans(0, spanned.length(), vy0.class);
                 int i14 = 0;
-                while (i14 < Math.min(100, wy0VarArr2.length)) {
-                    wy0 wy0Var = wy0VarArr2[i14];
-                    if (wy0Var.c()) {
-                        int spanStart = spanned.getSpanStart(wy0Var);
-                        int spanEnd = spanned.getSpanEnd(wy0Var);
+                while (i14 < Math.min(100, vy0VarArr2.length)) {
+                    vy0 vy0Var = vy0VarArr2[i14];
+                    if (vy0Var.c()) {
+                        int spanStart = spanned.getSpanStart(vy0Var);
+                        int spanEnd = spanned.getSpanEnd(vy0Var);
                         f6[] f6VarArr = (f6[]) spanned.getSpans(spanStart, spanEnd, f6.class);
                         int length = f6VarArr.length;
                         while (i13 < length) {
-                            wy0[] wy0VarArr3 = wy0VarArr2;
+                            vy0[] vy0VarArr3 = vy0VarArr2;
                             f6 f6Var = f6VarArr[i13];
-                            spannableStringBuilder.setSpan(new yo(f6Var, 4), spanned.getSpanStart(f6Var), spanned.getSpanEnd(f6Var), spanned.getSpanFlags(wy0Var));
+                            spannableStringBuilder.setSpan(new yo(f6Var, 4), spanned.getSpanStart(f6Var), spanned.getSpanEnd(f6Var), spanned.getSpanFlags(vy0Var));
                             spannableStringBuilder.removeSpan(f6Var);
                             i13++;
-                            wy0VarArr2 = wy0VarArr3;
+                            vy0VarArr2 = vy0VarArr3;
                             i14 = i14;
                             length = length;
                             f6VarArr = f6VarArr;
                         }
-                        wy0VarArr = wy0VarArr2;
+                        vy0VarArr = vy0VarArr2;
                         i12 = i14;
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(wy0Var));
-                        spannableStringBuilder.removeSpan(wy0Var);
+                        spannableStringBuilder.setSpan(new ForegroundColorSpan(0), spanStart, spanEnd, spanned.getSpanFlags(vy0Var));
+                        spannableStringBuilder.removeSpan(vy0Var);
                     } else {
-                        wy0VarArr = wy0VarArr2;
+                        vy0VarArr = vy0VarArr2;
                         i12 = i14;
                     }
                     i14 = i12 + 1;
-                    wy0VarArr2 = wy0VarArr;
+                    vy0VarArr2 = vy0VarArr;
                     i13 = 0;
                 }
             }
@@ -322,7 +322,7 @@ public final class f extends Drawable {
             boolean z12 = fVar.p;
             fVar.p = false;
             if (z12) {
-                fVar.h(i0.a.f(Math.max(0.0f, fVar.n), i7, (i11 == 1 ? layout.getPaint() : l6.o2).getColor()));
+                fVar.h(i0.a.f(Math.max(0.0f, fVar.n), i7, (i11 == 1 ? layout.getPaint() : m6.o2).getColor()));
             } else {
                 fVar.h(i7);
             }
@@ -512,7 +512,7 @@ public final class f extends Drawable {
         this.r = duration;
         duration.setInterpolator(this.t);
         this.r.addUpdateListener(new i2(this, alpha, 6));
-        this.r.addListener(new t81(this, 24));
+        this.r.addListener(new u81(this, 24));
         this.r.start();
         invalidateSelf();
     }

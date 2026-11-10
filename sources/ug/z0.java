@@ -15,17 +15,17 @@ import java.util.HashMap;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.i5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.h5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class z0 extends ImageView {
     public static final /* synthetic */ int L = 0;
     public Paint D;
     public ImageReceiver E;
-    public i5 F;
+    public h5 F;
     public float G;
     public boolean H;
     public boolean I;
@@ -34,7 +34,7 @@ public class z0 extends ImageView {
     public final int a;
     public final float[] b;
     public final p1 c;
-    public final g6 d;
+    public final h6 d;
     public boolean e;
     public final float f;
     public boolean h;
@@ -45,7 +45,7 @@ public class z0 extends ImageView {
     public final Path x;
     public Paint y;
 
-    public z0(int i7, Context context, g6 g6Var) {
+    public z0(int i7, Context context, h6 h6Var) {
         super(context);
         this.b = new float[3];
         this.f = 1.0f;
@@ -56,7 +56,7 @@ public class z0 extends ImageView {
         this.y = new Paint(1);
         this.G = 1.0f;
         this.a = i7;
-        this.d = g6Var;
+        this.d = h6Var;
         setImageResource(i7 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i7 == 0) {
             p1 p1Var = new p1(5);
@@ -72,7 +72,7 @@ public class z0 extends ImageView {
         }
         if (i7 == 2) {
             this.f = 0.8f;
-            this.y.setColor(l6.x0(null, l6.a7, false));
+            this.y.setColor(m6.x0(null, m6.a7, false));
         } else if (i7 == 3) {
             setScaleType(ImageView.ScaleType.CENTER);
             setImageResource(R.drawable.msg_archive_hide);
@@ -94,10 +94,10 @@ public class z0 extends ImageView {
             fArr[2] = 0.7f;
         }
         int HSVToColor = Color.HSVToColor(fArr);
-        int i10 = l6.d6;
-        g6 g6Var = this.d;
-        int f10 = i0.a.f(0.5f, HSVToColor, l6.w0(i10, g6Var));
-        int f11 = i0.a.f(0.4f, HSVToColor, l6.w0(i10, g6Var));
+        int i10 = m6.d6;
+        h6 h6Var = this.d;
+        int f10 = i0.a.f(0.5f, HSVToColor, m6.w0(i10, h6Var));
+        int f11 = i0.a.f(0.4f, HSVToColor, m6.w0(i10, h6Var));
         if (this.w != null && this.r == f11 && this.s == f10) {
             return;
         }
@@ -155,19 +155,19 @@ public class z0 extends ImageView {
         if (this.H) {
             ImageReceiver imageReceiver = this.E;
             if (imageReceiver == null || imageReceiver.n() == null) {
-                i5 i5Var = this.F;
-                if (i5Var != null) {
-                    SparseArray sparseArray = i5.r;
-                    long h = i5Var.h();
+                h5 h5Var = this.F;
+                if (h5Var != null) {
+                    SparseArray sparseArray = h5.r;
+                    long h = h5Var.h();
                     if (h != 0) {
-                        if (i5.x == null) {
-                            i5.x = new HashMap();
+                        if (h5.x == null) {
+                            h5.x = new HashMap();
                         }
-                        Integer num = (Integer) i5.x.get(Long.valueOf(h));
-                        if (num == null && (z2Var = i5Var.k) != null && z2Var.n() != null) {
-                            HashMap hashMap = i5.x;
+                        Integer num = (Integer) h5.x.get(Long.valueOf(h));
+                        if (num == null && (z2Var = h5Var.k) != null && z2Var.n() != null) {
+                            HashMap hashMap = h5.x;
                             Long valueOf = Long.valueOf(h);
-                            Integer valueOf2 = Integer.valueOf(org.telegram.messenger.g0.J0(i5Var.k.n()));
+                            Integer valueOf2 = Integer.valueOf(org.telegram.messenger.g0.J0(h5Var.k.n()));
                             hashMap.put(valueOf, valueOf2);
                             num = valueOf2;
                         }
@@ -284,9 +284,9 @@ public class z0 extends ImageView {
         p1Var.a.inset(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f));
     }
 
-    public void setAnimatedEmojiDrawable(i5 i5Var) {
-        this.F = i5Var;
-        if (i5Var != null) {
+    public void setAnimatedEmojiDrawable(h5 h5Var) {
+        this.F = h5Var;
+        if (h5Var != null) {
             this.H = true;
             invalidate();
         }
@@ -300,7 +300,7 @@ public class z0 extends ImageView {
         this.h = true;
         Integer num = this.K;
         if (num != null) {
-            i7 = l6.w(i7, num.intValue());
+            i7 = m6.w(i7, num.intValue());
         }
         if (this.n != i7) {
             this.n = i7;

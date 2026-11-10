@@ -3,18 +3,18 @@ package org.telegram.ui;
 import android.content.Context;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ck extends org.telegram.ui.Components.rl0 {
+public final class ck extends org.telegram.ui.Components.ql0 {
     public final /* synthetic */ cn I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ck(cn cnVar, Context context, cn cnVar2, int i7, long j3, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, cnVar2, i7, j3, g6Var);
+    public ck(cn cnVar, Context context, cn cnVar2, int i7, long j3, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, cnVar2, i7, j3, h6Var);
         this.I = cnVar;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ql0
     public final void b(boolean z9) {
         cn cnVar = this.I;
         cnVar.I7();
@@ -29,7 +29,7 @@ public final class ck extends org.telegram.ui.Components.rl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ql0
     public final boolean f(ch.o0 o0Var) {
         int i7;
         cn cnVar = this.I;
@@ -56,7 +56,7 @@ public final class ck extends org.telegram.ui.Components.rl0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.rl0
+    @Override // org.telegram.ui.Components.ql0
     public final void h(boolean z9) {
         super.h(z9);
         cn cnVar = this.I;

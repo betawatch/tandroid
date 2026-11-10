@@ -3,11 +3,11 @@ package fi;
 import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import java.io.Serializable;
-import org.telegram.ui.Components.ar0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.ox;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.zq0;
+import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -36,22 +36,22 @@ public final /* synthetic */ class e4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                ar0 ar0Var = (ar0) this.c;
-                qj0 qj0Var = (qj0) this.d;
-                ar0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                qj0Var.invalidate();
+                zq0 zq0Var = (zq0) this.c;
+                pj0 pj0Var = (pj0) this.d;
+                zq0Var.e.R1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                pj0Var.invalidate();
                 break;
             case 2:
-                ox oxVar = (ox) this.c;
+                px pxVar = (px) this.c;
                 float[] fArr = (float[]) this.d;
-                oxVar.getClass();
+                pxVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int i7 = 0;
                 while (i7 < 3) {
-                    oxVar.f[i7] = org.telegram.messenger.g0.T1(fArr[i7], i7 == this.b ? 1.0f : 0.0f, floatValue);
+                    pxVar.f[i7] = org.telegram.messenger.g0.T1(fArr[i7], i7 == this.b ? 1.0f : 0.0f, floatValue);
                     i7++;
                 }
-                oxVar.a();
+                pxVar.a();
                 break;
             default:
                 tg.g0 g0Var = (tg.g0) this.c;
@@ -66,10 +66,10 @@ public final /* synthetic */ class e4 implements ValueAnimator.AnimatorUpdateLis
         }
     }
 
-    public /* synthetic */ e4(ar0 ar0Var, int i7, qj0 qj0Var) {
+    public /* synthetic */ e4(zq0 zq0Var, int i7, pj0 pj0Var) {
         this.a = 1;
-        this.c = ar0Var;
+        this.c = zq0Var;
         this.b = i7;
-        this.d = qj0Var;
+        this.d = pj0Var;
     }
 }

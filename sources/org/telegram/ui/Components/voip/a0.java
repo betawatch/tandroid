@@ -26,12 +26,12 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a0 extends ViewGroup {
     public final z D;
@@ -39,7 +39,7 @@ public final class a0 extends ViewGroup {
     public long F;
     public long G;
     public int[] H;
-    public final et I;
+    public final dt I;
     public final /* synthetic */ e0 J;
     public final ArrayList a;
     public final ArrayList b;
@@ -65,7 +65,7 @@ public final class a0 extends ViewGroup {
         this.h = org.telegram.messenger.g0.L(2.0f);
         this.r = 1.0f;
         this.D = new z(this, 1);
-        this.I = new et(this, 18);
+        this.I = new dt(this, 18);
         setBackgroundColor(-16777216);
         setChildrenDrawingOrderEnabled(true);
         this.n = e0Var.c;
@@ -73,7 +73,7 @@ public final class a0 extends ViewGroup {
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(l6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        imageView.setBackground(m6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
         addView(imageView);
         TextView textView = new TextView(context);
         this.d = textView;
@@ -388,7 +388,7 @@ public final class a0 extends ViewGroup {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.s = ofFloat;
         ofFloat.setDuration(420L);
-        this.s.setInterpolator(xq.h);
+        this.s.setInterpolator(wq.h);
         this.s.addUpdateListener(new v3(this, 16));
         this.s.addListener(new va(this, 11));
         this.s.start();

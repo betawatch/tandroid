@@ -7,11 +7,11 @@ import e2.u;
 import h2.m0;
 import java.util.ArrayList;
 import java.util.Iterator;
-import x2.c1;
+import x2.b1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class l implements c1 {
+public final class l implements b1 {
     public final int a;
     public final p b;
     public int c = -1;
@@ -21,7 +21,7 @@ public final class l implements c1 {
         this.a = i7;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final void a() {
         int i7 = this.c;
         p pVar = this.b;
@@ -65,7 +65,7 @@ public final class l implements c1 {
         return (i7 == -1 || i7 == -3 || i7 == -2) ? false : true;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final boolean f() {
         if (this.c == -3) {
             return true;
@@ -78,7 +78,7 @@ public final class l implements c1 {
         return !pVar.y() && pVar.L[i7].A(pVar.j0);
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int l(long j3) {
         Object next;
         Object obj;
@@ -116,7 +116,7 @@ public final class l implements c1 {
         return x10;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int m(wf.b bVar, k2.h hVar, int i7) {
         u uVar;
         if (this.c == -3) {

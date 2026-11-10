@@ -16,10 +16,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class f0 implements Runnable {
         String str3;
         v0 v0Var;
         f2 T;
-        dk0 dk0Var;
+        ck0 ck0Var;
         v0 v0Var2;
         int i7 = 2;
         r5 = null;
@@ -178,9 +178,9 @@ public final /* synthetic */ class f0 implements Runnable {
                     v0Var3.t = str3;
                     v0Var3.u = jSONObject3;
                 }
-                dk0 dk0Var2 = k0Var3.u;
-                if (dk0Var2 != null && (v0Var3 == null || v0Var3.i <= 0)) {
-                    dk0Var2.p0("cached heights read");
+                ck0 ck0Var2 = k0Var3.u;
+                if (ck0Var2 != null && (v0Var3 == null || v0Var3.i <= 0)) {
+                    ck0Var2.p0("cached heights read");
                 }
                 if (k0Var3.A) {
                     k0Var3.A = false;
@@ -200,8 +200,8 @@ public final /* synthetic */ class f0 implements Runnable {
                 String optString = jSONObject4.optString("kind");
                 if (!"openLink".equals(optString) && !"openTelegramLink".equals(optString)) {
                     if ("haptic".equals(optString)) {
-                        if (h != null && h.x > 0 && (dk0Var = h.w) != null) {
-                            view = dk0Var.V;
+                        if (h != null && h.x > 0 && (ck0Var = h.w) != null) {
+                            view = ck0Var.V;
                         }
                         if (view != null) {
                             String optString2 = jSONObject4.optString("haptic");

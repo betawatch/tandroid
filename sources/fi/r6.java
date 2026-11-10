@@ -11,11 +11,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r6 implements v10 {
     public final /* synthetic */ int a;
@@ -34,57 +34,57 @@ public final /* synthetic */ class r6 implements v10 {
                 ArrayList arrayList = (ArrayList) obj;
                 m41 m41Var = (m41) obj2;
                 w6 w6Var = this.b;
-                kp kpVar = w6Var.W1;
+                kp kpVar = w6Var.Z1;
                 m41Var.F = 1;
                 int L = org.telegram.messenger.g0.L(64.0f);
-                arrayList.add(y31.D(org.telegram.messenger.g0.L(64.0f)));
-                if (w6Var.R1 || w6Var.Z1) {
-                    L += w6Var.d1(true, arrayList, id.M0(2131753905, null), w6Var.T1, false, false, -1);
+                arrayList.add(x31.D(org.telegram.messenger.g0.L(64.0f)));
+                if (w6Var.U1 || w6Var.c2) {
+                    L += w6Var.d1(true, arrayList, id.M0(2131753905, null), w6Var.W1, false, false, -1);
                 }
-                if (!w6Var.R1) {
-                    if (TextUtils.isEmpty(w6Var.j2) && !w6Var.Z1) {
+                if (!w6Var.U1) {
+                    if (TextUtils.isEmpty(w6Var.m2) && !w6Var.c2) {
                         m41Var.V();
-                        y31 c10 = y31.c(1, R.drawable.msg2_folder, id.M0(2131744609, null));
+                        x31 c10 = x31.c(1, R.drawable.msg2_folder, id.M0(2131744609, null));
                         c10.q = true;
                         arrayList.add(c10);
                         m41Var.U();
                         L += org.telegram.messenger.g0.L(50.0f);
                     }
-                    if (!w6Var.Z1 && kpVar != null) {
+                    if (!w6Var.c2 && kpVar != null) {
                         L += w6Var.d1(true, arrayList, id.M0(2131753904, null), kpVar.c, kpVar.f, !kpVar.e, 2);
                     }
-                    L = L + w6Var.d1(false, arrayList, id.M0(2131753907, null), w6Var.U1, w6Var.n2 || w6Var.m2, w6Var.l2, 3) + w6Var.d1(false, arrayList, id.M0(2131753906, null), w6Var.V1, w6Var.u2 || w6Var.t2, w6Var.s2, 4);
+                    L = L + w6Var.d1(false, arrayList, id.M0(2131753907, null), w6Var.X1, w6Var.q2 || w6Var.p2, w6Var.o2, 3) + w6Var.d1(false, arrayList, id.M0(2131753906, null), w6Var.Y1, w6Var.x2 || w6Var.w2, w6Var.v2, 4);
                 }
-                if (arrayList.size() <= ((w6Var.R1 || !TextUtils.isEmpty(w6Var.j2) || w6Var.Z1) ? 1 : 2)) {
-                    if (TextUtils.isEmpty(w6Var.j2)) {
+                if (arrayList.size() <= ((w6Var.U1 || !TextUtils.isEmpty(w6Var.m2) || w6Var.c2) ? 1 : 2)) {
+                    if (TextUtils.isEmpty(w6Var.m2)) {
                         String M0 = id.M0(2131748243, null);
                         String M02 = id.M0(2131748244, null);
-                        int i7 = li.b;
-                        y31 K = y31.K(li.class);
+                        int i7 = ki.b;
+                        x31 K = x31.K(ki.class);
                         K.l = M0;
                         K.m = M02;
                         arrayList.add(K);
                     } else {
                         String M03 = id.M0(2131748243, null);
-                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, w6Var.j2.length() >= 3 ? 2131748241 : 2131748242, w6Var.j2));
-                        int i10 = li.b;
-                        y31 K2 = y31.K(li.class);
+                        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(id.a0(null, null, w6Var.m2.length() >= 3 ? 2131748241 : 2131748242, w6Var.m2));
+                        int i10 = ki.b;
+                        x31 K2 = x31.K(ki.class);
                         K2.l = M03;
                         K2.m = X2;
                         arrayList.add(K2);
                     }
                 }
-                arrayList.add(y31.C(null));
-                arrayList.add(y31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(x31.C(null));
+                arrayList.add(x31.D(Math.max(0, org.telegram.messenger.g0.L(24.0f) + (((org.telegram.messenger.g0.q.y - (org.telegram.messenger.g0.L(12.0f) + L)) - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()))));
                 break;
             default:
                 TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) obj;
                 w6 w6Var2 = this.b;
-                ArrayList arrayList2 = w6Var2.V1;
-                w6Var2.t2 = false;
-                w6Var2.u2 = false;
+                ArrayList arrayList2 = w6Var2.Y1;
+                w6Var2.w2 = false;
+                w6Var2.x2 = false;
                 if (messages_botresults == null) {
-                    w6Var2.h2.O(true);
+                    w6Var2.k2.O(true);
                     break;
                 } else {
                     qp.s1(w6Var2.a).Y3(messages_botresults.users, false);
@@ -100,8 +100,8 @@ public final /* synthetic */ class r6 implements v10 {
                             if (tL_botInlineMediaResult.document != null) {
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.out = true;
-                                int i12 = w6Var2.A2;
-                                w6Var2.A2 = i12 - 1;
+                                int i12 = w6Var2.D2;
+                                w6Var2.D2 = i12 - 1;
                                 tL_message.id = i12;
                                 tL_message.peer_id = new TLRPC.TL_peerUser();
                                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
@@ -121,12 +121,12 @@ public final /* synthetic */ class r6 implements v10 {
                             }
                         }
                     }
-                    w6Var2.r2 = messages_botresults.next_offset;
-                    if (!arrayList2.isEmpty() && !TextUtils.isEmpty(w6Var2.r2)) {
+                    w6Var2.u2 = messages_botresults.next_offset;
+                    if (!arrayList2.isEmpty() && !TextUtils.isEmpty(w6Var2.u2)) {
                         z9 = true;
                     }
-                    w6Var2.s2 = z9;
-                    w6Var2.h2.O(true);
+                    w6Var2.v2 = z9;
+                    w6Var2.k2.O(true);
                     break;
                 }
                 break;

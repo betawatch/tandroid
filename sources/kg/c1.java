@@ -19,21 +19,21 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.h5;
 import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c1 extends f2 implements ls {
     public r41 a;
-    public b5 b;
+    public c5 b;
     public boolean c;
     public boolean d;
     public ArrayList[] e;
@@ -50,14 +50,14 @@ public final class c1 extends f2 implements ls {
     public static void Z(c1 c1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
         if (tL_error != null) {
             c1Var.b.b(false);
-            hc.d0(tL_error);
+            gc.d0(tL_error);
         } else {
             if (tLObject instanceof TLRPC.TL_boolFalse) {
                 if (c1Var.getParentActivity() == null) {
                     return;
                 }
                 c1Var.b.b(false);
-                k5.p(null, 2131743879, hc.a0(c1Var), null);
+                k5.p(null, 2131743879, gc.a0(c1Var), null);
                 return;
             }
             if (c1Var.isFinished || c1Var.finishing) {
@@ -70,26 +70,26 @@ public final class c1 extends f2 implements ls {
     public static void a0(c1 c1Var, ArrayList arrayList) {
         String M0 = id.M0(2131752764, null);
         String M02 = id.M0(2131752749, null);
-        y31 y31Var = new y31(2);
-        y31Var.l = M0;
-        y31Var.o = M02;
-        y31Var.k = R.raw.biz_clock;
-        arrayList.add(y31Var);
-        y31 i7 = y31.i(-1, id.M0(2131752729, null));
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.k = R.raw.biz_clock;
+        arrayList.add(x31Var);
+        x31 i7 = x31.i(-1, id.M0(2131752729, null));
         i7.L(c1Var.d);
         arrayList.add(i7);
-        arrayList.add(y31.B(-100, null));
+        arrayList.add(x31.B(-100, null));
         if (!c1Var.d) {
             return;
         }
-        arrayList.add(y31.u(id.M0(2131752764, null)));
+        arrayList.add(x31.u(id.M0(2131752764, null)));
         int i10 = 0;
         while (true) {
             ArrayList[] arrayListArr = c1Var.f;
             if (i10 >= arrayListArr.length) {
-                arrayList.add(y31.B(-101, null));
-                arrayList.add(y31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
-                arrayList.add(y31.B(-102, null));
+                arrayList.add(x31.B(-101, null));
+                arrayList.add(x31.f(id.M0(2131752728, null), x1.b(c1Var.currentAccount).d(c1Var.n, false), -2));
+                arrayList.add(x31.B(-102, null));
                 return;
             }
             if (arrayListArr[i10] == null) {
@@ -98,12 +98,12 @@ public final class c1 extends f2 implements ls {
             String displayName = DayOfWeek.values()[i10].getDisplayName(TextStyle.FULL, id.E0().y);
             String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
             String f02 = f0(c1Var.f[i10]);
-            y31 y31Var2 = new y31(5);
-            y31Var2.d = i10;
-            y31Var2.l = str;
-            y31Var2.m = f02;
-            y31Var2.L(!c1Var.f[i10].isEmpty());
-            arrayList.add(y31Var2);
+            x31 x31Var2 = new x31(5);
+            x31Var2.d = i10;
+            x31Var2.l = str;
+            x31Var2.m = f02;
+            x31Var2.L(!c1Var.f[i10].isEmpty());
+            arrayList.add(x31Var2);
             i10++;
         }
     }
@@ -272,7 +272,7 @@ public final class c1 extends f2 implements ls {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752764, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 16));
-        this.b = this.simpleActionBar.o(id.M0(2131745946, null));
+        this.b = this.simpleActionBar.p(id.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         r41 r41Var = new r41(this, new hi.u1(this, 11), new r4(this, 24), null);
@@ -351,7 +351,7 @@ public final class c1 extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.a;
     }
 

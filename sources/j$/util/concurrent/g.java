@@ -1,22 +1,22 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-public final class g extends l {
-    public final l[] e;
+public final class g extends k {
+    public final k[] e;
 
-    public g(l[] lVarArr) {
+    public g(k[] kVarArr) {
         super(-1, null, null);
-        this.e = lVarArr;
+        this.e = kVarArr;
     }
 
-    @Override // j$.util.concurrent.l
-    public final l a(int i7, Object obj) {
-        l k10;
+    @Override // j$.util.concurrent.k
+    public final k a(int i7, Object obj) {
+        k k10;
         Object obj2;
-        l[] lVarArr = this.e;
+        k[] kVarArr = this.e;
         loop0: while (true) {
-            int length = lVarArr.length;
-            if (length == 0 || (k10 = ConcurrentHashMap.k(lVarArr, (length - 1) & i7)) == null) {
+            int length = kVarArr.length;
+            if (length == 0 || (k10 = ConcurrentHashMap.k(kVarArr, (length - 1) & i7)) == null) {
                 return null;
             }
             do {
@@ -24,7 +24,7 @@ public final class g extends l {
                 if (i10 != i7 || ((obj2 = k10.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
                     if (i10 < 0) {
                         if (k10 instanceof g) {
-                            lVarArr = ((g) k10).e;
+                            kVarArr = ((g) k10).e;
                         } else {
                             return k10.a(i7, obj);
                         }

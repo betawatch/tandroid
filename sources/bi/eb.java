@@ -3,7 +3,7 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -78,18 +78,18 @@ public final /* synthetic */ class eb implements DialogInterface.OnDismissListen
                 break;
             case 13:
                 ug.i0 i0Var = (ug.i0) this.b;
-                i0Var.X1 = false;
-                i0Var.p2.d0 = true;
-                i0Var.w2.invalidate();
-                i0Var.p2.invalidate();
+                i0Var.a2 = false;
+                i0Var.s2.d0 = true;
+                i0Var.z2.invalidate();
+                i0Var.s2.invalidate();
                 break;
             case 14:
                 ug.f1 f1Var = (ug.f1) this.b;
-                qd qdVar = f1Var.j2;
+                qd qdVar = f1Var.m2;
                 if (qdVar != null) {
                     qdVar.setDialogVisible(false);
                 }
-                f1Var.i2.setPaused(false);
+                f1Var.l2.setPaused(false);
                 break;
             default:
                 ((yh.m) this.b).s = null;

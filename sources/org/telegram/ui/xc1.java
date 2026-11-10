@@ -1,17 +1,29 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import com.google.android.gms.tasks.OnFailureListener;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class xc1 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.a7));
+public final /* synthetic */ class xc1 implements OnFailureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fi.d b;
+
+    public /* synthetic */ xc1(fi.d dVar, int i7) {
+        this.a = i7;
+        this.b = dVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public final void onFailure(Exception exc) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.a8.d("wear-auth: /answer send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
+            default:
+                org.telegram.messenger.a8.d("wear-auth: /token send failed: " + exc.getMessage());
+                this.b.setLoading(false);
+                break;
+        }
     }
 }

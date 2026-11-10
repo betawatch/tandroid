@@ -1,26 +1,29 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hw extends v4.s {
-    public final /* synthetic */ hy Q;
+public final class hw extends g.p {
+    public final /* synthetic */ gy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hw(hy hyVar) {
-        super(8);
-        this.Q = hyVar;
+    public hw(gy gyVar) {
+        this.c = gyVar;
     }
 
-    @Override // v4.b0, v4.n0
-    public final void v0(RecyclerView recyclerView, v4.a1 a1Var, int i7) {
-        try {
-            fi.j1 j1Var = new fi.j1(2, recyclerView.getContext(), this);
-            j1Var.a = i7;
-            w0(j1Var);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // g.p
+    public final int i(int i7) {
+        gy gyVar = this.c;
+        pw pwVar = gyVar.R;
+        gw gwVar = gyVar.Q;
+        v4.g0 adapter = gyVar.P.getAdapter();
+        gx gxVar = gyVar.S;
+        if (adapter == gxVar) {
+            int d = gxVar.d(i7);
+            if (d == 1 || d == 3 || d == 2 || d == 4 || d == 5) {
+                return gwVar.J;
+            }
+        } else if ((gyVar.d0 && i7 == 0) || i7 == pwVar.d || i7 == pwVar.c || i7 == pwVar.f || pwVar.r.indexOfKey(i7) >= 0 || pwVar.w.indexOfKey(i7) >= 0) {
+            return gwVar.J;
         }
+        return 1;
     }
 }

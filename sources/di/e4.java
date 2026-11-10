@@ -2,9 +2,9 @@ package di;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class e4 extends org.telegram.ui.ActionBar.l5 {
+public final class e4 extends org.telegram.ui.ActionBar.m5 {
     public final /* synthetic */ int M0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class e4 extends org.telegram.ui.ActionBar.l5 {
         this.M0 = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.l5
+    @Override // org.telegram.ui.ActionBar.m5
     public boolean k(CharSequence charSequence) {
         switch (this.M0) {
             case 2:
@@ -28,7 +28,7 @@ public final class e4 extends org.telegram.ui.ActionBar.l5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l5
+    @Override // org.telegram.ui.ActionBar.m5
     public boolean l(CharSequence charSequence, boolean z9) {
         switch (this.M0) {
             case 1:
@@ -40,7 +40,7 @@ public final class e4 extends org.telegram.ui.ActionBar.l5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    @Override // org.telegram.ui.ActionBar.m5, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.M0) {
             case 0:

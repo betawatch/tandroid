@@ -13,20 +13,20 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.re0;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.qe0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dh;
-import org.telegram.ui.o40;
-import org.telegram.ui.pr;
-import org.telegram.ui.s10;
+import org.telegram.ui.f10;
+import org.telegram.ui.p40;
+import org.telegram.ui.qr;
 import org.telegram.ui.tp;
 import org.telegram.ui.web.x0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,13 +55,13 @@ public final /* synthetic */ class k0 implements RequestDelegate {
         switch (i7) {
             case 0:
                 int i10 = this.b;
-                org.telegram.messenger.g0.h3(new l0(i10, 0, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj2, (dh) obj, (q4) obj3, tLObject));
+                org.telegram.messenger.g0.h3(new l0(i10, 0, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj2, (dh) obj, (r4) obj3, tLObject));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new l0((fi.d) obj4, tLObject, (v2[]) obj2, (g6) obj, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
+                org.telegram.messenger.g0.h3(new l0((fi.d) obj4, tLObject, (w2[]) obj2, (h6) obj, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new ub((fi.d) obj4, (v2[]) obj2, this.b, (TLObject) obj, (String) obj3, 0));
+                org.telegram.messenger.g0.h3(new ub((fi.d) obj4, (w2[]) obj2, this.b, (TLObject) obj, (String) obj3, 0));
                 break;
             case 3:
                 org.telegram.messenger.g0.h3(new l0((l8) obj4, tLObject, this.d, (ArrayList) obj, (boolean[]) obj3, this.b));
@@ -71,19 +71,19 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 break;
             case 5:
                 int i11 = this.b;
-                org.telegram.messenger.g0.h3(new l0(i11, 6, (u1) obj4, (Context) obj2, (g6) obj, (o40) obj3, tLObject));
+                org.telegram.messenger.g0.h3(new l0(i11, 6, (u1) obj4, (Context) obj2, (h6) obj, (p40) obj3, tLObject));
                 break;
             case 6:
                 org.telegram.messenger.g0.h3(new c1(tL_error, tLObject, (ArrayList) obj4, this.b, (AtomicInteger) obj2, (ArrayList) obj, (tp) obj3));
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new l0((re0) obj4, (Integer[]) obj2, this.b, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
+                org.telegram.messenger.g0.h3(new l0((qe0) obj4, (Integer[]) obj2, this.b, tLObject, (ArrayList) obj, (TLRPC.PollAnswerVoters) obj3));
                 break;
             case 8:
                 org.telegram.messenger.g0.h3(new c1((u1) obj4, tLObject, this.b, (TLRPC.Document) obj2, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj3));
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new l0((pr) obj4, (TLRPC.FileLocation) obj2, (TLRPC.InputFile) obj, tLObject, (TLRPC.FileLocation) obj3, this.b));
+                org.telegram.messenger.g0.h3(new l0((qr) obj4, (TLRPC.FileLocation) obj2, (TLRPC.InputFile) obj, tLObject, (TLRPC.FileLocation) obj3, this.b));
                 break;
             case 10:
                 org.telegram.messenger.g0.h3(new c1((u1) obj4, (vf.b) obj2, tLObject, this.b, (Context) obj, (TLRPC.TL_inputGroupCallSlug) obj3, tL_error));
@@ -94,11 +94,11 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 break;
             case 12:
                 String str2 = LaunchActivity.B1;
-                org.telegram.messenger.g0.h3(new c1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (s10) obj, this.b, (String) obj3));
+                org.telegram.messenger.g0.h3(new c1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (f10) obj, this.b, (String) obj3));
                 break;
             case 13:
                 String str3 = LaunchActivity.B1;
-                org.telegram.messenger.g0.h3(new c1((LaunchActivity) obj4, tL_error, tLObject, this.b, (u1) obj2, (s10) obj, (String) obj3));
+                org.telegram.messenger.g0.h3(new c1((LaunchActivity) obj4, tL_error, tLObject, this.b, (u1) obj2, (f10) obj, (String) obj3));
                 break;
             default:
                 org.telegram.messenger.g0.h3(new c1((x0) obj4, (String) obj2, tLObject, tL_error, this.b, (org.telegram.ui.web.u0) obj, (p7) obj3));

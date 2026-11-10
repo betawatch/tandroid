@@ -13,11 +13,11 @@ import java.util.HashMap;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.lz;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class f1 {
     public static /* synthetic */ String A(int i7) {
@@ -63,7 +63,7 @@ public abstract /* synthetic */ class f1 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i7 = jt0.l0;
+        int i7 = it0.l0;
         v4.n0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;
@@ -86,8 +86,8 @@ public abstract /* synthetic */ class f1 {
         return (drawable.getIntrinsicHeight() / i7) + i10;
     }
 
-    public static int g(mz mzVar, int i7) {
-        return mzVar.c(mzVar.getMeasuredWidth()) + i7;
+    public static int g(lz lzVar, int i7) {
+        return lzVar.c(lzVar.getMeasuredWidth()) + i7;
     }
 
     public static Bundle h(int i7, String str, String str2, boolean z9) {
@@ -144,8 +144,8 @@ public abstract /* synthetic */ class f1 {
         arrayList2.add(num);
     }
 
-    public static void r(FrameLayout frameLayout, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.TL_error tL_error, boolean z9) {
-        new hc(frameLayout, g6Var).f0(tL_error, z9);
+    public static void r(FrameLayout frameLayout, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.TL_error tL_error, boolean z9) {
+        new gc(frameLayout, h6Var).f0(tL_error, z9);
     }
 
     public static void s(e2.t tVar, f3.j0 j0Var) {

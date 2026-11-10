@@ -1,39 +1,42 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ub0 implements Runnable {
+public final /* synthetic */ class ub0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fc0 b;
+    public final /* synthetic */ ec0 b;
 
-    public /* synthetic */ ub0(fc0 fc0Var, int i7) {
+    public /* synthetic */ ub0(ec0 ec0Var, int i7) {
         this.a = i7;
-        this.b = fc0Var;
+        this.b = ec0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        fc0 fc0Var = this.b;
-        switch (i7) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = fc0Var.r;
-                if (!fc0Var.P && fc0Var.isAttachedToWindow() && fc0Var.y.getVisibility() != 0 && editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    org.telegram.messenger.g0.K3(editTextBoldCursor);
-                    break;
-                }
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ec0 ec0Var = this.b;
+                di.b4 b4Var = ec0Var.e;
+                b4Var.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, floatValue));
+                b4Var.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, floatValue));
+                b4Var.setAlpha(org.telegram.messenger.g0.T1(0.0f, 1.0f, floatValue));
+                TextView textView = ec0Var.x;
+                textView.setScaleX(org.telegram.messenger.g0.T1(1.0f, 0.9f, floatValue));
+                textView.setScaleY(org.telegram.messenger.g0.T1(1.0f, 0.9f, floatValue));
+                textView.setAlpha(org.telegram.messenger.g0.T1(1.0f, 0.0f, floatValue));
+                ec0Var.s.setAlpha(org.telegram.messenger.g0.T1(0.0f, 1.0f, floatValue));
                 break;
             default:
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(fc0Var.a0, 0.0f);
-                fc0Var.S = ofFloat;
-                ofFloat.addUpdateListener(new vb0(fc0Var, 1));
-                ofFloat.addListener(new f60(fc0Var, 6));
-                ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(xq.h);
-                ofFloat.start();
+                ec0 ec0Var2 = this.b;
+                ec0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ec0Var2.a0 = floatValue2;
+                ec0Var2.h(floatValue2);
+                ec0Var2.setAlpha(ec0Var2.a0);
                 break;
         }
     }

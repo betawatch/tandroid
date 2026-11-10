@@ -1,130 +1,138 @@
 package j$.util.concurrent;
 
-import j$.util.Collection;
 import j$.util.Spliterator;
-import j$.util.stream.Stream;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.Spliterator;
+import java.util.Comparator;
 import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
 
 /* loaded from: classes2.dex */
-public final class i extends b implements Set, j$.util.Set {
-    private static final long serialVersionUID = 7249069246763182397L;
+public final class i extends o implements Spliterator {
+    public final /* synthetic */ int i;
+    public long j;
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i(k[] kVarArr, int i7, int i10, int i11, long j3, int i12) {
+        super(kVarArr, i7, i10, i11);
+        this.i = i12;
+        this.j = j3;
     }
 
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$parallelStream(this));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean contains(Object obj) {
-        return this.a.containsKey(obj);
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean remove(Object obj) {
-        return this.a.remove(obj) != null;
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new h(lVarArr, length, length, concurrentHashMap, 0);
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Object it = iterator();
-        int i7 = 0;
-        while (((a) it).hasNext()) {
-            i7 += ((h) it).next().hashCode();
+    @Override // j$.util.Spliterator
+    public final int characteristics() {
+        switch (this.i) {
+            case 0:
+                return 4353;
+            default:
+                return 4352;
         }
-        return i7;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof Set)) {
-            return false;
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ long getExactSizeIfKnown() {
+        switch (this.i) {
         }
-        Set set = (Set) obj;
-        if (set != this) {
-            return containsAll(set) && set.containsAll(this);
+        return j$.com.android.tools.r8.a.m(this);
+    }
+
+    @Override // j$.util.Spliterator
+    public final /* synthetic */ boolean hasCharacteristics(int i7) {
+        switch (this.i) {
+        }
+        return j$.com.android.tools.r8.a.o(this, i7);
+    }
+
+    @Override // j$.util.Spliterator
+    public final Comparator getComparator() {
+        switch (this.i) {
+            case 0:
+                throw new IllegalStateException();
+            default:
+                throw new IllegalStateException();
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final Spliterator trySplit() {
+        switch (this.i) {
+            case 0:
+                int i7 = this.f;
+                int i10 = this.g;
+                int i11 = (i7 + i10) >>> 1;
+                if (i11 <= i7) {
+                    return null;
+                }
+                k[] kVarArr = this.a;
+                this.g = i11;
+                long j3 = this.j >>> 1;
+                this.j = j3;
+                return new i(kVarArr, this.h, i11, i10, j3, 0);
+            default:
+                int i12 = this.f;
+                int i13 = this.g;
+                int i14 = (i12 + i13) >>> 1;
+                if (i14 <= i12) {
+                    return null;
+                }
+                k[] kVarArr2 = this.a;
+                this.g = i14;
+                long j10 = this.j >>> 1;
+                this.j = j10;
+                return new i(kVarArr2, this.h, i14, i13, j10, 1);
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final void forEachRemaining(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                while (true) {
+                    k a10 = a();
+                    if (a10 == null) {
+                        break;
+                    } else {
+                        consumer.x(a10.b);
+                    }
+                }
+            default:
+                consumer.getClass();
+                while (true) {
+                    k a11 = a();
+                    if (a11 == null) {
+                        break;
+                    } else {
+                        consumer.x(a11.c);
+                    }
+                }
+        }
+    }
+
+    @Override // j$.util.Spliterator
+    public final boolean tryAdvance(Consumer consumer) {
+        switch (this.i) {
+            case 0:
+                consumer.getClass();
+                k a10 = a();
+                if (a10 != null) {
+                    consumer.x(a10.b);
+                    break;
+                }
+                break;
+            default:
+                consumer.getClass();
+                k a11 = a();
+                if (a11 != null) {
+                    consumer.x(a11.c);
+                    break;
+                }
+                break;
         }
         return true;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        long j3 = concurrentHashMap.j();
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j3 < 0 ? 0L : j3, 0);
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final void forEach(Consumer consumer) {
-        consumer.getClass();
-        l[] lVarArr = this.a.a;
-        if (lVarArr == null) {
-            return;
+    @Override // j$.util.Spliterator
+    public final long estimateSize() {
+        switch (this.i) {
         }
-        p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
-        while (true) {
-            l a10 = pVar.a();
-            if (a10 == null) {
-                return;
-            } else {
-                consumer.x(a10.b);
-            }
-        }
+        return this.j;
     }
 }

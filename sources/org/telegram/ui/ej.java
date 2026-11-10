@@ -1,14 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ej extends mi.l {
     public Runnable W;
     public final /* synthetic */ cn X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ej(cn cnVar, cn cnVar2, cj cjVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(cnVar2, cjVar, g6Var);
+    public ej(cn cnVar, cn cnVar2, cj cjVar, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(cnVar2, cjVar, h6Var);
         this.X = cnVar;
     }
 
@@ -48,9 +48,9 @@ public final class ej extends mi.l {
         m.f3 f3Var = cnVar.Z.getAdjustPanLayoutHelper().h;
         org.telegram.messenger.g0.r(f3Var);
         f3Var.run();
-        org.telegram.ui.Components.je jeVar = cnVar.Z.Y3;
-        org.telegram.messenger.g0.r(jeVar);
-        jeVar.run();
+        org.telegram.ui.Components.ie ieVar = cnVar.Z.Y3;
+        org.telegram.messenger.g0.r(ieVar);
+        ieVar.run();
     }
 
     @Override // mi.l, v4.k, v4.l0

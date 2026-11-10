@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -32,15 +32,15 @@ public final class t4 extends FrameLayout {
     public Object f;
     public Object h;
 
-    public t4(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public t4(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.b = org.telegram.messenger.g0.L(64.0f);
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.d = l9Var;
-        l9Var.setAspectFit(true);
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(12.0f));
-        addView(l9Var, c8.ha.c(-1.0f, -1));
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, g6Var);
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.d = k9Var;
+        k9Var.setAspectFit(true);
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(12.0f));
+        addView(k9Var, c8.ha.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, h6Var);
         this.e = radialProgress2;
         radialProgress2.E = 0.0f;
         radialProgress2.setIcon(10, false, false);
@@ -65,7 +65,7 @@ public final class t4 extends FrameLayout {
         sg.q qVar = (sg.q) this.h;
         this.c = true;
         sg.m mVar = (sg.m) this.e;
-        mVar.d = i0.a.o(mVar.e.m1, org.telegram.messenger.qs.e4);
+        mVar.d = i0.a.o(mVar.e.p1, org.telegram.messenger.qs.e4);
         mVar.a();
         mVar.invalidate();
         EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.f;
@@ -73,11 +73,11 @@ public final class t4 extends FrameLayout {
         int selectionEnd = editTextBoldCursor.getSelectionEnd();
         int i7 = this.b;
         if (i7 == 0) {
-            editTextBoldCursor.setText(String.valueOf(Color.red(qVar.m1)));
+            editTextBoldCursor.setText(String.valueOf(Color.red(qVar.p1)));
         } else if (i7 == 1) {
-            editTextBoldCursor.setText(String.valueOf(Color.green(qVar.m1)));
+            editTextBoldCursor.setText(String.valueOf(Color.green(qVar.p1)));
         } else if (i7 == 2) {
-            editTextBoldCursor.setText(String.valueOf(Color.blue(qVar.m1)));
+            editTextBoldCursor.setText(String.valueOf(Color.blue(qVar.p1)));
         }
         editTextBoldCursor.setSelection(selectionStart, selectionEnd);
         this.c = false;
@@ -94,9 +94,9 @@ public final class t4 extends FrameLayout {
                 RadialProgress2 radialProgress2 = (RadialProgress2) obj;
                 super.dispatchDraw(canvas);
                 if (this.c) {
-                    Drawable t6 = ((org.telegram.ui.Components.l9) this.d).getImageReceiver().t();
+                    Drawable t6 = ((org.telegram.ui.Components.k9) this.d).getImageReceiver().t();
                     final int i11 = 1;
-                    if ((t6 instanceof org.telegram.ui.Components.v5) && ((org.telegram.ui.Components.v5) t6).d[4] > 0) {
+                    if ((t6 instanceof org.telegram.ui.Components.u5) && ((org.telegram.ui.Components.u5) t6).d[4] > 0) {
                         ValueAnimator valueAnimator = (ValueAnimator) this.h;
                         if (valueAnimator != null) {
                             valueAnimator.cancel();
@@ -173,18 +173,18 @@ public final class t4 extends FrameLayout {
                 break;
             case 1:
                 Paint paint = (Paint) obj;
-                w71 w71Var = (w71) this.h;
-                x61 x61Var = w71Var.a;
+                x71 x71Var = (x71) this.h;
+                y61 y61Var = x71Var.a;
                 if (this.c) {
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                     canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.qs.e4, 31);
-                    org.telegram.ui.ActionBar.l6.t(this, w71Var.y0, x61Var);
-                    Paint d = x61Var.d("paintChatActionBackground");
+                    org.telegram.ui.ActionBar.m6.t(this, x71Var.y0, y61Var);
+                    Paint d = y61Var.d("paintChatActionBackground");
                     ColorFilter colorFilter = d.getColorFilter();
                     d.setColorFilter((ColorMatrixColorFilter) this.f);
-                    m71 m71Var = w71Var.y0;
-                    if (m71Var != null && (m71Var.getBackground() instanceof org.telegram.ui.Components.ra0) && w71Var.m1 < 0.0f) {
+                    n71 n71Var = x71Var.y0;
+                    if (n71Var != null && (n71Var.getBackground() instanceof org.telegram.ui.Components.qa0) && x71Var.m1 < 0.0f) {
                         f10 = 0.33f;
                     }
                     int alpha = d.getAlpha();
@@ -192,10 +192,10 @@ public final class t4 extends FrameLayout {
                     canvas.drawRect(rectF, d);
                     d.setAlpha(alpha);
                     d.setColorFilter(colorFilter);
-                    if (w71Var.N1) {
-                        float f11 = w71Var.o1;
+                    if (x71Var.N1) {
+                        float f11 = x71Var.o1;
                         if (f11 > 0.0f) {
-                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * w71Var.p1)));
+                            canvas.drawColor(i0.a.o(-16777216, (int) (f11 * 255.0f * x71Var.p1)));
                         }
                     }
                     canvas.save();
@@ -272,7 +272,7 @@ public final class t4 extends FrameLayout {
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
+        editTextBoldCursor.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(10.0f), 436207615));
         editTextBoldCursor.setPadding(0, 0, 0, 0);
         editTextBoldCursor.setTextColor(-1);
         editTextBoldCursor.setGravity(17);
@@ -283,14 +283,14 @@ public final class t4 extends FrameLayout {
         editTextBoldCursor.setTypeface(org.telegram.messenger.g0.o());
         editTextBoldCursor.addTextChangedListener(new fi.h7(this));
         editTextBoldCursor.setOnFocusChangeListener(new bi.n(this, 6));
-        editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.l2(4));
+        editTextBoldCursor.setOnEditorActionListener(new org.telegram.ui.Components.k2(4));
         addView(editTextBoldCursor, c8.ha.e(72, 36, 85));
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t4(w71 w71Var, Context context, boolean z9) {
+    public t4(x71 x71Var, Context context, boolean z9) {
         super(context);
-        this.h = w71Var;
+        this.h = x71Var;
         this.c = z9;
         Paint paint = new Paint(3);
         this.e = paint;

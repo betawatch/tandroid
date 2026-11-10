@@ -1,6 +1,6 @@
 package wg;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,8 +34,8 @@ public final /* synthetic */ class r0 implements Runnable {
                 break;
             case 6:
                 w0 w0Var = this.b;
-                w0Var.W1.clear();
-                w0Var.X1.clear();
+                w0Var.Z1.clear();
+                w0Var.a2.clear();
                 w0Var.dismiss();
                 break;
             default:

@@ -8,20 +8,20 @@ import android.view.MenuItem;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
-import org.telegram.ui.Components.l21;
-import org.telegram.ui.Components.zs;
-import org.telegram.ui.ty0;
+import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.uy0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f9 implements ActionMode.Callback {
     public final /* synthetic */ int a;
     public Object b;
     public final /* synthetic */ Object c;
 
-    public f9(zs zsVar, ActionMode.Callback callback) {
+    public f9(ys ysVar, ActionMode.Callback callback) {
         this.a = 1;
-        this.c = zsVar;
+        this.c = ysVar;
         this.b = callback;
     }
 
@@ -31,7 +31,7 @@ public final class f9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || ty0.d0().contains((String) this.b)) ? false : true);
+        findItem.setVisible((((v9) this.c).k0 == null || ((String) this.b) == null || uy0.d0().contains((String) this.b)) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -77,7 +77,7 @@ public final class f9 implements ActionMode.Callback {
                             String str = (String) this.b;
                             f fVar2 = new f(this, 9);
                             org.telegram.ui.g4 g4Var = sVar.a;
-                            l21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
+                            k21.U0(g4Var.L, g4Var.M, str, language, r11, null, fVar2);
                         }
                         v9Var.u();
                     } else if (itemId == R.id.menu_quote) {
@@ -102,7 +102,7 @@ public final class f9 implements ActionMode.Callback {
                 }
                 return true;
             default:
-                if (((zs) obj).G(menuItem.getItemId())) {
+                if (((ys) obj).G(menuItem.getItemId())) {
                     actionMode.finish();
                     return true;
                 }
@@ -126,7 +126,7 @@ public final class f9 implements ActionMode.Callback {
                 menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
                 return true;
             default:
-                ((zs) this.c).E();
+                ((ys) this.c).E();
                 return ((ActionMode.Callback) this.b).onCreateActionMode(actionMode, menu);
         }
     }
@@ -137,7 +137,7 @@ public final class f9 implements ActionMode.Callback {
             case 0:
                 break;
             default:
-                ((zs) this.c).D();
+                ((ys) this.c).D();
                 ((ActionMode.Callback) this.b).onDestroyActionMode(actionMode);
                 break;
         }

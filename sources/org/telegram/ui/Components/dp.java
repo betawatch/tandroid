@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class dp implements c5.g {
     public int a;
-    public final /* synthetic */ tf0 b;
+    public final /* synthetic */ sf0 b;
 
-    public dp(tf0 tf0Var) {
-        this.b = tf0Var;
+    public dp(sf0 sf0Var) {
+        this.b = sf0Var;
     }
 
     @Override // c5.g
@@ -26,12 +26,12 @@ public final class dp implements c5.g {
     }
 
     public final void d() {
-        tf0 tf0Var = this.b;
-        if (tf0Var.w0 != null) {
-            int currentItem = tf0Var.getCurrentItem();
-            int k10 = tf0Var.w0.k(currentItem) + tf0Var.w0.j();
+        sf0 sf0Var = this.b;
+        if (sf0Var.w0 != null) {
+            int currentItem = sf0Var.getCurrentItem();
+            int k10 = sf0Var.w0.k(currentItem) + sf0Var.w0.j();
             if (currentItem != k10) {
-                tf0Var.x(k10, false);
+                sf0Var.x(k10, false);
             }
         }
     }

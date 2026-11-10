@@ -9,24 +9,24 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class j0 {
     public final g1 a;
-    public final g6 b;
+    public final h6 b;
     public final i0 c;
     public boolean d;
 
-    public j0(Context context, g6 g6Var, i0 i0Var) {
-        this.b = g6Var;
+    public j0(Context context, h6 h6Var, i0 i0Var) {
+        this.b = h6Var;
         this.c = i0Var;
-        g1 g1Var = new g1(context, g6Var);
+        g1 g1Var = new g1(context, h6Var);
         this.a = g1Var;
         g1Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
         g1Var.setAllowNewlines(false);
@@ -59,12 +59,12 @@ public final class j0 {
     public final void a() {
         g1 g1Var = this.a;
         g1Var.updateColors();
-        int i7 = l6.G6;
-        g6 g6Var = this.b;
-        l6.w0(i7, g6Var);
-        s6.V(g1Var, s6.K(0.5f, i7), g6Var);
-        o6 K = s6.K(0.35f, i7);
-        s6.n(g1Var, 1, K.a, -1, 2, K.d, g6Var);
+        int i7 = m6.G6;
+        h6 h6Var = this.b;
+        m6.w0(i7, h6Var);
+        t6.V(g1Var, t6.K(0.5f, i7), h6Var);
+        p6 K = t6.K(0.35f, i7);
+        t6.n(g1Var, 1, K.a, -1, 2, K.d, h6Var);
     }
 
     public final void b() {

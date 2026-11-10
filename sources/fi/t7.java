@@ -6,40 +6,40 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t7 extends FrameLayout {
     public final Paint a;
-    public final org.telegram.ui.Components.w5 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+    public final org.telegram.ui.Components.v5 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 c;
     public final /* synthetic */ w7 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t7(w7 w7Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public t7(w7 w7Var, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         this.d = w7Var;
-        this.c = g6Var;
+        this.c = h6Var;
         this.a = new Paint(1);
-        this.b = new org.telegram.ui.Components.w5(this, 0L, 350L, xq.h);
+        this.b = new org.telegram.ui.Components.v5(this, 0L, 350L, wq.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, this.c);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, this.c);
         Paint paint = this.a;
         paint.setColor(w02);
         w7 w7Var = this.d;
         float max = Math.max(0.0f, w7Var.I0());
         boolean z9 = max < ((float) org.telegram.messenger.g0.m);
-        org.telegram.ui.Components.w5 w5Var = this.b;
-        float T1 = org.telegram.messenger.g0.T1(max, 0.0f, w5Var.d(z9));
+        org.telegram.ui.Components.v5 v5Var = this.b;
+        float T1 = org.telegram.messenger.g0.T1(max, 0.0f, v5Var.d(z9));
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(w7Var.t0, T1, getWidth() - w7Var.t0, org.telegram.messenger.g0.L(14.0f) + getHeight());
-        float L = (1.0f - w5Var.c) * org.telegram.messenger.g0.L(14.0f);
+        float L = (1.0f - v5Var.c) * org.telegram.messenger.g0.L(14.0f);
         canvas.drawRoundRect(rectF, L, L, paint);
-        w7Var.n1.setTranslationY(Math.max(org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m, org.telegram.messenger.g0.L(14.0f) + T1));
+        w7Var.q1.setTranslationY(Math.max(org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.m, org.telegram.messenger.g0.L(14.0f) + T1));
         canvas.save();
         canvas.clipRect(w7Var.t0, org.telegram.messenger.g0.L(14.0f) + org.telegram.messenger.g0.m, getWidth() - w7Var.t0, getHeight());
         super.dispatchDraw(canvas);

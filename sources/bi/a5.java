@@ -7,22 +7,22 @@ import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a5 extends ClickableSpan {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
     public final /* synthetic */ long e;
     public final /* synthetic */ String f;
     public final /* synthetic */ String h;
 
-    public a5(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var, long j3, String str, String str2) {
+    public a5(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var, long j3, String str, String str2) {
         this.a = zArr;
         this.b = i7;
         this.c = context;
-        this.d = g6Var;
+        this.d = h6Var;
         this.e = j3;
         this.f = str;
         this.h = str2;

@@ -2,64 +2,64 @@ package m2;
 
 import e2.k1;
 import e2.l1;
-import x2.g0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
     public int b;
     public long c;
-    public final g0 d;
+    public final f0 d;
     public boolean e;
     public boolean f;
     public final /* synthetic */ g g;
 
-    public f(g gVar, String str, int i7, g0 g0Var) {
+    public f(g gVar, String str, int i7, f0 f0Var) {
         this.g = gVar;
         this.a = str;
         this.b = i7;
-        this.c = g0Var == null ? -1L : g0Var.d;
-        if (g0Var == null || !g0Var.b()) {
+        this.c = f0Var == null ? -1L : f0Var.d;
+        if (f0Var == null || !f0Var.b()) {
             return;
         }
-        this.d = g0Var;
+        this.d = f0Var;
     }
 
     public final boolean a(a aVar) {
-        g0 g0Var = aVar.d;
+        f0 f0Var = aVar.d;
         l1 l1Var = aVar.b;
-        if (g0Var == null) {
+        if (f0Var == null) {
             return this.b != aVar.c;
         }
         long j3 = this.c;
         if (j3 == -1) {
             return false;
         }
-        if (g0Var.d > j3) {
+        if (f0Var.d > j3) {
             return true;
         }
-        g0 g0Var2 = this.d;
-        if (g0Var2 == null) {
+        f0 f0Var2 = this.d;
+        if (f0Var2 == null) {
             return false;
         }
-        int i7 = g0Var2.b;
-        int b10 = l1Var.b(g0Var.a);
-        int b11 = l1Var.b(g0Var2.a);
-        if (g0Var.d < g0Var2.d || b10 < b11) {
+        int i7 = f0Var2.b;
+        int b10 = l1Var.b(f0Var.a);
+        int b11 = l1Var.b(f0Var2.a);
+        if (f0Var.d < f0Var2.d || b10 < b11) {
             return false;
         }
         if (b10 > b11) {
             return true;
         }
-        if (!g0Var.b()) {
-            int i10 = g0Var.e;
+        if (!f0Var.b()) {
+            int i10 = f0Var.e;
             return i10 == -1 || i10 > i7;
         }
-        int i11 = g0Var.b;
-        int i12 = g0Var.c;
+        int i11 = f0Var.b;
+        int i12 = f0Var.c;
         if (i11 <= i7) {
-            return i11 == i7 && i12 > g0Var2.c;
+            return i11 == i7 && i12 > f0Var2.c;
         }
         return true;
     }
@@ -72,7 +72,7 @@ public final class f {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean b(l1 l1Var, l1 l1Var2) {
-        g0 g0Var;
+        f0 f0Var;
         int i7 = this.b;
         if (i7 < l1Var.o()) {
             g gVar = this.g;
@@ -88,6 +88,6 @@ public final class f {
             i7 = -1;
         }
         this.b = i7;
-        return i7 != -1 && ((g0Var = this.d) == null || l1Var2.b(g0Var.a) != -1);
+        return i7 != -1 && ((f0Var = this.d) == null || l1Var2.b(f0Var.a) != -1);
     }
 }

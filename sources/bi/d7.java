@@ -6,7 +6,7 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d7 extends AnimatorListenerAdapter {
     public final /* synthetic */ e7 a;
@@ -27,7 +27,7 @@ public final class d7 extends AnimatorListenerAdapter {
         dd.c1(e7Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - e7Var.u0].document, qs.q2);
         TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) e7Var.d0.f;
         if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.i5 l10 = org.telegram.ui.Components.i5.l(p10.s0, 7, stargiftattributepattern.document);
+            org.telegram.ui.Components.h5 l10 = org.telegram.ui.Components.h5.l(p10.s0, 7, stargiftattributepattern.document);
             l10.m = true;
             l10.u();
         }

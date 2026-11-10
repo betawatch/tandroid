@@ -1,22 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.qs;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public abstract class aa {
-    public static org.telegram.messenger.q5 a;
-    public static final int[] b = new int[qs.N1];
+public final class aa extends FrameLayout {
+    public final /* synthetic */ ca a;
 
-    static {
-        int i7 = 0;
-        while (true) {
-            int[] iArr = b;
-            if (i7 >= iArr.length) {
-                return;
-            }
-            iArr[i7] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i7))) * 255.0d);
-            i7++;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public aa(ca caVar, Context context) {
+        super(context);
+        this.a = caVar;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        ca caVar = this.a;
+        caVar.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (caVar.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

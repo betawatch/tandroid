@@ -13,7 +13,7 @@ import android.text.TextPaint;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class CheckBox extends View {
     public static Paint H;
@@ -92,7 +92,7 @@ public class CheckBox extends View {
         this.w = z9;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z9 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new z5(this, 18));
+        ofFloat.addListener(new y5(this, 18));
         this.s.setDuration(300L);
         this.s.start();
     }

@@ -1,23 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class rv extends di.q {
-    public final /* synthetic */ yw O0;
+public final /* synthetic */ class rv {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sv b;
+    public final /* synthetic */ View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rv(yw ywVar, Context context, yw ywVar2, int i7, int i10) {
-        super(context, ywVar2, i7, i10);
-        this.O0 = ywVar;
+    public /* synthetic */ rv(sv svVar, View view, int i7) {
+        this.a = i7;
+        this.b = svVar;
+        this.c = view;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.f2) this.O0).actionBar;
-        return !kVar.w() && super.dispatchTouchEvent(motionEvent);
+    public final void a(boolean z9) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof di.p) {
+                    this.b.O0.E0.i((di.p) view, false);
+                    if (z9) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.us(16), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof di.p) {
+                    this.b.O0.E0.i((di.p) view2, false);
+                    if (z9) {
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.Components.us(16), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

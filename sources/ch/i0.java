@@ -3,14 +3,14 @@ package ch;
 import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.l9;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.k9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i0 extends l9 {
+public final class i0 extends k9 {
     public boolean G;
-    public i5 H;
+    public h5 H;
     public d I;
     public boolean J;
     public final /* synthetic */ k0 K;
@@ -22,13 +22,13 @@ public final class i0 extends l9 {
         getImageReceiver().h0(3);
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.J = true;
-        i5 i5Var = this.H;
-        if (i5Var != null) {
-            i5Var.a(this);
+        h5 h5Var = this.H;
+        if (h5Var != null) {
+            h5Var.a(this);
         }
         d dVar = this.I;
         if (dVar != null) {
@@ -36,13 +36,13 @@ public final class i0 extends l9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.J = false;
-        i5 i5Var = this.H;
-        if (i5Var != null) {
-            i5Var.n(this);
+        h5 h5Var = this.H;
+        if (h5Var != null) {
+            h5Var.n(this);
         }
         d dVar = this.I;
         if (dVar != null) {
@@ -50,11 +50,11 @@ public final class i0 extends l9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onDraw(Canvas canvas) {
-        i5 i5Var = this.H;
-        if (i5Var != null) {
-            i5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        h5 h5Var = this.H;
+        if (h5Var != null) {
+            h5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
             this.H.setAlpha(qs.e4);
             this.H.draw(canvas);
             this.G = true;

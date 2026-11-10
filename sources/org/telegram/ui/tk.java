@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class tk implements ml {
     public final /* synthetic */ cn a;
@@ -22,7 +22,7 @@ public final class tk implements ml {
 
     @Override // org.telegram.ui.ml
     public final void Y(boolean z9, boolean z10) {
-        org.telegram.ui.Components.za zaVar;
+        org.telegram.ui.Components.ya yaVar;
         int i7;
         cn cnVar = this.b;
         if (!z9) {
@@ -35,7 +35,7 @@ public final class tk implements ml {
         }
         ArrayList arrayList = new ArrayList(cnVar.T4);
         ArrayList arrayList2 = new ArrayList(cnVar.V4.values());
-        org.telegram.ui.Components.cc ccVar = null;
+        org.telegram.ui.Components.bc bcVar = null;
         if (z10) {
             i7 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
             SharedPreferences sharedPreferences = org.telegram.messenger.qp.s1(i7).d7;
@@ -48,9 +48,9 @@ public final class tk implements ml {
         } else {
             cnVar.getNotificationCenter().k(org.telegram.messenger.qs.t0, Long.valueOf(cnVar.j6), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
         }
-        org.telegram.ui.Components.cc ccVar2 = cnVar.O3;
-        if (ccVar2 != null) {
-            ccVar2.b();
+        org.telegram.ui.Components.bc bcVar2 = cnVar.O3;
+        if (bcVar2 != null) {
+            bcVar2.b();
         }
         cnVar.P3 = true;
         int i10 = cnVar.Q3 + 1;
@@ -66,24 +66,24 @@ public final class tk implements ml {
             k0Var.run();
         } else {
             if (z10) {
-                org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(cnVar.getParentActivity(), anVar);
-                zbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                zbVar.b.setText(org.telegram.messenger.id.M0(2131747224, null));
-                zbVar.c.setText(org.telegram.messenger.id.M0(2131747223, null));
-                zaVar = zbVar;
+                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(cnVar.getParentActivity(), anVar);
+                ybVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                ybVar.b.setText(org.telegram.messenger.id.M0(2131747224, null));
+                ybVar.c.setText(org.telegram.messenger.id.M0(2131747223, null));
+                yaVar = ybVar;
             } else {
-                org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(cnVar.getParentActivity(), anVar);
-                kbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                kbVar.b.setText(org.telegram.messenger.id.G(b92, "MessagesUnpinned", new Object[0]));
-                zaVar = kbVar;
+                org.telegram.ui.Components.jb jbVar = new org.telegram.ui.Components.jb(cnVar.getParentActivity(), anVar);
+                jbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                jbVar.b.setText(org.telegram.messenger.id.G(b92, "MessagesUnpinned", new Object[0]));
+                yaVar = jbVar;
             }
-            org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(cnVar.getParentActivity(), anVar, true);
-            acVar.b = skVar;
-            acVar.c = k0Var;
-            zaVar.setButton(acVar);
-            ccVar = org.telegram.ui.Components.cc.g(cnVar, zaVar, 5000);
+            org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(cnVar.getParentActivity(), anVar, true);
+            zbVar.b = skVar;
+            zbVar.c = k0Var;
+            yaVar.setButton(zbVar);
+            bcVar = org.telegram.ui.Components.bc.g(cnVar, yaVar, 5000);
         }
-        cnVar.O3 = ccVar;
+        cnVar.O3 = bcVar;
     }
 
     @Override // org.telegram.ui.ml

@@ -3,11 +3,11 @@ package o2;
 import e2.u;
 import h2.m0;
 import m4.d0;
-import x2.c1;
+import x2.b1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class m implements c1 {
+public final class m implements b1 {
     public final u a;
     public long[] c;
     public boolean d;
@@ -47,12 +47,12 @@ public final class m implements c1 {
         }
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final boolean f() {
         return true;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int l(long j3) {
         int max = Math.max(this.h, m0.b(this.c, j3, true));
         int i7 = max - this.h;
@@ -60,7 +60,7 @@ public final class m implements c1 {
         return i7;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int m(wf.b bVar, k2.h hVar, int i7) {
         int i10 = this.h;
         boolean z9 = i10 == this.c.length;
@@ -89,7 +89,7 @@ public final class m implements c1 {
         return -4;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final void a() {
     }
 }

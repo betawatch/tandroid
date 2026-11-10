@@ -28,11 +28,11 @@ import java.util.concurrent.ExecutionException;
 import org.telegram.messenger.df;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.re;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.s31;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class d0 {
     public static final m1 B = new m1(1);
@@ -237,7 +237,7 @@ public class d0 {
 
     public final void f(e2.y0 y0Var) {
         this.c.a(false, false);
-        d(new m3(y0Var, 7));
+        d(new n3(y0Var, 7));
         try {
             re reVar = this.h.j;
             e2.o oVar = this.s.s;
@@ -363,7 +363,7 @@ public class d0 {
             return true;
         }
         try {
-            return ((Boolean) q7.a(new m3(this, 6)).b.get()).booleanValue();
+            return ((Boolean) q7.a(new n3(this, 6)).b.get()).booleanValue();
         } catch (InterruptedException | ExecutionException e10) {
             throw new IllegalStateException(e10);
         }
@@ -394,9 +394,9 @@ public class d0 {
                 }
                 this.v = true;
                 a0 a0Var = this.d;
-                s31 s31Var = a0Var.a;
-                if (s31Var != null) {
-                    a0Var.removeCallbacks(s31Var);
+                r31 r31Var = a0Var.a;
+                if (r31Var != null) {
+                    a0Var.removeCallbacks(r31Var);
                     a0Var.a = null;
                 }
                 this.l.removeCallbacksAndMessages(null);

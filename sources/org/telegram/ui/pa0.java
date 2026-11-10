@@ -1,49 +1,9 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class pa0 implements TextureView.SurfaceTextureListener {
-    public final TextureView.SurfaceTextureListener a;
-    public final /* synthetic */ ra0 b;
-
-    public pa0(ra0 ra0Var, TextureView.SurfaceTextureListener surfaceTextureListener) {
-        this.b = ra0Var;
-        this.a = surfaceTextureListener;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
-        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
-        if (surfaceTextureListener != null) {
-            surfaceTextureListener.onSurfaceTextureAvailable(surfaceTexture, i7, i10);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
-        return surfaceTextureListener == null || surfaceTextureListener.onSurfaceTextureDestroyed(surfaceTexture);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
-        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
-        if (surfaceTextureListener != null) {
-            surfaceTextureListener.onSurfaceTextureSizeChanged(surfaceTexture, i7, i10);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        oi.q qVar;
-        TextureView.SurfaceTextureListener surfaceTextureListener = this.a;
-        if (surfaceTextureListener != null) {
-            surfaceTextureListener.onSurfaceTextureUpdated(surfaceTexture);
-        }
-        qVar = ((org.telegram.ui.ActionBar.f2) this.b).glassEngine;
-        qVar.g();
-    }
+public interface pa0 {
+    void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3);
 }

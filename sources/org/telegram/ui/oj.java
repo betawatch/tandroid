@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Context;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class oj extends en {
     public final /* synthetic */ int f;
     public boolean h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oj(Context context, org.telegram.ui.ActionBar.q4 q4Var, Bundle bundle, int i7) {
-        super(context, q4Var, bundle);
+    public /* synthetic */ oj(Context context, org.telegram.ui.ActionBar.r4 r4Var, Bundle bundle, int i7) {
+        super(context, r4Var, bundle);
         this.f = i7;
     }
 

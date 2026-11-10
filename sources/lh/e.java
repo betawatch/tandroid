@@ -20,17 +20,17 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.a30;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.z20;
 import org.telegram.ui.cn;
 import org.telegram.ui.fe;
 import org.telegram.ui.fh;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class e extends FrameLayout implements te.b, b6 {
+public class e extends FrameLayout implements te.b, c6 {
     public static final int[] H = {R.drawable.msg_search, R.drawable.input_gift_s, R.drawable.input_message, R.drawable.msg_help, R.drawable.msg_help};
     public static final int[] I = {0};
     public static final int[] J = {1, 2, 3, 4};
@@ -45,7 +45,7 @@ public class e extends FrameLayout implements te.b, b6 {
     public d d;
     public final FrameLayout e;
     public final HashSet f;
-    public final g6 h;
+    public final h6 h;
     public final dh.c n;
     public final gh.a r;
     public fh.g s;
@@ -53,20 +53,20 @@ public class e extends FrameLayout implements te.b, b6 {
     public final te.a x;
     public float y;
 
-    public e(Context context, dh.c cVar, gh.a aVar, g6 g6Var) {
+    public e(Context context, dh.c cVar, gh.a aVar, h6 h6Var) {
         super(context);
         this.a = new n[5];
         this.b = new View.OnClickListener[5];
         this.c = new fe[5];
         this.f = new HashSet();
-        xq xqVar = xq.h;
-        this.w = new te.a(99, this, xqVar, 320L, false);
-        this.x = new te.a(100, this, xqVar, 320L, false);
+        wq wqVar = wq.h;
+        this.w = new te.a(99, this, wqVar, 320L, false);
+        this.x = new te.a(100, this, wqVar, 320L, false);
         this.F = new Paint(1);
         this.G = 0;
         this.n = cVar;
         this.r = aVar;
-        this.h = g6Var;
+        this.h = h6Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
         frameLayout.setClipToOutline(true);
@@ -98,9 +98,9 @@ public class e extends FrameLayout implements te.b, b6 {
                 final cn cnVar = feVar.b;
                 switch (i12) {
                     case 28:
-                        if (cnVar.X0 == null && !z9 && (((m3Var = cnVar.Z0) == null || !m3Var.V) && a30.h.c())) {
+                        if (cnVar.X0 == null && !z9 && (((m3Var = cnVar.Z0) == null || !m3Var.V) && z20.h.c())) {
                             final int i13 = 1;
-                            g0.i3(new Runnable() { // from class: org.telegram.ui.lf
+                            g0.i3(new Runnable() { // from class: org.telegram.ui.mf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i14 = i13;
@@ -128,7 +128,7 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 fi.m3 m3Var4 = cnVar2.Z0;
                                                 m3Var4.q0 = new xf(cnVar2, 14);
                                                 m3Var4.w();
-                                                org.telegram.ui.Components.a30.f.b();
+                                                org.telegram.ui.Components.z20.f.b();
                                                 break;
                                             }
                                             break;
@@ -145,9 +145,9 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 cnVar2.X0.o(1.0f, (-width2) + 7.33f);
                                                 cnVar2.l1.addView(cnVar2.X0, c8.ha.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
                                                 fi.m3 m3Var6 = cnVar2.X0;
-                                                m3Var6.q0 = new af(cnVar2, 19);
+                                                m3Var6.q0 = new bf(cnVar2, 19);
                                                 m3Var6.w();
-                                                org.telegram.ui.Components.a30.h.b();
+                                                org.telegram.ui.Components.z20.h.b();
                                                 break;
                                             }
                                             break;
@@ -158,9 +158,9 @@ public class e extends FrameLayout implements te.b, b6 {
                         }
                         break;
                     default:
-                        if (cnVar.Z0 == null && !z9 && a30.f.c()) {
+                        if (cnVar.Z0 == null && !z9 && z20.f.c()) {
                             final int i14 = 0;
-                            g0.i3(new Runnable() { // from class: org.telegram.ui.lf
+                            g0.i3(new Runnable() { // from class: org.telegram.ui.mf
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i142 = i14;
@@ -188,7 +188,7 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 fi.m3 m3Var4 = cnVar2.Z0;
                                                 m3Var4.q0 = new xf(cnVar2, 14);
                                                 m3Var4.w();
-                                                org.telegram.ui.Components.a30.f.b();
+                                                org.telegram.ui.Components.z20.f.b();
                                                 break;
                                             }
                                             break;
@@ -205,9 +205,9 @@ public class e extends FrameLayout implements te.b, b6 {
                                                 cnVar2.X0.o(1.0f, (-width2) + 7.33f);
                                                 cnVar2.l1.addView(cnVar2.X0, c8.ha.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
                                                 fi.m3 m3Var6 = cnVar2.X0;
-                                                m3Var6.q0 = new af(cnVar2, 19);
+                                                m3Var6.q0 = new bf(cnVar2, 19);
                                                 m3Var6.w();
-                                                org.telegram.ui.Components.a30.h.b();
+                                                org.telegram.ui.Components.z20.h.b();
                                                 break;
                                             }
                                             break;
@@ -362,7 +362,7 @@ public class e extends FrameLayout implements te.b, b6 {
             n[] nVarArr = this.a;
             if (i7 < nVarArr.length && ((nVar = nVarArr[i7]) != null || z9)) {
                 if (nVar == null) {
-                    te.a aVar = new te.a((i7 << 16) | 1, this, xq.h, 300L, false);
+                    te.a aVar = new te.a((i7 << 16) | 1, this, wq.h, 300L, false);
                     kh.a d = kh.a.d(getContext(), this.n, this.r, this.h, H[i7], 48);
                     if (i7 == 1) {
                         d.setContentDescription(id.M0(2131746735, null));
@@ -475,7 +475,7 @@ public class e extends FrameLayout implements te.b, b6 {
         d(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         kh.a aVar;
         for (n nVar : this.a) {
@@ -485,7 +485,7 @@ public class e extends FrameLayout implements te.b, b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

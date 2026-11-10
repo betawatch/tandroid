@@ -4,18 +4,18 @@ import android.content.Intent;
 import java.util.ArrayList;
 import org.telegram.messenger.gz;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.mj;
+import org.telegram.ui.Components.lj;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class w2 implements mj {
+public final class w2 implements lj {
     public final /* synthetic */ j4 a;
 
     public w2(j4 j4Var) {
         this.a = j4Var;
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void A() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -31,7 +31,7 @@ public final class w2 implements mj {
         }
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
         org.telegram.messenger.c accountInstance;
         j4 j4Var = this.a;
@@ -44,11 +44,11 @@ public final class w2 implements mj {
         j4Var.i0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void S() {
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void p(ArrayList arrayList, boolean z9, int i7, long j3) {
     }
 }

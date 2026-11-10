@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.core.widget.NestedScrollView;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class x41 extends NestedScrollView {
     public boolean W;
@@ -34,8 +34,8 @@ public final class x41 extends NestedScrollView {
     public final void onMeasure(int i7, int i10) {
         int size = View.MeasureSpec.getSize(i10);
         y41 y41Var = this.a0;
-        measureChildWithMargins(y41Var.m1, i7, 0, i10, 0);
-        int measuredHeight = y41Var.m1.getMeasuredHeight();
+        measureChildWithMargins(y41Var.p1, i7, 0, i10, 0);
+        int measuredHeight = y41Var.p1.getMeasuredHeight();
         int i11 = (size / 5) * 2;
         if (measuredHeight - (size - i11) >= org.telegram.messenger.g0.L(90.0f)) {
         }

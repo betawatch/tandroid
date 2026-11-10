@@ -29,19 +29,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l21;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.we0;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.k21;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ve0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.tq;
+import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a4 extends k.a {
     public boolean c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
     public final /* synthetic */ q9 e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ boolean h;
@@ -52,10 +52,10 @@ public final class a4 extends k.a {
     public final /* synthetic */ j4 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a4(j4 j4Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.g6 g6Var2, q9 q9Var, boolean z9, boolean z10, boolean z11, Context context2, g4 g4Var, boolean[] zArr) {
-        super(context, g6Var, true);
+    public a4(j4 j4Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.h6 h6Var2, q9 q9Var, boolean z9, boolean z10, boolean z11, Context context2, g4 g4Var, boolean[] zArr) {
+        super(context, h6Var, true);
         this.x = j4Var;
-        this.d = g6Var2;
+        this.d = h6Var2;
         this.e = q9Var;
         this.f = z9;
         this.h = z10;
@@ -107,7 +107,7 @@ public final class a4 extends k.a {
     public final void j(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2;
         TL_stories.StoryItem storyItem;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         TL_stories.StoryItem storyItem2;
         int i7;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3;
@@ -117,7 +117,7 @@ public final class a4 extends k.a {
         final q9 q9Var2;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout4;
         final a4 a4Var2;
-        org.telegram.ui.ActionBar.g6 g6Var2;
+        org.telegram.ui.ActionBar.h6 h6Var2;
         String str;
         int i10;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout5;
@@ -149,7 +149,7 @@ public final class a4 extends k.a {
         final a4 a4Var3;
         String str4;
         q9 q9Var3;
-        org.telegram.ui.ActionBar.g6 g6Var3;
+        org.telegram.ui.ActionBar.h6 h6Var3;
         final int i16;
         final q9 q9Var4;
         int i17;
@@ -166,19 +166,19 @@ public final class a4 extends k.a {
         boolean z11 = this.h;
         Context context = this.r;
         q9 q9Var5 = this.e;
-        org.telegram.ui.ActionBar.g6 g6Var4 = this.d;
+        org.telegram.ui.ActionBar.h6 h6Var4 = this.d;
         if (z11 || h4Var.b != null) {
             int i22 = 6;
             TL_stories.StoryItem storyItem5 = h4Var.a;
             if (h4Var.b != null) {
                 storyItem = storyItem5;
-                g6Var = g6Var4;
+                h6Var = h6Var4;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                 org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_cancel, id.M0(2131752589, null), false, this.d).setOnClickListener(new o3(this, i22));
             } else {
                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                 storyItem = storyItem5;
-                g6Var = g6Var4;
+                h6Var = h6Var4;
             }
             if (storyItem == null) {
                 return;
@@ -187,13 +187,13 @@ public final class a4 extends k.a {
                 i7 = R.id.fit_width_tag;
             } else {
                 HashSet hashSet = storyItem2.albums != null ? new HashSet(storyItem2.albums) : new HashSet();
-                l60 l60Var = new l60(actionBarPopupWindow$ActionBarPopupWindowLayout2, g6Var);
-                l60Var.c(R.drawable.ic_ab_back, id.M0(2131753756, null), new u3(actionBarPopupWindow$ActionBarPopupWindowLayout2, 0), false);
-                l60Var.k();
+                k60 k60Var = new k60(actionBarPopupWindow$ActionBarPopupWindowLayout2, h6Var);
+                k60Var.c(R.drawable.ic_ab_back, id.M0(2131753756, null), new u3(actionBarPopupWindow$ActionBarPopupWindowLayout2, 0), false);
+                k60Var.k();
                 n6 B = j4Var.getStoriesController().B(j4Var.k1, true);
                 n6 B2 = j4Var.B1.B(j4Var.k1, false);
-                l60.f(l60Var, B, hashSet, B2 != null && B2.a(), new aa.s(this, g6Var, storyItem2, 23), new s2(this, hashSet, storyItem2, g6Var, 2));
-                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(l60Var.B);
+                k60.f(k60Var, B, hashSet, B2 != null && B2.a(), new aa.s(this, h6Var, storyItem2, 23), new s2(this, hashSet, storyItem2, h6Var, 2));
+                int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(k60Var.B);
                 org.telegram.ui.ActionBar.z0 z0Var = new org.telegram.ui.ActionBar.z0(0, j4Var.getContext(), this.d, false, false);
                 j4Var.n3 = z0Var;
                 z0Var.j(id.M0(2131744805, null), R.drawable.menu_album_add, null);
@@ -202,7 +202,7 @@ public final class a4 extends k.a {
                 z0Var2.setOnClickListener(new o3(this, 12));
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.addView(j4Var.n3);
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.c = true;
-                org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, j4Var.getContext(), g6Var);
+                org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, j4Var.getContext(), h6Var);
                 i7 = R.id.fit_width_tag;
                 d1Var.setTag(R.id.fit_width_tag, 1);
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.a(d1Var, ha.o(-1, 8));
@@ -219,7 +219,7 @@ public final class a4 extends k.a {
             }
             r(actionBarPopupWindow$ActionBarPopupWindowLayout3, false);
             if (j4Var.l1 || this.f) {
-                org.telegram.ui.ActionBar.d1 d1Var2 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, j4Var.getContext(), g6Var);
+                org.telegram.ui.ActionBar.d1 d1Var2 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, j4Var.getContext(), h6Var);
                 d1Var2.setTag(i7, 1);
                 actionBarPopupWindow$ActionBarPopupWindowLayout3.a(d1Var2, ha.o(-1, 8));
             }
@@ -257,17 +257,17 @@ public final class a4 extends k.a {
                 }
                 q9Var2 = q9Var;
                 org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !z12 ? R.drawable.msg_save_story : R.drawable.menu_unsave_story, M0, false, a4Var.d);
-                org.telegram.ui.ActionBar.g6 g6Var5 = g6Var;
+                org.telegram.ui.ActionBar.h6 h6Var5 = h6Var;
                 a4 a4Var4 = a4Var;
                 actionBarPopupWindow$ActionBarPopupWindowLayout4 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                r3 r3Var = new r3(a4Var4, storyItem, z13, g6Var5, 0);
+                r3 r3Var = new r3(a4Var4, storyItem, z13, h6Var5, 0);
                 a4Var2 = a4Var4;
-                g6Var2 = g6Var5;
+                h6Var2 = h6Var5;
                 c12.setOnClickListener(r3Var);
             } else {
                 a4Var2 = a4Var;
                 q9Var2 = q9Var;
-                g6Var2 = g6Var;
+                h6Var2 = h6Var;
                 actionBarPopupWindow$ActionBarPopupWindowLayout4 = actionBarPopupWindow$ActionBarPopupWindowLayout;
             }
             a4Var2.s(actionBarPopupWindow$ActionBarPopupWindowLayout4, storyItem);
@@ -343,16 +343,16 @@ public final class a4 extends k.a {
             }
             if (h4Var.f && (j4Var.k1 == p10.i(j4Var.l2).e() || org.telegram.messenger.t3.w(14, qp.s1(j4Var.l2).M0(Long.valueOf(-j4Var.k1))) || ((g1Var = q9Var2.A0) != null && h4Var.k(g1Var.g()) && (groupCall = q9Var2.A0.w) != null && groupCall.creator))) {
                 i11 = 1;
-                org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_settings_old, id.M0(2131748790, null), false, a4Var2.d).setOnClickListener(new q3(a4Var2, g6Var2, q9Var2, i11));
+                org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_settings_old, id.M0(2131748790, null), false, a4Var2.d).setOnClickListener(new q3(a4Var2, h6Var2, q9Var2, i11));
             } else {
                 i11 = 1;
             }
             if (h4Var.f) {
                 org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_remove, id.M0(2131748820, null), false, a4Var2.d);
-                int i25 = org.telegram.ui.ActionBar.l6.q7;
+                int i25 = org.telegram.ui.ActionBar.m6.q7;
                 c13.h(0.12f, i25);
-                c13.d(g6Var2.h(i25), g6Var2.h(i25));
-                c13.setOnClickListener(new q3(a4Var2, g6Var2, q9Var2, 2));
+                c13.d(h6Var2.h(i25), h6Var2.h(i25));
+                c13.setOnClickListener(new q3(a4Var2, h6Var2, q9Var2, 2));
             }
             if (!h4Var.f) {
                 if (!j4Var.l1) {
@@ -394,9 +394,9 @@ public final class a4 extends k.a {
                 arrayList = null;
                 actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                 org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout6, R.drawable.msg_delete, id.M0(2131751598, null), false, a4Var2.d);
-                int i27 = org.telegram.ui.ActionBar.l6.q7;
+                int i27 = org.telegram.ui.ActionBar.m6.q7;
                 c14.h(0.12f, i27);
-                c14.d(g6Var2.h(i27), g6Var2.h(i27));
+                c14.d(h6Var2.h(i27), h6Var2.h(i27));
                 c14.setOnClickListener(new o3(a4Var2, 13));
                 z9 = (h4Var != null || (storyItem3 = h4Var.a) == null || (messageMedia = storyItem3.media) == null || (!ij.V2(messageMedia.document) && ((photo = h4Var.a.media.photo) == null || !photo.has_stickers))) ? 0 : i11;
                 if (h4Var == null) {
@@ -409,7 +409,7 @@ public final class a4 extends k.a {
                             if (mediaArea2 instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
                                 TLRPC.Reaction reaction = mediaArea2.reaction;
                                 if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
-                                    TLRPC.Document e10 = org.telegram.ui.Components.i5.e(j4Var.l2, ((TLRPC.TL_reactionCustomEmoji) reaction).document_id);
+                                    TLRPC.Document e10 = org.telegram.ui.Components.h5.e(j4Var.l2, ((TLRPC.TL_reactionCustomEmoji) reaction).document_id);
                                     if (e10 != null && (i15 = ij.i1(e10)) != null && !hashSet2.contains(Long.valueOf(i15.id))) {
                                         hashSet2.add(Long.valueOf(i15.id));
                                         arrayList4.add(i15);
@@ -428,7 +428,7 @@ public final class a4 extends k.a {
                                     if (h20Var.a == 4 && (mediaArea = h20Var.M) != null) {
                                         TLRPC.Reaction reaction2 = mediaArea.reaction;
                                         if (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) {
-                                            TLRPC.Document e11 = org.telegram.ui.Components.i5.e(j4Var.l2, ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id);
+                                            TLRPC.Document e11 = org.telegram.ui.Components.h5.e(j4Var.l2, ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id);
                                             if (e11 != null && (i14 = ij.i1(e11)) != null && !hashSet2.contains(Long.valueOf(i14.id))) {
                                                 hashSet2.add(Long.valueOf(i14.id));
                                                 arrayList4.add(i14);
@@ -440,12 +440,12 @@ public final class a4 extends k.a {
                             CharSequence charSequence = h4Var.b.c.C0;
                             if (charSequence instanceof Spanned) {
                                 z10 = false;
-                                org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.r5.class);
-                                if (r5VarArr != null) {
-                                    for (org.telegram.ui.Components.r5 r5Var : r5VarArr) {
-                                        TLRPC.Document document = r5Var.document;
+                                org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) ((Spanned) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.q5.class);
+                                if (q5VarArr != null) {
+                                    for (org.telegram.ui.Components.q5 q5Var : q5VarArr) {
+                                        TLRPC.Document document = q5Var.document;
                                         if (document == null) {
-                                            document = org.telegram.ui.Components.i5.e(j4Var.l2, r5Var.documentId);
+                                            document = org.telegram.ui.Components.h5.e(j4Var.l2, q5Var.documentId);
                                         }
                                         if (document != null) {
                                             TLRPC.InputStickerSet i110 = ij.i1(document);
@@ -466,7 +466,7 @@ public final class a4 extends k.a {
                                 TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = (TLRPC.TL_messageEntityCustomEmoji) messageEntity;
                                 TLRPC.Document document2 = tL_messageEntityCustomEmoji.document;
                                 if (document2 == null) {
-                                    document2 = org.telegram.ui.Components.i5.e(j4Var.l2, tL_messageEntityCustomEmoji.document_id);
+                                    document2 = org.telegram.ui.Components.h5.e(j4Var.l2, tL_messageEntityCustomEmoji.document_id);
                                 }
                                 if (document2 != null) {
                                     TLRPC.InputStickerSet i111 = ij.i1(document2);
@@ -486,7 +486,7 @@ public final class a4 extends k.a {
                 }
                 boolean z16 = (arrayList2 != null || arrayList2.isEmpty()) ? z10 : true;
                 if (z9 == 0 || z16) {
-                    org.telegram.ui.ActionBar.d1 d1Var3 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, context, g6Var2);
+                    org.telegram.ui.ActionBar.d1 d1Var3 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, context, h6Var2);
                     d1Var3.setTag(R.id.fit_width_tag, 1);
                     actionBarPopupWindow$ActionBarPopupWindowLayout6.a(d1Var3, ha.o(-1, 8));
                     TLRPC.MessageMedia messageMedia3 = h4Var.a.media;
@@ -526,16 +526,16 @@ public final class a4 extends k.a {
                 a4Var3 = this;
                 str4 = null;
                 q9Var3 = q9Var5;
-                g6Var3 = g6Var4;
+                h6Var3 = h6Var4;
                 i16 = 0;
             } else {
                 if (h02) {
                     q9Var3 = q9Var5;
-                    g6Var3 = g6Var4;
+                    h6Var3 = h6Var4;
                     i16 = 0;
                     org.telegram.ui.ActionBar.z0 c15 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_mute, id.M0(2131747863, null), false, this.d);
                     final int i31 = 0;
-                    final org.telegram.ui.ActionBar.g6 g6Var6 = this.d;
+                    final org.telegram.ui.ActionBar.h6 h6Var6 = this.d;
                     final TLObject tLObject3 = tLObject2;
                     a4Var3 = this;
                     c15.setOnClickListener(new View.OnClickListener(this) { // from class: di.y3
@@ -550,7 +550,7 @@ public final class a4 extends k.a {
                             int i32 = i31;
                             String str7 = str6;
                             TLObject tLObject4 = tLObject3;
-                            org.telegram.ui.ActionBar.g6 g6Var7 = g6Var6;
+                            org.telegram.ui.ActionBar.h6 h6Var7 = h6Var6;
                             String str8 = v;
                             a4 a4Var5 = this.b;
                             switch (i32) {
@@ -558,7 +558,7 @@ public final class a4 extends k.a {
                                     j4 j4Var2 = a4Var5.x;
                                     qp.s1(j4Var2.l2).d7.edit().putBoolean("stories_" + str8, false).apply();
                                     dt.t(j4Var2.l2).c0(j4Var2.k1, 0L, true);
-                                    cc V = new hc(j4Var2.L0, g6Var7).V(Arrays.asList(tLObject4), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryMutedHint", null, 2131747862, str7)), null, null);
+                                    bc V = new gc(j4Var2.L0, h6Var7).V(Arrays.asList(tLObject4), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryMutedHint", null, 2131747862, str7)), null, null);
                                     V.a = 2;
                                     V.j();
                                     a4 a4Var6 = j4Var2.c1;
@@ -571,7 +571,7 @@ public final class a4 extends k.a {
                                     j4 j4Var3 = a4Var5.x;
                                     qp.s1(j4Var3.l2).d7.edit().putBoolean("stories_" + str8, true).apply();
                                     dt.t(j4Var3.l2).c0(j4Var3.k1, 0L, true);
-                                    cc V2 = new hc(j4Var3.L0, g6Var7).V(Arrays.asList(tLObject4), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryUnmutedHint", null, 2131747859, str7)), null, null);
+                                    bc V2 = new gc(j4Var3.L0, h6Var7).V(Arrays.asList(tLObject4), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryUnmutedHint", null, 2131747859, str7)), null, null);
                                     V2.a = 2;
                                     V2.j();
                                     a4 a4Var7 = j4Var3.c1;
@@ -587,12 +587,12 @@ public final class a4 extends k.a {
                 } else {
                     a4Var3 = this;
                     q9Var3 = q9Var5;
-                    g6Var3 = g6Var4;
+                    h6Var3 = h6Var4;
                     final TLObject tLObject4 = tLObject2;
                     i16 = 0;
                     org.telegram.ui.ActionBar.z0 c16 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_unmute, id.M0(2131747860, null), false, a4Var3.d);
                     final int i32 = 1;
-                    final org.telegram.ui.ActionBar.g6 g6Var7 = a4Var3.d;
+                    final org.telegram.ui.ActionBar.h6 h6Var7 = a4Var3.d;
                     c16.setOnClickListener(new View.OnClickListener(a4Var3) { // from class: di.y3
                         public final /* synthetic */ a4 b;
 
@@ -605,7 +605,7 @@ public final class a4 extends k.a {
                             int i322 = i32;
                             String str7 = str6;
                             TLObject tLObject42 = tLObject4;
-                            org.telegram.ui.ActionBar.g6 g6Var72 = g6Var7;
+                            org.telegram.ui.ActionBar.h6 h6Var72 = h6Var7;
                             String str8 = v;
                             a4 a4Var5 = this.b;
                             switch (i322) {
@@ -613,7 +613,7 @@ public final class a4 extends k.a {
                                     j4 j4Var2 = a4Var5.x;
                                     qp.s1(j4Var2.l2).d7.edit().putBoolean("stories_" + str8, false).apply();
                                     dt.t(j4Var2.l2).c0(j4Var2.k1, 0L, true);
-                                    cc V = new hc(j4Var2.L0, g6Var72).V(Arrays.asList(tLObject42), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryMutedHint", null, 2131747862, str7)), null, null);
+                                    bc V = new gc(j4Var2.L0, h6Var72).V(Arrays.asList(tLObject42), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryMutedHint", null, 2131747862, str7)), null, null);
                                     V.a = 2;
                                     V.j();
                                     a4 a4Var6 = j4Var2.c1;
@@ -626,7 +626,7 @@ public final class a4 extends k.a {
                                     j4 j4Var3 = a4Var5.x;
                                     qp.s1(j4Var3.l2).d7.edit().putBoolean("stories_" + str8, true).apply();
                                     dt.t(j4Var3.l2).c0(j4Var3.k1, 0L, true);
-                                    cc V2 = new hc(j4Var3.L0, g6Var72).V(Arrays.asList(tLObject42), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryUnmutedHint", null, 2131747859, str7)), null, null);
+                                    bc V2 = new gc(j4Var3.L0, h6Var72).V(Arrays.asList(tLObject42), org.telegram.messenger.g0.X2(id.a0("NotificationsStoryUnmutedHint", null, 2131747859, str7)), null, null);
                                     V2.a = 2;
                                     V2.j();
                                     a4 a4Var7 = j4Var3.c1;
@@ -706,9 +706,9 @@ public final class a4 extends k.a {
                 if (p10.i(j4Var.l2).q()) {
                     int i34 = z17 ? R.drawable.menu_quality_sd : R.drawable.menu_quality_hd;
                     String M04 = id.M0(z17 ? 2131744512 : 2131744509, str4);
-                    org.telegram.ui.ActionBar.g6 g6Var8 = j4Var.k0;
+                    org.telegram.ui.ActionBar.h6 h6Var8 = j4Var.k0;
                     i17 = R.drawable.msg_gallery_locked2;
-                    org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, i34, M04, false, g6Var8).setOnClickListener(new a2(i16, j4Var, z17));
+                    org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, i34, M04, false, h6Var8).setOnClickListener(new a2(i16, j4Var, z17));
                 } else {
                     i17 = R.drawable.msg_gallery_locked2;
                     Drawable drawable = j4Var.getContext().getDrawable(i17);
@@ -742,24 +742,24 @@ public final class a4 extends k.a {
                             }
                             storyItem4 = h4Var.a;
                             if (storyItem4 != null) {
-                                if (storyItem4.translated && TextUtils.equals(storyItem4.translatedLng, l21.M0())) {
+                                if (storyItem4.translated && TextUtils.equals(storyItem4.translatedLng, k21.M0())) {
                                     org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, id.M0(2131749304, null), false, a4Var3.d).setOnClickListener(new o3(a4Var3, 4));
                                 } else {
                                     f10 f10Var = qp.s1(j4Var.l2).s7;
                                     TL_stories.StoryItem storyItem11 = h4Var.a;
                                     f10Var.getClass();
-                                    if (storyItem11 != null && !TextUtils.isEmpty(storyItem11.caption) && !org.telegram.messenger.i6.d(storyItem11.caption) && ((storyItem11.detectedLng == null && storyItem11.translatedText != null && TextUtils.equals(storyItem11.translatedLng, l21.M0())) || ((str5 = storyItem11.detectedLng) != null && !f10Var.w(str5)))) {
+                                    if (storyItem11 != null && !TextUtils.isEmpty(storyItem11.caption) && !org.telegram.messenger.i6.d(storyItem11.caption) && ((storyItem11.detectedLng == null && storyItem11.translatedText != null && TextUtils.equals(storyItem11.translatedLng, k21.M0())) || ((str5 = storyItem11.detectedLng) != null && !f10Var.w(str5)))) {
                                         actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                                         org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_translate, id.M0(2131743956, null), false, a4Var3.d).setOnClickListener(new o3(a4Var3, 5));
                                         a4Var3.s(actionBarPopupWindow$ActionBarPopupWindowLayout8, h4Var.a);
                                         if (!j4Var.L2 || t10.A(j4Var.k1) || j4Var.G0()) {
                                             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                                            g6Var2 = g6Var3;
+                                            h6Var2 = h6Var3;
                                         } else {
-                                            org.telegram.ui.ActionBar.g6 g6Var9 = g6Var3;
-                                            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, id.M0(2131746230, null), false, a4Var3.d).setOnClickListener(new q3(a4Var3, q9Var4, g6Var9));
+                                            org.telegram.ui.ActionBar.h6 h6Var9 = h6Var3;
+                                            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout8, R.drawable.msg_report, id.M0(2131746230, null), false, a4Var3.d).setOnClickListener(new q3(a4Var3, q9Var4, h6Var9));
                                             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                                            g6Var2 = g6Var9;
+                                            h6Var2 = h6Var9;
                                         }
                                         i11 = 1;
                                     }
@@ -770,7 +770,7 @@ public final class a4 extends k.a {
                             if (j4Var.L2) {
                             }
                             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                            g6Var2 = g6Var3;
+                            h6Var2 = h6Var3;
                             i11 = 1;
                         } else if (!qp.s1(j4Var.l2).D3()) {
                             Drawable drawable2 = context.getDrawable(i17);
@@ -796,7 +796,7 @@ public final class a4 extends k.a {
                             if (j4Var.L2) {
                             }
                             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                            g6Var2 = g6Var3;
+                            h6Var2 = h6Var3;
                             i11 = 1;
                         }
                     }
@@ -816,7 +816,7 @@ public final class a4 extends k.a {
                     if (j4Var.L2) {
                     }
                     actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-                    g6Var2 = g6Var3;
+                    h6Var2 = h6Var3;
                     i11 = 1;
                 }
             }
@@ -841,7 +841,7 @@ public final class a4 extends k.a {
             if (j4Var.L2) {
             }
             actionBarPopupWindow$ActionBarPopupWindowLayout6 = actionBarPopupWindow$ActionBarPopupWindowLayout;
-            g6Var2 = g6Var3;
+            h6Var2 = h6Var3;
             i11 = 1;
         }
         arrayList = null;
@@ -853,7 +853,7 @@ public final class a4 extends k.a {
         }
         if (z9 == 0) {
         }
-        org.telegram.ui.ActionBar.d1 d1Var32 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, context, g6Var2);
+        org.telegram.ui.ActionBar.d1 d1Var32 = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, context, h6Var2);
         d1Var32.setTag(R.id.fit_width_tag, 1);
         actionBarPopupWindow$ActionBarPopupWindowLayout6.a(d1Var32, ha.o(-1, 8));
         TLRPC.MessageMedia messageMedia32 = h4Var.a.media;
@@ -886,7 +886,7 @@ public final class a4 extends k.a {
             return;
         }
         Context context = j4Var.getContext();
-        we0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+        ve0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
         boolean z11 = false;
         final wf.b bVar = new wf.b(this, actionBarPopupWindow$ActionBarPopupWindowLayout, z11, 15);
         h6.m mVar = new h6.m(24, z11);
@@ -896,7 +896,7 @@ public final class a4 extends k.a {
         mVar.b = actionBarPopupWindow$ActionBarPopupWindowLayout2;
         actionBarPopupWindow$ActionBarPopupWindowLayout2.setFitItems(true);
         org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_arrow_back, id.M0(2131753756, null), false, null);
-        c10.setOnClickListener(new tq(swipeBack, 1));
+        c10.setOnClickListener(new uq(swipeBack, 1));
         c10.d(-328966, -328966);
         c10.setSelectorColor(268435455);
         View b4Var = new b4(context, 11);
@@ -932,7 +932,7 @@ public final class a4 extends k.a {
         org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_0_2, id.M0(2131745263, null), false, null);
         c11.d(-328966, -328966);
         final int i7 = 0;
-        c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.xq
+        c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.yq
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i7) {
@@ -959,7 +959,7 @@ public final class a4 extends k.a {
         org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_slow, id.M0(2131745266, null), false, null);
         c12.d(-328966, -328966);
         final int i10 = 1;
-        c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.xq
+        c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.yq
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i10) {
@@ -986,7 +986,7 @@ public final class a4 extends k.a {
         org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_normal, id.M0(2131745267, null), false, null);
         c13.d(-328966, -328966);
         final int i11 = 2;
-        c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.xq
+        c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.yq
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i11) {
@@ -1013,7 +1013,7 @@ public final class a4 extends k.a {
         org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_fast, id.M0(2131745270, null), false, null);
         c14.d(-328966, -328966);
         final int i12 = 3;
-        c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.xq
+        c14.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.yq
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i12) {
@@ -1040,7 +1040,7 @@ public final class a4 extends k.a {
         org.telegram.ui.ActionBar.z0 c15 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, R.drawable.msg_speed_superfast, id.M0(2131745264, null), false, null);
         c15.d(-328966, -328966);
         final int i13 = 4;
-        c15.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.xq
+        c15.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.yq
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i13) {
@@ -1086,7 +1086,7 @@ public final class a4 extends k.a {
         z0Var2.setOnClickListener(new o3(this, 11));
         actionBarPopupWindow$ActionBarPopupWindowLayout.c = true;
         if (z9) {
-            org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.l6.H8, j4Var.getContext(), this.d);
+            org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(org.telegram.ui.ActionBar.m6.H8, j4Var.getContext(), this.d);
             d1Var.setTag(R.id.fit_width_tag, 1);
             actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, ha.o(-1, 8));
         }

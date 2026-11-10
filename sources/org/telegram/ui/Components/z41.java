@@ -7,7 +7,7 @@ import java.io.File;
 import org.telegram.messenger.ApplicationLoaderImpl;
 import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z41 extends IUpdateLayout {
     public FrameLayout a;
@@ -33,7 +33,7 @@ public final class z41 extends IUpdateLayout {
         this.a = frameLayout;
         frameLayout.setVisibility(4);
         this.a.setTranslationY(org.telegram.messenger.g0.L(44.0f));
-        this.a.setBackground(org.telegram.ui.ActionBar.l6.h0(1090519039, 2, -1));
+        this.a.setBackground(org.telegram.ui.ActionBar.m6.h0(1090519039, 2, -1));
         viewGroup.addView(this.a, c8.ha.e(-1, 44, 83));
         this.a.setOnClickListener(new ai.v(this, i7, 19));
         org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(this, activity);
@@ -46,8 +46,8 @@ public final class z41 extends IUpdateLayout {
         this.c.c(org.telegram.messenger.id.M0(2131754229, null), false, true);
         RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
         this.b = radialProgress2;
-        int i10 = org.telegram.ui.ActionBar.l6.Ci;
-        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.l6.x0(null, i10, false), org.telegram.ui.ActionBar.l6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.m6.Ci;
+        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.m6.x0(null, i10, false), org.telegram.ui.ActionBar.m6.x0(null, i10, false));
         this.b.r(0, 0, org.telegram.messenger.g0.L(22.0f), org.telegram.messenger.g0.L(22.0f));
         this.b.setCircleRadius(org.telegram.messenger.g0.L(11.0f));
         this.b.setAsMini();
@@ -68,7 +68,7 @@ public final class z41 extends IUpdateLayout {
             }
             this.a.setTag(null);
             if (z9) {
-                this.a.animate().translationY(org.telegram.messenger.g0.L(44.0f)).setInterpolator(xq.g).setListener(new g11(this, 4)).setDuration(180L).start();
+                this.a.animate().translationY(org.telegram.messenger.g0.L(44.0f)).setInterpolator(wq.g).setListener(new f11(this, 4)).setDuration(180L).start();
                 return;
             } else {
                 this.a.setTranslationY(org.telegram.messenger.g0.L(44.0f));
@@ -97,7 +97,7 @@ public final class z41 extends IUpdateLayout {
         this.a.setVisibility(0);
         this.a.setTag(1);
         if (z9) {
-            this.a.animate().translationY(0.0f).setInterpolator(xq.g).setListener(null).setDuration(180L).start();
+            this.a.animate().translationY(0.0f).setInterpolator(wq.g).setListener(null).setDuration(180L).start();
         } else {
             this.a.setTranslationY(0.0f);
         }

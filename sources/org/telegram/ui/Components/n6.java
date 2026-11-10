@@ -1,27 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.widget.TextView;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class n6 extends za {
-    public n6(LaunchActivity launchActivity, org.telegram.ui.y80 y80Var) {
-        super(launchActivity, null);
-        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
-        TextView textView = new TextView(getContext());
-        addView(qVar, c8.ha.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.vj, null);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, c8.ha.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(y80Var.b));
-        qVar.setOuterPadding(org.telegram.messenger.g0.L(8.0f));
-        qVar.setBackgroundOuterPadding(org.telegram.messenger.g0.L(24.0f));
-        qVar.setForeground(y80Var.c);
-        org.telegram.messenger.k5.r(null, null, 2131754238, new Object[]{org.telegram.messenger.id.M0(y80Var.d, null)}, textView);
+public final /* synthetic */ class n6 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
+
+    public /* synthetic */ n6(int i7, Runnable runnable) {
+        this.a = i7;
+        this.b = runnable;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                this.b.run();
+                break;
+        }
     }
 }

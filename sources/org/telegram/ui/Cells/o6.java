@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -126,12 +126,12 @@ public final class o6 extends LinearLayout {
             }
             n4 n4Var = new n4(getContext(), 20);
             n4Var.setText(id.M0(2131747336, null));
-            int i10 = org.telegram.ui.ActionBar.l6.d6;
-            org.telegram.ui.ActionBar.s6.h(i10, n4Var, null);
+            int i10 = org.telegram.ui.ActionBar.m6.d6;
+            org.telegram.ui.ActionBar.t6.h(i10, n4Var, null);
             addView(n4Var, c8.ha.o(-1, -2));
             View v3Var = new v3(getContext(), 9, 1);
             v3Var.setBackground(null);
-            org.telegram.ui.ActionBar.s6.h(i10, v3Var, null);
+            org.telegram.ui.ActionBar.t6.h(i10, v3Var, null);
             addView(v3Var, c8.ha.o(-1, -2));
             int size = arrayList.size();
             int i11 = 0;
@@ -141,27 +141,27 @@ public final class o6 extends LinearLayout {
                 p6 p6Var = (p6) obj;
                 Context context = getContext();
                 bi.t tVar = new bi.t(context, 2);
-                org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, tVar, null);
+                org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, tVar, null);
                 tVar.setOrientation(0);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(p6Var.a <= 0 ? R.drawable.list_check : R.drawable.list_circle);
-                org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.L6, null, PorterDuff.Mode.MULTIPLY);
+                org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.L6, null, PorterDuff.Mode.MULTIPLY);
                 tVar.addView(imageView, c8.ha.q(20, 20, 0.0f, 51, (p6Var.a * 16) + 17, -1, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 14.0f);
-                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.z6, null);
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.z6, null);
                 textView.setSingleLine(false);
                 textView.setText(p6Var.b);
                 tVar.addView(textView, c8.ha.t(-1, -2, 1, 6, 4, 24, 4));
                 addView(tVar, c8.ha.o(-1, -2));
             }
-            int i12 = org.telegram.ui.ActionBar.l6.d6;
+            int i12 = org.telegram.ui.ActionBar.m6.d6;
             View v3Var2 = new v3(getContext(), 12, 1);
             v3Var2.setBackground(null);
-            org.telegram.ui.ActionBar.s6.h(i12, v3Var2, null);
+            org.telegram.ui.ActionBar.t6.h(i12, v3Var2, null);
             addView(v3Var2, c8.ha.o(-1, -2));
-            Drawable Y0 = org.telegram.ui.ActionBar.l6.Y0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.l6.b7);
+            Drawable Y0 = org.telegram.ui.ActionBar.m6.Y0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.m6.b7);
             View v3Var3 = new v3(getContext(), 12, 1);
             v3Var3.setBackground(Y0);
             addView(v3Var3, c8.ha.o(-1, -2));

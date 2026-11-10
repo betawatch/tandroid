@@ -1,82 +1,102 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.MotionEvent;
+import android.os.Bundle;
 import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class a41 extends org.telegram.ui.Components.w61 {
-    public boolean V;
-    public final /* synthetic */ d51 W;
+public final /* synthetic */ class a41 implements org.telegram.ui.Components.dj0, te.b {
+    public final /* synthetic */ e51 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a41(d51 d51Var, Activity activity) {
-        super(activity, null);
-        this.W = d51Var;
+    public /* synthetic */ a41(e51 e51Var) {
+        this.a = e51Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        boolean z9;
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            d51 d51Var = this.W;
-            if (d51Var.j0 != null) {
-                View currentView = getCurrentView();
-                zd zdVar = d51Var.j0;
-                if (currentView == zdVar) {
-                    boolean G = zdVar.G(motionEvent.getX() - d51Var.j0.getX(), motionEvent.getY() - d51Var.j0.getY());
-                    zdVar.Q0 = G;
-                    if (G && zdVar.a1.b.canScrollHorizontally(-1)) {
-                        z9 = true;
-                        this.V = z9;
+    @Override // te.b
+    public void Y(int i7, float f10, float f11, te.c cVar) {
+        this.a.t0();
+    }
+
+    @Override // org.telegram.ui.Components.dj0
+    public boolean c(int i7, View view) {
+        final e51 e51Var = this.a;
+        org.telegram.ui.ActionBar.u1[] u1VarArr = e51Var.g0;
+        i41 i41Var = e51Var.W;
+        int i10 = i41Var.I;
+        final int i11 = 0;
+        final int i12 = 1;
+        if (i7 < i10 || i7 > i41Var.J) {
+            int i13 = i41Var.U;
+            if (i7 >= i13 && i7 <= i41Var.V) {
+                ((x41) e51Var.Q.get(i7 - i13)).c(e51Var.a, e51Var, u1VarArr, true);
+                return true;
+            }
+            int i14 = i41Var.R;
+            if (i7 >= i14 && i7 <= i41Var.S) {
+                ((x41) e51Var.O.get(i7 - i14)).c(e51Var.a, e51Var, u1VarArr, true);
+                return true;
+            }
+            int i15 = i41Var.X;
+            if (i7 >= i15 && i7 <= i41Var.Y) {
+                ((x41) e51Var.P.get(i7 - i15)).c(e51Var.a, e51Var, u1VarArr, true);
+                return true;
+            }
+        } else {
+            final org.telegram.messenger.ij ijVar = ((b51) e51Var.y0.get(i7 - i10)).b;
+            if (!ijVar.x4()) {
+                org.telegram.ui.Components.k60 H = org.telegram.ui.Components.k60.H(e51Var, view);
+                H.c(R.drawable.msg_stats, org.telegram.messenger.id.M0(2131743549, null), new Runnable() { // from class: org.telegram.ui.z31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                e51 e51Var2 = e51Var;
+                                e51Var2.getClass();
+                                e51Var2.presentFragment(new mg0(ijVar));
+                                break;
+                            default:
+                                e51 e51Var3 = e51Var;
+                                e51Var3.getClass();
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", e51Var3.b);
+                                bundle.putInt("message_id", ijVar.e1());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                e51Var3.presentFragment(new cn(bundle), false);
+                                break;
+                        }
                     }
-                }
+                }, false);
+                H.c(R.drawable.msg_msgbubble3, org.telegram.messenger.id.M0(2131743550, null), new Runnable() { // from class: org.telegram.ui.z31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                e51 e51Var2 = e51Var;
+                                e51Var2.getClass();
+                                e51Var2.presentFragment(new mg0(ijVar));
+                                break;
+                            default:
+                                e51 e51Var3 = e51Var;
+                                e51Var3.getClass();
+                                Bundle bundle = new Bundle();
+                                bundle.putLong("chat_id", e51Var3.b);
+                                bundle.putInt("message_id", ijVar.e1());
+                                bundle.putBoolean("need_remove_previous_same_chat_activity", false);
+                                e51Var3.presentFragment(new cn(bundle), false);
+                                break;
+                        }
+                    }
+                }, false);
+                H.W(e51Var.S.U0(view, false));
+                H.Z();
+                return true;
             }
-            z9 = false;
-            this.V = z9;
         }
-        try {
-            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-            if (actionMasked != 1 && actionMasked != 3) {
-                return dispatchTouchEvent;
-            }
-            this.V = false;
-            return dispatchTouchEvent;
-        } catch (Throwable th2) {
-            if (actionMasked == 1 || actionMasked == 3) {
-                this.V = false;
-            }
-            throw th2;
-        }
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.w61, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.V && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.w61, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.V && B(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.w61
-    public final void u() {
-        d51 d51Var = this.W;
-        d51Var.p0(d51Var.h0.getCurrentPosition(), true);
-        d51Var.q0(false, 0.0f);
-    }
-
-    @Override // org.telegram.ui.Components.w61
-    public final void w(boolean z9) {
-        d51 d51Var = this.W;
-        float positionAnimated = d51Var.h0.getPositionAnimated();
-        d51Var.q0(!z9, positionAnimated);
-        if (z9) {
-            return;
-        }
-        d51Var.p0(Math.round(positionAnimated), true);
+    @Override // te.b
+    public /* synthetic */ void F(float f10, int i7) {
     }
 }

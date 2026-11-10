@@ -24,9 +24,9 @@ import java.util.Map;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public int D;
     public int E;
     public int F;
@@ -130,7 +130,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                         animatorSet.playTogether(ObjectAnimator.ofFloat(g4Var.g0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, g4.e1, 0.0f));
                     }
                     animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), org.telegram.messenger.qs.Z3));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.xq.h);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.wq.h);
                     animatorSet.addListener(new f4(this, z10));
                     animatorSet.start();
                     g4Var.U0 = true;
@@ -165,18 +165,18 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Dl));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.d6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.y6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.J6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.K6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.k6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.d7));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.M6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.l6.Id));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Dl));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.y6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.J6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.K6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.k6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.d7));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.M6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Id));
     }
 
     public final void b(MotionEvent motionEvent) {
@@ -518,11 +518,11 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         fi.v vVar;
+        org.telegram.ui.ActionBar.a3 a3Var;
         org.telegram.ui.ActionBar.z2 z2Var;
-        org.telegram.ui.ActionBar.y2 y2Var;
         Paint paint;
         k3 k3Var;
         k3 k3Var2;
@@ -531,7 +531,7 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
         g4 g4Var = this.H;
         t3 t3Var = g4Var.K;
         try {
-            int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Dl, false);
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Dl, false);
             if (g4Var.u0 != null) {
                 int i10 = 0;
                 while (true) {
@@ -568,10 +568,10 @@ class ArticleViewer$WindowView extends FrameLayout implements org.telegram.ui.Ac
                 paint2.setColor(x02);
             }
             if (g4Var.z0 && (paint = g4Var.y0) != null) {
-                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.a7, true) : org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.a7, false));
+                paint.setColor(t3Var == null ? org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, true) : org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.a7, false));
             }
-            if (t3Var != null && (z2Var = t3Var.e) != null && (y2Var = z2Var.b) != null) {
-                org.telegram.messenger.g0.r3(y2Var, t3Var.f());
+            if (t3Var != null && (a3Var = t3Var.e) != null && (z2Var = a3Var.b) != null) {
+                org.telegram.messenger.g0.r3(z2Var, t3Var.f());
             }
             if (g4Var.l0 != null && g4.r1 != null) {
                 g4.e0(g4Var);

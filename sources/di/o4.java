@@ -9,10 +9,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hc;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.ou0;
+import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.nu0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o4 {
     public final ImageReceiver a;
@@ -52,7 +52,7 @@ public final class o4 {
             s7.x(imageReceiver, storyItem);
         } else {
             y6 y6Var = s5Var.b;
-            f10[] f10VarArr = s7.a;
+            e10[] e10VarArr = s7.a;
             if (y6Var.c.K) {
                 imageReceiver.r0(hc.g(y6Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {
@@ -76,12 +76,12 @@ public final class o4 {
         int i7 = (int) (p4Var.J + 1.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = this.d;
-        StaticLayout c10 = ou0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        StaticLayout c10 = nu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         this.c = c10;
         if (c10.getLineCount() > 1) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
             p4.a(p4Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = ou0.c(spannableStringBuilder2, textPaint, (int) (p4Var.J + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+            this.c = nu0.c(spannableStringBuilder2, textPaint, (int) (p4Var.J + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

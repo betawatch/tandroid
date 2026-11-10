@@ -17,17 +17,17 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.y1;
-import org.telegram.ui.Components.cv0;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bv0;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class s extends f2 implements te.b {
     public final te.a a;
@@ -38,18 +38,18 @@ public final class s extends f2 implements te.b {
     public LinearLayout f;
     public fi.d h;
     public fi.d n;
-    public cv0 r;
+    public bv0 r;
     public TLRPC.ChatFull s;
     public l0 w;
     public int x;
 
     public s(Bundle bundle) {
         super(bundle);
-        this.a = new te.a(0, this, xq.h, 320L, false);
+        this.a = new te.a(0, this, wq.h, 320L, false);
     }
 
-    public static void Z(s sVar, y31 y31Var) {
-        Object obj = y31Var.G;
+    public static void Z(s sVar, x31 x31Var) {
+        Object obj = x31Var.G;
         if (obj instanceof ji.f) {
             ji.f fVar = (ji.f) obj;
             long j3 = fVar.a;
@@ -86,7 +86,7 @@ public final class s extends f2 implements te.b {
         boolean z9 = true;
         z9 = true;
         setHasOwnBackground(true);
-        l0 l0Var = new l0(getParentActivity(), this.resourceProvider, hc.a0(this), this.currentAccount, this.b);
+        l0 l0Var = new l0(getParentActivity(), this.resourceProvider, gc.a0(this), this.currentAccount, this.b);
         this.w = l0Var;
         l0Var.h = new g6.d0(this, 6);
         l0Var.d();
@@ -98,8 +98,8 @@ public final class s extends f2 implements te.b {
         this.actionBar.setTitle(id.M0(2131751895, null));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        int i10 = l6.a7;
-        s6.h(i10, frameLayout, null);
+        int i10 = m6.a7;
+        t6.h(i10, frameLayout, null);
         r41 r41Var = new r41(this, new u1(this, 3), new q(this), new x3(this, 7));
         this.d = r41Var;
         r41Var.setClipToPadding(false);
@@ -124,7 +124,7 @@ public final class s extends f2 implements te.b {
         this.n = dVar;
         dVar.e();
         fi.d dVar2 = this.n;
-        int f10 = i0.a.f(0.125f, getThemedColor(l6.d6), getThemedColor(l6.G6));
+        int f10 = i0.a.f(0.125f, getThemedColor(m6.d6), getThemedColor(m6.G6));
         this.x = f10;
         dVar2.setColor(f10);
         this.n.setText(id.M0(2131751900, null));
@@ -176,9 +176,9 @@ public final class s extends f2 implements te.b {
         });
         this.f.addView(this.h, ha.q(0, 48, 1.0f, 0, 4, 0, 4, 0));
         this.c.addView(this.f, ha.e(-1, -2, 80));
-        cv0 cv0Var = new cv0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = cv0Var;
-        cv0Var.d.setText(id.M0(2131748225, null));
+        bv0 bv0Var = new bv0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = bv0Var;
+        bv0Var.d.setText(id.M0(2131748225, null));
         this.r.e.setText(id.M0(2131748224, null));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
@@ -232,7 +232,7 @@ public final class s extends f2 implements te.b {
     public final void onThemeColorsChanged() {
         try {
             super.onThemeColorsChanged();
-            int f10 = i0.a.f(0.125f, getThemedColor(l6.d6), getThemedColor(l6.G6));
+            int f10 = i0.a.f(0.125f, getThemedColor(m6.d6), getThemedColor(m6.G6));
             fi.d dVar = this.n;
             if (dVar == null || f10 == this.x) {
                 return;

@@ -6,7 +6,7 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k9 implements c20 {
     public final /* synthetic */ ea a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class k9 implements c20 {
     public final /* synthetic */ boolean[] c;
     public final /* synthetic */ c20 d;
     public final /* synthetic */ Context e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 f;
     public final /* synthetic */ boolean g;
     public final /* synthetic */ String h;
     public final /* synthetic */ ij i;
@@ -23,13 +23,13 @@ public final /* synthetic */ class k9 implements c20 {
     public final /* synthetic */ int l;
     public final /* synthetic */ long m;
 
-    public /* synthetic */ k9(ea eaVar, long j3, boolean[] zArr, c20 c20Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z9, String str, ij ijVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i7, long j10) {
+    public /* synthetic */ k9(ea eaVar, long j3, boolean[] zArr, c20 c20Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, boolean z9, String str, ij ijVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i7, long j10) {
         this.a = eaVar;
         this.b = j3;
         this.c = zArr;
         this.d = c20Var;
         this.e = context;
-        this.f = g6Var;
+        this.f = h6Var;
         this.g = z9;
         this.h = str;
         this.i = ijVar;
@@ -57,10 +57,10 @@ public final /* synthetic */ class k9 implements c20 {
         }
         boolean z9 = qp.s1(eaVar.a).j7;
         Context context = this.e;
-        org.telegram.ui.ActionBar.g6 g6Var = this.f;
+        org.telegram.ui.ActionBar.h6 h6Var = this.f;
         if (!z9) {
             boolean[] zArr2 = {false};
-            tc tcVar = new tc(context, g6Var, j10, this.g ? 9 : 0, this.h, new p9(eaVar, zArr2, ijVar, inputInvoice, tL_payments_paymentFormStars, zArr, i7, c20Var2, c20Var), this.m);
+            tc tcVar = new tc(context, h6Var, j10, this.g ? 9 : 0, this.h, new p9(eaVar, zArr2, ijVar, inputInvoice, tL_payments_paymentFormStars, zArr, i7, c20Var2, c20Var), this.m);
             tcVar.setOnDismissListener(new s7(eaVar, c20Var, zArr2, zArr, c20Var2, 1));
             tcVar.show();
             return;
@@ -72,6 +72,6 @@ public final /* synthetic */ class k9 implements c20 {
             c20Var2.a("cancelled");
             zArr[0] = true;
         }
-        ea.c0(context, g6Var);
+        ea.c0(context, h6Var);
     }
 }

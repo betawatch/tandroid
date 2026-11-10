@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k51 extends Drawable {
     public static final int[] r = {10, 7, 26, 16, 10, 25};
@@ -71,8 +71,8 @@ public final class k51 extends Drawable {
         return this.j;
     }
 
-    public final void c(org.telegram.ui.to0 to0Var) {
-        this.n = to0Var;
+    public final void c(org.telegram.ui.uo0 uo0Var) {
+        this.n = uo0Var;
     }
 
     public final void d(boolean z9) {

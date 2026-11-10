@@ -5,9 +5,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.p61;
+import org.telegram.ui.q61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements v10 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class e0 implements v10 {
                 if (walletState != null) {
                     l0Var2.l0(walletState);
                     l0Var2.R();
-                    org.telegram.messenger.g0.i3(new p61(3), 1000L);
+                    org.telegram.messenger.g0.i3(new q61(3), 1000L);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("disable backup: failed to disable backup on server: ");

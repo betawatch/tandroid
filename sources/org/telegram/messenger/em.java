@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.d01;
+import org.telegram.ui.e01;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class em implements Runnable {
     public final /* synthetic */ int a;
@@ -707,16 +707,16 @@ public final /* synthetic */ class em implements Runnable {
                 return;
             case 1:
                 qp qpVar5 = (qp) this.b;
-                org.telegram.ui.Components.v4.c0(qpVar5.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_channels_createChannel) this.e, new Object[0]);
+                org.telegram.ui.Components.u4.c0(qpVar5.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_channels_createChannel) this.e, new Object[0]);
                 qpVar5.getNotificationCenter().k(29, new Object[0]);
                 return;
             case 2:
                 qp qpVar6 = (qp) this.b;
-                org.telegram.ui.Components.v4.c0(qpVar6.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_messages_createChat) this.e, new Object[0]);
+                org.telegram.ui.Components.u4.c0(qpVar6.currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_messages_createChat) this.e, new Object[0]);
                 qpVar6.getNotificationCenter().k(29, new Object[0]);
                 return;
             case 3:
-                org.telegram.ui.Components.v4.c0(((qp) this.b).currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_messages_editChatAdmin) this.e, Boolean.FALSE);
+                org.telegram.ui.Components.u4.c0(((qp) this.b).currentAccount, (TLRPC.TL_error) this.c, (org.telegram.ui.ActionBar.f2) this.d, (TLRPC.TL_messages_editChatAdmin) this.e, Boolean.FALSE);
                 return;
             case 4:
                 gz gzVar = (gz) this.b;
@@ -730,13 +730,13 @@ public final /* synthetic */ class em implements Runnable {
                 return;
             case 5:
                 boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.Components.jc[] jcVarArr = (org.telegram.ui.Components.jc[]) this.c;
+                org.telegram.ui.Components.ic[] icVarArr = (org.telegram.ui.Components.ic[]) this.c;
                 ui.a aVar = (ui.a) this.d;
                 LaunchActivity launchActivity = (LaunchActivity) this.e;
                 if (zArr[0]) {
                     return;
                 }
-                ng ngVar = new ng(zArr, jcVarArr, aVar, 6);
+                ng ngVar = new ng(zArr, icVarArr, aVar, 6);
                 SharedPreferences e12 = qp.e1();
                 if (e12.getBoolean("proxycheckstatusip", false)) {
                     ngVar.run();
@@ -891,7 +891,7 @@ public final /* synthetic */ class em implements Runnable {
                 String str3 = (String) this.b;
                 ArrayList arrayList13 = (ArrayList) this.c;
                 ArrayList arrayList14 = (ArrayList) this.d;
-                d01 d01Var = (d01) this.e;
+                e01 e01Var = (e01) this.e;
                 ArrayList arrayList15 = new ArrayList();
                 ArrayList arrayList16 = new ArrayList();
                 String lowerCase = str3.toLowerCase();
@@ -926,7 +926,7 @@ public final /* synthetic */ class em implements Runnable {
                     }
                 }
                 arrayList15.addAll(arrayList16);
-                d01Var.a(arrayList15);
+                e01Var.a(arrayList15);
                 return;
             case 17:
                 qp qpVar7 = (qp) this.b;

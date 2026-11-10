@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class mv extends v4.m0 {
-    public final /* synthetic */ hy a;
+public final class mv extends tx {
+    public final /* synthetic */ gy H;
 
-    public mv(hy hyVar) {
-        this.a = hyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mv(gy gyVar, Context context) {
+        super(gyVar, context, 2);
+        this.H = gyVar;
     }
 
-    @Override // v4.m0
-    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.a1 a1Var) {
-        int R = RecyclerView.R(view);
-        hy hyVar = this.a;
-        v4.g0 adapter = hyVar.h0.getAdapter();
-        mx mxVar = hyVar.n0;
-        if (adapter == mxVar && R == mxVar.I) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            super.setTranslationY(f10);
+            this.H.g0.invalidate();
         }
-        if (R == 0) {
-            mxVar.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = org.telegram.messenger.g0.L(2.0f);
-        nx nxVar = hyVar.i0;
-        mxVar.getClass();
-        rect.right = nxVar.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

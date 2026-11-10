@@ -1,53 +1,51 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f20 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h20 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public final class f20 implements jg.y1 {
+    public final /* synthetic */ g20 a;
 
-    public /* synthetic */ f20(h20 h20Var, String str, int i7, int i10) {
-        this.a = i10;
-        this.b = h20Var;
-        this.c = str;
-        this.d = i7;
+    public f20(g20 g20Var) {
+        this.a = g20Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h20 h20Var = this.b;
-                String str = this.c;
-                int i7 = this.d;
-                if (h20Var.e != null) {
-                    h20Var.e = null;
-                    org.telegram.messenger.g0.h3(new f20(h20Var, str, i7, 1));
-                    break;
-                }
-                break;
-            default:
-                h20 h20Var2 = this.b;
-                String str2 = this.c;
-                int i10 = this.d;
-                ArrayList arrayList = null;
-                h20Var2.e = null;
-                if (!org.telegram.messenger.t3.T(h20Var2.x.M1) && h20Var2.x.N1 != null) {
-                    arrayList = new ArrayList(h20Var2.x.N1.participants.participants);
-                }
-                ArrayList arrayList2 = arrayList;
-                if (arrayList2 != null) {
-                    Utilities.g.c(new ai.a1(h20Var2, str2, i10, arrayList2, 24));
-                } else {
-                    h20Var2.h = false;
-                }
-                h20Var2.d.g(str2, org.telegram.messenger.t3.w(3, h20Var2.x.M1), false, true, false, org.telegram.messenger.t3.T(h20Var2.x.M1) ? h20Var2.x.M1.id : 0L, false, 2, i10);
-                break;
+    @Override // jg.y1
+    public final /* synthetic */ a0.h X0() {
+        return null;
+    }
+
+    @Override // jg.y1
+    public final /* synthetic */ boolean k1(int i7) {
+        return true;
+    }
+
+    @Override // jg.y1
+    public final void q(int i7) {
+        g20 g20Var = this.a;
+        h20 h20Var = g20Var.x;
+        if (i7 < 0 || i7 != g20Var.n || g20Var.h) {
+            return;
         }
+        int i10 = g20Var.f - 1;
+        boolean z9 = h20Var.t1.getVisibility() == 0;
+        g20Var.f();
+        if (g20Var.f > i10) {
+            h20Var.O0(i10);
+        }
+        if (g20Var.d.e() || !h20Var.n1.R0()) {
+            return;
+        }
+        h20Var.t1.e(false, z9);
+    }
+
+    @Override // jg.y1
+    public final a0.h v0() {
+        return this.a.x.Y1;
+    }
+
+    @Override // jg.y1
+    public final /* synthetic */ void m1(ArrayList arrayList) {
     }
 }

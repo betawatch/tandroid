@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class kb extends h2.j0 {
     public final /* synthetic */ int e;
@@ -59,16 +59,16 @@ public final class kb extends h2.j0 {
                 BitmapDrawable bitmapDrawable3 = (BitmapDrawable) obj;
                 gc gcVar3 = this.f;
                 Integer num3 = (Integer) gcVar3.a.get(str);
-                boolean z9 = bitmapDrawable3 instanceof org.telegram.ui.Components.v5;
+                boolean z9 = bitmapDrawable3 instanceof org.telegram.ui.Components.u5;
                 if (z9) {
-                    gcVar3.f.remove((org.telegram.ui.Components.v5) bitmapDrawable3);
+                    gcVar3.f.remove((org.telegram.ui.Components.u5) bitmapDrawable3);
                 }
                 if (num3 == null || num3.intValue() == 0) {
                     if (z9) {
-                        ((org.telegram.ui.Components.v5) bitmapDrawable3).u();
+                        ((org.telegram.ui.Components.u5) bitmapDrawable3).u();
                     }
-                    if (bitmapDrawable3 instanceof ah0) {
-                        ((ah0) bitmapDrawable3).C(false);
+                    if (bitmapDrawable3 instanceof zg0) {
+                        ((zg0) bitmapDrawable3).C(false);
                         break;
                     }
                 }
@@ -81,8 +81,8 @@ public final class kb extends h2.j0 {
         switch (this.e) {
             case 3:
                 BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
-                if (bitmapDrawable instanceof org.telegram.ui.Components.v5) {
-                    this.f.f.add((org.telegram.ui.Components.v5) bitmapDrawable);
+                if (bitmapDrawable instanceof org.telegram.ui.Components.u5) {
+                    this.f.f.add((org.telegram.ui.Components.u5) bitmapDrawable);
                 }
                 return (BitmapDrawable) super.l(str, bitmapDrawable);
             default:

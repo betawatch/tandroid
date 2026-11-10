@@ -1,65 +1,51 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lk0 implements OnCompleteListener, org.telegram.ui.ActionBar.r1, rs {
+public final /* synthetic */ class lk0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jl0 b;
+    public final /* synthetic */ kl0 b;
 
-    public /* synthetic */ lk0(jl0 jl0Var, int i7) {
+    public /* synthetic */ lk0(kl0 kl0Var, int i7) {
         this.a = i7;
-        this.b = jl0Var;
+        this.b = kl0Var;
     }
 
-    @Override // org.telegram.ui.rs
-    public void b(os osVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                jl0 jl0Var = this.b;
-                jl0Var.A0 = osVar;
-                jl0Var.f[4].setText(osVar.a);
+            case 0:
+                this.b.z0();
                 break;
-            default:
-                jl0 jl0Var2 = this.b;
-                jl0Var2.A0 = osVar;
-                jl0Var2.f[4].setText(osVar.a);
-                jl0Var2.B0 = osVar.d;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
             case 1:
-                jl0 jl0Var = this.b;
-                jl0Var.O0(jl0Var.R0[0]);
+                kl0 kl0Var = this.b;
+                kl0Var.getMessagesController().l7 = null;
+                if (kl0Var.f1 == 3 && !kl0Var.isFinishing()) {
+                    kl0Var.f1 = 4;
+                    jl0 jl0Var = kl0Var.Z0;
+                    if (jl0Var != null) {
+                        jl0Var.b(4);
+                    }
+                    kl0Var.finishFragment();
+                    break;
+                } else if (kl0Var.f1 == 1 && !kl0Var.isFinishing()) {
+                    kl0Var.finishFragment();
+                    break;
+                }
                 break;
             case 2:
+                kl0 kl0Var2 = this.b;
+                if (kl0Var2.d0 != null) {
+                    kl0Var2.C0();
+                    kl0Var2.d0 = null;
+                    break;
+                }
+                break;
             default:
-                jl0 jl0Var2 = this.b;
-                jl0Var2.J0(true);
-                jl0Var2.F0();
+                kl0 kl0Var3 = this.b;
+                kl0Var3.f[0].requestFocus();
+                org.telegram.messenger.g0.K3(kl0Var3.f[0]);
                 break;
-            case 3:
-                this.b.G0(true);
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        if (!task.isSuccessful()) {
-            org.telegram.messenger.a8.e("isReadyToPay failed", task.getException());
-            return;
-        }
-        FrameLayout frameLayout = this.b.O;
-        if (frameLayout != null) {
-            frameLayout.setVisibility(0);
         }
     }
 }

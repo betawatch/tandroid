@@ -16,10 +16,10 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,13 +30,13 @@ public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ ra(int i7, Context context, long j3, long j10, org.telegram.ui.ActionBar.v2[] v2VarArr, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ ra(int i7, Context context, long j3, long j10, org.telegram.ui.ActionBar.w2[] w2VarArr, org.telegram.ui.ActionBar.h6 h6Var) {
         this.b = i7;
         this.e = context;
         this.c = j3;
         this.d = j10;
-        this.f = v2VarArr;
-        this.h = g6Var;
+        this.f = w2VarArr;
+        this.h = h6Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -57,12 +57,12 @@ public final /* synthetic */ class ra implements Runnable {
         switch (this.a) {
             case 0:
                 Context context = (Context) this.e;
-                org.telegram.ui.ActionBar.v2[] v2VarArr = (org.telegram.ui.ActionBar.v2[]) this.f;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.h;
+                org.telegram.ui.ActionBar.w2[] w2VarArr = (org.telegram.ui.ActionBar.w2[]) this.f;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.h;
                 int i10 = this.b;
                 n0 g10 = n0.g(i10);
                 long j3 = this.c;
-                g10.f(context, j3, this.d, new hi.d3(v2VarArr, context, i10, j3, g6Var, 2));
+                g10.f(context, j3, this.d, new hi.d3(w2VarArr, context, i10, j3, h6Var, 2));
                 return;
             case 1:
                 di.u0 u0Var = (di.u0) this.e;
@@ -78,7 +78,7 @@ public final /* synthetic */ class ra implements Runnable {
                     return;
                 }
                 if (!"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                    new org.telegram.ui.Components.hc(u0Var.b, new di.b()).f0(tL_error, true);
+                    new org.telegram.ui.Components.gc(u0Var.b, new di.b()).f0(tL_error, true);
                     return;
                 }
                 di.g1 g1Var = u0Var.P;
@@ -233,18 +233,18 @@ public final /* synthetic */ class ra implements Runnable {
                 }
                 break;
             default:
-                l60 l60Var = (l60) this.e;
+                k60 k60Var = (k60) this.e;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.f;
-                org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) this.h;
-                l60Var.u();
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) this.h;
+                k60Var.u();
                 int i16 = this.b;
                 qp s12 = qp.s1(i16);
                 long j16 = this.c;
                 long j17 = this.d;
                 boolean r22 = s12.r2(j16, j17, null);
                 dt.t(i16).G(j16, j17, !r22);
-                if (org.telegram.ui.Components.hc.a(f2Var)) {
-                    org.telegram.ui.Components.hc.z(f2Var, !r22 ? 3 : 4, !r22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, g6Var2).j();
+                if (org.telegram.ui.Components.gc.a(f2Var)) {
+                    org.telegram.ui.Components.gc.z(f2Var, !r22 ? 3 : 4, !r22 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, h6Var2).j();
                     return;
                 }
                 return;
@@ -278,12 +278,12 @@ public final /* synthetic */ class ra implements Runnable {
         this.h = str2;
     }
 
-    public /* synthetic */ ra(l60 l60Var, int i7, long j3, long j10, cn cnVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.e = l60Var;
+    public /* synthetic */ ra(k60 k60Var, int i7, long j3, long j10, cn cnVar, org.telegram.ui.ActionBar.h6 h6Var) {
+        this.e = k60Var;
         this.b = i7;
         this.c = j3;
         this.d = j10;
         this.f = cnVar;
-        this.h = g6Var;
+        this.h = h6Var;
     }
 }

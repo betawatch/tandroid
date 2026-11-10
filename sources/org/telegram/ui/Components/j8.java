@@ -1,13 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class j8 extends vp {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(300.0f), TLObject.FLAG_30));
+public final class j8 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s8 b;
+
+    public /* synthetic */ j8(s8 s8Var, int i7) {
+        this.a = i7;
+        this.b = s8Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i7) {
+        switch (this.a) {
+            case 0:
+                if (i7 == -1) {
+                    s8.Z(this.b);
+                    break;
+                }
+                break;
+            default:
+                s8 s8Var = this.b;
+                if (i7 == -1) {
+                    s8.Z(s8Var);
+                }
+                if (i7 == 1) {
+                    s8Var.k0();
+                    break;
+                }
+                break;
+        }
     }
 }

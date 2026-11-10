@@ -1,54 +1,44 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.graphics.Point;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.hc;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class q3 implements ig.a {
-    public k6 a;
-    public TLRPC.TL_theme b;
-    public TLRPC.TL_chatThemeUniqueGift c;
-    public int d;
-    public int e = -1;
-    public SparseIntArray f;
-    public String g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
+public final /* synthetic */ class q3 implements c20 {
+    public final /* synthetic */ c20 a;
+    public final /* synthetic */ TLRPC.WallPaper b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
 
-    public final long a() {
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme != null) {
-            return tL_theme.id;
-        }
-        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-        if (tL_chatThemeUniqueGift != null) {
-            return tL_chatThemeUniqueGift.gift.gift_id;
-        }
-        return 0L;
+    public /* synthetic */ q3(c20 c20Var, TLRPC.WallPaper wallPaper, int i7, int i10, long j3) {
+        this.a = c20Var;
+        this.b = wallPaper;
+        this.c = i7;
+        this.d = i10;
+        this.e = j3;
     }
 
-    public final TLRPC.ThemeSettings b(int i7) {
-        ArrayList<TLRPC.ThemeSettings> arrayList;
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme == null) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-            if (tL_chatThemeUniqueGift != null) {
-                arrayList = tL_chatThemeUniqueGift.theme_settings;
-            }
-            return null;
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
+        gg.a aVar = (gg.a) obj;
+        c20 c20Var = this.a;
+        if (aVar != null) {
+            c20Var.a(aVar);
+            return;
         }
-        arrayList = tL_theme.settings;
-        if (arrayList != null && i7 >= 0 && arrayList.size() > i7) {
-            return arrayList.get(i7);
-        }
-        return null;
+        TLRPC.WallPaper wallPaper = this.b;
+        hc b10 = hc.b(wallPaper.document);
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        imageReceiver.z1 = false;
+        Point point = org.telegram.messenger.g0.q;
+        imageReceiver.q0(b10, (Math.min(point.x, point.y) / org.telegram.messenger.g0.p) + "_" + (Math.max(point.x, point.y) / org.telegram.messenger.g0.p) + "_f", null, ".jpg", wallPaper, 1);
+        imageReceiver.g1 = new org.telegram.tgnet.f(this.c, this.d, this.e, c20Var);
+        gc.D().M(imageReceiver, null);
     }
 }

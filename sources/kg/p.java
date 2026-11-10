@@ -6,9 +6,9 @@ import android.widget.TextView;
 import org.telegram.messenger.wr;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.t4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -64,12 +64,12 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                 }
                 break;
             default:
-                u4 u4Var = (u4) this.e;
+                t4 t4Var = (t4) this.e;
                 wr wrVar = (wr) this.f;
                 if (i7 == 6) {
-                    String obj2 = u4Var.getText().toString();
+                    String obj2 = t4Var.getText().toString();
                     if (obj2.length() > this.b) {
-                        org.telegram.messenger.g0.F3(u4Var);
+                        org.telegram.messenger.g0.F3(t4Var);
                     } else {
                         wrVar.a(obj2);
                         org.telegram.ui.ActionBar.u1 u1Var2 = this.c[0];

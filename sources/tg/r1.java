@@ -16,21 +16,21 @@ import android.view.ViewGroup;
 import c8.ha;
 import org.telegram.messenger.k5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.ot0;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r1 extends j {
     public boolean A0;
     public boolean B0;
-    public final w5 C0;
+    public final v5 C0;
     public final int q0;
     public boolean r0;
-    public final w5 s0;
-    public final ot0 t0;
+    public final v5 s0;
+    public final nt0 t0;
     public final TextureView u0;
     public final Bitmap v0;
     public final Rect w0;
@@ -38,7 +38,7 @@ public final class r1 extends j {
     public float y0;
     public final Path z0;
 
-    public r1(Context context, PointF pointF, ot0 ot0Var, String str) {
+    public r1(Context context, PointF pointF, nt0 nt0Var, String str) {
         super(context, pointF);
         this.q0 = -1;
         this.r0 = false;
@@ -49,12 +49,12 @@ public final class r1 extends j {
         this.z0 = new Path();
         this.A0 = true;
         this.B0 = true;
-        xq xqVar = xq.h;
-        this.C0 = new w5(this, 0L, 350L, xqVar);
+        wq wqVar = wq.h;
+        this.C0 = new v5(this, 0L, 350L, wqVar);
         new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         setRotation(0.0f);
         setScale(1.0f);
-        this.t0 = ot0Var;
+        this.t0 = nt0Var;
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
         this.v0 = decodeFile;
         if (decodeFile != null) {
@@ -64,7 +64,7 @@ public final class r1 extends j {
         TextureView textureView = new TextureView(context);
         this.u0 = textureView;
         addView(textureView, ha.c(-1.0f, -1));
-        this.s0 = new w5(this, 0L, 500L, xqVar);
+        this.s0 = new v5(this, 0L, 500L, wqVar);
         k();
         setWillNotDraw(false);
     }
@@ -134,28 +134,28 @@ public final class r1 extends j {
         return this.q0;
     }
 
-    public ot0 getBaseSize() {
+    public nt0 getBaseSize() {
         return this.t0;
     }
 
     @Override // tg.j
-    public li0 getSelectionBounds() {
+    public ki0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new li0();
+            return new ki0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float x10 = org.telegram.messenger.camera.q.x(L, 2.0f, getPositionX(), scaleX);
-        return new li0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        return new ki0(x10, org.telegram.messenger.camera.q.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
     }
 
     @Override // tg.j
     public final void k() {
-        ot0 ot0Var = this.t0;
-        float f10 = ot0Var.a / 2.0f;
-        float f11 = ot0Var.b / 2.0f;
+        nt0 nt0Var = this.t0;
+        float f10 = nt0Var.a / 2.0f;
+        float f11 = nt0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -173,9 +173,9 @@ public final class r1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        ot0 ot0Var = this.t0;
-        int i11 = (int) ot0Var.a;
-        int i12 = (int) ot0Var.b;
+        nt0 nt0Var = this.t0;
+        int i11 = (int) nt0Var.a;
+        int i12 = (int) nt0Var.b;
         TextureView textureView = this.u0;
         if (textureView != null) {
             float f10 = this.y0;

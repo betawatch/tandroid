@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.v71;
+import android.graphics.Bitmap;
+import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ko implements v71 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ di b;
-    public final /* synthetic */ org.telegram.ui.wb c;
+public final class ko extends x71 {
+    public final /* synthetic */ int l2;
 
-    public /* synthetic */ ko(di diVar, org.telegram.ui.wb wbVar, int i7) {
-        this.a = i7;
-        this.b = diVar;
-        this.c = wbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ko(Object obj, Bitmap bitmap, boolean z9, int i7) {
+        super(obj, bitmap, z9);
+        this.l2 = i7;
     }
 
-    @Override // org.telegram.ui.v71
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.K();
-                this.c.a(tL_wallPaper);
-                break;
-            default:
-                this.b.K();
-                this.c.a(tL_wallPaper);
-                break;
+    @Override // org.telegram.ui.x71
+    public final boolean Z0() {
+        switch (this.l2) {
         }
+        return true;
     }
 }

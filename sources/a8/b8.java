@@ -37,9 +37,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.cz;
 import org.telegram.messenger.ds;
 import org.telegram.messenger.qd;
-import org.telegram.ui.Components.yv0;
+import org.telegram.ui.Components.xv0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -78,19 +78,19 @@ public class b8 {
         return new ColorStateList(new int[][]{m.a3.b, m.a3.d, m.a3.c, m.a3.f}, new int[]{m.a3.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i7), i0.a.k(c10, i7), i7});
     }
 
-    public static x2.g0 f(e2.c1 c1Var, h9.i0 i0Var, x2.g0 g0Var, e2.i1 i1Var) {
+    public static x2.f0 f(e2.c1 c1Var, h9.i0 i0Var, x2.f0 f0Var, e2.i1 i1Var) {
         e2.l1 y02 = c1Var.y0();
         int B = c1Var.B();
         Object l10 = y02.p() ? null : y02.l(B);
         int b10 = (c1Var.p() || y02.p()) ? -1 : y02.f(B, i1Var, false).b(h2.m0.S(c1Var.l()) - i1Var.e);
         for (int i7 = 0; i7 < i0Var.size(); i7++) {
-            x2.g0 g0Var2 = (x2.g0) i0Var.get(i7);
-            if (i(g0Var2, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
-                return g0Var2;
+            x2.f0 f0Var2 = (x2.f0) i0Var.get(i7);
+            if (i(f0Var2, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
+                return f0Var2;
             }
         }
-        if (i0Var.isEmpty() && g0Var != null && i(g0Var, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
-            return g0Var;
+        if (i0Var.isEmpty() && f0Var != null && i(f0Var, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
+            return f0Var;
         }
         return null;
     }
@@ -130,16 +130,16 @@ public class b8 {
         return layerDrawable;
     }
 
-    public static boolean i(x2.g0 g0Var, Object obj, boolean z9, int i7, int i10, int i11) {
-        Object obj2 = g0Var.a;
-        int i12 = g0Var.b;
+    public static boolean i(x2.f0 f0Var, Object obj, boolean z9, int i7, int i10, int i11) {
+        Object obj2 = f0Var.a;
+        int i12 = f0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z9 && i12 == i7 && g0Var.c == i10) {
+        if (z9 && i12 == i7 && f0Var.c == i10) {
             return true;
         }
-        return !z9 && i12 == -1 && g0Var.e == i11;
+        return !z9 && i12 == -1 && f0Var.e == i11;
     }
 
     public static void n(Drawable drawable, int i7, PorterDuff.Mode mode) {
@@ -156,17 +156,17 @@ public class b8 {
         mutate.setColorFilter(h);
     }
 
-    public void a(wa waVar, x2.g0 g0Var, e2.l1 l1Var) {
-        if (g0Var == null) {
+    public void a(wa waVar, x2.f0 f0Var, e2.l1 l1Var) {
+        if (f0Var == null) {
             return;
         }
-        if (l1Var.b(g0Var.a) != -1) {
-            waVar.v(g0Var, l1Var);
+        if (l1Var.b(f0Var.a) != -1) {
+            waVar.v(f0Var, l1Var);
             return;
         }
-        e2.l1 l1Var2 = (e2.l1) ((h9.y1) this.c).get(g0Var);
+        e2.l1 l1Var2 = (e2.l1) ((h9.y1) this.c).get(f0Var);
         if (l1Var2 != null) {
-            waVar.v(g0Var, l1Var2);
+            waVar.v(f0Var, l1Var2);
         }
     }
 
@@ -457,7 +457,7 @@ public class b8 {
             ((ValueAnimator) arrayList3.get(i7)).cancel();
             if (z9) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i7)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new yv0(this, i7, 0));
+                ofFloat.addUpdateListener(new xv0(this, i7, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -466,7 +466,7 @@ public class b8 {
             ((ValueAnimator) arrayList2.get(i10)).cancel();
             if (z9) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i10)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new yv0(this, i10, 1));
+                ofFloat2.addUpdateListener(new xv0(this, i10, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -475,7 +475,7 @@ public class b8 {
             ((ValueAnimator) arrayList.get(i11)).cancel();
             if (z9) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i11)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new yv0(this, i11, 2));
+                ofFloat3.addUpdateListener(new xv0(this, i11, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -504,19 +504,19 @@ public class b8 {
     public void s(e2.l1 l1Var) {
         wa waVar = new wa(4, 10);
         if (((h9.i0) this.b).isEmpty()) {
-            a(waVar, (x2.g0) this.e, l1Var);
-            if (!Objects.equals((x2.g0) this.f, (x2.g0) this.e)) {
-                a(waVar, (x2.g0) this.f, l1Var);
+            a(waVar, (x2.f0) this.e, l1Var);
+            if (!Objects.equals((x2.f0) this.f, (x2.f0) this.e)) {
+                a(waVar, (x2.f0) this.f, l1Var);
             }
-            if (!Objects.equals((x2.g0) this.d, (x2.g0) this.e) && !Objects.equals((x2.g0) this.d, (x2.g0) this.f)) {
-                a(waVar, (x2.g0) this.d, l1Var);
+            if (!Objects.equals((x2.f0) this.d, (x2.f0) this.e) && !Objects.equals((x2.f0) this.d, (x2.f0) this.f)) {
+                a(waVar, (x2.f0) this.d, l1Var);
             }
         } else {
             for (int i7 = 0; i7 < ((h9.i0) this.b).size(); i7++) {
-                a(waVar, (x2.g0) ((h9.i0) this.b).get(i7), l1Var);
+                a(waVar, (x2.f0) ((h9.i0) this.b).get(i7), l1Var);
             }
-            if (!((h9.i0) this.b).contains((x2.g0) this.d)) {
-                a(waVar, (x2.g0) this.d, l1Var);
+            if (!((h9.i0) this.b).contains((x2.f0) this.d)) {
+                a(waVar, (x2.f0) this.d, l1Var);
             }
         }
         this.c = waVar.d(true);

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class sj extends ChatActivityEnterView {
     public int t5;
@@ -15,8 +15,8 @@ public final class sj extends ChatActivityEnterView {
     public final /* synthetic */ cn w5;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sj(cn cnVar, Activity activity, org.telegram.ui.Components.tt0 tt0Var, cn cnVar2, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(activity, tt0Var, cnVar2, z9, g6Var);
+    public sj(cn cnVar, Activity activity, org.telegram.ui.Components.st0 st0Var, cn cnVar2, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(activity, st0Var, cnVar2, z9, h6Var);
         this.w5 = cnVar;
     }
 
@@ -27,18 +27,18 @@ public final class sj extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void C0(int i7, int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
         cn cnVar = this.w5;
         if (cnVar.Z != null) {
             if (cnVar.z0 != null) {
                 if (cnVar.Za > 0.0f) {
                     return;
                 }
-                kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                    if (kVar2.w()) {
+                lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                if (lVar != null) {
+                    lVar2 = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                    if (lVar2.x()) {
                         return;
                     }
                 }
@@ -65,11 +65,11 @@ public final class sj extends ChatActivityEnterView {
     }
 
     public final void V1() {
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         cn cnVar = this.w5;
-        kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+        lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
         final int i7 = 0;
-        if (kVar.w() || cnVar.X9()) {
+        if (lVar.x() || cnVar.X9()) {
             ValueAnimator valueAnimator = cnVar.L9;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -145,8 +145,8 @@ public final class sj extends ChatActivityEnterView {
         }
         if (this.n3) {
             float scrollY = (this.v5 - this.E0.getScrollY()) + (this.u5 - this.E0.getMeasuredHeight());
-            org.telegram.ui.Components.xe xeVar = this.E0;
-            xeVar.setOffsetY(xeVar.getOffsetY() - scrollY);
+            org.telegram.ui.Components.we weVar = this.E0;
+            weVar.setOffsetY(weVar.getOffsetY() - scrollY);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.E0.getOffsetY(), 0.0f);
             ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.rj
                 public final /* synthetic */ sj b;
@@ -204,9 +204,9 @@ public final class sj extends ChatActivityEnterView {
     public final void o0(boolean z9) {
         super.o0(z9);
         cn cnVar = this.w5;
-        af afVar = cnVar.Pb;
-        if (afVar != null) {
-            org.telegram.messenger.g0.h3(afVar);
+        bf bfVar = cnVar.Pb;
+        if (bfVar != null) {
+            org.telegram.messenger.g0.h3(bfVar);
             cnVar.Pb = null;
         }
     }

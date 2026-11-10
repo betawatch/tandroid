@@ -27,9 +27,9 @@ import org.telegram.messenger.gf;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public static int d0;
@@ -72,7 +72,7 @@ public final class b3 extends FrameLayout {
     public static final HashMap e0 = new HashMap();
     public static final fh.i f0 = new fh.i(45, 1);
 
-    public b3(Context context, org.telegram.ui.ActionBar.g6 g6Var, float f10, boolean z9) {
+    public b3(Context context, org.telegram.ui.ActionBar.h6 h6Var, float f10, boolean z9) {
         super(context);
         this.b = new Paint(3);
         Paint paint = new Paint(1);
@@ -100,16 +100,16 @@ public final class b3 extends FrameLayout {
         textPaint2.setTextSize(org.telegram.messenger.g0.L(11.33f));
         textPaint2.setColor(-1);
         this.w = context.getResources().getDrawable(R.drawable.play_mini_video).mutate();
-        a3 a3Var = new a3(this, context, g6Var);
+        a3 a3Var = new a3(this, context, h6Var);
         this.J = a3Var;
         if (z9) {
             a3Var.setDrawBackgroundAsArc(7);
         } else {
             a3Var.setDrawBackgroundAsArc(6);
         }
-        a3Var.b(org.telegram.ui.ActionBar.l6.W9, org.telegram.ui.ActionBar.l6.X9, org.telegram.ui.ActionBar.l6.V9);
+        a3Var.b(org.telegram.ui.ActionBar.m6.W9, org.telegram.ui.ActionBar.m6.X9, org.telegram.ui.ActionBar.m6.V9);
         CheckBoxBase checkBoxBase = a3Var.getCheckBoxBase();
-        int i7 = org.telegram.ui.ActionBar.l6.G6;
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
         if (checkBoxBase.u != i7) {
             checkBoxBase.u = i7;
             checkBoxBase.b();
@@ -373,7 +373,7 @@ public final class b3 extends FrameLayout {
         a3 a3Var = this.J;
         if (z10) {
             frameLayout.setVisibility(0);
-            org.telegram.messenger.camera.q.l(a3Var.animate().alpha(z9 ? 1.0f : 0.0f).scaleX(z9 ? 1.0f : 0.7f).scaleY(z9 ? 1.0f : 0.7f).withEndAction(new bi.k1(5, this, z9)), xq.h, 320L);
+            org.telegram.messenger.camera.q.l(a3Var.animate().alpha(z9 ? 1.0f : 0.0f).scaleX(z9 ? 1.0f : 0.7f).scaleY(z9 ? 1.0f : 0.7f).withEndAction(new bi.k1(5, this, z9)), wq.h, 320L);
         } else {
             frameLayout.setVisibility(z9 ? 0 : 8);
         }

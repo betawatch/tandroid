@@ -10,12 +10,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.r5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class i0 extends FrameLayout {
     public final xh.l a;
@@ -45,12 +45,12 @@ public final class i0 extends FrameLayout {
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
         if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
             spannableStringBuilder.append((CharSequence) "* ");
-            spannableStringBuilder.setSpan(new r5(keyboardButton.style.icon, lVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.setSpan(new q5(keyboardButton.style.icon, lVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
         spannableStringBuilder.append(i6.m(keyboardButton.text, lVar.getPaint().getFontMetricsInt(), false, null, 0));
         ImageView imageView = new ImageView(getContext());
         this.b = imageView;
-        s6.s(imageView, l6.Mf, k0Var.a, PorterDuff.Mode.SRC_ATOP);
+        t6.s(imageView, m6.Mf, k0Var.a, PorterDuff.Mode.SRC_ATOP);
         if (cg.c.b(keyboardButton)) {
             imageView.setImageResource(R.drawable.bot_webview);
             imageView.setVisibility(0);
@@ -68,22 +68,22 @@ public final class i0 extends FrameLayout {
         int k10;
         int L = org.telegram.messenger.g0.L(21.0f);
         int L2 = org.telegram.messenger.g0.L(11.0f);
-        int i11 = l6.Nf;
-        g6 g6Var = this.n.a;
-        int w02 = l6.w0(i11, g6Var);
-        int w03 = l6.w0(l6.Of, g6Var);
-        int w04 = l6.w0(l6.Mf, g6Var);
+        int i11 = m6.Nf;
+        h6 h6Var = this.n.a;
+        int w02 = m6.w0(i11, h6Var);
+        int w03 = m6.w0(m6.Of, h6Var);
+        int w04 = m6.w0(m6.Mf, h6Var);
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
         if (keyboardButtonStyle != null) {
             if (keyboardButtonStyle.bg_primary) {
-                r12 = l6.r1(0.8f, l6.w0(l6.Rl, g6Var));
-                k10 = i0.a.k(l6.w0(l6.i6, g6Var), r12);
+                r12 = m6.r1(0.8f, m6.w0(m6.Rl, h6Var));
+                k10 = i0.a.k(m6.w0(m6.i6, h6Var), r12);
             } else if (keyboardButtonStyle.bg_danger) {
-                r12 = l6.r1(0.8f, l6.w0(l6.Sl, g6Var));
-                k10 = i0.a.k(l6.w0(l6.i6, g6Var), r12);
+                r12 = m6.r1(0.8f, m6.w0(m6.Sl, h6Var));
+                k10 = i0.a.k(m6.w0(m6.i6, h6Var), r12);
             } else if (keyboardButtonStyle.bg_success) {
-                r12 = l6.r1(0.8f, l6.w0(l6.Tl, g6Var));
-                k10 = i0.a.k(l6.w0(l6.i6, g6Var), r12);
+                r12 = m6.r1(0.8f, m6.w0(m6.Tl, h6Var));
+                k10 = i0.a.k(m6.w0(m6.i6, h6Var), r12);
             }
             i7 = r12;
             i10 = k10;
@@ -93,7 +93,7 @@ public final class i0 extends FrameLayout {
             boolean z9 = this.d;
             int i12 = (z9 || !this.e) ? L2 : L;
             boolean z10 = this.f;
-            setBackground(l6.k0(i12, (z10 || !this.e) ? L2 : L, (z10 || !this.h) ? L2 : L, (z9 || !this.h) ? L2 : L, i7, i10, i10));
+            setBackground(m6.k0(i12, (z10 || !this.e) ? L2 : L, (z10 || !this.h) ? L2 : L, (z9 || !this.h) ? L2 : L, i7, i10, i10));
         }
         i7 = w02;
         i10 = w03;
@@ -103,6 +103,6 @@ public final class i0 extends FrameLayout {
         if (z92) {
         }
         boolean z102 = this.f;
-        setBackground(l6.k0(i12, (z102 || !this.e) ? L2 : L, (z102 || !this.h) ? L2 : L, (z92 || !this.h) ? L2 : L, i7, i10, i10));
+        setBackground(m6.k0(i12, (z102 || !this.e) ? L2 : L, (z102 || !this.h) ? L2 : L, (z92 || !this.h) ? L2 : L, i7, i10, i10));
     }
 }

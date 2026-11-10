@@ -1,80 +1,46 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class j1 implements c1 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ l1 c;
+public final class j1 implements b3.l {
+    public final j2.m a;
+    public final j2.c0 b;
+    public byte[] c;
 
-    public j1(l1 l1Var) {
-        this.c = l1Var;
+    public j1(j2.h hVar, j2.m mVar) {
+        t.g.getAndIncrement();
+        this.a = mVar;
+        this.b = new j2.c0(hVar);
     }
 
-    @Override // x2.c1
+    @Override // b3.l
     public final void a() {
-        l1 l1Var = this.c;
-        if (l1Var.w) {
-            return;
+        j2.c0 c0Var = this.b;
+        c0Var.b = 0L;
+        try {
+            c0Var.open(this.a);
+            int i7 = 0;
+            while (i7 != -1) {
+                int i10 = (int) c0Var.b;
+                byte[] bArr = this.c;
+                if (bArr == null) {
+                    this.c = new byte[1024];
+                } else if (i10 == bArr.length) {
+                    this.c = Arrays.copyOf(bArr, bArr.length * 2);
+                }
+                byte[] bArr2 = this.c;
+                i7 = c0Var.read(bArr2, i10, bArr2.length - i10);
+            }
+            c8.p0.a(c0Var);
+        } catch (Throwable th2) {
+            c8.p0.a(c0Var);
+            throw th2;
         }
-        l1Var.r.a();
     }
 
-    public final void b() {
-        if (this.b) {
-            return;
-        }
-        l1 l1Var = this.c;
-        l1Var.e.j(e2.s0.h(l1Var.s.s), l1Var.s, 0, null, 0L);
-        this.b = true;
-    }
-
-    @Override // x2.c1
-    public final boolean f() {
-        return this.c.x;
-    }
-
-    @Override // x2.c1
-    public final int l(long j3) {
-        b();
-        if (j3 <= 0 || this.a == 2) {
-            return 0;
-        }
-        this.a = 2;
-        return 1;
-    }
-
-    @Override // x2.c1
-    public final int m(wf.b bVar, k2.h hVar, int i7) {
-        b();
-        l1 l1Var = this.c;
-        boolean z9 = l1Var.x;
-        if (z9 && l1Var.y == null) {
-            this.a = 2;
-        }
-        int i10 = this.a;
-        if (i10 == 2) {
-            hVar.addFlag(4);
-            return -4;
-        }
-        if ((i7 & 2) != 0 || i10 == 0) {
-            bVar.c = l1Var.s;
-            this.a = 1;
-            return -5;
-        }
-        if (!z9) {
-            return -3;
-        }
-        l1Var.y.getClass();
-        hVar.addFlag(1);
-        hVar.e = 0L;
-        if ((i7 & 4) == 0) {
-            hVar.b(l1Var.D);
-            hVar.c.put(l1Var.y, 0, l1Var.D);
-        }
-        if ((i7 & 1) == 0) {
-            this.a = 2;
-        }
-        return -4;
+    @Override // b3.l
+    public final void q0() {
     }
 }

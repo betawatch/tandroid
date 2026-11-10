@@ -1,38 +1,35 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class o3 implements r1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
 
-    public /* synthetic */ o3(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes4.dex */
+public final class o3 extends View {
+    public final /* synthetic */ p3 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o3(p3 p3Var, Context context) {
+        super(context);
+        this.a = p3Var;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                u3 u3Var = (u3) this.b;
-                u3Var.G = f10;
-                u3Var.c();
-                break;
-            case 1:
-                n8 n8Var = (n8) this.b;
-                n8Var.e = f10;
-                n8Var.setScaleX(f10);
-                n8Var.setScaleY(f10);
-                break;
-            case 2:
-                l9 l9Var = (l9) this.b;
-                l9Var.b0 = f10;
-                l9Var.G0();
-                break;
-            default:
-                ((k9) this.b).d.setConversionWobble(f10);
-                break;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        p3 p3Var = this.a;
+        Bitmap bitmap = p3Var.G;
+        if (bitmap == null || bitmap.isRecycled()) {
+            return;
         }
+        p3Var.D.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.drawBitmap(p3Var.G, (Rect) null, p3Var.D, p3Var.y);
     }
 }

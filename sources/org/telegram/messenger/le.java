@@ -3,13 +3,13 @@ package org.telegram.messenger;
 import android.graphics.SurfaceTexture;
 import java.util.ArrayList;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.r51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class le implements r51 {
+public final class le implements q51 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ ij c;
@@ -22,8 +22,8 @@ public final class le implements r51 {
         this.c = ijVar;
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public final void onError(u51 u51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public final void onError(t51 t51Var, Exception exc) {
         switch (this.a) {
             case 0:
                 break;
@@ -33,22 +33,22 @@ public final class le implements r51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final /* synthetic */ void onSeekFinished(m2.a aVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final /* synthetic */ void onSeekStarted(m2.a aVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void onStateChanged(boolean z9, int i7) {
         int i10 = this.a;
         int i11 = this.b;
@@ -90,7 +90,7 @@ public final class le implements r51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 0:
@@ -146,12 +146,12 @@ public final class le implements r51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         switch (this.a) {
             case 0:
@@ -169,7 +169,7 @@ public final class le implements r51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public final void onRenderedFirstFrame() {
         switch (this.a) {
             case 0:
@@ -214,7 +214,7 @@ public final class le implements r51 {
     private final /* synthetic */ void j(SurfaceTexture surfaceTexture) {
     }
 
-    private final void a(u51 u51Var, Exception exc) {
+    private final void a(t51 t51Var, Exception exc) {
     }
 
     private final void k(int i7, int i10, float f10, int i11) {

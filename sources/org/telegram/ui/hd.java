@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hd implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -17,10 +17,10 @@ public final /* synthetic */ class hd implements View.OnClickListener {
     public final /* synthetic */ FrameLayout d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ hd(int i7, fi.d dVar, org.telegram.ui.ActionBar.v2 v2Var, long j3) {
+    public /* synthetic */ hd(int i7, fi.d dVar, org.telegram.ui.ActionBar.w2 w2Var, long j3) {
         this.b = i7;
         this.d = dVar;
-        this.e = v2Var;
+        this.e = w2Var;
         this.c = j3;
     }
 
@@ -44,11 +44,11 @@ public final /* synthetic */ class hd implements View.OnClickListener {
                 break;
             default:
                 fi.d dVar2 = (fi.d) this.d;
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) this.e;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.e;
                 TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
                 createconferencecall.random_id = Utilities.b.nextInt();
                 int i10 = this.b;
-                ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new bi.b0(i10, dVar2, v2Var, this.c));
+                ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new bi.b0(i10, dVar2, w2Var, this.c));
                 break;
         }
     }

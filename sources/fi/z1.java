@@ -3,9 +3,9 @@ package fi;
 import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.ui;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z1 extends u1 {
     public final m1 b;
@@ -43,10 +43,10 @@ public final class z1 extends u1 {
         kVar.e = 220L;
         kVar.f = 160L;
         kVar.g = 160L;
-        kVar.i = xq.g;
+        kVar.i = wq.g;
         m1Var.setItemAnimator(kVar);
         addView(m1Var, c8.ha.c(-1.0f, -1));
-        int i7 = k2.y1;
+        int i7 = k2.B1;
         e2 e2Var = new e2(context, k2Var.I0);
         this.f = e2Var;
         e2Var.x = new ai.e(this, 17);
@@ -69,7 +69,7 @@ public final class z1 extends u1 {
             y1Var.D(null);
         }
         k2 k2Var = this.s;
-        int i11 = k2Var.j1;
+        int i11 = k2Var.m1;
         e2 e2Var = this.f;
         if (i11 >= 0) {
             e2Var.s = true;
@@ -77,7 +77,7 @@ public final class z1 extends u1 {
             e2Var.s = false;
             d2 d2Var = e2Var.h;
             if (d2Var != null) {
-                d2Var.H1(k2Var.j1);
+                d2Var.H1(k2Var.m1);
                 e2Var.h.F1();
                 if (e2Var.h.getSelectedCategory() != null) {
                     y1Var.H = e2Var.h.getSelectedCategory().a;
@@ -86,10 +86,10 @@ public final class z1 extends u1 {
                     org.telegram.messenger.g0.h3(f8Var);
                 }
             }
-        } else if (TextUtils.isEmpty(k2Var.i1)) {
+        } else if (TextUtils.isEmpty(k2Var.l1)) {
             e2Var.b();
         } else {
-            e2Var.e.setText(k2Var.i1);
+            e2Var.e.setText(k2Var.l1);
             d2 d2Var2 = e2Var.h;
             if (d2Var2 != null) {
                 d2Var2.I1(null);
@@ -98,7 +98,7 @@ public final class z1 extends u1 {
             org.telegram.messenger.g0.r(y1Var.M);
             org.telegram.messenger.g0.h3(y1Var.M);
         }
-        e2Var.a(i7, k2Var.q1);
+        e2Var.a(i7, k2Var.t1);
         ui.b0(k2Var.a).B(i7 == 0 ? 5 : 0);
     }
 
@@ -135,13 +135,13 @@ public final class z1 extends u1 {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        int i11 = k2.y1;
+        int i11 = k2.B1;
         k2 k2Var = this.s;
         int i12 = k2Var.t0;
         setPadding(i12, 0, i12, 0);
         this.e.setTranslationY(org.telegram.messenger.g0.L(16.0f));
         this.f.setTranslationY(org.telegram.messenger.g0.L(52.0f));
-        this.b.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(102.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(k2Var.p1 ? 0.0f : 40.0f) + org.telegram.messenger.g0.n);
+        this.b.setPadding(org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(102.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(k2Var.s1 ? 0.0f : 40.0f) + org.telegram.messenger.g0.n);
         super.onMeasure(i7, i10);
     }
 }

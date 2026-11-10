@@ -1,19 +1,32 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class tv extends v4.b0 {
-    public final /* synthetic */ xw I;
-    public final /* synthetic */ uv J;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 
-    public tv(uv uvVar, xw xwVar) {
-        this.J = uvVar;
-        this.I = xwVar;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class tv extends org.telegram.ui.Components.w9 {
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // v4.b0
-    public final int R0() {
-        xw xwVar = this.I;
-        return (xwVar.s == 0 && this.J.W.l4() && xwVar.w == 2) ? 1 : 0;
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.w9
+    public final int z1() {
+        return org.telegram.messenger.g0.L(48.0f);
+    }
+
+    @Override // org.telegram.ui.Components.w9, org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
     }
 }

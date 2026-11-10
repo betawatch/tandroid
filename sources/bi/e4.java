@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.c20;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e4 implements c20 {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class e4 implements c20 {
                     }
                     k7Var.dismiss();
                     org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                    if (T instanceof org.telegram.ui.Wallet.w5) {
-                        ((org.telegram.ui.Wallet.w5) T).O0();
+                    if (T instanceof org.telegram.ui.Wallet.z5) {
+                        ((org.telegram.ui.Wallet.z5) T).P0();
                         break;
                     }
                 } else {
-                    (f1Var != null ? new org.telegram.ui.Components.hc(f1Var.c, k7Var.I0) : k7Var.k()).e0(str, false);
+                    (f1Var != null ? new org.telegram.ui.Components.gc(f1Var.c, k7Var.I0) : k7Var.k()).e0(str, false);
                     break;
                 }
                 break;
@@ -47,7 +47,7 @@ public final /* synthetic */ class e4 implements c20 {
                 if (!TextUtils.isEmpty(str)) {
                     k7 k7Var2 = this.b;
                     wg.f1 f1Var2 = this.d;
-                    (f1Var2 != null ? new org.telegram.ui.Components.hc(f1Var2.c, k7Var2.I0) : k7Var2.k()).e0(str, false);
+                    (f1Var2 != null ? new org.telegram.ui.Components.gc(f1Var2.c, k7Var2.I0) : k7Var2.k()).e0(str, false);
                     break;
                 }
                 break;

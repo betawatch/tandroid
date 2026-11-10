@@ -17,16 +17,16 @@ import org.telegram.messenger.xr;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Components.c70;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.cn;
-import org.telegram.ui.y91;
+import org.telegram.ui.z91;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements a20, r0.m, b20 {
     public final /* synthetic */ int a;
@@ -42,21 +42,21 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         h1 h1Var = k1Var.a;
         i0.b f10 = h1Var.f(527);
         d0 d0Var = this.b;
-        d0Var.K1 = f10;
-        d0Var.L1 = h1Var.f(519);
-        d0Var.w1.j(org.telegram.messenger.g0.L(56.0f) + d0Var.K1.b, d0Var.K1.d, false);
-        d0Var.y1.invalidate();
+        d0Var.N1 = f10;
+        d0Var.O1 = h1Var.f(519);
+        d0Var.z1.j(org.telegram.messenger.g0.L(56.0f) + d0Var.N1.b, d0Var.N1.d, false);
+        d0Var.B1.invalidate();
         return k1.b;
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         boolean z9;
         long j3;
         boolean z10;
         boolean z11;
-        int i7 = d0.M1;
-        Object obj = y31Var.G;
+        int i7 = d0.P1;
+        Object obj = x31Var.G;
         boolean z12 = obj instanceof TLRPC.Chat;
         d0 d0Var = this.b;
         boolean z13 = true;
@@ -65,7 +65,7 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                 TLRPC.User user = (TLRPC.User) obj;
                 long j10 = user.id;
                 boolean t6 = t10.t(user);
-                TLRPC.Chat chat = d0Var.m1;
+                TLRPC.Chat chat = d0Var.p1;
                 z9 = chat != null && ((user.bot && user.bot_can_edit) || t3.y(27, chat));
                 j3 = j10;
                 z10 = t6;
@@ -77,15 +77,15 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         TLRPC.Chat chat2 = (TLRPC.Chat) obj;
         long j11 = -chat2.id;
         boolean V = t3.V(chat2);
-        TLRPC.Chat chat3 = d0Var.m1;
+        TLRPC.Chat chat3 = d0Var.p1;
         z9 = chat3 != null && (chat2.creator || t3.y(27, chat3));
         j3 = j11;
         z11 = V;
         z10 = false;
         if (z9) {
-            l60 F = l60.F(d0Var.c, null, view);
+            k60 F = k60.F(d0Var.c, null, view);
             F.c(R.drawable.msg_cancel, id.M0(2131751915, null), new m(d0Var, z10, z11, j3, 1), true);
-            F.W(d0Var.r1.d.U0(view, true));
+            F.W(d0Var.u1.d.U0(view, true));
             F.Z();
             return Boolean.valueOf(z13);
         }
@@ -101,27 +101,27 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
         d0 d0Var = this.b;
         switch (i7) {
             case 0:
-                d0Var.L0((y31) obj);
+                d0Var.L0((x31) obj);
                 break;
             case 1:
             default:
-                int i10 = d0.M1;
-                d0Var.I0((y31) obj);
+                int i10 = d0.P1;
+                d0Var.I0((x31) obj);
                 break;
             case 2:
-                int i11 = d0.M1;
-                d0Var.L0((y31) obj);
+                int i11 = d0.P1;
+                d0Var.L0((x31) obj);
                 break;
             case 3:
-                y31 y31Var = (y31) obj;
+                x31 x31Var = (x31) obj;
                 View view = (View) obj2;
-                f2 f2Var = d0Var.q1;
-                if (!d0Var.I0(y31Var)) {
-                    int i12 = y31Var.d;
+                f2 f2Var = d0Var.t1;
+                if (!d0Var.I0(x31Var)) {
+                    int i12 = x31Var.d;
                     boolean z9 = false;
                     if (i12 != 101) {
                         if (i12 != 100) {
-                            Object obj3 = y31Var.G;
+                            Object obj3 = x31Var.G;
                             if (obj3 instanceof TLRPC.Chat) {
                                 TLRPC.Chat chat2 = (TLRPC.Chat) obj3;
                                 z9 = t3.V(chat2);
@@ -135,13 +135,13 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                             if (b10 != 1 && b10 != 2) {
                                 if (b10 != 3) {
                                     if (b10 == 4) {
-                                        k5.o(null, z9 ? 2131751930 : 2131751927, new hc((FrameLayout) d0Var.b, d0Var.I0), R.raw.e_hand_2, 36);
+                                        k5.o(null, z9 ? 2131751930 : 2131751927, new gc((FrameLayout) d0Var.b, d0Var.I0), R.raw.e_hand_2, 36);
                                         break;
                                     }
                                 } else {
-                                    c70 c70Var = new c70(d0Var.getContext(), chat, null, d0Var.q1, d0Var.I0);
-                                    c70Var.p1 = new hc((FrameLayout) d0Var.b, d0Var.I0);
-                                    c70Var.show();
+                                    b70 b70Var = new b70(d0Var.getContext(), chat, null, d0Var.t1, d0Var.I0);
+                                    b70Var.s1 = new gc((FrameLayout) d0Var.b, d0Var.I0);
+                                    b70Var.show();
                                     break;
                                 }
                             } else {
@@ -167,24 +167,24 @@ public final /* synthetic */ class u implements a20, r0.m, b20 {
                                     qg.d.a(cnVar2, xr.a(j3, qp.s1(d0Var.a).e7.getLong(p0.o(chat.id, "forumlasttopic"), 1L)));
                                     f2Var.presentFragment(cnVar2);
                                 } else {
-                                    f2Var.presentFragment(new y91(bundle));
+                                    f2Var.presentFragment(new z91(bundle));
                                 }
                                 d0Var.dismiss();
                                 break;
                             }
                         } else {
-                            d0Var.k1.E(1);
-                            d0Var.D1.e();
+                            d0Var.n1.E(1);
+                            d0Var.G1.e();
                             break;
                         }
                     } else {
-                        d0Var.n1 = !d0Var.n1;
-                        qp.s1(d0Var.a).e5(d0Var.l1, d0Var.n1);
+                        d0Var.q1 = !d0Var.q1;
+                        qp.s1(d0Var.a).e5(d0Var.o1, d0Var.q1);
                         if (!(view instanceof q8)) {
-                            d0Var.r1.d.f3.O(false);
+                            d0Var.u1.d.f3.O(false);
                             break;
                         } else {
-                            ((q8) view).getCheckBox().c(d0Var.n1, true);
+                            ((q8) view).getCheckBox().c(d0Var.q1, true);
                             break;
                         }
                     }

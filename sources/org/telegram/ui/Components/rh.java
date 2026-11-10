@@ -1,20 +1,83 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class rh implements st0 {
-    public final /* synthetic */ di a;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-    public rh(di diVar) {
-        this.a = diVar;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class rh implements org.telegram.ui.zm0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ci d;
+
+    public rh(ci ciVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = ciVar;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.st0
-    public final void K(int i7, boolean z9) {
-        di diVar = this.a;
-        vh vhVar = diVar.s2;
-        if (vhVar == diVar.h2) {
-            vhVar.invalidate();
+    @Override // org.telegram.ui.zm0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.zm0
+    public final void v0(int i7, boolean z9, boolean z10) {
+        if (z9) {
+            return;
         }
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty() || this.a) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i10 >= arrayList2.size()) {
+                ((org.telegram.ui.cn) this.d.Z1).t8(i7, arrayList, z10);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i10));
+            org.telegram.messenger.fz fzVar = new org.telegram.messenger.fz();
+            arrayList.add(fzVar);
+            org.telegram.messenger.kf kfVar = (org.telegram.messenger.kf) obj;
+            String str = kfVar.h;
+            if (str != null) {
+                fzVar.c = str;
+            } else {
+                fzVar.l = kfVar;
+            }
+            fzVar.e = kfVar.c;
+            fzVar.k = kfVar.s;
+            CharSequence charSequence = kfVar.I;
+            fzVar.d = charSequence != null ? charSequence.toString() : null;
+            fzVar.i = kfVar.n;
+            fzVar.j = kfVar.r;
+            fzVar.h = kfVar.x;
+            TLRPC.BotInlineResult botInlineResult = kfVar.N;
+            if (botInlineResult != null && kfVar.H == 1) {
+                fzVar.m = botInlineResult;
+                fzVar.n = kfVar.O;
+            }
+            System.currentTimeMillis();
+            i10++;
+        }
+    }
+
+    @Override // org.telegram.ui.zm0
+    public final void B(Editable editable) {
+    }
+
+    @Override // org.telegram.ui.zm0
+    public final void A() {
+    }
+
+    @Override // org.telegram.ui.zm0
+    public final /* synthetic */ void f0() {
     }
 }

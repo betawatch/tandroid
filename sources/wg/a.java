@@ -12,30 +12,30 @@ import android.text.style.ReplacementSpan;
 import android.util.Pair;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a extends ReplacementSpan {
     public final Drawable a;
     public final Drawable b;
     public boolean c;
     public boolean d;
-    public final i6 e;
+    public final h6 e;
     public final TextPaint f;
     public final int h;
 
     public a(q1 q1Var, TextPaint textPaint, int i7) {
         this.f = textPaint;
-        i6 i6Var = new i6(false, false, true);
-        this.e = i6Var;
-        i6Var.n(0.3f, 250L, xq.h);
-        i6Var.setCallback(q1Var);
-        i6Var.w(org.telegram.messenger.g0.L(11.5f));
-        i6Var.x(org.telegram.messenger.g0.o());
-        i6Var.t("", true, true);
-        i6Var.b = 17;
+        h6 h6Var = new h6(false, false, true);
+        this.e = h6Var;
+        h6Var.n(0.3f, 250L, wq.h);
+        h6Var.setCallback(q1Var);
+        h6Var.w(org.telegram.messenger.g0.L(11.5f));
+        h6Var.x(org.telegram.messenger.g0.o());
+        h6Var.t("", true, true);
+        h6Var.b = 17;
         Drawable mutate = q1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
         this.a = mutate;
         Drawable mutate2 = q1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
@@ -43,7 +43,7 @@ public final class a extends ReplacementSpan {
         mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
         mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
         this.h = i7;
-        i6Var.t(i7 > 1 ? String.valueOf(i7) : "", false, true);
+        h6Var.t(i7 > 1 ? String.valueOf(i7) : "", false, true);
     }
 
     public static Pair a(q1 q1Var, TextPaint textPaint, int i7) {
@@ -61,16 +61,16 @@ public final class a extends ReplacementSpan {
     public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
         TextPaint textPaint = this.f;
         int color = textPaint.getColor();
-        i6 i6Var = this.e;
-        int color2 = i6Var.a.getColor();
+        h6 h6Var = this.e;
+        int color2 = h6Var.a.getColor();
         Drawable drawable = this.b;
         Drawable drawable2 = this.a;
         if (color != color2) {
-            i6Var.u(textPaint.getColor());
-            int color3 = i6Var.a.getColor();
+            h6Var.u(textPaint.getColor());
+            int color3 = h6Var.a.getColor();
             PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
             drawable2.setColorFilter(new PorterDuffColorFilter(color3, mode));
-            drawable.setColorFilter(new PorterDuffColorFilter(i6Var.a.getColor(), mode));
+            drawable.setColorFilter(new PorterDuffColorFilter(h6Var.a.getColor(), mode));
         }
         canvas.save();
         canvas.translate(f10 + ((!this.d || this.c) ? 0 : org.telegram.messenger.g0.L(8.0f)), -org.telegram.messenger.g0.L(0.2f));
@@ -82,9 +82,9 @@ public final class a extends ReplacementSpan {
         }
         canvas.translate(org.telegram.messenger.g0.L(16.0f), 0.0f);
         Rect rect = org.telegram.messenger.g0.Q;
-        rect.set(0, 0, (int) i6Var.c(), (int) i6Var.e);
-        i6Var.setBounds(rect);
-        i6Var.draw(canvas);
+        rect.set(0, 0, (int) h6Var.c(), (int) h6Var.e);
+        h6Var.setBounds(rect);
+        h6Var.draw(canvas);
         canvas.restore();
     }
 

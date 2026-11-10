@@ -2,27 +2,27 @@ package ch;
 
 import android.content.Context;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l extends d0 {
     public final /* synthetic */ o c2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(o oVar, Context context, g6 g6Var, int i7) {
-        super(i7, context, g6Var);
+    public l(o oVar, Context context, h6 h6Var, int i7) {
+        super(i7, context, h6Var);
         this.c2 = oVar;
     }
 
-    @Override // org.telegram.ui.Components.zs
+    @Override // org.telegram.ui.Components.ys
     public final void F(int i7, int i10) {
         if (i10 > i7) {
             this.c2.E.w0(0, org.telegram.messenger.g0.L(30.0f), null);
         }
     }
 
-    @Override // org.telegram.ui.Components.zs, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.ys, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i7) {
         if (i7 == R.id.menu_delete || i7 == 16908320) {
             return this.c2.g0();

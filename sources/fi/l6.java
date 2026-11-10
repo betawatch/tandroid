@@ -12,9 +12,9 @@ import java.io.File;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class l6 extends FrameLayout {
     public ValueAnimator D;
@@ -84,7 +84,7 @@ public abstract class l6 extends FrameLayout {
         this.D = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 3));
         this.D.addListener(new bi.t5(this, 23));
-        this.D.setInterpolator(xq.h);
+        this.D.setInterpolator(wq.h);
         this.D.setDuration(280L);
         this.D.start();
     }
@@ -109,7 +109,7 @@ public abstract class l6 extends FrameLayout {
         rectF.set(((1.0f - k6Var.getScaleX()) * (k6Var.getWidth() / 2.0f)) + k6Var.getX(), ((1.0f - k6Var.getScaleY()) * (k6Var.getHeight() / 2.0f)) + k6Var.getY(), (k6Var.getX() + k6Var.getWidth()) - ((1.0f - k6Var.getScaleX()) * (k6Var.getWidth() / 2.0f)), (k6Var.getY() + k6Var.getHeight()) - ((1.0f - k6Var.getScaleY()) * (k6Var.getHeight() / 2.0f)));
         float L = org.telegram.messenger.g0.L(2.0f);
         float L2 = org.telegram.messenger.g0.L(0.66f);
-        int r12 = org.telegram.ui.ActionBar.l6.r1(this.s, TLObject.FLAG_29);
+        int r12 = org.telegram.ui.ActionBar.m6.r1(this.s, TLObject.FLAG_29);
         Paint paint = this.e;
         paint.setShadowLayer(L, 0.0f, L2, r12);
         paint.setAlpha((int) (this.s * 255.0f));
@@ -133,8 +133,8 @@ public abstract class l6 extends FrameLayout {
             float L3 = org.telegram.messenger.g0.L(3.33f);
             Paint paint2 = this.f;
             paint2.setStrokeWidth(L3);
-            paint2.setColor(org.telegram.ui.ActionBar.l6.r1(this.s, -1090519041));
-            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.33f), org.telegram.ui.ActionBar.l6.r1(this.s, TLObject.FLAG_29));
+            paint2.setColor(org.telegram.ui.ActionBar.m6.r1(this.s, -1090519041));
+            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.33f), org.telegram.ui.ActionBar.m6.r1(this.s, TLObject.FLAG_29));
             rectF.inset(-org.telegram.messenger.g0.L(7.665f), -org.telegram.messenger.g0.L(7.665f));
             canvas.drawArc(rectF, -90.0f, i7 * 360.0f, false, paint2);
             if (this.d <= 0) {

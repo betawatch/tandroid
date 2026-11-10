@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.ui.Cells.f1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class d implements b3.j {
     public static final s0.b J = new s0.b(8);
@@ -28,7 +28,7 @@ public final class d implements b3.j {
     public Uri F;
     public m G;
     public boolean H;
-    public final org.telegram.ui.Components.n a;
+    public final org.telegram.ui.Components.m a;
     public final t b;
     public final pb.b c;
     public wa f;
@@ -43,26 +43,26 @@ public final class d implements b3.j {
     public final HashMap d = new HashMap();
     public long I = -9223372036854775807L;
 
-    public d(org.telegram.ui.Components.n nVar, pb.b bVar, t tVar) {
-        this.a = nVar;
+    public d(org.telegram.ui.Components.m mVar, pb.b bVar, t tVar) {
+        this.a = mVar;
         this.b = tVar;
         this.c = bVar;
     }
 
     @Override // b3.j
     public final void M0(b3.l lVar, long j3, long j10, int i7) {
-        x2.u uVar;
+        x2.t tVar;
         b3.r rVar = (b3.r) lVar;
         if (i7 == 0) {
             long j11 = rVar.a;
-            uVar = new x2.u(rVar.b, j3);
+            tVar = new x2.t(rVar.b, j3);
         } else {
             long j12 = rVar.a;
             j2.m mVar = rVar.b;
             c0 c0Var = rVar.d;
-            uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+            tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         }
-        this.f.t(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
+        this.f.t(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i7);
     }
 
     public final void a(List list) {
@@ -214,7 +214,7 @@ public final class d implements b3.j {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         int i10 = rVar.c;
         this.c.getClass();
         Throwable th2 = iOException;
@@ -230,7 +230,7 @@ public final class d implements b3.j {
         }
         min = -9223372036854775807L;
         boolean z9 = min == -9223372036854775807L;
-        this.f.r(uVar, i10, iOException, z9);
+        this.f.r(tVar, i10, iOException, z9);
         return z9 ? b3.o.f : new b3.i(0, min, false);
     }
 
@@ -267,19 +267,19 @@ public final class d implements b3.j {
             a(this.E);
             j2.m mVar = rVar.b;
             c0 c0Var = rVar.d;
-            x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+            x2.t tVar2 = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
             c cVar = (c) this.d.get(this.F);
             cVar.getClass();
             if (z9) {
                 Uri uri = rVar.d.c;
                 b bVar = (b) f1.l(cVar.b, uri, uri);
                 bVar.getClass();
-                bVar.d((m) qVar, uVar);
+                bVar.d((m) qVar, tVar2);
             } else {
                 c.b(cVar, this.F, false);
             }
             this.c.getClass();
-            this.f.p(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+            this.f.p(tVar2, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         } catch (t0 e10) {
             this.w = e10;
         }
@@ -291,8 +291,8 @@ public final class d implements b3.j {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        x2.u uVar = new x2.u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        x2.t tVar = new x2.t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         this.c.getClass();
-        this.f.o(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

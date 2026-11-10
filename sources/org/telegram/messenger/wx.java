@@ -6,7 +6,7 @@ import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -91,7 +91,7 @@ public final /* synthetic */ class wx implements Runnable {
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.x;
                 TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice = (TLRPC.TL_inputMediaStakeDice) this.y;
                 Context context = f2Var.getContext();
-                org.telegram.ui.ActionBar.g6 resourceProvider = f2Var.getResourceProvider();
+                org.telegram.ui.ActionBar.h6 resourceProvider = f2Var.getResourceProvider();
                 cg.a i7 = cg.a.i(tL_inputMediaStakeDice.ton_amount, cg.b.b);
                 gz gzVar2 = this.b;
                 TLObject tLObject3 = this.c;

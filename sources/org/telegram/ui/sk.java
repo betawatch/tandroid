@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sk implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class sk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.cc ccVar;
+        org.telegram.ui.Components.bc bcVar;
         int i7;
         int i10;
         int i11;
@@ -50,13 +50,13 @@ public final /* synthetic */ class sk implements Runnable {
                     i7 = ((org.telegram.ui.ActionBar.f2) cnVar).currentAccount;
                     org.telegram.messenger.qp.s1(i7).d7.edit().remove("pin_" + cnVar.j6).commit();
                     cnVar.fd(0, true);
-                    ccVar = null;
+                    bcVar = null;
                 } else {
-                    ccVar = null;
+                    bcVar = null;
                     cnVar.getNotificationCenter().k(56, Long.valueOf(cnVar.j6), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i14), Boolean.valueOf(cnVar.e5));
                 }
                 if (i13 == cnVar.Q3) {
-                    cnVar.O3 = ccVar;
+                    cnVar.O3 = bcVar;
                     break;
                 }
                 break;

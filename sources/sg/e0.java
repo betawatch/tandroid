@@ -3,10 +3,10 @@ package sg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.p2;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class e0 implements Runnable {
                     j0Var.h = new RectF();
                 }
                 j0Var.c.a(j0Var.h);
-                vy vyVar = j0Var.a;
-                if (vyVar != null) {
-                    vyVar.b();
+                uy uyVar = j0Var.a;
+                if (uyVar != null) {
+                    uyVar.b();
                     break;
                 }
                 break;
@@ -45,9 +45,9 @@ public final /* synthetic */ class e0 implements Runnable {
                 if (j0Var.H == (y0Var != null)) {
                     if (y0Var != j0Var.d) {
                         j0Var.d = y0Var;
-                        vy vyVar2 = j0Var.a;
-                        if (vyVar2 != null) {
-                            vyVar2.b();
+                        uy uyVar2 = j0Var.a;
+                        if (uyVar2 != null) {
+                            uyVar2.b();
                             break;
                         }
                     }
@@ -62,12 +62,12 @@ public final /* synthetic */ class e0 implements Runnable {
                     j0Var.K = ofFloat;
                     ofFloat.addUpdateListener(new d0(j0Var, i10));
                     j0Var.K.addListener(new h0(j0Var, i10));
-                    j0Var.K.setInterpolator(xq.h);
+                    j0Var.K.setInterpolator(wq.h);
                     j0Var.K.start();
                     j0Var.d = y0Var;
-                    vy vyVar3 = j0Var.a;
-                    if (vyVar3 != null) {
-                        vyVar3.b();
+                    uy uyVar3 = j0Var.a;
+                    if (uyVar3 != null) {
+                        uyVar3.b();
                     }
                     if (j0Var.H) {
                         p2.y.a();

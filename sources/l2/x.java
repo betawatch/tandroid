@@ -42,16 +42,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.k3;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.xs;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.ActionBar.l3;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.ws;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegram.ui.ActionBar.r1, sw, n5, i2.u, oi.m, Vector.TLDeserializer, r0.m, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class x implements h2.o, ws, li.m0, a20, org.telegram.ui.ActionBar.r1, tw, n5, i2.u, oi.m, Vector.TLDeserializer, r0.m, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -60,13 +60,13 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         return false;
     }
 
@@ -89,17 +89,17 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
                 }
                 break;
             default:
-                k3 k3Var = (k3) obj;
-                k3Var.s = k1Var.a.f(2).d;
-                k3Var.invalidate();
+                l3 l3Var = (l3) obj;
+                l3Var.s = k1Var.a.f(2).d;
+                l3Var.invalidate();
                 break;
         }
         return r0.k1.b;
     }
 
     @Override // li.m0
-    public l60 a(li.g1 g1Var) {
-        return l60.H((b2) ((g6.d0) this.b).b, g1Var);
+    public k60 a(li.g1 g1Var) {
+        return k60.H((b2) ((g6.d0) this.b).b, g1Var);
     }
 
     @Override // i2.u
@@ -140,12 +140,12 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
             try {
                 GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
                 try {
-                    org.telegram.ui.Components.n nVar = bVar.a;
-                    n5.m mVar2 = (n5.m) mVar.c;
+                    org.telegram.ui.Components.m mVar2 = bVar.a;
+                    n5.m mVar3 = (n5.m) mVar.c;
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(gZIPOutputStream));
-                    pa.d dVar = (pa.d) nVar.a;
+                    pa.d dVar = (pa.d) mVar2.a;
                     pa.e eVar = new pa.e(bufferedWriter, dVar.a, dVar.b, dVar.c, dVar.d);
-                    eVar.h(mVar2);
+                    eVar.h(mVar3);
                     eVar.j();
                     eVar.b.flush();
                     gZIPOutputStream.close();
@@ -273,7 +273,7 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
                 ((m2.b) obj).z((d) this.b);
                 break;
             default:
-                ((m2.b) obj).b((x2.c0) this.b);
+                ((m2.b) obj).b((x2.b0) this.b);
                 break;
         }
     }
@@ -352,7 +352,7 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
         }
     }
 
-    @Override // org.telegram.ui.Components.xs
+    @Override // org.telegram.ui.Components.ws
     public void m() {
         switch (this.a) {
             case 5:
@@ -395,14 +395,14 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
         }
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         g4 g4Var = (g4) this.b;
         if (arrayList.isEmpty() || ((xr) arrayList.get(0)).a <= 0) {
             return false;
         }
         g4Var.run(((xr) arrayList.get(0)).a);
-        ywVar.finishFragment();
+        zwVar.finishFragment();
         return true;
     }
 
@@ -411,8 +411,8 @@ public final /* synthetic */ class x implements h2.o, xs, li.m0, a20, org.telegr
         this.b = obj;
     }
 
-    public /* synthetic */ x(m2.a aVar, x2.u uVar, x2.c0 c0Var, IOException iOException, boolean z9) {
+    public /* synthetic */ x(m2.a aVar, x2.t tVar, x2.b0 b0Var, IOException iOException, boolean z9) {
         this.a = 16;
-        this.b = c0Var;
+        this.b = b0Var;
     }
 }

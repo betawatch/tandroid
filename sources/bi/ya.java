@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.c20;
-import org.telegram.messenger.f10;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
@@ -17,14 +16,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ev0;
-import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.dv0;
+import org.telegram.ui.Components.qu;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.s10;
+import org.telegram.ui.f10;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ya implements c20 {
     public final /* synthetic */ int a;
@@ -51,14 +50,14 @@ public final /* synthetic */ class ya implements c20 {
         Object obj4 = this.c;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.jc jcVar = (org.telegram.ui.Components.jc) obj4;
+                org.telegram.ui.Components.ic icVar = (org.telegram.ui.Components.ic) obj4;
                 Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(jcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.kc.b(org.telegram.messenger.id.M0(2131745219, null), new ai.a1(this.b, context, g6Var, savedStarGift, 2), g6Var, null));
-                    jcVar.setText(spannableStringBuilder);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(icVar.getText());
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) org.telegram.ui.Components.jc.b(org.telegram.messenger.id.M0(2131745219, null), new ai.a1(this.b, context, h6Var, savedStarGift, 2), h6Var, null));
+                    icVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;
@@ -106,34 +105,34 @@ public final /* synthetic */ class ya implements c20 {
                 }
                 break;
             case 3:
-                ru ruVar = (ru) obj4;
+                qu quVar = (qu) obj4;
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                org.telegram.ui.ActionBar.f2 f2Var2 = ruVar.j1;
+                org.telegram.ui.ActionBar.f2 f2Var2 = quVar.m1;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == i11 && iArr[1] > 0) {
-                    ruVar.dismiss();
-                    org.telegram.ui.Components.cc.g(f2Var2, new ev0(f2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, f2Var2.getResourceProvider()), 1500).j();
+                    quVar.dismiss();
+                    org.telegram.ui.Components.bc.g(f2Var2, new dv0(f2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, f2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 4:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                s10 s10Var = (s10) obj3;
+                f10 f10Var = (f10) obj3;
                 Long l10 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 String str2 = LaunchActivity.B1;
                 try {
-                    s10Var.run();
+                    f10Var.run();
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
                 }
                 LaunchActivity.Q();
                 if (tL_storyAlbum == null) {
-                    org.telegram.ui.Components.hc X = org.telegram.ui.Components.hc.X();
+                    org.telegram.ui.Components.gc X = org.telegram.ui.Components.gc.X();
                     if (X != null) {
                         org.telegram.messenger.k5.o(null, 2131744730, X, R.raw.story_bomb2, 36);
                         break;
@@ -153,12 +152,12 @@ public final /* synthetic */ class ya implements c20 {
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj4;
-                f10 f10Var = (f10) obj3;
+                org.telegram.messenger.f10 f10Var2 = (org.telegram.messenger.f10) obj3;
                 ij ijVar = (ij) obj2;
                 String str3 = (String) obj;
                 if (i11 == photoViewer.P4) {
                     photoViewer.n5 = str3;
-                    if (!f10Var.s() || !f10Var.b(ijVar, photoViewer.n5)) {
+                    if (!f10Var2.s() || !f10Var2.b(ijVar, photoViewer.n5)) {
                         photoViewer.o0.t(19);
                         photoViewer.o0.t(20);
                         break;
@@ -176,18 +175,18 @@ public final /* synthetic */ class ya implements c20 {
         }
     }
 
-    public /* synthetic */ ya(ru ruVar, int[] iArr, int i7, ArrayList arrayList) {
+    public /* synthetic */ ya(qu quVar, int[] iArr, int i7, ArrayList arrayList) {
         this.a = 3;
-        this.c = ruVar;
+        this.c = quVar;
         this.d = iArr;
         this.b = i7;
         this.e = arrayList;
     }
 
-    public /* synthetic */ ya(LaunchActivity launchActivity, s10 s10Var, Long l10, int i7) {
+    public /* synthetic */ ya(LaunchActivity launchActivity, f10 f10Var, Long l10, int i7) {
         this.a = 4;
         this.c = launchActivity;
-        this.d = s10Var;
+        this.d = f10Var;
         this.e = l10;
         this.b = i7;
     }

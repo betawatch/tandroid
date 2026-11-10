@@ -1,15 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v20 extends org.telegram.ui.Components.voip.t0 {
-    public final /* synthetic */ e40 E;
+public final class v20 implements gr0 {
+    public final /* synthetic */ f40 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v20(e40 e40Var, Context context, boolean z9) {
-        super(context, z9);
-        this.E = e40Var;
+    public v20(f40 f40Var) {
+        this.a = f40Var;
+    }
+
+    @Override // org.telegram.ui.gr0
+    public final void I(org.telegram.messenger.ij ijVar) {
+        this.a.b.invalidate();
+    }
+
+    @Override // org.telegram.ui.gr0
+    public final void I0(org.telegram.messenger.ij ijVar) {
+        f40 f40Var = this.a;
+        f40Var.K1.I0(true);
+        f40Var.W3.f.K0(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), 0, 0);
+        f40Var.b.invalidate();
+    }
+
+    @Override // org.telegram.ui.gr0
+    public final /* synthetic */ TextureView l0() {
+        return null;
     }
 }

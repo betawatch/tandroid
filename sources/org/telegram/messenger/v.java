@@ -4,10 +4,10 @@ import android.content.Context;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.ui.Components.ry0;
-import org.telegram.ui.q50;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.r50;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class v extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class v extends ClickableSpan {
                 vf.c.t(t0.b, (String) this.c);
                 break;
             case 1:
-                ((q50) this.b).a((org.telegram.ui.e4) this.c, (ry0) this.d);
+                ((r50) this.b).a((org.telegram.ui.e4) this.c, (qy0) this.d);
                 break;
             default:
                 org.telegram.ui.ActionBar.u1 u1Var = ((org.telegram.ui.ActionBar.u1[]) this.b)[0];
@@ -49,7 +49,7 @@ public final class v extends ClickableSpan {
     public void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.Uc, (org.telegram.ui.ActionBar.g6) this.d));
+                textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.Uc, (org.telegram.ui.ActionBar.h6) this.d));
                 textPaint.setUnderlineText(false);
                 break;
             case 1:

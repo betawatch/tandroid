@@ -17,11 +17,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.we0;
-import org.telegram.ui.Components.x70;
-import org.telegram.ui.lo0;
+import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.mo0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class re implements mf, m9.t, p4.u {
     public long a;
@@ -35,18 +35,18 @@ public final class re implements mf, m9.t, p4.u {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public re(Context context, we0 we0Var, final org.telegram.ui.Components.f8 f8Var, boolean z9, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    public re(Context context, ve0 ve0Var, final org.telegram.ui.Components.e8 e8Var, boolean z9, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         int i10;
         final int i11 = 1;
         final int i12 = 0;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z9 ? R.drawable.popup_fixed_alert : 0, 0, context, g6Var);
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(z9 ? R.drawable.popup_fixed_alert : 0, 0, context, h6Var);
         this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        this.d = f8Var;
-        if (we0Var != null) {
-            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, id.M0(2131753756, null), false, g6Var).setOnClickListener(new org.telegram.ui.Components.d8(we0Var, 0));
+        this.d = e8Var;
+        if (ve0Var != null) {
+            org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, id.M0(2131753756, null), false, h6Var).setOnClickListener(new org.telegram.ui.Components.c8(ve0Var, 0));
         }
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, id.M0(2131753881, null), false, g6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.e8
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1d, id.M0(2131753881, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.d8
             public final /* synthetic */ org.telegram.messenger.re b;
 
             {
@@ -58,24 +58,24 @@ public final class re implements mf, m9.t, p4.u {
                 switch (i12) {
                     case 0:
                         this.b.m();
-                        f8Var.X0(86400, 70);
+                        e8Var.X0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        f8Var.X0(604800, 70);
+                        e8Var.X0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        f8Var.X0(2678400, 70);
+                        e8Var.X0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        f8Var.X0(0, 71);
+                        e8Var.X0(0, 71);
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, id.M0(2131753878, null), false, g6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.e8
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1w, id.M0(2131753878, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.d8
             public final /* synthetic */ org.telegram.messenger.re b;
 
             {
@@ -87,25 +87,25 @@ public final class re implements mf, m9.t, p4.u {
                 switch (i11) {
                     case 0:
                         this.b.m();
-                        f8Var.X0(86400, 70);
+                        e8Var.X0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        f8Var.X0(604800, 70);
+                        e8Var.X0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        f8Var.X0(2678400, 70);
+                        e8Var.X0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        f8Var.X0(0, 71);
+                        e8Var.X0(0, 71);
                         break;
                 }
             }
         });
         final int i13 = 2;
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, id.M0(2131753880, null), false, g6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.e8
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_autodelete_1m, id.M0(2131753880, null), false, h6Var).setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.d8
             public final /* synthetic */ org.telegram.messenger.re b;
 
             {
@@ -117,28 +117,28 @@ public final class re implements mf, m9.t, p4.u {
                 switch (i13) {
                     case 0:
                         this.b.m();
-                        f8Var.X0(86400, 70);
+                        e8Var.X0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        f8Var.X0(604800, 70);
+                        e8Var.X0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        f8Var.X0(2678400, 70);
+                        e8Var.X0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        f8Var.X0(0, 71);
+                        e8Var.X0(0, 71);
                         break;
                 }
             }
         });
-        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? id.M0(2131753863, null) : id.M0(2131753864, null), false, g6Var).setOnClickListener(new di.v3(this, context, i7, g6Var, f8Var));
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, id.M0(2131753862, null), false, g6Var);
+        org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_customize, i7 == 1 ? id.M0(2131753863, null) : id.M0(2131753864, null), false, h6Var).setOnClickListener(new di.v3(this, context, i7, h6Var, e8Var));
+        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_disable, id.M0(2131753862, null), false, h6Var);
         this.c = c10;
         final int i14 = 3;
-        c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.e8
+        c10.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.d8
             public final /* synthetic */ org.telegram.messenger.re b;
 
             {
@@ -150,57 +150,57 @@ public final class re implements mf, m9.t, p4.u {
                 switch (i14) {
                     case 0:
                         this.b.m();
-                        f8Var.X0(86400, 70);
+                        e8Var.X0(86400, 70);
                         break;
                     case 1:
                         this.b.m();
-                        f8Var.X0(604800, 70);
+                        e8Var.X0(604800, 70);
                         break;
                     case 2:
                         this.b.m();
-                        f8Var.X0(2678400, 70);
+                        e8Var.X0(2678400, 70);
                         break;
                     default:
                         this.b.m();
-                        f8Var.X0(0, 71);
+                        e8Var.X0(0, 71);
                         break;
                 }
             }
         });
         if (i7 != 1) {
-            if (g6Var != null) {
-                int i15 = org.telegram.ui.ActionBar.l6.q7;
-                org.telegram.ui.Components.k2 k2Var = new org.telegram.ui.Components.k2(9);
-                org.telegram.ui.Components.k2 k2Var2 = new org.telegram.ui.Components.k2(10);
-                int P = org.telegram.ui.ActionBar.s6.P(i15, -1, 0, 0.0f, null);
-                k2Var2.c(P, c10);
-                org.telegram.ui.ActionBar.m6 w10 = org.telegram.ui.ActionBar.s6.w(100, c10);
+            if (h6Var != null) {
+                int i15 = org.telegram.ui.ActionBar.m6.q7;
+                org.telegram.ui.Components.j2 j2Var = new org.telegram.ui.Components.j2(9);
+                org.telegram.ui.Components.j2 j2Var2 = new org.telegram.ui.Components.j2(10);
+                int P = org.telegram.ui.ActionBar.t6.P(i15, -1, 0, 0.0f, null);
+                j2Var2.c(P, c10);
+                org.telegram.ui.ActionBar.n6 w10 = org.telegram.ui.ActionBar.t6.w(100, c10);
                 w10.c(i15, -1, 0, 0.0f, null);
-                w10.n = k2Var;
-                w10.o = k2Var2;
+                w10.n = j2Var;
+                w10.o = j2Var2;
                 w10.m = false;
                 w10.g = P;
                 i10 = 1;
                 if (i7 == i10) {
-                    org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(context, g6Var);
-                    org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.H8, d1Var, g6Var);
+                    org.telegram.ui.ActionBar.d1 d1Var = new org.telegram.ui.ActionBar.d1(context, h6Var);
+                    org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.H8, d1Var, h6Var);
                     d1Var.setTag(R.id.fit_width_tag, 1);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.a(d1Var, c8.ha.o(-1, 8));
-                    x70 x70Var = new x70(context, null);
-                    this.e = x70Var;
-                    x70Var.setTag(R.id.fit_width_tag, 1);
-                    x70Var.setPadding(g0.L(13.0f), 0, g0.L(13.0f), g0.L(8.0f));
-                    x70Var.setTextSize(1, 13.0f);
-                    org.telegram.ui.ActionBar.s6.U(x70Var, org.telegram.ui.ActionBar.l6.E8, null);
-                    x70Var.setMovementMethod(LinkMovementMethod.getInstance());
-                    org.telegram.ui.ActionBar.s6.G(x70Var, org.telegram.ui.ActionBar.l6.J6, null);
-                    x70Var.setText(id.M0(2131753848, null));
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(x70Var, c8.ha.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+                    w70 w70Var = new w70(context, null);
+                    this.e = w70Var;
+                    w70Var.setTag(R.id.fit_width_tag, 1);
+                    w70Var.setPadding(g0.L(13.0f), 0, g0.L(13.0f), g0.L(8.0f));
+                    w70Var.setTextSize(1, 13.0f);
+                    org.telegram.ui.ActionBar.t6.U(w70Var, org.telegram.ui.ActionBar.m6.E8, null);
+                    w70Var.setMovementMethod(LinkMovementMethod.getInstance());
+                    org.telegram.ui.ActionBar.t6.G(w70Var, org.telegram.ui.ActionBar.m6.J6, null);
+                    w70Var.setText(id.M0(2131753848, null));
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.a(w70Var, c8.ha.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
                     return;
                 }
                 return;
             }
-            int i16 = org.telegram.ui.ActionBar.l6.q7;
+            int i16 = org.telegram.ui.ActionBar.m6.q7;
             c10.c(i16, i16);
         }
         i10 = 1;
@@ -285,7 +285,7 @@ public final class re implements mf, m9.t, p4.u {
     }
 
     public void m() {
-        ((org.telegram.ui.Components.f8) this.d).dismiss();
+        ((org.telegram.ui.Components.e8) this.d).dismiss();
         this.a = System.currentTimeMillis();
     }
 
@@ -409,7 +409,7 @@ public final class re implements mf, m9.t, p4.u {
     public void u(int i7) {
         org.telegram.ui.ActionBar.z0 z0Var = (org.telegram.ui.ActionBar.z0) this.c;
         if (System.currentTimeMillis() - this.a < 200) {
-            g0.h3(new org.telegram.ui.Components.r2(this, i7, 1));
+            g0.h3(new org.telegram.ui.Components.q2(this, i7, 1));
         } else if (i7 == 0) {
             z0Var.setVisibility(8);
         } else {
@@ -483,18 +483,18 @@ public final class re implements mf, m9.t, p4.u {
             arrayList.add(l1Var.m(i10, k1Var, 0L).c);
         }
         ArrayList arrayList2 = new ArrayList();
-        lo0 lo0Var = new lo0(this, new AtomicInteger(0), arrayList, arrayList2, 22);
+        mo0 mo0Var = new mo0(this, new AtomicInteger(0), arrayList, arrayList2, 22);
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             byte[] bArr = ((e2.l0) arrayList.get(i11)).d.k;
             if (bArr == null) {
                 arrayList2.add(null);
-                lo0Var.run();
+                mo0Var.run();
             } else {
                 m9.y W = d0Var.m.W(bArr);
                 arrayList2.add(W);
                 Handler handler = d0Var.l;
                 Objects.requireNonNull(handler);
-                W.b(lo0Var, new l2.g0(handler, 1));
+                W.b(mo0Var, new l2.g0(handler, 1));
             }
         }
     }

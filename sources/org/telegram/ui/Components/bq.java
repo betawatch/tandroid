@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class bq {
     public float A;
@@ -22,7 +22,7 @@ public final class bq {
     public final boolean F;
     public boolean G;
     public View H;
-    public final org.telegram.ui.ActionBar.g6 J;
+    public final org.telegram.ui.ActionBar.h6 J;
     public boolean a;
     public Paint d;
     public boolean g;
@@ -46,15 +46,15 @@ public final class bq {
     public TextPaint e = new TextPaint(1);
     public final RectF f = new RectF();
     public float l = 1.0f;
-    public int v = org.telegram.ui.ActionBar.l6.gg;
-    public int w = org.telegram.ui.ActionBar.l6.hg;
+    public int v = org.telegram.ui.ActionBar.m6.gg;
+    public int w = org.telegram.ui.ActionBar.m6.hg;
     public int z = 17;
     public final float C = 11.5f;
     public int I = 0;
 
-    public bq(View view, boolean z9, org.telegram.ui.ActionBar.g6 g6Var) {
+    public bq(View view, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
         this.H = view;
-        this.J = g6Var;
+        this.J = h6Var;
         this.F = z9;
         if (z9) {
             Paint paint = new Paint(1);
@@ -72,9 +72,9 @@ public final class bq {
         int i7 = this.I;
         if (i7 != 1 && i7 != 2) {
             int i10 = this.v;
-            org.telegram.ui.ActionBar.g6 g6Var = this.J;
-            int w02 = org.telegram.ui.ActionBar.l6.w0(i10, g6Var);
-            int w03 = org.telegram.ui.ActionBar.l6.w0(this.w, g6Var);
+            org.telegram.ui.ActionBar.h6 h6Var = this.J;
+            int w02 = org.telegram.ui.ActionBar.m6.w0(i10, h6Var);
+            int w03 = org.telegram.ui.ActionBar.m6.w0(this.w, h6Var);
             if (this.u != w02) {
                 this.u = w02;
                 this.e.setColor(w02);
@@ -116,7 +116,7 @@ public final class bq {
         e(z10);
         if (this.j) {
             float f18 = this.l;
-            f10 = ((f18 <= 0.5f ? xq.g.getInterpolation(f18 * 2.0f) : xq.i.getInterpolation(1.0f - ((f18 - 0.5f) * 2.0f))) * 0.1f) + 1.0f;
+            f10 = ((f18 <= 0.5f ? wq.g.getInterpolation(f18 * 2.0f) : wq.i.getInterpolation(1.0f - ((f18 - 0.5f) * 2.0f))) * 0.1f) + 1.0f;
         } else {
             f10 = 1.0f;
         }
@@ -136,9 +136,9 @@ public final class bq {
         if (this.F && (paint = this.d) != null) {
             float f21 = org.telegram.messenger.g0.p * f16;
             canvas.drawRoundRect(rectF, f21, f21, paint);
-            if (this.g && org.telegram.ui.ActionBar.l6.d1()) {
+            if (this.g && org.telegram.ui.ActionBar.m6.d1()) {
                 float f22 = f16 * org.telegram.messenger.g0.p;
-                canvas.drawRoundRect(rectF, f22, f22, org.telegram.ui.ActionBar.l6.h2);
+                canvas.drawRoundRect(rectF, f22, f22, org.telegram.ui.ActionBar.m6.h2);
             }
         }
         if (z9) {
@@ -209,9 +209,9 @@ public final class bq {
             }
             float f14 = org.telegram.messenger.g0.p * f10;
             canvas.drawRoundRect(rectF, f14, f14, this.d);
-            if (this.g && org.telegram.ui.ActionBar.l6.d1()) {
+            if (this.g && org.telegram.ui.ActionBar.m6.d1()) {
                 float f15 = f10 * org.telegram.messenger.g0.p;
-                canvas.drawRoundRect(rectF, f15, f15, org.telegram.ui.ActionBar.l6.h2);
+                canvas.drawRoundRect(rectF, f15, f15, org.telegram.ui.ActionBar.m6.h2);
             }
             if (z9) {
                 canvas.restore();
@@ -270,8 +270,8 @@ public final class bq {
             this.l = 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.k = ofFloat;
-            ofFloat.addUpdateListener(new e6(this, 15));
-            this.k.addListener(new z5(this, 20));
+            ofFloat.addUpdateListener(new d6(this, 15));
+            this.k.addListener(new y5(this, 20));
             if (this.h <= 0) {
                 this.c = 0;
                 this.k.setDuration(220L);
@@ -279,11 +279,11 @@ public final class bq {
             } else if (i7 == 0) {
                 this.c = 1;
                 this.k.setDuration(150L);
-                this.k.setInterpolator(xq.f);
+                this.k.setInterpolator(wq.f);
             } else {
                 this.c = 2;
                 this.k.setDuration(430L);
-                this.k.setInterpolator(xq.f);
+                this.k.setInterpolator(wq.f);
             }
             if (this.n != null) {
                 String str = this.i;
@@ -294,10 +294,10 @@ public final class bq {
                     for (int i10 = 0; i10 < str.length(); i10++) {
                         if (str.charAt(i10) == o02.charAt(i10)) {
                             int i11 = i10 + 1;
-                            spannableStringBuilder.setSpan(new iy(z10), i10, i11, 0);
-                            spannableStringBuilder2.setSpan(new iy(z10), i10, i11, 0);
+                            spannableStringBuilder.setSpan(new hy(z10), i10, i11, 0);
+                            spannableStringBuilder2.setSpan(new hy(z10), i10, i11, 0);
                         } else {
-                            spannableStringBuilder3.setSpan(new iy(z10), i10, i10 + 1, 0);
+                            spannableStringBuilder3.setSpan(new hy(z10), i10, i10 + 1, 0);
                         }
                     }
                     int max = Math.max(org.telegram.messenger.g0.L(12.0f), (int) Math.ceil(this.e.measureText(str.toString())));

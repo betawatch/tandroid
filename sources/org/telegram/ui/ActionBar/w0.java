@@ -33,13 +33,13 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.sc;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.fu0;
-import org.telegram.ui.Components.ra0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.eu0;
+import org.telegram.ui.Components.qa0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class w0 extends FrameLayout implements b6 {
+public abstract class w0 extends FrameLayout implements c6 {
     public final Paint D;
     public final Paint E;
     public final Paint F;
@@ -68,7 +68,7 @@ public abstract class w0 extends FrameLayout implements b6 {
     public float c0;
     public final s0 d;
     public float d0;
-    public final org.telegram.ui.Components.w5 e;
+    public final org.telegram.ui.Components.v5 e;
     public long e0;
     public Bitmap f;
     public boolean f0;
@@ -78,13 +78,13 @@ public abstract class w0 extends FrameLayout implements b6 {
     public float s;
     public boolean w;
     public boolean x;
-    public final g6 y;
+    public final h6 y;
 
-    public w0(Context context, g6 g6Var) {
+    public w0(Context context, h6 h6Var) {
         super(context);
         this.a = 0.5f;
-        xq xqVar = xq.h;
-        this.e = new org.telegram.ui.Components.w5(1.0f, this, 0L, 320L, xqVar);
+        wq wqVar = wq.h;
+        this.e = new org.telegram.ui.Components.v5(1.0f, this, 0L, 320L, wqVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -104,13 +104,13 @@ public abstract class w0 extends FrameLayout implements b6 {
         this.N = true;
         this.W = false;
         this.a0 = new l2.a0(this, 17);
-        this.y = g6Var;
+        this.y = h6Var;
         setWillNotDraw(false);
         s0 s0Var = new s0(this, 0);
         this.c = s0Var;
         s0Var.setCallback(this);
         s0Var.x(org.telegram.messenger.g0.o());
-        s0Var.n(0.3f, 165L, xqVar);
+        s0Var.n(0.3f, 165L, wqVar);
         s0Var.w(org.telegram.messenger.g0.N(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = s0Var.a;
@@ -121,7 +121,7 @@ public abstract class w0 extends FrameLayout implements b6 {
         this.d = s0Var2;
         s0Var2.setCallback(this);
         s0Var2.x(org.telegram.messenger.g0.o());
-        s0Var2.n(0.3f, 165L, xqVar);
+        s0Var2.n(0.3f, 165L, wqVar);
         s0Var2.w(org.telegram.messenger.g0.N(14.0f));
         TextPaint textPaint2 = s0Var2.a;
         textPaint2.setStyle(style);
@@ -133,16 +133,16 @@ public abstract class w0 extends FrameLayout implements b6 {
         org.telegram.messenger.g0.i(colorMatrix, -0.4f);
         org.telegram.messenger.g0.h(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        int w02 = l6.w0(l6.G8, g6Var);
+        int w02 = m6.w0(m6.G8, h6Var);
         this.U = w02;
         paint2.setColor(w02);
         boolean z9 = org.telegram.messenger.g0.B(paint2.getColor()) <= 0.721f;
         this.L = z9;
         s0Var.u(z9 ? -1 : -16777216);
         s0Var2.u(this.L ? -1 : -16777216);
-        paint4.setColor(l6.r1(0.025f, -16777216));
-        paint3.setColor(l6.r1(0.35f, -1));
-        paint6.setColor(l6.r1(0.2f, -1));
+        paint4.setColor(m6.r1(0.025f, -16777216));
+        paint3.setColor(m6.r1(0.35f, -1));
+        paint6.setColor(m6.r1(0.2f, -1));
     }
 
     public final void a(Canvas canvas) {
@@ -203,7 +203,7 @@ public abstract class w0 extends FrameLayout implements b6 {
             this.T = ofFloat;
             ofFloat.addUpdateListener(new fi.v3(this, 10));
             this.T.addListener(new t0(this, a10, 0));
-            this.T.setInterpolator(xq.h);
+            this.T.setInterpolator(wq.h);
             this.T.setDuration(220L);
             this.T.start();
         } else {
@@ -213,7 +213,7 @@ public abstract class w0 extends FrameLayout implements b6 {
         v0 v0Var = (v0) this;
         String str2 = v0Var.h0;
         if (str2 == null) {
-            str2 = fu0.a((a10 * 2.8f) + 0.2f) + "x";
+            str2 = eu0.a((a10 * 2.8f) + 0.2f) + "x";
         }
         if (str2 != null) {
             s0 s0Var = this.c;
@@ -223,7 +223,7 @@ public abstract class w0 extends FrameLayout implements b6 {
             }
         }
         if (v0Var.h0 != null) {
-            str = fu0.a((2.8f * a10) + 0.2f) + "x";
+            str = eu0.a((2.8f * a10) + 0.2f) + "x";
         }
         if (str != null) {
             s0 s0Var2 = this.d;
@@ -325,21 +325,21 @@ public abstract class w0 extends FrameLayout implements b6 {
             }
         }
         boolean z10 = this.N;
-        g6 g6Var = this.y;
+        h6 h6Var = this.y;
         if (z10) {
-            Drawable s02 = l6.s0();
+            Drawable s02 = m6.s0();
             if (s02 instanceof ColorDrawable) {
                 w02 = ((ColorDrawable) s02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = s02 instanceof ra0 ? ((ra0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
+                Bitmap bitmap = s02 instanceof qa0 ? ((qa0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
                 if (bitmap != null) {
                     int i14 = iArr[0];
                     Point point = org.telegram.messenger.g0.q;
                     float f10 = i14 / point.x;
                     int width = (int) (f10 * bitmap.getWidth());
                     int measuredWidth = (int) (((getMeasuredWidth() + i14) / point.x) * bitmap.getWidth());
-                    int currentActionBarHeight = (int) ((((iArr[1] - org.telegram.messenger.g0.m) - k.getCurrentActionBarHeight()) / point.y) * bitmap.getHeight());
+                    int currentActionBarHeight = (int) ((((iArr[1] - org.telegram.messenger.g0.m) - l.getCurrentActionBarHeight()) / point.y) * bitmap.getHeight());
                     if (width >= 0 && width < bitmap.getWidth() && measuredWidth >= 0 && measuredWidth < bitmap.getWidth() && currentActionBarHeight >= 0 && currentActionBarHeight < bitmap.getHeight()) {
                         pair = new Pair(Integer.valueOf(bitmap.getPixel(width, currentActionBarHeight)), Integer.valueOf(bitmap.getPixel(measuredWidth, currentActionBarHeight)));
                     }
@@ -356,12 +356,12 @@ public abstract class w0 extends FrameLayout implements b6 {
                     this.O = linearGradient;
                     this.I.setShader(linearGradient);
                 }
-                w02 = l6.r1(0.25f, l6.w0(l6.d6, g6Var));
+                w02 = m6.r1(0.25f, m6.w0(m6.d6, h6Var));
             }
         } else {
-            w02 = l6.w0(l6.d6, g6Var);
-            if (!l6.I.q()) {
-                w02 = l6.w(w02, l6.r1(0.18f, -16777216));
+            w02 = m6.w0(m6.d6, h6Var);
+            if (!m6.I.q()) {
+                w02 = m6.w(w02, m6.r1(0.18f, -16777216));
             }
         }
         i13 = w02;
@@ -489,13 +489,13 @@ public abstract class w0 extends FrameLayout implements b6 {
         this.d.u(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         int w02;
         Paint paint = this.E;
         if (paint != null) {
             try {
-                if (paint.getColor() == this.U && (w02 = l6.w0(l6.G8, this.y)) != this.U) {
+                if (paint.getColor() == this.U && (w02 = m6.w0(m6.G8, this.y)) != this.U) {
                     this.U = w02;
                     paint.setColor(w02);
                     boolean z9 = org.telegram.messenger.g0.B(w02) <= 0.721f;
@@ -523,7 +523,7 @@ public abstract class w0 extends FrameLayout implements b6 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

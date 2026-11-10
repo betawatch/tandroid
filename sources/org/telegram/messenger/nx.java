@@ -9,13 +9,13 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.w80;
+import org.telegram.ui.Components.r80;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hy0;
-import org.telegram.ui.o40;
-import org.telegram.ui.ys0;
+import org.telegram.ui.iy0;
+import org.telegram.ui.p40;
+import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nx implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class nx implements RequestDelegate {
                 g0.h3(new jg.c1((org.telegram.ui.g4) obj5, this.b, (vf.b) obj4, tLObject, (String) obj, (org.telegram.ui.f0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
                 break;
             case 2:
-                g0.h3(new jg.c1(tLObject, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.g6) obj2, (o40) obj));
+                g0.h3(new jg.c1(tLObject, (org.telegram.ui.ActionBar.u1) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.h6) obj2, (p40) obj));
                 break;
             case 3:
                 boolean[] zArr = (boolean[]) obj5;
@@ -73,34 +73,34 @@ public final /* synthetic */ class nx implements RequestDelegate {
             case 4:
                 String str = (String) obj;
                 String str2 = LaunchActivity.B1;
-                g0.h3(new jg.c1((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.yw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, str));
+                g0.h3(new jg.c1((LaunchActivity) obj5, tLObject, this.b, (org.telegram.ui.zw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, str));
                 break;
             case 5:
-                g0.h3(new ee(tLObject, (org.telegram.ui.ActionBar.f2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (ys0) obj3, (com.google.android.gms.internal.clearcut.z0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
+                g0.h3(new ee(tLObject, (org.telegram.ui.ActionBar.f2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (zs0) obj3, (com.google.android.gms.internal.clearcut.z0) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
             default:
                 Context context2 = (Context) obj5;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
                 byte[] bArr = (byte[]) obj3;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj2;
-                w80 w80Var = (w80) obj;
+                r80 r80Var = (r80) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        g0.i3(new hy0(f2Var, context2, g6Var, w80Var, 1), 200L);
+                        g0.i3(new iy0(f2Var, context2, h6Var, r80Var, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            g0.i3(new org.telegram.ui.f10(f2Var, i10, w80Var, 10), 200L);
+                            g0.i3(new org.telegram.ui.h10(f2Var, i10, r80Var, 10), 200L);
                             break;
                         }
                     } else {
-                        g0.i3(new hy0(f2Var, context2, g6Var, w80Var, 0), 200L);
+                        g0.i3(new iy0(f2Var, context2, h6Var, r80Var, 0), 200L);
                         break;
                     }
                 } else {
-                    g0.h3(new bi.a3(tLObject, (Object) context2, (Object) g6Var, (Object) bArr, (Object) f2Var, (Object) w80Var, 17));
+                    g0.h3(new bi.a3(tLObject, (Object) context2, (Object) h6Var, (Object) bArr, (Object) f2Var, (Object) r80Var, 17));
                     break;
                 }
                 break;
@@ -117,24 +117,24 @@ public final /* synthetic */ class nx implements RequestDelegate {
         this.c = context;
     }
 
-    public /* synthetic */ nx(Context context, org.telegram.ui.ActionBar.g6 g6Var, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, w80 w80Var, int i7) {
+    public /* synthetic */ nx(Context context, org.telegram.ui.ActionBar.h6 h6Var, byte[] bArr, org.telegram.ui.ActionBar.f2 f2Var, r80 r80Var, int i7) {
         this.a = 6;
         this.d = context;
-        this.e = g6Var;
+        this.e = h6Var;
         this.f = bArr;
         this.g = f2Var;
-        this.c = w80Var;
+        this.c = r80Var;
         this.b = i7;
     }
 
-    public /* synthetic */ nx(org.telegram.ui.ActionBar.u1 u1Var, Context context, int i7, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.g6 g6Var, o40 o40Var) {
+    public /* synthetic */ nx(org.telegram.ui.ActionBar.u1 u1Var, Context context, int i7, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.h6 h6Var, p40 p40Var) {
         this.a = 2;
         this.d = u1Var;
         this.e = context;
         this.b = i7;
         this.f = exportgroupcallinvite;
-        this.g = g6Var;
-        this.c = o40Var;
+        this.g = h6Var;
+        this.c = p40Var;
     }
 
     public /* synthetic */ nx(org.telegram.ui.g4 g4Var, int i7, vf.b bVar, String str, org.telegram.ui.f0 f0Var, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
@@ -147,11 +147,11 @@ public final /* synthetic */ class nx implements RequestDelegate {
         this.g = tL_messages_getWebPage;
     }
 
-    public /* synthetic */ nx(LaunchActivity launchActivity, int i7, org.telegram.ui.yw ywVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
+    public /* synthetic */ nx(LaunchActivity launchActivity, int i7, org.telegram.ui.zw zwVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
         this.a = 4;
         this.d = launchActivity;
         this.b = i7;
-        this.e = ywVar;
+        this.e = zwVar;
         this.f = f2Var;
         this.g = user;
         this.c = str;

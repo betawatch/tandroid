@@ -21,19 +21,19 @@ import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.tg0;
-import org.telegram.ui.vg0;
+import org.telegram.ui.ug0;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public abstract class fu implements tg0 {
+public abstract class fu implements ug0 {
     public boolean D;
     public int E;
     public int F;
     public TLObject G;
     public boolean I;
-    public org.telegram.ui.Components.ic J;
-    public vg0 K;
+    public org.telegram.ui.Components.hc J;
+    public wg0 K;
     public lu L;
     public float M;
     public int N;
@@ -239,7 +239,7 @@ public abstract class fu implements tg0 {
         }
     }
 
-    @Override // org.telegram.ui.tg0
+    @Override // org.telegram.ui.ug0
     public Layout a() {
         return null;
     }
@@ -263,7 +263,7 @@ public abstract class fu implements tg0 {
         if (this.r == null) {
             CheckBoxBase checkBoxBase = new CheckBoxBase(20, null, this.a.D);
             this.r = checkBoxBase;
-            checkBoxBase.h(org.telegram.ui.ActionBar.l6.Vl, org.telegram.ui.ActionBar.l6.z5, org.telegram.ui.ActionBar.l6.k7);
+            checkBoxBase.h(org.telegram.ui.ActionBar.m6.Vl, org.telegram.ui.ActionBar.m6.z5, org.telegram.ui.ActionBar.m6.k7);
             this.r.d(10);
             this.r.k(true);
             this.r.i(g0.L(5.0f));
@@ -312,7 +312,7 @@ public abstract class fu implements tg0 {
         this.R = this.Q;
     }
 
-    @Override // org.telegram.ui.tg0
+    @Override // org.telegram.ui.ug0
     public final View e() {
         return null;
     }
@@ -361,11 +361,11 @@ public abstract class fu implements tg0 {
                     if (contains && n()) {
                         this.I = true;
                         if (this.J == null && (view = kvVar.Q) != null) {
-                            this.J = new org.telegram.ui.Components.ic(view);
+                            this.J = new org.telegram.ui.Components.hc(view);
                         }
-                        org.telegram.ui.Components.ic icVar = this.J;
-                        if (icVar != null) {
-                            icVar.c(true);
+                        org.telegram.ui.Components.hc hcVar = this.J;
+                        if (hcVar != null) {
+                            hcVar.c(true);
                         }
                         View view2 = kvVar.Q;
                         if (view2 != null) {
@@ -378,17 +378,17 @@ public abstract class fu implements tg0 {
                     if (actionMasked == 2) {
                         if (!contains) {
                             this.I = false;
-                            org.telegram.ui.Components.ic icVar2 = this.J;
-                            if (icVar2 != null) {
-                                icVar2.c(false);
+                            org.telegram.ui.Components.hc hcVar2 = this.J;
+                            if (hcVar2 != null) {
+                                hcVar2.c(false);
                             }
                         }
                     } else if (actionMasked == 1 || actionMasked == 3) {
                         boolean z9 = actionMasked == 1 && contains;
                         this.I = false;
-                        org.telegram.ui.Components.ic icVar3 = this.J;
-                        if (icVar3 != null) {
-                            icVar3.c(false);
+                        org.telegram.ui.Components.hc hcVar3 = this.J;
+                        if (hcVar3 != null) {
+                            hcVar3.c(false);
                         }
                         if (z9) {
                             e0();
@@ -480,7 +480,7 @@ public abstract class fu implements tg0 {
         float L = (((kvVar.C + kvVar.T) - g0.L(14.0f)) - rect.right) - rect.left;
         if (this.d != null) {
             textPaint.setTextSize(g0.L(iz.W0));
-            textPaint.setColor(org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.Tc : org.telegram.ui.ActionBar.l6.Sc, kvVar.D));
+            textPaint.setColor(org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.Tc : org.telegram.ui.ActionBar.m6.Sc, kvVar.D));
             canvas.save();
             if (!this.x && !this.y) {
                 float N2 = g0.N(5.0f);
@@ -511,8 +511,8 @@ public abstract class fu implements tg0 {
                     checkBoxBase.a = view;
                 }
             }
-            org.telegram.ui.Components.ic icVar = this.J;
-            float a10 = icVar != null ? icVar.a(0.1f) : 1.0f;
+            org.telegram.ui.Components.hc hcVar = this.J;
+            float a10 = hcVar != null ? hcVar.a(0.1f) : 1.0f;
             canvas.save();
             canvas.scale(a10, a10, g0.L(10.0f) + L2, this.s + g0.L(10.0f));
             this.r.e(L2, (int) this.s, g0.L(20.0f), g0.L(20.0f));
@@ -529,17 +529,17 @@ public abstract class fu implements tg0 {
 
     public boolean s(Canvas canvas, ColorFilter colorFilter) {
         jv jvVar;
-        org.telegram.ui.Components.n5 n5Var;
+        org.telegram.ui.Components.m5 m5Var;
         org.telegram.ui.Cells.t9[] L = L();
         if (L == null) {
             return false;
         }
         boolean z9 = false;
         for (org.telegram.ui.Cells.t9 t9Var : L) {
-            if ((t9Var instanceof jv) && (n5Var = (jvVar = (jv) t9Var).E) != null && !n5Var.a.isEmpty()) {
+            if ((t9Var instanceof jv) && (m5Var = (jvVar = (jv) t9Var).E) != null && !m5Var.a.isEmpty()) {
                 canvas.save();
                 canvas.translate(jvVar.c, jvVar.d - this.M);
-                org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, jvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
+                org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, jvVar.x, 0.0f, 0.0f, 0.0f, 1.0f, colorFilter);
                 canvas.restore();
                 z9 = true;
             }
@@ -548,16 +548,16 @@ public abstract class fu implements tg0 {
     }
 
     public void t(Canvas canvas) {
-        vg0 vg0Var = this.K;
-        if (vg0Var != null && vg0Var.h && vg0Var.d(this) >= 0) {
-            if (!vg0Var.i(this)) {
+        wg0 wg0Var = this.K;
+        if (wg0Var != null && wg0Var.h && wg0Var.d(this) >= 0) {
+            if (!wg0Var.i(this)) {
                 return;
             }
-            if (vg0Var.g(this)) {
-                r(canvas, vg0Var.g(this) ? vg0Var.e : -1, vg0Var.g(this) ? vg0Var.f : 0.0f);
+            if (wg0Var.g(this)) {
+                r(canvas, wg0Var.g(this) ? wg0Var.e : -1, wg0Var.g(this) ? wg0Var.f : 0.0f);
                 return;
             }
-            float c10 = vg0Var.c(this);
+            float c10 = wg0Var.c(this);
             if (c10 <= 0.0f) {
                 return;
             }

@@ -1,12 +1,22 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface t40 {
-    void e(TLRPC.User user);
+public final class t40 implements Comparator {
+    public static String a(TLObject tLObject) {
+        if (!(tLObject instanceof TLRPC.User)) {
+            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
+        }
+        TLRPC.User user = (TLRPC.User) tLObject;
+        return org.telegram.messenger.g5.m(0, user.first_name, user.last_name);
+    }
 
-    void f(int i7, ArrayList arrayList);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    }
 }

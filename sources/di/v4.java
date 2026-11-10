@@ -10,14 +10,14 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.l90;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v4 implements ej0 {
+public final class v4 implements dj0 {
     public final /* synthetic */ q9 a;
     public final /* synthetic */ l5 b;
 
@@ -26,7 +26,7 @@ public final class v4 implements ej0 {
         this.a = q9Var;
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.dj0
     public final boolean c(int i7, View view) {
         final TL_stories.StoryView storyView;
         final qp s12;
@@ -53,10 +53,10 @@ public final class v4 implements ej0 {
                 if (B) {
                     return false;
                 }
-                l60 F = l60.F(q9Var.w, bVar, view);
+                k60 F = k60.F(q9Var.w, bVar, view);
                 F.i = 3;
                 F.j = true;
-                F.W(new ColorDrawable(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, bVar)));
+                F.W(new ColorDrawable(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, bVar)));
                 F.s = 133;
                 boolean z12 = (!d || N || z10 || B) ? false : true;
                 final int i11 = 0;
@@ -81,13 +81,13 @@ public final class v4 implements ej0 {
                             case 0:
                                 qpVar.P1().m0(user.id, true, true);
                                 l5 l5Var2 = v4Var.b;
-                                new hc(l5Var2, l5Var2.s).Q(R.raw.ic_ban, 36, id.a0(null, null, 2131744663, str3)).j();
+                                new gc(l5Var2, l5Var2.s).Q(R.raw.ic_ban, 36, id.a0(null, null, 2131744663, str3)).j();
                                 m6Var2.a(true, l5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 qpVar.P1().m0(user.id, false, true);
                                 l5 l5Var3 = v4Var.b;
-                                new hc(l5Var3, l5Var3.s).Q(R.raw.contact_check, 36, id.a0(null, null, 2131744461, str3)).j();
+                                new gc(l5Var3, l5Var3.s).Q(R.raw.contact_check, 36, id.a0(null, null, 2131744461, str3)).j();
                                 m6Var2.a(true, l5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
@@ -116,13 +116,13 @@ public final class v4 implements ej0 {
                             case 0:
                                 qpVar.P1().m0(user.id, true, true);
                                 l5 l5Var2 = v4Var.b;
-                                new hc(l5Var2, l5Var2.s).Q(R.raw.ic_ban, 36, id.a0(null, null, 2131744663, str3)).j();
+                                new gc(l5Var2, l5Var2.s).Q(R.raw.ic_ban, 36, id.a0(null, null, 2131744663, str3)).j();
                                 m6Var2.a(true, l5Var2.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                             default:
                                 qpVar.P1().m0(user.id, false, true);
                                 l5 l5Var3 = v4Var.b;
-                                new hc(l5Var3, l5Var3.s).Q(R.raw.contact_check, 36, id.a0(null, null, 2131744461, str3)).j();
+                                new gc(l5Var3, l5Var3.s).Q(R.raw.contact_check, 36, id.a0(null, null, 2131744461, str3)).j();
                                 m6Var2.a(true, l5Var3.d(storyView2) ? 1.0f : 0.5f);
                                 break;
                         }
@@ -144,7 +144,7 @@ public final class v4 implements ej0 {
                             case 0:
                                 s12.w(a22.id);
                                 l5 l5Var2 = this.b.b;
-                                new hc(l5Var2, l5Var2.s).e(true).j();
+                                new gc(l5Var2, l5Var2.s).e(true).j();
                                 m6Var.a(true, l5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
@@ -154,7 +154,7 @@ public final class v4 implements ej0 {
                                 P1.m0(user.id, false, true);
                                 qpVar.f5(null, user.id);
                                 l5 l5Var3 = this.b.b;
-                                new hc(l5Var3, l5Var3.s).e(false).j();
+                                new gc(l5Var3, l5Var3.s).e(false).j();
                                 m6Var.a(true, l5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
@@ -174,7 +174,7 @@ public final class v4 implements ej0 {
                             case 0:
                                 s12.w(a22.id);
                                 l5 l5Var2 = this.b.b;
-                                new hc(l5Var2, l5Var2.s).e(true).j();
+                                new gc(l5Var2, l5Var2.s).e(true).j();
                                 m6Var.a(true, l5Var2.d(storyView) ? 1.0f : 0.5f);
                                 break;
                             default:
@@ -184,7 +184,7 @@ public final class v4 implements ej0 {
                                 P1.m0(user.id, false, true);
                                 qpVar.f5(null, user.id);
                                 l5 l5Var3 = this.b.b;
-                                new hc(l5Var3, l5Var3.s).e(false).j();
+                                new gc(l5Var3, l5Var3.s).e(false).j();
                                 m6Var.a(true, l5Var3.d(storyView) ? 1.0f : 0.5f);
                                 break;
                         }
@@ -192,15 +192,15 @@ public final class v4 implements ej0 {
                 }, (z11 || !z10 || B) ? false : true);
                 F.m(R.drawable.msg_user_remove, new bi.u0(this, a22, str2, m6Var, storyView, 11), id.M0(2131744687, null), z11 && !B, true);
                 TLRPC.Reaction reaction = storyView.reaction;
-                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.i5.g(i10).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
+                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.h5.g(i10).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
                     z9 = false;
                 } else {
                     F.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    m90 m90Var = new m90(l5Var.w, 3, l5Var.getContext(), arrayList, bVar);
-                    m90Var.setOnClickListener(new ah.g(this, arrayList, F, 7));
-                    F.q(m90Var);
+                    l90 l90Var = new l90(l5Var.w, 3, l5Var.getContext(), arrayList, bVar);
+                    l90Var.setOnClickListener(new ah.g(this, arrayList, F, 7));
+                    F.q(l90Var);
                     z9 = true;
                 }
                 if (F.x() <= 0 && !z9) {

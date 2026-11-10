@@ -25,7 +25,7 @@ import c8.h9;
 import c8.mc;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class t extends EditText implements r0.n, u0.k {
     public final h2.c a;
@@ -147,7 +147,7 @@ public final class t extends EditText implements r0.n, u0.k {
         h9.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e10 = r0.i0.e(this)) != null) {
             t0.b.b(editorInfo, e10);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new org.telegram.ui.ActionBar.m3(this, 18));
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new org.telegram.ui.ActionBar.n3(this, 18));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }

@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import c8.j9;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -77,7 +77,7 @@ public final class t implements Runnable {
             }
             actionBarLayout.H.setNavigationBarColor(f11);
         }
-        float interpolation = z11 ? z10 ? actionBarLayout.M.getInterpolation(actionBarLayout.K0) : xq.h.getInterpolation(actionBarLayout.K0) : actionBarLayout.L.getInterpolation(actionBarLayout.K0);
+        float interpolation = z11 ? z10 ? actionBarLayout.M.getInterpolation(actionBarLayout.K0) : wq.h.getInterpolation(actionBarLayout.K0) : actionBarLayout.L.getInterpolation(actionBarLayout.K0);
         if (z10) {
             float a10 = j9.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a10);
@@ -94,7 +94,7 @@ public final class t implements Runnable {
                     actionBarLayout.J.setScaleY(f14);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
-                l6.s0.setAlpha((int) (a10 * 255.0f));
+                m6.s0.setAlpha((int) (a10 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
@@ -110,7 +110,7 @@ public final class t implements Runnable {
                 actionBarLayout.w.setScaleY(f16);
                 actionBarLayout.r.setAlpha((int) (46.0f * a11));
                 if (actionBarLayout.J == null) {
-                    l6.s0.setAlpha((int) (a11 * 255.0f));
+                    m6.s0.setAlpha((int) (a11 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

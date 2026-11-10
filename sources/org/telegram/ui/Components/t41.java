@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t41 extends Drawable {
     public final Drawable a;
@@ -24,7 +24,7 @@ public final class t41 extends Drawable {
     public final TextPaint e;
     public final Paint f;
     public final RectF g;
-    public final ic h;
+    public final hc h;
     public final org.telegram.ui.Cells.l9 i;
     public Runnable j;
     public StaticLayout k;
@@ -52,9 +52,9 @@ public final class t41 extends Drawable {
         this.e = textPaint3;
         this.f = new Paint(1);
         this.g = new RectF();
-        ic icVar = new ic((View) null);
-        this.h = icVar;
-        this.i = new org.telegram.ui.Cells.l9(new rt(this, 5));
+        hc hcVar = new hc((View) null);
+        this.h = hcVar;
+        this.i = new org.telegram.ui.Cells.l9(new qt(this, 5));
         this.s = org.telegram.messenger.g0.L(62.33f);
         this.t = org.telegram.messenger.g0.L(12.0f);
         this.u = org.telegram.messenger.g0.L(30.0f);
@@ -64,7 +64,7 @@ public final class t41 extends Drawable {
         this.y = org.telegram.messenger.g0.L(2.0f);
         this.a = org.telegram.messenger.t0.b.getDrawable(R.drawable.send_plane_26).mutate();
         this.b = org.telegram.messenger.t0.b.getDrawable(R.drawable.large_unsupported).mutate();
-        icVar.f = new kr0(this, 27);
+        hcVar.f = new jr0(this, 27);
         textPaint.setTypeface(org.telegram.messenger.g0.o());
         textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
         textPaint2.setTextSize(org.telegram.messenger.g0.L(12.0f));
@@ -95,14 +95,14 @@ public final class t41 extends Drawable {
     }
 
     public final void b() {
-        int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Wc, false);
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Wc, false);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.a.setColorFilter(new PorterDuffColorFilter(x02, mode));
-        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.r1(0.11f, -16777216), mode));
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.r1(0.11f, -16777216), mode));
         this.c.setColor(x02);
         this.d.setColor(i0.a.o(x02, org.telegram.messenger.qs.J2));
         this.e.setColor(x02);
-        this.f.setColor(org.telegram.ui.ActionBar.l6.r1(0.11f, -16777216));
+        this.f.setColor(org.telegram.ui.ActionBar.m6.r1(0.11f, -16777216));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -129,7 +129,7 @@ public final class t41 extends Drawable {
         float a10 = this.h.a(0.05f);
         canvas.save();
         canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-        org.telegram.ui.ActionBar.l6.r1(0.18f, -1);
+        org.telegram.ui.ActionBar.m6.r1(0.18f, -1);
         int i12 = this.v;
         canvas.drawRoundRect(rectF, i12, i12, this.f);
         canvas.save();

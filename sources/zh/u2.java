@@ -9,36 +9,36 @@ import c8.ka;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class u2 extends TextView {
     public final wp a;
     public final int b;
     public final boolean c;
 
-    public u2(Context context, g6 g6Var, boolean z9) {
+    public u2(Context context, h6 h6Var, boolean z9) {
         super(context);
         this.c = z9;
         if (z9) {
-            s6.U(this, l6.G6, g6Var);
+            t6.U(this, m6.G6, h6Var);
             setPadding(org.telegram.messenger.g0.L(14.0f), 0, org.telegram.messenger.g0.L(14.0f), 0);
             setTextSize(1, 15.0f);
             this.b = org.telegram.messenger.g0.L(40.0f);
         } else {
-            int i7 = l6.y8;
-            int w02 = l6.w0(i7, g6Var);
-            s6.U(this, i7, g6Var);
-            org.telegram.ui.Cells.y b02 = l6.b0(l6.r1(0.08f, w02), l6.r1(0.15f, w02), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f));
-            o6 K = s6.K(0.08f, i7);
-            o6 K2 = s6.K(0.15f, i7);
+            int i7 = m6.y8;
+            int w02 = m6.w0(i7, h6Var);
+            t6.U(this, i7, h6Var);
+            org.telegram.ui.Cells.y b02 = m6.b0(m6.r1(0.08f, w02), m6.r1(0.15f, w02), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f));
+            p6 K = t6.K(0.08f, i7);
+            p6 K2 = t6.K(0.15f, i7);
             setBackground(b02);
-            s6.j(this, b02, K, K2, g6Var);
+            t6.j(this, b02, K, K2, h6Var);
             setPadding(org.telegram.messenger.g0.L(11.0f), 0, org.telegram.messenger.g0.L(11.0f), 0);
             this.b = org.telegram.messenger.g0.L(26.0f);
         }

@@ -37,29 +37,29 @@ import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.w0;
-import org.telegram.ui.Components.ac;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.jb;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ys;
+import org.telegram.ui.Components.zb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.hw;
+import org.telegram.ui.iw;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 import org.telegram.ui.web.o1;
 import org.telegram.ui.web.u0;
 import org.telegram.ui.web.z0;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 import sg.v0;
 import sg.y0;
 import tg.i2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements c20 {
     public final /* synthetic */ int a;
@@ -102,15 +102,15 @@ public final /* synthetic */ class c implements c20 {
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
-                zl0 zl0Var = (zl0) ((jg.h0) obj2);
-                hw hwVar = zl0Var.K0;
+                yl0 yl0Var = (yl0) ((jg.h0) obj2);
+                iw iwVar = yl0Var.K0;
                 if (user != null) {
-                    yw ywVar = hwVar.L0;
-                    if (ywVar != null) {
-                        ywVar.W3();
+                    zw zwVar = iwVar.L0;
+                    if (zwVar != null) {
+                        zwVar.W3();
                     }
-                    qp.s1(hwVar.J0).x3(null, user, null, 0, null, false, false);
-                    zl0Var.Q(user.id, user);
+                    qp.s1(iwVar.J0).x3(null, user, null, 0, null, false, false);
+                    yl0Var.Q(user.id, user);
                     break;
                 }
                 break;
@@ -336,7 +336,7 @@ public final /* synthetic */ class c implements c20 {
                     break;
                 }
             case 15:
-                org.telegram.messenger.g0.v1((zs) obj2);
+                org.telegram.messenger.g0.v1((ys) obj2);
                 org.telegram.messenger.g0.i3((Runnable) obj, 80L);
                 break;
             case 16:
@@ -423,8 +423,8 @@ public final /* synthetic */ class c implements c20 {
                 i2Var.r = bitmapShader2;
                 paint2.setShader(bitmapShader2);
                 ColorMatrix colorMatrix2 = new ColorMatrix();
-                org.telegram.messenger.g0.i(colorMatrix2, l6.I.q() ? 0.08f : 0.25f);
-                org.telegram.messenger.g0.h(colorMatrix2, l6.I.q() ? -0.02f : -0.07f);
+                org.telegram.messenger.g0.i(colorMatrix2, m6.I.q() ? 0.08f : 0.25f);
+                org.telegram.messenger.g0.h(colorMatrix2, m6.I.q() ? -0.02f : -0.07f);
                 i2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
                 i2Var.w = new Matrix();
                 break;
@@ -469,32 +469,32 @@ public final /* synthetic */ class c implements c20 {
                     String b10 = wg.h.b(ijVar);
                     TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-ijVar.Z0()));
                     boolean z14 = M0 != null && org.telegram.messenger.t3.V(M0);
-                    kb kbVar = new kb(Q.getParentActivity(), Q.getResourceProvider());
+                    jb jbVar = new jb(Q.getParentActivity(), Q.getResourceProvider());
                     if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
-                        kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                        kbVar.b.setText(id.M0(2131753371, null));
+                        jbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                        jbVar.b.setText(id.M0(2131753371, null));
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                         if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
-                            kbVar.c(R.raw.forward, 30, 30, new String[0]);
-                            kbVar.b.setText(id.M0(2131753369, null));
+                            jbVar.c(R.raw.forward, 30, 30, new String[0]);
+                            jbVar.b.setText(id.M0(2131753369, null));
                         } else {
-                            kbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
-                            kbVar.b.setText(id.M0(2131753370, null));
+                            jbVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                            jbVar.b.setText(id.M0(2131753370, null));
                         }
                     }
-                    kbVar.b.setSingleLine(false);
-                    kbVar.b.setMaxLines(2);
-                    ac acVar = new ac(Q.getParentActivity(), Q.getResourceProvider(), true);
-                    acVar.e(id.M0(2131749010, null));
-                    acVar.b = new fi.q1(payments_giveawayinfo, z14, b10, j3, tL_messageMediaGiveaway2, Q);
-                    kbVar.setButton(acVar);
-                    cc.g(Q, kbVar, 2750).j();
+                    jbVar.b.setSingleLine(false);
+                    jbVar.b.setMaxLines(2);
+                    zb zbVar = new zb(Q.getParentActivity(), Q.getResourceProvider(), true);
+                    zbVar.e(id.M0(2131749010, null));
+                    zbVar.b = new fi.q1(payments_giveawayinfo, z14, b10, j3, tL_messageMediaGiveaway2, Q);
+                    jbVar.setButton(zbVar);
+                    bc.g(Q, jbVar, 2750).j();
                     break;
                 }
                 break;
             case 28:
                 wg.q0 q0Var2 = (wg.q0) obj2;
-                q0Var2.S1.setLoading(false);
+                q0Var2.V1.setLoading(false);
                 wg.h.j(q0Var2.getContext(), (TLRPC.TL_error) obj);
                 break;
             default:
@@ -513,8 +513,8 @@ public final /* synthetic */ class c implements c20 {
                     hVar2.L = paint3;
                     paint3.setShader(hVar2.J);
                     ColorMatrix colorMatrix3 = new ColorMatrix();
-                    org.telegram.messenger.g0.i(colorMatrix3, l6.I.q() ? 0.08f : 1.25f);
-                    org.telegram.messenger.g0.h(colorMatrix3, l6.I.q() ? 0.02f : -0.15f);
+                    org.telegram.messenger.g0.i(colorMatrix3, m6.I.q() ? 0.08f : 1.25f);
+                    org.telegram.messenger.g0.h(colorMatrix3, m6.I.q() ? 0.02f : -0.15f);
                     hVar2.L.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                     matrix5.reset();
                     matrix5.setScale(15.0f, 15.0f);

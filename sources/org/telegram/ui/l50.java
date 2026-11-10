@@ -1,75 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l50 extends LinearLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Components.zs a;
-    public boolean b;
-    public int c;
-    public s10 d;
-    public String e;
-    public final k50 f;
-    public final /* synthetic */ o50 h;
+public final class l50 implements TextWatcher {
+    public final /* synthetic */ m50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l50(o50 o50Var, Context context) {
-        super(context);
-        this.h = o50Var;
-        this.f = new k50(this);
-        TextView g10 = org.telegram.messenger.k5.g(context, 1, 16.0f);
-        org.telegram.ui.ActionBar.s6.U(g10, org.telegram.ui.ActionBar.l6.j5, null);
-        g10.setText("t.me/addemoji/");
-        org.telegram.ui.Components.zs zsVar = new org.telegram.ui.Components.zs(context, null);
-        this.a = zsVar;
-        zsVar.setLines(1);
-        zsVar.setSingleLine(true);
-        zsVar.setInputType(TLObject.FLAG_14);
-        zsVar.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.s6.U(zsVar, org.telegram.ui.ActionBar.l6.Ie, null);
-        org.telegram.ui.ActionBar.s6.G(zsVar, org.telegram.ui.ActionBar.l6.Vc, null);
-        org.telegram.ui.ActionBar.s6.C(zsVar, org.telegram.ui.ActionBar.l6.ig, null);
-        int i7 = org.telegram.ui.ActionBar.l6.Je;
-        org.telegram.ui.ActionBar.s6.l(zsVar, 34, i7, null);
-        org.telegram.ui.ActionBar.s6.D(zsVar, i7, null);
-        org.telegram.ui.ActionBar.s6.l(zsVar, 30, org.telegram.ui.ActionBar.l6.Ke, null);
-        org.telegram.ui.ActionBar.s6.l(zsVar, 36, org.telegram.ui.ActionBar.l6.jg, null);
-        zsVar.setBackground(null);
-        zsVar.setHint(org.telegram.messenger.id.M0(2131754433, null));
-        addView(g10, c8.ha.t(-2, -2, 16, 20, 0, 0, 0));
-        addView(zsVar, c8.ha.t(-1, -2, 16, -4, 0, 0, 0));
-        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, this, null);
-        setPadding(0, org.telegram.messenger.g0.L(5.0f), 0, org.telegram.messenger.g0.L(5.0f));
-        setWillNotDraw(false);
+    public l50(m50 m50Var) {
+        this.a = m50Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(org.telegram.messenger.g0.L(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        m50 m50Var = this.a;
+        p50 p50Var = m50Var.h;
+        if (m50Var.c != 0) {
+            p50Var.getConnectionsManager().cancelRequest(m50Var.c, true);
+            m50Var.c = 0;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
-    public final void updateColors() {
-        org.telegram.ui.Components.zs zsVar = this.a;
-        try {
-            zsVar.setHintColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Je, false));
-            zsVar.setCursorColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.Ke, false));
-            zsVar.setHandlesColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.jg, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+        f10 f10Var = m50Var.d;
+        if (f10Var != null) {
+            org.telegram.messenger.g0.r(f10Var);
         }
+        m50Var.e = null;
+        if (trim.isEmpty()) {
+            p50.f0(p50Var, null);
+            return;
+        }
+        f10 f10Var2 = new f10(4, this, trim);
+        m50Var.d = f10Var2;
+        org.telegram.messenger.g0.i3(f10Var2, 300L);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

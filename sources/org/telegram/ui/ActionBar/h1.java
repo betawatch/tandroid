@@ -10,17 +10,17 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.qt;
-import org.telegram.ui.Components.t51;
-import org.telegram.ui.Components.u10;
-import org.telegram.ui.Components.w10;
-import org.telegram.ui.Components.x30;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.pt;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.t10;
+import org.telegram.ui.Components.v10;
+import org.telegram.ui.Components.w30;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w7;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h1 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -180,46 +180,46 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                 ofFloat3.start();
                 break;
             case 2:
-                ((qt) obj).a.j1.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((pt) obj).a.m1.getViewTreeObserver().removeOnPreDrawListener(this);
                 break;
             case 3:
-                q10 q10Var = (q10) obj;
-                u10 u10Var = q10Var.f;
-                w7 w7Var = q10Var.e;
+                p10 p10Var = (p10) obj;
+                t10 t10Var = p10Var.f;
+                w7 w7Var = p10Var.e;
                 w7Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                w7Var.getLocationOnScreen(q10Var.H);
-                float f12 = q10Var.s.x + q10Var.R;
-                w10 w10Var = q10Var.V;
-                float measuredWidth = ((w10Var.getMeasuredWidth() / 2.0f) + f12) - r8[0];
-                float measuredWidth2 = ((w10Var.getMeasuredWidth() / 2.0f) + (q10Var.s.y + q10Var.S)) - r8[1];
+                w7Var.getLocationOnScreen(p10Var.H);
+                float f12 = p10Var.s.x + p10Var.R;
+                v10 v10Var = p10Var.V;
+                float measuredWidth = ((v10Var.getMeasuredWidth() / 2.0f) + f12) - r8[0];
+                float measuredWidth2 = ((v10Var.getMeasuredWidth() / 2.0f) + (p10Var.s.y + p10Var.S)) - r8[1];
                 boolean z11 = measuredWidth2 - ((float) org.telegram.messenger.g0.L(61.0f)) > 0.0f && ((float) org.telegram.messenger.g0.L(61.0f)) + measuredWidth2 < ((float) w7Var.getMeasuredHeight());
-                if (org.telegram.messenger.g0.L(61.0f) + measuredWidth + u10Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f) && z11) {
-                    u10Var.setTranslationX(org.telegram.messenger.g0.L(61.0f) + measuredWidth);
+                if (org.telegram.messenger.g0.L(61.0f) + measuredWidth + t10Var.getMeasuredWidth() < w7Var.getMeasuredWidth() - org.telegram.messenger.g0.L(16.0f) && z11) {
+                    t10Var.setTranslationX(org.telegram.messenger.g0.L(61.0f) + measuredWidth);
                     float measuredHeight = measuredWidth2 / w7Var.getMeasuredHeight();
-                    float L = org.telegram.messenger.g0.L(40.0f) / u10Var.getMeasuredHeight();
-                    u10Var.setTranslationY((int) (measuredWidth2 - (u10Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
-                    u10Var.a(measuredWidth, measuredWidth2, 0);
+                    float L = org.telegram.messenger.g0.L(40.0f) / t10Var.getMeasuredHeight();
+                    t10Var.setTranslationY((int) (measuredWidth2 - (t10Var.getMeasuredHeight() * Math.max(L, Math.min(measuredHeight, 1.0f - L)))));
+                    t10Var.a(measuredWidth, measuredWidth2, 0);
                     break;
-                } else if ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - u10Var.getMeasuredWidth() > org.telegram.messenger.g0.L(16.0f) && z11) {
-                    float L2 = org.telegram.messenger.g0.L(40.0f) / u10Var.getMeasuredHeight();
+                } else if ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - t10Var.getMeasuredWidth() > org.telegram.messenger.g0.L(16.0f) && z11) {
+                    float L2 = org.telegram.messenger.g0.L(40.0f) / t10Var.getMeasuredHeight();
                     float max = Math.max(L2, Math.min(measuredWidth2 / w7Var.getMeasuredHeight(), 1.0f - L2));
-                    u10Var.setTranslationX((int) ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - u10Var.getMeasuredWidth()));
-                    u10Var.setTranslationY((int) (measuredWidth2 - (u10Var.getMeasuredHeight() * max)));
-                    u10Var.a(measuredWidth, measuredWidth2, 1);
+                    t10Var.setTranslationX((int) ((measuredWidth - org.telegram.messenger.g0.L(61.0f)) - t10Var.getMeasuredWidth()));
+                    t10Var.setTranslationY((int) (measuredWidth2 - (t10Var.getMeasuredHeight() * max)));
+                    t10Var.a(measuredWidth, measuredWidth2, 1);
                     break;
                 } else if (measuredWidth2 <= w7Var.getMeasuredHeight() * 0.3f) {
                     float measuredWidth3 = measuredWidth / w7Var.getMeasuredWidth();
-                    float L3 = org.telegram.messenger.g0.L(40.0f) / u10Var.getMeasuredWidth();
-                    u10Var.setTranslationX((int) (measuredWidth - (u10Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
-                    u10Var.setTranslationY((int) (org.telegram.messenger.g0.L(61.0f) + measuredWidth2));
-                    u10Var.a(measuredWidth, measuredWidth2, 2);
+                    float L3 = org.telegram.messenger.g0.L(40.0f) / t10Var.getMeasuredWidth();
+                    t10Var.setTranslationX((int) (measuredWidth - (t10Var.getMeasuredWidth() * Math.max(L3, Math.min(measuredWidth3, 1.0f - L3)))));
+                    t10Var.setTranslationY((int) (org.telegram.messenger.g0.L(61.0f) + measuredWidth2));
+                    t10Var.a(measuredWidth, measuredWidth2, 2);
                     break;
                 } else {
                     float measuredWidth4 = measuredWidth / w7Var.getMeasuredWidth();
-                    float L4 = org.telegram.messenger.g0.L(40.0f) / u10Var.getMeasuredWidth();
-                    u10Var.setTranslationX((int) (measuredWidth - (u10Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
-                    u10Var.setTranslationY((int) ((measuredWidth2 - u10Var.getMeasuredHeight()) - org.telegram.messenger.g0.L(61.0f)));
-                    u10Var.a(measuredWidth, measuredWidth2, 3);
+                    float L4 = org.telegram.messenger.g0.L(40.0f) / t10Var.getMeasuredWidth();
+                    t10Var.setTranslationX((int) (measuredWidth - (t10Var.getMeasuredWidth() * Math.max(L4, Math.min(measuredWidth4, 1.0f - L4)))));
+                    t10Var.setTranslationY((int) ((measuredWidth2 - t10Var.getMeasuredHeight()) - org.telegram.messenger.g0.L(61.0f)));
+                    t10Var.a(measuredWidth, measuredWidth2, 3);
                     break;
                 }
                 break;
@@ -227,20 +227,20 @@ public final class h1 implements ViewTreeObserver.OnPreDrawListener {
                 ((fi.p5) obj).invalidate();
                 break;
             default:
-                m71 m71Var = (m71) ((x30) obj).b;
-                m71Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = m71Var.e;
+                l71 l71Var = (l71) ((w30) obj).b;
+                l71Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = l71Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    m71Var.e.setImageDrawable(null);
-                    Bitmap bitmap = m71Var.h;
+                    l71Var.e.setImageDrawable(null);
+                    Bitmap bitmap = l71Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        m71Var.h = null;
+                        l71Var.h = null;
                     }
                 }
-                org.telegram.messenger.g0.h3(new t51(this, i10));
-                m71Var.r = 0;
+                org.telegram.messenger.g0.h3(new s51(this, i10));
+                l71Var.r = 0;
                 break;
         }
         return true;

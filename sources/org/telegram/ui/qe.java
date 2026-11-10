@@ -1,69 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe implements Runnable {
+public final /* synthetic */ class qe implements org.telegram.messenger.u10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cn b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
 
-    public /* synthetic */ qe(cn cnVar, int i7, int i10) {
-        this.a = i10;
-        this.b = cnVar;
-        this.c = i7;
+    public /* synthetic */ qe(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = i7;
+        this.b = f2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.messenger.ij messageObject;
+    @Override // org.telegram.messenger.u10
+    public final Object run() {
+        org.telegram.ui.ActionBar.f2 f2Var;
         switch (this.a) {
             case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                f2Var = (cn) this.b;
                 break;
             case 1:
-                this.b.l(this.c, 0, false, 0, true, 0);
-                break;
-            case 2:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 3:
-                cn cnVar = this.b;
-                cj cjVar = cnVar.z0;
-                if (cjVar != null) {
-                    int childCount = cjVar.getChildCount();
-                    for (int i7 = 0; i7 < childCount; i7++) {
-                        View childAt = cnVar.z0.getChildAt(i7);
-                        if ((childAt instanceof org.telegram.ui.Cells.q1) && (messageObject = (q1Var = (org.telegram.ui.Cells.q1) childAt).getMessageObject()) != null && messageObject.T(cnVar.U3)) {
-                            q1Var.G3(this.c, true, true);
+                cn cnVar = (cn) this.b;
+                if (org.telegram.messenger.sc.e(65536) && org.telegram.ui.Components.dz0.c()) {
+                    org.telegram.ui.Components.dz0 dz0Var = cnVar.x0;
+                    if (dz0Var == null || dz0Var.e) {
+                        if (cnVar.getParentActivity() != null && org.telegram.ui.Components.dz0.c() && cnVar.z0 != null && cnVar.l1 != null) {
+                            org.telegram.ui.Components.dz0 dz0Var2 = cnVar.x0;
+                            if (dz0Var2 != null) {
+                                org.telegram.messenger.g0.E2(dz0Var2);
+                            }
+                            org.telegram.ui.Components.dz0 dz0Var3 = new org.telegram.ui.Components.dz0(cnVar.getParentActivity(), new oe(0, cnVar, r2));
+                            cnVar.x0 = dz0Var3;
+                            org.telegram.ui.Components.dz0[] dz0VarArr = {dz0Var3};
+                            ql qlVar = cnVar.l1;
+                            qlVar.addView(dz0Var3, qlVar.indexOfChild(cnVar.z0) + 1, c8.ha.c(-1.0f, -1));
                         }
                     }
+                    return cnVar.x0;
                 }
-                cnVar.U3 = null;
-                break;
-            case 4:
-                this.b.actionBar.getActionBarMenuOnItemClick().b(this.c);
-                break;
-            case 5:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 6:
-                cn.c0(this.b, this.c);
-                break;
-            case 7:
-                this.b.actionBar.setSubtitle(org.telegram.messenger.id.G(this.c, "messages", new Object[0]));
-                break;
-            case 8:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            case 9:
-                cn.O0(this.b, this.c);
-                break;
+                return null;
+            case 2:
+                ((cn) this.b).getClass();
+                return Boolean.valueOf(org.telegram.ui.Components.dz0.c() && org.telegram.messenger.sc.e(65536));
             default:
-                cn.d1(this.b, this.c);
+                f2Var = (ProfileActivity) this.b;
                 break;
         }
+        return f2Var.getSimpleMenuOverlay();
     }
 }

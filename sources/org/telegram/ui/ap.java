@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ap extends v4.g0 {
     public final /* synthetic */ Context c;
@@ -56,7 +56,7 @@ public final class ap extends v4.g0 {
             }
         }
         org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-        org.telegram.ui.ActionBar.s6.U(z8Var.getTextView(), org.telegram.ui.ActionBar.l6.B6, null);
+        org.telegram.ui.ActionBar.t6.U(z8Var.getTextView(), org.telegram.ui.ActionBar.m6.B6, null);
         int i11 = bpVar.s;
         if (i11 == 1) {
             z8Var.setText(org.telegram.messenger.id.M0(2131751147, null));
@@ -71,19 +71,19 @@ public final class ap extends v4.g0 {
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         Context context = this.c;
         if (i7 == 0) {
-            return new org.telegram.ui.Components.yi0(new org.telegram.ui.Cells.z8(context));
+            return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.z8(context));
         }
         if (i7 == 1) {
-            return new org.telegram.ui.Components.yi0(new org.telegram.ui.Cells.n4(context, 23));
+            return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.n4(context, 23));
         }
         if (i7 != 3) {
-            return new org.telegram.ui.Components.yi0(new org.telegram.ui.Cells.x(context, false, false));
+            return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.x(context, false, false));
         }
         FrameLayout frameLayout = new FrameLayout(context);
         bp bpVar = this.d;
         org.telegram.messenger.g0.E2(bpVar.r);
         frameLayout.addView(bpVar.r);
         frameLayout.setLayoutParams(new v4.o0(-1, -2));
-        return new org.telegram.ui.Components.yi0(frameLayout);
+        return new org.telegram.ui.Components.xi0(frameLayout);
     }
 }

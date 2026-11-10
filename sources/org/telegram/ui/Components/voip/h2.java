@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.de;
-import org.telegram.ui.ActionBar.o5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h2 extends FrameLayout {
     public TextView[] a;
@@ -33,7 +33,7 @@ public final class h2 extends FrameLayout {
         this.h = ofFloat;
         ofFloat.addUpdateListener(new de(19, view2, view));
         this.h.addListener(new jg.j0((FrameLayout) this, view, view2, (Object) runnable, 4));
-        this.h.setDuration(250L).setInterpolator(xq.f);
+        this.h.setDuration(250L).setInterpolator(wq.f);
         this.h.start();
     }
 
@@ -75,7 +75,7 @@ public final class h2 extends FrameLayout {
                 return;
             }
             textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new o5(this, 5));
+            a(textViewArr[0], textViewArr[1], new p5(this, 5));
         }
     }
 
@@ -85,7 +85,7 @@ public final class h2 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(xq.f).setListener(new g2(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(wq.f).setListener(new g2(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -95,7 +95,7 @@ public final class h2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            org.telegram.messenger.camera.q.l(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), xq.k, 300L);
+            org.telegram.messenger.camera.q.l(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), wq.k, 300L);
         }
     }
 

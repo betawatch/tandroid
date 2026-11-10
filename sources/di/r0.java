@@ -10,12 +10,12 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r0 extends FrameLayout {
     public final o0 a;
-    public final org.telegram.ui.Components.l9 b;
-    public final org.telegram.ui.Components.w8 c;
+    public final org.telegram.ui.Components.k9 b;
+    public final org.telegram.ui.Components.v8 c;
     public final ImageView d;
     public final p0 e;
     public t0 f;
@@ -27,11 +27,11 @@ public final class r0 extends FrameLayout {
         this.a = o0Var;
         o0Var.setOrientation(0);
         addView(o0Var, ha.d(-2, -2.0f, qs.E1, 0.0f, 0.0f, 6.0f, 0.0f));
-        this.c = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.b = l9Var;
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(11.0f));
-        o0Var.addView(l9Var, ha.q(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        this.c = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.b = k9Var;
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(11.0f));
+        o0Var.addView(k9Var, ha.q(22, 22, 0.0f, 51, 3, 2, 7, 2));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setVisibility(8);
@@ -49,16 +49,16 @@ public final class r0 extends FrameLayout {
     public void set(t0 t0Var) {
         this.f = t0Var;
         long j3 = t0Var.b;
-        org.telegram.ui.Components.l9 l9Var = this.b;
-        org.telegram.ui.Components.w8 w8Var = this.c;
+        org.telegram.ui.Components.k9 k9Var = this.b;
+        org.telegram.ui.Components.v8 v8Var = this.c;
         if (j3 >= 0) {
             TLRPC.User a22 = qp.s1(p10.s0).a2(Long.valueOf(t0Var.b));
-            w8Var.r(a22);
-            l9Var.e(a22, w8Var);
+            v8Var.r(a22);
+            k9Var.e(a22, v8Var);
         } else {
             TLRPC.Chat M0 = qp.s1(p10.s0).M0(Long.valueOf(-t0Var.b));
-            w8Var.q(M0);
-            l9Var.e(M0, w8Var);
+            v8Var.q(M0);
+            k9Var.e(M0, v8Var);
         }
         int i7 = t0Var.e;
         ImageView imageView = this.d;

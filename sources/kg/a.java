@@ -7,12 +7,12 @@ import org.telegram.messenger.a20;
 import org.telegram.messenger.id;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.s4;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
@@ -37,14 +37,14 @@ public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.messenger.a20
     public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        y31 y31Var = (y31) obj;
+        x31 x31Var = (x31) obj;
         final View view = (View) obj2;
         final c cVar = this.b;
-        if (cVar.c.h(y31Var)) {
+        if (cVar.c.h(x31Var)) {
             return;
         }
-        int i7 = y31Var.d;
-        if (i7 == 2 || y31Var.a == 17) {
+        int i7 = x31Var.d;
+        if (i7 == 2 || x31Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().e());
             bundle.putInt("chatMode", 5);
@@ -94,8 +94,8 @@ public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r
             cVar.a0(true);
         } else {
             if (i7 == 8) {
-                v4.x(cVar.getParentActivity(), id.M0(2131752823, null), id.M0(2131752825, null), cVar.E, new t4() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.t4
+                u4.x(cVar.getParentActivity(), id.M0(2131752823, null), id.M0(2131752825, null), cVar.E, new s4() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.s4
                     public final void L(int i12, int i13, boolean z9) {
                         switch (i11) {
                             case 0:
@@ -120,8 +120,8 @@ public final /* synthetic */ class a implements a20, org.telegram.ui.ActionBar.r
                 return;
             }
             if (i7 == 9) {
-                v4.x(cVar.getParentActivity(), id.M0(2131752826, null), id.M0(2131752825, null), cVar.F, new t4() { // from class: kg.b
-                    @Override // org.telegram.ui.Components.t4
+                u4.x(cVar.getParentActivity(), id.M0(2131752826, null), id.M0(2131752825, null), cVar.F, new s4() { // from class: kg.b
+                    @Override // org.telegram.ui.Components.s4
                     public final void L(int i12, int i13, boolean z9) {
                         switch (i10) {
                             case 0:

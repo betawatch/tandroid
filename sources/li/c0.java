@@ -10,9 +10,9 @@ import org.telegram.messenger.gu;
 import org.telegram.messenger.kv;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class c0 extends View {
     public final gu a;
@@ -29,9 +29,9 @@ public final class c0 extends View {
         this.b = i7;
         int i10 = f0Var.n;
         int e10 = jg.g.e(32.0f, org.telegram.messenger.g0.q.x, org.telegram.messenger.g0.L(240.0f));
-        g6 g6Var = f0Var.r;
+        h6 h6Var = f0Var.r;
         l2.a0 a0Var = new l2.a0(this, 4);
-        kv kvVar = new kv(i10, e10, g6Var);
+        kv kvVar = new kv(i10, e10, h6Var);
         SpannableStringBuilder l10 = kvVar.l(pageButton.text, kv.R(16, 13));
         TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
         gu guVar = new gu(kvVar, e10, l10, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, a0Var);

@@ -6,9 +6,9 @@ import org.telegram.messenger.hc;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.t5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h extends sh.d {
     public final TLRPC.Document b;
@@ -21,7 +21,7 @@ public final class h extends sh.d {
         ImageReceiver imageReceiver = this.a;
         boolean z9 = ij.u4(document) || ij.N4(document);
         ij.K2(document, true);
-        imageReceiver.p0(hc.b(document), "38_38", t5.f(document, l6.Zc, 1.0f, null), document.size, z9 ? "webp" : null, obj, 0);
+        imageReceiver.p0(hc.b(document), "38_38", t5.f(document, m6.Zc, 1.0f, null), document.size, z9 ? "webp" : null, obj, 0);
     }
 
     @Override // sh.d

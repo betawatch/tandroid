@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final class m4 implements Runnable {
                 s9 s9Var = (s9) this.b;
                 CameraView cameraView = s9Var.d;
                 if (cameraView != null && !s9Var.N && cameraView.getCameraSession() != null) {
-                    s9Var.f.post(new iq0(this, 17));
+                    s9Var.f.post(new jq0(this, 17));
                     break;
                 }
                 break;
@@ -92,29 +92,29 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 5:
-                a00 a00Var = (a00) this.b;
-                if (a00Var.M) {
-                    a00Var.f.clear();
-                    a00Var.n.clear();
-                    a00Var.r.clear();
-                    org.telegram.ui.Components.pj0 pj0Var = a00Var.d;
-                    if (pj0Var != null) {
-                        pj0Var.f();
+                b00 b00Var = (b00) this.b;
+                if (b00Var.M) {
+                    b00Var.f.clear();
+                    b00Var.n.clear();
+                    b00Var.r.clear();
+                    org.telegram.ui.Components.oj0 oj0Var = b00Var.d;
+                    if (oj0Var != null) {
+                        oj0Var.f();
                         break;
                     }
                 }
                 break;
             case 6:
-                e40 e40Var = ((q10) this.b).b;
-                e40Var.t1.setAnimation(e40Var.A2);
-                e40Var.C2 = false;
+                f40 f40Var = ((s10) this.b).b;
+                f40Var.w1.setAnimation(f40Var.D2);
+                f40Var.F2 = false;
                 break;
             case 7:
                 try {
-                    e40 e40Var2 = (e40) this.b;
-                    b20 b20Var = e40Var2.R3;
-                    if (b20Var != null && !b20Var.b && (g12 = e40Var2.g1()) != null && g12.isAttachedToWindow() && (renderer = g12.getRenderer()) != null && (uVar = renderer.a) != null) {
-                        e40.y5.postRunnable(new s10(0, this, uVar));
+                    f40 f40Var2 = (f40) this.b;
+                    c20 c20Var = f40Var2.U3;
+                    if (c20Var != null && !c20Var.b && (g12 = f40Var2.g1()) != null && g12.isAttachedToWindow() && (renderer = g12.getRenderer()) != null && (uVar = renderer.a) != null) {
+                        f40.B5.postRunnable(new f10(1, this, uVar));
                         break;
                     }
                 } catch (Exception e10) {
@@ -123,13 +123,13 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 8:
-                w50 w50Var = (w50) this.b;
+                x50 x50Var = (x50) this.b;
                 try {
-                    int x02 = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.d6, false);
-                    v50 v50Var = w50Var.I;
-                    if (v50Var != null && w50Var.fragmentView != null && w50Var.O != x02) {
-                        w50Var.O = x02;
-                        v50Var.postRunnable(new org.telegram.ui.Components.r2(v50Var, x02, 16));
+                    int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.d6, false);
+                    w50 w50Var = x50Var.I;
+                    if (w50Var != null && x50Var.fragmentView != null && x50Var.O != x02) {
+                        x50Var.O = x02;
+                        w50Var.postRunnable(new org.telegram.ui.Components.q2(w50Var, x02, 16));
                         break;
                     }
                 } catch (Exception e11) {
@@ -138,43 +138,43 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 9:
-                if (((v50) this.b).h) {
+                if (((w50) this.b).h) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    v50 v50Var2 = (v50) this.b;
-                    if (v50Var2.e.equals(v50Var2.b.eglGetCurrentContext())) {
-                        v50 v50Var3 = (v50) this.b;
+                    w50 w50Var2 = (w50) this.b;
+                    if (w50Var2.e.equals(w50Var2.b.eglGetCurrentContext())) {
+                        w50 w50Var3 = (w50) this.b;
                         break;
                     }
-                    v50 v50Var4 = (v50) this.b;
-                    EGL10 egl10 = v50Var4.b;
-                    EGLDisplay eGLDisplay = v50Var4.c;
-                    EGLSurface eGLSurface = v50Var4.f;
-                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, v50Var4.e)) {
+                    w50 w50Var4 = (w50) this.b;
+                    EGL10 egl10 = w50Var4.b;
+                    EGLDisplay eGLDisplay = w50Var4.c;
+                    EGLSurface eGLSurface = w50Var4.f;
+                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, w50Var4.e)) {
                         if (org.telegram.messenger.r2.a) {
-                            org.telegram.messenger.camera.q.t(((v50) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.camera.q.t(((w50) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }
-                    int min = (int) Math.min(currentTimeMillis - ((v50) this.b).s, 16L);
-                    Intro.setPage(((v50) this.b).y.H);
+                    int min = (int) Math.min(currentTimeMillis - ((w50) this.b).s, 16L);
+                    Intro.setPage(((w50) this.b).y.H);
                     Intro.setDate((currentTimeMillis - r3.J) / 1000.0f);
                     Intro.onDrawFrame(min);
-                    v50 v50Var5 = (v50) this.b;
-                    v50Var5.b.eglSwapBuffers(v50Var5.c, v50Var5.f);
-                    v50 v50Var6 = (v50) this.b;
-                    v50Var6.s = currentTimeMillis;
+                    w50 w50Var5 = (w50) this.b;
+                    w50Var5.b.eglSwapBuffers(w50Var5.c, w50Var5.f);
+                    w50 w50Var6 = (w50) this.b;
+                    w50Var6.s = currentTimeMillis;
                     float f10 = 0.0f;
-                    if (v50Var6.r == 0.0f) {
+                    if (w50Var6.r == 0.0f) {
                         for (float f11 : ((WindowManager) org.telegram.messenger.t0.b.getSystemService("window")).getDefaultDisplay().getSupportedRefreshRates()) {
                             if (f11 > f10) {
                                 f10 = f11;
                             }
                         }
-                        ((v50) this.b).r = f10;
+                        ((w50) this.b).r = f10;
                     }
                     long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
-                    v50 v50Var7 = (v50) this.b;
-                    v50Var7.postRunnable(v50Var7.x, Math.max(((long) (1000.0f / v50Var7.r)) - currentTimeMillis2, 0L));
+                    w50 w50Var7 = (w50) this.b;
+                    w50Var7.postRunnable(w50Var7.x, Math.max(((long) (1000.0f / w50Var7.r)) - currentTimeMillis2, 0L));
                     break;
                 }
                 break;
@@ -199,27 +199,27 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 11:
-                sc0 sc0Var = (sc0) this.b;
-                if (sc0Var.h == this) {
-                    sc0Var.n();
-                    org.telegram.messenger.g0.i3(sc0Var.h, 1000L);
+                uc0 uc0Var = (uc0) this.b;
+                if (uc0Var.h == this) {
+                    uc0Var.n();
+                    org.telegram.messenger.g0.i3(uc0Var.h, 1000L);
                     break;
                 }
                 break;
             case 12:
-                ((lg0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                ((mg0) this.b).T.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 13:
-                sg0 sg0Var = (sg0) this.b;
-                String str = sg0Var.b2;
+                tg0 tg0Var = (tg0) this.b;
+                String str = tg0Var.e2;
                 if (str != null) {
-                    if (sg0Var.e2 >= 0) {
-                        ConnectionsManager.getInstance(sg0Var.a).cancelRequest(sg0Var.e2, true);
-                        sg0Var.e2 = -1;
+                    if (tg0Var.h2 >= 0) {
+                        ConnectionsManager.getInstance(tg0Var.a).cancelRequest(tg0Var.h2, true);
+                        tg0Var.h2 = -1;
                     }
-                    Boolean bool = sg0Var.j2;
+                    Boolean bool = tg0Var.m2;
                     boolean z9 = bool != null && bool.booleanValue();
-                    org.telegram.ui.Components.fx fxVar = new org.telegram.ui.Components.fx(14, sg0Var, str);
+                    org.telegram.ui.Components.ex exVar = new org.telegram.ui.Components.ex(14, tg0Var, str);
                     int i10 = org.telegram.messenger.p10.s0;
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = org.telegram.messenger.g5.r(i10).e0;
@@ -259,17 +259,17 @@ public final class m4 implements Runnable {
                             }
                         }
                     }
-                    fxVar.a(arrayList);
+                    exVar.a(arrayList);
                     break;
                 }
                 break;
             case 14:
-                rr0 rr0Var = (rr0) this.b;
-                m4 m4Var = rr0Var.y0;
-                org.telegram.ui.Cells.a6 a6Var = rr0Var.b0;
+                sr0 sr0Var = (sr0) this.b;
+                m4 m4Var = sr0Var.y0;
+                org.telegram.ui.Cells.a6 a6Var = sr0Var.b0;
                 if (a6Var != null) {
                     EditTextBoldCursor editField = a6Var.getEditField();
-                    if (!rr0Var.U && editField != null && rr0Var.T && !rr0Var.Y && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
+                    if (!sr0Var.U && editField != null && sr0Var.T && !sr0Var.Y && !org.telegram.messenger.g0.D && !org.telegram.messenger.g0.E && org.telegram.messenger.g0.Q1()) {
                         editField.requestFocus();
                         org.telegram.messenger.g0.K3(editField);
                         org.telegram.messenger.g0.r(m4Var);
@@ -279,21 +279,21 @@ public final class m4 implements Runnable {
                 }
                 break;
             case 15:
-                ((d51) this.b).a0.animate().alpha(1.0f).setDuration(230L);
+                ((e51) this.b).a0.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 16:
-                o81 o81Var = (o81) this.b;
-                o81Var.F.setVisibility(0);
-                o81Var.F.setAlpha(0.0f);
-                o81Var.F.animate().alpha(1.0f).start();
+                p81 p81Var = (p81) this.b;
+                p81Var.F.setVisibility(0);
+                p81Var.F.setAlpha(0.0f);
+                p81Var.F.animate().alpha(1.0f).start();
                 break;
             default:
-                cd1 cd1Var = (cd1) this.b;
-                org.telegram.messenger.ij ijVar = cd1Var.n;
-                if (ijVar != null && cd1Var.getParentActivity() != null && cd1Var.s != null) {
-                    i7 = ((org.telegram.ui.ActionBar.f2) cd1Var).currentAccount;
+                dd1 dd1Var = (dd1) this.b;
+                org.telegram.messenger.ij ijVar = dd1Var.n;
+                if (ijVar != null && dd1Var.getParentActivity() != null && dd1Var.s != null) {
+                    i7 = ((org.telegram.ui.ActionBar.f2) dd1Var).currentAccount;
                     org.telegram.messenger.qp.s1(i7).C4(6, 0, org.telegram.messenger.ij.B0(ijVar.k), 0L, null);
-                    org.telegram.messenger.g0.i3(cd1Var.s, 25000L);
+                    org.telegram.messenger.g0.i3(dd1Var.s, 25000L);
                     break;
                 }
                 break;

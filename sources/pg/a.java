@@ -1,8 +1,8 @@
 package pg;
 
-import org.telegram.ui.Components.l6;
+import org.telegram.ui.Components.k6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a {
     public final CharSequence a;
@@ -10,7 +10,7 @@ public final class a {
     public final Runnable c;
     public final float d;
     public final float e;
-    public final l6 f;
+    public final k6 f;
 
     public a(String str, Runnable runnable) {
         this.a = str;
@@ -21,10 +21,10 @@ public final class a {
         this.a = str;
     }
 
-    public a(String str, float f10, float f11, l6 l6Var) {
+    public a(String str, float f10, float f11, k6 k6Var) {
         this.a = str;
         this.d = f10;
         this.e = f11;
-        this.f = l6Var;
+        this.f = k6Var;
     }
 }

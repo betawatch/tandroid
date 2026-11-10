@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.location.Location;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ok implements t4 {
+public final /* synthetic */ class ok implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wk b;
-    public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
+    public final /* synthetic */ vk b;
 
-    public /* synthetic */ ok(wk wkVar, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, int i7) {
+    public /* synthetic */ ok(vk vkVar, int i7) {
         this.a = i7;
-        this.b = wkVar;
-        this.c = tL_messageMediaVenue;
+        this.b = vkVar;
     }
 
-    @Override // org.telegram.ui.Components.t4
-    public final void L(int i7, int i10, boolean z9) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                wk wkVar = this.b;
-                wkVar.n0.d(this.c, wkVar.o0, z9, i7, 0L);
-                wkVar.b.a(true);
+                vk.Z(this.b, (org.telegram.messenger.fa) obj);
                 break;
             default:
-                wk wkVar2 = this.b;
-                wkVar2.n0.d(this.c, wkVar2.o0, z9, i7, 0L);
-                wkVar2.b.a(true);
+                vk.W(this.b, (Location) obj);
                 break;
         }
     }

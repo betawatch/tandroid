@@ -8,9 +8,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class rk extends org.telegram.ui.Components.l9 {
+public final class rk extends org.telegram.ui.Components.k9 {
     public final /* synthetic */ int G = 0;
     public Object H;
     public Object I;
@@ -27,7 +27,7 @@ public final class rk extends org.telegram.ui.Components.l9 {
                 xh.f fVar = (xh.f) this.I;
                 Path path = (Path) this.H;
                 super.draw(canvas);
-                if (((org.telegram.ui.Components.zn) this.J).h) {
+                if (((org.telegram.ui.Components.yn) this.J).h) {
                     path.rewind();
                     RectF rectF = org.telegram.messenger.g0.P;
                     ImageReceiver imageReceiver = this.a;
@@ -50,7 +50,7 @@ public final class rk extends org.telegram.ui.Components.l9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.G) {
             case 0:
@@ -93,9 +93,9 @@ public final class rk extends org.telegram.ui.Components.l9 {
             case 2:
                 org.telegram.ui.Components.voip.n nVar = (org.telegram.ui.Components.voip.n) this.I;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.p40 p40Var = (org.telegram.ui.Components.p40) this.J;
-                if (p40Var.w0) {
-                    int i7 = p40Var.W0;
+                org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) this.J;
+                if (o40Var.w0) {
+                    int i7 = o40Var.W0;
                     nVar.f = i7;
                     RectF rectF2 = org.telegram.messenger.g0.P;
                     float f14 = i7;
@@ -111,7 +111,7 @@ public final class rk extends org.telegram.ui.Components.l9 {
             case 3:
                 org.telegram.ui.Components.voip.n nVar2 = (org.telegram.ui.Components.voip.n) this.I;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.o40) this.J).m0) {
+                if (((org.telegram.ui.Components.n40) this.J).m0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = org.telegram.messenger.g0.P;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -127,25 +127,25 @@ public final class rk extends org.telegram.ui.Components.l9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rk(org.telegram.ui.Components.zn znVar, Context context, xh.f fVar) {
+    public rk(org.telegram.ui.Components.yn ynVar, Context context, xh.f fVar) {
         super(context);
-        this.J = znVar;
+        this.J = ynVar;
         this.I = fVar;
         this.H = new Path();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rk(org.telegram.ui.Components.n40 n40Var, Context context, Paint paint) {
+        super(context);
+        this.J = n40Var;
+        this.H = paint;
+        this.I = new org.telegram.ui.Components.voip.n();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public rk(org.telegram.ui.Components.o40 o40Var, Context context, Paint paint) {
         super(context);
         this.J = o40Var;
-        this.H = paint;
-        this.I = new org.telegram.ui.Components.voip.n();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rk(org.telegram.ui.Components.p40 p40Var, Context context, Paint paint) {
-        super(context);
-        this.J = p40Var;
         this.H = paint;
         this.I = new org.telegram.ui.Components.voip.n();
     }

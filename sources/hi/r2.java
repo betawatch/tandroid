@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class r2 extends b4 {
     public final /* synthetic */ int c0;
@@ -54,7 +54,7 @@ public final class r2 extends b4 {
                         }
                         size = View.MeasureSpec.getSize(i10);
                         if (!a3Var.e0) {
-                            size = (size - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                            size = (size - org.telegram.messenger.g0.m) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
                         }
                         if (w2Var != null && w2Var.getTotalHeight() > 0) {
                             size -= w2Var.getTotalHeight();
@@ -85,7 +85,7 @@ public final class r2 extends b4 {
                 }
                 super.onMeasure(i7, org.telegram.messenger.camera.q.B(24.0f, size, TLObject.FLAG_30));
             default:
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((c4) this.d0).N, TLObject.FLAG_30));
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i10) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(84.0f)) + ((c4) this.d0).N, TLObject.FLAG_30));
                 break;
         }
     }
@@ -117,7 +117,7 @@ public final class r2 extends b4 {
                 }
                 FrameLayout frameLayout = a3Var.q0;
                 if (frameLayout != null) {
-                    frameLayout.setTranslationY(a3Var.x.getTranslationY() + org.telegram.messenger.g0.W1(a3Var.g0, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(70.0f) + a3Var.n.top));
+                    frameLayout.setTranslationY(a3Var.x.getTranslationY() + org.telegram.messenger.g0.W1(a3Var.g0, org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(70.0f) + a3Var.n.top));
                     break;
                 }
                 break;

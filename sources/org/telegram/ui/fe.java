@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fe implements org.telegram.ui.Components.q40, org.telegram.ui.Components.t40, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.on, org.telegram.messenger.qr, org.telegram.ui.Components.ph0, ResultCallback, oi.m, yh.c, lh.a, lh.b, t40, or, org.telegram.ui.Components.ej0 {
+public final /* synthetic */ class fe implements org.telegram.ui.Components.p40, org.telegram.ui.Components.s40, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.nn, org.telegram.messenger.qr, org.telegram.ui.Components.oh0, ResultCallback, oi.m, yh.c, lh.a, lh.b, u40, pr, org.telegram.ui.Components.dj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cn b;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         this.b = cnVar;
     }
 
-    @Override // org.telegram.ui.or
+    @Override // org.telegram.ui.pr
     public void a() {
         cn cnVar = this.b;
         if (cnVar.M3 != null || cnVar.getParentActivity() == null) {
@@ -29,7 +29,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         cnVar.M3.m(cnVar.j6, cnVar.f, 8);
     }
 
-    @Override // org.telegram.ui.Components.on
+    @Override // org.telegram.ui.Components.nn
     public void b(TLRPC.Document document) {
         switch (this.a) {
             case 4:
@@ -41,7 +41,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         }
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.dj0
     public boolean c(int i7, View view) {
         cn cnVar = this.b;
         boolean z9 = false;
@@ -55,7 +55,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
                 Object J = cnVar.W1.getAdapter().J(i7 - 1);
                 if (J instanceof jg.f1) {
                     jg.f1 f1Var = (jg.f1) J;
-                    if (cnVar.W1.getAdapter().J != null && org.telegram.ui.Components.z31.h) {
+                    if (cnVar.W1.getAdapter().J != null && org.telegram.ui.Components.y31.h) {
                         cnVar.Z.setFieldText("");
                         sj sjVar = cnVar.Z;
                         String str = f1Var.a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
                         cnVar.showDialog(u1Var);
                         return true;
                     }
-                    if (org.telegram.ui.Components.z31.h) {
+                    if (org.telegram.ui.Components.y31.h) {
                         cnVar.Z.setFieldText("");
                         sj sjVar2 = cnVar.Z;
                         String str2 = (String) J;
@@ -101,7 +101,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         cnVar.a1.i(cnVar.Aa.b(), z9, z10);
     }
 
-    @Override // org.telegram.ui.t40
+    @Override // org.telegram.ui.u40
     public void f(int i7, ArrayList arrayList) {
         cn cnVar = this.b;
         cnVar.getMessagesController().o(cnVar.e, cnVar, arrayList, i7, null, null, null);
@@ -161,9 +161,9 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
                 adapter.x.c();
                 adapter.I.clear();
                 adapter.f();
-                org.telegram.ui.Components.c90 c90Var = adapter.V;
-                if (c90Var != null) {
-                    c90Var.a(false);
+                org.telegram.ui.Components.b90 b90Var = adapter.V;
+                if (b90Var != null) {
+                    b90Var.a(false);
                     break;
                 }
                 break;
@@ -234,7 +234,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         }
     }
 
-    @Override // org.telegram.ui.Components.ph0
+    @Override // org.telegram.ui.Components.oh0
     public void j(ArrayList arrayList) {
         switch (this.a) {
             case 11:
@@ -284,10 +284,10 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) obj;
+        org.telegram.ui.ActionBar.s3 s3Var = (org.telegram.ui.ActionBar.s3) obj;
         cn cnVar = this.b;
         an anVar = cnVar.za;
-        anVar.r(r3Var, anVar.g, cnVar.f6 != 0, null, false);
+        anVar.r(s3Var, anVar.g, cnVar.f6 != 0, null, false);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -300,7 +300,7 @@ public final /* synthetic */ class fe implements org.telegram.ui.Components.q40,
         org.telegram.tgnet.k.b(this, tL_error);
     }
 
-    @Override // org.telegram.ui.t40
+    @Override // org.telegram.ui.u40
     public /* synthetic */ void e(TLRPC.User user) {
     }
 }

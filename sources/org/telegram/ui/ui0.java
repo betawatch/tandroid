@@ -1,77 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ui0 implements org.telegram.ui.ActionBar.r1, rs, sj0 {
+public final /* synthetic */ class ui0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+    public final /* synthetic */ ek0 b;
 
-    public /* synthetic */ ui0(dk0 dk0Var, int i7) {
+    public /* synthetic */ ui0(ek0 ek0Var, int i7) {
         this.a = i7;
-        this.b = dk0Var;
+        this.b = ek0Var;
     }
 
-    @Override // org.telegram.ui.sj0
-    public void a(String str, String str2) {
-        this.b.B1();
-    }
-
-    @Override // org.telegram.ui.rs
-    public void b(os osVar) {
-        switch (this.a) {
-            case 2:
-                dk0 dk0Var = this.b;
-                dk0Var.Y[5].setText(osVar.a);
-                dk0Var.s = osVar.d;
-                break;
-            default:
-                dk0 dk0Var2 = this.b;
-                dk0Var2.Y[0].setText(osVar.a);
-                if (dk0Var2.U0.indexOf(osVar.a) != -1) {
-                    dk0Var2.Z0 = true;
-                    String str = (String) dk0Var2.V0.get(osVar.a);
-                    dk0Var2.Y[1].setText(str);
-                    String str2 = (String) dk0Var2.X0.get(str);
-                    dk0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    dk0Var2.Z0 = false;
-                }
-                org.telegram.messenger.g0.i3(new ri0(dk0Var2, 3), 300L);
-                dk0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = dk0Var2.Y[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        switch (this.a) {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        int i7 = this.a;
+        int i10 = 2;
+        int i11 = 3;
+        ek0 ek0Var = this.b;
+        switch (i7) {
             case 0:
-                dk0 dk0Var = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    dk0Var.getParentActivity().startActivity(intent);
+                if (ek0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ts tsVar = new ts(null, false);
+                        tsVar.r = new su(28, ek0Var, view);
+                        ek0Var.presentFragment(tsVar);
+                    }
                     break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
                 }
+                break;
             case 1:
-                this.b.finishFragment();
+                if (ek0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ek0Var.getParentActivity());
+                        String M0 = org.telegram.messenger.id.M0(2131747466, null);
+                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                        u1Var.R = M0;
+                        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.id.M0(2131747508, null), org.telegram.messenger.id.M0(2131747569, null)}, new k4(ek0Var, i11));
+                        alertDialog$Builder.k(org.telegram.messenger.id.M0(2131752589, null), null);
+                        ek0Var.showDialog(u1Var);
+                    }
+                    break;
+                }
                 break;
             case 2:
-            case 3:
-            default:
-                dk0.f0(this.b);
+                if (ek0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ts tsVar2 = new ts(null, false);
+                        tsVar2.r = new vi0(ek0Var, i10);
+                        ek0Var.presentFragment(tsVar2);
+                    }
+                    break;
+                }
                 break;
-            case 4:
-                vf.c.t(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.p10.i(this.b.currentAccount).d());
+            default:
+                if (ek0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        ts tsVar3 = new ts(null, false);
+                        tsVar3.r = new vi0(ek0Var, i11);
+                        ek0Var.presentFragment(tsVar3);
+                    }
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

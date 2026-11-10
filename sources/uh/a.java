@@ -14,11 +14,11 @@ import bg.s;
 import jg.g;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a extends c implements te.b {
     public final te.a d;
@@ -29,15 +29,15 @@ public final class a extends c implements te.b {
     public int r;
     public int s;
 
-    public a(Context context, g6 g6Var) {
-        super(g6Var);
-        this.d = new te.a(0, this, xq.h, 320L, false);
+    public a(Context context, h6 h6Var) {
+        super(h6Var);
+        this.d = new te.a(0, this, wq.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = g.h(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
-        this.h = new TextPaint(l6.P2);
-        int w02 = l6.w0(l6.i6, g6Var);
+        this.h = new TextPaint(m6.P2);
+        int w02 = m6.w0(m6.i6, h6Var);
         if (this.b != w02) {
-            l6.H1(this.a, w02, false);
+            m6.H1(this.a, w02, false);
             this.b = w02;
         }
         b();

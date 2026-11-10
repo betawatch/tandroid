@@ -10,14 +10,14 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y7 extends View {
     public Paint a;
     public boolean b;
     public ra c;
-    public org.telegram.ui.Components.w5 d;
-    public org.telegram.ui.Components.w5 e;
+    public org.telegram.ui.Components.v5 d;
+    public org.telegram.ui.Components.v5 e;
     public float f;
 
     public final void a(boolean z9) {
@@ -76,15 +76,15 @@ public final class y7 extends View {
     public final void onDraw(Canvas canvas) {
         Paint paint = this.a;
         super.onDraw(canvas);
-        org.telegram.ui.Components.w5 w5Var = this.e;
-        w5Var.e(false, this.f);
-        org.telegram.ui.Components.w5 w5Var2 = this.d;
-        w5Var2.e(false, this.b ? 1.0f : 0.0f);
-        if (w5Var2.c != 0.0f) {
+        org.telegram.ui.Components.v5 v5Var = this.e;
+        v5Var.e(false, this.f);
+        org.telegram.ui.Components.v5 v5Var2 = this.d;
+        v5Var2.e(false, this.b ? 1.0f : 0.0f);
+        if (v5Var2.c != 0.0f) {
             float measuredHeight = getMeasuredHeight() / 2.0f;
-            paint.setAlpha((int) (w5Var2.c * 255.0f));
+            paint.setAlpha((int) (v5Var2.c * 255.0f));
             RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(0.0f, 0.0f, getMeasuredWidth() * w5Var.c, getMeasuredHeight());
+            rectF.set(0.0f, 0.0f, getMeasuredWidth() * v5Var.c, getMeasuredHeight());
             canvas.drawRoundRect(rectF, measuredHeight, measuredHeight, paint);
         }
     }

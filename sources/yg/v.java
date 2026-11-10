@@ -5,31 +5,31 @@ import android.view.View;
 import android.widget.FrameLayout;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.vt0;
 import org.telegram.ui.Components.wt0;
-import org.telegram.ui.Components.xt0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
-    public final xt0 a;
+    public final wt0 a;
     public final View b;
 
-    public v(Context context, g6 g6Var) {
+    public v(Context context, h6 h6Var) {
         super(context);
         View view = new View(context);
         this.b = view;
         addView(view, ha.o(-1, -1));
-        s6.h(l6.h5, view, g6Var);
-        xt0 xt0Var = new xt0(context, g6Var);
-        this.a = xt0Var;
-        addView(xt0Var, ha.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-        s6.Z(this, getContext(), R.drawable.greydivider_top, l6.b7);
+        t6.h(m6.h5, view, h6Var);
+        wt0 wt0Var = new wt0(context, h6Var);
+        this.a = wt0Var;
+        addView(wt0Var, ha.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        t6.Z(this, getContext(), R.drawable.greydivider_top, m6.b7);
     }
 
-    public void setCallBack(wt0 wt0Var) {
-        this.a.setCallback(wt0Var);
+    public void setCallBack(vt0 vt0Var) {
+        this.a.setCallback(vt0Var);
     }
 }

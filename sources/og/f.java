@@ -20,9 +20,9 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -57,7 +57,7 @@ public final class f extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_photo_flip);
-        imageView.setBackgroundDrawable(l6.h0(1090519039, 1, -1));
+        imageView.setBackgroundDrawable(m6.h0(1090519039, 1, -1));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         final int i10 = 0;
@@ -103,7 +103,7 @@ public final class f extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
-        imageView2.setBackgroundDrawable(l6.h0(1090519039, 1, -1));
+        imageView2.setBackgroundDrawable(m6.h0(1090519039, 1, -1));
         imageView2.setScaleType(scaleType);
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: og.d
             public final /* synthetic */ f b;
@@ -147,7 +147,7 @@ public final class f extends FrameLayout {
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
-        imageView3.setBackgroundDrawable(l6.h0(1090519039, 1, -1));
+        imageView3.setBackgroundDrawable(m6.h0(1090519039, 1, -1));
         imageView3.setScaleType(scaleType);
         final int i11 = 2;
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: og.d
@@ -326,11 +326,11 @@ public final class f extends FrameLayout {
     }
 
     public void setMirrored(boolean z9) {
-        this.e.setColorFilter(z9 ? new PorterDuffColorFilter(l6.x0(null, l6.ng, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.e.setColorFilter(z9 ? new PorterDuffColorFilter(m6.x0(null, m6.ng, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setRotated(boolean z9) {
-        this.d.setColorFilter(z9 ? new PorterDuffColorFilter(l6.x0(null, l6.ng, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.d.setColorFilter(z9 ? new PorterDuffColorFilter(m6.x0(null, m6.ng, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setFreeform(boolean z9) {

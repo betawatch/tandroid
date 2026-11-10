@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import j$.util.Objects;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.v50;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class p0 implements View.OnApplyWindowInsetsListener {
     public final rh.d a;
@@ -113,7 +113,7 @@ public final class p0 implements View.OnApplyWindowInsetsListener {
                     j2.n nVar = new j2.n(i0.b.b(min, min2, min3, Math.min(i26, i27)), i0.b.b(Math.max(f12.a, f13.a), Math.max(i22, i23), Math.max(i24, i25), Math.max(i26, i27)), z10, 28);
                     q0.f(view, h, false);
                     duration.addUpdateListener(new o0(v0Var, h, k1Var2, i21, view));
-                    duration.addListener(new w50(v0Var, view, 19));
+                    duration.addListener(new v50(v0Var, view, 19));
                     o.a(view, new pa(view, v0Var, nVar, duration, 4));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {

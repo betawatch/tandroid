@@ -21,13 +21,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.kk0;
-import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.jk0;
+import org.telegram.ui.Components.k60;
 import org.telegram.ui.cn;
 import org.telegram.ui.ge;
-import org.telegram.ui.xy;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class m3 implements Runnable {
                             y10.e = true;
                             break;
                         } else {
-                            k7Var.c2.setLoading(false);
+                            k7Var.f2.setLoading(false);
                             ea.c0(k7Var.getContext(), k7Var.I0);
                             break;
                         }
@@ -92,12 +92,12 @@ public final /* synthetic */ class m3 implements Runnable {
                     qp.s1(k7Var.a).S3(tL_payments_paymentResult.updates.chats, false);
                     ea.y(k7Var.a, false).S(false);
                     ea.y(k7Var.a, false).O();
-                    if (!TextUtils.isEmpty(str) && (savedStarGift = k7Var.x2) != null) {
+                    if (!TextUtils.isEmpty(str) && (savedStarGift = k7Var.A2) != null) {
                         savedStarGift.flags &= -65537;
                         savedStarGift.prepaid_upgrade_hash = null;
                     }
-                    k7Var.j2 = true;
-                    k7Var.k3 = null;
+                    k7Var.m2 = true;
+                    k7Var.n3 = null;
                     k7Var.l1(inputSavedStarGift, tL_payments_paymentResult.updates, new b4(k7Var, str, i10));
                     Utilities.d.c(new c4(k7Var, tL_payments_paymentResult, i10));
                     break;
@@ -193,18 +193,18 @@ public final /* synthetic */ class m3 implements Runnable {
                 break;
             case 6:
                 cn cnVar = (cn) this.d;
-                l60 l60Var = (l60) this.c;
+                k60 k60Var = (k60) this.c;
                 long j14 = this.b;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) this.e;
                 ArrayList arrayList = (ArrayList) this.f;
-                kk0 kk0Var = (kk0) this.h;
-                l60Var.n0 = true;
+                jk0 jk0Var = (jk0) this.h;
+                k60Var.n0 = true;
                 Activity parentActivity = cnVar.getParentActivity();
                 long j15 = tL_messageEntityFormattedDate.date;
-                bg.e0 e0Var = new bg.e0(cnVar, arrayList, j14, kk0Var, 3);
-                ge geVar = new ge(kk0Var, i7);
-                Pattern pattern = org.telegram.ui.Components.v4.a;
-                org.telegram.ui.Components.v4.H(parentActivity, j14, j15, 0, true, e0Var, geVar, new org.telegram.ui.Components.s4(null), null);
+                bg.e0 e0Var = new bg.e0(cnVar, arrayList, j14, jk0Var, 3);
+                ge geVar = new ge(jk0Var, i7);
+                Pattern pattern = org.telegram.ui.Components.u4.a;
+                org.telegram.ui.Components.u4.H(parentActivity, j14, j15, 0, true, e0Var, geVar, new org.telegram.ui.Components.r4(null), null);
                 break;
             default:
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) this.d;
@@ -218,11 +218,11 @@ public final /* synthetic */ class m3 implements Runnable {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject5;
                         f2Var.getMessagesController().S3(tL_chatlists_exportedInvites.chats, false);
                         f2Var.getMessagesController().Y3(tL_chatlists_exportedInvites.users, false);
-                        new xy(f2Var, voVar, tL_chatlists_exportedInvites.invites).show();
+                        new yy(f2Var, voVar, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error2 == null || !"FILTER_ID_INVALID".equals(tL_error2.text) || voVar.e()) {
-                        org.telegram.messenger.k5.p(null, 2131743879, org.telegram.ui.Components.hc.a0(f2Var), null);
+                        org.telegram.messenger.k5.p(null, 2131743879, org.telegram.ui.Components.gc.a0(f2Var), null);
                     } else {
-                        new xy(f2Var, voVar, null).show();
+                        new yy(f2Var, voVar, null).show();
                     }
                     if (runnable2 != null) {
                         org.telegram.messenger.g0.i3(runnable2, Math.max(0L, 200 - (System.currentTimeMillis() - j16)));

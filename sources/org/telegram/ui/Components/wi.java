@@ -1,12 +1,27 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface wi {
-    void a(TLRPC.User user, boolean z9, int i7, long j3);
+public final /* synthetic */ class wi implements cj {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.d5 b;
 
-    void b(ArrayList arrayList, String str, boolean z9, int i7, long j3, boolean z10);
+    public /* synthetic */ wi(org.telegram.messenger.d5 d5Var, int i7) {
+        this.a = i7;
+        this.b = d5Var;
+    }
+
+    @Override // org.telegram.ui.Components.cj
+    public final String run() {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = this.b.e;
+                return arrayList.isEmpty() ? "" : pf.b.c().b((String) arrayList.get(0));
+            default:
+                ArrayList arrayList2 = this.b.e;
+                return arrayList2.isEmpty() ? "" : pf.b.c().b((String) arrayList2.get(0));
+        }
+    }
 }

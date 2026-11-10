@@ -5,9 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class rd extends AnimatorListenerAdapter {
     public final /* synthetic */ ch.m0 a;
@@ -30,9 +30,9 @@ public final class rd extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        t80 t80Var;
+        u80 u80Var;
         ce ceVar = this.h;
-        qd qdVar = ceVar.B1;
+        qd qdVar = ceVar.E1;
         qdVar.setVisibility(4);
         qdVar.setPaused(true);
         ch.m0 m0Var = this.a;
@@ -47,7 +47,7 @@ public final class rd extends AnimatorListenerAdapter {
         if (n0Var != null) {
             n0Var.setDrawStar(true);
         }
-        super/*org.telegram.ui.ActionBar.v2*/.K();
+        super/*org.telegram.ui.ActionBar.w2*/.K();
         boolean[] zArr = this.d;
         if (!zArr[0]) {
             zArr[0] = true;
@@ -63,9 +63,9 @@ public final class rd extends AnimatorListenerAdapter {
             }
         }
         LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null || (t80Var = launchActivity.v0) == null) {
+        if (launchActivity == null || (u80Var = launchActivity.v0) == null) {
             return;
         }
-        t80Var.c(true);
+        u80Var.c(true);
     }
 }

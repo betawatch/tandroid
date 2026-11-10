@@ -1,35 +1,37 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.id;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class m3 extends View {
-    public final /* synthetic */ n3 a;
+public final /* synthetic */ class m3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(n3 n3Var, Context context) {
-        super(context);
-        this.a = n3Var;
+    public /* synthetic */ m3(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+        this.a = i7;
+        this.b = f2Var;
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        n3 n3Var = this.a;
-        Bitmap bitmap = n3Var.G;
-        if (bitmap == null || bitmap.isRecycled()) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.f2 f2Var = this.b;
+        switch (i7) {
+            case 0:
+                f2Var.presentFragment(new z5());
+                break;
+            case 1:
+                z5.I0(f2Var.getContext(), f2Var.getResourceProvider());
+                break;
+            default:
+                if (gc.a(f2Var)) {
+                    gc.a0(f2Var).I(R.raw.contact_check, id.M0(2131743150, null), id.M0(2131743149, null)).j();
+                    break;
+                }
+                break;
         }
-        n3Var.D.set(0.0f, 0.0f, getWidth(), getHeight());
-        canvas.drawBitmap(n3Var.G, (Rect) null, n3Var.D, n3Var.y);
     }
 }

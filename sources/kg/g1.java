@@ -16,45 +16,45 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.m20;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.b80;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.a80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class g1 extends LinearLayout implements b6 {
-    public final g6 a;
-    public final b80 b;
+public final class g1 extends LinearLayout implements c6 {
+    public final h6 a;
+    public final a80 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
 
-    public g1(Context context, g6 g6Var) {
+    public g1(Context context, h6 h6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
-        this.a = g6Var;
+        this.a = h6Var;
         setOrientation(1);
-        b80 b80Var = new b80();
-        this.b = b80Var;
-        int i7 = l6.G6;
-        int w02 = l6.w0(i7, g6Var);
-        b80Var.g(l6.r1(0.05f, w02), l6.r1(0.15f, w02), l6.r1(0.1f, w02), l6.r1(0.3f, w02));
-        b80Var.k(4.0f);
-        b80Var.x.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
+        a80 a80Var = new a80();
+        this.b = a80Var;
+        int i7 = m6.G6;
+        int w02 = m6.w0(i7, h6Var);
+        a80Var.g(m6.r1(0.05f, w02), m6.r1(0.15f, w02), m6.r1(0.1f, w02), m6.r1(0.3f, w02));
+        a80Var.k(4.0f);
+        a80Var.x.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
         imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setGravity(id.a0 ? 5 : 3);
-        s6.U(textView, i7, g6Var);
+        t6.U(textView, i7, h6Var);
         textView.setTextSize(1, 16.0f);
         boolean z9 = id.a0;
         addView(textView, ha.t(-1, -2, 55, z9 ? 70 : 18, 10, z9 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(id.a0 ? 5 : 3);
-        org.telegram.messenger.camera.q.o(textView2, l6.z6, g6Var, null, 2131752689);
+        org.telegram.messenger.camera.q.o(textView2, m6.z6, h6Var, null, 2131752689);
         textView2.setTextSize(1, 13.0f);
         boolean z10 = id.a0;
         addView(textView2, ha.t(-1, -2, 55, z10 ? 70 : 18, 0, z10 ? 18 : 70, 8));
@@ -86,9 +86,9 @@ public final class g1 extends LinearLayout implements b6 {
         imageReceiver.h(canvas, null);
         super.onDraw(canvas);
         if (this.e) {
-            Paint W0 = l6.W0("paintDivider", this.a);
+            Paint W0 = m6.W0("paintDivider", this.a);
             if (W0 == null) {
-                W0 = l6.k0;
+                W0 = m6.k0;
             }
             canvas.drawRect(org.telegram.messenger.g0.L(id.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(id.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }
@@ -99,13 +99,13 @@ public final class g1 extends LinearLayout implements b6 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        b80 b80Var = this.b;
-        if (b80Var != null) {
+        a80 a80Var = this.b;
+        if (a80Var != null) {
             try {
-                int w02 = l6.w0(l6.G6, this.a);
-                b80Var.g(l6.r1(0.05f, w02), l6.r1(0.15f, w02), l6.r1(0.1f, w02), l6.r1(0.3f, w02));
+                int w02 = m6.w0(m6.G6, this.a);
+                a80Var.g(m6.r1(0.05f, w02), m6.r1(0.15f, w02), m6.r1(0.1f, w02), m6.r1(0.3f, w02));
                 invalidate();
             } catch (Exception e10) {
                 a8.g(e10, true);
@@ -118,7 +118,7 @@ public final class g1 extends LinearLayout implements b6 {
         return drawable == this.b || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

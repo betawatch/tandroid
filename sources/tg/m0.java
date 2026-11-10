@@ -27,10 +27,10 @@ import org.telegram.messenger.i6;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class m0 extends View {
     public final float D;
@@ -45,7 +45,7 @@ public class m0 extends View {
     public float M;
     public float N;
     public final RectF O;
-    public final w5 P;
+    public final v5 P;
     public int a;
     public String b;
     public boolean c;
@@ -74,7 +74,7 @@ public class m0 extends View {
         this.E = 1.0f;
         this.O = new RectF();
         new Path();
-        this.P = new w5(this, 350L, xq.h);
+        this.P = new v5(this, 350L, wq.h);
         this.D = f10;
         imageReceiver.A0 = true;
         imageReceiver.J0 = true;

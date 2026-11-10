@@ -33,26 +33,26 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l5;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a01;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.mb0;
-import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.lb0;
+import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.uo;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.Components.v8;
+import org.telegram.ui.Components.zz0;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r1, ni.p, ResultCallback {
+public final /* synthetic */ class n1 implements tw, org.telegram.ui.ActionBar.r1, ni.p, ResultCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -67,13 +67,13 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         this.b = i7;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         return false;
     }
 
@@ -185,19 +185,19 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        a01 a01Var = (a01) this.d;
+        zz0 zz0Var = (zz0) this.d;
         uo uoVar = (uo) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
             return;
         }
         Drawable drawable = uoVar.b;
-        if (drawable instanceof ra0) {
-            ra0 ra0Var = (ra0) drawable;
-            ra0Var.s(this.b >= 0 ? 100 : -100, a01.e((Bitmap) pair.second));
-            ra0Var.t(a01Var.L);
+        if (drawable instanceof qa0) {
+            qa0 qa0Var = (qa0) drawable;
+            qa0Var.s(this.b >= 0 ? 100 : -100, zz0.e((Bitmap) pair.second));
+            qa0Var.t(zz0Var.L);
         }
-        a01Var.invalidate();
+        zz0Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -209,23 +209,23 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
     /* JADX WARN: Type inference failed for: r4v18 */
     /* JADX WARN: Type inference failed for: r4v3 */
     /* JADX WARN: Type inference failed for: r4v4, types: [boolean, int] */
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         int i11;
         String str;
         TLRPC.User user;
         TLRPC.Chat chat;
         ?? r42;
         TLRPC.Chat chat2;
-        yw ywVar2 = (yw) this.d;
+        zw zwVar2 = (zw) this.d;
         final TL_bots.BotVerifierSettings botVerifierSettings = (TL_bots.BotVerifierSettings) this.e;
         if (arrayList.isEmpty()) {
             return false;
         }
         final long j3 = ((xr) arrayList.get(0)).a;
-        Activity parentActivity = ywVar2.getParentActivity();
+        Activity parentActivity = zwVar2.getParentActivity();
         final int i12 = this.b;
-        final o1 o1Var = new o1(y91Var, ywVar2, j3, i12);
+        final o1 o1Var = new o1(z91Var, zwVar2, j3, i12);
         if (parentActivity == null) {
             return true;
         }
@@ -260,7 +260,7 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
             r42 = 1;
             chat2 = M0;
         }
-        final org.telegram.ui.ActionBar.v2 h = org.telegram.messenger.camera.q.h(parentActivity, r42, r42, null);
+        final org.telegram.ui.ActionBar.w2 h = org.telegram.messenger.camera.q.h(parentActivity, r42, r42, null);
         LinearLayout e10 = k5.e(parentActivity, r42);
         TLRPC.User user2 = user;
         TLRPC.Chat chat3 = chat;
@@ -270,32 +270,32 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         FrameLayout frameLayout = new FrameLayout(parentActivity);
         int L = org.telegram.messenger.g0.L(28.0f);
         int L2 = org.telegram.messenger.g0.L(28.0f);
-        int i14 = l6.Qi;
-        ShapeDrawable e02 = l6.e0(L, L2, l6.x0(null, i14, false));
-        o6 M = s6.M(i14);
+        int i14 = m6.Qi;
+        ShapeDrawable e02 = m6.e0(L, L2, m6.x0(null, i14, false));
+        p6 M = t6.M(i14);
         frameLayout.setBackground(e02);
-        s6.j(frameLayout, e02, M, null, null);
-        l9 l9Var = new l9(parentActivity);
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
-        w8 w8Var = new w8((g6) null);
-        w8Var.l(chat2);
-        l9Var.e(chat2, w8Var);
-        frameLayout.addView(l9Var, ha.e(28, 28, 51));
-        l9 l9Var2 = new l9(parentActivity);
-        l9Var2.setEmojiColorFilter(new PorterDuffColorFilter(l6.x0(null, l6.z9, false), PorterDuff.Mode.SRC_IN));
-        l9Var2.setAnimatedEmojiDrawable(i5.m(i12, botVerifierSettings.icon, null, 3));
-        frameLayout.addView(l9Var2, ha.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
-        l5 l5Var = new l5(parentActivity);
-        s6.X(l5Var, l6.j5, null);
-        l5Var.setTextSize(13);
-        l5Var.setEllipsizeByGradient(true);
-        l5Var.l(str, false);
-        l5Var.setWidthWrapContent(true);
-        frameLayout.addView(l5Var, ha.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        t6.j(frameLayout, e02, M, null, null);
+        k9 k9Var = new k9(parentActivity);
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
+        v8 v8Var = new v8((h6) null);
+        v8Var.l(chat2);
+        k9Var.e(chat2, v8Var);
+        frameLayout.addView(k9Var, ha.e(28, 28, 51));
+        k9 k9Var2 = new k9(parentActivity);
+        k9Var2.setEmojiColorFilter(new PorterDuffColorFilter(m6.x0(null, m6.z9, false), PorterDuff.Mode.SRC_IN));
+        k9Var2.setAnimatedEmojiDrawable(h5.m(i12, botVerifierSettings.icon, null, 3));
+        frameLayout.addView(k9Var2, ha.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
+        m5 m5Var = new m5(parentActivity);
+        t6.X(m5Var, m6.j5, null);
+        m5Var.setTextSize(13);
+        m5Var.setEllipsizeByGradient(true);
+        m5Var.l(str, false);
+        m5Var.setWidthWrapContent(true);
+        frameLayout.addView(m5Var, ha.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
         e10.addView(frameLayout, ha.t(-2, -2, 1, 16, 0, 16, 0));
         TextView textView = new TextView(parentActivity);
-        int i15 = l6.G6;
-        s6.U(textView, i15, null);
+        int i15 = m6.G6;
+        t6.U(textView, i15, null);
         textView.setTextSize(1, 20.0f);
         textView.setGravity(17);
         if (t10.t(user2)) {
@@ -310,7 +310,7 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         textView.setTypeface(org.telegram.messenger.g0.o());
         e10.addView(textView, ha.k(24.0f, 21.0f, 24.0f, 8.33f, -1, -2));
         TextView textView2 = new TextView(parentActivity);
-        s6.U(textView2, i15, null);
+        t6.U(textView2, i15, null);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         qs.i(textView2);
@@ -318,11 +318,11 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         e10.addView(textView2, ha.k(24.0f, 0.0f, 24.0f, 22.0f, -1, -2));
         final int i16 = qp.s1(i12).j6;
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(parentActivity);
-        final mb0 mb0Var = new mb0(parentActivity, null);
-        mb0Var.setForceForceUseCenter(true);
-        mb0Var.setText(id.M0(2131752926, null));
-        mb0Var.setLeftPadding(org.telegram.messenger.g0.L(2.0f));
-        s6.U(editTextBoldCursor, i15, null);
+        final lb0 lb0Var = new lb0(parentActivity, null);
+        lb0Var.setForceForceUseCenter(true);
+        lb0Var.setText(id.M0(2131752926, null));
+        lb0Var.setLeftPadding(org.telegram.messenger.g0.L(2.0f));
+        t6.U(editTextBoldCursor, i15, null);
         editTextBoldCursor.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setBackground(null);
@@ -331,15 +331,15 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         editTextBoldCursor.setInputType(180225);
         editTextBoldCursor.setTypeface(Typeface.DEFAULT);
         editTextBoldCursor.setSelectAllOnFocus(true);
-        s6.C(editTextBoldCursor, l6.ig, null);
-        s6.l(editTextBoldCursor, 36, l6.jg, null);
+        t6.C(editTextBoldCursor, m6.ig, null);
+        t6.l(editTextBoldCursor, 36, m6.jg, null);
         editTextBoldCursor.setGravity(id.a0 ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new bb(mb0Var, editTextBoldCursor, 1));
-        mb0Var.e(editTextBoldCursor);
-        mb0Var.addView(editTextBoldCursor, ha.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
-        e10.addView(mb0Var, ha.o(-1, -2));
+        editTextBoldCursor.setOnFocusChangeListener(new bb(lb0Var, editTextBoldCursor, 1));
+        lb0Var.e(editTextBoldCursor);
+        lb0Var.addView(editTextBoldCursor, ha.d(-1, -2.0f, 48, 12.0f, 4.0f, 12.0f, 4.0f));
+        e10.addView(lb0Var, ha.o(-1, -2));
         editTextBoldCursor.addTextChangedListener(new org.telegram.ui.Cells.j3());
-        editTextBoldCursor.addTextChangedListener(new r1(editTextBoldCursor, i16, mb0Var));
+        editTextBoldCursor.addTextChangedListener(new r1(editTextBoldCursor, i16, lb0Var));
         TLRPC.TL_textWithEntities tL_textWithEntities = botVerifierSettings.custom_description;
         if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
             editTextBoldCursor.setText(botVerifierSettings.custom_description.text);
@@ -349,11 +349,11 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
                 editTextBoldCursor.setFocusableInTouchMode(false);
             }
         } else if (!botVerifierSettings.can_modify_custom_description) {
-            mb0Var.setVisibility(8);
+            lb0Var.setVisibility(8);
         }
         if (botVerifierSettings.can_modify_custom_description) {
             TextView textView3 = new TextView(parentActivity);
-            s6.U(textView3, l6.B6, null);
+            t6.U(textView3, m6.B6, null);
             textView3.setTextSize(1, 12.0f);
             textView3.setText(id.M0(i11 >= 0 ? 2131752925 : 2131752924, null));
             textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(27.0f));
@@ -376,9 +376,9 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
                 boolean z11 = botVerifierSettings2.can_modify_custom_description;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
                 if (z11 && editTextBoldCursor2.getText().length() > i16) {
-                    mb0 mb0Var2 = mb0Var;
-                    mb0Var2.a(1.0f);
-                    org.telegram.messenger.g0.G3(-6.0f, mb0Var2, null);
+                    lb0 lb0Var2 = lb0Var;
+                    lb0Var2.a(1.0f);
+                    org.telegram.messenger.g0.G3(-6.0f, lb0Var2, null);
                     return;
                 }
                 dVar2.setLoading(true);
@@ -428,9 +428,9 @@ public final /* synthetic */ class n1 implements sw, org.telegram.ui.ActionBar.r
         this.e = editText2;
     }
 
-    public /* synthetic */ n1(yw ywVar, int i7, long j3, TL_bots.BotVerifierSettings botVerifierSettings) {
+    public /* synthetic */ n1(zw zwVar, int i7, long j3, TL_bots.BotVerifierSettings botVerifierSettings) {
         this.a = 0;
-        this.d = ywVar;
+        this.d = zwVar;
         this.b = i7;
         this.c = j3;
         this.e = botVerifierSettings;

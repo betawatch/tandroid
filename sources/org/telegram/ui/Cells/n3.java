@@ -9,9 +9,9 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.u31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n3 {
     public boolean a;
@@ -37,23 +37,23 @@ public final class n3 {
                 String str2 = a22 == null ? "DELETED" : a22.first_name;
                 int Q0 = (int) ((org.telegram.messenger.g0.Q1() ? org.telegram.messenger.g0.Q0() : q1Var.getParentWidth()) * 0.4f);
                 String M0 = id.M0(2131750508, null);
-                TextPaint textPaint = org.telegram.ui.ActionBar.l6.X2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.m6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(M0 + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.l6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
+                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.m6.Y2, Q0 - ceil, TextUtils.TruncateAt.END);
                 String M02 = id.M0(2131750504, null);
                 int indexOf = M02.indexOf("%1$s");
                 String format = String.format(M02, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new v31(org.telegram.messenger.g0.o()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new u31(org.telegram.messenger.g0.o()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
                 }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.l6.Z2;
+                TextPaint textPaint2 = org.telegram.ui.ActionBar.m6.Z2;
                 int L = org.telegram.messenger.g0.L(10.0f) + ((int) (textPaint2.measureText(e10, 0, e10.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
                 this.b = new StaticLayout(e10, textPaint2, L, alignment, 1.0f, 0.0f, false);

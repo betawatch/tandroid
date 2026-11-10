@@ -39,15 +39,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Cells.m8;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.ht0;
-import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.tp0;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.qi0;
+import org.telegram.ui.Components.sp0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessListener, w10, ej0, org.telegram.ui.ActionBar.r1, ri0, a20, sg.k1, CameraController.VideoTakeCallback, ht0, h9.h1, f3.g, h2.o {
+public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessListener, w10, dj0, org.telegram.ui.ActionBar.r1, qi0, a20, sg.k1, CameraController.VideoTakeCallback, gt0, h9.h1, f3.g, h2.o {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -86,7 +86,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x005f  */
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.dj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -94,14 +94,14 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
         gf gfVar;
         switch (this.a) {
             case 7:
-                tp0 tp0Var = ((ei.n) this.b).W;
-                if (!tp0Var.G.E1 && (view instanceof org.telegram.ui.Cells.o7)) {
+                sp0 sp0Var = ((ei.n) this.b).W;
+                if (!sp0Var.G.E1 && (view instanceof org.telegram.ui.Cells.o7)) {
                     ij messageObject = ((org.telegram.ui.Cells.o7) view).getMessageObject();
-                    if (!tp0Var.c(messageObject)) {
-                        tp0Var.e(messageObject);
+                    if (!sp0Var.c(messageObject)) {
+                        sp0Var.e(messageObject);
                         break;
                     } else {
-                        tp0Var.g(messageObject);
+                        sp0Var.g(messageObject);
                         break;
                     }
                 }
@@ -157,15 +157,15 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
 
     @Override // org.telegram.messenger.w10
     public Object d(Number number, Object obj) {
-        tp0 tp0Var = (tp0) this.b;
+        sp0 sp0Var = (sp0) this.b;
         if (((Integer) number).intValue() != -1) {
             return Boolean.FALSE;
         }
-        new ei.q(tp0Var.a, id.M0(2131746693, null), new ai.i(tp0Var, 15)).show();
+        new ei.q(sp0Var.a, id.M0(2131746693, null), new ai.i(sp0Var, 15)).show();
         return Boolean.TRUE;
     }
 
-    @Override // org.telegram.ui.Components.ri0
+    @Override // org.telegram.ui.Components.qi0
     public void e() {
         ((fi.m1) this.b).invalidate();
     }
@@ -287,7 +287,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
         }
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.f1.c(recyclerView);
     }
@@ -300,9 +300,9 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
         switch (this.a) {
             case 12:
                 fi.n9 n9Var = (fi.n9) this.b;
-                y31 y31Var = (y31) obj;
-                int i12 = y31Var.d;
-                fi.e7 e7Var = (fi.e7) y31Var.G;
+                x31 x31Var = (x31) obj;
+                int i12 = x31Var.d;
+                fi.e7 e7Var = (fi.e7) x31Var.G;
                 n9Var.c(false, true);
                 va vaVar = n9Var.O;
                 if (e7Var != vaVar.K1 && !vaVar.X1) {
@@ -327,17 +327,17 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                 }
                 break;
             case 21:
-                hi.q.a0((hi.q) this.b, (y31) obj);
+                hi.q.a0((hi.q) this.b, (x31) obj);
                 break;
             case 22:
-                ((hi.p4) this.b).a0((y31) obj);
+                ((hi.p4) this.b).a0((x31) obj);
                 break;
             case 24:
                 kg.c1 c1Var = (kg.c1) this.b;
-                y31 y31Var2 = (y31) obj;
+                x31 x31Var2 = (x31) obj;
                 View view = (View) obj2;
                 float floatValue = ((Float) serializable).floatValue();
-                int i13 = y31Var2.d;
+                int i13 = x31Var2.d;
                 if (i13 == -1) {
                     boolean z9 = !c1Var.d;
                     c1Var.d = z9;
@@ -351,9 +351,9 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                     w1Var.c = new ai.f1(25, c1Var, view);
                     c1Var.presentFragment(w1Var);
                     break;
-                } else if (y31Var2.a == 5 && i13 >= 0 && i13 < c1Var.f.length) {
+                } else if (x31Var2.a == 5 && i13 >= 0 && i13 < c1Var.f.length) {
                     if (!id.a0 ? floatValue < view.getMeasuredWidth() - org.telegram.messenger.g0.L(76.0f) : floatValue > org.telegram.messenger.g0.L(76.0f)) {
-                        int i14 = (y31Var2.d + 6) % 7;
+                        int i14 = (x31Var2.d + 6) % 7;
                         int i15 = 0;
                         for (int i16 = 0; i16 < c1Var.f[i14].size(); i16++) {
                             if (((kg.b1) c1Var.f[i14].get(i16)).b > i15) {
@@ -361,7 +361,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                             }
                         }
                         int max = Math.max(0, i15 - 1439);
-                        int i17 = (y31Var2.d + 1) % 7;
+                        int i17 = (x31Var2.d + 1) % 7;
                         int i18 = 1440;
                         for (int i19 = 0; i19 < c1Var.f[i17].size(); i19++) {
                             if (((kg.b1) c1Var.f[i17].get(i19)).a < i18) {
@@ -369,8 +369,8 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                             }
                         }
                         int i20 = i18 + 1439;
-                        CharSequence charSequence = y31Var2.l;
-                        ArrayList arrayList = c1Var.f[y31Var2.d];
+                        CharSequence charSequence = x31Var2.l;
+                        ArrayList arrayList = c1Var.f[x31Var2.d];
                         int i21 = 0;
                         while (i11 < 7) {
                             ArrayList arrayList2 = c1Var.f[i11];
@@ -381,19 +381,19 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                         }
                         kg.e1 e1Var = new kg.e1(charSequence, arrayList, max, i20, 28 - i21);
                         e1Var.f = new fi.v9(c1Var, 26);
-                        e1Var.h = new ha.b(19, c1Var, y31Var2);
+                        e1Var.h = new ha.b(19, c1Var, x31Var2);
                         c1Var.presentFragment(e1Var);
                         break;
                     } else {
-                        if (c1Var.f[y31Var2.d].isEmpty()) {
+                        if (c1Var.f[x31Var2.d].isEmpty()) {
                             ((org.telegram.ui.Cells.h5) view).setChecked(true);
-                            c1Var.f[y31Var2.d].add(new kg.b1(0, 1439));
-                            c1Var.c0(y31Var2.d);
+                            c1Var.f[x31Var2.d].add(new kg.b1(0, 1439));
+                            c1Var.c0(x31Var2.d);
                         } else {
-                            c1Var.f[y31Var2.d].clear();
+                            c1Var.f[x31Var2.d].clear();
                             ((org.telegram.ui.Cells.h5) view).setChecked(false);
                         }
-                        ((org.telegram.ui.Cells.h5) view).setValue(kg.c1.f0(c1Var.f[y31Var2.d]));
+                        ((org.telegram.ui.Cells.h5) view).setValue(kg.c1.f0(c1Var.f[x31Var2.d]));
                         c1Var.d0(true);
                         break;
                     }
@@ -401,12 +401,12 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                 break;
             case 25:
                 final kg.e1 e1Var2 = (kg.e1) this.b;
-                y31 y31Var3 = (y31) obj;
+                x31 x31Var3 = (x31) obj;
                 final View view2 = (View) obj2;
                 int i22 = e1Var2.c;
                 int i23 = e1Var2.d;
                 ArrayList arrayList3 = e1Var2.b;
-                int i24 = y31Var3.d;
+                int i24 = x31Var3.d;
                 if (i24 == -1) {
                     e1Var2.r = !e1Var2.r;
                     arrayList3.clear();
@@ -415,10 +415,10 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                     }
                     org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view2;
                     boolean z10 = e1Var2.r;
-                    y31Var3.e = z10;
+                    x31Var3.e = z10;
                     r8Var.setChecked(z10);
                     boolean z11 = e1Var2.r;
-                    r8Var.b(org.telegram.ui.ActionBar.l6.x0(null, z11 ? org.telegram.ui.ActionBar.l6.f6 : org.telegram.ui.ActionBar.l6.e6, false), z11);
+                    r8Var.b(org.telegram.ui.ActionBar.m6.x0(null, z11 ? org.telegram.ui.ActionBar.m6.f6 : org.telegram.ui.ActionBar.m6.e6, false), z11);
                     e1Var2.n.f3.O(true);
                     fi.v9 v9Var = e1Var2.f;
                     if (v9Var != null) {
@@ -443,13 +443,13 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                     }
                     e1Var2.n.f3.O(true);
                     break;
-                } else if (y31Var3.a == 3 && (i7 = i24 / 3) >= 0 && i7 < arrayList3.size()) {
+                } else if (x31Var3.a == 3 && (i7 = i24 / 3) >= 0 && i7 < arrayList3.size()) {
                     int i26 = i7 - 1;
                     kg.b1 b1Var = i26 >= 0 ? (kg.b1) arrayList3.get(i26) : null;
                     final kg.b1 b1Var2 = (kg.b1) arrayList3.get(i7);
                     int i27 = i7 + 1;
                     kg.b1 b1Var3 = i27 < arrayList3.size() ? (kg.b1) arrayList3.get(i27) : null;
-                    int i28 = y31Var3.d % 3;
+                    int i28 = x31Var3.d % 3;
                     if (i28 == 0) {
                         Activity parentActivity = e1Var2.getParentActivity();
                         String M0 = id.M0(2131752750, null);
@@ -457,7 +457,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                         if (b1Var != null) {
                             i22 = b1Var.b + 1;
                         }
-                        org.telegram.ui.Components.v4.U(parentActivity, M0, i29, i22, b1Var2.b - 1, new c20() { // from class: kg.d1
+                        org.telegram.ui.Components.u4.U(parentActivity, M0, i29, i22, b1Var2.b - 1, new c20() { // from class: kg.d1
                             @Override // org.telegram.messenger.c20
                             public final void a(Object obj3) {
                                 Integer num = (Integer) obj3;
@@ -506,7 +506,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                         if (b1Var3 != null) {
                             i23 = b1Var3.a - 1;
                         }
-                        org.telegram.ui.Components.v4.U(parentActivity2, M02, i30, i31, i23, new c20() { // from class: kg.d1
+                        org.telegram.ui.Components.u4.U(parentActivity2, M02, i30, i31, i23, new c20() { // from class: kg.d1
                             @Override // org.telegram.messenger.c20
                             public final void a(Object obj3) {
                                 Integer num = (Integer) obj3;
@@ -562,7 +562,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
                 }
                 break;
             default:
-                kg.w1.Z((kg.w1) this.b, (y31) obj, (View) obj2);
+                kg.w1.Z((kg.w1) this.b, (x31) obj, (View) obj2);
                 break;
         }
     }
@@ -596,7 +596,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
         canvas.clipPath(path, Region.Op.DIFFERENCE);
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public RecyclerView l(View view) {
         ((cd) this.b).getClass();
         return ((ad) view).a;
@@ -732,7 +732,7 @@ public final /* synthetic */ class r4 implements h7, k9, xh.j, r0.m, OnSuccessLi
         return h2.m0.j((j3 * r0.e) / 1000000, 0L, ((f3.u) this.b).j - 1);
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ void s(RecyclerView recyclerView) {
         org.telegram.ui.Cells.f1.b(recyclerView);
     }

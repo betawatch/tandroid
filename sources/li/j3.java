@@ -15,7 +15,6 @@ import android.media.metrics.TrackChangeEvent;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import bi.ya;
 import java.io.File;
 import java.util.ArrayList;
@@ -27,6 +26,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.v10;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
@@ -35,11 +35,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.vy0;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.wy0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,6 @@ public final /* synthetic */ class j3 implements Runnable {
         Object[] objArr = 0;
         Object[] objArr2 = 0;
         Object[] objArr3 = 0;
-        Object[] objArr4 = 0;
         switch (this.a) {
             case 0:
                 k3 k3Var = (k3) this.b;
@@ -298,76 +297,58 @@ public final /* synthetic */ class j3 implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((c20) this.c);
                 return;
             case 18:
-                vy0.d1((Context) this.b, null, false, (di.i0) this.c, null);
+                wy0.d1((Context) this.b, null, false, (di.i0) this.c, null);
                 return;
             case 19:
                 ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
                 return;
             case 20:
-                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) this.b, (Point) this.c);
+                ((GroupCallMessagesController) this.b).lambda$sendCallMessage$5((String) this.c);
                 return;
             case 21:
-                ((VideoCapturerDevice) this.b).lambda$init$4((String) this.c);
+                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) this.b, (Point) this.c);
                 return;
             case 22:
-                ((VoIPService) this.b).lambda$startGroupCall$21((TL_update.TL_updateGroupCall) this.c);
+                ((VideoCapturerDevice) this.b).lambda$init$4((String) this.c);
                 return;
             case 23:
-                ((VoIPService) this.b).lambda$createGroupInstance$71((String) this.c);
+                ((VoIPService) this.b).lambda$startGroupCall$21((TL_update.TL_updateGroupCall) this.c);
                 return;
             case 24:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.k0) this.c);
+                ((VoIPService) this.b).lambda$createGroupInstance$71((String) this.c);
                 return;
             case 25:
-                ((VoIPService) this.b).lambda$startScreenCapture$58((TLRPC.Updates) this.c);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.k0) this.c);
                 return;
             case 26:
-                ((AudioManager) this.b).setCommunicationDevice((AudioDeviceInfo) this.c);
+                ((VoIPService) this.b).lambda$startScreenCapture$58((TLRPC.Updates) this.c);
                 return;
             case 27:
-                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((v10) this.c);
+                ((AudioManager) this.b).setCommunicationDevice((AudioDeviceInfo) this.c);
                 return;
             case 28:
-                org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((im0) this.c).canScrollVertically(-1);
+                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((v10) this.c);
+                return;
+            default:
+                org.telegram.ui.ActionBar.l lVar = (org.telegram.ui.ActionBar.l) this.b;
+                boolean canScrollVertically = ((hm0) this.c).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically;
-                if (kVar.C1 == z11) {
+                if (lVar.C1 == z11) {
                     return;
                 }
-                ValueAnimator valueAnimator = kVar.E1;
+                ValueAnimator valueAnimator = lVar.E1;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                float f10 = kVar.D1;
-                kVar.C1 = z11;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, canScrollVertically ? 0.0f : 1.0f);
-                kVar.E1 = ofFloat;
-                ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar, 4));
-                kVar.E1.addListener(new org.telegram.ui.ActionBar.c(kVar, z11, i7));
-                kVar.E1.setDuration(320L);
-                kVar.E1.setInterpolator(xq.h);
-                kVar.E1.start();
-                return;
-            default:
-                org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically2 = ((RecyclerView) this.c).canScrollVertically(-1);
-                boolean z12 = !canScrollVertically2;
-                if (kVar2.C1 == z12) {
-                    return;
-                }
-                ValueAnimator valueAnimator2 = kVar2.E1;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                float f11 = kVar2.D1;
-                kVar2.C1 = z12;
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, canScrollVertically2 ? 0.0f : 1.0f);
-                kVar2.E1 = ofFloat2;
-                ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, 3));
-                kVar2.E1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z12, objArr4 == true ? 1 : 0));
-                kVar2.E1.setDuration(320L);
-                kVar2.E1.setInterpolator(xq.h);
-                kVar2.E1.start();
+                float f10 = lVar.D1;
+                lVar.C1 = z11;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, !canScrollVertically ? 1.0f : 0.0f);
+                lVar.E1 = ofFloat;
+                ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(lVar, 4));
+                lVar.E1.addListener(new org.telegram.ui.ActionBar.d(lVar, z11, i7));
+                lVar.E1.setDuration(320L);
+                lVar.E1.setInterpolator(wq.h);
+                lVar.E1.start();
                 return;
         }
     }

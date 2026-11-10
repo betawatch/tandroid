@@ -1,40 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i3 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i3(Context context, org.telegram.ui.Cells.c2[] c2VarArr, int i7) {
-        super(context);
-        this.a = i7;
-        this.b = c2VarArr;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i7, i10);
-                org.telegram.ui.Cells.c2[] c2VarArr = this.b;
-                if (c2VarArr[0] != null) {
-                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.g0.L(7.0f) + c2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-                    break;
-                }
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                org.telegram.ui.Cells.c2[] c2VarArr2 = this.b;
-                if (c2VarArr2[0] != null) {
-                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.g0.L(7.0f) + c2VarArr2[0].getMeasuredHeight() + getMeasuredHeight());
-                    break;
-                }
-                break;
-        }
+public final class i3 extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(org.telegram.messenger.i6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

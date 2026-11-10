@@ -70,15 +70,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.r2;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.q2;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.cn;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -192,7 +193,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
             case 4:
                 a3 a3Var3 = (a3) this.b;
-                cc Q = new hc(a3Var3.q0, a3Var3.F).Q(R.raw.contact_check, 36, g0.X2((String) this.c));
+                bc Q = new gc(a3Var3.q0, a3Var3.F).Q(R.raw.contact_check, 36, g0.X2((String) this.c));
                 Q.j = 5000;
                 Q.k(true);
                 return;
@@ -221,7 +222,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
             case 8:
                 c4 c4Var2 = (c4) this.b;
-                cc Q2 = new hc(c4Var2.b.c, c4Var2.a).Q(R.raw.contact_check, 36, g0.X2((String) this.c));
+                bc Q2 = new gc(c4Var2.b.c, c4Var2.a).Q(R.raw.contact_check, 36, g0.X2((String) this.c));
                 Q2.j = 5000;
                 Q2.k(true);
                 return;
@@ -232,7 +233,7 @@ public final /* synthetic */ class b implements Runnable {
                 sVar.presentFragment(cn.ta(fVar.b.id));
                 return;
             case 10:
-                ((d0) this.b).q1.presentFragment(cn.ta(((f) this.c).b.id));
+                ((d0) this.b).t1.presentFragment(cn.ta(((f) this.c).b.id));
                 return;
             case 11:
                 h0 h0Var = (h0) this.b;
@@ -343,9 +344,9 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 17:
                 i0 i0Var = (i0) this.b;
-                r2 r2Var = (r2) this.c;
+                q2 q2Var = (q2) this.c;
                 kg.f.a(i0Var.a).b();
-                r2Var.run();
+                q2Var.run();
                 i0Var.dismiss();
                 return;
             case 18:
@@ -353,9 +354,9 @@ public final /* synthetic */ class b implements Runnable {
                 return;
             case 19:
                 c1 c1Var = (c1) this.b;
-                y31 y31Var = (y31) this.c;
+                x31 x31Var = (x31) this.c;
                 c1Var.getClass();
-                c1Var.c0(y31Var.d);
+                c1Var.c0(x31Var.d);
                 return;
             case 20:
                 yr yrVar = (yr) this.b;
@@ -502,9 +503,9 @@ public final /* synthetic */ class b implements Runnable {
                                 j10 = ((k1) o0Var.f).d;
                             } else {
                                 k1 k1Var = (k1) o0Var.f;
-                                x2.g0 g0Var = k1Var.b;
+                                f0 f0Var = k1Var.b;
                                 long j11 = k1Var.d;
-                                Object obj = g0Var.a;
+                                Object obj = f0Var.a;
                                 i1 i1Var = i0Var2.o;
                                 l1Var.g(obj, i1Var);
                                 j10 = j11 + i1Var.e;
@@ -536,7 +537,7 @@ public final /* synthetic */ class b implements Runnable {
                 while (i13 < size) {
                     Object obj2 = arrayList8.get(i13);
                     i13++;
-                    ((u51) ((w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((t51) ((w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 25:
@@ -552,9 +553,9 @@ public final /* synthetic */ class b implements Runnable {
             case 26:
                 v vVar = (v) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
-                vVar.Y1 = false;
-                vVar.Z1 = 0;
-                fi.d dVar = vVar.X1;
+                vVar.b2 = false;
+                vVar.c2 = 0;
+                fi.d dVar = vVar.a2;
                 dVar.setLoading(false);
                 if (!(tLObject4 instanceof TLRPC.TL_composedRichMessageWithAI)) {
                     g0.G3(4.0f, dVar, null);
@@ -565,11 +566,11 @@ public final /* synthetic */ class b implements Runnable {
                     g0.G3(4.0f, dVar, null);
                     return;
                 }
-                vVar.a2 = richMessage;
-                vVar.U1.set(richMessage);
+                vVar.d2 = richMessage;
+                vVar.X1.set(richMessage);
                 dVar.i(id.M0(2131754061, null), true, true);
                 vVar.d1();
-                m41 m41Var = vVar.R1;
+                m41 m41Var = vVar.U1;
                 if (m41Var != null) {
                     m41Var.O(true);
                     return;

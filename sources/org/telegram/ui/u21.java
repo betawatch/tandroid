@@ -1,11 +1,10 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u21 implements org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class u21 implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a;
     public final /* synthetic */ SessionsActivity b;
 
@@ -14,22 +13,24 @@ public final /* synthetic */ class u21 implements org.telegram.ui.ActionBar.r1 {
         this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // org.telegram.messenger.c20
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
                 SessionsActivity sessionsActivity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
+                sessionsActivity.getClass();
+                if (connectedbots != null) {
+                    sessionsActivity.f = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.r0();
+                        sessionsActivity.a.f();
+                        break;
+                    }
                 }
+                break;
             default:
-                SessionsActivity.b0(this.b);
+                SessionsActivity.a0(this.b, (Boolean) obj);
                 break;
         }
     }

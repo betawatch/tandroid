@@ -28,61 +28,61 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.ej0;
+import org.telegram.ui.Components.dj0;
+import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.i6;
+import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.j30;
-import org.telegram.ui.Components.k30;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.mp0;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.lp0;
+import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pl0;
-import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.ql0;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.tq;
+import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.voip.a3;
 import org.telegram.ui.Components.voip.b3;
 import org.telegram.ui.Components.voip.z2;
-import org.telegram.ui.Components.zs0;
+import org.telegram.ui.Components.ys0;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.ca;
 import org.telegram.ui.dh;
 import org.telegram.ui.ia;
-import org.telegram.ui.ic1;
+import org.telegram.ui.jc1;
 import org.telegram.ui.la;
-import org.telegram.ui.pu;
-import org.telegram.ui.yq0;
-import org.telegram.ui.ys0;
-import org.telegram.ui.yw;
+import org.telegram.ui.qu;
+import org.telegram.ui.zq0;
+import org.telegram.ui.zs0;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2, q1, h2.j {
+public final /* synthetic */ class f0 implements i30, r1, f6, dj0, qr, f5.m, z2, q1, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ f0(int i7, dh dhVar, q4 q4Var, k30 k30Var) {
+    public /* synthetic */ f0(int i7, dh dhVar, r4 r4Var, j30 j30Var) {
         this.a = 0;
         this.b = i7;
         this.c = dhVar;
-        this.d = q4Var;
-        this.e = k30Var;
+        this.d = r4Var;
+        this.e = j30Var;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public void U(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, boolean z9, final TLRPC.VideoSize videoSize) {
         final dh dhVar = (dh) this.c;
-        final q4 q4Var = (q4) this.d;
-        final k30 k30Var = (k30) this.e;
+        final r4 r4Var = (r4) this.d;
+        final j30 j30Var = (j30) this.e;
         final int i7 = this.b;
         org.telegram.messenger.g0.h3(new Runnable() { // from class: bg.i0
             @Override // java.lang.Runnable
@@ -106,8 +106,8 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
                     tL_photos_uploadProfilePhoto.flags |= 16;
                 }
                 int i11 = i7;
-                ConnectionsManager.getInstance(i11).sendRequest(tL_photos_uploadProfilePhoto, new k0(i11, photoSize2, photoSize, dhVar, q4Var, 0));
-                k30Var.i();
+                ConnectionsManager.getInstance(i11).sendRequest(tL_photos_uploadProfilePhoto, new k0(i11, photoSize2, photoSize, dhVar, r4Var, 0));
+                j30Var.i();
             }
         });
     }
@@ -143,20 +143,20 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
     @Override // h2.j
     public void accept(Object obj) {
         wa waVar = (wa) this.c;
-        ((x2.k0) obj).I(waVar.b, (x2.g0) waVar.c, (x2.u) this.d, (x2.c0) this.e, this.b);
+        ((x2.j0) obj).I(waVar.b, (x2.f0) waVar.c, (x2.t) this.d, (x2.b0) this.e, this.b);
     }
 
     @Override // f5.m
     public void b(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new l0(fVar, (f2) this.c, list, this.b, (z0) this.d, (ys0) this.e, 12));
+        org.telegram.messenger.g0.h3(new l0(fVar, (f2) this.c, list, this.b, (z0) this.d, (zs0) this.e, 12));
     }
 
-    @Override // org.telegram.ui.Components.ej0
+    @Override // org.telegram.ui.Components.dj0
     public boolean c(int i7, View view) {
-        rl0 rl0Var = (rl0) this.c;
+        ql0 ql0Var = (ql0) this.c;
         f2 f2Var = (f2) this.d;
-        org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.e;
-        ArrayList arrayList = rl0Var.r;
+        h6 h6Var = (h6) this.e;
+        ArrayList arrayList = ql0Var.r;
         if (i7 >= 0 && i7 < arrayList.size()) {
             int i10 = this.b;
             if (p10.i(i10).q()) {
@@ -164,14 +164,14 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
                     new ug.w0(f2Var, 24, true).show();
                     return true;
                 }
-                pl0 pl0Var = ((ql0) view).a;
-                if (pl0Var != null) {
-                    pl0Var.p();
+                ol0 ol0Var = ((pl0) view).a;
+                if (ol0Var != null) {
+                    ol0Var.p();
                 }
-                ol0 ol0Var = (ol0) arrayList.get(i7);
-                l60 H = l60.H(f2Var, view);
+                nl0 nl0Var = (nl0) arrayList.get(i7);
+                k60 H = k60.H(f2Var, view);
                 H.i = 3;
-                H.c(R.drawable.menu_tag_rename, id.M0(TextUtils.isEmpty(ol0Var.c) ? 2131745881 : 2131745869, null), new a1(rl0Var, i10, ol0Var, g6Var, 26), false);
+                H.c(R.drawable.menu_tag_rename, id.M0(TextUtils.isEmpty(nl0Var.c) ? 2131745881 : 2131745869, null), new a1(ql0Var, i10, nl0Var, h6Var, 26), false);
                 H.Z();
                 return true;
             }
@@ -181,38 +181,38 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
 
     @Override // org.telegram.ui.Components.voip.z2
     public void d(a3 a3Var) {
-        ic1 ic1Var = (ic1) this.c;
+        jc1 jc1Var = (jc1) this.c;
         b3 b3Var = (b3) this.d;
         VoIPService voIPService = (VoIPService) this.e;
         if (VoIPService.getSharedInstance() != null) {
-            org.telegram.messenger.g0.r(ic1Var.R0);
-            ic1Var.Q0 = false;
-            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(ic1Var.b, false, Integer.valueOf(this.b));
-            ic1Var.l(b3Var, voIPService);
+            org.telegram.messenger.g0.r(jc1Var.R0);
+            jc1Var.Q0 = false;
+            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(jc1Var.b, false, Integer.valueOf(this.b));
+            jc1Var.l(b3Var, voIPService);
         }
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.g6
+    @Override // org.telegram.ui.Components.f6
     public void f(CharSequence charSequence) {
-        i6 i6Var = (i6) this.c;
+        org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) this.c;
         ArrayList arrayList = (ArrayList) this.d;
         ArrayList arrayList2 = (ArrayList) this.e;
-        StaticLayout j3 = i6Var.j(this.b - ((int) Math.ceil(Math.min(i6Var.d, i6Var.j))), charSequence);
-        f6 f6Var = new f6(i6Var, j3, i6Var.d, arrayList.size());
-        f6 f6Var2 = new f6(i6Var, j3, i6Var.j, arrayList2.size());
-        arrayList2.add(f6Var);
-        arrayList.add(f6Var2);
-        float f10 = i6Var.d;
-        float f11 = f6Var.f;
-        i6Var.d = f10 + f11;
-        i6Var.j += f11;
-        i6Var.f(f6Var);
-        i6Var.g(f6Var2);
+        StaticLayout j3 = h6Var.j(this.b - ((int) Math.ceil(Math.min(h6Var.d, h6Var.j))), charSequence);
+        e6 e6Var = new e6(h6Var, j3, h6Var.d, arrayList.size());
+        e6 e6Var2 = new e6(h6Var, j3, h6Var.j, arrayList2.size());
+        arrayList2.add(e6Var);
+        arrayList.add(e6Var2);
+        float f10 = h6Var.d;
+        float f11 = e6Var.f;
+        h6Var.d = f10 + f11;
+        h6Var.j += f11;
+        h6Var.f(e6Var);
+        h6Var.g(e6Var2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -266,20 +266,20 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
                 PasskeysActivity.a0((PasskeysActivity) obj3, (TL_account.Passkey) obj2, (String) obj, i12);
                 break;
             case 3:
-                tq tqVar = (tq) obj3;
+                sq sqVar = (sq) obj3;
                 fi.d dVar = (fi.d) obj2;
                 TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl = (TL_phone.getGroupCallStreamRtmpUrl) obj;
                 if (!dVar.Q) {
                     dVar.setLoading(true);
                     getgroupcallstreamrtmpurl.revoke = true;
-                    ConnectionsManager.getInstance(i12).sendRequest(getgroupcallstreamrtmpurl, new pq(tqVar, dVar, i13));
+                    ConnectionsManager.getInstance(i12).sendRequest(getgroupcallstreamrtmpurl, new oq(sqVar, dVar, i13));
                     break;
                 }
                 break;
             case 5:
-                zs0 zs0Var = (zs0) obj3;
+                ys0 ys0Var = (ys0) obj3;
                 ij ijVar = (ij) obj;
-                u1[] u1VarArr = {new u1(3, zs0Var.getContext(), (org.telegram.ui.ActionBar.g6) obj2)};
+                u1[] u1VarArr = {new u1(3, ys0Var.getContext(), (h6) obj2)};
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) ijVar.k.media;
                 TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
@@ -292,42 +292,42 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
                 tL_poll.closed = true;
                 tL_messages_editMessage.media = tL_inputMediaPoll;
                 int i15 = this.b;
-                tL_messages_editMessage.peer = qp.s1(i15).j1(zs0Var.l1);
+                tL_messages_editMessage.peer = qp.s1(i15).j1(ys0Var.l1);
                 tL_messages_editMessage.id = ijVar.e1();
                 tL_messages_editMessage.flags |= TLObject.FLAG_14;
-                org.telegram.messenger.g0.i3(new mp0(u1VarArr, i15, ConnectionsManager.getInstance(i15).sendRequest(tL_messages_editMessage, new j8(zs0Var, u1VarArr, i15, tL_messages_editMessage, 5)), i13), 500L);
+                org.telegram.messenger.g0.i3(new lp0(u1VarArr, i15, ConnectionsManager.getInstance(i15).sendRequest(tL_messages_editMessage, new j8(ys0Var, u1VarArr, i15, tL_messages_editMessage, 5)), i13), 500L);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.j30
-    public /* synthetic */ yq0 getCloseIntoObject() {
+    @Override // org.telegram.ui.Components.i30
+    public /* synthetic */ zq0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
     @Override // org.telegram.messenger.qr
     public void k(boolean z9) {
-        yw ywVar = (yw) this.c;
+        zw zwVar = (zw) this.c;
         ArrayList arrayList = (ArrayList) this.d;
         HashSet hashSet = (HashSet) this.e;
         if (arrayList.isEmpty()) {
             return;
         }
         ArrayList arrayList2 = new ArrayList(arrayList);
-        UndoView k42 = ywVar.k4();
+        UndoView k42 = zwVar.k4();
         int i7 = this.b;
         if (k42 != null) {
-            k42.n(arrayList2, i7 == 102 ? 27 : 26, null, null, new pu(ywVar, i7, arrayList2, z9, hashSet), null);
+            k42.n(arrayList2, i7 == 102 ? 27 : 26, null, null, new qu(zwVar, i7, arrayList2, z9, hashSet), null);
         }
-        ywVar.n4(i7 == 103);
+        zwVar.n4(i7 == 103);
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ boolean x() {
         return false;
     }
@@ -356,15 +356,15 @@ public final /* synthetic */ class f0 implements j30, r1, g6, ej0, qr, f5.m, z2,
         this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void T() {
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void H(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.j30
+    @Override // org.telegram.ui.Components.i30
     public /* synthetic */ void O(boolean z9, boolean z10) {
     }
 }

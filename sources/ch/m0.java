@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hc;
+import org.telegram.messenger.i6;
+import org.telegram.messenger.ic;
 import org.telegram.messenger.id;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
@@ -27,30 +28,29 @@ import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.t4;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.u4;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.bq;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.pl0;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y8;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x8;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class m0 {
     public int A;
     public final ImageReceiver B;
-    public final i5 C;
+    public final h5 C;
     public int D;
     public final bq E;
-    public final i6 F;
-    public final i6 G;
+    public final h6 F;
+    public final h6 G;
     public boolean H;
     public int I;
     public int J;
@@ -62,14 +62,14 @@ public abstract class m0 {
     public final boolean P;
     public boolean Q;
     public boolean R;
-    public y8 S;
+    public x8 S;
     public ArrayList T;
     public final int U;
     public final View V;
-    public final g6 W;
-    public final ic X;
+    public final org.telegram.ui.ActionBar.h6 W;
+    public final hc X;
     public final ud Y;
-    public final ah0 Z;
+    public final zg0 Z;
     public final TLRPC.ReactionCount a;
     public int b;
     public int c;
@@ -78,7 +78,7 @@ public abstract class m0 {
     public int e;
     public ImageReceiver e0;
     public int f;
-    public i5 f0;
+    public h5 f0;
     public int g;
     public int h;
     public final int i;
@@ -103,14 +103,14 @@ public abstract class m0 {
     public final RectF b0 = new RectF();
     public final Path c0 = new Path();
 
-    public m0(m0 m0Var, int i7, View view, TLRPC.ReactionCount reactionCount, boolean z9, g6 g6Var) {
+    public m0(m0 m0Var, int i7, View view, TLRPC.ReactionCount reactionCount, boolean z9, org.telegram.ui.ActionBar.h6 h6Var) {
         ud udVar;
-        ah0 ah0Var;
+        zg0 zg0Var;
         a5.b bVar = new a5.b(this, 2);
         this.U = i7;
         this.V = view;
-        this.X = new ic(view);
-        this.W = g6Var;
+        this.X = new hc(view);
+        this.W = h6Var;
         this.R = z9;
         if (m0Var != null) {
             this.E = m0Var.E;
@@ -122,23 +122,23 @@ public abstract class m0 {
             this.E = new bq(view, false, null);
         }
         if (this.F == null) {
-            i6 i6Var = new i6(true, true, true);
-            this.F = i6Var;
-            i6Var.K = true;
-            i6Var.n(0.4f, 320L, xq.h);
-            i6Var.w(org.telegram.messenger.g0.L(13.0f));
-            i6Var.setCallback(bVar);
-            i6Var.x(org.telegram.messenger.g0.o());
-            i6Var.M = org.telegram.messenger.g0.q.x;
+            h6 h6Var2 = new h6(true, true, true);
+            this.F = h6Var2;
+            h6Var2.K = true;
+            h6Var2.n(0.4f, 320L, wq.h);
+            h6Var2.w(org.telegram.messenger.g0.L(13.0f));
+            h6Var2.setCallback(bVar);
+            h6Var2.x(org.telegram.messenger.g0.o());
+            h6Var2.M = org.telegram.messenger.g0.q.x;
         }
         if (this.G == null) {
-            i6 i6Var2 = new i6(false, false, false, true, false);
-            this.G = i6Var2;
-            i6Var2.w(org.telegram.messenger.g0.L(12.0f));
-            i6Var2.setCallback(bVar);
-            i6Var2.x(org.telegram.messenger.g0.o());
-            i6Var2.M = org.telegram.messenger.g0.q.x;
-            i6Var2.A = 0.35f;
+            h6 h6Var3 = new h6(false, false, false, true, false);
+            this.G = h6Var3;
+            h6Var3.w(org.telegram.messenger.g0.L(12.0f));
+            h6Var3.setCallback(bVar);
+            h6Var3.x(org.telegram.messenger.g0.o());
+            h6Var3.M = org.telegram.messenger.g0.q.x;
+            h6Var3.A = 0.35f;
         }
         this.a = reactionCount;
         TLRPC.Reaction reaction = reactionCount.reaction;
@@ -169,10 +169,10 @@ public abstract class m0 {
             if (d.a) {
                 this.l = true;
                 if (sc.e(8200)) {
-                    if (m0Var == null || (ah0Var = m0Var.Z) == null) {
-                        this.Z = new ah0(R.raw.star_reaction_click, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
+                    if (m0Var == null || (zg0Var = m0Var.Z) == null) {
+                        this.Z = new zg0(R.raw.star_reaction_click, org.telegram.messenger.g0.L(40.0f), org.telegram.messenger.g0.L(40.0f));
                     } else {
-                        this.Z = ah0Var;
+                        this.Z = zg0Var;
                     }
                     this.B.w0(this.Z);
                 } else {
@@ -185,10 +185,10 @@ public abstract class m0 {
             } else if (d.f != null) {
                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i7).r.get(d.f);
                 if (tL_availableReaction != null) {
-                    this.B.q0(hc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", t5.f(tL_availableReaction.static_icon, l6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
+                    this.B.q0(org.telegram.messenger.hc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", t5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null), "webp", tL_availableReaction, 1);
                 }
             } else if (d.g != 0) {
-                this.C = new i5(i(), i7, d.g);
+                this.C = new h5(i(), i7, d.g);
             }
         }
         this.E.d(org.telegram.messenger.g0.L(26.0f), org.telegram.messenger.g0.L(100.0f));
@@ -198,18 +198,18 @@ public abstract class m0 {
             this.t = !TextUtils.isEmpty(r1);
         }
         if (this.t) {
-            i6 i6Var3 = this.F;
-            i6Var3.t(org.telegram.messenger.i6.m(this.u, i6Var3.a.getFontMetricsInt(), false, null, 0), !id.a0, true);
-            if (this instanceof pl0) {
+            h6 h6Var4 = this.F;
+            h6Var4.t(i6.m(this.u, h6Var4.a.getFontMetricsInt(), false, null, 0), !id.a0, true);
+            if (this instanceof ol0) {
                 Integer.toString(reactionCount.count);
                 this.E.c(this.v, false);
             } else {
                 this.E.c(0, false);
             }
         } else {
-            i6 i6Var4 = this.F;
-            if (i6Var4 != null) {
-                i6Var4.t("", false, true);
+            h6 h6Var5 = this.F;
+            if (h6Var5 != null) {
+                h6Var5.t("", false, true);
             }
             Integer.toString(reactionCount.count);
             this.E.c(this.v, false);
@@ -225,13 +225,13 @@ public abstract class m0 {
         if (imageReceiver != null) {
             imageReceiver.P();
         }
-        y8 y8Var = this.S;
-        if (y8Var != null) {
-            y8Var.e();
+        x8 x8Var = this.S;
+        if (x8Var != null) {
+            x8Var.e();
         }
-        i5 i5Var = this.C;
-        if (i5Var != null) {
-            i5Var.a(this.V);
+        h5 h5Var = this.C;
+        if (h5Var != null) {
+            h5Var.a(this.V);
         }
     }
 
@@ -241,13 +241,13 @@ public abstract class m0 {
         if (imageReceiver != null) {
             imageReceiver.R();
         }
-        y8 y8Var = this.S;
-        if (y8Var != null) {
-            y8Var.f();
+        x8 x8Var = this.S;
+        if (x8Var != null) {
+            x8Var.f();
         }
-        i5 i5Var = this.C;
-        if (i5Var != null) {
-            i5Var.n(this.V);
+        h5 h5Var = this.C;
+        if (h5Var != null) {
+            h5Var.n(this.V);
         }
         c();
     }
@@ -274,8 +274,8 @@ public abstract class m0 {
         bq bqVar;
         float f15;
         ImageReceiver imageReceiver;
-        i6 i6Var;
-        g6 g6Var;
+        h6 h6Var;
+        org.telegram.ui.ActionBar.h6 h6Var2;
         View view;
         float f16;
         float f17;
@@ -283,7 +283,7 @@ public abstract class m0 {
         boolean z11;
         float f19;
         float f20;
-        i6 i6Var2;
+        h6 h6Var3;
         float f21;
         float f22;
         float f23;
@@ -291,19 +291,19 @@ public abstract class m0 {
         int L;
         int L2;
         ImageReceiver imageReceiver2;
-        org.telegram.messenger.ic icVar;
+        ic icVar;
         boolean z12;
         Paint paint;
-        t4 L1;
+        u4 L1;
         bq bqVar2 = this.E;
         View view2 = this.V;
         boolean z13 = this.l;
         Rect rect = this.s;
-        i6 i6Var3 = this.F;
-        i6 i6Var4 = this.G;
-        g6 g6Var2 = this.W;
-        i5 i5Var = this.C;
-        ImageReceiver imageReceiver3 = i5Var != null ? i5Var.k : this.B;
+        h6 h6Var4 = this.F;
+        h6 h6Var5 = this.G;
+        org.telegram.ui.ActionBar.h6 h6Var6 = this.W;
+        h5 h5Var = this.C;
+        ImageReceiver imageReceiver3 = h5Var != null ? h5Var.k : this.B;
         if (this.o) {
             if (z13) {
                 this.I = -1529086;
@@ -311,14 +311,14 @@ public abstract class m0 {
                 this.L = -1;
                 this.K = -1529086;
             } else {
-                this.I = l6.w0(l() ? l6.Gc : l6.qk, g6Var2);
-                this.J = l6.w0(l() ? l6.uk : l6.tk, g6Var2);
+                this.I = m6.w0(l() ? m6.Gc : m6.qk, h6Var6);
+                this.J = m6.w0(l() ? m6.uk : m6.tk, h6Var6);
                 if (view2 instanceof org.telegram.ui.Cells.t0) {
-                    this.L = l6.w0(l6.wk, g6Var2);
-                    this.K = l6.w0(l6.vk, g6Var2);
+                    this.L = m6.w0(m6.wk, h6Var6);
+                    this.K = m6.w0(m6.vk, h6Var6);
                 } else {
-                    this.L = l6.w0(l() ? l6.Gc : l6.qk, g6Var2);
-                    this.K = l6.w0(l() ? l6.ob : l6.ra, g6Var2);
+                    this.L = m6.w0(l() ? m6.Gc : m6.qk, h6Var6);
+                    this.K = m6.w0(l() ? m6.ob : m6.ra, h6Var6);
                 }
             }
         } else if (z13) {
@@ -327,20 +327,20 @@ public abstract class m0 {
             this.L = -1;
             this.K = 0;
         } else {
-            this.J = l6.w0(l() ? l6.rk : l6.sk, g6Var2);
-            int w02 = l6.w0(l() ? l6.Gc : l6.qk, g6Var2);
+            this.J = m6.w0(l() ? m6.rk : m6.sk, h6Var6);
+            int w02 = m6.w0(l() ? m6.Gc : m6.qk, h6Var6);
             this.I = w02;
             this.I = i0.a.o(w02, (int) (Color.alpha(w02) * 0.156f));
-            this.L = l6.w0(l6.Wc, g6Var2);
+            this.L = m6.w0(m6.Wc, h6Var6);
             this.K = 0;
         }
         if (!z13 && (view2 instanceof q1) && ((q1) view2).v2()) {
             if (this.o) {
-                this.I = l6.w0(l6.gb, g6Var2);
-                this.J = l6.w0(l6.hb, g6Var2);
+                this.I = m6.w0(m6.gb, h6Var6);
+                this.J = m6.w0(m6.hb, h6Var6);
             } else {
-                this.I = i0.a.k(l6.w0(l6.eb, g6Var2), l() ? i0.a.k(l6.w0(l6.La, g6Var2), l6.w0(l6.ua, g6Var2)) : l6.w0(l6.ua, g6Var2));
-                this.J = l6.w0(l6.fb, g6Var2);
+                this.I = i0.a.k(m6.w0(m6.eb, h6Var6), l() ? i0.a.k(m6.w0(m6.La, h6Var6), m6.w0(m6.ua, h6Var6)) : m6.w0(m6.ua, h6Var6));
+                this.J = m6.w0(m6.fb, h6Var6);
             }
             this.L = this.J;
             this.K = this.I;
@@ -352,8 +352,8 @@ public abstract class m0 {
         r(f12);
         TextPaint textPaint = p0.V;
         textPaint.setColor(this.M);
-        if (i6Var3 != null) {
-            i6Var3.u(this.M);
+        if (h6Var4 != null) {
+            h6Var4.u(this.M);
         }
         Paint paint2 = p0.S;
         paint2.setColor(this.N);
@@ -369,35 +369,35 @@ public abstract class m0 {
             bqVar = bqVar2;
             f15 = 0.0f;
             imageReceiver = imageReceiver3;
-            i6Var = i6Var4;
-            g6Var = g6Var2;
+            h6Var = h6Var5;
+            h6Var2 = h6Var6;
             view = view2;
         } else {
             if (z10) {
-                i6Var = i6Var4;
+                h6Var = h6Var5;
                 f15 = 0.0f;
                 bqVar = bqVar2;
-                g6Var = g6Var2;
+                h6Var2 = h6Var6;
                 imageReceiver = imageReceiver3;
-                i6Var.m(0.6f, 650L, 1.6f, xq.k);
-                i6Var.t(org.telegram.messenger.g0.o0(this.v, 0), false, true);
+                h6Var.m(0.6f, 650L, 1.6f, wq.k);
+                h6Var.t(org.telegram.messenger.g0.o0(this.v, 0), false, true);
                 view = view2;
-                i6Var.t(id.E(this.v, ','), true, true);
+                h6Var.t(id.E(this.v, ','), true, true);
             } else {
                 bqVar = bqVar2;
                 f15 = 0.0f;
                 imageReceiver = imageReceiver3;
-                i6Var = i6Var4;
-                g6Var = g6Var2;
+                h6Var = h6Var5;
+                h6Var2 = h6Var6;
                 view = view2;
-                i6Var.m(0.6f, 320L, 1.6f, xq.h);
-                i6Var.t(org.telegram.messenger.g0.o0(this.v, 0), true, true);
+                h6Var.m(0.6f, 320L, 1.6f, wq.h);
+                h6Var.t(org.telegram.messenger.g0.o0(this.v, 0), true, true);
             }
             this.H = z10;
         }
         float a10 = this.X.a(0.1f);
         int i7 = this.z;
-        if (f14 <= 0.0f || this.R || i6Var == null || this.S != null) {
+        if (f14 <= 0.0f || this.R || h6Var == null || this.S != null) {
             f16 = 1.0f;
             if (f12 != 1.0f) {
                 f18 = 6.0f;
@@ -410,8 +410,8 @@ public abstract class m0 {
                 f18 = 6.0f;
             }
         } else {
-            i7 = (int) (i6Var.c() + org.telegram.messenger.g0.L(i5Var != null ? 6.0f : 4.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.L(8.0f));
-            i6Var.u(this.M);
+            i7 = (int) (h6Var.c() + org.telegram.messenger.g0.L(h5Var != null ? 6.0f : 4.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(8.0f) + org.telegram.messenger.g0.L(8.0f));
+            h6Var.u(this.M);
             f17 = 8.0f;
             f18 = 6.0f;
             f16 = 1.0f;
@@ -432,17 +432,17 @@ public abstract class m0 {
             f19 = 2.0f;
             f20 = 4.0f;
         } else {
-            g6 g6Var3 = g6Var;
-            Paint W0 = l6.W0("paintChatActionBackground", g6Var3);
+            org.telegram.ui.ActionBar.h6 h6Var7 = h6Var2;
+            Paint W0 = m6.W0("paintChatActionBackground", h6Var7);
             f19 = 2.0f;
-            Paint W02 = l6.W0("paintChatActionBackgroundDarken", g6Var3);
+            Paint W02 = m6.W0("paintChatActionBackgroundDarken", h6Var7);
             f20 = 4.0f;
             int alpha = W0.getAlpha();
             int alpha2 = W02.getAlpha();
             W0.setAlpha((int) (alpha * f13 * j()));
             W02.setAlpha((int) (alpha2 * f13 * j()));
             g(canvas, rectF, f27, W0);
-            if (g6Var == null ? l6.d1() : g6Var.g()) {
+            if (h6Var2 == null ? m6.d1() : h6Var2.g()) {
                 g(canvas, rectF, f27, W02);
             }
             W0.setAlpha(alpha);
@@ -481,7 +481,7 @@ public abstract class m0 {
             if (z13) {
                 L = org.telegram.messenger.g0.L(22.0f);
                 L2 = org.telegram.messenger.g0.L(f20);
-            } else if (i5Var != null) {
+            } else if (h5Var != null) {
                 L = org.telegram.messenger.g0.L(24.0f);
                 L2 = org.telegram.messenger.g0.L(f18);
                 imageReceiver4.J0(org.telegram.messenger.g0.L(f18));
@@ -497,21 +497,21 @@ public abstract class m0 {
             int i11 = ((int) f10) + L2;
             int i12 = ((int) f11) + i10;
             rect.set(i11, i12, i11 + L, L + i12);
-            i5 i5Var2 = this.C;
-            if (i5Var2 == null || (imageReceiver2 = i5Var2.k) == null) {
+            h5 h5Var2 = this.C;
+            if (h5Var2 == null || (imageReceiver2 = h5Var2.k) == null) {
                 imageReceiver2 = this.B;
             }
             if (imageReceiver2 != null && rect != null) {
                 imageReceiver2.z0(rect);
             }
-            i5 i5Var3 = this.C;
-            if (i5Var3 != null && this.D != this.M) {
+            h5 h5Var3 = this.C;
+            if (h5Var3 != null && this.D != this.M) {
                 int i13 = this.M;
                 this.D = i13;
-                i5Var3.setColorFilter(new PorterDuffColorFilter(i13, PorterDuff.Mode.SRC_IN));
+                h5Var3.setColorFilter(new PorterDuffColorFilter(i13, PorterDuff.Mode.SRC_IN));
             }
             if (!this.k || (!this.l && this.i <= 1 && m() && this.P)) {
-                i6Var2 = i6Var3;
+                h6Var3 = h6Var4;
                 imageReceiver2.setAlpha(0.0f);
                 imageReceiver2.h(canvas, null);
                 this.m = false;
@@ -538,7 +538,7 @@ public abstract class m0 {
                     }
                     float f28 = imageReceiver2.K0 - (imageReceiver2.M0 / 2.0f);
                     float f29 = imageReceiver2.L0 - (imageReceiver2.N0 / 2.0f);
-                    i6Var2 = i6Var3;
+                    h6Var3 = h6Var4;
                     float floor = (int) Math.floor(f28);
                     float floor2 = (int) Math.floor(f29);
                     k10.y0(floor, floor2, imageReceiver2.M0 * 2.0f, imageReceiver2.N0 * 2.0f);
@@ -548,7 +548,7 @@ public abstract class m0 {
                     k10.h(canvas, null);
                     canvas.restore();
                 } else {
-                    i6Var2 = i6Var3;
+                    h6Var3 = h6Var4;
                     icVar = null;
                     z12 = true;
                 }
@@ -558,9 +558,9 @@ public abstract class m0 {
                 this.m = true;
             }
         } else {
-            i6Var2 = i6Var3;
+            h6Var3 = h6Var4;
         }
-        if (i6Var2 == null || i6Var2.i() <= f15) {
+        if (h6Var3 == null || h6Var3.i() <= f15) {
             f21 = f15;
         } else {
             canvas.save();
@@ -570,24 +570,24 @@ public abstract class m0 {
                 f24 = 10.0f;
             }
             canvas.translate(org.telegram.messenger.g0.L(f24) + f10 + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(f19), f11);
-            i6Var2.setBounds(0, 0, this.z, this.A);
-            i6Var2.draw(canvas);
-            i6Var2.B = (int) (f13 * 255.0f);
+            h6Var3.setBounds(0, 0, this.z, this.A);
+            h6Var3.draw(canvas);
+            h6Var3.B = (int) (f13 * 255.0f);
             canvas.restore();
-            f21 = i6Var2.c() + (i6Var2.i() * org.telegram.messenger.g0.L(f20));
+            f21 = h6Var3.c() + (h6Var3.i() * org.telegram.messenger.g0.L(f20));
         }
-        if (f14 > 0.0f && !this.R && i6Var != null && this.S == null) {
-            float max = Math.max(f15, (org.telegram.messenger.g0.L(12.0f) - i6Var.c()) / f19);
+        if (f14 > 0.0f && !this.R && h6Var != null && this.S == null) {
+            float max = Math.max(f15, (org.telegram.messenger.g0.L(12.0f) - h6Var.c()) / f19);
             canvas.save();
             if (!this.t || h()) {
                 f23 = this.t ? 9 : 8;
             } else {
                 f23 = 10.0f;
             }
-            canvas.translate(org.telegram.messenger.g0.L(f23) + f10 + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(i5Var == null ? f19 : 5.0f) + max, f11 - org.telegram.messenger.g0.L(f26));
-            i6Var.setBounds(0, 0, this.z, this.A);
-            i6Var.draw(canvas);
-            i6Var.B = (int) (255.0f * f13);
+            canvas.translate(org.telegram.messenger.g0.L(f23) + f10 + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(h5Var == null ? f19 : 5.0f) + max, f11 - org.telegram.messenger.g0.L(f26));
+            h6Var.setBounds(0, 0, this.z, this.A);
+            h6Var.draw(canvas);
+            h6Var.B = (int) (255.0f * f13);
             canvas.restore();
         } else if (bqVar != null && e()) {
             canvas.save();
@@ -596,20 +596,20 @@ public abstract class m0 {
             } else {
                 f22 = 10.0f;
             }
-            canvas.translate(org.telegram.messenger.g0.L(f22) + f10 + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(i5Var == null ? f19 : 5.0f) + f21 + (z13 ? -org.telegram.messenger.g0.L(f26) : 0), f11);
+            canvas.translate(org.telegram.messenger.g0.L(f22) + f10 + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(h5Var == null ? f19 : 5.0f) + f21 + (z13 ? -org.telegram.messenger.g0.L(f26) : 0), f11);
             bqVar.a(canvas);
             canvas.restore();
         }
         if (!this.R && this.S != null) {
             canvas.save();
             canvas.translate(f10 + org.telegram.messenger.g0.L(10.0f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(f19), f11);
-            y8 y8Var = this.S;
-            y8Var.u = f13;
-            if (y8Var.w && y8Var.e != f12) {
-                y8Var.e = f12;
+            x8 x8Var = this.S;
+            x8Var.u = f13;
+            if (x8Var.w && x8Var.e != f12) {
+                x8Var.e = f12;
                 if (f12 == f26) {
-                    y8Var.k();
-                    y8Var.w = false;
+                    x8Var.k();
+                    x8Var.w = false;
                 }
             }
             this.S.g(canvas);
@@ -699,15 +699,15 @@ public abstract class m0 {
         if (arrayList != null) {
             Collections.sort(arrayList, p0.Z);
             if (this.S == null) {
-                y8 y8Var = new y8(this.V, false);
-                this.S = y8Var;
-                y8Var.v = 250L;
-                xq xqVar = mi.l.V;
-                y8Var.s = org.telegram.messenger.g0.L(20.0f);
+                x8 x8Var = new x8(this.V, false);
+                this.S = x8Var;
+                x8Var.v = 250L;
+                wq wqVar = mi.l.V;
+                x8Var.s = org.telegram.messenger.g0.L(20.0f);
                 this.S.p = org.telegram.messenger.g0.L(100.0f);
-                y8 y8Var2 = this.S;
-                y8Var2.o = this.A;
-                y8Var2.h(org.telegram.messenger.g0.L(22.0f));
+                x8 x8Var2 = this.S;
+                x8Var2.o = this.A;
+                x8Var2.h(org.telegram.messenger.g0.L(22.0f));
             }
             if (this.d0) {
                 this.S.e();
@@ -721,17 +721,17 @@ public abstract class m0 {
 
     public final void p() {
         ImageReceiver imageReceiver;
-        i5 i5Var = this.C;
-        if (i5Var == null || (imageReceiver = i5Var.k) == null) {
+        h5 h5Var = this.C;
+        if (h5Var == null || (imageReceiver = h5Var.k) == null) {
             imageReceiver = this.B;
         }
         if (imageReceiver != null) {
-            ah0 B = imageReceiver.B();
+            zg0 B = imageReceiver.B();
             if (B != null) {
                 B.H(true);
                 return;
             }
-            v5 m10 = imageReceiver.m();
+            u5 m10 = imageReceiver.m();
             if (m10 != null) {
                 m10.start();
             }
@@ -740,17 +740,17 @@ public abstract class m0 {
 
     public final void q() {
         ImageReceiver imageReceiver;
-        i5 i5Var = this.C;
-        if (i5Var == null || (imageReceiver = i5Var.k) == null) {
+        h5 h5Var = this.C;
+        if (h5Var == null || (imageReceiver = h5Var.k) == null) {
             imageReceiver = this.B;
         }
         if (imageReceiver != null) {
-            ah0 B = imageReceiver.B();
+            zg0 B = imageReceiver.B();
             if (B != null) {
                 B.stop();
                 return;
             }
-            v5 m10 = imageReceiver.m();
+            u5 m10 = imageReceiver.m();
             if (m10 != null) {
                 m10.stop();
             }

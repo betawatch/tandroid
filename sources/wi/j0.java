@@ -1,17 +1,17 @@
 package wi;
 
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rt b;
+    public final /* synthetic */ qt b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ j0(rt rtVar, Exception exc, int i7) {
+    public /* synthetic */ j0(qt qtVar, Exception exc, int i7) {
         this.a = i7;
-        this.b = rtVar;
+        this.b = qtVar;
         this.c = exc;
     }
 

@@ -11,11 +11,11 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.r2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.z5;
-import org.telegram.ui.Components.vj;
-import org.telegram.ui.Components.xf;
+import org.telegram.ui.Components.uj;
+import org.telegram.ui.Components.wf;
 import org.telegram.ui.tp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -75,12 +75,12 @@ public final class f extends BroadcastReceiver {
                 t0.d.post(new org.telegram.messenger.a(this, 14));
                 break;
             case 8:
-                xf xfVar = new xf(this, 23);
+                wf wfVar = new wf(this, 23);
                 if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    xfVar.run();
+                    wfVar.run();
                     break;
                 } else {
-                    ((vj) this.b).r.postDelayed(xfVar, 1000L);
+                    ((uj) this.b).r.postDelayed(wfVar, 1000L);
                     break;
                 }
             case 9:

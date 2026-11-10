@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.view.View;
 import bi.e7;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w extends e7 {
     public final Path D0;
@@ -16,8 +16,8 @@ public final class w extends e7 {
     public final /* synthetic */ b0 G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(b0 b0Var, Context context, g6 g6Var, wg.a0 a0Var, bi.l1 l1Var, bi.l1 l1Var2, bi.l1 l1Var3, bi.l1 l1Var4, bi.l1 l1Var5, bi.l1 l1Var6, int i7) {
-        super(context, g6Var, a0Var, l1Var, null, l1Var2, l1Var3, l1Var4, l1Var5, l1Var6);
+    public w(b0 b0Var, Context context, h6 h6Var, wg.a0 a0Var, bi.l1 l1Var, bi.l1 l1Var2, bi.l1 l1Var3, bi.l1 l1Var4, bi.l1 l1Var5, bi.l1 l1Var6, int i7) {
+        super(context, h6Var, a0Var, l1Var, null, l1Var2, l1Var3, l1Var4, l1Var5, l1Var6);
         this.G0 = b0Var;
         this.F0 = i7;
         this.D0 = new Path();
@@ -53,7 +53,7 @@ public final class w extends e7 {
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        y yVar = this.G0.U1;
+        y yVar = this.G0.X1;
         if (yVar != null) {
             yVar.invalidate();
         }
@@ -61,7 +61,7 @@ public final class w extends e7 {
 
     @Override // bi.e7
     public final void k(int i7) {
-        this.G0.U1.setRibbonColor(i7);
+        this.G0.X1.setRibbonColor(i7);
     }
 
     @Override // android.view.View

@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.d20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cx0;
+import org.telegram.ui.Components.bx0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class Vector<T extends TLObject> extends TLObject {
     public static final int constructor = 481674261;
     private final TLDeserializer<T> itemDeserializer;
     public final ArrayList<T> objects = new ArrayList<>();
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class Int extends TLObject {
         public int value;
 
@@ -37,7 +37,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     public static class Long extends TLObject {
         public long value;
 
@@ -60,7 +60,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+    /* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
     @FunctionalInterface
     public interface TLDeserializer<T extends TLObject> {
         T deserialize(InputSerializedData inputSerializedData, int i7, boolean z9);
@@ -111,11 +111,11 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z9);
             return new ArrayList<>();
         }
-        cx0 cx0Var = (ArrayList<T>) new ArrayList(readInt322);
+        bx0 bx0Var = (ArrayList<T>) new ArrayList(readInt322);
         for (int i7 = 0; i7 < readInt322; i7++) {
-            cx0Var.add(d20Var.a(Boolean.valueOf(z9)));
+            bx0Var.add(d20Var.a(Boolean.valueOf(z9)));
         }
-        return cx0Var;
+        return bx0Var;
     }
 
     public static ArrayList<byte[]> deserializeByteArray(InputSerializedData inputSerializedData, boolean z9) {

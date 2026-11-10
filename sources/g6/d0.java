@@ -75,24 +75,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.s4;
+import org.telegram.ui.ActionBar.t4;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.qg;
-import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.pg;
+import org.telegram.ui.Components.s4;
 import org.telegram.ui.cn;
-import org.telegram.ui.dg0;
+import org.telegram.ui.eg0;
 import org.telegram.ui.va;
-import org.telegram.ui.xs;
+import org.telegram.ui.ys;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i6.a, k0, com.google.android.gms.common.api.internal.p, bi, t4, i0, r3, f1, y0, n2.v, xa, ra, cz, gh.a, mm0 {
+public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i6.a, k0, com.google.android.gms.common.api.internal.p, ai, s4, i0, r3, f1, y0, n2.v, xa, ra, cz, gh.a, lm0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -104,7 +104,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public int A() {
         j5 j5Var = (j5) this.b;
         gh.a Q = Q();
-        int A = (Q == null || !j5Var.d.d()) ? 0 : Q.A();
+        int A = (Q == null || !j5Var.d.e()) ? 0 : Q.A();
         gh.a S = S();
         if (S != null) {
             return i0.a.f(j5Var.a, S.A(), A);
@@ -144,7 +144,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         b2Var.C0(i7 != 2 ? i7 : 0, true);
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ boolean G1() {
         return false;
     }
@@ -232,8 +232,8 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     }
 
     @Override // li.r3
-    public l60 J(View view) {
-        return l60.H((b2) this.b, view);
+    public k60 J(View view) {
+        return k60.H((b2) this.b, view);
     }
 
     @Override // org.telegram.messenger.cz
@@ -253,13 +253,13 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         hashMap.clear();
     }
 
-    @Override // org.telegram.ui.Components.t4
+    @Override // org.telegram.ui.Components.s4
     public void L(int i7, int i10, boolean z9) {
         ((li.p) this.b).L(z9, i7, i10, 0L, false);
         li.p pVar = (li.p) this.b;
-        dg0 dg0Var = pVar.O;
-        if (dg0Var != null) {
-            dg0Var.h();
+        eg0 eg0Var = pVar.O;
+        if (eg0Var != null) {
+            eg0Var.h();
             pVar.O = null;
         }
     }
@@ -310,7 +310,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public int O() {
         j5 j5Var = (j5) this.b;
         gh.a Q = Q();
-        int O = (Q == null || !j5Var.d.d()) ? 0 : Q.O();
+        int O = (Q == null || !j5Var.d.e()) ? 0 : Q.O();
         gh.a S = S();
         if (S != null) {
             return i0.a.f(j5Var.a, S.O(), O);
@@ -328,9 +328,9 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     }
 
     public gh.a Q() {
-        s4 s4Var = ((j5) this.b).d;
-        if (s4Var != null) {
-            return s4Var.getMenuGlassColorProvider();
+        t4 t4Var = ((j5) this.b).d;
+        if (t4Var != null) {
+            return t4Var.getMenuGlassColorProvider();
         }
         return null;
     }
@@ -356,12 +356,12 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     }
 
     public gh.a S() {
-        s4 s4Var;
+        t4 t4Var;
         j5 j5Var = (j5) this.b;
-        if (j5Var.a >= 1.0f || (s4Var = j5Var.d) == null) {
+        if (j5Var.a >= 1.0f || (t4Var = j5Var.d) == null) {
             return null;
         }
-        return s4Var.getButtonsGlassColorProvider();
+        return t4Var.getButtonsGlassColorProvider();
     }
 
     @Override // li.i0
@@ -964,11 +964,11 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
-    public void c0(qg qgVar) {
+    @Override // org.telegram.ui.Components.ai
+    public void c0(pg pgVar) {
         int i7;
         i7 = ((f2) ((kg.m) this.b)).currentAccount;
-        qs.f(i7).d(qgVar);
+        qs.f(i7).d(pgVar);
     }
 
     @Override // n2.v
@@ -984,7 +984,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     @Override // li.r3
     public void d(s3 s3Var, View view) {
         b2 b2Var = (b2) this.b;
-        l60 H = l60.H(b2Var, view);
+        k60 H = k60.H(b2Var, view);
         H.Q = true;
         b2Var.getParentActivity();
         b2Var.getResourceProvider();
@@ -1034,11 +1034,11 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
 
     @Override // gh.a
     public int e1() {
-        s4 s4Var;
+        t4 t4Var;
         j5 j5Var = (j5) this.b;
         gh.a Q = Q();
         int e12 = Q != null ? Q.e1() : 0;
-        return (j5Var.a >= 1.0f || (s4Var = j5Var.d) == null) ? e12 : i0.a.f(j5Var.a, s4Var.getButtonsGlassBackgroundColor(), e12);
+        return (j5Var.a >= 1.0f || (t4Var = j5Var.d) == null) ? e12 : i0.a.f(j5Var.a, t4Var.getButtonsGlassBackgroundColor(), e12);
     }
 
     @Override // n2.v
@@ -1050,7 +1050,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ boolean f0() {
         return false;
     }
@@ -1084,13 +1084,13 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         return q0.a(firebaseApp);
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
-        xs xsVar = (xs) this.b;
-        sb2.append((Object) xsVar.a.getText());
+        ys ysVar = (ys) this.b;
+        sb2.append((Object) ysVar.a.getText());
         sb2.append(" ");
-        sb2.append((Object) xsVar.b.getText());
+        sb2.append((Object) ysVar.b.getText());
         return sb2.toString();
     }
 
@@ -1166,11 +1166,11 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         ((ii.s) this.b).presentFragment(cn.ta(j3));
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public void l(boolean z9, float f10) {
         float c10;
         int i7;
-        xs xsVar = (xs) this.b;
+        ys ysVar = (ys) this.b;
         if (f10 <= 0.25f) {
             c10 = com.google.android.recaptcha.internal.a.c(f10, 0.25f, 536576.0f, 512000);
         } else {
@@ -1184,14 +1184,14 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         }
         int i10 = (int) c10;
         long j3 = i10;
-        xsVar.b.setText(id.a0("AutodownloadSizeLimitUpTo", null, 2131753772, g0.i0(j3, false, false)));
-        xsVar.d = j3;
-        r8[] r8VarArr = xsVar.h;
-        AnimatorSet[] animatorSetArr = xsVar.n;
-        int i11 = xsVar.e;
-        i7 = xsVar.r.videosRow;
+        ysVar.b.setText(id.a0("AutodownloadSizeLimitUpTo", null, 2131753772, g0.i0(j3, false, false)));
+        ysVar.d = j3;
+        r8[] r8VarArr = ysVar.h;
+        AnimatorSet[] animatorSetArr = ysVar.n;
+        int i11 = ysVar.e;
+        i7 = ysVar.r.videosRow;
         if (i11 == i7) {
-            xsVar.f.setText(id.a0("AutoDownloadPreloadVideoInfo", null, 2131753810, g0.i0(j3, false, false)));
+            ysVar.f.setText(id.a0("AutoDownloadPreloadVideoInfo", null, 2131753810, g0.i0(j3, false, false)));
             boolean z10 = i10 > 2097152;
             if (z10 != r8VarArr[0].isEnabled()) {
                 ArrayList arrayList = new ArrayList();
@@ -1204,7 +1204,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new va(xsVar, 22));
+                animatorSetArr[0].addListener(new va(ysVar, 22));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
@@ -1244,13 +1244,13 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public void n(li.a aVar) {
         b2 b2Var = (b2) this.b;
         if (aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && g0.J1(b2Var)) {
-            di diVar = new di(b2Var.getParentActivity(), b2Var, false, false, false, b2Var.getResourceProvider());
-            diVar.T3 = new qb.a(13);
-            diVar.G1 = true;
-            diVar.r3.setVisibility(8);
-            diVar.q4 = new a3.h(b2Var, aVar, diVar, 15);
-            diVar.e1();
-            diVar.show();
+            ci ciVar = new ci(b2Var.getParentActivity(), b2Var, false, false, false, b2Var.getResourceProvider());
+            ciVar.W3 = new qb.a(13);
+            ciVar.J1 = true;
+            ciVar.u3.setVisibility(8);
+            ciVar.t4 = new a3.h(b2Var, aVar, ciVar, 15);
+            ciVar.e1();
+            ciVar.show();
         }
     }
 
@@ -1330,7 +1330,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         b2Var.C0(2, true);
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public /* synthetic */ int q0() {
         return 0;
     }
@@ -1434,7 +1434,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     @Override // li.r3
     public void z(q3 q3Var, View view) {
         b2 b2Var = (b2) this.b;
-        l60 H = l60.H(b2Var, view);
+        k60 H = k60.H(b2Var, view);
         H.Q = true;
         b2Var.x0 = h4.c(H, b2Var, b2Var.getParentActivity(), b2Var.getResourceProvider(), q3Var, false);
     }
@@ -1474,11 +1474,11 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
         this.b = new n0(str, str2);
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.lm0
     public void D() {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void F0() {
     }
 
@@ -1486,7 +1486,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public /* synthetic */ void r0() {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void t0() {
     }
 
@@ -1502,7 +1502,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public /* synthetic */ void F(g1 g1Var) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void M0(Object obj) {
     }
 
@@ -1510,7 +1510,7 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public void P(int i7) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void Y0(TLRPC.User user) {
     }
 
@@ -1522,11 +1522,11 @@ public /* synthetic */ class d0 implements OnCompleteListener, ib.b, j6.n, h1, i
     public void r(g1 g1Var, boolean z9) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public void o1(int i7, boolean z9, boolean z10, int i10, int i11, long j3, boolean z11, boolean z12, long j10) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
     }
 }

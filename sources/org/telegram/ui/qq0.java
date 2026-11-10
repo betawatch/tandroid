@@ -1,73 +1,266 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.ImageView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class qq0 extends ImageView {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public org.telegram.ui.Components.u51 e;
-    public final org.telegram.ui.Components.xq f;
-    public ValueAnimator h;
-    public final /* synthetic */ PhotoViewer n;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qq0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.n = photoViewer;
-        this.a = 0;
-        this.b = false;
-        this.c = false;
-        this.d = false;
-        this.f = org.telegram.ui.Components.xq.i;
-        setAlpha(0.0f);
+public class qq0 implements xq0 {
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean A() {
+        return false;
     }
 
-    public static void a(qq0 qq0Var) {
-        PhotoViewer photoViewer = qq0Var.n;
-        org.telegram.ui.Components.u51 u51Var = photoViewer.F2;
-        if (u51Var == null || u51Var.U() == -9223372036854775807L) {
-            ValueAnimator valueAnimator = qq0Var.h;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                qq0Var.h = null;
-            }
-            qq0Var.setAlpha(0.0f);
-            return;
-        }
-        long max = Math.max(0L, photoViewer.F2.U() - photoViewer.F2.S());
-        float max2 = 1.0f - Math.max(Math.min(max / 250.0f, 1.0f), 0.0f);
-        if (max2 <= 0.0f) {
-            ValueAnimator valueAnimator2 = qq0Var.h;
-            if (valueAnimator2 != null) {
-                valueAnimator2.cancel();
-                qq0Var.h = null;
-            }
-            qq0Var.setAlpha(0.0f);
-            return;
-        }
-        if (!photoViewer.F2.d0()) {
-            ValueAnimator valueAnimator3 = qq0Var.h;
-            if (valueAnimator3 != null) {
-                valueAnimator3.cancel();
-                qq0Var.h = null;
-            }
-            qq0Var.setAlpha(max2);
-            return;
-        }
-        if (qq0Var.h == null) {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(max2, 1.0f);
-            qq0Var.h = ofFloat;
-            ofFloat.addUpdateListener(new a3(qq0Var, 22));
-            qq0Var.h.setDuration(max);
-            qq0Var.h.setInterpolator(qq0Var.f);
-            qq0Var.h.start();
-            qq0Var.setAlpha(max2);
-        }
+    @Override // org.telegram.ui.xq0
+    public CharSequence C(int i7) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public int H() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean I() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean K() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean L() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean N() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean Q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public int R(Object obj) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public int S(int i7) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean T() {
+        return !(this instanceof xk);
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean U() {
+        return !(this instanceof zk);
+    }
+
+    @Override // org.telegram.ui.xq0
+    public org.telegram.messenger.ij V() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean Z() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public String b0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public CharSequence c0(int i7) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean g() {
+        return !(this instanceof xk);
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public org.telegram.messenger.jc j(int i7) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public int k(int i7, org.telegram.messenger.j20 j20Var) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean u() {
+        return !(this instanceof org.telegram.ui.Components.ll);
+    }
+
+    @Override // org.telegram.ui.xq0
+    public HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean x(int i7) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public int y() {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.xq0
+    public boolean z() {
+        return !(this instanceof org.telegram.ui.Components.th);
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void B(int i7) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void F(boolean z9) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void M(org.telegram.messenger.j20 j20Var) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void X(int i7) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void Y(int i7) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void a0(int i7) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void D() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void G() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void W() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void d() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void n() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void f(String str, String str2, boolean z9) {
+    }
+
+    @Override // org.telegram.ui.xq0
+    public void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
     }
 }

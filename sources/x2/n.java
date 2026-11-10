@@ -4,9 +4,9 @@ import a8.ia;
 import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class n implements e1 {
+public final class n implements d1 {
     public final t1 a;
     public long b;
 
@@ -14,13 +14,13 @@ public final class n implements e1 {
         h9.f0 p10 = h9.i0.p();
         ia.f(list.size() == list2.size());
         for (int i7 = 0; i7 < list.size(); i7++) {
-            p10.c(new m((e1) list.get(i7), (List) list2.get(i7)));
+            p10.c(new m((d1) list.get(i7), (List) list2.get(i7)));
         }
         this.a = p10.f();
         this.b = -9223372036854775807L;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final boolean c(l2.v0 v0Var) {
         boolean z9;
         boolean z10 = false;
@@ -48,7 +48,7 @@ public final class n implements e1 {
         return z10;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final long e() {
         int i7 = 0;
         long j3 = Long.MAX_VALUE;
@@ -69,7 +69,7 @@ public final class n implements e1 {
         return j3;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final boolean g() {
         int i7 = 0;
         while (true) {
@@ -84,7 +84,7 @@ public final class n implements e1 {
         }
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final long p() {
         int i7 = 0;
         long j3 = Long.MAX_VALUE;
@@ -116,7 +116,7 @@ public final class n implements e1 {
         return j11 != -9223372036854775807L ? j11 : j10;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final void r(long j3) {
         int i7 = 0;
         while (true) {

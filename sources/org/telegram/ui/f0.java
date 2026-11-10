@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.net.Uri;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements org.telegram.messenger.u10 {
     public final /* synthetic */ g4 a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class f0 implements org.telegram.messenger.u10 {
         g4 g4Var = this.a;
         vf.b bVar = this.d;
         if (bVar != null) {
-            bVar.c = new org.telegram.ui.ActionBar.p(6, g4Var, bVar);
+            bVar.c = new org.telegram.ui.ActionBar.c(7, g4Var, bVar);
         } else {
             t3 t3Var = g4Var.K;
             if (t3Var != null) {

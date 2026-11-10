@@ -17,25 +17,25 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.zs;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.ys;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class d0 extends zs implements b6 {
-    public final g6 Y1;
-    public final vy Z1;
+public abstract class d0 extends ys implements c6 {
+    public final h6 Y1;
+    public final uy Z1;
     public Runnable a2;
     public int b2;
 
-    public d0(int i7, Context context, g6 g6Var) {
-        super(context, g6Var);
-        this.Y1 = g6Var;
-        this.Z1 = new vy(getContext(), new c0());
+    public d0(int i7, Context context, h6 h6Var) {
+        super(context, h6Var);
+        this.Y1 = h6Var;
+        this.Z1 = new uy(getContext(), new c0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i10 = Build.VERSION.SDK_INT;
@@ -47,14 +47,14 @@ public abstract class d0 extends zs implements b6 {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(12.0f));
-        s6.U(this, l6.Ie, g6Var);
-        s6.G(this, l6.Vc, g6Var);
-        s6.C(this, l6.ig, g6Var);
-        int i11 = l6.Je;
-        s6.l(this, 34, i11, g6Var);
-        s6.D(this, i11, g6Var);
-        s6.l(this, 30, l6.Ke, g6Var);
-        s6.l(this, 36, l6.jg, g6Var);
+        t6.U(this, m6.Ie, h6Var);
+        t6.G(this, m6.Vc, h6Var);
+        t6.C(this, m6.ig, h6Var);
+        int i11 = m6.Je;
+        t6.l(this, 34, i11, h6Var);
+        t6.D(this, i11, h6Var);
+        t6.l(this, 30, m6.Ke, h6Var);
+        t6.l(this, 36, m6.jg, h6Var);
         if (i10 >= 28) {
             setFallbackLineSpacing(false);
         }
@@ -96,7 +96,7 @@ public abstract class d0 extends zs implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.dt, android.view.View
+    @Override // org.telegram.ui.Components.ct, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (!((GestureDetector) this.Z1.b).onTouchEvent(motionEvent) || isLongClickable()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -130,7 +130,7 @@ public abstract class d0 extends zs implements b6 {
         menu.add(R.id.menu_delete, R.id.menu_delete, 0, id.M0(2131751598, null));
     }
 
-    @Override // org.telegram.ui.Components.dt, android.widget.TextView
+    @Override // org.telegram.ui.Components.ct, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         if (!hasSelection() || ((b[]) getText().getSpans(i7, i10, b.class)).length == 0) {
@@ -150,20 +150,20 @@ public abstract class d0 extends zs implements b6 {
         this.a2 = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        g6 g6Var = this.Y1;
+        h6 h6Var = this.Y1;
         try {
-            setHintColor(l6.w0(l6.Je, g6Var));
-            setCursorColor(l6.w0(l6.Ke, g6Var));
-            setHandlesColor(l6.w0(l6.jg, g6Var));
+            setHintColor(m6.w0(m6.Je, h6Var));
+            setCursorColor(m6.w0(m6.Ke, h6Var));
+            setHandlesColor(m6.w0(m6.jg, h6Var));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

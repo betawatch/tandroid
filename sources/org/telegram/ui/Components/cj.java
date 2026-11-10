@@ -1,32 +1,7 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ej b;
-
-    public /* synthetic */ cj(ej ejVar, int i7) {
-        this.a = i7;
-        this.b = ejVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ej ejVar = this.b;
-                if (ejVar.f != null) {
-                    ejVar.w = org.telegram.messenger.k5.i(new StringBuilder("+"), ejVar.f.phone, pf.b.c());
-                    ejVar.s = ejVar.f;
-                    org.telegram.messenger.g0.h3(new cj(ejVar, 1));
-                    break;
-                }
-                break;
-            default:
-                ej ejVar2 = this.b;
-                ejVar2.c.l(ejVar2.w, false);
-                break;
-        }
-    }
+public interface cj {
+    String run();
 }

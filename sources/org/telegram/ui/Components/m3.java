@@ -1,32 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Vibrator;
-import android.text.Spanned;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class m3 extends pp {
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ NumberTextView c;
+public final class m3 extends b41 {
+    public final /* synthetic */ AlertDialog$Builder e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(int i7, Context context, NumberTextView numberTextView) {
-        super(i7);
-        this.b = context;
-        this.c = numberTextView;
+    public m3(String str, AlertDialog$Builder alertDialog$Builder) {
+        super(str, (uy0) null);
+        this.e = alertDialog$Builder;
     }
 
-    @Override // org.telegram.ui.Components.pp, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
-        CharSequence filter = super.filter(charSequence, i7, i10, spanned, i11, i12);
-        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
-            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
-            if (vibrator != null) {
-                vibrator.vibrate(200L);
-            }
-            org.telegram.messenger.g0.F3(this.c);
-        }
-        return filter;
+    @Override // org.telegram.ui.Components.b41, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.e.a.L0.run();
+        super.onClick(view);
     }
 }

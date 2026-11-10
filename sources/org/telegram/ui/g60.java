@@ -1,114 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class g60 extends ActionBarPopupWindow$ActionBarPopupWindowLayout implements org.telegram.ui.ActionBar.b6 {
-    public final org.telegram.ui.Components.x70 T;
-    public final org.telegram.ui.ActionBar.z0 U;
-    public final org.telegram.ui.ActionBar.z0 V;
-    public final org.telegram.ui.ActionBar.z0 W;
-    public final ArrayList a0;
-    public final f60 b0;
-    public int c0;
-    public final org.telegram.messenger.u2 d0;
-    public d60 e0;
-    public ArrayList f0;
-    public final org.telegram.ui.ActionBar.f2 g0;
-    public final FrameLayout h0;
+public final class g60 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.ActionBar.m5 a;
+    public final org.telegram.ui.Components.y8 b;
+    public boolean c;
+    public int d;
+    public final /* synthetic */ h60 e;
 
-    public g60(Context context, org.telegram.ui.ActionBar.f2 f2Var) {
-        super(context, null);
-        ArrayList arrayList = new ArrayList();
-        this.a0 = arrayList;
-        this.g0 = f2Var;
-        this.d0 = f2Var.getMessagesController().r7;
-        setFitItems(true);
-        org.telegram.ui.ActionBar.z0 c10 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_autodelete_1d, org.telegram.messenger.id.G(1, "Days", new Object[0]), false, null);
-        org.telegram.ui.ActionBar.z0 c11 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_autodelete_2d, org.telegram.messenger.id.G(2, "Days", new Object[0]), false, null);
-        this.W = c11;
-        org.telegram.ui.ActionBar.z0 c12 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_autodelete_1w, org.telegram.messenger.id.G(1, "Weeks", new Object[0]), false, null);
-        org.telegram.ui.ActionBar.z0 c13 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_autodelete_1m, org.telegram.messenger.id.G(1, "Months", new Object[0]), false, null);
-        this.V = c13;
-        org.telegram.ui.ActionBar.z0 c14 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_cancel, org.telegram.messenger.id.M0(2131753851, null), false, null);
-        org.telegram.ui.ActionBar.z0 c15 = org.telegram.ui.ActionBar.r0.c(false, false, this, R.drawable.msg_delete, org.telegram.messenger.id.M0(2131751542, null), false, null);
-        this.U = c15;
-        int i7 = org.telegram.ui.ActionBar.l6.p7;
-        c15.d(org.telegram.ui.ActionBar.l6.x0(null, i7, false), org.telegram.ui.ActionBar.l6.x0(null, i7, false));
-        arrayList.add(new e60(c10, 3));
-        arrayList.add(new e60(c11, 6));
-        arrayList.add(new e60(c12, 0));
-        arrayList.add(new e60(c13, 1));
-        arrayList.add(new e60(c14, 2));
-        arrayList.add(new e60(c15, 4));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.h0 = frameLayout;
-        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.H8, frameLayout, null);
-        View view = new View(context);
-        org.telegram.ui.ActionBar.s6.Z(view, context, R.drawable.greydivider, org.telegram.ui.ActionBar.l6.b7);
-        frameLayout.addView(view, c8.ha.c(-1.0f, -1));
-        frameLayout.setTag(R.id.fit_width_tag, 1);
-        a(frameLayout, c8.ha.o(-1, 8));
-        f60 f60Var = new f60(this, context);
-        this.b0 = f60Var;
-        a(f60Var, c8.ha.o(-1, 48));
-        f60Var.setOnClickListener(new org.telegram.ui.Components.u41(19, this, f2Var));
-        for (int i10 = 0; i10 < this.a0.size(); i10++) {
-            ((e60) this.a0.get(i10)).a.setOnClickListener(new ai.v(this, ((e60) this.a0.get(i10)).b, 24));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g60(h60 h60Var, Context context) {
+        super(context);
+        this.e = h60Var;
+        int i7 = org.telegram.ui.ActionBar.m6.i6;
+        this.d = org.telegram.ui.ActionBar.m6.x0(null, i7, false);
+        org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(context);
+        this.a = m5Var;
+        m5Var.setTextSize(16);
+        m5Var.setEllipsizeByGradient(true);
+        m5Var.setRightPadding(org.telegram.messenger.g0.L(68.0f));
+        org.telegram.ui.ActionBar.t6.X(m5Var, org.telegram.ui.ActionBar.m6.j5, null);
+        addView(m5Var, c8.ha.d(0, -2.0f, 19, 19.0f, 0.0f, 19.0f, 0.0f));
+        org.telegram.ui.Components.y8 y8Var = new org.telegram.ui.Components.y8(context, false);
+        this.b = y8Var;
+        y8Var.a.a = true;
+        y8Var.setStyle(11);
+        y8Var.setAvatarsTextSize(org.telegram.messenger.g0.L(22.0f));
+        addView(y8Var, c8.ha.d(56, -1.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+        setBackground(org.telegram.ui.ActionBar.m6.a0(org.telegram.ui.ActionBar.m6.x0(null, i7, false), 0, 4));
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        View view = (View) getParent();
+        if (view != null && view.getWidth() > 0) {
+            i7 = View.MeasureSpec.makeMeasureSpec(view.getWidth(), TLObject.FLAG_30);
         }
-        org.telegram.ui.Components.x70 x70Var = new org.telegram.ui.Components.x70(context, null);
-        this.T = x70Var;
-        x70Var.setTag(R.id.fit_width_tag, 1);
-        x70Var.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
-        x70Var.setTextSize(1, 13.0f);
-        org.telegram.ui.ActionBar.s6.U(x70Var, org.telegram.ui.ActionBar.l6.E8, null);
-        x70Var.setMovementMethod(LinkMovementMethod.getInstance());
-        org.telegram.ui.ActionBar.s6.G(x70Var, org.telegram.ui.ActionBar.l6.J6, null);
-        x70Var.setText(org.telegram.messenger.id.M0(2131749057, null));
-        a(x70Var, c8.ha.q(-1, -2, 0.0f, 0, 0, 8, 0, 0));
+        this.c = true;
+        org.telegram.ui.ActionBar.m5 m5Var = this.a;
+        m5Var.setVisibility(8);
+        super.onMeasure(i7, i10);
+        m5Var.setVisibility(0);
+        m5Var.getLayoutParams().width = getMeasuredWidth();
+        this.c = false;
+        this.e.g();
+        super.onMeasure(i7, i10);
     }
 
-    public final void g() {
-        if (this.f0 != null) {
-            this.b0.b.setTranslationX((3 - Math.min(3, this.f0.size())) * org.telegram.messenger.g0.L(12.0f));
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
         }
+        super.requestLayout();
     }
 
-    public final void h(boolean z9) {
-        this.c0 = -1;
-        this.h0.setVisibility(0);
-        this.U.setVisibility(z9 ? 8 : 0);
-        this.T.setVisibility(0);
-        this.b0.setVisibility(8);
-    }
-
-    public void setCallback(d60 d60Var) {
-        this.e0 = d60Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            org.telegram.ui.ActionBar.z0 z0Var = this.U;
-            if (z0Var != null) {
-                int i7 = org.telegram.ui.ActionBar.l6.p7;
-                z0Var.d(org.telegram.ui.ActionBar.l6.x0(null, i7, false), org.telegram.ui.ActionBar.l6.x0(null, i7, false));
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i6, false);
+            if (x02 != this.d) {
+                this.d = x02;
+                org.telegram.ui.ActionBar.m6.H1(getBackground(), x02, true);
+                invalidate();
             }
-            invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

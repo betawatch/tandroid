@@ -4,9 +4,9 @@ import a8.b8;
 import h2.m0;
 import h9.i0;
 import l2.c0;
-import x2.g0;
+import x2.f0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 m2.e eVar = ((c) obj).b;
                 b8 b8Var = eVar.d;
-                m2.a S = eVar.S(((i0) b8Var.b).isEmpty() ? null : (g0) h9.o.n((i0) b8Var.b));
+                m2.a S = eVar.S(((i0) b8Var.b).isEmpty() ? null : (f0) h9.o.n((i0) b8Var.b));
                 eVar.V(S, 1006, new c4.n(S, this.b, this.c, this.d));
                 break;
             default:

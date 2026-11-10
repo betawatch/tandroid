@@ -5,11 +5,11 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import c8.j9;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.we0;
-import org.telegram.ui.Components.yq;
+import org.telegram.ui.Components.ar;
+import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class z3 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final class z3 extends GestureDetector.SimpleOnGestureListener {
     public boolean onDown(MotionEvent motionEvent) {
         switch (this.a) {
             case 1:
-                br brVar = (br) this.c;
-                yq yqVar = brVar.r;
-                if (brVar.n) {
-                    brVar.removeCallbacks(yqVar);
+                ar arVar = (ar) this.c;
+                xq xqVar = arVar.r;
+                if (arVar.n) {
+                    arVar.removeCallbacks(xqVar);
                 }
-                brVar.n = true;
-                brVar.postDelayed(yqVar, 200L);
-                brVar.h.run();
+                arVar.n = true;
+                arVar.postDelayed(xqVar, 200L);
+                arVar.h.run();
                 return true;
             case 2:
                 return true;
@@ -98,11 +98,11 @@ public final class z3 extends GestureDetector.SimpleOnGestureListener {
             default:
                 return super.onFling(motionEvent, motionEvent2, f10, f11);
             case 2:
-                we0 we0Var = (we0) viewGroup;
-                if (!we0Var.f && !we0Var.h && f10 >= 600.0f) {
-                    we0Var.e = false;
-                    we0Var.h = false;
-                    we0Var.a(0.0f, f10 / 6000.0f);
+                ve0 ve0Var = (ve0) viewGroup;
+                if (!ve0Var.f && !ve0Var.h && f10 >= 600.0f) {
+                    ve0Var.e = false;
+                    ve0Var.h = false;
+                    ve0Var.a(0.0f, f10 / 6000.0f);
                 }
                 return false;
         }
@@ -205,44 +205,44 @@ public final class z3 extends GestureDetector.SimpleOnGestureListener {
                 }
                 return true;
             case 1:
-                br brVar = (br) this.c;
-                if (brVar.n || brVar.f) {
+                ar arVar = (ar) this.c;
+                if (arVar.n || arVar.f) {
                     float abs3 = Math.abs(f10);
                     float f19 = this.b;
                     if (abs3 >= f19 || Math.abs(f11) >= f19) {
-                        brVar.n = false;
-                        brVar.f = false;
-                        brVar.removeCallbacks(brVar.r);
-                        brVar.removeCallbacks(brVar.h);
+                        arVar.n = false;
+                        arVar.f = false;
+                        arVar.removeCallbacks(arVar.r);
+                        arVar.removeCallbacks(arVar.h);
                     }
                 }
                 return false;
             default:
-                we0 we0Var = (we0) this.c;
-                if (we0Var.e || we0Var.h) {
+                ve0 ve0Var = (ve0) this.c;
+                if (ve0Var.e || ve0Var.h) {
                     motionEvent3 = motionEvent2;
                 } else {
-                    if (we0Var.D || we0Var.b != 1.0f || f10 > (-this.b) || Math.abs(f10) < Math.abs(1.5f * f11)) {
+                    if (ve0Var.D || ve0Var.b != 1.0f || f10 > (-this.b) || Math.abs(f10) < Math.abs(1.5f * f11)) {
                         motionEvent3 = motionEvent2;
                     } else {
                         motionEvent3 = motionEvent2;
-                        if (!we0Var.d(we0Var.getChildAt(we0Var.b > 0.5f ? 1 : 0), motionEvent3)) {
-                            we0Var.e = true;
+                        if (!ve0Var.d(ve0Var.getChildAt(ve0Var.b > 0.5f ? 1 : 0), motionEvent3)) {
+                            ve0Var.e = true;
                             MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                            for (int i10 = 0; i10 < we0Var.getChildCount(); i10++) {
-                                we0Var.getChildAt(i10).dispatchTouchEvent(obtain2);
+                            for (int i10 = 0; i10 < ve0Var.getChildCount(); i10++) {
+                                ve0Var.getChildAt(i10).dispatchTouchEvent(obtain2);
                             }
                             obtain2.recycle();
                         }
                     }
-                    we0Var.h = true;
+                    ve0Var.h = true;
                 }
-                if (we0Var.e) {
-                    we0Var.c = -1.0f;
-                    we0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / we0Var.getWidth()));
-                    we0Var.c(true);
+                if (ve0Var.e) {
+                    ve0Var.c = -1.0f;
+                    ve0Var.b = 1.0f - Math.max(0.0f, Math.min(1.0f, (motionEvent3.getX() - motionEvent.getX()) / ve0Var.getWidth()));
+                    ve0Var.c(true);
                 }
-                return we0Var.e;
+                return ve0Var.e;
         }
     }
 }

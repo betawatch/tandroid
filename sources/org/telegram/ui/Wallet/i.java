@@ -5,9 +5,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.wb1;
+import org.telegram.ui.sb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements v10 {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class i implements v10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 l0Var3.B = -1;
                 if (updates != null) {
-                    Utilities.d.c(new wb1(1, l0Var3, updates));
+                    Utilities.d.c(new sb1(2, l0Var3, updates));
                     break;
                 } else {
                     StringBuilder sb3 = new StringBuilder("requesting gasless info: ");

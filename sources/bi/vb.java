@@ -9,22 +9,22 @@ import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class vb extends LinearLayout {
     public final Path a;
     public final /* synthetic */ Matrix b;
     public final /* synthetic */ RadialGradient c;
     public final /* synthetic */ Paint d;
-    public final /* synthetic */ org.telegram.ui.Components.g5 e;
+    public final /* synthetic */ org.telegram.ui.Components.f5 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vb(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.g5 g5Var) {
+    public vb(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.f5 f5Var) {
         super(context);
         this.b = matrix;
         this.c = radialGradient;
         this.d = paint;
-        this.e = g5Var;
+        this.e = f5Var;
         this.a = new Path();
     }
 

@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j extends r41 {
     public final /* synthetic */ int m3;
@@ -18,7 +18,7 @@ public final class j extends r41 {
         this.m3 = i7;
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i7, int i10) {
         int min = Math.min(g0.L(220.0f), View.MeasureSpec.getSize(i7));
         View.MeasureSpec.getSize(i10);

@@ -9,10 +9,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegram.messenger.ls {
-    public org.telegram.ui.Components.qj0 a;
+    public org.telegram.ui.Components.pj0 a;
     public j b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -65,20 +65,20 @@ public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegra
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 21));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.qj0 qj0Var = new org.telegram.ui.Components.qj0(context, null);
-        this.a = qj0Var;
-        qj0Var.r1();
+        org.telegram.ui.Components.pj0 pj0Var = new org.telegram.ui.Components.pj0(context, null);
+        this.a = pj0Var;
+        pj0Var.r1();
         this.a.setLayoutManager(new jg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setSectionsDrawBackground(true);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.qj0 qj0Var2 = this.a;
+        org.telegram.ui.Components.pj0 pj0Var2 = this.a;
         j jVar = new j(this);
         this.b = jVar;
-        qj0Var2.setAdapter(jVar);
+        pj0Var2.setAdapter(jVar);
         v4.k kVar = new v4.k();
         kVar.n(350L);
-        kVar.o(org.telegram.ui.Components.xq.h);
+        kVar.o(org.telegram.ui.Components.wq.h);
         kVar.C = false;
         kVar.m = false;
         this.a.setItemAnimator(kVar);
@@ -132,7 +132,7 @@ public final class k extends org.telegram.ui.ActionBar.f2 implements org.telegra
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final org.telegram.ui.Components.qj0 getListViewForSimpleGlass() {
+    public final org.telegram.ui.Components.pj0 getListViewForSimpleGlass() {
         return this.a;
     }
 

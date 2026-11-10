@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ll extends org.telegram.ui.Components.qi0 {
+public final class ll extends org.telegram.ui.Components.pi0 {
     public int D;
     public int E;
     public int F;
@@ -62,7 +62,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return false;
     }
@@ -560,12 +560,12 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         return i7 == this.I ? 8 : 4;
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void f() {
         O(false);
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void g(int i7) {
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("notify item changed " + i7);
@@ -588,7 +588,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void i(int i7) {
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("notify item inserted " + i7);
@@ -634,7 +634,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void k(int i7, int i10) {
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("notify item range changed " + i7 + ":" + i10);
@@ -657,7 +657,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void o(int i7, int i10) {
         int i11;
         int i12;
@@ -690,7 +690,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void p(int i7, int i10) {
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("notify item range removed" + i7 + ":" + i10);
@@ -713,7 +713,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qi0, v4.g0
+    @Override // org.telegram.ui.Components.pi0, v4.g0
     public final void s(int i7) {
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("notify item removed " + i7);
@@ -866,7 +866,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
         int i16;
         int i17;
         boolean z20;
-        org.telegram.ui.Components.u40 u40Var;
+        org.telegram.ui.Components.t40 t40Var;
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         String str2;
@@ -1315,10 +1315,10 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                                                 ArrayList arrayList10 = arrayList2;
                                                 indexOf = arrayList10.indexOf(ijVar3);
                                                 if (indexOf != -1) {
-                                                    if (ijVar3.D == 5 && (u40Var = cnVar.p3) != null && u40Var.getTextureView() != null) {
-                                                        af afVar = cnVar.G7;
-                                                        if (afVar != null) {
-                                                            org.telegram.messenger.g0.r(afVar);
+                                                    if (ijVar3.D == 5 && (t40Var = cnVar.p3) != null && t40Var.getTextureView() != null) {
+                                                        bf bfVar = cnVar.G7;
+                                                        if (bfVar != null) {
+                                                            org.telegram.messenger.g0.r(bfVar);
                                                             cnVar.G7 = null;
                                                         }
                                                         q1Var.getViewTreeObserver().addOnPreDrawListener(new jl(this, q1Var, 0));
@@ -1337,26 +1337,26 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                                                             }
                                                             float f10 = i16 + cnVar.O9;
                                                             float height = cnVar.fragmentView == null ? 0.0f : r8.getHeight();
-                                                            org.telegram.ui.Components.ue ueVar = cnVar.Z.L0;
-                                                            Rect rect = ueVar.t0;
-                                                            if (!ueVar.p0) {
-                                                                ueVar.r = true;
-                                                                ueVar.p0 = true;
-                                                                tf0 tf0Var = ueVar.W;
-                                                                if (tf0Var != null) {
-                                                                    tf0Var.invalidate();
+                                                            org.telegram.ui.Components.te teVar = cnVar.Z.L0;
+                                                            Rect rect = teVar.t0;
+                                                            if (!teVar.p0) {
+                                                                teVar.r = true;
+                                                                teVar.p0 = true;
+                                                                uf0 uf0Var = teVar.W;
+                                                                if (uf0Var != null) {
+                                                                    uf0Var.invalidate();
                                                                 }
-                                                                org.telegram.ui.Components.dg dgVar = ueVar.V;
-                                                                if (dgVar != null) {
-                                                                    dgVar.invalidate();
+                                                                org.telegram.ui.Components.cg cgVar = teVar.V;
+                                                                if (cgVar != null) {
+                                                                    cgVar.invalidate();
                                                                 }
-                                                                if (ueVar.P != null) {
-                                                                    ueVar.q0 = q1Var;
+                                                                if (teVar.P != null) {
+                                                                    teVar.q0 = q1Var;
                                                                     q1Var.setVisibility(4);
-                                                                    ueVar.r0 = f10;
-                                                                    ueVar.s0 = height;
-                                                                    org.telegram.ui.Cells.q1 q1Var2 = ueVar.P;
-                                                                    org.telegram.ui.Cells.q1 q1Var3 = ueVar.q0;
+                                                                    teVar.r0 = f10;
+                                                                    teVar.s0 = height;
+                                                                    org.telegram.ui.Cells.q1 q1Var2 = teVar.P;
+                                                                    org.telegram.ui.Cells.q1 q1Var3 = teVar.q0;
                                                                     q1Var2.e6 = q1Var3.e6;
                                                                     q1Var2.n6 = q1Var3.n6;
                                                                     q1Var2.g6 = q1Var3.g6;
@@ -1364,32 +1364,32 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                                                                     q1Var2.k6 = q1Var3.k6;
                                                                     q1Var2.m6 = q1Var3.m6;
                                                                     q1Var2.w3(q1Var.getMessageObject(), null, q1Var.H2(), q1Var.I2(), q1Var.z2(), false);
-                                                                    org.telegram.ui.Cells.x1 transitionParams = ueVar.P.getTransitionParams();
-                                                                    transitionParams.h = ueVar.P.getTransitionParams().a();
+                                                                    org.telegram.ui.Cells.x1 transitionParams = teVar.P.getTransitionParams();
+                                                                    transitionParams.h = teVar.P.getTransitionParams().a();
                                                                     Rect rect2 = transitionParams.E0;
                                                                     transitionParams.L1 = 0.0f;
-                                                                    if (ueVar.P.getTransitionParams().E0.left == ueVar.P.getBackgroundDrawableLeft() && rect2.top == ueVar.P.getBackgroundDrawableTop() && rect2.bottom == ueVar.P.getBackgroundDrawableBottom()) {
+                                                                    if (teVar.P.getTransitionParams().E0.left == teVar.P.getBackgroundDrawableLeft() && rect2.top == teVar.P.getBackgroundDrawableTop() && rect2.bottom == teVar.P.getBackgroundDrawableBottom()) {
                                                                         i17 = 1;
                                                                     } else {
-                                                                        rect.bottom = -(ueVar.P.getBackgroundDrawableBottom() - rect2.bottom);
-                                                                        rect.top = -(ueVar.P.getBackgroundDrawableTop() - rect2.top);
+                                                                        rect.bottom = -(teVar.P.getBackgroundDrawableBottom() - rect2.bottom);
+                                                                        rect.top = -(teVar.P.getBackgroundDrawableTop() - rect2.top);
                                                                         if (q1Var.getMessageObject().P3()) {
-                                                                            rect.left = -(ueVar.P.getBackgroundDrawableLeft() - rect2.left);
+                                                                            rect.left = -(teVar.P.getBackgroundDrawableLeft() - rect2.left);
                                                                             rect.right = 0;
                                                                         } else {
                                                                             rect.left = 0;
-                                                                            rect.right = ueVar.P.getBackgroundDrawableRight() - rect2.right;
+                                                                            rect.right = teVar.P.getBackgroundDrawableRight() - rect2.right;
                                                                         }
                                                                         i17 = 1;
                                                                         transitionParams.x0 = true;
                                                                     }
-                                                                    int i30 = ueVar.P.pc;
+                                                                    int i30 = teVar.P.pc;
                                                                 } else {
                                                                     i17 = 1;
                                                                 }
-                                                                ueVar.d(new mf0(ueVar, i17), false);
-                                                                ueVar.E.invalidate();
-                                                                org.telegram.messenger.qs.f(ueVar.c).n(ueVar, org.telegram.messenger.qs.u3);
+                                                                teVar.d(new nf0(teVar, i17), false);
+                                                                teVar.E.invalidate();
+                                                                org.telegram.messenger.qs.f(teVar.c).n(teVar, org.telegram.messenger.qs.u3);
                                                             }
                                                             cnVar.Z.L0 = null;
                                                         }
@@ -1414,9 +1414,9 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                                                         hashMap3.remove(ijVar3.F0());
                                                         ej ejVar2 = cnVar.A0;
                                                         if (ejVar2 != null) {
-                                                            org.telegram.ui.Components.pn pnVar = cnVar.g1;
+                                                            org.telegram.ui.Components.on onVar = cnVar.g1;
                                                             ejVar2.O = d1Var;
-                                                            ejVar2.P = pnVar;
+                                                            ejVar2.P = onVar;
                                                             r10 = 0;
                                                             ejVar2.N = false;
                                                             if (q1Var.nb) {
@@ -1829,8 +1829,8 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                     ?? z1Var = new org.telegram.ui.Cells.z1(context, cnVar.za);
                     q1Var2 = z1Var;
                     if (!cnVar.R9()) {
-                        org.telegram.ui.ActionBar.s6.U(z1Var.getTextView(), org.telegram.ui.ActionBar.l6.tf, cnVar.za);
-                        org.telegram.ui.ActionBar.s6.x(z1Var.getBackgroundLayout(), z1Var.getBackgroundLayout().getBackground(), org.telegram.ui.ActionBar.l6.uf, cnVar.za, PorterDuff.Mode.MULTIPLY);
+                        org.telegram.ui.ActionBar.t6.U(z1Var.getTextView(), org.telegram.ui.ActionBar.m6.tf, cnVar.za);
+                        org.telegram.ui.ActionBar.t6.x(z1Var.getBackgroundLayout(), z1Var.getBackgroundLayout().getBackground(), org.telegram.ui.ActionBar.m6.uf, cnVar.za, PorterDuff.Mode.MULTIPLY);
                         q1Var2 = z1Var;
                     }
                 } else if (i7 == 3) {
@@ -1914,7 +1914,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                     }
                 }
             }
-            if (((org.telegram.ui.ActionBar.f2) cnVar).actionBar.w() || cnVar.X9()) {
+            if (((org.telegram.ui.ActionBar.f2) cnVar).actionBar.x() || cnVar.X9()) {
                 cnVar.d8 = false;
                 cnVar.e8 = 0L;
                 cnVar.f8 = null;
@@ -1971,7 +1971,7 @@ public final class ll extends org.telegram.ui.Components.qi0 {
                     if (!z12 && cnVar.f8 != null) {
                         long currentTimeMillis = System.currentTimeMillis();
                         if (!q1Var.t3(true, cnVar.i8, cnVar.f8, cnVar.d8 || currentTimeMillis - cnVar.e8 < 200) && cnVar.c8) {
-                            org.telegram.ui.Components.hc.a0(cnVar).Q(R.raw.error, 36, org.telegram.messenger.id.M0(2131746435, null)).k(true);
+                            org.telegram.ui.Components.gc.a0(cnVar).Q(R.raw.error, 36, org.telegram.messenger.id.M0(2131746435, null)).k(true);
                         }
                         cnVar.c8 = false;
                         if (cnVar.d8) {

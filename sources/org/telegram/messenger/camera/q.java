@@ -20,15 +20,15 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.c3;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class q {
     public static int A(float f10, int i7, int i10) {
@@ -84,10 +84,10 @@ public abstract /* synthetic */ class q {
         return byteBuffer.order(ByteOrder.nativeOrder()).asFloatBuffer();
     }
 
-    public static v2 h(Activity activity, boolean z9, int i7, g6 g6Var) {
-        v2 v2Var = new v2(i7, activity, g6Var, z9);
-        v2Var.N();
-        return v2Var;
+    public static w2 h(Activity activity, boolean z9, int i7, h6 h6Var) {
+        w2 w2Var = new w2(i7, activity, h6Var, z9);
+        w2Var.N();
+        return w2Var;
     }
 
     public static void i(float f10, ValueAnimator valueAnimator) {
@@ -102,8 +102,8 @@ public abstract /* synthetic */ class q {
         viewPropertyAnimator.alpha(f10).setDuration(j3).start();
     }
 
-    public static void l(ViewPropertyAnimator viewPropertyAnimator, xq xqVar, long j3) {
-        viewPropertyAnimator.setInterpolator(xqVar).setDuration(j3).start();
+    public static void l(ViewPropertyAnimator viewPropertyAnimator, wq wqVar, long j3) {
+        viewPropertyAnimator.setInterpolator(wqVar).setDuration(j3).start();
     }
 
     public static void m(TextView textView, int i7, float f10) {
@@ -117,8 +117,8 @@ public abstract /* synthetic */ class q {
         textView.setMaxLines(i11);
     }
 
-    public static void o(TextView textView, int i7, g6 g6Var, String str, int i10) {
-        s6.U(textView, i7, g6Var);
+    public static void o(TextView textView, int i7, h6 h6Var, String str, int i10) {
+        t6.U(textView, i7, h6Var);
         textView.setText(id.M0(i10, str));
     }
 
@@ -132,12 +132,12 @@ public abstract /* synthetic */ class q {
         sb2.append(str2);
     }
 
-    public static void r(String str, int i7, hc hcVar) {
-        hcVar.i(id.M0(i7, str)).j();
+    public static void r(String str, int i7, gc gcVar) {
+        gcVar.i(id.M0(i7, str)).j();
     }
 
-    public static void s(String str, hc hcVar, int i7, int i10) {
-        hcVar.Q(i7, i10, g0.X2(str)).j();
+    public static void s(String str, gc gcVar, int i7, int i10) {
+        gcVar.Q(i7, i10, g0.X2(str)).j();
     }
 
     public static void t(EGL10 egl10, StringBuilder sb2) {

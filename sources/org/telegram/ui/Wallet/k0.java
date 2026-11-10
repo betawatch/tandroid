@@ -10,15 +10,15 @@ import org.json.JSONObject;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.wn0;
+import org.telegram.ui.xn0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean h;
     public boolean i;
     public final /* synthetic */ l0 l;
-    public final t3 a = new t3();
+    public final v3 a = new v3();
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public final HashSet d = new HashSet();
@@ -217,11 +217,11 @@ public final class k0 {
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
-        List.-EL.sort(arrayList3, new wn0(7));
-        t3 t3Var = this.a;
-        HashSet hashSet2 = t3Var.a;
-        HashSet hashSet3 = t3Var.a;
-        HashMap hashMap = t3Var.b;
+        List.-EL.sort(arrayList3, new xn0(7));
+        v3 v3Var = this.a;
+        HashSet hashSet2 = v3Var.a;
+        HashSet hashSet3 = v3Var.a;
+        HashMap hashMap = v3Var.b;
         hashSet2.clear();
         hashMap.clear();
         int size3 = arrayList3.size();
@@ -234,6 +234,6 @@ public final class k0 {
             }
         }
         hashMap.clear();
-        t3Var.b(4, new ArrayList(hashSet3));
+        v3Var.b(4, new ArrayList(hashSet3));
     }
 }

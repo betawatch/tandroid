@@ -1,53 +1,13 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class t3 {
-    public final HashSet a = new HashSet();
-    public final HashMap b = new HashMap();
+public final class t3 extends TL_wallet.walletTransaction {
+    public final TL_wallet.walletTransaction a;
 
-    public static String c(int i7, String str) {
-        if (str.length() <= (i7 * 2) + 1) {
-            return str;
-        }
-        return str.substring(0, i7) + "…" + str.substring(str.length() - i7);
-    }
-
-    public final String a(String str) {
-        if (str == null) {
-            return null;
-        }
-        String str2 = (String) this.b.get(str);
-        return str2 == null ? str : str2;
-    }
-
-    public final void b(int i7, ArrayList arrayList) {
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            String str = (String) obj;
-            String c10 = c(i7, str);
-            ArrayList arrayList2 = (ArrayList) hashMap.get(c10);
-            if (arrayList2 == null) {
-                arrayList2 = new ArrayList();
-                hashMap.put(c10, arrayList2);
-            }
-            arrayList2.add(str);
-        }
-        for (ArrayList arrayList3 : hashMap.values()) {
-            if (arrayList3.size() == 1) {
-                String str2 = (String) arrayList3.get(0);
-                this.b.put(str2, c(i7, str2));
-            } else {
-                b(i7 + 1, arrayList3);
-            }
-        }
+    public t3(TL_wallet.walletTransaction wallettransaction) {
+        this.a = wallettransaction;
     }
 }

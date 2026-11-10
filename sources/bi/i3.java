@@ -8,11 +8,11 @@ import org.telegram.messenger.c20;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,9 +59,9 @@ public final /* synthetic */ class i3 implements Runnable {
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.Updates)) {
-                        org.telegram.ui.Components.hc.a0(T).f0(tL_error, false);
+                        org.telegram.ui.Components.gc.a0(T).f0(tL_error, false);
                     } else if (j3 < 0 || j10 < 0) {
-                        org.telegram.ui.Components.cc I = org.telegram.ui.Components.hc.a0(T).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
+                        org.telegram.ui.Components.bc I = org.telegram.ui.Components.gc.a0(T).I(R.raw.forward, org.telegram.messenger.id.M0(2131749897, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131749898, k7Var.y1(), org.telegram.messenger.m5.t(j3))));
                         I.t = true;
                         I.j();
                     } else {
@@ -110,7 +110,7 @@ public final /* synthetic */ class i3 implements Runnable {
                     try {
                         p0Var.c(j11);
                         try {
-                            fw0 r10 = p0Var.r();
+                            ew0 r10 = p0Var.r();
                             try {
                                 if (!((LinkedHashMap) r10.e).isEmpty() && r10.a != r72) {
                                     throw new org.telegram.ui.Wallet.o0("USER_MISMATCH");

@@ -5,37 +5,36 @@ import android.graphics.Rect;
 import android.view.View;
 import bg.s;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.eh0;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d extends c {
-    public final i6 d;
-    public final eh0 e;
+    public final h6 d;
+    public final dh0 e;
     public final te.a f;
     public float h;
 
-    public d(View view, g6 g6Var) {
-        super(g6Var);
-        eh0 eh0Var = new eh0(view);
-        this.e = eh0Var;
-        eh0Var.d(null, true, false);
-        eh0Var.v = 650.0f;
-        eh0Var.e(false, 0.69f);
-        eh0Var.p.setStrokeWidth(g0.L(1.5f));
-        this.f = new te.a(view, xq.h, 260L);
-        i6 i6Var = new i6(true, false, false);
-        this.d = i6Var;
-        i6Var.x(g0.o());
-        i6Var.w(g0.L(13.0f));
-        i6Var.b = 17;
-        int w02 = l6.w0(l6.i6, g6Var);
+    public d(View view, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(h6Var);
+        dh0 dh0Var = new dh0(view);
+        this.e = dh0Var;
+        dh0Var.d(null, true, false);
+        dh0Var.v = 650.0f;
+        dh0Var.e(false, 0.69f);
+        dh0Var.p.setStrokeWidth(g0.L(1.5f));
+        this.f = new te.a(view, wq.h, 260L);
+        h6 h6Var2 = new h6(true, false, false);
+        this.d = h6Var2;
+        h6Var2.x(g0.o());
+        h6Var2.w(g0.L(13.0f));
+        h6Var2.b = 17;
+        int w02 = m6.w0(m6.i6, h6Var);
         if (this.b != w02) {
-            l6.H1(this.a, w02, false);
+            m6.H1(this.a, w02, false);
             this.b = w02;
         }
     }

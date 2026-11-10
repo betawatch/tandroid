@@ -4,16 +4,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class go extends org.telegram.ui.Components.pj0 {
+public final class go extends org.telegram.ui.Components.oj0 {
     public final /* synthetic */ ho c;
 
     public go(ho hoVar) {
         this.c = hoVar;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 1;
     }
@@ -39,7 +39,7 @@ public final class go extends org.telegram.ui.Components.pj0 {
         View view = d1Var.a;
         if (i10 == 0) {
             org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) view;
-            org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d6, n4Var, hoVar.n2);
+            org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d6, n4Var, hoVar.n2);
             n4Var.setText(org.telegram.messenger.id.M0(2131743644, null));
             return;
         }
@@ -65,16 +65,16 @@ public final class go extends org.telegram.ui.Components.pj0 {
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         ho hoVar = this.c;
-        org.telegram.ui.ActionBar.g6 g6Var = hoVar.n2;
+        org.telegram.ui.ActionBar.h6 h6Var = hoVar.n2;
         if (i7 == 0) {
-            return new org.telegram.ui.Components.yi0(new org.telegram.ui.Cells.n4(hoVar.getContext(), g6Var));
+            return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.n4(hoVar.getContext(), h6Var));
         }
         if (i7 == 1) {
-            return new org.telegram.ui.Components.yi0(new da(this, hoVar.getContext(), g6Var));
+            return new org.telegram.ui.Components.xi0(new da(this, hoVar.getContext(), h6Var));
         }
         if (i7 != 2) {
             return null;
         }
-        return new org.telegram.ui.Components.yi0(new org.telegram.ui.Cells.z8(12, hoVar.getContext(), g6Var));
+        return new org.telegram.ui.Components.xi0(new org.telegram.ui.Cells.z8(12, hoVar.getContext(), h6Var));
     }
 }

@@ -1,67 +1,54 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements org.telegram.ui.Components.zi0, org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ jt a;
+public final class ft extends rg.a {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final CharSequence f;
+    public final CharSequence g;
+    public final int h;
 
-    public /* synthetic */ ft(jt jtVar) {
-        this.a = jtVar;
+    public ft(int i7, String str) {
+        super(i7, false);
+        this.f = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        int i10;
-        int i11;
-        int i12;
-        jt jtVar = this.a;
-        mt mtVar = jtVar.v3;
-        ArrayList arrayList = jtVar.m3;
-        arrayList.clear();
-        int i13 = 0;
-        while (true) {
-            ht[] htVarArr = jtVar.n3;
-            if (i13 >= htVarArr.length) {
-                i10 = ((org.telegram.ui.ActionBar.f2) mtVar).currentAccount;
-                org.telegram.messenger.jz.e(i10).l(0);
-                i11 = ((org.telegram.ui.ActionBar.f2) mtVar).currentAccount;
-                org.telegram.messenger.jz.e(i11).l(1);
-                i12 = ((org.telegram.ui.ActionBar.f2) mtVar).currentAccount;
-                org.telegram.messenger.jz.e(i12).l(2);
-                jtVar.e3 = true;
-                jtVar.C1();
-                jtVar.D1(true);
-                return;
-            }
-            ht htVar = htVarArr[i13];
-            if (htVar.c > 0) {
-                arrayList.add(Integer.valueOf(htVar.d));
-            }
-            i13++;
-        }
+    public static ft b(CharSequence charSequence, String str) {
+        return new ft(-1, 0, 0, 0, charSequence, str);
     }
 
-    @Override // org.telegram.ui.Components.zi0
-    public int run() {
-        jt jtVar = this.a;
-        ArrayList arrayList = jtVar.j3;
-        int i7 = 0;
-        while (true) {
-            if (i7 >= arrayList.size()) {
-                i7 = -1;
-                break;
-            }
-            if (((et) arrayList.get(i7)).a == 5) {
-                break;
-            }
-            i7++;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ft)) {
+            return false;
         }
-        if (i7 < 0) {
-            return -1;
+        ft ftVar = (ft) obj;
+        CharSequence charSequence = ftVar.f;
+        int i7 = ftVar.a;
+        int i10 = this.a;
+        if (i7 != i10) {
+            return false;
         }
-        jtVar.g3.h1(i7, org.telegram.messenger.g0.L(60.0f));
-        return i7;
+        CharSequence charSequence2 = this.f;
+        if (i10 == 1 || i10 == 4 || i10 == 3 || i10 == 5) {
+            return TextUtils.equals(charSequence2, charSequence);
+        }
+        if (i10 == 2) {
+            return ftVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && ftVar.d == this.d && ftVar.e == this.e && ftVar.c == this.c;
+        }
+        return true;
+    }
+
+    public ft(int i7, int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2) {
+        super(2, false);
+        this.h = i7;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = charSequence;
+        this.g = charSequence2;
     }
 }

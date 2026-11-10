@@ -17,18 +17,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Cells.g6;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.v8;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class f extends f2 implements ls {
     public ri.c a;
@@ -41,15 +41,15 @@ public final class f extends f2 implements ls {
     public ArrayList n;
     public ab.b0 r;
 
-    public static void Z(f fVar, y31 y31Var) {
+    public static void Z(f fVar, x31 x31Var) {
         f fVar2;
-        if (y31Var.d == 1) {
+        if (x31Var.d == 1) {
             fVar2 = fVar;
-            v4.O(fVar.getParentActivity(), fVar2, id.M0(2131751906, null), null, id.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, id.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
+            u4.O(fVar.getParentActivity(), fVar2, id.M0(2131751906, null), null, id.M0(2131751907, null), null, ConnectionsManager.DEFAULT_DATACENTER_ID, id.M0(2131751753, null), fVar.resourceProvider, new b(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = y31Var.G;
+        Object obj = x31Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().M0(Long.valueOf(-fVar2.b));
@@ -96,15 +96,15 @@ public final class f extends f2 implements ls {
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 5));
         ri.c cVar = new ri.c();
-        cVar.a(getThemedColor(l6.d6));
+        cVar.a(getThemedColor(m6.d6));
         this.a = cVar;
         dh.c cVar2 = new dh.c(cVar, cVar, cVar);
         this.actionBar.setBackground(null);
-        this.actionBar.N(cVar2, c8.g0.o(this.resourceProvider), false);
+        this.actionBar.O(cVar2, c8.g0.o(this.resourceProvider), false);
         this.actionBar.Q0 = true;
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
-        s6.h(l6.a7, frameLayout, null);
+        t6.h(m6.a7, frameLayout, null);
         e eVar = new e(context, this.resourceProvider);
         this.h = eVar;
         eVar.setTitle(id.M0(2131751847, null));
@@ -112,11 +112,11 @@ public final class f extends f2 implements ls {
         this.h.setTag(-33024);
         TLRPC.User user = this.d;
         if (user != null) {
-            this.h.a.e(user, new w8(0, this.d));
+            this.h.a.e(user, new v8(0, this.d));
         } else {
             TLRPC.Chat chat = this.c;
             if (chat != null) {
-                this.h.a.e(chat, new w8(this.c));
+                this.h.a.e(chat, new v8(this.c));
             }
         }
         r41 r41Var = new r41(this, new a(this, 0), new b(this), new x3(this, 6));
@@ -196,11 +196,11 @@ public final class f extends f2 implements ls {
         try {
             ri.c cVar = this.a;
             if (cVar != null) {
-                cVar.a(getThemedColor(l6.d6));
+                cVar.a(getThemedColor(m6.d6));
             }
-            org.telegram.ui.ActionBar.k kVar = this.actionBar;
-            if (kVar != null) {
-                kVar.invalidate();
+            org.telegram.ui.ActionBar.l lVar = this.actionBar;
+            if (lVar != null) {
+                lVar.invalidate();
             }
         } catch (Exception e10) {
             a8.g(e10, true);

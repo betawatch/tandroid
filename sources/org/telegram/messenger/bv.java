@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class bv extends fu {
     public final jv W;
@@ -130,7 +130,7 @@ public abstract class bv extends fu {
         }
     }
 
-    @Override // org.telegram.messenger.fu, org.telegram.ui.tg0
+    @Override // org.telegram.messenger.fu, org.telegram.ui.ug0
     public final Layout a() {
         return this.W.b;
     }

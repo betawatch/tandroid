@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Region;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class h3 extends l9 {
-    public final Path G;
+public final class h3 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public h3(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h3(Context context, org.telegram.ui.Cells.c2[] c2VarArr, int i7) {
         super(context);
-        this.G = new Path();
+        this.a = i7;
+        this.b = c2VarArr;
     }
 
-    @Override // org.telegram.ui.Components.l9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        Path path = this.G;
-        path.rewind();
-        path.addCircle(org.telegram.messenger.g0.L(54.0f), org.telegram.messenger.g0.L(53.0f), org.telegram.messenger.g0.L(14.0f), Path.Direction.CW);
-        canvas.clipPath(path, Region.Op.DIFFERENCE);
-        super.onDraw(canvas);
-        canvas.restore();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, i10);
+                org.telegram.ui.Cells.c2[] c2VarArr = this.b;
+                if (c2VarArr[0] != null) {
+                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.g0.L(7.0f) + c2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+                    break;
+                }
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                org.telegram.ui.Cells.c2[] c2VarArr2 = this.b;
+                if (c2VarArr2[0] != null) {
+                    setMeasuredDimension(getMeasuredWidth(), org.telegram.messenger.g0.L(7.0f) + c2VarArr2[0].getMeasuredHeight() + getMeasuredHeight());
+                    break;
+                }
+                break;
+        }
     }
 }

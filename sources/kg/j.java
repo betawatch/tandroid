@@ -10,11 +10,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -29,7 +29,7 @@ public final class j extends FrameLayout {
         this.e = mVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new w5(this, 220L, xq.h);
+        this.d = new v5(this, 220L, wq.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -38,11 +38,11 @@ public final class j extends FrameLayout {
             case 1:
                 h6.m mVar = (h6.m) this.d;
                 Path path = (Path) this.c;
-                di diVar = (di) this.e;
-                fh.g gVar = diVar.v2;
+                ci ciVar = (ci) this.e;
+                fh.g gVar = ciVar.y2;
                 if (gVar != null) {
-                    gVar.setBounds(0, (int) diVar.P3, getMeasuredWidth(), getMeasuredHeight());
-                    diVar.v2.draw(canvas);
+                    gVar.setBounds(0, (int) ciVar.S3, getMeasuredWidth(), getMeasuredHeight());
+                    ciVar.y2.draw(canvas);
                 }
                 float L = org.telegram.messenger.g0.L(20.0f);
                 int L2 = org.telegram.messenger.g0.L(7.0f);
@@ -74,9 +74,9 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 0:
                 float width = getWidth() / 2.0f;
-                w5 w5Var = (w5) this.d;
+                v5 v5Var = (v5) this.d;
                 m mVar = (m) this.e;
-                float e10 = w5Var.e(false, mVar.n.getWidth());
+                float e10 = v5Var.e(false, mVar.n.getWidth());
                 Rect rect = (Rect) this.c;
                 float f10 = e10 / 2.0f;
                 rect.set((int) (width - (mVar.n.getScaleX() * f10)), (int) (((1.0f - mVar.n.getScaleY()) * mVar.n.getHeight()) + mVar.n.getY()), (int) ((mVar.n.getScaleX() * f10) + width), (int) (mVar.n.getY() + mVar.n.getHeight()));
@@ -93,13 +93,13 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 1:
                 int i13 = this.b;
-                di diVar = (di) this.e;
-                int top = i13 - diVar.s1.getTop();
+                ci ciVar = (ci) this.e;
+                int top = i13 - ciVar.v1.getTop();
                 super.onLayout(z9, i7, i10, i11, i12);
                 this.b = getHeight();
-                if (diVar.s1.getVisibility() == 0 && getHeight() - diVar.s1.getTop() != top) {
-                    diVar.s1.setTranslationY(diVar.s1.getTranslationY() + ((getHeight() - diVar.s1.getTop()) - top));
-                    diVar.s1.animate().translationY(0.0f).setDuration(320L).setInterpolator(xq.h).start();
+                if (ciVar.v1.getVisibility() == 0 && getHeight() - ciVar.v1.getTop() != top) {
+                    ciVar.v1.setTranslationY(ciVar.v1.getTranslationY() + ((getHeight() - ciVar.v1.getTop()) - top));
+                    ciVar.v1.animate().translationY(0.0f).setDuration(320L).setInterpolator(wq.h).start();
                     break;
                 }
                 break;
@@ -129,9 +129,9 @@ public final class j extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(di diVar, Context context) {
+    public j(ci ciVar, Context context) {
         super(context);
-        this.e = diVar;
+        this.e = ciVar;
         this.c = new Path();
         this.d = new h6.m(28);
     }

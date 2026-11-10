@@ -1,13 +1,58 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public interface f0 {
-    f0 a(w7.s sVar);
+public final class f0 {
+    public final Object a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final int e;
 
-    a b(e2.l0 l0Var);
+    public f0(Object obj) {
+        this(obj, -1L);
+    }
 
-    f0 c(boolean z9);
+    public final f0 a(Object obj) {
+        if (this.a.equals(obj)) {
+            return this;
+        }
+        long j3 = this.d;
+        return new f0(this.b, this.c, this.e, j3, obj);
+    }
 
-    f0 d(int i7);
+    public final boolean b() {
+        return this.b != -1;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof f0)) {
+            return false;
+        }
+        f0 f0Var = (f0) obj;
+        return this.a.equals(f0Var.a) && this.b == f0Var.b && this.c == f0Var.c && this.d == f0Var.d && this.e == f0Var.e;
+    }
+
+    public final int hashCode() {
+        return ((((((((this.a.hashCode() + 527) * 31) + this.b) * 31) + this.c) * 31) + ((int) this.d)) * 31) + this.e;
+    }
+
+    public f0(Object obj, long j3) {
+        this(-1, -1, -1, j3, obj);
+    }
+
+    public f0(Object obj, long j3, int i7) {
+        this(-1, -1, i7, j3, obj);
+    }
+
+    public f0(int i7, int i10, int i11, long j3, Object obj) {
+        this.a = obj;
+        this.b = i7;
+        this.c = i10;
+        this.d = j3;
+        this.e = i11;
+    }
 }

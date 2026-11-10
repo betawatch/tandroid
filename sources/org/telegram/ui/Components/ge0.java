@@ -1,114 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ge0 extends org.telegram.ui.j4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class ge0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ge0(int i7, Context context, Object obj) {
-        super(context);
-        this.h = i7;
-        this.n = obj;
+    public /* synthetic */ ge0(PipRoundVideoView pipRoundVideoView, int i7) {
+        this.a = i7;
+        this.b = pipRoundVideoView;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.h) {
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                Drawable[] drawableArr = PhotoViewer.Y8;
-                photoViewer.getClass();
-                super.draw(canvas);
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.messenger.ij ijVar;
-        switch (this.h) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (ijVar = MediaController.B().u0) != null) {
-                    pipRoundVideoView.E.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, ijVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.l6.k2);
-                }
-                return drawChild;
-            case 1:
-            default:
-                return super.drawChild(canvas, view, j3);
-            case 2:
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                if (view == photoViewer.D3 && photoViewer.f4) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // org.telegram.ui.j4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i7, i10);
-                m71 m71Var = (m71) this.n;
-                if (m71Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = m71Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = m71Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
+                    break;
                 }
                 break;
-            case 2:
-                super.onMeasure(i7, i10);
-                PhotoViewer photoViewer = (PhotoViewer) this.n;
-                ImageView imageView2 = photoViewer.w3;
-                if (imageView2 != null) {
-                    ViewGroup.LayoutParams layoutParams3 = imageView2.getLayoutParams();
-                    layoutParams3.width = getMeasuredWidth();
-                    layoutParams3.height = getMeasuredHeight();
-                }
-                TextureView textureView = photoViewer.B2;
-                if (textureView instanceof i51) {
-                    textureView.setPivotX(textureView.getMeasuredWidth() / 2);
-                    photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
-                } else {
-                    if (textureView != null) {
-                        textureView.setPivotX(0.0f);
-                    }
-                    SurfaceView surfaceView = photoViewer.C2;
-                    if (surfaceView != null) {
-                        surfaceView.setPivotX(0.0f);
-                    }
-                    photoViewer.E2.setPivotX(0.0f);
-                }
-                photoViewer.s0();
-                break;
             default:
-                super.onMeasure(i7, i10);
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

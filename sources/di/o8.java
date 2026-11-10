@@ -13,24 +13,24 @@ import java.util.HashSet;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public final Paint a;
     public final Paint b;
     public final TextView c;
     public final TextView d;
     public final TextView e;
-    public final org.telegram.ui.ActionBar.g6 f;
+    public final org.telegram.ui.ActionBar.h6 f;
 
-    public o8(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public o8(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        this.f = g6Var;
-        paint.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q7, g6Var));
+        this.f = h6Var;
+        paint.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.q7, h6Var));
         paint2.setColor(-1);
         setWillNotDraw(false);
         TextView textView = new TextView(context);
@@ -41,7 +41,7 @@ public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.b
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 8.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.l6.r1(0.5f, -1));
+        textView2.setTextColor(org.telegram.ui.ActionBar.m6.r1(0.5f, -1));
         textView2.setVisibility(8);
         textView2.setTranslationY(org.telegram.messenger.g0.L(9.0f));
         addView(textView2, ha.d(-2, -2.0f, 19, 44.0f, 0.0f, 0.0f, 0.0f));
@@ -49,7 +49,7 @@ public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.e = textView3;
         textView3.setPadding(org.telegram.messenger.g0.L(13.0f), 0, org.telegram.messenger.g0.L(13.0f), 0);
         int L = org.telegram.messenger.g0.L(16.0f);
-        textView3.setBackground(org.telegram.ui.ActionBar.l6.k0(L, L, L, L, 536870911, 956301311, 956301311));
+        textView3.setBackground(org.telegram.ui.ActionBar.m6.k0(L, L, L, L, 536870911, 956301311, 956301311));
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setText(id.M0(2131743943, null));
         textView3.setTextSize(1, 14.0f);
@@ -92,17 +92,17 @@ public final class o8 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this.e.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.a.setColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.q7, this.f));
+            this.a.setColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.q7, this.f));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -9,9 +9,9 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class jd {
     public static n2.p0 a(File file, wi.x xVar, long j3, long j10, boolean z9, b7.d dVar) {
@@ -82,21 +82,21 @@ public abstract class jd {
                     j12 = 0;
                 } else {
                     long min = Math.min(j15, max2);
-                    ky0 ky0Var = new ky0(25);
+                    ly0 ly0Var = new ly0(25);
                     j12 = 0;
-                    kd.c(file, j14, max, min, dVar.a, dVar.b, dVar.c, ky0Var);
-                    if (((MediaFormat) ky0Var.d) == null || ((ArrayList) ky0Var.b).isEmpty()) {
+                    kd.c(file, j14, max, min, dVar.a, dVar.b, dVar.c, ly0Var);
+                    if (((MediaFormat) ly0Var.d) == null || ((ArrayList) ly0Var.b).isEmpty()) {
                         throw new IOException("Re-encoded trim start produced no frames");
                     }
-                    boolean m10 = wi.x.m(trackFormat, (MediaFormat) ky0Var.d, "csd-0", "csd-1");
+                    boolean m10 = wi.x.m(trackFormat, (MediaFormat) ly0Var.d, "csd-0", "csd-1");
                     if (min >= max2) {
-                        xVar2.n(m10 ? trackFormat : (MediaFormat) ky0Var.d, true);
-                        e(xVar2, ky0Var, max);
+                        xVar2.n(m10 ? trackFormat : (MediaFormat) ly0Var.d, true);
+                        e(xVar2, ly0Var, max);
                         str = "reencode-range-in-gop";
                         max = max;
                     } else if (m10) {
                         xVar2.n(trackFormat, true);
-                        e(xVar2, ky0Var, max);
+                        e(xVar2, ly0Var, max);
                         b(file, xVar2, j15, max, max2);
                         max = max;
                         str = "reencode-head";
@@ -219,10 +219,10 @@ public abstract class jd {
         return -1;
     }
 
-    public static void e(wi.x xVar, ky0 ky0Var, long j3) {
-        ArrayList arrayList = (ArrayList) ky0Var.b;
+    public static void e(wi.x xVar, ly0 ly0Var, long j3) {
+        ArrayList arrayList = (ArrayList) ly0Var.b;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            xVar.q(true, (ByteBuffer) arrayList.get(i7), (MediaCodec.BufferInfo) ((ArrayList) ky0Var.c).get(i7), -j3);
+            xVar.q(true, (ByteBuffer) arrayList.get(i7), (MediaCodec.BufferInfo) ((ArrayList) ly0Var.c).get(i7), -j3);
         }
     }
 }

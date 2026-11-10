@@ -7,42 +7,42 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.jt0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.sj0;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.it0;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.rj0;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class cd extends LinearLayout implements ls {
     public final int a;
-    public final w61 b;
+    public final v61 b;
     public final bd c;
     public final FrameLayout d;
-    public final jt0 e;
+    public final it0 e;
     public final long f;
 
-    public cd(Context context, int i7, boolean z9, long j3, int i10, org.telegram.ui.ActionBar.g6 g6Var, jt0 jt0Var) {
+    public cd(Context context, int i7, boolean z9, long j3, int i10, org.telegram.ui.ActionBar.h6 h6Var, it0 it0Var) {
         super(context);
-        this.e = jt0Var;
+        this.e = it0Var;
         this.a = i7;
         this.f = j3;
         setOrientation(1);
-        w61 w61Var = jt0Var == null ? new w61(context, null) : new sj0(context, g6Var, jt0Var);
-        this.b = w61Var;
-        bd bdVar = new bd(context, i7, z9, j3, i10, g6Var);
+        v61 v61Var = it0Var == null ? new v61(context, null) : new rj0(context, h6Var, it0Var);
+        this.b = v61Var;
+        bd bdVar = new bd(context, i7, z9, j3, i10, h6Var);
         this.c = bdVar;
-        bdVar.g = jt0Var == null ? null : (sj0) w61Var;
-        w61Var.setAdapter(bdVar);
-        View n10 = w61Var.n(jt0Var == null ? 3 : -2, true);
+        bdVar.g = it0Var == null ? null : (rj0) v61Var;
+        v61Var.setAdapter(bdVar);
+        View n10 = v61Var.n(it0Var == null ? 3 : -2, true);
         View view = new View(context);
-        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.d7, view, g6Var);
-        if (jt0Var == null) {
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.d7, view, h6Var);
+        if (it0Var == null) {
             this.d = null;
             addView(n10, c8.ha.o(-1, 48));
             addView(view, new LinearLayout.LayoutParams(c8.ha.z(-1.0f), c8.ha.z(1.0f / org.telegram.messenger.g0.p)));
-            setBackgroundColor(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, g6Var));
+            setBackgroundColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
         } else {
             setClipChildren(false);
             setClipToPadding(false);
@@ -51,54 +51,54 @@ public final class cd extends LinearLayout implements ls {
             frameLayout.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
             frameLayout.addView(n10, c8.ha.e(-1, 48, 48));
         }
-        addView(w61Var, c8.ha.o(-1, -1));
+        addView(v61Var, c8.ha.o(-1, -1));
     }
 
     public final void a(boolean z9) {
         bd bdVar = this.c;
-        w61 w61Var = this.b;
-        jt0 jt0Var = this.e;
-        if (jt0Var == null) {
+        v61 v61Var = this.b;
+        it0 it0Var = this.e;
+        if (it0Var == null) {
             bdVar.i();
-            w61Var.o(z9);
+            v61Var.o(z9);
             return;
         }
         ArrayList arrayList = bdVar.i;
         ArrayList arrayList2 = bdVar.i;
         int i7 = 0;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            i7 |= 1 << ((y31) arrayList.get(i10)).z;
+            i7 |= 1 << ((x31) arrayList.get(i10)).z;
         }
-        View currentView = w61Var.getCurrentView();
+        View currentView = v61Var.getCurrentView();
         int i11 = currentView instanceof ad ? ((ad) currentView).d : 0;
         bdVar.i();
         int i12 = 0;
         for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-            i12 |= 1 << ((y31) arrayList2.get(i13)).z;
+            i12 |= 1 << ((x31) arrayList2.get(i13)).z;
         }
         if (i7 == i12) {
             if (z9) {
                 return;
             }
-            w61Var.o(false);
+            v61Var.o(false);
             return;
         }
-        w61Var.onTouchEvent(null);
+        v61Var.onTouchEvent(null);
         int i14 = 0;
         while (true) {
             if (i14 >= arrayList2.size()) {
                 i14 = 0;
                 break;
-            } else if (((y31) arrayList2.get(i14)).z == i11) {
+            } else if (((x31) arrayList2.get(i14)).z == i11) {
                 break;
             } else {
                 i14++;
             }
         }
-        w61Var.setPosition(i14);
-        w61Var.J();
-        w61Var.o(false);
-        jt0Var.p();
+        v61Var.setPosition(i14);
+        v61Var.J();
+        v61Var.o(false);
+        it0Var.p();
     }
 
     @Override // org.telegram.messenger.ls
@@ -110,7 +110,7 @@ public final class cd extends LinearLayout implements ls {
         }
     }
 
-    public qj0 getCurrentListView() {
+    public pj0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof ad) {
             return ((ad) currentView).a;
@@ -122,7 +122,7 @@ public final class cd extends LinearLayout implements ls {
         return this.d;
     }
 
-    public w61 getViewPager() {
+    public v61 getViewPager() {
         return this.b;
     }
 
@@ -146,9 +146,9 @@ public final class cd extends LinearLayout implements ls {
                 return;
             }
             bdVar.h = qVar;
-            w61 w61Var = this.b;
-            qVar.c(w61Var);
-            for (View view : w61Var.getViewPages()) {
+            v61 v61Var = this.b;
+            qVar.c(v61Var);
+            for (View view : v61Var.getViewPages()) {
                 if (view instanceof ad) {
                     qVar.b(((ad) view).a);
                 }

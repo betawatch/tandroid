@@ -30,9 +30,9 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.r2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.w2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class j0 extends WebViewClient {
     public boolean a = true;
@@ -158,9 +158,9 @@ public final class j0 extends WebViewClient {
             boolean z10 = x0.Q0;
         }
         u0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        v2 v2Var = u0Var.F;
-        if (v2Var != null) {
-            v2Var.dismiss();
+        w2 w2Var = u0Var.F;
+        if (w2Var != null) {
+            w2Var.dismiss();
             u0Var.F = null;
         }
         u0Var.e = null;

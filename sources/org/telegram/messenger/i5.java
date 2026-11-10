@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     public ArrayList a;
@@ -57,7 +57,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
     /* JADX WARN: Type inference failed for: r0v10 */
     /* JADX WARN: Type inference failed for: r0v11 */
     /* JADX WARN: Type inference failed for: r0v12, types: [org.telegram.tgnet.TLRPC$User] */
-    /* JADX WARN: Type inference failed for: r0v41, types: [org.telegram.ui.Components.w8] */
+    /* JADX WARN: Type inference failed for: r0v41, types: [org.telegram.ui.Components.v8] */
     /* JADX WARN: Type inference failed for: r0v56 */
     /* JADX WARN: Type inference failed for: r0v57 */
     /* JADX WARN: Type inference failed for: r12v40 */
@@ -93,7 +93,7 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
         String format;
         ?? r13;
         Canvas canvas;
-        org.telegram.ui.Components.w8 w8Var;
+        org.telegram.ui.Components.v8 v8Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation2;
         ArrayList arrayList = this.a;
@@ -203,20 +203,20 @@ public final class i5 implements RemoteViewsService.RemoteViewsFactory {
                     canvas = new Canvas(createBitmap);
                     if (r13 == 0) {
                         if (r02 != 0) {
-                            w8Var = new org.telegram.ui.Components.w8(i14, r02);
+                            v8Var = new org.telegram.ui.Components.v8(i14, r02);
                             if (t10.z(r02)) {
-                                w8Var.g(12);
+                                v8Var.g(12);
                             } else if (t10.B(r02)) {
-                                w8Var.g(1);
+                                v8Var.g(1);
                             }
                         } else {
-                            ?? w8Var2 = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+                            ?? v8Var2 = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
                             int i17 = cVar.a;
-                            w8Var2.q(r12);
-                            w8Var = w8Var2;
+                            v8Var2.q(r12);
+                            v8Var = v8Var2;
                         }
-                        w8Var.setBounds(i14, i14, L, L);
-                        w8Var.draw(canvas);
+                        v8Var.setBounds(i14, i14, L, L);
+                        v8Var.draw(canvas);
                         i10 = i14;
                     } else {
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;

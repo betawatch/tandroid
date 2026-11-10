@@ -20,7 +20,6 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import bi.k7;
 import bi.v3;
-import bi.w2;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -58,7 +57,9 @@ import li.q3;
 import li.t3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.c20;
+import org.telegram.messenger.d4;
 import org.telegram.messenger.g0;
+import org.telegram.messenger.g6;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.ij;
@@ -77,39 +78,40 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.m0;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.a6;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.Cells.o7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.d4;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.gb0;
-import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.ik;
-import org.telegram.ui.Components.nb0;
-import org.telegram.ui.Components.t4;
+import org.telegram.ui.Components.an;
+import org.telegram.ui.Components.b4;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.fb0;
+import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.hk;
+import org.telegram.ui.Components.mb0;
+import org.telegram.ui.Components.s4;
 import org.telegram.ui.Components.u3;
-import org.telegram.ui.Components.v4;
-import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.u4;
+import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.uk;
 import org.telegram.ui.Components.vk;
-import org.telegram.ui.Components.wk;
 import org.telegram.ui.cn;
-import org.telegram.ui.il0;
+import org.telegram.ui.jl0;
 import org.telegram.ui.ld;
-import org.telegram.ui.sw;
-import org.telegram.ui.y91;
-import org.telegram.ui.yw;
+import org.telegram.ui.tw;
+import org.telegram.ui.z91;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, androidx.car.app.utils.b, Continuation, sw, wr, l9, ri, r1, OnFailureListener, il0, vk, m0, gb0, t4 {
+public final /* synthetic */ class h implements p, SuccessContinuation, androidx.car.app.utils.b, Continuation, tw, wr, l9, ri, r1, OnFailureListener, jl0, uk, m0, fb0, s4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -122,31 +124,31 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         this.d = gVar;
     }
 
-    @Override // org.telegram.ui.sw
+    @Override // org.telegram.ui.tw
     public /* synthetic */ boolean G() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.t4
+    @Override // org.telegram.ui.Components.s4
     public void L(int i7, int i10, boolean z9) {
         switch (this.a) {
             case 27:
-                wk wkVar = (wk) this.c;
-                wkVar.n0.d((TLRPC.TL_messageMediaGeo) this.b, wkVar.o0, z9, i7, ((Long) this.d).longValue());
-                wkVar.b.a(true);
+                vk vkVar = (vk) this.c;
+                vkVar.n0.d((TLRPC.TL_messageMediaGeo) this.b, vkVar.o0, z9, i7, ((Long) this.d).longValue());
+                vkVar.b.a(true);
                 break;
             default:
-                bn bnVar = (bn) this.c;
-                bnVar.j0.b((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z9, i7, ((Long) this.d).longValue());
-                bnVar.b.a(true);
+                an anVar = (an) this.c;
+                anVar.j0.b((TLRPC.TL_messageMediaToDo) this.b, null, null, null, z9, i7, ((Long) this.d).longValue());
+                anVar.b.a(true);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean N(yw ywVar) {
+    @Override // org.telegram.ui.tw
+    public /* synthetic */ boolean N(zw zwVar) {
         switch (this.a) {
         }
         return false;
@@ -156,29 +158,29 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
     public void a(String str) {
         a4 a4Var = (a4) this.c;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.b;
-        g6 g6Var = (g6) this.d;
+        h6 h6Var = (h6) this.d;
         j4 j4Var = a4Var.x;
-        j4Var.getStoriesController().r(j4Var.k1, str, new v3(a4Var, storyItem, g6Var, 3));
+        j4Var.getStoriesController().r(j4Var.k1, str, new v3(a4Var, storyItem, h6Var, 3));
     }
 
-    @Override // org.telegram.ui.il0
+    @Override // org.telegram.ui.jl0
     public void b(int i7) {
         switch (this.a) {
             case 12:
                 v2 v2Var = (v2) this.c;
-                nb0 nb0Var = (nb0) this.d;
+                mb0 mb0Var = (mb0) this.d;
                 String str = (String) this.b;
                 if (i7 != 3) {
-                    nb0Var.dismiss();
+                    mb0Var.dismiss();
                 }
                 v2Var.d.D.G(str, f1.A(i7).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                nb0 nb0Var2 = (nb0) this.c;
+                mb0 mb0Var2 = (mb0) this.c;
                 c4 c4Var = (c4) this.d;
                 String str2 = (String) this.b;
                 if (i7 != 3) {
-                    nb0Var2.dismiss();
+                    mb0Var2.dismiss();
                 }
                 c4Var.getWebViewContainer().G(str2, f1.A(i7).toLowerCase(Locale.ROOT), false);
                 break;
@@ -218,13 +220,13 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         }
     }
 
-    @Override // org.telegram.ui.Components.vk
+    @Override // org.telegram.ui.Components.uk
     public void d(TLRPC.MessageMedia messageMedia, int i7, boolean z9, int i10, long j3) {
         switch (this.a) {
             case 14:
                 li.p pVar = (li.p) this.c;
                 li.a aVar = (li.a) this.b;
-                di diVar = (di) this.d;
+                ci ciVar = (ci) this.d;
                 t3 t3Var = pVar.r;
                 if (messageMedia != null && messageMedia.geo != null) {
                     f2 f2Var = t3Var.Q3;
@@ -243,7 +245,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                         f2Var2.h();
                     }
                     pVar.a0(true);
-                    diVar.a(true);
+                    ciVar.a(true);
                     t3Var.post(new li.f(pVar, aVar, 0));
                     break;
                 }
@@ -251,7 +253,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
             default:
                 b2 b2Var = (b2) this.c;
                 li.a aVar2 = (li.a) this.b;
-                di diVar2 = (di) this.d;
+                ci ciVar2 = (ci) this.d;
                 if (messageMedia != null && messageMedia.geo != null) {
                     f2 f2Var3 = b2Var.P.Q3;
                     if (f2Var3 != null) {
@@ -268,7 +270,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                     if (f2Var4 != null) {
                         f2Var4.h();
                     }
-                    diVar2.a(true);
+                    ciVar2.a(true);
                     b2Var.P.post(new l1(b2Var, aVar2, 9));
                     break;
                 }
@@ -302,7 +304,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
             for (int i13 = 0; i13 < j3.size(); i13++) {
                 try {
                     qi qiVar = new qi();
-                    qiVar.a = ((org.telegram.messenger.g6) j3.get(i13)).c.toString();
+                    qiVar.a = ((g6) j3.get(i13)).c.toString();
                     arrayList5.add(qiVar);
                 } catch (Exception unused) {
                 }
@@ -500,10 +502,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                     break;
                 }
             case 24:
-                di diVar = (di) this.c;
+                ci ciVar = (ci) this.c;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.b;
                 TLRPC.User user2 = (TLRPC.User) this.d;
-                int i11 = diVar.D3;
+                int i11 = ciVar.G3;
                 if (tL_attachMenuBot == null) {
                     ui.b0(i11).L1(user2.id);
                     break;
@@ -511,41 +513,41 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                     tL_messages_toggleBotInAttachMenu.bot = qp.s1(i11).q1(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new ld(11, diVar, tL_attachMenuBot), 66);
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new ld(11, ciVar, tL_attachMenuBot), 66);
                     break;
                 }
             case 26:
-                ik ikVar = (ik) this.c;
+                hk hkVar = (hk) this.c;
                 x0 x0Var = (x0) this.b;
                 c2 c2Var = (c2) this.d;
-                TextView textView = ikVar.U;
+                TextView textView = hkVar.U;
                 if (x0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
                     String trim3 = x0Var.getText().toString().trim();
-                    ikVar.s0 = TextUtils.isEmpty(trim3) ? null : trim3;
-                    ikVar.t0 = !c2Var.b();
-                    if (TextUtils.isEmpty(ikVar.s0)) {
+                    hkVar.s0 = TextUtils.isEmpty(trim3) ? null : trim3;
+                    hkVar.t0 = !c2Var.b();
+                    if (TextUtils.isEmpty(hkVar.s0)) {
                         textView.setVisibility(8);
                     } else {
-                        textView.setText(ikVar.s0);
+                        textView.setText(hkVar.s0);
                         textView.setVisibility(0);
                     }
-                    ikVar.k0();
+                    hkVar.k0();
                     u1Var.dismiss();
-                    ikVar.a0();
+                    hkVar.a0();
                     break;
                 } else {
-                    int i12 = -ikVar.v0;
-                    ikVar.v0 = i12;
+                    int i12 = -hkVar.v0;
+                    hkVar.v0 = i12;
                     g0.G3(i12, x0Var, null);
                     break;
                 }
             default:
-                bn bnVar = (bn) this.c;
+                an anVar = (an) this.c;
                 View view = (View) this.b;
                 a6 a6Var = (a6) this.d;
-                bnVar.getClass();
+                anVar.getClass();
                 view.setTag(null);
-                bnVar.c0(view, a6Var, false);
+                anVar.c0(view, a6Var, false);
                 break;
         }
     }
@@ -564,23 +566,23 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
 
     @Override // org.telegram.ui.ActionBar.m0
     public void i(int i7) {
-        t4 t4Var = (t4) this.c;
+        s4 s4Var = (s4) this.c;
         boolean[] zArr = (boolean[]) this.b;
         h9.f1 f1Var = (h9.f1) this.d;
         if (i7 == 1) {
-            t4Var.L(2147483646, 0, zArr[0]);
-            ((org.telegram.ui.ActionBar.v2) f1Var.b).x0.run();
+            s4Var.L(2147483646, 0, zArr[0]);
+            ((w2) f1Var.b).x0.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.gb0
-    public void n(ib0 ib0Var, int i7) {
+    @Override // org.telegram.ui.Components.fb0
+    public void n(hb0 hb0Var, int i7) {
         switch (this.a) {
             case 19:
-                v4.g(null, null, 0L, 0L, 0, (ib0) this.c, (org.telegram.ui.Components.c4) this.b, (d4) this.d);
+                u4.g(null, null, 0L, 0L, 0, (hb0) this.c, (b4) this.b, (org.telegram.ui.Components.c4) this.d);
                 break;
             default:
-                v4.g(null, null, 0L, 0L, 0, (ib0) this.c, (u3) this.b, (org.telegram.ui.Components.v3) this.d);
+                u4.g(null, null, 0L, 0L, 0, (hb0) this.c, (org.telegram.ui.Components.t3) this.b, (u3) this.d);
                 break;
         }
     }
@@ -588,7 +590,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
     @Override // di.l9
     public void o(Canvas canvas, RectF rectF, float f10) {
         o7 o7Var = (o7) this.c;
-        vi0 vi0Var = (vi0) this.b;
+        ui0 ui0Var = (ui0) this.b;
         int[] iArr = (int[]) this.d;
         o7Var.c(canvas, rectF, f10);
         o7Var.f(canvas, rectF, f10);
@@ -597,10 +599,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         } else {
             o7Var.e(canvas, rectF, f10);
         }
-        if (vi0Var != null && vi0Var.a0 && vi0Var.getVisibility() == 0) {
+        if (ui0Var != null && ui0Var.a0 && ui0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            vi0Var.draw(canvas);
+            ui0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -646,22 +648,22 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
         return Tasks.forResult(null);
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, y91 y91Var) {
+    @Override // org.telegram.ui.tw
+    public boolean y(zw zwVar, ArrayList arrayList, CharSequence charSequence, boolean z9, boolean z10, int i7, int i10, z91 z91Var) {
         switch (this.a) {
             case 5:
                 k7 k7Var = (k7) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.b;
-                yw ywVar2 = (yw) this.d;
+                zw zwVar2 = (zw) this.d;
                 if (!arrayList.isEmpty()) {
                     long j3 = ((xr) arrayList.get(0)).a;
-                    Long l10 = (Long) org.telegram.messenger.d4.f(k7Var.a).r.get(tL_starGiftUnique.slug);
+                    Long l10 = (Long) d4.f(k7Var.a).r.get(tL_starGiftUnique.slug);
                     long longValue = l10 != null ? l10.longValue() : 0L;
                     if (longValue == 0 || longValue == j3) {
-                        org.telegram.messenger.d4.f(k7Var.a).s(j3, new ig.b(null, tL_starGiftUnique.slug), null, true);
-                        ywVar2.presentFragment(cn.ta(j3), true);
+                        d4.f(k7Var.a).s(j3, new ig.b(null, tL_starGiftUnique.slug), null, true);
+                        zwVar2.presentFragment(cn.ta(j3), true);
                     } else {
-                        v4.k0(k7Var.getContext(), k7Var.I0, k7Var.a, tL_starGiftUnique, longValue, new w2(k7Var, j3, tL_starGiftUnique, ywVar2, 1));
+                        u4.k0(k7Var.getContext(), k7Var.I0, k7Var.a, tL_starGiftUnique, longValue, new bi.w2(k7Var, j3, tL_starGiftUnique, zwVar2, 1));
                     }
                     break;
                 }
@@ -682,7 +684,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                     long j12 = ((xr) arrayList.get(0)).a;
                     ui.b0(chatActivityEnterView.Q).Q1(j12, 0, "@" + t10.n(a22) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, null, null, 0L, true, false, null);
                     if (j12 == chatActivityEnterView.Q2) {
-                        ywVar.finishFragment();
+                        zwVar.finishFragment();
                         break;
                     } else if (!m5.C(j12)) {
                         Bundle bundle = new Bundle();
@@ -691,9 +693,9 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                         } else {
                             bundle.putLong("chat_id", -j12);
                         }
-                        if (qp.s1(chatActivityEnterView.R.a).E(bundle, ywVar, null, null)) {
+                        if (qp.s1(chatActivityEnterView.R.a).E(bundle, zwVar, null, null)) {
                             if (!cnVar.presentFragment(new cn(bundle), true)) {
-                                ywVar.finishFragment();
+                                zwVar.finishFragment();
                                 break;
                             } else if (!g0.Q1()) {
                                 cnVar.removeSelfFromStack();
@@ -701,11 +703,11 @@ public final /* synthetic */ class h implements p, SuccessContinuation, androidx
                             }
                         }
                     } else {
-                        ywVar.finishFragment();
+                        zwVar.finishFragment();
                         break;
                     }
                 } else {
-                    ywVar.finishFragment();
+                    zwVar.finishFragment();
                     break;
                 }
                 break;

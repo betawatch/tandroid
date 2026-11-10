@@ -9,14 +9,14 @@ import java.util.List;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.Components.kt0;
 import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.mt0;
 import sg.z;
 import tg.c2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements z, t3.g, OnFailureListener, lt0, mt0, u9.e, ua.a, r1 {
+public final /* synthetic */ class b implements z, t3.g, OnFailureListener, kt0, lt0, u9.e, ua.a, r1 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i7) {
@@ -50,7 +50,7 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, lt0,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.mt0
+    @Override // org.telegram.ui.Components.lt0
     public void f(Object obj, float f10) {
         ti.i iVar = (ti.i) obj;
         switch (this.a) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class b implements z, t3.g, OnFailureListener, lt0,
         }
     }
 
-    @Override // org.telegram.ui.Components.lt0
+    @Override // org.telegram.ui.Components.kt0
     public float get(Object obj) {
         ti.i iVar = (ti.i) obj;
         switch (this.a) {

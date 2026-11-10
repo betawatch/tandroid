@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v6 extends View {
     public float D;
@@ -72,15 +72,15 @@ public final class v6 extends View {
             canvas.restore();
             for (int i7 = 0; i7 < iArr.length; i7++) {
                 float width = (getWidth() / (iArr.length - 1)) * i7;
-                iArr[i7] = org.telegram.ui.ActionBar.l6.w(iArr[i7], org.telegram.ui.ActionBar.l6.r1(l10 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.l((width - f14) / max), Utilities.l(1.0f - ((width - (f15 - max)) / max)))), p6Var.g));
+                iArr[i7] = org.telegram.ui.ActionBar.m6.w(iArr[i7], org.telegram.ui.ActionBar.m6.r1(l10 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.l((width - f14) / max), Utilities.l(1.0f - ((width - (f15 - max)) / max)))), p6Var.g));
             }
             for (int i10 = 0; i10 < iArr2.length; i10++) {
                 float width2 = (getWidth() / (iArr2.length - 1)) * i10;
-                iArr2[i10] = org.telegram.ui.ActionBar.l6.w(iArr2[i10], org.telegram.ui.ActionBar.l6.r1(l10 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.l((width2 - f14) / max), Utilities.l(1.0f - ((width2 - (f15 - max)) / max)))), p6Var.f));
+                iArr2[i10] = org.telegram.ui.ActionBar.m6.w(iArr2[i10], org.telegram.ui.ActionBar.m6.r1(l10 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.l((width2 - f14) / max), Utilities.l(1.0f - ((width2 - (f15 - max)) / max)))), p6Var.f));
             }
             for (int i11 = 0; i11 < iArr3.length; i11++) {
                 float width3 = (getWidth() / (iArr2.length - 1)) * i11;
-                iArr3[i11] = org.telegram.ui.ActionBar.l6.w(iArr3[i11], org.telegram.ui.ActionBar.l6.r1(l10 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.l((width3 - f14) / max), Utilities.l(1.0f - ((width3 - (f15 - max)) / max)))), p6Var.h));
+                iArr3[i11] = org.telegram.ui.ActionBar.m6.w(iArr3[i11], org.telegram.ui.ActionBar.m6.r1(l10 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.l((width3 - f14) / max), Utilities.l(1.0f - ((width3 - (f15 - max)) / max)))), p6Var.h));
             }
         }
     }

@@ -33,14 +33,14 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.gg;
+import org.telegram.ui.Components.fg;
 import v0.j;
 import v4.v0;
 import yc.f;
 import yc.g;
 import yc.i;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final e l;
@@ -168,20 +168,20 @@ public final class d extends i {
         rf.b.p(n10, (String) dVar.i.get("range"), "CAST_SERVER");
         try {
             g k10 = k(dVar);
-            gg ggVar = k10.e;
-            ggVar.put("Access-Control-Allow-Origin", "*");
-            ggVar.put("Access-Control-Max-Age", "3628800");
-            ggVar.put("Access-Control-Allow-Methods", "*");
-            ggVar.put("Access-Control-Allow-Headers", "*");
+            fg fgVar = k10.e;
+            fgVar.put("Access-Control-Allow-Origin", "*");
+            fgVar.put("Access-Control-Max-Age", "3628800");
+            fgVar.put("Access-Control-Allow-Methods", "*");
+            fgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             g c10 = i.c(f.n, "text/plain", "Error reading file");
-            gg ggVar2 = c10.e;
-            ggVar2.put("Access-Control-Allow-Origin", "*");
-            ggVar2.put("Access-Control-Max-Age", "3628800");
-            ggVar2.put("Access-Control-Allow-Methods", "*");
-            ggVar2.put("Access-Control-Allow-Headers", "*");
+            fg fgVar2 = c10.e;
+            fgVar2.put("Access-Control-Allow-Origin", "*");
+            fgVar2.put("Access-Control-Max-Age", "3628800");
+            fgVar2.put("Access-Control-Allow-Methods", "*");
+            fgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }

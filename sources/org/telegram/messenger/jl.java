@@ -9,7 +9,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jl implements Comparator {
     public final /* synthetic */ int a;
@@ -246,37 +246,37 @@ public final /* synthetic */ class jl implements Comparator {
             case 23:
                 return ((MenuItem) obj).getOrder() - ((MenuItem) obj2).getOrder();
             case 24:
-                List list = org.telegram.ui.ActionBar.k4.r;
+                List list = org.telegram.ui.ActionBar.l4.r;
                 return (list.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
             case 25:
-                org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) obj;
-                org.telegram.ui.ActionBar.k6 k6Var2 = (org.telegram.ui.ActionBar.k6) obj2;
-                if (k6Var.b == null && k6Var.d == null) {
+                org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) obj;
+                org.telegram.ui.ActionBar.l6 l6Var2 = (org.telegram.ui.ActionBar.l6) obj2;
+                if (l6Var.b == null && l6Var.d == null) {
                     return -1;
                 }
-                if (k6Var2.b == null && k6Var2.d == null) {
+                if (l6Var2.b == null && l6Var2.d == null) {
                     return 1;
                 }
-                return k6Var.a.compareTo(k6Var2.a);
+                return l6Var.a.compareTo(l6Var2.a);
             case 26:
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
-                org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj2;
-                if (!org.telegram.ui.ActionBar.l6.l1(i6Var)) {
-                    if (!org.telegram.ui.ActionBar.l6.l1(i6Var2)) {
-                        ?? r02 = i6Var.z;
-                        ?? r12 = i6Var2.z;
+                org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) obj;
+                org.telegram.ui.ActionBar.j6 j6Var2 = (org.telegram.ui.ActionBar.j6) obj2;
+                if (!org.telegram.ui.ActionBar.m6.l1(j6Var)) {
+                    if (!org.telegram.ui.ActionBar.m6.l1(j6Var2)) {
+                        ?? r02 = j6Var.z;
+                        ?? r12 = j6Var2.z;
                         if (r02 == r12) {
                             if (r02 != 0) {
-                                int i37 = i6Var.a;
-                                int i38 = i6Var2.a;
+                                int i37 = j6Var.a;
+                                int i38 = j6Var2.a;
                                 if (i37 <= i38) {
                                     if (i37 >= i38) {
                                         return 0;
                                     }
                                 }
                             } else {
-                                int i39 = i6Var.a;
-                                int i40 = i6Var2.a;
+                                int i39 = j6Var.a;
+                                int i40 = j6Var2.a;
                                 if (i39 <= i40) {
                                     if (i39 >= i40) {
                                         return 0;

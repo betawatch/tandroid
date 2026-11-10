@@ -11,11 +11,11 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements v10 {
     public final /* synthetic */ int a;
@@ -85,18 +85,18 @@ public final /* synthetic */ class d implements v10 {
                     break;
                 }
             case 5:
-                ((ArrayList) obj).add(y31.k(((y2) this.b).Q1));
+                ((ArrayList) obj).add(x31.k(((y2) this.b).T1));
                 break;
             case 6:
-                n3 n3Var = (n3) this.b;
+                p3 p3Var = (p3) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 Bitmap bitmap2 = (Bitmap) obj2;
-                if (!n3Var.S && !n3Var.R) {
-                    n3Var.G = bitmap;
-                    n3Var.n.invalidate();
-                    n3Var.d();
-                    n3Var.E.a(bitmap2);
-                    n3Var.h.post(new j3(n3Var, 1));
+                if (!p3Var.S && !p3Var.R) {
+                    p3Var.G = bitmap;
+                    p3Var.n.invalidate();
+                    p3Var.d();
+                    p3Var.E.a(bitmap2);
+                    p3Var.h.post(new j3(p3Var, 0));
                     break;
                 } else {
                     bitmap.recycle();
@@ -105,12 +105,12 @@ public final /* synthetic */ class d implements v10 {
                 }
                 break;
             case 7:
-                w5 w5Var = (w5) this.b;
+                z5 z5Var = (z5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    w5Var.R0 = true;
-                    w5Var.S0 = password.has_password;
-                    fi.w3 w3Var = w5Var.a;
+                    z5Var.R0 = true;
+                    z5Var.S0 = password.has_password;
+                    fi.w3 w3Var = z5Var.a;
                     if (w3Var != null && (m41Var = w3Var.f3) != null) {
                         m41Var.O(true);
                         break;
@@ -137,10 +137,10 @@ public final /* synthetic */ class d implements v10 {
                 }
                 break;
             case 9:
-                WalletEngine2.HttpTransport.lambda$execute$0((i7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
+                WalletEngine2.HttpTransport.lambda$execute$0((l7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((v9) this.b).h = false;
+                ((y9) this.b).h = false;
                 break;
         }
     }

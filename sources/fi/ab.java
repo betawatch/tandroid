@@ -2,9 +2,9 @@ package fi;
 
 import android.graphics.RectF;
 import java.util.ArrayList;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class ab {
     public int a;
@@ -17,12 +17,12 @@ public final class ab {
     public float h;
     public float i;
     public final RectF j = new RectF();
-    public final org.telegram.ui.Components.w5 k;
+    public final org.telegram.ui.Components.v5 k;
     public final /* synthetic */ fb l;
 
     public ab(fb fbVar) {
         this.l = fbVar;
-        this.k = new org.telegram.ui.Components.w5(fbVar, 360L, xq.h);
+        this.k = new org.telegram.ui.Components.v5(fbVar, 360L, wq.h);
     }
 
     public static void a(ab abVar, boolean z9) {

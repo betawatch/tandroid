@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements View.OnApplyWindowInsetsListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class b2 implements View.OnApplyWindowInsetsListene
             case 0:
                 return a3.h((a3) this.b, view, windowInsets);
             default:
-                return org.telegram.ui.ActionBar.v2.z((org.telegram.ui.ActionBar.v2) this.b, windowInsets);
+                return org.telegram.ui.ActionBar.w2.z((org.telegram.ui.ActionBar.w2) this.b, windowInsets);
         }
     }
 }

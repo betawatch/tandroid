@@ -9,54 +9,54 @@ import fi.r7;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.yw;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g0 extends ug.f1 {
-    public static g0 K2;
-    public final yg.a I2;
-    public final String J2;
+    public static g0 N2;
+    public final yg.a L2;
+    public final String M2;
 
-    public g0(f2 f2Var, int i7, TLRPC.User user, ug.j jVar, String str, boolean z9, g6 g6Var) {
-        super(f2Var, i7, user, jVar, null, g6Var);
-        this.J2 = str;
-        cc.a((FrameLayout) this.b, new r7(15));
+    public g0(f2 f2Var, int i7, TLRPC.User user, ug.j jVar, String str, boolean z9, h6 h6Var) {
+        super(f2Var, i7, user, jVar, null, h6Var);
+        this.M2 = str;
+        bc.a((FrameLayout) this.b, new r7(15));
         if (!z9) {
-            qj0 qj0Var = this.k1;
+            pj0 pj0Var = this.n1;
             int i10 = this.t0;
-            qj0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(68.0f));
+            pj0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(68.0f));
             yg.a aVar = new yg.a(getContext(), this.I0);
-            this.I2 = aVar;
+            this.L2 = aVar;
             aVar.setOnClickListener(new ii.g(this, 27));
-            yg.a aVar2 = this.I2;
+            yg.a aVar2 = this.L2;
             aVar2.e = true;
             fi.d dVar = aVar2.a;
             dVar.setEnabled(true);
             dVar.i(id.M0(2131749675, null), false, true);
-            s6.h(l6.h5, aVar2.b, aVar2.c);
-            this.b.addView(this.I2, ha.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            t6.h(m6.h5, aVar2.b, aVar2.c);
+            this.b.addView(this.L2, ha.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         N();
     }
 
     public static void l1(g0 g0Var) {
-        String str = "https://t.me/giftcode/" + g0Var.J2;
-        yw ywVar = new yw(org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true));
-        ywVar.D2 = new org.telegram.ui.web.a0(21, g0Var, str);
-        g0Var.o1.presentFragment(ywVar);
+        String str = "https://t.me/giftcode/" + g0Var.M2;
+        zw zwVar = new zw(org.telegram.ui.Cells.f1.h(3, "onlySelect", "dialogsType", true));
+        zwVar.D2 = new org.telegram.ui.web.a0(21, g0Var, str);
+        g0Var.r1.presentFragment(zwVar);
         g0Var.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final void K() {
         super.K();
-        K2 = null;
+        N2 = null;
     }
 
     @Override // ug.f1
@@ -66,7 +66,7 @@ public final class g0 extends ug.f1 {
 
     @Override // ug.f1
     public final void g1(View view) {
-        ((yg.t) view).setSlug(this.J2);
+        ((yg.t) view).setSlug(this.M2);
     }
 
     @Override // ug.f1
@@ -82,24 +82,24 @@ public final class g0 extends ug.f1 {
     @Override // ug.f1
     public final void j1(boolean z9) {
         super.j1(z9);
-        this.H2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
-        ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(14.0f);
-        ((ViewGroup.MarginLayoutParams) this.H2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(12.0f);
-        this.H2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.S2(id.M0(2131749679, "GiftPremiumAboutThisLink"), l6.Uc, 0, new e0(this, 0), null), org.telegram.messenger.g0.X2(id.M0(2131749678, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
+        this.K2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        ((ViewGroup.MarginLayoutParams) this.K2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(14.0f);
+        ((ViewGroup.MarginLayoutParams) this.K2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(12.0f);
+        this.K2.setText(org.telegram.messenger.g0.K2(org.telegram.messenger.g0.S2(id.M0(2131749679, "GiftPremiumAboutThisLink"), m6.Uc, 0, new e0(this, 0), null), org.telegram.messenger.g0.X2(id.M0(2131749678, "GiftPremiumAboutThisLinkEnd")), "%1$s"));
     }
 
     @Override // ug.f1
     public final void k1() {
-        int i7 = this.X1;
-        this.Y1 = i7;
-        this.Z1 = i7 + 1;
+        int i7 = this.a2;
+        this.b2 = i7;
+        this.c2 = i7 + 1;
         int i10 = i7 + 2;
-        this.X1 = i10;
         this.a2 = i10;
-        this.b2 = i10;
-        int size = this.P1.size() + i10;
-        this.c2 = size;
-        this.X1 = size + 1;
-        this.d2 = size;
+        this.d2 = i10;
+        this.e2 = i10;
+        int size = this.S1.size() + i10;
+        this.f2 = size;
+        this.a2 = size + 1;
+        this.g2 = size;
     }
 }

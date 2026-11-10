@@ -20,29 +20,29 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.t4;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.v90;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.u4;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.u90;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends j {
     public boolean A0;
     public boolean B0;
     public final SparseIntArray C0;
     public final t0 D0;
-    public t4 E0;
-    public t4 F0;
-    public t4 G0;
-    public t4 H0;
-    public t4 I0;
-    public t4 J0;
-    public t4 K0;
-    public t4 L0;
+    public u4 E0;
+    public u4 F0;
+    public u4 G0;
+    public u4 H0;
+    public u4 I0;
+    public u4 J0;
+    public u4 K0;
+    public u4 L0;
     public final m5 q0;
     public final p0 r0;
     public final ArrayList s0;
@@ -54,7 +54,7 @@ public abstract class u0 extends j {
     public int y0;
     public int z0;
 
-    public u0(Context context, PointF pointF, ArrayList arrayList, y9 y9Var, boolean z9, x5 x5Var) {
+    public u0(Context context, PointF pointF, ArrayList arrayList, x9 x9Var, boolean z9, x5 x5Var) {
         super(context, pointF);
         hi.u1 u1Var;
         TLRPC.Message message;
@@ -66,7 +66,7 @@ public abstract class u0 extends j {
         this.y0 = 1;
         this.z0 = 1;
         this.A0 = true;
-        this.B0 = l6.I.q();
+        this.B0 = m6.I.q();
         this.C0 = new SparseIntArray();
         e5 e5Var = (e5) this;
         this.D0 = new t0(e5Var);
@@ -191,10 +191,10 @@ public abstract class u0 extends j {
         addView(m5Var, ha.c(-1.0f, -1));
         p0 p0Var = new p0(e5Var, context, this.D0);
         this.r0 = p0Var;
-        p0Var.setAdapter(new s0(e5Var, context, y9Var, x5Var, z9));
-        v90 v90Var = new v90(e5Var, 2);
-        v90Var.O = new ai.l(e5Var, 15);
-        p0Var.setLayoutManager(v90Var);
+        p0Var.setAdapter(new s0(e5Var, context, x9Var, x5Var, z9));
+        u90 u90Var = new u90(e5Var, 2);
+        u90Var.O = new ai.l(e5Var, 15);
+        p0Var.setLayoutManager(u90Var);
         p0Var.i(new di.k(16));
         m5Var.addView(p0Var, ha.c(-1.0f, -1));
         if (x5Var != null && x5Var.g) {
@@ -238,13 +238,13 @@ public abstract class u0 extends j {
     }
 
     @Override // tg.j
-    public li0 getSelectionBounds() {
+    public ki0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new li0();
+            return new ki0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new li0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), (getScale() * getMeasuredWidth() * scaleX) + org.telegram.messenger.g0.L(71.0f), (getScale() * getMeasuredHeight() * scaleX) + org.telegram.messenger.g0.L(71.0f));
+        return new ki0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - org.telegram.messenger.g0.L(35.5f), (getScale() * getMeasuredWidth() * scaleX) + org.telegram.messenger.g0.L(71.0f), (getScale() * getMeasuredHeight() * scaleX) + org.telegram.messenger.g0.L(71.0f));
     }
 
     @Override // tg.j
@@ -373,7 +373,7 @@ public abstract class u0 extends j {
         SparseIntArray T0;
         int[] iArr;
         int i7;
-        i6 k10;
+        j6 k10;
         if (e7Var == null) {
             this.C0.clear();
             return;
@@ -381,27 +381,27 @@ public abstract class u0 extends j {
         SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
         String str = "Blue";
         String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (l6.Q0(string) == null || l6.Q0(string).q()) {
+        if (m6.Q0(string) == null || m6.Q0(string).q()) {
             string = "Blue";
         }
         String str2 = "Dark Blue";
         String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (l6.Q0(string2) == null || !l6.Q0(string2).q()) {
+        if (m6.Q0(string2) == null || !m6.Q0(string2).q()) {
             string2 = "Dark Blue";
         }
-        k6 k6Var = l6.I;
+        l6 l6Var = m6.I;
         if (!string.equals(string2)) {
             str2 = string2;
-        } else if (k6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+        } else if (l6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
             str2 = string2;
             boolean z9 = e7Var.y0;
             this.B0 = z9;
-            k6 Q0 = !z9 ? l6.Q0(str2) : l6.Q0(str);
+            l6 Q0 = !z9 ? m6.Q0(str2) : m6.Q0(str);
             String[] strArr = new String[1];
             String str3 = Q0.d;
-            T0 = str3 == null ? l6.T0(null, str3, strArr) : l6.T0(new File(Q0.b), null, strArr);
+            T0 = str3 == null ? m6.T0(null, str3, strArr) : m6.T0(new File(Q0.b), null, strArr);
             this.C0.clear();
-            iArr = l6.em;
+            iArr = m6.em;
             if (iArr != null) {
                 for (int i10 = 0; i10 < iArr.length; i10++) {
                     this.C0.put(i10, iArr[i10]);
@@ -426,7 +426,7 @@ public abstract class u0 extends j {
         if (str32 == null) {
         }
         this.C0.clear();
-        iArr = l6.em;
+        iArr = m6.em;
         if (iArr != null) {
         }
         while (i7 < T0.size()) {

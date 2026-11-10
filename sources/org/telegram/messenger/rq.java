@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rq implements Runnable {
     public final /* synthetic */ int a;
@@ -494,18 +494,18 @@ public final /* synthetic */ class rq implements Runnable {
                             byteBufferValue.reuse();
                             break;
                         case 21:
-                            org.telegram.ui.ActionBar.d6 d6Var = new org.telegram.ui.ActionBar.d6();
+                            org.telegram.ui.ActionBar.e6 e6Var = new org.telegram.ui.ActionBar.e6();
                             byteBufferValue.readInt64(false);
-                            d6Var.i = byteBufferValue.readBool(false);
-                            d6Var.j = byteBufferValue.readBool(false);
-                            d6Var.d = byteBufferValue.readInt32(false);
-                            d6Var.e = byteBufferValue.readInt32(false);
-                            d6Var.h = byteBufferValue.readInt32(false);
-                            d6Var.k = (float) byteBufferValue.readDouble(false);
+                            e6Var.i = byteBufferValue.readBool(false);
+                            e6Var.j = byteBufferValue.readBool(false);
+                            e6Var.d = byteBufferValue.readInt32(false);
+                            e6Var.e = byteBufferValue.readInt32(false);
+                            e6Var.h = byteBufferValue.readInt32(false);
+                            e6Var.k = (float) byteBufferValue.readDouble(false);
                             boolean readBool4 = byteBufferValue.readBool(false);
-                            d6Var.c = byteBufferValue.readString(false);
-                            d6Var.b = byteBufferValue.readString(false);
-                            g0.h3(new rg(yrVar, d6Var, readBool4, longValue, 5));
+                            e6Var.c = byteBufferValue.readString(false);
+                            e6Var.b = byteBufferValue.readString(false);
+                            g0.h3(new rg(yrVar, e6Var, readBool4, longValue, 5));
                             byteBufferValue.reuse();
                             break;
                         case 22:

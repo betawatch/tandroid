@@ -1,21 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public interface ab {
-    boolean a();
-
-    void b(cc ccVar);
-
-    void c(float f10);
-
-    void d(cc ccVar);
-
-    boolean e();
-
-    int f(int i7);
-
-    boolean g(int i7);
-
-    int h(int i7);
+public final class ab extends bc {
+    @Override // org.telegram.ui.Components.bc
+    public final bc j() {
+        return this;
+    }
 }

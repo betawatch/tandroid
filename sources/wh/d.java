@@ -16,11 +16,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.Components.v8;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
@@ -44,7 +44,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver;
         String str;
         String str2;
-        w8 w8Var = new w8((g6) null);
+        v8 v8Var = new v8((h6) null);
         int i7 = p10.s0;
         this.l = 1.0f;
         this.m = true;
@@ -56,16 +56,16 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         q1 q1Var = hVar.D;
         this.b = q1Var;
         this.d = j3;
-        w8Var.p = 1.0f;
+        v8Var.p = 1.0f;
         if (m5.E(j3)) {
             TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(j3));
-            w8Var.r(a22);
+            v8Var.r(a22);
             if (t10.B(a22)) {
                 str2 = id.M0(2131745901, null);
-                w8Var.g(1);
-                w8Var.p = 0.75f;
+                v8Var.g(1);
+                v8Var.p = 0.75f;
                 imageReceiver = imageReceiver2;
-                imageReceiver.r0(null, null, null, null, w8Var, 0L, null, a22, 0);
+                imageReceiver.r0(null, null, null, null, v8Var, 0L, null, a22, 0);
                 imageReceiver.J0(g0.L(g.a / 2.0f));
                 imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
                 Paint Z1 = q1Var.Z1("paintChatActionText");
@@ -78,13 +78,13 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             }
             imageReceiver = imageReceiver2;
             str = a22 != null ? g5.m(0, a22.first_name, a22.last_name) : "";
-            imageReceiver.i0(a22, w8Var, null);
+            imageReceiver.i0(a22, v8Var, null);
         } else {
             imageReceiver = imageReceiver2;
             TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
             str = M0 != null ? M0.title : "";
-            w8Var.q(M0);
-            imageReceiver.i0(M0, w8Var, null);
+            v8Var.q(M0);
+            imageReceiver.i0(M0, v8Var, null);
         }
         str2 = str;
         imageReceiver.J0(g0.L(g.a / 2.0f));

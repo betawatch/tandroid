@@ -21,10 +21,10 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlin.jvm.internal.j;
 import m.q;
-import org.telegram.ui.Components.ut0;
+import org.telegram.ui.Components.tt0;
 import p4.d0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.p {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                     eVar = new u2.e(mediaCodec, (HandlerThread) ((u2.b) this.d).get());
                     i7 = 0;
                 } else {
-                    eVar = new org.telegram.ui.Components.n(mediaCodec);
+                    eVar = new org.telegram.ui.Components.m(mediaCodec);
                     i7 = 4;
                 }
                 cVar = new u2.c(mediaCodec, (HandlerThread) ((u2.b) this.c).get(), eVar, (u2.j) b8Var.f);
@@ -227,9 +227,9 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         }
     }
 
-    public /* synthetic */ n(ut0 ut0Var, Object obj, int i7) {
+    public /* synthetic */ n(tt0 tt0Var, Object obj, int i7) {
         this.a = i7;
-        this.d = ut0Var;
+        this.d = tt0Var;
         this.c = obj;
     }
 

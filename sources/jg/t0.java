@@ -6,10 +6,10 @@ import org.telegram.messenger.kg;
 import org.telegram.messenger.lg;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -62,7 +62,7 @@ public final /* synthetic */ class t0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new l2.a0(l6.p1((d6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 28));
+                org.telegram.messenger.g0.h3(new l2.a0(m6.p1((e6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 28));
                 break;
         }
     }
@@ -76,8 +76,8 @@ public final /* synthetic */ class t0 implements Runnable {
         this.d = z10;
     }
 
-    public /* synthetic */ t0(d6 d6Var, File file, int i7, boolean z9, TLRPC.Document document, boolean z10) {
-        this.e = d6Var;
+    public /* synthetic */ t0(e6 e6Var, File file, int i7, boolean z9, TLRPC.Document document, boolean z10) {
+        this.e = e6Var;
         this.f = file;
         this.c = i7;
         this.b = z9;

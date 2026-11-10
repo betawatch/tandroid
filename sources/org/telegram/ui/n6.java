@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements org.telegram.messenger.v10 {
     public final /* synthetic */ int a;
@@ -54,94 +54,94 @@ public final /* synthetic */ class n6 implements org.telegram.messenger.v10 {
                 yfVar.a(bool, webPage);
                 break;
             case 2:
-                final yw ywVar = (yw) obj5;
+                final zw zwVar = (zw) obj5;
                 bd bdVar = (bd) obj4;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj3;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) obj;
                 final Long l10 = (Long) obj2;
-                Utilities.u(0, new di.s2(ywVar, l10, bdVar, f2Var, 11), new y(ywVar, u1Var, l10, 8), new org.telegram.messenger.c20() { // from class: org.telegram.ui.qu
+                Utilities.u(0, new di.s2(zwVar, l10, bdVar, f2Var, 11), new y(zwVar, u1Var, l10, 8), new org.telegram.messenger.c20() { // from class: org.telegram.ui.ru
                     @Override // org.telegram.messenger.c20
                     public final void a(Object obj6) {
                         switch (i11) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
-                                yw ywVar2 = ywVar;
-                                if (ywVar2.G.bot_admin_rights == null) {
+                                zw zwVar2 = zwVar;
+                                if (zwVar2.G.bot_admin_rights == null) {
                                     runnable.run();
                                     break;
                                 } else {
-                                    TLRPC.User a22 = ywVar2.getMessagesController().a2(Long.valueOf(ywVar2.H));
-                                    org.telegram.messenger.qp messagesController = ywVar2.getMessagesController();
+                                    TLRPC.User a22 = zwVar2.getMessagesController().a2(Long.valueOf(zwVar2.H));
+                                    org.telegram.messenger.qp messagesController = zwVar2.getMessagesController();
                                     long longValue = l10.longValue();
-                                    TLRPC.RequestPeerType requestPeerType = ywVar2.G;
+                                    TLRPC.RequestPeerType requestPeerType = zwVar2.G;
                                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
                                     Boolean bool2 = requestPeerType.bot_participant;
-                                    messagesController.P4(longValue, a22, tL_chatAdminRights, null, false, ywVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new ve(5, runnable));
+                                    messagesController.P4(longValue, a22, tL_chatAdminRights, null, false, zwVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new we(5, runnable));
                                     break;
                                 }
                             default:
                                 Runnable runnable2 = (Runnable) obj6;
-                                yw ywVar3 = ywVar;
-                                if (ywVar3.G.user_admin_rights == null) {
+                                zw zwVar3 = zwVar;
+                                if (zwVar3.G.user_admin_rights == null) {
                                     runnable2.run();
                                     break;
                                 } else {
-                                    org.telegram.messenger.qp messagesController2 = ywVar3.getMessagesController();
+                                    org.telegram.messenger.qp messagesController2 = zwVar3.getMessagesController();
                                     Long l11 = l10;
-                                    ywVar3.getMessagesController().P4(l11.longValue(), org.telegram.messenger.p10.i(ywVar3.getAccountInstance().a).f(), mp.x0(messagesController2.M0(l11).admin_rights, ywVar3.G.user_admin_rights), null, true, ywVar3, false, true, null, runnable2, new ve(4, runnable2));
+                                    zwVar3.getMessagesController().P4(l11.longValue(), org.telegram.messenger.p10.i(zwVar3.getAccountInstance().a).f(), mp.x0(messagesController2.M0(l11).admin_rights, zwVar3.G.user_admin_rights), null, true, zwVar3, false, true, null, runnable2, new we(4, runnable2));
                                     break;
                                 }
                         }
                     }
-                }, new org.telegram.messenger.c20() { // from class: org.telegram.ui.qu
+                }, new org.telegram.messenger.c20() { // from class: org.telegram.ui.ru
                     @Override // org.telegram.messenger.c20
                     public final void a(Object obj6) {
                         switch (i10) {
                             case 0:
                                 Runnable runnable = (Runnable) obj6;
-                                yw ywVar2 = ywVar;
-                                if (ywVar2.G.bot_admin_rights == null) {
+                                zw zwVar2 = zwVar;
+                                if (zwVar2.G.bot_admin_rights == null) {
                                     runnable.run();
                                     break;
                                 } else {
-                                    TLRPC.User a22 = ywVar2.getMessagesController().a2(Long.valueOf(ywVar2.H));
-                                    org.telegram.messenger.qp messagesController = ywVar2.getMessagesController();
+                                    TLRPC.User a22 = zwVar2.getMessagesController().a2(Long.valueOf(zwVar2.H));
+                                    org.telegram.messenger.qp messagesController = zwVar2.getMessagesController();
                                     long longValue = l10.longValue();
-                                    TLRPC.RequestPeerType requestPeerType = ywVar2.G;
+                                    TLRPC.RequestPeerType requestPeerType = zwVar2.G;
                                     TLRPC.TL_chatAdminRights tL_chatAdminRights = requestPeerType.bot_admin_rights;
                                     Boolean bool2 = requestPeerType.bot_participant;
-                                    messagesController.P4(longValue, a22, tL_chatAdminRights, null, false, ywVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new ve(5, runnable));
+                                    messagesController.P4(longValue, a22, tL_chatAdminRights, null, false, zwVar2, bool2 == null || !bool2.booleanValue(), true, null, runnable, new we(5, runnable));
                                     break;
                                 }
                             default:
                                 Runnable runnable2 = (Runnable) obj6;
-                                yw ywVar3 = ywVar;
-                                if (ywVar3.G.user_admin_rights == null) {
+                                zw zwVar3 = zwVar;
+                                if (zwVar3.G.user_admin_rights == null) {
                                     runnable2.run();
                                     break;
                                 } else {
-                                    org.telegram.messenger.qp messagesController2 = ywVar3.getMessagesController();
+                                    org.telegram.messenger.qp messagesController2 = zwVar3.getMessagesController();
                                     Long l11 = l10;
-                                    ywVar3.getMessagesController().P4(l11.longValue(), org.telegram.messenger.p10.i(ywVar3.getAccountInstance().a).f(), mp.x0(messagesController2.M0(l11).admin_rights, ywVar3.G.user_admin_rights), null, true, ywVar3, false, true, null, runnable2, new ve(4, runnable2));
+                                    zwVar3.getMessagesController().P4(l11.longValue(), org.telegram.messenger.p10.i(zwVar3.getAccountInstance().a).f(), mp.x0(messagesController2.M0(l11).admin_rights, zwVar3.G.user_admin_rights), null, true, zwVar3, false, true, null, runnable2, new we(4, runnable2));
                                     break;
                                 }
                         }
                     }
-                }, new bi.z2(ywVar, u1Var, l10, bdVar, f2Var, 5));
+                }, new bi.z2(zwVar, u1Var, l10, bdVar, f2Var, 5));
                 break;
             default:
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) obj5;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) obj5;
                 TL_account.Passkey passkey = (TL_account.Passkey) obj4;
                 String str = (String) obj3;
                 TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (passkeys == null) {
                     if (tL_error != null) {
-                        new org.telegram.ui.Components.hc(v2Var.E, v2Var.I0).e0(str, false);
+                        new org.telegram.ui.Components.gc(w2Var.E, w2Var.I0).e0(str, false);
                         break;
                     }
                 } else {
-                    v2Var.dismiss();
+                    w2Var.dismiss();
                     while (i11 < passkeys.passkeys.size()) {
                         if (TextUtils.equals(passkeys.passkeys.get(i11).id, passkey.id)) {
                             passkeys.passkeys.remove(i11);
@@ -153,7 +153,7 @@ public final /* synthetic */ class n6 implements org.telegram.messenger.v10 {
                     if (T != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         T.presentFragment(passkeysActivity);
-                        org.telegram.messenger.g0.i3(new bd0(18, passkeysActivity, passkey), 150L);
+                        org.telegram.messenger.g0.i3(new tc0(19, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

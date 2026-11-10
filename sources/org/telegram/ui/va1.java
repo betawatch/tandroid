@@ -1,33 +1,65 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class va1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bb1 b;
-    public final /* synthetic */ byte[] c;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ va1(bb1 bb1Var, byte[] bArr, int i7) {
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class va1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cb1 b;
+
+    public /* synthetic */ va1(cb1 cb1Var, int i7) {
         this.a = i7;
-        this.b = bb1Var;
-        this.c = bArr;
+        this.b = cb1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                bb1.d0(this.b, this.c);
+                final int i7 = 0;
+                final cb1 cb1Var = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xa1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                cb1.g0(cb1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                cb1.m0(cb1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 0));
+                break;
+            case 2:
+                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 1));
+                break;
+            case 3:
+                org.telegram.messenger.g0.h3(new ya1(this.b, tL_error, 2));
                 break;
             default:
-                bb1 bb1Var = this.b;
-                bb1Var.B0();
-                bb1Var.V = this.c;
-                bb1Var.getMessagesController().k4(0L, "VALIDATE_PASSWORD");
-                bb1 bb1Var2 = new bb1(9, bb1Var.U);
-                bb1Var2.H = bb1Var.H;
-                bb1Var2.G = bb1Var.G;
-                bb1Var.presentFragment(bb1Var2, true);
+                final int i10 = 1;
+                final cb1 cb1Var2 = this.b;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xa1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                cb1.g0(cb1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                cb1.m0(cb1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

@@ -1,48 +1,67 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.Window;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l41 {
-    public final org.telegram.ui.Components.lz a;
-    public ng.f b;
-    public final int c;
-    public final /* synthetic */ m41 d;
+public final class l41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n41 b;
 
-    public l41(m41 m41Var, int i7) {
-        this.d = m41Var;
-        this.c = i7;
-        org.telegram.ui.Components.lz lzVar = new org.telegram.ui.Components.lz(m41Var.getContext());
-        lzVar.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        lzVar.e = textPaint;
-        lzVar.f = new Paint(1);
-        Paint paint = new Paint(1);
-        lzVar.h = paint;
-        Paint paint2 = new Paint(1);
-        lzVar.n = paint2;
-        lzVar.x = org.telegram.messenger.g0.L(35.0f);
-        lzVar.y = org.telegram.messenger.g0.L(22.0f);
-        lzVar.D = org.telegram.messenger.g0.L(8.0f);
-        lzVar.E = org.telegram.messenger.g0.L(3.5f);
-        lzVar.F = new RectF();
-        lzVar.G = 0.0f;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        this.a = lzVar;
-        lzVar.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        m41Var.h.addView(lzVar);
-        m41Var.n.add(this);
+    public /* synthetic */ l41(n41 n41Var, int i7) {
+        this.a = i7;
+        this.b = n41Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                n41 n41Var = this.b;
+                n41Var.b.setVisibility(4);
+                lg.g gVar = n41Var.b;
+                gVar.J = false;
+                lg.g gVar2 = n41Var.c;
+                gVar2.J = true;
+                gVar.y0 = 0;
+                gVar2.y0 = 0;
+                Window window = n41Var.a;
+                if (window != null) {
+                    window.clearFlags(16);
+                    break;
+                }
+                break;
+            case 1:
+                n41 n41Var2 = this.b;
+                lg.g gVar3 = n41Var2.c;
+                gVar3.setVisibility(4);
+                lg.g gVar4 = n41Var2.b;
+                gVar4.y0 = 0;
+                gVar3.y0 = 0;
+                gVar4.J = true;
+                gVar3.J = false;
+                if (gVar4 instanceof lg.q) {
+                    gVar4.u0 = false;
+                    gVar4.d();
+                } else {
+                    gVar4.u0 = true;
+                    gVar4.x((gVar4.G0 * gVar4.g0.k) - lg.g.k1);
+                    gVar4.c(true);
+                    gVar4.invalidate();
+                }
+                Window window2 = n41Var2.a;
+                if (window2 != null) {
+                    window2.clearFlags(16);
+                    break;
+                }
+                break;
+            default:
+                n41 n41Var3 = this.b;
+                n41Var3.b.y0 = 0;
+                n41Var3.e.setVisibility(8);
+                break;
+        }
     }
 }

@@ -1,68 +1,84 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i7 extends FrameLayout {
+public final class i7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b8 b;
+    public final /* synthetic */ j7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i7(b8 b8Var, Context context, int i7) {
-        super(context);
+    public /* synthetic */ i7(j7 j7Var, int i7) {
         this.a = i7;
-        this.b = b8Var;
+        this.b = j7Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        TextView textView;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int y10 = org.telegram.messenger.camera.q.y(248.0f, i11 - i7, 4);
-                for (int i13 = 0; i13 < 5; i13++) {
-                    int L = (y10 * i13) + org.telegram.messenger.g0.L((i13 * 48) + 4);
-                    int L2 = org.telegram.messenger.g0.L(9.0f);
-                    b8 b8Var = this.b;
-                    View view = b8Var.d2[i13];
-                    view.layout(L, L2, view.getMeasuredWidth() + L, b8Var.d2[i13].getMeasuredHeight() + L2);
-                }
-                break;
-            case 1:
-            default:
-                super.onLayout(z9, i7, i10, i11, i12);
-                break;
-            case 2:
-                super.onLayout(z9, i7, i10, i11, i12);
-                b8 b8Var2 = this.b;
-                if (b8Var2.L1 != null && (textView = b8Var2.Q1) != null) {
-                    int left = (textView.getLeft() - org.telegram.messenger.g0.L(4.0f)) - b8Var2.L1.getMeasuredWidth();
-                    org.telegram.ui.ActionBar.r0 r0Var = b8Var2.L1;
-                    r0Var.layout(left, r0Var.getTop(), b8Var2.L1.getMeasuredWidth() + left, b8Var2.L1.getBottom());
+                j7 j7Var = this.b;
+                int i7 = j7Var.w + 1;
+                j7Var.w = i7;
+                if (i7 != 1) {
+                    if (i7 == 2) {
+                        org.telegram.messenger.g0.i3(this, 2000L);
+                        break;
+                    }
+                } else {
+                    a8 a8Var = j7Var.H;
+                    a8Var.A2 = -1;
+                    a8Var.B2 = MediaController.B().u0.b0;
+                    j7Var.x = System.currentTimeMillis();
+                    org.telegram.messenger.g0.i3(this, 2000L);
+                    org.telegram.messenger.g0.h3(j7Var.E);
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                b8 b8Var = this.b;
-                if (b8Var.Y1.getTag() != null) {
-                    b8Var.W0(false, true);
-                }
-                return true;
-            case 2:
-                return true;
             default:
-                return super.onTouchEvent(motionEvent);
+                j7 j7Var2 = this.b;
+                a8 a8Var2 = j7Var2.H;
+                t51 t51Var = MediaController.B().i0;
+                long U = t51Var == null ? 0L : t51Var.U();
+                if (U != 0 && U != -9223372036854775807L) {
+                    float f10 = a8Var2.B2;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long j3 = currentTimeMillis - j7Var2.x;
+                    j7Var2.x = currentTimeMillis;
+                    long j10 = currentTimeMillis - j7Var2.y;
+                    int i10 = j7Var2.w;
+                    float f11 = ((long) ((f10 * r5) - (j3 * (i10 == 1 ? 3L : i10 == 2 ? 6L : 12L)))) / U;
+                    if (f11 < 0.0f) {
+                        f11 = 0.0f;
+                    }
+                    a8Var2.B2 = f11;
+                    org.telegram.messenger.ij ijVar = MediaController.B().u0;
+                    if (ijVar != null && ijVar.I3()) {
+                        a8Var2.b1(ijVar, false);
+                    }
+                    if (a8Var2.A2 == -1 && j7Var2.w > 0) {
+                        if (j10 > 200 || a8Var2.B2 == 0.0f) {
+                            j7Var2.y = currentTimeMillis;
+                            if (a8Var2.B2 == 0.0f) {
+                                MediaController.B().i0(MediaController.B().u0, 0.0f);
+                                t51 t51Var2 = MediaController.B().i0;
+                                if (t51Var2 != null) {
+                                    t51Var2.g0();
+                                }
+                            } else {
+                                MediaController.B().i0(MediaController.B().u0, f11);
+                            }
+                        }
+                        if (j7Var2.w > 0 && a8Var2.B2 > 0.0f) {
+                            org.telegram.messenger.g0.i3(j7Var2.E, 16L);
+                            break;
+                        }
+                    }
+                } else {
+                    j7Var2.x = System.currentTimeMillis();
+                    break;
+                }
+                break;
         }
     }
 }

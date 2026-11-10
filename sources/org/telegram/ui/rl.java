@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class rl extends org.telegram.ui.Cells.j9 {
     public cn w0;
 
     @Override // org.telegram.ui.Cells.v9
     public final void I(int i7, int i10, org.telegram.messenger.ij ijVar) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
         org.telegram.messenger.dj T8;
         cn cnVar = this.w0;
         if (cnVar != null) {
@@ -30,10 +30,10 @@ public final class rl extends org.telegram.ui.Cells.j9 {
             }
             sj sjVar = this.w0.Z;
             if (sjVar != null && sjVar.getVisibility() == 0) {
-                kVar = ((org.telegram.ui.ActionBar.f2) this.w0).actionBar;
-                if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.f2) this.w0).actionBar;
-                    if (kVar2.w()) {
+                lVar = ((org.telegram.ui.ActionBar.f2) this.w0).actionBar;
+                if (lVar != null) {
+                    lVar2 = ((org.telegram.ui.ActionBar.f2) this.w0).actionBar;
+                    if (lVar2.x()) {
                         this.w0.O7(false);
                     }
                 }
@@ -55,10 +55,10 @@ public final class rl extends org.telegram.ui.Cells.j9 {
             h.putBoolean("quote", true);
             h.putInt("messagesCount", 1);
             h.putBoolean("canSelectTopics", true);
-            yw ywVar = new yw(h);
+            zw zwVar = new zw(h);
             cn cnVar4 = this.w0;
-            ywVar.D2 = cnVar4;
-            cnVar4.presentFragment(ywVar);
+            zwVar.D2 = cnVar4;
+            cnVar4.presentFragment(zwVar);
         }
     }
 
@@ -128,7 +128,7 @@ public final class rl extends org.telegram.ui.Cells.j9 {
     }
 
     @Override // org.telegram.ui.Cells.v9
-    public final org.telegram.ui.ActionBar.g6 q() {
+    public final org.telegram.ui.ActionBar.h6 q() {
         cn cnVar = this.w0;
         if (cnVar != null) {
             return cnVar.za;
@@ -138,6 +138,6 @@ public final class rl extends org.telegram.ui.Cells.j9 {
 
     @Override // org.telegram.ui.Cells.v9
     public final int t(int i7) {
-        return org.telegram.ui.ActionBar.l6.w0(i7, this.w0.za);
+        return org.telegram.ui.ActionBar.m6.w0(i7, this.w0.za);
     }
 }

@@ -33,18 +33,17 @@ import org.telegram.messenger.t5;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.bq;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y8;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x8;
 import org.telegram.ui.ql;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int W;
@@ -81,7 +80,7 @@ public final class p0 {
     public int r;
     public final org.telegram.ui.Cells.z w;
     public ij x;
-    public g6 y;
+    public h6 y;
     public Integer z;
     public static final Paint S = new Paint(1);
     public static final Paint T = new Paint(1);
@@ -155,9 +154,9 @@ public final class p0 {
         return 0L;
     }
 
-    public static void n(g6 g6Var) {
-        S.setColor(l6.w0(l6.We, g6Var));
-        int w02 = l6.w0(l6.Gi, g6Var);
+    public static void n(h6 h6Var) {
+        S.setColor(m6.w0(m6.We, h6Var));
+        int w02 = m6.w0(m6.Gi, h6Var);
         TextPaint textPaint = V;
         textPaint.setColor(w02);
         textPaint.setTextSize(org.telegram.messenger.g0.L(12.0f));
@@ -167,7 +166,7 @@ public final class p0 {
 
     public final boolean a() {
         ArrayList arrayList;
-        y8 y8Var;
+        x8 x8Var;
         int i7;
         int i10;
         if (this.x == null) {
@@ -218,9 +217,9 @@ public final class p0 {
                         bqVar.c(i16, false);
                         bqVar.c(m0Var.v, true);
                     }
-                    y8 y8Var2 = m0Var.S;
-                    if (y8Var2 != null || m0Var2.S != null) {
-                        if (y8Var2 == null) {
+                    x8 x8Var2 = m0Var.S;
+                    if (x8Var2 != null || m0Var2.S != null) {
+                        if (x8Var2 == null) {
                             m0Var.o(new ArrayList());
                         }
                         if (m0Var2.S == null) {
@@ -235,14 +234,14 @@ public final class p0 {
                                 i10 = (tLObject == null || tLObject2 == null || j(tLObject) != j(tLObject2)) ? 0 : i10 + 1;
                             }
                         }
-                        y8 y8Var3 = m0Var.S;
-                        if (y8Var3 != null && (y8Var = m0Var2.S) != null) {
-                            ValueAnimator valueAnimator = y8Var.f;
+                        x8 x8Var3 = m0Var.S;
+                        if (x8Var3 != null && (x8Var = m0Var2.S) != null) {
+                            ValueAnimator valueAnimator = x8Var.f;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();
-                                if (y8Var3.w) {
-                                    y8Var3.w = false;
-                                    y8Var3.k();
+                                if (x8Var3.w) {
+                                    x8Var3.w = false;
+                                    x8Var3.k();
                                 }
                             }
                             TLObject[] tLObjectArr = new TLObject[3];
@@ -252,16 +251,16 @@ public final class p0 {
                                 if (i17 >= 3) {
                                     break;
                                 }
-                                tLObjectArr[i17] = y8Var3.b[i17].h;
-                                y8Var3.j(i17, i7, y8Var.b[i17].h);
+                                tLObjectArr[i17] = x8Var3.b[i17].h;
+                                x8Var3.j(i17, i7, x8Var.b[i17].h);
                                 i17++;
                             }
-                            y8Var3.a(false, true);
+                            x8Var3.a(false, true);
                             for (int i18 = 0; i18 < 3; i18++) {
-                                y8Var3.j(i18, i7, tLObjectArr[i18]);
+                                x8Var3.j(i18, i7, tLObjectArr[i18]);
                             }
-                            y8Var3.d = true;
-                            y8Var3.a(true, false);
+                            x8Var3.d = true;
+                            x8Var3.a(true, false);
                         }
                     }
                 }
@@ -583,7 +582,7 @@ public final class p0 {
                 float f12 = f10 + f11;
                 RectF rectF2 = this.L;
                 rectF2.set(i11, (f10 - L) + f11, L + i11, f12);
-                float interpolation = xq.h.getInterpolation(this.A);
+                float interpolation = wq.h.getInterpolation(this.A);
                 org.telegram.messenger.g0.Z1(rectF, rectF2, interpolation, rectF2);
                 int i12 = m0Var.U;
                 o0 o0Var = m0Var.r;
@@ -596,7 +595,7 @@ public final class p0 {
                         if (o0Var.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ui.b0(i12).r.get(o0Var.f);
                             if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                rz f13 = t5.f(tL_availableReaction.static_icon, l6.a7, 1.0f, null);
+                                rz f13 = t5.f(tL_availableReaction.static_icon, m6.a7, 1.0f, null);
                                 ImageReceiver imageReceiver = new ImageReceiver(view);
                                 m0Var.e0 = imageReceiver;
                                 imageReceiver.E0(7);
@@ -611,9 +610,9 @@ public final class p0 {
                                 imageReceiver3.q0(hc.b(tL_availableReaction.activate_animation), "140_140", f13, null, tL_availableReaction, 1);
                             }
                         } else if (o0Var.g != 0) {
-                            i5 i5Var = new i5(24, i12, o0Var.g);
-                            m0Var.f0 = i5Var;
-                            i5Var.a(view);
+                            h5 h5Var = new h5(24, i12, o0Var.g);
+                            m0Var.f0 = h5Var;
+                            h5Var.a(view);
                         }
                     }
                 }
@@ -625,9 +624,9 @@ public final class p0 {
                         m0Var.e0.setAlpha(interpolation);
                         m0Var.e0.h(canvas, null);
                     } else {
-                        i5 i5Var2 = m0Var.f0;
-                        if (i5Var2 != null) {
-                            i5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                        h5 h5Var2 = m0Var.f0;
+                        if (h5Var2 != null) {
+                            h5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
                             m0Var.f0.setAlpha((int) (interpolation * 255.0f));
                             m0Var.f0.draw(canvas);
                         }
@@ -691,13 +690,13 @@ public final class p0 {
             }
             m0 m0Var = (m0) arrayList.get(i11);
             m0Var.getClass();
-            i6 i6Var = m0Var.F;
+            org.telegram.ui.Components.h6 h6Var = m0Var.F;
             bq bqVar = m0Var.E;
             if (m0Var.R) {
                 m0Var.z = org.telegram.messenger.g0.L(42.0f);
                 m0Var.A = org.telegram.messenger.g0.L(26.0f);
                 if (m0Var.t) {
-                    m0Var.z = (int) (i6Var.d + org.telegram.messenger.g0.L(8.0f) + m0Var.z);
+                    m0Var.z = (int) (h6Var.d + org.telegram.messenger.g0.L(8.0f) + m0Var.z);
                 } else if (bqVar != null && m0Var.v > 1) {
                     m0Var.z = k5.C(8.0f, (int) Math.ceil(bqVar.m), m0Var.z);
                 }
@@ -708,7 +707,7 @@ public final class p0 {
                     m0Var.z = (int) ((org.telegram.messenger.g0.L(20.0f) * (m0Var.T.size() > 1 ? m0Var.T.size() - 1 : 0) * 0.8f) + org.telegram.messenger.g0.L(20.0f) + org.telegram.messenger.g0.L(2.0f) + org.telegram.messenger.g0.L(1.0f) + m0Var.z);
                     m0Var.S.o = org.telegram.messenger.g0.L(26.0f);
                 } else if (m0Var.t) {
-                    m0Var.z = (int) (i6Var.d + org.telegram.messenger.g0.L(8.0f) + m0Var.z);
+                    m0Var.z = (int) (h6Var.d + org.telegram.messenger.g0.L(8.0f) + m0Var.z);
                 } else if (((int) Math.ceil(bqVar.m)) > 0) {
                     m0Var.z = k5.C(8.0f, (int) Math.ceil(bqVar.m), m0Var.z);
                 } else {
@@ -826,7 +825,7 @@ public final class p0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void r(ij ijVar, boolean z9, g6 g6Var) {
+    public final void r(ij ijVar, boolean z9, h6 h6Var) {
         int i7;
         TLRPC.TL_messageReactions tL_messageReactions;
         ?? r72;
@@ -837,7 +836,7 @@ public final class p0 {
         boolean z11;
         int i11;
         boolean z12 = z9;
-        this.y = g6Var;
+        this.y = h6Var;
         this.J = z12;
         this.x = ijVar;
         ArrayList arrayList = this.s;

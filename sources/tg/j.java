@@ -17,11 +17,11 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, Integer.valueOf(qs.K2));
@@ -45,7 +45,7 @@ public abstract class j extends FrameLayout {
     public final e U;
     public int V;
     public int W;
-    public final ic a;
+    public final hc a;
     public ValueAnimator a0;
     public float b;
     public ValueAnimator b0;
@@ -79,7 +79,7 @@ public abstract class j extends FrameLayout {
     /* JADX WARN: Type inference failed for: r0v4, types: [tg.e] */
     public j(Context context, PointF pointF) {
         super(context);
-        this.a = new ic(this);
+        this.a = new hc(this);
         this.n = false;
         this.r = false;
         this.s = false;
@@ -272,7 +272,7 @@ public abstract class j extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n0, z10 ? 0.5f : 1.0f);
                     this.o0 = ofFloat;
                     ofFloat.addUpdateListener(new f(this, i7));
-                    this.o0.setInterpolator(xq.h);
+                    this.o0.setInterpolator(wq.h);
                     this.o0.setDuration(280L);
                     this.o0.start();
                     this.D = z10;
@@ -465,7 +465,7 @@ public abstract class j extends FrameLayout {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 this.Q = duration;
-                duration.setInterpolator(xq.f);
+                duration.setInterpolator(wq.f);
                 this.Q.addUpdateListener(new f(this, i7));
                 this.Q.addListener(new g(this, 3));
                 this.Q.start();
@@ -561,8 +561,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public li0 getSelectionBounds() {
-        return new li0(0.0f, 0.0f, 0.0f, 0.0f);
+    public ki0 getSelectionBounds() {
+        return new ki0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -600,7 +600,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.a0 = duration;
-        duration.setInterpolator(xq.f);
+        duration.setInterpolator(wq.f);
         this.a0.addUpdateListener(new f(this, 3));
         this.a0.addListener(new g(this, 0));
         this.a0.start();
@@ -613,7 +613,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.b0 = duration;
-        duration.setInterpolator(xq.f);
+        duration.setInterpolator(wq.f);
         this.b0.addUpdateListener(new f(this, 4));
         this.b0.addListener(new g(this, 1));
         this.b0.start();
@@ -672,7 +672,7 @@ public abstract class j extends FrameLayout {
             ofFloat.addUpdateListener(new f(this, 2));
             this.k0.addListener(new g(this, 4));
             this.k0.setDuration(280L);
-            this.k0.setInterpolator(xq.h);
+            this.k0.setInterpolator(wq.h);
             this.k0.start();
         }
     }
@@ -792,7 +792,7 @@ public abstract class j extends FrameLayout {
                     float f10 = fArr3[0];
                     float f11 = fArr3[1];
                     actionMasked = motionEvent.getActionMasked();
-                    ic icVar = this.a;
+                    hc hcVar = this.a;
                     if (actionMasked == 0) {
                         if (actionMasked != 1) {
                             if (actionMasked == 2) {
@@ -809,7 +809,7 @@ public abstract class j extends FrameLayout {
                         }
                         jVar = this;
                         d(actionMasked == 3);
-                        icVar.c(false);
+                        hcVar.c(false);
                         i iVar2 = jVar.H;
                         if (iVar2 != null) {
                             iVar2.f = true;
@@ -826,7 +826,7 @@ public abstract class j extends FrameLayout {
                         if ((getParent() instanceof d) && (jVar.R != 0 || jVar.S != 0)) {
                             ((d) getParent()).invalidate();
                         }
-                        icVar.c(true);
+                        hcVar.c(true);
                         e eVar = jVar.I;
                         org.telegram.messenger.g0.r(eVar);
                         if (!z9) {
@@ -851,7 +851,7 @@ public abstract class j extends FrameLayout {
             float f102 = fArr32[0];
             float f112 = fArr32[1];
             actionMasked = motionEvent.getActionMasked();
-            ic icVar2 = this.a;
+            hc hcVar2 = this.a;
             if (actionMasked == 0) {
             }
             z10 = true;

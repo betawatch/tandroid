@@ -7,9 +7,9 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements v10 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class i implements v10 {
                     int i11 = messagePeerVote.date;
                     u1 u1Var = new u1(nVar, o4, 3);
                     int i12 = k.b;
-                    y31 K = y31.K(k.class);
+                    x31 K = x31.K(k.class);
                     K.G = e22;
                     K.B = o4;
                     K.z = i11;
@@ -50,15 +50,15 @@ public final /* synthetic */ class i implements v10 {
                 if (!nVar.h) {
                     if (!arrayList2.isEmpty()) {
                         int i13 = m.b;
-                        arrayList.add(y31.K(m.class));
+                        arrayList.add(x31.K(m.class));
                         break;
                     } else {
                         int i14 = l.b;
-                        arrayList.add(y31.K(l.class));
-                        arrayList.add(y31.K(l.class));
-                        arrayList.add(y31.K(l.class));
-                        arrayList.add(y31.K(l.class));
-                        arrayList.add(y31.K(l.class));
+                        arrayList.add(x31.K(l.class));
+                        arrayList.add(x31.K(l.class));
+                        arrayList.add(x31.K(l.class));
+                        arrayList.add(x31.K(l.class));
+                        arrayList.add(x31.K(l.class));
                         break;
                     }
                 }

@@ -2,7 +2,7 @@ package ug;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -19,15 +19,15 @@ public final /* synthetic */ class c1 implements ValueAnimator.AnimatorUpdateLis
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 f1 f1Var = this.b;
-                f1Var.y2 = floatValue;
+                f1Var.B2 = floatValue;
                 f1Var.c.invalidate();
                 break;
             default:
                 f1 f1Var2 = this.b;
                 f1Var2.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f1Var2.F2.getLayoutParams().height = org.telegram.messenger.g0.W1(floatValue2, f1Var2.G2[0].getHeight(), f1Var2.G2[1].getHeight());
-                f1Var2.F2.requestLayout();
+                f1Var2.I2.getLayoutParams().height = org.telegram.messenger.g0.W1(floatValue2, f1Var2.J2[0].getHeight(), f1Var2.J2[1].getHeight());
+                f1Var2.I2.requestLayout();
                 break;
         }
     }

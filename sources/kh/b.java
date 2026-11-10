@@ -5,21 +5,21 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ha;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.cp;
 import org.telegram.ui.Components.cq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout {
-    public final g6 a;
+    public final h6 a;
     public a b;
     public cq c;
     public boolean d;
 
-    public b(Context context, g6 g6Var) {
+    public b(Context context, h6 h6Var) {
         super(context);
-        this.a = g6Var;
+        this.a = h6Var;
     }
 
     public final void a(int i7, boolean z9) {

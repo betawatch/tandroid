@@ -1,154 +1,145 @@
 package j$.util.concurrent;
 
-import j$.util.Collection;
 import j$.util.Spliterator;
-import j$.util.stream.Stream;
-import java.util.Iterator;
-import java.util.Spliterator;
+import j$.util.function.BiConsumer$-CC;
+import j$.util.function.BiFunction$-CC;
+import j$.util.function.Consumer$-CC;
+import j$.util.stream.b8;
+import j$.util.stream.e7;
+import j$.util.stream.m1;
+import j$.util.stream.q1;
+import j$.util.stream.r1;
+import j$.util.stream.s1;
+import j$.util.stream.t3;
+import j$.util.stream.v6;
+import j$.util.stream.w6;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
-import java.util.function.IntFunction;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 /* loaded from: classes2.dex */
-public final class s extends b implements Collection {
-    private static final long serialVersionUID = 2249069246763182397L;
+public final /* synthetic */ class s implements BiConsumer, BiFunction, Consumer, Supplier, b8 {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
+    public /* synthetic */ s(int i7, Object obj, Object obj2) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream parallelStream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$parallelStream(this));
+    public /* synthetic */ s(BiFunction biFunction, Function function) {
+        this.a = 2;
+        this.c = biFunction;
+        this.b = function;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public final /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.Collection
-    public final /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(Collection.-CC.$default$stream(this));
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public final /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean contains(Object obj) {
-        return this.a.containsValue(obj);
-    }
-
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean remove(Object obj) {
-        a aVar;
-        if (obj == null) {
-            return false;
+    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+        switch (this.a) {
         }
-        Object it = iterator();
-        do {
-            aVar = (a) it;
-            if (!aVar.hasNext()) {
-                return false;
-            }
-        } while (!obj.equals(((h) it).next()));
-        aVar.remove();
-        return true;
+        return BiConsumer$-CC.$default$andThen(this, biConsumer);
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new h(lVarArr, length, length, concurrentHashMap, 1);
+    public /* synthetic */ BiFunction andThen(Function function) {
+        return BiFunction$-CC.$default$andThen(this, function);
     }
 
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.a) {
+        }
+        return Consumer$-CC.$default$andThen(this, consumer);
     }
 
-    @Override // java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.function.BiFunction
+    public Object apply(Object obj, Object obj2) {
+        return ((Function) this.b).apply(((BiFunction) this.c).apply(obj, obj2));
     }
 
-    @Override // j$.util.concurrent.b, java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        collection.getClass();
-        Object it = iterator();
-        boolean z9 = false;
-        while (true) {
-            a aVar = (a) it;
-            if (!aVar.hasNext()) {
-                return z9;
-            }
-            if (collection.contains(((h) it).next())) {
-                aVar.remove();
-                z9 = true;
-            }
+    @Override // java.util.function.BiConsumer
+    public void accept(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                ConcurrentMap concurrentMap = (ConcurrentMap) this.b;
+                BiFunction biFunction = (BiFunction) this.c;
+                while (!concurrentMap.replace(obj, obj2, biFunction.apply(obj, obj2)) && (obj2 = concurrentMap.get(obj)) != null) {
+                }
+            default:
+                BiConsumer biConsumer = (BiConsumer) this.b;
+                BiConsumer biConsumer2 = (BiConsumer) this.c;
+                biConsumer.accept(obj, obj2);
+                biConsumer2.accept(obj, obj2);
+                break;
         }
     }
 
-    @Override // java.util.Collection, j$.util.Collection
-    public final boolean removeIf(Predicate predicate) {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        predicate.getClass();
-        l[] lVarArr = concurrentHashMap.a;
-        boolean z9 = false;
-        if (lVarArr != null) {
-            p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
-            while (true) {
-                l a10 = pVar.a();
-                if (a10 == null) {
+    @Override // java.util.function.Supplier
+    public Object get() {
+        return new m1((r1) this.b, (Predicate) this.c);
+    }
+
+    public s(w6 w6Var, r1 r1Var, Supplier supplier) {
+        this.a = 6;
+        this.b = r1Var;
+        this.c = supplier;
+    }
+
+    @Override // j$.util.stream.b8
+    public int v() {
+        return v6.u | v6.r;
+    }
+
+    @Override // j$.util.stream.b8
+    public Object f(j$.util.stream.a aVar, Spliterator spliterator) {
+        q1 q1Var = (q1) ((Supplier) this.c).get();
+        aVar.F0(spliterator, q1Var);
+        return Boolean.valueOf(q1Var.b);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // j$.util.stream.b8
+    public Object i(t3 t3Var, Spliterator spliterator) {
+        return (Boolean) new s1(this, (j$.util.stream.a) t3Var, spliterator).invoke();
+    }
+
+    @Override // java.util.function.Consumer
+    /* renamed from: accept */
+    public void x(Object obj) {
+        switch (this.a) {
+            case 3:
+                Consumer consumer = (Consumer) this.b;
+                Consumer consumer2 = (Consumer) this.c;
+                consumer.x(obj);
+                consumer2.x(obj);
+                break;
+            case 4:
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
+                ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) this.c;
+                if (obj != null) {
+                    concurrentHashMap.putIfAbsent(obj, Boolean.TRUE);
+                    break;
+                } else {
+                    atomicBoolean.set(true);
                     break;
                 }
-                Object obj = a10.b;
-                Object obj2 = a10.c;
-                if (predicate.test(obj2) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z9 = true;
+            case 5:
+            case 6:
+            default:
+                e7 e7Var = (e7) this.b;
+                Consumer consumer3 = (Consumer) this.c;
+                if (e7Var.b.putIfAbsent(obj != null ? obj : e7.d, Boolean.TRUE) == null) {
+                    consumer3.x(obj);
+                    break;
                 }
-            }
-        }
-        return z9;
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
-        ConcurrentHashMap concurrentHashMap = this.a;
-        long j3 = concurrentHashMap.j();
-        l[] lVarArr = concurrentHashMap.a;
-        int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j3 < 0 ? 0L : j3, 1);
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection
-    public final void forEach(Consumer consumer) {
-        consumer.getClass();
-        l[] lVarArr = this.a.a;
-        if (lVarArr == null) {
-            return;
-        }
-        p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
-        while (true) {
-            l a10 = pVar.a();
-            if (a10 == null) {
-                return;
-            } else {
-                consumer.x(a10.c);
-            }
+                break;
+            case 7:
+                ((BiConsumer) this.b).accept(this.c, obj);
+                break;
         }
     }
 }

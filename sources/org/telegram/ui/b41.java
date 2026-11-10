@@ -1,62 +1,82 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class b41 extends org.telegram.ui.Components.n61 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ d51 e;
+public final class b41 extends org.telegram.ui.Components.v61 {
+    public boolean V;
+    public final /* synthetic */ e51 W;
 
-    public b41(d51 d51Var, boolean z9, boolean z10, boolean z11, FrameLayout frameLayout) {
-        this.e = d51Var;
-        this.a = z9;
-        this.b = z10;
-        this.c = z11;
-        this.d = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b41(e51 e51Var, Activity activity) {
+        super(activity, null);
+        this.W = e51Var;
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final View d(int i7) {
-        d51 d51Var = this.e;
-        if (d51Var.n0) {
-            return d51Var.i0;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z9;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            e51 e51Var = this.W;
+            if (e51Var.j0 != null) {
+                View currentView = getCurrentView();
+                zd zdVar = e51Var.j0;
+                if (currentView == zdVar) {
+                    boolean G = zdVar.G(motionEvent.getX() - e51Var.j0.getX(), motionEvent.getY() - e51Var.j0.getY());
+                    zdVar.Q0 = G;
+                    if (G && zdVar.a1.b.canScrollHorizontally(-1)) {
+                        z9 = true;
+                        this.V = z9;
+                    }
+                }
+            }
+            z9 = false;
+            this.V = z9;
         }
-        boolean z9 = this.a;
-        FrameLayout frameLayout = this.d;
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.V = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.V = false;
+            }
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.v61, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.V && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.v61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.V && B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.v61
+    public final void u() {
+        e51 e51Var = this.W;
+        e51Var.p0(e51Var.h0.getCurrentPosition(), true);
+        e51Var.q0(false, 0.0f);
+    }
+
+    @Override // org.telegram.ui.Components.v61
+    public final void w(boolean z9) {
+        e51 e51Var = this.W;
+        float positionAnimated = e51Var.h0.getPositionAnimated();
+        e51Var.q0(!z9, positionAnimated);
         if (z9) {
-            if (i7 == 0) {
-                return frameLayout;
-            }
-            i7--;
+            return;
         }
-        if (this.b) {
-            if (i7 == 0) {
-                return d51Var.i0;
-            }
-            i7--;
-        }
-        return (this.c && i7 == 0) ? d51Var.j0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final int e() {
-        if (this.e.n0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final int h(int i7) {
-        return i7;
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final void b(View view, int i7, int i10) {
+        e51Var.p0(Math.round(positionAnimated), true);
     }
 }

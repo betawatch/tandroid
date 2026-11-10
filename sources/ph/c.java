@@ -13,22 +13,22 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements b6 {
-    public final g6 a;
+public final class c extends FrameLayout implements c6 {
+    public final h6 a;
     public final ImageView b;
     public final TextView c;
     public int d;
     public boolean e;
 
-    public c(Context context, g6 g6Var) {
+    public c(Context context, h6 h6Var) {
         super(context);
-        this.a = g6Var;
+        this.a = h6Var;
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -46,19 +46,19 @@ public final class c extends FrameLayout implements b6 {
     }
 
     public final int a(float f10) {
-        return i0.a.o(l6.w0(l6.Kl, this.a), (int) (f10 * 255.0f));
+        return i0.a.o(m6.w0(m6.Kl, this.a), (int) (f10 * 255.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(l6.Kl));
+        hashSet.add(Integer.valueOf(m6.Kl));
     }
 
     public void setOnBackClickListener(View.OnClickListener onClickListener) {
         this.b.setOnClickListener(onClickListener);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         this.c.setTextColor(a(0.6f));
         int a10 = a(1.0f);
@@ -71,9 +71,9 @@ public final class c extends FrameLayout implements b6 {
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
         if (imageView.getBackground() != null) {
-            l6.H1(imageView.getBackground(), a(0.1f), true);
+            m6.H1(imageView.getBackground(), a(0.1f), true);
         } else {
-            imageView.setBackground(l6.h0(a(0.1f), 1, -1));
+            imageView.setBackground(m6.h0(a(0.1f), 1, -1));
         }
     }
 }

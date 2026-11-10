@@ -1,32 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ce0 implements ValueAnimator.AnimatorUpdateListener {
+public final class ce0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ee0 b;
+    public final /* synthetic */ de0 b;
 
-    public /* synthetic */ ce0(ee0 ee0Var, int i7) {
+    public /* synthetic */ ce0(de0 de0Var, int i7) {
         this.a = i7;
-        this.b = ee0Var;
+        this.b = de0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ee0 ee0Var = this.b;
-                ee0Var.getClass();
-                ee0Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ee0Var.invalidate();
+                de0 de0Var = this.b;
+                de0Var.h = false;
+                de0Var.a = de0Var.c;
+                de0Var.invalidate();
+                int i7 = de0Var.J;
+                if (i7 >= 0) {
+                    de0Var.b(i7);
+                    de0Var.J = -1;
+                    break;
+                }
                 break;
             default:
-                ee0 ee0Var2 = this.b;
-                ee0Var2.getClass();
-                ee0Var2.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ee0Var2.invalidate();
+                de0 de0Var2 = this.b;
+                de0Var2.n = false;
+                de0Var2.h = false;
+                de0Var2.invalidate();
+                int i10 = de0Var2.J;
+                if (i10 >= 0) {
+                    de0Var2.b(i10);
+                    de0Var2.J = -1;
+                }
+                de0Var2.a();
                 break;
         }
     }

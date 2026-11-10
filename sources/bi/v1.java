@@ -2,29 +2,29 @@ package bi;
 
 import android.content.Context;
 import android.graphics.Rect;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v1 extends qh.c implements te.b {
     public static final /* synthetic */ int w = 0;
     public final te.c f;
     public final ai.i h;
     public final qh.b[] n;
-    public final org.telegram.ui.ActionBar.g6 r;
+    public final org.telegram.ui.ActionBar.h6 r;
     public int s;
 
-    public v1(Context context, org.telegram.ui.ActionBar.g6 g6Var, ai.i iVar) {
+    public v1(Context context, org.telegram.ui.ActionBar.h6 h6Var, ai.i iVar) {
         super(context);
-        this.f = new te.c(0, this, xq.h, 1600L);
+        this.f = new te.c(0, this, wq.h, 1600L);
         this.h = iVar;
-        this.r = g6Var;
-        int i7 = org.telegram.ui.ActionBar.l6.Kl;
-        int r12 = org.telegram.ui.ActionBar.l6.r1(0.09411765f, org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
-        org.telegram.ui.ActionBar.l6.r1(0.1254902f, org.telegram.ui.ActionBar.l6.w0(i7, g6Var));
+        this.r = h6Var;
+        int i7 = org.telegram.ui.ActionBar.m6.Kl;
+        int r12 = org.telegram.ui.ActionBar.m6.r1(0.09411765f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        org.telegram.ui.ActionBar.m6.r1(0.1254902f, org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
         this.e.setColor(r12);
         int i10 = 2;
-        this.n = new qh.b[]{qh.b.c(context, g6Var, qh.a.G, 2131749625), qh.b.c(context, g6Var, qh.a.w, 2131749642), qh.b.c(context, g6Var, qh.a.J, 2131749623)};
+        this.n = new qh.b[]{qh.b.c(context, h6Var, qh.a.G, 2131749625), qh.b.c(context, h6Var, qh.a.w, 2131749642), qh.b.c(context, h6Var, qh.a.J, 2131749623)};
         int i11 = 0;
         while (true) {
             qh.b[] bVarArr = this.n;

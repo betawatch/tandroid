@@ -5,12 +5,12 @@ import di.e4;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.w8;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.v8;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     @Override // yg.d, yg.c
@@ -23,31 +23,31 @@ public final class e extends d {
     }
 
     public void setGiveaway(TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        s6.X(this.e, l6.r5, this.a);
+        t6.X(this.e, m6.r5, this.a);
         boolean z9 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
         e4 e4Var = this.d;
-        w8 w8Var = this.b;
+        v8 v8Var = this.b;
         if (z9) {
             TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway;
-            w8Var.g(26);
+            v8Var.g(26);
             e4Var.k(id.H(',', "BoostingStarsPreparedGiveawaySubscriptionsPlural", (int) tL_prepaidStarsGiveaway.stars));
             setSubtitle(id.G(tL_prepaidStarsGiveaway.quantity, "AmongWinners", new Object[0]));
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
             e4Var.k(id.M0(2131753328, null));
-            w8Var.g(16);
+            v8Var.g(16);
             TL_stories.TL_prepaidGiveaway tL_prepaidGiveaway = (TL_stories.TL_prepaidGiveaway) prepaidGiveaway;
             int i7 = tL_prepaidGiveaway.months;
             if (i7 == 12) {
-                w8Var.i(-31392, -2796986);
+                v8Var.i(-31392, -2796986);
             } else if (i7 == 6) {
-                w8Var.i(-10703110, -12481584);
+                v8Var.i(-10703110, -12481584);
             } else {
-                w8Var.i(-6631068, -11945404);
+                v8Var.i(-6631068, -11945404);
             }
             setSubtitle(id.G(prepaidGiveaway.quantity, "BoostingPreparedGiveawaySubscriptionsPlural", id.G(tL_prepaidGiveaway.months, "Months", new Object[0])));
         }
-        l9 l9Var = this.c;
-        l9Var.setImageDrawable(w8Var);
-        l9Var.setRoundRadius(g0.L(20.0f));
+        k9 k9Var = this.c;
+        k9Var.setImageDrawable(v8Var);
+        k9Var.setRoundRadius(g0.L(20.0f));
     }
 }

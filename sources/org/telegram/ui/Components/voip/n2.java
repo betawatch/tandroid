@@ -17,12 +17,12 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import c8.ha;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.t9;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.s9;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.va;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class n2 extends FrameLayout {
     public int D;
@@ -136,11 +136,11 @@ public class n2 extends FrameLayout {
             int alpha = Color.alpha(i11);
             float f11 = this.T;
             if (alpha != 255 || org.telegram.messenger.g0.B(i11) <= 0.5d) {
-                org.telegram.ui.Cells.y j02 = l6.j0(org.telegram.messenger.g0.L(f11), 0, i0.a.o(-1, (int) (f10 * 76.5f)));
+                org.telegram.ui.Cells.y j02 = m6.j0(org.telegram.messenger.g0.L(f11), 0, i0.a.o(-1, (int) (f10 * 76.5f)));
                 this.N = j02;
                 j02.setCallback(this);
             } else {
-                org.telegram.ui.Cells.y j03 = l6.j0(org.telegram.messenger.g0.L(f11), 0, i0.a.o(-16777216, (int) (f10 * 25.5f)));
+                org.telegram.ui.Cells.y j03 = m6.j0(org.telegram.messenger.g0.L(f11), 0, i0.a.o(-16777216, (int) (f10 * 25.5f)));
                 this.N = j03;
                 j03.setCallback(this);
             }
@@ -201,7 +201,7 @@ public class n2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.w = ofFloat;
         ofFloat.addUpdateListener(new ch.u(9, this, z13));
-        this.w.addListener(new t9(26, this, z13));
+        this.w.addListener(new s9(26, this, z13));
         this.w.setDuration(150L).start();
         invalidate();
     }
@@ -271,7 +271,7 @@ public class n2 extends FrameLayout {
                     canvas.drawCircle(width, L, L2, paint);
                 }
                 if (this.N == null) {
-                    org.telegram.ui.Cells.y j02 = l6.j0(org.telegram.messenger.g0.L(f14), 0, -16777216);
+                    org.telegram.ui.Cells.y j02 = m6.j0(org.telegram.messenger.g0.L(f14), 0, -16777216);
                     this.N = j02;
                     j02.setCallback(this);
                 }
@@ -345,9 +345,9 @@ public class n2 extends FrameLayout {
                                     float N = org.telegram.messenger.g0.N(8.0f) + ((int) (width - (drawableArr[0].getIntrinsicWidth() / 2.0f))) + this.M;
                                     float N2 = org.telegram.messenger.g0.N(8.0f) + ((int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)));
                                     float L3 = org.telegram.messenger.g0.L(17.0f);
-                                    xq xqVar = xq.f;
-                                    float interpolation = (xqVar.getInterpolation(this.K) * L3) + (N - org.telegram.messenger.g0.L(1.0f));
-                                    float interpolation2 = (xqVar.getInterpolation(this.K) * org.telegram.messenger.g0.L(17.0f)) + N2;
+                                    wq wqVar = wq.f;
+                                    float interpolation = (wqVar.getInterpolation(this.K) * L3) + (N - org.telegram.messenger.g0.L(1.0f));
+                                    float interpolation2 = (wqVar.getInterpolation(this.K) * org.telegram.messenger.g0.L(17.0f)) + N2;
                                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), qs.e4, 31);
                                     drawableArr[0].setBounds((int) (width - (r2.getIntrinsicWidth() / 2.0f)), (int) (L - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + L));
                                     drawableArr[0].draw(canvas);

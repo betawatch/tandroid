@@ -10,9 +10,9 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c0 extends Drawable {
     public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
@@ -60,7 +60,7 @@ public final class c0 extends Drawable {
         int[] iArr = this.f;
         a(interpolator, i7, iArr);
         this.b.setColors(iArr);
-        this.c.setColor(l6.r1(this.h / 255.0f, this.g));
+        this.c.setColor(m6.r1(this.h / 255.0f, this.g));
     }
 
     public final void c(int i7, int i10) {
@@ -143,7 +143,7 @@ public final class c0 extends Drawable {
     public final void setAlpha(int i7) {
         this.h = i7;
         this.b.setAlpha(i7);
-        this.c.setColor(l6.r1(this.h / 255.0f, this.g));
+        this.c.setColor(m6.r1(this.h / 255.0f, this.g));
     }
 
     @Override // android.graphics.drawable.Drawable

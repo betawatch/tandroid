@@ -1,244 +1,95 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.regex.Pattern;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dr implements org.telegram.messenger.v10 {
+public final /* synthetic */ class dr implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lr b;
+    public final /* synthetic */ kr b;
 
-    public /* synthetic */ dr(lr lrVar, int i7) {
+    public /* synthetic */ dr(kr krVar, int i7) {
         this.a = i7;
-        this.b = lrVar;
+        this.b = krVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0424  */
-    @Override // org.telegram.messenger.v10
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(Object obj, Object obj2) {
-        float f10;
-        Object[] objArr;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Context context;
+        boolean z9;
+        CharSequence charSequence;
         int i7 = this.a;
-        lr lrVar = this.b;
-        int i10 = 1;
+        kr krVar = this.b;
+        boolean z10 = false;
         switch (i7) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                m41 m41Var = (m41) obj2;
-                kr krVar = lrVar.b2;
-                kr krVar2 = lrVar.d2;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = lrVar.o2;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = lrVar.n2;
-                if (lrVar.T1 != null) {
-                    arrayList.add(y31.D(org.telegram.messenger.g0.L(12.0f)));
-                    arrayList.add(y31.u(org.telegram.messenger.id.M0(2131751593, null)));
-                    lrVar.f1(arrayList, lrVar.a2);
-                    int i11 = 7;
-                    if (lrVar.r2) {
-                        krVar.i();
-                        int i12 = (lrVar.u2 ? 1 : 0) + (lrVar.v2 ? 1 : 0);
-                        String str = krVar.b;
-                        Locale locale = Locale.US;
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append(i12);
-                        f10 = 12.0f;
-                        sb2.append("/2");
-                        y31 A = y31.A(sb2.toString(), str, 100);
-                        A.L(i12 == 2);
-                        A.f = lrVar.t2;
-                        A.D = new lk(i11, lrVar, m41Var);
-                        arrayList.add(A);
-                        if (!lrVar.t2) {
-                            y31 z9 = y31.z(101, org.telegram.messenger.id.M0(2131746059, null));
-                            z9.L(lrVar.u2);
-                            z9.i = 1;
-                            arrayList.add(z9);
-                            y31 z10 = y31.z(org.telegram.messenger.qs.n1, org.telegram.messenger.id.M0(2131746058, null));
-                            z10.L(lrVar.v2);
-                            z10.i = 1;
-                            arrayList.add(z10);
-                        }
-                    } else {
-                        f10 = 12.0f;
-                        lrVar.f1(arrayList, krVar);
-                        lrVar.f1(arrayList, lrVar.c2);
-                    }
-                    lrVar.f1(arrayList, krVar2);
-                    if (!lrVar.Z1 && krVar2.e()) {
-                        if (lrVar.Y1) {
-                            arrayList.add(y31.C(null));
-                            if (krVar2.d()) {
-                                String G = org.telegram.messenger.id.G(krVar2.i, "UserRestrictionsCanDoUsers", new Object[0]);
-                                y31 y31Var = new y31(42);
-                                y31Var.d = 0;
-                                y31Var.o = G;
-                                arrayList.add(y31Var);
-                            } else {
-                                String M0 = org.telegram.messenger.id.M0(2131743723, null);
-                                y31 y31Var2 = new y31(42);
-                                y31Var2.d = 0;
-                                y31Var2.o = M0;
-                                arrayList.add(y31Var2);
-                            }
-                            y31 F = y31.F(0, org.telegram.messenger.id.M0(2131743691, null));
-                            F.L((tL_chatBannedRights.send_plain || tL_chatBannedRights2.send_plain) ? false : true);
-                            F.t = tL_chatBannedRights2.send_plain;
-                            arrayList.add(F);
-                            int i13 = (tL_chatBannedRights.send_photos || tL_chatBannedRights2.send_photos) ? 0 : 1;
-                            if (!tL_chatBannedRights.send_videos && !tL_chatBannedRights2.send_videos) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_stickers && !tL_chatBannedRights2.send_stickers) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_audios && !tL_chatBannedRights2.send_audios) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_docs && !tL_chatBannedRights2.send_docs) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_voices && !tL_chatBannedRights2.send_voices) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_roundvideos && !tL_chatBannedRights2.send_roundvideos) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.embed_links && !tL_chatBannedRights2.embed_links && !tL_chatBannedRights.send_plain && !tL_chatBannedRights2.send_plain) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_polls && !tL_chatBannedRights2.send_polls) {
-                                i13++;
-                            }
-                            if (!tL_chatBannedRights.send_reactions && !tL_chatBannedRights2.send_reactions) {
-                                i13++;
-                            }
-                            String M02 = org.telegram.messenger.id.M0(2131743690, null);
-                            Locale locale2 = Locale.US;
-                            y31 o4 = y31.o(1, M02, i13 + "/10");
-                            o4.L(i13 > 0);
-                            o4.t = lrVar.e1();
-                            o4.f = lrVar.q2;
-                            o4.D = new bi.la(lrVar, i13, m41Var, 9);
-                            arrayList.add(o4);
-                            if (!lrVar.q2) {
-                                y31 z11 = y31.z(6, org.telegram.messenger.id.M0(2131745607, null));
-                                z11.L((tL_chatBannedRights.send_photos || tL_chatBannedRights2.send_photos) ? false : true);
-                                z11.t = tL_chatBannedRights2.send_photos;
-                                z11.i = 1;
-                                arrayList.add(z11);
-                                y31 z12 = y31.z(7, org.telegram.messenger.id.M0(2131745604, null));
-                                z12.L((tL_chatBannedRights.send_videos || tL_chatBannedRights2.send_videos) ? false : true);
-                                z12.t = tL_chatBannedRights2.send_videos;
-                                z12.i = 1;
-                                arrayList.add(z12);
-                                y31 z13 = y31.z(8, org.telegram.messenger.id.M0(2131745609, null));
-                                z13.L((tL_chatBannedRights.send_docs || tL_chatBannedRights2.send_docs) ? false : true);
-                                z13.t = tL_chatBannedRights2.send_docs;
-                                z13.i = 1;
-                                arrayList.add(z13);
-                                y31 z14 = y31.z(9, org.telegram.messenger.id.M0(2131745608, null));
-                                z14.L((tL_chatBannedRights.send_audios || tL_chatBannedRights2.send_audios) ? false : true);
-                                z14.t = tL_chatBannedRights2.send_audios;
-                                z14.i = 1;
-                                arrayList.add(z14);
-                                y31 z15 = y31.z(10, org.telegram.messenger.id.M0(2131745603, null));
-                                z15.L((tL_chatBannedRights.send_voices || tL_chatBannedRights2.send_voices) ? false : true);
-                                z15.t = tL_chatBannedRights2.send_voices;
-                                z15.i = 1;
-                                arrayList.add(z15);
-                                y31 z16 = y31.z(11, org.telegram.messenger.id.M0(2131745606, null));
-                                z16.L((tL_chatBannedRights.send_roundvideos || tL_chatBannedRights2.send_roundvideos) ? false : true);
-                                z16.t = tL_chatBannedRights2.send_roundvideos;
-                                z16.i = 1;
-                                arrayList.add(z16);
-                                y31 z17 = y31.z(12, org.telegram.messenger.id.M0(2131745605, null));
-                                z17.L((tL_chatBannedRights.send_stickers || tL_chatBannedRights2.send_stickers) ? false : true);
-                                z17.t = tL_chatBannedRights2.send_stickers;
-                                z17.i = 1;
-                                arrayList.add(z17);
-                                y31 z18 = y31.z(13, org.telegram.messenger.id.M0(2131745602, null));
-                                z18.L((tL_chatBannedRights.send_polls || tL_chatBannedRights2.send_polls) ? false : true);
-                                z18.t = tL_chatBannedRights2.send_polls;
-                                z18.i = 1;
-                                arrayList.add(z18);
-                                y31 z19 = y31.z(14, org.telegram.messenger.id.M0(2131743712, null));
-                                z19.L((tL_chatBannedRights.embed_links || tL_chatBannedRights2.embed_links || tL_chatBannedRights.send_plain || tL_chatBannedRights2.send_plain) ? false : true);
-                                z19.t = tL_chatBannedRights2.embed_links;
-                                z19.i = 1;
-                                arrayList.add(z19);
-                                y31 z20 = y31.z(15, org.telegram.messenger.id.M0(2131743687, null));
-                                z20.L((tL_chatBannedRights.send_reactions || tL_chatBannedRights2.send_reactions) ? false : true);
-                                z20.t = tL_chatBannedRights2.send_reactions;
-                                z20.i = 1;
-                                arrayList.add(z20);
-                            }
-                            y31 F2 = y31.F(2, org.telegram.messenger.id.M0(2131743711, null));
-                            F2.L((tL_chatBannedRights.invite_users || tL_chatBannedRights2.invite_users) ? false : true);
-                            F2.t = tL_chatBannedRights2.invite_users;
-                            arrayList.add(F2);
-                            y31 F3 = y31.F(3, org.telegram.messenger.id.M0(2131743692, null));
-                            F3.L((tL_chatBannedRights.pin_messages || tL_chatBannedRights2.pin_messages) ? false : true);
-                            F3.t = tL_chatBannedRights2.pin_messages;
-                            arrayList.add(F3);
-                            y31 F4 = y31.F(4, org.telegram.messenger.id.M0(2131743716, null));
-                            F4.L((tL_chatBannedRights.change_info || tL_chatBannedRights2.change_info) ? false : true);
-                            F4.t = tL_chatBannedRights2.change_info;
-                            arrayList.add(F4);
-                            if (lrVar.S1) {
-                                y31 F5 = y31.F(5, org.telegram.messenger.id.M0(2131751700, null));
-                                F5.L((tL_chatBannedRights.manage_topics || tL_chatBannedRights2.manage_topics) ? false : true);
-                                F5.t = tL_chatBannedRights2.manage_topics;
-                                arrayList.add(F5);
-                            }
-                        }
-                        if (lrVar.g2) {
-                            String M03 = org.telegram.messenger.id.M0(!krVar2.d() ? lrVar.Y1 ? 2131751479 : 2131751477 : lrVar.Y1 ? 2131751478 : 2131751476, null);
-                            y31 y31Var3 = new y31(38);
-                            y31Var3.d = 1;
-                            y31Var3.o = M03;
-                            y31Var3.f = !lrVar.Y1;
-                            y31Var3.q = true;
-                            arrayList.add(y31Var3);
-                            objArr = false;
-                            if (lrVar.i2 == 0) {
-                                if (objArr != false) {
-                                    arrayList.add(y31.D(org.telegram.messenger.g0.L(f10)));
-                                }
-                                String M04 = org.telegram.messenger.id.M0(2131751963, null);
-                                y31 y31Var4 = new y31(39);
-                                y31Var4.d = org.telegram.messenger.qs.o1;
-                                y31Var4.l = M04;
-                                y31Var4.z = 0;
-                                y31Var4.L(lrVar.h2);
-                                arrayList.add(y31Var4);
-                                TL_communities.ParticipantJoinedChats participantJoinedChats = lrVar.j2;
-                                arrayList.add(y31.B(org.telegram.messenger.qs.p1, org.telegram.messenger.g0.H2(org.telegram.messenger.g0.U2(org.telegram.messenger.id.G(participantJoinedChats != null ? participantJoinedChats.joined_chat_ids.size() : 1, "CommunityBanFromCommunityInfo", new Object[0]), new er(lrVar, i10)), true)));
-                                break;
-                            }
-                        }
-                    }
-                    objArr = true;
-                    if (lrVar.i2 == 0) {
-                    }
-                }
+                krVar.i1(false);
                 break;
             default:
-                TL_communities.ParticipantJoinedChats participantJoinedChats2 = (TL_communities.ParticipantJoinedChats) obj;
-                if (participantJoinedChats2 == null) {
-                    lrVar.getClass();
-                    break;
-                } else {
-                    lrVar.j2 = participantJoinedChats2;
-                    lrVar.P1.O(true);
-                    break;
+                Context context2 = krVar.getContext();
+                org.telegram.ui.ActionBar.h6 h6Var = krVar.I0;
+                int i10 = krVar.a;
+                long j3 = krVar.l2;
+                ArrayList<Long> arrayList = krVar.m2.joined_chat_ids;
+                er erVar = new er(krVar, 5);
+                Pattern pattern = u4.a;
+                LinearLayout f10 = org.telegram.messenger.k5.f(context2, 1);
+                org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context2, h6Var);
+                Object obj = null;
+                String M0 = org.telegram.messenger.id.M0(2131751959, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.R = M0;
+                u1Var.T = org.telegram.messenger.g0.X2(org.telegram.messenger.id.G(arrayList.size(), "CommunityBanWillRemoveFromChats", org.telegram.messenger.m5.s(i10, j3)));
+                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131747831, null), null);
+                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+                alertDialog$Builder.o(f10);
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Long l10 = arrayList.get(i11);
+                    i11++;
+                    Long l11 = l10;
+                    long longValue = l11.longValue();
+                    TLRPC.Chat M02 = org.telegram.messenger.qp.s1(i10).M0(l11);
+                    TLRPC.ChatFull N0 = org.telegram.messenger.qp.s1(i10).N0(longValue);
+                    if (M02 == null) {
+                        obj = null;
+                    } else {
+                        org.telegram.ui.ActionBar.u1 u1Var2 = u1Var;
+                        bi.s1 s1Var = new bi.s1(context2, h6Var, z10);
+                        ((TextView) s1Var.b).setText(org.telegram.messenger.m5.m(M02));
+                        TextView textView = (TextView) s1Var.d;
+                        if (N0 != null) {
+                            context = context2;
+                            z9 = false;
+                            charSequence = org.telegram.messenger.id.G(N0.participants_count, "Members", new Object[0]);
+                        } else {
+                            context = context2;
+                            z9 = false;
+                            charSequence = null;
+                        }
+                        textView.setText(charSequence);
+                        ((k9) s1Var.c).e(M02, new v8(M02));
+                        s1Var.setBackground(org.telegram.ui.ActionBar.m6.N0(z9));
+                        s1Var.setOnClickListener(new bi.p3(u1VarArr, erVar, longValue, 3));
+                        f10.addView(s1Var, c8.ha.o(-1, -2));
+                        z10 = z9;
+                        obj = null;
+                        u1Var = u1Var2;
+                        context2 = context;
+                    }
                 }
+                org.telegram.ui.ActionBar.u1 u1Var3 = u1Var;
+                u1VarArr[z10 ? 1 : 0] = u1Var3;
+                u1Var3.show();
+                break;
         }
     }
 }

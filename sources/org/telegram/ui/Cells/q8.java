@@ -14,10 +14,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.sm;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q8 extends FrameLayout {
     public int a;
@@ -26,15 +26,15 @@ public final class q8 extends FrameLayout {
     public final Switch d;
     public boolean e;
     public LinearLayout f;
-    public org.telegram.ui.Components.j6 h;
+    public org.telegram.ui.Components.i6 h;
     public View n;
-    public tm r;
+    public sm r;
 
     public q8(Context context) {
         super(context);
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, null);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, null);
         org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
         textView.setSingleLine(true);
         textView.setGravity((id.a0 ? 5 : 3) | 16);
@@ -44,7 +44,7 @@ public final class q8 extends FrameLayout {
         addView(textView, c8.ha.d(-2, -1.0f, (z9 ? 5 : 3) | 48, z9 ? 64.0f : 21.0f, 0.0f, z9 ? 21.0f : 64.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.z6, null);
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.z6, null);
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(id.a0 ? 5 : 3);
         textView2.setLines(1);
@@ -65,32 +65,32 @@ public final class q8 extends FrameLayout {
             LinearLayout linearLayout = new LinearLayout(getContext());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(getContext(), false, true, true);
-            this.h = j6Var;
-            j6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
+            org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(getContext(), false, true, true);
+            this.h = i6Var;
+            i6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
             this.h.getDrawable().J = true;
-            org.telegram.ui.Components.j6 j6Var2 = this.h;
-            int i7 = org.telegram.ui.ActionBar.l6.G6;
-            org.telegram.ui.ActionBar.s6.Y(j6Var2, i7, null);
+            org.telegram.ui.Components.i6 i6Var2 = this.h;
+            int i7 = org.telegram.ui.ActionBar.m6.G6;
+            org.telegram.ui.ActionBar.t6.Y(i6Var2, i7, null);
             this.h.setTypeface(org.telegram.messenger.g0.o());
-            this.h.b(0.4f, 320L, xq.h);
+            this.h.b(0.4f, 320L, wq.h);
             this.f.addView(this.h, c8.ha.c(20.0f, -2));
             this.n = new View(getContext());
             Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-            org.telegram.ui.ActionBar.s6.x(this, mutate, i7, null, PorterDuff.Mode.MULTIPLY);
+            org.telegram.ui.ActionBar.t6.x(this, mutate, i7, null, PorterDuff.Mode.MULTIPLY);
             this.n.setBackground(mutate);
             this.f.addView(this.n, c8.ha.r(16, 16, 16));
             this.f.setClipChildren(false);
             setClipChildren(false);
             addView(this.f, c8.ha.e(-2, -2, 16));
-            tm tmVar = new tm(getContext(), 8);
-            this.r = tmVar;
-            tmVar.setBackground(org.telegram.ui.ActionBar.l6.h0(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.i6, false), 2, -1));
+            sm smVar = new sm(getContext(), 8);
+            this.r = smVar;
+            smVar.setBackground(org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.i6, false), 2, -1));
             addView(this.r, c8.ha.e(76, -1, id.a0 ? 3 : 5));
         }
         this.h.setText(str);
         this.n.animate().cancel();
-        this.n.animate().rotation(z9 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(xq.h).start();
+        this.n.animate().rotation(z9 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(wq.h).start();
         this.r.setOnClickListener(new a(runnable, 11));
     }
 
@@ -143,7 +143,7 @@ public final class q8 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 
@@ -192,9 +192,9 @@ public final class q8 extends FrameLayout {
             textView.setAlpha(1.0f);
             textView2.setAlpha(1.0f);
             r22.setAlpha(1.0f);
-            org.telegram.ui.Components.j6 j6Var = this.h;
-            if (j6Var != null) {
-                j6Var.setAlpha(1.0f);
+            org.telegram.ui.Components.i6 i6Var = this.h;
+            if (i6Var != null) {
+                i6Var.setAlpha(1.0f);
             }
             View view = this.n;
             if (view != null) {
@@ -206,9 +206,9 @@ public final class q8 extends FrameLayout {
         r22.setAlpha(0.5f);
         textView.setAlpha(0.5f);
         textView2.setAlpha(0.5f);
-        org.telegram.ui.Components.j6 j6Var2 = this.h;
-        if (j6Var2 != null) {
-            j6Var2.setAlpha(0.6f);
+        org.telegram.ui.Components.i6 i6Var2 = this.h;
+        if (i6Var2 != null) {
+            i6Var2.setAlpha(0.6f);
         }
         View view2 = this.n;
         if (view2 != null) {

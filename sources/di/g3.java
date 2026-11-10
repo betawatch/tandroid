@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import fi.gb;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateLis
                     o5Var.F0.getChildAt(i7).setAlpha(((i7 == o5Var.I0 ? o5Var.J0 : i7 == o5Var.H0 ? 1.0f - o5Var.J0 : 0.0f) * 0.4f) + 0.6f);
                     i7++;
                 }
-                float interpolation = xq.f.getInterpolation(o5Var.J0);
+                float interpolation = wq.f.getInterpolation(o5Var.J0);
                 if (view != null && view2 != null) {
                     float f10 = 1.0f - interpolation;
                     float f11 = (f10 * 0.4f) + 0.6f;
@@ -115,7 +115,7 @@ public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateLis
                     g0Var.O0.getChildAt(i10).setAlpha(((i10 == g0Var.Q0 ? g0Var.R0 : i10 == g0Var.P0 ? 1.0f - g0Var.R0 : 0.0f) * 0.4f) + 0.6f);
                     i10++;
                 }
-                float interpolation2 = xq.f.getInterpolation(g0Var.R0);
+                float interpolation2 = wq.f.getInterpolation(g0Var.R0);
                 if (view3 != null && view4 != null) {
                     float f13 = 1.0f - interpolation2;
                     float f14 = (f13 * 0.4f) + 0.6f;

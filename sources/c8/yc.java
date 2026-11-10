@@ -3,12 +3,12 @@ package c8;
 import java.util.Date;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.ky0;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class yc {
-    public static ky0 a(String str) {
+    public static ly0 a(String str) {
         JSONObject jSONObject = new JSONObject(str);
         String a10 = od.a(jSONObject.getString("id"));
         long j3 = jSONObject.getLong("created");
@@ -18,6 +18,6 @@ public abstract class yc {
         JSONObject jSONObject2 = jSONObject.getJSONObject("card");
         uc.a aVar = new uc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, od.a(jSONObject2.optString("name")), od.a(jSONObject2.optString("address_line1")), od.a(jSONObject2.optString("address_line2")), od.a(jSONObject2.optString("address_city")), od.a(jSONObject2.optString("address_state")), od.a(jSONObject2.optString("address_zip")), od.a(jSONObject2.optString("address_country")), qd.a(od.a(jSONObject2.optString("brand"))), od.a(jSONObject2.optString("last4")), od.a(jSONObject2.optString("fingerprint")), qd.b(od.a(jSONObject2.optString("funding"))), od.a(jSONObject2.optString("country")), od.a(jSONObject2.optString("currency")));
         new Date(j3 * 1000);
-        return new ky0(a10, valueOf, aVar, str2);
+        return new ly0(a10, valueOf, aVar, str2);
     }
 }

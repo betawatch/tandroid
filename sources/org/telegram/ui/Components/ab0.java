@@ -1,157 +1,594 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.BlendMode;
+import android.graphics.Canvas;
+import android.graphics.DrawFilter;
+import android.graphics.Matrix;
+import android.graphics.NinePatch;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Picture;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Region;
+import android.graphics.RenderNode;
+import android.graphics.fonts.Font;
+import android.graphics.text.MeasuredText;
+import android.os.Build;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class ab0 extends tt0 implements r0.l, View.OnLayoutChangeListener {
-    public final e2.r0 f0;
-    public View g0;
-    public za0 h0;
-    public org.telegram.ui.ActionBar.s2 i0;
-    public int j0;
-    public boolean k0;
+public final class ab0 extends Canvas {
+    public Canvas a;
 
-    public ab0(Context context) {
-        super(context, null);
-        this.f0 = new e2.r0();
+    @Override // android.graphics.Canvas
+    public final boolean clipOutPath(Path path) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return this.a.clipOutPath(path);
+        }
+        return false;
     }
 
-    public final void X() {
-        View view = this.g0;
-        if (view == null || this.h0 == null) {
-            return;
+    @Override // android.graphics.Canvas
+    public final boolean clipOutRect(float f10, float f11, float f12, float f13) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return this.a.clipOutRect(f10, f11, f12, f13);
         }
-        this.j0 = (view.getMeasuredHeight() - this.g0.getPaddingBottom()) - this.h0.getMeasuredHeight();
+        return false;
     }
 
-    @Override // r0.k
-    public final void k(int i7, View view) {
-        this.f0.a = 0;
-        org.telegram.ui.ActionBar.s2 s2Var = this.i0;
-        if (s2Var != null) {
-            s2Var.onStopNestedScroll(view);
-        }
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path) {
+        return this.a.clipPath(path);
     }
 
-    @Override // r0.l
-    public final void l(View view, int i7, int i10, int i11, int i12, int i13, int[] iArr) {
-        za0 za0Var;
-        if (view != this.g0 || (za0Var = this.h0) == null || ((org.telegram.ui.t7) za0Var).getListView() == null) {
-            return;
-        }
-        qj0 listView = ((org.telegram.ui.t7) this.h0).getListView();
-        if (this.h0.getTop() == this.j0) {
-            iArr[1] = i12;
-            listView.scrollBy(0, i12);
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(float f10, float f11, float f12, float f13) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void concat(Matrix matrix) {
+        this.a.concat(matrix);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void disableZ() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.disableZ();
         }
     }
 
-    @Override // r0.k
-    public final boolean o(View view, View view2, int i7, int i10) {
-        return view != null && view.isAttachedToWindow() && i7 == 2;
+    @Override // android.graphics.Canvas
+    public final void drawARGB(int i7, int i10, int i11, int i12) {
+        this.a.drawARGB(i7, i10, i11, i12);
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.k0 = true;
-        za0 za0Var = this.h0;
-        if (za0Var != null) {
-            za0Var.addOnLayoutChangeListener(this);
+    @Override // android.graphics.Canvas
+    public final void drawArc(RectF rectF, float f10, float f11, boolean z9, Paint paint) {
+        this.a.drawArc(rectF, f10, f11, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
+        this.a.drawBitmap(bitmap, matrix, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmapMesh(Bitmap bitmap, int i7, int i10, float[] fArr, int i11, int[] iArr, int i12, Paint paint) {
+        this.a.drawBitmapMesh(bitmap, i7, i10, fArr, i11, iArr, i12, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawCircle(float f10, float f11, float f12, Paint paint) {
+        this.a.drawCircle(f10, f11, f12, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawColor(long j3, BlendMode blendMode) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawColor(j3, blendMode);
         }
     }
 
-    @Override // org.telegram.ui.Components.tt0, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.k0 = false;
-        za0 za0Var = this.h0;
-        if (za0Var != null) {
-            za0Var.removeOnLayoutChangeListener(this);
+    @Override // android.graphics.Canvas
+    public final void drawDoubleRoundRect(RectF rectF, float[] fArr, RectF rectF2, float[] fArr2, Paint paint) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawDoubleRoundRect(rectF, fArr, rectF2, fArr2, paint);
         }
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
-        X();
+    @Override // android.graphics.Canvas
+    public final void drawGlyphs(int[] iArr, int i7, float[] fArr, int i10, int i11, Font font, Paint paint) {
+        this.a.drawGlyphs(iArr, i7, fArr, i10, i11, font, paint);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        X();
+    @Override // android.graphics.Canvas
+    public final void drawLine(float f10, float f11, float f12, float f13, Paint paint) {
+        this.a.drawLine(f10, f11, f12, f13, paint);
     }
 
-    @Override // r0.k
-    public final void r(View view, View view2, int i7, int i10) {
-        this.f0.a = i7;
+    @Override // android.graphics.Canvas
+    public final void drawLines(float[] fArr, int i7, int i10, Paint paint) {
+        this.a.drawLines(fArr, i7, i10, paint);
     }
 
-    @Override // r0.k
-    public final void s(View view, int i7, int i10, int[] iArr, int i11) {
-        za0 za0Var;
-        if (view != this.g0 || (za0Var = this.h0) == null || ((org.telegram.ui.t7) za0Var).getListView() == null) {
-            return;
-        }
-        int top = this.h0.getTop();
-        if (i10 >= 0) {
-            org.telegram.ui.ActionBar.s2 s2Var = this.i0;
-            if (s2Var != null) {
-                s2Var.onNestedPreScroll(view, i7, i10, iArr);
-                return;
-            }
-            return;
-        }
-        if (top > this.j0) {
-            if (this.i0 == null || this.g0.canScrollVertically(i10)) {
-                return;
-            }
-            this.i0.onNestedScroll(view, 0, 0, i7, i10);
-            return;
-        }
-        qj0 listView = ((org.telegram.ui.t7) this.h0).getListView();
-        int L0 = ((v4.b0) listView.getLayoutManager()).L0();
-        if (L0 != -1) {
-            v4.d1 K = listView.K(L0);
-            int top2 = K != null ? K.a.getTop() : -1;
-            int paddingTop = listView.getPaddingTop();
-            if (top2 == paddingTop && L0 == 0) {
-                return;
-            }
-            iArr[1] = L0 != 0 ? i10 : Math.max(i10, top2 - paddingTop);
-            listView.scrollBy(0, i10);
+    @Override // android.graphics.Canvas
+    public final void drawOval(RectF rectF, Paint paint) {
+        this.a.drawOval(rectF, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPaint(Paint paint) {
+        this.a.drawPaint(paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPatch(NinePatch ninePatch, RectF rectF, Paint paint) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            this.a.drawPatch(ninePatch, rectF, paint);
         }
     }
 
-    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.s2 s2Var) {
-        this.i0 = s2Var;
+    @Override // android.graphics.Canvas
+    public final void drawPath(Path path, Paint paint) {
+        this.a.drawPath(path, paint);
     }
 
-    public void setChildLayout(za0 za0Var) {
-        if (this.h0 != za0Var) {
-            this.h0 = za0Var;
-            if (this.k0 && za0Var != null) {
-                org.telegram.ui.t7 t7Var = (org.telegram.ui.t7) za0Var;
-                if (t7Var.getListView() != null) {
-                    t7Var.getListView().addOnLayoutChangeListener(this);
-                }
-            }
+    @Override // android.graphics.Canvas
+    public final void drawPicture(Picture picture, RectF rectF) {
+        this.a.drawPicture(picture, rectF);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPoint(float f10, float f11, Paint paint) {
+        this.a.drawPoint(f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPoints(float[] fArr, int i7, int i10, Paint paint) {
+        this.a.drawPoints(fArr, i7, i10, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPosText(String str, float[] fArr, Paint paint) {
+        this.a.drawPosText(str, fArr, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRGB(int i7, int i10, int i11) {
+        this.a.drawRGB(i7, i10, i11);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRect(Rect rect, Paint paint) {
+        this.a.drawRect(rect, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRenderNode(RenderNode renderNode) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawRenderNode(renderNode);
         }
-        X();
     }
 
-    public void setTargetListView(View view) {
-        this.g0 = view;
-        X();
+    @Override // android.graphics.Canvas
+    public final void drawRoundRect(RectF rectF, float f10, float f11, Paint paint) {
+        this.a.drawRoundRect(rectF, f10, f11, paint);
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onStopNestedScroll(View view) {
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, float f10, float f11, Paint paint) {
+        this.a.drawText(str, f10, f11, paint);
     }
 
-    @Override // r0.k
-    public final void m(View view, int i7, int i10, int i11, int i12, int i13) {
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(char[] cArr, int i7, int i10, Path path, float f10, float f11, Paint paint) {
+        this.a.drawTextOnPath(cArr, i7, i10, path, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(char[] cArr, int i7, int i10, int i11, int i12, float f10, float f11, boolean z9, Paint paint) {
+        this.a.drawTextRun(cArr, i7, i10, i11, i12, f10, f11, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawVertices(Canvas.VertexMode vertexMode, int i7, float[] fArr, int i10, float[] fArr2, int i11, int[] iArr, int i12, short[] sArr, int i13, int i14, Paint paint) {
+        this.a.drawVertices(vertexMode, i7, fArr, i10, fArr2, i11, iArr, i12, sArr, i13, i14, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void enableZ() {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.enableZ();
+        }
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean getClipBounds(Rect rect) {
+        return this.a.getClipBounds(rect);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getDensity() {
+        return this.a.getDensity();
+    }
+
+    @Override // android.graphics.Canvas
+    public final DrawFilter getDrawFilter() {
+        return this.a.getDrawFilter();
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getHeight() {
+        return this.a.getHeight();
+    }
+
+    @Override // android.graphics.Canvas
+    public final void getMatrix(Matrix matrix) {
+        this.a.getMatrix(matrix);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getMaximumBitmapHeight() {
+        return this.a.getMaximumBitmapHeight();
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getMaximumBitmapWidth() {
+        return this.a.getMaximumBitmapWidth();
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getSaveCount() {
+        return this.a.getSaveCount();
+    }
+
+    @Override // android.graphics.Canvas
+    public final int getWidth() {
+        return this.a.getWidth();
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean isOpaque() {
+        return this.a.isOpaque();
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(float f10, float f11, float f12, float f13) {
+        if (Build.VERSION.SDK_INT >= 30) {
+            return this.a.quickReject(f10, f11, f12, f13);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void restore() {
+        this.a.restore();
+    }
+
+    @Override // android.graphics.Canvas
+    public final void restoreToCount(int i7) {
+        this.a.restoreToCount(i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void rotate(float f10) {
+        this.a.rotate(f10);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int save() {
+        return this.a.save();
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayer(float f10, float f11, float f12, float f13, Paint paint) {
+        return this.a.saveLayer(f10, f11, f12, f13, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayerAlpha(RectF rectF, int i7, int i10) {
+        return this.a.saveLayerAlpha(rectF, i7, i10);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void scale(float f10, float f11) {
+        this.a.scale(f10, f11);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void setBitmap(Bitmap bitmap) {
+        this.a.setBitmap(bitmap);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void setDensity(int i7) {
+        this.a.setDensity(i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void setDrawFilter(DrawFilter drawFilter) {
+        this.a.setDrawFilter(drawFilter);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void setMatrix(Matrix matrix) {
+        this.a.setMatrix(matrix);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void skew(float f10, float f11) {
+        this.a.skew(f10, f11);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void translate(float f10, float f11) {
+        this.a.translate(f10, f11);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path, Region.Op op) {
+        return this.a.clipPath(path, op);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(float f10, float f11, float f12, float f13, Region.Op op) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawArc(float f10, float f11, float f12, float f13, float f14, float f15, boolean z9, Paint paint) {
+        this.a.drawArc(f10, f11, f12, f13, f14, f15, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(Bitmap bitmap, Rect rect, Rect rect2, Paint paint) {
+        this.a.drawBitmap(bitmap, rect, rect2, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawLines(float[] fArr, Paint paint) {
+        this.a.drawLines(fArr, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawOval(float f10, float f11, float f12, float f13, Paint paint) {
+        this.a.drawOval(f10, f11, f12, f13, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPicture(Picture picture) {
+        this.a.drawPicture(picture);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPoints(float[] fArr, Paint paint) {
+        this.a.drawPoints(fArr, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPosText(char[] cArr, int i7, int i10, float[] fArr, Paint paint) {
+        this.a.drawPosText(cArr, i7, i10, fArr, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRect(RectF rectF, Paint paint) {
+        this.a.drawRect(rectF, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRoundRect(float f10, float f11, float f12, float f13, float f14, float f15, Paint paint) {
+        this.a.drawRoundRect(f10, f11, f12, f13, f14, f15, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, int i7, int i10, float f10, float f11, Paint paint) {
+        this.a.drawText(str, i7, i10, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(String str, Path path, float f10, float f11, Paint paint) {
+        this.a.drawTextOnPath(str, path, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(MeasuredText measuredText, int i7, int i10, int i11, int i12, float f10, float f11, boolean z9, Paint paint) {
+        this.a.drawTextRun(measuredText, i7, i10, i11, i12, f10, f11, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayer(RectF rectF, Paint paint) {
+        return this.a.saveLayer(rectF, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayerAlpha(float f10, float f11, float f12, float f13, int i7) {
+        return this.a.saveLayerAlpha(f10, f11, f12, f13, i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipOutRect(int i7, int i10, int i11, int i12) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return this.a.clipOutRect(i7, i10, i11, i12);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(int i7, int i10, int i11, int i12) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(int[] iArr, int i7, int i10, float f10, float f11, int i11, int i12, boolean z9, Paint paint) {
+        this.a.drawBitmap(iArr, i7, i10, f10, f11, i11, i12, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawColor(int i7, BlendMode blendMode) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawColor(i7, blendMode);
+        }
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawDoubleRoundRect(RectF rectF, float f10, float f11, RectF rectF2, float f12, float f13, Paint paint) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawDoubleRoundRect(rectF, f10, f11, rectF2, f12, f13, paint);
+        }
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPatch(NinePatch ninePatch, Rect rect, Paint paint) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            this.a.drawPatch(ninePatch, rect, paint);
+        }
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawPicture(Picture picture, Rect rect) {
+        this.a.drawPicture(picture, rect);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawRect(float f10, float f11, float f12, float f13, Paint paint) {
+        this.a.drawRect(f10, f11, f12, f13, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(char[] cArr, int i7, int i10, float f10, float f11, Paint paint) {
+        this.a.drawText(cArr, i7, i10, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(CharSequence charSequence, int i7, int i10, int i11, int i12, float f10, float f11, boolean z9, Paint paint) {
+        this.a.drawTextRun(charSequence, i7, i10, i11, i12, f10, f11, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(RectF rectF) {
+        if (Build.VERSION.SDK_INT >= 30) {
+            return this.a.quickReject(rectF);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayer(float f10, float f11, float f12, float f13, Paint paint, int i7) {
+        return this.a.saveLayer(f10, f11, f12, f13, paint, i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayerAlpha(RectF rectF, int i7) {
+        return this.a.saveLayerAlpha(rectF, i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(Rect rect) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(int[] iArr, int i7, int i10, int i11, int i12, int i13, int i14, boolean z9, Paint paint) {
+        this.a.drawBitmap(iArr, i7, i10, i11, i12, i13, i14, z9, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(CharSequence charSequence, int i7, int i10, float f10, float f11, Paint paint) {
+        this.a.drawText(charSequence, i7, i10, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayer(RectF rectF, Paint paint, int i7) {
+        return this.a.saveLayer(rectF, paint, i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final int saveLayerAlpha(float f10, float f11, float f12, float f13, int i7, int i10) {
+        return this.a.saveLayerAlpha(f10, f11, f12, f13, i7, i10);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipOutRect(RectF rectF) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return this.a.clipOutRect(rectF);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(Rect rect, Region.Op op) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(Bitmap bitmap, Rect rect, RectF rectF, Paint paint) {
+        this.a.drawBitmap(bitmap, rect, rectF, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawColor(int i7) {
+        this.a.drawColor(i7);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(Path path) {
+        if (Build.VERSION.SDK_INT >= 30) {
+            return this.a.quickReject(path);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(RectF rectF) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawBitmap(Bitmap bitmap, float f10, float f11, Paint paint) {
+        this.a.drawBitmap(bitmap, f10, f11, paint);
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawColor(int i7, PorterDuff.Mode mode) {
+        this.a.drawColor(i7, mode);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipOutRect(Rect rect) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return this.a.clipOutRect(rect);
+        }
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipRect(RectF rectF, Region.Op op) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawColor(long j3) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a.drawColor(j3);
+        }
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(RectF rectF, Canvas.EdgeType edgeType) {
+        return this.a.quickReject(rectF, edgeType);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(Path path, Canvas.EdgeType edgeType) {
+        return this.a.quickReject(path, edgeType);
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean quickReject(float f10, float f11, float f12, float f13, Canvas.EdgeType edgeType) {
+        return this.a.quickReject(f10, f11, f12, f13, edgeType);
     }
 }

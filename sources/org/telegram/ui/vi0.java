@@ -1,34 +1,76 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vi0 implements RequestDelegate {
+public final /* synthetic */ class vi0 implements org.telegram.ui.ActionBar.r1, ss, tj0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+    public final /* synthetic */ ek0 b;
 
-    public /* synthetic */ vi0(dk0 dk0Var, int i7) {
+    public /* synthetic */ vi0(ek0 ek0Var, int i7) {
         this.a = i7;
-        this.b = dk0Var;
+        this.b = ek0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.ui.tj0
+    public void a(String str, String str2) {
+        this.b.B1();
+    }
+
+    @Override // org.telegram.ui.ss
+    public void b(ps psVar) {
         switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new oc0(this.b, tL_error, tLObject, 12));
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new bd0(21, this.b, tL_error));
-                break;
             case 2:
-                org.telegram.messenger.g0.h3(new ri0(this.b, 5));
+                ek0 ek0Var = this.b;
+                ek0Var.Y[5].setText(psVar.a);
+                ek0Var.s = psVar.d;
                 break;
             default:
-                org.telegram.messenger.g0.h3(new bd0(20, this.b, tLObject));
+                ek0 ek0Var2 = this.b;
+                ek0Var2.Y[0].setText(psVar.a);
+                if (ek0Var2.U0.indexOf(psVar.a) != -1) {
+                    ek0Var2.Z0 = true;
+                    String str = (String) ek0Var2.V0.get(psVar.a);
+                    ek0Var2.Y[1].setText(str);
+                    String str2 = (String) ek0Var2.X0.get(str);
+                    ek0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    ek0Var2.Z0 = false;
+                }
+                org.telegram.messenger.g0.i3(new si0(ek0Var2, 3), 300L);
+                ek0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = ek0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                ek0 ek0Var = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    ek0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                ek0.f0(this.b);
+                break;
+            case 4:
+                vf.c.t(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + org.telegram.messenger.p10.i(this.b.currentAccount).d());
                 break;
         }
     }

@@ -5,20 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class h7 extends pq0 {
-    public org.telegram.ui.Components.qj0 a;
+public final class h7 extends qq0 {
+    public org.telegram.ui.Components.pj0 a;
     public final /* synthetic */ t7 b;
 
     public h7(t7 t7Var) {
         this.b = t7Var;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
-    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         org.telegram.ui.Cells.o7 o7Var;
-        org.telegram.ui.Components.qj0 listView = this.b.getListView();
+        org.telegram.ui.Components.pj0 listView = this.b.getListView();
         int i10 = 0;
         while (true) {
             if (i10 >= listView.getChildCount()) {
@@ -37,14 +37,14 @@ public final class h7 extends pq0 {
         }
         int[] iArr = new int[2];
         o7Var.getLocationInWindow(iArr);
-        yq0 yq0Var = new yq0();
-        yq0Var.b = iArr[0];
-        yq0Var.c = iArr[1];
-        yq0Var.d = this.a;
+        zq0 zq0Var = new zq0();
+        zq0Var.b = iArr[0];
+        zq0Var.c = iArr[1];
+        zq0Var.d = this.a;
         ImageReceiver imageReceiver = o7Var.c;
-        yq0Var.a = imageReceiver;
-        yq0Var.e = imageReceiver.p();
-        yq0Var.k = o7Var.getScaleX();
-        return yq0Var;
+        zq0Var.a = imageReceiver;
+        zq0Var.e = imageReceiver.p();
+        zq0Var.k = o7Var.getScaleX();
+        return zq0Var;
     }
 }

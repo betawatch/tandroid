@@ -12,9 +12,9 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.k90;
+import org.telegram.ui.l90;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements v10 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class d1 implements v10 {
             case 0:
                 int i7 = 0;
                 d2 d2Var = (d2) this.b;
-                k90 k90Var = (k90) this.d;
+                l90 l90Var = (l90) this.d;
                 String str = (String) this.c;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -51,7 +51,7 @@ public final /* synthetic */ class d1 implements v10 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 d2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    k90Var.a(null, d2.z(tL_error, "createSession"));
+                    l90Var.a(null, d2.z(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = d2Var.d;
@@ -63,13 +63,13 @@ public final /* synthetic */ class d1 implements v10 {
                         if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
                             tonconnectsession = tonconnectsession3;
                             d2Var.p(tonconnectsession);
-                            k90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
+                            l90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
                             break;
                         }
                     }
                     tonconnectsession = tonconnectsession2;
                     d2Var.p(tonconnectsession);
-                    k90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
+                    l90Var.a(new y1(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 1:
@@ -138,7 +138,7 @@ public final /* synthetic */ class d1 implements v10 {
                 l0 l0Var2 = (l0) this.c;
                 TextView textView = (TextView) this.e;
                 c2 c2Var = (c2) this.f;
-                e7 e7Var = (e7) this.g;
+                h7 h7Var = (h7) this.g;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str9 = (String) obj2;
                 if (!s2Var.e && !s2Var.d) {
@@ -157,7 +157,7 @@ public final /* synthetic */ class d1 implements v10 {
                             d2.m("widget preview", str9);
                         }
                     }
-                    e7Var.run();
+                    h7Var.run();
                     break;
                 }
                 break;

@@ -13,27 +13,27 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.r9;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.d40;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.v8;
 import org.telegram.ui.e40;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class x extends View implements b6 {
-    public d40 D;
-    public d40 E;
+public final class x extends View implements c6 {
+    public e40 D;
+    public e40 E;
     public int F;
     public float G;
     public final /* synthetic */ y H;
     public final ImageReceiver a;
     public final ImageReceiver b;
-    public final w8 c;
-    public final r9 d;
-    public final r9 e;
+    public final v8 c;
+    public final q9 d;
+    public final q9 e;
     public final Paint f;
     public final Paint h;
     public float n;
@@ -41,7 +41,7 @@ public final class x extends View implements b6 {
     public float s;
     public float w;
     public float x;
-    public final d40[] y;
+    public final e40[] y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public x(y yVar, Context context) {
@@ -49,55 +49,55 @@ public final class x extends View implements b6 {
         this.H = yVar;
         this.a = new ImageReceiver(null);
         this.b = new ImageReceiver(null);
-        this.c = new w8((g6) null);
+        this.c = new v8((h6) null);
         Paint paint = new Paint(1);
         this.f = paint;
         Paint paint2 = new Paint(1);
         this.h = paint2;
-        this.y = new d40[3];
+        this.y = new e40[3];
         this.F = -1;
         this.G = 1.0f;
-        r9 r9Var = new r9(9);
-        this.d = r9Var;
-        r9 r9Var2 = new r9(12);
-        this.e = r9Var2;
-        r9Var.a = org.telegram.messenger.g0.L(76.0f);
-        r9Var.b = org.telegram.messenger.g0.L(92.0f);
-        r9Var.b();
-        r9Var2.a = org.telegram.messenger.g0.L(80.0f);
-        r9Var2.b = org.telegram.messenger.g0.L(95.0f);
-        r9Var2.b();
-        paint.setColor(i0.a.f(0.0f, l6.x0(null, l6.dh, false), l6.x0(null, l6.eh, false)));
+        q9 q9Var = new q9(9);
+        this.d = q9Var;
+        q9 q9Var2 = new q9(12);
+        this.e = q9Var2;
+        q9Var.a = org.telegram.messenger.g0.L(76.0f);
+        q9Var.b = org.telegram.messenger.g0.L(92.0f);
+        q9Var.b();
+        q9Var2.a = org.telegram.messenger.g0.L(80.0f);
+        q9Var2.b = org.telegram.messenger.g0.L(95.0f);
+        q9Var2.b();
+        paint.setColor(i0.a.f(0.0f, m6.x0(null, m6.dh, false), m6.x0(null, m6.eh, false)));
         paint.setAlpha(qs.n1);
         paint2.setColor(i0.a.o(-16777216, qs.L1));
     }
 
     public static void a(x xVar, boolean z9) {
         TLRPC.GroupCallParticipant groupCallParticipant;
-        d40[] d40VarArr = xVar.y;
+        e40[] e40VarArr = xVar.y;
         n0 n0Var = xVar.H.n0;
         int i7 = (n0Var.k || !((groupCallParticipant = n0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : n0Var.e ? 1 : 0;
         if (i7 == xVar.F) {
             return;
         }
         xVar.F = i7;
-        if (d40VarArr[i7] == null) {
-            d40VarArr[i7] = new d40(i7);
+        if (e40VarArr[i7] == null) {
+            e40VarArr[i7] = new e40(i7);
             int i10 = xVar.F;
             if (i10 == 2) {
-                d40VarArr[i10].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{l6.x0(null, l6.Wh, false), l6.x0(null, l6.Yh, false), l6.x0(null, l6.Xh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new LinearGradient(0.0f, 400.0f, 400.0f, 0.0f, new int[]{m6.x0(null, m6.Wh, false), m6.x0(null, m6.Yh, false), m6.x0(null, m6.Xh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else if (i10 == 1) {
-                d40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{l6.x0(null, l6.th, false), l6.x0(null, l6.vh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{m6.x0(null, m6.th, false), m6.x0(null, m6.vh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             } else {
-                d40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{l6.x0(null, l6.xh, false), l6.x0(null, l6.wh, false)}, (float[]) null, Shader.TileMode.CLAMP);
+                e40VarArr[i10].g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{m6.x0(null, m6.xh, false), m6.x0(null, m6.wh, false)}, (float[]) null, Shader.TileMode.CLAMP);
             }
         }
-        d40 d40Var = d40VarArr[xVar.F];
-        d40 d40Var2 = xVar.D;
-        if (d40Var != d40Var2) {
-            xVar.E = d40Var2;
-            xVar.D = d40Var;
-            if (d40Var2 == null || !z9) {
+        e40 e40Var = e40VarArr[xVar.F];
+        e40 e40Var2 = xVar.D;
+        if (e40Var != e40Var2) {
+            xVar.E = e40Var2;
+            xVar.D = e40Var;
+            if (e40Var2 == null || !z9) {
                 xVar.G = 1.0f;
                 xVar.E = null;
             } else {
@@ -123,9 +123,9 @@ public final class x extends View implements b6 {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        d40 d40Var;
+        e40 e40Var;
         float f10;
-        d40 d40Var2;
+        e40 e40Var2;
         super.onDraw(canvas);
         RectF rectF = org.telegram.messenger.g0.P;
         u uVar = this.H.a;
@@ -167,30 +167,30 @@ public final class x extends View implements b6 {
         float f19 = (this.n * 0.8f) + 1.0f;
         canvas.save();
         canvas.scale(f19, f19, this.w, this.x);
-        d40 d40Var3 = this.D;
-        if (d40Var3 != null) {
-            d40Var3.b((int) (this.x - org.telegram.messenger.g0.L(100.0f)), (int) (this.w - org.telegram.messenger.g0.L(100.0f)), org.telegram.messenger.g0.L(200.0f), 16L, this.n);
+        e40 e40Var3 = this.D;
+        if (e40Var3 != null) {
+            e40Var3.b((int) (this.x - org.telegram.messenger.g0.L(100.0f)), (int) (this.w - org.telegram.messenger.g0.L(100.0f)), org.telegram.messenger.g0.L(200.0f), 16L, this.n);
         }
         float f20 = this.n;
-        r9 r9Var = this.e;
-        r9Var.e(f20, 1.0f);
+        q9 q9Var = this.e;
+        q9Var.e(f20, 1.0f);
         float f21 = this.n;
-        r9 r9Var2 = this.d;
-        r9Var2.e(f21, 1.0f);
+        q9 q9Var2 = this.d;
+        q9Var2.e(f21, 1.0f);
         for (int i7 = 0; i7 < 2; i7++) {
             Paint paint = this.f;
-            if (i7 != 0 || (d40Var2 = this.E) == null) {
-                if (i7 == 1 && (d40Var = this.D) != null) {
-                    paint.setShader(d40Var.g);
+            if (i7 != 0 || (e40Var2 = this.E) == null) {
+                if (i7 == 1 && (e40Var = this.D) != null) {
+                    paint.setShader(e40Var.g);
                     f10 = this.G;
                 }
             } else {
-                paint.setShader(d40Var2.g);
+                paint.setShader(e40Var2.g);
                 f10 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f10 * 76.0f));
-            r9Var.a(this.w, this.x, canvas, paint);
-            r9Var2.a(this.w, this.x, canvas, paint);
+            q9Var.a(this.w, this.x, canvas, paint);
+            q9Var2.a(this.w, this.x, canvas, paint);
         }
         canvas.restore();
         float f22 = (this.n * 0.2f) + 1.0f;
@@ -206,24 +206,24 @@ public final class x extends View implements b6 {
         super.onMeasure(i7, i10);
         float L = org.telegram.messenger.g0.L(157.0f);
         this.w = getMeasuredWidth() >> 1;
-        this.x = (getMeasuredHeight() >> 1) + (e40.w5 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
+        this.x = (getMeasuredHeight() >> 1) + (f40.z5 ? 0.0f : (-getMeasuredHeight()) * 0.12f);
         float f10 = L / 2.0f;
         ImageReceiver imageReceiver = this.a;
         imageReceiver.J0((int) f10);
         imageReceiver.y0(this.w - f10, this.x - f10, L, L);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.f.setColor(i0.a.f(0.0f, l6.x0(null, l6.dh, false), l6.x0(null, l6.eh, false)));
+            this.f.setColor(i0.a.f(0.0f, m6.x0(null, m6.dh, false), m6.x0(null, m6.eh, false)));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class hc extends View {
     public final Paint a;
@@ -18,9 +18,9 @@ public final class hc extends View {
     public final Path f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.ic r;
+    public final org.telegram.ui.Components.hc r;
     public boolean s;
-    public final org.telegram.ui.Components.w5 w;
+    public final org.telegram.ui.Components.v5 w;
     public final /* synthetic */ ic x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,8 +34,8 @@ public final class hc extends View {
         this.d = new Paint(1);
         this.e = new Path();
         this.f = new Path();
-        this.r = new org.telegram.ui.Components.ic(this);
-        this.w = new org.telegram.ui.Components.w5(this, 0L, 320L, org.telegram.ui.Components.xq.h);
+        this.r = new org.telegram.ui.Components.hc(this);
+        this.w = new org.telegram.ui.Components.v5(this, 0L, 320L, org.telegram.ui.Components.wq.h);
         paint.setStyle(Paint.Style.STROKE);
     }
 
@@ -46,24 +46,24 @@ public final class hc extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(org.telegram.messenger.fp fpVar) {
-        org.telegram.ui.ActionBar.g6 g6Var = this.x.a;
-        boolean a10 = g6Var != null ? g6Var.a() : org.telegram.ui.ActionBar.l6.I.q();
+        org.telegram.ui.ActionBar.h6 h6Var = this.x.a;
+        boolean a10 = h6Var != null ? h6Var.a() : org.telegram.ui.ActionBar.m6.I.q();
         Paint paint = this.c;
         Paint paint2 = this.b;
         if (a10) {
             if (fpVar.g() != fpVar.f()) {
                 if (!(fpVar.i() != fpVar.f())) {
-                    paint2.setColor(fpVar.e(1, g6Var));
-                    paint.setColor(fpVar.e(0, g6Var));
-                    this.d.setColor(fpVar.e(2, g6Var));
+                    paint2.setColor(fpVar.e(1, h6Var));
+                    paint.setColor(fpVar.e(0, h6Var));
+                    this.d.setColor(fpVar.e(2, h6Var));
                     this.h = fpVar.g() == fpVar.f();
                     this.n = fpVar.i() != fpVar.f();
                 }
             }
         }
-        paint2.setColor(fpVar.e(0, g6Var));
-        paint.setColor(fpVar.e(1, g6Var));
-        this.d.setColor(fpVar.e(2, g6Var));
+        paint2.setColor(fpVar.e(0, h6Var));
+        paint.setColor(fpVar.e(1, h6Var));
+        this.d.setColor(fpVar.e(2, h6Var));
         this.h = fpVar.g() == fpVar.f();
         this.n = fpVar.i() != fpVar.f();
     }

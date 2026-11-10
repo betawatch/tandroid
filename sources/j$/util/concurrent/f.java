@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 
 /* loaded from: classes2.dex */
-public final class f extends p implements Spliterator {
+public final class f extends o implements Spliterator {
     public final ConcurrentHashMap i;
     public long j;
 
@@ -29,8 +29,8 @@ public final class f extends p implements Spliterator {
         throw new IllegalStateException();
     }
 
-    public f(l[] lVarArr, int i7, int i10, int i11, long j3, ConcurrentHashMap concurrentHashMap) {
-        super(lVarArr, i7, i10, i11);
+    public f(k[] kVarArr, int i7, int i10, int i11, long j3, ConcurrentHashMap concurrentHashMap) {
+        super(kVarArr, i7, i10, i11);
         this.i = concurrentHashMap;
         this.j = j3;
     }
@@ -43,22 +43,22 @@ public final class f extends p implements Spliterator {
         if (i11 <= i7) {
             return null;
         }
-        l[] lVarArr = this.a;
+        k[] kVarArr = this.a;
         this.g = i11;
         long j3 = this.j >>> 1;
         this.j = j3;
-        return new f(lVarArr, this.h, i11, i10, j3, this.i);
+        return new f(kVarArr, this.h, i11, i10, j3, this.i);
     }
 
     @Override // j$.util.Spliterator
     public final void forEachRemaining(Consumer consumer) {
         consumer.getClass();
         while (true) {
-            l a10 = a();
+            k a10 = a();
             if (a10 == null) {
                 return;
             } else {
-                consumer.x(new k(a10.b, a10.c, this.i));
+                consumer.x(new j(a10.b, a10.c, this.i));
             }
         }
     }
@@ -66,11 +66,11 @@ public final class f extends p implements Spliterator {
     @Override // j$.util.Spliterator
     public final boolean tryAdvance(Consumer consumer) {
         consumer.getClass();
-        l a10 = a();
+        k a10 = a();
         if (a10 == null) {
             return false;
         }
-        consumer.x(new k(a10.b, a10.c, this.i));
+        consumer.x(new j(a10.b, a10.c, this.i));
         return true;
     }
 

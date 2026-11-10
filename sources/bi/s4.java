@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,35 +28,35 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                         switch (i7) {
                             case 0:
                                 k7 k7Var2 = k7Var;
-                                z1 z1Var = k7Var2.m3;
-                                k7Var2.j3 = false;
+                                z1 z1Var = k7Var2.p3;
+                                k7Var2.m3 = false;
                                 TLObject tLObject2 = tLObject;
                                 if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.cc Y = k7Var2.k().Y(tL_error);
+                                    org.telegram.ui.Components.bc Y = k7Var2.k().Y(tL_error);
                                     Y.t = true;
                                     Y.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
                                     qp.s1(k7Var2.a).Y3(paymentForm.users, false);
-                                    k7Var2.k3 = paymentForm;
+                                    k7Var2.n3 = paymentForm;
                                     org.telegram.messenger.g0.r(z1Var);
                                     org.telegram.messenger.g0.h3(z1Var);
                                     break;
                                 }
                             default:
                                 k7 k7Var3 = k7Var;
-                                k7Var3.j3 = false;
+                                k7Var3.m3 = false;
                                 TLObject tLObject3 = tLObject;
                                 if (!(tLObject3 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.cc Y2 = k7Var3.k().Y(tL_error);
+                                    org.telegram.ui.Components.bc Y2 = k7Var3.k().Y(tL_error);
                                     Y2.t = true;
                                     Y2.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
                                     qp.s1(k7Var3.a).Y3(paymentForm2.users, false);
-                                    k7Var3.k3 = paymentForm2;
+                                    k7Var3.n3 = paymentForm2;
                                     k7Var3.Z1();
                                     break;
                                 }
@@ -73,35 +73,35 @@ public final /* synthetic */ class s4 implements RequestDelegate {
                         switch (i10) {
                             case 0:
                                 k7 k7Var22 = k7Var2;
-                                z1 z1Var = k7Var22.m3;
-                                k7Var22.j3 = false;
+                                z1 z1Var = k7Var22.p3;
+                                k7Var22.m3 = false;
                                 TLObject tLObject2 = tLObject;
                                 if (!(tLObject2 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.cc Y = k7Var22.k().Y(tL_error);
+                                    org.telegram.ui.Components.bc Y = k7Var22.k().Y(tL_error);
                                     Y.t = true;
                                     Y.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
                                     qp.s1(k7Var22.a).Y3(paymentForm.users, false);
-                                    k7Var22.k3 = paymentForm;
+                                    k7Var22.n3 = paymentForm;
                                     org.telegram.messenger.g0.r(z1Var);
                                     org.telegram.messenger.g0.h3(z1Var);
                                     break;
                                 }
                             default:
                                 k7 k7Var3 = k7Var2;
-                                k7Var3.j3 = false;
+                                k7Var3.m3 = false;
                                 TLObject tLObject3 = tLObject;
                                 if (!(tLObject3 instanceof TLRPC.PaymentForm)) {
-                                    org.telegram.ui.Components.cc Y2 = k7Var3.k().Y(tL_error);
+                                    org.telegram.ui.Components.bc Y2 = k7Var3.k().Y(tL_error);
                                     Y2.t = true;
                                     Y2.j();
                                     break;
                                 } else {
                                     TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject3;
                                     qp.s1(k7Var3.a).Y3(paymentForm2.users, false);
-                                    k7Var3.k3 = paymentForm2;
+                                    k7Var3.n3 = paymentForm2;
                                     k7Var3.Z1();
                                     break;
                                 }

@@ -9,13 +9,13 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c70;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.b70;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,24 +44,24 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                 j4Var.s0.N(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                c70 c70Var = (c70) this.c;
-                c70Var.dismiss();
+                b70 b70Var = (b70) this.c;
+                b70Var.dismiss();
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
-                tL_messages_importChatInvite.hash = c70Var.j1;
-                ConnectionsManager.getInstance(c70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new mc(c70Var, this.b, tL_messages_importChatInvite), 2);
+                tL_messages_importChatInvite.hash = b70Var.m1;
+                ConnectionsManager.getInstance(b70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new mc(b70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 2:
-                yw ywVar = (yw) this.c;
-                qp messagesController = ywVar.getMessagesController();
+                zw zwVar = (zw) this.c;
+                qp messagesController = zwVar.getMessagesController();
                 long j10 = this.b;
                 boolean r22 = messagesController.r2(j10, 0L, null);
                 if (r22) {
-                    ywVar.getNotificationsController().T(j10, 4, 0L);
+                    zwVar.getNotificationsController().T(j10, 4, 0L);
                 } else {
-                    ywVar.getNotificationsController().T(j10, 3, 0L);
+                    zwVar.getNotificationsController().T(j10, 3, 0L);
                 }
-                hc.A(ywVar, !r22, null).j();
-                ywVar.finishPreviewFragment();
+                gc.A(zwVar, !r22, null).j();
+                zwVar.finishPreviewFragment();
                 break;
             case 3:
                 c20 c20Var = ((sh.n) this.c).f;
@@ -90,7 +90,7 @@ public final /* synthetic */ class u1 implements View.OnClickListener {
                         T.presentFragment(new ProfileActivity(bundle2, null));
                     }
                 }
-                Runnable runnable = lVar.f2;
+                Runnable runnable = lVar.i2;
                 if (runnable != null) {
                     runnable.run();
                 }

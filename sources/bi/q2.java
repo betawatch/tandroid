@@ -13,11 +13,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.z21;
+import org.telegram.ui.Components.y21;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.di0;
+import org.telegram.ui.ei0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements v10 {
     public final /* synthetic */ int a;
@@ -119,24 +119,24 @@ public final /* synthetic */ class q2 implements v10 {
                     break;
                 } else {
                     bVar.b();
-                    (f1Var != null ? new org.telegram.ui.Components.hc(f1Var.c, k7Var2.I0) : k7Var2.k()).f0(tL_error2, false);
+                    (f1Var != null ? new org.telegram.ui.Components.gc(f1Var.c, k7Var2.I0) : k7Var2.k()).f0(tL_error2, false);
                     break;
                 }
             case 2:
-                z21 z21Var = (z21) obj5;
+                y21 y21Var = (y21) obj5;
                 String str2 = (String) obj4;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj3;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj3;
                 ((org.telegram.ui.ActionBar.u1) obj6).dismiss();
                 if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.v2 v2Var = di0.a;
-                    if (v2Var != null) {
-                        v2Var.dismiss();
-                        di0.a = null;
+                    org.telegram.ui.ActionBar.w2 w2Var = ei0.a;
+                    if (w2Var != null) {
+                        w2Var.dismiss();
+                        ei0.a = null;
                     }
-                    di0.a().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.uj, g6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
+                    ei0.a().I(R.raw.error, org.telegram.messenger.id.M0(2131753128, null), TextUtils.isEmpty(str2) ? org.telegram.messenger.id.M0(2131753129, null) : org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.uj, h6Var), org.telegram.messenger.id.a0(null, null, 2131753130, str2))).j();
                     break;
                 } else {
-                    z21Var.run();
+                    y21Var.run();
                     break;
                 }
             default:
@@ -146,14 +146,14 @@ public final /* synthetic */ class q2 implements v10 {
                 TLRPC.User user = (TLRPC.User) obj3;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.g6 g6Var2 = x0Var.e;
+                org.telegram.ui.ActionBar.h6 h6Var2 = x0Var.e;
                 if (updates2 == null) {
                     if (tL_error3 == null) {
-                        new org.telegram.ui.Components.hc(x0Var, g6Var2).e0("UNKNOWN_BUTTON", false);
+                        new org.telegram.ui.Components.gc(x0Var, h6Var2).e0("UNKNOWN_BUTTON", false);
                         x0Var.x(p7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
                         break;
                     } else {
-                        new org.telegram.ui.Components.hc(x0Var, g6Var2).f0(tL_error3, false);
+                        new org.telegram.ui.Components.gc(x0Var, h6Var2).f0(tL_error3, false);
                         x0Var.x(p7Var, "requested_chat_failed", org.telegram.ui.web.x0.A(str3, "req_id"));
                         break;
                     }

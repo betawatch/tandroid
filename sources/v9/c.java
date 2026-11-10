@@ -2,9 +2,9 @@ package v9;
 
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements g {
     public final /* synthetic */ int a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class c implements g {
     }
 
     @Override // v9.g
-    public final ScheduledFuture a(rt rtVar) {
+    public final ScheduledFuture a(qt qtVar) {
         switch (this.a) {
             case 0:
                 f fVar = this.b;
-                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, rtVar, 0), this.d, this.e, this.f);
+                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, qtVar, 0), this.d, this.e, this.f);
             default:
                 f fVar2 = this.b;
-                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, rtVar, 2), this.d, this.e, this.f);
+                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, qtVar, 2), this.d, this.e, this.f);
         }
     }
 }

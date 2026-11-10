@@ -1,515 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.BlendMode;
-import android.graphics.Canvas;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.RecordingCanvas;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.os.Build;
 import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class lf0 extends View {
-    public int D;
-    public int E;
-    public boolean F;
-    public boolean G;
-    public boolean H;
-    public RenderNode I;
-    public final qt0[] J;
-    public final w5 K;
-    public final di.o5 L;
-    public boolean a;
-    public final Object b;
-    public final yf0[] c;
-    public final yf0[] d;
-    public volatile boolean e;
-    public final Paint[] f;
-    public tf0 h;
-    public int n;
-    public int r;
-    public final kf0 s;
-    public final kf0 w;
-    public int x;
-    public int y;
+public final class lf0 implements c5.g {
+    public final /* synthetic */ sf0 a;
 
-    public lf0(Context context) {
-        super(context);
-        int i7 = 1;
-        int i10 = 0;
-        this.a = Build.VERSION.SDK_INT >= 31;
-        this.b = new Object();
-        this.c = new yf0[3];
-        this.d = new yf0[3];
-        this.e = false;
-        Paint[] paintArr = {new Paint(), new Paint()};
-        this.f = paintArr;
-        this.s = new kf0(this, i10);
-        this.w = new kf0(this, i7);
-        this.x = -1;
-        this.F = false;
-        this.G = false;
-        this.H = false;
-        this.J = new qt0[3];
-        w5 w5Var = new w5(this, 0L, 350L, xq.f);
-        this.K = w5Var;
-        this.L = new di.o5(2, this);
-        w5Var.e(true, 1.0f);
-        boolean z9 = this.a & org.telegram.messenger.iz.a0;
-        this.a = z9;
-        if (z9) {
-            setLayerType(2, null);
-        } else {
-            setLayerType(1, paintArr[0]);
-            setLayerType(1, paintArr[1]);
+    public lf0(sf0 sf0Var) {
+        this.a = sf0Var;
+    }
+
+    @Override // c5.g
+    public final void a(int i7) {
+        sf0 sf0Var = this.a;
+        int i10 = sf0Var.o1;
+        boolean z9 = i7 >= i10;
+        if (i7 != i10) {
+            sf0Var.getClass();
+            sf0Var.o1 = i7;
+        }
+        org.telegram.messenger.yo yoVar = sf0Var.S0;
+        if (yoVar != null) {
+            rf0 rf0Var = sf0Var.D0;
+            yoVar.b(i7 - (rf0Var != null ? rf0Var.j() : 0), z9);
         }
     }
 
-    public static void a(lf0 lf0Var, int i7, int i10, int i11) {
-        synchronized (lf0Var.b) {
-            try {
-                yf0[] yf0VarArr = lf0Var.c;
-                yf0 yf0Var = yf0VarArr[i7];
-                yf0VarArr[i7] = yf0VarArr[i10];
-                yf0VarArr[i10] = yf0Var;
-                yf0[] yf0VarArr2 = lf0Var.d;
-                yf0 yf0Var2 = yf0VarArr2[i7];
-                yf0VarArr2[i7] = yf0VarArr2[i10];
-                yf0VarArr2[i10] = yf0Var2;
-                if (i7 != 2) {
-                    Paint[] paintArr = lf0Var.f;
-                    Paint paint = paintArr[i7];
-                    paintArr[i7] = paintArr[i10];
-                    paintArr[i10] = paint;
-                } else if (yf0Var2.f) {
-                    lf0Var.b(i10, yf0Var2.b);
-                }
-                if (i11 != -1) {
-                    lf0Var.f[i11].setShader(null);
-                    yf0 yf0Var3 = lf0Var.c[i11];
-                    if (yf0Var3 != null && !yf0Var3.e && !yf0Var3.d) {
-                        yf0Var3.f = false;
-                        yf0Var3.b.eraseColor(0);
-                    }
-                }
-            } finally {
+    @Override // c5.g
+    public final void b(float f10, int i7, int i10) {
+        org.telegram.messenger.hc hcVar;
+        sf0 sf0Var = this.a;
+        sf0Var.B(f10, i7);
+        if (i10 == 0) {
+            int k10 = sf0Var.D0.k(i7);
+            if (sf0Var.i1) {
+                k10--;
             }
-        }
-    }
-
-    public static void f(ImageReceiver imageReceiver, Canvas canvas, float f10, float f11) {
-        if (imageReceiver == null) {
-            return;
-        }
-        int i7 = imageReceiver.W0[0];
-        imageReceiver.J0(0);
-        canvas.save();
-        canvas.translate(0.0f, f10 - f11);
-        imageReceiver.h(canvas, null);
-        canvas.restore();
-        canvas.save();
-        canvas.scale(1.0f, -1.0f);
-        canvas.translate(0.0f, (-f11) - f10);
-        canvas.scale(1.0f, 2.0f, 0.0f, f11);
-        imageReceiver.h(canvas, null);
-        canvas.restore();
-        imageReceiver.J0(i7);
-    }
-
-    private float getBlurRadius() {
-        int o4 = org.telegram.messenger.iz.o();
-        if (o4 != 1) {
-            return o4 != 2 ? 8.0f : 20.0f;
-        }
-        return 12.0f;
-    }
-
-    private float getRenderNodeScale() {
-        return org.telegram.messenger.g0.L(1.0f);
-    }
-
-    public final void b(int i7, Bitmap bitmap) {
-        if (i7 >= 2 || bitmap == null || bitmap.isRecycled()) {
-            return;
-        }
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, this.r / 6.0f, new int[]{0, -1}, new float[]{0.0f, org.telegram.messenger.g0.N(56.0f) / this.r}, Shader.TileMode.CLAMP);
-        Shader.TileMode tileMode = Shader.TileMode.MIRROR;
-        this.f[i7].setShader(new ComposeShader(new BitmapShader(bitmap, tileMode, tileMode), linearGradient, PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x005b, code lost:
-    
-        if (r8.getHeight() != r2) goto L35;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c() {
-        org.telegram.ui.hr0 hr0Var;
-        qt0[] qt0VarArr;
-        tf0 tf0Var = this.h;
-        boolean z9 = false;
-        if (tf0Var != null && ((hr0Var = tf0Var.h1) == null || !hr0Var.n)) {
-            int measuredWidth = (int) (tf0Var.getMeasuredWidth() / 6.0f);
-            int i7 = (int) (this.r / 6.0f);
-            if (measuredWidth > 0 && i7 > 0) {
-                this.D = measuredWidth;
-                this.E = i7;
-                boolean z10 = this.G;
-                yf0[] yf0VarArr = this.c;
-                int length = (!z10 || this.H) ? yf0VarArr.length : 1;
-                this.G = false;
-                this.H = false;
-                int i10 = 0;
-                while (true) {
-                    qt0VarArr = this.J;
-                    if (i10 >= length) {
-                        break;
+            sf0Var.getCurrentItemView();
+            int childCount = sf0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = sf0Var.getChildAt(i11);
+                if (childAt instanceof k9) {
+                    rf0 rf0Var = sf0Var.D0;
+                    int k11 = rf0Var.k(rf0Var.d.indexOf(childAt));
+                    if (sf0Var.i1) {
+                        k11--;
                     }
-                    qt0 qt0Var = qt0VarArr[i10];
-                    if (qt0Var != null) {
-                        qt0Var.f(null);
-                    }
-                    yf0 yf0Var = yf0VarArr[i10];
-                    if (yf0Var != null) {
-                        Bitmap bitmap = yf0Var.b;
-                        if (!yf0Var.d) {
-                            if (bitmap.getWidth() == measuredWidth) {
+                    ImageReceiver imageReceiver = ((k9) childAt).getImageReceiver();
+                    boolean z9 = imageReceiver.t0;
+                    if (k11 >= 0 && k11 < sf0Var.W0.size()) {
+                        if (k11 == k10) {
+                            if (!z9) {
+                                imageReceiver.t0 = true;
+                                imageReceiver.P0(false);
                             }
+                            org.telegram.messenger.hc hcVar2 = (org.telegram.messenger.hc) sf0Var.W0.get(k11);
+                            if (hcVar2 != null) {
+                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(sf0Var.L0);
+                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = hcVar2.f;
+                                if (tL_fileLocationToBeDeprecated != null) {
+                                    org.telegram.messenger.w7.J.c(new org.telegram.messenger.x4(9, G, tL_fileLocationToBeDeprecated));
+                                }
+                            }
+                        } else if (z9) {
+                            u5 m10 = imageReceiver.m();
+                            if (m10 != null && (hcVar = (org.telegram.messenger.hc) sf0Var.W0.get(k11)) != null) {
+                                m10.y(hcVar.j, false, true);
+                            }
+                            imageReceiver.t0 = false;
+                            imageReceiver.Q0();
                         }
                     }
-                    if (yf0Var != null) {
-                        yf0Var.a();
-                    }
-                    yf0 yf0Var2 = new yf0();
-                    Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, i7, Bitmap.Config.ARGB_8888);
-                    yf0Var2.b = createBitmap;
-                    yf0Var2.a = new Canvas(createBitmap);
-                    yf0VarArr[i10] = yf0Var2;
-                    if (yf0VarArr[i10].e) {
-                        if (length == 1) {
-                            this.G = true;
-                        } else {
-                            this.H = true;
-                        }
-                    }
-                    i10++;
-                }
-                View E = this.h.E(this.x);
-                g(0, E);
-                kf0 kf0Var = this.w;
-                if (length == 1) {
-                    qt0 qt0Var2 = qt0VarArr[0];
-                    if (qt0Var2 != null) {
-                        qt0Var2.f(kf0Var);
-                    }
-                    return !this.G;
-                }
-                View E2 = this.h.E(this.x + 1);
-                g(1, E2);
-                if (this.y == 0) {
-                    g(2, this.h.E(this.x - 1));
-                }
-                for (qt0 qt0Var3 : qt0VarArr) {
-                    if (qt0Var3 != null) {
-                        qt0Var3.f(kf0Var);
-                    }
-                }
-                if ((E != null && qt0VarArr[0] == null) || (this.y != 0 && E2 != null && qt0VarArr[1] == null)) {
-                    z9 = true;
-                }
-                this.F = z9;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void d() {
-        RenderNode renderNode;
-        tf0 tf0Var = this.h;
-        if (tf0Var != null) {
-            di.o5 o5Var = this.L;
-            ArrayList arrayList = tf0Var.k0;
-            if (arrayList != null) {
-                arrayList.remove(o5Var);
-            }
-            this.h = null;
-        }
-        this.e = false;
-        zf0.a.cancelRunnable(this.s);
-        if (Build.VERSION.SDK_INT >= 29 && (renderNode = this.I) != null) {
-            renderNode.discardDisplayList();
-            this.I = null;
-        }
-        synchronized (this.b) {
-            for (int i7 = 0; i7 < 3; i7++) {
-                try {
-                    yf0 yf0Var = this.c[i7];
-                    if (yf0Var != null) {
-                        yf0Var.a();
-                        this.c[i7] = null;
-                    }
-                    yf0 yf0Var2 = this.d[i7];
-                    if (yf0Var2 != null) {
-                        yf0Var2.a();
-                        this.d[i7] = null;
-                    }
-                    qt0 qt0Var = this.J[i7];
-                    if (qt0Var != null) {
-                        qt0Var.f(null);
-                        this.J[i7] = null;
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
                 }
             }
-            this.f[0].setShader(null);
-            this.f[1].setShader(null);
         }
     }
 
-    public final void e(Canvas canvas, org.telegram.ui.yv0 yv0Var, float f10, float f11, boolean z9, float f12, float f13) {
-        float f14;
-        Canvas canvas2 = canvas;
-        tf0 tf0Var = this.h;
-        if (tf0Var == null || !tf0Var.isAttachedToWindow() || this.h.getVisibility() == 8) {
-            return;
-        }
-        if (this.a && Build.VERSION.SDK_INT >= 31) {
-            if (canvas2.isHardwareAccelerated()) {
-                if (yv0Var != null || getVisibility() != 0 || getAlpha() <= 0.0f) {
-                    if (yv0Var != null) {
-                        float measuredWidth = f10 / this.h.getMeasuredWidth();
-                        float f15 = this.r * (1.0f - f12) * measuredWidth;
-                        float renderNodeScale = getRenderNodeScale() * measuredWidth;
-                        i();
-                        this.I.setPosition(0, 0, (int) Math.ceil(f10 / renderNodeScale), (int) Math.ceil((r6 + this.n) / renderNodeScale));
-                        RecordingCanvas beginRecording = this.I.beginRecording();
-                        float f16 = 1.0f / renderNodeScale;
-                        beginRecording.scale(f16, f16);
-                        i5 i5Var = yv0Var.e;
-                        f(i5Var != null ? i5Var.k : yv0Var.a, beginRecording, f15, f11);
-                        if (yv0Var.a0 && yv0Var.V > 0.0f) {
-                            f(yv0Var.U, beginRecording, f15, f11);
-                        }
-                        this.I.endRecording();
-                        this.I.setAlpha(f13);
-                        canvas2.translate(0.0f, -f15);
-                        canvas2.scale(renderNodeScale, renderNodeScale);
-                        canvas2.drawRenderNode(this.I);
-                        return;
-                    }
-                    return;
-                }
-                i();
-                qt0[] qt0VarArr = this.J;
-                qt0 qt0Var = qt0VarArr[0];
-                if (qt0Var != null) {
-                    qt0Var.f(null);
-                }
-                qt0 qt0Var2 = qt0VarArr[1];
-                if (qt0Var2 != null) {
-                    qt0Var2.f(null);
-                }
-                float renderNodeScale2 = getRenderNodeScale();
-                this.I.setPosition(0, 0, (int) Math.ceil(f10 / renderNodeScale2), (int) Math.ceil((this.r + this.n) / renderNodeScale2));
-                RecordingCanvas beginRecording2 = this.I.beginRecording();
-                float f17 = 1.0f / renderNodeScale2;
-                beginRecording2.scale(f17, f17);
-                beginRecording2.save();
-                beginRecording2.translate(-this.y, 0.0f);
-                h(beginRecording2, 0);
-                beginRecording2.restore();
-                if (this.y != 0) {
-                    beginRecording2.save();
-                    beginRecording2.translate((-this.y) + f10, 0.0f);
-                    h(beginRecording2, 1);
-                    beginRecording2.restore();
-                }
-                this.I.endRecording();
-                this.I.setAlpha(this.K.e(false, 1.0f));
-                canvas2.save();
-                canvas2.scale(renderNodeScale2, renderNodeScale2);
-                canvas2.drawRenderNode(this.I);
-                canvas2.restore();
-                return;
-            }
-            if (yv0Var != null || org.telegram.messenger.g0.m0) {
-                return;
-            }
-            this.a = false;
-            setLayerType(1, this.f[0]);
-            setLayerType(1, this.f[1]);
-        }
-        if (this.H || this.G || this.F || (this.f[0].getShader() == null && this.f[1].getShader() == null && !this.e)) {
-            boolean c10 = c();
-            if (!this.e && c10) {
-                this.e = true;
-                org.telegram.messenger.q5 q5Var = zf0.a;
-                q5Var.cancelRunnable(this.s);
-                q5Var.postRunnable(this.s);
-            }
-        }
-        if (this.f[0].getShader() == null && this.f[1].getShader() == null) {
-            return;
-        }
-        synchronized (this.b) {
-            try {
-                float f18 = f10 / this.D;
-                if (z9) {
-                    canvas2.translate(0.0f, (-f18) * this.E);
-                }
-                canvas2.scale(f18, f18);
-                float f19 = this.n / f18;
-                if (this.f[0].getShader() != null) {
-                    canvas2.save();
-                    canvas2.translate((-this.y) / f18, 0.0f);
-                    canvas2.save();
-                    canvas2.scale(1.0f, 2.0f, 0.0f, this.E);
-                    float f20 = this.E;
-                    f14 = 2.0f;
-                    canvas2.drawRect(0.0f, f20, this.D, f20 + f19, this.f[0]);
-                    canvas.restore();
-                    this.f[0].setAlpha((int) (f13 * 255.0f));
-                    float f21 = this.E;
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, f21 * f12, this.D, f21, this.f[0]);
-                    this.f[0].setAlpha(org.telegram.messenger.qs.e4);
-                    canvas2.restore();
-                } else {
-                    f14 = 2.0f;
-                }
-                if (this.y != 0 && this.f[1].getShader() != null) {
-                    canvas2.save();
-                    canvas2.translate(((-this.y) + f10) / f18, 0.0f);
-                    canvas2.save();
-                    canvas2.scale(1.0f, f14, 0.0f, this.E);
-                    float f22 = this.E;
-                    canvas2.drawRect(0.0f, f22, this.D, f22 + f19, this.f[1]);
-                    canvas.restore();
-                    this.f[1].setAlpha((int) (f13 * 255.0f));
-                    float f23 = this.E;
-                    canvas.drawRect(0.0f, f23 * f12, this.D, f23, this.f[1]);
-                    this.f[1].setAlpha(org.telegram.messenger.qs.e4);
-                    canvas.restore();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void g(int i7, View view) {
-        yf0 yf0Var = this.c[i7];
-        if (view != 0 && !yf0Var.e) {
-            Canvas canvas = yf0Var.a;
-            canvas.save();
-            canvas.scale(0.16666667f, 0.16666667f);
-            canvas.translate(0.0f, this.r - view.getMeasuredHeight());
-            view.draw(canvas);
-            canvas.restore();
-            yf0Var.f = true;
-        }
-        if (i7 == 0 || (this.y != 0 && i7 == 1)) {
-            boolean z9 = view instanceof qt0;
-            qt0[] qt0VarArr = this.J;
-            if (z9) {
-                qt0VarArr[i7] = (qt0) view;
-            } else {
-                qt0VarArr[i7] = null;
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void h(Canvas canvas, int i7) {
-        View E = this.h.E(this.x + i7);
-        if (E != 0) {
-            int measuredHeight = E.getMeasuredHeight();
-            canvas.save();
-            canvas.translate(0.0f, this.r - measuredHeight);
-            E.draw(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(1.0f, -1.0f);
-            canvas.translate(0.0f, (-measuredHeight) - this.r);
-            canvas.scale(1.0f, 2.0f, 0.0f, measuredHeight);
-            E.draw(canvas);
-            canvas.restore();
-        }
-        boolean z9 = E instanceof qt0;
-        qt0[] qt0VarArr = this.J;
-        if (!z9) {
-            qt0VarArr[i7] = null;
-            return;
-        }
-        qt0 qt0Var = (qt0) E;
-        qt0VarArr[i7] = qt0Var;
-        qt0Var.f(this.w);
-    }
-
-    public final void i() {
-        BlendMode blendMode;
-        if (this.I == null) {
-            float renderNodeScale = getRenderNodeScale();
-            this.I = new RenderNode("profileBlurNode");
-            float[] fArr = {0.0f, org.telegram.messenger.g0.N(56.0f) / this.r};
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, this.r / renderNodeScale, new int[]{0, -1}, fArr, tileMode);
-            float blurRadius = getBlurRadius();
-            RenderNode renderNode = this.I;
-            RenderEffect createBlurEffect = RenderEffect.createBlurEffect(blurRadius, blurRadius, tileMode);
-            RenderEffect createShaderEffect = RenderEffect.createShaderEffect(linearGradient);
-            blendMode = BlendMode.DST_IN;
-            renderNode.setRenderEffect(RenderEffect.createBlendModeEffect(createBlurEffect, createShaderEffect, blendMode));
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        e(canvas, null, this.h.getMeasuredWidth(), this.h.getMeasuredHeight(), false, 0.0f, 1.0f);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), this.r + this.n);
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        super.setAlpha(f10);
-        if (f10 == 0.0f || !this.a) {
-            return;
-        }
-        invalidate();
-    }
-
-    public void setSize(int i7) {
-        if (this.n != i7) {
-            invalidate();
-        }
-        this.n = i7;
-        this.r = (int) (org.telegram.messenger.g0.L(64.0f) * 1.5f);
-    }
-
-    public void setView(tf0 tf0Var) {
-        d();
-        this.h = tf0Var;
-        this.x = tf0Var.getCurrentItem();
-        this.y = 0;
-        tf0Var.b(this.L);
+    @Override // c5.g
+    public final void c(int i7) {
     }
 }

@@ -1,161 +1,107 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.text.SpannableStringBuilder;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class oq extends na {
-    public final s60 P1;
-    public final ArrayList Q1;
-    public final boolean R1;
-    public final boolean S1;
-    public final boolean T1;
-    public boolean U1;
-    public TLRPC.Peer V1;
-    public TLRPC.InputPeer W1;
-    public final org.telegram.ui.ActionBar.f2 X1;
-    public final long Y1;
+public final /* synthetic */ class oq implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sq b;
+    public final /* synthetic */ fi.d c;
 
-    public oq(org.telegram.ui.ActionBar.f2 f2Var, ArrayList arrayList, long j3, s60 s60Var) {
-        super(f2Var, false);
-        boolean z9;
-        String a02;
-        TLRPC.Chat M0 = org.telegram.messenger.qp.s1(this.a).M0(Long.valueOf(-j3));
-        this.X1 = f2Var;
-        this.Y1 = j3;
-        this.r1 = 0.26f;
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        this.Q1 = arrayList2;
-        this.P1 = s60Var;
-        boolean W = org.telegram.messenger.t3.W(M0);
-        this.T1 = W;
-        this.V1 = (TLRPC.Peer) arrayList2.get(0);
-        final int i7 = 1;
-        this.R1 = arrayList2.size() > 1;
-        this.S1 = org.telegram.messenger.t3.w(14, M0);
-        Context context = this.b.getContext();
-        this.b.addView(new bi.ec(17, context, this), c8.ha.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        textView.setGravity(17);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        textView.setSingleLine(true);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setText(W ? org.telegram.messenger.id.a0(null, null, 2131743455, new Object[0]) : org.telegram.messenger.id.a0(null, null, 2131743324, new Object[0]));
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.Gi, null);
-        int L = org.telegram.messenger.g0.L(8.0f);
-        int i10 = org.telegram.ui.ActionBar.l6.Ci;
-        int x02 = org.telegram.ui.ActionBar.l6.x0(null, i10, false);
-        int i11 = org.telegram.ui.ActionBar.l6.d6;
-        int o4 = i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, i11, false), 120);
-        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.l6.k0(L, L, L, L, x02, o4, o4);
-        org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i10);
-        org.telegram.ui.ActionBar.o6 g10 = org.telegram.ui.ActionBar.s6.g(i11, 120);
-        textView.setBackground(k02);
-        org.telegram.ui.ActionBar.s6.j(textView, k02, M, g10, null);
-        this.b.addView(textView, c8.ha.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
-        TextView textView2 = new TextView(context);
-        textView2.setGravity(17);
-        textView2.setEllipsize(truncateAt);
-        textView2.setSingleLine(true);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(org.telegram.messenger.g0.o());
-        if (W) {
-            z9 = false;
-            a02 = org.telegram.messenger.id.a0(null, null, 2131743462, new Object[0]);
-        } else {
-            z9 = false;
-            a02 = org.telegram.messenger.id.a0(null, null, 2131743341, new Object[0]);
+    public /* synthetic */ oq(sq sqVar, fi.d dVar, int i7) {
+        this.a = i7;
+        this.b = sqVar;
+        this.c = dVar;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i7 = 0;
+                final sq sqVar = this.b;
+                final fi.d dVar = this.c;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Components.pq
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                sq sqVar2 = sqVar;
+                                sqVar2.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    sqVar2.W1 = groupcallstreamrtmpurl.url;
+                                    sqVar2.X1 = groupcallstreamrtmpurl.key;
+                                    sqVar2.Y1 = new SpannableStringBuilder(sqVar2.X1);
+                                    sqVar2.Z1.O(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                sq sqVar3 = sqVar;
+                                sqVar3.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    sqVar3.W1 = groupcallstreamrtmpurl2.url;
+                                    sqVar3.X1 = groupcallstreamrtmpurl2.key;
+                                    sqVar3.Y1 = new SpannableStringBuilder(sqVar3.X1);
+                                    sqVar3.Z1.O(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i10 = 1;
+                final sq sqVar2 = this.b;
+                final fi.d dVar2 = this.c;
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Components.pq
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                sq sqVar22 = sqVar2;
+                                sqVar22.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    sqVar22.W1 = groupcallstreamrtmpurl.url;
+                                    sqVar22.X1 = groupcallstreamrtmpurl.key;
+                                    sqVar22.Y1 = new SpannableStringBuilder(sqVar22.X1);
+                                    sqVar22.Z1.O(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                sq sqVar3 = sqVar2;
+                                sqVar3.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    sqVar3.W1 = groupcallstreamrtmpurl2.url;
+                                    sqVar3.X1 = groupcallstreamrtmpurl2.key;
+                                    sqVar3.Y1 = new SpannableStringBuilder(sqVar3.X1);
+                                    sqVar3.Z1.O(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        textView2.setText(a02);
-        textView2.setLetterSpacing(0.025f);
-        org.telegram.ui.ActionBar.s6.U(textView2, i10, null);
-        int L2 = org.telegram.messenger.g0.L(8.0f);
-        int o10 = i0.a.o(org.telegram.ui.ActionBar.l6.x0(null, i10, z9), 120);
-        org.telegram.ui.Cells.y k03 = org.telegram.ui.ActionBar.l6.k0(L2, L2, L2, L2, 0, o10, o10);
-        org.telegram.ui.ActionBar.o6 g11 = org.telegram.ui.ActionBar.s6.g(i10, 120);
-        textView2.setBackground(k03);
-        org.telegram.ui.ActionBar.s6.j(textView2, k03, null, g11, null);
-        this.b.addView(textView2, c8.ha.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
-        final int i12 = 0;
-        textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.mq
-            public final /* synthetic */ oq b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        oq oqVar = this.b;
-                        oqVar.W1 = org.telegram.messenger.qp.s1(oqVar.a).j1(org.telegram.messenger.ij.B1(oqVar.V1));
-                        oqVar.dismiss();
-                        break;
-                    default:
-                        oq oqVar2 = this.b;
-                        oqVar2.W1 = org.telegram.messenger.qp.s1(oqVar2.a).j1(org.telegram.messenger.ij.B1(oqVar2.V1));
-                        oqVar2.U1 = true;
-                        oqVar2.dismiss();
-                        break;
-                }
-            }
-        });
-        textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.mq
-            public final /* synthetic */ oq b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i7) {
-                    case 0:
-                        oq oqVar = this.b;
-                        oqVar.W1 = org.telegram.messenger.qp.s1(oqVar.a).j1(org.telegram.messenger.ij.B1(oqVar.V1));
-                        oqVar.dismiss();
-                        break;
-                    default:
-                        oq oqVar2 = this.b;
-                        oqVar2.W1 = org.telegram.messenger.qp.s1(oqVar2.a).j1(org.telegram.messenger.ij.B1(oqVar2.V1));
-                        oqVar2.U1 = true;
-                        oqVar2.dismiss();
-                        break;
-                }
-            }
-        });
-        qj0 qj0Var = this.k1;
-        int i13 = this.t0;
-        qj0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(120.0f));
-        this.k1.setOnItemClickListener(new k(this, 4));
-        N();
-        b1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.v2
-    public final void K() {
-        super.K();
-        TLRPC.InputPeer inputPeer = this.W1;
-        if (inputPeer != null) {
-            this.P1.a(inputPeer, this.Q1.size() > 1, this.U1, false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.na
-    public final pj0 L0(qj0 qj0Var) {
-        return new nq(this);
-    }
-
-    @Override // org.telegram.ui.Components.na
-    public final CharSequence O0() {
-        return this.T1 ? org.telegram.messenger.id.M0(2131744903, null) : org.telegram.messenger.id.M0(2131744900, null);
     }
 }

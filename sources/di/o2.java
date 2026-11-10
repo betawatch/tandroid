@@ -14,10 +14,10 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.ud;
+import org.telegram.ui.Components.td;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o2 extends ChatActivityEnterView {
     public ValueAnimator t5;
@@ -90,7 +90,7 @@ public final class o2 extends ChatActivityEnterView {
         if (!j4Var.B0(true)) {
             if (j02 instanceof Spannable) {
                 Spannable spannable = (Spannable) j02;
-                i7 = ((org.telegram.ui.Components.r5[]) spannable.getSpans(0, j02.length(), org.telegram.ui.Components.r5.class)).length + ((org.telegram.messenger.f6[]) spannable.getSpans(0, j02.length(), org.telegram.messenger.f6.class)).length;
+                i7 = ((org.telegram.ui.Components.q5[]) spannable.getSpans(0, j02.length(), org.telegram.ui.Components.q5.class)).length + ((org.telegram.messenger.f6[]) spannable.getSpans(0, j02.length(), org.telegram.messenger.f6.class)).length;
             } else {
                 i7 = 0;
             }
@@ -126,12 +126,12 @@ public final class o2 extends ChatActivityEnterView {
     */
     public final void V1() {
         boolean z9;
-        ud udVar;
+        td tdVar;
         j4 j4Var = this.x5;
         boolean z10 = j4Var.p2;
         if (!j4Var.K1.v0()) {
             o2 o2Var = j4Var.K1;
-            if ((o2Var.k2 || o2Var.p4 <= 0.0f) && ((udVar = this.e1) == null || udVar.getVisibility() != 0)) {
+            if ((o2Var.k2 || o2Var.p4 <= 0.0f) && ((tdVar = this.e1) == null || tdVar.getVisibility() != 0)) {
                 z9 = false;
                 j4Var.p2 = z9;
                 if (z10 == z9) {

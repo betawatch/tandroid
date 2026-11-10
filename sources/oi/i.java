@@ -1,18 +1,18 @@
 package oi;
 
-import org.telegram.ui.Components.wv;
+import org.telegram.ui.Components.vv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class i implements c5.g {
     public int a;
-    public final /* synthetic */ wv b;
+    public final /* synthetic */ vv b;
     public final /* synthetic */ q c;
 
-    public i(q qVar, wv wvVar) {
+    public i(q qVar, vv vvVar) {
         this.c = qVar;
-        this.b = wvVar;
-        this.a = wvVar.getScrollX();
+        this.b = vvVar;
+        this.a = vvVar.getScrollX();
     }
 
     @Override // c5.g

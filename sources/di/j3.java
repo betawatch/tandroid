@@ -20,19 +20,19 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.hr0;
-import org.telegram.ui.kx;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.ir0;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j3 extends v {
-    public final org.telegram.ui.Components.w5 d;
-    public final org.telegram.ui.Components.w5 e;
+    public final org.telegram.ui.Components.v5 d;
+    public final org.telegram.ui.Components.v5 e;
     public final org.telegram.ui.Components.voip.n f;
-    public final org.telegram.ui.Components.w5 h;
-    public final org.telegram.ui.Components.w5 n;
+    public final org.telegram.ui.Components.v5 h;
+    public final org.telegram.ui.Components.v5 n;
     public boolean r;
     public boolean s;
     public final /* synthetic */ g4 w;
@@ -45,16 +45,16 @@ public final class j3 extends v {
         this.y = j4Var;
         this.w = g4Var;
         this.x = q9Var;
-        xq xqVar = xq.f;
-        this.d = new org.telegram.ui.Components.w5(this, 150L, xqVar);
-        this.e = new org.telegram.ui.Components.w5(this, 150L, xqVar);
+        wq wqVar = wq.f;
+        this.d = new org.telegram.ui.Components.v5(this, 150L, wqVar);
+        this.e = new org.telegram.ui.Components.v5(this, 150L, wqVar);
         this.f = new org.telegram.ui.Components.voip.n(32, qs.n1, qs.P3);
-        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(this);
-        this.h = w5Var;
-        org.telegram.ui.Components.w5 w5Var2 = new org.telegram.ui.Components.w5(this);
-        this.n = w5Var2;
-        w5Var.g = 500L;
-        w5Var2.g = 100L;
+        org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(this);
+        this.h = v5Var;
+        org.telegram.ui.Components.v5 v5Var2 = new org.telegram.ui.Components.v5(this);
+        this.n = v5Var2;
+        v5Var.g = 500L;
+        v5Var2.g = 100L;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0157, code lost:
@@ -183,25 +183,25 @@ public final class j3 extends v {
             f14 = 2.0f;
             f4 f4Var = j4Var.X0;
             f15 = 8.0f;
-            org.telegram.ui.Components.i6 i6Var = (org.telegram.ui.Components.i6) nVar.d;
+            org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) nVar.d;
             int i15 = (g10 << 12) + i14;
             if (nVar.a != i15) {
                 nVar.a = i15;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) String.valueOf(i14 + 1)).append((CharSequence) nVar.b).append((CharSequence) "/").append((CharSequence) nVar.c).append((CharSequence) String.valueOf(g10));
-                i6Var.t(spannableStringBuilder, false, true);
+                h6Var.t(spannableStringBuilder, false, true);
             }
             canvas.save();
             float y11 = f4Var.getY();
             e4 e4Var = f4Var.b;
-            float top = ((i6Var.e / 2.0f) + (y11 + e4Var.getTop())) - 1.0f;
-            e4Var.setRightPadding((int) i6Var.c());
+            float top = ((h6Var.e / 2.0f) + (y11 + e4Var.getTop())) - 1.0f;
+            e4Var.setRightPadding((int) h6Var.c());
             canvas.translate((e4Var.getRightDrawableWidth() + (e4Var.getTextWidth() + (e4Var.getLeft() + (f4Var.getLeft() + org.telegram.messenger.g0.L(4.0f))))) - Utilities.j(((e4Var.getRightDrawableWidth() + e4Var.getTextWidth()) + r0) - e4Var.getWidth(), r0, 0), top);
             float L = org.telegram.messenger.g0.L(8.0f);
             float L2 = org.telegram.messenger.g0.L(2.0f);
-            org.telegram.messenger.g0.P.set(-L, -L2, i6Var.c() + L, i6Var.e + L2);
-            i6Var.B = (int) (f21 * 160.0f);
-            i6Var.draw(canvas);
+            org.telegram.messenger.g0.P.set(-L, -L2, h6Var.c() + L, h6Var.e + L2);
+            h6Var.B = (int) (f21 * 160.0f);
+            h6Var.draw(canvas);
             canvas.restore();
         }
         canvas.save();
@@ -236,7 +236,7 @@ public final class j3 extends v {
                 canvas.save();
                 textPaint.setAlpha((int) (d2 * 255.0f));
                 z9 = z13;
-                textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(f12), org.telegram.ui.ActionBar.l6.r1(d2, 805306368));
+                textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(f12), org.telegram.ui.ActionBar.m6.r1(d2, 805306368));
                 canvas.translate(((measuredWidth - p8Var2.f) / f14) - p8Var2.e, org.telegram.messenger.g0.W1(d2, org.telegram.messenger.g0.L(f13), org.telegram.messenger.g0.L(16.0f)));
                 p8Var2.d.draw(canvas);
                 canvas.restore();
@@ -387,12 +387,12 @@ public final class j3 extends v {
         float f12;
         float f13;
         boolean z9;
-        kx kxVar;
+        lx lxVar;
         o4 o4Var;
         boolean z10;
         float f14;
         boolean z11;
-        org.telegram.ui.Components.w5 w5Var;
+        org.telegram.ui.Components.v5 v5Var;
         boolean L;
         ri.f fVar;
         p9 p9Var;
@@ -418,17 +418,17 @@ public final class j3 extends v {
                 invalidate();
             }
             canvas2.save();
-            hr0 hr0Var = j4Var.G2;
-            if (hr0Var.n) {
+            ir0 ir0Var = j4Var.G2;
+            if (ir0Var.n) {
                 canvas2.save();
-                float f15 = hr0Var.O;
-                float f16 = hr0Var.A;
+                float f15 = ir0Var.O;
+                float f16 = ir0Var.A;
                 float f17 = ((f15 * f16) + 1.0f) - f16;
-                canvas2.scale(f17, f17, hr0Var.o + hr0Var.s, hr0Var.p + hr0Var.t);
-                float f18 = hr0Var.o;
-                float f19 = hr0Var.J;
-                float f20 = hr0Var.A;
-                canvas2.translate((f19 * f20) + f18, (hr0Var.K * f20) + hr0Var.p);
+                canvas2.scale(f17, f17, ir0Var.o + ir0Var.s, ir0Var.p + ir0Var.t);
+                float f18 = ir0Var.o;
+                float f19 = ir0Var.J;
+                float f20 = ir0Var.A;
+                canvas2.translate((f19 * f20) + f18, (ir0Var.K * f20) + ir0Var.p);
             }
             org.telegram.ui.j4 j4Var2 = (org.telegram.ui.j4) i4Var.e;
             if (j4Var2 == null || (!i4Var.a && ((g1) i4Var.b) == null)) {
@@ -447,11 +447,11 @@ public final class j3 extends v {
                     z2Var.h(canvas2, null);
                     canvas2.restore();
                     z11 = j4Var.H2;
-                    org.telegram.ui.Components.w5 w5Var2 = this.h;
-                    w5Var = this.n;
+                    org.telegram.ui.Components.v5 v5Var2 = this.h;
+                    v5Var = this.n;
                     if (z11) {
-                        w5Var2.e(true, f14);
-                        w5Var.e(true, f14);
+                        v5Var2.e(true, f14);
+                        v5Var.e(true, f14);
                     }
                     if (!h4Var.f) {
                         g1 g1Var = (g1) i4Var.b;
@@ -480,12 +480,12 @@ public final class j3 extends v {
                     } else {
                         L = z2Var.L();
                     }
-                    w5Var2.e(false, (j4Var.t1 || L || h4Var.b != null) ? 0.0f : 1.0f);
-                    w5Var.e(false, w5Var2.c != 1.0f ? 1.0f : 0.0f);
-                    if (w5Var.c > 0.0f) {
+                    v5Var2.e(false, (j4Var.t1 || L || h4Var.b != null) ? 0.0f : 1.0f);
+                    v5Var.e(false, v5Var2.c != 1.0f ? 1.0f : 0.0f);
+                    if (v5Var.c > 0.0f) {
                         RectF rectF = org.telegram.messenger.g0.P;
                         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                        int i7 = (int) (w5Var.c * 255.0f);
+                        int i7 = (int) (v5Var.c * 255.0f);
                         org.telegram.ui.Components.voip.n nVar = this.f;
                         nVar.a.setAlpha(i7);
                         nVar.c.setAlpha(i7);
@@ -523,15 +523,15 @@ public final class j3 extends v {
             f14 = 0.0f;
             canvas2.restore();
             z11 = j4Var.H2;
-            org.telegram.ui.Components.w5 w5Var22 = this.h;
-            w5Var = this.n;
+            org.telegram.ui.Components.v5 v5Var22 = this.h;
+            v5Var = this.n;
             if (z11) {
             }
             if (!h4Var.f) {
             }
-            w5Var22.e(false, (j4Var.t1 || L || h4Var.b != null) ? 0.0f : 1.0f);
-            w5Var.e(false, w5Var22.c != 1.0f ? 1.0f : 0.0f);
-            if (w5Var.c > 0.0f) {
+            v5Var22.e(false, (j4Var.t1 || L || h4Var.b != null) ? 0.0f : 1.0f);
+            v5Var.e(false, v5Var22.c != 1.0f ? 1.0f : 0.0f);
+            if (v5Var.c > 0.0f) {
             }
             j4Var.H2 = false;
             c10 = 0;
@@ -680,9 +680,9 @@ public final class j3 extends v {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                kxVar = j4Var.T0;
-                if (kxVar == null) {
-                    kxVar.e(canvas2);
+                lxVar = j4Var.T0;
+                if (lxVar == null) {
+                    lxVar.e(canvas2);
                     return;
                 }
                 return;
@@ -708,8 +708,8 @@ public final class j3 extends v {
         }
         if (f11 <= 0.0f) {
         }
-        kxVar = j4Var.T0;
-        if (kxVar == null) {
+        lxVar = j4Var.T0;
+        if (lxVar == null) {
         }
     }
 
@@ -732,8 +732,8 @@ public final class j3 extends v {
         if (!this.r) {
             return super.drawChild(canvas, view, j3);
         }
-        cc ccVar = cc.w;
-        if (ccVar == null || view != ccVar.e) {
+        bc bcVar = bc.w;
+        if (bcVar == null || view != bcVar.e) {
             return super.drawChild(canvas, view, j3);
         }
         if (this.s) {

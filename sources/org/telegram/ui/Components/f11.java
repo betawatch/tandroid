@@ -1,32 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f11 implements ValueAnimator.AnimatorUpdateListener {
+public final class f11 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i11 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ f11(i11 i11Var, int i7) {
+    public /* synthetic */ f11(Object obj, int i7) {
         this.a = i7;
-        this.b = i11Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                di.b3 b3Var = this.b.f;
-                b3Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                b3Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                di.b3 b3Var = ((h11) this.b).f;
+                b3Var.setScaleX(1.0f);
+                b3Var.setScaleY(1.0f);
                 b3Var.invalidate();
                 break;
+            case 1:
+                l11 l11Var = (l11) this.b;
+                l11Var.L = 1.0f;
+                l11Var.h.invalidate();
+                break;
+            case 2:
+                ((t31) this.b).L = null;
+                break;
+            case 3:
+                UndoView undoView = (UndoView) this.b;
+                undoView.setVisibility(4);
+                undoView.setScaleX(1.0f);
+                undoView.setScaleY(1.0f);
+                undoView.setAlpha(1.0f);
+                break;
+            case 4:
+                z41 z41Var = (z41) this.b;
+                if (z41Var.a.getTag() == null) {
+                    z41Var.a.setVisibility(4);
+                    break;
+                }
+                break;
+            case 5:
+                super.onAnimationEnd(animator);
+                a51 a51Var = (a51) this.b;
+                a51Var.b = 0.0f;
+                a51Var.setTranslationY(0.0f);
+                a51Var.a = null;
+                break;
+            case 6:
+                u61 u61Var = (u61) this.b;
+                u61Var.J = false;
+                u61Var.setEnabled(true);
+                t61 t61Var = u61Var.D;
+                if (t61Var != null) {
+                    ((m) t61Var).y(1.0f);
+                }
+                u61Var.invalidate();
+                break;
+            case 7:
+                ((l71) this.b).e0 = null;
+                break;
             default:
-                i11 i11Var = this.b;
-                i11Var.getClass();
-                i11Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i11Var.h();
+                ((r71) this.b).K = null;
                 break;
         }
     }

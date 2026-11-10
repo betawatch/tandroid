@@ -20,9 +20,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.i60;
+import org.telegram.ui.j60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class g3 {
     public static void a(final int i7, final d20 d20Var, final v10 v10Var, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final x10 x10Var, final boolean z9, final boolean z10, final bg.v0 v0Var) {
@@ -158,8 +158,8 @@ public abstract class g3 {
                                     linearLayout.setOrientation(1);
                                     alertDialog$Builder.o(linearLayout);
                                     TextView textView = new TextView(activity3);
-                                    int i14 = org.telegram.ui.ActionBar.l6.j5;
-                                    org.telegram.ui.ActionBar.s6.U(textView, i14, null);
+                                    int i14 = org.telegram.ui.ActionBar.m6.j5;
+                                    org.telegram.ui.ActionBar.t6.U(textView, i14, null);
                                     textView.setTextSize(1, 16.0f);
                                     textView.setGravity((id.a0 ? 5 : 3) | 48);
                                     textView.setText(org.telegram.messenger.g0.X2(id.M0(2131742864, null)));
@@ -171,9 +171,9 @@ public abstract class g3 {
                                     imageView.setImageResource(R.drawable.list_circle);
                                     imageView.setPadding(id.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), id.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
                                     PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                                    org.telegram.ui.ActionBar.s6.s(imageView, i14, null, mode);
+                                    org.telegram.ui.ActionBar.t6.s(imageView, i14, null, mode);
                                     TextView textView2 = new TextView(activity3);
-                                    org.telegram.ui.ActionBar.s6.U(textView2, i14, null);
+                                    org.telegram.ui.ActionBar.t6.U(textView2, i14, null);
                                     textView2.setTextSize(1, 16.0f);
                                     textView2.setGravity((id.a0 ? 5 : 3) | 48);
                                     textView2.setText(org.telegram.messenger.g0.X2(id.M0(2131751300, null)));
@@ -189,9 +189,9 @@ public abstract class g3 {
                                     ImageView imageView2 = new ImageView(activity3);
                                     imageView2.setImageResource(R.drawable.list_circle);
                                     imageView2.setPadding(id.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), id.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
-                                    org.telegram.ui.ActionBar.s6.s(imageView2, i14, null, mode);
+                                    org.telegram.ui.ActionBar.t6.s(imageView2, i14, null, mode);
                                     TextView textView3 = new TextView(activity3);
-                                    org.telegram.ui.ActionBar.s6.U(textView3, i14, null);
+                                    org.telegram.ui.ActionBar.t6.U(textView3, i14, null);
                                     textView3.setTextSize(1, 16.0f);
                                     textView3.setGravity((id.a0 ? 5 : 3) | 48);
                                     textView3.setText(org.telegram.messenger.g0.X2(id.M0(2131751299, null)));
@@ -211,7 +211,7 @@ public abstract class g3 {
                                         alertDialog$Builder.h(id.M0(2131752589, null), null);
                                     } else {
                                         TextView textView4 = new TextView(activity3);
-                                        org.telegram.ui.ActionBar.s6.U(textView4, i14, null);
+                                        org.telegram.ui.ActionBar.t6.U(textView4, i14, null);
                                         textView4.setTextSize(1, 16.0f);
                                         if (!id.a0) {
                                             i12 = 3;
@@ -264,7 +264,7 @@ public abstract class g3 {
                                         b3 b3Var = new b3(i12, d20Var4, v10Var4, f3Var, x10Var4, z16, z17, v0Var4, 1);
                                         f3Var.Z = 1;
                                         f3Var.b0 = b3Var;
-                                        f3Var.x0(new i60(v0Var4, z16, f3Var, 13));
+                                        f3Var.x0(new j60(v0Var4, z16, f3Var, 13));
                                         twoStepVerificationActivity4 = f3Var;
                                     } else {
                                         v10Var4 = v10Var5;

@@ -31,11 +31,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.jv0;
-import org.telegram.ui.Components.ra0;
+import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.qa0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mn implements Runnable {
     public final /* synthetic */ int a;
@@ -98,17 +98,17 @@ public final /* synthetic */ class mn implements Runnable {
     /* JADX WARN: Type inference failed for: r0v98 */
     /* JADX WARN: Type inference failed for: r0v99, types: [android.graphics.drawable.Drawable] */
     /* JADX WARN: Type inference failed for: r15v0, types: [android.graphics.Canvas] */
-    /* JADX WARN: Type inference failed for: r1v16, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.ra0] */
-    /* JADX WARN: Type inference failed for: r28v18, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.ra0] */
-    /* JADX WARN: Type inference failed for: r2v26, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v27, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v28, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v30, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v31, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v32, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v33, types: [org.telegram.ui.ActionBar.t4] */
-    /* JADX WARN: Type inference failed for: r2v34, types: [org.telegram.ui.ActionBar.t4] */
+    /* JADX WARN: Type inference failed for: r1v16, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.qa0] */
+    /* JADX WARN: Type inference failed for: r28v18, types: [android.graphics.drawable.Drawable, org.telegram.ui.Components.qa0] */
+    /* JADX WARN: Type inference failed for: r2v26, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v27, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v28, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v30, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v31, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v32, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v33, types: [org.telegram.ui.ActionBar.u4] */
+    /* JADX WARN: Type inference failed for: r2v34, types: [org.telegram.ui.ActionBar.u4] */
     /* JADX WARN: Type inference failed for: r36v0 */
     /* JADX WARN: Type inference failed for: r37v0, types: [android.graphics.drawable.Drawable] */
     /* JADX WARN: Type inference failed for: r3v10 */
@@ -141,7 +141,7 @@ public final /* synthetic */ class mn implements Runnable {
     */
     private final void a() {
         qp qpVar;
-        org.telegram.ui.ActionBar.k6 k6Var;
+        org.telegram.ui.ActionBar.l6 l6Var;
         int i7;
         boolean z9;
         String str;
@@ -202,53 +202,53 @@ public final /* synthetic */ class mn implements Runnable {
         qp qpVar2 = (qp) this.b;
         String str4 = (String) this.c;
         File file = (File) this.d;
-        org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.e;
-        org.telegram.ui.ActionBar.k6 k6Var2 = (org.telegram.ui.ActionBar.k6) this.f;
+        org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) this.e;
+        org.telegram.ui.ActionBar.l6 l6Var2 = (org.telegram.ui.ActionBar.l6) this.f;
         String absolutePath = file != null ? file.getAbsolutePath() : null;
-        int i38 = org.telegram.ui.ActionBar.l6.a;
+        int i38 = org.telegram.ui.ActionBar.m6.a;
         try {
             strArr = new String[1];
-            T0 = org.telegram.ui.ActionBar.l6.T0(new File(str4), null, strArr);
-            if (i6Var != null) {
+            T0 = org.telegram.ui.ActionBar.m6.T0(new File(str4), null, strArr);
+            if (j6Var != null) {
                 try {
-                    org.telegram.ui.ActionBar.l6.H(T0, i6Var.b);
+                    org.telegram.ui.ActionBar.m6.H(T0, j6Var.b);
                 } catch (Throwable th2) {
                     th = th2;
                     qpVar = qpVar2;
-                    k6Var = k6Var2;
+                    l6Var = l6Var2;
                     z9 = true;
                     str = null;
                     a8.g(th, z9);
                     str2 = str;
                     str3 = str2;
-                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                 }
             }
-            i10 = org.telegram.ui.ActionBar.l6.hm.get(org.telegram.ui.ActionBar.l6.g5, -1);
+            i10 = org.telegram.ui.ActionBar.m6.hm.get(org.telegram.ui.ActionBar.m6.g5, -1);
             Bitmap.Config config = Bitmap.Config.ARGB_8888;
             c10 = as.c(560, 678);
             canvas = new Canvas(c10);
             paint = new Paint();
-            I0 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.s8);
+            I0 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.s8);
             try {
-                I02 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.v8);
-                int I06 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.Ge);
-                I03 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.Le);
-                I04 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.ra);
-                I05 = org.telegram.ui.ActionBar.l6.I0(T0, org.telegram.ui.ActionBar.l6.ob);
-                T0.get(org.telegram.ui.ActionBar.l6.rb);
-                i11 = T0.get(org.telegram.ui.ActionBar.l6.Be);
-                i12 = T0.get(org.telegram.ui.ActionBar.l6.Ce);
+                I02 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.v8);
+                int I06 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.Ge);
+                I03 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.Le);
+                I04 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.ra);
+                I05 = org.telegram.ui.ActionBar.m6.I0(T0, org.telegram.ui.ActionBar.m6.ob);
+                T0.get(org.telegram.ui.ActionBar.m6.rb);
+                i11 = T0.get(org.telegram.ui.ActionBar.m6.Be);
+                i12 = T0.get(org.telegram.ui.ActionBar.m6.Ce);
                 qpVar = qpVar2;
                 try {
-                    i7 = T0.get(org.telegram.ui.ActionBar.l6.De);
-                    i13 = T0.get(org.telegram.ui.ActionBar.l6.Ee);
-                    k6Var = k6Var2;
-                    if (i6Var != null) {
+                    i7 = T0.get(org.telegram.ui.ActionBar.m6.De);
+                    i13 = T0.get(org.telegram.ui.ActionBar.m6.Ee);
+                    l6Var = l6Var2;
+                    if (j6Var != null) {
                         i14 = I06;
                         i15 = 0;
                         try {
-                            i16 = (int) i6Var.j;
+                            i16 = (int) j6Var.j;
                         } catch (Throwable th3) {
                             th = th3;
                             i7 = 0;
@@ -257,7 +257,7 @@ public final /* synthetic */ class mn implements Runnable {
                             a8.g(th, z9);
                             str2 = str;
                             str3 = str2;
-                            g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                            g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                         }
                     } else {
                         i14 = I06;
@@ -266,14 +266,14 @@ public final /* synthetic */ class mn implements Runnable {
                     }
                 } catch (Throwable th4) {
                     th = th4;
-                    k6Var = k6Var2;
+                    l6Var = l6Var2;
                     i7 = 0;
                     z9 = true;
                     str = i7;
                     a8.g(th, z9);
                     str2 = str;
                     str3 = str2;
-                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                 }
             } catch (Throwable th5) {
                 th = th5;
@@ -282,35 +282,35 @@ public final /* synthetic */ class mn implements Runnable {
         } catch (Throwable th6) {
             th = th6;
             qpVar = qpVar2;
-            k6Var = k6Var2;
+            l6Var = l6Var2;
             i7 = 0;
         }
-        if (i16 != 0 || i6Var == null) {
+        if (i16 != 0 || j6Var == null) {
             i17 = i16;
         } else {
             i17 = i16;
-            if (i6Var.j != 0) {
+            if (j6Var.j != 0) {
                 i11 = i15;
-                i18 = i6Var == null ? (int) i6Var.k : i15;
-                if (i18 == 0 || i6Var == null) {
+                i18 = j6Var == null ? (int) j6Var.k : i15;
+                if (i18 == 0 || j6Var == null) {
                     i19 = i18;
                 } else {
                     i19 = i18;
-                    if (i6Var.k != 0) {
+                    if (j6Var.k != 0) {
                         i12 = i15;
-                        i20 = i6Var != null ? (int) i6Var.l : i15;
-                        if (i20 == 0 || i6Var == null) {
+                        i20 = j6Var != null ? (int) j6Var.l : i15;
+                        if (i20 == 0 || j6Var == null) {
                             i21 = i20;
                         } else {
                             i21 = i20;
-                            if (i6Var.l != 0) {
+                            if (j6Var.l != 0) {
                                 i21 = i15;
-                                i22 = i6Var == null ? (int) i6Var.m : i15;
-                                if (i22 == 0 || i6Var == null) {
+                                i22 = j6Var == null ? (int) j6Var.m : i15;
+                                if (i22 == 0 || j6Var == null) {
                                     i23 = i22;
                                 } else {
                                     i23 = i22;
-                                    if (i6Var.m != 0) {
+                                    if (j6Var.m != 0) {
                                         i24 = i15;
                                         if (TextUtils.isEmpty(strArr[i15])) {
                                             strArr2 = strArr;
@@ -324,21 +324,21 @@ public final /* synthetic */ class mn implements Runnable {
                                                 e = e10;
                                                 strArr2 = strArr;
                                             }
-                                            if (i6Var != null) {
+                                            if (j6Var != null) {
                                                 if (!TextUtils.isEmpty(queryParameter)) {
                                                     int i39 = i24;
                                                     strArr2 = strArr;
                                                     try {
                                                         int parseInt = Integer.parseInt(queryParameter.substring(i15, 6), 16) | (-16777216);
                                                         try {
-                                                            i6Var.j = parseInt;
+                                                            j6Var.j = parseInt;
                                                             if (queryParameter.length() < 13 || !g0.S1(queryParameter.charAt(6))) {
                                                                 i28 = parseInt;
                                                             } else {
                                                                 int parseInt2 = Integer.parseInt(queryParameter.substring(7, 13), 16) | (-16777216);
                                                                 i28 = parseInt;
                                                                 try {
-                                                                    i6Var.k = parseInt2;
+                                                                    j6Var.k = parseInt2;
                                                                     i12 = parseInt2;
                                                                 } catch (Exception e11) {
                                                                     e = e11;
@@ -350,20 +350,20 @@ public final /* synthetic */ class mn implements Runnable {
                                                                     i26 = i12;
                                                                     i27 = i21;
                                                                     mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                    org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                                                                    org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                                                                     mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                    org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                                                                    org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                                                                     Drawable mutate4 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                    org.telegram.ui.ActionBar.l6.C1(I03, mutate4);
+                                                                    org.telegram.ui.ActionBar.m6.C1(I03, mutate4);
                                                                     mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                    org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                                                                    org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                                                                     i29 = 2;
-                                                                    org.telegram.ui.ActionBar.t4[] t4VarArr = new org.telegram.ui.ActionBar.t4[2];
+                                                                    org.telegram.ui.ActionBar.u4[] u4VarArr = new org.telegram.ui.ActionBar.u4[2];
                                                                     i30 = 0;
                                                                     while (i30 < i29) {
                                                                     }
                                                                     r37 = mutate4;
-                                                                    ?? r36 = t4VarArr;
+                                                                    ?? r36 = u4VarArr;
                                                                     RectF rectF = new RectF();
                                                                     int i40 = 80;
                                                                     if (absolutePath == null) {
@@ -402,14 +402,14 @@ public final /* synthetic */ class mn implements Runnable {
                                                                     c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2));
                                                                     iz.y();
                                                                     str3 = file2.getAbsolutePath();
-                                                                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                                 }
                                                             }
                                                             try {
                                                                 if (queryParameter.length() >= 20 && g0.S1(queryParameter.charAt(13))) {
                                                                     int parseInt3 = Integer.parseInt(queryParameter.substring(14, 20), 16) | (-16777216);
                                                                     try {
-                                                                        i6Var.l = parseInt3;
+                                                                        j6Var.l = parseInt3;
                                                                         i21 = parseInt3;
                                                                     } catch (Exception e12) {
                                                                         e = e12;
@@ -421,20 +421,20 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         i26 = i12;
                                                                         i27 = i21;
                                                                         mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                                                                         mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                                                                         Drawable mutate42 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate42);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate42);
                                                                         mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                                                                         i29 = 2;
-                                                                        org.telegram.ui.ActionBar.t4[] t4VarArr2 = new org.telegram.ui.ActionBar.t4[2];
+                                                                        org.telegram.ui.ActionBar.u4[] u4VarArr2 = new org.telegram.ui.ActionBar.u4[2];
                                                                         i30 = 0;
                                                                         while (i30 < i29) {
                                                                         }
                                                                         r37 = mutate42;
-                                                                        ?? r362 = t4VarArr2;
+                                                                        ?? r362 = u4VarArr2;
                                                                         RectF rectF2 = new RectF();
                                                                         int i402 = 80;
                                                                         if (absolutePath == null) {
@@ -473,13 +473,13 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file22));
                                                                         iz.y();
                                                                         str3 = file22.getAbsolutePath();
-                                                                        g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                                        g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                                     }
                                                                 }
                                                                 if (queryParameter.length() == 27 && g0.S1(queryParameter.charAt(20))) {
                                                                     i24 = Integer.parseInt(queryParameter.substring(21), 16) | (-16777216);
                                                                     try {
-                                                                        i6Var.m = i24;
+                                                                        j6Var.m = i24;
                                                                     } catch (Exception e13) {
                                                                         e = e13;
                                                                         i11 = i28;
@@ -488,20 +488,20 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         i26 = i12;
                                                                         i27 = i21;
                                                                         mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                                                                         mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                                                                         Drawable mutate422 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate422);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate422);
                                                                         mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                                                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                                                                         i29 = 2;
-                                                                        org.telegram.ui.ActionBar.t4[] t4VarArr22 = new org.telegram.ui.ActionBar.t4[2];
+                                                                        org.telegram.ui.ActionBar.u4[] u4VarArr22 = new org.telegram.ui.ActionBar.u4[2];
                                                                         i30 = 0;
                                                                         while (i30 < i29) {
                                                                         }
                                                                         r37 = mutate422;
-                                                                        ?? r3622 = t4VarArr22;
+                                                                        ?? r3622 = u4VarArr22;
                                                                         RectF rectF22 = new RectF();
                                                                         int i4022 = 80;
                                                                         if (absolutePath == null) {
@@ -540,7 +540,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                                         c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file222));
                                                                         iz.y();
                                                                         str3 = file222.getAbsolutePath();
-                                                                        g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                                        g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                                     }
                                                                 } else {
                                                                     i24 = i39;
@@ -569,30 +569,30 @@ public final /* synthetic */ class mn implements Runnable {
                                             i27 = i21;
                                         }
                                         mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                                         mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                        org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                                        org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                                         Drawable mutate4222 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate4222);
+                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate4222);
                                         mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                        org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                                        org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                                         i29 = 2;
-                                        org.telegram.ui.ActionBar.t4[] t4VarArr222 = new org.telegram.ui.ActionBar.t4[2];
+                                        org.telegram.ui.ActionBar.u4[] u4VarArr222 = new org.telegram.ui.ActionBar.u4[2];
                                         i30 = 0;
                                         while (i30 < i29) {
                                             int i41 = i29;
-                                            org.telegram.ui.ActionBar.t4[] t4VarArr3 = t4VarArr222;
+                                            org.telegram.ui.ActionBar.u4[] u4VarArr3 = u4VarArr222;
                                             Drawable drawable = mutate4222;
-                                            org.telegram.ui.ActionBar.r5 r5Var = new org.telegram.ui.ActionBar.r5(i30 == 1, T0, 0);
-                                            t4VarArr3[i30] = r5Var;
-                                            org.telegram.ui.ActionBar.l6.C1(i30 == 0 ? I04 : I05, r5Var);
+                                            org.telegram.ui.ActionBar.s5 s5Var = new org.telegram.ui.ActionBar.s5(i30 == 1, T0, 0);
+                                            u4VarArr3[i30] = s5Var;
+                                            org.telegram.ui.ActionBar.m6.C1(i30 == 0 ? I04 : I05, s5Var);
                                             i30++;
                                             i29 = i41;
-                                            t4VarArr222 = t4VarArr3;
+                                            u4VarArr222 = u4VarArr3;
                                             mutate4222 = drawable;
                                         }
                                         r37 = mutate4222;
-                                        ?? r36222 = t4VarArr222;
+                                        ?? r36222 = u4VarArr222;
                                         RectF rectF222 = new RectF();
                                         int i40222 = 80;
                                         if (absolutePath == null) {
@@ -618,7 +618,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                 options.inJustDecodeBounds = false;
                                                 Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath, options);
                                                 if (decodeFile != null) {
-                                                    if (i27 == 0 || i6Var == null) {
+                                                    if (i27 == 0 || j6Var == null) {
                                                         Paint paint2 = new Paint();
                                                         paint2.setFilterBitmap(true);
                                                         float min2 = Math.min(decodeFile.getWidth() / 560.0f, decodeFile.getHeight() / 560.0f);
@@ -626,7 +626,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                         rectF222.offset((c10.getWidth() - rectF222.width()) / 2.0f, (c10.getHeight() - rectF222.height()) / 2.0f);
                                                         canvas.drawBitmap(decodeFile, null, rectF222, paint2);
                                                     } else {
-                                                        ?? ra0Var = new ra0(true, i11, i26, i27, i25);
+                                                        ?? qa0Var = new qa0(true, i11, i26, i27, i25);
                                                         if (c10.getConfig() != config2) {
                                                             Bitmap copy = c10.copy(config2, false);
                                                             try {
@@ -670,19 +670,19 @@ public final /* synthetic */ class mn implements Runnable {
                                                                 c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2222));
                                                                 iz.y();
                                                                 str3 = file2222.getAbsolutePath();
-                                                                g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                                g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                             }
                                                         }
-                                                        ra0Var.s((int) (i6Var.p * 100.0f), decodeFile);
-                                                        ra0Var.setBounds(0, 0, c10.getWidth(), c10.getHeight());
-                                                        ra0Var.draw(canvas);
+                                                        qa0Var.s((int) (j6Var.p * 100.0f), decodeFile);
+                                                        qa0Var.setBounds(0, 0, c10.getWidth(), c10.getHeight());
+                                                        qa0Var.draw(canvas);
                                                     }
                                                     z10 = true;
                                                     z11 = z10;
                                                     i21 = 120;
                                                     i34 = 80;
                                                     if (!z11) {
-                                                        ?? S = org.telegram.ui.ActionBar.l6.S(c10.getWidth(), c10.getHeight() - 120);
+                                                        ?? S = org.telegram.ui.ActionBar.m6.S(c10.getWidth(), c10.getHeight() - 120);
                                                         S.setBounds(0, i21, c10.getWidth(), c10.getHeight() - 120);
                                                         S.draw(canvas);
                                                     }
@@ -729,7 +729,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                     c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file22222));
                                                     iz.y();
                                                     str3 = file22222.getAbsolutePath();
-                                                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                 }
                                             }
                                             z10 = false;
@@ -767,25 +767,25 @@ public final /* synthetic */ class mn implements Runnable {
                                             c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file222222));
                                             iz.y();
                                             str3 = file222222.getAbsolutePath();
-                                            g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                            g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                         }
                                         int i42 = i11;
                                         if (i42 != 0) {
                                             if (i26 == 0) {
                                                 bitmapDrawable = new ColorDrawable(i42);
                                             } else if (i27 != 0) {
-                                                bitmapDrawable = new ra0(true, i42, i26, i27, i25);
+                                                bitmapDrawable = new qa0(true, i42, i26, i27, i25);
                                             } else {
-                                                int i43 = T0.get(org.telegram.ui.ActionBar.l6.Fe, -1);
+                                                int i43 = T0.get(org.telegram.ui.ActionBar.m6.Fe, -1);
                                                 if (i43 == -1) {
                                                     i43 = 45;
                                                 }
                                                 int[] iArr = {i42, i7};
                                                 int width3 = c10.getWidth();
                                                 int height3 = c10.getHeight() - 120;
-                                                GradientDrawable.Orientation d = org.telegram.ui.Components.k9.d(i43);
+                                                GradientDrawable.Orientation d = org.telegram.ui.Components.j9.d(i43);
                                                 Resources resources = t0.b.getResources();
-                                                Rect e17 = org.telegram.ui.Components.k9.e(d, width3, height3);
+                                                Rect e17 = org.telegram.ui.Components.j9.e(d, width3, height3);
                                                 Bitmap createBitmap = Bitmap.createBitmap(width3, height3, Bitmap.Config.ARGB_8888);
                                                 Utilities.drawDitheredGradient(createBitmap, iArr, e17.left, e17.top, e17.right, e17.bottom);
                                                 i40222 = 90;
@@ -827,7 +827,7 @@ public final /* synthetic */ class mn implements Runnable {
                                             c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2222222));
                                             iz.y();
                                             str3 = file2222222.getAbsolutePath();
-                                            g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                            g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                         }
                                         if (i10 >= 0 || !TextUtils.isEmpty(strArr2[0])) {
                                             try {
@@ -894,7 +894,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                                 c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file22222222));
                                                                 iz.y();
                                                                 str3 = file22222222.getAbsolutePath();
-                                                                g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                                g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                             } finally {
                                                             }
                                                         }
@@ -917,7 +917,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                             a8.g(th, z9);
                                                             str2 = str;
                                                             str3 = str2;
-                                                            g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                            g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                         }
                                                     }
                                                     i34 = 80;
@@ -953,7 +953,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                     c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file222222222));
                                                     iz.y();
                                                     str3 = file222222222.getAbsolutePath();
-                                                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                 }
                                             } catch (Throwable th12) {
                                                 th = th12;
@@ -1022,7 +1022,7 @@ public final /* synthetic */ class mn implements Runnable {
                                                     c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2222222222));
                                                     iz.y();
                                                     str3 = file2222222222.getAbsolutePath();
-                                                    g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                                    g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                                 }
                                             }
                                             z11 = false;
@@ -1060,7 +1060,7 @@ public final /* synthetic */ class mn implements Runnable {
                                             c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file22222222222));
                                             iz.y();
                                             str3 = file22222222222.getAbsolutePath();
-                                            g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                            g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                         }
                                         i21 = 120;
                                         i34 = 80;
@@ -1096,7 +1096,7 @@ public final /* synthetic */ class mn implements Runnable {
                                         c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file222222222222));
                                         iz.y();
                                         str3 = file222222222222.getAbsolutePath();
-                                        g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                        g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                                     }
                                 }
                                 if (i23 != 0) {
@@ -1106,20 +1106,20 @@ public final /* synthetic */ class mn implements Runnable {
                                 if (TextUtils.isEmpty(strArr[i15])) {
                                 }
                                 mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                                org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                                org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                                 mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                                org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                                org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                                 Drawable mutate42222 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                                org.telegram.ui.ActionBar.l6.C1(I03, mutate42222);
+                                org.telegram.ui.ActionBar.m6.C1(I03, mutate42222);
                                 mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                                org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                                org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                                 i29 = 2;
-                                org.telegram.ui.ActionBar.t4[] t4VarArr2222 = new org.telegram.ui.ActionBar.t4[2];
+                                org.telegram.ui.ActionBar.u4[] u4VarArr2222 = new org.telegram.ui.ActionBar.u4[2];
                                 i30 = 0;
                                 while (i30 < i29) {
                                 }
                                 r37 = mutate42222;
-                                ?? r362222 = t4VarArr2222;
+                                ?? r362222 = u4VarArr2222;
                                 RectF rectF2222 = new RectF();
                                 int i402222 = 80;
                                 if (absolutePath == null) {
@@ -1158,13 +1158,13 @@ public final /* synthetic */ class mn implements Runnable {
                                 c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2222222222222));
                                 iz.y();
                                 str3 = file2222222222222.getAbsolutePath();
-                                g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                                g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                             }
                         }
                         if (i21 == 0) {
                             i21 = i7;
                         }
-                        if (i6Var == null) {
+                        if (j6Var == null) {
                         }
                         if (i22 == 0) {
                         }
@@ -1175,20 +1175,20 @@ public final /* synthetic */ class mn implements Runnable {
                         if (TextUtils.isEmpty(strArr[i15])) {
                         }
                         mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                        org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                        org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                         mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                        org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                        org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                         Drawable mutate422222 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                        org.telegram.ui.ActionBar.l6.C1(I03, mutate422222);
+                        org.telegram.ui.ActionBar.m6.C1(I03, mutate422222);
                         mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                        org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                        org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                         i29 = 2;
-                        org.telegram.ui.ActionBar.t4[] t4VarArr22222 = new org.telegram.ui.ActionBar.t4[2];
+                        org.telegram.ui.ActionBar.u4[] u4VarArr22222 = new org.telegram.ui.ActionBar.u4[2];
                         i30 = 0;
                         while (i30 < i29) {
                         }
                         r37 = mutate422222;
-                        ?? r3622222 = t4VarArr22222;
+                        ?? r3622222 = u4VarArr22222;
                         RectF rectF22222 = new RectF();
                         int i4022222 = 80;
                         if (absolutePath == null) {
@@ -1227,20 +1227,20 @@ public final /* synthetic */ class mn implements Runnable {
                         c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file22222222222222));
                         iz.y();
                         str3 = file22222222222222.getAbsolutePath();
-                        g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                        g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
                     }
                 }
                 if (i19 != 0) {
                     i12 = i19;
                 }
-                if (i6Var != null) {
+                if (j6Var != null) {
                 }
                 if (i20 == 0) {
                 }
                 i21 = i20;
                 if (i21 == 0) {
                 }
-                if (i6Var == null) {
+                if (j6Var == null) {
                 }
                 if (i22 == 0) {
                 }
@@ -1251,20 +1251,20 @@ public final /* synthetic */ class mn implements Runnable {
                 if (TextUtils.isEmpty(strArr[i15])) {
                 }
                 mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-                org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+                org.telegram.ui.ActionBar.m6.C1(I02, mutate);
                 mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-                org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+                org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
                 Drawable mutate4222222 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-                org.telegram.ui.ActionBar.l6.C1(I03, mutate4222222);
+                org.telegram.ui.ActionBar.m6.C1(I03, mutate4222222);
                 mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-                org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+                org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
                 i29 = 2;
-                org.telegram.ui.ActionBar.t4[] t4VarArr222222 = new org.telegram.ui.ActionBar.t4[2];
+                org.telegram.ui.ActionBar.u4[] u4VarArr222222 = new org.telegram.ui.ActionBar.u4[2];
                 i30 = 0;
                 while (i30 < i29) {
                 }
                 r37 = mutate4222222;
-                ?? r36222222 = t4VarArr222222;
+                ?? r36222222 = u4VarArr222222;
                 RectF rectF222222 = new RectF();
                 int i40222222 = 80;
                 if (absolutePath == null) {
@@ -1303,27 +1303,27 @@ public final /* synthetic */ class mn implements Runnable {
                 c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file222222222222222));
                 iz.y();
                 str3 = file222222222222222.getAbsolutePath();
-                g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+                g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
             }
         }
         if (i17 != 0) {
             i11 = i17;
         }
-        if (i6Var == null) {
+        if (j6Var == null) {
         }
         if (i18 == 0) {
         }
         i19 = i18;
         if (i19 != 0) {
         }
-        if (i6Var != null) {
+        if (j6Var != null) {
         }
         if (i20 == 0) {
         }
         i21 = i20;
         if (i21 == 0) {
         }
-        if (i6Var == null) {
+        if (j6Var == null) {
         }
         if (i22 == 0) {
         }
@@ -1334,20 +1334,20 @@ public final /* synthetic */ class mn implements Runnable {
         if (TextUtils.isEmpty(strArr[i15])) {
         }
         mutate = t0.b.getResources().getDrawable(R.drawable.preview_back).mutate();
-        org.telegram.ui.ActionBar.l6.C1(I02, mutate);
+        org.telegram.ui.ActionBar.m6.C1(I02, mutate);
         mutate2 = t0.b.getResources().getDrawable(R.drawable.preview_dots).mutate();
-        org.telegram.ui.ActionBar.l6.C1(I02, mutate2);
+        org.telegram.ui.ActionBar.m6.C1(I02, mutate2);
         Drawable mutate42222222 = t0.b.getResources().getDrawable(R.drawable.preview_smile).mutate();
-        org.telegram.ui.ActionBar.l6.C1(I03, mutate42222222);
+        org.telegram.ui.ActionBar.m6.C1(I03, mutate42222222);
         mutate3 = t0.b.getResources().getDrawable(R.drawable.preview_mic).mutate();
-        org.telegram.ui.ActionBar.l6.C1(I03, mutate3);
+        org.telegram.ui.ActionBar.m6.C1(I03, mutate3);
         i29 = 2;
-        org.telegram.ui.ActionBar.t4[] t4VarArr2222222 = new org.telegram.ui.ActionBar.t4[2];
+        org.telegram.ui.ActionBar.u4[] u4VarArr2222222 = new org.telegram.ui.ActionBar.u4[2];
         i30 = 0;
         while (i30 < i29) {
         }
         r37 = mutate42222222;
-        ?? r362222222 = t4VarArr2222222;
+        ?? r362222222 = u4VarArr2222222;
         RectF rectF2222222 = new RectF();
         int i402222222 = 80;
         if (absolutePath == null) {
@@ -1386,7 +1386,7 @@ public final /* synthetic */ class mn implements Runnable {
         c10.compress(Bitmap.CompressFormat.JPEG, i34, new FileOutputStream(file2222222222222222));
         iz.y();
         str3 = file2222222222222222.getAbsolutePath();
-        g0.h3(new mn(qpVar, str3, str4, i6Var, k6Var, 7));
+        g0.h3(new mn(qpVar, str3, str4, j6Var, l6Var, 7));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1399,7 +1399,7 @@ public final /* synthetic */ class mn implements Runnable {
         String str;
         boolean z9;
         int i7;
-        org.telegram.ui.Components.v5 v5Var;
+        org.telegram.ui.Components.u5 u5Var;
         boolean z10 = true;
         int i10 = 0;
         switch (this.a) {
@@ -1443,9 +1443,9 @@ public final /* synthetic */ class mn implements Runnable {
                 while (i11 < size) {
                     Object obj = arrayList2.get(i11);
                     i11++;
-                    org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) obj;
+                    org.telegram.ui.ActionBar.s3 s3Var = (org.telegram.ui.ActionBar.s3) obj;
                     HashMap hashMap = d4Var.e;
-                    ig.b bVar = r3Var.c;
+                    ig.b bVar = s3Var.c;
                     if (bVar == null) {
                         str = null;
                     } else {
@@ -1454,7 +1454,7 @@ public final /* synthetic */ class mn implements Runnable {
                             str = bVar.a;
                         }
                     }
-                    hashMap.put(str, r3Var);
+                    hashMap.put(str, s3Var);
                 }
                 int size2 = arrayList3.size();
                 int i12 = 0;
@@ -1511,54 +1511,54 @@ public final /* synthetic */ class mn implements Runnable {
                 ArrayList arrayList8 = (ArrayList) this.d;
                 ArrayList arrayList9 = (ArrayList) this.e;
                 String str2 = (String) this.f;
-                if (drawable instanceof org.telegram.ui.Components.v5) {
-                    org.telegram.ui.Components.v5 v5Var2 = (org.telegram.ui.Components.v5) drawable;
-                    if (!v5Var2.n0) {
+                if (drawable instanceof org.telegram.ui.Components.u5) {
+                    org.telegram.ui.Components.u5 u5Var2 = (org.telegram.ui.Components.u5) drawable;
+                    if (!u5Var2.n0) {
                         int i17 = 0;
                         boolean z11 = false;
                         while (i17 < arrayList8.size()) {
                             ImageReceiver imageReceiver = (ImageReceiver) arrayList8.get(i17);
                             if (i17 == 0) {
-                                v5Var = v5Var2;
+                                u5Var = u5Var2;
                                 z9 = z10;
                                 i7 = i10;
                             } else {
-                                AnimatedFileDrawableStream animatedFileDrawableStream = v5Var2.u0;
+                                AnimatedFileDrawableStream animatedFileDrawableStream = u5Var2.u0;
                                 if (animatedFileDrawableStream != null) {
-                                    File file = v5Var2.G;
-                                    long j3 = v5Var2.H;
+                                    File file = u5Var2.G;
+                                    long j3 = u5Var2.H;
                                     z9 = z10;
-                                    int i18 = v5Var2.I;
+                                    int i18 = u5Var2.I;
                                     i7 = i10;
                                     TLRPC.Document document = animatedFileDrawableStream.c;
                                     hc hcVar = animatedFileDrawableStream.d;
-                                    long j10 = v5Var2.M;
-                                    int i19 = v5Var2.J;
-                                    AnimatedFileDrawableStream animatedFileDrawableStream2 = v5Var2.u0;
-                                    v5Var = new org.telegram.ui.Components.v5(file, false, j3, i18, document, hcVar, document, j10, i19, (animatedFileDrawableStream2 == null || !animatedFileDrawableStream2.w) ? i7 : z9 ? 1 : 0);
+                                    long j10 = u5Var2.M;
+                                    int i19 = u5Var2.J;
+                                    AnimatedFileDrawableStream animatedFileDrawableStream2 = u5Var2.u0;
+                                    u5Var = new org.telegram.ui.Components.u5(file, false, j3, i18, document, hcVar, document, j10, i19, (animatedFileDrawableStream2 == null || !animatedFileDrawableStream2.w) ? i7 : z9 ? 1 : 0);
                                 } else {
                                     z9 = z10;
                                     i7 = i10;
-                                    v5Var = new org.telegram.ui.Components.v5(v5Var2.G, false, v5Var2.H, v5Var2.I, v5Var2.o0, null, null, v5Var2.M, v5Var2.J, false);
+                                    u5Var = new org.telegram.ui.Components.u5(u5Var2.G, false, u5Var2.H, u5Var2.I, u5Var2.o0, null, null, u5Var2.M, u5Var2.J, false);
                                 }
-                                int[] iArr = v5Var.d;
-                                int[] iArr2 = v5Var2.d;
+                                int[] iArr = u5Var.d;
+                                int[] iArr2 = u5Var2.d;
                                 iArr[i7] = iArr2[i7];
                                 iArr[z9 ? 1 : 0] = iArr2[z9 ? 1 : 0];
                             }
-                            if (imageReceiver.x0(v5Var, ubVar.d, ubVar.m, false, ((Integer) arrayList9.get(i17)).intValue())) {
-                                if (v5Var == v5Var2) {
+                            if (imageReceiver.x0(u5Var, ubVar.d, ubVar.m, false, ((Integer) arrayList9.get(i17)).intValue())) {
+                                if (u5Var == u5Var2) {
                                     z11 = z9;
                                 }
-                            } else if (v5Var != v5Var2) {
-                                v5Var.u();
+                            } else if (u5Var != u5Var2) {
+                                u5Var.u();
                             }
                             i17++;
                             z10 = z9;
                             i10 = i7;
                         }
                         if (!z11) {
-                            v5Var2.u();
+                            u5Var2.u();
                         }
                         if (str2 == null) {
                             ubVar.A.p(str2);
@@ -1631,20 +1631,20 @@ public final /* synthetic */ class mn implements Runnable {
                 qp qpVar2 = (qp) this.b;
                 String str5 = (String) this.c;
                 String str6 = (String) this.d;
-                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.e;
-                org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) this.f;
+                org.telegram.ui.ActionBar.j6 j6Var = (org.telegram.ui.ActionBar.j6) this.e;
+                org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) this.f;
                 HashMap hashMap4 = qpVar2.P2;
                 if (str5 == null) {
                     hashMap4.remove(str6);
                     break;
                 } else {
-                    hashMap4.put(str5, i6Var != null ? i6Var : k6Var);
-                    if (i6Var == null) {
-                        k6Var.I = str6;
-                        k6Var.H = str5;
+                    hashMap4.put(str5, j6Var != null ? j6Var : l6Var);
+                    if (j6Var == null) {
+                        l6Var.I = str6;
+                        l6Var.H = str5;
                     } else {
-                        i6Var.v = str6;
-                        i6Var.u = str5;
+                        j6Var.v = str6;
+                        j6Var.u = str5;
                     }
                     qpVar2.getFileLoader().h0(false, 67108864, str6, true);
                     qpVar2.getFileLoader().h0(false, 16777216, str5, true);
@@ -1744,7 +1744,7 @@ public final /* synthetic */ class mn implements Runnable {
                 bz bzVar = (bz) this.c;
                 HashMap hashMap5 = (HashMap) this.d;
                 String str7 = (String) this.e;
-                jv0 jv0Var = (jv0) this.f;
+                iv0 iv0Var = (iv0) this.f;
                 if (((zy) bzVar.d.get(0)).f != null) {
                     bzVar.b();
                 } else {
@@ -1759,7 +1759,7 @@ public final /* synthetic */ class mn implements Runnable {
                         gzVar2.getFileLoader().h0(false, 67108864, ((zy) arrayList16.get(i23)).a, true);
                     }
                     gzVar.getNotificationCenter().k(qs.v1, str7);
-                    jv0Var.a(str7);
+                    iv0Var.a(str7);
                 }
                 try {
                     t0.b.startService(new Intent(t0.b, (Class<?>) ImportingService.class));

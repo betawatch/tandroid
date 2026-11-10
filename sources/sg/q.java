@@ -13,28 +13,28 @@ import android.widget.LinearLayout;
 import bi.nc;
 import c8.ha;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.hk0;
+import org.telegram.ui.ik0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class q extends v2 {
-    public static final /* synthetic */ int q1 = 0;
-    public final nc i1;
-    public final ImageView j1;
-    public final k k1;
-    public final Path l1;
-    public int m1;
-    public q0.a n1;
-    public androidx.activity.n o1;
-    public boolean p1;
+public final class q extends w2 {
+    public static final /* synthetic */ int t1 = 0;
+    public final nc l1;
+    public final ImageView m1;
+    public final k n1;
+    public final Path o1;
+    public int p1;
+    public q0.a q1;
+    public androidx.activity.n r1;
+    public boolean s1;
 
-    public q(Context context, g6 g6Var) {
-        super(1, context, g6Var, true);
-        this.l1 = new Path();
+    public q(Context context, h6 h6Var) {
+        super(1, context, h6Var, true);
+        this.o1 = new Path();
         O(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.r0 = mutate;
@@ -43,19 +43,19 @@ public final class q extends v2 {
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, org.telegram.messenger.g0.L(16.0f), 0, 0);
         ImageView imageView = new ImageView(context);
-        this.j1 = imageView;
+        this.m1 = imageView;
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(l6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new hk0(25, this, context));
+        imageView.setBackground(m6.h0(1090519039, 1, -1));
+        imageView.setOnClickListener(new ik0(24, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(l6.h0(1090519039, 1, -1));
+        imageView2.setBackground(m6.h0(1090519039, 1, -1));
         imageView2.setOnClickListener(new ii.g(this, 21));
         k kVar = new k(this, context);
-        this.k1 = kVar;
+        this.n1 = kVar;
         kVar.c = Color.alpha(-65536) / 255.0f;
         kVar.a();
         kVar.invalidate();
@@ -63,7 +63,7 @@ public final class q extends v2 {
         ncVar.setOrientation(1);
         o oVar = new o(this, context);
         ncVar.b = oVar;
-        oVar.a(this.m1);
+        oVar.a(this.p1);
         ncVar.c = new n(this, context);
         ncVar.d = new p(this, context);
         l lVar = new l(context, this.I0);
@@ -77,7 +77,7 @@ public final class q extends v2 {
         linearLayout2.addView(lVar.n(8, false), ha.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
         linearLayout2.addView(imageView2, ha.o(28, 28));
         ncVar.addView(linearLayout2, ha.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
-        this.i1 = ncVar;
+        this.l1 = ncVar;
         linearLayout.addView(ncVar, ha.o(-1, 0));
         j jVar = new j(this, context, linearLayout);
         jVar.addView(linearLayout);
@@ -86,14 +86,14 @@ public final class q extends v2 {
 
     public final void I0(int i7, int i10) {
         View findFocus;
-        if (!this.p1) {
+        if (!this.s1) {
             if (i10 != 2) {
                 return;
             } else {
-                this.p1 = true;
+                this.s1 = true;
             }
         }
-        nc ncVar = this.i1;
+        nc ncVar = this.l1;
         if (i10 != 5 && (findFocus = ncVar.findFocus()) != null) {
             findFocus.clearFocus();
             org.telegram.messenger.g0.v1(findFocus);
@@ -104,7 +104,7 @@ public final class q extends v2 {
         if (i10 != 0) {
             n nVar = (n) ncVar.c;
             boolean z9 = i10 != 1;
-            nVar.n.m1 = i7;
+            nVar.n.p1 = i7;
             float[] fArr = nVar.h;
             Color.colorToHSV(i7, fArr);
             if (z9) {
@@ -116,7 +116,7 @@ public final class q extends v2 {
             nVar.invalidate();
         }
         if (i10 != 1) {
-            k kVar = this.k1;
+            k kVar = this.n1;
             kVar.getClass();
             kVar.c = Color.alpha(i7) / 255.0f;
             kVar.a();
@@ -131,7 +131,7 @@ public final class q extends v2 {
         if (!editTextBoldCursor.isFocused()) {
             int selectionStart = editTextBoldCursor.getSelectionStart();
             int selectionEnd = editTextBoldCursor.getSelectionEnd();
-            StringBuilder sb2 = new StringBuilder(Integer.toHexString(pVar.f.m1));
+            StringBuilder sb2 = new StringBuilder(Integer.toHexString(pVar.f.p1));
             while (sb2.length() < 8) {
                 sb2.insert(0, "0");
             }
@@ -141,19 +141,19 @@ public final class q extends v2 {
         pVar.e = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.b2
     public final void dismiss() {
         super.dismiss();
-        q0.a aVar = this.n1;
+        q0.a aVar = this.q1;
         if (aVar != null) {
-            aVar.accept(Integer.valueOf(this.m1));
+            aVar.accept(Integer.valueOf(this.p1));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
         boolean z9;
-        androidx.activity.n nVar = this.o1;
+        androidx.activity.n nVar = this.r1;
         switch (nVar.a) {
             default:
                 if (((Bitmap) nVar.c) != null) {
@@ -165,7 +165,7 @@ public final class q extends v2 {
                 break;
         }
         if (!z9) {
-            this.j1.setVisibility(8);
+            this.m1.setVisibility(8);
         }
         super.show();
     }

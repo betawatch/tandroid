@@ -17,13 +17,13 @@ import android.view.View;
 import fi.m3;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.iy;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.hy;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final /* synthetic */ LimitPreviewView D;
@@ -111,7 +111,7 @@ public final class r extends View {
                 ArrayList arrayList2 = qVar.b;
                 arrayList2.add(staticLayout);
                 arrayList2.add(new StaticLayout("" + this.f.charAt(length), textPaint, (int) this.e, alignment, 1.0f, 0.0f, false));
-                spannableStringBuilder3.setSpan(new iy(false), length, length + 1, 0);
+                spannableStringBuilder3.setSpan(new hy(false), length, length + 1, 0);
             }
             length--;
         }
@@ -123,7 +123,7 @@ public final class r extends View {
             qVar2.f = ofFloat;
             ofFloat.addUpdateListener(new o(this, qVar2, 0));
             qVar2.f.addListener(new p(this, qVar2, 1));
-            qVar2.f.setInterpolator(xq.g);
+            qVar2.f.setInterpolator(wq.g);
             qVar2.f.setDuration(250L);
             qVar2.f.setStartDelay(((arrayList.size() - 1) - i11) * 60);
             qVar2.f.start();
@@ -174,7 +174,7 @@ public final class r extends View {
             if (((Paint) d2.d) == null) {
                 d2.d = new Paint(1);
             }
-            ((Paint) d2.d).setColor(l6.x0(null, l6.Ci, false));
+            ((Paint) d2.d).setColor(m6.x0(null, m6.Ci, false));
             canvas.drawRoundRect(rectF, f10, f10, (Paint) d2.d);
         } else {
             if (this.w) {

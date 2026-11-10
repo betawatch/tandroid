@@ -2,15 +2,15 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
+    public final /* synthetic */ w2 b;
 
-    public /* synthetic */ h2(v2 v2Var, int i7) {
+    public /* synthetic */ h2(w2 w2Var, int i7) {
         this.a = i7;
-        this.b = v2Var;
+        this.b = w2Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -18,11 +18,11 @@ public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateLis
         switch (this.a) {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2 v2Var = this.b;
-                v2Var.C0 = floatValue;
-                l2 l2Var = v2Var.c;
-                if (l2Var != null) {
-                    l2Var.invalidate();
+                w2 w2Var = this.b;
+                w2Var.C0 = floatValue;
+                m2 m2Var = w2Var.c;
+                if (m2Var != null) {
+                    m2Var.invalidate();
                     break;
                 }
                 break;
@@ -33,25 +33,25 @@ public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateLis
                 this.b.h0();
                 break;
             case 3:
-                v2 v2Var2 = this.b;
-                v2Var2.getClass();
+                w2 w2Var2 = this.b;
+                w2Var2.getClass();
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                v2Var2.C0(v2Var2.X.intValue(), intValue, intValue);
+                w2Var2.C0(w2Var2.X.intValue(), intValue, intValue);
                 break;
             case 4:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2 v2Var3 = this.b;
-                v2Var3.S0 = floatValue2;
-                v2Var3.c.requestLayout();
-                v2Var3.b.requestLayout();
+                w2 w2Var3 = this.b;
+                w2Var3.S0 = floatValue2;
+                w2Var3.c.requestLayout();
+                w2Var3.b.requestLayout();
                 break;
             case 5:
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v2 v2Var4 = this.b;
-                v2Var4.C0 = floatValue3;
-                l2 l2Var2 = v2Var4.c;
-                if (l2Var2 != null) {
-                    l2Var2.invalidate();
+                w2 w2Var4 = this.b;
+                w2Var4.C0 = floatValue3;
+                m2 m2Var2 = w2Var4.c;
+                if (m2Var2 != null) {
+                    m2Var2.invalidate();
                     break;
                 }
                 break;

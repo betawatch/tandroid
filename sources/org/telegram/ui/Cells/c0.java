@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c0 {
     public final Runnable a;
@@ -20,7 +20,7 @@ public final class c0 {
     public float e;
     public int f;
     public int g;
-    public ny0 h;
+    public my0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public org.telegram.messenger.o2 j;
     public org.telegram.messenger.m2 k;
@@ -30,10 +30,10 @@ public final class c0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public b80 r;
+    public a80 r;
     public y s;
     public Drawable t;
-    public org.telegram.ui.Components.i5 u;
+    public org.telegram.ui.Components.h5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;

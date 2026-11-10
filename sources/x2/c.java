@@ -1,28 +1,28 @@
 package x2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class c implements c1 {
-    public final c1 a;
+public final class c implements b1 {
+    public final b1 a;
     public boolean b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, c1 c1Var) {
+    public c(d dVar, b1 b1Var) {
         this.c = dVar;
-        this.a = c1Var;
+        this.a = b1Var;
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final void a() {
         this.a.a();
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final boolean f() {
         return !this.c.f() && this.a.f();
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int l(long j3) {
         if (this.c.f()) {
             return -3;
@@ -30,7 +30,7 @@ public final class c implements c1 {
         return this.a.l(j3);
     }
 
-    @Override // x2.c1
+    @Override // x2.b1
     public final int m(wf.b bVar, k2.h hVar, int i7) {
         d dVar = this.c;
         if (dVar.f()) {

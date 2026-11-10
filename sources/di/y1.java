@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -178,29 +178,29 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                 break;
             case 7:
                 Context context = j4Var.getContext();
-                org.telegram.ui.ActionBar.g6 g6Var = j4Var.k0;
-                org.telegram.ui.ActionBar.v2 v2Var = new org.telegram.ui.ActionBar.v2(1, context, g6Var, false);
-                v2Var.O(org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.h5, g6Var));
+                org.telegram.ui.ActionBar.h6 h6Var = j4Var.k0;
+                org.telegram.ui.ActionBar.w2 w2Var = new org.telegram.ui.ActionBar.w2(1, context, h6Var, false);
+                w2Var.O(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.h5, h6Var));
                 LinearLayout linearLayout = new LinearLayout(j4Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-                org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(j4Var.getContext());
-                l9Var.getImageReceiver().W(1);
-                ui.b0(j4Var.l2).c2(l9Var, "tg_superplaceholders_android_2", "😎", "150_150");
-                linearLayout.addView(l9Var, ha.t(qs.g2, qs.g2, 1, 0, 16, 0, 16));
+                org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(j4Var.getContext());
+                k9Var.getImageReceiver().W(1);
+                ui.b0(j4Var.l2).c2(k9Var, "tg_superplaceholders_android_2", "😎", "150_150");
+                linearLayout.addView(k9Var, ha.t(qs.g2, qs.g2, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(j4Var.getContext());
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 textView.setGravity(17);
-                org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.j5, g6Var);
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, h6Var);
                 jg.g.v(textView, 1, 20.0f, null, 2131744506);
                 linearLayout.addView(textView, ha.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(j4Var.getContext());
                 textView2.setGravity(17);
-                org.telegram.ui.ActionBar.s6.U(textView2, org.telegram.ui.ActionBar.l6.r5, g6Var);
+                org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.r5, h6Var);
                 textView2.setTextSize(1, 14.0f);
                 textView2.setText(org.telegram.messenger.g0.X2(id.M0(2131744505, null)));
                 linearLayout.addView(textView2, ha.t(-1, -2, 1, 32, 9, 32, 19));
-                fi.d dVar = new fi.d(j4Var.getContext(), g6Var, true);
+                fi.d dVar = new fi.d(j4Var.getContext(), h6Var, true);
                 dVar.i(id.M0(2131744509, null), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
                 wp wpVar = new wp(R.drawable.mini_switch_lock, 0);
@@ -208,9 +208,9 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                 spannableStringBuilder.setSpan(wpVar, 0, 1, 33);
                 dVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) id.M0(2131747771, null)), false);
                 linearLayout.addView(dVar, ha.r(-1, 48, 1));
-                dVar.setOnClickListener(new bi.r(11, j4Var, v2Var));
-                v2Var.N = linearLayout;
-                ((h9) j4Var.z1).h(v2Var);
+                dVar.setOnClickListener(new bi.r(11, j4Var, w2Var));
+                w2Var.N = linearLayout;
+                ((h9) j4Var.z1).h(w2Var);
                 a4 a4Var = j4Var.c1;
                 if (a4Var != null) {
                     a4Var.a();

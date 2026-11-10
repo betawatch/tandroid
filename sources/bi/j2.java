@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.ls0;
-import org.telegram.ui.Components.vs;
+import org.telegram.ui.Components.ks0;
+import org.telegram.ui.Components.us;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f10;
-import org.telegram.ui.vc1;
+import org.telegram.ui.h10;
 import org.telegram.ui.vh;
+import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -211,7 +211,7 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i15, tLObject, tL_error);
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.q8((ls0) obj, tLObject, i15, i12));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.q8((ks0) obj, tLObject, i15, i12));
                 break;
             case 8:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -219,21 +219,21 @@ public final /* synthetic */ class j2 implements RequestDelegate {
                 iz.l1 = System.currentTimeMillis();
                 iz.y();
                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    org.telegram.messenger.g0.h3(new f10(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i15, i14));
+                    org.telegram.messenger.g0.h3(new h10(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i15, i14));
                     break;
                 } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
-                    org.telegram.messenger.g0.h3(new vs(i12));
+                    org.telegram.messenger.g0.h3(new us(i12));
                     break;
                 } else if (tL_error != null) {
-                    org.telegram.messenger.g0.h3(new vs(tL_error, 20));
+                    org.telegram.messenger.g0.h3(new us(tL_error, 20));
                     break;
                 }
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new f10((vh) obj, tLObject, i15, i11));
+                org.telegram.messenger.g0.h3(new h10((vh) obj, tLObject, i15, i11));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new f10((vc1) obj, i15, tLObject, i12));
+                org.telegram.messenger.g0.h3(new h10((wc1) obj, i15, tLObject, i12));
                 break;
         }
     }

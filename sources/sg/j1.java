@@ -9,9 +9,9 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.nt0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j1 {
     public final Bitmap a;
@@ -21,9 +21,9 @@ public final class j1 {
         this.a = bitmap;
     }
 
-    public static int b(ot0 ot0Var) {
-        int i7 = (int) ot0Var.a;
-        int i10 = (int) ot0Var.b;
+    public static int b(nt0 nt0Var) {
+        int i7 = (int) nt0Var.a;
+        int i10 = (int) nt0Var.b;
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i11 = iArr[0];

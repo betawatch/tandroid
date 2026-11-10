@@ -8,20 +8,20 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class uh implements View.OnClickListener {
-    public final /* synthetic */ lf0 a;
-    public final /* synthetic */ org.telegram.ui.Components.qj0 b;
+    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ org.telegram.ui.Components.pj0 b;
     public final /* synthetic */ LinearLayout c;
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
     public final /* synthetic */ int[] e;
     public final /* synthetic */ cn f;
 
-    public uh(cn cnVar, lf0 lf0Var, org.telegram.ui.Components.qj0 qj0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+    public uh(cn cnVar, mf0 mf0Var, org.telegram.ui.Components.pj0 pj0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
         this.f = cnVar;
-        this.a = lf0Var;
-        this.b = qj0Var;
+        this.a = mf0Var;
+        this.b = pj0Var;
         this.c = linearLayout;
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
         this.e = iArr;
@@ -29,9 +29,9 @@ public final class uh implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        lf0 lf0Var = this.a;
-        ArrayList arrayList = lf0Var.b;
-        ArrayList arrayList2 = lf0Var.c;
+        mf0 mf0Var = this.a;
+        ArrayList arrayList = mf0Var.b;
+        ArrayList arrayList2 = mf0Var.c;
         cn cnVar = this.f;
         if (cnVar.e9 == null || arrayList2.isEmpty()) {
             return;
@@ -52,16 +52,16 @@ public final class uh implements View.OnClickListener {
             return;
         }
         if (org.telegram.messenger.iz.c1 > 0 && cnVar.l1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
-            org.telegram.ui.Components.cc t6 = new org.telegram.ui.Components.hc(org.telegram.ui.Components.xa.a(cnVar.getParentActivity()), cnVar.za).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131748488, null)), null);
+            org.telegram.ui.Components.bc t6 = new org.telegram.ui.Components.gc(org.telegram.ui.Components.wa.a(cnVar.getParentActivity()), cnVar.za).t(org.telegram.messenger.g0.X2(org.telegram.messenger.id.M0(2131748488, null)), null);
             cnVar.B1 = t6;
             t6.j = 4000;
             t6.j();
             org.telegram.messenger.iz.S(org.telegram.messenger.iz.c1 - 1);
         }
-        org.telegram.ui.Components.qj0 qj0Var = this.b;
-        qj0Var.requestLayout();
+        org.telegram.ui.Components.pj0 pj0Var = this.b;
+        pj0Var.requestLayout();
         this.c.requestLayout();
-        qj0Var.getAdapter().f();
+        pj0Var.getAdapter().f();
         this.d.getSwipeBack().e(this.e[0]);
     }
 }

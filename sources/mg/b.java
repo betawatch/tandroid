@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 import m4.d0;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.ui.ActionBar.u4;
+import org.telegram.ui.ActionBar.v4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public class b {
     public long[] a;
@@ -88,7 +88,7 @@ public class b {
                 Matcher matcher = compile.matcher(optJSONObject.getString(aVar2.c));
                 if (matcher.matches()) {
                     if (!TextUtils.isEmpty(matcher.group(1))) {
-                        aVar2.g = u4.h("statisticChartLine_" + matcher.group(1).toLowerCase());
+                        aVar2.g = v4.h("statisticChartLine_" + matcher.group(1).toLowerCase());
                     }
                     int parseColor = Color.parseColor(matcher.group(2));
                     aVar2.h = parseColor;

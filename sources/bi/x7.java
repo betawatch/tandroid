@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.t80;
+import org.telegram.ui.u80;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -28,13 +28,13 @@ public final /* synthetic */ class x7 implements RequestDelegate {
     public final /* synthetic */ Object h;
     public final /* synthetic */ TLObject i;
 
-    public /* synthetic */ x7(ea eaVar, v10 v10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.ChatInvite chatInvite, String str2) {
+    public /* synthetic */ x7(ea eaVar, v10 v10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.h6 h6Var, TLRPC.ChatInvite chatInvite, String str2) {
         this.d = eaVar;
         this.e = v10Var;
         this.c = j3;
         this.f = str;
         this.b = context;
-        this.h = g6Var;
+        this.h = h6Var;
         this.i = chatInvite;
         this.g = str2;
     }
@@ -46,7 +46,7 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                 final ea eaVar = (ea) this.d;
                 final v10 v10Var = (v10) this.e;
                 final String str = (String) this.f;
-                final org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.h;
+                final org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.h;
                 final TLRPC.ChatInvite chatInvite = (TLRPC.ChatInvite) this.i;
                 final String str2 = (String) this.g;
                 final long j3 = this.c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new Runnable() { // from class: bi.k8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        t80 t80Var;
+                        u80 u80Var;
                         ea eaVar2 = ea.this;
                         TLObject tLObject2 = tLObject;
                         v10 v10Var2 = v10Var;
@@ -62,11 +62,11 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                         String str3 = str;
                         TLRPC.TL_error tL_error2 = tL_error;
                         Context context2 = context;
-                        org.telegram.ui.ActionBar.g6 g6Var2 = g6Var;
+                        org.telegram.ui.ActionBar.h6 h6Var2 = h6Var;
                         TLRPC.ChatInvite chatInvite2 = chatInvite;
                         String str4 = str2;
                         org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
-                        org.telegram.ui.Components.hc a02 = !org.telegram.messenger.g0.u1(Q) ? org.telegram.ui.Components.hc.a0(Q) : org.telegram.ui.Components.hc.X();
+                        org.telegram.ui.Components.gc a02 = !org.telegram.messenger.g0.u1(Q) ? org.telegram.ui.Components.gc.a0(Q) : org.telegram.ui.Components.gc.X();
                         int i7 = 1;
                         if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                             if (tL_error2 == null || !"BALANCE_TOO_LOW".equals(tL_error2.text)) {
@@ -75,11 +75,11 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                                 return;
                             } else if (qp.s1(eaVar2.a).j7) {
                                 v10Var2.a(0L, Boolean.FALSE);
-                                ea.c0(context2, g6Var2);
+                                ea.c0(context2, h6Var2);
                                 return;
                             } else {
                                 boolean[] zArr = {false};
-                                tc tcVar = new tc(context2, g6Var2, j10, 1, chatInvite2.title, new u0(eaVar2, zArr, str4, chatInvite2, v10Var2, 2), 0L);
+                                tc tcVar = new tc(context2, h6Var2, j10, 1, chatInvite2.title, new u0(eaVar2, zArr, str4, chatInvite2, v10Var2, 2), 0L);
                                 tcVar.setOnDismissListener(new t8(v10Var2, zArr, 0));
                                 tcVar.show();
                                 return;
@@ -102,8 +102,8 @@ public final /* synthetic */ class x7 implements RequestDelegate {
                             a02.I(R.raw.stars_send, org.telegram.messenger.id.M0(2131744994, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.G((int) j10, "StarsSubscriptionCompletedText", str3))).j();
                         }
                         LaunchActivity launchActivity = LaunchActivity.G1;
-                        if (launchActivity != null && (t80Var = launchActivity.v0) != null) {
-                            t80Var.c(true);
+                        if (launchActivity != null && (u80Var = launchActivity.v0) != null) {
+                            u80Var.c(true);
                         }
                         eaVar2.S(true);
                         eaVar2.R();

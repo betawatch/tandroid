@@ -9,17 +9,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import kotlin.jvm.internal.j;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b {
     public final LinkedHashMap a;
-    public final rt b;
+    public final qt b;
 
     public b(LinkedHashMap linkedHashMap, boolean z9) {
         this.a = linkedHashMap;
-        this.b = new rt(z9);
+        this.b = new qt(z9);
     }
 
     public final Map a() {

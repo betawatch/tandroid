@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class nh implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a = 0;
@@ -10,8 +10,8 @@ public final class nh implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public nh(e40 e40Var, org.telegram.messenger.s3 s3Var, boolean z9) {
-        this.d = e40Var;
+    public nh(f40 f40Var, org.telegram.messenger.s3 s3Var, boolean z9) {
+        this.d = f40Var;
         this.c = s3Var;
         this.b = z9;
     }
@@ -35,24 +35,24 @@ public final class nh implements ViewTreeObserver.OnPreDrawListener {
                 this.b = true;
                 return cnVar.L8();
             default:
-                e40 e40Var = (e40) this.d;
-                m30 m30Var = e40Var.H1;
-                m30Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                e40Var.h4 = null;
-                b20 b20Var = e40Var.R3;
+                f40 f40Var = (f40) this.d;
+                n30 n30Var = f40Var.K1;
+                n30Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                f40Var.k4 = null;
+                c20 c20Var = f40Var.U3;
                 org.telegram.messenger.s3 s3Var = (org.telegram.messenger.s3) this.c;
-                b20Var.j(s3Var);
-                if (e40Var.j2) {
-                    e40Var.j2 = false;
-                    e40Var.Q0(true);
+                c20Var.j(s3Var);
+                if (f40Var.m2) {
+                    f40Var.m2 = false;
+                    f40Var.Q0(true);
                     if (this.b && s3Var != null) {
-                        m30Var.v0(0);
+                        n30Var.v0(0);
                     }
-                    e40Var.j2 = true;
+                    f40Var.m2 = true;
                 } else {
-                    e40Var.Q0(true);
+                    f40Var.Q0(true);
                 }
-                e40Var.b.requestLayout();
+                f40Var.b.requestLayout();
                 return false;
         }
     }

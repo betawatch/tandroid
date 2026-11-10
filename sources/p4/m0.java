@@ -34,10 +34,10 @@ import java.util.HashSet;
 import java.util.List;
 import jg.a2;
 import org.telegram.messenger.re;
-import org.telegram.ui.Components.hr;
-import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.r31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class m0 extends android.support.v4.media.session.s {
     public static final int z;
@@ -430,7 +430,7 @@ public final class m0 extends android.support.v4.media.session.s {
         }
         if (!str.equals("androidx.media3.session.SESSION_COMMAND_REQUEST_SESSION3_TOKEN") || resultReceiver == null) {
             i1 i1Var = new i1(str, Bundle.EMPTY);
-            j0(i1Var, 0, new hr(this, i1Var, bundle, resultReceiver), ((q4.l) this.n.b).c());
+            j0(i1Var, 0, new gr(this, i1Var, bundle, resultReceiver), ((q4.l) this.n.b).c());
             return;
         }
         n1 n1Var = this.h.j;
@@ -751,7 +751,7 @@ public final class m0 extends android.support.v4.media.session.s {
         Context context = d0Var.f;
         a0 a0Var = d0Var.d;
         Bundle extras = intent.getExtras();
-        s31 s31Var = null;
+        r31 r31Var = null;
         KeyEvent keyEvent = (extras == null || !extras.containsKey("android.intent.extra.KEY_EVENT")) ? null : (KeyEvent) extras.getParcelable("android.intent.extra.KEY_EVENT");
         ComponentName component = intent.getComponent();
         if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && ((component == null || Objects.equals(component.getPackageName(), context.getPackageName())) && keyEvent != null)) {
@@ -769,37 +769,37 @@ public final class m0 extends android.support.v4.media.session.s {
             int keyCode2 = keyEvent.getKeyCode();
             boolean hasSystemFeature = context.getPackageManager().hasSystemFeature("android.software.leanback");
             if (keyCode2 != 79 && keyCode2 != 85) {
-                s31 s31Var2 = a0Var.a;
-                if (s31Var2 != null) {
-                    a0Var.removeCallbacks(s31Var2);
-                    s31 s31Var3 = a0Var.a;
+                r31 r31Var2 = a0Var.a;
+                if (r31Var2 != null) {
+                    a0Var.removeCallbacks(r31Var2);
+                    r31 r31Var3 = a0Var.a;
                     a0Var.a = null;
-                    s31Var = s31Var3;
+                    r31Var = r31Var3;
                 }
-                if (s31Var != null) {
-                    h2.m0.W(a0Var, s31Var);
+                if (r31Var != null) {
+                    h2.m0.W(a0Var, r31Var);
                 }
             } else if (hasSystemFeature || keyEvent.getRepeatCount() != 0) {
-                s31 s31Var4 = a0Var.a;
-                if (s31Var4 != null) {
-                    a0Var.removeCallbacks(s31Var4);
-                    s31 s31Var5 = a0Var.a;
+                r31 r31Var4 = a0Var.a;
+                if (r31Var4 != null) {
+                    a0Var.removeCallbacks(r31Var4);
+                    r31 r31Var5 = a0Var.a;
                     a0Var.a = null;
-                    s31Var = s31Var5;
+                    r31Var = r31Var5;
                 }
-                if (s31Var != null) {
-                    h2.m0.W(a0Var, s31Var);
+                if (r31Var != null) {
+                    h2.m0.W(a0Var, r31Var);
                 }
             } else {
-                s31 s31Var6 = a0Var.a;
-                if (s31Var6 == null) {
-                    s31 s31Var7 = new s31(a0Var, vVar, keyEvent, 13);
-                    a0Var.a = s31Var7;
-                    a0Var.postDelayed(s31Var7, ViewConfiguration.getDoubleTapTimeout());
+                r31 r31Var6 = a0Var.a;
+                if (r31Var6 == null) {
+                    r31 r31Var7 = new r31(a0Var, vVar, keyEvent, 13);
+                    a0Var.a = r31Var7;
+                    a0Var.postDelayed(r31Var7, ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
-                if (s31Var6 != null) {
-                    a0Var.removeCallbacks(s31Var6);
+                if (r31Var6 != null) {
+                    a0Var.removeCallbacks(r31Var6);
                     a0Var.a = null;
                 }
                 z9 = true;

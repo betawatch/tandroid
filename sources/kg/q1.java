@@ -31,28 +31,28 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.y1;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q1 extends f2 implements ls {
     public static org.telegram.ui.ActionBar.u1 f;
     public r41 a;
     public final ArrayList b;
-    public f5 c;
+    public g5 c;
     public int d;
     public boolean e;
 
@@ -65,8 +65,8 @@ public final class q1 extends f2 implements ls {
     public static void Z(q1 q1Var, int i7, ArrayList arrayList) {
         if (i7 == q1Var.d) {
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                if (((y31) arrayList.get(i10)).G instanceof s1) {
-                    ((s1) ((y31) arrayList.get(i10)).G).c = i10;
+                if (((x31) arrayList.get(i10)).G instanceof s1) {
+                    ((s1) ((x31) arrayList.get(i10)).G).c = i10;
                 }
             }
             t1 f10 = t1.f(q1Var.currentAccount);
@@ -91,12 +91,12 @@ public final class q1 extends f2 implements ls {
     public static void a0(q1 q1Var, ArrayList arrayList, m41 m41Var) {
         String M0 = id.M0(2131752683, null);
         String M02 = id.M0(2131752670, null);
-        y31 y31Var = new y31(2);
-        y31Var.l = M0;
-        y31Var.o = M02;
-        y31Var.m = "RestrictedEmoji";
-        y31Var.n = "📝";
-        arrayList.add(y31Var);
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.m = "RestrictedEmoji";
+        x31Var.n = "📝";
+        arrayList.add(x31Var);
         m41Var.V();
         t1 f10 = t1.f(q1Var.currentAccount);
         ArrayList arrayList2 = f10.b;
@@ -111,7 +111,7 @@ public final class q1 extends f2 implements ls {
             }
         }
         if (arrayList2.size() + (i10 ^ 1) + (i11 ^ 1) < qp.s1(f10.a).B5) {
-            y31 c10 = y31.c(1, R.drawable.msg_viewintopic, id.M0(2131752682, null));
+            x31 c10 = x31.c(1, R.drawable.msg_viewintopic, id.M0(2131752682, null));
             c10.q = true;
             arrayList.add(c10);
         }
@@ -122,27 +122,27 @@ public final class q1 extends f2 implements ls {
             Object obj = arrayList3.get(i7);
             i7++;
             s1 s1Var = (s1) obj;
-            y31 y31Var2 = new y31(16);
-            y31Var2.G = s1Var;
-            y31Var2.L(q1Var.b.contains(Integer.valueOf(s1Var.a)));
-            arrayList.add(y31Var2);
+            x31 x31Var2 = new x31(16);
+            x31Var2.G = s1Var;
+            x31Var2.L(q1Var.b.contains(Integer.valueOf(s1Var.a)));
+            arrayList.add(x31Var2);
         }
         m41Var.L();
         m41Var.U();
-        arrayList.add(y31.C(id.M0(2131752681, null)));
+        arrayList.add(x31.C(id.M0(2131752681, null)));
     }
 
-    public static void b0(q1 q1Var, y31 y31Var, View view) {
-        if (y31Var.d == 1) {
+    public static void b0(q1 q1Var, x31 x31Var, View view) {
+        if (x31Var.d == 1) {
             i0(q1Var.getParentActivity(), q1Var.currentAccount, null, null, q1Var.getResourceProvider(), new ii.c(q1Var, 7));
             return;
         }
-        if (y31Var.a == 16 && (y31Var.G instanceof s1)) {
+        if (x31Var.a == 16 && (x31Var.G instanceof s1)) {
             if (!q1Var.b.isEmpty()) {
-                q1Var.j0(y31Var, view);
+                q1Var.j0(x31Var, view);
                 return;
             }
-            s1 s1Var = (s1) y31Var.G;
+            s1 s1Var = (s1) x31Var.G;
             if (s1Var.g) {
                 return;
             }
@@ -158,36 +158,36 @@ public final class q1 extends f2 implements ls {
     public static void c0(q1 q1Var) {
         q1Var.b.clear();
         org.telegram.messenger.g0.d0(q1Var.a, new di.e(4));
-        q1Var.simpleActionBar.s();
+        q1Var.simpleActionBar.t();
         q1Var.a.z1(false);
     }
 
     /* JADX WARN: Type inference failed for: r11v6 */
     /* JADX WARN: Type inference failed for: r11v7, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v8 */
-    public static void i0(Activity activity, int i7, String str, s1 s1Var, g6 g6Var, c20 c20Var) {
+    public static void i0(Activity activity, int i7, String str, s1 s1Var, h6 h6Var, c20 c20Var) {
         ?? r11;
         f2 Q = LaunchActivity.Q();
         Activity W = org.telegram.messenger.g0.W(activity);
         View currentFocus = W != null ? W.getCurrentFocus() : null;
         boolean z9 = false;
-        boolean z10 = Q != null && (Q.getFragmentView() instanceof tt0) && ((tt0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
+        boolean z10 = Q != null && (Q.getFragmentView() instanceof st0) && ((st0) Q.getFragmentView()).Q() > org.telegram.messenger.g0.L(20.0f);
         org.telegram.ui.ActionBar.u1[] u1VarArr = new org.telegram.ui.ActionBar.u1[1];
-        AlertDialog$Builder w1Var = z10 ? new org.telegram.ui.ActionBar.w1(0, activity, g6Var) : new AlertDialog$Builder(0, activity, g6Var);
+        AlertDialog$Builder w1Var = z10 ? new org.telegram.ui.ActionBar.w1(0, activity, h6Var) : new AlertDialog$Builder(0, activity, h6Var);
         String M0 = id.M0((s1Var == null && str == null) ? 2131752659 : 2131752673, null);
         org.telegram.ui.ActionBar.u1 u1Var = w1Var.a;
         u1Var.R = M0;
-        final x0 x0Var = new x0(activity, g6Var);
+        final x0 x0Var = new x0(activity, h6Var);
         ui.b0(i7).M(org.telegram.messenger.g0.G0(), true);
         x0Var.setTextSize(1, 18.0f);
         x0Var.setText(s1Var == null ? str == null ? "" : str : s1Var.b);
-        int i10 = l6.j5;
-        s6.U(x0Var, i10, g6Var);
-        s6.l(x0Var, 34, l6.Li, g6Var);
+        int i10 = m6.j5;
+        t6.U(x0Var, i10, h6Var);
+        t6.l(x0Var, 34, m6.Li, h6Var);
         x0Var.setHintText(id.M0(2131752661, null));
         x0Var.setSingleLine(true);
         x0Var.setFocusable(true);
-        s6.F(x0Var, l6.k6, l6.l6, l6.p7, g6Var);
+        t6.F(x0Var, m6.k6, m6.l6, m6.p7, h6Var);
         x0Var.setImeOptions(6);
         x0Var.setBackgroundDrawable(null);
         x0Var.setPadding(0, 0, org.telegram.messenger.g0.L(42.0f), 0);
@@ -195,12 +195,12 @@ public final class q1 extends f2 implements ls {
         LinearLayout e10 = k5.e(activity, 1);
         FrameLayout frameLayout = new FrameLayout(activity);
         TextView textView = new TextView(activity);
-        s6.U(textView, i10, g6Var);
+        t6.U(textView, i10, h6Var);
         textView.setTextSize(1, 16.0f);
         textView.setText(id.M0((s1Var == null && str == null) ? 2131752660 : 2131752674, null));
         frameLayout.addView(textView, ha.e(-1, -2, 83));
         TextView textView2 = new TextView(activity);
-        s6.U(textView2, l6.q7, g6Var);
+        t6.U(textView2, m6.q7, h6Var);
         jg.g.v(textView2, 1, 16.0f, null, 2131752662);
         textView2.setAlpha(0.0f);
         frameLayout.addView(textView2, ha.e(-1, -2, 83));
@@ -276,11 +276,11 @@ public final class q1 extends f2 implements ls {
         this.simpleActionBar.setBackButtonDrawable(new y1(false));
         this.simpleActionBar.setTitle(id.M0(2131752683, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 18));
-        e5 m10 = this.simpleActionBar.m();
-        f5 b10 = m10.b(1, R.drawable.msg_edit);
+        f5 n10 = this.simpleActionBar.n();
+        g5 b10 = n10.b(1, R.drawable.msg_edit);
         this.c = b10;
         b10.setContentDescription(id.M0(2131751335, null));
-        m10.b(2, R.drawable.msg_delete).setContentDescription(id.M0(2131751598, null));
+        n10.b(2, R.drawable.msg_delete).setContentDescription(id.M0(2131751598, null));
         l1 l1Var = new l1(context, null, i10);
         r41 r41Var = new r41(this, new v10(this) { // from class: kg.i1
             public final /* synthetic */ q1 b;
@@ -341,7 +341,7 @@ public final class q1 extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.a;
     }
 
@@ -350,8 +350,8 @@ public final class q1 extends f2 implements ls {
         return true;
     }
 
-    public final void j0(y31 y31Var, View view) {
-        s1 s1Var = (s1) y31Var.G;
+    public final void j0(x31 x31Var, View view) {
+        s1 s1Var = (s1) x31Var.G;
         p1 p1Var = (p1) view;
         Integer valueOf = Integer.valueOf(s1Var.a);
         ArrayList arrayList = this.b;
@@ -362,16 +362,16 @@ public final class q1 extends f2 implements ls {
         }
         this.a.z1(!arrayList.isEmpty());
         boolean contains = arrayList.contains(Integer.valueOf(s1Var.a));
-        y31Var.e = contains;
+        x31Var.e = contains;
         p1Var.d.a(contains, true);
-        if (this.simpleActionBar.t() == arrayList.isEmpty()) {
+        if (this.simpleActionBar.u() == arrayList.isEmpty()) {
             if (arrayList.isEmpty()) {
-                this.simpleActionBar.s();
+                this.simpleActionBar.t();
             } else {
-                this.simpleActionBar.C();
+                this.simpleActionBar.D();
             }
         }
-        this.simpleActionBar.y(Math.max(1, arrayList.size()), true);
+        this.simpleActionBar.z(Math.max(1, arrayList.size()), true);
         boolean z9 = false;
         boolean z10 = arrayList.size() == 1;
         if (z10) {

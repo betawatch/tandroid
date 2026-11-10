@@ -1,48 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class eb0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class eb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ee0 b;
+    public final /* synthetic */ sc0 b;
 
-    public /* synthetic */ eb0(ee0 ee0Var, int i7) {
+    public /* synthetic */ eb0(sc0 sc0Var, int i7) {
         this.a = i7;
-        this.b = ee0Var;
+        this.b = sc0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ee0 ee0Var = this.b;
-                if (ee0Var.d == animator) {
-                    ee0Var.d = null;
-                    break;
-                }
+                this.b.M.m();
+                break;
+            case 1:
+                sc0 sc0Var = this.b;
+                sc0Var.N = null;
+                sc0Var.O = null;
+                sc0Var.o(true);
+                sc0Var.e.j(null, null, sc0Var.f, null);
+                yc ycVar = sc0Var.n;
+                org.telegram.ui.Components.zg0 zg0Var = sc0Var.J;
+                ycVar.setAnimation(zg0Var);
+                zg0Var.M(0);
+                sc0Var.L = true;
+                break;
+            case 2:
+                this.b.L = true;
                 break;
             default:
-                ee0 ee0Var2 = this.b;
-                ee0Var2.c.setVisibility(8);
-                if (ee0Var2.d == animator) {
-                    ee0Var2.d = null;
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    org.telegram.messenger.g0.K3(editTextBoldCursor);
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.c.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
                 break;
         }
     }

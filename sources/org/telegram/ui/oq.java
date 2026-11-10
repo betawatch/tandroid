@@ -1,63 +1,47 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oq implements org.telegram.ui.Cells.z4, jg.y1 {
-    public final /* synthetic */ pq a;
+public final /* synthetic */ class oq implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qq b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ oq(pq pqVar) {
-        this.a = pqVar;
+    public /* synthetic */ oq(qq qqVar, String str, int i7) {
+        this.a = i7;
+        this.b = qqVar;
+        this.c = str;
     }
 
-    @Override // jg.y1
-    public /* synthetic */ a0.h X0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.z4
-    public boolean b(org.telegram.ui.Cells.a5 a5Var, boolean z9) {
-        int intValue = ((Integer) a5Var.getTag()).intValue();
-        pq pqVar = this.a;
-        TLObject E = pqVar.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        m6 m6Var;
+        switch (this.a) {
+            case 0:
+                qq qqVar = this.b;
+                qqVar.getClass();
+                org.telegram.messenger.g0.h3(new oq(qqVar, this.c, 1));
+                break;
+            default:
+                qq qqVar2 = this.b;
+                qqVar2.n = null;
+                rq rqVar = qqVar2.D;
+                TLRPC.Chat chat = rqVar.n;
+                int i7 = rqVar.d1;
+                ArrayList arrayList = (org.telegram.messenger.t3.T(chat) || rqVar.r == null) ? null : new ArrayList(rqVar.r.participants.participants);
+                ArrayList arrayList2 = i7 == 1 ? new ArrayList(rqVar.getContactsController().e0) : null;
+                String str = this.c;
+                if (arrayList == null && arrayList2 == null) {
+                    qqVar2.s = false;
+                    m6Var = null;
+                } else {
+                    m6Var = new m6(qqVar2, str, arrayList, arrayList2, 13);
+                }
+                qqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.t3.T(rqVar.n) ? rqVar.M : 0L, false, rqVar.N, 1, 0L, m6Var);
+                break;
         }
-        return pqVar.D.m0((TLRPC.ChannelParticipant) E, !z9, a5Var);
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ boolean k1(int i7) {
-        return true;
-    }
-
-    @Override // jg.y1
-    public void q(int i7) {
-        pq pqVar = this.a;
-        qq qqVar = pqVar.D;
-        if (pqVar.h.e()) {
-            return;
-        }
-        int i10 = pqVar.r;
-        pqVar.f();
-        if (pqVar.r > i10) {
-            qqVar.D0(i10);
-        }
-        if (pqVar.s || pqVar.r != 0 || i7 == 0) {
-            return;
-        }
-        qqVar.b.e(false, true);
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ a0.h v0() {
-        return null;
-    }
-
-    @Override // jg.y1
-    public /* synthetic */ void m1(ArrayList arrayList) {
     }
 }

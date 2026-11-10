@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
     public final /* synthetic */ int a = 1;
@@ -21,12 +21,12 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ vp(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.c20 c20Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ vp(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, org.telegram.messenger.c20 c20Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.b = i7;
         this.d = arrayList;
         this.c = j3;
         this.e = activity;
-        this.f = g6Var;
+        this.f = h6Var;
         this.g = c20Var;
         this.h = hashMap;
     }
@@ -41,7 +41,7 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
         Object obj5 = this.d;
         switch (i7) {
             case 0:
-                qq qqVar = (qq) obj5;
+                rq rqVar = (rq) obj5;
                 TLObject tLObject = (TLObject) obj4;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) obj3;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) obj2;
@@ -49,17 +49,17 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
                 int intValue = ((Integer) obj).intValue();
                 boolean[] zArr = new boolean[1];
                 boolean z9 = (tLObject instanceof TLRPC.TL_channelParticipantAdmin) || (tLObject instanceof TLRPC.TL_chatParticipantAdmin);
-                long j3 = qqVar.M;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = qqVar.D;
+                long j3 = rqVar.M;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights2 = rqVar.D;
                 long j10 = this.c;
-                yp ypVar = new yp(qqVar, j10, j3, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j10);
-                ypVar.X0 = new zp(qqVar, intValue, j10, this.b, z9, zArr);
-                qqVar.presentFragment(ypVar);
+                yp ypVar = new yp(rqVar, j10, j3, tL_chatAdminRights, tL_chatBannedRights2, tL_chatBannedRights, str, intValue, zArr, j10);
+                ypVar.X0 = new zp(rqVar, intValue, j10, this.b, z9, zArr);
+                rqVar.presentFragment(ypVar);
                 break;
             case 1:
                 ArrayList arrayList = (ArrayList) obj5;
                 Activity activity = (Activity) obj4;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj3;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj3;
                 org.telegram.messenger.c20 c20Var = (org.telegram.messenger.c20) obj2;
                 HashMap hashMap = (HashMap) serializable;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
@@ -82,7 +82,7 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
                     }
                     edit.apply();
                 }
-                org.telegram.messenger.pb pbVar = new org.telegram.messenger.pb(i10, this.c, activity, arrayList, hashMap, c20Var, g6Var);
+                org.telegram.messenger.pb pbVar = new org.telegram.messenger.pb(i10, this.c, activity, arrayList, hashMap, c20Var, h6Var);
                 if (!bi.ea.y(i10, false).e) {
                     bi.ea y10 = bi.ea.y(i10, false);
                     y10.e = false;
@@ -101,13 +101,13 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
                 tL_messages_toggleBotInAttachMenu.bot = org.telegram.messenger.qp.s1(i12).o1(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.nx((LaunchActivity) obj5, i12, (yw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.nx((LaunchActivity) obj5, i12, (zw) obj4, (org.telegram.ui.ActionBar.f2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }
 
-    public /* synthetic */ vp(qq qqVar, long j3, int i7, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z9) {
-        this.d = qqVar;
+    public /* synthetic */ vp(rq rqVar, long j3, int i7, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z9) {
+        this.d = rqVar;
         this.c = j3;
         this.b = i7;
         this.e = tLObject;
@@ -116,11 +116,11 @@ public final /* synthetic */ class vp implements org.telegram.messenger.c20 {
         this.h = str;
     }
 
-    public /* synthetic */ vp(LaunchActivity launchActivity, int i7, long j3, yw ywVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
+    public /* synthetic */ vp(LaunchActivity launchActivity, int i7, long j3, zw zwVar, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.User user, String str) {
         this.d = launchActivity;
         this.b = i7;
         this.c = j3;
-        this.e = ywVar;
+        this.e = zwVar;
         this.f = f2Var;
         this.g = user;
         this.h = str;

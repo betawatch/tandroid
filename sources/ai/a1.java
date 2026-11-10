@@ -48,45 +48,44 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.p4;
-import org.telegram.ui.ActionBar.t4;
-import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.u4;
+import org.telegram.ui.ActionBar.v6;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Cells.w3;
 import org.telegram.ui.Cells.x3;
+import org.telegram.ui.Components.aj;
 import org.telegram.ui.Components.am;
-import org.telegram.ui.Components.bj;
-import org.telegram.ui.Components.bm;
-import org.telegram.ui.Components.fj;
-import org.telegram.ui.Components.h20;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.ol0;
+import org.telegram.ui.Components.ej;
+import org.telegram.ui.Components.g20;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.pn;
 import org.telegram.ui.Components.po0;
-import org.telegram.ui.Components.qn;
-import org.telegram.ui.Components.qo0;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.v20;
-import org.telegram.ui.Components.v4;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.voip.y1;
-import org.telegram.ui.Components.wz;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.vz;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yl;
+import org.telegram.ui.Components.ys0;
 import org.telegram.ui.Components.zl;
-import org.telegram.ui.Components.zs0;
 import org.telegram.ui.an;
 import org.telegram.ui.c9;
 import org.telegram.ui.cn;
 import org.telegram.ui.g4;
-import org.telegram.ui.hu;
-import org.telegram.ui.jw;
+import org.telegram.ui.iu;
+import org.telegram.ui.kw;
 import org.telegram.ui.q8;
 import org.telegram.ui.sj;
 import org.telegram.ui.vm;
 import org.telegram.ui.xf;
 import org.telegram.ui.xm;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -110,18 +109,18 @@ public final /* synthetic */ class a1 implements Runnable {
     */
     private final void a() {
         TLRPC.WebPage webPage;
-        qo0 qo0Var = (qo0) this.b;
+        po0 po0Var = (po0) this.b;
         TLObject tLObject = (TLObject) this.e;
         String str = (String) this.d;
-        HashMap hashMap = qo0Var.w;
-        if (this.c != qo0Var.D) {
+        HashMap hashMap = po0Var.w;
+        if (this.c != po0Var.D) {
             return;
         }
-        qo0Var.y = 0;
+        po0Var.y = 0;
         if (tLObject instanceof TL_account.webPagePreview) {
             TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
-            qp.s1(qo0Var.c).Y3(webpagepreview.users, false);
-            qp.s1(qo0Var.c).S3(webpagepreview.chats, false);
+            qp.s1(po0Var.c).Y3(webpagepreview.users, false);
+            qp.s1(po0Var.c).S3(webpagepreview.chats, false);
             TLRPC.MessageMedia messageMedia = webpagepreview.media;
             if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                 webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
@@ -134,21 +133,21 @@ public final /* synthetic */ class a1 implements Runnable {
                         }
                     }
                     hashMap.put(str, webPage);
-                    qo0Var.x = webPage;
-                    qo0.a(qo0Var.a[0], webPage, str);
+                    po0Var.x = webPage;
+                    po0.a(po0Var.a[0], webPage, str);
                     return;
                 }
                 if (webPage instanceof TLRPC.TL_webPagePending) {
-                    qo0Var.x = webPage;
+                    po0Var.x = webPage;
                     return;
                 }
                 if (webPage instanceof TLRPC.TL_webPageEmpty) {
-                    qo0Var.x = null;
-                    if (qo0Var.b != 0) {
-                        qo0Var.b = 0;
-                        po0 po0Var = qo0Var.H;
-                        if (po0Var != null) {
-                            ((hu) po0Var).i(0);
+                    po0Var.x = null;
+                    if (po0Var.b != 0) {
+                        po0Var.b = 0;
+                        oo0 oo0Var = po0Var.H;
+                        if (oo0Var != null) {
+                            ((iu) oo0Var).i(0);
                             return;
                         }
                         return;
@@ -192,7 +191,7 @@ public final /* synthetic */ class a1 implements Runnable {
         sj sjVar;
         TLRPC.EncryptedChat encryptedChat;
         ArrayList arrayList;
-        wz wzVar;
+        vz vzVar;
         ?? r19;
         long B1;
         boolean z9;
@@ -223,7 +222,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 return;
             case 2:
                 int i14 = this.c;
-                k7 k7Var = new k7((Context) obj3, i14, p10.i(i14).e(), (g6) obj, null);
+                k7 k7Var = new k7((Context) obj3, i14, p10.i(i14).e(), (h6) obj, null);
                 k7Var.i2((TL_stars.SavedStarGift) obj2, null);
                 k7Var.show();
                 return;
@@ -441,9 +440,9 @@ public final /* synthetic */ class a1 implements Runnable {
                         i26++;
                         z17 = false;
                     }
-                    jw jwVar = h0Var2.U;
-                    if (jwVar != null) {
-                        jwVar.d(h0Var2.D0 > 0, true);
+                    kw kwVar = h0Var2.U;
+                    if (kwVar != null) {
+                        kwVar.d(h0Var2.D0 > 0, true);
                     }
                     h0Var2.f();
                     return;
@@ -511,7 +510,7 @@ public final /* synthetic */ class a1 implements Runnable {
             case 11:
                 int i31 = 2;
                 ActionBarLayout actionBarLayout = (ActionBarLayout) obj3;
-                p4 p4Var = (p4) obj;
+                q4 q4Var = (q4) obj;
                 Runnable runnable = (Runnable) obj2;
                 g5 g5Var = actionBarLayout.d0;
                 boolean z18 = false;
@@ -527,44 +526,44 @@ public final /* synthetic */ class a1 implements Runnable {
                         i31 = 2;
                     }
                     if (f2Var != null) {
-                        if (p4Var.m != null) {
+                        if (q4Var.m != null) {
                             if (actionBarLayout.e0 == null) {
-                                t4 t4Var = new t4(0, true, false, g5Var);
-                                actionBarLayout.e0 = t4Var;
-                                t4Var.L = true;
-                                t4 t4Var2 = new t4(1, true, false, g5Var);
-                                actionBarLayout.f0 = t4Var2;
-                                t4Var2.L = true;
+                                u4 u4Var = new u4(0, true, false, g5Var);
+                                actionBarLayout.e0 = u4Var;
+                                u4Var.L = true;
+                                u4 u4Var2 = new u4(1, true, false, g5Var);
+                                actionBarLayout.f0 = u4Var2;
+                                u4Var2.L = true;
                             }
-                            an anVar = p4Var.m;
+                            an anVar = q4Var.m;
                             SparseIntArray sparseIntArray = (SparseIntArray) g5Var.b;
                             sparseIntArray.clear();
                             for (int i33 : (int[]) g5Var.c) {
                                 sparseIntArray.put(i33, anVar.k(i33, false));
                             }
                         }
-                        ArrayList<u6> themeDescriptions = f2Var.getThemeDescriptions();
+                        ArrayList<v6> themeDescriptions = f2Var.getThemeDescriptions();
                         actionBarLayout.d(themeDescriptions);
                         Dialog dialog = f2Var.visibleDialog;
-                        if (dialog instanceof v2) {
-                            actionBarLayout.d(((v2) dialog).U());
+                        if (dialog instanceof w2) {
+                            actionBarLayout.d(((w2) dialog).U());
                         }
                         if (i32 == 0) {
-                            if (p4Var.h != null) {
-                                an anVar2 = p4Var.m;
+                            if (q4Var.h != null) {
+                                an anVar2 = q4Var.m;
                                 if (anVar2 != null) {
                                     actionBarLayout.g0(anVar2);
                                 }
-                                p4Var.h.run();
+                                q4Var.h.run();
                             }
-                            an anVar3 = p4Var.m;
+                            an anVar3 = q4Var.m;
                             actionBarLayout.o0 = 0;
                             actionBarLayout.p0 = anVar3;
                             int[] iArr4 = actionBarLayout.k0;
                             if (iArr4 != null) {
                                 try {
                                     try {
-                                        min = Math.min(l6.f5, iArr4.length);
+                                        min = Math.min(m6.f5, iArr4.length);
                                         iArr2 = actionBarLayout.l0;
                                     } catch (Exception e11) {
                                         a8.g(e11, true);
@@ -575,7 +574,7 @@ public final /* synthetic */ class a1 implements Runnable {
                                         if (iArr2.length < min) {
                                         }
                                         for (i10 = 0; i10 < min; i10++) {
-                                            int h = anVar3 != null ? anVar3.h(i10) : l6.x0(null, i10, true);
+                                            int h = anVar3 != null ? anVar3.h(i10) : m6.x0(null, i10, true);
                                             int i34 = actionBarLayout.k0[i10];
                                             if (h != i34 && ActionBarLayout.z(i10, i34, h)) {
                                                 int[] iArr5 = actionBarLayout.l0;
@@ -604,8 +603,8 @@ public final /* synthetic */ class a1 implements Runnable {
                         }
                         actionBarLayout.b(themeDescriptions);
                         Dialog dialog2 = f2Var.visibleDialog;
-                        if (dialog2 instanceof v2) {
-                            actionBarLayout.b(((v2) dialog2).U());
+                        if (dialog2 instanceof w2) {
+                            actionBarLayout.b(((w2) dialog2).U());
                         }
                         z18 = true;
                     }
@@ -613,7 +612,7 @@ public final /* synthetic */ class a1 implements Runnable {
                     i31 = 2;
                 }
                 if (z18) {
-                    if (!p4Var.e) {
+                    if (!q4Var.e) {
                         int size3 = actionBarLayout.U0.size() - ((actionBarLayout.h || actionBarLayout.a0) ? 2 : 1);
                         for (int i36 = 0; i36 < size3; i36++) {
                             f2 f2Var2 = (f2) actionBarLayout.U0.get(i36);
@@ -621,7 +620,7 @@ public final /* synthetic */ class a1 implements Runnable {
                             f2Var2.setParentLayout(actionBarLayout);
                         }
                     }
-                    if (p4Var.d) {
+                    if (q4Var.d) {
                         actionBarLayout.setThemeAnimationValue(1.0f);
                         actionBarLayout.h0.clear();
                         actionBarLayout.b0.clear();
@@ -630,7 +629,7 @@ public final /* synthetic */ class a1 implements Runnable {
                         actionBarLayout.j();
                         actionBarLayout.i0 = null;
                         actionBarLayout.g0 = null;
-                        vm vmVar = p4Var.j;
+                        vm vmVar = q4Var.j;
                         if (vmVar != null) {
                             vmVar.run();
                         }
@@ -640,14 +639,14 @@ public final /* synthetic */ class a1 implements Runnable {
                         }
                         return;
                     }
-                    int i37 = l6.a;
-                    l6.jm = new SparseIntArray();
+                    int i37 = m6.a;
+                    m6.jm = new SparseIntArray();
                     actionBarLayout.setThemeAnimationValue(0.0f);
-                    vm vmVar2 = p4Var.i;
+                    vm vmVar2 = q4Var.i;
                     if (vmVar2 != null) {
                         vmVar2.run();
                     }
-                    xm xmVar = p4Var.k;
+                    xm xmVar = q4Var.k;
                     actionBarLayout.g0 = xmVar;
                     if (xmVar != null) {
                         an anVar4 = xmVar.a;
@@ -659,9 +658,9 @@ public final /* synthetic */ class a1 implements Runnable {
                     actionBarLayout.r0.d();
                     AnimatorSet animatorSet = new AnimatorSet();
                     actionBarLayout.q0 = animatorSet;
-                    animatorSet.addListener(new ah.l(14, actionBarLayout, p4Var));
+                    animatorSet.addListener(new ah.l(14, actionBarLayout, q4Var));
                     actionBarLayout.q0.playTogether(ObjectAnimator.ofFloat(actionBarLayout, "themeAnimationValue", 0.0f, 1.0f));
-                    actionBarLayout.q0.setDuration(p4Var.l);
+                    actionBarLayout.q0.setDuration(q4Var.l);
                     actionBarLayout.q0.start();
                 }
                 if (runnable != null) {
@@ -673,17 +672,17 @@ public final /* synthetic */ class a1 implements Runnable {
                 l2.a0 a0Var = (l2.a0) obj3;
                 SparseIntArray sparseIntArray2 = (SparseIntArray) obj;
                 aa.d0 d0Var = (aa.d0) obj2;
-                if (i13 != l6.tm) {
+                if (i13 != m6.tm) {
                     a0Var.run();
                     return;
                 } else {
-                    l6.hm = sparseIntArray2;
+                    m6.hm = sparseIntArray2;
                     d0Var.run();
                     return;
                 }
             case 13:
                 ((org.telegram.ui.a1) obj3).a(0, false);
-                v4.c0(i13, (TLRPC.TL_error) obj, null, (TLRPC.TL_channels_joinChannel) obj2, Boolean.TRUE);
+                org.telegram.ui.Components.u4.c0(i13, (TLRPC.TL_error) obj, null, (TLRPC.TL_channels_joinChannel) obj2, Boolean.TRUE);
                 return;
             case 14:
                 g4 g4Var = (g4) obj3;
@@ -757,42 +756,42 @@ public final /* synthetic */ class a1 implements Runnable {
                 countDownLatch.countDown();
                 return;
             case 19:
-                bj bjVar = (bj) obj3;
+                aj ajVar = (aj) obj3;
                 ArrayList arrayList13 = (ArrayList) obj;
                 ArrayList arrayList14 = (ArrayList) obj2;
-                fj fjVar = bjVar.n;
-                q1 q1Var = fjVar.s;
-                if (i13 != bjVar.h) {
+                ej ejVar = ajVar.n;
+                q1 q1Var = ejVar.s;
+                if (i13 != ajVar.h) {
                     return;
                 }
                 if (i13 != -1) {
                     v4.g0 adapter = q1Var.getAdapter();
-                    bj bjVar2 = fjVar.F;
-                    if (adapter != bjVar2) {
-                        q1Var.setAdapter(bjVar2);
+                    aj ajVar2 = ejVar.F;
+                    if (adapter != ajVar2) {
+                        q1Var.setAdapter(ajVar2);
                     }
                 }
-                bjVar.d = arrayList13;
-                bjVar.e = arrayList14;
-                bjVar.f();
+                ajVar.d = arrayList13;
+                ajVar.e = arrayList14;
+                ajVar.f();
                 return;
             case 20:
-                am amVar = (am) obj3;
-                zl zlVar = (zl) obj;
+                zl zlVar = (zl) obj3;
+                yl ylVar = (yl) obj;
                 gf gfVar = (gf) obj2;
-                bm bmVar = amVar.P;
-                ValueAnimator valueAnimator = bmVar.L;
+                am amVar = zlVar.P;
+                ValueAnimator valueAnimator = amVar.L;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                bmVar.J = null;
-                amVar.G = 0.0f;
-                amVar.f(zlVar, gfVar, i13);
-                amVar.j();
-                amVar.i(bmVar.P, false);
+                amVar.J = null;
+                zlVar.G = 0.0f;
+                zlVar.f(ylVar, gfVar, i13);
+                zlVar.j();
+                zlVar.i(amVar.P, false);
                 return;
             case 21:
-                v4.D(((l60) obj3).e, (g6) obj, new l2.q(i13, (qn) obj2, i12));
+                org.telegram.ui.Components.u4.D(((k60) obj3).e, (h6) obj, new l2.q(i13, (pn) obj2, i12));
                 return;
             case 22:
                 int[] iArr6 = (int[]) obj3;
@@ -826,21 +825,21 @@ public final /* synthetic */ class a1 implements Runnable {
                         } catch (Exception unused) {
                         }
                     }
-                    wzVar = new wz(f2Var3, i13, arrayList15);
+                    vzVar = new vz(f2Var3, i13, arrayList15);
                 } else {
-                    wzVar = new wz(f2Var3, i13, null);
+                    vzVar = new vz(f2Var3, i13, null);
                 }
-                wzVar.t2 = c20Var;
-                f2Var3.showDialog(wzVar);
+                vzVar.w2 = c20Var;
+                f2Var3.showDialog(vzVar);
                 return;
             case 24:
-                h20 h20Var = (h20) obj3;
+                g20 g20Var = (g20) obj3;
                 ArrayList arrayList16 = (ArrayList) obj2;
-                h20Var.getClass();
+                g20Var.getClass();
                 String lowerCase = ((String) obj).trim().toLowerCase();
                 int i39 = 9;
                 if (lowerCase.length() == 0) {
-                    org.telegram.messenger.g0.h3(new q8(h20Var, i13, new ArrayList(), i39));
+                    org.telegram.messenger.g0.h3(new q8(g20Var, i13, new ArrayList(), i39));
                     return;
                 }
                 String S0 = id.E0().S0(lowerCase, true, false);
@@ -872,7 +871,7 @@ public final /* synthetic */ class a1 implements Runnable {
                         r14 = z10;
                         z11 = z9;
                     }
-                    TLRPC.User a22 = qp.s1(h20Var.x.a).a2(Long.valueOf(B1));
+                    TLRPC.User a22 = qp.s1(g20Var.x.a).a2(Long.valueOf(B1));
                     if (!t10.B(a22)) {
                         String lowerCase2 = t10.p(a22).toLowerCase();
                         String S02 = id.E0().S0(lowerCase2, z11, r14);
@@ -912,27 +911,27 @@ public final /* synthetic */ class a1 implements Runnable {
                     r14 = z10;
                     z11 = z9;
                 }
-                org.telegram.messenger.g0.h3(new q8(h20Var, i13, arrayList17, 9));
+                org.telegram.messenger.g0.h3(new q8(g20Var, i13, arrayList17, 9));
                 return;
             case 25:
-                v20 v20Var = (v20) obj3;
+                u20 u20Var = (u20) obj3;
                 TLObject tLObject5 = (TLObject) obj2;
                 String str6 = (String) obj;
-                int i43 = v20Var.P;
-                ArrayList arrayList18 = v20Var.Q;
-                if (i13 != v20Var.V) {
+                int i43 = u20Var.P;
+                ArrayList arrayList18 = u20Var.Q;
+                if (i13 != u20Var.V) {
                     return;
                 }
                 boolean isEmpty = arrayList18.isEmpty();
-                v20Var.U = false;
+                u20Var.U = false;
                 if (tLObject5 instanceof TLRPC.messages_Messages) {
                     TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject5;
                     if (messages_messages2 instanceof TLRPC.TL_messages_messages) {
-                        v20Var.Y = ((TLRPC.TL_messages_messages) messages_messages2).messages.size();
+                        u20Var.Y = ((TLRPC.TL_messages_messages) messages_messages2).messages.size();
                     } else if (messages_messages2 instanceof TLRPC.TL_messages_messagesSlice) {
-                        v20Var.Y = ((TLRPC.TL_messages_messagesSlice) messages_messages2).count;
+                        u20Var.Y = ((TLRPC.TL_messages_messagesSlice) messages_messages2).count;
                     }
-                    v20Var.b0 = messages_messages2.next_rate;
+                    u20Var.b0 = messages_messages2.next_rate;
                     qp.s1(i43).Y3(messages_messages2.users, false);
                     qp.s1(i43).S3(messages_messages2.chats, false);
                     for (int i44 = 0; i44 < messages_messages2.messages.size(); i44++) {
@@ -940,29 +939,29 @@ public final /* synthetic */ class a1 implements Runnable {
                         ijVar3.K5(str6, true);
                         arrayList18.add(ijVar3);
                     }
-                    v20Var.X = arrayList18.size() >= v20Var.Y;
-                    v20Var.X();
+                    u20Var.X = arrayList18.size() >= u20Var.Y;
+                    u20Var.X();
                 } else {
-                    v20Var.X = true;
-                    v20Var.Y = arrayList18.size();
+                    u20Var.X = true;
+                    u20Var.Y = arrayList18.size();
                 }
-                v20Var.O(true);
+                u20Var.O(true);
                 if (isEmpty) {
-                    ((xl0) v20Var).e0.v0.h1(0, 0);
+                    ((wl0) u20Var).e0.v0.h1(0, 0);
                     return;
                 }
                 return;
             case 26:
-                rl0.c(((rl0) obj3).getContext(), i13, ((ol0) obj).a.g(), (g6) obj2);
+                ql0.c(((ql0) obj3).getContext(), i13, ((nl0) obj).a.g(), (h6) obj2);
                 return;
             case 27:
                 a();
                 return;
             case 28:
-                ((zs0) obj3).T0((ij) obj, (View) obj2, i13, false);
+                ((ys0) obj3).T0((ij) obj, (View) obj2, i13, false);
                 return;
             default:
-                zs0.d((zs0) obj3, i13, (TL_stories.StoryItem) obj2, (String) obj);
+                ys0.d((ys0) obj3, i13, (TL_stories.StoryItem) obj2, (String) obj);
                 return;
         }
     }

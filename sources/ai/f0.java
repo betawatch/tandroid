@@ -3,9 +3,9 @@ package ai;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.id;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -31,7 +31,7 @@ public final /* synthetic */ class f0 implements Runnable {
                 break;
             default:
                 if (str == null) {
-                    hc.a0(f2Var).N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
+                    gc.a0(f2Var).N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
                     break;
                 } else {
                     c20Var.a(str);

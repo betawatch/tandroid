@@ -18,12 +18,12 @@ import org.telegram.messenger.qp;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g1 extends View implements ls {
-    public final org.telegram.ui.Components.w5 D;
+    public final org.telegram.ui.Components.v5 D;
     public float E;
     public v9 F;
     public final ArrayList G;
@@ -50,7 +50,7 @@ public final class g1 extends View implements ls {
     public g1(Context context, int i7, long j3, org.telegram.ui.k0 k0Var) {
         super(context);
         this.d = true;
-        this.D = new org.telegram.ui.Components.w5(this, 0L, 350L, xq.h);
+        this.D = new org.telegram.ui.Components.v5(this, 0L, 350L, wq.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();
@@ -159,19 +159,19 @@ public final class g1 extends View implements ls {
                         } else {
                             float L = org.telegram.messenger.g0.L(22.5f);
                             int i17 = f1Var6.d;
-                            f1Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.l6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                            f1Var6.h = new RadialGradient(0.0f, 0.0f, L, new int[]{i17, org.telegram.ui.ActionBar.m6.r1(0.0f, i17)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                             Paint paint = new Paint(1);
                             f1Var6.i = paint;
                             paint.setShader(f1Var6.h);
                             TLRPC.Document document = f1Var6.b;
                             if (document != null) {
-                                f1Var6.j = org.telegram.ui.Components.i5.l(i12, i13, document);
+                                f1Var6.j = org.telegram.ui.Components.h5.l(i12, i13, document);
                             } else {
-                                f1Var6.j = org.telegram.ui.Components.i5.m(i12, f1Var6.c, null, i13);
+                                f1Var6.j = org.telegram.ui.Components.h5.m(i12, f1Var6.c, null, i13);
                             }
-                            org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(this, 0L, 320L, (TimeInterpolator) null);
-                            f1Var6.k = w5Var;
-                            w5Var.e(true, 0.0f);
+                            org.telegram.ui.Components.v5 v5Var = new org.telegram.ui.Components.v5(this, 0L, 320L, (TimeInterpolator) null);
+                            f1Var6.k = v5Var;
+                            v5Var.e(true, 0.0f);
                             if (isAttachedToWindow()) {
                                 f1Var6.j.a(this);
                             }
@@ -368,7 +368,7 @@ public final class g1 extends View implements ls {
             float f20 = (scaleY / 2.0f) + y10;
             float f21 = g1Var.x;
             float f22 = f21 / g1Var.y;
-            float l11 = Utilities.l((f21 - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m)) / org.telegram.messenger.g0.L(50.0f));
+            float l11 = Utilities.l((f21 - (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + org.telegram.messenger.g0.m)) / org.telegram.messenger.g0.L(50.0f));
             boolean z10 = false;
             int i7 = 0;
             while (i7 < arrayList2.size()) {

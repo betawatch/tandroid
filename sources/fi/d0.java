@@ -7,13 +7,13 @@ import android.graphics.RectF;
 import android.net.Uri;
 import android.view.TextureView;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d0 {
     public int a;
-    public final org.telegram.ui.Components.w5 b;
+    public final org.telegram.ui.Components.v5 b;
     public final ImageReceiver c;
     public c0 d;
     public TextureView e;
@@ -31,7 +31,7 @@ public final class d0 {
 
     public d0(e0 e0Var) {
         this.p = e0Var;
-        this.b = new org.telegram.ui.Components.w5(e0Var, 0L, 1200L, xq.g);
+        this.b = new org.telegram.ui.Components.v5(e0Var, 0L, 1200L, wq.g);
         this.c = new ImageReceiver(e0Var);
     }
 
@@ -140,7 +140,7 @@ public final class d0 {
             this.o = ofFloat;
             ofFloat.addUpdateListener(new di.n4(this, 2));
             this.o.addListener(new bi.t5(this, 17));
-            this.o.setInterpolator(xq.h);
+            this.o.setInterpolator(wq.h);
             this.o.setDuration(360L);
             this.o.start();
         } else {

@@ -1,38 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x60 implements Runnable {
+public final /* synthetic */ class x60 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c70 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ x60(c70 c70Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i7) {
+    public /* synthetic */ x60(int i7, Object obj, boolean z9) {
         this.a = i7;
-        this.b = c70Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j3;
+        this.b = obj;
+        this.c = z9;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                c70 c70Var = this.b;
-                org.telegram.messenger.qp s12 = org.telegram.messenger.qp.s1(c70Var.a);
-                TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView = this.c;
-                s12.Y3(tL_chatInviteJoinResultWebView.users, false);
-                org.telegram.messenger.k2.b(c70Var.a).c(this.d, tL_chatInviteJoinResultWebView.bot_id, tL_chatInviteJoinResultWebView.query_id, false);
+                b70 b70Var = (b70) this.b;
+                b70.J0(b70Var.getContext(), b70Var.n1, b70Var.s1, this.c);
+                break;
+            case 1:
+                b70 b70Var2 = (b70) this.b;
+                b70.J0(b70Var2.getContext(), b70Var2.n1, b70Var2.s1, this.c);
                 break;
             default:
-                c70 c70Var2 = this.b;
-                org.telegram.messenger.qp s13 = org.telegram.messenger.qp.s1(c70Var2.a);
-                TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView2 = this.c;
-                s13.Y3(tL_chatInviteJoinResultWebView2.users, false);
-                org.telegram.messenger.k2.b(c70Var2.a).c(this.d, tL_chatInviteJoinResultWebView2.bot_id, tL_chatInviteJoinResultWebView2.query_id, false);
+                fi.va vaVar = (fi.va) this.b;
+                vaVar.z2 = false;
+                vaVar.X0.x(7, true);
+                if (this.c) {
+                    vaVar.p(true);
+                    break;
+                }
                 break;
         }
     }

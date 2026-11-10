@@ -1,156 +1,103 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class w00 extends ScrollView {
-    public final int a;
-    public final a0.h b;
-    public final ArrayList c;
-    public final v00 d;
-    public int e;
-    public t00 f;
-    public boolean h;
-    public int n;
+public final class w00 extends LinearLayout {
+    public final fi.d a;
+    public final fi.d b;
+    public final fi.d c;
+    public final long d;
 
     public w00(Context context, int i7) {
         super(context);
-        this.b = new a0.h();
-        this.c = new ArrayList();
-        this.a = i7;
-        v00 v00Var = new v00(this, context);
-        this.d = v00Var;
-        setVerticalScrollBarEnabled(false);
-        addView(v00Var, c8.ha.c(-2.0f, -1));
+        TLRPC.TL_emojiList a10 = u8.a(i7);
+        setOrientation(1);
+        k9 k9Var = new k9(context);
+        k9Var.setImageDrawable(new zg0(R.raw.utyan_gallery, org.telegram.messenger.g0.L(110.0f), org.telegram.messenger.g0.L(110.0f)));
+        if (!org.telegram.messenger.g0.Q1()) {
+            addView(k9Var, c8.ha.r(org.telegram.messenger.qs.v1, org.telegram.messenger.qs.v1, 49));
+        }
+        TextView g10 = org.telegram.messenger.k5.g(context, 1, 20.0f);
+        org.telegram.ui.ActionBar.t6.U(g10, org.telegram.ui.ActionBar.m6.G6, null);
+        g10.setGravity(1);
+        g10.setText(org.telegram.messenger.id.M0(2131750483, null));
+        g10.setTypeface(org.telegram.messenger.g0.o());
+        addView(g10, c8.ha.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.c7, null);
+        textView.setGravity(1);
+        textView.setText(org.telegram.messenger.id.M0(org.telegram.messenger.p10.i(i7).q() ? 2131750478 : 2131750479, null));
+        textView.setMaxWidth(org.telegram.messenger.g0.L(260.0f));
+        textView.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(textView, c8.ha.t(-2, -2, 49, 0, 0, 0, 14));
+        fi.d dVar = new fi.d(context, null, true);
+        this.a = dVar;
+        dVar.f();
+        dVar.i(org.telegram.messenger.id.M0(2131750482, null), false, true);
+        addView(dVar, c8.ha.r(-2, 44, 49));
+        fi.d dVar2 = new fi.d(context, null, false);
+        this.b = dVar2;
+        dVar2.f();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new wp(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) org.telegram.messenger.id.M0(2131750480, null));
+        dVar2.i(spannableStringBuilder, false, true);
+        addView(dVar2, c8.ha.t(-2, 44, 49, 0, 8, 0, 0));
+        fi.d dVar3 = new fi.d(context, null, false);
+        this.c = dVar3;
+        dVar3.f();
+        dVar3.setVisibility(8);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
+        ArrayList<Long> arrayList = a10.document_id;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.d = 0L;
+        } else {
+            long longValue = a10.document_id.get(0).longValue();
+            this.d = longValue;
+            spannableStringBuilder2.setSpan(new q5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.append((CharSequence) "  ");
+        }
+        spannableStringBuilder2.append((CharSequence) org.telegram.messenger.id.M0(2131743797, null));
+        dVar3.i(spannableStringBuilder2, false, true);
+        addView(dVar3, c8.ha.t(-2, 44, 49, 0, 1, 0, 0));
     }
 
-    public void a(d20 d20Var) {
-        v00 v00Var = this.d;
-        ArrayList arrayList = v00Var.c;
-        w00 w00Var = v00Var.r;
-        w00Var.c.add(d20Var);
-        if (!d20Var.d) {
-            w00Var.b.k(d20Var, d20Var.getUid());
-        }
-        AnimatorSet animatorSet = v00Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            v00Var.a.setupEndValues();
-            v00Var.a.cancel();
-        }
-        v00Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v00Var.a = animatorSet2;
-        animatorSet2.addListener(new u00(v00Var, 1));
-        v00Var.a.setDuration(150L);
-        v00Var.d = d20Var;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v00Var.d, (Property<d20, Float>) View.ALPHA, 0.0f, 1.0f));
-        v00Var.addView(d20Var);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(44.0f), TLObject.FLAG_30);
+        fi.d dVar = this.a;
+        dVar.setUseWrapContent(true);
+        fi.d dVar2 = this.b;
+        dVar2.setUseWrapContent(true);
+        fi.d dVar3 = this.c;
+        dVar3.setUseWrapContent(true);
+        dVar.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar2.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar3.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar.setUseWrapContent(false);
+        dVar2.setUseWrapContent(false);
+        dVar3.setUseWrapContent(false);
+        int max = Math.max(Math.max(dVar.getMeasuredWidth(), dVar2.getMeasuredWidth()), dVar3.getMeasuredWidth());
+        dVar.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        dVar2.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        dVar3.getLayoutParams().width = org.telegram.messenger.g0.L(80.0f) + max;
+        super.onMeasure(i7, i10);
     }
 
-    public void b() {
-        v00 v00Var = this.d;
-        ArrayList arrayList = v00Var.c;
-        w00 w00Var = v00Var.r;
-        w00Var.h = true;
-        ArrayList arrayList2 = w00Var.c;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        arrayList2.clear();
-        ArrayList arrayList4 = v00Var.e;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        for (int i7 = 0; i7 < arrayList3.size(); i7++) {
-            ((d20) arrayList3.get(i7)).setOnClickListener(null);
-        }
-        AnimatorSet animatorSet = v00Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            v00Var.a.setupEndValues();
-            v00Var.a.cancel();
-        }
-        v00Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v00Var.a = animatorSet2;
-        animatorSet2.addListener(new ah.l(29, v00Var, arrayList3));
-        arrayList.clear();
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            d20 d20Var = (d20) arrayList3.get(i10);
-            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
-        }
-        v00Var.requestLayout();
-    }
-
-    public void c(d20 d20Var) {
-        v00 v00Var = this.d;
-        ArrayList arrayList = v00Var.e;
-        ArrayList arrayList2 = v00Var.c;
-        w00 w00Var = v00Var.r;
-        w00Var.h = true;
-        if (!d20Var.d) {
-            w00Var.b.l(d20Var.getUid());
-        }
-        w00Var.c.remove(d20Var);
-        d20Var.setOnClickListener(null);
-        AnimatorSet animatorSet = v00Var.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            v00Var.a.cancel();
-        }
-        v00Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v00Var.a = animatorSet2;
-        animatorSet2.addListener(new ah.l(28, v00Var, d20Var));
-        v00Var.a.setDuration(150L);
-        arrayList.clear();
-        arrayList.add(d20Var);
-        arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
-        v00Var.requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        float f10 = this.e;
-        float y10 = motionEvent.getY();
-        if (action != 0 || y10 <= f10) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    public ViewGroup getSpansContainer() {
-        return this.d;
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z9) {
-        if (this.h) {
-            this.h = false;
-            return false;
-        }
-        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.k5.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.k5.C(50.0f, this.n, rect.bottom);
-        return super.requestChildRectangleOnScreen(view, rect, z9);
-    }
-
-    public void setDelegate(t00 t00Var) {
-        this.f = t00Var;
+    public void setUseAnEmojiVisible(boolean z9) {
+        this.c.setVisibility(z9 ? 0 : 8);
     }
 }

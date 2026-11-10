@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n0 extends c8.da {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final class n0 extends c8.da {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.v2 v2Var = this.b.I;
-                if (v2Var != null) {
-                    v2Var.D0 = z9;
+                org.telegram.ui.ActionBar.w2 w2Var = this.b.I;
+                if (w2Var != null) {
+                    w2Var.D0 = z9;
                     break;
                 }
                 break;
@@ -35,7 +35,7 @@ public final class n0 extends c8.da {
         switch (this.a) {
             case 0:
                 if (org.telegram.messenger.g0.I3()) {
-                    org.telegram.messenger.camera.q.r(null, 2131744194, new org.telegram.ui.Components.hc(this.b.g0, null));
+                    org.telegram.messenger.camera.q.r(null, 2131744194, new org.telegram.ui.Components.gc(this.b.g0, null));
                     break;
                 }
                 break;

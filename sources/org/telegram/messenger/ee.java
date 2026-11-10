@@ -21,10 +21,10 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.dk0;
-import org.telegram.ui.ys0;
+import org.telegram.ui.ek0;
+import org.telegram.ui.zs0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -428,12 +428,12 @@ public final /* synthetic */ class ee implements Runnable {
                 }
                 if (tLObject != null) {
                     qp.s1(i20).Y3(authorizationform.users, false);
-                    dk0 dk0Var = new dk0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str5, str6, (String) null, authorizationform, (TL_account.Password) tLObject);
-                    dk0Var.C1 = true;
+                    ek0 ek0Var = new ek0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str5, str6, (String) null, authorizationform, (TL_account.Password) tLObject);
+                    ek0Var.C1 = true;
                     if (g0.Q1()) {
-                        externalActionActivity.d.c(-1, dk0Var);
+                        externalActionActivity.d.c(-1, ek0Var);
                     } else {
-                        externalActionActivity.c.c(-1, dk0Var);
+                        externalActionActivity.c.c(-1, ek0Var);
                     }
                     if (!g0.Q1()) {
                         externalActionActivity.e.setVisibility(8);
@@ -450,13 +450,13 @@ public final /* synthetic */ class ee implements Runnable {
                 TLObject tLObject2 = (TLObject) r12.f;
                 org.telegram.ui.ActionBar.f2 f2Var = (org.telegram.ui.ActionBar.f2) r12.d;
                 TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription = (TLRPC.TL_inputStorePaymentPremiumSubscription) r12.e;
-                ys0 ys0Var = (ys0) r12.b;
+                zs0 zs0Var = (zs0) r12.b;
                 com.google.android.gms.internal.clearcut.z0 z0Var = (com.google.android.gms.internal.clearcut.z0) r12.h;
                 int i21 = r12.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) r12.n;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) r12.r;
                 if (!(tLObject2 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.Components.v4.c0(i21, tL_error, f2Var, tL_payments_canPurchaseStore, new Object[0]);
+                    org.telegram.ui.Components.u4.c0(i21, tL_error, f2Var, tL_payments_canPurchaseStore, new Object[0]);
                     return;
                 }
                 Activity parentActivity = f2Var != null ? f2Var.getParentActivity() : g0.u0();
@@ -464,8 +464,8 @@ public final /* synthetic */ class ee implements Runnable {
                 c accountInstance = f2Var.getAccountInstance();
                 q4.q qVar = new q4.q(20, false);
                 qVar.g(r1.l);
-                ys0Var.a();
-                String str7 = ys0Var.g.a;
+                zs0Var.a();
+                String str7 = zs0Var.g.a;
                 if (TextUtils.isEmpty(str7)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
@@ -511,7 +511,7 @@ public final /* synthetic */ class ee implements Runnable {
                 Runnable[] runnableArr = (Runnable[]) r12.f;
                 TextView[] textViewArr = (TextView[]) r12.d;
                 int i25 = r12.c;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) r12.e;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) r12.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) r12.b;
                 String[] strArr2 = (String[]) r12.n;
                 boolean[] zArr4 = (boolean[]) r12.h;
@@ -520,7 +520,7 @@ public final /* synthetic */ class ee implements Runnable {
                 if (runnable != null) {
                     runnable.run();
                 }
-                bi.v0 v0Var = new bi.v0(runnableArr, textViewArr, i25, g6Var, 9);
+                bi.v0 v0Var = new bi.v0(runnableArr, textViewArr, i25, h6Var, 9);
                 org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(i25);
                 TL_wallet.nftItem nftitem = wallettransaction.nft;
                 if (nftitem != null) {
@@ -535,11 +535,11 @@ public final /* synthetic */ class ee implements Runnable {
         }
     }
 
-    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, ys0 ys0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ ee(TLObject tLObject, org.telegram.ui.ActionBar.f2 f2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, zs0 zs0Var, com.google.android.gms.internal.clearcut.z0 z0Var, int i7, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.f = tLObject;
         this.d = f2Var;
         this.e = tL_inputStorePaymentPremiumSubscription;
-        this.b = ys0Var;
+        this.b = zs0Var;
         this.h = z0Var;
         this.c = i7;
         this.n = tL_error;
@@ -568,11 +568,11 @@ public final /* synthetic */ class ee implements Runnable {
         this.r = l0Var;
     }
 
-    public /* synthetic */ ee(Runnable[] runnableArr, TextView[] textViewArr, int i7, org.telegram.ui.ActionBar.g6 g6Var, TL_wallet.walletTransaction wallettransaction, String[] strArr, boolean[] zArr, byte[] bArr) {
+    public /* synthetic */ ee(Runnable[] runnableArr, TextView[] textViewArr, int i7, org.telegram.ui.ActionBar.h6 h6Var, TL_wallet.walletTransaction wallettransaction, String[] strArr, boolean[] zArr, byte[] bArr) {
         this.f = runnableArr;
         this.d = textViewArr;
         this.c = i7;
-        this.e = g6Var;
+        this.e = h6Var;
         this.b = wallettransaction;
         this.n = strArr;
         this.h = zArr;

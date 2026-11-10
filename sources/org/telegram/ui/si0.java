@@ -1,104 +1,74 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class si0 implements View.OnClickListener {
+public final /* synthetic */ class si0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+    public final /* synthetic */ ek0 b;
 
-    public /* synthetic */ si0(dk0 dk0Var, int i7) {
+    public /* synthetic */ si0(ek0 ek0Var, int i7) {
         this.a = i7;
-        this.b = dk0Var;
+        this.b = ek0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i7 = this.a;
-        dk0 dk0Var = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
+        switch (this.a) {
             case 0:
-                dk0Var.S0 = 2;
-                dk0Var.H1();
+                ek0 ek0Var = this.b;
+                ViewGroup[] viewGroupArr = ek0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    ek0Var.Y[0].requestFocus();
+                    org.telegram.messenger.g0.K3(ek0Var.Y[0]);
+                    break;
+                }
                 break;
             case 1:
-                dk0Var.h1();
+                ek0 ek0Var2 = this.b;
+                ek0Var2.presentFragment(ek0Var2.h1, true);
+                ek0Var2.h1 = null;
                 break;
             case 2:
-                dk0Var.S0 = 3;
-                dk0Var.H1();
+                ek0 ek0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = ek0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    ek0Var3.M1(editTextBoldCursorArr[0]);
+                    break;
+                }
                 break;
             case 3:
-                dk0Var.S0 = 1;
-                dk0Var.H1();
+                org.telegram.messenger.g0.K3(this.b.Y[2]);
                 break;
             case 4:
-                dk0Var.S0 = 4;
-                dk0Var.H1();
+                this.b.B1();
                 break;
             case 5:
-                if (dk0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
-                    s9 s9Var = new s9(0);
-                    s9Var.M = new dj0(dk0Var);
-                    dk0Var.presentFragment(s9Var);
-                    break;
-                } else {
-                    dk0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 22);
-                    break;
+                int i7 = 0;
+                while (true) {
+                    ek0 ek0Var4 = this.b;
+                    if (i7 >= ek0Var4.c0.getChildCount()) {
+                        ek0Var4.B1();
+                        ek0Var4.q1.clear();
+                        ek0Var4.p1.clear();
+                        ek0Var4.D.values.clear();
+                        ek0Var4.V1();
+                        break;
+                    } else {
+                        View childAt = ek0Var4.c0.getChildAt(i7);
+                        if (childAt instanceof dk0) {
+                            ek0Var4.c0.removeView(childAt);
+                            i7--;
+                        }
+                        i7++;
+                    }
                 }
-            case 6:
-                dk0Var.f = true;
-                dk0Var.L.callOnClick();
-                dk0Var.f = false;
-                break;
-            case 7:
-                dk0Var.S0 = 0;
-                dk0Var.H1();
-                break;
-            case 8:
-                dk0Var.S0 = 4;
-                dk0Var.H1();
-                break;
-            case 9:
-                dk0Var.h1();
-                break;
-            case 10:
-                dk0.g0(dk0Var);
-                break;
-            case 11:
-                dk0.h0(dk0Var);
-                break;
-            case 12:
-                dk0Var.G1();
-                break;
-            case 13:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dk0Var.getParentActivity());
-                String M0 = org.telegram.messenger.id.M0(2131744232, null);
-                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
-                u1Var.R = M0;
-                u1Var.T = org.telegram.messenger.id.M0(2131744233, null);
-                alertDialog$Builder.k(org.telegram.messenger.id.M0(2131751598, null), new ui0(dk0Var, 5));
-                alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
-                dk0Var.showDialog(u1Var);
-                TextView textView = (TextView) u1Var.d(-1);
-                if (textView != null) {
-                    org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.q7, null);
-                    break;
-                }
-                break;
-            case 14:
-                dk0Var.G1();
-                break;
-            case 15:
-                dk0.a0(dk0Var);
-                break;
             default:
-                dk0Var.f = true;
-                dk0Var.L.callOnClick();
-                dk0Var.f = false;
+                this.b.finishFragment();
                 break;
         }
     }

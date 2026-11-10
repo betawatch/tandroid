@@ -2,11 +2,11 @@ package di;
 
 import android.content.Context;
 import android.text.TextUtils;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class w4 extends fl0 {
+public final class w4 extends el0 {
     public z0 f;
     public final /* synthetic */ l5 h;
 
@@ -16,7 +16,7 @@ public final class w4 extends fl0 {
         this.h = l5Var;
     }
 
-    @Override // org.telegram.ui.Components.fl0
+    @Override // org.telegram.ui.Components.el0
     public final void a(String str) {
         z0 z0Var = this.f;
         if (z0Var != null) {

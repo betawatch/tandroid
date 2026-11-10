@@ -7,7 +7,7 @@ import org.telegram.messenger.qs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class b4 implements Runnable {
         k7 k7Var = this.b;
         switch (i7) {
             case 0:
-                long j3 = k7Var.P1;
-                k7Var.c2.setLoading(false);
+                long j3 = k7Var.S1;
+                k7Var.f2.setLoading(false);
                 if (!TextUtils.isEmpty(str)) {
                     k7Var.dismiss();
                     org.telegram.ui.ActionBar.f2 Q = LaunchActivity.Q();
@@ -37,7 +37,7 @@ public final /* synthetic */ class b4 implements Runnable {
                         if (Q instanceof cn) {
                             cn cnVar = (cn) Q;
                             if (cnVar.a() == j3) {
-                                org.telegram.ui.Components.hc.a0(cnVar).I(R.raw.gift, org.telegram.messenger.id.M0(2131745096, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131745094, org.telegram.messenger.m5.t(j3)))).k(true);
+                                org.telegram.ui.Components.gc.a0(cnVar).I(R.raw.gift, org.telegram.messenger.id.M0(2131745096, null), org.telegram.messenger.g0.X2(org.telegram.messenger.id.a0(null, null, 2131745094, org.telegram.messenger.m5.t(j3)))).k(true);
                                 break;
                             }
                         }
@@ -76,7 +76,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 break;
             case 7:
                 org.telegram.messenger.g0.g(str);
-                org.telegram.ui.Components.cc k10 = k7Var.k().k(false);
+                org.telegram.ui.Components.bc k10 = k7Var.k().k(false);
                 k10.t = true;
                 k10.j();
                 break;

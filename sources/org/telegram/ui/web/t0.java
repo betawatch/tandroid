@@ -10,11 +10,11 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.z5;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class t0 implements DownloadListener {
     public final /* synthetic */ u0 a;
@@ -62,11 +62,11 @@ public final class t0 implements DownloadListener {
             org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
             u1Var.R = id.M0(2131742930, null);
             u1Var.T = org.telegram.messenger.g0.X2(j3 > 0 ? id.a0(null, null, 2131742931, U, org.telegram.messenger.g0.i0(j3, false, false)) : id.a0(null, null, 2131742932, U));
-            alertDialog$Builder.k(id.M0(2131742929, null), new m3(xVar, 5));
+            alertDialog$Builder.k(id.M0(2131742929, null), new n3(xVar, 5));
             alertDialog$Builder.h(id.M0(2131752589, null), null);
             TextView textView = (TextView) alertDialog$Builder.p().d(-2);
             if (textView != null) {
-                s6.U(textView, l6.q7, null);
+                t6.U(textView, m6.q7, null);
             }
         } catch (Exception e10) {
             a8.g(e10, true);

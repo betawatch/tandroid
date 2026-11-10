@@ -1,33 +1,59 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.ui.Components.pr;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.messenger.ls;
+import org.telegram.messenger.qs;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class g5 extends pr {
-    public final ShapeDrawable G;
-    public final /* synthetic */ w5 H;
+public final class g5 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ di.r a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ ls c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ v10 e;
+    public final /* synthetic */ y2[] f;
+    public final /* synthetic */ String[] h;
+    public final /* synthetic */ boolean[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g5(w5 w5Var, Context context) {
-        super(context);
-        this.H = w5Var;
-        this.G = org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(22.0f), w5Var.getThemedColor(org.telegram.ui.ActionBar.l6.d6));
+    public g5(di.r rVar, TL_wallet.walletTransaction[] wallettransactionArr, f5 f5Var, int i7, v10 v10Var, y2[] y2VarArr, String[] strArr, boolean[] zArr) {
+        this.a = rVar;
+        this.b = wallettransactionArr;
+        this.c = f5Var;
+        this.d = i7;
+        this.e = v10Var;
+        this.f = y2VarArr;
+        this.h = strArr;
+        this.n = zArr;
     }
 
-    @Override // org.telegram.ui.Components.pr, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int ceil = (int) Math.ceil(getMetadata().g.a);
-        if (ceil > 0) {
-            ShapeDrawable shapeDrawable = this.G;
-            shapeDrawable.getPaint().setColor(this.H.getThemedColor(org.telegram.ui.ActionBar.l6.d6));
-            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
-            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
-            shapeDrawable.draw(canvas);
+    /* JADX WARN: Type inference failed for: r3v0, types: [java.io.Serializable, java.lang.String[]] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [boolean[], java.io.Serializable] */
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.a.a(this.b[0]);
+        ls lsVar = this.c;
+        if (lsVar != null) {
+            int i7 = this.d;
+            qs.f(i7).c(lsVar, qs.a4);
+            qs.f(i7).c(lsVar, qs.b4);
         }
-        super.dispatchDraw(canvas);
+        v10 v10Var = this.e;
+        if (v10Var != null) {
+            this.f[0].n(new g(v10Var, (Serializable) this.h, (Serializable) this.n, 15));
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        ls lsVar = this.c;
+        if (lsVar != null) {
+            int i7 = this.d;
+            qs.f(i7).n(lsVar, qs.a4);
+            qs.f(i7).n(lsVar, qs.b4);
+        }
     }
 }

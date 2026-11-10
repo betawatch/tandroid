@@ -15,10 +15,10 @@ import org.telegram.messenger.ij;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class c extends sh.d {
     public final String b;
@@ -58,19 +58,19 @@ public final class c extends sh.d {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(g0.L(13.0f));
         textPaint.setTypeface(g0.o());
-        textPaint.setColor(l6.x0(null, l6.pj, false));
+        textPaint.setColor(m6.x0(null, m6.pj, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
     public static b d(View view, String str, String str2, TLRPC.Document document, ij ijVar) {
         b bVar = new b();
-        bVar.a.setColor(l6.x0(null, l6.G6, false));
-        bVar.b.setColor(l6.x0(null, l6.y6, false));
+        bVar.a.setColor(m6.x0(null, m6.G6, false));
+        bVar.b.setColor(m6.x0(null, m6.y6, false));
         bVar.d = true;
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(g0.L(21.0f));
-        bVar.c.g(l6.We, l6.Xe, l6.id, l6.jd);
+        bVar.c.g(m6.We, m6.Xe, m6.id, m6.jd);
         if (ij.J3(document)) {
             if (ij.W2(document)) {
                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, g0.L(22.0f), true, null, false);
@@ -136,7 +136,7 @@ public final class c extends sh.d {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(g0.L(13.0f));
             textPaint.setTypeface(g0.o());
-            textPaint.setColor(l6.x0(null, l6.pj, false));
+            textPaint.setColor(m6.x0(null, m6.pj, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

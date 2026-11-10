@@ -5,11 +5,11 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.ui.Components.dk0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.o71;
 import org.telegram.ui.Components.p71;
-import org.telegram.ui.Components.q71;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class b1 implements Runnable {
         g1 g1Var;
         JSONObject jSONObject;
         v0 v0Var;
-        q71 q71Var;
+        p71 p71Var;
         i1 i1Var;
         k0 h;
         int i7;
-        dk0 dk0Var;
+        ck0 ck0Var;
         switch (this.a) {
             case 0:
                 i1 i1Var2 = this.b;
@@ -82,12 +82,12 @@ public final /* synthetic */ class b1 implements Runnable {
                     v0Var.h(i1Var);
                     return;
                 } else {
-                    if (!v0Var.f() || (q71Var = v0Var.h) == null) {
+                    if (!v0Var.f() || (p71Var = v0Var.h) == null) {
                         return;
                     }
-                    p71 p71Var = q71Var.a;
-                    p71Var.j();
-                    p71Var.h();
+                    o71 o71Var = p71Var.a;
+                    o71Var.j();
+                    o71Var.h();
                     return;
                 }
             case 1:
@@ -120,9 +120,9 @@ public final /* synthetic */ class b1 implements Runnable {
                         sb2.append(v0Var3.a);
                         sb2.append(": engine process died");
                         org.telegram.ui.Cells.f1.u(z9 ? ", restarting" : "", sb2);
-                        if (z9 && h7 != null && (dk0Var = h7.w) != null && dk0Var.e0 && dk0Var.X != null) {
-                            dk0Var.s0();
-                            dk0Var.r0();
+                        if (z9 && h7 != null && (ck0Var = h7.w) != null && ck0Var.e0 && ck0Var.X != null) {
+                            ck0Var.s0();
+                            ck0Var.r0();
                         }
                     } else if (z9) {
                         v0Var3.a();

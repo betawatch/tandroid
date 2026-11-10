@@ -31,7 +31,7 @@ import n5.i0;
 import n5.j;
 import n5.k;
 import n5.l;
-import n5.m;
+import n5.n;
 import n5.o;
 import n5.p;
 import n5.q;
@@ -41,14 +41,14 @@ import n5.t;
 import n5.v;
 import n5.w;
 import n5.y;
-import org.telegram.ui.Components.n;
+import org.telegram.ui.Components.m;
 import p5.e;
 import pa.d;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class b implements e {
-    public final n a;
+    public final m a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -60,13 +60,13 @@ public final class b implements e {
         d dVar = new d();
         c cVar = c.a;
         dVar.b(w.class, cVar);
-        dVar.b(m.class, cVar);
+        dVar.b(n5.m.class, cVar);
         j jVar = j.a;
         dVar.b(f0.class, jVar);
         dVar.b(t.class, jVar);
         n5.d dVar2 = n5.d.a;
         dVar.b(y.class, dVar2);
-        dVar.b(n5.n.class, dVar2);
+        dVar.b(n.class, dVar2);
         n5.b bVar = n5.b.a;
         dVar.b(n5.a.class, bVar);
         dVar.b(l.class, bVar);
@@ -89,7 +89,7 @@ public final class b implements e {
         dVar.b(b0.class, fVar);
         dVar.b(p.class, fVar);
         dVar.d = true;
-        this.a = new n(dVar);
+        this.a = new m(dVar);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);

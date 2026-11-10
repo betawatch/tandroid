@@ -7,15 +7,15 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f4 extends e6 {
     public static final Paint i = new Paint(2);
     public static final Rect j = new Rect();
     public g4 c;
     public g4 d;
-    public org.telegram.ui.Components.w5 e;
-    public org.telegram.ui.Components.w5 f;
+    public org.telegram.ui.Components.v5 e;
+    public org.telegram.ui.Components.v5 f;
     public g4 g;
     public g4 h;
 
@@ -83,7 +83,7 @@ public final class f4 extends e6 {
         }
         if (this.g != null) {
             if (this.e == null) {
-                this.e = new org.telegram.ui.Components.w5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.xq.g);
+                this.e = new org.telegram.ui.Components.v5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.wq.g);
             }
             float e10 = this.e.e(false, 1.0f);
             c(canvas, this.g, bounds, Math.min(1.0f, e10 * 1.5f));
@@ -100,7 +100,7 @@ public final class f4 extends e6 {
             return;
         }
         if (this.f == null) {
-            this.f = new org.telegram.ui.Components.w5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.xq.g);
+            this.f = new org.telegram.ui.Components.v5(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.wq.g);
         }
         float e11 = this.f.e(false, 1.0f);
         c(canvas, this.h, bounds, Math.min(1.0f, 1.5f * e11));

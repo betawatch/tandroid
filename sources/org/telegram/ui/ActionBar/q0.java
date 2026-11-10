@@ -16,13 +16,13 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l9;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class q0 extends FrameLayout implements te.b, b6 {
+public class q0 extends FrameLayout implements te.b, c6 {
     public int D;
     public int E;
     public xp F;
@@ -32,26 +32,26 @@ public class q0 extends FrameLayout implements te.b, b6 {
     public int J;
     public final te.a a;
     public xp b;
-    public final l9 c;
+    public final k9 c;
     public final ImageView d;
     public final TextView e;
     public jg.o0 f;
     public final l2.a0 h;
-    public final g6 n;
+    public final h6 n;
     public boolean r;
     public boolean s;
     public int w;
     public int x;
     public xp y;
 
-    public q0(Context context, g6 g6Var) {
+    public q0(Context context, h6 h6Var) {
         super(context);
-        this.a = new te.a(0, this, xq.h, 380L, false);
+        this.a = new te.a(0, this, wq.h, 380L, false);
         this.h = new l2.a0(this, 16);
-        this.n = g6Var;
-        l9 l9Var = new l9(context);
-        this.c = l9Var;
-        addView(l9Var, ha.c(32.0f, 32));
+        this.n = h6Var;
+        k9 k9Var = new k9(context);
+        this.c = k9Var;
+        addView(k9Var, ha.c(32.0f, 32));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setImageResource(R.drawable.ic_close_white);
@@ -79,7 +79,7 @@ public class q0 extends FrameLayout implements te.b, b6 {
         float width = getWidth();
         float height = getHeight();
         int i7 = this.x;
-        canvas.drawRoundRect(0.0f, 0.0f, width, height, i7, i7, l6.n0(this.w));
+        canvas.drawRoundRect(0.0f, 0.0f, width, height, i7, i7, m6.n0(this.w));
         super.dispatchDraw(canvas);
     }
 
@@ -104,32 +104,32 @@ public class q0 extends FrameLayout implements te.b, b6 {
             str = id.M0(o0Var.b, null);
         }
         this.e.setText(str);
-        xp N = l6.N(org.telegram.messenger.g0.L(32.0f), o0Var.a);
+        xp N = m6.N(org.telegram.messenger.g0.L(32.0f), o0Var.a);
         this.b = N;
-        int i7 = l6.Ci;
-        g6 g6Var = this.n;
-        l6.B1(N, l6.w0(i7, g6Var), false);
+        int i7 = m6.Ci;
+        h6 h6Var = this.n;
+        m6.B1(N, m6.w0(i7, h6Var), false);
         xp xpVar = this.b;
-        int i10 = l6.Gi;
-        l6.B1(xpVar, l6.w0(i10, g6Var), true);
+        int i10 = m6.Gi;
+        m6.B1(xpVar, m6.w0(i10, h6Var), true);
         int i11 = o0Var.d;
-        l9 l9Var = this.c;
+        k9 k9Var = this.c;
         if (i11 != 4) {
             if (i11 != 7) {
-                l9Var.setImageDrawable(this.b);
+                k9Var.setImageDrawable(this.b);
                 return;
             }
-            xp N2 = l6.N(org.telegram.messenger.g0.L(32.0f), R.drawable.chats_archive);
+            xp N2 = m6.N(org.telegram.messenger.g0.L(32.0f), R.drawable.chats_archive);
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
             N2.e = L;
             N2.f = L2;
-            l6.B1(N2, l6.w0(i7, g6Var), false);
-            l6.B1(N2, l6.w0(i10, g6Var), true);
-            l9Var.setImageDrawable(N2);
+            m6.B1(N2, m6.w0(i7, h6Var), false);
+            m6.B1(N2, m6.w0(i10, h6Var), true);
+            k9Var.setImageDrawable(N2);
             this.y = N2;
-            this.D = l6.w0(i7, g6Var);
-            this.E = l6.w0(i10, g6Var);
+            this.D = m6.w0(i7, h6Var);
+            this.E = m6.w0(i10, h6Var);
             return;
         }
         TLObject tLObject = o0Var.f;
@@ -137,29 +137,29 @@ public class q0 extends FrameLayout implements te.b, b6 {
             if (tLObject instanceof TLRPC.Chat) {
                 TLRPC.Chat chat = (TLRPC.Chat) tLObject;
                 this.s = org.telegram.messenger.t3.Y(chat);
-                ImageReceiver imageReceiver = l9Var.getImageReceiver();
+                ImageReceiver imageReceiver = k9Var.getImageReceiver();
                 int L3 = org.telegram.messenger.g0.L(this.s ? 10.0f : 16.0f);
                 this.x = L3;
                 imageReceiver.J0(L3);
-                l9Var.getImageReceiver().i0(chat, this.b, null);
+                k9Var.getImageReceiver().i0(chat, this.b, null);
                 return;
             }
             return;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
         if (p10.i(p10.s0).f().id != user.id) {
-            l9Var.getImageReceiver().J0(org.telegram.messenger.g0.L(16.0f));
-            l9Var.getImageReceiver().i0(user, this.b, null);
+            k9Var.getImageReceiver().J0(org.telegram.messenger.g0.L(16.0f));
+            k9Var.getImageReceiver().i0(user, this.b, null);
             return;
         }
-        xp N3 = l6.N(org.telegram.messenger.g0.L(32.0f), R.drawable.chats_saved);
+        xp N3 = m6.N(org.telegram.messenger.g0.L(32.0f), R.drawable.chats_saved);
         int L4 = org.telegram.messenger.g0.L(16.0f);
         int L5 = org.telegram.messenger.g0.L(16.0f);
         N3.e = L4;
         N3.f = L5;
-        l6.B1(N3, l6.w0(i7, g6Var), false);
-        l6.B1(N3, l6.w0(i10, g6Var), true);
-        l9Var.setImageDrawable(N3);
+        m6.B1(N3, m6.w0(i7, h6Var), false);
+        m6.B1(N3, m6.w0(i10, h6Var), true);
+        k9Var.setImageDrawable(N3);
     }
 
     public void setExpanded(boolean z9) {
@@ -185,17 +185,17 @@ public class q0 extends FrameLayout implements te.b, b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         float f10 = this.a.e;
         boolean z9 = this.r;
-        g6 g6Var = this.n;
-        int r12 = z9 ? l6.r1(0.075f, l6.w0(l6.G6, g6Var)) : l6.w0(l6.Qi, g6Var);
-        int i7 = l6.Ci;
-        int w02 = l6.w0(i7, g6Var);
-        int w03 = l6.w0(l6.G6, g6Var);
-        int i10 = l6.Gi;
-        int w04 = l6.w0(i10, g6Var);
+        h6 h6Var = this.n;
+        int r12 = z9 ? m6.r1(0.075f, m6.w0(m6.G6, h6Var)) : m6.w0(m6.Qi, h6Var);
+        int i7 = m6.Ci;
+        int w02 = m6.w0(i7, h6Var);
+        int w03 = m6.w0(m6.G6, h6Var);
+        int i10 = m6.Gi;
+        int w04 = m6.w0(i10, h6Var);
         this.w = i0.a.f(f10, r12, w02);
         this.e.setTextColor(i0.a.f(f10, w03, w04));
         ImageView imageView = this.d;
@@ -208,36 +208,36 @@ public class q0 extends FrameLayout implements te.b, b6 {
         float f11 = 0.82f * f10;
         imageView.setScaleX(f11);
         imageView.setScaleY(f11);
-        int w05 = l6.w0(i7, g6Var);
-        int w06 = l6.w0(i10, g6Var);
+        int w05 = m6.w0(i7, h6Var);
+        int w06 = m6.w0(i10, h6Var);
         xp xpVar = this.b;
         if (xpVar != null && (xpVar != this.F || w05 != this.G || w06 != this.H)) {
-            l6.B1(xpVar, w05, false);
-            l6.B1(this.b, w06, true);
+            m6.B1(xpVar, w05, false);
+            m6.B1(this.b, w06, true);
             this.F = this.b;
             this.G = w05;
             this.H = w06;
         }
         float f12 = 1.0f - f10;
-        l9 l9Var = this.c;
-        l9Var.setAlpha(f12);
+        k9 k9Var = this.c;
+        k9Var.setAlpha(f12);
         jg.o0 o0Var = this.f;
         if (o0Var != null && o0Var.d == 7) {
             xp xpVar2 = this.y;
             if (xpVar2 == null) {
                 setData(o0Var);
             } else if (w05 != this.D || w06 != this.E) {
-                l6.B1(xpVar2, w05, false);
-                l6.B1(this.y, w06, true);
+                m6.B1(xpVar2, w05, false);
+                m6.B1(this.y, w06, true);
                 this.D = w05;
                 this.E = w06;
-                l9Var.invalidate();
+                k9Var.invalidate();
             }
         }
         invalidate();
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

@@ -1,65 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class mb implements ii0 {
-    public final /* synthetic */ nb a;
+public final class mb extends jb implements org.telegram.messenger.ls {
+    public final kb d;
+    public SparseLongArray e;
+    public final org.telegram.ui.ActionBar.f2 f;
+    public final int h;
+    public bc n;
 
-    public mb(nb nbVar) {
-        this.a = nbVar;
+    public mb(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
+        super(f2Var.getContext(), f2Var.getResourceProvider());
+        this.f = f2Var;
+        this.h = i7;
+        this.b.setLayoutParams(c8.ha.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(c8.ha.h(56.0f, 48.0f, 8388659));
+        kb kbVar = new kb(this, f2Var, getContext(), f2Var.getCurrentAccount(), f2Var.getResourceProvider());
+        this.d = kbVar;
+        kbVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(0.0f));
+        this.d.setDelegate(new lb(this));
+        this.d.setTop(true);
+        this.d.setClipChildren(false);
+        this.d.setClipToPadding(false);
+        this.d.setVisibility(0);
+        this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
+        this.d.setHint(org.telegram.messenger.id.M0(2131745875, null));
+        addView(this.d, c8.ha.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+        this.d.p(null, null, true);
     }
 
-    @Override // org.telegram.ui.Components.ii0
-    public final /* synthetic */ boolean E() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ii0
-    public final /* synthetic */ boolean U() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ii0
-    public final void i(View view, ch.o0 o0Var, boolean z9, boolean z10) {
-        nb nbVar = this.a;
-        org.telegram.ui.ActionBar.f2 f2Var = nbVar.f;
-        if (nbVar.e == null) {
-            return;
+    @Override // org.telegram.messenger.ls
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.qs.k3) {
+            this.e = (SparseLongArray) objArr[0];
         }
-        boolean z11 = (f2Var instanceof org.telegram.ui.cn) && ((org.telegram.ui.cn) f2Var).a() == org.telegram.messenger.p10.i(f2Var.getCurrentAccount()).e();
-        int i7 = 0;
-        for (int i10 = 0; i10 < nbVar.e.size(); i10++) {
-            int keyAt = nbVar.e.keyAt(i10);
-            TLRPC.Message message = new TLRPC.Message();
-            message.dialog_id = f2Var.getUserConfig().e();
-            message.id = keyAt;
-            org.telegram.messenger.ij ijVar = new org.telegram.messenger.ij(f2Var.getCurrentAccount(), message, false, false);
-            ArrayList arrayList = new ArrayList();
-            arrayList.add(o0Var);
-            f2Var.getSendMessagesHelper().s0(ijVar, arrayList, o0Var, false, false, nbVar.f, null);
-            i7 = message.id;
+    }
+
+    public final void f() {
+        if (this.d.getReactionsWindow() != null) {
+            this.d.e();
+            if (this.d.getReactionsWindow().a != null) {
+                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
+            }
         }
-        nbVar.f();
-        cc.e();
-        org.telegram.messenger.g0.i3(new org.telegram.messenger.rw(this, o0Var, !z11, f2Var.getCurrentAccount(), i7), 300L);
     }
 
-    @Override // org.telegram.ui.Components.ii0
-    public final /* synthetic */ boolean v() {
-        return true;
+    @Override // org.telegram.ui.Components.fb
+    public int getMeasuredBackgroundHeight() {
+        return org.telegram.messenger.g0.L(30.0f) + this.b.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.ii0
-    public final /* synthetic */ void M() {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).c(this, org.telegram.messenger.qs.k3);
     }
 
-    @Override // org.telegram.ui.Components.ii0
-    public final /* synthetic */ void L(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z9) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).n(this, org.telegram.messenger.qs.k3);
+    }
+
+    public void setBulletin(bc bcVar) {
+        this.n = bcVar;
     }
 }

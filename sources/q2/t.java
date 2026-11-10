@@ -22,7 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import p4.r0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class t implements q {
     public static final r0 d = new r0(17);
@@ -54,14 +54,14 @@ public final class t implements q {
     }
 
     @Override // q2.q
-    public final void B(final org.telegram.ui.Components.n nVar) {
+    public final void B(final org.telegram.ui.Components.m mVar) {
         this.b.setOnEventListener(new MediaDrm.OnEventListener() { // from class: q2.s
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i7, int i10, byte[] bArr2) {
                 t tVar = t.this;
-                org.telegram.ui.Components.n nVar2 = nVar;
+                org.telegram.ui.Components.m mVar2 = mVar;
                 tVar.getClass();
-                android.support.v4.media.session.q qVar = ((e) nVar2.a).M;
+                android.support.v4.media.session.q qVar = ((e) mVar2.a).M;
                 qVar.getClass();
                 qVar.obtainMessage(i7, bArr).sendToTarget();
             }

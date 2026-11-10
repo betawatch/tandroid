@@ -1,83 +1,84 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class jb extends x70 {
-    public final /* synthetic */ int L;
+public class jb extends ya {
+    public final ch0 a;
+    public TextView b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jb(int i7, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.L = i7;
+    public jb(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        ch0 ch0Var = new ch0(context);
+        this.a = ch0Var;
+        ch0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(ch0Var, c8.ha.h(56.0f, 48.0f, 8388627));
+        ib ibVar = new ib(0, context, null);
+        ibVar.setDisablePaddingsOffset(true);
+        this.b = ibVar;
+        org.telegram.messenger.qs.i(ibVar);
+        this.b.setSingleLine();
+        this.b.setTypeface(Typeface.SANS_SERIF);
+        this.b.setTextSize(1, 15.0f);
+        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        addView(this.b, c8.ha.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        org.telegram.ui.ActionBar.t6.G(this.b, org.telegram.ui.ActionBar.m6.uj, h6Var);
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.m6.vj));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.m6.tj));
     }
 
-    @Override // org.telegram.ui.Components.x70
-    public int a() {
-        switch (this.L) {
-            case 4:
-                return 3;
-            default:
-                return super.a();
+    public final void c(int i7, int i10, int i11, String... strArr) {
+        ch0 ch0Var = this.a;
+        ch0Var.f(i7, i10, i11, null);
+        for (String str : strArr) {
+            ch0Var.h(this.c, str);
         }
     }
 
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 3:
-                if (getAlpha() < 0.9f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            case 4:
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-            case 5:
-                if (getAlpha() < 0.95f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            case 6:
-                if (getAlpha() < 0.95f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
+    public final void d(int i7, String... strArr) {
+        c(i7, 32, 32, strArr);
+    }
+
+    public final void e(TLRPC.Document document, String... strArr) {
+        ch0 ch0Var = this.a;
+        ch0Var.setAutoRepeat(true);
+        ch0Var.g(36, 36, document);
+        for (String str : strArr) {
+            ch0Var.h(this.c, str);
         }
     }
 
-    @Override // org.telegram.ui.Components.x70, android.widget.TextView, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.L) {
-            case 7:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.fb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 
-    @Override // org.telegram.ui.Components.x70, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.L) {
-            case 0:
-                super.setText(org.telegram.messenger.i6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
-                break;
-            case 1:
-                super.setText(org.telegram.messenger.i6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
-                break;
-            case 2:
-                super.setText(org.telegram.messenger.i6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-        }
+    @Override // org.telegram.ui.Components.fb
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
+    }
+
+    public void setIconPaddingBottom(int i7) {
+        this.a.setLayoutParams(c8.ha.i(56.0f, 48 - i7, 8388627, 0.0f, 0.0f, 0.0f, i7));
+    }
+
+    public void setTextColor(int i7) {
+        this.c = i7;
+        this.b.setTextColor(i7);
+    }
+
+    public jb(int i7, int i10, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        this(context, h6Var);
+        setBackground(i7);
+        setTextColor(i10);
     }
 }

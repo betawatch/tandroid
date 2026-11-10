@@ -20,9 +20,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cn;
-import org.telegram.ui.n60;
+import org.telegram.ui.o60;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f9 implements Runnable {
     public final /* synthetic */ int a;
@@ -91,9 +91,9 @@ public final /* synthetic */ class f9 implements Runnable {
                 }
             case 1:
                 ((fi.d) obj2).setLoading(false);
-                org.telegram.ui.ActionBar.v2 v2Var = ((org.telegram.ui.ActionBar.v2[]) obj)[0];
-                if (v2Var != null) {
-                    v2Var.dismiss();
+                org.telegram.ui.ActionBar.w2 w2Var = ((org.telegram.ui.ActionBar.w2[]) obj)[0];
+                if (w2Var != null) {
+                    w2Var.dismiss();
                 }
                 ea.y(i10, false).R();
                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
@@ -160,10 +160,10 @@ public final /* synthetic */ class f9 implements Runnable {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 long j10 = this.c;
                 tonconnectgetpending.session_id = Long.valueOf(j10);
-                d2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, (n60) obj, j10, this.b, 0));
+                d2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, (o60) obj, j10, this.b, 0));
                 return;
             default:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.g6) obj);
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.h6) obj);
                 String M0 = org.telegram.messenger.id.M0(2131743073, null);
                 org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
                 u1Var.R = M0;
@@ -181,11 +181,11 @@ public final /* synthetic */ class f9 implements Runnable {
         this.e = arrayList;
     }
 
-    public /* synthetic */ f9(org.telegram.ui.Wallet.d2 d2Var, long j3, n60 n60Var, int i7) {
+    public /* synthetic */ f9(org.telegram.ui.Wallet.d2 d2Var, long j3, o60 o60Var, int i7) {
         this.a = 6;
         this.d = d2Var;
         this.c = j3;
-        this.e = n60Var;
+        this.e = o60Var;
         this.b = i7;
     }
 }

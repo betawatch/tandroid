@@ -16,7 +16,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class fn extends Drawable {
     public final boolean a;
@@ -24,7 +24,7 @@ public final class fn extends Drawable {
     public int c = org.telegram.messenger.qs.e4;
     public final float d;
     public final di.z2 e;
-    public final org.telegram.ui.Components.ra0 f;
+    public final org.telegram.ui.Components.qa0 f;
     public final TLRPC.WallPaper g;
     public boolean h;
     public boolean i;
@@ -45,11 +45,11 @@ public final class fn extends Drawable {
             this.d = wallPaperSettings2.intensity / 100.0f;
         }
         if ((z11 || wallPaper.document == null) && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.second_background_color != 0 && wallPaperSettings.third_background_color != 0) {
-            org.telegram.ui.Components.ra0 ra0Var = new org.telegram.ui.Components.ra0();
-            this.f = ra0Var;
+            org.telegram.ui.Components.qa0 qa0Var = new org.telegram.ui.Components.qa0();
+            this.f = qa0Var;
             TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
-            ra0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
-            org.telegram.ui.ActionBar.r3.o(org.telegram.messenger.p10.s0, wallPaper.id, wallPaper, new org.telegram.messenger.voip.k(21, this, wallPaper));
+            qa0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+            org.telegram.ui.ActionBar.s3.o(org.telegram.messenger.p10.s0, wallPaper.id, wallPaper, new org.telegram.messenger.voip.k(21, this, wallPaper));
             return;
         }
         Point point = org.telegram.messenger.g0.q;
@@ -117,16 +117,16 @@ public final class fn extends Drawable {
             } else if (wallPaperSettings.second_background_color == 0) {
                 a10 = a(new ColorDrawable(i0.a.o(wallPaper.settings.background_color, org.telegram.messenger.qs.e4)));
             } else if (wallPaperSettings.third_background_color == 0) {
-                a10 = a(new GradientDrawable(org.telegram.ui.Components.k9.d(wallPaper.settings.rotation), new int[]{i0.a.o(wallPaperSettings.background_color, org.telegram.messenger.qs.e4), i0.a.o(wallPaper.settings.second_background_color, org.telegram.messenger.qs.e4)}));
+                a10 = a(new GradientDrawable(org.telegram.ui.Components.j9.d(wallPaper.settings.rotation), new int[]{i0.a.o(wallPaperSettings.background_color, org.telegram.messenger.qs.e4), i0.a.o(wallPaper.settings.second_background_color, org.telegram.messenger.qs.e4)}));
             } else {
                 int o4 = i0.a.o(wallPaperSettings.background_color, org.telegram.messenger.qs.e4);
                 int o10 = i0.a.o(wallPaper.settings.second_background_color, org.telegram.messenger.qs.e4);
                 int o11 = i0.a.o(wallPaper.settings.third_background_color, org.telegram.messenger.qs.e4);
                 int i7 = wallPaper.settings.fourth_background_color;
                 r2 = i7 != 0 ? i0.a.o(i7, org.telegram.messenger.qs.e4) : 0;
-                org.telegram.ui.Components.ra0 ra0Var = new org.telegram.ui.Components.ra0();
-                ra0Var.n(o4, o10, o11, r2);
-                a10 = new BitmapDrawable(ra0Var.k);
+                org.telegram.ui.Components.qa0 qa0Var = new org.telegram.ui.Components.qa0();
+                qa0Var.n(o4, o10, o11, r2);
+                a10 = new BitmapDrawable(qa0Var.k);
             }
         }
         wallPaper.thumbDrawable = a10;
@@ -154,9 +154,9 @@ public final class fn extends Drawable {
 
     public final Drawable c(boolean z9) {
         Drawable drawable;
-        org.telegram.ui.Components.ra0 ra0Var = this.f;
-        if (ra0Var != null) {
-            return ra0Var;
+        org.telegram.ui.Components.qa0 qa0Var = this.f;
+        if (qa0Var != null) {
+            return qa0Var;
         }
         di.z2 z2Var = this.e;
         if (z9 && (drawable = z2Var.m0) != null) {
@@ -168,11 +168,11 @@ public final class fn extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        org.telegram.ui.Components.ra0 ra0Var = this.f;
-        if (ra0Var != null) {
-            ra0Var.setBounds(getBounds());
-            ra0Var.setAlpha(this.c);
-            ra0Var.draw(canvas);
+        org.telegram.ui.Components.qa0 qa0Var = this.f;
+        if (qa0Var != null) {
+            qa0Var.setBounds(getBounds());
+            qa0Var.setAlpha(this.c);
+            qa0Var.draw(canvas);
             return;
         }
         di.z2 z2Var = this.e;
@@ -209,9 +209,9 @@ public final class fn extends Drawable {
             this.i = false;
             z2Var.R();
         }
-        org.telegram.ui.Components.ra0 ra0Var = this.f;
-        if (ra0Var != null) {
-            ra0Var.k();
+        org.telegram.ui.Components.qa0 qa0Var = this.f;
+        if (qa0Var != null) {
+            qa0Var.k();
         }
     }
 
@@ -227,9 +227,9 @@ public final class fn extends Drawable {
             this.i = false;
             z2Var.R();
         }
-        org.telegram.ui.Components.ra0 ra0Var = this.f;
-        if (ra0Var != null) {
-            ra0Var.l();
+        org.telegram.ui.Components.qa0 qa0Var = this.f;
+        if (qa0Var != null) {
+            qa0Var.l();
         }
     }
 

@@ -4,13 +4,13 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import org.telegram.messenger.ij;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.dh0;
-import org.telegram.ui.a00;
-import org.telegram.ui.ni0;
-import org.telegram.ui.om0;
-import org.telegram.ui.yz;
+import org.telegram.ui.Components.ch0;
+import org.telegram.ui.b00;
+import org.telegram.ui.oi0;
+import org.telegram.ui.pm0;
+import org.telegram.ui.zz;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((v) obj).toggle();
                 break;
             case 3:
-                dh0 dh0Var = ((z2) obj).f;
-                if (!dh0Var.b()) {
-                    dh0Var.setProgress(0.0f);
-                    dh0Var.d();
+                ch0 ch0Var = ((z2) obj).f;
+                if (!ch0Var.b()) {
+                    ch0Var.setProgress(0.0f);
+                    ch0Var.d();
                     break;
                 }
                 break;
@@ -73,7 +73,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 v5 v5Var = (v5) obj;
                 u5 u5Var = v5Var.d;
                 if (u5Var != null) {
-                    om0.Z((om0) ((org.telegram.ui.l4) ((ni0) u5Var).b).e, v5Var.b[((Integer) view.getTag()).intValue()]);
+                    pm0.Z((pm0) ((org.telegram.ui.l4) ((oi0) u5Var).b).e, v5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
@@ -84,9 +84,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     n7 n7Var = p7Var.d;
                     int i10 = p7Var.c[intValue];
                     ij ijVar = p7Var.b[intValue];
-                    a00 a00Var = ((yz) ((org.telegram.ui.f) n7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = a00.s0;
-                    a00Var.f(i10, p7Var, ijVar, intValue);
+                    b00 b00Var = ((zz) ((org.telegram.ui.f) n7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = b00.s0;
+                    b00Var.f(i10, p7Var, ijVar, intValue);
                     break;
                 }
                 break;

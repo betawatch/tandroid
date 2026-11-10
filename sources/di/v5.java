@@ -12,19 +12,19 @@ import org.telegram.messenger.ui;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fz;
-import org.telegram.ui.Components.my0;
-import org.telegram.ui.Components.uv;
+import org.telegram.ui.Components.ez;
+import org.telegram.ui.Components.ly0;
+import org.telegram.ui.Components.tv;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.gf0;
+import org.telegram.ui.ak0;
+import org.telegram.ui.hf0;
 import org.telegram.ui.ho;
-import org.telegram.ui.id0;
-import org.telegram.ui.jl0;
+import org.telegram.ui.jd0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.la;
-import org.telegram.ui.n21;
-import org.telegram.ui.zj0;
+import org.telegram.ui.o21;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -90,37 +90,37 @@ public final /* synthetic */ class v5 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 18:
-                Pattern pattern2 = org.telegram.ui.Components.v4.a;
+                Pattern pattern2 = org.telegram.ui.Components.u4.a;
                 break;
             case 19:
-                int i12 = uv.H0;
+                int i12 = tv.H0;
                 break;
             case 20:
-                int i13 = fz.A0;
+                int i13 = ez.A0;
                 break;
             case 21:
                 org.telegram.messenger.g0.h3(new ai.m0(24));
                 break;
             case 22:
-                int i14 = my0.e;
+                int i14 = ly0.e;
                 break;
             case 23:
-                int i15 = id0.v0;
+                int i15 = jd0.v0;
                 break;
             case 24:
-                org.telegram.messenger.g0.h3(new gf0(tLObject, 5));
+                org.telegram.messenger.g0.h3(new hf0(tLObject, 5));
                 break;
             case 25:
-                int i16 = zj0.R;
+                int i16 = ak0.R;
                 break;
             case 26:
-                List list = jl0.g1;
+                List list = kl0.g1;
                 break;
             case 27:
                 RectF rectF = ProfileActivity.V6;
                 break;
             default:
-                int i17 = n21.l1;
+                int i17 = o21.o1;
                 break;
         }
     }

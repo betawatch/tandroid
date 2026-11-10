@@ -3,12 +3,12 @@ package l2;
 import j$.time.LocalDate;
 import j$.time.ZoneOffset;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.eb0;
-import org.telegram.ui.Components.zi0;
+import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u implements h2.o, g9.k, zi0, eb0, h2.j {
+public final /* synthetic */ class u implements h2.o, g9.k, yi0, db0, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -40,7 +40,7 @@ public final /* synthetic */ class u implements h2.o, g9.k, zi0, eb0, h2.j {
         return Integer.valueOf(this.b);
     }
 
-    @Override // org.telegram.ui.Components.eb0
+    @Override // org.telegram.ui.Components.db0
     public String h(int i7) {
         int i10 = this.a;
         int i11 = this.b;
@@ -73,7 +73,7 @@ public final /* synthetic */ class u implements h2.o, g9.k, zi0, eb0, h2.j {
         }
     }
 
-    @Override // org.telegram.ui.Components.zi0
+    @Override // org.telegram.ui.Components.yi0
     public int run() {
         return this.b;
     }

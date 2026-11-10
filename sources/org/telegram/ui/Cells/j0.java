@@ -1,12 +1,12 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.xw0;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.zw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class j0 extends ic {
+public final class j0 extends hc {
     public final /* synthetic */ int k;
     public final /* synthetic */ Object l;
 
@@ -17,7 +17,7 @@ public final class j0 extends ic {
         this.l = q1Var2;
     }
 
-    @Override // org.telegram.ui.Components.ic
+    @Override // org.telegram.ui.Components.hc
     public final void b() {
         switch (this.k) {
             case 0:
@@ -27,15 +27,15 @@ public final class j0 extends ic {
                 ((q1) this.l).p2();
                 break;
             default:
-                ((xw0) this.l).invalidateSelf();
+                ((zw0) this.l).invalidateSelf();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(xw0 xw0Var) {
+    public j0(zw0 zw0Var) {
         super((View) null);
         this.k = 2;
-        this.l = xw0Var;
+        this.l = zw0Var;
     }
 }

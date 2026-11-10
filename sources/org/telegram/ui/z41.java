@@ -1,8 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import java.util.Locale;
+import org.telegram.tgnet.tl.TL_stats;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class z41 {
+    public String A;
+    public boolean B;
+    public boolean C;
+    public String D;
+    public String E;
+    public String F;
+    public boolean G;
+    public boolean H;
     public String a;
     public String b;
     public String c;
@@ -18,5 +29,54 @@ public final class z41 {
     public String m;
     public String n;
     public String o;
-    public boolean p;
+    public String p;
+    public String q;
+    public boolean r;
+    public boolean s;
+    public String t;
+    public String u;
+    public String v;
+    public boolean w;
+    public boolean x;
+    public String y;
+    public String z;
+
+    public static ab.b0 a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
+        String str;
+        double d = tL_statsAbsValueAndPrev.current;
+        double d2 = tL_statsAbsValueAndPrev.previous;
+        int i7 = (int) (d - d2);
+        float abs = d2 == 0.0d ? 0.0f : Math.abs((i7 / ((float) d2)) * 100.0f);
+        String o02 = org.telegram.messenger.g0.o0((int) tL_statsAbsValueAndPrev.current, 0);
+        boolean z9 = true;
+        str = "";
+        if (i7 != 0 && abs != 0.0f) {
+            int i10 = (int) abs;
+            if (abs == i10) {
+                Locale locale = Locale.ENGLISH;
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(i7 > 0 ? "+" : "");
+                sb2.append(org.telegram.messenger.g0.o0(i7, 0));
+                str = sb2.toString() + " (" + i10 + "%)";
+            } else {
+                Locale locale2 = Locale.ENGLISH;
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append(i7 > 0 ? "+" : "");
+                sb3.append(org.telegram.messenger.g0.o0(i7, 0));
+                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
+            }
+        }
+        boolean z10 = i7 >= 0;
+        if (i7 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
+            z9 = false;
+        }
+        Boolean valueOf = Boolean.valueOf(z10);
+        Boolean valueOf2 = Boolean.valueOf(z9);
+        ab.b0 b0Var = new ab.b0(11, false);
+        b0Var.b = o02;
+        b0Var.e = str;
+        b0Var.c = valueOf;
+        b0Var.d = valueOf2;
+        return b0Var;
+    }
 }

@@ -1,35 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ju0 extends na {
-    public vr P1;
+public final /* synthetic */ class ju0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mu0 b;
 
-    public ju0(Context context) {
-        super(context, null, true, false, null);
-        N();
-        this.v1 = true;
-        this.u1 = true;
-        Y0();
-        qj0 qj0Var = this.k1;
-        int i7 = this.t0;
-        qj0Var.setPadding(i7, 0, i7, 0);
-        this.k1.j(new ui(this, 17));
-        this.k1.setOnItemClickListener(new k(this, 14));
+    public /* synthetic */ ju0(mu0 mu0Var, int i7) {
+        this.a = i7;
+        this.b = mu0Var;
     }
 
-    @Override // org.telegram.ui.Components.na
-    public final pj0 L0(qj0 qj0Var) {
-        vr vrVar = new vr(qj0Var, getContext(), this.a, 0, true, this.I0);
-        this.P1 = vrVar;
-        vrVar.r = false;
-        return vrVar;
-    }
-
-    @Override // org.telegram.ui.Components.na
-    public final CharSequence O0() {
-        return org.telegram.messenger.id.M0(2131745821, null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                mu0 mu0Var = this.b;
+                mu0Var.invalidate();
+                org.telegram.messenger.g0.h3(new ju0(mu0Var, 1));
+                break;
+            default:
+                mu0 mu0Var2 = this.b;
+                lu0 lu0Var = mu0Var2.e;
+                if (lu0Var != null) {
+                    mu0Var2.getVisibilityFactor();
+                    ProfileActivity profileActivity = ((org.telegram.ui.wt0) lu0Var).b;
+                    profileActivity.r.setTranslationX(profileActivity.m4(profileActivity.x6, profileActivity.z6));
+                    profileActivity.r.setTranslationY(profileActivity.n4(profileActivity.A6));
+                    break;
+                }
+                break;
+        }
     }
 }

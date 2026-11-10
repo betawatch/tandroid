@@ -1,42 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.io.Serializable;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class is0 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.a20 {
+public final class is0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ js0 b;
+    public final /* synthetic */ PopupNotificationActivity b;
 
-    public /* synthetic */ is0(js0 js0Var, int i7) {
+    public /* synthetic */ is0(PopupNotificationActivity popupNotificationActivity, int i7) {
         this.a = i7;
-        this.b = js0Var;
+        this.b = popupNotificationActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                this.b.d0();
+                PopupNotificationActivity popupNotificationActivity = this.b;
+                FrameLayout frameLayout = popupNotificationActivity.f;
+                if (frameLayout != null) {
+                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                int y10 = org.telegram.messenger.camera.q.y(48.0f, org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), 2);
+                FrameLayout frameLayout2 = popupNotificationActivity.f;
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), y10, popupNotificationActivity.f.getPaddingRight(), y10);
                 break;
             default:
-                this.b.finishFragment();
+                PopupNotificationActivity popupNotificationActivity2 = this.b;
+                popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                if (!popupNotificationActivity2.c() && !popupNotificationActivity2.X) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
+                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+                    marginLayoutParams.bottomMargin = org.telegram.messenger.g0.L(48.0f);
+                    marginLayoutParams.width = -1;
+                    marginLayoutParams.height = -1;
+                    popupNotificationActivity2.n.setLayoutParams(marginLayoutParams);
+                    popupNotificationActivity2.a(0);
+                    break;
+                }
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.a20
-    public void i(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        View view = (View) obj2;
-        if (((org.telegram.ui.Components.y31) obj).d == 1) {
-            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-            boolean z9 = !r8Var.e.h;
-            js0 js0Var = this.b;
-            js0Var.n = z9;
-            r8Var.setChecked(z9);
-            js0Var.d.f3.O(true);
-            js0Var.a0(true);
-        }
+        return true;
     }
 }

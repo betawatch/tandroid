@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q5 extends ImageView {
     public final int a;
@@ -17,7 +17,7 @@ public final class q5 extends ImageView {
         super(context);
         this.b = s5Var;
         this.a = i7;
-        setBackground(org.telegram.ui.ActionBar.l6.h0(1090519039, 1, -1));
+        setBackground(org.telegram.ui.ActionBar.m6.h0(1090519039, 1, -1));
         setScaleType(ImageView.ScaleType.CENTER);
         setImageResource(i10);
         setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));

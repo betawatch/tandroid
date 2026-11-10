@@ -1,15 +1,15 @@
 package ai;
 
 import android.graphics.Canvas;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class r extends qj0 {
+public final class r extends pj0 {
     public aa.k e3;
     public k0 f3;
 
-    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int i7;

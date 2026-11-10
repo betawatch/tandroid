@@ -6,9 +6,9 @@ import f3.j0;
 import j2.c0;
 import org.telegram.tgnet.ConnectionsManager;
 import sg.i0;
-import x2.b1;
+import x2.a1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n extends a {
     public final int E;
@@ -27,10 +27,10 @@ public final class n extends a {
         c0 c0Var = this.r;
         i0 i0Var = this.y;
         i0Var.getClass();
-        for (b1 b1Var : (b1[]) i0Var.c) {
-            if (b1Var.H != 0) {
-                b1Var.H = 0L;
-                b1Var.B = true;
+        for (a1 a1Var : (a1[]) i0Var.c) {
+            if (a1Var.H != 0) {
+                a1Var.H = 0L;
+                a1Var.B = true;
             }
         }
         j0 f10 = i0Var.f(this.E);

@@ -17,17 +17,17 @@ import org.telegram.messenger.qi;
 import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gb0;
-import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.ln0;
+import org.telegram.ui.Components.fb0;
+import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.kn0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.ev0;
-import org.telegram.ui.nd0;
-import org.telegram.ui.s11;
+import org.telegram.ui.fv0;
+import org.telegram.ui.od0;
+import org.telegram.ui.t11;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.k9, OnFailureListener, org.telegram.ui.ActionBar.r1, gb0, f5.m, ri {
+public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.k9, OnFailureListener, org.telegram.ui.ActionBar.r1, fb0, f5.m, ri {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -49,24 +49,24 @@ public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.k
 
     @Override // f5.m
     public void b(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new r7((nd0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (ln0) this.e, 8));
+        org.telegram.messenger.g0.h3(new r7((od0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (kn0) this.e, 8));
     }
 
     @Override // org.telegram.messenger.ri
     public void e(String str, ArrayList arrayList) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        s11 s11Var = (s11) this.a;
+        t11 t11Var = (t11) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        s11Var.getClass();
+        t11Var.getClass();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             try {
                 if (((qi) arrayList.get(i7)).a.startsWith("animated_")) {
                     linkedHashSet.add(Long.valueOf(Long.parseLong(((qi) arrayList.get(i7)).a.substring(9))));
                 } else {
-                    int i10 = s11Var.W;
+                    int i10 = t11Var.W;
                     if ((i10 == 1 || i10 == 11 || i10 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((qi) arrayList.get(i7)).a)) != null) {
                         arrayList2.add(ch.o0.c(tL_availableReaction));
                     }
@@ -79,13 +79,13 @@ public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.k
 
     @Override // org.telegram.ui.ActionBar.r1
     public void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
-        org.telegram.ui.ActionBar.d3 d3Var = (org.telegram.ui.ActionBar.d3) this.a;
+        org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.a;
         boolean[] zArr = (boolean[]) this.b;
-        org.telegram.ui.ActionBar.c3 c3Var = (org.telegram.ui.ActionBar.c3) this.c;
+        org.telegram.ui.ActionBar.d3 d3Var = (org.telegram.ui.ActionBar.d3) this.c;
         c20 c20Var = (c20) this.d;
         org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.e;
         zArr[0] = true;
-        d3Var.h(d3Var.x, c3Var, true);
+        e3Var.h(e3Var.x, d3Var, true);
         c20Var.a(Boolean.TRUE);
         u1VarArr[0].dismiss();
     }
@@ -111,16 +111,16 @@ public final /* synthetic */ class q7 implements org.telegram.messenger.q1, di.k
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        ev0 ev0Var = (ev0) nVar.b;
+        fv0 fv0Var = (fv0) nVar.b;
         int i7 = ProfileStoriesView.s0;
-        ev0Var.a(canvas, l4Var, l4Var2);
+        fv0Var.a(canvas, l4Var, l4Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }
 
-    @Override // org.telegram.ui.Components.gb0
-    public void n(ib0 ib0Var, int i7) {
-        org.telegram.ui.Components.v4.c((fi.d) this.a, (ib0) this.b, (ib0) this.c, (ib0) this.d, (ib0) this.e);
+    @Override // org.telegram.ui.Components.fb0
+    public void n(hb0 hb0Var, int i7) {
+        org.telegram.ui.Components.u4.c((fi.d) this.a, (hb0) this.b, (hb0) this.c, (hb0) this.d, (hb0) this.e);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

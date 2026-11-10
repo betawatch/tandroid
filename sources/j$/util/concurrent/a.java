@@ -1,12 +1,12 @@
 package j$.util.concurrent;
 
 /* loaded from: classes2.dex */
-public abstract class a extends p {
+public abstract class a extends o {
     public final ConcurrentHashMap i;
-    public l j;
+    public k j;
 
-    public a(l[] lVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap) {
-        super(lVarArr, i7, 0, i10);
+    public a(k[] kVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap) {
+        super(kVarArr, i7, 0, i10);
         this.i = concurrentHashMap;
         a();
     }
@@ -20,11 +20,11 @@ public abstract class a extends p {
     }
 
     public final void remove() {
-        l lVar = this.j;
-        if (lVar == null) {
+        k kVar = this.j;
+        if (kVar == null) {
             throw new IllegalStateException();
         }
         this.j = null;
-        this.i.g(lVar.b, null, null);
+        this.i.g(kVar.b, null, null);
     }
 }

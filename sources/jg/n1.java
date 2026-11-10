@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.r2;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n1 extends v4.i0 {
     public final /* synthetic */ int a;
@@ -27,15 +27,15 @@ public final class n1 extends v4.i0 {
                 ((o1) obj).f();
                 break;
             case 1:
-                qj0 qj0Var = (qj0) obj;
-                qj0Var.K0(true);
-                if (qj0Var.q2) {
-                    qj0Var.q1 = -1;
-                    if (qj0Var.T1 == null) {
-                        qj0Var.E1.setEmpty();
+                pj0 pj0Var = (pj0) obj;
+                pj0Var.K0(true);
+                if (pj0Var.q2) {
+                    pj0Var.q1 = -1;
+                    if (pj0Var.T1 == null) {
+                        pj0Var.E1.setEmpty();
                     }
                 }
-                qj0Var.invalidate();
+                pj0Var.invalidate();
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) obj;
@@ -98,12 +98,12 @@ public final class n1 extends v4.i0 {
                 ((o1) obj).o(i7 + 1, i10);
                 break;
             case 1:
-                qj0 qj0Var = (qj0) obj;
-                qj0Var.K0(true);
-                View view = qj0Var.p1;
+                pj0 pj0Var = (pj0) obj;
+                pj0Var.K0(true);
+                View view = pj0Var.p1;
                 if (view != null && view.getAlpha() == 0.0f) {
-                    qj0Var.q1 = -1;
-                    qj0Var.g1();
+                    pj0Var.q1 = -1;
+                    pj0Var.g1();
                     break;
                 }
                 break;
@@ -162,7 +162,7 @@ public final class n1 extends v4.i0 {
                 ((o1) obj).p(i7 + 1, i10);
                 break;
             case 1:
-                ((qj0) obj).K0(true);
+                ((pj0) obj).K0(true);
                 break;
             default:
                 RecyclerView recyclerView = (RecyclerView) obj;

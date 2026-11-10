@@ -10,23 +10,23 @@ import bi.de;
 import di.w8;
 import j$.util.Objects;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.ot0;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q1 extends j {
-    public ot0 q0;
+    public nt0 q0;
     public w8 r0;
     public w8 s0;
     public ch.f0 t0;
     public ch.f0 u0;
     public ch.o0 v0;
-    public w5 w0;
-    public w5 x0;
+    public v5 w0;
+    public v5 x0;
     public boolean y0;
     public float z0;
 
@@ -39,7 +39,7 @@ public final class q1 extends j {
 
     @Override // tg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        ot0 ot0Var = this.q0;
+        nt0 nt0Var = this.q0;
         int padding = getPadding();
         float e10 = this.x0.e(false, 1.0f);
         if (e10 == 1.0f) {
@@ -51,12 +51,12 @@ public final class q1 extends j {
         w8 w8Var = this.s0;
         if (w8Var != null) {
             w8Var.e = (int) ((1.0f - e10) * 255.0f);
-            w8Var.setBounds(padding, padding, ((int) ot0Var.a) - padding, ((int) ot0Var.b) - padding);
+            w8Var.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
             this.s0.draw(canvas);
         }
         w8 w8Var2 = this.r0;
         w8Var2.e = (int) (e10 * 255.0f);
-        w8Var2.setBounds(padding, padding, ((int) ot0Var.a) - padding, ((int) ot0Var.b) - padding);
+        w8Var2.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
         this.r0.draw(canvas);
         Rect rect = org.telegram.messenger.g0.Q;
         float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
@@ -104,23 +104,23 @@ public final class q1 extends j {
     }
 
     @Override // tg.j
-    public li0 getSelectionBounds() {
+    public ki0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new li0();
+            return new ki0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f10 = scale / 2.0f;
         float f11 = scale * scaleX;
-        return new li0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
+        return new ki0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
     }
 
     @Override // tg.j
     public final void k() {
-        ot0 ot0Var = this.q0;
-        float f10 = ot0Var.a / 2.0f;
-        float f11 = ot0Var.b / 2.0f;
+        nt0 nt0Var = this.q0;
+        float f10 = nt0Var.a / 2.0f;
+        float f11 = nt0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -142,8 +142,8 @@ public final class q1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        ot0 ot0Var = this.q0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ot0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) ot0Var.b, TLObject.FLAG_30));
+        nt0 nt0Var = this.q0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) nt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) nt0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z9) {
@@ -173,8 +173,8 @@ public final class q1 extends j {
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new de(28, this, zArr));
-        ofFloat.addListener(new w50(20, this, zArr));
-        ofFloat.setInterpolator(xq.g);
+        ofFloat.addListener(new v50(20, this, zArr));
+        ofFloat.setInterpolator(wq.g);
         ofFloat.setDuration(350L);
         ofFloat.start();
     }

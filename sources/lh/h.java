@@ -9,16 +9,16 @@ import h6.m;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements te.b {
     public static final int[] s = {R.drawable.msg_input_attach2, R.drawable.pagedown, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, R.drawable.pagedown, R.drawable.pagedown};
     public final String[] a;
-    public final g6 b;
+    public final h6 b;
     public final gh.a c;
     public final dh.c d;
     public final m[] e;
@@ -27,7 +27,7 @@ public final class h extends FrameLayout implements te.b {
     public b n;
     public int r;
 
-    public h(Context context, g6 g6Var, gh.b bVar, dh.c cVar) {
+    public h(Context context, h6 h6Var, gh.b bVar, dh.c cVar) {
         super(context);
         this.a = new String[]{id.M0(2131753953, null), id.M0(2131754815, null), id.M0(2131754842, null), id.M0(2131754790, null), id.M0(2131754804, null), id.M0(2131754778, null), id.M0(2131754779, null)};
         this.e = new m[7];
@@ -35,7 +35,7 @@ public final class h extends FrameLayout implements te.b {
         this.r = 83;
         this.d = cVar;
         this.c = bVar;
-        this.b = g6Var;
+        this.b = h6Var;
     }
 
     @Override // te.b
@@ -116,8 +116,8 @@ public final class h extends FrameLayout implements te.b {
         if (mVar != null || z9) {
             if (mVar == null) {
                 int i12 = i7 << 16;
-                te.a aVar = new te.a(i12 | 1, this, i7 == 0 ? xq.h : se.a.a, i7 == 0 ? 300L : 280L, false);
-                te.a aVar2 = new te.a(i12 | 2, this, i7 == 0 ? xq.h : se.a.a, i7 == 0 ? 300L : 280L, false);
+                te.a aVar = new te.a(i12 | 1, this, i7 == 0 ? wq.h : se.a.a, i7 == 0 ? 300L : 280L, false);
+                te.a aVar2 = new te.a(i12 | 2, this, i7 == 0 ? wq.h : se.a.a, i7 == 0 ? 300L : 280L, false);
                 if (i7 == 0) {
                     i10 = 50;
                     i11 = 32;
@@ -128,9 +128,9 @@ public final class h extends FrameLayout implements te.b {
                 int i13 = i11;
                 Context context = getContext();
                 int i14 = s[i7];
-                g6 g6Var = this.b;
-                kh.b bVar = new kh.b(context, g6Var);
-                kh.a d = kh.a.d(context, this.d, this.c, g6Var, i14, i13);
+                h6 h6Var = this.b;
+                kh.b bVar = new kh.b(context, h6Var);
+                kh.a d = kh.a.d(context, this.d, this.c, h6Var, i14, i13);
                 bVar.b = d;
                 bVar.addView(d, ha.e(i10, i10, 80));
                 d.setIconPadding(g0.L(2.0f));

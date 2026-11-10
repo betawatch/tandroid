@@ -20,9 +20,9 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.d20;
+import org.telegram.ui.Components.c20;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class n extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -55,7 +55,7 @@ public final class n extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((d20) arrayList2.get(i10)).setOnClickListener(null);
+            ((c20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
         this.c = false;
@@ -68,11 +68,11 @@ public final class n extends ViewGroup {
         arrayList5.clear();
         this.e.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            d20 d20Var = (d20) arrayList2.get(i11);
-            arrayList5.add(d20Var);
-            arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
+            c20 c20Var = (c20) arrayList2.get(i11);
+            arrayList5.add(c20Var);
+            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
         }
         requestLayout();
     }
@@ -88,7 +88,7 @@ public final class n extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((d20) arrayList2.get(i10)).setOnClickListener(null);
+            ((c20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
         if (z9) {
@@ -102,11 +102,11 @@ public final class n extends ViewGroup {
             arrayList5.clear();
             this.e.clear();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                d20 d20Var = (d20) arrayList2.get(i11);
-                arrayList5.add(d20Var);
-                arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_X, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(d20Var, (Property<d20, Float>) View.ALPHA, 1.0f, 0.0f));
+                c20 c20Var = (c20) arrayList2.get(i11);
+                arrayList5.add(c20Var);
+                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_X, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(c20Var, (Property<c20, Float>) View.ALPHA, 1.0f, 0.0f));
             }
         } else {
             for (int i12 = 0; i12 < arrayList2.size(); i12++) {
@@ -252,7 +252,7 @@ public final class n extends ViewGroup {
                 while (i21 < childCount) {
                     View childAt = getChildAt(i21);
                     int i24 = childCount;
-                    if (childAt instanceof d20) {
+                    if (childAt instanceof c20) {
                         i12 = i21;
                         int i25 = i22;
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -394,7 +394,7 @@ public final class n extends ViewGroup {
                 int i31 = 0;
                 while (i29 < childCount2) {
                     View childAt2 = getChildAt(i29);
-                    if (childAt2 instanceof d20) {
+                    if (childAt2 instanceof c20) {
                         d8Var = d8Var2;
                         i16 = childCount2;
                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));

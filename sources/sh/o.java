@@ -10,25 +10,25 @@ import c8.ha;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.b9;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.a9;
 import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o extends FrameLayout {
-    public final b9 a;
+    public final a9 a;
     public final TextView b;
     public j c;
 
-    public o(int i7, Context context, g6 g6Var) {
+    public o(int i7, Context context, h6 h6Var) {
         super(context);
-        this.a = new b9(i7, this, g0.L(24.0f), g0.L(10.0f), g0.N(1.0f));
+        this.a = new a9(i7, this, g0.L(24.0f), g0.L(10.0f), g0.N(1.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        s6.U(textView, l6.E8, g6Var);
+        t6.U(textView, m6.E8, h6Var);
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(19);
@@ -56,9 +56,9 @@ public final class o extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         int width = getWidth() - g0.L(11.0f);
-        b9 b9Var = this.a;
-        b9Var.setBounds(width - ((int) b9Var.c.d.f.a), g0.L(12.0f), getWidth() - g0.L(11.0f), g0.L(24.0f) + g0.L(12.0f));
-        b9Var.c(canvas);
+        a9 a9Var = this.a;
+        a9Var.setBounds(width - ((int) a9Var.c.d.f.a), g0.L(12.0f), getWidth() - g0.L(11.0f), g0.L(24.0f) + g0.L(12.0f));
+        a9Var.c(canvas);
     }
 
     @Override // android.view.ViewGroup, android.view.View

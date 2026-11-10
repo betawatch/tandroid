@@ -5,9 +5,9 @@ import bi.x5;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.ActionBar.q4;
+import org.telegram.ui.ActionBar.r4;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k extends i1 {
     public final /* synthetic */ x5 x;
@@ -23,7 +23,7 @@ public final class k extends i1 {
         boolean z9;
         boolean z10;
         o oVar = (o) this.x.c;
-        q4 parentLayout = oVar.getParentLayout();
+        r4 parentLayout = oVar.getParentLayout();
         z9 = ((f2) oVar).inPreviewMode;
         if (z9 || org.telegram.messenger.g0.Q1()) {
             return false;

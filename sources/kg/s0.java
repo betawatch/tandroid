@@ -14,17 +14,17 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s0 extends f2 implements ls {
-    public b5 a;
+    public c5 a;
     public r41 b;
     public a0 c;
     public final int[] d;
@@ -57,39 +57,39 @@ public final class s0 extends f2 implements ls {
     public static void Z(s0 s0Var, ArrayList arrayList, m41 m41Var) {
         String M0 = id.M0(2131752775, null);
         String M02 = id.M0(2131752773, null);
-        y31 y31Var = new y31(2);
-        y31Var.l = M0;
-        y31Var.o = M02;
-        y31Var.m = "RestrictedEmoji";
-        y31Var.n = "👋";
-        arrayList.add(y31Var);
-        y31 i7 = y31.i(1, id.M0(2131752769, null));
+        x31 x31Var = new x31(2);
+        x31Var.l = M0;
+        x31Var.o = M02;
+        x31Var.m = "RestrictedEmoji";
+        x31Var.n = "👋";
+        arrayList.add(x31Var);
+        x31 i7 = x31.i(1, id.M0(2131752769, null));
         i7.L(s0Var.r);
         arrayList.add(i7);
-        arrayList.add(y31.C(null));
+        arrayList.add(x31.C(null));
         if (s0Var.r) {
             s1 d = t1.f(s0Var.currentAccount).d("hello");
             if (d != null) {
-                y31 y31Var2 = new y31(17);
-                y31Var2.G = d;
-                arrayList.add(y31Var2);
+                x31 x31Var2 = new x31(17);
+                x31Var2.G = d;
+                arrayList.add(x31Var2);
             } else {
-                y31 c10 = y31.c(2, R.drawable.msg2_chats_add, id.M0(2131752774, null));
+                x31 c10 = x31.c(2, R.drawable.msg2_chats_add, id.M0(2131752774, null));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(y31.C(null));
-            arrayList.add(y31.u(id.M0(2131752688, null)));
-            y31 x10 = y31.x(3, id.M0(2131752781, null));
+            arrayList.add(x31.C(null));
+            arrayList.add(x31.u(id.M0(2131752688, null)));
+            x31 x10 = x31.x(3, id.M0(2131752781, null));
             x10.L(s0Var.s);
             arrayList.add(x10);
-            y31 x11 = y31.x(4, id.M0(2131752776, null));
+            x31 x11 = x31.x(4, id.M0(2131752776, null));
             x11.L(!s0Var.s);
             arrayList.add(x11);
-            arrayList.add(y31.C(null));
+            arrayList.add(x31.C(null));
             s0Var.c.a(arrayList, m41Var, true);
-            arrayList.add(y31.C(id.M0(2131752770, null)));
-            arrayList.add(y31.u(id.M0(2131752772, null)));
+            arrayList.add(x31.C(id.M0(2131752770, null)));
+            arrayList.add(x31.u(id.M0(2131752772, null)));
             int i10 = 0;
             while (true) {
                 int[] iArr = s0Var.d;
@@ -104,13 +104,13 @@ public final class s0 extends f2 implements ls {
             }
             String[] strArr = s0Var.e;
             ii.c cVar = new ii.c(s0Var, 6);
-            y31 y31Var3 = new y31(14);
-            y31Var3.p = strArr;
-            y31Var3.z = i10;
-            y31Var3.C = cVar;
-            y31Var3.B = -1L;
-            arrayList.add(y31Var3);
-            arrayList.add(y31.C(id.M0(2131752771, null)));
+            x31 x31Var3 = new x31(14);
+            x31Var3.p = strArr;
+            x31Var3.z = i10;
+            x31Var3.C = cVar;
+            x31Var3.B = -1L;
+            arrayList.add(x31Var3);
+            arrayList.add(x31.C(id.M0(2131752771, null)));
         }
     }
 
@@ -185,7 +185,7 @@ public final class s0 extends f2 implements ls {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752775, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 14));
-        this.a = this.simpleActionBar.o(id.M0(2131745946, null));
+        this.a = this.simpleActionBar.p(id.M0(2131745946, null));
         a0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         a0 a0Var = new a0(this, new v9(this, 25));
@@ -249,7 +249,7 @@ public final class s0 extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.b;
     }
 

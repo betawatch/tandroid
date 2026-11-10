@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
-import org.telegram.ui.yy;
+import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class rc extends org.telegram.ui.Components.j6 {
+public final class rc extends org.telegram.ui.Components.i6 {
     public final /* synthetic */ int s = 0;
     public final Object w;
     public final /* synthetic */ ViewGroup x;
@@ -34,11 +34,11 @@ public final class rc extends org.telegram.ui.Components.j6 {
                 super.dispatchDraw(canvas);
                 break;
             default:
-                yy yyVar = (yy) this.x;
-                int a10 = yyVar.x.a(yyVar.w, false);
+                zy zyVar = (zy) this.x;
+                int a10 = zyVar.x.a(zyVar.w, false);
                 setTextColor(a10);
                 Paint paint = (Paint) this.w;
-                paint.setColor(org.telegram.ui.ActionBar.l6.r1(org.telegram.ui.ActionBar.l6.I.q() ? 0.2f : 0.1f, a10));
+                paint.setColor(org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.2f : 0.1f, a10));
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set((getWidth() - getDrawable().c()) - org.telegram.messenger.g0.N(9.32f), (getHeight() - org.telegram.messenger.g0.N(14.66f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.N(14.66f) + getHeight()) / 2.0f);
                 canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
@@ -48,9 +48,9 @@ public final class rc extends org.telegram.ui.Components.j6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rc(yy yyVar, Context context) {
+    public rc(zy zyVar, Context context) {
         super(context, false, true, true);
-        this.x = yyVar;
+        this.x = zyVar;
         this.w = new Paint(1);
     }
 }

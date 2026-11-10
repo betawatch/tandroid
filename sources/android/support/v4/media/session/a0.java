@@ -106,19 +106,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.oy;
-import org.telegram.ui.Components.qg;
-import org.telegram.ui.Components.r51;
-import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.nm0;
+import org.telegram.ui.Components.ny;
+import org.telegram.ui.Components.pg;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.om0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.internal.p, r51, ib.b {
+public class a0 implements oa.a, om0, ai, com.google.android.gms.common.api.internal.p, q51, ib.b {
     public static int e;
     public static a0 f;
     public final /* synthetic */ int a;
@@ -201,7 +201,7 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public boolean G1() {
         return true;
     }
@@ -246,7 +246,7 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         return this;
     }
 
-    @Override // org.telegram.ui.nm0
+    @Override // org.telegram.ui.om0
     public void c(ArrayList arrayList) {
         String str = !arrayList.isEmpty() ? ((fz) arrayList.get(0)).c : null;
         if (str == null) {
@@ -255,9 +255,9 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         Utilities.e.c(new ai.d0(str, (d20) this.b, (f2) this.c, (c20) this.d));
     }
 
-    @Override // org.telegram.ui.Components.bi
-    public void c0(qg qgVar) {
-        qgVar.run();
+    @Override // org.telegram.ui.Components.ai
+    public void c0(pg pgVar) {
+        pgVar.run();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:56:0x00a7  */
@@ -405,7 +405,7 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         return (d2 == null || !d2.hasEnrolledFingerprints()) ? 11 : 0;
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ boolean f0() {
         return false;
     }
@@ -730,14 +730,14 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public void o1(int i7, boolean z9, boolean z10, int i10, int i11, long j3, boolean z11, boolean z12, long j10) {
         ua uaVar;
         String str = (String) this.c;
         ei.r rVar = (ei.r) this.d;
         long j11 = rVar.d;
-        di diVar = (di) this.b;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = diVar.a2;
+        ci ciVar = (ci) this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ciVar.d2;
         if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
             return;
         }
@@ -804,48 +804,48 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
                     D.d();
                 }
             }
-            g0.i3(new f8(diVar, 7), 400L);
+            g0.i3(new f8(ciVar, 7), 400L);
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
-    public void onError(u51 u51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.q51
+    public void onError(t51 t51Var, Exception exc) {
         u8 u8Var = ((y5) this.d).N;
         if (u8Var != null) {
             u8Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onStateChanged(boolean z9, int i7) {
         y5 y5Var = (y5) this.d;
         w5 w5Var = y5Var.K;
-        u51 u51Var = y5Var.e;
-        if (u51Var == null) {
+        t51 t51Var = y5Var.e;
+        if (t51Var == null) {
             return;
         }
-        if (u51Var.d0()) {
+        if (t51Var.d0()) {
             g0.h3(w5Var);
         } else {
             g0.r(w5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((y5) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         y5 y5Var = (y5) this.d;
         e7 e7Var = (e7) this.b;
@@ -873,11 +873,11 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
             int i15 = y5Var.h;
             i51Var2.d = i14;
             i51Var2.e = i15;
-            sy syVar = i51Var2.b;
-            if (syVar == null) {
+            ry ryVar = i51Var2.b;
+            if (ryVar == null) {
                 return;
             }
-            syVar.postRunnable(new oy(syVar, i14, i15, 0));
+            ryVar.postRunnable(new ny(ryVar, i14, i15, 0));
         }
     }
 
@@ -1146,7 +1146,7 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         this.c = serializable;
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public void onRenderedFirstFrame() {
         e7 e7Var = (e7) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -1254,15 +1254,15 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void F0() {
     }
 
-    @Override // org.telegram.ui.nm0
+    @Override // org.telegram.ui.om0
     public void m() {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void t0() {
     }
 
@@ -1273,19 +1273,19 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         this.d = new HashMap();
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void M0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void Y0(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r51
+    @Override // org.telegram.ui.Components.q51
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
@@ -1392,7 +1392,7 @@ public class a0 implements oa.a, nm0, bi, com.google.android.gms.common.api.inte
         throw new IllegalArgumentException("context must not be null");
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public /* synthetic */ void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
     }
 }

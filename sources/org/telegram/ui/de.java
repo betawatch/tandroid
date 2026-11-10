@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class de implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class de implements RequestDelegate {
             case 0:
                 final int i7 = 0;
                 final cn cnVar = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xe
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ye
                     @Override // java.lang.Runnable
                     public final void run() {
                         boolean z9 = false;
@@ -61,8 +61,8 @@ public final /* synthetic */ class de implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.hc.a(cnVar3)) {
-                                            org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(cnVar3);
+                                        if (org.telegram.ui.Components.gc.a(cnVar3)) {
+                                            org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(cnVar3);
                                             if (!cnVar3.ea() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z9 = true;
                                             }
@@ -81,7 +81,7 @@ public final /* synthetic */ class de implements RequestDelegate {
             case 1:
                 final int i10 = 1;
                 final cn cnVar2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xe
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ye
                     @Override // java.lang.Runnable
                     public final void run() {
                         boolean z9 = false;
@@ -117,8 +117,8 @@ public final /* synthetic */ class de implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.hc.a(cnVar3)) {
-                                            org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(cnVar3);
+                                        if (org.telegram.ui.Components.gc.a(cnVar3)) {
+                                            org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(cnVar3);
                                             if (!cnVar3.ea() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z9 = true;
                                             }
@@ -137,7 +137,7 @@ public final /* synthetic */ class de implements RequestDelegate {
             case 2:
                 final int i11 = 3;
                 final cn cnVar3 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xe
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ye
                     @Override // java.lang.Runnable
                     public final void run() {
                         boolean z9 = false;
@@ -173,8 +173,8 @@ public final /* synthetic */ class de implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.hc.a(cnVar32)) {
-                                            org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(cnVar32);
+                                        if (org.telegram.ui.Components.gc.a(cnVar32)) {
+                                            org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(cnVar32);
                                             if (!cnVar32.ea() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z9 = true;
                                             }
@@ -193,7 +193,7 @@ public final /* synthetic */ class de implements RequestDelegate {
             case 3:
                 final int i12 = 2;
                 final cn cnVar4 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.xe
+                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ye
                     @Override // java.lang.Runnable
                     public final void run() {
                         boolean z9 = false;
@@ -229,8 +229,8 @@ public final /* synthetic */ class de implements RequestDelegate {
                                     TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
                                     try {
                                         ((ClipboardManager) org.telegram.messenger.t0.b.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.hc.a(cnVar32)) {
-                                            org.telegram.ui.Components.hc a02 = org.telegram.ui.Components.hc.a0(cnVar32);
+                                        if (org.telegram.ui.Components.gc.a(cnVar32)) {
+                                            org.telegram.ui.Components.gc a02 = org.telegram.ui.Components.gc.a0(cnVar32);
                                             if (!cnVar32.ea() && tL_exportedMessageLink.link.contains("/c/")) {
                                                 z9 = true;
                                             }

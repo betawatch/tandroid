@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.bc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,23 +18,23 @@ public final /* synthetic */ class d8 implements Runnable {
         switch (this.a) {
             case 0:
                 s8 s8Var = this.b.W;
-                cc.h(s8Var.c);
-                super/*org.telegram.ui.ActionBar.v2*/.dismiss();
+                bc.h(s8Var.c);
+                super/*org.telegram.ui.ActionBar.w2*/.dismiss();
                 break;
             case 1:
                 n8 n8Var = this.b;
                 n8Var.w.setLoading(false);
                 s8 s8Var2 = n8Var.W;
                 s8Var2.M0();
-                s8Var2.i1.E(0);
+                s8Var2.l1.E(0);
                 break;
             case 2:
                 this.b.U = false;
                 break;
             case 3:
                 s8 s8Var3 = this.b.W;
-                s8Var3.D1 = 6;
-                s8Var3.i1.E(1);
+                s8Var3.G1 = 6;
+                s8Var3.l1.E(1);
                 break;
             case 4:
                 n8 n8Var2 = this.b;

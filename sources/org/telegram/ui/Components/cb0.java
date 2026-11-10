@@ -1,33 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class cb0 extends lm0 {
-    public final /* synthetic */ ib0 d;
+public final class cb0 implements Runnable {
+    public boolean a;
+    public final /* synthetic */ hb0 b;
 
-    public cb0(ib0 ib0Var) {
-        this.d = ib0Var;
+    public cb0(hb0 hb0Var) {
+        this.b = hb0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean a() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public final void c(boolean z9) {
-        this.d.a(!z9);
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public final CharSequence d() {
-        ib0 ib0Var = this.d;
-        org.telegram.messenger.d20 d20Var = ib0Var.u0;
-        return d20Var != null ? (CharSequence) d20Var.a(Integer.valueOf(ib0Var.H)) : ib0Var.d(ib0Var.H);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z9 = this.a;
+        hb0 hb0Var = this.b;
+        hb0Var.a(z9);
+        hb0Var.postDelayed(this, hb0Var.M);
     }
 }

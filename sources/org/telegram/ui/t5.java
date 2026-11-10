@@ -18,9 +18,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class t5 extends q00 implements org.telegram.messenger.ls {
+public final class t5 extends r00 implements org.telegram.messenger.ls {
     public final long R;
     public final int S;
     public TL_stories.TL_premium_boostsStatus T;
@@ -89,12 +89,12 @@ public final class t5 extends q00 implements org.telegram.messenger.ls {
                     }
                     new wg.c0(t5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z9 && boost.user_id == -1) {
-                    org.telegram.ui.Components.kb kbVar = new org.telegram.ui.Components.kb(t5Var.getParentActivity(), t5Var.getResourceProvider());
-                    kbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                    kbVar.b.setText(org.telegram.messenger.id.M0(2131753303, null));
-                    kbVar.b.setSingleLine(false);
-                    kbVar.b.setMaxLines(2);
-                    org.telegram.ui.Components.cc.g(t5Var, kbVar, 2750).j();
+                    org.telegram.ui.Components.jb jbVar = new org.telegram.ui.Components.jb(t5Var.getParentActivity(), t5Var.getResourceProvider());
+                    jbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                    jbVar.b.setText(org.telegram.messenger.id.M0(2131753303, null));
+                    jbVar.b.setSingleLine(false);
+                    jbVar.b.setMaxLines(2);
+                    org.telegram.ui.Components.bc.g(t5Var, jbVar, 2750).j();
                 } else if (!z10 && !z9) {
                     t5Var.presentFragment(ProfileActivity.D4(bVar.getDialogId()));
                 }
@@ -257,7 +257,7 @@ public final class t5 extends q00 implements org.telegram.messenger.ls {
         }
     }
 
-    @Override // org.telegram.ui.q00, org.telegram.ui.ActionBar.f2
+    @Override // org.telegram.ui.r00, org.telegram.ui.ActionBar.f2
     public final View createView(Context context) {
         View createView = super.createView(context);
         I0(false);
@@ -327,7 +327,7 @@ public final class t5 extends q00 implements org.telegram.messenger.ls {
         }
     }
 
-    @Override // org.telegram.ui.q00
+    @Override // org.telegram.ui.r00
     public final v4.g0 k0() {
         return this.f0;
     }

@@ -10,17 +10,17 @@ import org.telegram.messenger.rz;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class d3 extends LinearLayout implements ls {
     public int a;
-    public org.telegram.ui.Components.l9 b;
+    public org.telegram.ui.Components.k9 b;
     public TextView c;
     public TextView d;
     public TextView e;
 
     public final void a() {
-        org.telegram.ui.Components.l9 l9Var = this.b;
+        org.telegram.ui.Components.k9 k9Var = this.b;
         int i7 = this.a;
         TLRPC.TL_messages_stickerSet p02 = ui.b0(i7).p0("tg_placeholders_android");
         if (p02 == null) {
@@ -30,16 +30,16 @@ public abstract class d3 extends LinearLayout implements ls {
         TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
         if (document == null) {
             ui.b0(i7).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-            l9Var.getImageReceiver().f();
+            k9Var.getImageReceiver().f();
             return;
         }
-        rz d = org.telegram.messenger.t5.d(document.thumbs, org.telegram.ui.ActionBar.l6.a7, 0.2f, false);
+        rz d = org.telegram.messenger.t5.d(document.thumbs, org.telegram.ui.ActionBar.m6.a7, 0.2f, false);
         if (d != null) {
             d.e = 512;
             d.f = 512;
         }
         this.b.k(hc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
-        l9Var.getImageReceiver().W(2);
+        k9Var.getImageReceiver().W(2);
     }
 
     @Override // org.telegram.messenger.ls

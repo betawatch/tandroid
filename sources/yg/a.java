@@ -8,27 +8,27 @@ import android.widget.FrameLayout;
 import c8.ha;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final fi.d a;
     public final View b;
-    public final g6 c;
+    public final h6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, g6 g6Var) {
+    public a(Context context, h6 h6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = g6Var;
+        this.c = h6Var;
         View view = new View(context);
         this.b = view;
         addView(view, ha.o(-1, -1));
-        fi.d dVar = new fi.d(context, g6Var, true);
+        fi.d dVar = new fi.d(context, h6Var, true);
         this.a = dVar;
         addView(dVar, ha.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
@@ -41,7 +41,7 @@ public final class a extends FrameLayout {
         dVar.setEnabled(true);
         dVar.c(i7, z9);
         dVar.i(id.M0(2131753193, null), z9, true);
-        s6.h(l6.h5, this.b, this.c);
+        t6.h(m6.h5, this.b, this.c);
     }
 
     public final void b(boolean z9) {
@@ -52,7 +52,7 @@ public final class a extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            int w02 = l6.w0(l6.a7, this.c);
+            int w02 = m6.w0(m6.a7, this.c);
             Paint paint = this.d;
             paint.setColor(w02);
             paint.setAlpha(qs.e4);

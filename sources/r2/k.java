@@ -4,6 +4,7 @@ import a8.ia;
 import a8.wa;
 import android.net.Uri;
 import android.os.Looper;
+import e2.e0;
 import e2.f0;
 import e2.g0;
 import e2.l0;
@@ -18,14 +19,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.ui.Cells.f1;
-import x2.e0;
-import x2.i1;
+import x2.h1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class k extends x2.a {
     public final c h;
-    public final org.telegram.ui.Components.n i;
+    public final org.telegram.ui.Components.m i;
     public final sa.d j;
     public final q2.m k;
     public final pb.b l;
@@ -41,13 +41,13 @@ public final class k extends x2.a {
         m0.a("media3.exoplayer.hls");
     }
 
-    public k(l0 l0Var, org.telegram.ui.Components.n nVar, c cVar, sa.d dVar, q2.m mVar, pb.b bVar, s2.d dVar2, long j3, boolean z9, int i7) {
+    public k(l0 l0Var, org.telegram.ui.Components.m mVar, c cVar, sa.d dVar, q2.m mVar2, pb.b bVar, s2.d dVar2, long j3, boolean z9, int i7) {
         this.s = l0Var;
         this.q = l0Var.c;
-        this.i = nVar;
+        this.i = mVar;
         this.h = cVar;
         this.j = dVar;
-        this.k = mVar;
+        this.k = mVar2;
         this.l = bVar;
         this.o = dVar2;
         this.p = j3;
@@ -81,9 +81,9 @@ public final class k extends x2.a {
     }
 
     @Override // x2.a
-    public final e0 c(x2.g0 g0Var, h6.m mVar, long j3) {
-        wa b10 = b(g0Var);
-        q2.j jVar = new q2.j(this.d.c, 0, g0Var);
+    public final x2.d0 c(x2.f0 f0Var, h6.m mVar, long j3) {
+        wa b10 = b(f0Var);
+        q2.j jVar = new q2.j(this.d.c, 0, f0Var);
         d0 d0Var = this.r;
         m2.j jVar2 = this.g;
         jVar2.getClass();
@@ -141,8 +141,8 @@ public final class k extends x2.a {
     }
 
     @Override // x2.a
-    public final void o(e0 e0Var) {
-        j jVar = (j) e0Var;
+    public final void o(x2.d0 d0Var) {
+        j jVar = (j) d0Var;
         jVar.b.e.remove(jVar);
         for (p pVar : jVar.J) {
             if (pVar.T) {
@@ -210,7 +210,7 @@ public final class k extends x2.a {
 
     public final void v(s2.m mVar) {
         long j3;
-        i1 i1Var;
+        h1 h1Var;
         long j10;
         long j11;
         long j12;
@@ -254,7 +254,7 @@ public final class k extends x2.a {
             long j22 = h2.m0.j(j11, S, j21);
             f0 f0Var = i().c;
             boolean z12 = f0Var.d == -3.4028235E38f && f0Var.e == -3.4028235E38f && lVar.c == -9223372036854775807L && lVar.d == -9223372036854775807L;
-            e2.e0 a10 = this.q.a();
+            e0 a10 = this.q.a();
             a10.a = h2.m0.h0(j22);
             a10.d = z12 ? 1.0f : this.q.d;
             a10.e = z12 ? 1.0f : this.q.e;
@@ -276,7 +276,7 @@ public final class k extends x2.a {
                 }
                 j17 = j12;
             }
-            i1Var = new i1(j16, h02, j19, mVar.u, j18, j17, true, !z11, i7 == 2 && mVar.f, aVar, i(), this.q);
+            h1Var = new h1(j16, h02, j19, mVar.u, j18, j17, true, !z11, i7 == 2 && mVar.f, aVar, i(), this.q);
         } else {
             if (j14 == -9223372036854775807L || i0Var.isEmpty()) {
                 j3 = 0;
@@ -287,8 +287,8 @@ public final class k extends x2.a {
                 j3 = j14;
             }
             long j23 = mVar.u;
-            i1Var = new i1(j16, h02, j23, j23, 0L, j3, true, false, true, aVar, i(), null);
+            h1Var = new h1(j16, h02, j23, j23, 0L, j3, true, false, true, aVar, i(), null);
         }
-        n(i1Var);
+        n(h1Var);
     }
 }

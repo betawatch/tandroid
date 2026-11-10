@@ -21,17 +21,17 @@ import org.telegram.messenger.g5;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u6;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.ActionBar.v6;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class q0 extends qj0 implements b6 {
+public final class q0 extends pj0 implements c6 {
     public static final o0[] j3 = {new o0(R.drawable.search_media_filled, 2131745407, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, 2131745410, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, 2131745414, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, 2131745405, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, 2131745402, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern k3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern l3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
@@ -45,8 +45,8 @@ public final class q0 extends qj0 implements b6 {
     public boolean h3;
     public final l0 i3;
 
-    public q0(Context context, g6 g6Var) {
-        super(context, g6Var);
+    public q0(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.e3 = new ArrayList();
         this.f3 = new ArrayList();
         this.h3 = true;
@@ -61,7 +61,7 @@ public final class q0 extends qj0 implements b6 {
         setWillNotDraw(false);
         setHideIfEmpty(false);
         setSelectorRadius(org.telegram.messenger.g0.L(28.0f));
-        s6.l(this, 20, l6.i6, g6Var);
+        t6.l(this, 20, m6.i6, h6Var);
     }
 
     public static void A1(int i7, int i10, ArrayList arrayList) {
@@ -355,10 +355,10 @@ public final class q0 extends qj0 implements b6 {
         }
     }
 
-    public ArrayList<u6> getThemeDescriptions() {
-        ArrayList<u6> arrayList = new ArrayList<>();
-        arrayList.add(new u6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (t6) null, l6.e7));
-        arrayList.add(new u6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (t6) null, l6.f7));
+    public ArrayList<v6> getThemeDescriptions() {
+        ArrayList<v6> arrayList = new ArrayList<>();
+        arrayList.add(new v6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (u6) null, m6.e7));
+        arrayList.add(new v6(this, 0, (Class[]) null, (Paint) null, (Drawable[]) null, (u6) null, m6.f7));
         return arrayList;
     }
 
@@ -366,11 +366,11 @@ public final class q0 extends qj0 implements b6 {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.h3) {
-            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), l6.k0);
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), m6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -378,7 +378,7 @@ public final class q0 extends qj0 implements b6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);
@@ -386,7 +386,7 @@ public final class q0 extends qj0 implements b6 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         for (int i7 = 0; i7 < getCachedChildCount(); i7++) {
             View P = P(i7);
@@ -402,7 +402,7 @@ public final class q0 extends qj0 implements b6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

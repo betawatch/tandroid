@@ -20,11 +20,11 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.q5;
 import org.telegram.messenger.r2;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.ot0;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.x9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t0 extends q5 {
     public final /* synthetic */ v0 D;
@@ -38,17 +38,17 @@ public final class t0 extends q5 {
     public int n;
     public int r;
     public s0 s;
-    public final y9 w;
-    public final et x;
+    public final x9 w;
+    public final dt x;
     public final s0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t0(v0 v0Var, SurfaceTexture surfaceTexture, y9 y9Var) {
+    public t0(v0 v0Var, SurfaceTexture surfaceTexture, x9 x9Var) {
         super("CanvasInternal", true);
         this.D = v0Var;
-        this.x = new et(this, 29);
+        this.x = new dt(this, 29);
         this.y = new s0(this, 0);
-        this.w = y9Var;
+        this.w = x9Var;
         this.a = surfaceTexture;
     }
 
@@ -65,7 +65,7 @@ public final class t0 extends q5 {
     }
 
     public final void finish() {
-        y9 y9Var = this.w;
+        x9 x9Var = this.w;
         if (this.e != null) {
             EGL10 egl10 = this.b;
             EGLDisplay eGLDisplay = this.c;
@@ -76,11 +76,11 @@ public final class t0 extends q5 {
         }
         EGLContext eGLContext = this.d;
         if (eGLContext != null) {
-            if (y9Var != null) {
-                synchronized (y9Var.f) {
+            if (x9Var != null) {
+                synchronized (x9Var.f) {
                     try {
-                        if (y9Var.g == eGLContext) {
-                            y9Var.g = null;
+                        if (x9Var.g == eGLContext) {
+                            x9Var.g = null;
                         }
                     } finally {
                     }
@@ -94,12 +94,12 @@ public final class t0 extends q5 {
             this.b.eglTerminate(eGLDisplay2);
             this.c = null;
         }
-        if (y9Var != null) {
+        if (x9Var != null) {
             s0 s0Var = this.y;
-            ArrayList arrayList = y9Var.e;
+            ArrayList arrayList = x9Var.e;
             arrayList.remove(s0Var);
-            if (arrayList.isEmpty() && y9Var.d.isEmpty()) {
-                y9Var.n.o();
+            if (arrayList.isEmpty() && x9Var.d.isEmpty()) {
+                x9Var.n.o();
             }
         }
     }
@@ -113,7 +113,7 @@ public final class t0 extends q5 {
             return;
         }
         SurfaceTexture surfaceTexture = this.a;
-        y9 y9Var = this.w;
+        x9 x9Var = this.w;
         EGL10 egl10 = (EGL10) EGLContext.getEGL();
         this.b = egl10;
         EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
@@ -137,10 +137,10 @@ public final class t0 extends q5 {
                     if (iArr[0] > 0) {
                         EGLConfig eGLConfig = eGLConfigArr[0];
                         int[] iArr2 = {12440, 2, 12344};
-                        if (y9Var != null) {
-                            synchronized (y9Var.f) {
+                        if (x9Var != null) {
+                            synchronized (x9Var.f) {
                                 try {
-                                    eGLContext = y9Var.g;
+                                    eGLContext = x9Var.g;
                                     if (eGLContext == null) {
                                         eGLContext = EGL10.EGL_NO_CONTEXT;
                                     }
@@ -158,9 +158,9 @@ public final class t0 extends q5 {
                             }
                             finish();
                         } else {
-                            if (y9Var != null) {
-                                y9Var.a(eglCreateContext);
-                                y9Var.e.add(this.y);
+                            if (x9Var != null) {
+                                x9Var.a(eglCreateContext);
+                                x9Var.e.add(this.y);
                             }
                             if (surfaceTexture != null) {
                                 EGLSurface eglCreateWindowSurface = this.b.eglCreateWindowSurface(this.c, eGLConfig, surfaceTexture, null);
@@ -237,16 +237,16 @@ public final class t0 extends q5 {
                                         i7 = 0;
                                     }
                                     j0Var.r = DesugarCollections.unmodifiableMap(hashMap);
-                                    ot0 ot0Var = j0Var.g;
-                                    if (v0Var.h.getWidth() != ot0Var.a || v0Var.h.getHeight() != ot0Var.b) {
-                                        Bitmap createBitmap = Bitmap.createBitmap((int) ot0Var.a, (int) ot0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap).drawBitmap(v0Var.h, (Rect) null, new RectF(0.0f, 0.0f, ot0Var.a, ot0Var.b), (Paint) null);
+                                    nt0 nt0Var = j0Var.g;
+                                    if (v0Var.h.getWidth() != nt0Var.a || v0Var.h.getHeight() != nt0Var.b) {
+                                        Bitmap createBitmap = Bitmap.createBitmap((int) nt0Var.a, (int) nt0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap).drawBitmap(v0Var.h, (Rect) null, new RectF(0.0f, 0.0f, nt0Var.a, nt0Var.b), (Paint) null);
                                         v0Var.h = createBitmap;
                                         v0Var.r = true;
                                     }
-                                    if (v0Var.n != null && (r5.getWidth() != ot0Var.a || v0Var.n.getHeight() != ot0Var.b)) {
-                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) ot0Var.a, (int) ot0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap2).drawBitmap(v0Var.n, (Rect) null, new RectF(0.0f, 0.0f, ot0Var.a, ot0Var.b), (Paint) null);
+                                    if (v0Var.n != null && (r5.getWidth() != nt0Var.a || v0Var.n.getHeight() != nt0Var.b)) {
+                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) nt0Var.a, (int) nt0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap2).drawBitmap(v0Var.n, (Rect) null, new RectF(0.0f, 0.0f, nt0Var.a, nt0Var.b), (Paint) null);
                                         v0Var.n = createBitmap2;
                                         v0Var.r = true;
                                     }

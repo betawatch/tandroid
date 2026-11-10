@@ -11,10 +11,10 @@ import android.view.View;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.sc;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.f5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r2 extends View {
     public boolean D;
@@ -64,7 +64,7 @@ public final class r2 extends View {
             ValueAnimator ofInt = ValueAnimator.ofInt(0, L);
             this.c = ofInt;
             ofInt.addUpdateListener(new q2(this, 0));
-            this.c.setInterpolator(xq.g);
+            this.c.setInterpolator(wq.g);
             this.c.setDuration(200L);
             this.c.start();
         }
@@ -75,9 +75,9 @@ public final class r2 extends View {
         super.onAttachedToWindow();
         if (this.K) {
             for (f3 f3Var : this.a) {
-                g5 g5Var = f3Var.a;
-                if (g5Var != null) {
-                    g5Var.a();
+                f5 f5Var = f3Var.a;
+                if (f5Var != null) {
+                    f5Var.a();
                     ValueAnimator valueAnimator = f3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.start();
@@ -85,9 +85,9 @@ public final class r2 extends View {
                 }
             }
             for (f3 f3Var2 : this.b) {
-                g5 g5Var2 = f3Var2.a;
-                if (g5Var2 != null) {
-                    g5Var2.a();
+                f5 f5Var2 = f3Var2.a;
+                if (f5Var2 != null) {
+                    f5Var2.a();
                     ValueAnimator valueAnimator2 = f3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.start();
@@ -102,25 +102,25 @@ public final class r2 extends View {
         super.onDetachedFromWindow();
         if (this.K) {
             for (f3 f3Var : this.a) {
-                g5 g5Var = f3Var.a;
-                if (g5Var != null) {
+                f5 f5Var = f3Var.a;
+                if (f5Var != null) {
                     ValueAnimator valueAnimator = f3Var.b;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                         f3Var.b = null;
                     }
-                    g5Var.b();
+                    f5Var.b();
                 }
             }
             for (f3 f3Var2 : this.b) {
-                g5 g5Var2 = f3Var2.a;
-                if (g5Var2 != null) {
+                f5 f5Var2 = f3Var2.a;
+                if (f5Var2 != null) {
                     ValueAnimator valueAnimator2 = f3Var2.b;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                         f3Var2.b = null;
                     }
-                    g5Var2.b();
+                    f5Var2.b();
                 }
             }
             ValueAnimator valueAnimator3 = this.c;

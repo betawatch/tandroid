@@ -18,12 +18,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hk0;
-import org.telegram.ui.wn0;
-import org.telegram.ui.xc1;
+import org.telegram.ui.ik0;
+import org.telegram.ui.xn0;
 import org.telegram.ui.yc1;
+import org.telegram.ui.zc1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uz implements Runnable {
     public final /* synthetic */ int a;
@@ -75,35 +75,35 @@ public final /* synthetic */ class uz implements Runnable {
                     u10.append(bArr.length);
                     u10.append(" bytes)");
                     a8.b(u10.toString());
-                    BigInteger bigInteger = yc1.a;
+                    BigInteger bigInteger = zc1.a;
                     if (bArr.length != 272) {
                         a8.b("wear-auth: malformed offer (" + bArr.length + ")");
                         break;
                     } else {
                         byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
                         byte[] copyOfRange2 = Arrays.copyOfRange(bArr, 16, bArr.length);
-                        a8.r7 r7Var = yc1.d;
+                        a8.r7 r7Var = zc1.d;
                         if (r7Var != null && Arrays.equals((byte[]) r7Var.b, copyOfRange)) {
                             a8.b("wear-auth: duplicate offer (same sessionId) — ignoring");
                             break;
                         } else {
-                            a8.b("wear-auth: new session " + yc1.d(copyOfRange) + " from " + str2);
-                            yc1.d = new a8.r7(copyOfRange, copyOfRange2, str2);
+                            a8.b("wear-auth: new session " + zc1.d(copyOfRange) + " from " + str2);
+                            zc1.d = new a8.r7(copyOfRange, copyOfRange2, str2);
                             Context context = LaunchActivity.G1;
                             if (context == null) {
                                 context = t0.b;
                             }
                             if (context != null) {
                                 org.telegram.ui.ActionBar.f2 T = LaunchActivity.T();
-                                org.telegram.ui.ActionBar.g6 resourceProvider = T != null ? T.getResourceProvider() : null;
-                                org.telegram.ui.ActionBar.v2 v2Var = yc1.c;
-                                if (v2Var != null) {
-                                    v2Var.dismiss();
-                                    yc1.c = null;
+                                org.telegram.ui.ActionBar.h6 resourceProvider = T != null ? T.getResourceProvider() : null;
+                                org.telegram.ui.ActionBar.w2 w2Var = zc1.c;
+                                if (w2Var != null) {
+                                    w2Var.dismiss();
+                                    zc1.c = null;
                                 }
-                                org.telegram.ui.ActionBar.v2 l10 = k5.l(1, context, resourceProvider, false);
-                                xc1 xc1Var = new xc1(context);
-                                l10.N = xc1Var;
+                                org.telegram.ui.ActionBar.w2 l10 = k5.l(1, context, resourceProvider, false);
+                                yc1 yc1Var = new yc1(context);
+                                l10.N = yc1Var;
                                 int i11 = p10.s0;
                                 ArrayList arrayList = new ArrayList();
                                 arrayList.clear();
@@ -115,43 +115,43 @@ public final /* synthetic */ class uz implements Runnable {
                                         arrayList.add(Integer.valueOf(i12));
                                     }
                                 }
-                                Collections.sort(arrayList, new wn0(8));
+                                Collections.sort(arrayList, new xn0(8));
                                 if (!arrayList.isEmpty()) {
                                     FrameLayout frameLayout = new FrameLayout(context);
                                     FrameLayout frameLayout2 = new FrameLayout(context);
                                     int L = g0.L(14.0f);
-                                    int i13 = org.telegram.ui.ActionBar.l6.i5;
-                                    Drawable d02 = org.telegram.ui.ActionBar.l6.d0(L, org.telegram.ui.ActionBar.l6.w0(i13, resourceProvider));
-                                    org.telegram.ui.ActionBar.o6 M = org.telegram.ui.ActionBar.s6.M(i13);
+                                    int i13 = org.telegram.ui.ActionBar.m6.i5;
+                                    Drawable d02 = org.telegram.ui.ActionBar.m6.d0(L, org.telegram.ui.ActionBar.m6.w0(i13, resourceProvider));
+                                    org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i13);
                                     frameLayout2.setBackground(d02);
-                                    org.telegram.ui.ActionBar.s6.j(frameLayout2, d02, M, null, resourceProvider);
-                                    org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-                                    l9Var.setRoundRadius(g0.L(14.0f));
-                                    l9Var.getImageReceiver().A0 = true;
-                                    org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8((org.telegram.ui.ActionBar.g6) null);
+                                    org.telegram.ui.ActionBar.t6.j(frameLayout2, d02, M, null, resourceProvider);
+                                    org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+                                    k9Var.setRoundRadius(g0.L(14.0f));
+                                    k9Var.getImageReceiver().A0 = true;
+                                    org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8((org.telegram.ui.ActionBar.h6) null);
                                     int[] iArr2 = {p10.s0};
                                     TLRPC.User f10 = p10.i(iArr2[0]).f();
-                                    w8Var.r(f10);
-                                    l9Var.e(f10, w8Var);
-                                    frameLayout2.addView(l9Var, c8.ha.e(28, 28, qs.A1));
+                                    v8Var.r(f10);
+                                    k9Var.e(f10, v8Var);
+                                    frameLayout2.addView(k9Var, c8.ha.e(28, 28, qs.A1));
                                     ImageView imageView = new ImageView(context);
                                     imageView.setScaleType(ImageView.ScaleType.CENTER);
-                                    org.telegram.ui.ActionBar.s6.s(imageView, org.telegram.ui.ActionBar.l6.r5, resourceProvider, PorterDuff.Mode.SRC_IN);
+                                    org.telegram.ui.ActionBar.t6.s(imageView, org.telegram.ui.ActionBar.m6.r5, resourceProvider, PorterDuff.Mode.SRC_IN);
                                     imageView.setImageResource(R.drawable.arrows_select);
                                     frameLayout2.addView(imageView, c8.ha.d(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
                                     frameLayout.addView(frameLayout2, c8.ha.e(52, 28, 17));
                                     frameLayout.setPadding(g0.L(8.0f), g0.L(4.0f), g0.L(8.0f), 0);
-                                    xc1Var.addView(frameLayout, c8.ha.q(-2, -2, 0.0f, 51, 6, 4, 6, 0));
+                                    yc1Var.addView(frameLayout, c8.ha.q(-2, -2, 0.0f, 51, 6, 4, 6, 0));
                                     c8.ka.a(frameLayout);
                                     if (arrayList.size() <= 1) {
                                         frameLayout.setVisibility(8);
                                     }
                                     LinearLayout f11 = k5.f(context, 1);
-                                    xc1Var.addView(f11, c8.ha.e(-1, -1, qs.E1));
-                                    org.telegram.ui.Components.l9 l9Var2 = new org.telegram.ui.Components.l9(context);
-                                    f11.addView(l9Var2, c8.ha.s(qs.O1, qs.O1, 49, 32.0f, 32.0f, 32.0f, 9.66f));
-                                    ui.b0(i11).c2(l9Var2, "Utya3D", "😎", "130_130");
-                                    int i14 = org.telegram.ui.ActionBar.l6.j5;
+                                    yc1Var.addView(f11, c8.ha.e(-1, -1, qs.E1));
+                                    org.telegram.ui.Components.k9 k9Var2 = new org.telegram.ui.Components.k9(context);
+                                    f11.addView(k9Var2, c8.ha.s(qs.O1, qs.O1, 49, 32.0f, 32.0f, 32.0f, 9.66f));
+                                    ui.b0(i11).c2(k9Var2, "Utya3D", "😎", "130_130");
+                                    int i14 = org.telegram.ui.ActionBar.m6.j5;
                                     TextView b10 = c8.qa.b(context, 20.0f, i14, true, resourceProvider);
                                     k5.m(b10, 17, null, 2131742944);
                                     f11.addView(b10, c8.ha.s(-1, -2, 49, 32.0f, 24.0f, 32.0f, 9.66f));
@@ -161,12 +161,12 @@ public final /* synthetic */ class uz implements Runnable {
                                     fi.d h = k5.h(24, context, resourceProvider, true);
                                     h.setText(id.M0(2131748250, null));
                                     f11.addView(h, c8.ha.t(-1, 48, 7, 12, 12, 12, 8));
-                                    int i15 = org.telegram.ui.ActionBar.l6.a7;
+                                    int i15 = org.telegram.ui.ActionBar.m6.a7;
                                     l10.w0(i15);
                                     l10.P(i15);
-                                    frameLayout.setOnClickListener(new org.telegram.ui.Components.n1(l10, frameLayout2, arrayList, iArr2, w8Var, l9Var, 4));
-                                    h.setOnClickListener(new hk0(23, h, iArr2));
-                                    yc1.c = l10;
+                                    frameLayout.setOnClickListener(new org.telegram.ui.Components.m1(l10, frameLayout2, arrayList, iArr2, v8Var, k9Var, 4));
+                                    h.setOnClickListener(new ik0(22, h, iArr2));
+                                    zc1.c = l10;
                                     l10.show();
                                     break;
                                 }
@@ -175,13 +175,13 @@ public final /* synthetic */ class uz implements Runnable {
                     }
                 } else if (str.equals("/tg-wear-auth/cancel")) {
                     a8.b("wear-auth: cancel from " + str2);
-                    BigInteger bigInteger2 = yc1.a;
+                    BigInteger bigInteger2 = zc1.a;
                     a8.b("wear-auth: cancel received; dropping session and dismissing sheet");
-                    yc1.d = null;
-                    org.telegram.ui.ActionBar.v2 v2Var2 = yc1.c;
-                    if (v2Var2 != null) {
-                        v2Var2.dismiss();
-                        yc1.c = null;
+                    zc1.d = null;
+                    org.telegram.ui.ActionBar.w2 w2Var2 = zc1.c;
+                    if (w2Var2 != null) {
+                        w2Var2.dismiss();
+                        zc1.c = null;
                         break;
                     }
                 } else {

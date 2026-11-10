@@ -13,7 +13,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class n extends q1 {
     public static final n F0 = new n(new m());
@@ -125,7 +125,7 @@ public final class n extends q1 {
                 if (entry.getValue() != null) {
                     throw new ClassCastException();
                 }
-                arrayList2.add((x2.q1) entry.getKey());
+                arrayList2.add((x2.p1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
             c10.putIntArray(Q0, e1.f(arrayList));
@@ -167,8 +167,8 @@ public final class n extends q1 {
                                         Map map2 = (Map) sparseArray.valueAt(indexOfKey);
                                         if (map2.size() == map.size()) {
                                             for (Map.Entry entry : map.entrySet()) {
-                                                x2.q1 q1Var = (x2.q1) entry.getKey();
-                                                if (map2.containsKey(q1Var) && Objects.equals(entry.getValue(), map2.get(q1Var))) {
+                                                x2.p1 p1Var = (x2.p1) entry.getKey();
+                                                if (map2.containsKey(p1Var) && Objects.equals(entry.getValue(), map2.get(p1Var))) {
                                                 }
                                             }
                                         }

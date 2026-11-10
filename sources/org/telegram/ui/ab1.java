@@ -1,100 +1,49 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Property;
-import android.view.View;
-import android.widget.ScrollView;
 import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ab1 extends ScrollView {
-    public final int[] a;
-    public final Rect b;
-    public boolean c;
-    public final /* synthetic */ bb1 d;
+public final class ab1 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ cb1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ab1(bb1 bb1Var, Context context) {
-        super(context);
-        this.d = bb1Var;
-        this.a = new int[2];
-        this.b = new Rect();
-        this.c = true;
+    public ab1(cb1 cb1Var) {
+        this.a = cb1Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        this.c = false;
-        super.onLayout(z9, i7, i10, i11, i12);
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        super.onScrollChanged(i7, i10, i11, i12);
-        bb1 bb1Var = this.d;
-        TextView textView = bb1Var.c;
-        if (textView == null) {
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i7) {
+        org.telegram.ui.ActionBar.r4 r4Var;
+        cb1 cb1Var = this.a;
+        if (i7 == -1) {
+            if (cb1Var.G >= 0) {
+                r4Var = ((org.telegram.ui.ActionBar.f2) cb1Var).parentLayout;
+                if (r4Var.getFragmentStack().size() == 1) {
+                    cb1Var.N0();
+                    return;
+                }
+            }
+            cb1Var.finishFragment();
             return;
         }
-        int[] iArr = this.a;
-        textView.getLocationOnScreen(iArr);
-        int measuredHeight = bb1Var.c.getMeasuredHeight() + iArr[1];
-        kVar = ((org.telegram.ui.ActionBar.f2) bb1Var).actionBar;
-        boolean z9 = measuredHeight < kVar.getBottom();
-        if (z9 != (bb1Var.c.getTag() == null)) {
-            bb1Var.c.setTag(z9 ? null : 1);
-            AnimatorSet animatorSet = bb1Var.K;
-            if (animatorSet != null) {
-                animatorSet.cancel();
-                bb1Var.K = null;
+        if (i7 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cb1Var.getParentActivity());
+            TL_account.Password password = cb1Var.U;
+            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.id.M0(2131752578, null) : org.telegram.messenger.id.M0(2131752586, null);
+            String M02 = org.telegram.messenger.id.M0(2131752585, null);
+            String M03 = org.telegram.messenger.id.M0(2131754950, null);
+            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+            u1Var.T = M0;
+            u1Var.R = M02;
+            alertDialog$Builder.k(M03, new oi0(this, 22));
+            alertDialog$Builder.h(org.telegram.messenger.id.M0(2131752589, null), null);
+            cb1Var.showDialog(u1Var);
+            TextView textView = (TextView) u1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.q7, null);
             }
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            bb1Var.K = animatorSet2;
-            fi.p5 p5Var = bb1Var.D;
-            float[] fArr = {z9 ? 1.0f : 0.0f};
-            Property property = View.ALPHA;
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(p5Var, (Property<fi.p5, Float>) property, fArr);
-            kVar2 = ((org.telegram.ui.ActionBar.f2) bb1Var).actionBar;
-            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.l5, Float>) property, z9 ? 1.0f : 0.0f));
-            bb1Var.K.setDuration(150L);
-            bb1Var.K.addListener(new t81(this, 2));
-            bb1Var.K.start();
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
-        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
-            scrollToDescendant(view2);
-        }
-        super.requestChildFocus(view, view2);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        this.c = true;
-        super.requestLayout();
-    }
-
-    @Override // android.widget.ScrollView
-    public final void scrollToDescendant(View view) {
-        Rect rect = this.b;
-        view.getDrawingRect(rect);
-        offsetDescendantRectToMyCoords(view, rect);
-        rect.bottom = org.telegram.messenger.g0.L(120.0f) + rect.bottom;
-        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
-        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
-            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
-        }
-        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
-            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
         }
     }
 }

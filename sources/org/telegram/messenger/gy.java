@@ -18,9 +18,9 @@ import java.util.zip.ZipException;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.di0;
+import org.telegram.ui.ei0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gy implements Runnable {
     public final /* synthetic */ int a;
@@ -102,18 +102,18 @@ public final /* synthetic */ class gy implements Runnable {
                 String str = (String) this.h;
                 boolean z12 = this.b;
                 if (tLObject == null) {
-                    org.telegram.ui.Components.v4.n0(cnVar, str, false, z12);
+                    org.telegram.ui.Components.u4.n0(cnVar, str, false, z12);
                     return;
                 }
                 if (tLObject instanceof TLRPC.TL_urlAuthResultRequest) {
-                    di0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, null);
+                    ei0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject, null, null, null, false, null);
                     return;
                 } else if (tLObject instanceof TLRPC.TL_urlAuthResultAccepted) {
-                    di0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, null);
+                    ei0.b(false, gzVar.currentAccount, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject, null, null, null, false, null);
                     return;
                 } else {
                     if (tLObject instanceof TLRPC.TL_urlAuthResultDefault) {
-                        org.telegram.ui.Components.v4.n0(cnVar, str, false, z12);
+                        org.telegram.ui.Components.u4.n0(cnVar, str, false, z12);
                         return;
                     }
                     return;

@@ -12,41 +12,41 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class qc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.g6 a;
+    public final org.telegram.ui.ActionBar.h6 a;
     public final Drawable b;
     public final Drawable c;
     public final TextView d;
-    public final org.telegram.ui.Components.j6 e;
+    public final org.telegram.ui.Components.i6 e;
     public SpannableString f;
     public boolean h;
     public int n;
-    public final org.telegram.ui.Components.w5 r;
+    public final org.telegram.ui.Components.v5 r;
 
-    public qc(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public qc(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
         super(context);
-        this.r = new org.telegram.ui.Components.w5(this, 0L, 500L, xq.h);
-        this.a = g6Var;
+        this.r = new org.telegram.ui.Components.v5(this, 0L, 500L, wq.h);
+        this.a = h6Var;
         Drawable h = jg.g.h(context, R.drawable.star_small_outline);
         this.b = h;
-        org.telegram.ui.ActionBar.s6.x(this, h, org.telegram.ui.ActionBar.l6.h5, g6Var, PorterDuff.Mode.SRC_IN);
+        org.telegram.ui.ActionBar.t6.x(this, h, org.telegram.ui.ActionBar.m6.h5, h6Var, PorterDuff.Mode.SRC_IN);
         this.c = jg.g.h(context, R.drawable.star_small_inner);
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.d = textView;
         org.telegram.messenger.camera.q.m(textView, 1, 15.0f);
-        org.telegram.ui.ActionBar.s6.U(textView, org.telegram.ui.ActionBar.l6.G6, g6Var);
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.G6, h6Var);
         addView(textView, c8.ha.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, false, false);
-        this.e = j6Var;
-        j6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        org.telegram.ui.ActionBar.s6.Y(j6Var, org.telegram.ui.ActionBar.l6.z6, g6Var);
-        j6Var.setGravity(org.telegram.messenger.id.a0 ? 3 : 5);
-        addView(j6Var, c8.ha.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
+        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(context, false, false, false);
+        this.e = i6Var;
+        i6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        org.telegram.ui.ActionBar.t6.Y(i6Var, org.telegram.ui.ActionBar.m6.z6, h6Var);
+        i6Var.setGravity(org.telegram.messenger.id.a0 ? 3 : 5);
+        addView(i6Var, c8.ha.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -82,10 +82,10 @@ public final class qc extends FrameLayout {
             ceil--;
         }
         if (this.h) {
-            org.telegram.ui.ActionBar.g6 g6Var = this.a;
-            Paint d = g6Var != null ? g6Var.d("paintDivider") : null;
+            org.telegram.ui.ActionBar.h6 h6Var = this.a;
+            Paint d = h6Var != null ? h6Var.d("paintDivider") : null;
             if (d == null) {
-                d = org.telegram.ui.ActionBar.l6.k0;
+                d = org.telegram.ui.ActionBar.m6.k0;
             }
             canvas.drawRect(org.telegram.messenger.id.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.id.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight(), d);
         }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -20,46 +20,46 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
         int i11 = 1;
         switch (this.a) {
             case 0:
-                az0 az0Var = (az0) this.b;
-                az0Var.getClass();
+                bz0 bz0Var = (bz0) this.b;
+                bz0Var.getClass();
                 xi.e.c.b(i7 == 0 ? vi.f.a : vi.f.b);
-                ((l4) az0Var.c).g(2);
+                ((l4) bz0Var.c).g(2);
                 break;
             case 1:
-                yw ywVar = (yw) this.b;
+                zw zwVar = (zw) this.b;
                 if (i7 != 0) {
-                    if (i7 == 1 && ywVar.e0 != null) {
+                    if (i7 == 1 && zwVar.e0 != null) {
                         while (true) {
-                            xw[] xwVarArr = ywVar.e0;
-                            if (i10 >= xwVarArr.length) {
+                            yw[] ywVarArr = zwVar.e0;
+                            if (i10 >= ywVarArr.length) {
                                 break;
                             } else {
-                                xw xwVar = xwVarArr[i10];
-                                if (xwVar.s == 0 && xwVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.t2 c42 = yw.c4(ywVar.e0[i10]);
-                                    uw uwVar = ywVar.e0[i10].a;
-                                    int i12 = uw.B3;
-                                    uwVar.C1(true, c42);
+                                yw ywVar = ywVarArr[i10];
+                                if (ywVar.s == 0 && ywVar.getVisibility() == 0) {
+                                    org.telegram.ui.Cells.t2 c42 = zw.c4(zwVar.e0[i10]);
+                                    vw vwVar = zwVar.e0[i10].a;
+                                    int i12 = vw.B3;
+                                    vwVar.C1(true, c42);
                                 }
                                 i10++;
                             }
                         }
                     }
                 } else {
-                    org.telegram.messenger.yr messagesStorage = ywVar.getMessagesStorage();
+                    org.telegram.messenger.yr messagesStorage = zwVar.getMessagesStorage();
                     messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, i11, 3));
                     break;
                 }
                 break;
             case 2:
-                de0 de0Var = (de0) this.b;
+                ee0 ee0Var = (ee0) this.b;
                 if (i7 != 0) {
-                    ProfileActivity.Y4(de0Var.g0.getParentActivity(), false);
+                    ProfileActivity.Y4(ee0Var.g0.getParentActivity(), false);
                     break;
                 } else {
                     org.telegram.messenger.r2.a = !org.telegram.messenger.r2.a;
                     org.telegram.messenger.t0.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", org.telegram.messenger.r2.a).commit();
-                    org.telegram.ui.Components.hc.a0(de0Var.g0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.r2.a ? "Logs enabled." : "Logs disabled.").j();
+                    org.telegram.ui.Components.gc.a0(ee0Var.g0).Q(R.raw.chats_infotip, 36, org.telegram.messenger.r2.a ? "Logs enabled." : "Logs disabled.").j();
                     if (org.telegram.messenger.r2.a) {
                         jg.g.u(org.telegram.messenger.t0.s, new StringBuilder("app start time = "));
                         try {
@@ -73,19 +73,19 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                 }
                 break;
             default:
-                dk0 dk0Var = (dk0) this.b;
+                ek0 ek0Var = (ek0) this.b;
                 if (i7 != 0) {
                     if (i7 != 1) {
-                        dk0Var.getClass();
+                        ek0Var.getClass();
                         break;
                     } else {
-                        dk0Var.x = "female";
-                        dk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747569, null));
+                        ek0Var.x = "female";
+                        ek0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747569, null));
                         break;
                     }
                 } else {
-                    dk0Var.x = "male";
-                    dk0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747508, null));
+                    ek0Var.x = "male";
+                    ek0Var.Y[4].setText(org.telegram.messenger.id.M0(2131747508, null));
                     break;
                 }
         }

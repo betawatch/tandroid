@@ -9,29 +9,29 @@ import org.telegram.messenger.ow;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.pg;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v2 implements bi {
+public final class v2 implements ai {
     public final /* synthetic */ j4 a;
 
     public v2(j4 j4Var) {
         this.a = j4Var;
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void F0() {
         this.a.K1.L();
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ boolean G1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void M1(ArrayList arrayList, CharSequence charSequence, boolean z9, int i7, int i10, long j3, boolean z10, long j10) {
         org.telegram.messenger.c accountInstance;
         j4 j4Var = this.a;
@@ -47,12 +47,12 @@ public final class v2 implements bi {
         j4Var.i0(j10 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.bi
-    public final void c0(qg qgVar) {
-        qs.f(this.a.l2).d(qgVar);
+    @Override // org.telegram.ui.Components.ai
+    public final void c0(pg pgVar) {
+        qs.f(this.a.l2).d(pgVar);
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final boolean f0() {
         return this.a.L0();
     }
@@ -65,7 +65,7 @@ public final class v2 implements bi {
     /* JADX WARN: Type inference failed for: r7v1 */
     /* JADX WARN: Type inference failed for: r7v2, types: [int] */
     /* JADX WARN: Type inference failed for: r7v3 */
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final void o1(int i7, boolean z9, boolean z10, int i10, int i11, long j3, boolean z11, boolean z12, long j10) {
         TL_stories.StoryItem storyItem;
         org.telegram.messenger.c accountInstance;
@@ -76,7 +76,7 @@ public final class v2 implements bi {
         if (!j4Var.s0.m0 || (storyItem = j4Var.x1.a) == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
             return;
         }
-        if (i7 != 8 && i7 != 7 && (i7 != 4 || j4Var.r2.a2.getSelectedPhotos().isEmpty())) {
+        if (i7 != 8 && i7 != 7 && (i7 != 4 || j4Var.r2.d2.getSelectedPhotos().isEmpty())) {
             u2 u2Var = j4Var.r2;
             if (u2Var != null) {
                 u2Var.L(i7);
@@ -88,8 +88,8 @@ public final class v2 implements bi {
         if (i7 != 8) {
             j4Var.r2.a(true);
         }
-        HashMap<Object, Object> selectedPhotos = j4Var.r2.a2.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = j4Var.r2.a2.getSelectedPhotosOrder();
+        HashMap<Object, Object> selectedPhotos = j4Var.r2.d2.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = j4Var.r2.d2.getSelectedPhotosOrder();
         if (selectedPhotos.isEmpty()) {
             return;
         }
@@ -155,15 +155,15 @@ public final class v2 implements bi {
         j4Var.i0(j10 <= 0 ? z17 : z18);
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void M0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void Y0(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.bi
+    @Override // org.telegram.ui.Components.ai
     public final /* synthetic */ void t0() {
     }
 }

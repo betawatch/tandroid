@@ -25,24 +25,24 @@ import java.util.Map;
 import l2.u0;
 import l2.v0;
 import org.telegram.ui.Cells.f1;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 import p4.r0;
 import s2.u;
 import s2.w;
-import x2.c1;
+import x2.b1;
+import x2.c0;
 import x2.d0;
-import x2.e0;
-import x2.q1;
+import x2.p1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class j implements e0, u {
+public final class j implements d0, u {
     public final int D;
     public final m2.j E;
-    public final rt F = new rt(this, 12);
-    public d0 G;
+    public final qt F = new qt(this, 12);
+    public c0 G;
     public int H;
-    public q1 I;
+    public p1 I;
     public p[] J;
     public p[] K;
     public int L;
@@ -50,7 +50,7 @@ public final class j implements e0, u {
     public final long N;
     public final c a;
     public final s2.d b;
-    public final org.telegram.ui.Components.n c;
+    public final org.telegram.ui.Components.m c;
     public final j2.d0 d;
     public final q2.m e;
     public final q2.j f;
@@ -58,20 +58,20 @@ public final class j implements e0, u {
     public final wa n;
     public final h6.m r;
     public final IdentityHashMap s;
-    public final org.telegram.ui.Components.n w;
+    public final org.telegram.ui.Components.m w;
     public final sa.d x;
     public final boolean y;
 
-    public j(c cVar, s2.d dVar, org.telegram.ui.Components.n nVar, j2.d0 d0Var, q2.m mVar, q2.j jVar, pb.b bVar, wa waVar, h6.m mVar2, sa.d dVar2, boolean z9, int i7, m2.j jVar2) {
+    public j(c cVar, s2.d dVar, org.telegram.ui.Components.m mVar, j2.d0 d0Var, q2.m mVar2, q2.j jVar, pb.b bVar, wa waVar, h6.m mVar3, sa.d dVar2, boolean z9, int i7, m2.j jVar2) {
         this.a = cVar;
         this.b = dVar;
-        this.c = nVar;
+        this.c = mVar;
         this.d = d0Var;
-        this.e = mVar;
+        this.e = mVar2;
         this.f = jVar;
         this.h = bVar;
         this.n = waVar;
-        this.r = mVar2;
+        this.r = mVar3;
         this.x = dVar2;
         this.y = z9;
         this.D = i7;
@@ -81,7 +81,7 @@ public final class j implements e0, u {
         t1 t1Var = t1.e;
         this.M = new x2.n(t1Var, t1Var);
         this.s = new IdentityHashMap();
-        this.w = new org.telegram.ui.Components.n(15);
+        this.w = new org.telegram.ui.Components.m(15);
         this.J = new p[0];
         this.K = new p[0];
         this.N = Long.MIN_VALUE;
@@ -209,20 +209,20 @@ public final class j implements e0, u {
     /* JADX WARN: Type inference failed for: r9v4 */
     /* JADX WARN: Type inference failed for: r9v40 */
     /* JADX WARN: Type inference failed for: r9v5 */
-    @Override // x2.e0
+    @Override // x2.d0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long b(a3.u[] uVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long b(a3.u[] uVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         IdentityHashMap identityHashMap;
-        c1[] c1VarArr2;
+        b1[] b1VarArr2;
         int[] iArr;
         boolean z9;
         ?? r92;
         h hVar;
         int i7;
         int i10;
-        c1[] c1VarArr3;
+        b1[] b1VarArr3;
         int i11;
         int[] iArr2;
         p[] pVarArr;
@@ -246,8 +246,8 @@ public final class j implements e0, u {
             if (i17 >= length) {
                 break;
             }
-            c1 c1Var = c1VarArr[i17];
-            iArr3[i17] = c1Var == null ? -1 : ((Integer) identityHashMap.get(c1Var)).intValue();
+            b1 b1Var = b1VarArr[i17];
+            iArr3[i17] = b1Var == null ? -1 : ((Integer) identityHashMap.get(b1Var)).intValue();
             iArr4[i17] = -1;
             a3.u uVar = uVarArr[i17];
             if (uVar != null) {
@@ -270,9 +270,9 @@ public final class j implements e0, u {
         }
         identityHashMap.clear();
         int length2 = uVarArr.length;
-        c1[] c1VarArr4 = new c1[length2];
+        b1[] b1VarArr4 = new b1[length2];
         int length3 = uVarArr.length;
-        c1[] c1VarArr5 = new c1[length3];
+        b1[] b1VarArr5 = new b1[length3];
         int length4 = uVarArr.length;
         a3.u[] uVarArr3 = new a3.u[length4];
         boolean z13 = false;
@@ -285,13 +285,13 @@ public final class j implements e0, u {
             int i22 = length2;
             ?? r72 = z13;
             while (true) {
-                c1VarArr2 = c1VarArr4;
+                b1VarArr2 = b1VarArr4;
                 if (r72 >= uVarArr.length) {
                     break;
                 }
-                c1VarArr5[r72] = iArr3[r72] == i20 ? c1VarArr[r72] : null;
+                b1VarArr5[r72] = iArr3[r72] == i20 ? b1VarArr[r72] : null;
                 uVarArr3[r72] = iArr4[r72] == i20 ? uVarArr[r72] : null;
-                c1VarArr4 = c1VarArr2;
+                b1VarArr4 = b1VarArr2;
                 r72++;
             }
             p pVar3 = this.J[i20];
@@ -303,7 +303,7 @@ public final class j implements e0, u {
             ArrayList arrayList = pVar3.D;
             pVar3.l();
             int i24 = pVar3.U;
-            ?? r29 = c1VarArr5;
+            ?? r29 = b1VarArr5;
             ?? r73 = z13;
             while (r73 < length4) {
                 l lVar = (l) r29[r73];
@@ -412,7 +412,7 @@ public final class j implements e0, u {
                     hVar = hVar2;
                     i12 = i19;
                     i10 = i22;
-                    c1VarArr3 = c1VarArr2;
+                    b1VarArr3 = b1VarArr2;
                     i11 = i23;
                     z11 = z18;
                     iArr2 = iArr4;
@@ -424,7 +424,7 @@ public final class j implements e0, u {
                         hVar = hVar2;
                         i7 = i19;
                         i10 = i22;
-                        c1VarArr3 = c1VarArr2;
+                        b1VarArr3 = b1VarArr2;
                         i11 = i23;
                         iArr2 = iArr4;
                         pVarArr = pVarArr3;
@@ -434,7 +434,7 @@ public final class j implements e0, u {
                             hVar = hVar2;
                             i7 = i19;
                             i10 = i22;
-                            c1VarArr3 = c1VarArr2;
+                            b1VarArr3 = b1VarArr2;
                             i11 = i23;
                             iArr2 = iArr4;
                             pVarArr = pVarArr3;
@@ -448,7 +448,7 @@ public final class j implements e0, u {
                             List list = pVar3.E;
                             i7 = i19;
                             i10 = i22;
-                            c1VarArr3 = c1VarArr2;
+                            b1VarArr3 = b1VarArr2;
                             i11 = i23;
                             iArr2 = iArr4;
                             pVarArr = pVarArr3;
@@ -500,21 +500,21 @@ public final class j implements e0, u {
                     int i31 = i11;
                     if (iArr2[i14] == i31) {
                         r83.getClass();
-                        r10 = c1VarArr3;
+                        r10 = b1VarArr3;
                         r10[i14] = r83;
                         identityHashMap.put(r83, Integer.valueOf(i31));
                         z12 = true;
                     } else {
-                        r10 = c1VarArr3;
+                        r10 = b1VarArr3;
                         if (iArr[i14] == i31) {
                             ia.p(r83 == 0);
                         }
                     }
                     i14++;
-                    c1VarArr3 = r10;
+                    b1VarArr3 = r10;
                     i11 = i31;
                 }
-                c1[] c1VarArr6 = c1VarArr3;
+                b1[] b1VarArr6 = b1VarArr3;
                 int i32 = i11;
                 int i33 = i21;
                 if (!z12) {
@@ -537,12 +537,12 @@ public final class j implements e0, u {
                 iArr4 = iArr2;
                 iArr3 = iArr;
                 pVarArr3 = pVarArr;
-                c1VarArr5 = r29;
+                b1VarArr5 = r29;
                 uVarArr3 = uVarArr4;
                 length2 = i10;
                 z13 = false;
                 i19 = i12;
-                c1VarArr4 = c1VarArr6;
+                b1VarArr4 = b1VarArr6;
                 length4 = i29;
             }
             iArr = iArr3;
@@ -566,7 +566,7 @@ public final class j implements e0, u {
             z12 = false;
             while (i14 < uVarArr.length) {
             }
-            c1[] c1VarArr62 = c1VarArr3;
+            b1[] b1VarArr62 = b1VarArr3;
             int i322 = i11;
             int i332 = i21;
             if (!z12) {
@@ -575,16 +575,16 @@ public final class j implements e0, u {
             iArr4 = iArr2;
             iArr3 = iArr;
             pVarArr3 = pVarArr;
-            c1VarArr5 = r29;
+            b1VarArr5 = r29;
             uVarArr3 = uVarArr4;
             length2 = i10;
             z13 = false;
             i19 = i12;
-            c1VarArr4 = c1VarArr62;
+            b1VarArr4 = b1VarArr62;
             length4 = i292;
         }
         boolean z20 = z13;
-        System.arraycopy(c1VarArr4, z20 ? 1 : 0, c1VarArr, z20 ? 1 : 0, length2);
+        System.arraycopy(b1VarArr4, z20 ? 1 : 0, b1VarArr, z20 ? 1 : 0, length2);
         p[] pVarArr5 = (p[]) m0.U(i21, pVarArr3);
         this.K = pVarArr5;
         t1 r11 = i0.r(pVarArr5);
@@ -594,7 +594,7 @@ public final class j implements e0, u {
         return j3;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final boolean c(v0 v0Var) {
         if (this.I != null) {
             return this.M.c(v0Var);
@@ -688,7 +688,7 @@ public final class j implements e0, u {
         return z11;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final long e() {
         return this.M.e();
     }
@@ -705,12 +705,12 @@ public final class j implements e0, u {
         return pVar;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final boolean g() {
         return this.M.g();
     }
 
-    @Override // x2.e0
+    @Override // x2.d0
     public final long h(long j3, l2.t1 t1Var) {
         p[] pVarArr = this.K;
         int length = pVarArr.length;
@@ -743,7 +743,7 @@ public final class j implements e0, u {
         return j3;
     }
 
-    @Override // x2.e0
+    @Override // x2.d0
     public final void i() {
         for (p pVar : this.J) {
             pVar.A();
@@ -753,7 +753,7 @@ public final class j implements e0, u {
         }
     }
 
-    @Override // x2.e0
+    @Override // x2.d0
     public final long j(long j3) {
         p[] pVarArr = this.K;
         if (pVarArr.length > 0) {
@@ -774,7 +774,7 @@ public final class j implements e0, u {
         return j3;
     }
 
-    @Override // x2.e0
+    @Override // x2.d0
     public final void k(long j3) {
         for (p pVar : this.K) {
             if (pVar.S && !pVar.y()) {
@@ -786,25 +786,25 @@ public final class j implements e0, u {
         }
     }
 
-    @Override // x2.e0
+    @Override // x2.d0
     public final long n() {
         return -9223372036854775807L;
     }
 
-    @Override // x2.e0
-    public final q1 o() {
-        q1 q1Var = this.I;
-        q1Var.getClass();
-        return q1Var;
+    @Override // x2.d0
+    public final p1 o() {
+        p1 p1Var = this.I;
+        p1Var.getClass();
+        return p1Var;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final long p() {
         return this.M.p();
     }
 
-    @Override // x2.e0
-    public final void q(d0 d0Var, long j3) {
+    @Override // x2.d0
+    public final void q(c0 c0Var, long j3) {
         String str;
         c cVar;
         boolean z9;
@@ -823,7 +823,7 @@ public final class j implements e0, u {
         int i11;
         boolean z12;
         List list;
-        this.G = d0Var;
+        this.G = c0Var;
         s2.d dVar = this.b;
         dVar.getClass();
         dVar.e.add(this);
@@ -1120,7 +1120,7 @@ public final class j implements e0, u {
         this.K = this.J;
     }
 
-    @Override // x2.e1
+    @Override // x2.d1
     public final void r(long j3) {
         this.M.r(j3);
     }

@@ -1,20 +1,434 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.util.Property;
+import android.util.Size;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.Space;
+import android.widget.TextView;
+import c8.ha;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.jl;
+import org.telegram.messenger.p10;
+import org.telegram.messenger.qp;
+import org.telegram.ui.Components.ps;
+import org.telegram.ui.e61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l4 extends ActionBarLayout {
-    public final /* synthetic */ l2.x y1;
+public final class l4 {
+    public static final y3 p = new y3();
+    public static final List q;
+    public static final List r;
+    public final View a;
+    public final j4 b;
+    public Menu e;
+    public final int i;
+    public Runnable j;
+    public ps k;
+    public final h6 n;
+    public final dh.c o;
+    public final Rect c = new Rect();
+    public final Rect d = new Rect();
+    public ArrayList f = new ArrayList();
+    public MenuItem.OnMenuItemClickListener g = p;
+    public boolean h = true;
+    public final z3 l = new z3(this);
+    public final jl m = new jl(23);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l4(Activity activity, l2.x xVar) {
-        super(activity, false);
-        this.y1 = xVar;
+    static {
+        Integer valueOf = Integer.valueOf(R.id.menu_regular);
+        Integer valueOf2 = Integer.valueOf(R.id.menu_bold);
+        Integer valueOf3 = Integer.valueOf(R.id.menu_italic);
+        Integer valueOf4 = Integer.valueOf(R.id.menu_strike);
+        Integer valueOf5 = Integer.valueOf(R.id.menu_mono);
+        Integer valueOf6 = Integer.valueOf(R.id.menu_underline);
+        Integer valueOf7 = Integer.valueOf(R.id.menu_spoiler);
+        Integer valueOf8 = Integer.valueOf(R.id.menu_link);
+        Integer valueOf9 = Integer.valueOf(R.id.menu_quote);
+        q = Arrays.asList(valueOf, valueOf2, valueOf3, valueOf4, valueOf5, valueOf6, valueOf7, valueOf8, valueOf9, Integer.valueOf(R.id.menu_date));
+        r = Arrays.asList(valueOf2, valueOf3, valueOf4, valueOf8, valueOf5, valueOf6, valueOf7, valueOf9);
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.q4
-    public final v2 getBottomSheet() {
-        return ((v2[]) this.y1.b)[0];
+    public l4(Context context, View view, int i7, h6 h6Var, dh.c cVar) {
+        this.a = view;
+        this.i = i7;
+        this.o = cVar;
+        this.n = h6Var;
+        this.b = new j4(this, context, view);
+    }
+
+    public static AnimatorSet a(RelativeLayout relativeLayout, int i7, AnimatorListenerAdapter animatorListenerAdapter) {
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(ObjectAnimator.ofFloat(relativeLayout, (Property<RelativeLayout, Float>) View.ALPHA, 1.0f, 0.0f).setDuration(100L));
+        animatorSet.setStartDelay(i7);
+        animatorSet.addListener(animatorListenerAdapter);
+        return animatorSet;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00db  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0138  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00de  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c0  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00ba  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00b4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static LinearLayout b(l4 l4Var, Context context, MenuItem menuItem, boolean z9, boolean z10, boolean z11) {
+        int w02;
+        int i7;
+        int i10;
+        ImageView imageView;
+        int i11 = l4Var.i;
+        h6 h6Var = l4Var.n;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
+        linearLayout.setOrientation(0);
+        linearLayout.setMinimumWidth(org.telegram.messenger.g0.L(48.0f));
+        linearLayout.setMinimumHeight(org.telegram.messenger.g0.L(z9 ? 42.0f : 48.0f));
+        linearLayout.setPaddingRelative(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
+        TextView textView = new TextView(context);
+        textView.setGravity(17);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setTextSize(1, 14.0f);
+        textView.setFocusable(false);
+        textView.setImportantForAccessibility(2);
+        textView.setFocusableInTouchMode(false);
+        int w03 = m6.w0(m6.i6, h6Var);
+        if (i11 == 0) {
+            i7 = m6.j5;
+            w02 = m6.w0(i7, h6Var);
+            t6.U(textView, i7, h6Var);
+        } else {
+            if (i11 == 2) {
+                textView.setTextColor(-328966);
+                i10 = -328966;
+                w03 = 553648127;
+                i7 = -1;
+                if (!z10 || z11) {
+                    linearLayout.setBackground(m6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
+                } else {
+                    linearLayout.setBackground(m6.h0(w03, 2, -1));
+                }
+                textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
+                linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z9 ? 42.0f : 48.0f)));
+                linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
+                ImageView e10 = org.telegram.messenger.camera.q.e(context, R.drawable.msg_mini_lock3);
+                e10.setScaleType(ImageView.ScaleType.CENTER);
+                if (i11 == 2) {
+                    if (i7 < 0) {
+                        i7 = m6.G6;
+                    }
+                    p6 K = t6.K(0.4f, i7);
+                    PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+                    int i12 = K.a;
+                    float f10 = K.d;
+                    int P = t6.P(i12, -1, 2, f10, h6Var);
+                    PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(P, mode);
+                    e10.setColorFilter(porterDuffColorFilter);
+                    n6 N = t6.N(e10, 5, i12, -1, 2, f10, h6Var, P, porterDuffColorFilter);
+                    imageView = e10;
+                    N.h = mode;
+                } else {
+                    imageView = e10;
+                    imageView.setColorFilter(new PorterDuffColorFilter(m6.r1(0.4f, i10), PorterDuff.Mode.SRC_IN));
+                }
+                imageView.setVisibility(8);
+                linearLayout.addView(imageView, ha.q(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+                if (menuItem != null) {
+                    e(linearLayout, menuItem, l4Var.j != null);
+                }
+                return linearLayout;
+            }
+            if (i11 == 1) {
+                i7 = m6.G6;
+                w02 = m6.w0(i7, h6Var);
+                t6.U(textView, i7, h6Var);
+            } else {
+                w02 = m6.w0(m6.G6, h6Var);
+                i7 = -1;
+            }
+        }
+        i10 = w02;
+        if (z10) {
+        }
+        linearLayout.setBackground(m6.c0(w03, !z10 ? 12 : 0, !z11 ? 12 : 0, !z11 ? 12 : 0, !z10 ? 12 : 0));
+        textView.setPaddingRelative(org.telegram.messenger.g0.L(11.0f), 0, 0, 0);
+        linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, org.telegram.messenger.g0.L(!z9 ? 42.0f : 48.0f)));
+        linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
+        ImageView e102 = org.telegram.messenger.camera.q.e(context, R.drawable.msg_mini_lock3);
+        e102.setScaleType(ImageView.ScaleType.CENTER);
+        if (i11 == 2) {
+        }
+        imageView.setVisibility(8);
+        linearLayout.addView(imageView, ha.q(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        if (menuItem != null) {
+        }
+        return linearLayout;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0047  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void e(View view, MenuItem menuItem, boolean z9) {
+        boolean z10;
+        ViewGroup viewGroup = (ViewGroup) view;
+        TextView textView = (TextView) viewGroup.getChildAt(0);
+        textView.setEllipsize(null);
+        if (TextUtils.isEmpty(menuItem.getTitle())) {
+            textView.setVisibility(8);
+        } else {
+            textView.setVisibility(0);
+            textView.setText(menuItem.getTitle());
+        }
+        textView.setPaddingRelative(0, 0, 0, 0);
+        if (z9) {
+            if (r.contains(Integer.valueOf(menuItem.getItemId()))) {
+                z10 = true;
+                viewGroup.getChildAt(2).setVisibility(z10 ? 0 : 8);
+            }
+        }
+        z10 = false;
+        viewGroup.getChildAt(2).setVisibility(z10 ? 0 : 8);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x006c, code lost:
+    
+        if (r26.h != false) goto L21;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c() {
+        List list;
+        boolean z9;
+        int i7;
+        List list2;
+        boolean z10;
+        ArrayList d = d(this.e);
+        Collections.sort(d, this.m);
+        ArrayList arrayList = this.f;
+        j4 j4Var = this.b;
+        if (arrayList != null && d.size() == this.f.size()) {
+            int size = d.size();
+            int i10 = 0;
+            while (true) {
+                if (i10 < size) {
+                    MenuItem menuItem = (MenuItem) d.get(i10);
+                    MenuItem menuItem2 = (MenuItem) this.f.get(i10);
+                    if (menuItem.getItemId() != menuItem2.getItemId() || !TextUtils.equals(menuItem.getTitle(), menuItem2.getTitle()) || !Objects.equals(menuItem.getIcon(), menuItem2.getIcon()) || menuItem.getGroupId() != menuItem2.getGroupId()) {
+                        break;
+                    } else {
+                        i10++;
+                    }
+                }
+            }
+        }
+        boolean z11 = j4Var.F;
+        Rect rect = j4Var.A;
+        l4 l4Var = j4Var.Q;
+        boolean z12 = true;
+        if (!z11) {
+            j4Var.G = false;
+            j4Var.F = true;
+            j4Var.x.cancel();
+            j4Var.w.start();
+            j4Var.D.setEmpty();
+        }
+        MenuItem.OnMenuItemClickListener onMenuItemClickListener = this.g;
+        Size size2 = j4Var.H;
+        j4Var.K = onMenuItemClickListener;
+        j4Var.d();
+        j4Var.I = null;
+        j4Var.J = null;
+        j4Var.N = false;
+        j4Var.n();
+        e61 e61Var = j4Var.g;
+        e61Var.removeAllViews();
+        e61Var.setPaddingRelative(0, 0, 0, 0);
+        i4 i4Var = j4Var.h;
+        ArrayAdapter arrayAdapter = (ArrayAdapter) i4Var.getAdapter();
+        arrayAdapter.clear();
+        i4Var.setAdapter((ListAdapter) arrayAdapter);
+        j4Var.f.removeAllViews();
+        j4Var.b.getWindowVisibleDisplayFrame(rect);
+        int min = Math.min(org.telegram.messenger.g0.L(400.0f), org.telegram.messenger.camera.q.A(16.0f, 2, rect.width()));
+        LinkedList linkedList = new LinkedList(d);
+        Iterator it = linkedList.iterator();
+        int i11 = min;
+        boolean z13 = true;
+        while (true) {
+            boolean hasNext = it.hasNext();
+            List list3 = r;
+            if (!hasNext) {
+                list = list3;
+                z9 = z12;
+                break;
+            }
+            MenuItem menuItem3 = (MenuItem) it.next();
+            boolean hasNext2 = it.hasNext();
+            boolean z14 = !hasNext2;
+            z9 = z12;
+            if (menuItem3 == null || l4Var.j == null || !list3.contains(Integer.valueOf(menuItem3.getItemId()))) {
+                int i12 = i11;
+                list = list3;
+                LinearLayout b10 = b(l4Var, j4Var.a, menuItem3, false, z13, z14);
+                b10.setGravity(17);
+                int i13 = min;
+                b10.setPaddingRelative((int) ((z13 ? 1.5d : 1.0d) * b10.getPaddingStart()), b10.getPaddingTop(), (int) (b10.getPaddingEnd() * (hasNext2 ? 1.0d : 1.5d)), b10.getPaddingBottom());
+                b10.measure(0, 0);
+                min = i13;
+                int min2 = Math.min(b10.getMeasuredWidth(), min);
+                boolean z15 = min2 <= i12 - size2.getWidth() ? z9 : false;
+                boolean z16 = (hasNext2 || min2 > i12) ? false : z9;
+                if (!z15 && !z16) {
+                    break;
+                }
+                b10.setTag(menuItem3);
+                b10.setOnClickListener(j4Var.L);
+                e61Var.addView(b10);
+                ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
+                layoutParams.width = min2;
+                b10.setLayoutParams(layoutParams);
+                i11 = i12 - min2;
+                it.remove();
+                z12 = z9;
+                z13 = false;
+            } else {
+                z12 = z9;
+            }
+        }
+        if (linkedList.isEmpty()) {
+            i7 = 0;
+        } else {
+            i7 = 0;
+            e61Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+        }
+        e61Var.measure(i7, i7);
+        j4Var.J = new Size(e61Var.getMeasuredWidth(), e61Var.getMeasuredHeight());
+        if (!linkedList.isEmpty()) {
+            ArrayAdapter arrayAdapter2 = (ArrayAdapter) i4Var.getAdapter();
+            arrayAdapter2.clear();
+            if (l4Var.j != null) {
+                Collections.sort(linkedList, new jl(24));
+            }
+            int size3 = linkedList.size();
+            boolean D3 = qp.s1(p10.s0).D3();
+            int i14 = 0;
+            while (i14 < size3) {
+                MenuItem menuItem4 = (MenuItem) linkedList.get(i14);
+                if (l4Var.j == null) {
+                    z10 = z9;
+                    list2 = list;
+                } else {
+                    list2 = list;
+                    z10 = list2.contains(Integer.valueOf(menuItem4.getItemId())) ? !D3 : z9;
+                }
+                if (z10) {
+                    arrayAdapter2.add(menuItem4);
+                }
+                i14++;
+                list = list2;
+            }
+            i4Var.setAdapter((ListAdapter) arrayAdapter2);
+            if (j4Var.M) {
+                i4Var.setY(0.0f);
+            } else {
+                i4Var.setY(size2.getHeight());
+            }
+            int count = i4Var.getAdapter().getCount();
+            int i15 = 0;
+            for (int i16 = 0; i16 < count; i16++) {
+                MenuItem menuItem5 = (MenuItem) i4Var.getAdapter().getItem(i16);
+                ab.v vVar = j4Var.q;
+                LinearLayout linearLayout = (LinearLayout) vVar.d;
+                e(linearLayout, menuItem5, ((j4) vVar.e).Q.j != null ? z9 : false);
+                linearLayout.measure(0, 0);
+                i15 = Math.max(linearLayout.getMeasuredWidth(), i15);
+            }
+            Size size4 = new Size(Math.max(i15, size2.getWidth()), j4Var.c(4));
+            j4Var.I = size4;
+            j4.m(i4Var, size4);
+        }
+        j4Var.p();
+        this.f = d;
+        boolean f10 = j4Var.f();
+        Point point = j4Var.B;
+        PopupWindow popupWindow = j4Var.c;
+        Rect rect2 = this.d;
+        Rect rect3 = this.c;
+        if (f10) {
+            if (!rect2.equals(rect3) && j4Var.f() && popupWindow.isShowing()) {
+                j4Var.d();
+                j4Var.i(rect3);
+                j4Var.h();
+                popupWindow.update(point.x, point.y, popupWindow.getWidth(), popupWindow.getHeight());
+            }
+        } else if (!j4Var.f()) {
+            j4Var.G = false;
+            j4Var.F = false;
+            j4Var.w.cancel();
+            j4Var.x.cancel();
+            j4Var.d();
+            j4Var.i(rect3);
+            j4Var.h();
+            popupWindow.showAtLocation(j4Var.b, 0, point.x, point.y);
+            j4Var.v.start();
+        }
+        this.h = false;
+        rect2.set(rect3);
+    }
+
+    public final ArrayList d(Menu menu) {
+        ps psVar;
+        ArrayList arrayList = new ArrayList();
+        for (int i7 = 0; menu != null && i7 < menu.size(); i7++) {
+            MenuItem item = menu.getItem(i7);
+            if (item.isVisible() && item.isEnabled()) {
+                SubMenu subMenu = item.getSubMenu();
+                if (subMenu != null) {
+                    arrayList.addAll(d(subMenu));
+                } else if ((item.getItemId() != R.id.menu_quote || (psVar = this.k) == null || ((Boolean) psVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
+                    arrayList.add(item);
+                }
+            }
+        }
+        return arrayList;
     }
 }

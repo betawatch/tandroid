@@ -1,14 +1,14 @@
 package xi;
 
 import org.telegram.ui.ActionBar.a5;
-import org.telegram.ui.ActionBar.z4;
+import org.telegram.ui.ActionBar.b5;
 import vi.f;
 import wi.m0;
 import wi.n0;
 import wi.o0;
 import wi.r0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class e {
     public static final a a = new a("experimental_settings_allowed");
@@ -21,6 +21,6 @@ public abstract class e {
     public static final c h = new c();
     public static final a i = new a("round_video_composition");
     public static final b j = new b("round_video_last_camera", m0.a);
-    public static final b k = new b("header_done_button_style", a5.a);
-    public static final b l = new b("header_done_button_shape", z4.b);
+    public static final b k = new b("header_done_button_style", b5.a);
+    public static final b l = new b("header_done_button_shape", a5.b);
 }

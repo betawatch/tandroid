@@ -14,19 +14,19 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
     public final int b;
-    public final g6 c;
+    public final h6 c;
     public final f2 d;
     public final Runnable e;
     public int f;
@@ -95,7 +95,7 @@ public final class a0 {
             if (TextUtils.isEmpty(str2)) {
                 str2 = id.M0(2131752777, null);
             }
-            y31 f10 = y31.f(id.M0(2131752778, null), str2, 101);
+            x31 f10 = x31.f(id.M0(2131752778, null), str2, 101);
             f10.g = z9;
             arrayList.add(f10);
         }
@@ -139,7 +139,7 @@ public final class a0 {
             if (TextUtils.isEmpty(str)) {
                 str = id.M0(2131752779, null);
             }
-            y31 f11 = y31.f(id.M0(2131752780, null), str, qs.o1);
+            x31 f11 = x31.f(id.M0(2131752780, null), str, qs.o1);
             f11.g = z9;
             arrayList.add(f11);
         }
@@ -294,8 +294,8 @@ public final class a0 {
         return false;
     }
 
-    public final boolean h(y31 y31Var) {
-        int i7 = y31Var.d;
+    public final boolean h(x31 x31Var) {
+        int i7 = x31Var.d;
         int i10 = 2;
         f2 f2Var = this.d;
         boolean z9 = false;
@@ -335,17 +335,17 @@ public final class a0 {
             runnable.run();
             return true;
         }
-        if (y31Var.a != 11) {
+        if (x31Var.a != 11) {
             return false;
         }
-        boolean z12 = y31Var.w;
-        String B1 = qp.s1(this.b).B1(y31Var.x, false);
+        boolean z12 = x31Var.w;
+        String B1 = qp.s1(this.b).B1(x31Var.x, false);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, this.a, this.c);
         String M0 = id.M0(!z12 ? 2131752686 : 2131752684, null);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.R = M0;
         u1Var.T = id.a0(null, null, !z12 ? 2131752687 : 2131752685, B1);
-        alertDialog$Builder.k(id.M0(2131746321, null), new ab.j(this, z12, y31Var, i10));
+        alertDialog$Builder.k(id.M0(2131746321, null), new ab.j(this, z12, x31Var, i10));
         alertDialog$Builder.h(id.M0(2131752589, null), null);
         if (f2Var != null) {
             f2Var.showDialog(u1Var);
@@ -443,7 +443,7 @@ public final class a0 {
         return false;
     }
 
-    public a0(Context context, int i7, v9 v9Var, g6 g6Var) {
+    public a0(Context context, int i7, v9 v9Var, h6 h6Var) {
         this.j = new ArrayList();
         this.k = new ArrayList();
         this.m = -4;
@@ -451,6 +451,6 @@ public final class a0 {
         this.b = i7;
         this.d = null;
         this.e = v9Var;
-        this.c = g6Var;
+        this.c = h6Var;
     }
 }

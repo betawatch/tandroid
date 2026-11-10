@@ -1,71 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class d5 implements te.f, we.a {
-    public final View a;
-    public boolean b;
-    public float c = 1.0f;
-    public float d = 1.0f;
-    public float e = 1.0f;
+public final /* synthetic */ class d5 implements te.d, m0 {
+    public final /* synthetic */ f5 a;
 
-    public d5(View view) {
-        this.a = view;
+    public /* synthetic */ d5(f5 f5Var) {
+        this.a = f5Var;
     }
 
-    @Override // we.a
-    public final void a() {
-        View view = this.a;
-        if (e5.h(view)) {
-            return;
+    @Override // te.d
+    public /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // te.d
+    public /* synthetic */ boolean B(float f10) {
+        return false;
+    }
+
+    @Override // te.d
+    public void Y0() {
+        f5 f5Var = this.a;
+        f5Var.e();
+        f5Var.a.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.m0
+    public void i(int i7) {
+        k kVar = this.a.a.V;
+        if (kVar != null) {
+            kVar.b(i7);
         }
-        if (view instanceof f5) {
-            ((f5) view).X();
-        } else {
-            view.setVisibility(8);
-        }
-        c(1.0f, 1.0f);
     }
 
-    @Override // te.f
-    public final /* synthetic */ int b(boolean z9) {
-        return 0;
+    @Override // te.d
+    public /* synthetic */ void l(boolean z9) {
     }
 
-    public final void c(float f10, float f11) {
-        float f12 = this.c;
-        if (f12 == f10 && this.d == f11) {
-            return;
-        }
-        View view = this.a;
-        if (f12 == 1.0f) {
-            this.e = view.getAlpha();
-        }
-        this.c = f10;
-        this.d = f11;
-        view.setAlpha(this.e * f10);
-        float min = Math.min(org.telegram.messenger.g0.T1(0.6f, 1.0f, f10), f11);
-        view.setScaleX(min);
-        view.setScaleY(min);
+    @Override // te.d
+    public /* synthetic */ void D() {
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof d5) && ((d5) obj).a == this.a;
-    }
-
-    @Override // te.f
-    public final int getHeight() {
-        return this.a.getMeasuredHeight();
-    }
-
-    @Override // te.f
-    public final int getWidth() {
-        return e5.f(this.a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // te.d
+    public /* synthetic */ void a() {
     }
 }

@@ -11,9 +11,9 @@ import e2.t0;
 import h9.f0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.telegram.ui.Components.rt;
+import org.telegram.ui.Components.qt;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final class f extends Handler {
             aVar.e = i7;
             ((q2.b) this.c).i.getClass();
             if (i7 <= 3) {
-                x2.u uVar = new x2.u(wVar.a, wVar.b, wVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, wVar.d);
+                x2.t tVar = new x2.t(wVar.a, wVar.b, wVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, wVar.d);
                 pb.b bVar = ((q2.b) this.c).i;
                 int i10 = aVar.e;
                 bVar.getClass();
@@ -49,9 +49,9 @@ public final class f extends Handler {
                     return false;
                 }
                 synchronized (((q2.b) this.c).o) {
-                    rt rtVar = ((q2.b) this.c).y;
-                    if (rtVar != null) {
-                        ((f0) rtVar.b).c(uVar);
+                    qt qtVar = ((q2.b) this.c).y;
+                    if (qtVar != null) {
+                        ((f0) qtVar.b).c(tVar);
                     }
                 }
                 synchronized (this) {
@@ -78,7 +78,7 @@ public final class f extends Handler {
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
         Object obj;
-        x2.u uVar;
+        x2.t tVar;
         switch (this.a) {
             case 0:
                 androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.c;
@@ -134,9 +134,9 @@ public final class f extends Handler {
                         q2.v m10 = bVar.k.m(bVar.l, (q2.o) aVar.d);
                         synchronized (((q2.b) this.c).o) {
                             try {
-                                rt rtVar = ((q2.b) this.c).y;
-                                if (rtVar != null && (uVar = m10.b) != null) {
-                                    ((f0) rtVar.b).c(new x2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
+                                qt qtVar = ((q2.b) this.c).y;
+                                if (qtVar != null && (tVar = m10.b) != null) {
+                                    ((f0) qtVar.b).c(new x2.t(tVar.a, tVar.b, tVar.c, tVar.d, SystemClock.elapsedRealtime() - aVar.c, tVar.f));
                                 }
                             } finally {
                             }

@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class ma {
-    public static ArrayList a(org.telegram.ui.ActionBar.t6 t6Var, int... iArr) {
+    public static ArrayList a(org.telegram.ui.ActionBar.u6 u6Var, int... iArr) {
         ArrayList arrayList = new ArrayList(iArr.length);
         for (int i7 : iArr) {
-            arrayList.add(new org.telegram.ui.ActionBar.u6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, t6Var, i7));
+            arrayList.add(new org.telegram.ui.ActionBar.v6((View) null, 0, (Class[]) null, (Paint) null, (Drawable[]) null, u6Var, i7));
         }
         return arrayList;
     }

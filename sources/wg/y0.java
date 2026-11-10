@@ -10,9 +10,9 @@ import org.telegram.messenger.qs;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.qg0;
+import org.telegram.ui.rg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements c20 {
     public final /* synthetic */ int a;
@@ -28,13 +28,13 @@ public final /* synthetic */ class y0 implements c20 {
         switch (this.a) {
             case 0:
                 f1 f1Var = this.b;
-                ArrayList arrayList = f1Var.j2;
+                ArrayList arrayList = f1Var.m2;
                 arrayList.clear();
                 arrayList.addAll((List) obj);
-                qg0 qg0Var = f1Var.Q1;
-                if (qg0Var.Q) {
-                    qg0Var.setLoading(false);
-                    if (f1Var.k1.G) {
+                rg0 rg0Var = f1Var.T1;
+                if (rg0Var.Q) {
+                    rg0Var.setLoading(false);
+                    if (f1Var.n1.G) {
                         f1Var.k1();
                         break;
                     }
@@ -64,8 +64,8 @@ public final /* synthetic */ class y0 implements c20 {
                 break;
             default:
                 f1 f1Var3 = this.b;
-                f1Var3.g2 = (String) obj;
-                tg.y yVar = f1Var3.o2;
+                f1Var3.j2 = (String) obj;
+                tg.y yVar = f1Var3.r2;
                 org.telegram.messenger.g0.r(yVar);
                 org.telegram.messenger.g0.i3(yVar, 350L);
                 break;

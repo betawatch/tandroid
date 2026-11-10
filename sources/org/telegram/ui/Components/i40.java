@@ -1,35 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i40 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class i40 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o40 b;
+    public final /* synthetic */ n40 b;
 
-    public /* synthetic */ i40(o40 o40Var, int i7) {
+    public /* synthetic */ i40(n40 n40Var, int i7) {
         this.a = i7;
-        this.b = o40Var;
+        this.b = n40Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        wi.s0 s0Var;
+        int i7 = this.a;
+        n40 n40Var = this.b;
+        switch (i7) {
             case 0:
-                o40 o40Var = this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * o40Var.getMeasuredHeight() * 0.5f;
-                o40Var.x0 = floatValue;
-                o40Var.s.setTranslationY(floatValue + o40Var.w0);
+                wi.s0 s0Var2 = n40Var.Q;
+                if (s0Var2 != null && s0Var2.a == 3) {
+                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+                    long j3 = n40Var.G0;
+                    if (j3 == 0 || elapsedRealtimeNanos - j3 >= 70000000) {
+                        n40Var.F();
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                int i10 = n40.L0;
+                n40Var.u();
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o40 o40Var2 = this.b;
-                o40Var2.z0 = floatValue2;
-                wi.t0 t0Var = o40Var2.O;
-                if (t0Var != null) {
-                    t0Var.y(floatValue2);
-                    break;
+                int i11 = n40.L0;
+                wi.t0 t0Var = n40Var.O;
+                if (t0Var != null && (s0Var = n40Var.Q) != null) {
+                    if (s0Var.a != 3) {
+                        if (s0Var.e) {
+                            t0Var.p();
+                            break;
+                        }
+                    } else {
+                        n40Var.y();
+                        break;
+                    }
                 }
                 break;
         }

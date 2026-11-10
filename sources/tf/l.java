@@ -8,11 +8,11 @@ import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.ly0;
 import sg.i0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -88,7 +88,7 @@ public final class l extends rf.a {
         byte b10;
         byte b11;
         byte b12;
-        ky0 ky0Var;
+        ly0 ly0Var;
         Logger logger;
         uf.a aVar;
         int i7;
@@ -106,12 +106,12 @@ public final class l extends rf.a {
                 hVar.b = 0;
                 hVar.c = 0;
                 long j13 = dVar.b;
-                vy vyVar = new vy(dVar, 19);
+                uy uyVar = new uy(dVar, 19);
                 byte[] bArr = new byte[3];
                 int i10 = 0;
                 for (int i11 = 3; i10 < i11; i11 = 3) {
                     long j14 = j13;
-                    int read = ((ab.d) vyVar.b).read(bArr, i10, 3 - i10);
+                    int read = ((ab.d) uyVar.b).read(bArr, i10, 3 - i10);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -123,14 +123,14 @@ public final class l extends rf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte M = vyVar.M();
+                byte M = uyVar.M();
                 hVar.a = M;
                 if (M != 2 && M != 3 && M != 4) {
                     throw new c(jg.g.j(M, "Unsupported ID3v2 version: "));
                 }
-                byte M2 = vyVar.M();
-                byte M3 = vyVar.M();
-                int P = vyVar.P();
+                byte M2 = uyVar.M();
+                byte M3 = uyVar.M();
+                int P = uyVar.P();
                 hVar.b = P + 10;
                 if (M == 2) {
                     hVar.d = (M3 & 128) != 0;
@@ -142,17 +142,17 @@ public final class l extends rf.a {
                         b11 = M2;
                         b12 = M3;
                     } else if (M == 3) {
-                        int O = vyVar.O();
-                        vyVar.M();
-                        vyVar.M();
-                        vyVar.O();
+                        int O = uyVar.O();
+                        uyVar.M();
+                        uyVar.M();
+                        uyVar.O();
                         b11 = M2;
                         b12 = M3;
-                        vyVar.R(O - 6);
+                        uyVar.R(O - 6);
                     } else {
                         b11 = M2;
                         b12 = M3;
-                        vyVar.R(vyVar.P() - 4);
+                        uyVar.R(uyVar.P() - 4);
                     }
                     if (M >= 4 && (b12 & 16) != 0) {
                         hVar.c = 10;
@@ -168,7 +168,7 @@ public final class l extends rf.a {
                 }
                 if (M >= 4 || !hVar.d) {
                     logger = logger2;
-                    ky0Var = new ky0(mVar, i12, (i13 - i12) - hVar.c, hVar);
+                    ly0Var = new ly0(mVar, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
                     int i14 = i13 - i12;
                     byte[] bArr2 = new byte[i14];
@@ -190,18 +190,18 @@ public final class l extends rf.a {
                         }
                         z9 = b13 == -1;
                     }
-                    ky0Var = new ky0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
+                    ly0Var = new ly0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                vy vyVar2 = (vy) ky0Var.d;
-                uf.a aVar2 = (uf.a) ky0Var.b;
+                uy uyVar2 = (uy) ly0Var.d;
+                uf.a aVar2 = (uf.a) ly0Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(ky0Var);
+                        f fVar = new f(ly0Var);
                         String str6 = fVar.a;
                         int i18 = fVar.c;
                         aVar = aVar2;
@@ -222,7 +222,7 @@ public final class l extends rf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                vyVar2.R(aVar.e());
+                                uyVar2.R(aVar.e());
                                 i7 = hVar.c;
                                 if (i7 > 0) {
                                 }
@@ -274,7 +274,7 @@ public final class l extends rf.a {
                                     i20++;
                                 }
                             }
-                            vyVar2.R(i18);
+                            uyVar2.R(i18);
                             aVar2 = aVar;
                         } else if (logger.isLoggable(level)) {
                             logger.log(level, "ID3 frame claims to extend frames area");
@@ -284,7 +284,7 @@ public final class l extends rf.a {
                         aVar = aVar2;
                     }
                 }
-                vyVar2.R(aVar.e());
+                uyVar2.R(aVar.e());
                 i7 = hVar.c;
                 if (i7 > 0) {
                     mVar.skip(i7);

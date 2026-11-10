@@ -12,13 +12,13 @@ import org.telegram.messenger.yr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class r1 extends pj0 {
+public final class r1 extends oj0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -37,14 +37,14 @@ public final class r1 extends pj0 {
         ArrayList arrayList = t1Var.h;
         arrayList.clear();
         k2 k2Var = t1Var.r;
-        int i7 = k2.y1;
+        int i7 = k2.B1;
         arrayList.addAll(new ArrayList(ui.b0(k2Var.a).i0));
         if (z9) {
             r1Var.f();
         }
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return d1Var.f == 2;
     }
@@ -79,12 +79,12 @@ public final class r1 extends pj0 {
         this.r = true;
         t1Var.d.c(true);
         if (this.d >= 0) {
-            int i7 = k2.y1;
+            int i7 = k2.B1;
             ConnectionsManager.getInstance(k2Var.a).cancelRequest(this.d, true);
             this.d = -1;
         }
         if (this.f == null) {
-            int i10 = k2.y1;
+            int i10 = k2.B1;
             TLObject f22 = qp.s1(k2Var.a).f2(qp.s1(k2Var.a).K3);
             if (f22 instanceof TLRPC.User) {
                 this.f = (TLRPC.User) f22;
@@ -93,7 +93,7 @@ public final class r1 extends pj0 {
         TLRPC.User user = this.f;
         if (user == null && !this.n) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            int i11 = k2.y1;
+            int i11 = k2.B1;
             tL_contacts_resolveUsername.username = qp.s1(k2Var.a).K3;
             this.d = ConnectionsManager.getInstance(k2Var.a).sendRequest(tL_contacts_resolveUsername, new bi.j0(this, 8));
             return;
@@ -102,7 +102,7 @@ public final class r1 extends pj0 {
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        int i12 = k2.y1;
+        int i12 = k2.B1;
         tL_messages_getInlineBotResults.bot = qp.s1(k2Var.a).q1(this.f);
         String str = this.e;
         if (str == null) {
@@ -123,7 +123,7 @@ public final class r1 extends pj0 {
         if (!TextUtils.equals(this.e, str)) {
             if (this.d != -1) {
                 k2 k2Var = t1Var.r;
-                int i7 = k2.y1;
+                int i7 = k2.B1;
                 ConnectionsManager.getInstance(k2Var.a).cancelRequest(this.d, true);
                 this.d = -1;
             }
@@ -180,7 +180,7 @@ public final class r1 extends pj0 {
         View view = d1Var.a;
         if (i10 == 0) {
             view.setTag(34);
-            view.setLayoutParams(new v4.o0(-1, (int) this.s.r.o1));
+            view.setLayoutParams(new v4.o0(-1, (int) this.s.r.r1));
             return;
         }
         if (i10 == 2) {
@@ -210,7 +210,7 @@ public final class r1 extends pj0 {
         } else if (i7 == 1) {
             Context context = t1Var.getContext();
             k2 k2Var = t1Var.r;
-            int i10 = k2.y1;
+            int i10 = k2.B1;
             ?? j8Var = new org.telegram.ui.Cells.j8(context, false, false, k2Var.I0, false);
             j8Var.a(0, id.M0(2131750834, null));
             v4.o0 o0Var = new v4.o0(-1, -2);
@@ -222,14 +222,14 @@ public final class r1 extends pj0 {
             org.telegram.ui.Cells.h2 h2Var2 = new org.telegram.ui.Cells.h2(t1Var.getContext());
             h2Var2.getPhotoImage().E0(7);
             if (h2Var2.d0 == null) {
-                ic icVar = new ic(h2Var2, 1.0f, 3.0f);
-                icVar.e = 120L;
-                h2Var2.d0 = icVar;
+                hc hcVar = new hc(h2Var2, 1.0f, 3.0f);
+                hcVar.e = 120L;
+                h2Var2.d0 = hcVar;
             }
             h2Var2.setIsKeyboard(true);
             h2Var2.setCanPreviewGif(true);
             h2Var = h2Var2;
         }
-        return new yi0(h2Var);
+        return new xi0(h2Var);
     }
 }

@@ -10,16 +10,16 @@ import org.telegram.messenger.kv;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class i4 extends ReplacementSpan {
     public final TL_iv.textButton a;
     public iu b;
     public View c;
     public int d = p10.s0;
-    public g6 e;
+    public h6 e;
 
     public i4(TL_iv.textButton textbutton) {
         this.a = textbutton;
@@ -29,7 +29,7 @@ public final class i4 extends ReplacementSpan {
         return (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile);
     }
 
-    public final void a(int i7, View view, g6 g6Var) {
+    public final void a(int i7, View view, h6 h6Var) {
         View view2;
         iu iuVar = this.b;
         if (iuVar != null && (view2 = this.c) != null) {
@@ -37,7 +37,7 @@ public final class i4 extends ReplacementSpan {
         }
         this.c = view;
         this.d = i7;
-        this.e = g6Var;
+        this.e = h6Var;
         this.b = null;
         b();
     }

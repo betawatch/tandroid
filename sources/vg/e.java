@@ -16,10 +16,10 @@ import di.d2;
 import fi.k9;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.x9;
-import org.telegram.ui.t81;
+import org.telegram.ui.u81;
 import ug.q1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class e extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int K = 0;
@@ -121,7 +121,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
         ofFloat.setDuration(600L);
         this.d.setInterpolator(new OvershootInterpolator());
         this.d.addUpdateListener(new k9(this, f10, f11, 7));
-        this.d.addListener(new t81(this, 21));
+        this.d.addListener(new u81(this, 21));
         this.d.start();
         q1 q1Var = this.c;
         if (q1Var != null) {

@@ -14,11 +14,11 @@ import android.os.SystemClock;
 import android.util.Size;
 import android.view.Surface;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.r31;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class t {
     public EGLSurface B;
@@ -261,8 +261,8 @@ public final class t {
             this.i.a("GL error", e10);
             c cVar = this.s;
             if (cVar != null) {
-                rt rtVar = cVar.b;
-                ((t0) rtVar.b).i.post(new j0(rtVar, e10, 1));
+                qt qtVar = cVar.b;
+                ((t0) qtVar.b).i.post(new j0(qtVar, e10, 1));
             }
         }
     }
@@ -378,8 +378,8 @@ public final class t {
                 this.i.a("GL error", e);
                 c cVar = this.s;
                 if (cVar != null) {
-                    rt rtVar = cVar.b;
-                    ((t0) rtVar.b).i.post(new j0(rtVar, e, 1));
+                    qt qtVar = cVar.b;
+                    ((t0) qtVar.b).i.post(new j0(qtVar, e, 1));
                 }
             }
         } catch (RuntimeException e11) {
@@ -666,7 +666,7 @@ public final class t {
             return;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        handler.post(new s31(this, handlerThread, countDownLatch, 24));
+        handler.post(new r31(this, handlerThread, countDownLatch, 24));
         try {
             countDownLatch.await();
         } catch (InterruptedException unused) {

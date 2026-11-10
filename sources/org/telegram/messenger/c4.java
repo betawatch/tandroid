@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c4 implements ResultCallback {
     public final /* synthetic */ ig.b a;
@@ -19,7 +19,7 @@ public final class c4 implements ResultCallback {
     @Override // org.telegram.tgnet.ResultCallback
     public final void onComplete(Object obj) {
         org.telegram.ui.fe feVar;
-        org.telegram.ui.ActionBar.r3 r3Var;
+        org.telegram.ui.ActionBar.s3 s3Var;
         Iterator it = ((List) obj).iterator();
         do {
             boolean hasNext = it.hasNext();
@@ -28,10 +28,10 @@ public final class c4 implements ResultCallback {
                 feVar.onComplete(null);
                 return;
             }
-            r3Var = (org.telegram.ui.ActionBar.r3) it.next();
-        } while (!this.a.equals(r3Var.c));
-        r3Var.k();
-        feVar.onComplete(r3Var);
+            s3Var = (org.telegram.ui.ActionBar.s3) it.next();
+        } while (!this.a.equals(s3Var.c));
+        s3Var.k();
+        feVar.onComplete(s3Var);
     }
 
     @Override // org.telegram.tgnet.ResultCallback

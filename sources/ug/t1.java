@@ -30,12 +30,12 @@ import org.telegram.messenger.ui;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.p61;
+import org.telegram.ui.q61;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout implements l0, ls {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -77,7 +77,7 @@ public final class t1 extends FrameLayout implements l0, ls {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public t1(Context context, rz rzVar, int i7, int i10, g6 g6Var) {
+    public t1(Context context, rz rzVar, int i7, int i10, h6 h6Var) {
         super(context);
         boolean[] zArr;
         Paint paint = new Paint(1);
@@ -91,7 +91,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         this.w = i10;
         this.a = rzVar;
         paint.setColor(-16777216);
-        paint2.setColor(i0.a.f(0.5f, l6.w0(l6.Ak, g6Var), -16777216));
+        paint2.setColor(i0.a.f(0.5f, m6.w0(m6.Ak, h6Var), -16777216));
         imageReceiver.E0(ConnectionsManager.DEFAULT_DATACENTER_ID);
         TLRPC.TL_help_premiumPromo tL_help_premiumPromo = ui.b0(i7).D;
         String q02 = PremiumPreviewFragment.q0(i10);
@@ -142,7 +142,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                     TextPaint textPaint = new TextPaint(65);
                     textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
                     textPaint.setTextSize(k0Var.b);
-                    textPaint.setColor(i0.a.o(l6.x0(zArr, l6.Nk, false), 30));
+                    textPaint.setColor(i0.a.o(m6.x0(zArr, m6.Nk, false), 30));
                     textPaint.setTextAlign(Paint.Align.CENTER);
                     int i13 = 0;
                     while (i13 < 16) {
@@ -173,8 +173,8 @@ public final class t1 extends FrameLayout implements l0, ls {
                     p1Var.v = 0.98f;
                     p1Var.u = 0.98f;
                     p1Var.o = 4.0f;
-                    p1Var.P = g6Var;
-                    p1Var.Q = l6.Nk;
+                    p1Var.P = h6Var;
+                    p1Var.Q = m6.Nk;
                     p1Var.c();
                 } else if (i10 == 2) {
                     n1 n1Var = new n1();
@@ -185,7 +185,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                             arrayList.add(new m1(n1Var));
                         }
                     }
-                    int o4 = i0.a.o(l6.x0(zArr, l6.Nk, false), 80);
+                    int o4 = i0.a.o(m6.x0(zArr, m6.Nk, false), 80);
                     if (n1Var.i != o4) {
                         n1Var.i = o4;
                         n1Var.c.setColor(o4);
@@ -202,8 +202,8 @@ public final class t1 extends FrameLayout implements l0, ls {
                 } else {
                     p1 p1Var2 = new p1(iz.o() == 2 ? 800 : iz.o() == 1 ? 400 : 100);
                     this.N = p1Var2;
-                    p1Var2.P = g6Var;
-                    p1Var2.Q = l6.Nk;
+                    p1Var2.P = h6Var;
+                    p1Var2.Q = m6.Nk;
                     p1Var2.r = 4;
                     p1Var2.w = 0.98f;
                     p1Var2.v = 0.98f;
@@ -600,7 +600,7 @@ public final class t1 extends FrameLayout implements l0, ls {
                         }
                         n1Var.f = (((1.0f - Utilities.i(this.G / 0.1f, 1.0f, 0.0f)) * 0.9f) + 0.1f) * 150.0f * f12;
                         ArrayList arrayList3 = n1Var.e;
-                        int o4 = i0.a.o(l6.x0(null, l6.Nk, false), 80);
+                        int o4 = i0.a.o(m6.x0(null, m6.Nk, false), 80);
                         if (n1Var.i != o4) {
                             n1Var.i = o4;
                             paint2.setColor(o4);
@@ -801,7 +801,7 @@ public final class t1 extends FrameLayout implements l0, ls {
         fi.c0 c0Var = this.H;
         if (c0Var != null) {
             this.T = c0Var.getCurrentPosition();
-            this.H.release(new p61(20));
+            this.H.release(new q61(20));
             this.H = null;
         }
     }
@@ -944,7 +944,7 @@ public final class t1 extends FrameLayout implements l0, ls {
             fi.c0 c0Var = this.H;
             if (c0Var != null) {
                 this.T = c0Var.getCurrentPosition();
-                this.H.release(new p61(20));
+                this.H.release(new q61(20));
                 this.H = null;
             }
             imageReceiver.Q0();

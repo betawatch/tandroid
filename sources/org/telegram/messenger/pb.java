@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pb implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -19,12 +19,12 @@ public final /* synthetic */ class pb implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ pb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, c20 c20Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public /* synthetic */ pb(int i7, long j3, Activity activity, ArrayList arrayList, HashMap hashMap, c20 c20Var, org.telegram.ui.ActionBar.h6 h6Var) {
         this.c = i7;
         this.b = j3;
         this.d = activity;
         this.e = arrayList;
-        this.f = g6Var;
+        this.f = h6Var;
         this.h = c20Var;
         this.n = hashMap;
     }
@@ -111,7 +111,7 @@ public final /* synthetic */ class pb implements Runnable {
             case 3:
                 Activity activity = (Activity) obj2;
                 ArrayList arrayList2 = (ArrayList) obj5;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj4;
                 c20 c20Var = (c20) obj3;
                 HashMap hashMap = (HashMap) obj;
                 long j11 = bi.ea.y(i10, false).p().amount;
@@ -121,7 +121,7 @@ public final /* synthetic */ class pb implements Runnable {
                     break;
                 } else if (activity != null) {
                     long longValue = ((Long) arrayList2.get(0)).longValue();
-                    new bi.tc(activity, g6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.y1(c20Var, hashMap, 0), longValue).show();
+                    new bi.tc(activity, h6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.x1(c20Var, hashMap, 0), longValue).show();
                     break;
                 }
                 break;

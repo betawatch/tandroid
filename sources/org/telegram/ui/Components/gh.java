@@ -1,127 +1,174 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
+import android.text.Editable;
 import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MotionEvent;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class gh extends lt {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ di c0;
+public final class gh implements TextWatcher {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public boolean c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gh(di diVar, Context context, qh qhVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, qhVar, null, 1, true, g6Var);
-        this.c0 = diVar;
+    public /* synthetic */ gh(KeyEvent.Callback callback, int i7) {
+        this.a = i7;
+        this.d = callback;
     }
 
-    @Override // org.telegram.ui.Components.lt
-    public final void c(float f10) {
-        di diVar = this.c0;
-        diVar.a4 = f10;
-        dh dhVar = diVar.x2;
-        dhVar.setTranslationY(f10);
-        dhVar.invalidate();
-        diVar.U0();
-        diVar.M1(diVar.s2, 0);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            zs editText = this.c0.y2.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new bi.de(15, this, editText));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(xq.f);
-            ofFloat.start();
-            this.V = false;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z9;
+        int i7;
+        switch (this.a) {
+            case 0:
+                ci ciVar = (ci) this.d;
+                i6 i6Var = ciVar.u1;
+                fh fhVar = ciVar.B2;
+                i6 i6Var2 = ciVar.t1;
+                if (this.c != TextUtils.isEmpty(editable)) {
+                    uh uhVar = ciVar.v2;
+                    if (uhVar != null) {
+                        uhVar.D(uhVar.getSelectedItemsCount());
+                    }
+                    this.c = !this.c;
+                }
+                boolean z10 = false;
+                if (this.b) {
+                    for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                        editable.removeSpan(imageSpan);
+                    }
+                    org.telegram.messenger.i6.l(editable, fhVar.getEditText().getPaint().getFontMetricsInt(), false);
+                    this.b = false;
+                }
+                int codePointCount = Character.codePointCount(editable, 0, editable.length());
+                ciVar.F1 = codePointCount;
+                ciVar.o1.a(codePointCount > 0, true);
+                int i10 = ciVar.E1;
+                if (i10 <= 0 || (i7 = i10 - ciVar.F1) > 100) {
+                    i6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new y5(this, 8));
+                    i6Var.setAlpha(0.0f);
+                    z9 = true;
+                } else {
+                    if (i7 < -9999) {
+                        i7 = -9999;
+                    }
+                    long j3 = i7;
+                    i6Var2.c(org.telegram.messenger.id.E(j3, ','), i6Var2.getVisibility() == 0, true);
+                    if (i6Var2.getVisibility() != 0) {
+                        i6Var2.setVisibility(0);
+                        i6Var2.setAlpha(0.0f);
+                        i6Var2.setScaleX(0.5f);
+                        i6Var2.setScaleY(0.5f);
+                    }
+                    i6Var2.animate().setListener(null).cancel();
+                    i6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                    if (i7 < 0) {
+                        org.telegram.ui.ActionBar.t6.Y(i6Var2, org.telegram.ui.ActionBar.m6.p7, ciVar.I0);
+                        z9 = false;
+                    } else {
+                        org.telegram.ui.ActionBar.t6.Y(i6Var2, org.telegram.ui.ActionBar.m6.y6, ciVar.I0);
+                        z9 = true;
+                    }
+                    i6Var.c(org.telegram.messenger.id.E(j3, ','), false, true);
+                    i6Var.setAlpha(1.0f);
+                }
+                if (ciVar.R2 != z9) {
+                    ciVar.R2 = z9;
+                    ciVar.F2.invalidate();
+                }
+                if (!ciVar.W1) {
+                    if (fhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(fhVar.getText().toString().trim())) {
+                        z10 = true;
+                    }
+                    ciVar.B1(z10);
+                }
+                ciVar.Q0(true);
+                return;
+            default:
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
+                if (!this.b) {
+                    n9Var.f(editable);
+                    return;
+                }
+                this.b = false;
+                this.c = true;
+                try {
+                    editable.append('.');
+                    this.c = false;
+                    n9Var.c.setSelection(editable.length());
+                    return;
+                } catch (Throwable th2) {
+                    this.c = false;
+                    throw th2;
+                }
         }
-        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.lt
-    public final void e() {
-        super/*org.telegram.ui.ActionBar.v2*/.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.lt
-    public final void f() {
-        super.f();
-        hy emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.x2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(org.telegram.messenger.g0.n);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
+                org.telegram.ui.Wallet.j9 j9Var = n9Var.c;
+                if (charSequence.length() > 0 && i10 == charSequence.length() && i11 == 0 && j9Var.getLayout() != null) {
+                    n9Var.N = j9Var.getLayout().getLineLeft(0) - j9Var.getScrollX();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lt
-    public final void i(ActionMode actionMode, Menu menu) {
-        org.telegram.ui.ActionBar.f2 f2Var = this.c0.W1;
-        if (f2Var instanceof org.telegram.ui.cn) {
-            org.telegram.ui.cn.B8(menu, ((org.telegram.ui.cn) f2Var).h, true, true, true, true);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ci ciVar = (ci) this.d;
+                if (i11 - i10 >= 1) {
+                    this.b = true;
+                }
+                if (ciVar.B4 == null) {
+                    ci.K0(ciVar);
+                }
+                if (ciVar.B4.getAdapter() != null) {
+                    ciVar.B4.setReversed(false);
+                    ciVar.B4.getAdapter().U(charSequence, ciVar.B2.getEditText().getSelectionStart(), null, false, false);
+                    ciVar.J1();
+                    break;
+                }
+                break;
+            default:
+                boolean z9 = false;
+                this.b = i11 > 0 && TextUtils.equals(charSequence, "0");
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
+                if (!n9Var.R && !this.c) {
+                    if (i10 != 0 || i11 != 0) {
+                        org.telegram.ui.Wallet.x6 x6Var = n9Var.d;
+                        if (i11 > 0 && i11 >= i10) {
+                            z9 = true;
+                        }
+                        if (x6Var.y && x6Var.r && x6Var.D == -1) {
+                            ch0 ch0Var = x6Var.h;
+                            if (ch0Var == null) {
+                                x6Var.d0 = org.telegram.messenger.camera.q.z(x6Var.d0, z9 ? -160.0f : 160.0f, 360.0f, -360.0f);
+                                break;
+                            } else if (!ch0Var.b()) {
+                                x6Var.h.setProgress(0.0f);
+                                x6Var.h.d();
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        di diVar = this.c0;
-        gh ghVar = diVar.y2;
-        if (!diVar.o3) {
-            if (motionEvent.getX() <= ghVar.getEditText().getLeft() || motionEvent.getX() >= ghVar.getEditText().getRight() || motionEvent.getY() <= ghVar.getEditText().getTop() || motionEvent.getY() >= ghVar.getEditText().getBottom()) {
-                diVar.h1(ghVar.getEditText(), false);
-            } else {
-                diVar.h1(ghVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        this.c0.J1();
-    }
-
-    @Override // org.telegram.ui.Components.lt
-    public final void q(int i7, int i10) {
-        di diVar = this.c0;
-        dh dhVar = diVar.x2;
-        boolean z9 = false;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        if (!diVar.T1) {
-            if (i10 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
-                z9 = true;
-            }
-            diVar.B1(z9);
-        }
-        diVar.Q3 = dhVar.getTop() + diVar.P3;
-        dhVar.invalidate();
-        diVar.J1();
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

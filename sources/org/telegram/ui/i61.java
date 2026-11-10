@@ -1,80 +1,116 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.ThemeActivity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class i61 extends org.telegram.ui.Components.pj0 {
-    public final Context c;
-    public org.telegram.ui.ActionBar.k6 d;
-    public ArrayList e;
-    public final /* synthetic */ ThemeActivity f;
+public final class i61 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.Cells.z9 a;
+    public final org.telegram.ui.Components.mm0 b;
+    public final org.telegram.ui.Cells.r8 c;
+    public final int d;
+    public final int e;
+    public final TextPaint f;
+    public int h;
+    public int n;
+    public final /* synthetic */ ThemeActivity r;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i61(ThemeActivity themeActivity, Context context) {
-        this.f = themeActivity;
-        this.c = context;
-        f();
+        super(context);
+        org.telegram.ui.ActionBar.r4 r4Var;
+        this.r = themeActivity;
+        this.d = 12;
+        this.e = 30;
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.f = textPaint;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context);
+        this.b = mm0Var;
+        mm0Var.setReportChanges(true);
+        mm0Var.setSeparatorsCount(19);
+        mm0Var.setDelegate(new zr0(this, 4));
+        mm0Var.setImportantForAccessibility(2);
+        addView(mm0Var, c8.ha.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        boolean z9 = org.telegram.messenger.r2.a;
+        org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
+        this.c = r8Var;
+        r8Var.setBackground(org.telegram.ui.ActionBar.m6.N0(false));
+        r8Var.f(org.telegram.messenger.id.M0(2131751832, null), org.telegram.messenger.iz.H0, false);
+        r8Var.setOnClickListener(new qy0(this, 7));
+        r4Var = ((org.telegram.ui.ActionBar.f2) themeActivity).parentLayout;
+        org.telegram.ui.Cells.z9 z9Var = new org.telegram.ui.Cells.z9(context, r4Var, 0);
+        this.a = z9Var;
+        z9Var.setImportantForAccessibility(4);
+        addView(z9Var, c8.ha.d(-1, -2.0f, 51, 0.0f, 53, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.pj0
-    public final boolean D(v4.d1 d1Var) {
-        return false;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.Jj));
     }
 
-    @Override // v4.g0
-    public final int b() {
-        if (this.e.isEmpty()) {
-            return 0;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.I6, false);
+        TextPaint textPaint = this.f;
+        textPaint.setColor(x02);
+        canvas.drawText("" + org.telegram.messenger.iz.W0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.b.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int size = View.MeasureSpec.getSize(i7);
+        if (this.h != size) {
+            int i11 = org.telegram.messenger.iz.W0;
+            int i12 = this.d;
+            this.b.setProgress((i11 - i12) / (this.e - i12));
+            this.h = size;
         }
-        return this.e.size() + 1;
     }
 
-    @Override // v4.g0
-    public final int d(int i7) {
-        return i7 == b() - 1 ? 1 : 0;
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i7, Bundle bundle) {
+        return super.performAccessibilityAction(i7, bundle) || this.b.getSeekBarAccessibilityDelegate().g(this, i7, bundle);
     }
 
-    @Override // v4.g0
-    public final void f() {
-        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.l6.J : org.telegram.ui.ActionBar.l6.D0();
-        this.e = new ArrayList(this.d.b0);
-        super.f();
-    }
-
-    @Override // v4.g0
-    public final void t(v4.d1 d1Var, int i7) {
-        View view = d1Var.a;
-        int d = d(i7);
-        if (d == 0) {
-            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
-            org.telegram.ui.ActionBar.k6 k6Var = this.d;
-            org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.e.get(i7);
-            innerAccentView.d = k6Var;
-            innerAccentView.e = i6Var;
-            innerAccentView.a(false);
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        org.telegram.ui.Components.mm0 mm0Var = this.b;
+        if (mm0Var == null) {
             return;
         }
-        if (d != 1) {
-            return;
+        try {
+            int x02 = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.Jj, false);
+            if (x02 != this.n) {
+                this.n = x02;
+                mm0Var.setOuterColor(x02);
+            }
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
-        z51 z51Var = (z51) view;
-        org.telegram.ui.ActionBar.k6 k6Var2 = this.d;
-        int i10 = z51.c;
-        z51Var.getClass();
-        if (k6Var2.W >= 8) {
-            z51Var.b = new int[]{k6Var2.l(6), k6Var2.l(4), k6Var2.l(7), k6Var2.l(2), k6Var2.l(0), k6Var2.l(5), k6Var2.l(3)};
-        } else {
-            z51Var.b = new int[7];
-        }
-    }
-
-    @Override // v4.g0
-    public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        Context context = this.c;
-        return i7 != 0 ? new org.telegram.ui.Components.yi0(new z51(context)) : new org.telegram.ui.Components.yi0(new ThemeActivity.InnerAccentView(context));
     }
 }

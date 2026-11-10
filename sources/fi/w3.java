@@ -1,15 +1,15 @@
 package fi;
 
 import android.content.Context;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.hi;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.gi;
+import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.n41;
-import org.telegram.ui.Components.ni;
 import org.telegram.ui.Components.o41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class w3 extends r41 {
     public final /* synthetic */ int m3 = 4;
@@ -21,12 +21,12 @@ public final class w3 extends r41 {
         this.n3 = o41Var;
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.pj0
     public boolean E0(float f10) {
         switch (this.m3) {
             case 1:
-                di diVar = ((ni) this.n3).b;
-                return f10 >= ((float) ((org.telegram.messenger.g0.L(30.0f) + diVar.V3[0]) + (!diVar.X1 ? org.telegram.messenger.g0.m : 0)));
+                ci ciVar = ((mi) this.n3).b;
+                return f10 >= ((float) ((org.telegram.messenger.g0.L(30.0f) + ciVar.Y3[0]) + (!ciVar.a2 ? org.telegram.messenger.g0.m : 0)));
             default:
                 return super.E0(f10);
         }
@@ -36,8 +36,8 @@ public final class w3 extends r41 {
     public void F1() {
         switch (this.m3) {
             case 1:
-                ni niVar = (ni) this.n3;
-                niVar.b.M1(niVar, 0);
+                mi miVar = (mi) this.n3;
+                miVar.b.M1(miVar, 0);
                 break;
         }
     }
@@ -51,7 +51,7 @@ public final class w3 extends r41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0
+    @Override // org.telegram.ui.Components.pj0
     public Integer V0(int i7) {
         switch (this.m3) {
             case 0:
@@ -74,13 +74,13 @@ public final class w3 extends r41 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         switch (this.m3) {
             case 1:
                 super.onLayout(z9, i7, i10, i11, i12);
-                ni niVar = (ni) this.n3;
-                niVar.b.M1(niVar, 0);
+                mi miVar = (mi) this.n3;
+                miVar.b.M1(miVar, 0);
                 break;
             case 2:
                 super.onLayout(z9, i7, i10, i11, i12);
@@ -92,7 +92,7 @@ public final class w3 extends r41 {
                 break;
             case 4:
                 super.onLayout(z9, i7, i10, i11, i12);
-                ((vp0) this.n3).p();
+                ((up0) this.n3).p();
                 break;
         }
     }
@@ -110,14 +110,14 @@ public final class w3 extends r41 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(ni niVar, Context context, int i7, org.telegram.ui.Components.d dVar, hi hiVar, hi hiVar2, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, i7, 0, false, dVar, hiVar, hiVar2, g6Var);
-        this.n3 = niVar;
+    public w3(mi miVar, Context context, int i7, org.telegram.ui.Components.d dVar, gi giVar, gi giVar2, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, i7, 0, false, dVar, giVar, giVar2, h6Var);
+        this.n3 = miVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(Context context, int i7, zh.p0 p0Var, zh.u1 u1Var, zh.u1 u1Var2, org.telegram.ui.ActionBar.g6 g6Var, vp0 vp0Var) {
-        super(context, i7, 0, false, p0Var, u1Var, u1Var2, g6Var, 3, 1);
-        this.n3 = vp0Var;
+    public w3(Context context, int i7, zh.p0 p0Var, zh.u1 u1Var, zh.u1 u1Var2, org.telegram.ui.ActionBar.h6 h6Var, up0 up0Var) {
+        super(context, i7, 0, false, p0Var, u1Var, u1Var2, h6Var, 3, 1);
+        this.n3 = up0Var;
     }
 }

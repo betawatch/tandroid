@@ -1,52 +1,16 @@
 package org.telegram.ui.Components;
 
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ir implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
+public final class ir extends v4.k {
+    public final /* synthetic */ kr F;
 
-    public /* synthetic */ ir(int i7, TLObject tLObject) {
-        this.a = i7;
-        this.b = tLObject;
+    public ir(kr krVar) {
+        this.F = krVar;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i7 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        switch (this.a) {
-            case 0:
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.b;
-                TLRPC.Peer peer = ((org.telegram.messenger.ij) obj).k.from_id;
-                if ((inputPeer != null || peer != null) && (inputPeer == null || peer == null || (!(inputPeer instanceof TLRPC.TL_inputPeerChat) || !(peer instanceof TLRPC.TL_peerChat) ? !(inputPeer instanceof TLRPC.TL_inputPeerChannel) || !(peer instanceof TLRPC.TL_peerChannel) ? !(inputPeer instanceof TLRPC.TL_inputPeerUser) || !(peer instanceof TLRPC.TL_peerUser) || inputPeer.user_id != peer.user_id : inputPeer.channel_id != peer.channel_id : inputPeer.chat_id != peer.chat_id))) {
-                }
-            default:
-                org.telegram.messenger.ij ijVar = (org.telegram.messenger.ij) obj;
-                TLObject tLObject = this.b;
-                if (!(tLObject instanceof TLRPC.User) ? !(tLObject instanceof TLRPC.Chat) || ijVar.k.from_id.user_id != ((TLRPC.Chat) tLObject).id : ijVar.k.from_id.user_id != ((TLRPC.User) tLObject).id) {
-                }
-                break;
-        }
-        return false;
+    @Override // v4.k
+    public final void P(v4.d1 d1Var) {
+        this.F.b.invalidate();
     }
 }

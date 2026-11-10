@@ -1,22 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class wo0 extends org.telegram.ui.Cells.s9 {
-    public final /* synthetic */ int q0 = 0;
+public final class wo0 implements org.telegram.ui.Components.k20 {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ wo0(di.h8 h8Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(h8Var, g6Var);
+    public wo0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Cells.v9
-    public final int o() {
-        switch (this.q0) {
+    public final void a(int i7) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.O4 = -1;
+        org.telegram.messenger.jc jcVar = photoViewer.i5;
+        if (jcVar != null) {
+            jcVar.a();
+            photoViewer.i5 = null;
         }
-        return 0;
-    }
-
-    public wo0(di.b bVar) {
-        super(null, bVar);
+        photoViewer.k5 = true;
+        photoViewer.y2(i7);
+        photoViewer.k5 = false;
     }
 }

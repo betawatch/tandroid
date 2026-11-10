@@ -4,9 +4,9 @@ import android.text.Layout;
 import android.text.TextPaint;
 import java.text.BreakIterator;
 import java.util.ArrayList;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.xw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class na {
     public static int[] a(int i7, int i10, int i11, ArrayList arrayList) {
@@ -45,21 +45,21 @@ public abstract class na {
         return iArr;
     }
 
-    public static yw0 b(CharSequence charSequence, TextPaint textPaint, int i7, int i10, int i11, int i12, int i13) {
+    public static xw0 b(CharSequence charSequence, TextPaint textPaint, int i7, int i10, int i11, int i12, int i13) {
         float f10;
         float measureText;
         float measureText2;
-        yw0 yw0Var = new yw0();
-        yw0Var.a = i7;
+        xw0 xw0Var = new xw0();
+        xw0Var.a = i7;
         int i14 = 1;
-        yw0Var.b = Math.max(1, i10);
-        yw0Var.c = i11;
+        xw0Var.b = Math.max(1, i10);
+        xw0Var.c = i11;
         int i15 = 0;
-        yw0Var.e = Math.max(0, Math.min(i12, i13));
+        xw0Var.e = Math.max(0, Math.min(i12, i13));
         if (charSequence == null || charSequence.length() == 0 || textPaint == null) {
-            yw0Var.d = yw0Var.e;
-            yw0Var.g = true;
-            return yw0Var;
+            xw0Var.d = xw0Var.e;
+            xw0Var.g = true;
+            return xw0Var;
         }
         int length = charSequence.length();
         for (int i16 = 0; i16 < length; i16++) {
@@ -67,7 +67,7 @@ public abstract class na {
                 i14++;
             }
         }
-        yw0Var.f = new float[i14];
+        xw0Var.f = new float[i14];
         int length2 = charSequence.length();
         int i17 = 0;
         int i18 = 0;
@@ -77,7 +77,7 @@ public abstract class na {
                 break;
             }
             if (i15 == length2 || charSequence.charAt(i15) == '\n') {
-                float[] fArr = yw0Var.f;
+                float[] fArr = xw0Var.f;
                 int i19 = i18 + 1;
                 if (i15 > i17) {
                     try {
@@ -101,8 +101,8 @@ public abstract class na {
             int i20 = first;
             first = lineInstance.next();
             if (first == -1) {
-                yw0Var.d = Math.min(yw0Var.e, (int) Math.ceil(f10));
-                return yw0Var;
+                xw0Var.d = Math.min(xw0Var.e, (int) Math.ceil(f10));
+                return xw0Var;
             }
             int i21 = first;
             while (i21 > i20 && Character.isWhitespace(charSequence2.charAt(i21 - 1))) {
@@ -129,23 +129,23 @@ public abstract class na {
         }
         int size = arrayList.size();
         for (int i15 = 0; i15 < size; i15++) {
-            yw0 yw0Var = (yw0) arrayList.get(i15);
-            if (yw0Var.b == 1 && (i13 = yw0Var.a) >= 0 && i13 < i7) {
-                iArr[i13] = Math.max(iArr[i13], yw0Var.b(i10));
+            xw0 xw0Var = (xw0) arrayList.get(i15);
+            if (xw0Var.b == 1 && (i13 = xw0Var.a) >= 0 && i13 < i7) {
+                iArr[i13] = Math.max(iArr[i13], xw0Var.b(i10));
             }
         }
         int size2 = arrayList.size();
         for (int i16 = 0; i16 < size2; i16++) {
-            yw0 yw0Var2 = (yw0) arrayList.get(i16);
-            int i17 = yw0Var2.b;
-            if (i17 > 1 && (i12 = yw0Var2.a) >= 0 && i12 < i7) {
+            xw0 xw0Var2 = (xw0) arrayList.get(i16);
+            int i17 = xw0Var2.b;
+            if (i17 > 1 && (i12 = xw0Var2.a) >= 0 && i12 < i7) {
                 int min = Math.min(i7, i12 + i17);
                 int i18 = 0;
-                for (int i19 = yw0Var2.a; i19 < min; i19++) {
+                for (int i19 = xw0Var2.a; i19 < min; i19++) {
                     i18 += iArr[i19];
                 }
-                int b10 = yw0Var2.b(i10) - i18;
-                for (int i20 = yw0Var2.a; i20 < min && b10 > 0; i20++) {
+                int b10 = xw0Var2.b(i10) - i18;
+                for (int i20 = xw0Var2.a; i20 < min && b10 > 0; i20++) {
                     int i21 = min - i20;
                     int i22 = ((b10 + i21) - 1) / i21;
                     iArr[i20] = iArr[i20] + i22;

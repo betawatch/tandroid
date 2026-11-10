@@ -5,11 +5,11 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.cn;
-import org.telegram.ui.q31;
+import org.telegram.ui.r31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class b0 extends cn {
     public boolean td;
@@ -32,6 +32,6 @@ public final class b0 extends cn {
             return;
         }
         this.td = true;
-        hc.a0(this).I(R.raw.contact_check, id.a0(null, null, 2131751739, t10.p(this.ud)), org.telegram.messenger.g0.U2(id.a0(null, null, 2131751740, t10.p(this.wd.U)), new q31(this, this.vd, 1))).j();
+        gc.a0(this).I(R.raw.contact_check, id.a0(null, null, 2131751739, t10.p(this.ud)), org.telegram.messenger.g0.U2(id.a0(null, null, 2131751740, t10.p(this.wd.U)), new r31(this, this.vd, 1))).j();
     }
 }

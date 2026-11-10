@@ -2,11 +2,11 @@ package l2;
 
 import android.os.Bundle;
 import org.telegram.messenger.k9;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.le0;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.me0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements h2.o, p.a, k9, h2.j {
     public final /* synthetic */ int a;
@@ -18,8 +18,8 @@ public final /* synthetic */ class w implements h2.o, p.a, k9, h2.j {
     }
 
     @Override // p.a
-    public cc a(hc hcVar) {
-        return hcVar.k(this.b);
+    public bc a(gc gcVar) {
+        return gcVar.k(this.b);
     }
 
     @Override // h2.j
@@ -52,8 +52,8 @@ public final /* synthetic */ class w implements h2.o, p.a, k9, h2.j {
     @Override // org.telegram.messenger.k9
     public Object j(Object obj) {
         Bundle k10 = a8.p0.k("afterSignup", this.b);
-        le0 le0Var = new le0();
-        le0Var.r0(k10);
-        return le0Var;
+        me0 me0Var = new me0();
+        me0Var.r0(k10);
+        return me0Var;
     }
 }

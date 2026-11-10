@@ -6,7 +6,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ae implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class ae implements Runnable {
                 cnVar.I7();
                 break;
             case 7:
-                w81 f02 = w81.f0(-cnVar.j6, 0L);
+                x81 f02 = x81.f0(-cnVar.j6, 0L);
                 f02.D = cnVar;
                 cnVar.presentFragment(f02);
                 break;
@@ -157,9 +157,9 @@ public final /* synthetic */ class ae implements Runnable {
                     aeVar.run();
                     break;
                 } else {
-                    org.telegram.ui.Components.et etVar = new org.telegram.ui.Components.et(aeVar, 26);
-                    org.telegram.utils.twidget.n0.h.add(etVar);
-                    org.telegram.messenger.g0.i3(etVar, 150L);
+                    org.telegram.ui.Components.dt dtVar = new org.telegram.ui.Components.dt(aeVar, 26);
+                    org.telegram.utils.twidget.n0.h.add(dtVar);
+                    org.telegram.messenger.g0.i3(dtVar, 150L);
                     break;
                 }
             case 20:
@@ -211,9 +211,9 @@ public final /* synthetic */ class ae implements Runnable {
                                     ((View) zoVar3.getParent()).getLocationInWindow(iArr);
                                     float f10 = i15 - iArr[1];
                                     if (f10 > org.telegram.messenger.g0.L(80.0f)) {
-                                        for (org.telegram.ui.Components.ah0 ah0Var : (org.telegram.ui.Components.ah0[]) zoVar3.X0) {
-                                            ah0Var.N(0, false, false);
-                                            ah0Var.start();
+                                        for (org.telegram.ui.Components.zg0 zg0Var : (org.telegram.ui.Components.zg0[]) zoVar3.X0) {
+                                            zg0Var.N(0, false, false);
+                                            zg0Var.start();
                                         }
                                         zoVar3.x(org.telegram.messenger.g0.L(5.0f) + q1Var.getChecksX() + (i14 - iArr[0]), f10 + q1Var.getChecksY() + org.telegram.messenger.g0.L(6.0f), true);
                                         cnVar.getMessagesController().k4(0L, "NEWCOMER_TICKS");
@@ -247,18 +247,18 @@ public final /* synthetic */ class ae implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.Components.zn znVar = ((org.telegram.ui.Components.zn[]) cnVar.b0.b)[0];
-                org.telegram.ui.ActionBar.l5 l5Var = znVar.d;
-                org.telegram.ui.ActionBar.l5 l5Var2 = znVar.e;
+                org.telegram.ui.Components.yn ynVar = ((org.telegram.ui.Components.yn[]) cnVar.b0.b)[0];
+                org.telegram.ui.ActionBar.m5 m5Var = ynVar.d;
+                org.telegram.ui.ActionBar.m5 m5Var2 = ynVar.e;
                 cnVar.T1 = !cnVar.T1;
-                l5Var.setPivotX(0.0f);
-                l5Var2.setPivotX(0.0f);
+                m5Var.setPivotX(0.0f);
+                m5Var2.setPivotX(0.0f);
                 if (cnVar.T1) {
-                    l5Var.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
-                    l5Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+                    m5Var.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
+                    m5Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
                 } else {
-                    l5Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
-                    l5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
+                    m5Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+                    m5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
                 }
                 org.telegram.messenger.g0.i3(cnVar.U1, 6000L);
                 break;

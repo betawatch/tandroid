@@ -4,45 +4,45 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.pq0;
-import org.telegram.ui.yq0;
+import org.telegram.ui.qq0;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class wb extends pq0 {
-    public final /* synthetic */ org.telegram.ui.Components.l9 a;
+public final class wb extends qq0 {
+    public final /* synthetic */ org.telegram.ui.Components.k9 a;
     public final /* synthetic */ LinearLayout b;
     public final /* synthetic */ long c;
 
-    public wb(org.telegram.ui.Components.l9 l9Var, LinearLayout linearLayout, long j3) {
-        this.a = l9Var;
+    public wb(org.telegram.ui.Components.k9 k9Var, LinearLayout linearLayout, long j3) {
+        this.a = k9Var;
         this.b = linearLayout;
         this.c = j3;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
-    public final yq0 E(ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
-        org.telegram.ui.Components.l9 l9Var = this.a;
-        ImageReceiver imageReceiver = l9Var.getImageReceiver();
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+        org.telegram.ui.Components.k9 k9Var = this.a;
+        ImageReceiver imageReceiver = k9Var.getImageReceiver();
         int[] iArr = new int[2];
-        l9Var.getLocationInWindow(iArr);
-        yq0 yq0Var = new yq0();
-        yq0Var.b = iArr[0];
-        yq0Var.c = iArr[1];
-        yq0Var.d = this.b;
-        yq0Var.m = null;
-        yq0Var.a = imageReceiver;
+        k9Var.getLocationInWindow(iArr);
+        zq0 zq0Var = new zq0();
+        zq0Var.b = iArr[0];
+        zq0Var.c = iArr[1];
+        zq0Var.d = this.b;
+        zq0Var.m = null;
+        zq0Var.a = imageReceiver;
         if (z9) {
-            yq0Var.e = imageReceiver.p();
+            zq0Var.e = imageReceiver.p();
         }
-        yq0Var.h = imageReceiver.E();
-        yq0Var.f = this.c;
-        yq0Var.j = 0;
-        yq0Var.i = 0;
-        return yq0Var;
+        zq0Var.h = imageReceiver.E();
+        zq0Var.f = this.c;
+        zq0Var.j = 0;
+        zq0Var.i = 0;
+        return zq0Var;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
     public final boolean L() {
         return true;
     }

@@ -24,21 +24,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class q0 extends f2 {
     public static final int U = -1;
@@ -79,7 +79,7 @@ public final class q0 extends f2 {
     public boolean R;
     public boolean S;
     public boolean T;
-    public b5 a;
+    public c5 a;
     public j7 b;
     public r41 c;
     public z1 d;
@@ -110,12 +110,12 @@ public final class q0 extends f2 {
         f2 T;
         if (tL_error != null) {
             q0Var.a.b(false);
-            hc.d0(tL_error);
+            gc.d0(tL_error);
             return;
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             q0Var.a.b(false);
-            k5.p(null, 2131743879, hc.a0(q0Var), null);
+            k5.p(null, 2131743879, gc.a0(q0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -133,19 +133,19 @@ public final class q0 extends f2 {
                 if (user == null || (T = LaunchActivity.T()) == null) {
                     return;
                 }
-                hc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(user))).j();
+                gc.a0(T).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752784, t10.p(user))).j();
                 return;
             }
             f2 T2 = LaunchActivity.T();
             if (T2 != null) {
-                hc.a0(T2).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752817, t10.p(user))).j();
+                gc.a0(T2).Q(R.raw.contact_check, 36, id.a0(null, null, 2131752817, t10.p(user))).j();
             }
         }
     }
 
-    public static void b0(final q0 q0Var, y31 y31Var, final View view) {
-        if (y31Var.g && !q0Var.w.h(y31Var)) {
-            int i7 = y31Var.d;
+    public static void b0(final q0 q0Var, x31 x31Var, final View view) {
+        if (x31Var.g && !q0Var.w.h(x31Var)) {
+            int i7 = x31Var.d;
             final int i10 = 1;
             if (i7 == U) {
                 a0 a0Var = q0Var.w;
@@ -170,8 +170,8 @@ public final class q0 extends f2 {
                 q0Var.d0(true);
                 return;
             }
-            if (y31Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) q0Var.N.get(y31Var.x);
+            if (x31Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) q0Var.N.get(x31Var.x);
                 if (user == null) {
                     return;
                 }
@@ -856,17 +856,17 @@ public final class q0 extends f2 {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752783, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 13));
-        this.a = this.simpleActionBar.o(id.M0(2131745946, null));
+        this.a = this.simpleActionBar.p(id.M0(2131745946, null));
         d0(false);
         FrameLayout frameLayout = new FrameLayout(context);
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
         this.f = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 17.0f);
-        s6.D(this.f, l6.H6, null);
+        t6.D(this.f, m6.H6, null);
         EditTextBoldCursor editTextBoldCursor2 = this.f;
-        int i10 = l6.G6;
-        s6.U(editTextBoldCursor2, i10, null);
+        int i10 = m6.G6;
+        t6.U(editTextBoldCursor2, i10, null);
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(1);
         this.f.setLines(1);
@@ -877,7 +877,7 @@ public final class q0 extends f2 {
         this.f.setInputType(180224);
         this.f.setImeOptions(6);
         this.f.setHint(id.M0(2131752816, null));
-        s6.v(this.f, i10, null);
+        t6.v(this.f, i10, null);
         this.f.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.f.setCursorWidth(1.5f);
         this.f.setOnEditorActionListener(new bi.p(this, i7));
@@ -886,11 +886,11 @@ public final class q0 extends f2 {
         this.e = frameLayout2;
         frameLayout2.addView(this.f, ha.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
-        int i12 = l6.d6;
-        s6.h(i12, frameLayout3, getResourceProvider());
+        int i12 = m6.d6;
+        t6.h(i12, frameLayout3, getResourceProvider());
         View view = new View(context);
         this.h = view;
-        s6.h(l6.d7, view, getResourceProvider());
+        t6.h(m6.d7, view, getResourceProvider());
         FrameLayout frameLayout4 = this.e;
         View view2 = this.h;
         float f10 = 1.0f / org.telegram.messenger.g0.p;
@@ -898,14 +898,14 @@ public final class q0 extends f2 {
         frameLayout4.addView(view2, ha.d(-1, f10, 87, z9 ? 0 : 21, 0.0f, z9 ? 21 : 0, 0.0f));
         b4 b4Var = new b4(context, i11);
         this.n = b4Var;
-        s6.h(i12, b4Var, getResourceProvider());
+        t6.h(i12, b4Var, getResourceProvider());
         TextView textView = new TextView(context);
         this.r = textView;
         textView.setText(id.M0(2131752811, null));
         this.r.setTextSize(1, 14.0f);
         TextView textView2 = this.r;
-        int i13 = l6.z6;
-        s6.U(textView2, i13, getResourceProvider());
+        int i13 = m6.z6;
+        t6.U(textView2, i13, getResourceProvider());
         this.n.addView(this.r, ha.e(-2, -2, 17));
         this.s = new ImageView(context);
         j7 j7Var = new j7(getThemedColor(i13));
@@ -1014,14 +1014,14 @@ public final class q0 extends f2 {
             }
             this.x = z10;
             ViewPropertyAnimator duration = this.r.animate().alpha(z10 ? 0.0f : 1.0f).translationY(z10 ? -org.telegram.messenger.g0.L(8.0f) : 0.0f).setDuration(320L);
-            xq xqVar = xq.h;
-            duration.setInterpolator(xqVar).start();
-            this.s.animate().alpha(z10 ? 1.0f : 0.0f).translationY(z10 ? 0.0f : org.telegram.messenger.g0.L(8.0f)).setDuration(320L).setInterpolator(xqVar).start();
+            wq wqVar = wq.h;
+            duration.setInterpolator(wqVar).start();
+            this.s.animate().alpha(z10 ? 1.0f : 0.0f).translationY(z10 ? 0.0f : org.telegram.messenger.g0.L(8.0f)).setDuration(320L).setInterpolator(wqVar).start();
         }
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.c;
     }
 
@@ -1077,7 +1077,7 @@ public final class q0 extends f2 {
         try {
             j7 j7Var = this.b;
             if (j7Var != null) {
-                j7Var.b(getThemedColor(l6.z6));
+                j7Var.b(getThemedColor(m6.z6));
                 ImageView imageView = this.s;
                 if (imageView != null) {
                     imageView.invalidate();

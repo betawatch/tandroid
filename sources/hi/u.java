@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import bi.t5;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.ve;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.ue;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class u extends FrameLayout {
     public ObjectAnimator a;
@@ -55,9 +55,9 @@ public abstract class u extends FrameLayout {
         this.a = ofFloat;
         ofFloat.addListener(new t5(this, 26));
         this.a.setDuration(150L);
-        this.a.setInterpolator(xq.f);
+        this.a.setInterpolator(wq.f);
         this.a.start();
-        y yVar = ((ve) this).w.l0;
+        y yVar = ((ue) this).w.l0;
         if (yVar != null) {
             yVar.setOpened(false);
         }
@@ -75,7 +75,7 @@ public abstract class u extends FrameLayout {
             this.a.setInterpolator(new OvershootInterpolator(0.8f));
         } else {
             ofFloat.setDuration(150L);
-            this.a.setInterpolator(xq.f);
+            this.a.setInterpolator(wq.f);
         }
         this.a.start();
     }
@@ -88,7 +88,7 @@ public abstract class u extends FrameLayout {
         return false;
     }
 
-    public qj0 getListView() {
+    public pj0 getListView() {
         return this.c;
     }
 

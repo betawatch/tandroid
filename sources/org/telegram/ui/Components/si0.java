@@ -1,269 +1,86 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.os.Message;
+import android.util.Property;
 import android.util.SparseArray;
 import android.view.View;
-import java.lang.ref.WeakReference;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public class si0 {
-    public final /* synthetic */ int a;
-    public int b;
-    public boolean c;
+public final class si0 {
+    public final pj0 a;
     public boolean d;
-    public final Object e;
-    public final Object f;
-    public Object g;
-    public Object h;
-    public Object i;
-    public final Object j;
-    public Object k;
+    public final boolean e;
+    public final SparseArray b = new SparseArray();
+    public final HashSet c = new HashSet();
+    public final boolean f = true;
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
 
-    public si0(qj0 qj0Var, v4.b0 b0Var) {
-        this.a = 0;
-        this.j = new SparseArray();
-        this.k = new HashMap();
-        this.e = qj0Var;
-        this.f = b0Var;
+    public si0(pj0 pj0Var, boolean z9) {
+        this.a = pj0Var;
+        this.e = z9;
+        pj0Var.setItemsEnterAnimator(this);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     public final void a() {
-        switch (this.a) {
-            case 0:
-                ValueAnimator valueAnimator = (ValueAnimator) this.g;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                qj0 qj0Var = (qj0) this.e;
-                qj0Var.setVerticalScrollBarEnabled(true);
-                qj0Var.V1 = false;
-                v4.g0 adapter = qj0Var.getAdapter();
-                if (adapter instanceof qi0) {
-                    ((qi0) adapter).E();
-                }
-                this.g = null;
-                int childCount = qj0Var.getChildCount();
-                for (int i7 = 0; i7 < childCount; i7++) {
-                    View childAt = qj0Var.getChildAt(i7);
-                    childAt.setTranslationY(0.0f);
-                    if (childAt instanceof org.telegram.ui.Cells.p4) {
-                        ((org.telegram.ui.Cells.p4) childAt).c(false, false);
-                    }
-                }
-                break;
-            default:
-                s4.q qVar = (s4.q) this.e;
-                if (!this.c && !this.d) {
-                    this.d = true;
-                    if (qVar != null) {
-                        qVar.h(0);
-                        qVar.d();
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    public void b() {
-        c0.l lVar;
-        s4.v vVar = (s4.v) this.f;
-        int i7 = this.b;
-        WeakReference weakReference = (WeakReference) this.j;
-        s4.x.b();
-        if (this.c || this.d) {
-            return;
-        }
-        s4.e eVar = (s4.e) weakReference.get();
-        if (eVar == null || eVar.g != this || ((lVar = (c0.l) this.k) != null && lVar.isCancelled())) {
-            a();
-            return;
-        }
-        this.c = true;
-        eVar.g = null;
-        s4.e eVar2 = (s4.e) weakReference.get();
-        if (eVar2 != null) {
-            HashMap hashMap = eVar2.b;
-            if (eVar2.d == vVar) {
-                Message obtainMessage = eVar2.a.obtainMessage(org.telegram.messenger.qs.m4, vVar);
-                obtainMessage.arg1 = i7;
-                obtainMessage.sendToTarget();
-                s4.q qVar = eVar2.e;
-                if (qVar != null) {
-                    qVar.h(i7);
-                    eVar2.e.d();
-                }
-                if (!hashMap.isEmpty()) {
-                    for (s4.q qVar2 : hashMap.values()) {
-                        qVar2.h(i7);
-                        qVar2.d();
-                    }
-                    hashMap.clear();
-                }
-                eVar2.e = null;
+        ArrayList arrayList = this.g;
+        int i7 = 0;
+        if (!arrayList.isEmpty()) {
+            ArrayList arrayList2 = new ArrayList(arrayList);
+            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                ((AnimatorSet) arrayList2.get(i10)).end();
+                ((AnimatorSet) arrayList2.get(i10)).cancel();
             }
         }
-        s4.e eVar3 = (s4.e) weakReference.get();
-        if (eVar3 == null) {
-            return;
-        }
-        s4.b bVar = eVar3.a;
-        s4.v vVar2 = (s4.v) this.g;
-        eVar3.d = vVar2;
-        eVar3.e = (s4.q) this.e;
-        s4.v vVar3 = (s4.v) this.h;
-        if (vVar3 == null) {
-            Message obtainMessage2 = bVar.obtainMessage(org.telegram.messenger.qs.l4, new q0.b(vVar, vVar2));
-            obtainMessage2.arg1 = i7;
-            obtainMessage2.sendToTarget();
-        } else {
-            Message obtainMessage3 = bVar.obtainMessage(org.telegram.messenger.qs.n4, new q0.b(vVar3, vVar2));
-            obtainMessage3.arg1 = i7;
-            obtainMessage3.sendToTarget();
-        }
-        eVar3.b.clear();
-        eVar3.g();
-        eVar3.l();
-        ArrayList arrayList = (ArrayList) this.i;
-        if (arrayList != null) {
-            eVar3.d.n(arrayList);
-        }
-    }
-
-    public void c(int i7, int i10, boolean z9) {
-        d(i7, i10, z9, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public void d(int i7, int i10, boolean z9, boolean z10) {
-        v4.g0 g0Var;
-        long j3;
-        HashMap hashMap = (HashMap) this.k;
-        SparseArray sparseArray = (SparseArray) this.j;
-        v4.b0 b0Var = (v4.b0) this.f;
-        qj0 qj0Var = (qj0) this.e;
-        if (qj0Var.V1) {
-            return;
-        }
-        if (qj0Var.getItemAnimator() != null) {
-            if (z10) {
-                v4.l0 itemAnimator = qj0Var.getItemAnimator();
-                ni0 ni0Var = new ni0(this, i7, i10, z9);
-                boolean k10 = itemAnimator.k();
-                if (k10) {
-                    itemAnimator.b.add(ni0Var);
-                } else {
-                    d(i7, i10, z9, false);
-                }
-                if (k10) {
-                    return;
-                }
-            } else if (qj0Var.getItemAnimator().k()) {
+        arrayList.clear();
+        while (true) {
+            ArrayList arrayList3 = this.h;
+            int size = arrayList3.size();
+            pj0 pj0Var = this.a;
+            if (i7 >= size) {
+                arrayList3.clear();
+                this.b.clear();
+                pj0Var.invalidate();
+                this.d = true;
                 return;
             }
+            pj0Var.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver.OnPreDrawListener) arrayList3.get(i7));
+            i7++;
         }
-        if (this.b == -1) {
-            b0Var.i1(i7, i10, z9);
-            return;
-        }
-        int childCount = qj0Var.getChildCount();
-        if (childCount == 0 || qj0Var.getVisibility() != 0 || !org.telegram.messenger.qp.e1().getBoolean("view_animations", true)) {
-            b0Var.i1(i7, i10, z9);
-            return;
-        }
-        boolean z11 = this.b == 0;
-        qj0Var.setScrollEnabled(false);
-        ArrayList arrayList = new ArrayList();
-        sparseArray.clear();
-        v4.g0 adapter = qj0Var.getAdapter();
-        hashMap.clear();
-        int i11 = 0;
-        while (i11 < childCount) {
-            View childAt = qj0Var.getChildAt(i11);
-            arrayList.add(childAt);
-            b0Var.getClass();
-            sparseArray.put(v4.n0.H(childAt), childAt);
-            if (adapter == null || !(adapter.b || this.c)) {
-                g0Var = adapter;
-            } else {
-                if (this.c) {
-                    int b10 = ((v4.o0) childAt.getLayoutParams()).a.b();
-                    if (b10 < 0) {
-                        g0Var = adapter;
-                        i11++;
-                        adapter = g0Var;
-                    } else {
-                        g0Var = adapter;
-                        j3 = adapter.c(b10);
-                    }
-                } else {
-                    g0Var = adapter;
-                    j3 = ((v4.o0) childAt.getLayoutParams()).a.e;
-                }
-                hashMap.put(Long.valueOf(j3), childAt);
-            }
-            if (childAt instanceof org.telegram.ui.Cells.p4) {
-                ((org.telegram.ui.Cells.p4) childAt).c(true, true);
-            }
-            i11++;
-            adapter = g0Var;
-        }
-        v4.g0 g0Var2 = adapter;
-        qj0Var.C0();
-        qj0Var.p0();
-        ug.k0 k0Var = qj0Var.d;
-        k0Var.l((ArrayList) k0Var.d);
-        k0Var.l((ArrayList) k0Var.e);
-        k0Var.b = 0;
-        v4.v0 v0Var = qj0Var.b;
-        v4.g0 g0Var3 = qj0Var.x;
-        v0Var.d(g0Var3, g0Var3);
-        qj0Var.u0.f = true;
-        qj0Var.e.G();
-        v0Var.l();
-        qi0 qi0Var = g0Var2 instanceof qi0 ? (qi0) g0Var2 : null;
-        b0Var.i1(i7, i10, z9);
-        if (g0Var2 != null) {
-            g0Var2.f();
-        }
-        qj0Var.C0();
-        qj0Var.setVerticalScrollBarEnabled(false);
-        c8.ja jaVar = (c8.ja) this.i;
-        if (jaVar != null) {
-            jaVar.c();
-        }
-        qj0Var.V1 = true;
-        if (qi0Var != null) {
-            qi0Var.c = true;
-            qi0Var.d = false;
-            qi0Var.e.clear();
-            qi0Var.f.clear();
-        }
-        qj0Var.addOnLayoutChangeListener(new pi0(this, g0Var2, arrayList, z11, qi0Var));
     }
 
-    public void e(c8.ja jaVar) {
-        this.i = jaVar;
-    }
-
-    public si0(s4.e eVar, s4.v vVar, s4.q qVar, int i7, s4.v vVar2, Collection collection) {
-        this.a = 1;
-        this.k = null;
-        this.c = false;
-        this.d = false;
-        this.j = new WeakReference(eVar);
-        this.g = vVar;
-        this.e = qVar;
-        this.b = i7;
-        this.f = eVar.d;
-        this.h = vVar2;
-        this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.ActionBar.o5(this, 25), 15000L);
+    public final void b(int i7) {
+        pj0 pj0Var = this.a;
+        int childCount = pj0Var.getChildCount();
+        View view = null;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = pj0Var.getChildAt(i10);
+            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof lz)) {
+                view = childAt;
+            }
+        }
+        v4.n0 layoutManager = pj0Var.getLayoutManager();
+        int i11 = 2;
+        if (view != null && layoutManager != null) {
+            pj0Var.removeView(view);
+            this.c.add(view);
+            pj0Var.addView(view);
+            layoutManager.M(view);
+            Animator ofFloat = this.f ? ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f) : ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addListener(new v50(this, (lz) view, layoutManager));
+            ofFloat.start();
+            i7--;
+        }
+        org.telegram.ui.xp xpVar = new org.telegram.ui.xp(this, (lz) view, i7, i11);
+        this.h.add(xpVar);
+        pj0Var.getViewTreeObserver().addOnPreDrawListener(xpVar);
     }
 }

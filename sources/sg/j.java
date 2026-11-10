@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j extends ScrollView {
     public final /* synthetic */ LinearLayout a;
@@ -29,13 +29,13 @@ public final class j extends ScrollView {
         int L = org.telegram.messenger.g0.L(36.0f);
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set((getMeasuredWidth() - L) / 2.0f, y10, (getMeasuredWidth() + L) / 2.0f, org.telegram.messenger.g0.L(4.0f) + y10);
-        l6.t0.setColor(-10790053);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), l6.t0);
+        m6.t0.setColor(-10790053);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), m6.t0);
     }
 
     @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
-        ((LinearLayout.LayoutParams) this.b.i1.getLayoutParams()).height = (int) (((View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(24.0f)) * 0.8333333f) + org.telegram.messenger.g0.L(88.0f));
+        ((LinearLayout.LayoutParams) this.b.l1.getLayoutParams()).height = (int) (((View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(24.0f)) * 0.8333333f) + org.telegram.messenger.g0.L(88.0f));
     }
 }

@@ -7,21 +7,21 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.g1;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.u;
-import org.telegram.ui.Components.zj;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.t;
+import org.telegram.ui.Components.yj;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class a {
     public boolean a;
     public Object b;
 
-    public a(Context context, g6 g6Var, boolean z9) {
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z9 ? 1 : 0, context, g6Var);
+    public a(Context context, h6 h6Var, boolean z9) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z9 ? 1 : 0, context, h6Var);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new zj(this, 1));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new u(this, 27));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new yj(this, 1));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new t(this, 27));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
         j(actionBarPopupWindow$ActionBarPopupWindowLayout);
         g1 g1Var = new g1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
@@ -36,7 +36,7 @@ public abstract class a {
         if (g0.C1()) {
             g1Var.setFocusable(true);
         }
-        g1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.cr
+        g1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.br
             @Override // android.widget.PopupWindow.OnDismissListener
             public final void onDismiss() {
                 k.a aVar = k.a.this;

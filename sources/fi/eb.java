@@ -4,7 +4,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class eb extends Path {
     public final int a = org.telegram.messenger.g0.L(10.0f);
@@ -148,8 +148,8 @@ public final class eb extends Path {
             return;
         }
         int i7 = yaVar.b;
-        org.telegram.ui.Components.w5 w5Var = yaVar.a;
-        float e10 = w5Var.e(false, yaVar.c);
+        org.telegram.ui.Components.v5 v5Var = yaVar.a;
+        float e10 = v5Var.e(false, yaVar.c);
         if (0 == j3 && Math.abs(this.e - f14) <= 1.0f && Math.abs(this.f - f15) <= 0.01f && Math.abs(this.g - f13) <= 0.1f && Math.abs(this.h - f16) <= 1.0f && Math.abs(this.i - f17) <= 1.0f && Math.abs(this.j - f18) <= 1.0f && Math.abs(this.k - f19) <= 1.0f && (arrayList = this.c) != null && arrayList.size() == 1) {
             ArrayList arrayList2 = this.d;
             if (Math.abs(((arrayList2 == null || arrayList2.isEmpty()) ? 0.0f : ((Float) this.d.get(0)).floatValue()) - e10) <= 0.01f) {
@@ -177,7 +177,7 @@ public final class eb extends Path {
         this.f = f15;
         this.e = f14;
         this.h = f16;
-        float e11 = w5Var.e(false, yaVar.c);
+        float e11 = v5Var.e(false, yaVar.c);
         rewind();
         float round = Math.round(org.telegram.messenger.g0.N(3.3333f));
         int max = Math.max(0, (int) (((f18 - this.a) - f17) / round));

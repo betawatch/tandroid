@@ -2,9 +2,9 @@ package hi;
 
 import bi.p5;
 import org.telegram.messenger.a8;
-import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.ec0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class n extends a8.l1 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class n extends a8.l1 {
                 break;
             default:
                 a8.b("PasscodeView onAuthenticationError " + i7 + " \"" + ((Object) charSequence) + "\"");
-                ((fc0) this.b).o(true);
+                ((ec0) this.b).o(true);
                 break;
         }
     }
@@ -43,7 +43,7 @@ public final class n extends a8.l1 {
                 break;
             default:
                 a8.b("PasscodeView onAuthenticationFailed");
-                ((fc0) this.b).o(true);
+                ((ec0) this.b).o(true);
                 break;
         }
     }
@@ -63,7 +63,7 @@ public final class n extends a8.l1 {
                 break;
             default:
                 a8.b("PasscodeView onAuthenticationSucceeded");
-                ((fc0) this.b).n(true);
+                ((ec0) this.b).n(true);
                 break;
         }
     }

@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.tgnet.QuickAckDelegate;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ug0;
+import org.telegram.ui.vg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, RequestTimeDelegate, bp, ug0, QuickAckDelegate {
+public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, RequestTimeDelegate, bp, vg0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -36,7 +36,7 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, Re
         return tL_error == null || !"USER_PRIVACY_RESTRICTED".equals(tL_error.text);
     }
 
-    @Override // org.telegram.ui.ug0
+    @Override // org.telegram.ui.vg0
     public void d(Canvas canvas) {
         cv cvVar = (cv) this.b;
         View view = (View) this.c;
@@ -45,7 +45,7 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, Re
         StaticLayout staticLayout = jvVar.b;
         ArrayList arrayList = jvVar.x;
         xh.f.g(view, false, -1, 0, atomicReference, 0, staticLayout, arrayList, canvas, false);
-        org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
+        org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, jvVar.b, jvVar.E, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
     }
 
     @Override // org.telegram.ui.ActionBar.r1
@@ -71,7 +71,7 @@ public final /* synthetic */ class o implements org.telegram.ui.ActionBar.r1, Re
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        g0.h3(new a4((boolean[]) this.b, j3, (org.telegram.ui.Components.jc[]) this.c, 10));
+        g0.h3(new a4((boolean[]) this.b, j3, (org.telegram.ui.Components.ic[]) this.c, 10));
     }
 
     @Override // org.telegram.tgnet.QuickAckDelegate

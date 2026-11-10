@@ -15,35 +15,35 @@ import org.telegram.messenger.id;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.w8;
-import wg.z0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.v8;
+import wg.a1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class g extends c implements b6 {
+public final class g extends c implements c6 {
     public int D;
     public final ImageView s;
     public f w;
     public TLRPC.Chat x;
     public boolean y;
 
-    public g(Context context, g6 g6Var) {
-        super(context, g6Var);
+    public g(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.d.setTypeface(g0.o());
         ImageView imageView = new ImageView(context);
         this.s = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int x02 = l6.x0(null, l6.Ji, false);
+        int x02 = m6.x0(null, m6.Ji, false);
         this.D = x02;
-        imageView.setBackground(l6.h0(x02, 1, -1));
+        imageView.setBackground(m6.h0(x02, 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
-        s6.s(imageView, l6.m6, null, PorterDuff.Mode.MULTIPLY);
+        t6.s(imageView, m6.m6, null, PorterDuff.Mode.MULTIPLY);
         imageView.setContentDescription(id.M0(2131751598, null));
         boolean z9 = id.a0;
         addView(imageView, ha.d(48, 50.0f, (z9 ? 3 : 5) | 17, z9 ? 3.0f : 0.0f, 0.0f, z9 ? 0.0f : 3.0f, 0.0f));
@@ -59,12 +59,12 @@ public final class g extends c implements b6 {
         String M0;
         this.y = z9;
         this.x = chat;
-        w8 w8Var = this.b;
-        w8Var.q(chat);
+        v8 v8Var = this.b;
+        v8Var.q(chat);
         int L = g0.L(20.0f);
-        l9 l9Var = this.c;
-        l9Var.setRoundRadius(L);
-        l9Var.e(chat, w8Var);
+        k9 k9Var = this.c;
+        k9Var.setRoundRadius(L);
+        k9Var.e(chat, v8Var);
         String str = chat.title;
         e4 e4Var = this.d;
         e4Var.k(i6.m(str, e4Var.getPaint().getFontMetricsInt(), false, null, 0));
@@ -79,7 +79,7 @@ public final class g extends c implements b6 {
         } else {
             setSubtitle(id.G(i7, V ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", new Object[0]));
         }
-        s6.X(this.e, l6.r5, this.a);
+        t6.X(this.e, m6.r5, this.a);
         setDivider(true);
         ImageView imageView = this.s;
         if (z9) {
@@ -87,7 +87,7 @@ public final class g extends c implements b6 {
         } else {
             imageView.setVisibility(4);
         }
-        imageView.setOnClickListener(new z0(3, this, chat));
+        imageView.setOnClickListener(new a1(2, this, chat));
     }
 
     public TLRPC.Chat getChat() {
@@ -104,23 +104,23 @@ public final class g extends c implements b6 {
         this.w = fVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            int x02 = l6.x0(null, l6.Ji, false);
+            int x02 = m6.x0(null, m6.Ji, false);
             ImageView imageView = this.s;
             if (imageView == null || x02 == this.D) {
                 return;
             }
             this.D = x02;
-            l6.H1(imageView.getBackground(), x02, true);
+            m6.H1(imageView.getBackground(), x02, true);
             imageView.invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

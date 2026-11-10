@@ -1,37 +1,45 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class f71 extends c8.ea {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.ls b;
+public final class f71 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ x71 e;
 
-    public /* synthetic */ f71(org.telegram.messenger.ls lsVar, int i7) {
-        this.a = i7;
-        this.b = lsVar;
+    public f71(x71 x71Var, boolean z9, int i7, int i10, boolean z10) {
+        this.e = x71Var;
+        this.a = z9;
+        this.b = i7;
+        this.c = i10;
+        this.d = z10;
     }
 
-    @Override // c8.ea
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((ic1) this.b).w.invalidate();
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        x71 x71Var = this.e;
+        FrameLayout[] frameLayoutArr = x71Var.M0;
+        x71Var.s1 = null;
+        int i7 = this.c;
+        int i10 = this.b;
+        boolean z9 = this.a;
+        if (z9 && frameLayoutArr[i10].getVisibility() == 0) {
+            frameLayoutArr[i10].setAlpha(1.0f);
+            frameLayoutArr[i10].setVisibility(4);
+        } else if (!z9) {
+            frameLayoutArr[i7].setVisibility(4);
         }
-    }
-
-    @Override // c8.ea
-    public void b(int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                Point point = org.telegram.messenger.g0.q;
-                if ((point.x <= point.y) == (i7 <= i10)) {
-                    ((w71) this.b).y0.invalidate();
-                    break;
-                }
-                break;
+        int i11 = x71Var.b;
+        if (i11 == 1 || i11 == 2) {
+            x71Var.K0[this.d ? (char) 0 : (char) 2].setVisibility(4);
+        } else if (i7 == 1) {
+            frameLayoutArr[i10].setAlpha(0.0f);
         }
     }
 }

@@ -9,6 +9,7 @@ import c8.e1;
 import e2.m1;
 import e2.n1;
 import e2.o1;
+import e2.q1;
 import h2.m0;
 import h9.i0;
 import h9.r1;
@@ -22,9 +23,9 @@ import java.util.Map;
 import java.util.RandomAccess;
 import l2.r0;
 import org.telegram.tgnet.ConnectionsManager;
-import x2.q1;
+import x2.p1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class s extends x {
     public static final r1 l = new h9.t(new c(1));
@@ -70,11 +71,11 @@ public final class s extends x {
     public static void d(w wVar, n nVar, t[] tVarArr) {
         int i7 = wVar.a;
         for (int i10 = 0; i10 < i7; i10++) {
-            q1 q1Var = wVar.c[i10];
+            p1 p1Var = wVar.c[i10];
             Map map = (Map) nVar.D0.get(i10);
-            if (map != null && map.containsKey(q1Var)) {
+            if (map != null && map.containsKey(p1Var)) {
                 Map map2 = (Map) nVar.D0.get(i10);
-                if (map2 != null && map2.get(q1Var) != null) {
+                if (map2 != null && map2.get(p1Var) != null) {
                     throw new ClassCastException();
                 }
                 tVarArr[i10] = null;
@@ -93,10 +94,10 @@ public final class s extends x {
 
     public static void f(w wVar, n nVar, t[] tVarArr) {
         int i7 = wVar.a;
-        q1[] q1VarArr = wVar.c;
+        p1[] p1VarArr = wVar.c;
         HashMap hashMap = new HashMap();
         for (int i10 = 0; i10 < i7; i10++) {
-            g(q1VarArr[i10], nVar, hashMap);
+            g(p1VarArr[i10], nVar, hashMap);
         }
         g(wVar.f, nVar, hashMap);
         for (int i11 = 0; i11 < i7; i11++) {
@@ -104,14 +105,14 @@ public final class s extends x {
             if (n1Var != null) {
                 m1 m1Var = n1Var.a;
                 i0 i0Var = n1Var.b;
-                tVarArr[i11] = (i0Var.isEmpty() || q1VarArr[i11].b(m1Var) == -1) ? null : new t(m1Var, e1.f(i0Var));
+                tVarArr[i11] = (i0Var.isEmpty() || p1VarArr[i11].b(m1Var) == -1) ? null : new t(m1Var, e1.f(i0Var));
             }
         }
     }
 
-    public static void g(q1 q1Var, e2.q1 q1Var2, HashMap hashMap) {
-        for (int i7 = 0; i7 < q1Var.a; i7++) {
-            n1 n1Var = (n1) q1Var2.H.get(q1Var.a(i7));
+    public static void g(p1 p1Var, q1 q1Var, HashMap hashMap) {
+        for (int i7 = 0; i7 < p1Var.a; i7++) {
+            n1 n1Var = (n1) q1Var.H.get(p1Var.a(i7));
             if (n1Var != null) {
                 m1 m1Var = n1Var.a;
                 n1 n1Var2 = (n1) hashMap.get(Integer.valueOf(m1Var.c));
@@ -173,13 +174,13 @@ public final class s extends x {
         return true;
     }
 
-    public static t o(q1 q1Var, int[][] iArr, n nVar) {
+    public static t o(p1 p1Var, int[][] iArr, n nVar) {
         if (nVar.w.a != 2) {
             int i7 = 0;
             m1 m1Var = null;
             k kVar = null;
-            for (int i10 = 0; i10 < q1Var.a; i10++) {
-                m1 a10 = q1Var.a(i10);
+            for (int i10 = 0; i10 < p1Var.a; i10++) {
+                m1 a10 = p1Var.a(i10);
                 int[] iArr2 = iArr[i10];
                 for (int i11 = 0; i11 < a10.a; i11++) {
                     if (jg.g.c(iArr2[i11], nVar.B0)) {
@@ -210,9 +211,9 @@ public final class s extends x {
         int i12 = 0;
         while (i12 < i11) {
             if (i7 == wVar2.b[i12]) {
-                q1 q1Var = wVar2.c[i12];
-                for (int i13 = 0; i13 < q1Var.a; i13++) {
-                    m1 a10 = q1Var.a(i13);
+                p1 p1Var = wVar2.c[i12];
+                for (int i13 = 0; i13 < p1Var.a; i13++) {
+                    m1 a10 = p1Var.a(i13);
                     t1 h = pVar.h(i12, a10, iArr[i12][i13]);
                     int i14 = a10.a;
                     boolean[] zArr = new boolean[i14];
@@ -287,7 +288,7 @@ public final class s extends x {
     }
 
     @Override // a3.x
-    public final void b(e2.q1 q1Var) {
+    public final void b(q1 q1Var) {
         if (q1Var instanceof n) {
             q((n) q1Var);
         }

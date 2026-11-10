@@ -21,9 +21,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class r5 extends View {
     public final Paint a;
@@ -34,7 +34,7 @@ public final class r5 extends View {
     public final int f;
     public final int h;
     public final boolean n;
-    public final org.telegram.ui.Components.w5 r;
+    public final org.telegram.ui.Components.v5 r;
     public boolean s;
     public float w;
     public ValueAnimator x;
@@ -50,7 +50,7 @@ public final class r5 extends View {
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        this.r = new org.telegram.ui.Components.w5(this, 0L, 220L, xq.h);
+        this.r = new org.telegram.ui.Components.v5(this, 0L, 220L, wq.h);
         this.s = true;
         this.n = z9;
         paint.setColor(-15098625);

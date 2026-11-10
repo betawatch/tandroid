@@ -1,40 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ t4 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f2 d;
 
-    public /* synthetic */ y0(LaunchActivity launchActivity, int i7) {
+    public /* synthetic */ y0(t4 t4Var, org.telegram.ui.ActionBar.u1 u1Var, org.telegram.ui.ActionBar.f2 f2Var, int i7) {
         this.a = i7;
-        this.b = launchActivity;
+        this.b = t4Var;
+        this.c = u1Var;
+        this.d = f2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.t0(new LanguageSelectActivity());
-                break;
-            case 1:
-                this.b.t0(new org.telegram.ui.y6());
+                org.telegram.messenger.g0.h3(new y0(this.b, this.c, this.d, 1));
                 break;
             default:
-                LaunchActivity launchActivity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    launchActivity.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                }
+                u4.b0(this.b, this.c, this.d);
+                break;
         }
     }
 }

@@ -5,11 +5,11 @@ import e2.q0;
 import e2.t;
 import e2.u;
 import java.util.Map;
-import x2.b1;
+import x2.a1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final class o extends b1 {
+public final class o extends a1 {
     public final Map J;
     public e2.r K;
 
@@ -18,7 +18,7 @@ public final class o extends b1 {
         this.J = map;
     }
 
-    @Override // x2.b1
+    @Override // x2.a1
     public final u r(u uVar) {
         e2.r rVar;
         e2.r rVar2 = this.K;

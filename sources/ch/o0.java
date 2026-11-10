@@ -5,9 +5,9 @@ import j$.util.Objects;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.i5;
+import org.telegram.ui.Components.h5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean a;
@@ -83,7 +83,7 @@ public final class o0 {
     public final o0 a() {
         String V;
         long j3 = this.g;
-        return (j3 == 0 || (V = ij.V(i5.e(p10.s0, j3), null, null)) == null) ? this : b(V);
+        return (j3 == 0 || (V = ij.V(h5.e(p10.s0, j3), null, null)) == null) ? this : b(V);
     }
 
     public final boolean equals(Object obj) {
@@ -127,7 +127,7 @@ public final class o0 {
             return this.f;
         }
         long j3 = this.g;
-        if (j3 != 0 && (e10 = i5.e(p10.s0, j3)) != null) {
+        if (j3 != 0 && (e10 = h5.e(p10.s0, j3)) != null) {
             return ij.V(e10, null, null);
         }
         StringBuilder sb2 = new StringBuilder("VisibleReaction{");

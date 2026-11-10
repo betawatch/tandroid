@@ -32,9 +32,9 @@ import fi.y;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.yv0;
+import org.telegram.ui.zv0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 break;
             case 3:
                 k7 k7Var = (k7) this.b;
-                k7Var.T2.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k7Var.W2.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 k7Var.O1();
                 break;
             case 4:
@@ -178,11 +178,11 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 break;
             case 19:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                yv0 yv0Var = profileStoriesView.h;
+                zv0 zv0Var = profileStoriesView.h;
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.G = floatValue8;
-                yv0Var.R = floatValue8;
-                yv0Var.invalidate();
+                zv0Var.R = floatValue8;
+                zv0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 20:
@@ -254,7 +254,7 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 p2Var.i();
                 break;
             case 28:
-                ((j3) this.b).i1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((j3) this.b).l1.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
                 m3 m3Var = (m3) this.b;

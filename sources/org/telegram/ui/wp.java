@@ -3,20 +3,20 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class wp implements jp {
     public final /* synthetic */ TLObject a;
-    public final /* synthetic */ qq b;
+    public final /* synthetic */ rq b;
 
-    public wp(qq qqVar, TLObject tLObject) {
-        this.b = qqVar;
+    public wp(rq rqVar, TLObject tLObject) {
+        this.b = rqVar;
         this.a = tLObject;
     }
 
     @Override // org.telegram.ui.jp
     public final void a(TLRPC.User user) {
-        qq.h0(this.b, user);
+        rq.h0(this.b, user);
     }
 
     @Override // org.telegram.ui.jp
@@ -27,7 +27,7 @@ public final class wp implements jp {
             channelParticipant.admin_rights = tL_chatAdminRights;
             channelParticipant.banned_rights = tL_chatBannedRights;
             channelParticipant.rank = str;
-            qq.b0(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+            rq.b0(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
     }
 }

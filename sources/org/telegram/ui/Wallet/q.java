@@ -19,13 +19,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.wy0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.qw0;
+import org.telegram.ui.sw0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements v10 {
     public final /* synthetic */ int a;
@@ -539,7 +539,7 @@ public final /* synthetic */ class q implements v10 {
                     sVar2.a(d2.z(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.e.c(new qw0(i0Var2, z1Var, tonconnectchallenge, sVar2, n3Var, 5));
+                    Utilities.e.c(new sw0(i0Var2, z1Var, tonconnectchallenge, sVar2, n3Var, 5));
                     return;
                 }
             case 7:
@@ -550,7 +550,7 @@ public final /* synthetic */ class q implements v10 {
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && d2Var.A(z1Var2) && !d2Var.j(z1Var2)) {
-                    Utilities.e.c(new qw0(d2Var, sendtransfer, z1Var2, c20Var3, i0Var3, 6));
+                    Utilities.e.c(new sw0(d2Var, sendtransfer, z1Var2, c20Var3, i0Var3, 6));
                     return;
                 }
                 if (str13 == null) {
@@ -582,20 +582,20 @@ public final /* synthetic */ class q implements v10 {
             case 9:
                 boolean[] zArr = (boolean[]) this.b;
                 y2[] y2VarArr = (y2[]) this.c;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.d;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.d;
                 xh.l lVar = (xh.l) this.e;
                 String str16 = (String) obj;
                 String str17 = (String) obj2;
                 zArr[0] = false;
                 if (str17 != null) {
-                    new hc(y2VarArr[0].E, g6Var).e0(str17, false);
+                    new gc(y2VarArr[0].E, h6Var).e0(str17, false);
                     return;
                 }
                 lVar.setPadding(org.telegram.messenger.g0.L(19.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(15.0f), org.telegram.messenger.g0.L(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                vy0 vy0Var = new vy0();
-                vy0Var.a |= 256;
-                spannableString.setSpan(new wy0(vy0Var, 0), 0, spannableString.length(), 33);
+                uy0 uy0Var = new uy0();
+                uy0Var.a |= 256;
+                spannableString.setSpan(new vy0(uy0Var, 0), 0, spannableString.length(), 33);
                 lVar.setText(spannableString);
                 lVar.setTextIsSelectable(true);
                 lVar.setOnClickListener(null);
@@ -610,7 +610,7 @@ public final /* synthetic */ class q implements v10 {
                 lVar.c((lVar.getWidth() / 2.0f) - lVar.getPaddingLeft(), ((lVar.getHeight() / 2.0f) - lVar.getPaddingTop()) + lVar.getScrollY());
                 return;
             default:
-                v9.d0((v9) this.c, (l0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                y9.d0((y9) this.c, (l0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
                 return;
         }
     }
@@ -623,9 +623,9 @@ public final /* synthetic */ class q implements v10 {
         this.e = str3;
     }
 
-    public /* synthetic */ q(v9 v9Var, l0 l0Var, TLRPC.User user, String str) {
+    public /* synthetic */ q(y9 y9Var, l0 l0Var, TLRPC.User user, String str) {
         this.a = 10;
-        this.c = v9Var;
+        this.c = y9Var;
         this.b = l0Var;
         this.e = user;
         this.d = str;

@@ -13,13 +13,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.gr;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                 i0Var.dismiss();
                 break;
             case 1:
-                y yVar = i0Var.w2;
+                y yVar = i0Var.z2;
                 if (!yVar.r) {
                     yVar.w.performClick();
                     break;
@@ -49,7 +49,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                     break;
                 }
             case 2:
-                y yVar2 = i0Var.w2;
+                y yVar2 = i0Var.z2;
                 if (!yVar2.r) {
                     yVar2.w.performClick();
                     break;
@@ -58,23 +58,23 @@ public final /* synthetic */ class t implements View.OnClickListener {
                     break;
                 }
             default:
-                int i10 = i0Var.Z1;
-                HashSet hashSet = i0Var.q2;
+                int i10 = i0Var.c2;
+                HashSet hashSet = i0Var.t2;
                 int i11 = 1;
-                if (!i0Var.b2) {
+                if (!i0Var.e2) {
                     if (i10 == 19 || i10 == 32 || i0Var.s1()) {
-                        e3 e3Var = i0Var.U1;
+                        e3 e3Var = i0Var.X1;
                         if (!e3Var.a) {
-                            if (!e3Var.d || !wg.r.i() || i0Var.U1.m) {
+                            if (!e3Var.d || !wg.r.i() || i0Var.X1.m) {
                                 i0Var.dismiss();
                                 break;
                             } else {
-                                wg.h.i(i0Var.S1, i0Var);
+                                wg.h.i(i0Var.V1, i0Var);
                                 break;
                             }
                         } else {
-                            i0Var.w2.w.callOnClick();
-                            e3 e3Var2 = i0Var.U1;
+                            i0Var.z2.w.callOnClick();
+                            e3 e3Var2 = i0Var.X1;
                             if (e3Var2.d && e3Var2.l) {
                                 org.telegram.messenger.g0.i3(new v(i0Var, i11), e3Var2.e ? 300L : 0L);
                                 break;
@@ -82,7 +82,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                         }
                     }
                 } else {
-                    f2 f2Var = i0Var.C2;
+                    f2 f2Var = i0Var.F2;
                     if (f2Var != null) {
                         d2 d2Var = new d2();
                         d2Var.a = true;
@@ -109,11 +109,11 @@ public final /* synthetic */ class t implements View.OnClickListener {
                                     u1Var.T = org.telegram.messenger.g0.X2(id.a0("ChatsLeaveAlert", null, 2131752176, new Object[0]));
                                 }
                                 alertDialog$Builder.h(id.M0(2131752589, null), null);
-                                alertDialog$Builder.k(id.M0(2131743364, null), new hr(i0Var, arrayList, a22, 12));
+                                alertDialog$Builder.k(id.M0(2131743364, null), new gr(i0Var, arrayList, a22, 12));
                                 u1Var.show();
                                 TextView textView = (TextView) u1Var.d(-1);
                                 if (textView != null) {
-                                    s6.U(textView, l6.q7, i0Var.I0);
+                                    t6.U(textView, m6.q7, i0Var.I0);
                                     break;
                                 }
                             }
@@ -121,7 +121,7 @@ public final /* synthetic */ class t implements View.OnClickListener {
                             ArrayList arrayList2 = new ArrayList();
                             Iterator it2 = hashSet.iterator();
                             while (it2.hasNext()) {
-                                i0Var.a2.add((TLRPC.Chat) it2.next());
+                                i0Var.d2.add((TLRPC.Chat) it2.next());
                             }
                             i0Var.x1(arrayList2);
                             break;

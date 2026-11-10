@@ -20,10 +20,10 @@ import org.telegram.messenger.t10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.fs;
+import org.telegram.ui.Components.es;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s6 extends FrameLayout {
     public int a;
@@ -31,11 +31,11 @@ public final class s6 extends FrameLayout {
     public TextView c;
     public TextView d;
     public TextView e;
-    public org.telegram.ui.Components.l9 f;
-    public org.telegram.ui.Components.l9 h;
-    public org.telegram.ui.Components.w8 n;
+    public org.telegram.ui.Components.k9 f;
+    public org.telegram.ui.Components.k9 h;
+    public org.telegram.ui.Components.v8 n;
     public boolean r;
-    public org.telegram.ui.Components.w5 s;
+    public org.telegram.ui.Components.v5 s;
     public LinearLayout w;
     public int x;
 
@@ -57,77 +57,77 @@ public final class s6 extends FrameLayout {
         }
         String lowerCase2 = tL_authorization.device_model.toLowerCase();
         if (lowerCase2.contains("safari")) {
-            i10 = org.telegram.ui.ActionBar.l6.U7;
-            i11 = org.telegram.ui.ActionBar.l6.b8;
+            i10 = org.telegram.ui.ActionBar.m6.U7;
+            i11 = org.telegram.ui.ActionBar.m6.b8;
             i12 = R.drawable.device_web_safari;
         } else if (lowerCase2.contains("edge")) {
-            i10 = org.telegram.ui.ActionBar.l6.U7;
-            i11 = org.telegram.ui.ActionBar.l6.b8;
+            i10 = org.telegram.ui.ActionBar.m6.U7;
+            i11 = org.telegram.ui.ActionBar.m6.b8;
             i12 = R.drawable.device_web_edge;
         } else if (lowerCase2.contains("chrome")) {
-            i10 = org.telegram.ui.ActionBar.l6.U7;
-            i11 = org.telegram.ui.ActionBar.l6.b8;
+            i10 = org.telegram.ui.ActionBar.m6.U7;
+            i11 = org.telegram.ui.ActionBar.m6.b8;
             i12 = R.drawable.device_web_chrome;
         } else if (lowerCase2.contains("opera")) {
-            i10 = org.telegram.ui.ActionBar.l6.U7;
-            i11 = org.telegram.ui.ActionBar.l6.b8;
+            i10 = org.telegram.ui.ActionBar.m6.U7;
+            i11 = org.telegram.ui.ActionBar.m6.b8;
             i12 = R.drawable.device_web_opera;
         } else if (lowerCase2.contains("firefox")) {
-            i10 = org.telegram.ui.ActionBar.l6.U7;
-            i11 = org.telegram.ui.ActionBar.l6.b8;
+            i10 = org.telegram.ui.ActionBar.m6.U7;
+            i11 = org.telegram.ui.ActionBar.m6.b8;
             i12 = R.drawable.device_web_firefox;
         } else {
             if (lowerCase2.contains("vivaldi")) {
-                i10 = org.telegram.ui.ActionBar.l6.U7;
-                i11 = org.telegram.ui.ActionBar.l6.b8;
+                i10 = org.telegram.ui.ActionBar.m6.U7;
+                i11 = org.telegram.ui.ActionBar.m6.b8;
             } else if (lowerCase.contains("ios")) {
                 i12 = lowerCase2.contains("ipad") ? R.drawable.device_tablet_ios : R.drawable.device_phone_ios;
-                i10 = org.telegram.ui.ActionBar.l6.T7;
-                i11 = org.telegram.ui.ActionBar.l6.a8;
+                i10 = org.telegram.ui.ActionBar.m6.T7;
+                i11 = org.telegram.ui.ActionBar.m6.a8;
             } else if (lowerCase.contains("windows")) {
-                i10 = org.telegram.ui.ActionBar.l6.S7;
-                i11 = org.telegram.ui.ActionBar.l6.Z7;
+                i10 = org.telegram.ui.ActionBar.m6.S7;
+                i11 = org.telegram.ui.ActionBar.m6.Z7;
                 i12 = R.drawable.device_desktop_win;
             } else if (lowerCase.contains("macos")) {
-                i10 = org.telegram.ui.ActionBar.l6.S7;
-                i11 = org.telegram.ui.ActionBar.l6.Z7;
+                i10 = org.telegram.ui.ActionBar.m6.S7;
+                i11 = org.telegram.ui.ActionBar.m6.Z7;
                 i12 = R.drawable.device_desktop_osx;
             } else if (lowerCase.contains("android")) {
                 i12 = lowerCase2.contains("tab") ? R.drawable.device_tablet_android : R.drawable.device_phone_android;
-                i10 = org.telegram.ui.ActionBar.l6.R7;
-                i11 = org.telegram.ui.ActionBar.l6.Y7;
+                i10 = org.telegram.ui.ActionBar.m6.R7;
+                i11 = org.telegram.ui.ActionBar.m6.Y7;
             } else {
                 if (lowerCase.contains("fragment")) {
                     i12 = R.drawable.fragment;
                 } else if (lowerCase.equalsIgnoreCase("search")) {
-                    i10 = org.telegram.ui.ActionBar.l6.T7;
-                    i11 = org.telegram.ui.ActionBar.l6.a8;
+                    i10 = org.telegram.ui.ActionBar.m6.T7;
+                    i11 = org.telegram.ui.ActionBar.m6.a8;
                     i12 = R.drawable.msg_search;
                 } else if (lowerCase.contains("anonymous")) {
-                    i10 = org.telegram.ui.ActionBar.l6.T7;
-                    i11 = org.telegram.ui.ActionBar.l6.a8;
+                    i10 = org.telegram.ui.ActionBar.m6.T7;
+                    i11 = org.telegram.ui.ActionBar.m6.a8;
                     i12 = R.drawable.large_hidden;
                 } else if (lowerCase.contains("premiumbot")) {
-                    i10 = org.telegram.ui.ActionBar.l6.mk;
-                    i11 = org.telegram.ui.ActionBar.l6.lk;
+                    i10 = org.telegram.ui.ActionBar.m6.mk;
+                    i11 = org.telegram.ui.ActionBar.m6.lk;
                     i12 = R.drawable.filled_star_plus;
                 } else if (lowerCase.contains("ads")) {
-                    i10 = org.telegram.ui.ActionBar.l6.U7;
-                    i11 = org.telegram.ui.ActionBar.l6.b8;
+                    i10 = org.telegram.ui.ActionBar.m6.U7;
+                    i11 = org.telegram.ui.ActionBar.m6.b8;
                     i12 = R.drawable.msg_channel;
                 } else if (lowerCase.contains("api")) {
-                    i10 = org.telegram.ui.ActionBar.l6.R7;
-                    i11 = org.telegram.ui.ActionBar.l6.Y7;
+                    i10 = org.telegram.ui.ActionBar.m6.R7;
+                    i11 = org.telegram.ui.ActionBar.m6.Y7;
                     i12 = R.drawable.filled_paid_broadcast;
                 } else if (lowerCase.equals("?")) {
                     i12 = R.drawable.msg_emoji_question;
                 } else if (tL_authorization.app_name.toLowerCase().contains("desktop")) {
-                    i10 = org.telegram.ui.ActionBar.l6.S7;
-                    i11 = org.telegram.ui.ActionBar.l6.Z7;
+                    i10 = org.telegram.ui.ActionBar.m6.S7;
+                    i11 = org.telegram.ui.ActionBar.m6.Z7;
                     i12 = R.drawable.device_desktop_other;
                 } else {
-                    i10 = org.telegram.ui.ActionBar.l6.U7;
-                    i11 = org.telegram.ui.ActionBar.l6.b8;
+                    i10 = org.telegram.ui.ActionBar.m6.U7;
+                    i11 = org.telegram.ui.ActionBar.m6.b8;
                 }
                 i10 = -1;
                 i11 = -1;
@@ -135,11 +135,11 @@ public final class s6 extends FrameLayout {
             i12 = R.drawable.device_web_other;
         }
         Drawable mutate = org.telegram.messenger.t0.b.getDrawable(i12).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.J7, false), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.J7, false), PorterDuff.Mode.SRC_IN));
         float f10 = i7;
         int L = org.telegram.messenger.g0.L(f10);
-        int x02 = i10 == -1 ? -16777216 : org.telegram.ui.ActionBar.l6.x0(null, i10, false);
-        int x03 = i11 != -1 ? org.telegram.ui.ActionBar.l6.x0(null, i11, false) : -16777216;
+        int x02 = i10 == -1 ? -16777216 : org.telegram.ui.ActionBar.m6.x0(null, i10, false);
+        int x03 = i11 != -1 ? org.telegram.ui.ActionBar.m6.x0(null, i11, false) : -16777216;
         r6 r6Var = new r6(0);
         r6Var.b = L;
         Paint paint = new Paint(1);
@@ -170,13 +170,13 @@ public final class s6 extends FrameLayout {
         if (textView4 != null) {
             textView4.setAlpha(f10);
         }
-        org.telegram.ui.Components.l9 l9Var = this.h;
-        if (l9Var != null) {
-            l9Var.setAlpha(f10);
+        org.telegram.ui.Components.k9 k9Var = this.h;
+        if (k9Var != null) {
+            k9Var.setAlpha(f10);
         }
-        org.telegram.ui.Components.l9 l9Var2 = this.f;
-        if (l9Var2 != null) {
-            l9Var2.setAlpha(1.0f - f10);
+        org.telegram.ui.Components.k9 k9Var2 = this.f;
+        if (k9Var2 != null) {
+            k9Var2.setAlpha(1.0f - f10);
         }
         LinearLayout linearLayout = this.w;
         if (linearLayout != null) {
@@ -192,16 +192,16 @@ public final class s6 extends FrameLayout {
         TextView textView3 = this.d;
         TextView textView4 = this.b;
         int i7 = this.x;
-        org.telegram.ui.Components.w8 w8Var = this.n;
+        org.telegram.ui.Components.v8 v8Var = this.n;
         this.r = z9;
-        org.telegram.ui.Components.l9 l9Var = this.h;
-        l9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
+        org.telegram.ui.Components.k9 k9Var = this.h;
+        k9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
         if (tLObject instanceof TL_account.TL_connectedBot) {
             TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
             TLRPC.User a22 = qp.s1(i7).a2(Long.valueOf(tL_connectedBot.bot_id));
-            w8Var.r(a22);
-            l9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
-            l9Var.e(a22, w8Var);
+            v8Var.r(a22);
+            k9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
+            k9Var.e(a22, v8Var);
             textView4.setText(t10.p(a22));
             textView3.setText(id.M0(2131745560, null));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
@@ -212,7 +212,7 @@ public final class s6 extends FrameLayout {
         }
         if (tLObject instanceof TLRPC.TL_authorization) {
             TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-            l9Var.setImageDrawable(b(42, tL_authorization));
+            k9Var.setImageDrawable(b(42, tL_authorization));
             StringBuilder sb2 = new StringBuilder();
             if (tL_authorization.device_model.length() != 0) {
                 sb2.append(tL_authorization.device_model);
@@ -230,10 +230,10 @@ public final class s6 extends FrameLayout {
             }
             textView4.setText(sb2);
             if ((tL_authorization.flags & 1) != 0) {
-                setTag(Integer.valueOf(org.telegram.ui.ActionBar.l6.I6));
+                setTag(Integer.valueOf(org.telegram.ui.ActionBar.m6.I6));
                 e12 = id.M0(2131747826, null);
             } else {
-                setTag(Integer.valueOf(org.telegram.ui.ActionBar.l6.A6));
+                setTag(Integer.valueOf(org.telegram.ui.ActionBar.m6.A6));
                 e12 = id.e1(tL_authorization.date_active);
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -241,11 +241,11 @@ public final class s6 extends FrameLayout {
                 spannableStringBuilder.append((CharSequence) tL_authorization.country);
             }
             if (spannableStringBuilder.length() != 0) {
-                fs fsVar = new fs();
-                fsVar.b = org.telegram.messenger.g0.L(1.5f);
-                fsVar.c = 7.0f;
-                fsVar.d = 2.0f;
-                spannableStringBuilder.append((CharSequence) " . ").setSpan(fsVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
+                es esVar = new es();
+                esVar.b = org.telegram.messenger.g0.L(1.5f);
+                esVar.c = 7.0f;
+                esVar.d = 2.0f;
+                spannableStringBuilder.append((CharSequence) " . ").setSpan(esVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
             }
             spannableStringBuilder.append((CharSequence) e12);
             textView2.setText(spannableStringBuilder);
@@ -261,16 +261,16 @@ public final class s6 extends FrameLayout {
             TLRPC.User a23 = qp.s1(i7).a2(Long.valueOf(tL_webAuthorization.bot_id));
             textView4.setText(tL_webAuthorization.domain);
             if (a23 != null) {
-                w8Var.r(a23);
+                v8Var.r(a23);
                 str = t10.j(a23, true);
-                l9Var.e(a23, w8Var);
+                k9Var.e(a23, v8Var);
             } else {
                 str = "";
             }
-            int i10 = org.telegram.ui.ActionBar.l6.A6;
+            int i10 = org.telegram.ui.ActionBar.m6.A6;
             setTag(Integer.valueOf(i10));
             textView.setText(id.e1(tL_webAuthorization.date_active));
-            org.telegram.ui.ActionBar.s6.U(textView, i10, null);
+            org.telegram.ui.ActionBar.t6.U(textView, i10, null);
             StringBuilder sb4 = new StringBuilder();
             if (tL_webAuthorization.ip.length() != 0) {
                 sb4.append(tL_webAuthorization.ip);
@@ -308,7 +308,7 @@ public final class s6 extends FrameLayout {
         setContentAlpha(1.0f - this.s.e(false, 0.0f));
         if (this.r) {
             int i7 = this.a == 1 ? 49 : 72;
-            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.l6.k0);
+            canvas.drawLine(id.a0 ? 0.0f : org.telegram.messenger.g0.L(i7), getMeasuredHeight() - 1, getMeasuredWidth() - (id.a0 ? org.telegram.messenger.g0.L(i7) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.m6.k0);
         }
     }
 

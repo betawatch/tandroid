@@ -13,30 +13,30 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qp;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.tt0;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.xz;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class la extends r {
     public final Path Q1;
     public final /* synthetic */ va R1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public la(va vaVar, Activity activity, FrameLayout frameLayout, tt0 tt0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.y9 y9Var) {
-        super(activity, frameLayout, tt0Var, frameLayout2, bVar, y9Var);
+    public la(va vaVar, Activity activity, FrameLayout frameLayout, st0 st0Var, FrameLayout frameLayout2, di.b bVar, org.telegram.ui.Components.x9 x9Var) {
+        super(activity, frameLayout, st0Var, frameLayout2, bVar, x9Var);
         this.R1 = vaVar;
         this.Q1 = new Path();
     }
 
     @Override // fi.m
     public final boolean e() {
-        cc ccVar;
+        bc bcVar;
         int i7 = 0;
-        if (qp.s1(this.U).D3() || ((ccVar = cc.w) != null && ccVar.a == 2)) {
+        if (qp.s1(this.U).D3() || ((bcVar = bc.w) != null && bcVar.a == 2)) {
             return false;
         }
         int i10 = qp.s1(this.U).W4;
@@ -47,11 +47,11 @@ public final class la extends r {
             int indexOf2 = X2.toString().indexOf("__");
             if (indexOf2 >= 0) {
                 X2.replace(indexOf2, indexOf2 + 2, (CharSequence) "");
-                X2.setSpan(new yz(org.telegram.ui.ActionBar.l6.Uc, this.a), indexOf, indexOf2, 33);
+                X2.setSpan(new xz(org.telegram.ui.ActionBar.m6.Uc, this.a), indexOf, indexOf2, 33);
                 X2.setSpan(new ka(this, i7), indexOf, indexOf2, 33);
             }
         }
-        cc I = new hc(this.R1.l0, this.a).I(R.raw.caption_limit, id.M0(2131752556, null), X2);
+        bc I = new gc(this.R1.l0, this.a).I(R.raw.caption_limit, id.M0(2131752556, null), X2);
         I.a = 2;
         I.j = 5000;
         I.k(false);
@@ -74,7 +74,7 @@ public final class la extends r {
     }
 
     @Override // fi.m
-    public final void h(org.telegram.ui.Components.ca caVar, Canvas canvas, RectF rectF, float f10, boolean z9, float f11, float f12, boolean z10) {
+    public final void h(org.telegram.ui.Components.ba baVar, Canvas canvas, RectF rectF, float f10, boolean z9, float f11, float f12, boolean z10) {
         if (canvas.isHardwareAccelerated()) {
             canvas.save();
             Path path = this.Q1;
@@ -82,7 +82,7 @@ public final class la extends r {
             path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
             canvas.clipPath(path);
             canvas.translate(f11, f12);
-            caVar.b(canvas, true);
+            baVar.b(canvas, true);
             canvas.restore();
         }
     }
@@ -109,7 +109,7 @@ public final class la extends r {
                 for (int i7 = 0; i7 < vaVar.v1.A0.getChildCount(); i7++) {
                     View childAt = vaVar.v1.A0.getChildAt(i7);
                     if (childAt instanceof tg.j) {
-                        li0 selectionBounds = ((tg.j) childAt).getSelectionBounds();
+                        ki0 selectionBounds = ((tg.j) childAt).getSelectionBounds();
                         RectF rectF = org.telegram.messenger.g0.P;
                         float f12 = selectionBounds.a;
                         float f13 = selectionBounds.b;

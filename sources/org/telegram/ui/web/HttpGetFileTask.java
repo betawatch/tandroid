@@ -18,9 +18,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.c20;
 import org.telegram.messenger.p10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.o5;
+import org.telegram.ui.ActionBar.p5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private c20 doneCallback;
@@ -190,7 +190,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         r19 = obj;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                org.telegram.messenger.g0.h3(new o5(this, 14));
+                                                org.telegram.messenger.g0.h3(new p5(this, 14));
                                             }
                                             if (channel != null) {
                                                 channel.close();

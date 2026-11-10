@@ -14,14 +14,14 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.id;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.t10;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.r41;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.f5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class q extends org.telegram.ui.ActionBar.f2 {
     public r41 a;
@@ -49,21 +49,21 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
                 spannableStringBuilder.append((CharSequence) t10.p(oVar.a));
                 hashMap.put(oVar, spannableStringBuilder);
             }
-            y31 i10 = y31.i(i7, spannableStringBuilder);
+            x31 i10 = x31.i(i7, spannableStringBuilder);
             i10.L(!oVar.b);
             arrayList.add(i10);
         }
-        arrayList.add(y31.C(id.M0(2131746861, null)));
+        arrayList.add(x31.C(id.M0(2131746861, null)));
     }
 
-    public static void a0(q qVar, y31 y31Var) {
+    public static void a0(q qVar, x31 x31Var) {
         int i7;
         m41 m41Var;
         ArrayList arrayList = qVar.b;
-        if (y31Var.a != 4 || (i7 = y31Var.d) < 0 || i7 >= arrayList.size()) {
+        if (x31Var.a != 4 || (i7 = x31Var.d) < 0 || i7 >= arrayList.size()) {
             return;
         }
-        o oVar = (o) arrayList.get(y31Var.d);
+        o oVar = (o) arrayList.get(x31Var.d);
         oVar.b = !oVar.b;
         Activity parentActivity = qVar.getParentActivity();
         int i10 = qVar.currentAccount;
@@ -91,7 +91,7 @@ public final class q extends org.telegram.ui.ActionBar.f2 {
         this.actionBar.setTitle(id.M0(2131746863, null));
         this.actionBar.setActionBarMenuOnItemClick(new bi.s(this, 3));
         FrameLayout frameLayout = new FrameLayout(context);
-        s6.h(l6.a7, frameLayout, this.resourceProvider);
+        t6.h(m6.a7, frameLayout, this.resourceProvider);
         r41 r41Var = new r41(this, new ai.e(this, 27), new r4(this, 21), new g2.c(this, 24));
         this.a = r41Var;
         frameLayout.addView(r41Var, ha.e(-1, -1, qs.E1));

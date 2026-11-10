@@ -1,38 +1,52 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DataSettingsActivity b;
+public final class ys extends org.telegram.ui.Cells.b5 {
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.z8 f;
+    public final /* synthetic */ org.telegram.ui.Cells.r8[] h;
+    public final /* synthetic */ AnimatorSet[] n;
+    public final /* synthetic */ DataAutoDownloadActivity r;
 
-    public /* synthetic */ ys(DataSettingsActivity dataSettingsActivity, int i7) {
-        this.a = i7;
-        this.b = dataSettingsActivity;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        switch (this.a) {
-            case 0:
-                this.b.getMediaDataController().E(true);
-                break;
-            case 1:
-                DataSettingsActivity dataSettingsActivity = this.b;
-                dataSettingsActivity.W = true;
-                if (dataSettingsActivity.a != null && (i7 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.s0(i7);
-                    break;
-                }
-                break;
-            default:
-                y6.j0 = null;
-                DataSettingsActivity dataSettingsActivity2 = this.b;
-                ys ysVar = new ys(dataSettingsActivity2, 1);
-                org.telegram.messenger.g0.i3(ysVar, 100L);
-                y6.m0(new bi.b2(dataSettingsActivity2, ysVar, System.currentTimeMillis(), 1));
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ys(DataAutoDownloadActivity dataAutoDownloadActivity, Activity activity, int i7, org.telegram.ui.Cells.z8 z8Var, org.telegram.ui.Cells.r8[] r8VarArr, AnimatorSet[] animatorSetArr) {
+        super(activity);
+        this.r = dataAutoDownloadActivity;
+        this.e = i7;
+        this.f = z8Var;
+        this.h = r8VarArr;
+        this.n = animatorSetArr;
+        setWillNotDraw(false);
+        TextView textView = new TextView(activity);
+        this.a = textView;
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.j5, null);
+        org.telegram.messenger.camera.q.n(textView, 1, 16.0f, 1, 1);
+        textView.setSingleLine(true);
+        textView.setGravity((org.telegram.messenger.id.a0 ? 5 : 3) | 48);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setImportantForAccessibility(2);
+        addView(textView, c8.ha.d(-1, -1.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+        TextView textView2 = new TextView(activity);
+        this.b = textView2;
+        org.telegram.ui.ActionBar.t6.U(textView2, org.telegram.ui.ActionBar.m6.n5, null);
+        org.telegram.messenger.camera.q.n(textView2, 1, 16.0f, 1, 1);
+        textView2.setSingleLine(true);
+        textView2.setGravity((org.telegram.messenger.id.a0 ? 3 : 5) | 48);
+        textView2.setImportantForAccessibility(2);
+        addView(textView2, c8.ha.d(-2, -1.0f, (org.telegram.messenger.id.a0 ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+        org.telegram.ui.Cells.h0 h0Var = new org.telegram.ui.Cells.h0(activity);
+        this.c = h0Var;
+        h0Var.setReportChanges(true);
+        h0Var.setDelegate(new g6.d0(this, 29));
+        h0Var.setImportantForAccessibility(2);
+        addView(h0Var, c8.ha.d(-1, 38.0f, 51, 6.0f, 36.0f, 6.0f, 0.0f));
+        setImportantForAccessibility(1);
+        setAccessibilityDelegate(h0Var.getSeekBarAccessibilityDelegate());
     }
 }

@@ -53,27 +53,27 @@ import org.telegram.ui.Components.a41;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.c41;
 import org.telegram.ui.Components.d41;
+import org.telegram.ui.Components.dy0;
 import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.gu0;
-import org.telegram.ui.Components.m71;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.q51;
-import org.telegram.ui.Components.rd0;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.fu0;
+import org.telegram.ui.Components.l71;
+import org.telegram.ui.Components.my0;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.qd0;
+import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.s11;
+import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.tg0;
+import org.telegram.ui.Components.u31;
 import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.uy0;
 import org.telegram.ui.Components.v31;
-import org.telegram.ui.Components.vg0;
 import org.telegram.ui.Components.vy0;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.z31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public class ij {
     public static Pattern k3;
@@ -212,17 +212,17 @@ public class ij {
     public float e0;
     public TLRPC.TL_peerColorCollectible e1;
     public boolean e2;
-    public s51 e3;
+    public r51 e3;
     public final boolean f;
     public float f0;
     public boolean f1;
     public TLRPC.Peer f2;
-    public s51 f3;
+    public r51 f3;
     public final boolean g;
     public int g0;
     public boolean g1;
     public final Drawable[] g2;
-    public s51 g3;
+    public r51 g3;
     public Boolean h;
     public int h0;
     public TLRPC.TL_forumTopic h1;
@@ -468,16 +468,16 @@ public class ij {
                     f6Var = f6Var3;
                     if (messageEntity.offset + messageEntity.length <= spannableString.length()) {
                         int i14 = messageEntity.offset;
-                        org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) spannableString.getSpans(i14, messageEntity.length + i14, org.telegram.ui.Components.r5.class);
-                        if (r5VarArr != null && r5VarArr.length > 0) {
-                            for (org.telegram.ui.Components.r5 r5Var : r5VarArr) {
-                                spannableString.removeSpan(r5Var);
+                        org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) spannableString.getSpans(i14, messageEntity.length + i14, org.telegram.ui.Components.q5.class);
+                        if (q5VarArr != null && q5VarArr.length > 0) {
+                            for (org.telegram.ui.Components.q5 q5Var : q5VarArr) {
+                                spannableString.removeSpan(q5Var);
                             }
                         }
-                        org.telegram.ui.Components.r5 r5Var2 = tL_messageEntityCustomEmoji.document != null ? new org.telegram.ui.Components.r5(tL_messageEntityCustomEmoji.document, f10, fontMetricsInt) : new org.telegram.ui.Components.r5(tL_messageEntityCustomEmoji.document_id, f10, fontMetricsInt);
-                        r5Var2.top = z9;
+                        org.telegram.ui.Components.q5 q5Var2 = tL_messageEntityCustomEmoji.document != null ? new org.telegram.ui.Components.q5(tL_messageEntityCustomEmoji.document, f10, fontMetricsInt) : new org.telegram.ui.Components.q5(tL_messageEntityCustomEmoji.document_id, f10, fontMetricsInt);
+                        q5Var2.top = z9;
                         int i15 = messageEntity.offset;
-                        spannableString.setSpan(r5Var2, i15, messageEntity.length + i15, 33);
+                        spannableString.setSpan(q5Var2, i15, messageEntity.length + i15, 33);
                         i10--;
                         i11++;
                         f6Var3 = f6Var;
@@ -581,9 +581,9 @@ public class ij {
             str2 = str4;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{charSequence2}));
-        d41 d41Var = new d41(rf.b.i("", str2));
-        d41Var.c = tLObject3;
-        spannableStringBuilder.setSpan(d41Var, indexOf, charSequence2.length() + indexOf, 33);
+        c41 c41Var = new c41(rf.b.i("", str2));
+        c41Var.c = tLObject3;
+        spannableStringBuilder.setSpan(c41Var, indexOf, charSequence2.length() + indexOf, 33);
         return spannableStringBuilder;
     }
 
@@ -1190,18 +1190,18 @@ public class ij {
         int i7;
         TreeSet treeSet = new TreeSet();
         HashMap hashMap = new HashMap();
-        ug0[] ug0VarArr = (ug0[]) spanned.getSpans(0, spanned.length(), ug0.class);
+        tg0[] tg0VarArr = (tg0[]) spanned.getSpans(0, spanned.length(), tg0.class);
         int i10 = 0;
         while (true) {
-            if (i10 >= ug0VarArr.length) {
+            if (i10 >= tg0VarArr.length) {
                 break;
             }
-            ug0 ug0Var = ug0VarArr[i10];
-            ug0Var.a.b = false;
-            int spanStart = spanned.getSpanStart(ug0Var);
-            int spanEnd = spanned.getSpanEnd(ug0VarArr[i10]);
+            tg0 tg0Var = tg0VarArr[i10];
+            tg0Var.a.b = false;
+            int spanStart = spanned.getSpanStart(tg0Var);
+            int spanEnd = spanned.getSpanEnd(tg0VarArr[i10]);
             treeSet.add(Integer.valueOf(spanStart));
-            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0) | (ug0VarArr[i10].a.e ? 16 : 1)));
+            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0) | (tg0VarArr[i10].a.e ? 16 : 1)));
             treeSet.add(Integer.valueOf(spanEnd));
             hashMap.put(Integer.valueOf(spanEnd), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanEnd)) ? ((Integer) hashMap.get(Integer.valueOf(spanEnd))).intValue() : 0) | 2));
             i10++;
@@ -1514,7 +1514,7 @@ public class ij {
                 str = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
             } else if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("d");
-                spannableStringBuilder2.setSpan(new org.telegram.ui.Components.r5(((TLRPC.TL_reactionCustomEmoji) reaction).document_id, (Paint.FontMetricsInt) null), 0, 1, 0);
+                spannableStringBuilder2.setSpan(new org.telegram.ui.Components.q5(((TLRPC.TL_reactionCustomEmoji) reaction).document_id, (Paint.FontMetricsInt) null), 0, 1, 0);
                 str = spannableStringBuilder2;
             } else {
                 str = "";
@@ -1658,7 +1658,7 @@ public class ij {
         if (!(charSequence instanceof Spannable)) {
             return false;
         }
-        CharSequence a10 = org.telegram.ui.Components.a00.a(charSequence, false);
+        CharSequence a10 = org.telegram.ui.Components.zz.a(charSequence, false);
         Spannable spannable2 = (Spannable) a10;
         URLSpan[] uRLSpanArr = (URLSpan[]) spannable2.getSpans(0, a10.length(), URLSpan.class);
         boolean z14 = uRLSpanArr != null && uRLSpanArr.length > 0;
@@ -1690,37 +1690,37 @@ public class ij {
                         }
                     }
                     if ((i7 != 1 || (messageEntity instanceof TLRPC.TL_messageEntityHashtag)) && !(messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) && !(messageEntity instanceof TLRPC.TL_messageEntityBlockquote) && !(messageEntity instanceof TLRPC.TL_messageEntityPre) && !(messageEntity instanceof TLRPC.TL_messageEntityDiffReplace)) {
-                        vy0 vy0Var = new vy0();
+                        uy0 uy0Var = new uy0();
                         int i20 = messageEntity.offset;
-                        vy0Var.b = i20;
-                        vy0Var.c = i20 + messageEntity.length;
+                        uy0Var.b = i20;
+                        uy0Var.c = i20 + messageEntity.length;
                         if (messageEntity instanceof TLRPC.TL_messageEntitySpoiler) {
-                            vy0Var.a = 256;
+                            uy0Var.a = 256;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityStrike) {
-                            vy0Var.a = 8;
+                            uy0Var.a = 8;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffDelete) {
-                            vy0Var.a = TLObject.FLAG_13;
+                            uy0Var.a = TLObject.FLAG_13;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityUnderline) {
-                            vy0Var.a = 16;
+                            uy0Var.a = 16;
                         } else if (messageEntity instanceof TLRPC.TL_messageEntityBold) {
-                            vy0Var.a = 1;
+                            uy0Var.a = 1;
                         } else {
                             if (messageEntity instanceof TLRPC.TL_messageEntityItalic) {
-                                vy0Var.a = 2;
+                                uy0Var.a = 2;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityCode) {
-                                vy0Var.a = 4;
+                                uy0Var.a = 4;
                             } else if (messageEntity instanceof TLRPC.TL_messageEntityDiffInsert) {
-                                vy0Var.a = TLObject.FLAG_12;
+                                uy0Var.a = TLObject.FLAG_12;
                             } else {
                                 if (messageEntity instanceof TLRPC.TL_messageEntityMentionName) {
                                     if (z10) {
-                                        vy0Var.a = 64;
-                                        vy0Var.d = messageEntity;
+                                        uy0Var.a = 64;
+                                        uy0Var.d = messageEntity;
                                     }
                                 } else if (messageEntity instanceof TLRPC.TL_inputMessageEntityMentionName) {
                                     if (z10) {
-                                        vy0Var.a = 64;
-                                        vy0Var.d = messageEntity;
+                                        uy0Var.a = 64;
+                                        uy0Var.d = messageEntity;
                                     }
                                 } else if (!z12 || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) || (messageEntity instanceof TLRPC.TL_messageEntityFormattedDate)) {
                                     if (((messageEntity instanceof TLRPC.TL_messageEntityUrl) || (messageEntity instanceof TLRPC.TL_messageEntityTextUrl)) && (str2 = messageEntity.url) != null) {
@@ -1738,10 +1738,10 @@ public class ij {
                                         }
                                     }
                                     if (!(messageEntity instanceof TLRPC.TL_messageEntityMention) || z10) {
-                                        vy0Var.a = 128;
-                                        vy0Var.d = messageEntity;
+                                        uy0Var.a = 128;
+                                        uy0Var.d = messageEntity;
                                         if (messageEntity instanceof TLRPC.TL_messageEntityTextUrl) {
-                                            vy0Var.a = 1152;
+                                            uy0Var.a = 1152;
                                         }
                                     }
                                 }
@@ -1751,58 +1751,58 @@ public class ij {
                             size = arrayList2.size();
                             i15 = 0;
                             while (i15 < size) {
-                                vy0 vy0Var2 = (vy0) arrayList2.get(i15);
-                                if ((vy0Var2.a & 256) == 0 || vy0Var.b < vy0Var2.b || vy0Var.c > vy0Var2.c) {
-                                    int i21 = vy0Var.b;
-                                    int i22 = vy0Var2.b;
+                                uy0 uy0Var2 = (uy0) arrayList2.get(i15);
+                                if ((uy0Var2.a & 256) == 0 || uy0Var.b < uy0Var2.b || uy0Var.c > uy0Var2.c) {
+                                    int i21 = uy0Var.b;
+                                    int i22 = uy0Var2.b;
                                     if (i21 > i22) {
-                                        int i23 = vy0Var2.c;
+                                        int i23 = uy0Var2.c;
                                         if (i21 < i23) {
-                                            if (vy0Var.c < i23) {
-                                                vy0 vy0Var3 = new vy0(vy0Var);
-                                                vy0Var3.b(vy0Var2);
-                                                arrayList2.add(i15 + 1, vy0Var3);
-                                                vy0 vy0Var4 = new vy0(vy0Var2);
-                                                vy0Var4.b = vy0Var.c;
+                                            if (uy0Var.c < i23) {
+                                                uy0 uy0Var3 = new uy0(uy0Var);
+                                                uy0Var3.b(uy0Var2);
+                                                arrayList2.add(i15 + 1, uy0Var3);
+                                                uy0 uy0Var4 = new uy0(uy0Var2);
+                                                uy0Var4.b = uy0Var.c;
                                                 i15 += 2;
                                                 size += 2;
-                                                arrayList2.add(i15, vy0Var4);
+                                                arrayList2.add(i15, uy0Var4);
                                             } else {
-                                                vy0 vy0Var5 = new vy0(vy0Var);
-                                                vy0Var5.b(vy0Var2);
-                                                vy0Var5.c = vy0Var2.c;
+                                                uy0 uy0Var5 = new uy0(uy0Var);
+                                                uy0Var5.b(uy0Var2);
+                                                uy0Var5.c = uy0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, vy0Var5);
+                                                arrayList2.add(i15, uy0Var5);
                                             }
-                                            int i24 = vy0Var.b;
-                                            vy0Var.b = vy0Var2.c;
-                                            vy0Var2.c = i24;
+                                            int i24 = uy0Var.b;
+                                            uy0Var.b = uy0Var2.c;
+                                            uy0Var2.c = i24;
                                         }
                                     } else {
-                                        int i25 = vy0Var.c;
+                                        int i25 = uy0Var.c;
                                         if (i22 < i25) {
                                             i16 = size2;
-                                            int i26 = vy0Var2.c;
+                                            int i26 = uy0Var2.c;
                                             if (i25 == i26) {
-                                                vy0Var2.b(vy0Var);
+                                                uy0Var2.b(uy0Var);
                                             } else if (i25 < i26) {
-                                                vy0 vy0Var6 = new vy0(vy0Var2);
-                                                vy0Var6.b(vy0Var);
-                                                vy0Var6.c = vy0Var.c;
+                                                uy0 uy0Var6 = new uy0(uy0Var2);
+                                                uy0Var6.b(uy0Var);
+                                                uy0Var6.c = uy0Var.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, vy0Var6);
-                                                vy0Var2.b = vy0Var.c;
+                                                arrayList2.add(i15, uy0Var6);
+                                                uy0Var2.b = uy0Var.c;
                                             } else {
-                                                vy0 vy0Var7 = new vy0(vy0Var);
-                                                vy0Var7.b = vy0Var2.c;
+                                                uy0 uy0Var7 = new uy0(uy0Var);
+                                                uy0Var7.b = uy0Var2.c;
                                                 i15++;
                                                 size++;
-                                                arrayList2.add(i15, vy0Var7);
-                                                vy0Var2.b(vy0Var);
+                                                arrayList2.add(i15, uy0Var7);
+                                                uy0Var2.b(uy0Var);
                                             }
-                                            vy0Var.c = i22;
+                                            uy0Var.c = i22;
                                             i15++;
                                             size2 = i16;
                                         }
@@ -1813,8 +1813,8 @@ public class ij {
                                 size2 = i16;
                             }
                             i13 = size2;
-                            if (vy0Var.b >= vy0Var.c) {
-                                arrayList2.add(vy0Var);
+                            if (uy0Var.b >= uy0Var.c) {
+                                arrayList2.add(uy0Var);
                             }
                             i17++;
                             size2 = i13;
@@ -1824,7 +1824,7 @@ public class ij {
                         while (i15 < size) {
                         }
                         i13 = size2;
-                        if (vy0Var.b >= vy0Var.c) {
+                        if (uy0Var.b >= uy0Var.c) {
                         }
                         i17++;
                         size2 = i13;
@@ -1839,17 +1839,17 @@ public class ij {
             int i28 = 0;
             int i29 = 0;
             while (i27 < min) {
-                vy0 vy0Var8 = (vy0) arrayList2.get(i27);
-                int i30 = vy0Var8.b;
-                if (i30 >= 0 && i30 < (i11 = vy0Var8.c) && i11 <= a10.length() && (i7 != 1 || (vy0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
-                    TLRPC.MessageEntity messageEntity2 = vy0Var8.d;
+                uy0 uy0Var8 = (uy0) arrayList2.get(i27);
+                int i30 = uy0Var8.b;
+                if (i30 >= 0 && i30 < (i11 = uy0Var8.c) && i11 <= a10.length() && (i7 != 1 || (uy0Var8.d instanceof TLRPC.TL_messageEntityHashtag))) {
+                    TLRPC.MessageEntity messageEntity2 = uy0Var8.d;
                     if (messageEntity2 != null) {
                         int i31 = messageEntity2.offset;
                         str = TextUtils.substring(a10, i31, messageEntity2.length + i31);
                     } else {
                         str = null;
                     }
-                    TLRPC.MessageEntity messageEntity3 = vy0Var8.d;
+                    TLRPC.MessageEntity messageEntity3 = uy0Var8.d;
                     if (!(messageEntity3 instanceof TLRPC.TL_messageEntityBotCommand)) {
                         if ((messageEntity3 instanceof TLRPC.TL_messageEntityHashtag) || (messageEntity3 instanceof TLRPC.TL_messageEntityMention)) {
                             charSequence2 = a10;
@@ -1878,7 +1878,7 @@ public class ij {
                                         b10 = b11;
                                         z14 = true;
                                     } else {
-                                        spannable2.setSpan(new a41(str, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                        spannable2.setSpan(new z31(str, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                         spannable = spannable2;
                                         b10 = b11;
                                         z13 = false;
@@ -1892,7 +1892,7 @@ public class ij {
                             } else if (messageEntity3 instanceof TLRPC.TL_messageEntityFormattedDate) {
                                 if (i28 < 250) {
                                     i28++;
-                                    spannable2.setSpan(new org.telegram.ui.Components.a00(str, vy0Var8, (TLRPC.TL_messageEntityFormattedDate) vy0Var8.d), vy0Var8.b, vy0Var8.c, 33);
+                                    spannable2.setSpan(new org.telegram.ui.Components.zz(str, uy0Var8, (TLRPC.TL_messageEntityFormattedDate) uy0Var8.d), uy0Var8.b, uy0Var8.c, 33);
                                     spannable = spannable2;
                                     b10 = b11;
                                     z13 = false;
@@ -1903,15 +1903,15 @@ public class ij {
                                 b10 = b11;
                             } else {
                                 if (messageEntity3 instanceof TLRPC.TL_messageEntityTonAddress) {
-                                    spannable2.setSpan(new c41(rf.b.i("tonaddress:", str), vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("tonaddress:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityBankCard) {
-                                    spannable2.setSpan(new c41(rf.b.i("card:", str), vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("card:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityPhone) {
                                     String d = pf.b.d(str, false);
                                     if (str.startsWith("+")) {
                                         d = rf.b.i("+", d);
                                     }
-                                    spannable2.setSpan(new c41(rf.b.i("tel:", d), vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                    spannable2.setSpan(new b41(rf.b.i("tel:", d), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityTextUrl) {
                                     if (i28 < 250) {
                                         i28++;
@@ -1920,7 +1920,7 @@ public class ij {
                                             str3 = str3.replaceAll("∕|⁄|%E2%81%84|%E2%88%95", "/");
                                         }
                                         if (!vf.c.k(str3)) {
-                                            spannable2.setSpan(new e41(str3, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                            spannable2.setSpan(new d41(str3, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                             spannable = spannable2;
                                             b10 = b11;
                                             z13 = false;
@@ -1932,22 +1932,22 @@ public class ij {
                                     b10 = b11;
                                 } else {
                                     if (messageEntity3 instanceof TLRPC.TL_messageEntityMentionName) {
-                                        spannable2.setSpan(new f41("" + ((TLRPC.TL_messageEntityMentionName) vy0Var8.d).user_id, b11, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                        spannable2.setSpan(new e41("" + ((TLRPC.TL_messageEntityMentionName) uy0Var8.d).user_id, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                     } else if (messageEntity3 instanceof TLRPC.TL_inputMessageEntityMentionName) {
-                                        spannable2.setSpan(new f41("" + ((TLRPC.TL_inputMessageEntityMentionName) vy0Var8.d).user_id.user_id, b11, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
-                                    } else if ((vy0Var8.a & 4) != 0) {
+                                        spannable2.setSpan(new e41("" + ((TLRPC.TL_inputMessageEntityMentionName) uy0Var8.d).user_id.user_id, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
+                                    } else if ((uy0Var8.a & 4) != 0) {
                                         Spannable spannable3 = spannable2;
                                         byte b12 = b11;
                                         spannable = spannable3;
                                         b10 = b12;
-                                        spannable.setSpan(new b41(spannable3, vy0Var8.b, vy0Var8.c, b12, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                                        spannable.setSpan(new a41(spannable3, uy0Var8.b, uy0Var8.c, b12, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                                         z13 = false;
                                         if (!z13) {
                                         }
                                     } else {
                                         spannable = spannable2;
                                         b10 = b11;
-                                        spannable.setSpan(new wy0(vy0Var8, 0), vy0Var8.b, vy0Var8.c, 33);
+                                        spannable.setSpan(new vy0(uy0Var8, 0), uy0Var8.b, uy0Var8.c, 33);
                                         z13 = true;
                                         if (!z13) {
                                         }
@@ -1967,7 +1967,7 @@ public class ij {
                             }
                         } else if (i28 < 250) {
                             i28++;
-                            spannable2.setSpan(new e41(rf.b.i("mailto:", str), vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                            spannable2.setSpan(new d41(rf.b.i("mailto:", str), uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                             charSequence2 = a10;
                             spannable = spannable2;
                             b10 = b11;
@@ -1977,22 +1977,22 @@ public class ij {
                         }
                         if (i28 < i12) {
                             i28++;
-                            spannable.setSpan(new c41(str, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                            spannable.setSpan(new b41(str, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                             z13 = false;
                             if (!z13) {
                             }
                         }
                     } else if (i28 < 250) {
                         i28++;
-                        spannable2.setSpan(new z31(str, b11, vy0Var8), vy0Var8.b, vy0Var8.c, 33);
+                        spannable2.setSpan(new y31(str, b11, uy0Var8), uy0Var8.b, uy0Var8.c, 33);
                         charSequence2 = a10;
                         spannable = spannable2;
                         b10 = b11;
                         z13 = false;
                         if (!z13) {
-                            if ((vy0Var8.a & 256) != 0 && i29 < 100) {
+                            if ((uy0Var8.a & 256) != 0 && i29 < 100) {
                                 i29++;
-                                spannable.setSpan(new wy0(vy0Var8, 0), vy0Var8.b, vy0Var8.c, 33);
+                                spannable.setSpan(new vy0(uy0Var8, 0), uy0Var8.b, uy0Var8.c, 33);
                             }
                         }
                     }
@@ -2021,7 +2021,7 @@ public class ij {
                     }
                     if (messageEntity4 instanceof TLRPC.TL_messageEntityBlockquote) {
                         int i34 = messageEntity4.offset;
-                        vg0.b(spannable4, i34, messageEntity4.length + i34, messageEntity4.collapsed);
+                        ug0.b(spannable4, i34, messageEntity4.length + i34, messageEntity4.collapsed);
                     } else {
                         if (messageEntity4 instanceof TLRPC.TL_messageEntityPre) {
                             if (i32 < 50) {
@@ -2032,7 +2032,7 @@ public class ij {
                             }
                         } else if (messageEntity4 instanceof TLRPC.TL_messageEntityDiffReplace) {
                             int i37 = messageEntity4.offset;
-                            spannable4.setSpan(new gu0(), i37, messageEntity4.length + i37, 33);
+                            spannable4.setSpan(new fu0(), i37, messageEntity4.length + i37, 33);
                         }
                     }
                 }
@@ -2580,16 +2580,16 @@ public class ij {
         } else if (richText instanceof TL_iv.textUrl) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                vy0 vy0Var = new vy0();
-                vy0Var.a = i10;
-                spannableStringBuilder.setSpan(new a41(richText.url, vy0Var), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var = new uy0();
+                uy0Var.a = i10;
+                spannableStringBuilder.setSpan(new z31(richText.url, uy0Var), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textEmail) {
             f0(richText.text, i7, spannableStringBuilder, i10);
             if (spannableStringBuilder.length() > length) {
-                vy0 vy0Var2 = new vy0();
-                vy0Var2.a = i10;
-                spannableStringBuilder.setSpan(new e41("mailto:" + richText.email, vy0Var2), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var2 = new uy0();
+                uy0Var2.a = i10;
+                spannableStringBuilder.setSpan(new d41("mailto:" + richText.email, uy0Var2), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textMath) {
             spannableStringBuilder.append((CharSequence) T5(R.drawable.iv_formula, "fx")).append(" ").append((CharSequence) id.M0(2131754864, null));
@@ -2601,9 +2601,9 @@ public class ij {
                 if (textphone.phone.startsWith("+")) {
                     d = rf.b.i("+", d);
                 }
-                vy0 vy0Var3 = new vy0();
-                vy0Var3.a = i10;
-                spannableStringBuilder.setSpan(new c41(rf.b.i("tel:", d), vy0Var3), length, spannableStringBuilder.length(), 33);
+                uy0 uy0Var3 = new uy0();
+                uy0Var3.a = i10;
+                spannableStringBuilder.setSpan(new b41(rf.b.i("tel:", d), uy0Var3), length, spannableStringBuilder.length(), 33);
             }
         } else if (richText instanceof TL_iv.textConcat) {
             ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
@@ -2623,9 +2623,9 @@ public class ij {
         if (spannableStringBuilder.length() <= length || i10 == 0) {
             return;
         }
-        vy0 vy0Var4 = new vy0();
-        vy0Var4.a = i10;
-        spannableStringBuilder.setSpan(new wy0(vy0Var4, 0), length, spannableStringBuilder.length(), 33);
+        uy0 uy0Var4 = new uy0();
+        uy0Var4.a = i10;
+        spannableStringBuilder.setSpan(new vy0(uy0Var4, 0), length, spannableStringBuilder.length(), 33);
     }
 
     public static int f1(TLRPC.BotInlineResult botInlineResult) {
@@ -2788,9 +2788,9 @@ public class ij {
         URLSpan[] uRLSpanArr;
         int i13;
         int i14;
-        c41 c41Var;
+        b41 b41Var;
         Object[] objArr;
-        c41 z31Var;
+        b41 y31Var;
         if (charSequence == null) {
             return;
         }
@@ -2826,7 +2826,7 @@ public class ij {
                 while (matcher.find() && i17 < 100) {
                     int start = matcher.start();
                     int end = matcher.end();
-                    c41 c41Var2 = null;
+                    b41 b41Var2 = null;
                     if (i7 == i15 || i7 == 4) {
                         i11 = 0;
                         matcher.groupCount();
@@ -2856,17 +2856,17 @@ public class ij {
                                 if (i13 <= i10) {
                                     i14 = 3;
                                     if (i7 == 3) {
-                                        c41Var = new c41("video?" + i13, (vy0) null);
+                                        b41Var = new b41("video?" + i13, (uy0) null);
                                     } else {
-                                        c41Var = new c41("audio?" + i13, (vy0) null);
+                                        b41Var = new b41("audio?" + i13, (uy0) null);
                                     }
-                                    c41Var2 = c41Var;
-                                    c41Var2.d = str;
-                                    if (c41Var2 != null) {
+                                    b41Var2 = b41Var;
+                                    b41Var2.d = str;
+                                    if (b41Var2 != null) {
                                         if (z11 && (objArr = (ClickableSpan[]) spannable.getSpans(start, end, ClickableSpan.class)) != null && objArr.length > 0) {
                                             spannable.removeSpan(objArr[i11]);
                                         }
-                                        spannable.setSpan(c41Var2, start, end, i11);
+                                        spannable.setSpan(b41Var2, start, end, i11);
                                         i17 = i12 + 1;
                                     } else {
                                         i17 = i12;
@@ -2909,15 +2909,15 @@ public class ij {
                         }
                         if (i7 == i16) {
                             if (charAt == '@') {
-                                z31Var = new c41("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (vy0) null);
+                                y31Var = new b41("https://instagram.com/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             } else {
-                                z31Var = new c41("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (vy0) null);
+                                y31Var = new b41("https://www.instagram.com/explore/tags/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             }
                         } else if (i7 == 2) {
                             if (charAt == '@') {
-                                z31Var = new c41("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (vy0) null);
+                                y31Var = new b41("https://twitter.com/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             } else {
-                                z31Var = new c41("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (vy0) null);
+                                y31Var = new b41("https://twitter.com/hashtag/" + charSequence.subSequence(start + 1, end).toString(), (uy0) null);
                             }
                         } else if (charSequence.charAt(start) != '/') {
                             String charSequence2 = charSequence.subSequence(start, end).toString();
@@ -2926,29 +2926,29 @@ public class ij {
                             }
                             i14 = i15;
                             i12 = i17;
-                            c41Var2 = new c41(charSequence2, (vy0) null);
-                            if (c41Var2 != null) {
+                            b41Var2 = new b41(charSequence2, (uy0) null);
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         } else if (z10) {
-                            z31Var = new z31(charSequence.subSequence(start, end).toString(), z9 ? 1 : 0, null);
+                            y31Var = new y31(charSequence.subSequence(start, end).toString(), z9 ? 1 : 0, null);
                             i14 = i15;
-                            c41Var2 = z31Var;
+                            b41Var2 = y31Var;
                             i12 = i17;
-                            if (c41Var2 != null) {
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         } else {
                             i14 = i15;
                             i12 = i17;
-                            if (c41Var2 != null) {
+                            if (b41Var2 != null) {
                             }
                             i15 = i14;
                         }
                         i14 = i15;
-                        c41Var2 = z31Var;
+                        b41Var2 = y31Var;
                         i12 = i17;
-                        if (c41Var2 != null) {
+                        if (b41Var2 != null) {
                         }
                         i15 = i14;
                     }
@@ -2962,8 +2962,8 @@ public class ij {
     }
 
     public static CharSequence h0(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z9) {
-        org.telegram.ui.ActionBar.l6.P();
-        TextPaint textPaint = org.telegram.ui.ActionBar.l6.s2;
+        org.telegram.ui.ActionBar.m6.P();
+        TextPaint textPaint = org.telegram.ui.ActionBar.m6.s2;
         if (textPaint == null) {
             textPaint = new TextPaint(1);
             textPaint.setTypeface(g0.o());
@@ -3507,7 +3507,7 @@ public class ij {
         if (charSequence instanceof Spannable) {
             Spannable spannable = (Spannable) charSequence;
             for (URLSpan uRLSpan : (URLSpan[]) spannable.getSpans(0, spannable.length(), URLSpan.class)) {
-                if (!(uRLSpan instanceof org.telegram.ui.Components.a00)) {
+                if (!(uRLSpan instanceof org.telegram.ui.Components.zz)) {
                     spannable.removeSpan(uRLSpan);
                 }
             }
@@ -3723,13 +3723,13 @@ public class ij {
                     int i7 = this.I1;
                     TLRPC.Message message2 = this.k;
                     TLRPC.MessageMedia messageMedia2 = message2 != null ? message2.media : null;
-                    int i10 = u51.j0;
-                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : u51.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z9);
+                    int i10 = t51.j0;
+                    ArrayList arrayList = !(messageMedia2 instanceof TLRPC.TL_messageMediaDocument) ? new ArrayList() : t51.X(i7, messageMedia2.document, messageMedia2.alt_documents, 0, z9);
                     this.c3 = arrayList;
                     this.b3 = Boolean.valueOf(arrayList.size() > 1);
-                    this.e3 = u51.a0(this.c3);
-                    this.f3 = u51.b0(this.c3);
-                    this.g3 = u51.N(this.c3);
+                    this.e3 = t51.a0(this.c3);
+                    this.f3 = t51.b0(this.c3);
+                    this.g3 = t51.N(this.c3);
                 }
                 this.b3 = Boolean.FALSE;
                 return false;
@@ -3755,9 +3755,9 @@ public class ij {
         CharSequence charSequence;
         if (com.google.android.recaptcha.internal.a.u(spannable)) {
             f6[] f6VarArr = (f6[]) spannable.getSpans(0, spannable.length(), f6.class);
-            org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) spannable.getSpans(0, spannable.length(), org.telegram.ui.Components.r5.class);
+            org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) spannable.getSpans(0, spannable.length(), org.telegram.ui.Components.q5.class);
             if (f6VarArr != null) {
-                if ((iArr[0] - f6VarArr.length) - (r5VarArr == null ? 0 : r5VarArr.length) > 0) {
+                if ((iArr[0] - f6VarArr.length) - (q5VarArr == null ? 0 : q5VarArr.length) > 0) {
                     return;
                 }
                 for (int i7 = 0; i7 < f6VarArr.length; i7++) {
@@ -3774,10 +3774,10 @@ public class ij {
                         int spanStart = spannable.getSpanStart(f6VarArr[i7]);
                         int spanEnd = spannable.getSpanEnd(f6VarArr[i7]);
                         spannable.removeSpan(f6VarArr[i7]);
-                        org.telegram.ui.Components.r5 r5Var = new org.telegram.ui.Components.r5(T, f6VarArr[i7].a);
-                        r5Var.standard = true;
-                        r5Var.invert = z9;
-                        spannable.setSpan(r5Var, spanStart, spanEnd, 33);
+                        org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(T, f6VarArr[i7].a);
+                        q5Var.standard = true;
+                        q5Var.invert = z9;
+                        spannable.setSpan(q5Var, spanStart, spanEnd, 33);
                     }
                 }
             }
@@ -3868,9 +3868,9 @@ public class ij {
     }
 
     public final TLRPC.Document F0() {
-        s51 s51Var;
+        r51 r51Var;
         TLRPC.Document document = this.n;
-        return document != null ? document : (!D2(true) || (s51Var = this.e3) == null) ? G0(this.k) : s51Var.g;
+        return document != null ? document : (!D2(true) || (r51Var = this.e3) == null) ? G0(this.k) : r51Var.g;
     }
 
     public final boolean F2() {
@@ -3908,7 +3908,7 @@ public class ij {
                 StringBuilder sb2 = new StringBuilder("");
                 i7 = i10;
                 sb2.append(user.id);
-                spannableStringBuilder.setSpan(new d41(sb2.toString()), length, p10.length() + length, 33);
+                spannableStringBuilder.setSpan(new c41(sb2.toString()), length, p10.length() + length, 33);
             } else {
                 i7 = i10;
             }
@@ -3918,7 +3918,7 @@ public class ij {
     }
 
     public final void G() {
-        org.telegram.ui.Components.r5[] r5VarArr;
+        org.telegram.ui.Components.q5[] q5VarArr;
         int i7;
         this.n = null;
         this.o = null;
@@ -3974,12 +3974,12 @@ public class ij {
                     try {
                         Long valueOf = Long.valueOf(((TLRPC.TL_messageEntityCustomEmoji) this.k.entities.get(0)).document_id);
                         this.o = valueOf;
-                        TLRPC.Document e10 = org.telegram.ui.Components.i5.e(i10, valueOf.longValue());
+                        TLRPC.Document e10 = org.telegram.ui.Components.h5.e(i10, valueOf.longValue());
                         this.n = e10;
                         if (e10 == null) {
                             CharSequence charSequence3 = this.v;
-                            if ((charSequence3 instanceof Spanned) && (r5VarArr = (org.telegram.ui.Components.r5[]) ((Spanned) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.r5.class)) != null && r5VarArr.length == 1) {
-                                this.n = r5VarArr[0].document;
+                            if ((charSequence3 instanceof Spanned) && (q5VarArr = (org.telegram.ui.Components.q5[]) ((Spanned) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.q5.class)) != null && q5VarArr.length == 1) {
+                                this.n = q5VarArr[0].document;
                             }
                         }
                     } catch (Exception unused) {
@@ -4023,42 +4023,42 @@ public class ij {
         Integer valueOf = iArr == null ? null : Integer.valueOf(iArr[0]);
         if (valueOf == null || valueOf.intValue() < 1 || this.k == null || u2()) {
             CharSequence charSequence = this.v;
-            org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.r5.class);
-            if (r5VarArr == null || r5VarArr.length <= 0) {
+            org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) ((Spannable) charSequence).getSpans(0, charSequence.length(), org.telegram.ui.Components.q5.class);
+            if (q5VarArr == null || q5VarArr.length <= 0) {
                 this.P1 = 0;
                 return;
             }
-            this.P1 = r5VarArr.length;
-            for (int i7 = 0; i7 < r5VarArr.length; i7++) {
-                r5VarArr[i7].replaceFontMetrics(org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.l6.o2.getTextSize() + g0.L(4.0f)), -1);
-                r5VarArr[i7].full = false;
+            this.P1 = q5VarArr.length;
+            for (int i7 = 0; i7 < q5VarArr.length; i7++) {
+                q5VarArr[i7].replaceFontMetrics(org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.m6.o2.getTextSize() + g0.L(4.0f)), -1);
+                q5VarArr[i7].full = false;
             }
             return;
         }
         CharSequence charSequence2 = this.v;
         f6[] f6VarArr = (f6[]) ((Spannable) charSequence2).getSpans(0, charSequence2.length(), f6.class);
         CharSequence charSequence3 = this.v;
-        org.telegram.ui.Components.r5[] r5VarArr2 = (org.telegram.ui.Components.r5[]) ((Spannable) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.r5.class);
-        this.N1 = Math.max(valueOf.intValue(), (f6VarArr == null ? 0 : f6VarArr.length) + (r5VarArr2 == null ? 0 : r5VarArr2.length));
-        this.P1 = r5VarArr2 == null ? 0 : r5VarArr2.length;
+        org.telegram.ui.Components.q5[] q5VarArr2 = (org.telegram.ui.Components.q5[]) ((Spannable) charSequence3).getSpans(0, charSequence3.length(), org.telegram.ui.Components.q5.class);
+        this.N1 = Math.max(valueOf.intValue(), (f6VarArr == null ? 0 : f6VarArr.length) + (q5VarArr2 == null ? 0 : q5VarArr2.length));
+        this.P1 = q5VarArr2 == null ? 0 : q5VarArr2.length;
         this.O1 = 0;
-        if (r5VarArr2 != null) {
-            for (org.telegram.ui.Components.r5 r5Var : r5VarArr2) {
-                if (!r5Var.standard) {
+        if (q5VarArr2 != null) {
+            for (org.telegram.ui.Components.q5 q5Var : q5VarArr2) {
+                if (!q5Var.standard) {
                     this.O1++;
                 }
             }
         }
         int i10 = this.N1;
-        boolean z9 = (i10 - (f6VarArr == null ? 0 : f6VarArr.length)) - (r5VarArr2 == null ? 0 : r5VarArr2.length) > 0;
+        boolean z9 = (i10 - (f6VarArr == null ? 0 : f6VarArr.length)) - (q5VarArr2 == null ? 0 : q5VarArr2.length) > 0;
         this.M1 = z9;
         if (i10 == 0 || z9) {
-            if (r5VarArr2 == null || r5VarArr2.length <= 0) {
+            if (q5VarArr2 == null || q5VarArr2.length <= 0) {
                 return;
             }
-            for (int i11 = 0; i11 < r5VarArr2.length; i11++) {
-                r5VarArr2[i11].replaceFontMetrics(org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.l6.o2.getTextSize() + g0.L(4.0f)), -1);
-                r5VarArr2[i11].full = false;
+            for (int i11 = 0; i11 < q5VarArr2.length; i11++) {
+                q5VarArr2[i11].replaceFontMetrics(org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), (int) (org.telegram.ui.ActionBar.m6.o2.getTextSize() + g0.L(4.0f)), -1);
+                q5VarArr2[i11].full = false;
             }
             return;
         }
@@ -4069,22 +4069,22 @@ public class ij {
             case 0:
             case 1:
             case 2:
-                TextPaint[] textPaintArr = org.telegram.ui.ActionBar.l6.y2;
+                TextPaint[] textPaintArr = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z10 ? textPaintArr[0] : textPaintArr[2];
                 i13 = 1;
                 break;
             case 3:
-                TextPaint[] textPaintArr2 = org.telegram.ui.ActionBar.l6.y2;
+                TextPaint[] textPaintArr2 = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z10 ? textPaintArr2[1] : textPaintArr2[3];
                 i13 = 1;
                 break;
             case 4:
-                TextPaint[] textPaintArr3 = org.telegram.ui.ActionBar.l6.y2;
+                TextPaint[] textPaintArr3 = org.telegram.ui.ActionBar.m6.y2;
                 textPaint = z10 ? textPaintArr3[2] : textPaintArr3[4];
                 i13 = 1;
                 break;
             case 5:
-                TextPaint[] textPaintArr4 = org.telegram.ui.ActionBar.l6.y2;
+                TextPaint[] textPaintArr4 = org.telegram.ui.ActionBar.m6.y2;
                 if (z10) {
                     textPaint = textPaintArr4[3];
                     break;
@@ -4093,7 +4093,7 @@ public class ij {
                     break;
                 }
             case 6:
-                TextPaint[] textPaintArr5 = org.telegram.ui.ActionBar.l6.y2;
+                TextPaint[] textPaintArr5 = org.telegram.ui.ActionBar.m6.y2;
                 if (z10) {
                     textPaint = textPaintArr5[4];
                     break;
@@ -4103,7 +4103,7 @@ public class ij {
                 }
             default:
                 int i14 = this.N1 > 9 ? 0 : -1;
-                textPaint = org.telegram.ui.ActionBar.l6.y2[5];
+                textPaint = org.telegram.ui.ActionBar.m6.y2[5];
                 i13 = i14;
                 break;
         }
@@ -4114,12 +4114,12 @@ public class ij {
                 f6Var.c = textSize;
             }
         }
-        if (r5VarArr2 == null || r5VarArr2.length <= 0) {
+        if (q5VarArr2 == null || q5VarArr2.length <= 0) {
             return;
         }
-        for (int i15 = 0; i15 < r5VarArr2.length; i15++) {
-            r5VarArr2[i15].replaceFontMetrics(textPaint.getFontMetricsInt(), textSize, i13);
-            r5VarArr2[i15].full = true;
+        for (int i15 = 0; i15 < q5VarArr2.length; i15++) {
+            q5VarArr2[i15].replaceFontMetrics(textPaint.getFontMetricsInt(), textSize, i13);
+            q5VarArr2[i15].full = true;
         }
     }
 
@@ -4297,7 +4297,7 @@ public class ij {
         if ((i7 == 0 || i7 == 19 || i7 == 36) && this.k.peer_id != null && (charSequence = this.v) != null && (charSequence.length() != 0 || this.W1)) {
             if (this.Q1) {
                 int A1 = (!g0.Q1() || this.T == 0) ? A1() : g0.L(530.0f);
-                TextPaint textPaint = org.telegram.ui.ActionBar.l6.o2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.m6.o2;
                 float textSize = textPaint != null ? textPaint.getTextSize() : 0.0f;
                 if (Math.abs(this.R1 - A1) > (this.D == 36 ? 0 : g0.L(52.0f)) || this.S1 != g0.p || this.U1 != textSize || this.T1 != P2()) {
                     this.Q1 = false;
@@ -4306,7 +4306,7 @@ public class ij {
             if (!this.Q1) {
                 this.Q1 = true;
                 TLRPC.User a22 = p3() ? qp.s1(this.I1).a2(Long.valueOf(this.k.from_id.user_id)) : null;
-                TextPaint textPaint2 = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.l6.x2 : org.telegram.ui.ActionBar.l6.o2;
+                TextPaint textPaint2 = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
                 int[] iArr = i() ? new int[1] : null;
                 CharSequence m10 = i6.m(this.v, textPaint2.getFontMetricsInt(), false, iArr, 0);
                 this.v = m10;
@@ -5191,12 +5191,12 @@ public class ij {
                                             j20Var2.A.t = serializedData.readFloat(false);
                                             int i10 = 0;
                                             while (i10 < 4) {
-                                                rd0 rd0Var = i10 == 0 ? (rd0) j20Var2.A.p.b : i10 == 1 ? (rd0) j20Var2.A.p.c : i10 == 2 ? (rd0) j20Var2.A.p.d : (rd0) j20Var2.A.p.e;
-                                                rd0Var.a = serializedData.readFloat(false);
-                                                rd0Var.b = serializedData.readFloat(false);
-                                                rd0Var.c = serializedData.readFloat(false);
-                                                rd0Var.d = serializedData.readFloat(false);
-                                                rd0Var.e = serializedData.readFloat(false);
+                                                qd0 qd0Var = i10 == 0 ? (qd0) j20Var2.A.p.b : i10 == 1 ? (qd0) j20Var2.A.p.c : i10 == 2 ? (qd0) j20Var2.A.p.d : (qd0) j20Var2.A.p.e;
+                                                qd0Var.a = serializedData.readFloat(false);
+                                                qd0Var.b = serializedData.readFloat(false);
+                                                qd0Var.c = serializedData.readFloat(false);
+                                                qd0Var.d = serializedData.readFloat(false);
+                                                qd0Var.e = serializedData.readFloat(false);
                                                 i10++;
                                             }
                                         }
@@ -5598,16 +5598,16 @@ public class ij {
     }
 
     public final long S1() {
-        s51 s51Var = this.e3;
-        if (s51Var != null) {
-            return s51Var.g.size;
+        r51 r51Var = this.e3;
+        if (r51Var != null) {
+            return r51Var.g.size;
         }
-        s51 s51Var2 = this.f3;
-        if (s51Var2 != null) {
-            return s51Var2.g.size;
+        r51 r51Var2 = this.f3;
+        if (r51Var2 != null) {
+            return r51Var2.g.size;
         }
-        s51 s51Var3 = this.g3;
-        return s51Var3 != null ? s51Var3.g.size : p1(n1(this.k));
+        r51 r51Var3 = this.g3;
+        return r51Var3 != null ? r51Var3.g.size : p1(n1(this.k));
     }
 
     public final boolean S2() {
@@ -5656,14 +5656,14 @@ public class ij {
         if (message == null) {
             return false;
         }
-        if (!R4(message) && (!h4() || !t11.k(this))) {
+        if (!R4(message) && (!h4() || !s11.k(this))) {
             return false;
         }
         TLRPC.Message message2 = this.k;
         if (!message2.voiceTranscriptionOpen || message2.voiceTranscription == null) {
             return false;
         }
-        return message2.voiceTranscriptionFinal || t11.j(this);
+        return message2.voiceTranscriptionFinal || s11.j(this);
     }
 
     public final String U1() {
@@ -5976,7 +5976,7 @@ public class ij {
             return (message == null || (messageMedia2 = message.media) == null || messageMedia2.webpage == null || !bool.booleanValue()) ? false : true;
         }
         TLRPC.Message message2 = this.k;
-        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(m71.e(webPage.url))) {
+        if (message2 != null && (messageMedia = message2.media) != null && (webPage = messageMedia.webpage) != null && !TextUtils.isEmpty(l71.e(webPage.url))) {
             z9 = true;
         }
         this.R2 = Boolean.valueOf(z9);
@@ -6165,7 +6165,7 @@ public class ij {
                                 if (str2 != null) {
                                     SpannableString spannableString = new SpannableString(str2);
                                     this.v = spannableString;
-                                    spannableString.setSpan(new e41("https://".concat(str2), new vy0()), 0, this.v.length(), 33);
+                                    spannableString.setSpan(new d41("https://".concat(str2), new uy0()), 0, this.v.length(), 33);
                                 } else {
                                     this.v = str;
                                 }
@@ -6358,7 +6358,7 @@ public class ij {
                                 if (d26 != null) {
                                     if (d26.id != p10.i(i11).n) {
                                         SpannableString spannableString2 = new SpannableString(t10.i(d26));
-                                        spannableString2.setSpan(new v31(g0.o()), 0, spannableString2.length(), 33);
+                                        spannableString2.setSpan(new u31(g0.o()), 0, spannableString2.length(), 33);
                                         if (tL_messageActionSetChatWallPaper.same) {
                                             this.D = 10;
                                             this.v = id.L0(2131754567);
@@ -6376,7 +6376,7 @@ public class ij {
                                     } else {
                                         this.v = id.L0(2131754561);
                                         SpannableString spannableString3 = new SpannableString(t10.i(d27));
-                                        spannableString3.setSpan(new v31(g0.o()), 0, spannableString3.length(), 33);
+                                        spannableString3.setSpan(new u31(g0.o()), 0, spannableString3.length(), 33);
                                         this.v = g0.K2(this.v, spannableString3, "%s");
                                     }
                                 } else if (chat11 != null) {
@@ -7307,7 +7307,7 @@ public class ij {
                                                                         if (length < str12.length() && str12.charAt(length) == ')') {
                                                                             length++;
                                                                         }
-                                                                        spannableString4.setSpan(new v31(Typeface.DEFAULT), indexOf4, length, 0);
+                                                                        spannableString4.setSpan(new u31(Typeface.DEFAULT), indexOf4, length, 0);
                                                                         this.v = spannableString4;
                                                                     }
                                                                 }
@@ -7359,7 +7359,7 @@ public class ij {
                                                                         if (length2 < str13.length() && str13.charAt(length2) == ')') {
                                                                             length2++;
                                                                         }
-                                                                        spannableString5.setSpan(new v31(Typeface.DEFAULT), indexOf5, length2, 0);
+                                                                        spannableString5.setSpan(new u31(Typeface.DEFAULT), indexOf5, length2, 0);
                                                                         this.v = spannableString5;
                                                                     }
                                                                 }
@@ -7388,7 +7388,7 @@ public class ij {
                                                                             StringBuilder sb5 = new StringBuilder("https://");
                                                                             com.google.android.recaptcha.internal.a.s(sb5, qp.s1(i11).U2, "/", n11, "/");
                                                                             sb5.append(botApp.short_name);
-                                                                            spannableString6.setSpan(new d41(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
+                                                                            spannableString6.setSpan(new c41(sb5.toString()), indexOf6, str15.length() + indexOf6, 33);
                                                                         }
                                                                         this.v = spannableString6;
                                                                     } else {
@@ -7399,7 +7399,7 @@ public class ij {
                                                                         int indexOf7 = L05.indexOf("%1$s");
                                                                         SpannableString spannableString7 = new SpannableString(String.format(L05, str14));
                                                                         if (indexOf7 >= 0 && !TextUtils.isEmpty(str14)) {
-                                                                            spannableString7.setSpan(new d41("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
+                                                                            spannableString7.setSpan(new c41("http://".concat(str14)), indexOf7, str14.length() + indexOf7, 33);
                                                                         }
                                                                         this.v = spannableString7;
                                                                     }
@@ -7522,7 +7522,7 @@ public class ij {
                                                                     }
                                                                     todoItem = null;
                                                                     if (todoItem != null) {
-                                                                        org.telegram.ui.ActionBar.l6.P();
+                                                                        org.telegram.ui.ActionBar.m6.P();
                                                                         Spannable g02 = g0(todoItem);
                                                                         if (P3()) {
                                                                             this.v = id.U(!isEmpty ? 2131744062 : 2131744058, g02);
@@ -7785,18 +7785,18 @@ public class ij {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            ArrayList arrayList2 = ((q51) obj).d;
+            ArrayList arrayList2 = ((p51) obj).d;
             int size2 = arrayList2.size();
             int i10 = 0;
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                ((s51) obj2).e(z9);
+                ((r51) obj2).e(z9);
             }
         }
-        this.e3 = u51.a0(this.c3);
-        this.f3 = u51.b0(this.c3);
-        this.g3 = u51.N(this.c3);
+        this.e3 = t51.a0(this.c3);
+        this.f3 = t51.b0(this.c3);
+        this.g3 = t51.N(this.c3);
     }
 
     public final void f(int i7, long j3, boolean z9) {
@@ -7822,8 +7822,8 @@ public class ij {
             return;
         }
         this.t = true;
-        org.telegram.ui.Components.i5.g(this.I1).b(this.o.longValue(), new org.telegram.ui.Components.f5() { // from class: org.telegram.messenger.yi
-            @Override // org.telegram.ui.Components.f5
+        org.telegram.ui.Components.h5.g(this.I1).b(this.o.longValue(), new org.telegram.ui.Components.e5() { // from class: org.telegram.messenger.yi
+            @Override // org.telegram.ui.Components.e5
             public final void a(TLRPC.Document document) {
                 g0.h3(new hi(4, ij.this, document));
             }
@@ -7836,7 +7836,7 @@ public class ij {
             h02 = new SpannableStringBuilder(h02);
         }
         Spannable spannable = (Spannable) h02;
-        spannable.setSpan(new c41("task?" + todoItem.id, 0), 0, h02.length(), 33);
+        spannable.setSpan(new b41("task?" + todoItem.id, 0), 0, h02.length(), 33);
         return spannable;
     }
 
@@ -8017,7 +8017,7 @@ public class ij {
         }
         if (!TextUtils.isEmpty(str)) {
             String str2 = (!this.J2 || (tL_textWithEntities = this.k.translatedVoiceTranscription) == null) ? this.k.voiceTranscription : tL_textWithEntities.text;
-            return !TextUtils.isEmpty(str2) ? i6.m(str2, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false, null, 0) : str2;
+            return !TextUtils.isEmpty(str2) ? i6.m(str2, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0) : str2;
         }
         SpannableString spannableString = new SpannableString(id.M0(2131748128, null));
         spannableString.setSpan(new fi.s9(1), 0, spannableString.length(), 33);
@@ -8082,7 +8082,7 @@ public class ij {
         }
         f5.u uVar = this.o2;
         if ((uVar != null && !p2()) || ((tL_messageReactions = this.k.reactions) != null && !tL_messageReactions.results.isEmpty())) {
-            org.telegram.ui.ActionBar.l6.Q();
+            org.telegram.ui.ActionBar.m6.Q();
             StringBuilder sb2 = this.D0;
             if (sb2 == null) {
                 this.D0 = new StringBuilder();
@@ -8110,9 +8110,9 @@ public class ij {
                         if (d == null) {
                             d = "";
                         }
-                        m10 = i6.m(d, org.telegram.ui.ActionBar.l6.w2.getFontMetricsInt(), false, null, 0);
+                        m10 = i6.m(d, org.telegram.ui.ActionBar.m6.w2.getFontMetricsInt(), false, null, 0);
                     }
-                    StaticLayout staticLayout = new StaticLayout(m10, org.telegram.ui.ActionBar.l6.w2, g0.L(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    StaticLayout staticLayout = new StaticLayout(m10, org.telegram.ui.ActionBar.m6.w2, g0.L(2000.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     if (staticLayout.getLineCount() > 0) {
                         float lineWidth = staticLayout.getLineWidth(0);
                         float lineLeft = staticLayout.getLineLeft(0);
@@ -8217,8 +8217,8 @@ public class ij {
     }
 
     public final boolean j5() {
-        s51 s51Var;
-        return (!D2(true) || (s51Var = this.e3) == null) ? this.x0 : s51Var.b();
+        r51 r51Var;
+        return (!D2(true) || (r51Var = this.e3) == null) ? this.x0 : r51Var.b();
     }
 
     public final void k(CharSequence charSequence) {
@@ -8228,7 +8228,7 @@ public class ij {
         TLRPC.User a22 = p3() ? qp.s1(this.I1).a2(Long.valueOf(this.k.from_id.user_id)) : null;
         this.v = charSequence;
         ArrayList O0 = O0();
-        TextPaint textPaint = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.l6.x2 : org.telegram.ui.ActionBar.l6.o2;
+        TextPaint textPaint = n1(this.k) instanceof TLRPC.TL_messageMediaGame ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
         int[] iArr = i() ? new int[1] : null;
         CharSequence m10 = i6.m(this.v, textPaint.getFontMetricsInt(), false, iArr, 0);
         this.v = m10;
@@ -8308,9 +8308,9 @@ public class ij {
                 if (!F3() || (n1(this.k) instanceof TLRPC.TL_messageMediaGame) || TextUtils.isEmpty(str)) {
                     return;
                 }
-                CharSequence m10 = i6.m(str, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false, null, 0);
+                CharSequence m10 = i6.m(str, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                 this.z = m10;
-                this.z = B5(m10, arrayList, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false);
+                this.z = B5(m10, arrayList, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
                 boolean z11 = z9 || (!(this.k.send_state != 0 ? false : arrayList.isEmpty() ^ true) && (this.T != 0 || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_old) || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_layer68) || (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto_layer74) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_old) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_layer68) || (n1(this.k) instanceof TLRPC.TL_messageMediaDocument_layer74) || ((N3() && this.k.send_state != 0) || this.k.id < 0)));
                 if (z11) {
                     if (M(this.z)) {
@@ -8323,7 +8323,7 @@ public class ij {
                     h(P3(), this.z, true, 0, 0, true);
                 }
                 c(this.z, false, z11);
-                this.z = org.telegram.ui.Components.a00.a(this.z, true);
+                this.z = org.telegram.ui.Components.zz.a(this.z, true);
                 if (L4(this.k)) {
                     h(P3(), this.z, true, 3, (int) L0(), false);
                 } else if (I3() || R4(this.k)) {
@@ -8484,9 +8484,9 @@ public class ij {
             this.A = null;
             return;
         }
-        CharSequence m10 = i6.m(str, org.telegram.ui.ActionBar.l6.b3.getFontMetricsInt(), false, null, 0);
+        CharSequence m10 = i6.m(str, org.telegram.ui.ActionBar.m6.b3.getFontMetricsInt(), false, null, 0);
         this.A = m10;
-        Spannable B5 = B5(m10, arrayList, org.telegram.ui.ActionBar.l6.b3.getFontMetricsInt(), false);
+        Spannable B5 = B5(m10, arrayList, org.telegram.ui.ActionBar.m6.b3.getFontMetricsInt(), false);
         this.A = B5;
         b(B5, arrayList, P3(), true, false, false, 0);
     }
@@ -8508,7 +8508,7 @@ public class ij {
             this.R1 = g0.L(530.0f);
         }
         this.S1 = g0.p;
-        TextPaint textPaint = org.telegram.ui.ActionBar.l6.o2;
+        TextPaint textPaint = org.telegram.ui.ActionBar.m6.o2;
         this.U1 = textPaint != null ? textPaint.getTextSize() : 0.0f;
         boolean P2 = P2();
         this.T1 = P2;
@@ -8950,18 +8950,18 @@ public class ij {
         CharSequence charSequence4 = this.v;
         this.A2 = (charSequence4 instanceof Spanned) && ((ni.j[]) ((Spanned) charSequence4).getSpans(0, charSequence4.length(), ni.j.class)).length > 0;
         CharSequence charSequence5 = this.v;
-        this.E2 = (charSequence5 instanceof Spanned) && ((ug0[]) ((Spanned) charSequence5).getSpans(0, charSequence5.length(), ug0.class)).length > 0;
+        this.E2 = (charSequence5 instanceof Spanned) && ((tg0[]) ((Spanned) charSequence5).getSpans(0, charSequence5.length(), tg0.class)).length > 0;
         this.F2 = false;
         this.G2 = false;
-        CharSequence a10 = org.telegram.ui.Components.a00.a(this.v, true);
+        CharSequence a10 = org.telegram.ui.Components.zz.a(this.v, true);
         this.v = a10;
         if (a10 instanceof Spanned) {
             Spanned spanned = (Spanned) a10;
-            vg0[] vg0VarArr = (vg0[]) spanned.getSpans(0, spanned.length(), vg0.class);
-            for (vg0 vg0Var : vg0VarArr) {
-                vg0Var.b = false;
+            ug0[] ug0VarArr = (ug0[]) spanned.getSpans(0, spanned.length(), ug0.class);
+            for (ug0 ug0Var : ug0VarArr) {
+                ug0Var.b = false;
             }
-            this.F2 = vg0VarArr.length == 1 && spanned.getSpanStart(vg0VarArr[0]) == 0 && spanned.getSpanEnd(vg0VarArr[0]) == spanned.length();
+            this.F2 = ug0VarArr.length == 1 && spanned.getSpanStart(ug0VarArr[0]) == 0 && spanned.getSpanEnd(ug0VarArr[0]) == spanned.length();
             ni.j[] jVarArr = (ni.j[]) spanned.getSpans(0, spanned.length(), ni.j.class);
             this.G2 = jVarArr.length == 1 && spanned.getSpanStart(jVarArr[0]) == 0 && spanned.getSpanEnd(jVarArr[0]) == spanned.length();
         }
@@ -8971,11 +8971,11 @@ public class ij {
                 charSequence3 = charSequence6;
             }
             SpannableStringBuilder spannableStringBuilder = charSequence6 instanceof SpannableStringBuilder ? (SpannableStringBuilder) charSequence6 : new SpannableStringBuilder(charSequence6);
-            w31 w31Var = new w31(true);
-            w31Var.b(-1);
-            w31Var.d();
-            e2 e2Var = new e2(1, w31Var);
-            e2Var.a(org.telegram.ui.ActionBar.l6.Sc);
+            v31 v31Var = new v31(true);
+            v31Var.b(-1);
+            v31Var.d();
+            e2 e2Var = new e2(1, v31Var);
+            e2Var.a(org.telegram.ui.ActionBar.m6.Sc);
             e2Var.n = -g0.L(10.0f);
             spannableStringBuilder.append((CharSequence) " _");
             spannableStringBuilder.setSpan(e2Var, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
@@ -8990,7 +8990,7 @@ public class ij {
                     L = g0.L(15.0f);
                 }
                 int i23 = l12;
-                TextPaint textPaint4 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.l6.x2 : org.telegram.ui.ActionBar.l6.o2;
+                TextPaint textPaint4 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
                 CharSequence charSequence7 = this.v;
                 StaticLayout g52 = g5(charSequence7, textPaint4, i23, 1.0f, this.P1 < 4 ? -1.0f : 0.0f, this.N1 <= 0, Layout.Alignment.ALIGN_NORMAL);
                 if (this.h2) {
@@ -9109,7 +9109,7 @@ public class ij {
                                                 }
                                                 if (fjVar.H) {
                                                     int i31 = i30 - i29;
-                                                    textPaint = i31 > 220 ? org.telegram.ui.ActionBar.l6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.l6.q2 : org.telegram.ui.ActionBar.l6.p2;
+                                                    textPaint = i31 > 220 ? org.telegram.ui.ActionBar.m6.r2 : i31 > 80 ? org.telegram.ui.ActionBar.m6.q2 : org.telegram.ui.ActionBar.m6.p2;
                                                 } else {
                                                     textPaint = textPaint4;
                                                 }
@@ -9379,9 +9379,9 @@ public class ij {
                                                         if (fjVar.U) {
                                                             this.t2 = Math.max(this.t2, i14);
                                                         } else {
-                                                            ny0 ny0Var = fjVar.L;
-                                                            if (ny0Var != null) {
-                                                                this.t2 = (int) Math.max(this.t2, Math.min(ny0Var.c + g0.L(15.0f), fjVar.e == null ? f11 : r3.getWidth()));
+                                                            my0 my0Var = fjVar.L;
+                                                            if (my0Var != null) {
+                                                                this.t2 = (int) Math.max(this.t2, Math.min(my0Var.c + g0.L(15.0f), fjVar.e == null ? f11 : r3.getWidth()));
                                                             }
                                                         }
                                                         fjVar.y.clear();
@@ -9685,7 +9685,7 @@ public class ij {
         }
         l12 -= L;
         int i232 = l12;
-        TextPaint textPaint42 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.l6.x2 : org.telegram.ui.ActionBar.l6.o2;
+        TextPaint textPaint42 = !(n1(this.k) instanceof TLRPC.TL_messageMediaGame) ? org.telegram.ui.ActionBar.m6.x2 : org.telegram.ui.ActionBar.m6.o2;
         CharSequence charSequence72 = this.v;
     }
 
@@ -9751,7 +9751,7 @@ public class ij {
                 b(spannableStringBuilder, this.k.reply_to.quote_entities, P3(), false, false, false, 0);
                 SpannableString spannableString = new SpannableString("q ");
                 org.telegram.ui.Components.wp wpVar = new org.telegram.ui.Components.wp(R.drawable.mini_quote, 0);
-                wpVar.y = org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.q6, false);
+                wpVar.y = org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.q6, false);
                 spannableString.setSpan(wpVar, 0, 1, 33);
                 M2 = new SpannableStringBuilder(spannableString).append((CharSequence) spannableStringBuilder).append('\n').append(M2);
             }
@@ -9929,12 +9929,12 @@ public class ij {
                             a8.g(e10, true);
                         }
                     }
-                    CharSequence m10 = i6.m(this.y, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false, null, 0);
+                    CharSequence m10 = i6.m(this.y, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                     this.y = m10;
                     ArrayList arrayList = this.z1;
                     if (arrayList != null) {
                         b(m10, arrayList, N3(), z9, false, !z9, 0);
-                        B5(this.y, this.z1, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false);
+                        B5(this.y, this.z1, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false);
                     }
                     if (i7 != 0) {
                         if (!(this.y instanceof Spannable)) {
@@ -10357,7 +10357,7 @@ public class ij {
                     }
                     CharSequence E5 = E5(a02, "un1", chat);
                     this.v = E5;
-                    this.v = i6.m(E5, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), false, null, 0);
+                    this.v = i6.m(E5, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), false, null, 0);
                     return;
                 }
                 CharSequence charSequence = this.C.v;
@@ -10369,17 +10369,17 @@ public class ij {
                     this.v = E5(M014, "un1", chat);
                     return;
                 }
-                CharSequence cloneSpans = org.telegram.ui.Components.r5.cloneSpans(this.C.v);
+                CharSequence cloneSpans = org.telegram.ui.Components.q5.cloneSpans(this.C.v);
                 if (cloneSpans.length() > 20) {
                     cloneSpans = cloneSpans.subSequence(0, 20);
                     z9 = true;
                 } else {
                     z9 = false;
                 }
-                CharSequence m10 = i6.m(cloneSpans, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt(), true, null, 0);
+                CharSequence m10 = i6.m(cloneSpans, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt(), true, null, 0);
                 ij ijVar2 = this.C;
                 if (ijVar2 != null && ijVar2.k != null) {
-                    m10 = ijVar2.A5(m10, org.telegram.ui.ActionBar.l6.o2.getFontMetricsInt());
+                    m10 = ijVar2.A5(m10, org.telegram.ui.ActionBar.m6.o2.getFontMetricsInt());
                 }
                 ui.h(this.C, (Spannable) m10);
                 if (z9) {
@@ -10453,7 +10453,7 @@ public class ij {
                 return "";
             }
             SpannableString spannableString = new SpannableString(str);
-            spannableString.setSpan(new e41("https://".concat(str), new vy0()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new d41("https://".concat(str), new uy0()), 0, spannableString.length(), 33);
             return spannableString;
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaDice) {
@@ -11626,7 +11626,7 @@ public class ij {
         this.I2 = false;
         this.J2 = false;
         this.K2 = false;
-        org.telegram.ui.ActionBar.l6.Q();
+        org.telegram.ui.ActionBar.m6.Q();
         this.h2 = z11;
         this.i2 = z12;
         this.l2 = z13 || B0(message) == p10.i(i7).e();
@@ -11681,9 +11681,9 @@ public class ij {
         k0();
         if (z9) {
             if (n1(this.k) instanceof TLRPC.TL_messageMediaGame) {
-                textPaint = org.telegram.ui.ActionBar.l6.x2;
+                textPaint = org.telegram.ui.ActionBar.m6.x2;
             } else {
-                textPaint = org.telegram.ui.ActionBar.l6.o2;
+                textPaint = org.telegram.ui.ActionBar.m6.o2;
             }
             int[] iArr = i() ? new int[1] : null;
             CharSequence m10 = i6.m(this.v, textPaint.getFontMetricsInt(), r15, iArr, r15);
@@ -11698,7 +11698,7 @@ public class ij {
             L5();
             TLRPC.Document F0 = F0();
             if (F0 != null) {
-                this.F1 = t5.f(F0, org.telegram.ui.ActionBar.l6.Zc, 1.0f, null);
+                this.F1 = t5.f(F0, org.telegram.ui.ActionBar.m6.Zc, 1.0f, null);
             }
         }
         this.Q1 = z9;
@@ -12584,9 +12584,9 @@ public class ij {
                                                                         this.v = str3;
                                                                     }
                                                                     if (!(n1(this.k) instanceof TLRPC.TL_messageMediaGame)) {
-                                                                        textPaint = org.telegram.ui.ActionBar.l6.x2;
+                                                                        textPaint = org.telegram.ui.ActionBar.m6.x2;
                                                                     } else {
-                                                                        textPaint = org.telegram.ui.ActionBar.l6.o2;
+                                                                        textPaint = org.telegram.ui.ActionBar.m6.o2;
                                                                     }
                                                                     iArr3 = !i() ? new int[1] : iArr2;
                                                                     CharSequence m10 = i6.m(this.v, textPaint.getFontMetricsInt(), false, iArr3, 0);
@@ -13020,7 +13020,7 @@ public class ij {
                                                         TLRPC.TL_channelAdminLogEventActionChangeColor tL_channelAdminLogEventActionChangeColor = (TLRPC.TL_channelAdminLogEventActionChangeColor) tL_channelAdminLogEvent.action;
                                                         int i32 = V ? 2131751071 : 2131751070;
                                                         int i33 = tL_channelAdminLogEventActionChangeColor.prev_value;
-                                                        int[][] iArr4 = org.telegram.ui.Components.w8.L;
+                                                        int[][] iArr4 = org.telegram.ui.Components.v8.L;
                                                         this.v = E5(id.Z(i32, id.M0(new int[]{2131752012, 2131752017, 2131752008, 2131752018, 2131752019, 2131752020, 2131752013}[i33 % 7], null).toLowerCase(), id.M0(new int[]{2131752012, 2131752017, 2131752008, 2131752018, 2131752019, 2131752020, 2131752013}[tL_channelAdminLogEventActionChangeColor.new_value % 7], null).toLowerCase()), "un1", user);
                                                     } else if (channelAdminLogEventAction instanceof TLRPC.TL_channelAdminLogEventActionChangePeerColor) {
                                                         boolean V2 = t3.V(chat2);
@@ -13031,9 +13031,9 @@ public class ij {
                                                             spannableStringBuilder4.append((CharSequence) "c");
                                                             str = str;
                                                             i10 = i7;
-                                                            ey0 ey0Var = new ey0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
-                                                            ey0Var.a(g0.L(18.0f));
-                                                            spannableStringBuilder4.setSpan(ey0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                                            dy0 dy0Var = new dy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.prev_value.color);
+                                                            dy0Var.a(g0.L(18.0f));
+                                                            spannableStringBuilder4.setSpan(dy0Var, spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                                         } else {
                                                             str = str;
                                                             i10 = i7;
@@ -13043,7 +13043,7 @@ public class ij {
                                                                 spannableStringBuilder4.append((CharSequence) ", ");
                                                             }
                                                             spannableStringBuilder4.append((CharSequence) "e");
-                                                            spannableStringBuilder4.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
+                                                            spannableStringBuilder4.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder4.length() - 1, spannableStringBuilder4.length(), 33);
                                                         }
                                                         if (spannableStringBuilder4.length() == 0) {
                                                             spannableStringBuilder4.append((CharSequence) id.L0(2131751013));
@@ -13051,16 +13051,16 @@ public class ij {
                                                         SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 1) != 0) {
                                                             spannableStringBuilder5.append((CharSequence) "c");
-                                                            ey0 ey0Var2 = new ey0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
-                                                            ey0Var2.a(g0.L(18.0f));
-                                                            spannableStringBuilder5.setSpan(ey0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
+                                                            dy0 dy0Var2 = new dy0(false, i10, tL_channelAdminLogEventActionChangePeerColor.new_value.color);
+                                                            dy0Var2.a(g0.L(18.0f));
+                                                            spannableStringBuilder5.setSpan(dy0Var2, spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
                                                         }
                                                         if ((tL_channelAdminLogEventActionChangePeerColor.new_value.flags & 2) != 0) {
                                                             if (spannableStringBuilder5.length() > 0) {
                                                                 spannableStringBuilder5.append((CharSequence) ", ");
                                                             }
                                                             spannableStringBuilder5.append((CharSequence) "e");
-                                                            spannableStringBuilder5.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
+                                                            spannableStringBuilder5.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder5.length() - 1, spannableStringBuilder5.length(), 33);
                                                         }
                                                         if (spannableStringBuilder5.length() == 0) {
                                                             spannableStringBuilder5.append((CharSequence) id.L0(2131751013));
@@ -13075,16 +13075,16 @@ public class ij {
                                                             SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 1) != 0) {
                                                                 spannableStringBuilder7.append((CharSequence) "c");
-                                                                ey0 ey0Var3 = new ey0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
-                                                                ey0Var3.a(g0.L(18.0f));
-                                                                spannableStringBuilder7.setSpan(ey0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
+                                                                dy0 dy0Var3 = new dy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.color);
+                                                                dy0Var3.a(g0.L(18.0f));
+                                                                spannableStringBuilder7.setSpan(dy0Var3, spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder7.length() > 0) {
                                                                     spannableStringBuilder7.append((CharSequence) ", ");
                                                                 }
                                                                 spannableStringBuilder7.append((CharSequence) "e");
-                                                                spannableStringBuilder7.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
+                                                                spannableStringBuilder7.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangeProfilePeerColor.prev_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder7.length() - 1, spannableStringBuilder7.length(), 33);
                                                             }
                                                             if (spannableStringBuilder7.length() == 0) {
                                                                 spannableStringBuilder7.append((CharSequence) id.L0(2131751013));
@@ -13092,16 +13092,16 @@ public class ij {
                                                             SpannableStringBuilder spannableStringBuilder8 = new SpannableStringBuilder();
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 1) != 0) {
                                                                 spannableStringBuilder8.append((CharSequence) "c");
-                                                                ey0 ey0Var4 = new ey0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
-                                                                ey0Var4.a(g0.L(18.0f));
-                                                                spannableStringBuilder8.setSpan(ey0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
+                                                                dy0 dy0Var4 = new dy0(true, i7, tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.color);
+                                                                dy0Var4.a(g0.L(18.0f));
+                                                                spannableStringBuilder8.setSpan(dy0Var4, spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
                                                             }
                                                             if ((tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.flags & 2) != 0) {
                                                                 if (spannableStringBuilder8.length() > 0) {
                                                                     spannableStringBuilder8.append((CharSequence) ", ");
                                                                 }
                                                                 spannableStringBuilder8.append((CharSequence) "e");
-                                                                spannableStringBuilder8.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
+                                                                spannableStringBuilder8.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangeProfilePeerColor.new_value.background_emoji_id, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), spannableStringBuilder8.length() - 1, spannableStringBuilder8.length(), 33);
                                                             }
                                                             if (spannableStringBuilder8.length() == 0) {
                                                                 spannableStringBuilder8.append((CharSequence) id.L0(2131751013));
@@ -13117,7 +13117,7 @@ public class ij {
                                                                     z10 = true;
                                                                 } else {
                                                                     spannableString3 = new SpannableString("e");
-                                                                    spannableString3.setSpan(new org.telegram.ui.Components.r5(m5.f(tL_channelAdminLogEventActionChangeEmojiStatus.prev_value), org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                    spannableString3.setSpan(new org.telegram.ui.Components.q5(m5.f(tL_channelAdminLogEventActionChangeEmojiStatus.prev_value), org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     z10 = false;
                                                                 }
                                                                 int g10 = m5.g(tL_channelAdminLogEventActionChangeEmojiStatus.new_value);
@@ -13125,7 +13125,7 @@ public class ij {
                                                                     spannableString4 = new SpannableString(id.L0(2131751013));
                                                                 } else {
                                                                     SpannableString spannableString5 = new SpannableString("e");
-                                                                    spannableString5.setSpan(new org.telegram.ui.Components.r5(m5.f(tL_channelAdminLogEventActionChangeEmojiStatus.new_value), org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                    spannableString5.setSpan(new org.telegram.ui.Components.q5(m5.f(tL_channelAdminLogEventActionChangeEmojiStatus.new_value), org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     spannableString4 = spannableString5;
                                                                 }
                                                                 SpannableStringBuilder K2 = g0.K2(g0.K2(new SpannableStringBuilder(id.L0(z10 ? g10 != 0 ? V4 ? 2131751065 : 2131751064 : V4 ? 2131751066 : 2131751059 : g10 != 0 ? V4 ? 2131751062 : 2131751061 : V4 ? 2131751063 : 2131751060)), spannableString3, "%1$s"), spannableString4, "%2$s");
@@ -13156,14 +13156,14 @@ public class ij {
                                                                         spannableString = new SpannableString(id.L0(2131751013));
                                                                     } else {
                                                                         spannableString = new SpannableString("e");
-                                                                        spannableString.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangeBackgroundEmoji.prev_value, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                        spannableString.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangeBackgroundEmoji.prev_value, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     }
                                                                     this.v = g0.K2(this.v, spannableString, "%1$s");
                                                                     if (tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value == 0) {
                                                                         spannableString2 = new SpannableString(id.L0(2131751013));
                                                                     } else {
                                                                         spannableString2 = new SpannableString("e");
-                                                                        spannableString2.setSpan(new org.telegram.ui.Components.r5(tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value, org.telegram.ui.ActionBar.l6.s2.getFontMetricsInt()), 0, 1, 33);
+                                                                        spannableString2.setSpan(new org.telegram.ui.Components.q5(tL_channelAdminLogEventActionChangeBackgroundEmoji.new_value, org.telegram.ui.ActionBar.m6.s2.getFontMetricsInt()), 0, 1, 33);
                                                                     }
                                                                     this.v = g0.K2(this.v, spannableString2, "%2$s");
                                                                 } else {

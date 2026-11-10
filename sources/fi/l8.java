@@ -5,9 +5,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.LinearLayout;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l8 extends LinearLayout {
     public float a;
@@ -15,7 +15,7 @@ public final class l8 extends LinearLayout {
     public ValueAnimator c;
     public ValueAnimator d;
     public final Paint e;
-    public final org.telegram.ui.Components.w5 f;
+    public final org.telegram.ui.Components.v5 f;
     public final /* synthetic */ n8 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,7 +23,7 @@ public final class l8 extends LinearLayout {
         super(context);
         this.h = n8Var;
         this.e = new Paint(1);
-        this.f = new org.telegram.ui.Components.w5(this);
+        this.f = new org.telegram.ui.Components.v5(this);
     }
 
     public static /* synthetic */ void a(l8 l8Var, ValueAnimator valueAnimator) {
@@ -50,18 +50,18 @@ public final class l8 extends LinearLayout {
         ofFloat.addUpdateListener(new k8(this, r1));
         this.c.addListener(new ch.y(12, this, z9));
         this.c.setDuration(320L);
-        this.c.setInterpolator(xq.h);
+        this.c.setInterpolator(wq.h);
         this.c.start();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int i7 = org.telegram.ui.ActionBar.l6.a7;
+        int i7 = org.telegram.ui.ActionBar.m6.a7;
         n8 n8Var = this.h;
         s8 s8Var = n8Var.W;
-        int i10 = s8.U1;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(i7, s8Var.I0);
+        int i10 = s8.X1;
+        int w02 = org.telegram.ui.ActionBar.m6.w0(i7, s8Var.I0);
         Paint paint = this.e;
         paint.setColor(w02);
         paint.setAlpha((int) (this.f.e(false, n8Var.f.canScrollVertically(1) ? 1.0f : 0.0f) * 255.0f));

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.FrameLayout;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class pl extends org.telegram.ui.ActionBar.i1 {
     public final /* synthetic */ ql x;
@@ -20,7 +20,7 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
         boolean z10;
         boolean z11;
         cn cnVar = this.x.w0;
-        org.telegram.ui.ActionBar.q4 parentLayout = cnVar.getParentLayout();
+        org.telegram.ui.ActionBar.r4 parentLayout = cnVar.getParentLayout();
         if (cnVar.kb) {
             return false;
         }
@@ -49,7 +49,7 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
 
     @Override // org.telegram.ui.ActionBar.i1
     public final void e(float f10, float f11, boolean z9) {
-        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.l lVar;
         fi.m3 m3Var;
         ql qlVar = this.x;
         cn cnVar = qlVar.w0;
@@ -58,8 +58,8 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
             cnVar.S9 = f11;
             di.u2 u2Var = cnVar.X1;
             if (u2Var == null || !u2Var.isShowing()) {
-                kVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
-                kVar.setTranslationY(f10);
+                lVar = ((org.telegram.ui.ActionBar.f2) cnVar).actionBar;
+                lVar.setTranslationY(f10);
                 jk jkVar = cnVar.zb;
                 if (jkVar != null) {
                     jkVar.setTranslationY(cnVar.R9 + (cnVar.C1 != null ? r2.getCurrentHeight() : 0));
@@ -79,15 +79,15 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
                 cnVar.Q.setTranslationY(f10 / 2.0f);
                 int i7 = (int) f10;
                 cnVar.l1.setBackgroundTranslation(i7);
-                org.telegram.ui.Components.u40 u40Var = cnVar.p3;
-                if (u40Var != null) {
-                    u40Var.g(f10);
+                org.telegram.ui.Components.t40 t40Var = cnVar.p3;
+                if (t40Var != null) {
+                    t40Var.g(f10);
                 }
                 fi.p5 p5Var = cnVar.M2;
                 if (p5Var != null) {
-                    org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) p5Var.b;
-                    w9Var.u = f10;
-                    w9Var.d.invalidate();
+                    org.telegram.ui.Components.v9 v9Var = (org.telegram.ui.Components.v9) p5Var.b;
+                    v9Var.u = f10;
+                    v9Var.d.invalidate();
                 }
                 cnVar.setFragmentPanTranslationOffset(i7);
                 cnVar.L9();
@@ -96,16 +96,16 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
                 qlVar.setNonNoveTranslation(f10);
             }
             cnVar.z0.invalidate();
-            org.telegram.ui.Components.cc ccVar = org.telegram.ui.Components.cc.w;
-            if (ccVar != null && cnVar.Cc != null) {
-                ccVar.l();
+            org.telegram.ui.Components.bc bcVar = org.telegram.ui.Components.bc.w;
+            if (bcVar != null && cnVar.Cc != null) {
+                bcVar.l();
             }
             if (org.telegram.messenger.g0.Q1() && (cnVar.getParentActivity() instanceof LaunchActivity)) {
                 org.telegram.ui.ActionBar.f2 lastFragment = ((LaunchActivity) cnVar.getParentActivity()).M().getLastFragment();
-                if (lastFragment instanceof yw) {
-                    yw ywVar = (yw) lastFragment;
-                    ywVar.w1 = f10;
-                    ywVar.k5();
+                if (lastFragment instanceof zw) {
+                    zw zwVar = (zw) lastFragment;
+                    zwVar.w1 = f10;
+                    zwVar.k5();
                 }
             }
             fi.m3 m3Var4 = cnVar.G2;
@@ -122,11 +122,11 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
 
     @Override // org.telegram.ui.ActionBar.i1
     public final void f() {
-        org.telegram.ui.Components.ad adVar;
+        org.telegram.ui.Components.zc zcVar;
         cn cnVar = this.x.w0;
         sj sjVar = cnVar.Z;
-        if (sjVar != null && (adVar = sjVar.u0) != null) {
-            adVar.run();
+        if (sjVar != null && (zcVar = sjVar.u0) != null) {
+            zcVar.run();
             sjVar.u0 = null;
         }
         fi.m3 m3Var = cnVar.G2;
@@ -138,18 +138,18 @@ public final class pl extends org.telegram.ui.ActionBar.i1 {
 
     @Override // org.telegram.ui.ActionBar.i1
     public final void g(int i7, boolean z9) {
-        org.telegram.ui.Components.ad adVar;
+        org.telegram.ui.Components.zc zcVar;
         cn cnVar = this.x.w0;
         cnVar.P4 = true;
         sj sjVar = cnVar.Z;
         if (sjVar != null) {
-            if (z9 && (adVar = sjVar.V) != null) {
-                org.telegram.messenger.g0.r(adVar);
+            if (z9 && (zcVar = sjVar.V) != null) {
+                org.telegram.messenger.g0.r(zcVar);
                 sjVar.V.run();
             }
-            org.telegram.ui.Components.f fVar = sjVar.W;
-            if (fVar != null) {
-                org.telegram.messenger.g0.r(fVar);
+            fq fqVar = sjVar.W;
+            if (fqVar != null) {
+                org.telegram.messenger.g0.r(fqVar);
                 sjVar.W.run();
             }
         }

@@ -11,39 +11,39 @@ import org.telegram.messenger.qp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.na;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.ma;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.st0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class c0 extends na {
-    public final TLRPC.TL_payments_checkedGiftCode P1;
-    public final boolean Q1;
-    public b0 R1;
-    public final String S1;
+public final class c0 extends ma {
+    public final TLRPC.TL_payments_checkedGiftCode S1;
+    public final boolean T1;
+    public b0 U1;
+    public final String V1;
 
     public c0(f2 f2Var, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode, String str) {
         super(f2Var, true);
-        this.Q1 = tL_payments_checkedGiftCode.used_date == 0;
-        this.P1 = tL_payments_checkedGiftCode;
-        this.S1 = str;
+        this.T1 = tL_payments_checkedGiftCode.used_date == 0;
+        this.S1 = tL_payments_checkedGiftCode;
+        this.V1 = str;
         this.u0 = false;
         this.v0 = false;
         N();
         b1();
-        b0 b0Var = this.R1;
-        l2 l2Var = this.c;
+        b0 b0Var = this.U1;
+        m2 m2Var = this.c;
         b0Var.getClass();
         b0Var.d = tL_payments_checkedGiftCode.used_date == 0;
         b0Var.e = f2Var;
         b0Var.f = tL_payments_checkedGiftCode;
         b0Var.h = str;
-        b0Var.n = l2Var;
+        b0Var.n = m2Var;
     }
 
     public static boolean d1(Intent intent, vf.b bVar) {
@@ -95,20 +95,20 @@ public final class c0 extends na {
         connectionsManager.sendRequest(tL_payments_checkGiftCode, new bi.f2(s12, s2Var, eVar, 22));
     }
 
-    @Override // org.telegram.ui.Components.na
-    public final pj0 L0(qj0 qj0Var) {
+    @Override // org.telegram.ui.Components.ma
+    public final oj0 L0(pj0 pj0Var) {
         b0 b0Var = new b0(this, this.I0);
-        this.R1 = b0Var;
+        this.U1 = b0Var;
         return b0Var;
     }
 
-    @Override // org.telegram.ui.Components.na
+    @Override // org.telegram.ui.Components.ma
     public final CharSequence O0() {
-        return this.Q1 ? id.M0(2131753500, null) : id.M0(2131753173, null);
+        return this.T1 ? id.M0(2131753500, null) : id.M0(2131753173, null);
     }
 
-    @Override // org.telegram.ui.Components.na
-    public final void U0(tt0 tt0Var) {
-        cc.a(this.c, new r7(14));
+    @Override // org.telegram.ui.Components.ma
+    public final void U0(st0 st0Var) {
+        bc.a(this.c, new r7(14));
     }
 }

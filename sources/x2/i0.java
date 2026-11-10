@@ -1,34 +1,10 @@
 package x2;
 
-import a8.wa;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i0 implements h2.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wa b;
-    public final /* synthetic */ u c;
-    public final /* synthetic */ c0 d;
-
-    public /* synthetic */ i0(wa waVar, u uVar, c0 c0Var, int i7) {
-        this.a = i7;
-        this.b = waVar;
-        this.c = uVar;
-        this.d = c0Var;
-    }
-
-    @Override // h2.j
-    public final void accept(Object obj) {
-        k0 k0Var = (k0) obj;
-        switch (this.a) {
-            case 0:
-                wa waVar = this.b;
-                k0Var.G(waVar.b, (g0) waVar.c, this.c, this.d);
-                break;
-            default:
-                wa waVar2 = this.b;
-                k0Var.A(waVar2.b, (g0) waVar2.c, this.c, this.d);
-                break;
-        }
-    }
+public final class i0 {
+    public Handler a;
+    public Object b;
 }

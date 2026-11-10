@@ -6,7 +6,7 @@ import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements x10 {
     public final /* synthetic */ int a = 0;
@@ -50,25 +50,25 @@ public final /* synthetic */ class t implements x10 {
                 }
                 break;
             default:
-                v9 v9Var = (v9) this.c;
+                y9 y9Var = (y9) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str2 = (String) this.e;
                 String str3 = (String) obj;
                 c20 c20Var2 = (c20) obj3;
-                String str4 = v9Var.f;
+                String str4 = y9Var.f;
                 l0 l0Var2 = this.b;
                 if (!l0.b(str4, l0Var2.t())) {
                     c20Var2.a("WALLET_CHANGED");
                     break;
                 } else {
-                    l0Var2.d0(user, str2, 0L, str3, null, v9Var.e, null, new s(11, v9Var, c20Var2), null, null);
+                    l0Var2.d0(user, str2, 0L, str3, null, y9Var.e, null, new s(11, y9Var, c20Var2), null, null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ t(v9 v9Var, l0 l0Var, TLRPC.User user, String str) {
-        this.c = v9Var;
+    public /* synthetic */ t(y9 y9Var, l0 l0Var, TLRPC.User user, String str) {
+        this.c = y9Var;
         this.b = l0Var;
         this.d = user;
         this.e = str;

@@ -17,16 +17,16 @@ import org.telegram.messenger.vi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.d5;
 import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.cv0;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.up0;
+import org.telegram.ui.Components.bv0;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class m implements d5 {
     public final boolean a;
@@ -38,10 +38,10 @@ public abstract class m implements d5 {
     public final int k;
     public final boolean l;
     public FrameLayout m;
-    public cv0 n;
-    public cv0 o;
-    public qj0 p;
-    public mz q;
+    public bv0 n;
+    public bv0 o;
+    public pj0 p;
+    public lz q;
     public TLRPC.TL_chatInviteImporter r;
     public l s;
     public String t;
@@ -91,13 +91,13 @@ public abstract class m implements d5 {
         view.animate().alpha(f10).setDuration(150L).start();
     }
 
-    public final cv0 a() {
+    public final bv0 a() {
         if (this.n == null) {
             f2 f2Var = this.g;
-            cv0 cv0Var = new cv0(f2Var.getParentActivity(), null, 16, f2Var.getResourceProvider());
-            this.n = cv0Var;
+            bv0 bv0Var = new bv0(f2Var.getParentActivity(), null, 16, f2Var.getResourceProvider());
+            this.n = bv0Var;
             boolean z9 = this.a;
-            cv0Var.d.setText(id.M0(z9 ? 2131748146 : 2131748195, null));
+            bv0Var.d.setText(id.M0(z9 ? 2131748146 : 2131748195, null));
             this.n.e.setText(id.M0(z9 ? 2131748145 : 2131748194, null));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
@@ -105,29 +105,29 @@ public abstract class m implements d5 {
         return this.n;
     }
 
-    public final mz b() {
+    public final lz b() {
         if (this.q == null) {
             f2 f2Var = this.g;
-            mz mzVar = new mz(f2Var.getParentActivity(), f2Var.getResourceProvider());
-            this.q = mzVar;
-            mzVar.setAlpha(0.0f);
+            lz lzVar = new lz(f2Var.getParentActivity(), f2Var.getResourceProvider());
+            this.q = lzVar;
+            lzVar.setAlpha(0.0f);
             if (this.B) {
-                s6.h(l6.d6, this.q, f2Var.getResourceProvider());
+                t6.h(m6.d6, this.q, f2Var.getResourceProvider());
             }
-            this.q.e(l6.d6, l6.a7, -1);
+            this.q.e(m6.d6, m6.a7, -1);
             this.q.setViewType(15);
             this.q.setMemberRequestButton(this.a);
         }
         return this.q;
     }
 
-    public final cv0 c() {
+    public final bv0 c() {
         if (this.o == null) {
             f2 f2Var = this.g;
-            cv0 cv0Var = new cv0(f2Var.getParentActivity(), null, 1, f2Var.getResourceProvider());
-            this.o = cv0Var;
+            bv0 bv0Var = new bv0(f2Var.getParentActivity(), null, 1, f2Var.getResourceProvider());
+            this.o = bv0Var;
             if (this.B) {
-                s6.h(l6.d6, cv0Var, f2Var.getResourceProvider());
+                t6.h(m6.d6, bv0Var, f2Var.getResourceProvider());
             }
             this.o.d.setText(id.M0(2131748167, null));
             this.o.e.setText(id.M0(2131745807, null));
@@ -160,7 +160,7 @@ public abstract class m implements d5 {
                 z9 = false;
             }
         }
-        g0.h3(new up0(17, this, z9));
+        g0.h3(new tp0(17, this, z9));
     }
 
     public void f(String str, boolean z9, boolean z10) {
@@ -169,38 +169,38 @@ public abstract class m implements d5 {
         ArrayList arrayList = this.e;
         if (isEmpty) {
             z11 = !arrayList.isEmpty() || z9;
-            cv0 cv0Var = this.n;
-            if (cv0Var != null) {
-                cv0Var.setVisibility(z11 ? 4 : 0);
+            bv0 bv0Var = this.n;
+            if (bv0Var != null) {
+                bv0Var.setVisibility(z11 ? 4 : 0);
             }
-            cv0 cv0Var2 = this.o;
-            if (cv0Var2 != null) {
-                cv0Var2.setVisibility(4);
+            bv0 bv0Var2 = this.o;
+            if (bv0Var2 != null) {
+                bv0Var2.setVisibility(4);
             }
         } else {
             z11 = !this.c.isEmpty() || z9;
-            cv0 cv0Var3 = this.n;
-            if (cv0Var3 != null) {
-                cv0Var3.setVisibility(4);
+            bv0 bv0Var3 = this.n;
+            if (bv0Var3 != null) {
+                bv0Var3.setVisibility(4);
             }
-            cv0 cv0Var4 = this.o;
-            if (cv0Var4 != null) {
-                cv0Var4.setVisibility(z11 ? 4 : 0);
+            bv0 bv0Var4 = this.o;
+            if (bv0Var4 != null) {
+                bv0Var4.setVisibility(z11 ? 4 : 0);
             }
         }
         k(this.p, z11, true);
         if (arrayList.isEmpty()) {
-            cv0 cv0Var5 = this.n;
-            if (cv0Var5 != null) {
-                cv0Var5.setVisibility(0);
+            bv0 bv0Var5 = this.n;
+            if (bv0Var5 != null) {
+                bv0Var5.setVisibility(0);
             }
-            cv0 cv0Var6 = this.o;
-            if (cv0Var6 != null) {
-                cv0Var6.setVisibility(4);
+            bv0 bv0Var6 = this.o;
+            if (bv0Var6 != null) {
+                bv0Var6.setVisibility(4);
             }
             k(this.q, false, false);
             if (this.y && this.l) {
-                this.g.getActionBar().r().i(true);
+                this.g.getActionBar().s().i(true);
             }
         }
     }
@@ -296,7 +296,7 @@ public abstract class m implements d5 {
             arrayList4.addAll(tL_messages_chatInviteImporters.importers);
             if (this.l) {
                 z14 = false;
-                this.g.getActionBar().r().j(0).setVisibility(arrayList4.isEmpty() ? 8 : 0);
+                this.g.getActionBar().s().j(0).setVisibility(arrayList4.isEmpty() ? 8 : 0);
                 f(str, z10, z14);
                 this.x = arrayList2.size() >= tL_messages_chatInviteImporters.count ? z12 : z14;
                 if (z16 == ((arrayList2.isEmpty() && this.x) ? z12 : z14)) {
@@ -329,8 +329,8 @@ public abstract class m implements d5 {
 
     public final void i(boolean z9) {
         int i7;
-        qj0 qj0Var = this.p;
-        if (qj0Var == null || (i7 = !this.f.c.B ? 1 : 0) < 0 || i7 >= qj0Var.getChildCount()) {
+        pj0 pj0Var = this.p;
+        if (pj0Var == null || (i7 = !this.f.c.B ? 1 : 0) < 0 || i7 >= pj0Var.getChildCount()) {
             return;
         }
         this.p.getChildAt(i7).setEnabled(z9);
@@ -354,12 +354,12 @@ public abstract class m implements d5 {
             this.f.E(this.e);
             k(this.p, true, true);
             k(this.q, false, false);
-            cv0 cv0Var = this.o;
-            if (cv0Var != null) {
-                cv0Var.setVisibility(4);
+            bv0 bv0Var = this.o;
+            if (bv0Var != null) {
+                bv0Var.setVisibility(4);
             }
             if (str == null && this.l) {
-                this.g.getActionBar().r().j(0).setVisibility(this.e.isEmpty() ? 8 : 0);
+                this.g.getActionBar().s().j(0).setVisibility(this.e.isEmpty() ? 8 : 0);
             }
         } else {
             this.f.E(Collections.EMPTY_LIST);
@@ -371,13 +371,13 @@ public abstract class m implements d5 {
             p5Var.d(eVar, 300L);
         }
         if (str != null) {
-            cv0 cv0Var2 = this.n;
-            if (cv0Var2 != null) {
-                cv0Var2.setVisibility(4);
+            bv0 bv0Var2 = this.n;
+            if (bv0Var2 != null) {
+                bv0Var2.setVisibility(4);
             }
-            cv0 cv0Var3 = this.o;
-            if (cv0Var3 != null) {
-                cv0Var3.setVisibility(4);
+            bv0 bv0Var3 = this.o;
+            if (bv0Var3 != null) {
+                bv0Var3.setVisibility(4);
             }
         }
     }

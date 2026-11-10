@@ -3,16 +3,16 @@ package bi;
 import android.content.Context;
 import android.view.View;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class p1 extends m41 {
     public final /* synthetic */ w1 P;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p1(w1 w1Var, qj0 qj0Var, Context context, int i7, ai.e eVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(qj0Var, context, i7, 0, true, eVar, g6Var);
+    public p1(w1 w1Var, pj0 pj0Var, Context context, int i7, ai.e eVar, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(pj0Var, context, i7, 0, true, eVar, h6Var);
         this.P = w1Var;
     }
 

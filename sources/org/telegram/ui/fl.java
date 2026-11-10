@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class fl extends pq0 {
+public final class fl extends qq0 {
     public final /* synthetic */ org.telegram.messenger.ij a;
     public final /* synthetic */ org.telegram.messenger.gf b;
     public final /* synthetic */ gl c;
@@ -15,12 +15,12 @@ public final class fl extends pq0 {
         this.b = gfVar;
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
-    public final yq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
+    public final zq0 E(org.telegram.messenger.ij ijVar, TLRPC.FileLocation fileLocation, int i7, boolean z9, boolean z10) {
         return this.c.a.Q.bb.E(this.a, fileLocation, i7, z9, false);
     }
 
-    @Override // org.telegram.ui.pq0, org.telegram.ui.wq0
+    @Override // org.telegram.ui.qq0, org.telegram.ui.xq0
     public final void o(int i7, org.telegram.messenger.j20 j20Var, boolean z9, int i10, int i11, boolean z10) {
         ll llVar = this.c.a;
         org.telegram.messenger.ij ijVar = this.a;
@@ -29,12 +29,12 @@ public final class fl extends pq0 {
         if (gfVar.h != null || gfVar.b) {
             cn cnVar = llVar.Q;
             dh dhVar = new dh(ijVar, 5);
-            org.telegram.ui.ActionBar.q4 parentLayout = cnVar.getParentLayout();
+            org.telegram.ui.ActionBar.r4 parentLayout = cnVar.getParentLayout();
             int currentAccount = cnVar.getCurrentAccount();
-            org.telegram.ui.Components.k30 k30Var = new org.telegram.ui.Components.k30(0, true, true);
-            k30Var.a = cnVar;
-            k30Var.s(gfVar);
-            k30Var.b = new bg.f0(currentAccount, dhVar, parentLayout, k30Var);
+            org.telegram.ui.Components.j30 j30Var = new org.telegram.ui.Components.j30(0, true, true);
+            j30Var.a = cnVar;
+            j30Var.s(gfVar);
+            j30Var.b = new bg.f0(currentAccount, dhVar, parentLayout, j30Var);
             return;
         }
         TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();

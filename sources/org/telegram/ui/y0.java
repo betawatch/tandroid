@@ -13,20 +13,20 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y0 extends View implements org.telegram.ui.Cells.h9, c3 {
-    public final q50 a;
+    public final r50 a;
     public final e4 b;
     public z2 c;
     public int d;
     public final int e;
     public TL_iv.pageBlockAuthorDate f;
 
-    public y0(Context context, q50 q50Var, e4 e4Var) {
+    public y0(Context context, r50 r50Var, e4 e4Var) {
         super(context);
         this.e = org.telegram.messenger.g0.L(8.0f);
-        this.a = q50Var;
+        this.a = r50Var;
         this.b = e4Var;
     }
 

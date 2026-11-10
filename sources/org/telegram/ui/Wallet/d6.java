@@ -1,47 +1,543 @@
 package org.telegram.ui.Wallet;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import j$.util.Objects;
-import org.telegram.ui.wb1;
+import android.graphics.Matrix;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import org.telegram.messenger.qs;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.u81;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class d6 extends org.telegram.ui.Components.j6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ f6 w;
+public final class d6 extends FrameLayout implements SensorEventListener {
+    public static final Object n0 = new Object();
+    public final boolean D;
+    public final float[] E;
+    public final float[] F;
+    public final k6 G;
+    public final int H;
+    public float I;
+    public float J;
+    public float K;
+    public float L;
+    public float M;
+    public float N;
+    public float O;
+    public int P;
+    public float Q;
+    public float R;
+    public float S;
+    public float T;
+    public boolean U;
+    public long V;
+    public boolean W;
+    public boolean a;
+    public boolean a0;
+    public a6 b;
+    public ValueAnimator b0;
+    public int c;
+    public float c0;
+    public j3 d;
+    public float d0;
+    public final org.telegram.ui.Cells.v0 e;
+    public float e0;
+    public final w41 f;
+    public float f0;
+    public float g0;
+    public final fi.p5 h;
+    public float h0;
+    public int i0;
+    public int j0;
+    public final dt k0;
+    public float l0;
+    public float m0;
+    public final c6 n;
+    public final w41 r;
+    public final ga.d s;
+    public final float[] w;
+    public final SensorManager x;
+    public final Sensor y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d6(f6 f6Var, Context context, int i7) {
-        super(context, false, true, true, true, true);
-        this.s = i7;
-        this.w = f6Var;
+    public d6(Context context, int i7, int i10) {
+        super(context);
+        this.s = new ga.d(4);
+        this.w = new float[8];
+        this.E = new float[9];
+        this.F = new float[3];
+        this.G = new k6();
+        this.I = -0.22f;
+        this.J = -0.28f;
+        this.P = -1;
+        this.e0 = 1.0f;
+        this.g0 = Float.NaN;
+        this.h0 = Float.NaN;
+        this.k0 = new dt(this, 25);
+        this.c = i7;
+        boolean z9 = false;
+        setClipChildren(false);
+        setClipToPadding(false);
+        setWillNotDraw(false);
+        setCameraDistance(org.telegram.messenger.g0.L(4800.0f));
+        c8.ka.b(this, 0.02f, 1.2f);
+        org.telegram.ui.Cells.v0 v0Var = new org.telegram.ui.Cells.v0(this, context);
+        this.e = v0Var;
+        addView(v0Var, c8.ha.e(-1, -1, 17));
+        w41 w41Var = new w41(context);
+        this.f = w41Var;
+        w41Var.setPadding(2, 2, 2, 2);
+        w41Var.setLayerType(2, null);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
+        layoutParams.setMargins(-2, -2, -2, -2);
+        v0Var.addView(w41Var, layoutParams);
+        fi.p5 p5Var = new fi.p5(this, context);
+        this.h = p5Var;
+        w41Var.addView(p5Var, c8.ha.e(-1, -1, 17));
+        c6 c6Var = new c6(this, context);
+        this.n = c6Var;
+        w41Var.addView(c6Var, c8.ha.e(-1, -1, 17));
+        w41 w41Var2 = new w41(3, context, this);
+        this.r = w41Var2;
+        w41Var2.setClipChildren(false);
+        w41Var2.setClipToPadding(false);
+        w41Var2.setLayerType(2, null);
+        w41Var2.setPivotX(0.0f);
+        w41Var2.setPivotY(0.0f);
+        w41Var.addView(w41Var2, c8.ha.e(qs.H5, qs.j3, 51));
+        this.H = ViewConfiguration.get(context).getScaledTouchSlop();
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.x = sensorManager;
+        Sensor defaultSensor = sensorManager.getDefaultSensor(15);
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(11) : defaultSensor;
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(4) : defaultSensor;
+        this.y = defaultSensor;
+        if (defaultSensor != null && defaultSensor.getType() != 4) {
+            z9 = true;
+        }
+        this.D = z9;
+        b6 b6Var = new b6(this, 1);
+        if (a6.j0 && a6.p0.get(Integer.valueOf(i7)) != null) {
+            this.b = new a6(context.getApplicationContext(), i7, i10, b6Var);
+        } else {
+            v0Var.setVisibility(4);
+            a6.l0.postRunnable(new hi.j4(this, context, i7, i10, b6Var));
+        }
     }
 
-    @Override // org.telegram.ui.Components.j6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                float c10 = getDrawable().c();
-                f6 f6Var = this.w;
-                float b10 = f6Var.b();
-                float min = (((c10 > 0.0f ? Math.min(1.0f, f6Var.U / c10) : 1.0f) - b10) * f6Var.T) + b10;
-                f6Var.b = min;
-                int save = canvas.save();
-                canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float e10 = (1.0f - f6Var.T) * f6Var.f0.e(false, f6Var.d0);
-                org.telegram.ui.Components.i6 drawable = getDrawable();
-                Objects.requireNonNull(drawable);
-                f6Var.c(e10, new c3(drawable, 4), new wb1(16, this, canvas));
-                canvas.restoreToCount(save);
-                break;
-            default:
-                f6 f6Var2 = this.w;
-                float e11 = (1.0f - f6Var2.T) * f6Var2.f0.e(false, f6Var2.d0);
-                org.telegram.ui.Components.i6 drawable2 = getDrawable();
-                Objects.requireNonNull(drawable2);
-                f6Var2.c(e11, new c3(drawable2, 4), new wb1(17, this, canvas));
-                break;
+    public static float c(float f10, float f11, float f12) {
+        return Math.max(f11, Math.min(f12, f10));
+    }
+
+    public final void a() {
+        ValueAnimator valueAnimator = this.b0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.b0.cancel();
+            this.b0 = null;
         }
+        float f10 = this.N;
+        float f11 = this.O;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.b0 = ofFloat;
+        ofFloat.setDuration(600L);
+        org.telegram.messenger.camera.q.i(1.2f, this.b0);
+        this.b0.addUpdateListener(new fi.k9(this, f10, f11, 5));
+        this.b0.addListener(new u81(this, 8));
+        this.b0.start();
+    }
+
+    public final void b(float f10, float f11) {
+        this.c0 = f10;
+        this.f0 = f11;
+        float f12 = f10 + this.l0;
+        float f13 = f11 + this.m0;
+        boolean z9 = Math.cos(Math.toRadians((double) f13)) * Math.cos(Math.toRadians((double) f12)) < 0.0d;
+        boolean z10 = this.a;
+        c6 c6Var = this.n;
+        if (z10 != z9) {
+            this.a = z9;
+            this.r.invalidate();
+            c6Var.invalidate();
+        }
+        int width = getWidth();
+        int height = getHeight();
+        if (this.g0 == f12 && this.h0 == f13 && this.i0 == width && this.j0 == height) {
+            return;
+        }
+        this.g0 = f12;
+        this.h0 = f13;
+        this.i0 = width;
+        this.j0 = height;
+        if (width > 0 && height > 0) {
+            this.s.f(width, height, f12, f13, z9, this.w);
+            a6 a6Var = this.b;
+            if (a6Var != null) {
+                float[] fArr = a6Var.n;
+                float[] fArr2 = a6Var.m;
+                float[] fArr3 = a6Var.k;
+                float[] fArr4 = a6Var.l;
+                int[] iArr = a6Var.o;
+                a6Var.r = z9;
+                float[] fArr5 = a6Var.i;
+                float[] fArr6 = z9 ? fArr4 : fArr3;
+                if (!z9) {
+                    fArr3 = fArr4;
+                }
+                ga.d dVar = this.s;
+                dVar.getClass();
+                int i7 = 0;
+                while (i7 < fArr5.length / 2) {
+                    int i10 = i7 * 2;
+                    float f14 = (fArr5[i10 + 1] * (-1.212122f)) + 0.618561f;
+                    float f15 = ((fArr5[i10] * 2.0f) - 1.0f) * 1.0f;
+                    float g10 = dVar.g(-0.0125f, f14, f15, width, height, fArr6, i10);
+                    float[] fArr7 = fArr6;
+                    float[] fArr8 = fArr3;
+                    fArr2[i7] = (g10 + dVar.g(0.0125f, f14, f15, width, height, fArr8, i10)) * 0.5f;
+                    i7++;
+                    dVar = dVar;
+                    fArr3 = fArr8;
+                    fArr5 = fArr5;
+                    iArr = iArr;
+                    fArr6 = fArr7;
+                }
+                int[] iArr2 = iArr;
+                a6Var.q = width / 336.0f;
+                int i11 = 0;
+                while (i11 < 76) {
+                    int i12 = i11 + 1;
+                    fArr[i11] = (fArr2[i11] + fArr2[i12 % 76]) * 0.5f;
+                    iArr2[i11] = i11;
+                    i11 = i12;
+                }
+                for (int i13 = 1; i13 < 76; i13++) {
+                    int i14 = iArr2[i13];
+                    int i15 = i13 - 1;
+                    while (i15 >= 0) {
+                        int i16 = iArr2[i15];
+                        if (fArr[i16] < fArr[i14]) {
+                            iArr2[i15 + 1] = i16;
+                            i15--;
+                        }
+                    }
+                    iArr2[i15 + 1] = i14;
+                }
+            }
+            org.telegram.ui.Cells.v0 v0Var = this.e;
+            int width2 = v0Var.getWidth();
+            int height2 = v0Var.getHeight();
+            if (width2 != 0 && height2 != 0) {
+                float[] fArr9 = (float[]) v0Var.b;
+                fArr9[0] = 0.0f;
+                fArr9[1] = 0.0f;
+                float f16 = width2;
+                fArr9[2] = f16;
+                fArr9[3] = 0.0f;
+                fArr9[4] = f16;
+                float f17 = height2;
+                fArr9[5] = f17;
+                fArr9[6] = 0.0f;
+                fArr9[7] = f17;
+                v0Var.c = ((Matrix) v0Var.d).setPolyToPoly(fArr9, 0, this.w, 0, 4);
+                v0Var.invalidate();
+            }
+        }
+        a6 a6Var2 = this.b;
+        if (a6Var2 != null) {
+            a6Var2.k(f12, f13);
+        }
+        this.h.invalidate();
+        c6Var.invalidate();
+    }
+
+    public final void d(int i7, MotionEvent motionEvent) {
+        this.P = motionEvent.getPointerId(i7);
+        this.Q = motionEvent.getX(i7);
+        this.R = motionEvent.getY(i7);
+        this.S = this.N;
+        this.T = this.O;
+    }
+
+    public final void e() {
+        SensorManager sensorManager = this.x;
+        if (sensorManager != null) {
+            boolean z9 = this.W && isShown() && getWindowVisibility() == 0 && hasWindowFocus();
+            if (this.a0 == z9) {
+                return;
+            }
+            this.a0 = z9;
+            dt dtVar = this.k0;
+            removeCallbacks(dtVar);
+            if (!z9) {
+                sensorManager.unregisterListener(this);
+                return;
+            }
+            this.V = 0L;
+            Sensor sensor = this.y;
+            if (sensor != null) {
+                sensorManager.registerListener(this, sensor, 1);
+            }
+            postOnAnimation(dtVar);
+        }
+    }
+
+    public float getCardRotationX() {
+        return this.c0;
+    }
+
+    public float getCardRotationY() {
+        return this.f0;
+    }
+
+    public FrameLayout getFrontFace() {
+        return this.r;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.W = true;
+        this.V = 0L;
+        k6 k6Var = this.G;
+        k6Var.a = false;
+        k6Var.h = 0L;
+        k6Var.i = 0L;
+        k6Var.j = 0L;
+        this.K = 0.0f;
+        this.L = 0.0f;
+        this.M = 0.0f;
+        e();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        this.W = false;
+        e();
+        ValueAnimator valueAnimator = this.b0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.b0.cancel();
+            this.b0 = null;
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i7);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.round(size / 1.64f), TLObject.FLAG_30));
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        if (this.D) {
+            float[] fArr = sensorEvent.values;
+            float[] fArr2 = this.E;
+            SensorManager.getRotationMatrixFromVector(fArr2, fArr);
+            float[] fArr3 = this.F;
+            SensorManager.getOrientation(fArr2, fArr3);
+            if (Float.isNaN(fArr3[1]) || Float.isNaN(fArr3[2])) {
+                return;
+            }
+            this.I = c((float) Math.sin(fArr3[2]), -0.82f, 0.82f);
+            this.J = c(-((float) Math.sin(fArr3[1])), -0.82f, 0.82f);
+        } else {
+            if (this.V != 0) {
+                float f10 = (sensorEvent.timestamp - r4) * 1.0E-9f;
+                if (f10 > 0.0f && f10 < 0.1f) {
+                    this.I = c(org.telegram.ui.Cells.f1.x(sensorEvent.values[1], f10, -0.75f, this.I), -0.82f, 0.82f);
+                    this.J = c(com.google.android.recaptcha.internal.a.x(sensorEvent.values[0], f10, -0.75f, this.J), -0.82f, 0.82f);
+                }
+            }
+            this.V = sensorEvent.timestamp;
+        }
+        float f11 = ((-this.J) / 0.82f) * 15.0f;
+        float f12 = (this.I / 0.82f) * 15.0f;
+        long j3 = sensorEvent.timestamp;
+        k6 k6Var = this.G;
+        k6Var.getClass();
+        if (Float.isNaN(f11) || Float.isInfinite(f11) || Float.isNaN(f12) || Float.isInfinite(f12)) {
+            return;
+        }
+        k6Var.b = f11;
+        k6Var.c = f12;
+        k6Var.i = j3;
+        if (!k6Var.a) {
+            k6Var.a = true;
+            k6Var.d = f11;
+            k6Var.e = f12;
+            k6Var.f = f11;
+            k6Var.g = f12;
+            k6Var.h = j3;
+            return;
+        }
+        float f13 = f11 - k6Var.f;
+        float f14 = f12 - k6Var.g;
+        if ((f14 * f14) + (f13 * f13) > 1.265625f) {
+            k6Var.f = f11;
+            k6Var.g = f12;
+            k6Var.h = j3;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        super.onSizeChanged(i7, i10, i11, i12);
+        w41 w41Var = this.r;
+        w41Var.setScaleX(i7 / org.telegram.messenger.g0.L(336.0f));
+        w41Var.setScaleY(i10 / org.telegram.messenger.g0.L(205.0f));
+        b(this.c0, this.f0);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.b0.cancel();
+                this.b0 = null;
+            }
+            getParent().requestDisallowInterceptTouchEvent(true);
+            d(0, motionEvent);
+            this.U = false;
+            setPressed(true);
+            return true;
+        }
+        if (actionMasked == 1) {
+            this.P = -1;
+            getParent().requestDisallowInterceptTouchEvent(false);
+            setPressed(false);
+            if (this.U) {
+                a();
+                return true;
+            }
+            postDelayed(new b6(this, 0), Math.max(0L, 80 - (motionEvent.getEventTime() - motionEvent.getDownTime())));
+            return true;
+        }
+        if (actionMasked == 2) {
+            int findPointerIndex = motionEvent.findPointerIndex(this.P);
+            if (findPointerIndex >= 0) {
+                float x10 = motionEvent.getX(findPointerIndex);
+                float y10 = motionEvent.getY(findPointerIndex);
+                float abs = Math.abs(x10 - this.Q);
+                float f10 = this.H;
+                if (abs > f10 || Math.abs(y10 - this.R) > f10) {
+                    this.U = true;
+                    setPressed(false);
+                }
+                if (this.U) {
+                    float f11 = this.T;
+                    this.O = c(com.google.android.recaptcha.internal.a.v(x10, this.Q, 0.03f, f11), f11 - 32.0f, f11 + 32.0f);
+                    float f12 = this.S;
+                    this.N = c(com.google.android.recaptcha.internal.a.v(y10, this.R, 0.03f, f12), f12 - 22.0f, f12 + 22.0f);
+                }
+            }
+        } else if (actionMasked == 3) {
+            this.P = -1;
+            getParent().requestDisallowInterceptTouchEvent(false);
+            setPressed(false);
+            if (this.U) {
+                a();
+                return true;
+            }
+        } else {
+            if (actionMasked == 5) {
+                d(motionEvent.getActionIndex(), motionEvent);
+                this.U = true;
+                setPressed(false);
+                return true;
+            }
+            if (actionMasked == 6 && motionEvent.getPointerId(motionEvent.getActionIndex()) == this.P) {
+                for (int i7 = 0; i7 < motionEvent.getPointerCount(); i7++) {
+                    if (i7 != motionEvent.getActionIndex()) {
+                        d(i7, motionEvent);
+                        return true;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View
+    public final void onVisibilityChanged(View view, int i7) {
+        super.onVisibilityChanged(view, i7);
+        e();
+    }
+
+    @Override // android.view.View
+    public final void onWindowFocusChanged(boolean z9) {
+        super.onWindowFocusChanged(z9);
+        e();
+    }
+
+    @Override // android.view.View
+    public final void onWindowVisibilityChanged(int i7) {
+        super.onWindowVisibilityChanged(i7);
+        e();
+    }
+
+    @Override // android.view.View
+    public final boolean performClick() {
+        super.performClick();
+        return true;
+    }
+
+    public void setAdditionalTilt(float f10) {
+        float f11 = this.d0;
+        if (f11 == f10) {
+            return;
+        }
+        float f12 = (this.c0 + f10) - f11;
+        this.d0 = f10;
+        b(f12, this.f0);
+    }
+
+    public void setCardIcon(int i7) {
+        c6 c6Var = this.n;
+        d6 d6Var = c6Var.b;
+        d6Var.c = i7;
+        a6 a6Var = d6Var.b;
+        if (a6Var != null) {
+            a6Var.j(i7);
+        }
+        c6Var.invalidate();
+    }
+
+    public void setHasCardNumber(boolean z9) {
+        c6 c6Var = this.n;
+        c6Var.a = z9;
+        c6Var.invalidate();
+    }
+
+    public void setStickerStyle(float[] fArr) {
+        fi.p5 p5Var = this.h;
+        p5Var.b = fArr;
+        this.e.invalidate();
+        p5Var.invalidate();
+        this.n.invalidate();
+    }
+
+    public void setUseGyroscope(float f10) {
+        if (this.e0 == f10) {
+            return;
+        }
+        this.e0 = f10;
+        b((this.L * f10) + this.N + this.d0, (this.M * f10) + this.O);
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i7) {
     }
 }

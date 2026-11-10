@@ -5,9 +5,9 @@ import android.graphics.Rect;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class s9 extends r9 {
     public final w8 a;
@@ -35,10 +35,10 @@ public final class s9 extends r9 {
     @Override // di.r9
     public final void a(Canvas canvas, float f10) {
         ch.f0 f0Var = this.c;
-        org.telegram.ui.Components.i5 i5Var = f0Var.b;
-        ImageReceiver imageReceiver = i5Var != null ? i5Var.k : f0Var.a;
+        org.telegram.ui.Components.h5 h5Var = f0Var.b;
+        ImageReceiver imageReceiver = h5Var != null ? h5Var.k : f0Var.a;
         if (imageReceiver != null && imageReceiver.K() && imageReceiver.J()) {
-            ah0 B = imageReceiver.B();
+            zg0 B = imageReceiver.B();
             if (B == null || !B.y()) {
                 v9 v9Var = this.d;
                 double d = v9Var.b;

@@ -3,10 +3,10 @@ package bi;
 import org.telegram.messenger.ls;
 import org.telegram.messenger.v10;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.jm0;
-import org.telegram.ui.kl0;
+import org.telegram.ui.km0;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements v10 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class w3 implements v10 {
                 zh.h0 h0Var = (zh.h0) this.f;
                 bVar.b();
                 if (((Boolean) obj).booleanValue()) {
-                    l5 l5Var = k7Var.J2;
+                    l5 l5Var = k7Var.M2;
                     if (l5Var != null) {
                         l5Var.a(this.b, this.c, h0Var != null);
                     }
@@ -47,7 +47,7 @@ public final /* synthetic */ class w3 implements v10 {
                 }
                 break;
             default:
-                jm0.Z((jm0) this.d, (boolean[]) this.e, this.b, this.c, (kl0) this.f, (h6) obj, (vf.b) obj2);
+                km0.Z((km0) this.d, (boolean[]) this.e, this.b, this.c, (ll0) this.f, (h6) obj, (vf.b) obj2);
                 break;
         }
     }

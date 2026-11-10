@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j7 extends f7 {
     public final ArrayList f;
@@ -19,7 +19,7 @@ public final class j7 extends f7 {
         this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return true;
     }
@@ -61,18 +61,18 @@ public final class j7 extends f7 {
             x6Var.getImageView().getAvatarDrawable().g(14);
             x6Var.getImageView().e(null, x6Var.getImageView().getAvatarDrawable());
         } else {
-            org.telegram.ui.Components.l9 imageView = x6Var.getImageView();
+            org.telegram.ui.Components.k9 imageView = x6Var.getImageView();
             H = imageView != null ? org.telegram.messenger.m5.H(imageView.getImageReceiver(), imageView.getAvatarDrawable(), e22) : org.telegram.messenger.m5.H(null, null, e22);
         }
         x6Var.a = s6Var;
         x6Var.getImageView().setRoundRadius(org.telegram.messenger.g0.L(((e22 instanceof TLRPC.Chat) && ((TLRPC.Chat) e22).forum) ? 12.0f : 19.0f));
         String i02 = org.telegram.messenger.g0.i0(s6Var.c, false, false);
         boolean z10 = i7 < arrayList.size() - 1;
-        org.telegram.ui.Components.j6 j6Var = x6Var.d;
+        org.telegram.ui.Components.i6 i6Var = x6Var.d;
         TextView textView = x6Var.c;
         textView.setText(org.telegram.messenger.i6.m(H, textView.getPaint().getFontMetricsInt(), false, null, 0));
-        j6Var.c(i02, false, true);
-        j6Var.setVisibility(0);
+        i6Var.c(i02, false, true);
+        i6Var.setVisibility(0);
         x6Var.f = z10;
         x6Var.setWillNotDraw(!z10);
         x6Var.requestLayout();
@@ -82,7 +82,7 @@ public final class j7 extends f7 {
             if (woVar == null) {
                 org.telegram.ui.Components.wo woVar2 = new org.telegram.ui.Components.wo(21, x6Var.getContext(), x6Var.b);
                 x6Var.n = woVar2;
-                woVar2.b(-1, org.telegram.ui.ActionBar.l6.d6, org.telegram.ui.ActionBar.l6.k7);
+                woVar2.b(-1, org.telegram.ui.ActionBar.m6.d6, org.telegram.ui.ActionBar.m6.k7);
                 x6Var.n.setDrawUnchecked(false);
                 x6Var.n.setDrawBackgroundAsArc(3);
                 x6Var.addView(x6Var.n, c8.ha.d(24, 24.0f, (org.telegram.messenger.id.a0 ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
@@ -93,6 +93,6 @@ public final class j7 extends f7 {
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
-        return new org.telegram.ui.Components.yi0(i7 == 1 ? new x6(this.h.getContext(), null) : null);
+        return new org.telegram.ui.Components.xi0(i7 == 1 ? new x6(this.h.getContext(), null) : null);
     }
 }

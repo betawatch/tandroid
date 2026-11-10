@@ -1,10 +1,10 @@
 package androidx.mediarouter.app;
 
 import android.view.animation.Animation;
-import org.telegram.ui.ActionBar.i4;
+import org.telegram.ui.ActionBar.j4;
 import org.telegram.ui.ActionBar.x1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class f0 implements Animation.AnimationListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class f0 implements Animation.AnimationListener {
                 ((x1) this.b).n1.setAlpha(0.0f);
                 break;
             default:
-                ((i4) this.b).f.post(new l2.a0(this, 25));
+                ((j4) this.b).f.post(new l2.a0(this, 25));
                 break;
         }
     }
@@ -46,10 +46,10 @@ public final class f0 implements Animation.AnimationListener {
             case 1:
                 break;
             default:
-                i4 i4Var = (i4) this.b;
-                i4Var.i.setEnabled(false);
-                i4Var.g.setVisibility(0);
-                i4Var.h.setVisibility(0);
+                j4 j4Var = (j4) this.b;
+                j4Var.i.setEnabled(false);
+                j4Var.g.setVisibility(0);
+                j4Var.h.setVisibility(0);
                 break;
         }
     }

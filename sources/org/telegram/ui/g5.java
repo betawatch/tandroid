@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public abstract class g5 extends androidx.fragment.app.u {
     public int O = -1;
@@ -23,9 +23,9 @@ public abstract class g5 extends androidx.fragment.app.u {
                 w(R.raw.permission_request_camera, org.telegram.messenger.id.M0(2131743285, null));
                 return true;
             }
-            e40 e40Var = e40.u5;
-            if (e40Var != null) {
-                e40Var.o1.callOnClick();
+            f40 f40Var = f40.x5;
+            if (f40Var != null) {
+                f40Var.r1.callOnClick();
                 return true;
             }
         } else {
@@ -101,8 +101,8 @@ public abstract class g5 extends androidx.fragment.app.u {
 
     public final org.telegram.ui.ActionBar.u1 v(int i7, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        int i10 = org.telegram.ui.ActionBar.l6.L5;
-        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.l6.x0(null, i10, false), null);
+        int i10 = org.telegram.ui.ActionBar.m6.L5;
+        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.m6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(str);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;

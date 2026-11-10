@@ -1,24 +1,15 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.RectF;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class hw0 extends org.telegram.ui.Cells.h5 {
-    public final /* synthetic */ lw0 w;
+public final class hw0 extends org.telegram.ui.Cells.j {
+    public final /* synthetic */ mw0 e0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hw0(lw0 lw0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, 18, 70, false, g6Var);
-        this.w = lw0Var;
-    }
-
-    @Override // org.telegram.ui.Cells.h5
-    public final int a(int i7) {
-        ProfileActivity profileActivity = this.w.e;
-        RectF rectF = ProfileActivity.V6;
-        profileActivity.getClass();
-        return i7;
+    public hw0(mw0 mw0Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, f2Var, h6Var);
+        this.e0 = mw0Var;
     }
 }

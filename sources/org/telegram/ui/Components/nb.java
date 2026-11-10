@@ -1,70 +1,32 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.support.SparseLongArray;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class nb extends kb implements org.telegram.messenger.ls {
-    public final lb d;
-    public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.f2 f;
-    public final int h;
-    public cc n;
+public class nb extends ya {
+    public final k9 a;
+    public final TextView b;
 
-    public nb(int i7, org.telegram.ui.ActionBar.f2 f2Var) {
-        super(f2Var.getContext(), f2Var.getResourceProvider());
-        this.f = f2Var;
-        this.h = i7;
-        this.b.setLayoutParams(c8.ha.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(c8.ha.h(56.0f, 48.0f, 8388659));
-        lb lbVar = new lb(this, f2Var, getContext(), f2Var.getCurrentAccount(), f2Var.getResourceProvider());
-        this.d = lbVar;
-        lbVar.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(0.0f));
-        this.d.setDelegate(new mb(this));
-        this.d.setTop(true);
-        this.d.setClipChildren(false);
-        this.d.setClipToPadding(false);
-        this.d.setVisibility(0);
-        this.d.setBubbleOffset(-org.telegram.messenger.g0.L(80.0f));
-        this.d.setHint(org.telegram.messenger.id.M0(2131745875, null));
-        addView(this.d, c8.ha.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
-        this.d.p(null, null, true);
+    public nb(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        k9 k9Var = new k9(getContext());
+        this.a = k9Var;
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        addView(k9Var, c8.ha.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        org.telegram.ui.ActionBar.t6.U(textView, org.telegram.ui.ActionBar.m6.vj, h6Var);
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, c8.ha.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.qs.k3) {
-            this.e = (SparseLongArray) objArr[0];
-        }
-    }
-
-    public final void f() {
-        if (this.d.getReactionsWindow() != null) {
-            this.d.e();
-            if (this.d.getReactionsWindow().a != null) {
-                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.gb
-    public int getMeasuredBackgroundHeight() {
-        return org.telegram.messenger.g0.L(30.0f) + this.b.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).c(this, org.telegram.messenger.qs.k3);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.qs.f(org.telegram.messenger.p10.s0).n(this, org.telegram.messenger.qs.k3);
-    }
-
-    public void setBulletin(cc ccVar) {
-        this.n = ccVar;
+    @Override // org.telegram.ui.Components.fb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 }

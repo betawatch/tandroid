@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.ks;
-import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.js;
+import org.telegram.ui.Components.qg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -46,8 +46,8 @@ public final class a extends Path {
                 if (i7 >= arrayList.size()) {
                     break;
                 }
-                rg0 rg0Var = (rg0) arrayList.get(i7);
-                if (f14 >= rg0Var.b && f14 <= rg0Var.c) {
+                qg0 qg0Var = (qg0) arrayList.get(i7);
+                if (f14 >= qg0Var.b && f14 <= qg0Var.c) {
                     fVar.y = true;
                     break;
                 }
@@ -65,7 +65,7 @@ public final class a extends Path {
         int i11 = this.f;
         fVar.setBounds(max, i10, (int) Math.min(f12, i11 <= 0 ? 2.14748365E9f : i11), (int) f13);
         fVar.h(this.b.getPaint().getColor());
-        fVar.t = ks.c;
+        fVar.t = js.c;
         int width = fVar.getBounds().width() / g0.L(6.0f);
         int i12 = f.B;
         int b10 = j9.b(width * i12, i12, f.A);

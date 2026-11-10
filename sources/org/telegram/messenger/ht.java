@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ht implements v10 {
     public final /* synthetic */ int a = 0;
@@ -117,7 +117,7 @@ public final /* synthetic */ class ht implements v10 {
                     break;
                 } else if (tL_error != null) {
                     if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (T = LaunchActivity.T()) != null) {
-                        org.telegram.ui.Components.cc K = org.telegram.ui.Components.hc.a0(T).K(R.raw.star_premium_2, id.M0(2131744331, null), id.M0(2131744330, null), new rn(3, T));
+                        org.telegram.ui.Components.bc K = org.telegram.ui.Components.gc.a0(T).K(R.raw.star_premium_2, id.M0(2131744331, null), id.M0(2131744330, null), new rn(3, T));
                         K.j = 5000;
                         K.k(true);
                     }

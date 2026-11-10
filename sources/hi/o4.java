@@ -13,12 +13,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.i5;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.h5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class o4 {
     public static void a(int i7, long j3, org.telegram.ui.web.n nVar) {
@@ -46,8 +46,8 @@ public abstract class o4 {
         final boolean[] zArr2 = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, null);
         n4 n4Var = new n4(f10);
-        int i10 = l6.L5;
-        int x02 = l6.x0(null, i10, false);
+        int i10 = m6.L5;
+        int x02 = m6.x0(null, i10, false);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.b0 = n4Var;
         u1Var.c0 = x02;
@@ -111,12 +111,12 @@ public abstract class o4 {
     }
 
     public static void f(final int i7, final TLRPC.User user, long j3, final int i10, final org.telegram.ui.web.n nVar) {
-        TLRPC.Document e10 = i5.e(i7, j3);
+        TLRPC.Document e10 = h5.e(i7, j3);
         if (e10 != null) {
             g(i7, user, e10, i10, new e4(nVar, e10, 1));
         } else {
-            i5.g(i7).b(j3, new f5() { // from class: hi.f4
-                @Override // org.telegram.ui.Components.f5
+            h5.g(i7).b(j3, new e5() { // from class: hi.f4
+                @Override // org.telegram.ui.Components.e5
                 public final void a(TLRPC.Document document) {
                     org.telegram.messenger.g0.h3(new j4(i7, user, document, i10, nVar));
                 }
@@ -167,8 +167,8 @@ public abstract class o4 {
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, W, null);
         n4 n4Var = new n4(f10, document);
-        int i13 = l6.L5;
-        int x02 = l6.x0(null, i13, false);
+        int i13 = m6.L5;
+        int x02 = m6.x0(null, i13, false);
         org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
         u1Var.b0 = n4Var;
         u1Var.c0 = x02;

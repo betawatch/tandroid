@@ -10,80 +10,80 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class x2 extends org.telegram.ui.ActionBar.v2 {
-    public final fi.g1 i1;
-    public final ArrayList j1;
-    public boolean k1;
-    public FrameLayout l1;
-    public Integer m1;
+public final class x2 extends org.telegram.ui.ActionBar.w2 {
+    public final fi.g1 l1;
+    public final ArrayList m1;
+    public boolean n1;
+    public FrameLayout o1;
+    public Integer p1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x2(Context context, org.telegram.ui.ActionBar.g6 g6Var, View... viewArr) {
-        super(1, context, g6Var, true);
+    public x2(Context context, org.telegram.ui.ActionBar.h6 h6Var, View... viewArr) {
+        super(1, context, h6Var, true);
         List asList = Arrays.asList(viewArr);
         ArrayList arrayList = new ArrayList();
-        this.j1 = arrayList;
+        this.m1 = arrayList;
         if (asList != null) {
             arrayList.addAll(asList);
         }
         u2 u2Var = new u2(this, context);
         this.b = u2Var;
         fi.g1 g1Var = new fi.g1(8, context, this);
-        this.i1 = g1Var;
+        this.l1 = g1Var;
         int i7 = this.t0;
         g1Var.setPadding(i7, 0, i7, org.telegram.messenger.g0.n);
         u2Var.addView(g1Var, c8.ha.e(-1, -1, qs.E1));
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final boolean G() {
-        return this.i1.getCurrentPosition() == 0;
+        return this.l1.getCurrentPosition() == 0;
     }
 
-    @Override // org.telegram.ui.ActionBar.v2
+    @Override // org.telegram.ui.ActionBar.w2
     public final boolean I(MotionEvent motionEvent) {
-        return this.i1.getCurrentPosition() == 0;
+        return this.l1.getCurrentPosition() == 0;
     }
 
     public final void I0(w2 w2Var) {
-        this.j1.add(w2Var);
-        if (this.k1) {
-            fi.g1 g1Var = this.i1;
+        this.m1.add(w2Var);
+        if (this.n1) {
+            fi.g1 g1Var = this.l1;
             g1Var.D(false);
             g1Var.o(false);
         }
     }
 
     public final void J0(int i7) {
-        this.m1 = Integer.valueOf(i7);
+        this.p1 = Integer.valueOf(i7);
         v0(i7);
         O(i7);
         ((u2) this.b).invalidate();
     }
 
     public final void K0(LinearLayout linearLayout) {
-        FrameLayout frameLayout = this.l1;
+        FrameLayout frameLayout = this.o1;
         if (frameLayout == null) {
             FrameLayout frameLayout2 = new FrameLayout(getContext());
-            this.l1 = frameLayout2;
+            this.o1 = frameLayout2;
             frameLayout2.setClipChildren(false);
-            this.l1.setClipToPadding(false);
-            this.b.addView(this.l1, c8.ha.e(-1, -2, 80));
+            this.o1.setClipToPadding(false);
+            this.b.addView(this.o1, c8.ha.e(-1, -2, 80));
         } else {
             frameLayout.removeAllViews();
         }
-        this.l1.addView(linearLayout, c8.ha.e(-1, -2, 80));
-        fi.g1 g1Var = this.i1;
+        this.o1.addView(linearLayout, c8.ha.e(-1, -2, 80));
+        fi.g1 g1Var = this.l1;
         int i7 = this.t0;
         g1Var.setPadding(i7, 0, i7, 0);
         ((u2) this.b).requestLayout();
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void onBackPressed() {
-        fi.g1 g1Var = this.i1;
+        fi.g1 g1Var = this.l1;
         if (g1Var.getCurrentPosition() <= 0) {
             super.onBackPressed();
             return;
@@ -96,14 +96,14 @@ public final class x2 extends org.telegram.ui.ActionBar.v2 {
         g1Var.E(g1Var.getCurrentPosition() - 1);
     }
 
-    @Override // org.telegram.ui.ActionBar.v2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.w2, android.app.Dialog
     public final void show() {
-        if (!this.k1) {
-            this.k1 = true;
-            this.i1.setAdapter(new ii.x(this, 3));
+        if (!this.n1) {
+            this.n1 = true;
+            this.l1.setAdapter(new ii.x(this, 3));
         }
         super.show();
-        Integer num = this.m1;
+        Integer num = this.p1;
         if (num != null) {
             E0(num.intValue());
         }

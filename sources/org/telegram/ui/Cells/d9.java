@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.graphics.Rect;
 import android.text.Layout;
 import android.text.Spanned;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d9 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,12 +44,12 @@ public final class d9 implements Runnable {
                             m10 = i7 + p10;
                         }
                     }
-                    qj0 qj0Var = v9Var.E;
-                    if (qj0Var != null) {
+                    pj0 pj0Var = v9Var.E;
+                    if (pj0Var != null) {
                         if (!v9Var.O) {
                             m10 = -m10;
                         }
-                        qj0Var.scrollBy(0, m10);
+                        pj0Var.scrollBy(0, m10);
                     }
                     org.telegram.messenger.g0.h3(this);
                     break;
@@ -65,9 +65,9 @@ public final class d9 implements Runnable {
                     q9 q9Var2 = v9Var2.W;
                     int i11 = 1;
                     CharSequence s5 = v9Var2.s(q9Var, true);
-                    qj0 qj0Var2 = v9Var2.E;
-                    if (qj0Var2 != null) {
-                        qj0Var2.I0(false);
+                    pj0 pj0Var2 = v9Var2.E;
+                    if (pj0Var2 != null) {
+                        pj0Var2.I0(false);
                     }
                     int i12 = v9Var2.s;
                     int i13 = v9Var2.t;
@@ -133,14 +133,14 @@ public final class d9 implements Runnable {
                                     }
                                 } else {
                                     i10 = i11;
-                                    org.telegram.ui.Components.r5[] r5VarArr = (org.telegram.ui.Components.r5[]) spanned.getSpans(0, s5.length(), org.telegram.ui.Components.r5.class);
-                                    int length2 = r5VarArr.length;
+                                    org.telegram.ui.Components.q5[] q5VarArr = (org.telegram.ui.Components.q5[]) spanned.getSpans(0, s5.length(), org.telegram.ui.Components.q5.class);
+                                    int length2 = q5VarArr.length;
                                     int i21 = 0;
                                     while (true) {
                                         if (i21 < length2) {
-                                            org.telegram.ui.Components.r5 r5Var = r5VarArr[i21];
-                                            int spanStart2 = spanned.getSpanStart(r5Var);
-                                            int spanEnd2 = spanned.getSpanEnd(r5Var);
+                                            org.telegram.ui.Components.q5 q5Var = q5VarArr[i21];
+                                            int spanStart2 = spanned.getSpanStart(q5Var);
+                                            int spanEnd2 = spanned.getSpanEnd(q5Var);
                                             if (k10 < spanStart2 || k10 > spanEnd2) {
                                                 i21++;
                                             } else {
@@ -197,9 +197,9 @@ public final class d9 implements Runnable {
                 break;
             default:
                 v9 v9Var3 = this.b;
-                org.telegram.ui.ActionBar.w3 w3Var = v9Var3.Y;
-                if (w3Var != null && !v9Var3.P) {
-                    w3Var.hide(Long.MAX_VALUE);
+                org.telegram.ui.ActionBar.x3 x3Var = v9Var3.Y;
+                if (x3Var != null && !v9Var3.P) {
+                    x3Var.hide(Long.MAX_VALUE);
                     org.telegram.messenger.g0.i3(v9Var3.n0, 1000L);
                     break;
                 }

@@ -3,13 +3,13 @@ package org.telegram.ui.Components.voip;
 import android.app.Activity;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.s60;
+import org.telegram.ui.Components.r60;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.e40;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements s60, org.telegram.ui.ActionBar.r1 {
+public final /* synthetic */ class r1 implements r60, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ TLRPC.User a;
     public final /* synthetic */ TLRPC.Chat b;
     public final /* synthetic */ String c;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r1 implements s60, org.telegram.ui.ActionBar.
         this.r = cVar;
     }
 
-    @Override // org.telegram.ui.Components.s60
+    @Override // org.telegram.ui.Components.r60
     public void a(TLRPC.InputPeer inputPeer, boolean z9, boolean z10, boolean z11) {
         boolean z12 = this.d;
         Activity activity = this.h;
@@ -40,7 +40,7 @@ public final /* synthetic */ class r1 implements s60, org.telegram.ui.ActionBar.
         TLRPC.Chat chat = this.b;
         String str = this.c;
         if (z12 && z10) {
-            e40.e1((LaunchActivity) activity, cVar, chat, inputPeer, z9, str);
+            f40.e1((LaunchActivity) activity, cVar, chat, inputPeer, z9, str);
             return;
         }
         TLRPC.User user = this.a;

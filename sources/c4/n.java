@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.zs0;
+import org.telegram.ui.Components.ys0;
 import p4.a1;
 import p4.c1;
 import p4.d0;
@@ -28,7 +28,7 @@ import p4.g1;
 import p4.v;
 import p4.y0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimestamp, r1, wr, y0, a1 {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class n implements h2.j, h2.o, RequestDelegateTimes
 
     @Override // org.telegram.messenger.wr
     public void a(String str) {
-        zs0.f((zs0) this.d, this.c, this.b, str);
+        ys0.f((ys0) this.d, this.c, this.b, str);
     }
 
     @Override // h2.j

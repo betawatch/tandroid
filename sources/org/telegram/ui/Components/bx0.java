@@ -1,14 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
-/* loaded from: classes3.dex */
-public final class bx0 {
-    public final hx0 a;
-    public final jx0 b;
-    public boolean c = true;
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-    public bx0(hx0 hx0Var, jx0 jx0Var) {
-        this.a = hx0Var;
-        this.b = jx0Var;
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
+/* loaded from: classes3.dex */
+public final class bx0 extends ArrayList {
+    public final Class a;
+    public final Class b;
+
+    public bx0(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final h6.m f() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i7 = 0; i7 < size; i7++) {
+            objArr[i7] = ((Pair) get(i7)).first;
+            objArr2[i7] = ((Pair) get(i7)).second;
+        }
+        return new h6.m(objArr, objArr2);
     }
 }

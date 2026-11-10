@@ -29,11 +29,11 @@ import org.telegram.messenger.p10;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ou0;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.nu0;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class h8 extends View implements org.telegram.ui.Cells.r9 {
     public final boolean D;
@@ -95,9 +95,9 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i7).setBreakStrategy(0).setHyphenationFrequency(0);
         if (id.a0) {
-            alignment = ou0.a();
+            alignment = nu0.a();
         } else {
-            Layout.Alignment[] alignmentArr = ou0.a;
+            Layout.Alignment[] alignmentArr = nu0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -156,7 +156,7 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
         ofFloat.addUpdateListener(new ah.h(this, 23));
         this.I.addListener(new bi.t5(this, 15));
         this.I.setDuration(180L);
-        this.I.setInterpolator(xq.g);
+        this.I.setInterpolator(wq.g);
         this.I.start();
     }
 
@@ -318,7 +318,7 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
                 }
                 if (s9Var.x() && z9 && this.D) {
                     z12 = false;
-                    if (((GestureDetector) ((vy) g8VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
+                    if (((GestureDetector) ((uy) g8VarArr[0].k.d).b).onTouchEvent(motionEvent)) {
                         getParent().requestDisallowInterceptTouchEvent(true);
                         s9Var.f(false);
                         return true;
@@ -402,8 +402,8 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
         int i7 = 0;
         g8 g8Var = this.r[0];
         h8 h8Var = g8Var.v;
-        org.telegram.ui.Components.r5.release(h8Var, g8Var.d);
-        org.telegram.ui.Components.r5.release(h8Var, g8Var.f);
+        org.telegram.ui.Components.q5.release(h8Var, g8Var.d);
+        org.telegram.ui.Components.q5.release(h8Var, g8Var.f);
         if (g8Var.h == null) {
             return;
         }
@@ -414,7 +414,7 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
             }
             d8 d8Var = d8VarArr[i7];
             if (d8Var != null) {
-                org.telegram.ui.Components.r5.release(h8Var, d8Var.a);
+                org.telegram.ui.Components.q5.release(h8Var, d8Var.a);
             }
             i7++;
         }
@@ -609,9 +609,9 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
     
         r3.f(true);
         r1.b = null;
-        r13 = new org.telegram.ui.Components.y70(r9[0], null, r20.getX(), r20.getY(), 0);
+        r13 = new org.telegram.ui.Components.x70(r9[0], null, r20.getX(), r20.getY(), 0);
         r1.a = r13;
-        r13.d(org.telegram.ui.ActionBar.l6.r1(0.2f, -1));
+        r13.d(org.telegram.ui.ActionBar.m6.r1(0.2f, -1));
         r3.b(r1.a, null);
         r9 = r5.getSpanStart(r1.a.i);
         r12 = r5.getSpanEnd(r1.a.i);
@@ -633,7 +633,7 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0179, code lost:
     
-        r5 = (org.telegram.ui.Components.r5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.r5.class);
+        r5 = (org.telegram.ui.Components.q5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.q5.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0181, code lost:
     
@@ -718,7 +718,7 @@ public final class h8 extends View implements org.telegram.ui.Cells.r9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.b41.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.a41.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0198, code lost:
     

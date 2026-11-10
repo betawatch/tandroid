@@ -7,12 +7,12 @@ import android.os.Build;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.it0;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements it0, r0.m {
+public final /* synthetic */ class f implements ht0, r0.m {
     public final /* synthetic */ int a;
     public final /* synthetic */ FrameLayout b;
 
@@ -41,20 +41,20 @@ public final /* synthetic */ class f implements it0, r0.m {
         return k1Var;
     }
 
-    @Override // org.telegram.ui.Components.it0
+    @Override // org.telegram.ui.Components.ht0
     public void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
         switch (this.a) {
             case 0:
-                qj0 qj0Var = (qj0) recyclerView;
-                ih.d.a(qj0Var, canvas, rectF, qj0Var, this.b);
+                pj0 pj0Var = (pj0) recyclerView;
+                ih.d.a(pj0Var, canvas, rectF, pj0Var, this.b);
                 break;
             case 1:
-                qj0 qj0Var2 = (qj0) recyclerView;
-                ih.d.a(qj0Var2, canvas, rectF, qj0Var2, this.b);
+                pj0 pj0Var2 = (pj0) recyclerView;
+                ih.d.a(pj0Var2, canvas, rectF, pj0Var2, this.b);
                 break;
             default:
-                qj0 qj0Var3 = (qj0) recyclerView;
-                ih.d.a(qj0Var3, canvas, rectF, qj0Var3, this.b);
+                pj0 pj0Var3 = (pj0) recyclerView;
+                ih.d.a(pj0Var3, canvas, rectF, pj0Var3, this.b);
                 break;
         }
     }

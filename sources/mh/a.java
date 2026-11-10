@@ -3,10 +3,10 @@ package mh;
 import l2.a0;
 import org.telegram.messenger.g0;
 import org.telegram.ui.Components.voip.n2;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import te.c;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a implements te.b {
     public final c a;
@@ -18,11 +18,11 @@ public final class a implements te.b {
     public boolean h;
 
     public a(n2 n2Var, a0 a0Var) {
-        xq xqVar = xq.h;
-        this.a = new c(1, this, xqVar, 350L);
-        this.b = new c(2, this, xqVar, 350L);
-        this.c = new te.a(0, this, xqVar, 350L, true);
-        this.d = new te.a(3, this, xqVar, 350L, true);
+        wq wqVar = wq.h;
+        this.a = new c(1, this, wqVar, 350L);
+        this.b = new c(2, this, wqVar, 350L);
+        this.c = new te.a(0, this, wqVar, 350L, true);
+        this.d = new te.a(3, this, wqVar, 350L, true);
         this.h = true;
         this.e = n2Var;
         this.f = a0Var;

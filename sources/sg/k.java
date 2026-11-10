@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import c8.j9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k extends View {
     public final Paint a;
@@ -32,7 +32,7 @@ public final class k extends View {
     }
 
     public final void a() {
-        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, this.d.m1}, (float[]) null, Shader.TileMode.CLAMP));
+        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{0, this.d.p1}, (float[]) null, Shader.TileMode.CLAMP));
     }
 
     public final void b(float f10) {
@@ -40,7 +40,7 @@ public final class k extends View {
         float a10 = j9.a(((f10 - L) + (org.telegram.messenger.g0.L(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (L * 2.0f)), 0.0f, 1.0f);
         this.c = a10;
         q qVar = this.d;
-        qVar.I0(i0.a.o(qVar.m1, (int) (a10 * 255.0f)), 1);
+        qVar.I0(i0.a.o(qVar.p1, (int) (a10 * 255.0f)), 1);
         invalidate();
     }
 
@@ -55,9 +55,9 @@ public final class k extends View {
         rectF.set(L, f10, getWidth() - L, f11);
         canvas.save();
         q qVar = this.d;
-        qVar.l1.rewind();
-        qVar.l1.addRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), Path.Direction.CW);
-        canvas.clipPath(qVar.l1);
+        qVar.o1.rewind();
+        qVar.o1.addRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), Path.Direction.CW);
+        canvas.clipPath(qVar.o1);
         tg.y0.z1(canvas, rectF, org.telegram.messenger.g0.L(6.0f));
         canvas.restore();
         rectF.set(L, f10, getWidth() - L, f11);
@@ -67,7 +67,7 @@ public final class k extends View {
         float strokeWidth = L2 - (paint.getStrokeWidth() / 2.0f);
         float max = Math.max(L + strokeWidth, (((getWidth() - (2.0f * L)) * this.c) + L) - strokeWidth);
         canvas.drawCircle(max, height, L2, paint);
-        tg.y0.A1(max, height, strokeWidth, i0.a.o(qVar.m1, (int) (this.c * 255.0f)), canvas);
+        tg.y0.A1(max, height, strokeWidth, i0.a.o(qVar.p1, (int) (this.c * 255.0f)), canvas);
     }
 
     @Override // android.view.View

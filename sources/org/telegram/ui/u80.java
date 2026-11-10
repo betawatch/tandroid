@@ -1,25 +1,16 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class u80 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ LaunchActivity a;
-
-    public u80(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+public final class u80 extends org.telegram.ui.Components.jz {
+    @Override // org.telegram.ui.Components.jz
+    public final void b() {
+        setVisibility(8);
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.c1);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.c1);
+    @Override // org.telegram.ui.Components.jz
+    public final void c(boolean z9) {
+        setVisibility(0);
+        super.c(z9);
     }
 }

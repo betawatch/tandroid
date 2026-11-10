@@ -1,6 +1,6 @@
 package l2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements g9.u {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class m implements g9.u {
                 return (j) this.b;
             default:
                 try {
-                    return (x2.f0) ((Class) this.b).getConstructor(null).newInstance(null);
+                    return (x2.e0) ((Class) this.b).getConstructor(null).newInstance(null);
                 } catch (Exception e10) {
                     throw new IllegalStateException(e10);
                 }

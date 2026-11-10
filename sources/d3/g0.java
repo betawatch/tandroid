@@ -2,7 +2,7 @@ package d3;
 
 import h2.m0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 String str2 = m0.a;
                 l2.i0 i0Var = ((l2.c0) h0Var2).a;
                 m2.e eVar2 = i0Var.s;
-                m2.a S = eVar2.S((x2.g0) eVar2.d.e);
+                m2.a S = eVar2.S((x2.f0) eVar2.d.e);
                 eVar2.V(S, 1020, new l2.x(S, dVar2, 15));
                 i0Var.S = null;
                 break;

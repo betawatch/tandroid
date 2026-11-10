@@ -18,9 +18,9 @@ import c8.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.ah0;
+import org.telegram.ui.Components.zg0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class d7 extends FrameLayout {
     public final ArrayList a;
@@ -136,16 +136,16 @@ public final class d7 extends FrameLayout {
         ArrayList arrayList = this.a;
         if (i7 != -1) {
             c7 c7Var = (c7) arrayList.get(i7);
-            ah0 ah0Var = c7Var.c;
-            ah0Var.M(0);
-            ah0Var.stop();
+            zg0 zg0Var = c7Var.c;
+            zg0Var.M(0);
+            zg0Var.stop();
             c7Var.n = 0.0f;
             c7Var.invalidate();
         }
         c7 c7Var2 = (c7) arrayList.get(this.d);
-        ah0 ah0Var2 = c7Var2.c;
-        ah0Var2.M(0);
-        ah0Var2.stop();
+        zg0 zg0Var2 = c7Var2.c;
+        zg0Var2.M(0);
+        zg0Var2.stop();
         c7Var2.n = 0.0f;
         c7Var2.invalidate();
         c();

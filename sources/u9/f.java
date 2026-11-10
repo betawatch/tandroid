@@ -38,15 +38,15 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.i2;
 import org.telegram.ui.Cells.l9;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y1;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.ex;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.n40;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x1;
+import org.telegram.ui.Components.z70;
 import org.telegram.ui.cn;
 import org.telegram.ui.rk;
 import ug.g0;
@@ -60,9 +60,9 @@ import wg.u;
 import wg.z;
 import wi.m0;
 import wi.t;
-import x2.w0;
+import x2.v0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -206,37 +206,37 @@ public final /* synthetic */ class f implements Runnable {
             case 3:
                 i0 i0Var = (i0) this.c;
                 TLObject tLObject = (TLObject) this.b;
-                ArrayList arrayList = i0Var.a2;
-                qj0 qj0Var = i0Var.k1;
+                ArrayList arrayList = i0Var.d2;
+                pj0 pj0Var = i0Var.n1;
                 if (tLObject != null) {
                     arrayList.clear();
                     arrayList.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
-                    i0Var.A2 = false;
-                    i0Var.B2.b(i0Var.f2 + 4);
+                    i0Var.D2 = false;
+                    i0Var.E2.b(i0Var.i2 + 4);
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= qj0Var.getChildCount()) {
+                        if (i12 >= pj0Var.getChildCount()) {
                             i7 = 0;
-                        } else if (qj0Var.getChildAt(i12) instanceof h0) {
-                            i7 = qj0Var.getChildAt(i12).getTop();
+                        } else if (pj0Var.getChildAt(i12) instanceof h0) {
+                            i7 = pj0Var.getChildAt(i12).getTop();
                         } else {
                             i12++;
                         }
                     }
                     i0Var.G1();
-                    if (i0Var.d2 >= 0 && i7 != 0) {
-                        ((b0) qj0Var.getLayoutManager()).h1(i0Var.d2 + 1, i7);
+                    if (i0Var.g2 >= 0 && i7 != 0) {
+                        ((b0) pj0Var.getLayoutManager()).h1(i0Var.g2 + 1, i7);
                     }
                 }
-                int max = Math.max(arrayList.size(), i0Var.E2.b);
-                i0Var.p2.i(max, false);
-                i0Var.p2.setBagePosition(max / i0Var.E2.c);
-                g0 g0Var = i0Var.p2;
+                int max = Math.max(arrayList.size(), i0Var.H2.b);
+                i0Var.s2.i(max, false);
+                i0Var.s2.setBagePosition(max / i0Var.H2.c);
+                g0 g0Var = i0Var.s2;
                 g0Var.H = true;
                 g0Var.requestLayout();
                 return;
             case 4:
-                ((i0) this.c).h1((a80) this.b, true);
+                ((i0) this.c).h1((z70) this.b, true);
                 return;
             case 5:
                 t1 t1Var = (t1) this.c;
@@ -282,7 +282,7 @@ public final /* synthetic */ class f implements Runnable {
                 return;
             case 11:
                 Callable callable = (Callable) this.c;
-                v9.h hVar = (v9.h) ((rt) this.b).b;
+                v9.h hVar = (v9.h) ((qt) this.b).b;
                 try {
                     hVar.k(callable.call());
                     return;
@@ -339,25 +339,25 @@ public final /* synthetic */ class f implements Runnable {
                 if (h02.isEmpty()) {
                     return;
                 }
-                org.telegram.messenger.g0.h3(new y1(c20Var, h02, 1));
+                org.telegram.messenger.g0.h3(new x1(c20Var, h02, 1));
                 return;
             case 19:
-                ((fx) this.c).a((ArrayList) this.b);
+                ((ex) this.c).a((ArrayList) this.b);
                 return;
             case 20:
-                cc I = hc.a0((cn) this.c).I(R.raw.stars_send, id.M0(2131745092, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.b).stars)));
+                bc I = gc.a0((cn) this.c).I(R.raw.stars_send, id.M0(2131745092, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.b).stars)));
                 I.j = 5000;
                 I.k(true);
                 return;
             case 21:
-                qs.f(p10.s0).k(qs.V2, ((z) this.c).T1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.b);
+                qs.f(p10.s0).k(qs.V2, ((z) this.c).W1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.b);
                 return;
             case 22:
                 f1 f1Var = (f1) this.c;
                 TLObject tLObject2 = (TLObject) this.b;
-                ArrayList arrayList2 = f1Var.c2;
+                ArrayList arrayList2 = f1Var.f2;
                 arrayList2.clear();
-                f1Var.p2 = -1;
+                f1Var.s2 = -1;
                 if (tLObject2 instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject2;
                     qp s12 = qp.s1(f1Var.a);
@@ -444,55 +444,55 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 return;
             case 27:
-                rt rtVar = (rt) this.c;
+                qt qtVar = (qt) this.c;
                 m0 m0Var = (m0) this.b;
-                wi.t0 t0Var = (wi.t0) rtVar.b;
+                wi.t0 t0Var = (wi.t0) qtVar.b;
                 t0Var.R++;
                 t0Var.y = true;
                 t0Var.m.b("camera switch started: target=" + m0Var);
-                o40 o40Var = (o40) t0Var.d.b;
-                FrameLayout frameLayout = o40Var.x;
-                o40Var.t0++;
-                ValueAnimator valueAnimator = o40Var.c0;
+                n40 n40Var = (n40) t0Var.d.b;
+                FrameLayout frameLayout = n40Var.x;
+                n40Var.t0++;
+                ValueAnimator valueAnimator = n40Var.c0;
                 if (valueAnimator != null) {
                     valueAnimator.removeAllListeners();
-                    o40Var.c0.cancel();
-                    o40Var.c0 = null;
+                    n40Var.c0.cancel();
+                    n40Var.c0 = null;
                 }
-                o40Var.o0 = true;
-                o40Var.p0 = false;
-                o40Var.q0 = false;
-                o40Var.r0 = false;
-                o40Var.s0 = SystemClock.elapsedRealtime();
-                rk rkVar = o40Var.D;
-                o40Var.A(false);
-                Bitmap bitmap = o40Var.u0;
+                n40Var.o0 = true;
+                n40Var.p0 = false;
+                n40Var.q0 = false;
+                n40Var.r0 = false;
+                n40Var.s0 = SystemClock.elapsedRealtime();
+                rk rkVar = n40Var.D;
+                n40Var.A(false);
+                Bitmap bitmap = n40Var.u0;
                 if (bitmap != null) {
                     rkVar.setImageBitmap(bitmap);
-                    o40Var.n0 = true;
+                    n40Var.n0 = true;
                     rkVar.animate().cancel();
                     rkVar.setAlpha(1.0f);
                 }
                 frameLayout.animate().cancel();
                 frameLayout.setRotationY(0.0f);
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
-                int i14 = o40Var.t0;
+                int i14 = n40Var.t0;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                o40Var.c0 = ofFloat;
+                n40Var.c0 = ofFloat;
                 ofFloat.setDuration(580L);
-                o40Var.c0.setInterpolator(xq.h);
-                o40Var.c0.addUpdateListener(new i2(o40Var, i14, i10));
-                o40Var.c0.addListener(new m2(o40Var, i14, 10));
-                o40Var.c0.start();
+                n40Var.c0.setInterpolator(wq.h);
+                n40Var.c0.addUpdateListener(new i2(n40Var, i14, i10));
+                n40Var.c0.addListener(new m2(n40Var, i14, 10));
+                n40Var.c0.start();
                 a8.b("RoundVideo camera flip started: facing=" + m0Var + ", minimumDurationMs=580");
-                o40Var.D();
+                n40Var.D();
                 t0Var.o();
                 return;
             case 28:
                 ((h2.j) this.c).accept(this.b);
                 return;
             default:
-                ((w0) this.c).y((c0) this.b);
+                ((v0) this.c).y((c0) this.b);
                 return;
         }
     }

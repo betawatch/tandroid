@@ -1,34 +1,130 @@
 package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class gv0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+public final class gv0 extends FrameLayout {
+    public static int G;
+    public float D;
+    public boolean E;
+    public float F;
+    public final int a;
+    public float b;
+    public boolean c;
+    public boolean d;
+    public final k9 e;
+    public final ImageView f;
+    public final bi.md h;
+    public final View n;
+    public boolean r;
+    public final int s;
+    public org.telegram.messenger.rz w;
+    public boolean x;
+    public ValueAnimator y;
 
-    public /* synthetic */ gv0(FrameLayout frameLayout, View view, int i7) {
+    public gv0(Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.c = frameLayout;
-        this.b = view;
+        int i10 = G;
+        G = i10 + 1;
+        this.s = i10;
+        if (i7 == 2) {
+            k9 k9Var = new k9(getContext());
+            this.e = k9Var;
+            k9Var.setLayerNum(1);
+            k9Var.setAspectFit(false);
+            k9Var.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+            addView(k9Var, c8.ha.e(26, 26, 17));
+            this.n = k9Var;
+        } else if (i7 == 1) {
+            ImageView imageView = new ImageView(context);
+            this.f = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            addView(imageView, c8.ha.e(24, 24, 17));
+            this.n = imageView;
+        } else {
+            k9 k9Var2 = new k9(getContext());
+            this.e = k9Var2;
+            k9Var2.setLayerNum(1);
+            k9Var2.setAspectFit(true);
+            k9Var2.setRoundRadius(org.telegram.messenger.g0.L(6.0f));
+            addView(k9Var2, c8.ha.e(26, 26, 17));
+            this.n = k9Var2;
+        }
+        bi.md mdVar = new bi.md(context, 26);
+        this.h = mdVar;
+        mdVar.addOnLayoutChangeListener(new z50(this, 1));
+        mdVar.setLines(1);
+        mdVar.setEllipsize(TextUtils.TruncateAt.END);
+        mdVar.setTextSize(1, 11.0f);
+        mdVar.setGravity(1);
+        org.telegram.ui.ActionBar.t6.U(mdVar, org.telegram.ui.ActionBar.m6.G6, null);
+        addView(mdVar, c8.ha.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
+        mdVar.setVisibility(8);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                hv0 hv0Var = (hv0) this.c;
-                hv0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                hv0Var.invalidate();
-                ((sk0) this.b).invalidate();
-                break;
-            default:
-                ((w61) this.c).F(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    public final void a(float f10) {
+        int i7 = this.a;
+        if (i7 == 2) {
+            return;
         }
+        boolean z9 = this.r;
+        View view = this.n;
+        if (!z9) {
+            view.setTranslationX(0.0f);
+            view.setTranslationY(0.0f);
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+            return;
+        }
+        float f11 = i7 == 1 ? 24.0f : 26.0f;
+        float f12 = i7 == 1 ? 38.0f : 44.0f;
+        int i10 = rk0.t0;
+        float f13 = 1.0f - f10;
+        view.setTranslationY((((org.telegram.messenger.g0.L(36.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(86.0f - f12) / 2.0f)) * f13) - (org.telegram.messenger.g0.L(8.0f) * f10));
+        view.setTranslationX(((org.telegram.messenger.g0.L(33.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(64.0f - f12) / 2.0f)) * f13);
+        float max = Math.max(0.0f, (f10 - 0.5f) / 0.5f);
+        bi.md mdVar = this.h;
+        mdVar.setAlpha(max);
+        mdVar.setTranslationY((-org.telegram.messenger.g0.L(40.0f)) * f13);
+        mdVar.setTranslationX((-org.telegram.messenger.g0.L(12.0f)) * f13);
+        view.setPivotX(0.0f);
+        view.setPivotY(0.0f);
+        float f14 = ((f11 / f12) * f13) + f10;
+        view.setScaleX(f14);
+        view.setScaleY(f14);
+    }
+
+    public float getTextWidth() {
+        return this.F;
+    }
+
+    public void setExpanded(boolean z9) {
+        int i7 = this.a;
+        if (i7 == 2) {
+            return;
+        }
+        this.r = z9;
+        float f10 = i7 == 1 ? 24.0f : 26.0f;
+        float f11 = i7 == 1 ? 38.0f : 44.0f;
+        View view = this.n;
+        view.getLayoutParams().width = org.telegram.messenger.g0.L(z9 ? f11 : f10);
+        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+        if (z9) {
+            f10 = f11;
+        }
+        layoutParams.height = org.telegram.messenger.g0.L(f10);
+        this.h.setVisibility(z9 ? 0 : 8);
+        if (i7 == 1 || !this.x) {
+            return;
+        }
+        this.e.setRoundRadius(org.telegram.messenger.g0.L(view.getLayoutParams().width / 2.0f));
     }
 }

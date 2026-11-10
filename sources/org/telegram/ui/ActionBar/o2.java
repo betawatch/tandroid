@@ -1,141 +1,84 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import c8.ha;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.id;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.WindowManager;
+import org.telegram.messenger.qs;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class o2 extends FrameLayout {
-    public final org.telegram.ui.Components.q5 a;
-    public final ImageView b;
-    public final ImageView c;
-    public final int d;
-    public boolean e;
-    public boolean f;
+public final class o2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w2 b;
 
-    public o2(int i7, Context context, g6 g6Var) {
-        super(context);
-        this.f = false;
-        this.d = i7;
-        if (i7 != 4) {
-            setBackgroundDrawable(l6.M0(g6Var, false));
-        }
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        s6.s(imageView, l6.J5, g6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, ha.e(56, 48, (id.a0 ? 5 : 3) | 16));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        imageView2.setScaleType(scaleType);
-        s6.s(imageView2, l6.h7, g6Var, PorterDuff.Mode.SRC_IN);
-        addView(imageView2, ha.e(56, 48, (id.a0 ? 3 : 5) | 16));
-        org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(context);
-        this.a = q5Var;
-        q5Var.setLines(1);
-        q5Var.setSingleLine(true);
-        q5Var.setGravity(1);
-        q5Var.setEllipsize(TextUtils.TruncateAt.END);
-        if (i7 == 0 || i7 == 4) {
-            s6.U(q5Var, l6.j5, g6Var);
-            q5Var.setTextSize(1, 16.0f);
-            addView(q5Var, ha.e(-2, -2, (id.a0 ? 5 : 3) | 16));
-            return;
-        }
-        if (i7 == 1) {
-            q5Var.setGravity(17);
-            s6.U(q5Var, l6.j5, g6Var);
-            q5Var.setTextSize(1, 14.0f);
-            q5Var.setTypeface(org.telegram.messenger.g0.o());
-            addView(q5Var, ha.c(-1.0f, -1));
-            return;
-        }
-        if (i7 == 2) {
-            q5Var.setGravity(17);
-            s6.U(q5Var, l6.Gi, g6Var);
-            q5Var.setTextSize(1, 14.0f);
-            q5Var.setTypeface(org.telegram.messenger.g0.o());
-            q5Var.setBackground(a6.e(l6.w0(l6.Ci, g6Var), 6.0f));
-            addView(q5Var, ha.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
+    public /* synthetic */ o2(w2 w2Var, int i7) {
+        this.a = i7;
+        this.b = w2Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                w2 w2Var = this.b;
+                AnimatorSet animatorSet = w2Var.z0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    w2Var.z0 = null;
+                    w2Var.A0 = 0;
+                    break;
+                }
+                break;
+            default:
+                w2 w2Var2 = this.b;
+                AnimatorSet animatorSet2 = w2Var2.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    w2Var2.z0 = null;
+                    w2Var2.A0 = 0;
+                    break;
+                }
+                break;
         }
     }
 
-    public final void a(CharSequence charSequence, int i7, Drawable drawable, boolean z9) {
-        org.telegram.ui.Components.q5 q5Var = this.a;
-        q5Var.setText(charSequence);
-        ImageView imageView = this.b;
-        if (i7 == 0 && drawable == null) {
-            imageView.setVisibility(4);
-            q5Var.setPadding(org.telegram.messenger.g0.L(z9 ? 21.0f : 16.0f), 0, org.telegram.messenger.g0.L(z9 ? 21.0f : 16.0f), 0);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7 = this.a;
+        w2 w2Var = this.b;
+        switch (i7) {
+            case 0:
+                AnimatorSet animatorSet = w2Var.z0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    w2Var.z0 = null;
+                    w2Var.A0 = 0;
+                    w2Var.v();
+                    q2 q2Var = w2Var.y0;
+                    if (q2Var != null) {
+                        q2Var.v();
+                    }
+                    if (w2Var.J) {
+                        w2Var.c.setLayerType(0, null);
+                    }
+                    if (w2Var.V) {
+                        WindowManager.LayoutParams attributes = w2Var.getWindow().getAttributes();
+                        attributes.flags &= -1025;
+                        w2Var.getWindow().setAttributes(attributes);
+                    }
+                }
+                if (w2Var.K0) {
+                    qs.e().k(99, 512);
+                }
+                w2Var.L0.e();
+                break;
+            default:
+                AnimatorSet animatorSet2 = w2Var.z0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    w2Var.z0 = null;
+                    w2Var.A0 = 0;
+                    org.telegram.messenger.g0.h3(new l2.a0(this, 22));
+                }
+                qs.e().k(99, 512);
+                break;
         }
-        if (drawable != null) {
-            imageView.setImageDrawable(drawable);
-        } else {
-            imageView.setImageResource(i7);
-        }
-        imageView.setVisibility(0);
-        if (z9) {
-            q5Var.setPadding(org.telegram.messenger.g0.L(id.a0 ? 21.0f : 72.0f), 0, org.telegram.messenger.g0.L(id.a0 ? 72.0f : 21.0f), 0);
-            imageView.setPadding(id.a0 ? 0 : org.telegram.messenger.g0.L(5.0f), 0, id.a0 ? org.telegram.messenger.g0.L(5.0f) : 5, 0);
-        } else {
-            q5Var.setPadding(org.telegram.messenger.g0.L(id.a0 ? 16.0f : 72.0f), 0, org.telegram.messenger.g0.L(id.a0 ? 72.0f : 16.0f), 0);
-            imageView.setPadding(0, 0, 0, 0);
-        }
-    }
-
-    public ImageView getImageView() {
-        return this.b;
-    }
-
-    public org.telegram.ui.Components.q5 getTextView() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.f) {
-            accessibilityNodeInfo.setSelected(true);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11 = this.d;
-        int i12 = i11 == 2 ? 80 : 48;
-        if (i11 == 0) {
-            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30);
-        }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(i12), TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z9) {
-        this.e = z9;
-        this.c.setImageResource(z9 ? R.drawable.checkbig : 0);
-    }
-
-    public void setGravity(int i7) {
-        this.a.setGravity(i7);
-    }
-
-    public void setIconColor(int i7) {
-        this.b.setColorFilter(new PorterDuffColorFilter(i7, PorterDuff.Mode.MULTIPLY));
-    }
-
-    public void setTextColor(int i7) {
-        this.a.setTextColor(i7);
     }
 }

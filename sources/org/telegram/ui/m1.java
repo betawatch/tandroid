@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebChromeClient;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m1 extends WebChromeClient {
     public final /* synthetic */ int a;
@@ -36,16 +36,16 @@ public final class m1 extends WebChromeClient {
                 break;
             default:
                 super.onHideCustomView();
-                org.telegram.ui.Components.wt wtVar = (org.telegram.ui.Components.wt) this.b;
-                if (wtVar.k1 != null) {
-                    wtVar.b.setVisibility(0);
-                    wtVar.l1.setVisibility(4);
-                    wtVar.l1.removeView(wtVar.k1);
-                    WebChromeClient.CustomViewCallback customViewCallback2 = wtVar.m1;
+                org.telegram.ui.Components.vt vtVar = (org.telegram.ui.Components.vt) this.b;
+                if (vtVar.n1 != null) {
+                    vtVar.b.setVisibility(0);
+                    vtVar.o1.setVisibility(4);
+                    vtVar.o1.removeView(vtVar.n1);
+                    WebChromeClient.CustomViewCallback customViewCallback2 = vtVar.p1;
                     if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
-                        wtVar.m1.onCustomViewHidden();
+                        vtVar.p1.onCustomViewHidden();
                     }
-                    wtVar.k1 = null;
+                    vtVar.n1 = null;
                     break;
                 }
                 break;
@@ -75,18 +75,18 @@ public final class m1 extends WebChromeClient {
                 } else {
                     g4Var.O = view;
                     g4Var.S = customViewCallback;
-                    org.telegram.messenger.g0.i3(new iq0(this, 7), 100L);
+                    org.telegram.messenger.g0.i3(new jq0(this, 7), 100L);
                     break;
                 }
             default:
-                org.telegram.ui.Components.wt wtVar = (org.telegram.ui.Components.wt) this.b;
-                if (wtVar.k1 == null && !wtVar.M0()) {
-                    wtVar.L0();
-                    wtVar.k1 = view;
-                    wtVar.b.setVisibility(4);
-                    wtVar.l1.setVisibility(0);
-                    wtVar.l1.addView(view, c8.ha.c(-1.0f, -1));
-                    wtVar.m1 = customViewCallback;
+                org.telegram.ui.Components.vt vtVar = (org.telegram.ui.Components.vt) this.b;
+                if (vtVar.n1 == null && !vtVar.M0()) {
+                    vtVar.L0();
+                    vtVar.n1 = view;
+                    vtVar.b.setVisibility(4);
+                    vtVar.o1.setVisibility(0);
+                    vtVar.o1.addView(view, c8.ha.c(-1.0f, -1));
+                    vtVar.p1 = customViewCallback;
                     break;
                 } else {
                     customViewCallback.onCustomViewHidden();

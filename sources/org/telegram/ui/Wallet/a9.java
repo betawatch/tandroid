@@ -1,93 +1,76 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.c20;
-import org.telegram.messenger.x10;
+import android.text.TextUtils;
+import org.telegram.messenger.v10;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a9 implements x10 {
+public final /* synthetic */ class a9 implements v10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l9 b;
-    public final /* synthetic */ l0 c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ o9 b;
 
-    public /* synthetic */ a9(l9 l9Var, l0 l0Var, long j3, int i7) {
+    public /* synthetic */ a9(o9 o9Var, int i7) {
         this.a = i7;
-        this.b = l9Var;
-        this.c = l0Var;
-        this.d = j3;
+        this.b = o9Var;
     }
 
-    @Override // org.telegram.messenger.x10
-    public final void a(Object obj, Object obj2, Object obj3) {
+    @Override // org.telegram.messenger.v10
+    public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                String str = (String) obj;
-                final c20 c20Var = (c20) obj3;
-                final l9 l9Var = this.b;
-                final int i7 = 0;
-                this.c.d0(l9Var.f, l9Var.h, this.d, str, ((Boolean) obj2).booleanValue() ? l9Var.r0() : null, null, l9Var.n, new c20() { // from class: org.telegram.ui.Wallet.d9
-                    @Override // org.telegram.messenger.c20
-                    public final void a(Object obj4) {
-                        String str2 = (String) obj4;
-                        switch (i7) {
-                            case 0:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str2)) {
-                                    c20Var.a(str2);
-                                    if (str2 == null) {
-                                        l9 l9Var2 = l9Var;
-                                        l9Var2.fragmentView.postDelayed(new v8(l9Var2, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str2)) {
-                                    c20Var.a(str2);
-                                    if (str2 == null) {
-                                        l9 l9Var3 = l9Var;
-                                        l9Var3.fragmentView.postDelayed(new v8(l9Var3, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
+                o9.g0(this.b, (TL_wallet.walletUserAddress) obj);
+                break;
+            case 1:
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                o9 o9Var = this.b;
+                o9Var.getClass();
+                if (wallettransaction != null) {
+                    o9Var.e0 = wallettransaction.fee;
+                    o9Var.D0();
+                    break;
+                }
+                break;
+            case 2:
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                o9 o9Var2 = this.b;
+                o9Var2.r = false;
+                if (!TextUtils.equals((String) obj2, "WALLET_USER_UNAVAILABLE")) {
+                    o9Var2.e = walletuseraddress;
+                    if (walletuseraddress != null) {
+                        o9Var2.h = walletuseraddress.address;
                     }
-                }, new z8(l9Var, 2), null);
+                    fi.w3 w3Var = o9Var2.a;
+                    if (w3Var != null) {
+                        w3Var.f3.O(true);
+                    }
+                    o9Var2.C0();
+                    o9Var2.t0();
+                    s8 s8Var = o9Var2.w;
+                    if (s8Var != null) {
+                        s8Var.a(o9Var2.h, o9Var2.f);
+                        break;
+                    }
+                } else {
+                    o9Var2.finishFragment();
+                    break;
+                }
+                break;
+            case 3:
+                o9 o9Var3 = this.b;
+                o9Var3.g0 = (String) obj;
+                o9Var3.h0 = ((Boolean) obj2).booleanValue();
+                o9Var3.P.setText(o9Var3.g0);
+                o9Var3.P.setVisibility(TextUtils.isEmpty(o9Var3.g0) ? 8 : 0);
+                o9Var3.E0();
                 break;
             default:
-                String str2 = (String) obj;
-                final c20 c20Var2 = (c20) obj3;
-                final l9 l9Var2 = this.b;
-                final int i10 = 1;
-                this.c.d0(l9Var2.f, l9Var2.h, this.d, str2, ((Boolean) obj2).booleanValue() ? l9Var2.r0() : null, null, l9Var2.n, new c20() { // from class: org.telegram.ui.Wallet.d9
-                    @Override // org.telegram.messenger.c20
-                    public final void a(Object obj4) {
-                        String str22 = (String) obj4;
-                        switch (i10) {
-                            case 0:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str22)) {
-                                    c20Var2.a(str22);
-                                    if (str22 == null) {
-                                        l9 l9Var22 = l9Var2;
-                                        l9Var22.fragmentView.postDelayed(new v8(l9Var22, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str22)) {
-                                    c20Var2.a(str22);
-                                    if (str22 == null) {
-                                        l9 l9Var3 = l9Var2;
-                                        l9Var3.fragmentView.postDelayed(new v8(l9Var3, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                }, new z8(l9Var2, 3), null);
+                o9 o9Var4 = this.b;
+                o9Var4.g0 = (String) obj;
+                o9Var4.h0 = ((Boolean) obj2).booleanValue();
+                o9Var4.P.setText(o9Var4.g0);
+                o9Var4.P.setVisibility(TextUtils.isEmpty(o9Var4.g0) ? 8 : 0);
+                o9Var4.E0();
                 break;
         }
     }

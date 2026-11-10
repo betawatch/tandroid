@@ -10,14 +10,14 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b6 extends FrameLayout {
     public final zh.v0 a;
     public final FrameLayout b;
-    public final org.telegram.ui.Components.l9 c;
+    public final org.telegram.ui.Components.k9 c;
     public final TextView d;
     public final FrameLayout e;
     public final ImageView f;
@@ -28,7 +28,7 @@ public final class b6 extends FrameLayout {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         addView(frameLayout, c8.ha.d(-1, -1.0f, qs.E1, 6.0f, 6.0f, 6.0f, 6.0f));
-        frameLayout.setBackground(org.telegram.ui.ActionBar.l6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.l6.r1(0.12f, -4530177)));
+        frameLayout.setBackground(org.telegram.ui.ActionBar.m6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.m6.r1(0.12f, -4530177)));
         frameLayout.setForeground(new t6(org.telegram.messenger.g0.L(18.0f), 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.filled_add_album);
@@ -46,9 +46,9 @@ public final class b6 extends FrameLayout {
         frameLayout2.setAlpha(0.0f);
         frameLayout2.setScaleX(0.6f);
         frameLayout2.setScaleY(0.6f);
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.c = l9Var;
-        frameLayout2.addView(l9Var, c8.ha.e(52, 52, 17));
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.c = k9Var;
+        frameLayout2.addView(k9Var, c8.ha.e(52, 52, 17));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setPadding(org.telegram.messenger.g0.L(5.0f), 0, org.telegram.messenger.g0.L(5.0f), 0);
@@ -80,7 +80,7 @@ public final class b6 extends FrameLayout {
             v0Var.d(stargiftattributebackdrop);
             v0Var.e(stargiftattributepattern);
             dd.c1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
-            int b10 = org.telegram.ui.ActionBar.l6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.l6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
+            int b10 = org.telegram.ui.ActionBar.m6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.m6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
             String J0 = hi.j.J0(starGift.craft_chance_permille);
             TextView textView = this.d;
             textView.setText(J0);
@@ -110,9 +110,9 @@ public final class b6 extends FrameLayout {
         }
         frameLayout.setVisibility(0);
         ViewPropertyAnimator alpha = frameLayout.animate().scaleX(z9 ? 1.0f : 0.6f).scaleY(z9 ? 1.0f : 0.6f).alpha(z9 ? 1.0f : 0.0f);
-        xq xqVar = xq.h;
+        wq wqVar = wq.h;
         final int i7 = 0;
-        alpha.setInterpolator(xqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
+        alpha.setInterpolator(wqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
             public final /* synthetic */ b6 b;
 
             {
@@ -157,7 +157,7 @@ public final class b6 extends FrameLayout {
         }).start();
         textView.setVisibility(0);
         final int i10 = 1;
-        textView.animate().alpha(z9 ? 1.0f : 0.0f).setInterpolator(xqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
+        textView.animate().alpha(z9 ? 1.0f : 0.0f).setInterpolator(wqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
             public final /* synthetic */ b6 b;
 
             {
@@ -202,7 +202,7 @@ public final class b6 extends FrameLayout {
         }).start();
         frameLayout2.setVisibility(0);
         final int i11 = 2;
-        frameLayout2.animate().alpha(z9 ? 1.0f : 0.0f).setInterpolator(xqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
+        frameLayout2.animate().alpha(z9 ? 1.0f : 0.0f).setInterpolator(wqVar).setDuration(420L).withEndAction(new Runnable(this) { // from class: bi.a6
             public final /* synthetic */ b6 b;
 
             {

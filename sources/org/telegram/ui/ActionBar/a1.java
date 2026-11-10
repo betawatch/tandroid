@@ -3,10 +3,10 @@ package org.telegram.ui.ActionBar;
 import android.view.ViewTreeObserver;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import org.telegram.ui.Components.yt;
-import org.telegram.ui.j11;
+import org.telegram.ui.Components.xt;
+import org.telegram.ui.k11;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements ViewTreeObserver.OnScrollChangedListener {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final /* synthetic */ class a1 implements ViewTreeObserver.OnScrollChange
                 Method method = g1.k;
                 break;
             case 1:
-                Field field = yt.f;
+                Field field = xt.f;
                 break;
             default:
-                Field field2 = j11.c;
+                Field field2 = k11.c;
                 break;
         }
     }

@@ -9,16 +9,16 @@ import li.s4;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.qs;
 import org.telegram.messenger.wu;
-import org.telegram.ui.Components.ar0;
-import org.telegram.ui.Components.i6;
-import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.of0;
-import org.telegram.ui.Components.ti0;
-import org.telegram.ui.Components.w7;
-import org.telegram.ui.Components.yw;
+import org.telegram.ui.Components.h6;
+import org.telegram.ui.Components.n40;
+import org.telegram.ui.Components.nf0;
+import org.telegram.ui.Components.si0;
+import org.telegram.ui.Components.v7;
+import org.telegram.ui.Components.xw;
+import org.telegram.ui.Components.zq0;
 import org.telegram.ui.xp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class m2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -44,11 +44,11 @@ public final class m2 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) this.c;
-                AnimatorSet animatorSet2 = v2Var.z0;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) this.c;
+                AnimatorSet animatorSet2 = w2Var.z0;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    v2Var.z0 = null;
-                    v2Var.A0 = 0;
+                    w2Var.z0 = null;
+                    w2Var.A0 = 0;
                     break;
                 }
                 break;
@@ -114,14 +114,14 @@ public final class m2 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                org.telegram.ui.ActionBar.v2 v2Var = (org.telegram.ui.ActionBar.v2) obj;
-                AnimatorSet animatorSet2 = v2Var.z0;
+                org.telegram.ui.ActionBar.w2 w2Var = (org.telegram.ui.ActionBar.w2) obj;
+                AnimatorSet animatorSet2 = w2Var.z0;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    v2Var.z0 = null;
-                    v2Var.A0 = 0;
-                    DialogInterface.OnClickListener onClickListener = v2Var.K;
+                    w2Var.z0 = null;
+                    w2Var.A0 = 0;
+                    DialogInterface.OnClickListener onClickListener = w2Var.K;
                     if (onClickListener != null) {
-                        onClickListener.onClick(v2Var, i10);
+                        onClickListener.onClick(w2Var, i10);
                     }
                     org.telegram.messenger.g0.h3(new l2.a0(this, 21));
                 }
@@ -135,47 +135,47 @@ public final class m2 extends AnimatorListenerAdapter {
                 f4Var.d0 = null;
                 break;
             case 7:
-                ((i6) obj).u(i10);
+                ((h6) obj).u(i10);
                 break;
             case 8:
-                ((w7) obj).a[i10].setVisibility(8);
+                ((v7) obj).a[i10].setVisibility(8);
                 break;
             case 9:
-                yw ywVar = (yw) obj;
-                ywVar.r.setVisibility(i10 == 1 ? 0 : 8);
-                ywVar.h.setVisibility(i10 == 2 ? 0 : 8);
-                ywVar.n.setVisibility(i10 == 3 ? 0 : 8);
+                xw xwVar = (xw) obj;
+                xwVar.r.setVisibility(i10 == 1 ? 0 : 8);
+                xwVar.h.setVisibility(i10 == 2 ? 0 : 8);
+                xwVar.n.setVisibility(i10 == 3 ? 0 : 8);
                 break;
             case 10:
-                o40 o40Var = (o40) obj;
-                if (i10 == o40Var.t0) {
-                    o40Var.x.setRotationY(0.0f);
-                    o40Var.r0 = true;
-                    o40Var.c0 = null;
+                n40 n40Var = (n40) obj;
+                if (i10 == n40Var.t0) {
+                    n40Var.x.setRotationY(0.0f);
+                    n40Var.r0 = true;
+                    n40Var.c0 = null;
                     StringBuilder sb2 = new StringBuilder("RoundVideo camera flip visual animation completed: elapsedMs=");
-                    cameraFlipElapsedMs = o40Var.getCameraFlipElapsedMs();
+                    cameraFlipElapsedMs = n40Var.getCameraFlipElapsedMs();
                     sb2.append(cameraFlipElapsedMs);
                     a8.b(sb2.toString());
-                    o40.n(o40Var);
+                    n40.n(n40Var);
                     break;
                 }
                 break;
             case 11:
-                of0 of0Var = (of0) obj;
-                of0Var.H = null;
-                of0Var.P.d1.delete(i10);
+                nf0 nf0Var = (nf0) obj;
+                nf0Var.H = null;
+                nf0Var.P.d1.delete(i10);
                 break;
             case 12:
                 xp xpVar = (xp) obj;
-                ((ti0) xpVar.d).b.remove(i10);
-                ti0 ti0Var = (ti0) xpVar.d;
-                ti0Var.d = true;
-                ti0Var.a.invalidate();
+                ((si0) xpVar.d).b.remove(i10);
+                si0 si0Var = (si0) xpVar.d;
+                si0Var.d = true;
+                si0Var.a.invalidate();
                 break;
             case 13:
-                ar0 ar0Var = (ar0) obj;
-                ar0Var.e.R1.remove(i10);
-                ar0Var.a.invalidate();
+                zq0 zq0Var = (zq0) obj;
+                zq0Var.e.R1.remove(i10);
+                zq0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.z0 z0Var = (org.telegram.ui.Components.voip.z0) obj;
@@ -192,10 +192,10 @@ public final class m2 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 9:
-                yw ywVar = (yw) this.c;
-                ywVar.r.setVisibility(0);
-                ywVar.h.setVisibility(0);
-                ywVar.n.setVisibility(0);
+                xw xwVar = (xw) this.c;
+                xwVar.r.setVisibility(0);
+                xwVar.h.setVisibility(0);
+                xwVar.n.setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

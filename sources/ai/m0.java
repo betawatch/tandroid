@@ -37,12 +37,12 @@ import org.telegram.messenger.support.JobIntentService;
 import org.telegram.messenger.tt;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qb1;
+import org.telegram.ui.rb1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class m0 implements Runnable {
         int i7 = 0;
         switch (this.a) {
             case 0:
-                hc.X().N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
+                gc.X().N(id.M0(2131745861, null), id.M0(2131751105, null)).j();
                 return;
             case 1:
                 wa waVar = bg.i.B;
@@ -82,10 +82,10 @@ public final /* synthetic */ class m0 implements Runnable {
                 return;
             case 2:
                 f2 T = LaunchActivity.T();
-                if ((T instanceof qb1) && (c02 = ((qb1) T).c0()) != null) {
+                if ((T instanceof rb1) && (c02 = ((rb1) T).c0()) != null) {
                     T = c02;
                 }
-                cc Q = (T != null ? hc.a0(T) : hc.X()).Q(R.raw.ic_delete, 36, id.M0(2131750216, null));
+                bc Q = (T != null ? gc.a0(T) : gc.X()).Q(R.raw.ic_delete, 36, id.M0(2131750216, null));
                 Q.t = true;
                 Q.j();
                 return;
@@ -108,7 +108,7 @@ public final /* synthetic */ class m0 implements Runnable {
             case 7:
                 return;
             case 8:
-                int i11 = x5.n1;
+                int i11 = x5.q1;
                 return;
             case 9:
                 Comparator comparator = z6.X;

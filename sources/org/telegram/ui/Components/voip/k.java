@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class k extends ViewGroup {
     public final j D;
@@ -113,10 +113,10 @@ public final class k extends ViewGroup {
             this.f = z11;
             frameLayout.animate().cancel();
             if (!z11) {
-                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(xq.g).withEndAction(new i(this, 1)).start();
+                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(wq.g).withEndAction(new i(this, 1)).start();
             } else {
                 frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(xq.h).withEndAction(null).start();
+                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(wq.h).withEndAction(null).start();
             }
         }
     }

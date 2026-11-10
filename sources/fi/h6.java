@@ -1,8 +1,8 @@
 package fi;
 
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h6 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class h6 implements Runnable {
                 break;
             default:
                 l6 l6Var = this.b;
-                l6Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(xq.h).setDuration(280L).start();
+                l6Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(wq.h).setDuration(280L).start();
                 l6Var.c = System.currentTimeMillis();
                 l6Var.invalidate();
                 try {

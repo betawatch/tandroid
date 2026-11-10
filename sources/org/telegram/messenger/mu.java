@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class mu extends fu {
     public final Paint W;
@@ -29,7 +29,7 @@ public final class mu extends fu {
     @Override // org.telegram.messenger.fu
     public final void W(Canvas canvas) {
         kv kvVar = this.a;
-        int w02 = org.telegram.ui.ActionBar.l6.w0(kvVar.E() ? org.telegram.ui.ActionBar.l6.ul : org.telegram.ui.ActionBar.l6.tl, kvVar.D);
+        int w02 = org.telegram.ui.ActionBar.m6.w0(kvVar.E() ? org.telegram.ui.ActionBar.m6.ul : org.telegram.ui.ActionBar.m6.tl, kvVar.D);
         Paint paint = this.W;
         paint.setColor(w02);
         float f10 = -kvVar.S;

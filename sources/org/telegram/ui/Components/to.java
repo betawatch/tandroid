@@ -15,10 +15,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class to extends pj0 {
-    public final org.telegram.ui.ActionBar.g6 c;
+public final class to extends oj0 {
+    public final org.telegram.ui.ActionBar.h6 c;
     public ArrayList d;
     public WeakReference e;
     public final int h;
@@ -35,7 +35,7 @@ public final class to extends pj0 {
         this.h = i7;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         return false;
     }
@@ -48,9 +48,9 @@ public final class to extends pj0 {
         if (i10 >= 0) {
             g(i10);
             WeakReference weakReference = this.e;
-            a01 a01Var = weakReference == null ? null : (a01) weakReference.get();
-            if (a01Var != null) {
-                a01Var.setSelected(false);
+            zz0 zz0Var = weakReference == null ? null : (zz0) weakReference.get();
+            if (zz0Var != null) {
+                zz0Var.setSelected(false);
             }
         }
         this.f = i7;
@@ -73,8 +73,8 @@ public final class to extends pj0 {
         int h;
         int intValue;
         String[] split;
-        a01 a01Var = (a01) d1Var.a;
-        org.telegram.ui.ActionBar.k6 i10 = ((uo) this.d.get(i7)).a.i(((uo) this.d.get(i7)).c);
+        zz0 zz0Var = (zz0) d1Var.a;
+        org.telegram.ui.ActionBar.l6 i10 = ((uo) this.d.get(i7)).a.i(((uo) this.d.get(i7)).c);
         if (i10 != null && i10.b != null && !i10.T && new File(i10.b).exists() && i10.b != null) {
             try {
                 FileInputStream fileInputStream2 = new FileInputStream(new File(i10.b));
@@ -180,7 +180,7 @@ public final class to extends pj0 {
                                     }
                                     int indexOf = str.indexOf(61);
                                     c10 = 65535;
-                                    if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.u4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.l6.ra || h == org.telegram.ui.ActionBar.l6.ob || h == org.telegram.ui.ActionBar.l6.Be || h == org.telegram.ui.ActionBar.l6.Ce || h == org.telegram.ui.ActionBar.l6.De || h == org.telegram.ui.ActionBar.l6.Ee)) {
+                                    if (indexOf != -1 && ((h = org.telegram.ui.ActionBar.v4.h(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.m6.ra || h == org.telegram.ui.ActionBar.m6.ob || h == org.telegram.ui.ActionBar.m6.Be || h == org.telegram.ui.ActionBar.m6.Ce || h == org.telegram.ui.ActionBar.m6.De || h == org.telegram.ui.ActionBar.m6.Ee)) {
                                         String substring2 = str.substring(indexOf + 1);
                                         if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                             intValue = Utilities.z(substring2).intValue();
@@ -191,17 +191,17 @@ public final class to extends pj0 {
                                                 intValue = Utilities.z(substring2).intValue();
                                             }
                                         }
-                                        if (h == org.telegram.ui.ActionBar.l6.ra) {
+                                        if (h == org.telegram.ui.ActionBar.m6.ra) {
                                             i10.Q = intValue;
-                                        } else if (h == org.telegram.ui.ActionBar.l6.ob) {
+                                        } else if (h == org.telegram.ui.ActionBar.m6.ob) {
                                             i10.R = intValue;
-                                        } else if (h == org.telegram.ui.ActionBar.l6.Be) {
+                                        } else if (h == org.telegram.ui.ActionBar.m6.Be) {
                                             i10.L = intValue;
-                                        } else if (h == org.telegram.ui.ActionBar.l6.Ce) {
+                                        } else if (h == org.telegram.ui.ActionBar.m6.Ce) {
                                             i10.M = intValue;
-                                        } else if (h == org.telegram.ui.ActionBar.l6.De) {
+                                        } else if (h == org.telegram.ui.ActionBar.m6.De) {
                                             i10.N = intValue;
-                                        } else if (h == org.telegram.ui.ActionBar.l6.Ee) {
+                                        } else if (h == org.telegram.ui.ActionBar.m6.Ee) {
                                             i10.O = intValue;
                                         }
                                     }
@@ -245,22 +245,22 @@ public final class to extends pj0 {
             }
         }
         uo uoVar = (uo) this.d.get(i7);
-        uo uoVar2 = a01Var.G;
-        boolean z10 = uoVar2 != null && ig.b.a(uoVar2.a.c, uoVar.a.c) && !org.telegram.ui.yw.y4 && a01Var.V == uoVar.c;
-        a01Var.setFocusable(true);
-        a01Var.setEnabled(true);
-        org.telegram.ui.ActionBar.s6.h(org.telegram.ui.ActionBar.l6.i5, a01Var, null);
-        a01Var.f(uoVar, this.r, z10);
-        a01Var.g(i7 == this.f, z10);
+        uo uoVar2 = zz0Var.G;
+        boolean z10 = uoVar2 != null && ig.b.a(uoVar2.a.c, uoVar.a.c) && !org.telegram.ui.zw.y4 && zz0Var.V == uoVar.c;
+        zz0Var.setFocusable(true);
+        zz0Var.setEnabled(true);
+        org.telegram.ui.ActionBar.t6.h(org.telegram.ui.ActionBar.m6.i5, zz0Var, null);
+        zz0Var.f(uoVar, this.r, z10);
+        zz0Var.g(i7 == this.f, z10);
         if (i7 == this.f) {
-            this.e = new WeakReference(a01Var);
+            this.e = new WeakReference(zz0Var);
         }
     }
 
     @Override // v4.g0
     public final v4.d1 x(ViewGroup viewGroup, int i7) {
         Context context = viewGroup.getContext();
-        org.telegram.ui.ActionBar.g6 g6Var = this.c;
-        return new yi0(new a01(this.h, this.n, context, g6Var));
+        org.telegram.ui.ActionBar.h6 h6Var = this.c;
+        return new xi0(new zz0(this.h, this.n, context, h6Var));
     }
 }

@@ -1,25 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class iq extends org.telegram.ui.Components.e10 {
-    public final /* synthetic */ qq j1;
+public final class iq implements u40 {
+    public final /* synthetic */ z40 a;
+    public final /* synthetic */ rq b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iq(qq qqVar, Activity activity, qq qqVar2) {
-        super(activity, qqVar2);
-        this.j1 = qqVar;
+    public iq(rq rqVar, z40 z40Var) {
+        this.b = rqVar;
+        this.a = z40Var;
     }
 
-    @Override // org.telegram.ui.Components.e10
-    public final void J0() {
-        qq qqVar = this.j1;
-        qqVar.getMessagesController().S(qqVar.getParentActivity(), qqVar.n, qqVar, new w0(this, 27));
+    @Override // org.telegram.ui.u40
+    public final void e(TLRPC.User user) {
+        this.b.y0(user.id, null, null, null, "", true, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.e10
-    public final void I0() {
+    @Override // org.telegram.ui.u40
+    public final void f(int i7, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
+        }
+        rq rqVar = this.b;
+        rqVar.getMessagesController().o(rqVar.n, rqVar, arrayList, i7, new f3(this, 2), new hq(0), null);
     }
 }

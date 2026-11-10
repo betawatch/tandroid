@@ -27,20 +27,20 @@ import org.telegram.messenger.c20;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.rm0;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.s;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class o {
     public final m a;
@@ -98,9 +98,9 @@ public final class o {
             if (z9 && iVar.g) {
                 AnimatorSet animatorSet = new AnimatorSet();
                 animatorSet.setDuration(250L);
-                animatorSet.setInterpolator(xq.f);
+                animatorSet.setInterpolator(wq.f);
                 animatorSet.playTogether(ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(iVar.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 0.1f));
-                animatorSet.addListener(new w50(21, iVar, bVar));
+                animatorSet.addListener(new v50(21, iVar, bVar));
                 animatorSet.start();
             } else {
                 iVar.f(bVar);
@@ -195,7 +195,7 @@ public final class o {
         iVar2.p = scaleGestureDetector;
         scaleGestureDetector.setQuickScaleEnabled(false);
         iVar2.p.setStylusScaleEnabled(false);
-        iVar2.q = new rt(activity2, new h(iVar2, scaledTouchSlop));
+        iVar2.q = new qt(activity2, new h(iVar2, scaledTouchSlop));
         iVar2.i = new e(iVar2, activity2, i10);
         org.telegram.ui.e eVar = new org.telegram.ui.e(3, activity2, iVar2);
         iVar2.h = eVar;
@@ -205,17 +205,17 @@ public final class o {
         q0 q0Var = u0.a;
         eVar2.setOutlineProvider(new s0(0, L));
         iVar2.i.setClipToOutline(true);
-        s6.h(l6.Ug, iVar2.i, null);
+        t6.h(m6.Ug, iVar2.i, null);
         ImageView imageView = new ImageView(activity2);
         iVar2.l = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         iVar2.l.setVisibility(8);
         iVar2.i.addView(iVar2.l, ha.c(-1.0f, -1));
-        k51Var.n = new vy(iVar2, 21);
+        k51Var.n = new uy(iVar2, 21);
         iVar2.m = new e(iVar2, activity2, i11);
         e eVar3 = iVar2.m;
         Objects.requireNonNull(eVar3);
-        iVar2.G = new rm0(new sh.b(eVar3, 7), true);
+        iVar2.G = new qm0(new sh.b(eVar3, 7), true);
         iVar2.m.setWillNotDraw(false);
         iVar2.m.setAlpha(0.0f);
         View view = new View(activity2);
@@ -224,14 +224,14 @@ public final class o {
         int L2 = g0.L(8.0f);
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_close);
-        int i12 = l6.Vg;
+        int i12 = m6.Vg;
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        s6.s(imageView2, i12, null, mode);
-        int i13 = l6.i6;
-        y h02 = l6.h0(l6.x0(null, i13, false), 1, -1);
-        o6 M = s6.M(i13);
+        t6.s(imageView2, i12, null, mode);
+        int i13 = m6.i6;
+        y h02 = m6.h0(m6.x0(null, i13, false), 1, -1);
+        p6 M = t6.M(i13);
         imageView2.setBackground(h02);
-        s6.j(imageView2, h02, null, M, null);
+        t6.j(imageView2, h02, null, M, null);
         imageView2.setPadding(L2, L2, L2, L2);
         imageView2.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -286,12 +286,12 @@ public final class o {
         iVar2.m.addView(imageView2, ha.d(38, 38.0f, 5, 0.0f, 4.0f, 4.0f, 0.0f));
         ImageView imageView3 = new ImageView(activity2);
         imageView3.setImageResource(R.drawable.pip_video_expand);
-        s6.s(imageView3, i12, null, mode);
+        t6.s(imageView3, i12, null, mode);
         final int i14 = 1;
-        y h03 = l6.h0(l6.x0(null, i13, false), 1, -1);
-        o6 M2 = s6.M(i13);
+        y h03 = m6.h0(m6.x0(null, i13, false), 1, -1);
+        p6 M2 = t6.M(i13);
         imageView3.setBackground(h03);
-        s6.j(imageView3, h03, null, M2, null);
+        t6.j(imageView3, h03, null, M2, null);
         imageView3.setPadding(L2, L2, L2, L2);
         imageView3.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -346,8 +346,8 @@ public final class o {
         iVar2.m.addView(imageView3, ha.d(38, 38.0f, 5, 0.0f, 4.0f, 48.0f, 0.0f));
         ImageView imageView4 = new ImageView(activity2);
         iVar2.n = imageView4;
-        s6.s(imageView4, i12, null, mode);
-        s6.Q(iVar2.n, l6.h0(l6.x0(null, i13, false), 1, -1), null, s6.M(i13), null);
+        t6.s(imageView4, i12, null, mode);
+        t6.Q(iVar2.n, m6.h0(m6.x0(null, i13, false), 1, -1), null, t6.M(i13), null);
         final int i15 = 2;
         iVar2.n.setOnClickListener(new View.OnClickListener() { // from class: ti.a
             @Override // android.view.View.OnClickListener
@@ -428,7 +428,7 @@ public final class o {
             iVar2.h.setScaleY(0.1f);
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(xq.f);
+            animatorSet.setInterpolator(wq.f);
             i7 = 1;
             animatorSet.playTogether(ObjectAnimator.ofFloat(iVar2.h, (Property<org.telegram.ui.e, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(iVar2.h, (Property<org.telegram.ui.e, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(iVar2.h, (Property<org.telegram.ui.e, Float>) View.SCALE_Y, 1.0f));
             animatorSet.start();

@@ -1,22 +1,22 @@
 package ug;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class y extends p0 {
     public final /* synthetic */ i0 R;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(i0 i0Var, Context context, g6 g6Var) {
-        super(context, g6Var, true);
+    public y(i0 i0Var, Context context, h6 h6Var) {
+        super(context, h6Var, true);
         this.R = i0Var;
     }
 
     @Override // android.view.View
     public final void invalidate() {
-        if (this.R.X1) {
+        if (this.R.a2) {
             return;
         }
         super.invalidate();

@@ -28,7 +28,7 @@ public class ThreadLocalRandom extends Random {
     private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("rnd", Long.TYPE), new ObjectStreamField("initialized", Boolean.TYPE)};
     public static final ThreadLocal d = new ThreadLocal();
     public static final AtomicInteger e = new AtomicInteger();
-    public static final v f = new v();
+    public static final u f = new u();
     public static final AtomicLong g = new AtomicLong(f(System.currentTimeMillis()) ^ f(System.nanoTime()));
 
     public /* synthetic */ ThreadLocalRandom(int i7) {
@@ -276,14 +276,14 @@ public class ThreadLocalRandom extends Random {
         if (j3 < 0) {
             throw new IllegalArgumentException("size must be non-negative");
         }
-        x xVar = new x(0L, j3, ConnectionsManager.DEFAULT_DATACENTER_ID, 0);
-        return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
+        w wVar = new w(0L, j3, ConnectionsManager.DEFAULT_DATACENTER_ID, 0);
+        return IntStream.Wrapper.convert(new w0(wVar, v6.l(wVar), false));
     }
 
     @Override // java.util.Random
     public final java.util.stream.IntStream ints() {
-        x xVar = new x(0L, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0);
-        return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
+        w wVar = new w(0L, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0);
+        return IntStream.Wrapper.convert(new w0(wVar, v6.l(wVar), false));
     }
 
     @Override // java.util.Random
@@ -294,8 +294,8 @@ public class ThreadLocalRandom extends Random {
         if (i7 >= i10) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        x xVar = new x(0L, j3, i7, i10);
-        return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
+        w wVar = new w(0L, j3, i7, i10);
+        return IntStream.Wrapper.convert(new w0(wVar, v6.l(wVar), false));
     }
 
     @Override // java.util.Random
@@ -303,8 +303,8 @@ public class ThreadLocalRandom extends Random {
         if (i7 >= i10) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        x xVar = new x(0L, Long.MAX_VALUE, i7, i10);
-        return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
+        w wVar = new w(0L, Long.MAX_VALUE, i7, i10);
+        return IntStream.Wrapper.convert(new w0(wVar, v6.l(wVar), false));
     }
 
     @Override // java.util.Random
@@ -312,14 +312,14 @@ public class ThreadLocalRandom extends Random {
         if (j3 < 0) {
             throw new IllegalArgumentException("size must be non-negative");
         }
-        y yVar = new y(0L, j3, Long.MAX_VALUE, 0L);
-        return k1.f(new f1(yVar, v6.l(yVar), false));
+        x xVar = new x(0L, j3, Long.MAX_VALUE, 0L);
+        return k1.f(new f1(xVar, v6.l(xVar), false));
     }
 
     @Override // java.util.Random
     public final LongStream longs() {
-        y yVar = new y(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L);
-        return k1.f(new f1(yVar, v6.l(yVar), false));
+        x xVar = new x(0L, Long.MAX_VALUE, Long.MAX_VALUE, 0L);
+        return k1.f(new f1(xVar, v6.l(xVar), false));
     }
 
     @Override // java.util.Random
@@ -330,8 +330,8 @@ public class ThreadLocalRandom extends Random {
         if (j10 >= j11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        y yVar = new y(0L, j3, j10, j11);
-        return k1.f(new f1(yVar, v6.l(yVar), false));
+        x xVar = new x(0L, j3, j10, j11);
+        return k1.f(new f1(xVar, v6.l(xVar), false));
     }
 
     @Override // java.util.Random
@@ -339,8 +339,8 @@ public class ThreadLocalRandom extends Random {
         if (j3 >= j10) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        y yVar = new y(0L, Long.MAX_VALUE, j3, j10);
-        return k1.f(new f1(yVar, v6.l(yVar), false));
+        x xVar = new x(0L, Long.MAX_VALUE, j3, j10);
+        return k1.f(new f1(xVar, v6.l(xVar), false));
     }
 
     @Override // java.util.Random
@@ -348,14 +348,14 @@ public class ThreadLocalRandom extends Random {
         if (j3 < 0) {
             throw new IllegalArgumentException("size must be non-negative");
         }
-        w wVar = new w(0L, j3, Double.MAX_VALUE, 0.0d);
-        return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
+        v vVar = new v(0L, j3, Double.MAX_VALUE, 0.0d);
+        return b0.f(new j$.util.stream.w(vVar, v6.l(vVar), false));
     }
 
     @Override // java.util.Random
     public final DoubleStream doubles() {
-        w wVar = new w(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d);
-        return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
+        v vVar = new v(0L, Long.MAX_VALUE, Double.MAX_VALUE, 0.0d);
+        return b0.f(new j$.util.stream.w(vVar, v6.l(vVar), false));
     }
 
     @Override // java.util.Random
@@ -366,8 +366,8 @@ public class ThreadLocalRandom extends Random {
         if (d2 >= d10) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        w wVar = new w(0L, j3, d2, d10);
-        return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
+        v vVar = new v(0L, j3, d2, d10);
+        return b0.f(new j$.util.stream.w(vVar, v6.l(vVar), false));
     }
 
     @Override // java.util.Random
@@ -375,8 +375,8 @@ public class ThreadLocalRandom extends Random {
         if (d2 >= d10) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        w wVar = new w(0L, Long.MAX_VALUE, d2, d10);
-        return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
+        v vVar = new v(0L, Long.MAX_VALUE, d2, d10);
+        return b0.f(new j$.util.stream.w(vVar, v6.l(vVar), false));
     }
 
     static {

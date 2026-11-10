@@ -35,7 +35,7 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.ij;
 import org.telegram.messenger.iz;
 import org.telegram.messenger.r2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.f0;
 import org.telegram.ui.Cells.g1;
 import org.telegram.ui.Cells.q1;
@@ -43,35 +43,35 @@ import org.telegram.ui.Cells.ra;
 import org.telegram.ui.Cells.s0;
 import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.x1;
+import org.telegram.ui.Components.bz0;
 import org.telegram.ui.Components.cz0;
 import org.telegram.ui.Components.dz0;
-import org.telegram.ui.Components.ez0;
-import org.telegram.ui.Components.pn;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.ue;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.on;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.te;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.cn;
-import org.telegram.ui.lc1;
-import org.telegram.ui.m51;
-import org.telegram.ui.pe;
+import org.telegram.ui.mc1;
+import org.telegram.ui.n51;
+import org.telegram.ui.qe;
 import org.telegram.ui.sj;
 import r0.i0;
 import v4.a1;
 import v4.d1;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public abstract class l extends v4.k {
-    public static final xq V = new xq(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
+    public static final wq V = new wq(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
     public final cn F;
-    public final qj0 G;
+    public final pj0 G;
     public boolean N;
     public d1 O;
-    public pn P;
+    public on P;
     public boolean Q;
-    public final g6 R;
-    public pe T;
-    public pe U;
+    public final h6 R;
+    public qe T;
+    public qe U;
     public final HashMap H = new HashMap();
     public final ArrayList I = new ArrayList();
     public final HashMap J = new HashMap();
@@ -80,10 +80,10 @@ public abstract class l extends v4.k {
     public final HashMap M = new HashMap();
     public final ArrayList S = new ArrayList();
 
-    public l(cn cnVar, qj0 qj0Var, g6 g6Var) {
-        this.R = g6Var;
+    public l(cn cnVar, pj0 pj0Var, h6 h6Var) {
+        this.R = h6Var;
         this.F = cnVar;
-        this.G = qj0Var;
+        this.G = pj0Var;
         this.o = V;
         this.n = true;
         this.m = false;
@@ -121,7 +121,7 @@ public abstract class l extends v4.k {
 
     @Override // v4.k
     public final boolean J(v4.i iVar, d1 d1Var) {
-        ez0 ez0Var;
+        dz0 dz0Var;
         if (r2.a) {
             a8.b("end change if necessary");
         }
@@ -130,8 +130,8 @@ public abstract class l extends v4.k {
             animator.cancel();
         }
         View view = d1Var.a;
-        if (this.K.contains(view) && (ez0Var = (ez0) this.U.run()) != null) {
-            ez0Var.a(view);
+        if (this.K.contains(view) && (dz0Var = (dz0) this.U.run()) != null) {
+            dz0Var.a(view);
         }
         if (iVar.b == d1Var) {
             iVar.b = null;
@@ -291,9 +291,9 @@ public abstract class l extends v4.k {
                         z11 = z10;
                     } else {
                         f10 = 0.0f;
-                        qj0 qj0Var = this.G;
-                        qj0Var.setClipChildren(z10);
-                        qj0Var.invalidate();
+                        pj0 pj0Var = this.G;
+                        pj0Var.setClipChildren(z10);
+                        pj0Var.invalidate();
                         float[] fArr = new float[i7];
                         // fill-array-data instruction
                         fArr[0] = 1.0f;
@@ -322,7 +322,7 @@ public abstract class l extends v4.k {
                         ValueAnimator ofFloat4 = ValueAnimator.ofFloat(fArr2);
                         x1 x1Var4 = x1Var;
                         final cj cjVar = currentMessagesGroup.m;
-                        final qj0 qj0Var2 = (qj0) view.getParent();
+                        final pj0 pj0Var2 = (pj0) view.getParent();
                         final float f12 = currentMessagesGroup.m.n;
                         if (currentMessagesGroup.c) {
                             f10 = 1.0f;
@@ -345,9 +345,9 @@ public abstract class l extends v4.k {
                                 if (z13) {
                                     cjVar2.n = com.google.android.recaptcha.internal.a.z(1.0f, floatValue, f13, f12 * floatValue);
                                 }
-                                qj0 qj0Var3 = qj0Var2;
-                                if (qj0Var3 != null) {
-                                    qj0Var3.invalidate();
+                                pj0 pj0Var3 = pj0Var2;
+                                if (pj0Var3 != null) {
+                                    pj0Var3.invalidate();
                                 }
                             }
                         });
@@ -431,7 +431,7 @@ public abstract class l extends v4.k {
                         animatorSet.setInterpolator(interpolator);
                     }
                 } else {
-                    animatorSet.setInterpolator(xq.g);
+                    animatorSet.setInterpolator(wq.g);
                 }
                 animatorSet.setDuration((long) (250 * (z9 ? 1.9f : 1.0f)));
                 animatorSet.addListener(new b5(this, d1Var2, i13, view));
@@ -454,7 +454,7 @@ public abstract class l extends v4.k {
     }
 
     public final void U() {
-        ez0 ez0Var;
+        dz0 dz0Var;
         HashMap hashMap = this.J;
         ArrayList arrayList = new ArrayList(hashMap.values());
         hashMap.clear();
@@ -469,34 +469,34 @@ public abstract class l extends v4.k {
                 animator.cancel();
             }
         }
-        if (this.K.isEmpty() || (ez0Var = (ez0) this.U.run()) == null) {
+        if (this.K.isEmpty() || (dz0Var = (dz0) this.U.run()) == null) {
             return;
         }
-        ArrayList arrayList2 = ez0Var.c;
-        if (ez0Var.e) {
+        ArrayList arrayList2 = dz0Var.c;
+        if (dz0Var.e) {
             return;
         }
-        ez0Var.e = true;
+        dz0Var.e = true;
         int size2 = arrayList2.size();
         while (i7 < size2) {
             Object obj2 = arrayList2.get(i7);
             i7++;
-            dz0 dz0Var = (dz0) obj2;
-            Runnable runnable = dz0Var.d;
+            cz0 cz0Var = (cz0) obj2;
+            Runnable runnable = cz0Var.d;
             if (runnable != null) {
-                ez0.b(runnable);
-                dz0Var.d = null;
+                dz0.b(runnable);
+                cz0Var.d = null;
             }
         }
         arrayList2.clear();
-        cz0 cz0Var = ez0Var.a;
-        if (cz0Var != null) {
-            cz0Var.h();
+        bz0 bz0Var = dz0Var.a;
+        if (bz0Var != null) {
+            bz0Var.h();
         }
-        Runnable runnable2 = ez0Var.d;
+        Runnable runnable2 = dz0Var.d;
         if (runnable2 != null) {
-            ez0Var.d = null;
-            ez0.b(runnable2);
+            dz0Var.d = null;
+            dz0.b(runnable2);
         }
     }
 
@@ -511,14 +511,14 @@ public abstract class l extends v4.k {
             return;
         }
         if (cjVar.b == 0 && cjVar.d == 0 && cjVar.a == 0 && cjVar.c == 0) {
-            qj0 qj0Var = this.G;
-            int childCount = qj0Var.getChildCount();
+            pj0 pj0Var = this.G;
+            int childCount = pj0Var.getChildCount();
             int i7 = 0;
             while (true) {
                 if (i7 >= childCount) {
                     break;
                 }
-                View childAt = qj0Var.getChildAt(i7);
+                View childAt = pj0Var.getChildAt(i7);
                 if (childAt instanceof q1) {
                     q1 q1Var = (q1) childAt;
                     ij messageObject = q1Var.getMessageObject();
@@ -548,9 +548,9 @@ public abstract class l extends v4.k {
         view.setScaleY(1.0f);
         view.setTranslationY(0.0f);
         boolean z9 = view instanceof f0;
-        qj0 qj0Var = this.G;
+        pj0 pj0Var = this.G;
         if (z9) {
-            int measuredHeight = (qj0Var.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
+            int measuredHeight = (pj0Var.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
             ((f0) view).setAnimating(false);
             if (view.getTop() > measuredHeight) {
                 view.setTranslationY(measuredHeight - view.getTop());
@@ -561,7 +561,7 @@ public abstract class l extends v4.k {
             }
         }
         if (view instanceof ra) {
-            int measuredHeight2 = (qj0Var.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
+            int measuredHeight2 = (pj0Var.getMeasuredHeight() / 2) - (view.getMeasuredHeight() / 2);
             ((ra) view).setAnimating(false);
             if (view.getTop() > measuredHeight2) {
                 view.setTranslationY(measuredHeight2 - view.getTop());
@@ -586,9 +586,9 @@ public abstract class l extends v4.k {
         }
     }
 
-    public final void Y(pe peVar, pe peVar2) {
-        this.T = peVar;
-        this.U = peVar2;
+    public final void Y(qe qeVar, qe qeVar2) {
+        this.T = qeVar;
+        this.U = qeVar2;
     }
 
     public final boolean Z(View view) {
@@ -642,14 +642,14 @@ public abstract class l extends v4.k {
 
     @Override // v4.k, v4.l0
     public final void f(d1 d1Var) {
-        ez0 ez0Var;
+        dz0 dz0Var;
         Animator animator = (Animator) this.J.remove(d1Var);
         if (animator != null) {
             animator.cancel();
         }
         View view = d1Var.a;
-        if (this.K.contains(view) && (ez0Var = (ez0) this.U.run()) != null) {
-            ez0Var.a(view);
+        if (this.K.contains(view) && (dz0Var = (dz0) this.U.run()) != null) {
+            dz0Var.a(view);
         }
         super.f(d1Var);
         X(view);
@@ -670,9 +670,9 @@ public abstract class l extends v4.k {
         }
         arrayList.clear();
         U();
-        pn pnVar = this.P;
-        if (pnVar != null) {
-            pnVar.h.setAlpha(1.0f);
+        on onVar = this.P;
+        if (onVar != null) {
+            onVar.h.setAlpha(1.0f);
         }
         this.O = null;
         this.P = null;
@@ -793,7 +793,7 @@ public abstract class l extends v4.k {
     public final void m() {
         boolean z9;
         boolean z10;
-        qj0 qj0Var;
+        pj0 pj0Var;
         boolean z11;
         boolean z12;
         int size;
@@ -802,7 +802,7 @@ public abstract class l extends v4.k {
         float f10;
         int i10;
         ArrayList arrayList;
-        qj0 qj0Var2;
+        pj0 pj0Var2;
         float f11;
         boolean z13;
         ArrayList arrayList2;
@@ -811,20 +811,20 @@ public abstract class l extends v4.k {
         ArrayList arrayList3;
         boolean z14;
         boolean z15;
-        pe peVar;
+        qe qeVar;
         int i13;
         dj currentMessagesGroup;
         boolean z16;
-        qj0 qj0Var3;
+        pj0 pj0Var3;
         boolean z17;
         ij messageObject;
-        pe peVar2;
+        qe qeVar2;
         int i14;
         int i15;
         boolean z18;
         cn cnVar;
         Runnable runnable;
-        ue ueVar;
+        te teVar;
         int i16;
         l lVar = this;
         ArrayList arrayList4 = lVar.p;
@@ -839,12 +839,12 @@ public abstract class l extends v4.k {
             return;
         }
         boolean z19 = lVar.N;
-        qj0 qj0Var4 = lVar.G;
+        pj0 pj0Var4 = lVar.G;
         if (z19) {
             z9 = false;
             for (0; i16 < arrayList7.size(); i16 + 1) {
                 if (lVar.Q) {
-                    i16 = ((d1) arrayList7.get(i16)).c() != (qj0Var4.getAdapter() == null ? 0 : qj0Var4.getAdapter().b()) - 1 ? i16 + 1 : 0;
+                    i16 = ((d1) arrayList7.get(i16)).c() != (pj0Var4.getAdapter() == null ? 0 : pj0Var4.getAdapter().b()) - 1 ? i16 + 1 : 0;
                     z9 = true;
                 } else {
                     if (((d1) arrayList7.get(i16)).c() != 0) {
@@ -922,7 +922,7 @@ public abstract class l extends v4.k {
                             if (q1Var2 != null && arrayList11.contains(q1Var2.getMessageObject())) {
                                 arrayList11.remove(q1Var2.getMessageObject());
                                 sj sjVar = cnVar2.Z;
-                                if (sjVar.f0 == null || !((ueVar = sjVar.L0) == null || ueVar.p0)) {
+                                if (sjVar.f0 == null || !((teVar = sjVar.L0) == null || teVar.p0)) {
                                     i15 = size4;
                                 } else {
                                     i15 = size4;
@@ -932,11 +932,11 @@ public abstract class l extends v4.k {
                                         if (z18) {
                                             if (ij.R4(q1Var2.getMessageObject().k)) {
                                                 if (Math.abs(view2.getTranslationY()) < view2.getMeasuredHeight() * 3.0f) {
-                                                    new lc1(q1Var2, cnVar2.Z, lVar.G, cnVar2.ha, lVar.R).f.start();
+                                                    new mc1(q1Var2, cnVar2.Z, lVar.G, cnVar2.ha, lVar.R).f.start();
                                                 }
-                                            } else if (iz.o() != 0 && Math.abs(view2.getTranslationY()) < qj0Var4.getMeasuredHeight()) {
+                                            } else if (iz.o() != 0 && Math.abs(view2.getTranslationY()) < pj0Var4.getMeasuredHeight()) {
                                                 cnVar = cnVar2;
-                                                ValueAnimator valueAnimator = new m51(q1Var2, cnVar2, lVar.G, cnVar2.ha, lVar.R).d;
+                                                ValueAnimator valueAnimator = new n51(q1Var2, cnVar2, lVar.G, cnVar2.ha, lVar.R).d;
                                                 if (valueAnimator != null) {
                                                     valueAnimator.start();
                                                 }
@@ -986,7 +986,7 @@ public abstract class l extends v4.k {
             boolean isEmpty11 = arrayList6.isEmpty();
             boolean isEmpty12 = arrayList7.isEmpty();
             if (!isEmpty9 || !isEmpty10 || !isEmpty12 || !isEmpty11) {
-                boolean z20 = (lVar.U == null || (peVar2 = lVar.T) == null || !((Boolean) peVar2.run()).booleanValue()) ? false : true;
+                boolean z20 = (lVar.U == null || (qeVar2 = lVar.T) == null || !((Boolean) qeVar2.run()).booleanValue()) ? false : true;
                 ArrayList arrayList12 = lVar.K;
                 ArrayList arrayList13 = lVar.A;
                 int i21 = 1;
@@ -1001,12 +1001,12 @@ public abstract class l extends v4.k {
                             View view4 = d1Var2.a;
                             z17 = isEmpty11;
                             if (!(view4 instanceof q1) || ((q1) view4).getCurrentMessagesGroup() == null || (messageObject = ((q1) d1Var2.a).getMessageObject()) == null || messageObject.c1() == 0) {
-                                qj0Var3 = qj0Var4;
+                                pj0Var3 = pj0Var4;
                             } else {
                                 if (longSparseArray == null) {
                                     longSparseArray = new LongSparseArray();
                                 }
-                                qj0Var3 = qj0Var4;
+                                pj0Var3 = pj0Var4;
                                 ArrayList arrayList15 = (ArrayList) longSparseArray.get(messageObject.c1());
                                 if (arrayList15 == null) {
                                     long c12 = messageObject.c1();
@@ -1021,16 +1021,16 @@ public abstract class l extends v4.k {
                             }
                         } else {
                             z16 = isEmpty10;
-                            qj0Var3 = qj0Var4;
+                            pj0Var3 = pj0Var4;
                             z17 = isEmpty11;
                         }
                         i22++;
                         isEmpty10 = z16;
                         isEmpty11 = z17;
-                        qj0Var4 = qj0Var3;
+                        pj0Var4 = pj0Var3;
                     }
                     z10 = isEmpty10;
-                    qj0Var = qj0Var4;
+                    pj0Var = pj0Var4;
                     z11 = isEmpty11;
                     if (longSparseArray != null) {
                         int i23 = 0;
@@ -1044,7 +1044,7 @@ public abstract class l extends v4.k {
                                         a8.b("animate remove group impl with thanos");
                                     }
                                     arrayList13.addAll(arrayList17);
-                                    ez0 ez0Var = (ez0) lVar.U.run();
+                                    dz0 dz0Var = (dz0) lVar.U.run();
                                     for (int i24 = 0; i24 < arrayList17.size(); i24++) {
                                     }
                                     ArrayList arrayList18 = new ArrayList();
@@ -1053,15 +1053,15 @@ public abstract class l extends v4.k {
                                         arrayList18.add(((d1) arrayList17.get(i25)).a);
                                     }
                                     z0 z0Var = new z0(lVar, arrayList18, arrayList17, 7);
-                                    cz0 cz0Var = ez0Var.a;
-                                    if (cz0Var != null) {
-                                        cz0Var.d(arrayList18, z0Var);
-                                        Choreographer.getInstance().postFrameCallback(ez0Var.b);
+                                    bz0 bz0Var = dz0Var.a;
+                                    if (bz0Var != null) {
+                                        bz0Var.d(arrayList18, z0Var);
+                                        Choreographer.getInstance().postFrameCallback(dz0Var.b);
                                     } else {
-                                        ez0Var.c.add(new dz0(arrayList18, z0Var));
+                                        dz0Var.c.add(new cz0(arrayList18, z0Var));
                                     }
                                     arrayList12.add((View) arrayList18.get(0));
-                                    qj0Var.C0();
+                                    pj0Var.C0();
                                     z12 = true;
                                     i23 = i13 + 1;
                                 } else {
@@ -1093,7 +1093,7 @@ public abstract class l extends v4.k {
                             }
                             View view6 = d1Var3.a;
                             arrayList13.add(d1Var3);
-                            if (!z22 || (peVar = lVar.U) == null) {
+                            if (!z22 || (qeVar = lVar.U) == null) {
                                 i12 = i26;
                                 arrayList3 = arrayList13;
                                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view6, (Property<View, Float>) View.ALPHA, view6.getAlpha(), 0.0f);
@@ -1104,22 +1104,22 @@ public abstract class l extends v4.k {
                                 hashMap.put(d1Var3, ofFloat);
                                 ofFloat.start();
                             } else {
-                                ez0 ez0Var2 = (ez0) peVar.run();
+                                dz0 dz0Var2 = (dz0) qeVar.run();
                                 i12 = i26;
                                 z0 z0Var2 = new z0(lVar, view6, d1Var3, 8);
-                                cz0 cz0Var2 = ez0Var2.a;
-                                if (cz0Var2 != null) {
-                                    cz0Var2.b(1.0f, view6, z0Var2);
-                                    Choreographer.getInstance().postFrameCallback(ez0Var2.b);
+                                bz0 bz0Var2 = dz0Var2.a;
+                                if (bz0Var2 != null) {
+                                    bz0Var2.b(1.0f, view6, z0Var2);
+                                    Choreographer.getInstance().postFrameCallback(dz0Var2.b);
                                 } else {
-                                    ez0Var2.c.add(new dz0(view6, z0Var2));
+                                    dz0Var2.c.add(new cz0(view6, z0Var2));
                                 }
                                 arrayList12.add(view6);
                                 arrayList3 = arrayList13;
                                 z14 = z20;
                                 z15 = z22;
                             }
-                            qj0Var.C0();
+                            pj0Var.C0();
                             z20 = z14;
                             if (z15) {
                                 z21 = true;
@@ -1195,25 +1195,25 @@ public abstract class l extends v4.k {
                                     f10 = 0.0f;
                                     view9.animate().translationX(0.0f).translationY(0.0f).setDuration(lVar.c).start();
                                 }
-                                long max = (long) ((1.0f - Math.max(f10, Math.min(1.0f, view9.getBottom() / qj0Var.getMeasuredHeight()))) * 100.0f);
+                                long max = (long) ((1.0f - Math.max(f10, Math.min(1.0f, view9.getBottom() / pj0Var.getMeasuredHeight()))) * 100.0f);
                                 if (!(view9 instanceof q1)) {
                                     i10 = size5;
                                     arrayList = arrayList21;
-                                    qj0Var2 = qj0Var;
+                                    pj0Var2 = pj0Var;
                                     f11 = 1.0f;
                                 } else if (d1Var4 == lVar.O) {
-                                    pn pnVar = lVar.P;
-                                    if (pnVar != null) {
-                                        pnVar.h.setAlpha(0.0f);
+                                    on onVar = lVar.P;
+                                    if (onVar != null) {
+                                        onVar.h.setAlpha(0.0f);
                                     }
-                                    qj0Var2 = qj0Var;
-                                    qj0Var2.setClipChildren(false);
+                                    pj0Var2 = pj0Var;
+                                    pj0Var2.setClipChildren(false);
                                     final q1 q1Var4 = (q1) view9;
                                     View view10 = (View) lVar.P.getParent();
                                     float x10 = view10.getX() + lVar.P.getX() + lVar.P.h.getX();
                                     float y10 = view10.getY() + lVar.P.getY() + lVar.P.h.getY();
-                                    float x11 = q1Var4.getX() + qj0Var2.getX() + q1Var4.getPhotoImage().K0;
-                                    float y11 = q1Var4.getY() + qj0Var2.getY() + q1Var4.getPhotoImage().L0;
+                                    float x11 = q1Var4.getX() + pj0Var2.getX() + q1Var4.getPhotoImage().K0;
+                                    float y11 = q1Var4.getY() + pj0Var2.getY() + q1Var4.getPhotoImage().L0;
                                     final float width = lVar.P.h.getWidth();
                                     final float height = lVar.P.h.getHeight();
                                     final float f13 = q1Var4.getPhotoImage().M0;
@@ -1271,13 +1271,13 @@ public abstract class l extends v4.k {
                                     animatorSet.start();
                                     i21 = 1;
                                     i27 = i28;
-                                    qj0Var = qj0Var2;
+                                    pj0Var = pj0Var2;
                                     size5 = i10;
                                     arrayList21 = arrayList;
                                 } else {
                                     i10 = size5;
                                     arrayList = arrayList21;
-                                    qj0Var2 = qj0Var;
+                                    pj0Var2 = pj0Var;
                                     f11 = 1.0f;
                                     dj currentMessagesGroup2 = ((q1) view9).getCurrentMessagesGroup();
                                     if (currentMessagesGroup2 != null) {
@@ -1310,7 +1310,7 @@ public abstract class l extends v4.k {
                                 animatorSet.start();
                                 i21 = 1;
                                 i27 = i28;
-                                qj0Var = qj0Var2;
+                                pj0Var = pj0Var2;
                                 size5 = i10;
                                 arrayList21 = arrayList;
                             }
@@ -1319,7 +1319,7 @@ public abstract class l extends v4.k {
                     }
                 } else {
                     z10 = isEmpty10;
-                    qj0Var = qj0Var4;
+                    pj0Var = pj0Var4;
                     z11 = isEmpty11;
                 }
                 z12 = false;
@@ -1477,7 +1477,7 @@ public abstract class l extends v4.k {
                 q1Var.setAnimationOffsetX(-i19);
             }
             boolean z10 = r0Var instanceof j;
-            qj0 qj0Var = this.G;
+            pj0 pj0Var = this.G;
             if (z10) {
                 ImageReceiver photoImage = q1Var.getPhotoImage();
                 view = view2;
@@ -1486,8 +1486,8 @@ public abstract class l extends v4.k {
                 boolean z11 = (!transitionParams.w0 || jVar.f == f10 || jVar.e == f10) ? false : true;
                 kVar.n = z11;
                 if (z11) {
-                    qj0Var.setClipChildren(false);
-                    qj0Var.invalidate();
+                    pj0Var.setClipChildren(false);
+                    pj0Var.invalidate();
                     transitionParams.g0 = true;
                     if (q1Var.getMessageObject().h4()) {
                         transitionParams.n0 = f12;
@@ -1561,8 +1561,8 @@ public abstract class l extends v4.k {
                     transitionParams.i0 = -kVar.t;
                     transitionParams.k0 = -kVar.u;
                     transitionParams.j0 = -kVar.v;
-                    qj0Var.setClipChildren(false);
-                    qj0Var.invalidate();
+                    pj0Var.setClipChildren(false);
+                    pj0Var.invalidate();
                 }
             } else {
                 view = view2;
@@ -1572,7 +1572,7 @@ public abstract class l extends v4.k {
                 ArrayList arrayList = this.I;
                 if (arrayList.contains(currentMessagesGroup)) {
                     arrayList.remove(currentMessagesGroup);
-                    qj0 qj0Var2 = (qj0) view.getParent();
+                    pj0 pj0Var2 = (pj0) view.getParent();
                     cj cjVar2 = currentMessagesGroup.m;
                     boolean z14 = true;
                     int i23 = 0;
@@ -1580,8 +1580,8 @@ public abstract class l extends v4.k {
                     int i25 = 0;
                     int i26 = 0;
                     int i27 = 0;
-                    while (i23 < qj0Var2.getChildCount()) {
-                        View childAt = qj0Var2.getChildAt(i23);
+                    while (i23 < pj0Var2.getChildCount()) {
+                        View childAt = pj0Var2.getChildAt(i23);
                         if (childAt instanceof q1) {
                             q1 q1Var3 = (q1) childAt;
                             if (q1Var3.getCurrentMessagesGroup() == currentMessagesGroup && !q1Var3.getMessageObject().Z) {
@@ -1635,8 +1635,8 @@ public abstract class l extends v4.k {
                         cjVar2.e = i30;
                         cjVar2.g = i31;
                         cjVar2.n = cjVar2.o ? 1.0f : f10;
-                        qj0Var2.setClipChildren(false);
-                        qj0Var2.invalidate();
+                        pj0Var2.setClipChildren(false);
+                        pj0Var2.invalidate();
                     }
                     cjVar2.i = z14;
                 }
@@ -1664,8 +1664,8 @@ public abstract class l extends v4.k {
                     transitionParams.k0 = (int) ((-kVar.u) - q1Var.getTranslationY());
                     transitionParams.j0 = (int) ((-kVar.v) - q1Var.getTranslationY());
                     transitionParams.D0 = true;
-                    qj0Var.setClipChildren(false);
-                    qj0Var.invalidate();
+                    pj0Var.setClipChildren(false);
+                    pj0Var.invalidate();
                 } else {
                     cjVar3.i = true;
                 }

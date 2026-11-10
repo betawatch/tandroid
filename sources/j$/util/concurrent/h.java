@@ -9,8 +9,8 @@ public final class h extends a implements Iterator, Enumeration {
     public final /* synthetic */ int k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(l[] lVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap, int i11) {
-        super(lVarArr, i7, i10, concurrentHashMap);
+    public /* synthetic */ h(k[] kVarArr, int i7, int i10, ConcurrentHashMap concurrentHashMap, int i11) {
+        super(kVarArr, i7, i10, concurrentHashMap);
         this.k = i11;
     }
 
@@ -18,21 +18,21 @@ public final class h extends a implements Iterator, Enumeration {
     public final Object next() {
         switch (this.k) {
             case 0:
-                l lVar = this.b;
-                if (lVar == null) {
+                k kVar = this.b;
+                if (kVar == null) {
                     throw new NoSuchElementException();
                 }
-                Object obj = lVar.b;
-                this.j = lVar;
+                Object obj = kVar.b;
+                this.j = kVar;
                 a();
                 return obj;
             default:
-                l lVar2 = this.b;
-                if (lVar2 == null) {
+                k kVar2 = this.b;
+                if (kVar2 == null) {
                     throw new NoSuchElementException();
                 }
-                Object obj2 = lVar2.c;
-                this.j = lVar2;
+                Object obj2 = kVar2.c;
+                this.j = kVar2;
                 a();
                 return obj2;
         }

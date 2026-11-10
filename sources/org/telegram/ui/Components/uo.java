@@ -2,23 +2,23 @@ package org.telegram.ui.Components;
 
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class uo {
-    public final org.telegram.ui.ActionBar.r3 a;
+    public final org.telegram.ui.ActionBar.s3 a;
     public Drawable b;
     public int c;
     public boolean d;
 
-    public uo(org.telegram.ui.ActionBar.r3 r3Var) {
-        this.a = r3Var;
+    public uo(org.telegram.ui.ActionBar.s3 s3Var) {
+        this.a = s3Var;
     }
 
     public final String a() {
-        org.telegram.ui.ActionBar.r3 r3Var = this.a;
-        if (r3Var == null || r3Var.a) {
+        org.telegram.ui.ActionBar.s3 s3Var = this.a;
+        if (s3Var == null || s3Var.a) {
             return null;
         }
-        return r3Var.e;
+        return s3Var.e;
     }
 }

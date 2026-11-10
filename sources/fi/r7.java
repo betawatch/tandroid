@@ -1,46 +1,46 @@
 package fi;
 
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.bc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class r7 implements org.telegram.ui.Components.ab {
+public final class r7 implements org.telegram.ui.Components.za {
     public final /* synthetic */ int a;
 
     public /* synthetic */ r7(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final /* synthetic */ void b(cc ccVar) {
+    @Override // org.telegram.ui.Components.za
+    public final /* synthetic */ void b(bc bcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ab
-    public final /* synthetic */ void d(cc ccVar) {
+    @Override // org.telegram.ui.Components.za
+    public final /* synthetic */ void d(bc bcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final int f(int i7) {
         int i10;
         int L;
@@ -89,117 +89,117 @@ public final class r7 implements org.telegram.ui.Components.ab {
         return L + i10;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final boolean g(int i7) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ab
+    @Override // org.telegram.ui.Components.za
     public final int h(int i7) {
         switch (this.a) {
         }
         return org.telegram.messenger.g0.m;
     }
 
-    private final /* synthetic */ void A(cc ccVar) {
+    private final /* synthetic */ void A(bc bcVar) {
     }
 
-    private final /* synthetic */ void B(cc ccVar) {
+    private final /* synthetic */ void B(bc bcVar) {
     }
 
-    private final /* synthetic */ void C(cc ccVar) {
+    private final /* synthetic */ void C(bc bcVar) {
     }
 
-    private final /* synthetic */ void D(cc ccVar) {
+    private final /* synthetic */ void D(bc bcVar) {
     }
 
-    private final /* synthetic */ void E(cc ccVar) {
+    private final /* synthetic */ void E(bc bcVar) {
     }
 
-    private final /* synthetic */ void F(cc ccVar) {
+    private final /* synthetic */ void F(bc bcVar) {
     }
 
-    private final /* synthetic */ void G(cc ccVar) {
+    private final /* synthetic */ void G(bc bcVar) {
     }
 
-    private final /* synthetic */ void H(cc ccVar) {
+    private final /* synthetic */ void H(bc bcVar) {
     }
 
-    private final /* synthetic */ void I(cc ccVar) {
+    private final /* synthetic */ void I(bc bcVar) {
     }
 
-    private final /* synthetic */ void J(cc ccVar) {
+    private final /* synthetic */ void J(bc bcVar) {
     }
 
-    private final /* synthetic */ void K(cc ccVar) {
+    private final /* synthetic */ void K(bc bcVar) {
     }
 
-    private final /* synthetic */ void L(cc ccVar) {
+    private final /* synthetic */ void L(bc bcVar) {
     }
 
-    private final /* synthetic */ void M(cc ccVar) {
+    private final /* synthetic */ void M(bc bcVar) {
     }
 
-    private final /* synthetic */ void N(cc ccVar) {
+    private final /* synthetic */ void N(bc bcVar) {
     }
 
-    private final /* synthetic */ void O(cc ccVar) {
+    private final /* synthetic */ void O(bc bcVar) {
     }
 
-    private final /* synthetic */ void P(cc ccVar) {
+    private final /* synthetic */ void P(bc bcVar) {
     }
 
-    private final /* synthetic */ void Q(cc ccVar) {
+    private final /* synthetic */ void Q(bc bcVar) {
     }
 
-    private final /* synthetic */ void R(cc ccVar) {
+    private final /* synthetic */ void R(bc bcVar) {
     }
 
-    private final /* synthetic */ void S(cc ccVar) {
+    private final /* synthetic */ void S(bc bcVar) {
     }
 
-    private final /* synthetic */ void T(cc ccVar) {
+    private final /* synthetic */ void T(bc bcVar) {
     }
 
-    private final /* synthetic */ void U(cc ccVar) {
+    private final /* synthetic */ void U(bc bcVar) {
     }
 
-    private final /* synthetic */ void V(cc ccVar) {
+    private final /* synthetic */ void V(bc bcVar) {
     }
 
-    private final /* synthetic */ void W(cc ccVar) {
+    private final /* synthetic */ void W(bc bcVar) {
     }
 
-    private final /* synthetic */ void X(cc ccVar) {
+    private final /* synthetic */ void X(bc bcVar) {
     }
 
-    private final /* synthetic */ void Y(cc ccVar) {
+    private final /* synthetic */ void Y(bc bcVar) {
     }
 
-    private final /* synthetic */ void Z(cc ccVar) {
+    private final /* synthetic */ void Z(bc bcVar) {
     }
 
-    private final /* synthetic */ void a0(cc ccVar) {
+    private final /* synthetic */ void a0(bc bcVar) {
     }
 
-    private final /* synthetic */ void b0(cc ccVar) {
+    private final /* synthetic */ void b0(bc bcVar) {
     }
 
-    private final /* synthetic */ void c0(cc ccVar) {
+    private final /* synthetic */ void c0(bc bcVar) {
     }
 
-    private final /* synthetic */ void d0(cc ccVar) {
+    private final /* synthetic */ void d0(bc bcVar) {
     }
 
-    private final /* synthetic */ void e0(cc ccVar) {
+    private final /* synthetic */ void e0(bc bcVar) {
     }
 
-    private final /* synthetic */ void f0(cc ccVar) {
+    private final /* synthetic */ void f0(bc bcVar) {
     }
 
-    private final /* synthetic */ void g0(cc ccVar) {
+    private final /* synthetic */ void g0(bc bcVar) {
     }
 
     private final /* synthetic */ void i(float f10) {
@@ -253,6 +253,6 @@ public final class r7 implements org.telegram.ui.Components.ab {
     private final /* synthetic */ void y(float f10) {
     }
 
-    private final /* synthetic */ void z(cc ccVar) {
+    private final /* synthetic */ void z(bc bcVar) {
     }
 }

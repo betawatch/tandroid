@@ -3,10 +3,10 @@ package fi;
 import android.content.DialogInterface;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.as;
-import org.telegram.ui.Components.fz0;
-import org.telegram.ui.e40;
+import org.telegram.ui.Components.ez0;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class d1 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                int i7 = k2.y1;
+                int i7 = k2.B1;
                 break;
             case 1:
                 org.telegram.ui.b.a = false;
@@ -30,10 +30,10 @@ public final /* synthetic */ class d1 implements DialogInterface.OnDismissListen
                 as.j.edit().putInt("dismissed_count", as.j.getInt("dismissed_count", 0) + 1).apply();
                 break;
             case 4:
-                int i10 = fz0.e;
+                int i10 = ez0.e;
                 break;
             case 5:
-                e40 e40Var = e40.u5;
+                f40 f40Var = f40.x5;
                 break;
             case 6:
                 break;

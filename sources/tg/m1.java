@@ -9,14 +9,14 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import c8.j9;
-import org.telegram.ui.Components.vy;
-import org.telegram.ui.Components.w5;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.v5;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
-    public final w5 D;
+    public final v5 D;
     public sg.v0 E;
     public float F;
     public float G;
@@ -27,7 +27,7 @@ public final class m1 extends View {
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final vy d;
+    public final uy d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -35,8 +35,8 @@ public final class m1 extends View {
     public float r;
     public long s;
     public boolean w;
-    public final w5 x;
-    public final w5 y;
+    public final v5 x;
+    public final v5 y;
 
     public m1(Context context) {
         super(context);
@@ -47,12 +47,12 @@ public final class m1 extends View {
         this.c = new Path();
         this.e = new RectF();
         this.w = true;
-        this.x = new w5(this);
-        this.y = new w5(this);
-        this.D = new w5(this);
+        this.x = new v5(this);
+        this.y = new v5(this);
+        this.D = new v5(this);
         this.H = new sg.i1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new vy(context, new k1(this));
+        this.d = new uy(context, new k1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, org.telegram.messenger.g0.L(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -135,13 +135,13 @@ public final class m1 extends View {
                         }
                         canvas.save();
                         float L4 = org.telegram.messenger.g0.L(32.0f);
-                        xq xqVar = xq.f;
-                        canvas.translate(xqVar.getInterpolation(this.r) * L4, rectF.top);
+                        wq wqVar = wq.f;
+                        canvas.translate(wqVar.getInterpolation(this.r) * L4, rectF.top);
                         canvas.drawPath(path, this.a);
                         canvas.restore();
                         float f13 = (e10 - e11) / (e12 - e11);
                         float f14 = L2 * 1.5f;
-                        a(xqVar.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f13, rectF.height(), rectF.top), rectF.top + f12, rectF.bottom - Math.min(f14, f12)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f14, f12), f12, f13), this.r), canvas, false);
+                        a(wqVar.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f13, rectF.height(), rectF.top), rectF.top + f12, rectF.bottom - Math.min(f14, f12)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f14, f12), f12, f13), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.w && this.E != null) {
                             sg.v0 v0Var = this.E;
                             float f15 = v0Var.c.g.a;
@@ -186,13 +186,13 @@ public final class m1 extends View {
                 }
                 canvas.save();
                 float L42 = org.telegram.messenger.g0.L(32.0f);
-                xq xqVar2 = xq.f;
-                canvas.translate(xqVar2.getInterpolation(this.r) * L42, rectF3.top);
+                wq wqVar2 = wq.f;
+                canvas.translate(wqVar2.getInterpolation(this.r) * L42, rectF3.top);
                 canvas.drawPath(path2, this.a);
                 canvas.restore();
                 float f132 = (e10 - e11) / (e12 - e11);
                 float f142 = L22 * 1.5f;
-                a(xqVar2.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f132, rectF3.height(), rectF3.top), rectF3.top + f122, rectF3.bottom - Math.min(f142, f122)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f142, f122), f122, f132), this.r), canvas, false);
+                a(wqVar2.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f132, rectF3.height(), rectF3.top), rectF3.top + f122, rectF3.bottom - Math.min(f142, f122)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f142, f122), f122, f132), this.r), canvas, false);
                 if (this.J) {
                     sg.v0 v0Var2 = this.E;
                     float f152 = v0Var2.c.g.a;
@@ -239,13 +239,13 @@ public final class m1 extends View {
         }
         canvas.save();
         float L422 = org.telegram.messenger.g0.L(32.0f);
-        xq xqVar22 = xq.f;
-        canvas.translate(xqVar22.getInterpolation(this.r) * L422, rectF32.top);
+        wq wqVar22 = wq.f;
+        canvas.translate(wqVar22.getInterpolation(this.r) * L422, rectF32.top);
         canvas.drawPath(path22, this.a);
         canvas.restore();
         float f1322 = (e10 - e11) / (e12 - e11);
         float f1422 = L222 * 1.5f;
-        a(xqVar22.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f1322, rectF32.height(), rectF32.top), rectF32.top + f1222, rectF32.bottom - Math.min(f1422, f1222)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f1422, f1222), f1222, f1322), this.r), canvas, false);
+        a(wqVar22.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), j9.a(com.google.android.recaptcha.internal.a.z(1.0f, f1322, rectF32.height(), rectF32.top), rectF32.top + f1222, rectF32.bottom - Math.min(f1422, f1222)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f1422, f1222), f1222, f1322), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {

@@ -1,130 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class ur0 extends FrameLayout {
-    public si0 D;
-    public int E;
-    public di.b4 F;
-    public w80 G;
-    public boolean H;
-    public int I;
-    public boolean J;
-    public float K;
-    public boolean L;
-    public final Paint M;
-    public org.telegram.ui.ActionBar.g6 N;
-    public Drawable O;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public v4.k d;
-    public v4.u0 e;
-    public v4.u0 f;
-    public dq0 h;
-    public tr0 n;
-    public eq0 r;
-    public nq0 s;
-    public pq0 w;
-    public bq0 x;
-    public mq0 y;
+public final class ur0 extends org.telegram.ui.Cells.g7 {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ oj0 m0;
 
-    public ur0(Context context) {
-        super(context);
-        this.M = new Paint();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ur0(oj0 oj0Var, Context context, org.telegram.ui.ActionBar.h6 h6Var, int i7) {
+        super(0, context, h6Var);
+        this.l0 = i7;
+        this.m0 = oj0Var;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setDrawPageBackground(boolean z9) {
-        if (this.L != z9) {
-            this.L = z9;
-            invalidate();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setWallpaper(Drawable drawable) {
-        Drawable drawable2 = this.O;
-        if (drawable2 != drawable) {
-            if (drawable2 != null) {
-                drawable2.setCallback(null);
-            }
-            this.O = drawable;
-            if (drawable != null) {
-                drawable.setCallback(this);
-            }
-            invalidate();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        h(canvas);
-        super.dispatchDraw(canvas);
-        di.b4 b4Var = this.F;
-        if (b4Var == null || b4Var.getVisibility() != 0) {
-            return;
-        }
-        vi0 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float L = org.telegram.messenger.g0.L(36.0f) + fastScroll.getScrollBarY();
-            if (this.E == 9) {
-                L += org.telegram.messenger.g0.L(64.0f);
-            }
-            int i7 = this.E;
-            if (i7 == 8 || zs0.J0(i7)) {
-                L += org.telegram.messenger.g0.L(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.F.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f);
-            this.F.setPivotX(r2.getMeasuredWidth());
-            this.F.setPivotY(0.0f);
-            this.F.setTranslationX(measuredWidth);
-            this.F.setTranslationY(L);
-        }
-        if (fastScroll.getProgress() > 0.85f) {
-            zs0.s(this, null, false);
+    @Override // org.telegram.ui.Cells.g7
+    public final boolean d(org.telegram.messenger.ij ijVar) {
+        long playlistTopicId;
+        long playlistTopicId2;
+        switch (this.l0) {
+            case 0:
+                vr0 vr0Var = (vr0) this.m0;
+                if (org.telegram.messenger.ij.R4(ijVar.k) || ijVar.h4()) {
+                    boolean S = MediaController.B().S(ijVar);
+                    MediaController.B().r0(S ? vr0Var.d : null, false);
+                    if (ijVar.h4()) {
+                        MediaController.B().k0(false);
+                    }
+                    return S;
+                }
+                if (!ijVar.I3()) {
+                    return false;
+                }
+                MediaController B = MediaController.B();
+                ArrayList arrayList = vr0Var.d;
+                ys0 ys0Var = vr0Var.w;
+                long j3 = ys0Var.e1;
+                playlistTopicId = ys0Var.getPlaylistTopicId();
+                return B.o0(arrayList, ijVar, j3, true, null, playlistTopicId);
+            case 1:
+                ls0 ls0Var = (ls0) this.m0;
+                int i7 = ls0Var.d;
+                ys0 ys0Var2 = ls0Var.f;
+                if (org.telegram.messenger.ij.R4(ijVar.k) || ijVar.h4()) {
+                    boolean S2 = MediaController.B().S(ijVar);
+                    MediaController.B().r0(S2 ? ys0Var2.v1[i7].a : null, false);
+                    return S2;
+                }
+                if (!ijVar.I3()) {
+                    return false;
+                }
+                MediaController B2 = MediaController.B();
+                ArrayList arrayList2 = ys0Var2.v1[i7].a;
+                long j10 = ys0Var2.e1;
+                playlistTopicId2 = ys0Var2.getPlaylistTopicId();
+                return B2.o0(arrayList2, ijVar, j10, true, null, playlistTopicId2);
+            default:
+                org.telegram.ui.b00 b00Var = ((org.telegram.ui.wz) this.m0).w;
+                if (org.telegram.messenger.ij.R4(ijVar.k) || ijVar.h4()) {
+                    boolean S3 = MediaController.B().S(ijVar);
+                    MediaController.B().r0(S3 ? b00Var.f : null, false);
+                    return S3;
+                }
+                if (!ijVar.I3()) {
+                    return false;
+                }
+                String str = b00Var.Q;
+                long j11 = b00Var.E;
+                long j12 = b00Var.H;
+                h2.a0 a0Var = new h2.a0(str, j11, j12, j12, b00Var.D);
+                a0Var.e = b00Var.N;
+                a0Var.f = b00Var.w;
+                a0Var.d = b00Var.O;
+                a0Var.g = b00Var.J ? 1 : 0;
+                return MediaController.B().o0(b00Var.f, ijVar, 0L, true, a0Var, 0L);
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.n) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    public final void h(Canvas canvas) {
-        int min = Math.min(0, this.h.getTop());
-        int max = Math.max(getHeight(), this.h.getBottom());
-        int L = org.telegram.messenger.g0.L(2.0f);
-        if (this.O != null) {
-            canvas.save();
-            int i7 = -L;
-            canvas.clipRect(i7, min, getWidth() + L, max);
-            this.O.setBounds(i7, min, getWidth() + L, max);
-            this.O.draw(canvas);
-            canvas.restore();
-            return;
-        }
-        if (this.L) {
-            int w02 = org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.a7, this.N);
-            Paint paint = this.M;
-            paint.setColor(w02);
-            canvas.drawRect(-L, min, getWidth() + L, max, paint);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.O || super.verifyDrawable(drawable);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ur0(org.telegram.ui.wz wzVar, Context context) {
+        super(1, context, null);
+        this.l0 = 2;
+        this.m0 = wzVar;
     }
 }

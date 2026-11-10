@@ -5,14 +5,14 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ak extends hr0 {
+public final class ak extends ir0 {
     public ak(ViewGroup viewGroup, ViewGroup viewGroup2) {
         super(viewGroup, viewGroup2);
     }
 
-    @Override // org.telegram.ui.hr0
+    @Override // org.telegram.ui.ir0
     public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
         if (f10 > 0.0f) {
             View view = this.e;

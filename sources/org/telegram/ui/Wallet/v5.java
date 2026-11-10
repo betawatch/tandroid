@@ -1,157 +1,169 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.id;
-import org.telegram.ui.Components.xq;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Scroller;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class v5 extends Drawable {
-    public final /* synthetic */ int a;
-    public final Path b;
-    public final Paint c;
-    public final Object d;
-    public final Object e;
+public final class v5 extends v4.q0 {
+    public RecyclerView a;
+    public fi.w3 c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public final /* synthetic */ z5 j;
+    public final fi.h8 b = new fi.h8(this);
+    public final l i = new l(this, 8);
 
-    public v5(org.telegram.ui.l0 l0Var) {
-        this.a = 1;
-        this.e = l0Var;
-        this.b = new Path();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        this.d = new org.telegram.ui.Components.w5(new org.telegram.ui.ActionBar.o5(this, 15), 350L, xq.h, 0);
+    public v5(z5 z5Var) {
+        this.j = z5Var;
     }
 
-    public void c() {
-        invalidateSelf();
-        ((org.telegram.ui.l0) this.e).O.setContentDescription(id.M0(2131750587, null));
+    /* JADX WARN: Removed duplicated region for block: B:35:0x008a  */
+    @Override // v4.q0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(int i7, int i10) {
+        int minFlingVelocity;
+        int i11;
+        boolean z9 = this.f;
+        if (z9) {
+            if (z9) {
+                this.d = true;
+            }
+            v4.n0 layoutManager = this.a.getLayoutManager();
+            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i10) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i7) > minFlingVelocity) && (layoutManager instanceof v4.b0))) {
+                v4.g1 g1Var = new v4.g1(this, this.a.getContext());
+                if (this.c != null && this.f && Math.abs(i10) >= org.telegram.messenger.g0.L(600.0f)) {
+                    z5 z5Var = this.j;
+                    if (z5Var.z0()) {
+                        int i12 = i10 > 0 ? 1 : -1;
+                        r41 y02 = z5Var.y0();
+                        if (this.c.canScrollVertically(i12) && (i12 >= 0 || y02 == null || !y02.canScrollVertically(-1))) {
+                            i11 = i12 > 0 ? layoutManager.B() - 1 : 0;
+                            if (i11 != -1) {
+                                g1Var.a = i11;
+                                layoutManager.w0(g1Var);
+                                return true;
+                            }
+                        }
+                    }
+                }
+                i11 = -1;
+                if (i11 != -1) {
+                }
+            }
+        }
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                canvas.drawPath(this.b, this.c);
-                break;
-            default:
-                float d = ((org.telegram.ui.Components.w5) this.d).d(true);
-                float centerX = getBounds().centerX();
-                float centerY = getBounds().centerY();
-                float width = getBounds().width();
-                float f10 = 0.57f * width;
-                Path path = this.b;
-                path.rewind();
-                float f11 = f10 / 2.0f;
-                path.moveTo(centerX - org.telegram.messenger.g0.T1(f11, (-f10) / 2.0f, d), centerY);
-                float f12 = f11 + centerX;
-                path.lineTo(f12, centerY);
-                float f13 = f12 - (0.27f * width);
-                float f14 = (0.54f * width) / 2.0f;
-                path.moveTo(f13, centerY - f14);
-                path.lineTo(f12, centerY);
-                path.lineTo(f13, f14 + centerY);
-                canvas.save();
-                float L = org.telegram.messenger.g0.L(2.0f);
-                Paint paint = this.c;
-                paint.setStrokeWidth(L);
-                canvas.translate(0.0f, (-width) * 0.1f * d);
-                canvas.rotate(d * 90.0f, centerX, centerY);
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                break;
+    public final void b(fi.w3 w3Var) {
+        fi.w3 w3Var2 = this.c;
+        if (w3Var2 != null) {
+            w3Var2.removeCallbacks(this.i);
+        }
+        this.c = w3Var;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == w3Var) {
+            return;
+        }
+        fi.h8 h8Var = this.b;
+        if (recyclerView != null) {
+            ArrayList arrayList = recyclerView.w0;
+            if (arrayList != null) {
+                arrayList.remove(h8Var);
+            }
+            this.a.setOnFlingListener(null);
+        }
+        this.a = w3Var;
+        if (w3Var != null) {
+            if (w3Var.getOnFlingListener() != null) {
+                throw new IllegalStateException("An instance of OnFlingListener already set.");
+            }
+            this.a.j(h8Var);
+            this.a.setOnFlingListener(this);
+            new Scroller(this.a.getContext(), new DecelerateInterpolator());
+            f();
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 1:
-                return org.telegram.messenger.g0.L(24.0f);
-            default:
-                return super.getIntrinsicHeight();
+    public final void c() {
+        this.e = false;
+        this.f = false;
+        this.d = false;
+        fi.w3 w3Var = this.c;
+        if (w3Var != null) {
+            w3Var.removeCallbacks(this.i);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 1:
-                return org.telegram.messenger.g0.L(24.0f);
-            default:
-                return super.getIntrinsicWidth();
+    public final View d(v4.n0 n0Var) {
+        fi.w3 w3Var;
+        if (this.e || (w3Var = this.c) == null || w3Var.getScrollState() != 0) {
+            return null;
+        }
+        z5 z5Var = this.j;
+        r41 y02 = z5Var.y0();
+        if ((y02 != null && y02.getScrollState() != 0) || !this.d) {
+            return null;
+        }
+        this.d = false;
+        if (!z5Var.z0()) {
+            return null;
+        }
+        View m10 = n0Var.m(0);
+        View m11 = n0Var.m(n0Var.B() - 1);
+        return m10 == null ? m11 : (m11 != null && Math.abs(new int[]{0, v4.n0.z(m10) - n0Var.F()}[1]) >= Math.abs(new int[]{0, v4.n0.z(m11) - n0Var.F()}[1])) ? m11 : m10;
+    }
+
+    public final void e(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            c();
+            this.e = true;
+            this.g = motionEvent.getX();
+            this.h = motionEvent.getY();
+            return;
+        }
+        if (actionMasked == 3) {
+            c();
+            return;
+        }
+        if (actionMasked == 2 || actionMasked == 1) {
+            float abs = Math.abs(motionEvent.getX() - this.g);
+            float abs2 = Math.abs(motionEvent.getY() - this.h);
+            boolean z9 = abs2 > ((float) ViewConfiguration.get(this.c.getContext()).getScaledTouchSlop()) && abs2 > abs * 1.5f;
+            this.f = z9;
+            if (!z9) {
+                this.d = false;
+            }
+            if (actionMasked == 1) {
+                this.e = false;
+            }
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return -3;
-            default:
-                return -2;
+    public final void f() {
+        v4.n0 layoutManager;
+        View d;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 0:
-                super.onBoundsChange(rect);
-                RectF rectF = (RectF) this.d;
-                rectF.set(rect);
-                Path path = this.b;
-                path.reset();
-                path.addRoundRect(rectF, (float[]) this.e, Path.Direction.CW);
-                this.c.setShader(new LinearGradient(0.0f, rect.top, 0.0f, rect.bottom, new int[]{-16216082, -12207881}, new float[]{0.15f, 0.53f}, Shader.TileMode.CLAMP));
-                break;
-            default:
-                super.onBoundsChange(rect);
-                break;
+        int[] iArr = {0, v4.n0.z(d) - layoutManager.F()};
+        int i7 = iArr[0];
+        if (i7 == 0 && iArr[1] == 0) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i7);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                this.c.setColorFilter(colorFilter);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    public v5() {
-        this.a = 0;
-        this.c = new Paint(1);
-        this.b = new Path();
-        this.d = new RectF();
-        this.e = new float[]{org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), 0.0f, 0.0f, 0.0f, 0.0f};
-    }
-
-    private final void a(int i7) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+        this.a.w0(i7, iArr[1], null);
     }
 }

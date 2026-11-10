@@ -8,10 +8,10 @@ import org.telegram.messenger.iz;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.x9;
-import org.telegram.ui.uw;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
     public boolean a;
@@ -47,7 +47,7 @@ public final class m extends FrameLayout {
         int i13 = nVar.r;
         boolean z9 = i13 == 0 && nVar.h == 0 && qp.s1(nVar.F).Q.f(2305843009213693952L | ((long) 1)) != null;
         View view = (View) getParent();
-        int i14 = view instanceof x9 ? ((x9) view).e3 : 0;
+        int i14 = view instanceof w9 ? ((w9) view).e3 : 0;
         boolean z10 = nVar.J;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -58,7 +58,7 @@ public final class m extends FrameLayout {
                 i11 = view.getMeasuredHeight();
             }
             if (i11 == 0) {
-                i11 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
+                i11 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
             }
             if (nVar.R.K) {
                 i11 += org.telegram.messenger.g0.L(81.0f);
@@ -70,7 +70,7 @@ public final class m extends FrameLayout {
                     size2 = view.getMeasuredHeight();
                 }
                 if (size2 == 0) {
-                    size2 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
+                    size2 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
                 }
                 int i16 = size2 - i14;
                 int L = org.telegram.messenger.g0.L(iz.p1 ? 76.0f : 70.0f);
@@ -98,9 +98,9 @@ public final class m extends FrameLayout {
                     if (i15 != 0) {
                         i11 -= org.telegram.messenger.g0.m;
                         if (!z10 && !nVar.S) {
-                            i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof uw) {
-                                i12 = ((uw) getParent()).z3;
+                            i11 -= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+                            if (getParent() instanceof vw) {
+                                i12 = ((vw) getParent()).z3;
                                 i11 -= i12;
                             }
                         }
@@ -112,9 +112,9 @@ public final class m extends FrameLayout {
                         if (i15 != 0) {
                             i11 -= org.telegram.messenger.g0.m;
                             if (!z10 && !nVar.S) {
-                                i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof uw) {
-                                    i12 = ((uw) getParent()).z3;
+                                i11 -= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+                                if (getParent() instanceof vw) {
+                                    i12 = ((vw) getParent()).z3;
                                     i11 -= i12;
                                 }
                             }

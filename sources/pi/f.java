@@ -11,9 +11,9 @@ import bg.c0;
 import c8.ob;
 import oi.r;
 import org.telegram.messenger.qs;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.m6;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class f extends oi.e {
     public g D;
@@ -177,12 +177,12 @@ public final class f extends oi.e {
         this.x = true;
     }
 
-    @Override // oi.e, org.telegram.ui.ActionBar.b6
+    @Override // oi.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         ri.c cVar = this.G;
         if (cVar != null) {
-            this.H = l6.r1(this.I / 255.0f, cVar.b);
-            this.J = l6.r1(this.K / 255.0f, this.G.b);
+            this.H = m6.r1(this.I / 255.0f, cVar.b);
+            this.J = m6.r1(this.K / 255.0f, this.G.b);
         }
         this.w = true;
         this.x = true;

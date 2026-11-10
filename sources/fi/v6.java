@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v6 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -21,11 +21,11 @@ public final class v6 implements View.OnFocusChangeListener {
             case 0:
                 if (z9) {
                     w6 w6Var = (w6) this.b;
-                    w6Var.a2 = true;
-                    v4.b0 b0Var = (v4.b0) w6Var.k1.getLayoutManager();
+                    w6Var.d2 = true;
+                    v4.b0 b0Var = (v4.b0) w6Var.n1.getLayoutManager();
                     mi.m mVar = new mi.m(w6Var.getContext(), 2);
                     mVar.a = 1;
-                    mVar.p = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m) - org.telegram.messenger.g0.L(1.0f);
+                    mVar.p = (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + org.telegram.messenger.g0.m) - org.telegram.messenger.g0.L(1.0f);
                     b0Var.w0(mVar);
                     break;
                 }

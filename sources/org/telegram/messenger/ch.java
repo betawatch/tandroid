@@ -14,16 +14,16 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.kt0;
 import org.telegram.ui.Components.lt0;
-import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.wt0;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.r1, wt0, w10, ht0, b20, jh.i, bj0, lt0, mt0 {
+public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCompleteListener, org.telegram.ui.ActionBar.r1, vt0, w10, gt0, b20, jh.i, aj0, kt0, lt0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ ch(int i7) {
@@ -31,7 +31,7 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
     }
 
     @Override // org.telegram.messenger.b20
-    public Boolean a(y31 y31Var, View view, Integer num, Float f10, Float f11) {
+    public Boolean a(x31 x31Var, View view, Integer num, Float f10, Float f11) {
         return Boolean.FALSE;
     }
 
@@ -79,21 +79,21 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.Components.mt0
+    @Override // org.telegram.ui.Components.lt0
     public void f(Object obj, float f10) {
-        org.telegram.ui.dr drVar = (org.telegram.ui.dr) obj;
+        org.telegram.ui.er erVar = (org.telegram.ui.er) obj;
         switch (this.a) {
             case 26:
-                drVar.G1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
+                erVar.G1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
                     break;
                 }
                 break;
             default:
-                drVar.H1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
+                erVar.H1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
                     break;
                 }
                 break;
@@ -118,21 +118,21 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.Components.lt0
+    @Override // org.telegram.ui.Components.kt0
     public float get(Object obj) {
-        org.telegram.ui.dr drVar = (org.telegram.ui.dr) obj;
+        org.telegram.ui.er erVar = (org.telegram.ui.er) obj;
         switch (this.a) {
             case 25:
-                return drVar.G1;
+                return erVar.G1;
             case 26:
             default:
-                return drVar.I1;
+                return erVar.I1;
             case 27:
-                return drVar.H1;
+                return erVar.H1;
         }
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.f1.c(recyclerView);
     }
@@ -147,12 +147,12 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
         }
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public RecyclerView l(View view) {
         return ((org.telegram.ui.td) view).a;
     }
 
-    @Override // org.telegram.ui.Components.wt0
+    @Override // org.telegram.ui.Components.vt0
     public void m(int i7) {
         if (i7 == 0) {
             iz.A(3);
@@ -185,7 +185,7 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
         PushListenerController.sendRegistrationToServer(2, null);
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.gt0
     public /* synthetic */ void s(RecyclerView recyclerView) {
         org.telegram.ui.Cells.f1.b(recyclerView);
     }
@@ -194,7 +194,7 @@ public final /* synthetic */ class ch implements k9, Vector.TLDeserializer, OnCo
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.wt0
+    @Override // org.telegram.ui.Components.vt0
     public /* synthetic */ void n() {
     }
 }

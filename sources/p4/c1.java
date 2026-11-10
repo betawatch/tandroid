@@ -23,11 +23,11 @@ import java.lang.ref.WeakReference;
 import java.util.HashSet;
 import java.util.Set;
 import org.telegram.messenger.la;
-import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.Components.us;
-import org.telegram.ui.lo0;
+import org.telegram.ui.ActionBar.n3;
+import org.telegram.ui.Components.ts;
+import org.telegram.ui.mo0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class c1 extends Binder implements m {
     public final WeakReference a;
@@ -53,7 +53,7 @@ public final class c1 extends Binder implements m {
         }
         m9.y yVar = (m9.y) a1Var.l(d0Var, vVar, i7);
         m9.e0 e0Var = new m9.e0();
-        yVar.b(new lo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
+        yVar.b(new mo0(d0Var, e0Var, jVar, yVar, 24), m9.r.a);
         return e0Var;
     }
 
@@ -68,8 +68,8 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public static m3 s1(h2.j jVar) {
-        return new m3(new m3(jVar, 11), 10);
+    public static n3 s1(h2.j jVar) {
+        return new n3(new n3(jVar, 11), 10);
     }
 
     public final e1 A1(e1 e1Var) {
@@ -181,7 +181,7 @@ public final class c1 extends Binder implements m {
                 d0 d0Var2 = (d0) weakReference.get();
                 if (d0Var2 != null && !d0Var2.j()) {
                     this.c.add(vVar);
-                    h2.m0.W(d0Var2.l, new lo0(this, vVar, d0Var2, lVar, 23));
+                    h2.m0.W(d0Var2.l, new mo0(this, vVar, d0Var2, lVar, 23));
                 }
                 bb.a(lVar);
             } finally {
@@ -416,7 +416,7 @@ public final class c1 extends Binder implements m {
                 int readInt7 = parcel.readInt();
                 int readInt8 = parcel.readInt();
                 if (h18 != null && readInt8 >= 0) {
-                    p1(h18, readInt7, 20, new m3(new o0(this, readInt8, 4), 10));
+                    p1(h18, readInt7, 20, new n3(new o0(this, readInt8, 4), 10));
                     return true;
                 }
                 return true;
@@ -426,7 +426,7 @@ public final class c1 extends Binder implements m {
                 int readInt10 = parcel.readInt();
                 int readInt11 = parcel.readInt();
                 if (h19 != null && readInt10 >= 0 && readInt11 >= readInt10) {
-                    p1(h19, readInt9, 20, new m3(new n0(this, readInt10, readInt11), 10));
+                    p1(h19, readInt9, 20, new n3(new n0(this, readInt10, readInt11), 10));
                     return true;
                 }
                 return true;
@@ -494,7 +494,7 @@ public final class c1 extends Binder implements m {
                 Bundle bundle2 = (Bundle) za.a(parcel, Bundle.CREATOR);
                 if (h116 != null && bundle2 != null) {
                     try {
-                        p1(h116, readInt23, 13, s1(new m3(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 9)));
+                        p1(h116, readInt23, 13, s1(new n3(new e2.w0(bundle2.getFloat(e2.w0.e, 1.0f), bundle2.getFloat(e2.w0.f, 1.0f)), 9)));
                     } catch (RuntimeException e11) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for PlaybackParameters", e11);
                     }
@@ -640,7 +640,7 @@ public final class c1 extends Binder implements m {
                 int readInt34 = parcel.readInt();
                 int readInt35 = parcel.readInt();
                 if (h126 != null && readInt35 >= 0) {
-                    p1(h126, readInt34, 10, new m3(new o0(this, readInt35, 0), 10));
+                    p1(h126, readInt34, 10, new n3(new o0(this, readInt35, 0), 10));
                     return true;
                 }
                 return true;
@@ -659,7 +659,7 @@ public final class c1 extends Binder implements m {
                 int readInt38 = parcel.readInt();
                 long readLong2 = parcel.readLong();
                 if (h128 != null && readInt38 >= 0) {
-                    p1(h128, readInt37, 10, new m3(new c4.n(this, readInt38, readLong2, 6), 10));
+                    p1(h128, readInt37, 10, new n3(new c4.n(this, readInt38, readLong2, 6), 10));
                     return true;
                 }
                 return true;
@@ -859,7 +859,7 @@ public final class c1 extends Binder implements m {
                             bundle12.getClass();
                             p12.c(e2.l0.a(x23.c, bundle12));
                         }
-                        q1(x23, readInt60, 20, new t0(new org.telegram.ui.web.a0(8, new m3(p12.f(), 8), new n0(this, readInt61, readInt62)), 1));
+                        q1(x23, readInt60, 20, new t0(new org.telegram.ui.web.a0(8, new n3(p12.f(), 8), new n0(this, readInt61, readInt62)), 1));
                     } catch (RuntimeException e21) {
                         h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e21);
                     }
@@ -907,7 +907,7 @@ public final class c1 extends Binder implements m {
                 int readInt68 = parcel.readInt();
                 int readInt69 = parcel.readInt();
                 if (h150 != null) {
-                    p1(h150, readInt67, 27, s1(new us(this, surface2, readInt68, readInt69)));
+                    p1(h150, readInt67, 27, s1(new ts(this, surface2, readInt68, readInt69)));
                     return true;
                 }
                 return true;
@@ -1062,10 +1062,10 @@ public final class c1 extends Binder implements m {
         }
     }
 
-    public final void p1(l lVar, int i7, int i10, m3 m3Var) {
+    public final void p1(l lVar, int i7, int i10, n3 n3Var) {
         v x10 = this.b.x(lVar.asBinder());
         if (x10 != null) {
-            q1(x10, i7, i10, m3Var);
+            q1(x10, i7, i10, n3Var);
         }
     }
 

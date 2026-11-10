@@ -1,57 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class xe0 extends LinearLayout implements org.telegram.messenger.ls {
-    public final org.telegram.ui.Components.l9 a;
-    public final int b;
+public final class xe0 extends v4.o {
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final SparseIntArray i = new SparseIntArray();
+    public final SparseIntArray j = new SparseIntArray();
+    public final ArrayList k = new ArrayList();
+    public final ArrayList l = new ArrayList();
+    public final /* synthetic */ ff0 m;
 
-    public xe0(Context context) {
-        super(context);
-        this.b = org.telegram.messenger.p10.s0;
-        setPadding(0, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f));
-        setOrientation(1);
-        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context);
-        this.a = l9Var;
-        addView(l9Var, c8.ha.t(org.telegram.messenger.qs.p1, org.telegram.messenger.qs.p1, 49, 0, 2, 0, 0));
+    public xe0(ff0 ff0Var) {
+        this.m = ff0Var;
     }
 
-    public final void a() {
-        int i7 = this.b;
-        TLRPC.TL_messages_stickerSet p02 = org.telegram.messenger.ui.b0(i7).p0("tg_placeholders_android");
-        if (p02 == null) {
-            p02 = org.telegram.messenger.ui.b0(i7).n0("tg_placeholders_android");
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
-        if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() < 4) {
-            org.telegram.messenger.ui.b0(i7).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-        } else {
-            TLRPC.Document document = tL_messages_stickerSet.documents.get(3);
-            this.a.k(org.telegram.messenger.hc.b(document), "104_104", "tgs", org.telegram.messenger.t5.f(document, org.telegram.ui.ActionBar.l6.a7, 1.0f, null), tL_messages_stickerSet);
+    public static void g(int i7, int i10, SparseIntArray sparseIntArray) {
+        if (i10 >= 0) {
+            sparseIntArray.put(i10, i7);
         }
     }
 
-    @Override // org.telegram.messenger.ls
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == org.telegram.messenger.qs.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
-            a();
+    @Override // v4.o
+    public final boolean a(int i7, int i10) {
+        return b(i7, i10);
+    }
+
+    @Override // v4.o
+    public final boolean b(int i7, int i10) {
+        int i11;
+        int i12;
+        int i13 = this.c;
+        ff0 ff0Var = this.m;
+        if (((i7 >= i13 && i7 < this.d) || (i7 >= this.e && i7 < this.f)) && ((i10 >= (i12 = ff0Var.D) && i10 < ff0Var.E) || (i10 >= ff0Var.H && i10 < ff0Var.I))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i10 < i12 || i10 >= ff0Var.E) ? (TLRPC.TL_chatInviteExported) ff0Var.j0.get(i10 - ff0Var.H) : (TLRPC.TL_chatInviteExported) ff0Var.i0.get(i10 - i12);
+            int i14 = this.c;
+            return ((i7 < i14 || i7 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i7 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i7 - i14)).link.equals(tL_chatInviteExported.link);
         }
+        int i15 = this.g;
+        if (i7 >= i15 && i7 < this.h && i10 >= (i11 = ff0Var.U) && i10 < ff0Var.V) {
+            return i7 - i15 == i10 - i11;
+        }
+        int i16 = this.i.get(i7, -1);
+        return i16 >= 0 && i16 == this.j.get(i10, -1);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-        org.telegram.messenger.qs.f(this.b).c(this, org.telegram.messenger.qs.y0);
+    @Override // v4.o
+    public final int d() {
+        return this.m.X;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.qs.f(this.b).n(this, org.telegram.messenger.qs.y0);
+    @Override // v4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        sparseIntArray.clear();
+        ff0 ff0Var = this.m;
+        g(1, ff0Var.r, sparseIntArray);
+        g(2, ff0Var.s, sparseIntArray);
+        g(3, ff0Var.w, sparseIntArray);
+        g(4, ff0Var.x, sparseIntArray);
+        g(5, ff0Var.y, sparseIntArray);
+        g(6, ff0Var.L, sparseIntArray);
+        g(7, ff0Var.N, sparseIntArray);
+        g(8, ff0Var.O, sparseIntArray);
+        g(9, ff0Var.Q, sparseIntArray);
+        g(10, ff0Var.R, sparseIntArray);
+        g(11, ff0Var.S, sparseIntArray);
+        g(12, ff0Var.P, sparseIntArray);
+        g(13, ff0Var.F, sparseIntArray);
     }
 }

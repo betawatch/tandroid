@@ -23,18 +23,18 @@ import org.telegram.ui.Cells.s5;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Cells.y9;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.bg0;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.ag0;
+import org.telegram.ui.Components.t51;
 import org.telegram.ui.e8;
 import org.telegram.ui.g4;
-import org.telegram.ui.gw0;
 import org.telegram.ui.h8;
+import org.telegram.ui.hw0;
 import org.telegram.ui.q4;
 import org.telegram.ui.s9;
 import org.telegram.ui.t4;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class a extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -94,15 +94,15 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                u51 u51Var = ((MediaController) this.b).i0;
-                if (u51Var != null) {
-                    u51Var.g0();
+                t51 t51Var = ((MediaController) this.b).i0;
+                if (t51Var != null) {
+                    t51Var.g0();
                     break;
                 }
                 break;
             case 6:
                 try {
-                    ((u51) this.b).m0();
+                    ((t51) this.b).m0();
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -132,10 +132,10 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 10:
-                org.telegram.ui.ActionBar.d3 d3Var = (org.telegram.ui.ActionBar.d3) this.b;
-                if (d3Var.F == animator) {
-                    d3Var.G = d3Var.H;
-                    Iterator it = d3Var.I.iterator();
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.b;
+                if (e3Var.F == animator) {
+                    e3Var.G = e3Var.H;
+                    Iterator it = e3Var.I.iterator();
                     while (it.hasNext()) {
                         ((Runnable) it.next()).run();
                     }
@@ -143,16 +143,16 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 11:
-                org.telegram.ui.ActionBar.k3 k3Var = (org.telegram.ui.ActionBar.k3) this.b;
-                org.telegram.ui.ActionBar.d3 d3Var2 = k3Var.a;
-                if (d3Var2 != null) {
-                    d3Var2.b = true;
-                    d3Var2.invalidate();
+                org.telegram.ui.ActionBar.l3 l3Var = (org.telegram.ui.ActionBar.l3) this.b;
+                org.telegram.ui.ActionBar.e3 e3Var2 = l3Var.a;
+                if (e3Var2 != null) {
+                    e3Var2.b = true;
+                    e3Var2.invalidate();
                 }
-                k3Var.V = k3Var.U ? 1.0f : 0.0f;
-                k3Var.invalidate();
-                if (!k3Var.U) {
-                    k3Var.R.clear();
+                l3Var.V = l3Var.U ? 1.0f : 0.0f;
+                l3Var.invalidate();
+                if (!l3Var.U) {
+                    l3Var.R.clear();
                     break;
                 }
                 break;
@@ -203,7 +203,7 @@ public final class a extends AnimatorListenerAdapter {
                 break;
             case 20:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((gw0) jVar).e0.e.c.r = false;
+                ((hw0) jVar).e0.e.c.r = false;
                 FrameLayout frameLayout = jVar.J;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.K);
@@ -213,12 +213,12 @@ public final class a extends AnimatorListenerAdapter {
             case 21:
                 org.telegram.ui.Cells.v vVar = (org.telegram.ui.Cells.v) this.b;
                 Button button = vVar.n;
-                bg0 bg0Var = vVar.f;
-                if (button == bg0Var) {
+                ag0 ag0Var = vVar.f;
+                if (button == ag0Var) {
                     vVar.e.setVisibility(4);
                     break;
                 } else {
-                    bg0Var.setVisibility(4);
+                    ag0Var.setVisibility(4);
                     break;
                 }
             case 22:
@@ -281,7 +281,7 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 20:
-                ((gw0) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
+                ((hw0) ((org.telegram.ui.Cells.j) this.b)).e0.e.c.r = true;
                 break;
             default:
                 super.onAnimationStart(animator);

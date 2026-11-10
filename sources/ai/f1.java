@@ -23,7 +23,6 @@ import bi.b3;
 import bi.b6;
 import bi.d6;
 import bi.e7;
-import bi.h6;
 import bi.k6;
 import bi.k7;
 import bi.nd;
@@ -48,7 +47,6 @@ import fi.sb;
 import fi.t8;
 import fi.tb;
 import fi.ua;
-import fi.v8;
 import fi.va;
 import fi.x9;
 import fi.za;
@@ -80,21 +78,21 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.p6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.ActionBar.u1;
-import org.telegram.ui.Components.c80;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.l9;
-import org.telegram.ui.Components.tq;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.k60;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.v8;
+import org.telegram.ui.Components.wq;
 import tg.k2;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements c20 {
     public final /* synthetic */ int a;
@@ -160,15 +158,15 @@ public final /* synthetic */ class f1 implements c20 {
                 if (l10.longValue() == -97) {
                     wg.f1 f1Var = f1VarArr[0];
                     TL_stars.TL_starGiftUnique G1 = k7Var.G1();
-                    if (k7Var.X2 != null && G1 != null && !TextUtils.isEmpty(G1.slug)) {
+                    if (k7Var.a3 != null && G1 != null && !TextUtils.isEmpty(G1.slug)) {
                         long e10 = p10.i(k7Var.a).e();
                         TextView textView = new TextView(k7Var.getContext());
                         textView.setTextSize(1, 13.0f);
-                        int i16 = l6.r5;
-                        s6.U(textView, i16, k7Var.I0);
+                        int i16 = m6.r5;
+                        t6.U(textView, i16, k7Var.I0);
                         textView.setGravity(17);
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(" ");
-                        spannableStringBuilder.setSpan(new c80(org.telegram.messenger.g0.L(160.0f), textView), 0, spannableStringBuilder.length(), 33);
+                        spannableStringBuilder.setSpan(new b80(org.telegram.messenger.g0.L(160.0f), textView), 0, spannableStringBuilder.length(), 33);
                         textView.setText(spannableStringBuilder);
                         TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = new TL_stars.starGiftDepositPayload[1];
                         Runnable[] runnableArr = new Runnable[1];
@@ -187,21 +185,21 @@ public final /* synthetic */ class f1 implements c20 {
                         linearLayout.setOrientation(1);
                         FrameLayout frameLayout = new FrameLayout(k7Var.getContext());
                         int L = org.telegram.messenger.g0.L(20.0f);
-                        int i17 = l6.j5;
-                        ShapeDrawable d02 = l6.d0(L, l6.r1(0.045f, l6.w0(i17, k7Var.I0)));
-                        o6 K = s6.K(0.045f, i17);
-                        g6 g6Var = k7Var.I0;
+                        int i17 = m6.j5;
+                        ShapeDrawable d02 = m6.d0(L, m6.r1(0.045f, m6.w0(i17, k7Var.I0)));
+                        p6 K = t6.K(0.045f, i17);
+                        h6 h6Var = k7Var.I0;
                         frameLayout.setBackground(d02);
-                        s6.j(frameLayout, d02, K, null, g6Var);
-                        l9 l9Var = new l9(k7Var.getContext());
-                        l9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
-                        w8 w8Var = new w8((g6) null);
-                        w8Var.r(f10);
-                        l9Var.e(f10, w8Var);
-                        frameLayout.addView(l9Var, ha.d(42, 42.0f, 19, 12.0f, 0.0f, 0.0f, 0.0f));
+                        t6.j(frameLayout, d02, K, null, h6Var);
+                        k9 k9Var = new k9(k7Var.getContext());
+                        k9Var.setRoundRadius(org.telegram.messenger.g0.L(21.0f));
+                        v8 v8Var = new v8((h6) null);
+                        v8Var.r(f10);
+                        k9Var.e(f10, v8Var);
+                        frameLayout.addView(k9Var, ha.d(42, 42.0f, 19, 12.0f, 0.0f, 0.0f, 0.0f));
                         TextView textView2 = new TextView(k7Var.getContext());
                         com.google.android.recaptcha.internal.a.q(textView2, 1, 16.0f);
-                        s6.U(textView2, i17, k7Var.I0);
+                        t6.U(textView2, i17, k7Var.I0);
                         textView2.setSingleLine();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                         textView2.setEllipsize(truncateAt);
@@ -209,7 +207,7 @@ public final /* synthetic */ class f1 implements c20 {
                         frameLayout.addView(textView2, ha.d(-1, -2.0f, 51, 66.0f, 11.0f, 12.0f, 0.0f));
                         TextView textView3 = new TextView(k7Var.getContext());
                         textView3.setTextSize(1, 14.0f);
-                        s6.U(textView3, i16, k7Var.I0);
+                        t6.U(textView3, i16, k7Var.I0);
                         textView3.setSingleLine();
                         textView3.setEllipsize(truncateAt);
                         if (f10 != null && !TextUtils.isEmpty(f10.phone)) {
@@ -221,7 +219,7 @@ public final /* synthetic */ class f1 implements c20 {
                         linearLayout.addView(frameLayout, ha.k(20.0f, 0.0f, 20.0f, 16.0f, -1, 62));
                         TextView textView4 = new TextView(k7Var.getContext());
                         textView4.setTextSize(1, 15.0f);
-                        s6.U(textView4, i17, k7Var.I0);
+                        t6.U(textView4, i17, k7Var.I0);
                         k5.m(textView4, 17, null, 2131750108);
                         linearLayout.addView(textView4, ha.k(24.0f, 0.0f, 24.0f, 0.0f, -1, -2));
                         LinearLayout linearLayout2 = new LinearLayout(k7Var.getContext());
@@ -251,9 +249,9 @@ public final /* synthetic */ class f1 implements c20 {
                 k7 k7Var2 = (k7) obj3;
                 String str = (String) obj2;
                 TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
-                e7 e7Var = k7Var2.X1;
-                hi.i[] iVarArr = k7Var2.l2;
-                fi.d dVar = k7Var2.c2;
+                e7 e7Var = k7Var2.a2;
+                hi.i[] iVarArr = k7Var2.o2;
+                fi.d dVar = k7Var2.f2;
                 if (stargiftupgradepreview != null) {
                     e7Var.setPreviewingAttributes(stargiftupgradepreview.sample_attributes);
                     k7Var2.s2(1, false, null);
@@ -261,8 +259,8 @@ public final /* synthetic */ class f1 implements c20 {
                     iVarArr[0].setText(id.M0(2131749866, null));
                     iVarArr[1].setText(id.M0(2131749863, null));
                     iVarArr[2].setText(id.M0(2131749860, null));
-                    k7Var2.n2.setVisibility(8);
-                    k7Var2.m2.setVisibility(8);
+                    k7Var2.q2.setVisibility(8);
+                    k7Var2.p2.setVisibility(8);
                     dVar.setFilled(true);
                     dVar.i(id.M0(2131747831, null), false, true);
                     dVar.g(null, false);
@@ -287,7 +285,7 @@ public final /* synthetic */ class f1 implements c20 {
                 }
                 k6Var.p.remove(bVar);
                 if (tL_payments_paymentFormStarGift != null) {
-                    k6Var.o.put(bVar, new h6(bVar, tL_payments_paymentFormStarGift));
+                    k6Var.o.put(bVar, new bi.h6(bVar, tL_payments_paymentFormStarGift));
                     k6Var.a(true);
                     break;
                 }
@@ -355,7 +353,7 @@ public final /* synthetic */ class f1 implements c20 {
                         x9Var.w1.playTogether(arrayList);
                         if (z9) {
                             x9Var.w1.setDuration(350L);
-                            x9Var.w1.setInterpolator(xq.h);
+                            x9Var.w1.setInterpolator(wq.h);
                         } else {
                             x9Var.w1.setDuration(250L);
                             x9Var.w1.setInterpolator(org.telegram.ui.ActionBar.i1.w);
@@ -363,7 +361,7 @@ public final /* synthetic */ class f1 implements c20 {
                         x9Var.w1.start();
                         for (i7 = 0; i7 < arrayList.size(); i7++) {
                             ((Animator) arrayList.get(i7)).setDuration(z9 ? 350L : 250L);
-                            ((Animator) arrayList.get(i7)).setInterpolator(z9 ? xq.h : org.telegram.ui.ActionBar.i1.w);
+                            ((Animator) arrayList.get(i7)).setInterpolator(z9 ? wq.h : org.telegram.ui.ActionBar.i1.w);
                             ((Animator) arrayList.get(i7)).start();
                         }
                         if (!z9) {
@@ -432,19 +430,19 @@ public final /* synthetic */ class f1 implements c20 {
                 }
             case 12:
                 n8 n8Var = (n8) obj3;
-                ((l60) obj2).u();
+                ((k60) obj2).u();
                 n8Var.h(true);
                 s8 s8Var = n8Var.W;
-                v8 v8Var = s8Var.O1;
-                if (v8Var != null) {
-                    v8Var.a(new HashSet(s8Var.r1));
+                fi.v8 v8Var2 = s8Var.R1;
+                if (v8Var2 != null) {
+                    v8Var2.a(new HashSet(s8Var.u1));
                     break;
                 }
                 break;
             case 13:
                 n8 n8Var2 = (n8) obj3;
-                n8Var2.W.x1 = true;
-                ((tq[]) obj2)[0].dismiss();
+                n8Var2.W.A1 = true;
+                ((sq[]) obj2)[0].dismiss();
                 n8Var2.h(true);
                 break;
             case 14:
@@ -602,7 +600,7 @@ public final /* synthetic */ class f1 implements c20 {
                 break;
             case 22:
                 ii.d0 d0Var = (ii.d0) obj3;
-                d0Var.K0((TLRPC.Chat) obj2, d0Var.l1, ((Boolean) obj).booleanValue());
+                d0Var.K0((TLRPC.Chat) obj2, d0Var.o1, ((Boolean) obj).booleanValue());
                 break;
             case 23:
                 View view = (View) obj3;
@@ -617,15 +615,15 @@ public final /* synthetic */ class f1 implements c20 {
             case 24:
                 s1 s1Var = (s1) obj2;
                 t1 f12 = t1.f(p10.s0);
-                di diVar = ((kg.g0) obj3).b;
-                long b12 = diVar.b1();
+                ci ciVar = ((kg.g0) obj3).b;
+                long b12 = ciVar.b1();
                 int i21 = f12.a;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = new TLRPC.TL_messages_sendQuickReplyMessages();
                 tL_messages_sendQuickReplyMessages.peer = qp.s1(i21).j1(b12);
                 tL_messages_sendQuickReplyMessages.shortcut_id = s1Var.a;
                 yr a02 = yr.a0(i21);
                 a02.a.c(new d0(f12, a02, s1Var, tL_messages_sendQuickReplyMessages, 22));
-                diVar.dismiss();
+                ciVar.dismiss();
                 break;
             case 25:
                 kg.c1.b0((kg.c1) obj3, (View) obj2, (String) obj);

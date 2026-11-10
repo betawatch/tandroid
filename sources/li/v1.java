@@ -6,14 +6,14 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class v1 extends HorizontalScrollView {
     public final h6.m a;
-    public final org.telegram.ui.Components.w5 b;
-    public final org.telegram.ui.Components.w5 c;
+    public final org.telegram.ui.Components.v5 b;
+    public final org.telegram.ui.Components.v5 c;
     public final /* synthetic */ b2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,9 +21,9 @@ public final class v1 extends HorizontalScrollView {
         super(context);
         this.d = b2Var;
         this.a = new h6.m(28);
-        xq xqVar = xq.h;
-        this.b = new org.telegram.ui.Components.w5(this, 300L, xqVar);
-        this.c = new org.telegram.ui.Components.w5(this, 300L, xqVar);
+        wq wqVar = wq.h;
+        this.b = new org.telegram.ui.Components.v5(this, 300L, wqVar);
+        this.c = new org.telegram.ui.Components.v5(this, 300L, wqVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View

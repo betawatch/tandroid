@@ -5,16 +5,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class l1 implements org.telegram.ui.Components.j71 {
+public final class l1 implements org.telegram.ui.Components.i71 {
     public final /* synthetic */ q1 a;
 
     public l1(q1 q1Var) {
         this.a = q1Var;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final TextureView a(View view, boolean z9, float f10, int i7, boolean z10) {
         q1 q1Var = this.a;
         g4 g4Var = q1Var.y;
@@ -34,12 +34,12 @@ public final class l1 implements org.telegram.ui.Components.j71 {
         return g4Var.Q;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final void c(float f10) {
         this.a.y.R.a(f10, 0);
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final void d() {
         this.a.a.setVisibility(0);
         this.a.b.setVisibility(4);
@@ -50,11 +50,11 @@ public final class l1 implements org.telegram.ui.Components.j71 {
         q1Var.a.loadUrl(q1Var.w.url, hashMap);
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void e(org.telegram.ui.Components.m71 m71Var, boolean z9) {
+    @Override // org.telegram.ui.Components.i71
+    public final void e(org.telegram.ui.Components.l71 l71Var, boolean z9) {
         g4 g4Var = this.a.y;
         if (!z9) {
-            if (g4Var.E0 == m71Var) {
+            if (g4Var.E0 == l71Var) {
                 g4Var.E0 = null;
             }
             try {
@@ -65,13 +65,13 @@ public final class l1 implements org.telegram.ui.Components.j71 {
                 return;
             }
         }
-        org.telegram.ui.Components.m71 m71Var2 = g4Var.E0;
-        if (m71Var2 != null && m71Var2 != m71Var) {
-            m71Var2.a.g0();
-            m71Var2.n();
-            m71Var2.f0.d(true, true);
+        org.telegram.ui.Components.l71 l71Var2 = g4Var.E0;
+        if (l71Var2 != null && l71Var2 != l71Var) {
+            l71Var2.a.g0();
+            l71Var2.n();
+            l71Var2.f0.d(true, true);
         }
-        g4Var.E0 = m71Var;
+        g4Var.E0 = l71Var;
         try {
             g4Var.L.getWindow().addFlags(128);
         } catch (Exception e11) {
@@ -79,26 +79,26 @@ public final class l1 implements org.telegram.ui.Components.j71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final TextureView f(View view, boolean z9, int i7, int i10, boolean z10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final ViewGroup g() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final boolean h() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.j71
+    @Override // org.telegram.ui.Components.i71
     public final void b() {
     }
 
-    @Override // org.telegram.ui.Components.j71
-    public final void i(boolean z9, org.telegram.ui.Components.e71 e71Var, float f10, boolean z10) {
+    @Override // org.telegram.ui.Components.i71
+    public final void i(boolean z9, org.telegram.ui.Components.d71 d71Var, float f10, boolean z10) {
     }
 }

@@ -13,15 +13,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.bn;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.gx;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.zw;
+import org.telegram.ui.Components.an;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.fx;
+import org.telegram.ui.Components.qu;
+import org.telegram.ui.Components.yw;
+import org.telegram.ui.Components.z70;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements c20 {
     public final /* synthetic */ int a;
@@ -64,10 +64,10 @@ public final /* synthetic */ class v3 implements c20 {
                 n3Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
                 arrayList2.add((TLRPC.InputStickerSet) obj);
-                ru ruVar = new ru(((di.q9) obj3).f, n3Var.getContext(), (org.telegram.ui.ActionBar.g6) obj2, arrayList2);
+                qu quVar = new qu(((di.q9) obj3).f, n3Var.getContext(), (org.telegram.ui.ActionBar.h6) obj2, arrayList2);
                 di.c4 c4Var = n3Var.z0.z1;
                 if (c4Var != null) {
-                    ((di.h9) c4Var).h(ruVar);
+                    ((di.h9) c4Var).h(quVar);
                     break;
                 }
                 break;
@@ -99,7 +99,7 @@ public final /* synthetic */ class v3 implements c20 {
                 di.s6 s6Var = (di.s6) obj;
                 di.j4 j4Var2 = ((di.a4) obj4).x;
                 j4Var2.B1.c(s6Var.a, j4Var2.k1, (TL_stories.StoryItem) obj3);
-                org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131744731, s6Var.b), new org.telegram.ui.Components.hc(j4Var2.L0, (org.telegram.ui.ActionBar.g6) obj2), R.raw.contact_check, 36);
+                org.telegram.messenger.camera.q.s(org.telegram.messenger.id.a0(null, null, 2131744731, s6Var.b), new org.telegram.ui.Components.gc(j4Var2.L0, (org.telegram.ui.ActionBar.h6) obj2), R.raw.contact_check, 36);
                 break;
             case 4:
                 fi.m6 m6Var = (fi.m6) obj4;
@@ -132,39 +132,39 @@ public final /* synthetic */ class v3 implements c20 {
                 }
                 break;
             case 6:
-                org.telegram.ui.Components.b8 b8Var = (org.telegram.ui.Components.b8) obj4;
+                org.telegram.ui.Components.a8 a8Var = (org.telegram.ui.Components.a8) obj4;
                 org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj3;
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 TLRPC.InputFile inputFile = (TLRPC.InputFile) obj;
                 if (inputFile != null) {
                     TLRPC.TL_messages_uploadMedia tL_messages_uploadMedia = new TLRPC.TL_messages_uploadMedia();
-                    tL_messages_uploadMedia.peer = qp.s1(b8Var.a).j1(p10.i(b8Var.a).e());
+                    tL_messages_uploadMedia.peer = qp.s1(a8Var.a).j1(p10.i(a8Var.a).e());
                     TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument = new TLRPC.TL_inputMediaUploadedDocument();
                     tL_messages_uploadMedia.media = tL_inputMediaUploadedDocument;
                     tL_inputMediaUploadedDocument.file = inputFile;
                     tL_inputMediaUploadedDocument.mime_type = document.mime_type;
                     tL_inputMediaUploadedDocument.attributes.addAll(document.attributes);
-                    ConnectionsManager.getInstance(b8Var.a).sendRequest(tL_messages_uploadMedia, new org.telegram.ui.ld(10, b8Var, u1Var));
+                    ConnectionsManager.getInstance(a8Var.a).sendRequest(tL_messages_uploadMedia, new org.telegram.ui.ld(10, a8Var, u1Var));
                     break;
                 } else {
                     u1Var.dismiss();
                     break;
                 }
             case 7:
-                bn bnVar = (bn) obj4;
+                an anVar = (an) obj4;
                 cn cnVar = (cn) obj3;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) obj2;
                 Long l11 = (Long) obj;
                 if (!cnVar.c()) {
-                    bnVar.j0.b(tL_messageMediaToDo, null, null, null, true, 0, l11.longValue());
-                    bnVar.b.a(true);
+                    anVar.j0.b(tL_messageMediaToDo, null, null, null, true, 0, l11.longValue());
+                    anVar.b.a(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.v4.I(cnVar.getParentActivity(), cnVar.a(), new a3.h(bnVar, tL_messageMediaToDo, l11, 28));
+                    org.telegram.ui.Components.u4.I(cnVar.getParentActivity(), cnVar.a(), new a3.h(anVar, tL_messageMediaToDo, l11, 28));
                     break;
                 }
             case 8:
-                gx gxVar = (gx) obj4;
+                fx fxVar = (fx) obj4;
                 ArrayList arrayList3 = (ArrayList) obj3;
                 Runnable runnable = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
@@ -176,26 +176,26 @@ public final /* synthetic */ class v3 implements c20 {
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                         arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        TLRPC.TL_messages_stickerSet l02 = ui.b0(gxVar.a.F.c1).l0(ui.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
+                        TLRPC.TL_messages_stickerSet l02 = ui.b0(fxVar.a.F.c1).l0(ui.Z(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true, false, null);
                         arrayList = l02 != null ? l02.documents : null;
                     } else {
                         arrayList = stickerSetCovered.covers;
                     }
                     if (arrayList != null && !arrayList.isEmpty()) {
-                        arrayList3.add(new zw(stickerSetCovered, arrayList));
+                        arrayList3.add(new yw(stickerSetCovered, arrayList));
                     }
                 }
                 runnable.run();
                 break;
             case 9:
                 org.telegram.ui.ActionBar.u1 u1Var2 = (org.telegram.ui.ActionBar.u1) obj3;
-                cw0 cw0Var = (cw0) obj2;
+                bw0 bw0Var = (bw0) obj2;
                 ((org.telegram.ui.ActionBar.u1) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    cw0Var.setErrorText(".");
-                    org.telegram.messenger.g0.G3(-6.0f, cw0Var, null);
+                    bw0Var.setErrorText(".");
+                    org.telegram.messenger.g0.G3(-6.0f, bw0Var, null);
                     org.telegram.messenger.p2.D.a();
-                    org.telegram.messenger.g0.K3(cw0Var);
+                    org.telegram.messenger.g0.K3(bw0Var);
                     break;
                 } else {
                     u1Var2.dismiss();
@@ -219,16 +219,16 @@ public final /* synthetic */ class v3 implements c20 {
                 ug.i0 i0Var = (ug.i0) obj4;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                ((a80) obj3).setLoading(false);
+                ((z70) obj3).setLoading(false);
                 if (tL_premium_boostsStatus != null) {
-                    i0Var.T1.boosts++;
-                    if (i0Var.Z1 == 32 && (N0 = qp.s1(i0Var.a).N0(-i0Var.S1)) != null) {
+                    i0Var.W1.boosts++;
+                    if (i0Var.c2 == 32 && (N0 = qp.s1(i0Var.a).N0(-i0Var.V1)) != null) {
                         N0.boosts_applied++;
                     }
                     i0Var.t1();
-                    i0Var.z1(tL_premium_boostsStatus, i0Var.W1);
-                    org.telegram.messenger.e3 e3Var = i0Var.U1;
-                    e3Var.m = i0Var.T1.next_level_boosts <= 0;
+                    i0Var.z1(tL_premium_boostsStatus, i0Var.Z1);
+                    org.telegram.messenger.e3 e3Var = i0Var.X1;
+                    e3Var.m = i0Var.W1.next_level_boosts <= 0;
                     e3Var.l = true;
                     e3Var.a(tL_premium_myBoosts);
                     i0Var.v1();
@@ -239,16 +239,16 @@ public final /* synthetic */ class v3 implements c20 {
                 zh.l lVar = (zh.l) obj4;
                 lVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                new zh.d(lVar.getContext(), (org.telegram.ui.ActionBar.g6) obj2, lVar.d2, (List) obj).show();
+                new zh.d(lVar.getContext(), (org.telegram.ui.ActionBar.h6) obj2, lVar.g2, (List) obj).show();
                 break;
             default:
                 zh.u uVar = (zh.u) obj4;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj2;
                 List list = (List) obj;
                 uVar.getClass();
                 ((boolean[]) obj3)[0] = false;
-                if (uVar.e2 != null) {
-                    new zh.d(uVar.getContext(), g6Var, uVar.e2, list).show();
+                if (uVar.h2 != null) {
+                    new zh.d(uVar.getContext(), h6Var, uVar.h2, list).show();
                     uVar.dismiss();
                     break;
                 }

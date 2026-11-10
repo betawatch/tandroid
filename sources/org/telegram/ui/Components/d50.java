@@ -1,40 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d50 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ pj0 h;
+public final class d50 extends q70 {
+    public final /* synthetic */ h50 M;
 
-    public /* synthetic */ d50(pj0 pj0Var, TLRPC.User user, String str, boolean z9, boolean z10, boolean z11, int i7) {
-        this.a = i7;
-        this.h = pj0Var;
-        this.b = user;
-        this.c = str;
-        this.d = z9;
-        this.e = z10;
-        this.f = z11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d50(h50 h50Var, Context context, org.telegram.ui.ActionBar.f2 f2Var, org.telegram.ui.ActionBar.w2 w2Var, boolean z9) {
+        super(context, f2Var, w2Var, false, z9);
+        this.M = h50Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                n50 n50Var = ((i50) this.h).c;
-                fy0.b(n50Var.getContext(), n50Var.a, -n50Var.X1, this.b, this.c, this.d, this.e, this.f, n50Var.I0);
-                break;
-            default:
-                zs0 zs0Var = ((mr0) this.h).f;
-                fy0.b(zs0Var.getContext(), zs0Var.x1.getCurrentAccount(), zs0Var.l1, this.b, this.c, this.d, this.e, this.f, zs0Var.H1);
-                break;
-        }
+    @Override // org.telegram.ui.Components.q70
+    public final void e(SpannableStringBuilder spannableStringBuilder) {
+        m50 m50Var = this.M.c;
+        org.telegram.ui.ActionBar.m2 m2Var = m50Var.c;
+        int i7 = m50.h2;
+        bc Q = new gc(m2Var, m50Var.I0).Q(R.raw.forward, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

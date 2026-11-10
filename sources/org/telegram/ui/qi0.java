@@ -1,120 +1,110 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qi0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dk0 b;
+public final class qi0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public boolean a;
+    public int b;
+    public final int c;
+    public final org.telegram.ui.ActionBar.h6 d;
+    public final FrameLayout e;
+    public final org.telegram.ui.Components.k9 f;
+    public final TextView h;
+    public final TextView n;
+    public final ImageView r;
+    public boolean s;
+    public String w;
 
-    public /* synthetic */ qi0(dk0 dk0Var, int i7) {
-        this.a = i7;
-        this.b = dk0Var;
+    public qi0(int i7, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        this.c = i7;
+        this.d = h6Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.e = frameLayout;
+        addView(frameLayout, c8.ha.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context);
+        this.f = k9Var;
+        k9Var.setImageResource(R.drawable.msg2_permissions);
+        a();
+        frameLayout.addView(k9Var, c8.ha.e(36, 36, 17));
+        TextView b10 = c8.qa.b(context, 15.0f, org.telegram.ui.ActionBar.m6.G6, true, null);
+        this.h = b10;
+        b10.setSingleLine();
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        b10.setEllipsize(truncateAt);
+        addView(b10, c8.ha.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
+        int i10 = org.telegram.ui.ActionBar.m6.y6;
+        TextView b11 = c8.qa.b(context, 13.0f, i10, false, null);
+        this.n = b11;
+        b11.setSingleLine();
+        b11.setEllipsize(truncateAt);
+        addView(b11, c8.ha.d(-1, -2.0f, 55, 72.0f, 31.0f, 46.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.r = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_ab_other);
+        org.telegram.ui.ActionBar.t6.s(imageView, i10, null, PorterDuff.Mode.SRC_IN);
+        int i11 = org.telegram.ui.ActionBar.m6.i6;
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.m6.h0(org.telegram.ui.ActionBar.m6.w0(i11, h6Var), 1, -1);
+        org.telegram.ui.ActionBar.p6 M = org.telegram.ui.ActionBar.t6.M(i11);
+        imageView.setBackground(h02);
+        org.telegram.ui.ActionBar.t6.j(imageView, h02, null, M, h6Var);
+        addView(imageView, c8.ha.d(32, 32.0f, 21, 0.0f, 0.0f, 13.0f, 0.0f));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                dk0 dk0Var = this.b;
-                if (i7 != 5) {
-                    if (i7 != 6) {
-                        dk0Var.getClass();
-                        break;
-                    } else {
-                        dk0Var.L.callOnClick();
-                        break;
-                    }
-                } else {
-                    dk0Var.Y[2].requestFocus();
-                    break;
-                }
-            case 1:
-                dk0 dk0Var2 = this.b;
-                dk0Var2.getClass();
-                if (i7 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = dk0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            dk0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            org.telegram.messenger.g0.v1(textView);
-                            break;
-                        } else {
-                            dk0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-                dk0 dk0Var3 = this.b;
-                dk0Var3.getClass();
-                if (i7 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = dk0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            dk0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            org.telegram.messenger.g0.v1(textView);
-                            break;
-                        } else {
-                            dk0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                dk0 dk0Var4 = this.b;
-                dk0Var4.getClass();
-                if (i7 == 6 || i7 == 5) {
-                    dk0Var4.L.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                dk0 dk0Var5 = this.b;
-                dk0Var5.getClass();
-                if (i7 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = dk0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            dk0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            org.telegram.messenger.g0.v1(textView);
-                            break;
-                        } else {
-                            dk0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                dk0 dk0Var6 = this.b;
-                dk0Var6.getClass();
-                if (i7 == 5 || i7 == 6) {
-                    dk0Var6.L.callOnClick();
-                    break;
-                }
-                break;
-            default:
-                dk0 dk0Var7 = this.b;
-                dk0Var7.getClass();
-                if (i7 == 6 || i7 == 5) {
-                    dk0Var7.L.callOnClick();
-                    break;
-                }
-                break;
+    public final void a() {
+        this.b = org.telegram.ui.ActionBar.m6.r1(0.3f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, this.d));
+        this.a = true;
+        this.f.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.s) {
+            Paint W0 = org.telegram.ui.ActionBar.m6.W0("paintDivider", this.d);
+            if (W0 == null) {
+                W0 = org.telegram.ui.ActionBar.m6.k0;
+            }
+            canvas.drawRect(org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? 0.0f : 72.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(org.telegram.messenger.id.a0 ? 72.0f : 0.0f), getMeasuredHeight(), W0);
         }
-        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(56.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        org.telegram.ui.Components.k9 k9Var;
+        int r12;
+        try {
+            if (!this.a || (k9Var = this.f) == null || (r12 = org.telegram.ui.ActionBar.m6.r1(0.3f, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.G6, this.d))) == this.b) {
+                return;
+            }
+            this.b = r12;
+            k9Var.setColorFilter(new PorterDuffColorFilter(r12, PorterDuff.Mode.SRC_IN));
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

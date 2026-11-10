@@ -13,9 +13,9 @@ import org.telegram.messenger.l10;
 import org.telegram.messenger.qs;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
+public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public static final /* synthetic */ int n = 0;
     public final LinearLayout a;
     public final TextView b;
@@ -94,7 +94,7 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.b
         super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + linearLayout.getMeasuredHeight() + 1, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         TextView textView;
         la laVar;
@@ -103,29 +103,29 @@ public final class ma extends FrameLayout implements org.telegram.ui.ActionBar.b
         if (textView2 == null || (textView = this.c) == null || (laVar = this.d) == null || (laVar2 = this.e) == null) {
             return;
         }
-        textView2.setTextColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false));
-        textView.setTextColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.y6, false));
-        int i7 = org.telegram.ui.ActionBar.l6.I6;
-        laVar.setTextColor(org.telegram.ui.ActionBar.l6.x0(null, i7, false));
-        int r12 = org.telegram.ui.ActionBar.l6.r1(org.telegram.ui.ActionBar.l6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.l6.x0(null, i7, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.G6, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.y6, false));
+        int i7 = org.telegram.ui.ActionBar.m6.I6;
+        laVar.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i7, false));
+        int r12 = org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.m6.x0(null, i7, false));
         if (laVar.getBackground() == null) {
-            laVar.setBackground(org.telegram.ui.ActionBar.l6.h0(r12, 7, org.telegram.messenger.g0.L(8.0f)));
+            laVar.setBackground(org.telegram.ui.ActionBar.m6.h0(r12, 7, org.telegram.messenger.g0.L(8.0f)));
         } else if (r12 != this.f) {
-            org.telegram.ui.ActionBar.l6.H1(laVar.getBackground(), r12, true);
+            org.telegram.ui.ActionBar.m6.H1(laVar.getBackground(), r12, true);
         }
-        int i10 = org.telegram.ui.ActionBar.l6.q7;
-        laVar2.setTextColor(org.telegram.ui.ActionBar.l6.x0(null, i10, false));
-        int r13 = org.telegram.ui.ActionBar.l6.r1(org.telegram.ui.ActionBar.l6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.l6.x0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.m6.q7;
+        laVar2.setTextColor(org.telegram.ui.ActionBar.m6.x0(null, i10, false));
+        int r13 = org.telegram.ui.ActionBar.m6.r1(org.telegram.ui.ActionBar.m6.I.q() ? 0.3f : 0.15f, org.telegram.ui.ActionBar.m6.x0(null, i10, false));
         if (laVar2.getBackground() == null) {
-            laVar2.setBackground(org.telegram.ui.ActionBar.l6.h0(r13, 7, org.telegram.messenger.g0.L(8.0f)));
+            laVar2.setBackground(org.telegram.ui.ActionBar.m6.h0(r13, 7, org.telegram.messenger.g0.L(8.0f)));
         } else if (r13 != this.h) {
-            org.telegram.ui.ActionBar.l6.H1(laVar2.getBackground(), r13, true);
+            org.telegram.ui.ActionBar.m6.H1(laVar2.getBackground(), r13, true);
         }
         this.f = r12;
         this.h = r13;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

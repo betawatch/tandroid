@@ -13,10 +13,10 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
 import org.telegram.messenger.k5;
-import org.telegram.ui.ActionBar.v2;
-import org.telegram.ui.Components.hc;
+import org.telegram.ui.ActionBar.w2;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class h0 implements View.OnLongClickListener {
     public final /* synthetic */ u0 a;
@@ -63,7 +63,7 @@ public final class h0 implements View.OnLongClickListener {
                     switch (i10) {
                         case 0:
                             u0 u0Var = h0Var.a;
-                            v2 l10 = k5.l(1, u0Var.getContext(), null, false);
+                            w2 l10 = k5.l(1, u0Var.getContext(), null, false);
                             try {
                                 parse = Uri.parse(str6);
                             } catch (Exception e10) {
@@ -109,7 +109,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                     org.telegram.messenger.g0.g(str7);
                                                                     x0 x0Var = u0Var2.Q;
                                                                     if (x0Var != null) {
-                                                                        new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                        new gc(x0Var, x0Var.e).k(false).k(true);
                                                                         break;
                                                                     }
                                                                 }
@@ -130,7 +130,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                     }
                                                                     x0 x0Var2 = u0Var2.Q;
                                                                     if (x0Var2 != null) {
-                                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                        new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                         break;
                                                                     }
                                                                 } catch (Exception e13) {
@@ -160,7 +160,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                     org.telegram.messenger.g0.g(str7);
                                                                     x0 x0Var3 = u0Var3.Q;
                                                                     if (x0Var3 != null) {
-                                                                        new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                        new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                         break;
                                                                     }
                                                                 }
@@ -216,7 +216,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var = u0Var2.Q;
                                                                 if (x0Var != null) {
-                                                                    new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                    new gc(x0Var, x0Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -237,7 +237,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var2.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                    new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e13) {
@@ -267,7 +267,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var3 = u0Var3.Q;
                                                                 if (x0Var3 != null) {
-                                                                    new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                    new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -327,7 +327,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var = u0Var2.Q;
                                                                 if (x0Var != null) {
-                                                                    new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                    new gc(x0Var, x0Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -348,7 +348,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var2.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                    new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e13) {
@@ -378,7 +378,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var3 = u0Var3.Q;
                                                                 if (x0Var3 != null) {
-                                                                    new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                    new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -439,7 +439,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var = u0Var2.Q;
                                                         if (x0Var != null) {
-                                                            new hc(x0Var, x0Var.e).k(false).k(true);
+                                                            new gc(x0Var, x0Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -460,7 +460,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var2.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                            new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e13) {
@@ -490,7 +490,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var3 = u0Var3.Q;
                                                         if (x0Var3 != null) {
-                                                            new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                            new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -521,7 +521,7 @@ public final class h0 implements View.OnLongClickListener {
                             u0Var.F = l10;
                         default:
                             u0 u0Var2 = h0Var.a;
-                            v2 l11 = k5.l(1, u0Var2.getContext(), null, false);
+                            w2 l11 = k5.l(1, u0Var2.getContext(), null, false);
                             try {
                                 Uri parse2 = Uri.parse(str6);
                                 str4 = vf.c.w(parse2, null, null, vf.c.a(parse2.getHost()), null);
@@ -553,7 +553,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var = u0Var22.Q;
                                                                 if (x0Var != null) {
-                                                                    new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                    new gc(x0Var, x0Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -574,7 +574,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var22.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                    new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e132) {
@@ -604,7 +604,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var3 = u0Var3.Q;
                                                                 if (x0Var3 != null) {
-                                                                    new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                    new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -660,7 +660,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var = u0Var22.Q;
                                                             if (x0Var != null) {
-                                                                new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                new gc(x0Var, x0Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -681,7 +681,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -711,7 +711,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var3 = u0Var3.Q;
                                                             if (x0Var3 != null) {
-                                                                new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -760,7 +760,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var = u0Var22.Q;
                                                         if (x0Var != null) {
-                                                            new hc(x0Var, x0Var.e).k(false).k(true);
+                                                            new gc(x0Var, x0Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -781,7 +781,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var22.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                            new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e132) {
@@ -811,7 +811,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var3 = u0Var3.Q;
                                                         if (x0Var3 != null) {
-                                                            new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                            new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -882,7 +882,7 @@ public final class h0 implements View.OnLongClickListener {
                 switch (i102) {
                     case 0:
                         u0 u0Var = h0Var.a;
-                        v2 l10 = k5.l(1, u0Var.getContext(), null, false);
+                        w2 l10 = k5.l(1, u0Var.getContext(), null, false);
                         try {
                             parse = Uri.parse(str6);
                         } catch (Exception e10) {
@@ -928,7 +928,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var = u0Var22.Q;
                                                                 if (x0Var != null) {
-                                                                    new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                    new gc(x0Var, x0Var.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -949,7 +949,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 }
                                                                 x0 x0Var2 = u0Var22.Q;
                                                                 if (x0Var2 != null) {
-                                                                    new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                    new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                     break;
                                                                 }
                                                             } catch (Exception e132) {
@@ -979,7 +979,7 @@ public final class h0 implements View.OnLongClickListener {
                                                                 org.telegram.messenger.g0.g(str7);
                                                                 x0 x0Var3 = u0Var3.Q;
                                                                 if (x0Var3 != null) {
-                                                                    new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                    new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                     break;
                                                                 }
                                                             }
@@ -1035,7 +1035,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var = u0Var22.Q;
                                                             if (x0Var != null) {
-                                                                new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                new gc(x0Var, x0Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1056,7 +1056,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1086,7 +1086,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var3 = u0Var3.Q;
                                                             if (x0Var3 != null) {
-                                                                new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1146,7 +1146,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var = u0Var22.Q;
                                                             if (x0Var != null) {
-                                                                new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                new gc(x0Var, x0Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1167,7 +1167,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1197,7 +1197,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var3 = u0Var3.Q;
                                                             if (x0Var3 != null) {
-                                                                new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1258,7 +1258,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     org.telegram.messenger.g0.g(str7);
                                                     x0 x0Var = u0Var22.Q;
                                                     if (x0Var != null) {
-                                                        new hc(x0Var, x0Var.e).k(false).k(true);
+                                                        new gc(x0Var, x0Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1279,7 +1279,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     x0 x0Var2 = u0Var22.Q;
                                                     if (x0Var2 != null) {
-                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                        new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e132) {
@@ -1309,7 +1309,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     org.telegram.messenger.g0.g(str7);
                                                     x0 x0Var3 = u0Var3.Q;
                                                     if (x0Var3 != null) {
-                                                        new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                        new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1340,7 +1340,7 @@ public final class h0 implements View.OnLongClickListener {
                         u0Var.F = l10;
                     default:
                         u0 u0Var2 = h0Var.a;
-                        v2 l11 = k5.l(1, u0Var2.getContext(), null, false);
+                        w2 l11 = k5.l(1, u0Var2.getContext(), null, false);
                         try {
                             Uri parse2 = Uri.parse(str6);
                             str4 = vf.c.w(parse2, null, null, vf.c.a(parse2.getHost()), null);
@@ -1372,7 +1372,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var = u0Var22.Q;
                                                             if (x0Var != null) {
-                                                                new hc(x0Var, x0Var.e).k(false).k(true);
+                                                                new gc(x0Var, x0Var.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1393,7 +1393,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             }
                                                             x0 x0Var2 = u0Var22.Q;
                                                             if (x0Var2 != null) {
-                                                                new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                                new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                                 break;
                                                             }
                                                         } catch (Exception e132) {
@@ -1423,7 +1423,7 @@ public final class h0 implements View.OnLongClickListener {
                                                             org.telegram.messenger.g0.g(str7);
                                                             x0 x0Var3 = u0Var3.Q;
                                                             if (x0Var3 != null) {
-                                                                new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                                new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                                 break;
                                                             }
                                                         }
@@ -1479,7 +1479,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var = u0Var22.Q;
                                                         if (x0Var != null) {
-                                                            new hc(x0Var, x0Var.e).k(false).k(true);
+                                                            new gc(x0Var, x0Var.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1500,7 +1500,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         }
                                                         x0 x0Var2 = u0Var22.Q;
                                                         if (x0Var2 != null) {
-                                                            new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                            new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                             break;
                                                         }
                                                     } catch (Exception e132) {
@@ -1530,7 +1530,7 @@ public final class h0 implements View.OnLongClickListener {
                                                         org.telegram.messenger.g0.g(str7);
                                                         x0 x0Var3 = u0Var3.Q;
                                                         if (x0Var3 != null) {
-                                                            new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                            new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                             break;
                                                         }
                                                     }
@@ -1579,7 +1579,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     org.telegram.messenger.g0.g(str7);
                                                     x0 x0Var = u0Var22.Q;
                                                     if (x0Var != null) {
-                                                        new hc(x0Var, x0Var.e).k(false).k(true);
+                                                        new gc(x0Var, x0Var.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }
@@ -1600,7 +1600,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     }
                                                     x0 x0Var2 = u0Var22.Q;
                                                     if (x0Var2 != null) {
-                                                        new hc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
+                                                        new gc(x0Var2, x0Var2.e).Q(R.raw.ic_download, 36, org.telegram.messenger.g0.X2(id.a0(null, null, 2131742927, guessFileName))).k(true);
                                                         break;
                                                     }
                                                 } catch (Exception e132) {
@@ -1630,7 +1630,7 @@ public final class h0 implements View.OnLongClickListener {
                                                     org.telegram.messenger.g0.g(str7);
                                                     x0 x0Var3 = u0Var3.Q;
                                                     if (x0Var3 != null) {
-                                                        new hc(x0Var3, x0Var3.e).k(false).k(true);
+                                                        new gc(x0Var3, x0Var3.e).k(false).k(true);
                                                         break;
                                                     }
                                                 }

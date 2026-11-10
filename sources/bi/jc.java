@@ -5,45 +5,45 @@ import android.graphics.PorterDuff;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.Components.m41;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.x31;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class jc extends x31 {
+public final class jc extends w31 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        x31.h(new jc());
+        w31.h(new jc());
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final void b(View view, y31 y31Var, boolean z9, m41 m41Var, r41 r41Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final void b(View view, x31 x31Var, boolean z9, m41 m41Var, r41 r41Var) {
         kc kcVar = (kc) view;
-        org.telegram.ui.Components.j6 j6Var = kcVar.a;
+        org.telegram.ui.Components.i6 i6Var = kcVar.a;
         ImageView imageView = kcVar.b;
         int i7 = kcVar.c;
-        int i10 = y31Var.d;
+        int i10 = x31Var.d;
         boolean z10 = i7 == i10;
         kcVar.c = i10;
-        j6Var.c(y31Var.l, z10, true);
-        org.telegram.ui.ActionBar.l6.v0(y31Var.q ? org.telegram.ui.ActionBar.l6.o6 : org.telegram.ui.ActionBar.l6.G6);
-        org.telegram.ui.ActionBar.s6.Y(j6Var, y31Var.q ? org.telegram.ui.ActionBar.l6.o6 : org.telegram.ui.ActionBar.l6.G6, null);
-        org.telegram.ui.ActionBar.s6.s(imageView, y31Var.q ? org.telegram.ui.ActionBar.l6.o6 : org.telegram.ui.ActionBar.l6.G6, null, PorterDuff.Mode.SRC_IN);
+        i6Var.c(x31Var.l, z10, true);
+        org.telegram.ui.ActionBar.m6.v0(x31Var.q ? org.telegram.ui.ActionBar.m6.o6 : org.telegram.ui.ActionBar.m6.G6);
+        org.telegram.ui.ActionBar.t6.Y(i6Var, x31Var.q ? org.telegram.ui.ActionBar.m6.o6 : org.telegram.ui.ActionBar.m6.G6, null);
+        org.telegram.ui.ActionBar.t6.s(imageView, x31Var.q ? org.telegram.ui.ActionBar.m6.o6 : org.telegram.ui.ActionBar.m6.G6, null, PorterDuff.Mode.SRC_IN);
         if (z10) {
-            imageView.animate().rotation(y31Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(xq.h);
+            imageView.animate().rotation(x31Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(wq.h);
         } else {
-            imageView.setRotation(y31Var.f ? 0.0f : 180.0f);
+            imageView.setRotation(x31Var.f ? 0.0f : 180.0f);
         }
         kcVar.d = z9;
         kcVar.setWillNotDraw(!z9);
     }
 
-    @Override // org.telegram.ui.Components.x31
-    public final View d(Context context, qj0 qj0Var, int i7, org.telegram.ui.ActionBar.g6 g6Var) {
+    @Override // org.telegram.ui.Components.w31
+    public final View d(Context context, pj0 pj0Var, int i7, org.telegram.ui.ActionBar.h6 h6Var) {
         return new kc(context);
     }
 }

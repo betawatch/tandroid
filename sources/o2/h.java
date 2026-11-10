@@ -11,6 +11,7 @@ import android.util.SparseArray;
 import b3.q;
 import b3.r;
 import c8.s0;
+import e2.e0;
 import e2.f0;
 import e2.g0;
 import e2.l0;
@@ -28,10 +29,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.m6;
-import x2.e0;
-import x2.u;
+import x2.t;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class h extends x2.a {
     public b3.o A;
@@ -211,10 +211,10 @@ public final class h extends x2.a {
     }
 
     @Override // x2.a
-    public final e0 c(x2.g0 g0Var, h6.m mVar, long j3) {
-        int intValue = ((Integer) g0Var.a).intValue() - this.N;
-        wa b10 = b(g0Var);
-        q2.j jVar = new q2.j(this.d.c, 0, g0Var);
+    public final x2.d0 c(x2.f0 f0Var, h6.m mVar, long j3) {
+        int intValue = ((Integer) f0Var.a).intValue() - this.N;
+        wa b10 = b(f0Var);
+        q2.j jVar = new q2.j(this.d.c, 0, f0Var);
         int i7 = this.N + intValue;
         p2.c cVar = this.G;
         d0 d0Var = this.B;
@@ -256,8 +256,8 @@ public final class h extends x2.a {
     }
 
     @Override // x2.a
-    public final void o(e0 e0Var) {
-        b bVar = (b) e0Var;
+    public final void o(x2.d0 d0Var) {
+        b bVar = (b) d0Var;
         p pVar = bVar.y;
         pVar.r = true;
         pVar.d.removeCallbacksAndMessages(null);
@@ -332,9 +332,9 @@ public final class h extends x2.a {
         long j11 = rVar.a;
         j2.m mVar = rVar.b;
         c0 c0Var = rVar.d;
-        u uVar = new u(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
+        t tVar = new t(mVar, c0Var.c, c0Var.d, j3, j10, c0Var.b);
         this.m.getClass();
-        this.q.o(uVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.o(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void y(IOException iOException) {
@@ -590,7 +590,7 @@ public final class h extends x2.a {
                         if (j26 != -9223372036854775807L) {
                             j16 = Math.min(h02, j26);
                         } else {
-                            e2.e0 e0Var = hVar2.G.j;
+                            e0 e0Var = hVar2.G.j;
                             if (e0Var != null) {
                                 long j27 = e0Var.c;
                                 if (j27 != -9223372036854775807L) {
@@ -613,7 +613,7 @@ public final class h extends x2.a {
                         if (j30 != -9223372036854775807L) {
                             j29 = h2.m0.j(j30, j29, h02);
                         } else {
-                            e2.e0 e0Var2 = hVar2.G.j;
+                            e0 e0Var2 = hVar2.G.j;
                             if (e0Var2 != null) {
                                 long j31 = e0Var2.b;
                                 if (j31 != -9223372036854775807L) {
@@ -629,7 +629,7 @@ public final class h extends x2.a {
                         long j34 = f0Var.a;
                         if (j34 == -9223372036854775807L) {
                             p2.c cVar4 = hVar2.G;
-                            e2.e0 e0Var3 = cVar4.j;
+                            e0 e0Var3 = cVar4.j;
                             if (e0Var3 != null) {
                                 long j35 = e0Var3.a;
                                 if (j35 != -9223372036854775807L) {
@@ -650,23 +650,23 @@ public final class h extends x2.a {
                         long j36 = j33;
                         float f12 = f0Var2.d;
                         if (f12 == -3.4028235E38f) {
-                            e2.e0 e0Var4 = hVar2.G.j;
+                            e0 e0Var4 = hVar2.G.j;
                             f12 = e0Var4 != null ? e0Var4.d : -3.4028235E38f;
                         }
                         float f13 = f0Var2.e;
                         if (f13 == -3.4028235E38f) {
-                            e2.e0 e0Var5 = hVar2.G.j;
+                            e0 e0Var5 = hVar2.G.j;
                             f13 = e0Var5 != null ? e0Var5.e : -3.4028235E38f;
                         }
                         if (f12 == -3.4028235E38f && f13 == -3.4028235E38f) {
                             f10 = f13;
-                            e2.e0 e0Var6 = hVar2.G.j;
+                            e0 e0Var6 = hVar2.G.j;
                             j17 = S4;
                             z11 = z17;
                             if (e0Var6 == null || e0Var6.a == -9223372036854775807L) {
                                 f12 = 1.0f;
                                 f11 = 1.0f;
-                                e2.e0 e0Var7 = new e2.e0();
+                                e0 e0Var7 = new e0();
                                 e0Var7.a = j34;
                                 e0Var7.b = j32;
                                 e0Var7.c = j36;
@@ -686,7 +686,7 @@ public final class h extends x2.a {
                             z11 = z17;
                         }
                         f11 = f10;
-                        e2.e0 e0Var72 = new e2.e0();
+                        e0 e0Var72 = new e0();
                         e0Var72.a = j34;
                         e0Var72.b = j32;
                         e0Var72.c = j36;

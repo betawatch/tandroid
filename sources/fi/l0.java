@@ -12,7 +12,7 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.ye;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class l0 extends View {
     public final Paint a;
@@ -137,7 +137,7 @@ public final class l0 extends View {
         ye yeVar4 = m0Var.b.G0;
         canvas.rotate(yeVar4 == null ? org.telegram.messenger.g0.T1(0.0f, e10, m0Var.s) : org.telegram.messenger.g0.T1(yeVar4.d + yeVar4.k, e10, m0Var.s));
         canvas.rotate(m0Var.b.getOrientation());
-        org.telegram.ui.Components.w5 w5Var = m0Var.c;
+        org.telegram.ui.Components.v5 v5Var = m0Var.c;
         if (m0Var.E) {
             ye yeVar5 = m0Var.b.G0;
             if (yeVar5 != null && yeVar5.l) {
@@ -151,7 +151,7 @@ public final class l0 extends View {
             }
             z9 = false;
         }
-        canvas.scale(org.telegram.messenger.g0.T1(1.0f, -1.0f, w5Var.d(z9)), 1.0f);
+        canvas.scale(org.telegram.messenger.g0.T1(1.0f, -1.0f, v5Var.d(z9)), 1.0f);
         canvas.translate((-m0Var.b.getContentWidth()) / 2.0f, (-m0Var.b.getContentHeight()) / 2.0f);
         tg.n1 n1Var2 = m0Var.b;
         Paint paint2 = n1Var2.F0;

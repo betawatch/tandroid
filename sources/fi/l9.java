@@ -11,11 +11,11 @@ import org.telegram.messenger.v10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.ot0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.nt0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l9 implements v10 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class l9 implements v10 {
 
     @Override // org.telegram.messenger.v10
     public final void a(Object obj, Object obj2) {
-        ot0 ot0Var;
+        nt0 nt0Var;
         TLRPC.PhotoSize w10;
         int i7 = this.a;
         int i10 = 0;
@@ -113,12 +113,12 @@ public final /* synthetic */ class l9 implements v10 {
                             float f10 = (!(tLObject instanceof TLRPC.Photo) || (w10 = org.telegram.messenger.w7.w(((TLRPC.Photo) tLObject).sizes, 1000, false, null, false)) == null) ? 1.0f : w10.w / w10.h;
                             if (f10 > 1.0f) {
                                 float floor = (float) Math.floor(Math.max(x9Var2.A1, j5Var.getMeasuredWidth()) * 0.5d);
-                                ot0Var = new ot0(floor, floor / f10);
+                                nt0Var = new nt0(floor, floor / f10);
                             } else {
                                 float floor2 = (float) Math.floor(Math.max(x9Var2.B1, j5Var.getMeasuredHeight()) * 0.5d);
-                                ot0Var = new ot0(f10 * floor2, floor2);
+                                nt0Var = new nt0(f10 * floor2, floor2);
                             }
-                            tg.n1 n1Var = new tg.n1(x9Var2.getContext(), x9Var2.c0(), ot0Var, tLObject);
+                            tg.n1 n1Var = new tg.n1(x9Var2.getContext(), x9Var2.c0(), nt0Var, tLObject);
                             n1Var.setDelegate(x9Var2);
                             j5Var.addView(n1Var);
                             x9Var2.d0();
@@ -139,16 +139,16 @@ public final /* synthetic */ class l9 implements v10 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error != null) {
                     if (TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                        ii.m0.f(new hc((FrameLayout) d0Var.b, d0Var.I0), 2, z9);
-                        d0Var.k1.E(0);
+                        ii.m0.f(new gc((FrameLayout) d0Var.b, d0Var.I0), 2, z9);
+                        d0Var.n1.E(0);
                         break;
                     } else {
                         org.telegram.ui.Cells.f1.r((FrameLayout) d0Var.b, d0Var.I0, tL_error, false);
                         break;
                     }
                 } else {
-                    ii.m0.f(new hc((FrameLayout) d0Var.b, d0Var.I0), 1, z9);
-                    d0Var.k1.E(0);
+                    ii.m0.f(new gc((FrameLayout) d0Var.b, d0Var.I0), 1, z9);
+                    d0Var.n1.E(0);
                     break;
                 }
             case 2:
@@ -157,13 +157,13 @@ public final /* synthetic */ class l9 implements v10 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 RectF rectF = ProfileActivity.V6;
                 if (!profileActivity.c4()) {
-                    if (hc.a(profileActivity)) {
+                    if (gc.a(profileActivity)) {
                         if (num.intValue() == 1) {
-                            hc.l(null, profileActivity, z9).j();
+                            gc.l(null, profileActivity, z9).j();
                         } else if (num.intValue() == 2) {
-                            hc.l(org.telegram.messenger.m5.t(profileActivity.d1), profileActivity, z9).j();
+                            gc.l(org.telegram.messenger.m5.t(profileActivity.d1), profileActivity, z9).j();
                         } else if (tL_error2 != null) {
-                            hc.d0(tL_error2);
+                            gc.d0(tL_error2);
                         }
                     }
                     org.telegram.messenger.n6 n6Var = profileActivity.W1;

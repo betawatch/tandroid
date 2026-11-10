@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,11 +96,11 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                 break;
             case 3:
                 qp qpVar2 = (qp) obj4;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj3;
                 TLRPC.TL_wallPaperSettings tL_wallPaperSettings = (TLRPC.TL_wallPaperSettings) obj2;
                 String str = (String) obj;
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
-                File file = new File(t0.h(), d6Var.b);
+                File file = new File(t0.h(), e6Var.b);
                 if (wallPaper != null) {
                     try {
                         w7 fileLoader = qpVar2.getFileLoader();
@@ -110,7 +110,7 @@ public final /* synthetic */ class q6 implements RequestDelegate {
                     } catch (Exception unused) {
                     }
                 }
-                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, d6Var, file, str, 0));
+                g0.h3(new yj(qpVar2, wallPaper, tL_wallPaperSettings, e6Var, file, str, 0));
                 break;
             case 4:
                 dw dwVar = (dw) obj4;

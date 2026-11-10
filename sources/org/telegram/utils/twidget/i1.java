@@ -14,9 +14,9 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.id;
 import org.telegram.messenger.p10;
 import org.telegram.messenger.qp;
-import org.telegram.ui.q31;
+import org.telegram.ui.r31;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
 public final class i1 {
     public static boolean U;
@@ -256,9 +256,6 @@ public final class i1 {
         if (a()) {
             throw new IllegalStateException("Widgets are disabled by the app config");
         }
-        if (!WidgetSandboxNative.available()) {
-            throw new IllegalStateException("libtwidget is missing");
-        }
         if (this.G == 0) {
             this.G = i7;
         }
@@ -287,18 +284,18 @@ public final class i1 {
                 } catch (Exception e10) {
                     e = e10;
                     if (j3 != 0) {
-                        a1.a.execute(new q31(this, j3, 2));
+                        a1.a.execute(new r31(this, j3, 2));
                     }
                     this.a.post(new f0(5, this, e));
                     throw e;
                 }
-            } catch (Exception e11) {
-                e = e11;
-                j3 = 0;
+            } catch (Throwable th2) {
+                Trace.endSection();
+                throw th2;
             }
-        } catch (Throwable th2) {
-            Trace.endSection();
-            throw th2;
+        } catch (Exception e11) {
+            e = e11;
+            j3 = 0;
         }
     }
 }

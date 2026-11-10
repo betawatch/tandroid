@@ -4,9 +4,9 @@ import a8.ra;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.bc;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a9 implements GestureDetector.OnGestureListener {
     public final /* synthetic */ q9 a;
@@ -49,7 +49,7 @@ public final class a9 implements GestureDetector.OnGestureListener {
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
         float f12;
-        cc ccVar;
+        bc bcVar;
         q9 q9Var = this.a;
         if (!q9Var.j0) {
             return false;
@@ -83,9 +83,9 @@ public final class a9 implements GestureDetector.OnGestureListener {
                 q9Var.e0 = (0.05f * f11) + f13;
             }
             e9 e9Var = q9Var.s;
-            cc ccVar2 = cc.w;
-            if (ccVar2 != null && ccVar2.h == e9Var) {
-                ccVar2.b();
+            bc bcVar2 = bc.w;
+            if (bcVar2 != null && bcVar2.h == e9Var) {
+                bcVar2.b();
             }
             if (q9Var.n0.getCurrentPeerView() != null) {
                 q9Var.n0.getCurrentPeerView().invalidate();
@@ -103,9 +103,9 @@ public final class a9 implements GestureDetector.OnGestureListener {
                 f12 = 0.3f;
                 q9Var.W -= f11 * f12;
                 e9 e9Var2 = q9Var.s;
-                ccVar = cc.w;
-                if (ccVar != null && ccVar.h == e9Var2) {
-                    ccVar.b();
+                bcVar = bc.w;
+                if (bcVar != null && bcVar.h == e9Var2) {
+                    bcVar.b();
                 }
                 q9.i(q9Var);
                 return true;
@@ -114,9 +114,9 @@ public final class a9 implements GestureDetector.OnGestureListener {
         f12 = 0.6f;
         q9Var.W -= f11 * f12;
         e9 e9Var22 = q9Var.s;
-        ccVar = cc.w;
-        if (ccVar != null) {
-            ccVar.b();
+        bcVar = bc.w;
+        if (bcVar != null) {
+            bcVar.b();
         }
         q9.i(q9Var);
         return true;

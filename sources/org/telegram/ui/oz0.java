@@ -1,119 +1,82 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.widget.FrameLayout;
-import java.util.Locale;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class oz0 extends FrameLayout {
-    public float a;
-    public final boolean b;
-    public final boolean c;
-    public boolean d;
-    public int e;
-    public final r1.f f;
-    public final r1.g h;
-    public final q0 n;
-    public final /* synthetic */ SecretMediaViewer r;
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public final org.telegram.ui.Components.c01 d;
+    public boolean e;
+    public long f;
+    public long h;
+    public final org.telegram.ui.Components.zg0 n;
+    public final TextPaint r;
+    public StaticLayout s;
+    public float w;
+    public float x;
+    public final /* synthetic */ SecretMediaViewer y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public oz0(SecretMediaViewer secretMediaViewer, Activity activity) {
         super(activity);
-        this.r = secretMediaViewer;
-        this.a = 1.0f;
-        this.b = true;
-        this.c = true;
-        r1.f fVar = new r1.f(0.0f);
-        this.f = fVar;
-        r1.g gVar = new r1.g(fVar);
-        gVar.m = org.telegram.ui.Cells.f1.o(0.0f, 750.0f, 1.0f);
-        gVar.b(new cb0(this, 5));
-        this.h = gVar;
-        this.n = new q0("progress", 7);
+        this.y = secretMediaViewer;
+        this.c = new RectF();
+        this.d = new org.telegram.ui.Components.c01();
+        this.r = new TextPaint(1);
         setWillNotDraw(false);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(1.5f));
+        paint.setColor(-1644826);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.a = paint2;
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setColor(-1644826);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        new Paint(1).setColor(2130706432);
+        org.telegram.ui.Components.zg0 zg0Var = new org.telegram.ui.Components.zg0(R.raw.fire_on, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
+        this.n = zg0Var;
+        zg0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        zg0Var.R(this);
+        zg0Var.start();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.f.a = 0.0f;
-        this.e = 0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
-        super.onLayout(z9, i7, i10, i11, i12);
-        SecretMediaViewer secretMediaViewer = this.r;
-        secretMediaViewer.O.h(false, secretMediaViewer.D != null ? r3.S() / secretMediaViewer.D.U() : 0.0f);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002a, code lost:
-    
-        if (r12 == (-9223372036854775807L)) goto L6;
-     */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i7, int i10) {
-        long j3;
-        this.d = true;
-        SecretMediaViewer secretMediaViewer = this.r;
-        ((FrameLayout.LayoutParams) secretMediaViewer.Q.getLayoutParams()).rightMargin = org.telegram.messenger.g0.L(12.0f);
-        this.d = false;
-        super.onMeasure(i7, i10);
-        mp0 mp0Var = secretMediaViewer.D;
-        if (mp0Var != null) {
-            j3 = mp0Var.U();
-        }
-        j3 = 0;
-        int ceil = (int) Math.ceil(secretMediaViewer.Q.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j3 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
-        r1.g gVar = this.h;
-        gVar.d();
-        int i11 = this.e;
-        r1.f fVar = this.f;
-        if (i11 != 0) {
-            float f10 = ceil;
-            if (fVar.a != f10) {
-                gVar.m.i = f10;
-                gVar.h();
-                this.e = ceil;
-            }
-        }
-        org.telegram.ui.Components.w51 w51Var = secretMediaViewer.O;
-        int z9 = org.telegram.messenger.k5.z(16.0f, getMeasuredWidth(), ceil);
-        int measuredHeight = getMeasuredHeight();
-        w51Var.h = z9;
-        w51Var.i = measuredHeight;
-        View view = w51Var.v;
-        if (view != null) {
-            view.invalidate();
-        }
-        fVar.a = ceil;
-        this.e = ceil;
-    }
-
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException
+        */
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.a < 1.0f) {
-            return false;
-        }
-        SecretMediaViewer secretMediaViewer = this.r;
-        if (secretMediaViewer.O.e(motionEvent.getX() - org.telegram.messenger.g0.L(2.0f), motionEvent.getY(), motionEvent.getAction())) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-            secretMediaViewer.P.invalidate();
-        }
-        return true;
+    public final void onDraw(android.graphics.Canvas r15) {
+        /*
+            Method dump skipped, instructions count: 217
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.oz0.onDraw(android.graphics.Canvas):void");
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d) {
-            return;
-        }
-        super.requestLayout();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        float measuredWidth = getMeasuredWidth() - org.telegram.messenger.g0.L(35.0f);
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float N = org.telegram.messenger.g0.N(10.5f);
+        this.c.set(measuredWidth - N, measuredHeight - N, measuredWidth + N, N + measuredHeight);
+        setPivotX(measuredWidth);
+        setPivotY(measuredHeight);
     }
 }

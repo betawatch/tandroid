@@ -2,14 +2,14 @@ package fi;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class f extends gh.b {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(int i7, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(i7, g6Var);
+    public /* synthetic */ f(int i7, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(i7, h6Var);
         this.s = 2;
     }
 
@@ -62,8 +62,8 @@ public final class f extends gh.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(org.telegram.ui.ActionBar.g6 g6Var, int i7, float f10, int i10) {
-        super(g6Var, i7, f10);
+    public /* synthetic */ f(org.telegram.ui.ActionBar.h6 h6Var, int i7, float f10, int i10) {
+        super(h6Var, i7, f10);
         this.s = i10;
     }
 }

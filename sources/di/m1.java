@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.qs;
 import org.telegram.ui.Components.cp;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
     public final /* synthetic */ int a = 1;
@@ -35,7 +35,7 @@ public final class m1 extends View {
                 int height2 = getHeight();
                 cp cpVar2 = this.b;
                 cpVar2.setBounds(0, 0, width2, height2);
-                cpVar2.b(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.m5, false));
+                cpVar2.b(org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
                 cpVar2.setAlpha(qs.e4);
                 cpVar2.draw(canvas);
                 invalidate();
@@ -46,6 +46,6 @@ public final class m1 extends View {
 
     public m1(Activity activity) {
         super(activity);
-        this.b = new cp(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.m5, false));
+        this.b = new cp(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.m6.x0(null, org.telegram.ui.ActionBar.m6.m5, false));
     }
 }

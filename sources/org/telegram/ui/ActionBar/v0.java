@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
 import c8.j9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class v0 extends w0 {
     public final u0 g0;
     public String h0;
 
-    public v0(Context context, g6 g6Var) {
-        super(context, g6Var);
+    public v0(Context context, h6 h6Var) {
+        super(context, h6Var);
         this.h0 = null;
         setFocusable(true);
         setFocusableInTouchMode(true);
@@ -24,9 +24,9 @@ public final class v0 extends w0 {
 
     @Override // org.telegram.ui.ActionBar.w0
     public final int c(float f10) {
-        int i7 = l6.gk;
-        g6 g6Var = this.y;
-        return i0.a.f(j9.a((((f10 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), l6.w0(i7, g6Var), l6.w0(l6.hk, g6Var));
+        int i7 = m6.gk;
+        h6 h6Var = this.y;
+        return i0.a.f(j9.a((((f10 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), m6.w0(i7, h6Var), m6.w0(m6.hk, h6Var));
     }
 
     public final void e(boolean z9, float f10) {

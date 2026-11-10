@@ -2,14 +2,14 @@ package bg;
 
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.id;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.n11;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.m11;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class j0 implements Runnable {
                 break;
             case 3:
                 cnVar.c6.put(j3, 0);
-                n11 n11Var = cnVar.f2;
-                if (n11Var != null) {
-                    n11Var.setAllTopicsHidden(false);
+                m11 m11Var = cnVar.f2;
+                if (m11Var != null) {
+                    m11Var.setAllTopicsHidden(false);
                 }
                 if (j3 == cnVar.r4) {
                     cnVar.C0.O(false);
@@ -50,7 +50,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 break;
             case 4:
                 cn cnVar2 = this.b;
-                cc v = hc.v(cnVar2.getParentActivity(), cnVar2, null, 1, this.c, 1, cnVar2.getThemedColor(l6.tj), cnVar2.getThemedColor(l6.vj), 5000, true, null);
+                bc v = gc.v(cnVar2.getParentActivity(), cnVar2, null, 1, this.c, 1, cnVar2.getThemedColor(m6.tj), cnVar2.getThemedColor(m6.vj), 5000, true, null);
                 v.k = true;
                 v.k(true);
                 break;
@@ -63,7 +63,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 cnVar.presentFragment(ProfileActivity.D4(j3));
                 break;
             default:
-                hc.a0(cnVar).I(R.raw.stars_topup, id.M0(2131745092, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
+                gc.a0(cnVar).I(R.raw.stars_topup, id.M0(2131745092, null), org.telegram.messenger.g0.X2(id.H(',', "StarsGiveawaySentPopupInfo", (int) j3))).k(true);
                 break;
         }
     }

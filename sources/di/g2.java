@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g2 extends u0 {
     public final /* synthetic */ q9 h0;
@@ -80,7 +80,7 @@ public final class g2 extends u0 {
                 ofFloat.addUpdateListener(new ah.h(this, 14));
                 this.e0.addListener(new ch.y(2, this, z9));
                 this.e0.setDuration(420L);
-                this.e0.setInterpolator(xq.h);
+                this.e0.setInterpolator(wq.h);
                 this.e0.start();
             } else {
                 this.a.setAlpha(z9 ? 0.0f : 0.5f);

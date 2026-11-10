@@ -1,99 +1,94 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class vd0 extends FrameLayout {
-    public final fi.fb a;
-    public final fi.d b;
-    public final ps c;
-    public u51 d;
-    public long e;
-    public float f;
-    public fi.j3 h;
-    public org.telegram.messenger.c20 n;
-    public Runnable r;
+public final class vd0 extends LinearLayout {
+    public final /* synthetic */ int a = 0;
+    public final LinearLayout b;
+    public final LinearLayout c;
 
-    public vd0(Context context, org.telegram.ui.ActionBar.g6 g6Var, y9 y9Var) {
+    public vd0(Context context) {
         super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, g6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(org.telegram.messenger.id.M0(2131751205, null));
-        kVar.E(-1, false);
-        kVar.D(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.w9(this, 15));
-        addView(kVar, c8.ha.e(-1, -2, 55));
-        fi.fb fbVar = new fi.fb(context, null, null, g6Var, y9Var);
-        this.a = fbVar;
-        fbVar.X0 = true;
-        addView(fbVar, c8.ha.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        fi.d dVar = new fi.d(context, g6Var, true);
-        this.b = dVar;
-        dVar.i(org.telegram.messenger.id.M0(2131751206, null), false, true);
-        dVar.f();
-        addView(dVar, c8.ha.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        ps psVar = new ps(context, org.telegram.messenger.id.M0(2131751207, null));
-        this.c = psVar;
-        psVar.setOnClickListener(new ud0(this, context, g6Var, 0));
-        addView(psVar, c8.ha.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        fbVar.setDelegate(new j2.n(this));
+        setOrientation(0);
+        setGravity(17);
+        setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
+        LinearLayout a10 = a(R.drawable.msg_replace, org.telegram.messenger.id.M0(2131746271, null));
+        this.c = a10;
+        addView(a10, c8.ha.o(-2, -1));
+        LinearLayout a11 = a(R.drawable.media_button_restore, org.telegram.messenger.id.M0(2131751335, null));
+        this.b = a11;
+        addView(a11, c8.ha.o(-2, -1));
     }
 
-    public final void a(org.telegram.messenger.gf gfVar, u51 u51Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        int i7;
-        fi.d dVar = this.b;
-        dVar.a = g6Var;
-        dVar.E = false;
-        dVar.updateColors();
-        int i10 = gfVar.F;
-        if (i10 <= 0 || (i7 = gfVar.G) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.i(i7 / i10, 1.39f, 0.85f);
+    public LinearLayout a(int i7, String str) {
+        Context context = getContext();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(17);
+        linearLayout.setPadding(org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(25.0f), org.telegram.messenger.g0.L(7.0f));
+        linearLayout.addView(org.telegram.messenger.camera.q.e(context, i7), c8.ha.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        TextView textView = new TextView(context);
+        textView.setGravity(16);
+        textView.setText(str);
+        textView.setTextSize(2, 14.0f);
+        textView.setSingleLine(true);
+        textView.setTextColor(-1);
+        linearLayout.addView(textView, c8.ha.o(-2, -2));
+        c8.ka.a(linearLayout);
+        return linearLayout;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                LinearLayout linearLayout = this.b;
+                ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
+                ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
+                int size = View.MeasureSpec.getSize(i7);
+                int size2 = View.MeasureSpec.getSize(i10);
+                int paddingRight = getPaddingRight() + getPaddingLeft();
+                int paddingBottom = getPaddingBottom() + getPaddingTop();
+                int max = Math.max(0, size - paddingRight);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
+                int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
+                linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
+                LinearLayout linearLayout2 = this.c;
+                linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
+                int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
+                layoutParams2.width = min;
+                layoutParams.width = min;
+                super.onMeasure(i7, i10);
+                break;
+            default:
+                int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+                int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(0, 0);
+                LinearLayout linearLayout3 = this.b;
+                linearLayout3.measure(makeMeasureSpec3, makeMeasureSpec4);
+                LinearLayout linearLayout4 = this.c;
+                if (linearLayout4 == null) {
+                    setMeasuredDimension(linearLayout3.getMeasuredWidth(), linearLayout3.getMeasuredHeight());
+                    break;
+                } else {
+                    linearLayout4.measure(View.MeasureSpec.makeMeasureSpec(linearLayout3.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                    setMeasuredDimension(linearLayout3.getMeasuredWidth(), linearLayout4.getMeasuredHeight() + linearLayout3.getMeasuredHeight());
+                    break;
+                }
         }
-        this.d = u51Var;
-        long j3 = gfVar.d;
-        if (j3 >= 0) {
-            this.e = j3;
-            u51Var.q0(j3, false);
-        } else {
-            this.e = u51Var.S();
-        }
-        String path = u51Var.F.getPath();
-        long U = u51Var.U();
-        l2.i0 i0Var = u51Var.d;
-        i0Var.F1();
-        this.a.o(false, path, U, i0Var.b0);
-        long U2 = u51Var.U();
-        float max = 2.8f / Math.max(60L, U2);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, u51Var.U()));
-        fi.fb fbVar = this.a;
-        fbVar.setVideoLeft(max2);
-        fbVar.setVideoRight(max2 + max);
-        fbVar.Z0 = 0L;
-        fbVar.a1 = U2;
-        fi.ab abVar = fbVar.h;
-        if (abVar != null) {
-            fi.ab.a(abVar, true);
-        }
-        fbVar.k();
     }
 
-    public long getTime() {
-        return this.e;
-    }
-
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(org.telegram.messenger.c20 c20Var) {
-        this.n = c20Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vd0(Context context, LinearLayout linearLayout, LinearLayout linearLayout2) {
+        super(context);
+        this.b = linearLayout;
+        this.c = linearLayout2;
     }
 }

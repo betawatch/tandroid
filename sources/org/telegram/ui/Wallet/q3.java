@@ -1,22 +1,38 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.ui.Components.d30;
-
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class q3 extends ShapeDrawable.ShaderFactory {
-    public final /* synthetic */ d30 a;
+public final /* synthetic */ class q3 implements r1.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public q3(d30 d30Var) {
-        this.a = d30Var;
+    public /* synthetic */ q3(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
-    public final Shader resize(int i7, int i10) {
-        d30 d30Var = this.a;
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i10, d30Var.a, d30Var.b, Shader.TileMode.CLAMP);
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                w3 w3Var = (w3) this.b;
+                w3Var.G = f10;
+                w3Var.c();
+                break;
+            case 1:
+                q8 q8Var = (q8) this.b;
+                q8Var.e = f10;
+                q8Var.setScaleX(f10);
+                q8Var.setScaleY(f10);
+                break;
+            case 2:
+                o9 o9Var = (o9) this.b;
+                o9Var.b0 = f10;
+                o9Var.G0();
+                break;
+            default:
+                ((n9) this.b).d.setConversionWobble(f10);
+                break;
+        }
     }
 }

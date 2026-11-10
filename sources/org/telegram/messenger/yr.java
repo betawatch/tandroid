@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class yr extends c1 {
     public static volatile yr[] e0 = new yr[4];
@@ -6751,7 +6751,7 @@ public final class yr extends c1 {
                                             if (c10 == 1) {
                                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(g5.n(user.first_name, user.last_name));
                                                 d0Var4.c = spannableStringBuilder;
-                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.l6.v0(org.telegram.ui.ActionBar.l6.Z8)), 0, d0Var4.c.length(), 33);
+                                                spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.m6.v0(org.telegram.ui.ActionBar.m6.Z8)), 0, d0Var4.c.length(), 33);
                                             } else {
                                                 d0Var4.c = g0.r0("@" + t10.n(user), null, "@" + str23);
                                             }

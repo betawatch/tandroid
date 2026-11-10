@@ -18,30 +18,30 @@ import java.util.HashSet;
 import org.telegram.messenger.iz;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.i9;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class o4 extends y implements org.telegram.ui.ActionBar.b6, h9 {
+public final class o4 extends y implements org.telegram.ui.ActionBar.c6, h9 {
     public y2 D;
     public boolean E;
     public final int[] F;
-    public final g6 n;
+    public final h6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView w;
     public Bitmap x;
     public int y;
 
-    public o4(Context context, g6 g6Var) {
+    public o4(Context context, h6 h6Var) {
         super(context);
         this.r = new Paint(1);
         this.y = 0;
         this.F = new int[4];
-        this.n = g6Var;
+        this.n = h6Var;
         setWillNotDraw(false);
         f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(6.0f));
         ImageView imageView = new ImageView(context);
@@ -71,10 +71,10 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, h9 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(l6.ig));
-        hashSet.add(Integer.valueOf(l6.G6));
+        hashSet.add(Integer.valueOf(m6.ig));
+        hashSet.add(Integer.valueOf(m6.G6));
     }
 
     public final void g(a aVar, y2 y2Var) {
@@ -126,7 +126,7 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, h9 {
     public final void onDraw(Canvas canvas) {
         y2 y2Var;
         i9 textSelectionHelper;
-        if (this.y != l6.w0(l6.G6, this.n)) {
+        if (this.y != m6.w0(m6.G6, this.n)) {
             updateColors();
         }
         if (this.x == null || (y2Var = this.D) == null || (textSelectionHelper = y2Var.a.getTextSelectionHelper()) == null || !textSelectionHelper.x() || !(getParent() instanceof RecyclerView)) {
@@ -145,12 +145,12 @@ public final class o4 extends y implements org.telegram.ui.ActionBar.b6, h9 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.b6
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        int i7 = l6.ig;
-        g6 g6Var = this.n;
-        this.r.setColor(l6.w0(i7, g6Var));
-        int w02 = l6.w0(l6.G6, g6Var);
+        int i7 = m6.ig;
+        h6 h6Var = this.n;
+        this.r.setColor(m6.w0(i7, h6Var));
+        int w02 = m6.w0(m6.G6, h6Var);
         if (!this.E || w02 != this.y) {
             this.E = true;
             this.y = w02;

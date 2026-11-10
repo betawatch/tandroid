@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class um extends org.telegram.ui.ActionBar.n0 {
     public float a;
@@ -122,9 +122,9 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
             if (xVar != null) {
                 xVar.e(0);
             }
-            er erVar = cnVar.e0;
-            if (erVar != null) {
-                erVar.b(true);
+            fr frVar = cnVar.e0;
+            if (frVar != null) {
+                frVar.b(true);
             }
             org.telegram.ui.ActionBar.r0 r0Var2 = cnVar.o0;
             if (r0Var2 != null && cnVar.fa) {
@@ -163,9 +163,9 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
             if (xVar4 != null) {
                 xVar4.e(8);
             }
-            er erVar2 = cnVar.e0;
-            if (erVar2 != null) {
-                erVar2.b(false);
+            fr frVar2 = cnVar.e0;
+            if (frVar2 != null) {
+                frVar2.b(false);
             }
         }
         if (cnVar.E1 != null) {
@@ -205,7 +205,7 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
         cnVar.Fd(false);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 0.0f);
         ofFloat.addUpdateListener(new tm(this, 2));
-        ofFloat.setInterpolator(org.telegram.ui.Components.xq.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.wq.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         cnVar.ed.a(false, true);
@@ -215,7 +215,7 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
         cnVar.cd();
         ck ckVar = cnVar.C1;
         if (ckVar != null) {
-            ckVar.d.M(new gq(2));
+            ckVar.d.M(new hq(2));
             ckVar.h = 0L;
             cnVar.C1.g(false);
         }
@@ -256,7 +256,7 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 1.0f);
         ofFloat.addUpdateListener(new tm(this, 1));
-        ofFloat.setInterpolator(org.telegram.ui.Components.xq.h);
+        ofFloat.setInterpolator(org.telegram.ui.Components.wq.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
         ck ckVar = cnVar.C1;
@@ -278,7 +278,7 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
         cn cnVar = this.b;
         ck ckVar = cnVar.C1;
         if (ckVar != null) {
-            ckVar.d.M(new gq(2));
+            ckVar.d.M(new hq(2));
             ckVar.h = 0L;
         }
         cnVar.E3 = null;
@@ -293,7 +293,7 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
         int i10;
         int i11;
         int i12;
-        org.telegram.ui.ActionBar.g6 g6Var;
+        org.telegram.ui.ActionBar.h6 h6Var;
         cn cnVar = this.b;
         boolean z9 = false;
         cnVar.md(0, 0, -1);
@@ -314,15 +314,15 @@ public final class um extends org.telegram.ui.ActionBar.n0 {
             cnVar.c8();
             if (cnVar.H3.contains("@")) {
                 String str = cnVar.H3;
-                g6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
-                cnVar.presentFragment(new org.telegram.ui.Components.s20(str, g6Var));
+                h6Var = ((org.telegram.ui.ActionBar.f2) cnVar).resourceProvider;
+                cnVar.presentFragment(new org.telegram.ui.Components.r20(str, h6Var));
                 return;
             }
             if (cnVar.I3 == null) {
                 cnVar.I3 = cnVar.H3;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, 1.0f);
                 ofFloat.addUpdateListener(new tm(this, 0));
-                ofFloat.setInterpolator(org.telegram.ui.Components.xq.h);
+                ofFloat.setInterpolator(org.telegram.ui.Components.wq.h);
                 ofFloat.setDuration(320L);
                 ofFloat.start();
                 ck ckVar = cnVar.C1;

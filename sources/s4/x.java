@@ -9,11 +9,11 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.ky0;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -73,9 +73,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        ky0 ky0Var = eVar.C;
-        if (ky0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ky0Var.b;
+        ly0 ly0Var = eVar.C;
+        if (ly0Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ly0Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }
@@ -110,12 +110,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new rt(c10, 13));
+                k kVar = new k(c10.h, new qt(c10, 13));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 qe.h hVar = c10.c;
-                ((Handler) hVar.d).post((et) hVar.h);
+                ((Handler) hVar.d).post((dt) hVar.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -139,7 +139,7 @@ public final class x {
                 }
                 c10.r = null;
                 qe.h hVar2 = c10.c;
-                ((Handler) hVar2.d).post((et) hVar2.h);
+                ((Handler) hVar2.d).post((dt) hVar2.h);
             }
         }
         bVar.b(769, zVar);

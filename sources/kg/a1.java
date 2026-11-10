@@ -20,24 +20,24 @@ import org.telegram.messenger.t5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Components.m41;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.qj0;
+import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.r41;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class a1 extends f2 implements ls {
     public boolean D;
     public int E;
     public boolean F;
     public r41 a;
-    public b5 b;
+    public c5 b;
     public boolean c;
     public FrameLayout d;
     public x0 e;
@@ -190,17 +190,17 @@ public final class a1 extends f2 implements ls {
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.simpleActionBar.setTitle(id.M0(2131752698, null));
         this.simpleActionBar.setActionBarMenuOnItemClick(new bi.s(this, 15));
-        this.b = this.simpleActionBar.o(id.M0(2131745946, null));
+        this.b = this.simpleActionBar.p(id.M0(2131745946, null));
         int i10 = 0;
         Z(false);
         FrameLayout frameLayout = new FrameLayout(context);
         x0 x0Var = new x0(this, getParentActivity());
         this.e = x0Var;
         x0Var.setTextSize(1, 17.0f);
-        s6.D(this.e, l6.H6, null);
+        t6.D(this.e, m6.H6, null);
         x0 x0Var2 = this.e;
-        int i11 = l6.G6;
-        s6.U(x0Var2, i11, null);
+        int i11 = m6.G6;
+        t6.U(x0Var2, i11, null);
         this.e.setBackgroundDrawable(null);
         this.e.setMaxLines(5);
         this.e.setSingleLine(false);
@@ -208,7 +208,7 @@ public final class a1 extends f2 implements ls {
         this.e.setGravity((id.a0 ? 5 : 3) | 48);
         this.e.setInputType(180225);
         this.e.setHint(id.M0(2131752697, null));
-        s6.v(this.e, i11, null);
+        t6.v(this.e, i11, null);
         this.e.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         this.e.setCursorWidth(1.5f);
         int i12 = 10;
@@ -218,8 +218,8 @@ public final class a1 extends f2 implements ls {
         this.d = frameLayout2;
         frameLayout2.addView(this.e, ha.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.d;
-        int i13 = l6.d6;
-        s6.h(i13, frameLayout3, getResourceProvider());
+        int i13 = m6.d6;
+        t6.h(i13, frameLayout3, getResourceProvider());
         x0 x0Var3 = this.e;
         if (x0Var3 != null) {
             this.c = true;
@@ -229,8 +229,8 @@ public final class a1 extends f2 implements ls {
             this.c = false;
         }
         this.r = new d4(i7, context, this);
-        rz c10 = t5.c(0.2f, l6.Dc);
-        g6 resourceProvider = getResourceProvider();
+        rz c10 = t5.c(0.2f, m6.Dc);
+        h6 resourceProvider = getResourceProvider();
         c10.m = i11;
         c10.o = resourceProvider;
         c10.t = true;
@@ -238,7 +238,7 @@ public final class a1 extends f2 implements ls {
         np npVar = new np(c10);
         this.n = npVar;
         npVar.setCallback(this.r);
-        s6.h(i13, this.r, getResourceProvider());
+        t6.h(i13, this.r, getResourceProvider());
         this.h = new z0(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.f = frameLayout4;
@@ -286,7 +286,7 @@ public final class a1 extends f2 implements ls {
     }
 
     @Override // org.telegram.ui.ActionBar.f2
-    public final qj0 getListViewForSimpleGlass() {
+    public final pj0 getListViewForSimpleGlass() {
         return this.a;
     }
 

@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class p41 extends ky {
+public final class p41 extends jy {
     public final /* synthetic */ int X;
     public final Object Y;
 
@@ -26,14 +26,14 @@ public final class p41 extends ky {
         }
     }
 
-    @Override // org.telegram.ui.Components.ky
-    public ot0 D1(int i7) {
+    @Override // org.telegram.ui.Components.jy
+    public nt0 D1(int i7) {
         switch (this.X) {
             case 2:
-                ot0 ot0Var = (ot0) this.Y;
-                ot0Var.b = 100.0f;
-                ot0Var.a = 100.0f;
-                return ot0Var;
+                nt0 nt0Var = (nt0) this.Y;
+                nt0Var.b = 100.0f;
+                nt0Var.a = 100.0f;
+                return nt0Var;
             default:
                 return super.D1(i7);
         }
@@ -97,6 +97,6 @@ public final class p41 extends ky {
     public p41() {
         super(100, false);
         this.X = 2;
-        this.Y = new ot0();
+        this.Y = new nt0();
     }
 }

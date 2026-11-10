@@ -5,21 +5,21 @@ import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.ij;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.mj;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.lj;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class r1 implements mj {
-    public final /* synthetic */ di a;
+public final class r1 implements lj {
+    public final /* synthetic */ ci a;
     public final /* synthetic */ b2 b;
 
-    public r1(b2 b2Var, di diVar) {
+    public r1(b2 b2Var, ci ciVar) {
         this.b = b2Var;
-        this.a = diVar;
+        this.a = ciVar;
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void A() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
@@ -30,7 +30,7 @@ public final class r1 implements mj {
         }
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z9, int i7, long j3, boolean z10, long j10) {
         boolean isEmpty = arrayList.isEmpty();
         b2 b2Var = this.b;
@@ -49,11 +49,11 @@ public final class r1 implements mj {
         this.a.a(true);
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void S() {
     }
 
-    @Override // org.telegram.ui.Components.mj
+    @Override // org.telegram.ui.Components.lj
     public final /* synthetic */ void p(ArrayList arrayList, boolean z9, int i7, long j3) {
     }
 }

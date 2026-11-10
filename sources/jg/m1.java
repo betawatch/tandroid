@@ -16,21 +16,21 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.t3;
 import org.telegram.messenger.ui;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.oj0;
 import org.telegram.ui.cn;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class m1 extends pj0 implements ls {
+public final class m1 extends oj0 implements ls {
     public l6 D;
     public final Context c;
     public final cn f;
     public int h;
     public int n;
-    public final g6 s;
+    public final h6 s;
     public final int w;
     public final boolean x;
     public String y;
@@ -39,15 +39,15 @@ public final class m1 extends pj0 implements ls {
     public final int r = p10.s0;
     public final v9 E = new v9(this, 20);
 
-    public m1(Context context, cn cnVar, g6 g6Var, int i7, boolean z9) {
-        this.s = g6Var;
+    public m1(Context context, cn cnVar, h6 h6Var, int i7, boolean z9) {
+        this.s = h6Var;
         this.c = context;
         this.f = cnVar;
         this.w = i7;
         this.x = z9;
     }
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 0 || i7 == 2;
@@ -175,17 +175,17 @@ public final class m1 extends pj0 implements ls {
         View t2Var;
         View view;
         if (i7 != 0) {
-            g6 g6Var = this.s;
+            h6 h6Var = this.s;
             Context context = this.c;
             if (i7 == 1) {
-                mz mzVar = new mz(context, g6Var);
-                mzVar.setIsSingleCell(true);
-                mzVar.setViewType(7);
-                view = mzVar;
+                lz lzVar = new lz(context, h6Var);
+                lzVar.setIsSingleCell(true);
+                lzVar.setViewType(7);
+                view = lzVar;
             } else if (i7 != 2) {
                 t2Var = null;
             } else {
-                view = new l1(context, g6Var);
+                view = new l1(context, h6Var);
             }
             t2Var = view;
         } else {

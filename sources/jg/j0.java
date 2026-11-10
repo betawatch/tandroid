@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.ui.ActionBar.o5;
-import org.telegram.ui.Components.cs;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.ur0;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ds;
+import org.telegram.ui.Components.tr0;
 import org.telegram.ui.Components.voip.h2;
-import org.telegram.ui.Components.zs0;
+import org.telegram.ui.Components.ys0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -84,20 +84,20 @@ public final class j0 extends AnimatorListenerAdapter {
             case 2:
                 ((v4.d1) this.b).a.setAlpha(1.0f);
                 ((AnimatorSet) this.c).removeAllListeners();
-                es esVar = (es) this.e;
-                cs csVar = (cs) this.d;
-                esVar.d(csVar.a);
-                esVar.y.remove(csVar.a);
-                esVar.A();
-                esVar.d(csVar.b);
-                esVar.y.remove(csVar.b);
-                esVar.A();
+                ds dsVar = (ds) this.e;
+                bs bsVar = (bs) this.d;
+                dsVar.d(bsVar.a);
+                dsVar.y.remove(bsVar.a);
+                dsVar.A();
+                dsVar.d(bsVar.b);
+                dsVar.y.remove(bsVar.b);
+                dsVar.A();
                 break;
             case 3:
-                ((zs0) this.e).K1 = false;
+                ((ys0) this.e).K1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((ur0) this.b).removeView(view3);
+                    ((tr0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -128,7 +128,7 @@ public final class j0 extends AnimatorListenerAdapter {
                         h2Var.e(true);
                     } else {
                         textViewArr[1].setText(h2Var.e);
-                        h2Var.a(textViewArr[0], textViewArr[1], new o5(this, 6));
+                        h2Var.a(textViewArr[0], textViewArr[1], new p5(this, 6));
                     }
                     h2Var.e = null;
                     break;
@@ -137,9 +137,9 @@ public final class j0 extends AnimatorListenerAdapter {
             default:
                 Runnable runnable2 = (Runnable) this.c;
                 ProfileActivity profileActivity = (ProfileActivity) this.e;
-                org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) this.b;
-                if (kVar != null) {
-                    kVar.setSkipDrawChild(false);
+                org.telegram.ui.ActionBar.l lVar2 = (org.telegram.ui.ActionBar.l) this.b;
+                if (lVar2 != null) {
+                    lVar2.setSkipDrawChild(false);
                 }
                 org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.d;
                 if (r0Var != null) {
@@ -180,12 +180,12 @@ public final class j0 extends AnimatorListenerAdapter {
                 ((mi.l) this.e).getClass();
                 break;
             case 2:
-                es esVar = (es) this.e;
-                cs csVar = (cs) this.d;
-                v4.d1 d1Var = csVar.a;
-                esVar.getClass();
-                v4.d1 d1Var2 = csVar.b;
-                esVar.getClass();
+                ds dsVar = (ds) this.e;
+                bs bsVar = (bs) this.d;
+                v4.d1 d1Var = bsVar.a;
+                dsVar.getClass();
+                v4.d1 d1Var2 = bsVar.b;
+                dsVar.getClass();
                 break;
             default:
                 super.onAnimationStart(animator);
@@ -209,10 +209,10 @@ public final class j0 extends AnimatorListenerAdapter {
         this.d = viewPropertyAnimator;
     }
 
-    public j0(es esVar, cs csVar, v4.d1 d1Var, AnimatorSet animatorSet) {
+    public j0(ds dsVar, bs bsVar, v4.d1 d1Var, AnimatorSet animatorSet) {
         this.a = 2;
-        this.e = esVar;
-        this.d = csVar;
+        this.e = dsVar;
+        this.d = bsVar;
         this.b = d1Var;
         this.c = animatorSet;
     }

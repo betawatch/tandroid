@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public abstract class m5 {
     public static boolean A() {
@@ -45,48 +45,48 @@ public abstract class m5 {
         return 2305843009213693952L | i7;
     }
 
-    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.w8 w8Var, TLObject tLObject) {
+    public static String H(ImageReceiver imageReceiver, org.telegram.ui.Components.v8 v8Var, TLObject tLObject) {
         if (!(tLObject instanceof TLRPC.User)) {
             if (!(tLObject instanceof TLRPC.Chat)) {
                 return "";
             }
             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
             String str = chat.title;
-            if (w8Var != null) {
-                w8Var.q(chat);
+            if (v8Var != null) {
+                v8Var.q(chat);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(tLObject, w8Var, null);
+                imageReceiver.i0(tLObject, v8Var, null);
             }
             return str;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
         if (t10.z(user)) {
             String M0 = id.M0(2131746266, null);
-            if (w8Var != null) {
-                w8Var.g(12);
+            if (v8Var != null) {
+                v8Var.g(12);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, w8Var, null);
+                imageReceiver.i0(null, v8Var, null);
             }
             return M0;
         }
         if (t10.B(user)) {
             String M02 = id.M0(2131745901, null);
-            if (w8Var != null) {
-                w8Var.g(1);
+            if (v8Var != null) {
+                v8Var.g(1);
             }
             if (imageReceiver != null) {
-                imageReceiver.i0(null, w8Var, null);
+                imageReceiver.i0(null, v8Var, null);
             }
             return M02;
         }
         String p10 = t10.p(user);
-        if (w8Var != null) {
-            w8Var.r(user);
+        if (v8Var != null) {
+            v8Var.r(user);
         }
         if (imageReceiver != null) {
-            imageReceiver.i0(tLObject, w8Var, null);
+            imageReceiver.i0(tLObject, v8Var, null);
         }
         return p10;
     }

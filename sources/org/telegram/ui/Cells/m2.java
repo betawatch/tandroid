@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import org.telegram.messenger.qp;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.yw;
+import org.telegram.ui.zw;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class m2 extends di.o7 {
     public final /* synthetic */ t2 S;
@@ -24,8 +24,8 @@ public final class m2 extends di.o7 {
     public final boolean d(long j3) {
         t2 t2Var = this.S;
         int i7 = t2Var.F0;
-        yw ywVar = t2Var.D4;
-        if (ywVar == null || t2Var.O0) {
+        zw zwVar = t2Var.D4;
+        if (zwVar == null || t2Var.O0) {
             return false;
         }
         if (j3 > 0) {
@@ -33,14 +33,14 @@ public final class m2 extends di.o7 {
             if (a22 == null || a22.linked_community_id == 0) {
                 return false;
             }
-            ywVar.showDialog(new ii.d0(ywVar, a22.linked_community_id));
+            zwVar.showDialog(new ii.d0(zwVar, a22.linked_community_id));
             return true;
         }
         TLRPC.Chat M0 = qp.s1(i7).M0(Long.valueOf(-j3));
         if (M0 == null || M0.linked_community_id == 0) {
             return false;
         }
-        ywVar.showDialog(new ii.d0(ywVar, M0.linked_community_id));
+        zwVar.showDialog(new ii.d0(zwVar, M0.linked_community_id));
         return true;
     }
 

@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qj0;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.ms;
+import org.telegram.ui.Components.pj0;
+import org.telegram.ui.Components.qu;
+import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public final class v extends qj0 {
+public final class v extends pj0 {
     public final /* synthetic */ int e3 = 0;
     public final Object f3;
     public final /* synthetic */ KeyEvent.Callback g3;
@@ -30,7 +30,7 @@ public final class v extends qj0 {
         this.f3 = new h6.m(28);
     }
 
-    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i7 = this.e3;
         KeyEvent.Callback callback = this.g3;
@@ -63,23 +63,23 @@ public final class v extends qj0 {
                 break;
             default:
                 Paint paint = (Paint) obj;
-                ru ruVar = (ru) callback;
-                org.telegram.ui.Components.w5 w5Var = ruVar.D1;
-                if (w5Var != null && ruVar.B1 >= 0 && ruVar.C1 >= 0 && ruVar.o1 != null && this.G) {
-                    float e10 = w5Var.e(false, 0.0f);
+                qu quVar = (qu) callback;
+                org.telegram.ui.Components.v5 v5Var = quVar.G1;
+                if (v5Var != null && quVar.E1 >= 0 && quVar.F1 >= 0 && quVar.r1 != null && this.G) {
+                    float e10 = v5Var.e(false, 0.0f);
                     if (e10 > 0.0f) {
                         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                         int i11 = TLObject.FLAG_31;
                         for (int i12 = 0; i12 < getChildCount(); i12++) {
                             View childAt = getChildAt(i12);
                             int R = RecyclerView.R(childAt);
-                            if (R != -1 && R >= ruVar.B1 && R <= ruVar.C1) {
+                            if (R != -1 && R >= quVar.E1 && R <= quVar.F1) {
                                 i10 = Math.min(i10, childAt.getTop() + ((int) childAt.getTranslationY()));
                                 i11 = Math.max(i11, childAt.getBottom() + ((int) childAt.getTranslationY()));
                             }
                         }
                         if (i10 < i11) {
-                            paint.setColor(org.telegram.ui.ActionBar.l6.r1(e10, org.telegram.ui.ActionBar.l6.w0(org.telegram.ui.ActionBar.l6.ze, this.n2)));
+                            paint.setColor(org.telegram.ui.ActionBar.m6.r1(e10, org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.ze, this.n2)));
                             canvas.drawRect(0.0f, i10, getMeasuredWidth(), i11, paint);
                         }
                         invalidate();
@@ -90,7 +90,7 @@ public final class v extends qj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.e3) {
             case 0:
@@ -102,7 +102,7 @@ public final class v extends qj0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.e3) {
             case 2:
@@ -124,20 +124,20 @@ public final class v extends qj0 {
                 }
                 break;
             case 2:
-                ru ruVar = (ru) this.g3;
-                ruVar.m1.a();
-                ruVar.b.invalidate();
+                qu quVar = (qu) this.g3;
+                quVar.p1.a();
+                quVar.b.invalidate();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         switch (this.e3) {
             case 2:
                 super.onDetachedFromWindow();
-                ru ruVar = (ru) this.g3;
-                org.telegram.ui.Components.r5.release(ruVar.b, (LongSparseArray<org.telegram.ui.Components.i5>) ruVar.i1);
+                qu quVar = (qu) this.g3;
+                org.telegram.ui.Components.q5.release(quVar.b, (LongSparseArray<org.telegram.ui.Components.h5>) quVar.l1);
                 break;
             default:
                 super.onDetachedFromWindow();
@@ -145,7 +145,7 @@ public final class v extends qj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         org.telegram.ui.ActionBar.g1 g1Var;
@@ -170,13 +170,13 @@ public final class v extends qj0 {
                 motionEvent2 = motionEvent;
                 return super.onInterceptTouchEvent(motionEvent2);
             default:
-                ms p10 = ms.p();
-                ru ruVar = (ru) this.g3;
-                return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, ruVar.n1, ruVar.E1, this.n2);
+                ns p10 = ns.p();
+                qu quVar = (qu) this.g3;
+                return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, quVar.q1, quVar.H1, this.n2);
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z9, int i7, int i10, int i11, int i12) {
         switch (this.e3) {
             case 1:
@@ -185,7 +185,7 @@ public final class v extends qj0 {
                 break;
             case 2:
                 super.onLayout(z9, i7, i10, i11, i12);
-                ((ru) this.g3).m1.a();
+                ((qu) this.g3).p1.a();
                 break;
             default:
                 super.onLayout(z9, i7, i10, i11, i12);
@@ -193,12 +193,12 @@ public final class v extends qj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.e3) {
             case 2:
                 View.MeasureSpec.getSize(i7);
-                ((ru) this.g3).u1.y1(40);
+                ((qu) this.g3).x1.y1(40);
                 super.onMeasure(i7, i10);
                 break;
             default:
@@ -207,7 +207,7 @@ public final class v extends qj0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qj0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.pj0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.g1 g1Var;
         switch (this.e3) {
@@ -237,9 +237,9 @@ public final class v extends qj0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(ru ruVar, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.g3 = ruVar;
+    public v(qu quVar, Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context, h6Var);
+        this.g3 = quVar;
         this.f3 = new Paint(1);
     }
 

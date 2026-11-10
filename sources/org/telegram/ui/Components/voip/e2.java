@@ -23,11 +23,11 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.vs;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.wq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class e2 implements VoIPService.StateListener, ls {
     public static boolean S = false;
@@ -304,7 +304,7 @@ public final class e2 implements VoIPService.StateListener, ls {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, this.H ? 1.0f : 0.0f);
             this.x = ofFloat;
             ofFloat.addUpdateListener(this.y);
-            this.x.setDuration(300L).setInterpolator(xq.f);
+            this.x.setDuration(300L).setInterpolator(wq.f);
             this.x.start();
         }
     }
@@ -341,7 +341,7 @@ public final class e2 implements VoIPService.StateListener, ls {
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onStateChanged(int i7) {
         if (i7 == 11 || i7 == 17 || i7 == 4 || i7 == 10) {
-            org.telegram.messenger.g0.i3(new vs(14), 200L);
+            org.telegram.messenger.g0.i3(new us(14), 200L);
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {

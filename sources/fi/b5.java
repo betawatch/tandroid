@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import org.telegram.messenger.cj;
 import org.telegram.messenger.dj;
 import org.telegram.messenger.qs;
-import org.telegram.ui.Components.lg;
-import org.telegram.ui.Components.ut0;
+import org.telegram.ui.Components.kg;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.cn;
 import org.telegram.ui.dh;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class b5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final class b5 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ b5(ut0 ut0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i7, int i10) {
+    public /* synthetic */ b5(tt0 tt0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i7, int i10) {
         this.a = i10;
-        this.e = ut0Var;
+        this.e = tt0Var;
         this.c = viewGroup;
         this.d = viewGroup2;
         this.b = i7;
@@ -116,9 +116,9 @@ public final class b5 extends AnimatorListenerAdapter {
                 cnVar2.o1.getAvatarImageView().setScaleX(1.0f);
                 cnVar2.o1.getAvatarImageView().setScaleY(1.0f);
                 cnVar2.o1.getAvatarImageView().setAlpha(1.0f);
-                lg lgVar = cnVar2.a1;
-                if (lgVar != null) {
-                    lgVar.setAlpha(1.0f);
+                kg kgVar = cnVar2.a1;
+                if (kgVar != null) {
+                    kgVar.setAlpha(1.0f);
                     break;
                 }
                 break;

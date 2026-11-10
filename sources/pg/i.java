@@ -8,17 +8,18 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.l6;
-import org.telegram.ui.Components.nm0;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.Components.k6;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout {
-    public nm0 a;
+    public mm0 a;
     public float b;
     public float c;
     public float d;
-    public l6 e;
+    public k6 e;
     public String f;
     public TextPaint h;
     public int n;
@@ -32,9 +33,9 @@ public final class i extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.h;
-        textPaint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.G6, false));
+        textPaint.setColor(m6.x0(null, m6.G6, false));
         canvas.drawText(this.f, g0.L(24.0f), g0.L(24.0f), textPaint);
-        textPaint.setColor(org.telegram.ui.ActionBar.l6.x0(null, org.telegram.ui.ActionBar.l6.I6, false));
+        textPaint.setColor(m6.x0(null, m6.I6, false));
         String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
         canvas.drawText(format, (getMeasuredWidth() - g0.L(8.0f)) - textPaint.measureText(format), this.a.getY() + g0.L(23.0f), textPaint);
     }
@@ -50,10 +51,10 @@ public final class i extends FrameLayout {
         super.onMeasure(i7, i10);
         int size = View.MeasureSpec.getSize(i7);
         if (this.n != size) {
-            nm0 nm0Var = this.a;
+            mm0 mm0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f10 = this.b;
-            nm0Var.setProgress((floatValue - f10) / (this.c - f10));
+            mm0Var.setProgress((floatValue - f10) / (this.c - f10));
             this.n = size;
         }
     }

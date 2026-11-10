@@ -19,18 +19,18 @@ import org.telegram.messenger.qs;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.f4;
-import org.telegram.ui.ActionBar.h3;
-import org.telegram.ui.ActionBar.i4;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.g4;
+import org.telegram.ui.ActionBar.j4;
+import org.telegram.ui.ActionBar.l3;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.o2;
 import org.telegram.ui.ActionBar.v1;
-import org.telegram.ui.ActionBar.v2;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.ActionBar.x1;
 import org.telegram.ui.Cells.i3;
 import org.telegram.ui.Cells.k3;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class a0 implements Runnable {
                 org.telegram.messenger.g0.K3(i3Var);
                 return;
             case 3:
-                org.telegram.messenger.g0.K3(((li.v) obj).W1.d);
+                org.telegram.messenger.g0.K3(((li.v) obj).Z1.d);
                 return;
             case 4:
                 ((li.c0) obj).invalidate();
@@ -189,13 +189,13 @@ public final /* synthetic */ class a0 implements Runnable {
                 x1Var.o1.animate().setDuration(300L).alpha(1.0f).setListener(new v1(x1Var, 0)).start();
                 return;
             case 21:
-                v2 v2Var = (v2) ((m2) obj).c;
-                DialogInterface.OnDismissListener onDismissListener = v2Var.H0;
+                w2 w2Var = (w2) ((m2) obj).c;
+                DialogInterface.OnDismissListener onDismissListener = w2Var.H0;
                 if (onDismissListener != null) {
-                    onDismissListener.onDismiss(v2Var);
+                    onDismissListener.onDismiss(w2Var);
                 }
                 try {
-                    v2Var.K();
+                    w2Var.K();
                     return;
                 } catch (Exception e12) {
                     a8.g(e12, true);
@@ -203,42 +203,42 @@ public final /* synthetic */ class a0 implements Runnable {
                 }
             case 22:
                 try {
-                    ((n2) obj).b.K();
+                    ((o2) obj).b.K();
                     return;
                 } catch (Exception e13) {
                     a8.g(e13, true);
                     return;
                 }
             case 23:
-                h3 h3Var = (h3) obj;
-                if (h3Var.d() != null) {
-                    h3Var.d().setDrawingFromOverlay(true);
+                org.telegram.ui.ActionBar.i3 i3Var2 = (org.telegram.ui.ActionBar.i3) obj;
+                if (i3Var2.d() != null) {
+                    i3Var2.d().setDrawingFromOverlay(true);
                     return;
                 }
                 return;
             case 24:
-                ((org.telegram.ui.ActionBar.k3) obj).f();
+                ((l3) obj).f();
                 return;
             case 25:
-                i4 i4Var = (i4) ((androidx.mediarouter.app.f0) obj).b;
-                i4Var.k();
-                i4Var.j();
+                j4 j4Var = (j4) ((androidx.mediarouter.app.f0) obj).b;
+                j4Var.k();
+                j4Var.j();
                 return;
             case 26:
-                i4 i4Var2 = ((f4) obj).b;
-                i4Var2.c.dismiss();
-                i4Var2.f.removeAllViews();
+                j4 j4Var2 = ((g4) obj).b;
+                j4Var2.c.dismiss();
+                j4Var2.f.removeAllViews();
                 return;
             case 27:
-                ((f4) obj).b.c.dismiss();
+                ((g4) obj).b.c.dismiss();
                 return;
             case 28:
                 Drawable drawable2 = (Drawable) obj;
-                l6.d = null;
-                l6.P();
-                if (!l6.b) {
-                    l6.j(drawable2);
-                    l6.h(drawable2);
+                m6.d = null;
+                m6.P();
+                if (!m6.b) {
+                    m6.j(drawable2);
+                    m6.h(drawable2);
                 }
                 qs.e().k(qs.z4, new Object[0]);
                 return;

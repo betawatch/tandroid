@@ -11,20 +11,20 @@ import java.util.ArrayList;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.id;
-import org.telegram.ui.Components.ak0;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.Components.y70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.x70;
+import org.telegram.ui.Components.zj0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class g8 {
-    public y70 a;
-    public org.telegram.ui.Components.r5 b;
+    public x70 a;
+    public org.telegram.ui.Components.q5 b;
     public final n2.n0 c;
-    public org.telegram.ui.Components.n5 d;
+    public org.telegram.ui.Components.m5 d;
     public StaticLayout e;
-    public org.telegram.ui.Components.n5 f;
+    public org.telegram.ui.Components.m5 f;
     public StaticLayout g;
     public d8[] h;
     public final ArrayList i;
@@ -36,8 +36,8 @@ public final class g8 {
     public c8 o;
     public c8 p;
     public boolean q;
-    public final org.telegram.ui.Components.w5 r;
-    public final b80 s;
+    public final org.telegram.ui.Components.v5 r;
+    public final a80 s;
     public final Path t;
     public final AtomicReference u;
     public final /* synthetic */ h8 v;
@@ -49,17 +49,17 @@ public final class g8 {
         this.i = arrayList;
         this.j = new Stack();
         this.n = "";
-        this.r = new org.telegram.ui.Components.w5(h8Var.J, 0L, 400L, xq.h);
+        this.r = new org.telegram.ui.Components.v5(h8Var.J, 0L, 400L, wq.h);
         Path path = new Path();
         this.t = path;
         this.u = new AtomicReference();
         this.k = new gf.c(h8Var, arrayList, new r4(this, 3));
-        b80 b80Var = new b80();
-        this.s = b80Var;
-        b80Var.y = path;
-        b80Var.k(4.0f);
-        b80Var.g(org.telegram.ui.ActionBar.l6.r1(0.3f, -1), org.telegram.ui.ActionBar.l6.r1(0.1f, -1), org.telegram.ui.ActionBar.l6.r1(0.2f, -1), org.telegram.ui.ActionBar.l6.r1(0.7f, -1));
-        b80Var.setCallback(h8Var);
+        a80 a80Var = new a80();
+        this.s = a80Var;
+        a80Var.y = path;
+        a80Var.k(4.0f);
+        a80Var.g(org.telegram.ui.ActionBar.m6.r1(0.3f, -1), org.telegram.ui.ActionBar.m6.r1(0.1f, -1), org.telegram.ui.ActionBar.m6.r1(0.2f, -1), org.telegram.ui.ActionBar.m6.r1(0.7f, -1));
+        a80Var.setCallback(h8Var);
     }
 
     public final int a(int i7) {
@@ -108,9 +108,9 @@ public final class g8 {
         }
         if (d > 0.0f || this.q) {
             int i7 = (int) (d * 255.0f * T1);
-            b80 b80Var = this.s;
-            b80Var.setAlpha(i7);
-            b80Var.draw(canvas2);
+            a80 a80Var = this.s;
+            a80Var.setAlpha(i7);
+            a80Var.draw(canvas2);
             h8Var.invalidate();
         }
     }
@@ -157,9 +157,9 @@ public final class g8 {
                 canvas.save();
                 canvas.translate(h8Var.E, h8Var.F + i7);
                 d(this.g, canvas, arrayList3);
-                org.telegram.ui.Components.n5 update = org.telegram.ui.Components.r5.update(0, h8Var, this.f, this.g);
+                org.telegram.ui.Components.m5 update = org.telegram.ui.Components.q5.update(0, h8Var, this.f, this.g);
                 this.f = update;
-                org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, this.g, update, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+                org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, this.g, update, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
                 arrayList = arrayList3;
                 canvas.restore();
                 if (z9) {
@@ -184,15 +184,15 @@ public final class g8 {
                             arrayList2 = arrayList;
                             i10 = i12;
                             float T1 = org.telegram.messenger.g0.T1(f12, f13, h8Var.x);
-                            float T12 = org.telegram.messenger.g0.T1(d8Var.d, d8Var.f, xq.g.getInterpolation(h8Var.x));
+                            float T12 = org.telegram.messenger.g0.T1(d8Var.d, d8Var.f, wq.g.getInterpolation(h8Var.x));
                             canvas.translate(h8Var.E + T1, h8Var.F + i7 + T12);
                             if (z9) {
                                 f(d8Var.b, h8Var.E + T1, h8Var.F + i7 + T12);
                             }
                             d8Var.b.draw(canvas);
-                            org.telegram.ui.Components.n5 update2 = org.telegram.ui.Components.r5.update(0, h8Var, d8Var.a, d8Var.b);
+                            org.telegram.ui.Components.m5 update2 = org.telegram.ui.Components.q5.update(0, h8Var, d8Var.a, d8Var.b);
                             d8Var.a = update2;
-                            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, d8Var.b, update2, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+                            org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, d8Var.b, update2, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
                         } else if (h8Var.x != f11) {
                             canvas.translate(h8Var.E + f13, h8Var.F + i7 + d8Var.f);
                             canvas.saveLayerAlpha(0.0f, 0.0f, d8Var.b.getWidth(), d8Var.b.getHeight(), (int) (h8Var.x * 255.0f), 31);
@@ -201,11 +201,11 @@ public final class g8 {
                                 f(d8Var.b, h8Var.E + d8Var.e, h8Var.F + i7 + d8Var.f);
                             }
                             d8Var.b.draw(canvas);
-                            org.telegram.ui.Components.n5 update3 = org.telegram.ui.Components.r5.update(0, h8Var, d8Var.a, d8Var.b);
+                            org.telegram.ui.Components.m5 update3 = org.telegram.ui.Components.q5.update(0, h8Var, d8Var.a, d8Var.b);
                             d8Var.a = update3;
                             arrayList2 = arrayList;
                             i10 = i12;
-                            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, d8Var.b, update3, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, h8Var.x, porterDuffColorFilter);
+                            org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, d8Var.b, update3, 0.0f, arrayList2, 0.0f, 0.0f, 0.0f, h8Var.x, porterDuffColorFilter);
                             canvas.restore();
                         }
                         canvas.restore();
@@ -227,9 +227,9 @@ public final class g8 {
                 i8Var.W.W(canvas);
             }
             d(this.e, canvas, arrayList3);
-            org.telegram.ui.Components.n5 update4 = org.telegram.ui.Components.r5.update(0, h8Var, this.d, this.e);
+            org.telegram.ui.Components.m5 update4 = org.telegram.ui.Components.q5.update(0, h8Var, this.d, this.e);
             this.d = update4;
-            org.telegram.ui.Components.r5.drawAnimatedEmojis(canvas, this.e, update4, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
+            org.telegram.ui.Components.q5.drawAnimatedEmojis(canvas, this.e, update4, 0.0f, arrayList3, 0.0f, 0.0f, 0.0f, 1.0f, porterDuffColorFilter);
             canvas.restore();
             if (z9) {
                 f(this.e, h8Var.E, h8Var.F + i7);
@@ -334,7 +334,7 @@ public final class g8 {
                     }
                     d8 d8Var = d8VarArr[i11];
                     if (d8Var != null) {
-                        org.telegram.ui.Components.r5.release(i8Var, d8Var.a);
+                        org.telegram.ui.Components.q5.release(i8Var, d8Var.a);
                     }
                     i11++;
                 }
@@ -410,7 +410,7 @@ public final class g8 {
             e8 e8Var = new e8(this, 0);
             c8Var.r = h8Var;
             c8Var.s = e8Var;
-            new ak0(h8Var);
+            new zj0(h8Var);
             c8Var.j.setCallback(h8Var);
             c8Var.h.a = h8Var;
             c8Var.i.a = h8Var;
@@ -421,7 +421,7 @@ public final class g8 {
             e8 e8Var2 = new e8(this, 1);
             c8Var3.r = h8Var;
             c8Var3.s = e8Var2;
-            new ak0(h8Var);
+            new zj0(h8Var);
             c8Var3.j.setCallback(h8Var);
             c8Var3.h.a = h8Var;
             c8Var3.i.a = h8Var;

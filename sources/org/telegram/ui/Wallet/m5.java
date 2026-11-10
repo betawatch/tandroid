@@ -1,153 +1,93 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PathMeasure;
-import android.graphics.RectF;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.wq;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class m5 extends View {
-    public ValueAnimator D;
-    public final Paint a;
-    public final Path b;
-    public final PathMeasure c;
-    public final String d;
-    public final RectF e;
-    public final float[] f;
-    public final float[] h;
-    public String n;
-    public float[] r;
-    public float s;
-    public float w;
-    public float x;
-    public float y;
+public final /* synthetic */ class m5 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public m5(Context context, String str) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        this.c = new PathMeasure();
-        this.e = new RectF();
-        this.f = new float[2];
-        this.h = new float[2];
-        this.d = a8.p0.s(new StringBuilder(), w5.v0(str.toUpperCase().replace('_', ' ').replace('-', ' ')), "   ·   ");
-        paint.setColor(-16747826);
-        paint.setTextSize(org.telegram.messenger.g0.L(12.0f));
-        paint.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+    public /* synthetic */ m5(int i7, View view) {
+        this.a = i7;
+        this.b = view;
     }
 
-    public final void a() {
-        if (!isAttachedToWindow() || this.x <= 0.0f) {
-            return;
-        }
-        ValueAnimator valueAnimator = this.D;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, this.x);
-        this.D = ofFloat;
-        ofFloat.setDuration(Math.max(1L, (long) ((this.x / org.telegram.messenger.g0.L(24.0f)) * 1000.0f)));
-        this.D.setInterpolator(new LinearInterpolator());
-        this.D.setRepeatCount(-1);
-        this.D.addUpdateListener(new p3(this, 1));
-        this.D.start();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        ValueAnimator valueAnimator = this.D;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.D = null;
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        super.onDraw(canvas);
-        if (this.r == null || this.w <= 0.0f || this.x <= 0.0f) {
-            return;
-        }
-        int i7 = 0;
-        float f10 = 0.0f;
-        while (i7 < this.n.length()) {
-            float f11 = this.r[i7] * this.s;
-            float f12 = ((f11 / 2.0f) + f10) - this.y;
-            float f13 = this.w;
-            float f14 = f12 % f13;
-            if (f14 < 0.0f) {
-                f14 += f13;
-            }
-            if (this.n.charAt(i7) != ' ') {
-                PathMeasure pathMeasure = this.c;
-                float[] fArr = this.f;
-                if (pathMeasure.getPosTan(f14, fArr, this.h)) {
-                    canvas.save();
-                    canvas.translate(fArr[0], fArr[1]);
-                    canvas.rotate((float) Math.toDegrees(Math.atan2(r7[1], r7[0])));
-                    canvas2 = canvas;
-                    canvas2.drawText(this.n, i7, i7 + 1, (-this.r[i7]) / 2.0f, org.telegram.messenger.g0.L(3.0f), this.a);
-                    canvas2.restore();
-                    f10 += f11;
-                    i7++;
-                    canvas = canvas2;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        fi.w3 w3Var;
+        switch (this.a) {
+            case 0:
+                z5 z5Var = (z5) ((bi.x5) this.b).c;
+                if (z5Var.F) {
+                    z5Var.T0();
+                    break;
                 }
-            }
-            canvas2 = canvas;
-            f10 += f11;
-            i7++;
-            canvas = canvas2;
+                break;
+            case 1:
+                o5 o5Var = (o5) this.b;
+                z5 z5Var2 = o5Var.e;
+                if (z5Var2.Z != null && (w3Var = z5Var2.a) != null) {
+                    boolean z9 = z5Var2.o0 && !w3Var.canScrollVertically(1);
+                    if (z5Var2.b0 != z9) {
+                        z5Var2.b0 = z9;
+                        z5Var2.Z.animate().cancel();
+                        if (z9) {
+                            z5Var2.Z.setVisibility(0);
+                            z5Var2.Z.animate().alpha(1.0f).setDuration(180L).setInterpolator(wq.g).start();
+                        } else {
+                            z5Var2.Z.setAlpha(0.0f);
+                            z5Var2.Z.setVisibility(4);
+                        }
+                    }
+                }
+                View m10 = z5Var2.a.e3.m(z5Var2.h);
+                float y10 = m10 != null ? m10.getY() : 0.0f;
+                int height = m10 != null ? m10.getHeight() : 0;
+                if (m10 != o5Var.a || y10 != o5Var.b || height != o5Var.c) {
+                    o5Var.a = m10;
+                    o5Var.b = y10;
+                    o5Var.c = height;
+                    z5Var2.U0();
+                    break;
+                }
+                break;
+            case 2:
+                d8 d8Var = (d8) this.b;
+                i6 i6Var = d8Var.c;
+                float cardRotationX = i6Var.getCardRotationX();
+                float cardRotationY = i6Var.getCardRotationY();
+                if (cardRotationX != d8Var.a0 || cardRotationY != d8Var.b0) {
+                    d8Var.a0 = cardRotationX;
+                    d8Var.b0 = cardRotationY;
+                    d8Var.L.invalidate();
+                    break;
+                }
+                break;
+            default:
+                o9 o9Var = (o9) ((fi.a5) this.b).c;
+                fi.a5 a5Var = o9Var.x;
+                if (a5Var != null && o9Var.Z != null && a5Var.getHeight() > 0 && o9Var.Z.getHeight() > 0) {
+                    float paddingTop = o9Var.fragmentView.getPaddingTop();
+                    if (o9Var.w.getVisibility() == 0) {
+                        paddingTop = Math.max(paddingTop, (o9Var.w.getScaleY() * (o9Var.w.getContentBottom() - o9Var.w.getPivotY())) + o9Var.w.getPivotY() + o9Var.w.getY());
+                    }
+                    float max = Math.max(0.0f, Math.min(o9Var.fragmentView.getHeight() - o9Var.fragmentView.getPaddingBottom(), o9Var.Z.getY()) - paddingTop);
+                    float min = Math.min(1.0f, Math.max(0.0f, max - (Math.min(org.telegram.messenger.g0.L(12.0f), max / 4.0f) * 2.0f)) / o9Var.x.getHeight());
+                    o9Var.x.setPivotX(r5.getWidth() / 2.0f);
+                    o9Var.x.setPivotY(r5.getHeight() / 2.0f);
+                    o9Var.x.setScaleX(min);
+                    o9Var.x.setScaleY(min);
+                    o9Var.x.setTranslationY((((max / 2.0f) + paddingTop) - r4.getTop()) - (o9Var.x.getHeight() / 2.0f));
+                }
+                if (o9Var.a0 != null || o9Var.b0 < 1.0f) {
+                    o9Var.G0();
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
-        float L = org.telegram.messenger.g0.L(12.0f) + org.telegram.messenger.g0.L(266.0f);
-        RectF rectF = this.e;
-        rectF.set(((i7 - org.telegram.messenger.g0.L(212.0f)) / 2.0f) - org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(22.0f) - org.telegram.messenger.g0.L(12.0f), ((org.telegram.messenger.g0.L(212.0f) + i7) / 2.0f) + org.telegram.messenger.g0.L(12.0f), L);
-        Path path = this.b;
-        path.reset();
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f), Path.Direction.CW);
-        PathMeasure pathMeasure = this.c;
-        pathMeasure.setPath(path, true);
-        this.w = pathMeasure.getLength();
-        Paint paint = this.a;
-        String str = this.d;
-        int max = Math.max(1, Math.round(this.w / paint.measureText(str)));
-        StringBuilder sb2 = new StringBuilder(str.length() * max);
-        int i13 = 0;
-        for (int i14 = 0; i14 < max; i14++) {
-            sb2.append(str);
-        }
-        String sb3 = sb2.toString();
-        this.n = sb3;
-        this.r = new float[sb3.length()];
-        float f10 = 0.0f;
-        while (i13 < this.n.length()) {
-            int i15 = i13 + 1;
-            this.r[i13] = paint.measureText(this.n, i13, i15);
-            f10 += this.r[i13];
-            i13 = i15;
-        }
-        float f11 = this.w;
-        this.s = f11 / f10;
-        this.x = f11 / max;
-        a();
+        return true;
     }
 }

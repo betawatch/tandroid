@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import android.app.Activity;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.fh0;
+import org.telegram.ui.gh0;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,35 +38,35 @@ public final /* synthetic */ class i4 implements Runnable {
                 g5Var.F(hashMap, true, this.b, this.c, false, false, this.d);
                 break;
             default:
-                org.telegram.ui.yw ywVar = (org.telegram.ui.yw) obj2;
+                org.telegram.ui.zw zwVar = (org.telegram.ui.zw) obj2;
                 Activity activity = (Activity) obj;
-                if (ywVar.getParentActivity() != null) {
+                if (zwVar.getParentActivity() != null) {
                     int i10 = 0;
-                    ywVar.u2 = false;
+                    zwVar.u2 = false;
                     boolean z9 = this.b;
                     boolean z10 = this.c;
                     boolean z11 = this.d;
                     if (z9 || z10 || z11) {
-                        ywVar.A0 = true;
-                        if (!z9 || !fh0.J0(activity)) {
-                            if (!z10 || !ywVar.V1 || !ywVar.getUserConfig().U || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
+                        zwVar.A0 = true;
+                        if (!z9 || !gh0.J0(activity)) {
+                            if (!z10 || !zwVar.V1 || !zwVar.getUserConfig().U || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
                                 if (!z11 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
-                                    ywVar.u3(true);
+                                    zwVar.u3(true);
                                     break;
                                 } else if (activity instanceof org.telegram.ui.g5) {
                                     org.telegram.ui.ActionBar.u1 v = ((org.telegram.ui.g5) activity).v(R.raw.permission_request_folder, id.M0(2131747299, null));
-                                    ywVar.U1 = v;
-                                    ywVar.showDialog(v);
+                                    zwVar.U1 = v;
+                                    zwVar.showDialog(v);
                                     break;
                                 }
                             } else {
-                                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.v4.v(activity, new org.telegram.ui.ku(ywVar, i10)).a;
-                                ywVar.U1 = u1Var;
-                                ywVar.showDialog(u1Var);
+                                org.telegram.ui.ActionBar.u1 u1Var = org.telegram.ui.Components.u4.v(activity, new org.telegram.ui.lu(zwVar, i10)).a;
+                                zwVar.U1 = u1Var;
+                                zwVar.showDialog(u1Var);
                                 break;
                             }
                         } else {
-                            c8.ia.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.mm(new org.telegram.ui.Components.fx(10, ywVar, activity), 1));
+                            c8.ia.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new org.telegram.ui.Components.lm(new org.telegram.ui.Components.ex(10, zwVar, activity), 1));
                             break;
                         }
                     }
@@ -75,8 +75,8 @@ public final /* synthetic */ class i4 implements Runnable {
         }
     }
 
-    public /* synthetic */ i4(org.telegram.ui.yw ywVar, boolean z9, boolean z10, boolean z11, Activity activity) {
-        this.e = ywVar;
+    public /* synthetic */ i4(org.telegram.ui.zw zwVar, boolean z9, boolean z10, boolean z11, Activity activity) {
+        this.e = zwVar;
         this.b = z9;
         this.c = z10;
         this.d = z11;

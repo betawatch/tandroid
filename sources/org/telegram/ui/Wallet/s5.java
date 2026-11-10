@@ -1,169 +1,60 @@
 package org.telegram.ui.Wallet;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.Scroller;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.ui.Components.r41;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes4.dex */
-public final class s5 extends v4.q0 {
-    public RecyclerView a;
-    public fi.w3 c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public float g;
-    public float h;
-    public final /* synthetic */ w5 j;
-    public final fi.h8 b = new fi.h8(this);
-    public final l i = new l(this, 8);
+public final class s5 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.ActionBar.h6 a;
+    public final ImageView b;
+    public final TextView c;
+    public final TextView d;
 
-    public s5(w5 w5Var) {
-        this.j = w5Var;
+    public s5(Context context, org.telegram.ui.ActionBar.h6 h6Var) {
+        super(context);
+        this.a = h6Var;
+        setPadding(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, c8.ha.d(28, 28.0f, 51, 0.0f, 2.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ha.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        com.google.android.recaptcha.internal.a.q(textView, 1, 14.0f);
+        TextView f10 = org.telegram.messenger.camera.q.f(linearLayout, textView, c8.ha.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.d = f10;
+        f10.setTextSize(1, 14.0f);
+        linearLayout.addView(f10, c8.ha.t(-1, -2, 55, 0, 0, 0, 2));
+        updateColors();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x008a  */
-    @Override // v4.q0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean a(int i7, int i10) {
-        int minFlingVelocity;
-        int i11;
-        boolean z9 = this.f;
-        if (z9) {
-            if (z9) {
-                this.d = true;
-            }
-            v4.n0 layoutManager = this.a.getLayoutManager();
-            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i10) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i7) > minFlingVelocity) && (layoutManager instanceof v4.b0))) {
-                v4.g1 g1Var = new v4.g1(this, this.a.getContext());
-                if (this.c != null && this.f && Math.abs(i10) >= org.telegram.messenger.g0.L(600.0f)) {
-                    w5 w5Var = this.j;
-                    if (w5Var.z0()) {
-                        int i12 = i10 > 0 ? 1 : -1;
-                        r41 y02 = w5Var.y0();
-                        if (this.c.canScrollVertically(i12) && (i12 >= 0 || y02 == null || !y02.canScrollVertically(-1))) {
-                            i11 = i12 > 0 ? layoutManager.B() - 1 : 0;
-                            if (i11 != -1) {
-                                g1Var.a = i11;
-                                layoutManager.w0(g1Var);
-                                return true;
-                            }
-                        }
-                    }
-                }
-                i11 = -1;
-                if (i11 != -1) {
-                }
-            }
-        }
-        return false;
+    public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {
+        this.b.setImageResource(i7);
+        this.c.setText(charSequence);
+        this.d.setText(charSequence2);
     }
 
-    public final void b(fi.w3 w3Var) {
-        fi.w3 w3Var2 = this.c;
-        if (w3Var2 != null) {
-            w3Var2.removeCallbacks(this.i);
-        }
-        this.c = w3Var;
-        RecyclerView recyclerView = this.a;
-        if (recyclerView == w3Var) {
-            return;
-        }
-        fi.h8 h8Var = this.b;
-        if (recyclerView != null) {
-            ArrayList arrayList = recyclerView.w0;
-            if (arrayList != null) {
-                arrayList.remove(h8Var);
-            }
-            this.a.setOnFlingListener(null);
-        }
-        this.a = w3Var;
-        if (w3Var != null) {
-            if (w3Var.getOnFlingListener() != null) {
-                throw new IllegalStateException("An instance of OnFlingListener already set.");
-            }
-            this.a.j(h8Var);
-            this.a.setOnFlingListener(this);
-            new Scroller(this.a.getContext(), new DecelerateInterpolator());
-            f();
-        }
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.m6.z6));
     }
 
-    public final void c() {
-        this.e = false;
-        this.f = false;
-        this.d = false;
-        fi.w3 w3Var = this.c;
-        if (w3Var != null) {
-            w3Var.removeCallbacks(this.i);
-        }
-    }
-
-    public final View d(v4.n0 n0Var) {
-        fi.w3 w3Var;
-        if (this.e || (w3Var = this.c) == null || w3Var.getScrollState() != 0) {
-            return null;
-        }
-        w5 w5Var = this.j;
-        r41 y02 = w5Var.y0();
-        if ((y02 != null && y02.getScrollState() != 0) || !this.d) {
-            return null;
-        }
-        this.d = false;
-        if (!w5Var.z0()) {
-            return null;
-        }
-        View m10 = n0Var.m(0);
-        View m11 = n0Var.m(n0Var.B() - 1);
-        return m10 == null ? m11 : (m11 != null && Math.abs(new int[]{0, v4.n0.z(m10) - n0Var.F()}[1]) >= Math.abs(new int[]{0, v4.n0.z(m11) - n0Var.F()}[1])) ? m11 : m10;
-    }
-
-    public final void e(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            c();
-            this.e = true;
-            this.g = motionEvent.getX();
-            this.h = motionEvent.getY();
-            return;
-        }
-        if (actionMasked == 3) {
-            c();
-            return;
-        }
-        if (actionMasked == 2 || actionMasked == 1) {
-            float abs = Math.abs(motionEvent.getX() - this.g);
-            float abs2 = Math.abs(motionEvent.getY() - this.h);
-            boolean z9 = abs2 > ((float) ViewConfiguration.get(this.c.getContext()).getScaledTouchSlop()) && abs2 > abs * 1.5f;
-            this.f = z9;
-            if (!z9) {
-                this.d = false;
-            }
-            if (actionMasked == 1) {
-                this.e = false;
-            }
-        }
-    }
-
-    public final void f() {
-        v4.n0 layoutManager;
-        View d;
-        RecyclerView recyclerView = this.a;
-        if (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
-            return;
-        }
-        int[] iArr = {0, v4.n0.z(d) - layoutManager.F()};
-        int i7 = iArr[0];
-        if (i7 == 0 && iArr[1] == 0) {
-            return;
-        }
-        this.a.w0(i7, iArr[1], null);
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int i7 = org.telegram.ui.ActionBar.m6.G6;
+        org.telegram.ui.ActionBar.h6 h6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.m6.w0(i7, h6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(org.telegram.ui.ActionBar.m6.w0(i7, h6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.m6.w0(org.telegram.ui.ActionBar.m6.z6, h6Var));
     }
 }

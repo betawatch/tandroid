@@ -25,37 +25,37 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f2;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.r1;
 import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.bi;
-import org.telegram.ui.Components.di;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.tl;
-import org.telegram.ui.Components.v8;
+import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.ci;
+import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.sl;
+import org.telegram.ui.Components.u8;
 import org.telegram.ui.Components.voip.y1;
-import org.telegram.ui.Components.x00;
-import org.telegram.ui.Components.y31;
+import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.x31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.az;
+import org.telegram.ui.bz;
 import org.telegram.ui.ca;
 import org.telegram.ui.cn;
-import org.telegram.ui.dk0;
+import org.telegram.ui.ek0;
 import org.telegram.ui.fo;
 import org.telegram.ui.ho;
 import org.telegram.ui.i9;
-import org.telegram.ui.iz;
-import org.telegram.ui.oa1;
-import org.telegram.ui.ri0;
-import org.telegram.ui.ui0;
-import org.telegram.ui.xr;
+import org.telegram.ui.jz;
+import org.telegram.ui.pa1;
+import org.telegram.ui.si0;
+import org.telegram.ui.vi0;
+import org.telegram.ui.yr;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, androidx.car.app.utils.a {
+public final /* synthetic */ class j implements Continuation, pa1, r1, cj0, yr, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -75,7 +75,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
         return lambda$onCarHardwareResult$0;
     }
 
-    @Override // org.telegram.ui.xr
+    @Override // org.telegram.ui.yr
     public void b(TLRPC.User user) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
@@ -86,33 +86,33 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
 
     /* JADX WARN: Code restructure failed: missing block: B:132:0x016f, code lost:
     
-        if (r7.N1 != false) goto L96;
+        if (r7.Q1 != false) goto L96;
      */
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void f(float f10, float f11, int i7, View view) {
         int i10 = i7;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.c;
-        g6 g6Var = (g6) this.d;
+        h6 h6Var = (h6) this.d;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
         HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
-        di diVar = chatAttachAlertPhotoLayout.b;
+        ci ciVar = chatAttachAlertPhotoLayout.b;
         if (chatAttachAlertPhotoLayout.v0) {
-            boolean z9 = diVar.M1;
-            f2 f2Var = diVar.W1;
+            boolean z9 = ciVar.P1;
+            f2 f2Var = ciVar.Z1;
             if (z9) {
                 return;
             }
             f2 Q = f2Var == null ? LaunchActivity.Q() : f2Var;
-            if (Q == null || (view instanceof x00)) {
+            if (Q == null || (view instanceof w00)) {
                 return;
             }
             int i11 = Build.VERSION.SDK_INT;
-            tl tlVar = chatAttachAlertPhotoLayout.G;
+            sl slVar = chatAttachAlertPhotoLayout.G;
             try {
-                if (tlVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && i10 == 0 && chatAttachAlertPhotoLayout.O0) {
+                if (slVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && i10 == 0 && chatAttachAlertPhotoLayout.O0) {
                     Q.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 18);
                     return;
                 }
@@ -126,7 +126,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
                         return;
                     }
                 }
-                boolean z10 = tlVar.f;
+                boolean z10 = slVar.f;
                 if (z10 && i10 == chatAttachAlertPhotoLayout.M0) {
                     chatAttachAlertPhotoLayout.l0();
                     return;
@@ -145,11 +145,11 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
                 cn cnVar = null;
                 if (chatAttachAlertPhotoLayout.g1) {
                     if (i10 == 0) {
-                        if (!(view instanceof v8)) {
+                        if (!(view instanceof u8)) {
                             return;
                         }
-                        chatAttachAlertPhotoLayout.u0((v8) view, null, 0L);
-                        diVar.dismiss();
+                        chatAttachAlertPhotoLayout.u0((u8) view, null, 0L);
+                        ciVar.dismiss();
                     }
                     i10--;
                 }
@@ -158,34 +158,34 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
                     return;
                 }
                 if (!(allPhotosArray.get(i10) instanceof gf) || ((gf) allPhotosArray.get(i10)).k(null)) {
-                    bi biVar = diVar.T3;
-                    if (biVar != null && biVar.G1() && (allPhotosArray.get(i10) instanceof gf)) {
+                    ai aiVar = ciVar.W3;
+                    if (aiVar != null && aiVar.G1() && (allPhotosArray.get(i10) instanceof gf)) {
                         gf gfVar = (gf) allPhotosArray.get(i10);
                         hashMap.clear();
                         if (gfVar != null) {
                             chatAttachAlertPhotoLayout.S(gfVar, -1);
                         }
-                        diVar.M0();
-                        diVar.T3.o1(7, true, true, 0, 0, 0L, diVar.f1(), false, 0L);
+                        ciVar.M0();
+                        ciVar.W3.o1(7, true, true, 0, 0, 0L, ciVar.f1(), false, 0L);
                         hashMap.clear();
                         ChatAttachAlertPhotoLayout.r1.clear();
                         arrayList.clear();
                         hashMap.clear();
                         return;
                     }
-                    PhotoViewer.p1().H2(null, Q, g6Var);
-                    PhotoViewer.p1().I2(diVar);
+                    PhotoViewer.p1().H2(null, Q, h6Var);
+                    PhotoViewer.p1().I2(ciVar);
                     PhotoViewer p12 = PhotoViewer.p1();
-                    int i13 = diVar.M3;
-                    boolean z12 = diVar.N3;
+                    int i13 = ciVar.P3;
+                    boolean z12 = ciVar.Q3;
                     p12.h = i13;
                     p12.n = z12;
-                    if (diVar.w1 && diVar.x1) {
+                    if (ciVar.z1 && ciVar.A1) {
                         i12 = 11;
                         if (f2Var instanceof cn) {
                             cnVar = (cn) f2Var;
                         }
-                    } else if (diVar.K2 != 0) {
+                    } else if (ciVar.N2 != 0) {
                         i12 = 1;
                     } else {
                         if (f2Var instanceof cn) {
@@ -193,21 +193,21 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
                         }
                         i12 = 0;
                     }
-                    if (!diVar.T3.f0()) {
+                    if (!ciVar.W3.f0()) {
                         org.telegram.messenger.g0.v1(Q.getFragmentView().findFocus());
-                        org.telegram.messenger.g0.v1(diVar.c.findFocus());
+                        org.telegram.messenger.g0.v1(ciVar.c.findFocus());
                     }
                     if (hashMap.size() > 0 && arrayList.size() > 0) {
                         Object obj = hashMap.get(arrayList.get(0));
                         if (obj instanceof gf) {
-                            ((gf) obj).a = diVar.a1().getText();
+                            ((gf) obj).a = ciVar.a1().getText();
                         }
                         if (obj instanceof kf) {
-                            ((kf) obj).I = diVar.a1().getText();
+                            ((kf) obj).I = ciVar.a1().getText();
                         }
                     }
-                    if (diVar.H1 != null) {
-                        diVar.H1.e = allPhotosArray.get(i10) instanceof gf ? ((gf) allPhotosArray.get(i10)).b : false;
+                    if (ciVar.K1 != null) {
+                        ciVar.K1.e = allPhotosArray.get(i10) instanceof gf ? ((gf) allPhotosArray.get(i10)).b : false;
                     }
                     boolean z13 = (allPhotosArray.get(i10) instanceof gf) && ((gf) allPhotosArray.get(i10)).M;
                     Object obj2 = allPhotosArray.get(i10);
@@ -224,7 +224,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ boolean f1(View view) {
         return false;
     }
@@ -234,7 +234,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
         switch (this.a) {
             case 2:
                 kg.a0 a0Var = (kg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((y31) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((x31) this.d).x));
                 a0Var.e.run();
                 break;
             case 3:
@@ -277,27 +277,27 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
             case 7:
             case 9:
             default:
-                dk0 dk0Var = (dk0) this.c;
+                ek0 ek0Var = (ek0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z13 = this.b;
-                dk0Var.C1();
-                dk0Var.n1(tL_secureRequiredType, null, null, true, new ri0(dk0Var, 4), new ui0(dk0Var, 6), z13);
+                ek0Var.C1();
+                ek0Var.n1(tL_secureRequiredType, null, null, true, new si0(ek0Var, 4), new vi0(ek0Var, 6), z13);
                 break;
             case 8:
-                iz izVar = (iz) this.c;
-                az azVar = (az) this.d;
+                jz jzVar = (jz) this.c;
+                bz bzVar = (bz) this.d;
                 boolean z14 = this.b;
-                int i10 = azVar.j;
+                int i10 = bzVar.j;
                 if (i10 > 0) {
-                    izVar.D &= ~i10;
+                    jzVar.D &= ~i10;
                 } else {
-                    (z14 ? izVar.F : izVar.G).remove(Long.valueOf(azVar.h));
+                    (z14 ? jzVar.F : jzVar.G).remove(Long.valueOf(bzVar.h));
                 }
-                izVar.p0();
-                izVar.C0();
-                izVar.o0(true);
+                jzVar.p0();
+                jzVar.C0();
+                jzVar.o0(true);
                 if (z14) {
-                    izVar.t0(1, false);
+                    jzVar.t0(1, false);
                     break;
                 }
                 break;
@@ -332,7 +332,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
         }
     }
 
-    @Override // org.telegram.ui.oa1
+    @Override // org.telegram.ui.pa1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         k7 k7Var = (k7) this.c;
         TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
@@ -361,7 +361,7 @@ public final /* synthetic */ class j implements Continuation, oa1, r1, dj0, xr, 
         this.d = f2Var;
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.cj0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Components.rt;
-import org.telegram.ui.en0;
-import org.telegram.ui.n00;
-import org.telegram.ui.wp0;
+import org.telegram.ui.Components.qt;
+import org.telegram.ui.fn0;
+import org.telegram.ui.o00;
+import org.telegram.ui.xp0;
 import y7.d6;
 import z7.qa;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
 public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.api.internal.p, b3.q {
     public final /* synthetic */ int a;
@@ -55,9 +55,9 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.u0
     public void Y() {
-        wp0 wp0Var = (wp0) this.c;
-        wp0Var.o0.a.f();
-        wp0Var.U0.setViewHidden(false);
+        xp0 xp0Var = (xp0) this.c;
+        xp0Var.o0.a.f();
+        xp0Var.U0.setViewHidden(false);
     }
 
     @Override // te.d
@@ -88,9 +88,9 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
     public ArrayList b() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        rt rtVar = (rt) this.c;
+        qt qtVar = (qt) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) rtVar.b;
+        Class cls = (Class) qtVar.b;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -261,11 +261,11 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.u0
     public void d0() {
-        wp0 wp0Var = (wp0) this.c;
-        if (wp0Var.B0 != null) {
-            wp0Var.r0(null, true);
+        xp0 xp0Var = (xp0) this.c;
+        if (xp0Var.B0 != null) {
+            xp0Var.r0(null, true);
         }
-        wp0Var.U0.setViewHidden(true);
+        xp0Var.U0.setViewHidden(true);
     }
 
     public boolean e(View view) {
@@ -292,7 +292,7 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
                 return new f3.n();
             }
             if (i7 == iArr[i10]) {
-                return ((x2.b1[]) this.c)[i10];
+                return ((x2.a1[]) this.c)[i10];
             }
             i10++;
         }
@@ -309,25 +309,25 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.u0
     public void n() {
-        ((en0) this.b).run();
+        ((fn0) this.b).run();
     }
 
     @Override // sg.u0
     public void o() {
-        n00 n00Var = ((wp0) this.c).G0;
-        if (n00Var != null) {
-            n00Var.invalidate();
+        o00 o00Var = ((xp0) this.c).G0;
+        if (o00Var != null) {
+            o00Var.invalidate();
         }
     }
 
     @Override // sg.u0
     public void p() {
-        wp0 wp0Var = (wp0) this.c;
-        if (wp0Var.T0) {
-            wp0Var.T0 = false;
+        xp0 xp0Var = (xp0) this.c;
+        if (xp0Var.T0) {
+            xp0Var.T0 = false;
         } else {
-            wp0Var.c1.b(1);
-            wp0Var.w((h) h.a.get(0));
+            xp0Var.c1.b(1);
+            xp0Var.w((h) h.a.get(0));
         }
     }
 
@@ -351,10 +351,10 @@ public final class i0 implements te.d, u0, q5.b, com.google.android.gms.common.a
 
     @Override // sg.u0
     public boolean z() {
-        wp0 wp0Var = (wp0) this.c;
-        boolean z9 = wp0Var.B0 == null;
+        xp0 xp0Var = (xp0) this.c;
+        boolean z9 = xp0Var.B0 == null;
         if (!z9) {
-            wp0Var.r0(null, true);
+            xp0Var.r0(null, true);
         }
         return z9;
     }

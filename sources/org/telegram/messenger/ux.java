@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ux implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -597,7 +597,7 @@ public final /* synthetic */ class ux implements Runnable {
                     r12 = z12;
                     i7 = 2;
                     tL_error = tL_error3;
-                    org.telegram.ui.Components.v4.c0(gzVar2.currentAccount, tL_error, null, tLObject2, new Object[0]);
+                    org.telegram.ui.Components.u4.c0(gzVar2.currentAccount, tL_error, null, tLObject2, new Object[0]);
                     z9 = true;
                     gzVar = gzVar2;
                 }
@@ -634,7 +634,7 @@ public final /* synthetic */ class ux implements Runnable {
                 boolean z17 = this.e;
                 TLObject tLObject4 = this.f;
                 if (tL_error6 != null) {
-                    org.telegram.ui.Components.v4.c0(gzVar7.currentAccount, tL_error6, null, tLObject4, new Object[0]);
+                    org.telegram.ui.Components.u4.c0(gzVar7.currentAccount, tL_error6, null, tLObject4, new Object[0]);
                     gzVar7.i0(message12.id, z17);
                     gzVar7.l0(ijVar6);
                     break;

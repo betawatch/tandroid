@@ -16,20 +16,20 @@ import org.telegram.messenger.t10;
 import org.telegram.messenger.t3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.s6;
+import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.t6;
 import org.telegram.ui.Cells.g6;
 import org.telegram.ui.Cells.m8;
 import org.telegram.ui.Cells.x3;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.Components.yz;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.oj0;
+import org.telegram.ui.Components.sm;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.Components.xz;
 
-/* compiled from: r8-map-id-6f2d76db22ca831bb15f086e4a1eed04c65c3f8086a2023f93e4a3f93807c96b */
+/* compiled from: r8-map-id-909e39e720ff0bfd2a4dca1bd610340fb8e6f66f796564cc1df33797d3f7a011 */
 /* loaded from: classes3.dex */
-public abstract class s1 extends pj0 {
+public abstract class s1 extends oj0 {
     public boolean D;
     public int E;
     public int F;
@@ -49,7 +49,7 @@ public abstract class s1 extends pj0 {
     public boolean x;
     public long y;
 
-    @Override // org.telegram.ui.Components.pj0
+    @Override // org.telegram.ui.Components.oj0
     public final boolean D(v4.d1 d1Var) {
         int i7 = d1Var.f;
         return i7 == 0 || i7 == 2 || i7 == 3;
@@ -176,7 +176,7 @@ public abstract class s1 extends pj0 {
             }
             String str2 = (String) E(i7);
             m8 m8Var = (m8) view;
-            m8Var.g(-1, l6.o6);
+            m8Var.g(-1, m6.o6);
             m8Var.k(id.a0(null, null, 2131754452, pf.b.c().b("+" + str2)), false);
             return;
         }
@@ -237,7 +237,7 @@ public abstract class s1 extends pj0 {
                         } else {
                             A1++;
                         }
-                        spannableStringBuilder.setSpan(new yz(l6.q6, null), A1, length + A1, 33);
+                        spannableStringBuilder.setSpan(new xz(m6.q6, null), A1, length + A1, 33);
                     }
                     str = spannableStringBuilder;
                 } catch (Exception e10) {
@@ -273,19 +273,19 @@ public abstract class s1 extends pj0 {
             g6Var2.E0 = true;
             view = g6Var2;
         } else if (i7 == 4) {
-            View tmVar = new tm(context, 6);
-            tmVar.setId(9);
-            tmVar.setTag(-33024);
-            view = tmVar;
+            View smVar = new sm(context, 6);
+            smVar.setId(9);
+            smVar.setTag(-33024);
+            view = smVar;
         } else if (i7 != 5) {
             view = new m8(16, context, false);
         } else {
-            mz mzVar = new mz(context, null);
-            mzVar.setIsSingleCell(true);
-            mzVar.setViewType(29);
-            s6.h(l6.d6, mzVar, null);
-            view = mzVar;
+            lz lzVar = new lz(context, null);
+            lzVar.setIsSingleCell(true);
+            lzVar.setViewType(29);
+            t6.h(m6.d6, lzVar, null);
+            view = lzVar;
         }
-        return new yi0(view);
+        return new xi0(view);
     }
 }
