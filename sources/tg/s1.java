@@ -15,23 +15,23 @@ import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.u9;
 import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class s1 extends hi.d {
     public final y9 l0;
     public final RectF m0;
     public int n0;
-    public final f2 o0;
+    public final e2 o0;
     public final e6 p0;
     public int q0;
     public boolean r0;
 
-    public s1(f2 f2Var, ContextThemeWrapper contextThemeWrapper, e6 e6Var, u9 u9Var) {
+    public s1(e2 e2Var, ContextThemeWrapper contextThemeWrapper, e6 e6Var, u9 u9Var) {
         super(contextThemeWrapper, e6Var, false);
         this.m0 = new RectF();
         this.q0 = 8;
         this.p0 = e6Var;
-        this.o0 = f2Var;
+        this.o0 = e2Var;
         this.l0 = new y9(u9Var, this, 0, true);
         setWillNotDraw(false);
         setTextColor(-1);
@@ -65,9 +65,9 @@ public abstract class s1 extends hi.d {
 
     @Override // android.view.View
     public void setAlpha(float f10) {
-        c2[] c2VarArr;
-        f2 f2Var = this.o0;
-        if (!f2Var.E || (c2VarArr = f2Var.I) == null || c2VarArr.length <= 0) {
+        b2[] b2VarArr;
+        e2 e2Var = this.o0;
+        if (!e2Var.E || (b2VarArr = e2Var.I) == null || b2VarArr.length <= 0) {
             f10 = 0.0f;
         }
         super.setAlpha(f10);

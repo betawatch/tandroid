@@ -10,11 +10,11 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.ActionBar.e6 a;
-    public final org.telegram.ui.Components.ea0 b;
+    public final org.telegram.ui.Components.fa0 b;
     public final FrameLayout c;
     public final ImageView d;
     public final TextView e;
@@ -30,9 +30,9 @@ public final class h31 extends LinearLayout implements org.telegram.ui.ActionBar
         setOrientation(0);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(1);
-        this.b = ea0Var;
-        frameLayout.setBackground(ea0Var);
+        org.telegram.ui.Components.fa0 fa0Var = new org.telegram.ui.Components.fa0(1);
+        this.b = fa0Var;
+        frameLayout.setBackground(fa0Var);
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);

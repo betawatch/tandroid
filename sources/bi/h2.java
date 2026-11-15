@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import di.ca;
-import di.mb;
+import di.ba;
+import di.lb;
 import org.telegram.messenger.hd;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.a41;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h2 extends a41 {
     public static final /* synthetic */ int b = 0;
@@ -63,7 +63,7 @@ public final class h2 extends a41 {
             TextView textView4 = i2Var.N;
             int d = jVar.d();
             if (i2Var.k0 != jVar) {
-                ca f12 = mb.f1(i9Var, i9Var.getImageReceiver(), d);
+                ba f12 = lb.f1(i9Var, i9Var.getImageReceiver(), d);
                 i2Var.O = f12;
                 f12.run();
                 i2Var.O = null;
@@ -86,7 +86,7 @@ public final class h2 extends a41 {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + hd.E(jVar.g(), ','));
                 spannableStringBuilder.setSpan(new y31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
                 eq[] eqVarArr = new eq[1];
-                textView4.setText(mb.a1(false, hd.V(null, null, 2131747028, spannableStringBuilder), 0.48f, eqVarArr));
+                textView4.setText(lb.a1(false, hd.V(null, null, 2131747028, spannableStringBuilder), 0.48f, eqVarArr));
                 eqVarArr[0].H = 0.8f;
             }
             FrameLayout.LayoutParams layoutParams = i2Var.F;

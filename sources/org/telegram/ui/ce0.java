@@ -56,7 +56,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ce0 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public static final int A0;
@@ -374,10 +374,10 @@ public final class ce0 extends org.telegram.ui.ActionBar.e2 implements org.teleg
             EditText attachedEditText = mb0Var.getAttachedEditText();
             bi.v vVar = new bi.v(attachedEditText, atomicReference, false, 12);
             mb0Var.a(1.0f);
-            org.telegram.ui.Components.ma0 ma0Var = new org.telegram.ui.Components.ma0(mb0Var, view, attachedEditText, vVar, 19);
-            atomicReference.set(ma0Var);
-            view.postDelayed(ma0Var, 2000L);
-            view.setTag(R.id.timeout_callback, ma0Var);
+            org.telegram.ui.Components.u80 u80Var = new org.telegram.ui.Components.u80(mb0Var, view, attachedEditText, vVar, 20);
+            atomicReference.set(u80Var);
+            view.postDelayed(u80Var, 2000L);
+            view.setTag(R.id.timeout_callback, u80Var);
             if (attachedEditText != null) {
                 attachedEditText.addTextChangedListener(vVar);
             }
@@ -523,7 +523,7 @@ public final class ce0 extends org.telegram.ui.ActionBar.e2 implements org.teleg
         org.telegram.messenger.m10.i(this.currentAccount).w(tL_auth_authorization.user);
         org.telegram.messenger.m10.i(this.currentAccount).v(true);
         org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(this.currentAccount);
-        a02.a.c(new org.telegram.messenger.ar(a02, true, 1 == true ? 1 : 0));
+        a02.a.c(new org.telegram.messenger.zq(a02, true, 1 == true ? 1 : 0));
         ArrayList arrayList = new ArrayList();
         arrayList.add(tL_auth_authorization.user);
         org.telegram.messenger.vr.a0(this.currentAccount).m1(arrayList, null, true, true);

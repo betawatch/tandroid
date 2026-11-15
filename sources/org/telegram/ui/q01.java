@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class q01 extends org.telegram.ui.Components.uj0 {
     public final SparseArray f3;
@@ -145,7 +145,7 @@ public abstract class q01 extends org.telegram.ui.Components.uj0 {
                     canvas2.save();
                     canvas2.translate(x01Var.getX(), x01Var.getY());
                     if (x01Var.x != null) {
-                        di.bc collectionParticles = n11Var.getCollectionParticles();
+                        di.ac collectionParticles = n11Var.getCollectionParticles();
                         i7 = i13;
                         boolean z13 = z12;
                         collectionParticles.f(0, 0, x01Var.getWidth(), x01Var.getHeight());

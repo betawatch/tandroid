@@ -69,12 +69,12 @@ import org.telegram.ui.Components.qm0;
 import org.telegram.ui.SaveToGallerySettingsActivity;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.ld0;
-import org.telegram.ui.nm0;
+import org.telegram.ui.om0;
 import org.telegram.ui.vc1;
 import org.telegram.ui.xy0;
 import org.telegram.ui.zy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.ya, pm0, q5.b, u9.b {
     public final /* synthetic */ int a;
@@ -152,10 +152,10 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
                 return;
             }
         }
-        nm0 nm0Var = new nm0(2, false, false, null);
-        nm0Var.y = false;
-        nm0Var.W = new ou(this, 13);
-        e2Var.presentFragment(nm0Var);
+        om0 om0Var = new om0(2, false, false, null);
+        om0Var.y = false;
+        om0Var.W = new ou(this, 13);
+        e2Var.presentFragment(om0Var);
     }
 
     @Override // org.telegram.ui.Components.li0
@@ -789,7 +789,7 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
             case 10:
                 return new jb.d((gb.h1) ((ib.c) this.b).get(), (va.d) ((ib.c) this.c).get(), (gb.b) ((ib.c) this.d).get(), (jb.f) ((ib.c) this.e).get(), (jb.p) ((ib.c) this.f).get());
             default:
-                return new t5.a((Executor) ((fd.a) this.b).get(), (p5.d) ((fd.a) this.c).get(), (ld0) ((ld0) this.d).get(), (v5.d) ((fd.a) this.e).get(), (w5.c) ((fd.a) this.f).get());
+                return new t5.b((Executor) ((fd.a) this.b).get(), (p5.d) ((fd.a) this.c).get(), (ld0) ((ld0) this.d).get(), (v5.d) ((fd.a) this.e).get(), (w5.c) ((fd.a) this.f).get());
         }
     }
 
@@ -931,11 +931,11 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
     }
 
     public void p(q0.a aVar) {
-        ai.j0 j0Var = (ai.j0) this.b;
+        ai.k0 k0Var = (ai.k0) this.b;
         org.telegram.messenger.ga gaVar = new org.telegram.messenger.ga(this, aVar);
-        j0Var.getClass();
+        k0Var.getClass();
         q6.m.d("getMapAsync() must be called on the main thread");
-        m.o3 o3Var = (m.o3) j0Var.b;
+        m.o3 o3Var = (m.o3) k0Var.b;
         h6.m mVar = (h6.m) o3Var.b;
         if (mVar != null) {
             mVar.v(gaVar);
@@ -1142,15 +1142,15 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
     }
 
     public void w() {
-        ai.j0 j0Var = (ai.j0) this.b;
-        m.o3 o3Var = (m.o3) j0Var.b;
+        ai.k0 k0Var = (ai.k0) this.b;
+        m.o3 o3Var = (m.o3) k0Var.b;
         StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder(threadPolicy).permitAll().build());
         try {
             o3Var.getClass();
             o3Var.b(new a7.c(o3Var, 0));
             if (((h6.m) o3Var.b) == null) {
-                m.o3.a(j0Var);
+                m.o3.a(k0Var);
             }
         } finally {
             StrictMode.setThreadPolicy(threadPolicy);
@@ -1158,7 +1158,7 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
     }
 
     public void x() {
-        m.o3 o3Var = (m.o3) ((ai.j0) this.b).b;
+        m.o3 o3Var = (m.o3) ((ai.k0) this.b).b;
         h6.m mVar = (h6.m) o3Var.b;
         if (mVar == null) {
             while (!((LinkedList) o3Var.c).isEmpty() && ((a7.c) ((LinkedList) o3Var.c).getLast()).a() >= 1) {
@@ -1175,7 +1175,7 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
     }
 
     public void y() {
-        m.o3 o3Var = (m.o3) ((ai.j0) this.b).b;
+        m.o3 o3Var = (m.o3) ((ai.k0) this.b).b;
         h6.m mVar = (h6.m) o3Var.b;
         if (mVar == null) {
             while (!((LinkedList) o3Var.c).isEmpty() && ((a7.c) ((LinkedList) o3Var.c).getLast()).a() >= 5) {
@@ -1192,7 +1192,7 @@ public final class r7 implements ib.b, li0, c4.d, te.b, org.telegram.messenger.y
     }
 
     public void z() {
-        m.o3 o3Var = (m.o3) ((ai.j0) this.b).b;
+        m.o3 o3Var = (m.o3) ((ai.k0) this.b).b;
         o3Var.getClass();
         o3Var.b(new a7.c(o3Var, 1));
     }

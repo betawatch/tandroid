@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class lx extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -608,109 +608,109 @@ public final class lx extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 23:
-                nm0 nm0Var = (nm0) obj2;
+                om0 om0Var = (om0) obj2;
                 if (i7 != -1) {
                     if (i7 != 1) {
                         if (i7 == 2) {
-                            nm0.Z(nm0Var, null);
+                            om0.Z(om0Var, null);
                             break;
                         }
-                    } else if (nm0Var.W != null) {
-                        nm0Var.finishFragment(false);
-                        nm0Var.W.s0();
+                    } else if (om0Var.W != null) {
+                        om0Var.finishFragment(false);
+                        om0Var.W.s0();
                         break;
                     }
                 } else {
-                    nm0Var.finishFragment();
+                    om0Var.finishFragment();
                     break;
                 }
                 break;
             case 24:
-                qm0 qm0Var = (qm0) obj2;
+                rm0 rm0Var = (rm0) obj2;
                 if (i7 != -1) {
                     if (i7 == 1) {
-                        if (qm0Var.c != null && !qm0Var.f) {
-                            om0 om0Var = qm0Var.d;
-                            float f10 = om0Var.f - om0Var.y;
-                            float f11 = om0Var.w;
+                        if (rm0Var.c != null && !rm0Var.f) {
+                            pm0 pm0Var = rm0Var.d;
+                            float f10 = pm0Var.f - pm0Var.y;
+                            float f11 = pm0Var.w;
                             float f12 = f10 / f11;
-                            float f13 = (om0Var.h - om0Var.E) / om0Var.x;
-                            float f14 = om0Var.d / f11;
-                            float f15 = om0Var.e / f11;
-                            qm0 qm0Var2 = om0Var.I;
-                            int width = (int) (f12 * qm0Var2.a.getWidth());
-                            int height = (int) (f13 * qm0Var2.a.getHeight());
-                            int width2 = (int) (f14 * qm0Var2.a.getWidth());
-                            int width3 = (int) (f15 * qm0Var2.a.getWidth());
+                            float f13 = (pm0Var.h - pm0Var.E) / pm0Var.x;
+                            float f14 = pm0Var.d / f11;
+                            float f15 = pm0Var.e / f11;
+                            rm0 rm0Var2 = pm0Var.I;
+                            int width = (int) (f12 * rm0Var2.a.getWidth());
+                            int height = (int) (f13 * rm0Var2.a.getHeight());
+                            int width2 = (int) (f14 * rm0Var2.a.getWidth());
+                            int width3 = (int) (f15 * rm0Var2.a.getWidth());
                             int i14 = width < 0 ? 0 : width;
                             int i15 = height < 0 ? 0 : height;
-                            if (i14 + width2 > qm0Var2.a.getWidth()) {
-                                width2 = qm0Var2.a.getWidth() - i14;
+                            if (i14 + width2 > rm0Var2.a.getWidth()) {
+                                width2 = rm0Var2.a.getWidth() - i14;
                             }
                             int i16 = width2;
-                            if (i15 + width3 > qm0Var2.a.getHeight()) {
-                                width3 = qm0Var2.a.getHeight() - i15;
+                            if (i15 + width3 > rm0Var2.a.getHeight()) {
+                                width3 = rm0Var2.a.getHeight() - i15;
                             }
                             int i17 = width3;
                             try {
-                                bitmap = Bitmap.createBitmap(qm0Var2.a, i14, i15, i16, i17, (Matrix) null, false);
+                                bitmap = Bitmap.createBitmap(rm0Var2.a, i14, i15, i16, i17, (Matrix) null, false);
                             } catch (Throwable th2) {
                                 org.telegram.messenger.a8.g(th2, true);
                                 System.gc();
                                 try {
-                                    bitmap = Bitmap.createBitmap(qm0Var2.a, i14, i15, i16, i17, (Matrix) null, false);
+                                    bitmap = Bitmap.createBitmap(rm0Var2.a, i14, i15, i16, i17, (Matrix) null, false);
                                 } catch (Throwable th3) {
                                     org.telegram.messenger.a8.g(th3, true);
                                     bitmap = null;
                                 }
                             }
-                            if (bitmap == qm0Var.a) {
-                                qm0Var.e = true;
+                            if (bitmap == rm0Var.a) {
+                                rm0Var.e = true;
                             }
-                            ((org.telegram.ui.Components.m30) qm0Var.c).r(false, bitmap, null);
-                            qm0Var.f = true;
+                            ((org.telegram.ui.Components.m30) rm0Var.c).r(false, bitmap, null);
+                            rm0Var.f = true;
                         }
-                        qm0Var.finishFragment();
+                        rm0Var.finishFragment();
                         break;
                     }
                 } else {
-                    qm0Var.finishFragment();
+                    rm0Var.finishFragment();
                     break;
                 }
                 break;
             case 25:
-                ym0 ym0Var = (ym0) obj2;
+                zm0 zm0Var = (zm0) obj2;
                 if (i7 != -1) {
                     if (i7 != 1) {
                         if (i7 == 2) {
-                            xm0 xm0Var = ym0Var.t0;
-                            if (xm0Var != null) {
-                                xm0Var.d0();
+                            ym0 ym0Var = zm0Var.t0;
+                            if (ym0Var != null) {
+                                ym0Var.d0();
                             }
-                            ym0Var.finishFragment();
+                            zm0Var.finishFragment();
                             break;
                         }
                     } else {
-                        boolean z18 = ym0Var.Z;
-                        ym0Var.Z = !z18;
+                        boolean z18 = zm0Var.Z;
+                        zm0Var.Z = !z18;
                         if (z18) {
-                            ym0Var.L.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(50.0f));
+                            zm0Var.L.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(50.0f));
                         } else {
-                            ym0Var.L.setPadding(0, 0, 0, org.telegram.messenger.g0.L(48.0f));
+                            zm0Var.L.setPadding(0, 0, 0, org.telegram.messenger.g0.L(48.0f));
                         }
-                        ym0Var.L.C0();
-                        ym0Var.N.h1(0, 0);
-                        ym0Var.M.f();
+                        zm0Var.L.C0();
+                        zm0Var.N.h1(0, 0);
+                        zm0Var.M.f();
                         break;
                     }
                 } else {
-                    ym0Var.finishFragment();
+                    zm0Var.finishFragment();
                     break;
                 }
                 break;
             case 26:
                 if (i7 == -1) {
-                    ((bn0) obj2).finishFragment();
+                    ((cn0) obj2).finishFragment();
                     break;
                 }
                 break;

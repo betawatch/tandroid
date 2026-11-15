@@ -42,7 +42,7 @@ import org.telegram.ui.Components.t00;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class a6 extends org.telegram.ui.ActionBar.e2 implements te.b {
     public LinearLayout E;
@@ -372,7 +372,7 @@ public class a6 extends org.telegram.ui.ActionBar.e2 implements te.b {
         c10.q(org.telegram.messenger.g0.L(6.0f));
         c5Var.setBackground(c10);
         na.a(c5Var);
-        c5Var.setOnClickListener(new ai.t2(3, this, c5Var));
+        c5Var.setOnClickListener(new ai.v2(3, this, c5Var));
         c5Var.setOnWidthChanged(new j4(this, i11));
         this.simpleActionBar.addView(c5Var, ja.e(-2, 58, 5));
         this.N = c8.g0.l(this.resourceProvider);

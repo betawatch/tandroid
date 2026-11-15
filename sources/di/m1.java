@@ -1,6 +1,6 @@
 package di;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class m1 implements Runnable {
                 c6Var.U1(j3);
                 break;
             case 6:
-                cb cbVar = new cb(c6Var.getContext(), c6Var.J0, this.c, 10, null, new s2(4, c6Var, new boolean[]{false}), 0L);
-                cbVar.setOnDismissListener(new k3(c6Var, 0));
-                cbVar.show();
+                bb bbVar = new bb(c6Var.getContext(), c6Var.J0, this.c, 10, null, new s2(4, c6Var, new boolean[]{false}), 0L);
+                bbVar.setOnDismissListener(new k3(c6Var, 0));
+                bbVar.show();
                 break;
             case 7:
                 c6Var.V1(j3);

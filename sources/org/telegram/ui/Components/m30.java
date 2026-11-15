@@ -24,9 +24,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class m30 implements org.telegram.messenger.is, org.telegram.ui.pm0 {
+public final class m30 implements org.telegram.messenger.is, org.telegram.ui.qm0 {
     public org.telegram.messenger.gj E;
     public String F;
     public boolean G;
@@ -502,10 +502,10 @@ public final class m30 implements org.telegram.messenger.is, org.telegram.ui.pm0
             parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, org.telegram.messenger.ns.h2);
             return;
         }
-        org.telegram.ui.nm0 nm0Var = new org.telegram.ui.nm0(this.R ? 3 : 1, false, false, null);
-        nm0Var.y = this.K;
-        nm0Var.W = new cf(this);
-        this.a.presentFragment(nm0Var);
+        org.telegram.ui.om0 om0Var = new org.telegram.ui.om0(this.R ? 3 : 1, false, false, null);
+        om0Var.y = this.K;
+        om0Var.W = new cf(this);
+        this.a.presentFragment(om0Var);
     }
 
     public final void n(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i7) {
@@ -669,18 +669,18 @@ public final class m30 implements org.telegram.messenger.is, org.telegram.ui.pm0
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.ym0 ym0Var = new org.telegram.ui.ym0(0, null, hashMap, arrayList, 1, false, null, this.S);
+        org.telegram.ui.zm0 zm0Var = new org.telegram.ui.zm0(0, null, hashMap, arrayList, 1, false, null, this.S);
         ab.q qVar = new ab.q();
         qVar.d = this;
         qVar.b = hashMap;
         qVar.c = arrayList;
-        ym0Var.t0 = qVar;
-        ym0Var.k0(1, false);
-        ym0Var.q0 = this.b.getInitialSearchString();
+        zm0Var.t0 = qVar;
+        zm0Var.k0(1, false);
+        zm0Var.q0 = this.b.getInitialSearchString();
         if (this.T) {
-            this.a.showAsSheet(ym0Var);
+            this.a.showAsSheet(zm0Var);
         } else {
-            this.a.presentFragment(ym0Var);
+            this.a.presentFragment(zm0Var);
         }
     }
 

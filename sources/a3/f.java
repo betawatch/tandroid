@@ -5,7 +5,8 @@ import a8.u6;
 import a8.v6;
 import ab.c0;
 import ab.o0;
-import ai.m2;
+import ai.n2;
+import ai.z;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,7 +25,6 @@ import androidx.fragment.app.u0;
 import androidx.lifecycle.e0;
 import bi.i4;
 import bi.l2;
-import bi.n2;
 import bi.s2;
 import bi.t0;
 import bi.x0;
@@ -32,7 +32,7 @@ import c8.he;
 import c8.k0;
 import c8.l0;
 import com.google.android.gms.internal.vision.e2;
-import di.bc;
+import di.ac;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayDeque;
 import java.util.Iterator;
@@ -46,7 +46,7 @@ import org.telegram.messenger.ns;
 import org.telegram.ui.Components.p41;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -76,25 +76,25 @@ public final /* synthetic */ class f implements Runnable {
         String nativeSessionPush;
         long nativeFileNew;
         String nativeFileNext;
-        ai.v vVar = (ai.v) this.b;
-        long k10 = DictationAsr.k(vVar.b);
+        ai.w wVar = (ai.w) this.b;
+        long k10 = DictationAsr.k(wVar.b);
         long j3 = 0;
         if (k10 == 0) {
-            vVar.b(vVar.o);
+            wVar.b(wVar.o);
             return;
         }
         DictationAsr.J();
-        ai.y yVar = vVar.a;
-        synchronized (yVar.a) {
-            z10 = yVar.d;
+        z zVar = wVar.a;
+        synchronized (zVar.a) {
+            z10 = zVar.d;
         }
         if (!z10) {
-            String str = vVar.c.split(",")[0];
-            nativeSessionNew = DictationAsr.nativeSessionNew(k10, vVar.c, str);
+            String str = wVar.c.split(",")[0];
+            nativeSessionNew = DictationAsr.nativeSessionNew(k10, wVar.c, str);
             StringBuilder sb2 = new StringBuilder("tinyasr: session ");
-            sb2.append(vVar.b.a);
+            sb2.append(wVar.b.a);
             sb2.append(" in ");
-            e2.r(sb2, vVar.c, " (from ", str, "), audio from ");
+            e2.r(sb2, wVar.c, " (from ", str, "), audio from ");
             sb2.append(0);
             sb2.append(" ms");
             Log.d("Dictation", sb2.toString());
@@ -102,19 +102,19 @@ public final /* synthetic */ class f implements Runnable {
             int i7 = 0;
             while (true) {
                 try {
-                    if (vVar.l) {
+                    if (wVar.l) {
                         break;
                     }
-                    boolean z11 = vVar.k;
-                    int c10 = vVar.a.c() - i7;
+                    boolean z11 = wVar.k;
+                    int c10 = wVar.a.c() - i7;
                     if (c10 >= 2) {
                         int min = Math.min(10240, c10 & (-2)) + i7;
-                        byte[] b10 = vVar.a.b(i7, min);
+                        byte[] b10 = wVar.a.b(i7, min);
                         long elapsedRealtime2 = SystemClock.elapsedRealtime();
                         nativeSessionPush = DictationAsr.nativeSessionPush(nativeSessionNew, b10, 0, b10.length);
-                        vVar.a(nativeSessionPush);
+                        wVar.a(nativeSessionPush);
                         j3 += SystemClock.elapsedRealtime() - elapsedRealtime2;
-                        vVar.m = min;
+                        wVar.m = min;
                         i7 = min;
                     } else if (z11) {
                         break;
@@ -124,71 +124,71 @@ public final /* synthetic */ class f implements Runnable {
                 } catch (InterruptedException unused) {
                 } catch (Throwable th2) {
                     DictationAsr.nativeSessionFree(nativeSessionNew);
-                    DictationAsr.M(vVar.b);
+                    DictationAsr.M(wVar.b);
                     throw th2;
                 }
             }
             DictationAsr.nativeSessionFree(nativeSessionNew);
-            DictationAsr.M(vVar.b);
-            vVar.b(vVar.o);
+            DictationAsr.M(wVar.b);
+            wVar.b(wVar.o);
             return;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime();
-        ai.y yVar2 = vVar.a;
-        byte[] b11 = yVar2.b(0, yVar2.c());
-        vVar.m = b11.length;
+        z zVar2 = wVar.a;
+        byte[] b11 = zVar2.b(0, zVar2.c());
+        wVar.m = b11.length;
         int length = b11.length / 2;
         float[] fArr = new float[length];
         for (int i10 = 0; i10 < length; i10++) {
             int i11 = i10 * 2;
             fArr[i10] = ((short) ((b11[i11 + 1] << 8) | (b11[i11] & 255))) / 32768.0f;
         }
-        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, vVar.c);
+        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, wVar.c);
         try {
             if (nativeFileNew == 0) {
                 if (nativeFileNew != 0) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
-                DictationAsr.M(vVar.b);
-                while (!vVar.k && !vVar.l) {
+                DictationAsr.M(wVar.b);
+                while (!wVar.k && !wVar.l) {
                     Thread.sleep(10L);
                 }
             } else {
-                while (!vVar.l && nativeFileNext != null) {
+                while (!wVar.l && nativeFileNext != null) {
                     try {
                         try {
-                            DictationAsr.n(vVar.e, new JSONArray(nativeFileNext), null);
+                            DictationAsr.n(wVar.e, new JSONArray(nativeFileNext), null);
                         } catch (Exception e10) {
                             Log.e("Dictation", "tinyasr: words " + nativeFileNext, e10);
                         }
-                        vVar.b(null);
+                        wVar.b(null);
                     } catch (Throwable th3) {
                         if (nativeFileNew != 0) {
                             DictationAsr.nativeFileFree(nativeFileNew);
                         }
-                        DictationAsr.M(vVar.b);
-                        while (!vVar.k && !vVar.l) {
+                        DictationAsr.M(wVar.b);
+                        while (!wVar.k && !wVar.l) {
                             try {
                                 Thread.sleep(10L);
                             } catch (InterruptedException unused2) {
                             }
                         }
-                        vVar.b(vVar.o);
+                        wVar.b(wVar.o);
                         throw th3;
                     }
                 }
-                Log.d("Dictation", "tinyasr: file pass in " + vVar.c + ", " + (length / 16) + " ms of audio in " + (SystemClock.elapsedRealtime() - elapsedRealtime3) + " ms");
+                Log.d("Dictation", "tinyasr: file pass in " + wVar.c + ", " + (length / 16) + " ms of audio in " + (SystemClock.elapsedRealtime() - elapsedRealtime3) + " ms");
                 if (nativeFileNew != 0) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
-                DictationAsr.M(vVar.b);
-                while (!vVar.k && !vVar.l) {
+                DictationAsr.M(wVar.b);
+                while (!wVar.k && !wVar.l) {
                     Thread.sleep(10L);
                 }
             }
         } catch (InterruptedException unused3) {
         }
-        vVar.b(vVar.o);
+        wVar.b(wVar.o);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0087, code lost:
@@ -201,36 +201,36 @@ public final /* synthetic */ class f implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void b() {
-        ai.x xVar = (ai.x) this.b;
+        ai.y yVar = (ai.y) this.b;
         byte[] bArr = new byte[3200];
-        xVar.i = SystemClock.elapsedRealtime();
+        yVar.i = SystemClock.elapsedRealtime();
         try {
-            ParcelFileDescriptor.AutoCloseOutputStream autoCloseOutputStream = new ParcelFileDescriptor.AutoCloseOutputStream(xVar.b);
-            while (!xVar.e) {
+            ParcelFileDescriptor.AutoCloseOutputStream autoCloseOutputStream = new ParcelFileDescriptor.AutoCloseOutputStream(yVar.b);
+            while (!yVar.e) {
                 try {
-                    long elapsedRealtime = (xVar.d - xVar.f) - (((SystemClock.elapsedRealtime() - xVar.i) * xVar.h) + xVar.g);
+                    long elapsedRealtime = (yVar.d - yVar.f) - (((SystemClock.elapsedRealtime() - yVar.i) * yVar.h) + yVar.g);
                     if (elapsedRealtime <= 0) {
-                        synchronized (xVar.j.a) {
-                            while (!xVar.e) {
+                        synchronized (yVar.j.a) {
+                            while (!yVar.e) {
                                 try {
-                                    ai.y yVar = xVar.j;
-                                    if (yVar.d || yVar.c > xVar.d) {
+                                    z zVar = yVar.j;
+                                    if (zVar.d || zVar.c > yVar.d) {
                                         break;
                                     } else {
-                                        xVar.j.a.wait();
+                                        yVar.j.a.wait();
                                     }
                                 } catch (Throwable th2) {
                                     throw th2;
                                 }
                             }
-                            if (!xVar.e && xVar.j.c > xVar.d) {
-                                int min = Math.min(3200, xVar.j.c - xVar.d);
-                                System.arraycopy(xVar.j.b, xVar.d, bArr, 0, min);
+                            if (!yVar.e && yVar.j.c > yVar.d) {
+                                int min = Math.min(3200, yVar.j.c - yVar.d);
+                                System.arraycopy(yVar.j.b, yVar.d, bArr, 0, min);
                             }
                         }
                         break;
                     }
-                    Thread.sleep(Math.max(1L, elapsedRealtime / xVar.h));
+                    Thread.sleep(Math.max(1L, elapsedRealtime / yVar.h));
                 } catch (Throwable th3) {
                     try {
                         autoCloseOutputStream.close();
@@ -242,7 +242,7 @@ public final /* synthetic */ class f implements Runnable {
             }
             autoCloseOutputStream.close();
         } catch (Exception e10) {
-            if (xVar.e) {
+            if (yVar.e) {
                 return;
             }
             Log.d("Dictation", "feed closed: " + e10);
@@ -404,7 +404,7 @@ public final /* synthetic */ class f implements Runnable {
                 g0.J3((EditText) this.b);
                 return;
             case 7:
-                DictationAsr.V((ai.s) ((a0) this.b).b, new m2());
+                DictationAsr.V((ai.t) ((a0) this.b).b, new n2());
                 return;
             case 8:
                 ((androidx.activity.l) this.b).invalidateOptionsMenu();
@@ -510,10 +510,10 @@ public final /* synthetic */ class f implements Runnable {
                 ((l2) this.b).invalidateSelf();
                 return;
             case 23:
-                n2 n2Var = (n2) this.b;
-                bc bcVar = n2Var.e;
-                if (bcVar != null) {
-                    bcVar.d();
+                bi.n2 n2Var = (bi.n2) this.b;
+                ac acVar = n2Var.e;
+                if (acVar != null) {
+                    acVar.d();
                     n2Var.invalidateSelf();
                     return;
                 }

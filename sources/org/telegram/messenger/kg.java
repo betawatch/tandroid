@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kg implements Runnable {
     public final /* synthetic */ int a;
@@ -304,7 +304,7 @@ public final /* synthetic */ class kg implements Runnable {
                                     linkedHashMap = new LinkedHashMap();
                                     arrayList3 = arrayList7;
                                     vrVar3 = vrVar5;
-                                    Collections.sort(arrayList12, new xq(soVar2.j, 0));
+                                    Collections.sort(arrayList12, new vq(soVar2.j, 0));
                                     int size6 = arrayList12.size();
                                     int i33 = 0;
                                     while (i33 < size6) {

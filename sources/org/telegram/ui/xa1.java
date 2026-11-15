@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class xa1 extends org.telegram.ui.ActionBar.e2 {
     public hi.n5 E;
@@ -800,7 +800,7 @@ public class xa1 extends org.telegram.ui.ActionBar.e2 {
         }
         TL_account.updatePasswordSettings updatepasswordsettings3 = updatepasswordsettings;
         C0();
-        Utilities.e.c(new ai.j(this, updatepasswordsettings3, z10, str, passwordinputsettings, 16));
+        Utilities.e.c(new ai.j(this, updatepasswordsettings3, z10, str, passwordinputsettings, 15));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x002c, code lost:

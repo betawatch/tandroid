@@ -37,7 +37,7 @@ import org.telegram.ui.Components.xo;
 import org.telegram.ui.an;
 import v4.e1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -245,7 +245,7 @@ public final class w implements View.OnClickListener {
                 epVar.S1.e1();
                 epVar.S1.e2.i0();
                 epVar.S1.show();
-                epVar.T1 = new ai.j0(epVar, epVar.getContext());
+                epVar.T1 = new ai.k0(epVar, epVar.getContext());
                 h6 h6Var = new h6(epVar.getContext(), true, true, true);
                 epVar.U1 = h6Var;
                 h6Var.setTextSize(org.telegram.messenger.g0.L(14.0f));
@@ -255,12 +255,12 @@ public final class w implements View.OnClickListener {
                 int i10 = j6.Fi;
                 q6.Y(h6Var2, i10, epVar.J0);
                 epVar.T1.addView(epVar.U1, ja.e(-1, -2, 17));
-                ai.j0 j0Var = epVar.T1;
+                ai.k0 k0Var2 = epVar.T1;
                 int L = org.telegram.messenger.g0.L(0.0f);
                 int i11 = j6.d6;
                 int w02 = j6.w0(i11, epVar.J0);
                 int o4 = i0.a.o(j6.w0(i10, epVar.J0), 76);
-                q6.Q(j0Var, j6.k0(L, L, L, L, w02, o4, o4), q6.M(i11), q6.g(i10, 76), epVar.J0);
+                q6.Q(k0Var2, j6.k0(L, L, L, L, w02, o4, o4), q6.M(i11), q6.g(i10, 76), epVar.J0);
                 epVar.T1.setOnClickListener(new oo(epVar, r9));
                 epVar.S1.p3.addView(epVar.T1, ja.e(-1, -2, 80));
                 return;

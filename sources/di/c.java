@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class c implements Runnable {
                 tVar.b0.setEnabled(tVar.Z > 0 || tVar.Q > currentTime);
                 if (currentTime >= tVar.Q) {
                     tVar.b0.g(null, true);
-                    tVar.b0.i(mb.Y0(false, tVar.Y ? hd.M0(2131752969, null) : hd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
+                    tVar.b0.i(lb.Y0(false, tVar.Y ? hd.M0(2131752969, null) : hd.H(' ', "BotStarsButtonWithdrawShort", (int) tVar.Z), tVar.d0), true, true);
                     break;
                 } else {
                     tVar.b0.i(hd.M0(2131752968, null), true, true);

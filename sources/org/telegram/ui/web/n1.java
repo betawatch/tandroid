@@ -1,5 +1,6 @@
 package org.telegram.ui.web;
 
+import ai.u2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +18,6 @@ import bi.v3;
 import bi.x2;
 import c8.ja;
 import c8.za;
-import di.t7;
 import fi.e2;
 import hi.g7;
 import java.io.File;
@@ -41,7 +41,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m5;
+import org.telegram.ui.ActionBar.l5;
 import org.telegram.ui.ActionBar.m6;
 import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.Cells.i6;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.br;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class n1 extends r41 implements is {
     public e2 e;
@@ -280,7 +280,6 @@ public final class n1 extends r41 implements is {
             this.a.g3.O(true);
             return;
         }
-        int i12 = 10;
         if (i7 == 10) {
             np messagesController3 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings3 = messagesController3.z8;
@@ -290,6 +289,7 @@ public final class n1 extends r41 implements is {
             this.a.g3.O(true);
             return;
         }
+        int i12 = 11;
         if (i7 == 11) {
             np messagesController4 = getMessagesController();
             TL_account.TL_webBrowserSettings tL_webBrowserSettings4 = messagesController4.z8;
@@ -803,7 +803,7 @@ public final class n1 extends r41 implements is {
             }
             Activity parentActivity = getParentActivity();
             e6 resourceProvider = getResourceProvider();
-            t7 t7Var = new t7(i12, this, M22);
+            u2 u2Var = new u2(i12, this, M22);
             Pattern pattern = t4.a;
             Activity W = org.telegram.messenger.g0.W(parentActivity);
             View currentFocus = W != null ? W.getCurrentFocus() : null;
@@ -830,15 +830,15 @@ public final class n1 extends r41 implements is {
             m6 K = q6.K(0.06f, i19);
             s4Var.setBackground(d02);
             q6.j(s4Var, d02, K, null, resourceProvider);
-            m5 m5Var = new m5(s4Var, t7Var, t1VarArr, currentFocus, 16);
-            s4Var.setOnEditorActionListener(new org.telegram.ui.Components.q0(m5Var, i11));
+            l5 l5Var = new l5(s4Var, u2Var, t1VarArr, currentFocus, 17);
+            s4Var.setOnEditorActionListener(new org.telegram.ui.Components.q0(l5Var, i11));
             LinearLayout linearLayout2 = new LinearLayout(parentActivity);
             linearLayout2.setOrientation(1);
             linearLayout2.addView(s4Var, ja.k(24.0f, 4.0f, 24.0f, 9.0f, -1, -2));
             alertDialog$Builder6.c();
             alertDialog$Builder6.o(linearLayout2);
             t1Var6.a = Math.min(org.telegram.messenger.g0.L(320.0f), (org.telegram.messenger.g0.q.x * 85) / 100);
-            alertDialog$Builder6.k(hd.M0(2131751354, null), new org.telegram.ui.Components.s(m5Var, 2));
+            alertDialog$Builder6.k(hd.M0(2131751354, null), new org.telegram.ui.Components.s(l5Var, 2));
             alertDialog$Builder6.h(hd.M0(2131752589, null), new br(9));
             t1VarArr[0] = t1Var6;
             t1Var6.k0 = false;

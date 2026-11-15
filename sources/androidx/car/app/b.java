@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements androidx.car.app.utils.b, androidx.activity.result.b {
+public final /* synthetic */ class b implements androidx.car.app.utils.a, androidx.activity.result.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.b, androi
         this.c = obj2;
     }
 
-    @Override // androidx.car.app.utils.b
+    @Override // androidx.car.app.utils.a
     public Object a() {
         Object lambda$onConfigurationChanged$6;
         Object lambda$onNewIntent$5;

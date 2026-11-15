@@ -14,7 +14,7 @@ import org.telegram.ui.eo;
 import org.telegram.ui.vs;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class f3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new m3(0, (c6) this.c, tL_error, (z10) this.d, (TwoStepVerificationActivity) this.e, tLObject, this.b));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new ai.j(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 2));
+                org.telegram.messenger.g0.h3(new ai.j(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 1));
                 break;
             case 2:
                 org.telegram.messenger.g0.h3(new in((org.telegram.messenger.x6) this.c, tLObject, (TLRPC.TL_textWithEntities) this.d, (org.telegram.ui.ActionBar.t1) this.e, this.b, 2));
@@ -47,7 +47,7 @@ public final /* synthetic */ class f3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new m3((xd) this.c, tL_error, (TwoStepVerificationActivity) this.e, (Activity) this.d, this.b, tLObject));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new ai.j((an) this.c, (vf.b) this.d, tLObject, (z2) this.e, this.b, 8));
+                org.telegram.messenger.g0.h3(new ai.j((an) this.c, (vf.b) this.d, tLObject, (z2) this.e, this.b, 7));
                 break;
             case 5:
                 org.telegram.messenger.g0.h3(new m3((eo) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error));

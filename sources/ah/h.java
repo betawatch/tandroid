@@ -1,5 +1,6 @@
 package ah;
 
+import ai.j0;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -9,13 +10,13 @@ import bi.a6;
 import ci.a0;
 import ci.i0;
 import di.ab;
-import di.bb;
 import di.c6;
-import di.gc;
+import di.fc;
 import di.h6;
 import di.r4;
 import di.s4;
 import di.y4;
+import di.za;
 import fi.c2;
 import fi.k5;
 import fi.n0;
@@ -33,7 +34,7 @@ import org.telegram.messenger.g0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -110,17 +111,17 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 h6Var.invalidate();
                 break;
             case 10:
-                bb bbVar = (bb) this.b;
+                ab abVar = (ab) this.b;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ab abVar = bbVar.c;
-                abVar.setScaleX(floatValue3);
-                abVar.setScaleY(floatValue3);
+                za zaVar = abVar.c;
+                zaVar.setScaleX(floatValue3);
+                zaVar.setScaleY(floatValue3);
                 break;
             case 11:
-                gc gcVar = (gc) this.b;
-                gcVar.getClass();
-                gcVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gcVar.invalidate();
+                fc fcVar = (fc) this.b;
+                fcVar.getClass();
+                fcVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fcVar.invalidate();
                 break;
             case 12:
                 fi.a aVar = (fi.a) this.b;
@@ -154,9 +155,9 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 17:
-                ai.i0 i0Var = (ai.i0) this.b;
+                j0 j0Var = (j0) this.b;
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n0 n0Var2 = (n0) i0Var.b;
+                n0 n0Var2 = (n0) j0Var.b;
                 Drawable drawable2 = n0Var2.e;
                 if (drawable2 != null) {
                     drawable2.setAlpha((int) (g0.T1(1.0f, n0Var2.f, floatValue6) * 255.0f));

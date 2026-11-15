@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class tb0 extends org.telegram.ui.Components.xt0 {
     public boolean E;
@@ -352,7 +352,7 @@ public final class tb0 extends org.telegram.ui.Components.xt0 {
             passwordinputsettings.hint = str2 != null ? str2 : "";
             passwordinputsettings.new_algo = this.s.new_algo;
         }
-        Utilities.e.c(new org.telegram.ui.Components.ma0(this, str, str2, tL_auth_recoverPassword, 20));
+        Utilities.e.c(new org.telegram.ui.Components.u80(this, str, str2, tL_auth_recoverPassword, 21));
     }
 
     @Override // org.telegram.ui.Components.xt0, org.telegram.ui.ActionBar.z5

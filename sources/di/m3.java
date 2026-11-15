@@ -44,7 +44,7 @@ import org.telegram.ui.ho;
 import org.telegram.ui.vs;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class m3 implements Runnable {
                     int i13 = 3;
                     if (!"PASSWORD_MISSING".equals(tL_error2.text) && !tL_error2.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error2.text.startsWith("SESSION_TOO_FRESH_")) {
                         if ("SRP_ID_INVALID".equals(tL_error2.text)) {
-                            ConnectionsManager.getInstance(xdVar.p0).sendRequest(new TL_account.getPassword(), new l8(xdVar, twoStepVerificationActivity2, z11, i13), 8);
+                            ConnectionsManager.getInstance(xdVar.p0).sendRequest(new TL_account.getPassword(), new k8(xdVar, twoStepVerificationActivity2, z11, i13), 8);
                             break;
                         } else {
                             if (twoStepVerificationActivity2 != null) {

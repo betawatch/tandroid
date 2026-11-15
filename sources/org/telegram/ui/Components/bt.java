@@ -9,7 +9,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bt implements et, h2.j, hj0 {
     public final /* synthetic */ int a;
@@ -147,11 +147,11 @@ public final /* synthetic */ class bt implements et, h2.j, hj0 {
                 if (ng0Var != null) {
                     org.telegram.messenger.g0.v1(ng0Var.getEditText());
                 }
-                di.xa xaVar = new di.xa(c1Var.getContext(), e6Var, user, new wg.v0(c1Var, 11));
+                di.wa waVar = new di.wa(c1Var.getContext(), e6Var, user, new wg.v0(c1Var, 11));
                 if (!org.telegram.messenger.g0.Q1()) {
-                    xaVar.a0(c1Var.j1);
+                    waVar.a0(c1Var.j1);
                 }
-                xaVar.show();
+                waVar.show();
                 return;
             }
             if (i11 == 0 || i11 == 2) {

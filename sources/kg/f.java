@@ -6,7 +6,7 @@ import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f {
     public static volatile f[] g = new f[4];
@@ -65,7 +65,7 @@ public final class f {
         }
         if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
             this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new ai.d1(this, 15));
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new ai.e1(this, 15));
         } else if (z10) {
             d();
         }

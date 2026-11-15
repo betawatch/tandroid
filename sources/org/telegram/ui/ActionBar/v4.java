@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import c8.ja;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.bn0;
+import org.telegram.ui.cn0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v4 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -20,9 +20,9 @@ public final class v4 extends FrameLayout {
     public final /* synthetic */ Object h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v4(bn0 bn0Var, Context context) {
+    public v4(cn0 cn0Var, Context context) {
         super(context);
-        this.h = bn0Var;
+        this.h = cn0Var;
     }
 
     public j5 a() {
@@ -181,10 +181,10 @@ public final class v4 extends FrameLayout {
         switch (this.a) {
             case 1:
                 super.setTranslationX(f10);
-                bn0 bn0Var = (bn0) this.h;
-                v4[] v4VarArr = bn0Var.n;
-                if (bn0Var.s && (v4Var = v4VarArr[0]) == this) {
-                    bn0Var.h.i(Math.abs(v4Var.getTranslationX()) / v4VarArr[0].getMeasuredWidth(), v4VarArr[1].b);
+                cn0 cn0Var = (cn0) this.h;
+                v4[] v4VarArr = cn0Var.n;
+                if (cn0Var.s && (v4Var = v4VarArr[0]) == this) {
+                    cn0Var.h.i(Math.abs(v4Var.getTranslationX()) / v4VarArr[0].getMeasuredWidth(), v4VarArr[1].b);
                     break;
                 }
                 break;

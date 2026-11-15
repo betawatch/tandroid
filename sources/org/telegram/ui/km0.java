@@ -1,90 +1,41 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class km0 implements xm0 {
+public final /* synthetic */ class km0 implements org.telegram.ui.Components.r4, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ nm0 d;
+    public final /* synthetic */ om0 b;
 
-    public /* synthetic */ km0(nm0 nm0Var, HashMap hashMap, ArrayList arrayList, int i7) {
+    public /* synthetic */ km0(om0 om0Var, int i7) {
         this.a = i7;
-        this.d = nm0Var;
-        this.b = hashMap;
-        this.c = arrayList;
+        this.b = om0Var;
     }
 
-    @Override // org.telegram.ui.xm0
-    public final void A(Editable editable) {
+    @Override // org.telegram.ui.Components.r4
+    public void L(int i7, int i10, boolean z10) {
         switch (this.a) {
             case 0:
-                nm0 nm0Var = this.d;
-                org.telegram.ui.Components.rt rtVar = nm0Var.N;
-                nm0Var.a = editable;
-                rtVar.setText(editable);
+                om0 om0Var = this.b;
+                om0Var.a0(om0Var.b, om0Var.c, z10, i7);
+                om0Var.finishFragment();
                 break;
             default:
-                nm0 nm0Var2 = this.d;
-                org.telegram.ui.Components.rt rtVar2 = nm0Var2.N;
-                nm0Var2.a = editable;
-                rtVar2.setText(editable);
+                om0 om0Var2 = this.b;
+                om0Var2.a0(om0Var2.b, om0Var2.c, z10, i7);
+                om0Var2.finishFragment();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.xm0
-    public final /* synthetic */ void d0() {
-        int i7 = this.a;
-    }
-
-    @Override // org.telegram.ui.xm0
-    public final /* synthetic */ boolean e() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.e1
+    public void j(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.g1 g1Var;
+        om0 om0Var = this.b;
+        om0Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = om0Var.J) != null && g1Var.isShowing()) {
+            om0Var.J.d(true);
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.xm0
-    public final void t0(int i7, boolean z10, boolean z11) {
-        switch (this.a) {
-            case 0:
-                nm0 nm0Var = this.d;
-                nm0Var.removeSelfFromStack();
-                if (!z10) {
-                    nm0Var.a0(this.b, this.c, z11, i7);
-                    break;
-                }
-                break;
-            default:
-                nm0 nm0Var2 = this.d;
-                nm0Var2.removeSelfFromStack();
-                if (!z10) {
-                    nm0Var2.a0(this.b, this.c, z11, i7);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.xm0
-    public final void y() {
-        int i7 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
     }
 }

@@ -24,7 +24,7 @@ import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.mb0;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s0 extends org.telegram.ui.ActionBar.u2 {
     public final cg.a A1;
@@ -63,7 +63,7 @@ public final class s0 extends org.telegram.ui.ActionBar.u2 {
         boolean z11 = org.telegram.messenger.t3.z(i7, 24, j3);
         this.n1 = z11;
         final int i11 = 0;
-        boolean z12 = z11 || v8.y(i7, true).j();
+        boolean z12 = z11 || u8.y(i7, true).j();
         org.telegram.messenger.p0 p0Var = np.s1(i7).y7;
         long j10 = ((org.telegram.messenger.l0) p0Var.g.b).c;
         cg.b bVar = cg.b.b;
@@ -97,7 +97,7 @@ public final class s0 extends org.telegram.ui.ActionBar.u2 {
                     switch (i11) {
                         case 0:
                             if (this.b.C1.a == cg.b.a) {
-                                new db(context, e6Var).show();
+                                new cb(context, e6Var).show();
                                 break;
                             }
                             break;
@@ -217,7 +217,7 @@ public final class s0 extends org.telegram.ui.ActionBar.u2 {
                 switch (i15) {
                     case 0:
                         if (this.b.C1.a == cg.b.a) {
-                            new db(context, e6Var).show();
+                            new cb(context, e6Var).show();
                             break;
                         }
                         break;
@@ -427,7 +427,7 @@ public final class s0 extends org.telegram.ui.ActionBar.u2 {
                 boolean z18 = aVar7.a == bVar ? true : z13;
                 Object[] objArr3 = new Object[1];
                 objArr3[z13] = z18 ? aVar7.b() : hd.E(aVar7.a(), ',');
-                dVar.i(mb.s1(mb.Y0(z18, hd.a0(null, null, 2131747081, objArr3), z18 ? this.H1 : this.G1), z18), z12, true);
+                dVar.i(lb.s1(lb.Y0(z18, hd.a0(null, null, 2131747081, objArr3), z18 ? this.H1 : this.G1), z18), z12, true);
             }
             J0(z12);
         }

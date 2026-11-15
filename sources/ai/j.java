@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.widget.TextView;
 import c8.le;
-import di.l8;
+import di.k8;
 import di.z2;
 import fi.s5;
 import hi.d7;
@@ -51,28 +51,28 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.an;
-import org.telegram.ui.jl0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.lw;
 import org.telegram.ui.xa1;
 import org.telegram.ui.xd;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
     public /* synthetic */ j(h2.c cVar, String str, Bitmap bitmap, boolean z10, Bitmap bitmap2) {
-        this.a = 9;
-        this.c = cVar;
-        this.b = str;
-        this.d = bitmap;
-        this.e = z10;
+        this.a = 8;
+        this.d = cVar;
+        this.c = str;
+        this.e = bitmap;
+        this.b = z10;
         this.f = bitmap2;
     }
 
@@ -103,33 +103,30 @@ public final /* synthetic */ class j implements Runnable {
         File file2;
         switch (this.a) {
             case 0:
-                boolean[] zArr = (boolean[]) this.c;
-                ki.r1 r1Var = (ki.r1) this.d;
-                String str = (String) this.b;
+                boolean[] zArr = (boolean[]) this.d;
+                ki.r1 r1Var = (ki.r1) this.e;
+                String str = (String) this.c;
                 int[] iArr = (int[]) this.f;
-                boolean z12 = this.e;
-                s[] sVarArr = DictationAsr.a;
+                boolean z12 = this.b;
+                t[] tVarArr = DictationAsr.a;
                 if (zArr[0]) {
                     return;
                 }
                 r1Var.a(str, iArr, z12);
                 return;
             case 1:
-                DictationAsr.b((String) this.b, (boolean[]) this.c, (ki.r1) this.d, this.e, (android.support.v4.media.session.a0) this.f);
-                return;
-            case 2:
-                hi.r1 r1Var2 = (hi.r1) this.c;
-                TLObject tLObject = (TLObject) this.d;
-                boolean z13 = this.e;
+                hi.r1 r1Var2 = (hi.r1) this.d;
+                TLObject tLObject = (TLObject) this.e;
+                boolean z13 = this.b;
                 TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = (TLRPC.TL_messages_getInlineBotResults) this.f;
-                String str2 = (String) this.b;
+                String str2 = (String) this.c;
                 hi.t1 t1Var = r1Var2.s;
                 ArrayList arrayList = t1Var.n;
                 if (r1Var2.r) {
                     if (!(tLObject instanceof TLRPC.messages_BotResults)) {
                         hi.i2 i2Var = t1Var.r;
                         int i17 = hi.i2.C1;
-                        r1Var2.d = ConnectionsManager.getInstance(i2Var.a).sendRequest(tL_messages_getInlineBotResults, new l8(r1Var2, str2, z13, 1));
+                        r1Var2.d = ConnectionsManager.getInstance(i2Var.a).sendRequest(tL_messages_getInlineBotResults, new k8(r1Var2, str2, z13, 1));
                         return;
                     }
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
@@ -145,11 +142,11 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
                 return;
-            case 3:
-                sa saVar = (sa) this.c;
-                Bitmap bitmap = (Bitmap) this.d;
-                boolean z14 = this.e;
-                File file3 = (File) this.b;
+            case 2:
+                sa saVar = (sa) this.d;
+                Bitmap bitmap = (Bitmap) this.e;
+                boolean z14 = this.b;
+                File file3 = (File) this.c;
                 d7 d7Var = (d7) this.f;
                 try {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, z14 ? 95 : 99, new FileOutputStream(file3));
@@ -158,12 +155,12 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 org.telegram.messenger.g0.h3(new s5(saVar, d7Var, file3, 14));
                 return;
-            case 4:
-                kg.y yVar = (kg.y) this.c;
-                ArrayList arrayList2 = (ArrayList) this.d;
-                ArrayList arrayList3 = (ArrayList) this.b;
+            case 3:
+                kg.y yVar = (kg.y) this.d;
+                ArrayList arrayList2 = (ArrayList) this.e;
+                ArrayList arrayList3 = (ArrayList) this.c;
                 ArrayList arrayList4 = (ArrayList) this.f;
-                boolean z15 = this.e;
+                boolean z15 = this.b;
                 ArrayList arrayList5 = yVar.b;
                 arrayList5.clear();
                 arrayList5.addAll(arrayList2);
@@ -174,18 +171,18 @@ public final /* synthetic */ class j implements Runnable {
                 yVar.c = false;
                 yVar.e(false, z15);
                 return;
+            case 4:
+                e4.f((org.telegram.ui.ActionBar.e2) this.d, (Context) this.e, (e6) this.c, (n3) this.f, this.b);
+                return;
             case 5:
-                e4.f((org.telegram.ui.ActionBar.e2) this.c, (Context) this.d, (e6) this.b, (n3) this.f, this.e);
+                ((CameraController) this.d).lambda$recordVideo$12((CameraController.ICameraView) this.e, (File) this.c, this.b, (Runnable) this.f);
                 return;
             case 6:
-                ((CameraController) this.c).lambda$recordVideo$12((CameraController.ICameraView) this.d, (File) this.b, this.e, (Runnable) this.f);
-                return;
-            case 7:
-                xd xdVar = (xd) this.c;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
-                TLObject tLObject2 = (TLObject) this.b;
+                xd xdVar = (xd) this.d;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
+                TLObject tLObject2 = (TLObject) this.c;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.f;
-                boolean z16 = this.e;
+                boolean z16 = this.b;
                 if (tL_error == null) {
                     TL_account.Password password = (TL_account.Password) tLObject2;
                     twoStepVerificationActivity.J = password;
@@ -194,12 +191,12 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
                 return;
-            case 8:
-                an anVar = (an) this.c;
-                vf.b bVar = (vf.b) this.d;
-                TLObject tLObject3 = (TLObject) this.b;
+            case 7:
+                an anVar = (an) this.d;
+                vf.b bVar = (vf.b) this.e;
+                TLObject tLObject3 = (TLObject) this.c;
                 z2 z2Var = (z2) this.f;
-                boolean z17 = this.e;
+                boolean z17 = this.b;
                 bVar.b();
                 if (tLObject3 instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject3;
@@ -217,11 +214,11 @@ public final /* synthetic */ class j implements Runnable {
                 obj = null;
                 z2Var.a(obj, Boolean.valueOf(z17));
                 return;
-            case 9:
-                h2.c cVar = (h2.c) this.c;
-                String str3 = (String) this.b;
-                Bitmap bitmap2 = (Bitmap) this.d;
-                boolean z18 = this.e;
+            case 8:
+                h2.c cVar = (h2.c) this.d;
+                String str3 = (String) this.c;
+                Bitmap bitmap2 = (Bitmap) this.e;
+                boolean z18 = this.b;
                 Bitmap bitmap3 = (Bitmap) this.f;
                 if (TextUtils.equals((String) cVar.b, str3)) {
                     cVar.f = null;
@@ -242,21 +239,21 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
                 return;
-            case 10:
-                ft ftVar = (ft) this.c;
-                boolean z19 = this.e;
-                di.q qVar = (di.q) this.d;
-                String str4 = (String) this.b;
+            case 9:
+                ft ftVar = (ft) this.d;
+                boolean z19 = this.b;
+                di.q qVar = (di.q) this.e;
+                String str4 = (String) this.c;
                 TextView textView = (TextView) this.f;
                 ClipboardManager clipboardManager = (ClipboardManager) ftVar.getContext().getSystemService("clipboard");
                 boolean z20 = z19 && (TextUtils.isEmpty(qVar.getText()) || TextUtils.equals(qVar.getText().toString(), str4)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
                 i20.n(textView.animate().alpha(z20 ? 1.0f : 0.0f).scaleX(z20 ? 1.0f : 0.7f).scaleY(z20 ? 1.0f : 0.7f), er.h, 300L);
                 return;
-            case 11:
-                tx txVar = (tx) this.c;
-                String str5 = (String) this.b;
-                boolean z21 = this.e;
-                String str6 = (String) this.d;
+            case 10:
+                tx txVar = (tx) this.d;
+                String str5 = (String) this.c;
+                boolean z21 = this.b;
+                String str6 = (String) this.e;
                 TLObject tLObject4 = (TLObject) this.f;
                 txVar.a.remove(str6);
                 ly lyVar = txVar.b;
@@ -276,12 +273,12 @@ public final /* synthetic */ class j implements Runnable {
                     hashMap.put(str6, (TLRPC.messages_BotResults) tLObject4);
                     return;
                 }
-            case 12:
-                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.c;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
-                TLRPC.Document document = (TLRPC.Document) this.b;
+            case 11:
+                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.d;
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
+                TLRPC.Document document = (TLRPC.Document) this.c;
                 an anVar2 = (an) this.f;
-                boolean z22 = this.e;
+                boolean z22 = this.b;
                 File w10 = d7.w(e2Var.getCurrentAccount(), "webp");
                 int o10 = gz.o();
                 float f10 = 512;
@@ -350,12 +347,12 @@ public final /* synthetic */ class j implements Runnable {
                 PhotoViewer.p1().S0(document, z22 ? document : null, true, null);
                 org.telegram.ui.ns.p().T = z22 ? tL_messages_stickerSet : null;
                 return;
-            case 13:
-                lw lwVar = (lw) this.c;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
+            case 12:
+                lw lwVar = (lw) this.d;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.e;
                 TLObject tLObject5 = (TLObject) this.f;
-                String str7 = (String) this.b;
-                boolean z23 = this.e;
+                String str7 = (String) this.c;
+                boolean z23 = this.b;
                 yw ywVar = lwVar.a;
                 if (tL_error2 == null) {
                     TLRPC.User a22 = ywVar.getMessagesController().a2(Long.valueOf(ywVar.getUserConfig().e()));
@@ -460,20 +457,20 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
                 return;
+            case 13:
+                kl0.f0((kl0) this.d, this.b, (String) this.c, (String) this.e, (TL_account.updatePasswordSettings) this.f);
+                return;
             case 14:
-                jl0.f0((jl0) this.c, this.e, (String) this.b, (String) this.d, (TL_account.updatePasswordSettings) this.f);
+                kl0.n0((kl0) this.d, (TLRPC.TL_error) this.e, this.b, (TLObject) this.f, (String) this.c);
                 return;
             case 15:
-                jl0.n0((jl0) this.c, (TLRPC.TL_error) this.d, this.e, (TLObject) this.f, (String) this.b);
+                xa1.Z((xa1) this.d, (TLObject) this.e, this.b, (String) this.c, (TL_account.passwordInputSettings) this.f);
                 return;
             case 16:
-                xa1.Z((xa1) this.c, (TLObject) this.d, this.e, (String) this.b, (TL_account.passwordInputSettings) this.f);
-                return;
-            case 17:
-                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) this.c;
-                boolean z24 = this.e;
-                String str8 = (String) this.b;
-                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) this.d;
+                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) this.d;
+                boolean z24 = this.b;
+                String str8 = (String) this.c;
+                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) this.e;
                 org.telegram.ui.ActionBar.e2 e2Var2 = (org.telegram.ui.ActionBar.e2) this.f;
                 if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
                     wg.h.d(z24, str8, (TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo, tL_messageMediaGiveaway, e2Var2.getParentActivity(), e2Var2.getResourceProvider());
@@ -486,10 +483,10 @@ public final /* synthetic */ class j implements Runnable {
                     return;
                 }
             default:
-                zi.v0 v0Var = (zi.v0) this.c;
-                boolean z25 = this.e;
-                zi.y yVar2 = (zi.y) this.d;
-                zi.r0 r0Var = (zi.r0) this.b;
+                zi.v0 v0Var = (zi.v0) this.d;
+                boolean z25 = this.b;
+                zi.y yVar2 = (zi.y) this.e;
+                zi.r0 r0Var = (zi.r0) this.c;
                 File file4 = (File) this.f;
                 v0Var.getClass();
                 long nanoTime = System.nanoTime();
@@ -595,91 +592,82 @@ public final /* synthetic */ class j implements Runnable {
 
     public /* synthetic */ j(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.d = obj2;
-        this.b = obj3;
+        this.d = obj;
+        this.e = obj2;
+        this.c = obj3;
         this.f = obj4;
-        this.e = z10;
+        this.b = z10;
     }
 
     public /* synthetic */ j(Object obj, Object obj2, boolean z10, Object obj3, Object obj4, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.d = obj2;
-        this.e = z10;
-        this.b = obj3;
+        this.d = obj;
+        this.e = obj2;
+        this.b = z10;
+        this.c = obj3;
         this.f = obj4;
     }
 
     public /* synthetic */ j(Object obj, TLObject tLObject, boolean z10, TLObject tLObject2, String str, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.d = tLObject;
-        this.e = z10;
+        this.d = obj;
+        this.e = tLObject;
+        this.b = z10;
         this.f = tLObject2;
-        this.b = str;
+        this.c = str;
     }
 
     public /* synthetic */ j(Object obj, boolean z10, Object obj2, Object obj3, Object obj4, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.e = z10;
-        this.d = obj2;
-        this.b = obj3;
+        this.d = obj;
+        this.b = z10;
+        this.e = obj2;
+        this.c = obj3;
         this.f = obj4;
     }
 
-    public /* synthetic */ j(String str, boolean[] zArr, ki.r1 r1Var, boolean z10, android.support.v4.media.session.a0 a0Var) {
-        this.a = 1;
-        this.b = str;
-        this.c = zArr;
-        this.d = r1Var;
-        this.e = z10;
-        this.f = a0Var;
-    }
-
     public /* synthetic */ j(CameraController cameraController, CameraController.ICameraView iCameraView, File file, boolean z10, Runnable runnable) {
-        this.a = 6;
-        this.c = cameraController;
-        this.d = iCameraView;
-        this.b = file;
-        this.e = z10;
+        this.a = 5;
+        this.d = cameraController;
+        this.e = iCameraView;
+        this.c = file;
+        this.b = z10;
         this.f = runnable;
     }
 
     public /* synthetic */ j(TLRPC.payments_GiveawayInfo payments_giveawayinfo, boolean z10, String str, long j3, TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway, org.telegram.ui.ActionBar.e2 e2Var) {
-        this.a = 17;
-        this.c = payments_giveawayinfo;
-        this.e = z10;
-        this.b = str;
-        this.d = tL_messageMediaGiveaway;
+        this.a = 16;
+        this.d = payments_giveawayinfo;
+        this.b = z10;
+        this.c = str;
+        this.e = tL_messageMediaGiveaway;
         this.f = e2Var;
     }
 
     public /* synthetic */ j(tx txVar, String str, boolean z10, String str2, TLObject tLObject) {
-        this.a = 11;
-        this.c = txVar;
-        this.b = str;
-        this.e = z10;
-        this.d = str2;
+        this.a = 10;
+        this.d = txVar;
+        this.c = str;
+        this.b = z10;
+        this.e = str2;
         this.f = tLObject;
     }
 
     public /* synthetic */ j(lw lwVar, TLRPC.TL_error tL_error, TLObject tLObject, String str, boolean z10) {
-        this.a = 13;
-        this.c = lwVar;
-        this.d = tL_error;
+        this.a = 12;
+        this.d = lwVar;
+        this.e = tL_error;
         this.f = tLObject;
-        this.b = str;
-        this.e = z10;
+        this.c = str;
+        this.b = z10;
     }
 
-    public /* synthetic */ j(jl0 jl0Var, boolean z10, String str, String str2, TL_account.updatePasswordSettings updatepasswordsettings) {
-        this.a = 14;
-        this.c = jl0Var;
-        this.e = z10;
-        this.b = str;
-        this.d = str2;
+    public /* synthetic */ j(kl0 kl0Var, boolean z10, String str, String str2, TL_account.updatePasswordSettings updatepasswordsettings) {
+        this.a = 13;
+        this.d = kl0Var;
+        this.b = z10;
+        this.c = str;
+        this.e = str2;
         this.f = updatepasswordsettings;
     }
 }

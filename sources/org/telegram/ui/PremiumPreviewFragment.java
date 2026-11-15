@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public oa A0;
@@ -93,7 +93,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
     public int r;
     public float r0;
     public int s;
-    public di.yb s0;
+    public di.xb s0;
     int showAdsRow;
     public int t0;
     public int u0;
@@ -217,7 +217,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", org.telegram.messenger.m10.i(premiumPreviewFragment.currentAccount).e());
                     bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.x80(bundle, null));
+                    premiumPreviewFragment.presentFragment(new org.telegram.ui.Components.y80(bundle, null));
                     return;
                 }
                 if (i14 != 12) {
@@ -717,12 +717,12 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
     }
 
     public final void A0(boolean z10) {
-        di.yb ybVar;
+        di.xb xbVar;
         if (z10 != this.a0) {
             this.a0 = z10;
             rs0 rs0Var = this.V;
-            if (rs0Var != null && (ybVar = rs0Var.d) != null) {
-                ybVar.setDialogVisible(z10);
+            if (rs0Var != null && (xbVar = rs0Var.d) != null) {
+                xbVar.setDialogVisible(z10);
             }
             this.W.setPaused(z10);
             this.e0.invalidate();
@@ -778,9 +778,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
 
     @Override // org.telegram.ui.ActionBar.e2
     public final boolean canBeginSlide() {
-        di.yb ybVar;
+        di.xb xbVar;
         rs0 rs0Var = this.V;
-        return rs0Var == null || (ybVar = rs0Var.d) == null || !ybVar.a;
+        return rs0Var == null || (xbVar = rs0Var.d) == null || !xbVar.a;
     }
 
     @Override // org.telegram.ui.ActionBar.e2
@@ -1052,11 +1052,11 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
 
     @Override // org.telegram.ui.ActionBar.e2
     public final void onPause() {
-        di.yb ybVar;
+        di.xb xbVar;
         super.onPause();
         rs0 rs0Var = this.V;
-        if (rs0Var != null && (ybVar = rs0Var.d) != null) {
-            ybVar.setDialogVisible(true);
+        if (rs0Var != null && (xbVar = rs0Var.d) != null) {
+            xbVar.setDialogVisible(true);
         }
         ug.s1 s1Var = this.W;
         if (s1Var != null) {
@@ -1067,11 +1067,11 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
 
     @Override // org.telegram.ui.ActionBar.e2
     public final void onResume() {
-        di.yb ybVar;
+        di.xb xbVar;
         super.onResume();
         rs0 rs0Var = this.V;
-        if (rs0Var != null && (ybVar = rs0Var.d) != null) {
-            ybVar.setPaused(false);
+        if (rs0Var != null && (xbVar = rs0Var.d) != null) {
+            xbVar.setPaused(false);
             this.V.d.setDialogVisible(false);
         }
         this.W.setPaused(false);
@@ -1125,12 +1125,12 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
             return;
         }
         int f10 = i0.a.f(0.5f, getThemedColor(org.telegram.ui.ActionBar.j6.Dk), getThemedColor(org.telegram.ui.ActionBar.j6.h5));
-        di.yb ybVar = this.s0;
-        di.yb ybVar2 = this.V.d;
-        if (ybVar == ybVar2 && this.t0 == f10) {
+        di.xb xbVar = this.s0;
+        di.xb xbVar2 = this.V.d;
+        if (xbVar == xbVar2 && this.t0 == f10) {
             return;
         }
-        this.s0 = ybVar2;
+        this.s0 = xbVar2;
         this.t0 = f10;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         new Canvas(createBitmap).drawColor(f10);
@@ -1189,8 +1189,8 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.e2 impleme
                 i7 = org.telegram.ui.ActionBar.j6.G6;
             }
             textView.setTextColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-            di.yb ybVar = this.V.d;
-            if (ybVar != null && (fVar = ybVar.b) != null) {
+            di.xb xbVar = this.V.d;
+            if (xbVar != null && (fVar = xbVar.b) != null) {
                 if (z10) {
                     fVar.z = org.telegram.ui.ActionBar.j6.Ok;
                     fVar.A = org.telegram.ui.ActionBar.j6.Pk;

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xe extends bg {
     public boolean g2;
@@ -58,15 +58,15 @@ public final class xe extends bg {
         int i7;
         ChatActivityEnterView chatActivityEnterView;
         ChatActivityEnterView chatActivityEnterView2 = this.k2;
-        ai.m0 m0Var = chatActivityEnterView2.j1;
-        ai.k1 k1Var = m0Var != null ? m0Var.a : null;
-        boolean z10 = (k1Var == null || !k1Var.d || getLayout() == null) ? false : true;
+        ai.n0 n0Var = chatActivityEnterView2.j1;
+        ai.l1 l1Var = n0Var != null ? n0Var.a : null;
+        boolean z10 = (l1Var == null || !l1Var.d || getLayout() == null) ? false : true;
         float totalPaddingLeft = getTotalPaddingLeft();
         float offsetY = getOffsetY() + getTotalPaddingTop();
         if (z10) {
             int width = getLayout().getWidth();
             int height = getLayout().getHeight();
-            k1Var.getClass();
+            l1Var.getClass();
             canvas2 = canvas;
             i7 = canvas2.saveLayer(totalPaddingLeft - org.telegram.messenger.g0.L(8.0f), offsetY - org.telegram.messenger.g0.L(40.0f), width + totalPaddingLeft + org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(40.0f) + height + offsetY, null);
         } else {
@@ -77,92 +77,92 @@ public final class xe extends bg {
         if (z10) {
             int width2 = getLayout().getWidth();
             int height2 = getLayout().getHeight();
-            LinearGradient linearGradient = k1Var.r;
-            EditText editText = k1Var.b;
-            int[] iArr = k1Var.A;
-            LinearGradient linearGradient2 = k1Var.s;
-            Paint paint = k1Var.q;
-            LinearGradient linearGradient3 = k1Var.t;
-            float f10 = k1Var.B;
-            nu0 nu0Var = k1Var.c;
-            Paint paint2 = k1Var.p;
+            LinearGradient linearGradient = l1Var.r;
+            EditText editText = l1Var.b;
+            int[] iArr = l1Var.A;
+            LinearGradient linearGradient2 = l1Var.s;
+            Paint paint = l1Var.q;
+            LinearGradient linearGradient3 = l1Var.t;
+            float f10 = l1Var.B;
+            nu0 nu0Var = l1Var.c;
+            Paint paint2 = l1Var.p;
             int i10 = i7;
-            if (!k1Var.D) {
-                k1Var.D = true;
-                ai.e0 e0Var = k1Var.C;
-                k1Var.C = null;
-                if (e0Var != null) {
-                    e0Var.run();
+            if (!l1Var.D) {
+                l1Var.D = true;
+                ai.f0 f0Var = l1Var.C;
+                l1Var.C = null;
+                if (f0Var != null) {
+                    f0Var.run();
                 }
             }
-            float uptimeMillis = (SystemClock.uptimeMillis() - k1Var.e) / 1000.0f;
-            float b10 = k1Var.b(uptimeMillis);
-            float b11 = k1Var.b(uptimeMillis - 0.06f);
+            float uptimeMillis = (SystemClock.uptimeMillis() - l1Var.e) / 1000.0f;
+            float b10 = l1Var.b(uptimeMillis);
+            float b11 = l1Var.b(uptimeMillis - 0.06f);
             float f11 = -org.telegram.messenger.g0.L(8.0f);
             float f12 = -org.telegram.messenger.g0.L(40.0f);
             float L = org.telegram.messenger.g0.L(8.0f) + width2;
             float L2 = org.telegram.messenger.g0.L(40.0f) + height2;
             canvas2.save();
             canvas2.translate(totalPaddingLeft, offsetY);
-            k1Var.c(linearGradient3, b11 - org.telegram.messenger.g0.L(48.0f), b11);
+            l1Var.c(linearGradient3, b11 - org.telegram.messenger.g0.L(48.0f), b11);
             paint.setShader(linearGradient3);
             chatActivityEnterView = chatActivityEnterView2;
             canvas.drawRect(f11, f12, L, L2, paint);
-            k1Var.c(linearGradient2, b11 - f10, b11);
+            l1Var.c(linearGradient2, b11 - f10, b11);
             paint2.setShader(linearGradient2);
             canvas.drawRect(f11, f12, L, L2, paint2);
             canvas.restore();
             canvas.restoreToCount(i10);
             editText.getLocationInWindow(iArr);
-            k1Var.z = k1Var.y - ((editText instanceof kt ? ((kt) editText).getOffsetY() : 0.0f) + ((editText.getTotalPaddingTop() + iArr[1]) - editText.getScrollY()));
+            l1Var.z = l1Var.y - ((editText instanceof kt ? ((kt) editText).getOffsetY() : 0.0f) + ((editText.getTotalPaddingTop() + iArr[1]) - editText.getScrollY()));
             canvas.save();
-            canvas.translate(totalPaddingLeft, offsetY + k1Var.z);
-            if (k1Var.h != null && b10 - f10 < k1Var.g) {
-                int saveLayer = canvas.saveLayer(f11, k1Var.w - org.telegram.messenger.g0.L(2.0f), Math.max(L, k1Var.h.getWidth()), org.telegram.messenger.g0.L(2.0f) + k1Var.w + k1Var.x, null);
-                canvas.drawBitmap(k1Var.h, 0.0f, 0.0f, k1Var.o);
-                k1Var.c(linearGradient, b10, b10 + f10);
+            canvas.translate(totalPaddingLeft, offsetY + l1Var.z);
+            if (l1Var.h != null && b10 - f10 < l1Var.g) {
+                int saveLayer = canvas.saveLayer(f11, l1Var.w - org.telegram.messenger.g0.L(2.0f), Math.max(L, l1Var.h.getWidth()), org.telegram.messenger.g0.L(2.0f) + l1Var.w + l1Var.x, null);
+                canvas.drawBitmap(l1Var.h, 0.0f, 0.0f, l1Var.o);
+                l1Var.c(linearGradient, b10, b10 + f10);
                 paint2.setShader(linearGradient);
-                canvas.drawRect(f11, f12, Math.max(L, k1Var.h.getWidth()), Math.max(L2, org.telegram.messenger.g0.L(40.0f) + k1Var.h.getHeight()), paint2);
+                canvas.drawRect(f11, f12, Math.max(L, l1Var.h.getWidth()), Math.max(L2, org.telegram.messenger.g0.L(40.0f) + l1Var.h.getHeight()), paint2);
                 canvas.restoreToCount(saveLayer);
             }
             float f13 = org.telegram.messenger.g0.p;
-            float max = Math.max(0.05f, (k1Var.a - (SystemClock.uptimeMillis() - k1Var.e)) / 1000.0f);
+            float max = Math.max(0.05f, (l1Var.a - (SystemClock.uptimeMillis() - l1Var.e)) / 1000.0f);
             while (true) {
-                int i11 = k1Var.m;
-                if (i11 >= k1Var.k) {
+                int i11 = l1Var.m;
+                if (i11 >= l1Var.k) {
                     break;
                 }
-                float[] fArr = k1Var.i;
+                float[] fArr = l1Var.i;
                 int i12 = i11 * 3;
                 if (fArr[i12 + 2] > b10) {
                     break;
                 }
                 nu0Var.g(fArr[i12], fArr[i12 + 1], ((nu0Var.d() * 34.0f) + 10.0f) * f13, (-((nu0Var.d() * 20.0f) + 6.0f)) * f13, Math.min(max, (nu0Var.d() * 0.3f) + 0.26f), 0.0f);
-                k1Var.m++;
+                l1Var.m++;
             }
             while (true) {
-                int i13 = k1Var.n;
-                if (i13 >= k1Var.l) {
+                int i13 = l1Var.n;
+                if (i13 >= l1Var.l) {
                     break;
                 }
-                float[] fArr2 = k1Var.j;
+                float[] fArr2 = l1Var.j;
                 int i14 = i13 * 3;
                 if (fArr2[i14 + 2] > b10) {
                     break;
                 }
                 float f14 = fArr2[i14];
                 int i15 = i14 + 1;
-                float f15 = fArr2[i15] - k1Var.z;
-                k1Var.n = i13 + 1;
+                float f15 = fArr2[i15] - l1Var.z;
+                l1Var.n = i13 + 1;
                 float scrollY = editText.getScrollY();
-                if (k1Var.j[i15] >= scrollY - org.telegram.messenger.g0.L(2.0f) && k1Var.j[i15] <= scrollY + k1Var.x + org.telegram.messenger.g0.L(2.0f)) {
+                if (l1Var.j[i15] >= scrollY - org.telegram.messenger.g0.L(2.0f) && l1Var.j[i15] <= scrollY + l1Var.x + org.telegram.messenger.g0.L(2.0f)) {
                     nu0Var.h((((nu0Var.d() * 16.0f) + 6.0f) * f13) + f14, ((nu0Var.d() - 0.5f) * 14.0f * f13) + f15, f14, f15, Math.min(max, (nu0Var.d() * 0.08f) + 0.099999994f));
                 }
             }
             nu0Var.b(canvas, 1.0f);
             canvas.restore();
-            if (uptimeMillis * 1000.0f >= k1Var.a) {
-                k1Var.a();
+            if (uptimeMillis * 1000.0f >= l1Var.a) {
+                l1Var.a();
             } else {
                 editText.invalidate();
             }

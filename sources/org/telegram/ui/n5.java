@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class n5 extends rg.b {
     public final /* synthetic */ t5 d;
@@ -229,10 +229,10 @@ public final class n5 extends rg.b {
                 scrollSlidingTextTabStrip.M = i13;
                 scrollSlidingTextTabStrip.N = i14;
                 scrollSlidingTextTabStrip.updateColors();
-                ai.j0 j0Var = new ai.j0(this, t5Var.getParentActivity());
+                ai.k0 k0Var = new ai.k0(this, t5Var.getParentActivity());
                 t5Var.W.setDelegate(new f(this, 6));
-                j0Var.addView(t5Var.W, c8.ja.c(48.0f, -2));
-                view = j0Var;
+                k0Var.addView(t5Var.W, c8.ja.c(48.0f, -2));
+                view = k0Var;
                 return i5.c.q(view, view, -1, -2);
             case 14:
                 view = t5Var.o0(t5Var.getParentActivity());

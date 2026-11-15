@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k60 implements org.telegram.messenger.s10 {
     public final /* synthetic */ int a = 2;
@@ -116,9 +116,9 @@ public final /* synthetic */ class k60 implements org.telegram.messenger.s10 {
                         }
                         int i19 = this.b;
                         if (i19 < 10) {
-                            ai.f1 f1Var = new ai.f1(q90Var, str3, str4, str5, i19, 23);
-                            q90Var.i = f1Var;
-                            org.telegram.messenger.g0.i3(f1Var, 500L);
+                            ai.g1 g1Var = new ai.g1(q90Var, str3, str4, str5, i19, 23);
+                            q90Var.i = g1Var;
+                            org.telegram.messenger.g0.i3(g1Var, 500L);
                             break;
                         } else {
                             q90Var.c();
@@ -377,16 +377,16 @@ public final /* synthetic */ class k60 implements org.telegram.messenger.s10 {
                         boolean[] zArr2 = {false};
                         final org.telegram.ui.Wallet.z1 z1Var3 = z1Var;
                         final org.telegram.ui.Wallet.d2 d2Var3 = d2Var;
-                        final org.telegram.ui.Wallet.f1 f1Var2 = new org.telegram.ui.Wallet.f1(z1Var3, zArr2, g10, dVar, d2Var3, w2Var, zArr, e6Var3);
+                        final org.telegram.ui.Wallet.f1 f1Var = new org.telegram.ui.Wallet.f1(z1Var3, zArr2, g10, dVar, d2Var3, w2Var, zArr, e6Var3);
                         g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Wallet.g1
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view) {
                                 switch (i25) {
                                     case 0:
-                                        f1Var2.a(Boolean.FALSE);
+                                        f1Var.a(Boolean.FALSE);
                                         break;
                                     default:
-                                        f1Var2.a(Boolean.TRUE);
+                                        f1Var.a(Boolean.TRUE);
                                         break;
                                 }
                             }
@@ -396,10 +396,10 @@ public final /* synthetic */ class k60 implements org.telegram.messenger.s10 {
                             public final void onClick(View view) {
                                 switch (i24) {
                                     case 0:
-                                        f1Var2.a(Boolean.FALSE);
+                                        f1Var.a(Boolean.FALSE);
                                         break;
                                     default:
-                                        f1Var2.a(Boolean.TRUE);
+                                        f1Var.a(Boolean.TRUE);
                                         break;
                                 }
                             }

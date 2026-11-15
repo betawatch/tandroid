@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class cc {
     public final org.telegram.ui.ActionBar.e2 a;
@@ -415,8 +415,8 @@ public final class cc {
     public final xb M(Drawable drawable, CharSequence charSequence) {
         fb fbVar = new fb(W(), this.c);
         fbVar.a.setImageDrawable(drawable);
-        if (drawable instanceof org.telegram.ui.dm0) {
-            ((org.telegram.ui.dm0) drawable).e(fbVar.a);
+        if (drawable instanceof org.telegram.ui.em0) {
+            ((org.telegram.ui.em0) drawable).e(fbVar.a);
         }
         fbVar.b.setText(charSequence);
         fbVar.b.setSingleLine(false);

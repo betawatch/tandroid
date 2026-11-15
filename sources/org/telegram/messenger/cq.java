@@ -1,153 +1,197 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cq implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ vr b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ CountDownLatch e;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ cq(vr vrVar, long j3, boolean[] zArr, CountDownLatch countDownLatch, int i7) {
-        this.a = i7;
+    public /* synthetic */ cq(int i7, int i10, long j3, long j10, vr vrVar, TLRPC.InputChannel inputChannel) {
         this.b = vrVar;
         this.c = j3;
-        this.d = zArr;
-        this.e = countDownLatch;
+        this.e = i7;
+        this.h = inputChannel;
+        this.f = i10;
+        this.d = j10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x003d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e8, code lost:
     
-        if (r6 == null) goto L17;
+        if (r13 == null) goto L50;
      */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00fb  */
+    /* JADX WARN: Type inference failed for: r13v9 */
+    /* JADX WARN: Type inference failed for: r7v2 */
+    /* JADX WARN: Type inference failed for: r7v4, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r7v5 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        SQLiteCursor queryFinalized;
-        TLRPC.ChatFull chatFull;
-        NativeByteBuffer byteBufferValue;
-        switch (this.a) {
+        SQLiteCursor sQLiteCursor;
+        boolean z10;
+        int i7;
+        SQLiteCursor sQLiteCursor2;
+        int i10;
+        SQLiteCursor sQLiteCursor3;
+        SQLiteCursor sQLiteCursor4;
+        long j3;
+        int i11 = this.a;
+        Object obj = this.h;
+        switch (i11) {
             case 0:
-                long j3 = this.c;
-                boolean[] zArr = this.d;
-                CountDownLatch countDownLatch = this.e;
-                vr vrVar = this.b;
-                vrVar.getClass();
-                SQLiteCursor sQLiteCursor = null;
-                try {
-                    try {
-                        queryFinalized = vrVar.b.queryFinalized("SELECT info FROM chat_settings_v2 WHERE uid = " + j3, new Object[0]);
-                    } catch (Throwable th2) {
-                        th = th2;
-                    }
-                } catch (Exception e10) {
-                    e = e10;
-                }
-                try {
-                    new ArrayList();
-                    if (!queryFinalized.next() || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
-                        chatFull = null;
-                    } else {
-                        chatFull = TLRPC.ChatFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                        byteBufferValue.reuse();
-                    }
-                    queryFinalized.dispose();
-                    zArr[0] = (chatFull instanceof TLRPC.TL_channelFull) && chatFull.migrated_from_chat_id != 0;
-                    countDownLatch.countDown();
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor = queryFinalized;
-                    vrVar.o(e, true);
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    countDownLatch.countDown();
-                    return;
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    countDownLatch.countDown();
-                    throw th;
-                }
-                countDownLatch.countDown();
+                this.b.getMessagesController().q3(-this.c, this.e, (TLRPC.InputChannel) obj, this.f, this.d, true);
                 return;
             case 1:
-                long j10 = this.c;
-                boolean[] zArr2 = this.d;
-                CountDownLatch countDownLatch2 = this.e;
-                vr vrVar2 = this.b;
-                vrVar2.getClass();
-                SQLiteCursor sQLiteCursor2 = null;
+                this.b.a2(this.c, this.d, (Integer) obj, this.e, this.f, 0, 0);
+                return;
+            default:
+                final org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) obj;
+                long j10 = this.d;
+                final ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ?? r72 = 0;
+                int i12 = this.e;
+                final vr vrVar = this.b;
+                final long j11 = this.c;
                 try {
-                    try {
-                        long e12 = vrVar2.getUserConfig().e();
-                        sQLiteCursor2 = vrVar2.b.queryFinalized("SELECT data FROM messages_v2 WHERE uid = " + (-j10) + " AND out = 0 ORDER BY mid DESC LIMIT 100", new Object[0]);
-                        while (true) {
-                            if (sQLiteCursor2.next()) {
-                                NativeByteBuffer byteBufferValue2 = sQLiteCursor2.byteBufferValue(0);
-                                if (byteBufferValue2 != null) {
-                                    TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                                    byteBufferValue2.reuse();
-                                    TLRPC.MessageAction messageAction = TLdeserialize.action;
-                                    if ((messageAction instanceof TLRPC.TL_messageActionChatAddUser) && messageAction.users.contains(Long.valueOf(e12))) {
-                                        zArr2[0] = true;
+                    if (i12 <= 0) {
+                        try {
+                            i10 = 1;
+                            i7 = i12;
+                            sQLiteCursor3 = vrVar.b.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j11));
+                        } catch (Exception e10) {
+                            e = e10;
+                            z10 = true;
+                            i7 = i12;
+                            sQLiteCursor2 = null;
+                            a8.g(e, z10);
+                            sQLiteCursor4 = sQLiteCursor2;
+                            break;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            sQLiteCursor = null;
+                            if (sQLiteCursor != null) {
+                            }
+                            throw th;
+                        }
+                    } else {
+                        try {
+                            try {
+                                i7 = i12;
+                                try {
+                                    i10 = 1;
+                                    try {
+                                        sQLiteCursor3 = vrVar.b.queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j11), Integer.valueOf(i7));
+                                    } catch (Exception e11) {
+                                        e = e11;
+                                        sQLiteCursor3 = 0;
+                                        z10 = true;
+                                        sQLiteCursor2 = sQLiteCursor3;
+                                        a8.g(e, z10);
+                                        sQLiteCursor4 = sQLiteCursor2;
                                     }
+                                } catch (Exception e12) {
+                                    e = e12;
                                 }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                sQLiteCursor = null;
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                throw th;
+                            }
+                        } catch (Exception e13) {
+                            e = e13;
+                            i7 = i12;
+                        }
+                    }
+                    try {
+                        ArrayList arrayList4 = new ArrayList();
+                        ArrayList arrayList5 = new ArrayList();
+                        while (sQLiteCursor3.next()) {
+                            NativeByteBuffer byteBufferValue = sQLiteCursor3.byteBufferValue(r72);
+                            if (byteBufferValue != 0) {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(r72), r72);
+                                TLdeserialize.readAttachPath(byteBufferValue, j10);
+                                byteBufferValue.reuse();
+                                TLdeserialize.id = sQLiteCursor3.intValue(i10);
+                                j3 = j10;
+                                TLdeserialize.dialog_id = -j11;
+                                vr.e(TLdeserialize, arrayList4, arrayList5, null);
+                                arrayList.add(TLdeserialize);
+                            } else {
+                                j3 = j10;
+                            }
+                            j10 = j3;
+                            r72 = 0;
+                            i10 = 1;
+                        }
+                        sQLiteCursor3.dispose();
+                        sQLiteCursor4 = sQLiteCursor3;
+                        if (!arrayList.isEmpty()) {
+                            if (!arrayList4.isEmpty()) {
+                                vrVar.n0(arrayList4, arrayList2, false);
+                            }
+                            sQLiteCursor4 = sQLiteCursor3;
+                            if (!arrayList5.isEmpty()) {
+                                vrVar.Q(TextUtils.join(",", arrayList5), arrayList3);
+                                sQLiteCursor4 = sQLiteCursor3;
                             }
                         }
-                        sQLiteCursor2.dispose();
-                    } catch (Exception e13) {
-                        vrVar2.o(e13, true);
-                        if (sQLiteCursor2 != null) {
-                            sQLiteCursor2.dispose();
-                        }
+                    } catch (Exception e14) {
+                        e = e14;
+                        z10 = true;
+                        sQLiteCursor2 = sQLiteCursor3;
+                        a8.g(e, z10);
+                        sQLiteCursor4 = sQLiteCursor2;
                     }
-                    countDownLatch2.countDown();
+                    sQLiteCursor4.dispose();
+                    final int i13 = this.f;
+                    final int i14 = i7;
+                    g0.h3(new Runnable() { // from class: org.telegram.ui.Cells.b6
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            d6.b(d6.this, i13, arrayList, j11, i14, vrVar);
+                        }
+                    });
                     return;
                 } catch (Throwable th4) {
-                    countDownLatch2.countDown();
-                    throw th4;
+                    th = th4;
                 }
-            default:
-                long j11 = this.c;
-                boolean[] zArr3 = this.d;
-                vr vrVar3 = this.b;
-                vrVar3.getClass();
-                SQLiteCursor sQLiteCursor3 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = vrVar3.b;
-                        Locale locale = Locale.US;
-                        sQLiteCursor3 = sQLiteDatabase.queryFinalized("SELECT random_id FROM randoms_v2 WHERE random_id = " + j11, new Object[0]);
-                        if (sQLiteCursor3.next()) {
-                            zArr3[0] = true;
-                        }
-                    } finally {
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                    }
-                } catch (Exception e14) {
-                    vrVar3.o(e14, true);
-                    break;
-                }
-                sQLiteCursor3.dispose();
-                this.e.countDown();
-                return;
         }
+    }
+
+    public /* synthetic */ cq(vr vrVar, long j3, long j10, Integer num, int i7, int i10) {
+        this.b = vrVar;
+        this.c = j3;
+        this.d = j10;
+        this.h = num;
+        this.e = i7;
+        this.f = i10;
+    }
+
+    public /* synthetic */ cq(org.telegram.ui.Cells.d6 d6Var, int i7, vr vrVar, long j3, long j10, int i10) {
+        this.h = d6Var;
+        this.e = i7;
+        this.b = vrVar;
+        this.c = j3;
+        this.d = j10;
+        this.f = i10;
     }
 }

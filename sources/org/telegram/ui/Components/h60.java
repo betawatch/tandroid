@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h60 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final class h60 extends AnimatorListenerAdapter {
                 frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.ActionBar.h1) p70Var.d);
                 break;
             case 4:
-                da0 da0Var = (da0) this.b;
-                da0Var.d0.h = null;
-                da0Var.f(da0Var.T, da0Var.S);
+                ea0 ea0Var = (ea0) this.b;
+                ea0Var.d0.h = null;
+                ea0Var.f(ea0Var.T, ea0Var.S);
                 break;
             case 5:
                 NumberTextView numberTextView = (NumberTextView) this.b;

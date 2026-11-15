@@ -16,7 +16,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.n50;
 import org.telegram.ui.tf0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class b8 implements RequestDelegate {
                     break;
                 }
             case 1:
-                org.telegram.messenger.g0.h3(new ai.f1(tLObject, (boolean[]) obj3, (z10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
+                org.telegram.messenger.g0.h3(new ai.g1(tLObject, (boolean[]) obj3, (z10) obj2, this.b, (TL_account.updateEmojiStatus) obj, 7));
                 break;
             case 2:
                 org.telegram.messenger.g0.h3(new bg.l0((n50) obj3, (org.telegram.ui.e4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.a1) obj));
@@ -67,11 +67,11 @@ public final /* synthetic */ class b8 implements RequestDelegate {
                     org.telegram.messenger.g0.h3(new org.telegram.ui.Components.y1(t1Var, i12));
                     break;
                 } else {
-                    org.telegram.messenger.g0.h3(new ai.f1(sharedPreferences, (TLRPC.TL_help_support) tLObject, t1Var, this.b, e2Var, 16));
+                    org.telegram.messenger.g0.h3(new ai.g1(sharedPreferences, (TLRPC.TL_help_support) tLObject, t1Var, this.b, e2Var, 16));
                     break;
                 }
             case 4:
-                org.telegram.messenger.g0.h3(new ai.f1((rr) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj));
+                org.telegram.messenger.g0.h3(new ai.g1((rr) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj));
                 break;
             case 5:
                 ys0 ys0Var = (ys0) obj3;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b8 implements RequestDelegate {
                 }
             case 6:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.i3(new ai.f1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.t1) obj, 20), 2L);
+                org.telegram.messenger.g0.i3(new ai.g1((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.t1) obj, 20), 2L);
                 break;
             case 7:
                 tf0 tf0Var = (tf0) obj3;

@@ -4,7 +4,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cm implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -160,7 +160,7 @@ public final /* synthetic */ class cm implements Runnable {
                     z10 = true;
                     npVar.F3(1, j10);
                     vr messagesStorage = npVar.getMessagesStorage();
-                    messagesStorage.a.c(new xp(messagesStorage, updates_channeldifference.pts, j10, 5));
+                    messagesStorage.a.c(new wp(messagesStorage, updates_channeldifference.pts, j10, 5));
                 } else if (updates_channeldifference instanceof TLRPC.TL_updates_channelDifferenceTooLong) {
                     long j17 = -j14;
                     Integer num4 = (Integer) concurrentHashMap2.get(Long.valueOf(j17));

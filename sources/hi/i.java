@@ -7,12 +7,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.ki;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class i extends i90 {
+public final class i extends j90 {
     public final /* synthetic */ int W;
     public final /* synthetic */ KeyEvent.Callback a0;
 
@@ -23,7 +23,7 @@ public final class i extends i90 {
         this.a0 = callback;
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public void f(Canvas canvas, Rect rect, float f10) {
         switch (this.W) {
             case 0:
@@ -53,7 +53,7 @@ public final class i extends i90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public boolean h() {
         switch (this.W) {
             case 0:
@@ -63,7 +63,7 @@ public final class i extends i90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public void i() {
         switch (this.W) {
             case 1:
@@ -76,7 +76,7 @@ public final class i extends i90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public void n(boolean z10) {
         switch (this.W) {
             case 1:

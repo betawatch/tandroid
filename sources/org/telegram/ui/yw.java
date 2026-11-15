@@ -79,7 +79,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is, pg.b, te.b, ie0 {
     public static final boolean[] A4 = new boolean[4];
@@ -1498,7 +1498,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                             t1Var.U = org.telegram.messenger.hd.a0("ClearSearchSingleUserAlertText", null, 2131752051, org.telegram.messenger.g5.m(0, a22.first_name, a22.last_name));
                             F = org.telegram.messenger.m5.F(r14.id);
                         }
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752055, null), new ai.c0(this, F, 8));
+                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131752055, null), new ai.d0(this, F, 8));
                         alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
                         showDialog(t1Var);
                         TextView textView = (TextView) t1Var.d(-1);
@@ -6581,7 +6581,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                     });
                 } else {
                     if (this.Y2 == 0 && this.a3 == 0 && org.telegram.messenger.np.s1(this.currentAccount).T3.contains("STARS_SUBSCRIPTION_LOW_BALANCE")) {
-                        di.v8 y10 = di.v8.y(this.currentAccount, false);
+                        di.u8 y10 = di.u8.y(this.currentAccount, false);
                         ArrayList arrayList = y10.z;
                         if (!arrayList.isEmpty()) {
                             long j13 = -y10.f.amount;
@@ -6610,7 +6610,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                             }
                             j3 = j12;
                             if (j13 > j3) {
-                                di.v8 y11 = di.v8.y(this.currentAccount, false);
+                                di.u8 y11 = di.u8.y(this.currentAccount, false);
                                 ArrayList arrayList2 = y11.z;
                                 StringBuilder sb3 = new StringBuilder();
                                 if (arrayList2.isEmpty()) {
@@ -6668,7 +6668,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                                     @Override // android.view.View.OnClickListener
                                     public final void onClick(View view) {
                                         yw ywVar = yw.this;
-                                        new di.cb(ywVar.getParentActivity(), ywVar.getResourceProvider(), j10, 2, sb4, new eu(ywVar, 2), j11).show();
+                                        new di.bb(ywVar.getParentActivity(), ywVar.getResourceProvider(), j10, 2, sb4, new eu(ywVar, 2), j11).show();
                                     }
                                 });
                                 org.telegram.ui.Cells.b3 b3Var4 = this.O1;
@@ -6678,7 +6678,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                                 }
                                 Object[] objArr = new Object[1];
                                 objArr[z18 ? 1 : 0] = sb4;
-                                b3Var4.b(di.mb.a1(z18, org.telegram.messenger.hd.K("StarsSubscriptionExpiredHintTitle2", (int) j10, ',', objArr), 0.72f, null), org.telegram.messenger.hd.M0(2131744989, null));
+                                b3Var4.b(di.lb.a1(z18, org.telegram.messenger.hd.K("StarsSubscriptionExpiredHintTitle2", (int) j10, ',', objArr), 0.72f, null), org.telegram.messenger.hd.M0(2131744989, null));
                                 this.O1.setOnCloseListener(new gu(this, 13));
                             }
                             if (this.Y2 != 0 && this.a3 == j3 && !getMessagesController().i7 && (b10 = org.telegram.messenger.v1.a(this.currentAccount).b()) != null && !b10.c.isEmpty() && !getMessagesController().U3.contains("BIRTHDAY_CONTACTS_TODAY")) {
@@ -6696,7 +6696,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
                                 }
                                 b3Var5.b(org.telegram.messenger.j6.p(org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.j6.I6, 2, r62, r62), this.O1.c, new eu(this, 21)), org.telegram.messenger.hd.a0(null, null, arrayList3.size() == 1 ? 2131753707 : 2131753710, new Object[0]));
                                 this.O1.setOnCloseListener(new gu(this, 14));
-                                di.v8.y(this.currentAccount, false).U();
+                                di.u8.y(this.currentAccount, false).U();
                             } else if (this.Y2 != 0 && this.a3 == j3 && org.telegram.messenger.np.s1(this.currentAccount).T3.contains("BIRTHDAY_SETUP") && getMessagesController().b2(getUserConfig().e()) != null && getMessagesController().b2(getUserConfig().e()).birthday == null) {
                                 org.telegram.messenger.g5.r(this.currentAccount).D(false);
                                 this.O1.setOnClickListener(new gu(this, 15));
@@ -9994,7 +9994,7 @@ public class yw extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
             if (this.E0 == null) {
                 this.E0 = new org.telegram.ui.Components.qs0(this);
             }
-            presentFragment(new org.telegram.ui.Components.x80(bundle5, this.E0));
+            presentFragment(new org.telegram.ui.Components.y80(bundle5, this.E0));
             return;
         }
         if (this.p2 != null) {

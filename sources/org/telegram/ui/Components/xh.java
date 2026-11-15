@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xh extends st0 {
     public int g0;
@@ -54,12 +54,12 @@ public final class xh extends st0 {
             canvas.save();
             float f15 = kiVar.j4;
             boolean z10 = kiVar.b2;
-            ai.j0 j0Var = kiVar.M2;
+            ai.k0 k0Var = kiVar.M2;
             kh khVar = kiVar.g3;
             canvas.translate(0.0f, f15);
             int alpha2 = (int) (ciVar2.getAlpha() * 255.0f);
             int j3 = ciVar2.j();
-            int L3 = org.telegram.messenger.g0.L(13.0f) + ((int) ((khVar != null ? khVar.getAlpha() : 0.0f) * org.telegram.messenger.g0.L(26.0f))) + ((int) (j0Var != null ? j0Var.getAlpha() * j0Var.getMeasuredHeight() : 0.0f));
+            int L3 = org.telegram.messenger.g0.L(13.0f) + ((int) ((khVar != null ? khVar.getAlpha() : 0.0f) * org.telegram.messenger.g0.L(26.0f))) + ((int) (k0Var != null ? k0Var.getAlpha() * k0Var.getMeasuredHeight() : 0.0f));
             int c12 = (kiVar.c1(0) - kiVar.t0) - L3;
             if (kiVar.B0 == 1 || kiVar.r3 != null) {
                 c12 = (int) (ciVar2.getTranslationY() + c12);
@@ -194,7 +194,7 @@ public final class xh extends st0 {
         ci ciVar;
         ki kiVar = this.l0;
         boolean z10 = kiVar.b2;
-        ai.j0 j0Var = kiVar.M2;
+        ai.k0 k0Var = kiVar.M2;
         fh.g gVar = kiVar.y2;
         kh khVar = kiVar.g3;
         o7 o7Var = kiVar.V2;
@@ -223,7 +223,7 @@ public final class xh extends st0 {
             ci ciVar2 = kiVar.w2;
             if (ciVar2 != null) {
                 int j10 = ciVar2.j();
-                int L5 = org.telegram.messenger.g0.L(13.0f) + ((int) ((khVar != null ? khVar.getAlpha() : 0.0f) * org.telegram.messenger.g0.L(26.0f))) + ((int) (j0Var != null ? j0Var.getAlpha() * j0Var.getMeasuredHeight() : 0.0f));
+                int L5 = org.telegram.messenger.g0.L(13.0f) + ((int) ((khVar != null ? khVar.getAlpha() : 0.0f) * org.telegram.messenger.g0.L(26.0f))) + ((int) (k0Var != null ? k0Var.getAlpha() * k0Var.getMeasuredHeight() : 0.0f));
                 int c12 = (kiVar.c1(0) - kiVar.t0) - L5;
                 if (kiVar.B0 == 1 || kiVar.r3 != null) {
                     c12 = (int) (ciVar2.getTranslationY() + c12);
@@ -265,7 +265,7 @@ public final class xh extends st0 {
         int alpha3 = (int) (view.getAlpha() * 255.0f);
         ci ciVar3 = (ci) view;
         int j11 = ciVar3.j();
-        int L7 = org.telegram.messenger.g0.L(13.0f) + (khVar != null ? org.telegram.messenger.g0.L(khVar.getAlpha() * 26.0f) : 0) + ((int) (j0Var != null ? j0Var.getAlpha() * j0Var.getMeasuredHeight() : 0.0f));
+        int L7 = org.telegram.messenger.g0.L(13.0f) + (khVar != null ? org.telegram.messenger.g0.L(khVar.getAlpha() * 26.0f) : 0) + ((int) (k0Var != null ? k0Var.getAlpha() * k0Var.getMeasuredHeight() : 0.0f));
         int c13 = (kiVar.c1(ciVar3 == kiVar.w2 ? 0 : 1) - kiVar.t0) - L7;
         if (kiVar.B0 == 1 || kiVar.r3 != null) {
             c13 = (int) (view.getTranslationY() + c13);
@@ -406,11 +406,11 @@ public final class xh extends st0 {
         if (motionEvent.getAction() == 0) {
             if (iArr[0] != 0) {
                 float y10 = motionEvent.getY();
-                ai.j0 j0Var = kiVar.M2;
+                ai.k0 k0Var = kiVar.M2;
                 int i7 = iArr[0] - (kiVar.t0 * 2);
                 int L = org.telegram.messenger.g0.L(13.0f);
                 kh khVar = kiVar.g3;
-                int L2 = org.telegram.messenger.g0.L(20.0f) + ((i7 - (L + (khVar != null ? org.telegram.messenger.g0.L(khVar.getAlpha() * 26.0f) : 0))) - ((int) (j0Var != null ? j0Var.getAlpha() * j0Var.getMeasuredHeight() : 0.0f)));
+                int L2 = org.telegram.messenger.g0.L(20.0f) + ((i7 - (L + (khVar != null ? org.telegram.messenger.g0.L(khVar.getAlpha() * 26.0f) : 0))) - ((int) (k0Var != null ? k0Var.getAlpha() * k0Var.getMeasuredHeight() : 0.0f)));
                 if (!kiVar.b2) {
                     L2 += org.telegram.messenger.g0.m;
                 }
@@ -453,7 +453,7 @@ public final class xh extends st0 {
         int emojiPadding;
         xh xhVar = this;
         ki kiVar = xhVar.l0;
-        ai.j0 j0Var = kiVar.M2;
+        ai.k0 k0Var = kiVar.M2;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kiVar.e2;
         int i20 = i11 - i7;
         if (xhVar.g0 != i20) {
@@ -615,7 +615,7 @@ public final class xh extends st0 {
         if (chatAttachAlertPhotoLayout == null || (qlVar = chatAttachAlertPhotoLayout.F) == null || qlVar.getFastScroll() == null) {
             return;
         }
-        chatAttachAlertPhotoLayout.F.getFastScroll().i0 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + chatAttachAlertPhotoLayout.q1 + (kiVar.X1 ? (int) (j0Var.getAlpha() * j0Var.getMeasuredHeight()) : 0);
+        chatAttachAlertPhotoLayout.F.getFastScroll().i0 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + chatAttachAlertPhotoLayout.q1 + (kiVar.X1 ? (int) (k0Var.getAlpha() * k0Var.getMeasuredHeight()) : 0);
         chatAttachAlertPhotoLayout.F.getFastScroll().invalidate();
     }
 

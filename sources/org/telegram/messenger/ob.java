@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ob implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -114,14 +114,14 @@ public final /* synthetic */ class ob implements Runnable {
                 org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj4;
                 z10 z10Var = (z10) obj3;
                 HashMap hashMap = (HashMap) obj;
-                long j11 = di.v8.y(i10, false).p().amount;
+                long j11 = di.u8.y(i10, false).p().amount;
                 long j12 = this.b;
                 if (j11 >= j12) {
                     z10Var.a(hashMap);
                     break;
                 } else if (activity != null) {
                     long longValue = ((Long) arrayList2.get(0)).longValue();
-                    new di.cb(activity, e6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.w1(z10Var, hashMap, 0), longValue).show();
+                    new di.bb(activity, e6Var, j12, 13, m5.s(i10, longValue), new org.telegram.ui.Components.w1(z10Var, hashMap, 0), longValue).show();
                     break;
                 }
                 break;

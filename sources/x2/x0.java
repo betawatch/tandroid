@@ -4,13 +4,13 @@ import android.net.Uri;
 import android.os.Looper;
 import j$.util.Objects;
 import org.telegram.ui.ld0;
-import tg.a2;
+import tg.z1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class x0 extends a {
     public final j2.g h;
-    public final a2 i;
+    public final z1 i;
     public final q2.n j;
     public final qb.a k;
     public final int l;
@@ -23,10 +23,10 @@ public final class x0 extends a {
     public j2.c0 s;
     public e2.l0 t;
 
-    public x0(e2.l0 l0Var, j2.g gVar, a2 a2Var, q2.n nVar, qb.a aVar, int i7, e2.u uVar) {
+    public x0(e2.l0 l0Var, j2.g gVar, z1 z1Var, q2.n nVar, qb.a aVar, int i7, e2.u uVar) {
         this.t = l0Var;
         this.h = gVar;
-        this.i = a2Var;
+        this.i = z1Var;
         this.j = nVar;
         this.k = aVar;
         this.l = i7;

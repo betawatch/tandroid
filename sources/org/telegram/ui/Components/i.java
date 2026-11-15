@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -71,10 +71,10 @@ public final /* synthetic */ class i implements View.OnLongClickListener {
                             }
                             bg0Var.r(arrayList);
                             m60 F2 = m60.F(chatActivityEnterView.U1, e6Var2, chatActivityEnterView.n2);
-                            ia0 ia0Var = new ia0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), chatActivityEnterView.E4);
-                            ia0Var.a(!chatActivityEnterView.m6, false);
-                            ia0Var.setOnClickListener(new bi.f4(chatActivityEnterView, arrayList, ia0Var, bg0Var, 11));
-                            F2.q(ia0Var);
+                            ja0 ja0Var = new ja0(chatActivityEnterView.getContext(), R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), chatActivityEnterView.E4);
+                            ja0Var.a(!chatActivityEnterView.m6, false);
+                            ja0Var.setOnClickListener(new bi.f4(chatActivityEnterView, arrayList, ja0Var, bg0Var, 11));
+                            F2.q(ja0Var);
                             F2.Y();
                             bg0Var.q(F2);
                             bg0Var.s(chatActivityEnterView.n2, false, new bi.f4(chatActivityEnterView, bjVar, gjVar, bg0Var, 12));

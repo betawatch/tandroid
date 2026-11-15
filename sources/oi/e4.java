@@ -19,7 +19,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public abstract class e4 {
     public static EditTextBoldCursor a(Context context, e6 e6Var, String str, String str2) {
@@ -132,7 +132,7 @@ public abstract class e4 {
                     }
                 }
             }, false);
-            m60Var.c(R.drawable.left_status_profile, hd.M0(2131745999, null), new ai.j(e2Var, context, e6Var, n3Var, z10, 5), false);
+            m60Var.c(R.drawable.left_status_profile, hd.M0(2131745999, null), new ai.j(e2Var, context, e6Var, n3Var, z10, 4), false);
             m60Var.Z();
             return m60Var;
         }

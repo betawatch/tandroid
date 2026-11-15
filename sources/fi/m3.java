@@ -20,12 +20,12 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.an;
 import org.telegram.ui.ek0;
-import org.telegram.ui.jl0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.ss0;
 import org.telegram.ui.t71;
 import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -210,10 +210,10 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                 ek0Var.I1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
                 break;
             case 3:
-                jl0.l0((jl0) obj3, (xb) obj2, z11, (TLRPC.Message[]) obj);
+                kl0.l0((kl0) obj3, (xb) obj2, z11, (TLRPC.Message[]) obj);
                 break;
             case 4:
-                jl0.d0((jl0) obj3, (xb) obj2, z11, (TLRPC.Message) obj);
+                kl0.d0((kl0) obj3, (xb) obj2, z11, (TLRPC.Message) obj);
                 break;
             default:
                 ug.x0 x0Var = (ug.x0) obj3;

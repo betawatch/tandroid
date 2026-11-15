@@ -14,7 +14,7 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ja;
-import di.jc;
+import di.ic;
 import j$.util.Map;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b61;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class u0 extends FrameLayout implements is {
     public boolean E;
@@ -549,11 +549,11 @@ public abstract class u0 extends FrameLayout implements is {
             e10 = org.telegram.messenger.m5.o(defaultSendAs);
         }
         i0 i0Var = new i0(0);
-        jc jcVar = new jc(getContext(), this.O, this.N, null, null, arrayList, !z10, true, e10, i0Var);
+        ic icVar = new ic(getContext(), this.O, this.N, null, null, arrayList, !z10, true, e10, i0Var);
         c2 c2Var = (c2) this;
-        jcVar.K1 = c2Var;
-        jcVar.M1 = new di.z6(c2Var, 5);
-        jcVar.show();
+        icVar.K1 = c2Var;
+        icVar.M1 = new di.z6(c2Var, 5);
+        icVar.show();
     }
 
     public final void l(int i7, int i10, boolean z10, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, long j10, boolean z11) {
@@ -788,7 +788,7 @@ public abstract class u0 extends FrameLayout implements is {
                 int i11 = j11;
                 if (!z11) {
                     if (tL_error != null) {
-                        org.telegram.messenger.g0.h3(new di.g9(u0Var, i11, tL_error, j10, j3, tL_textWithEntities));
+                        org.telegram.messenger.g0.h3(new di.f9(u0Var, i11, tL_error, j10, j3, tL_textWithEntities));
                         return;
                     }
                     return;

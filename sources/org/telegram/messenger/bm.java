@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bm implements Runnable {
     public final /* synthetic */ int a;
@@ -516,11 +516,11 @@ public final /* synthetic */ class bm implements Runnable {
         c10 c10Var = (c10) this.b;
         gj gjVar = (gj) this.c;
         f3.s sVar = (f3.s) this.d;
-        di.m9 m9Var = (di.m9) this.e;
+        di.l9 l9Var = (di.l9) this.e;
         gjVar.k.originalLanguage = "und";
         c10Var.getMessagesStorage().X1(sVar.a, gjVar.k);
         c10Var.L.remove(sVar);
-        m9Var.a("und");
+        l9Var.a("und");
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x015b  */

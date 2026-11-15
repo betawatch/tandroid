@@ -37,7 +37,7 @@ import org.telegram.ui.Components.hq;
 import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.j70;
 import org.telegram.ui.Components.k70;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.lk0;
 import org.telegram.ui.Components.ny;
 import org.telegram.ui.Components.qm0;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.tn;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s6 {
     public final View a;
@@ -104,13 +104,13 @@ public final class s6 {
         if ((i10 & 1) != 0 && (obj instanceof View)) {
             View view2 = (View) obj;
             Drawable background = view2.getBackground();
-            if (!(background instanceof k90)) {
+            if (!(background instanceof l90)) {
                 view2.setBackgroundColor(i7);
                 return;
             }
-            k90 k90Var = (k90) background;
-            k90Var.a.setColor(i7);
-            k90Var.b = null;
+            l90 l90Var = (l90) background;
+            l90Var.a.setColor(i7);
+            l90Var.b = null;
             return;
         }
         if (obj instanceof ft) {
@@ -517,10 +517,10 @@ public final class s6 {
         if (view != null && clsArr == null && this.k == null && ((i11 & 262144) == 0 || b(i10, view))) {
             if ((i11 & 1) != 0) {
                 Drawable background = view.getBackground();
-                if (background instanceof k90) {
-                    k90 k90Var = (k90) background;
-                    k90Var.a.setColor(i7);
-                    k90Var.b = null;
+                if (background instanceof l90) {
+                    l90 l90Var = (l90) background;
+                    l90Var.a.setColor(i7);
+                    l90Var.b = null;
                 } else {
                     view.setBackgroundColor(i7);
                 }

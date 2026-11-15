@@ -14,11 +14,11 @@ import o9.g;
 import q9.a;
 import q9.b;
 import q9.c;
-import tg.a2;
+import tg.z1;
 import u9.i;
 import u9.q;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
@@ -51,7 +51,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         a10.a(new i(0, 2, x9.a.class));
         a10.a(new i(0, 2, p9.a.class));
         a10.a(new i(0, 2, fb.a.class));
-        a10.f = new a2(this, 7);
+        a10.f = new z1(this, 7);
         a10.c(2);
         return Arrays.asList(a10.b(), i8.a("fire-cls", "20.1.1"));
     }

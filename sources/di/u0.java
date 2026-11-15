@@ -20,12 +20,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class u0 extends View implements is {
     public final org.telegram.ui.Components.u5 E;
     public float F;
-    public m8 G;
+    public l8 G;
     public final ArrayList H;
     public final ArrayList I;
     public final HashSet J;
@@ -76,7 +76,7 @@ public final class u0 extends View implements is {
     */
     public final void a() {
         TLRPC.EmojiStatus emojiStatus;
-        m8 G;
+        l8 G;
         boolean z10;
         int i7;
         ArrayList arrayList;
@@ -105,7 +105,7 @@ public final class u0 extends View implements is {
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i13 = 0;
-                G = v8.y(i12, false).G(j3, true);
+                G = u8.y(i12, false).G(j3, true);
                 this.G = G;
                 if (G != null) {
                     for (int i14 = 0; i14 < this.G.l.size(); i14++) {
@@ -238,7 +238,7 @@ public final class u0 extends View implements is {
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i132 = 0;
-            G = v8.y(i12, false).G(j3, true);
+            G = u8.y(i12, false).G(j3, true);
             this.G = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class u0 extends View implements is {
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1322 = 0;
-                G = v8.y(i12, false).G(j3, true);
+                G = u8.y(i12, false).G(j3, true);
                 this.G = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class u0 extends View implements is {
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i13222 = 0;
-            G = v8.y(i12, false).G(j3, true);
+            G = u8.y(i12, false).G(j3, true);
             this.G = G;
             if (G != null) {
             }

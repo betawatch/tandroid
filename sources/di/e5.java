@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.e30;
 import org.telegram.ui.Components.vx0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e5 {
     public final TL_stars.TL_starGiftUnique a;
@@ -84,9 +84,9 @@ public final class e5 {
         f10.addView(textView2, c8.ja.t(-1, -2, 48, 24, 4, 24, 4));
         if (z10) {
             vx0 vx0Var = new vx0(context, e6Var);
-            c6.k1(vx0Var, v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            c6.k1(vx0Var, v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            c6.k1(vx0Var, v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            c6.k1(vx0Var, u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            c6.k1(vx0Var, u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            c6.k1(vx0Var, u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
                 org.telegram.messenger.r1 i10 = org.telegram.messenger.r1.i();
                 long j10 = tL_starGiftUnique.value_amount;
@@ -148,7 +148,7 @@ public final class e5 {
             this.n = h;
             h.d();
             if (this.p.add(bVar)) {
-                v8.x(i7, bVar).H(this.a, j3, null, true, new ai.u1(10, this, bVar));
+                u8.x(i7, bVar).H(this.a, j3, null, true, new ai.v1(10, this, bVar));
                 return;
             }
             return;
@@ -159,7 +159,7 @@ public final class e5 {
         String str = this.e;
         if (bVar7 == bVar5) {
             c10 = 0;
-            this.l.setText(mb.T0(hd.H(',', "Gift2BuyDoPrice2", (int) aVar.a())));
+            this.l.setText(lb.T0(hd.H(',', "Gift2BuyDoPrice2", (int) aVar.a())));
             textView.setText(org.telegram.messenger.g0.X2(z11 ? hd.K("Gift2BuyPriceSelfText", (int) aVar.a(), ',', str) : hd.K("Gift2BuyPriceText", (int) aVar.a(), ',', str, org.telegram.messenger.m5.t(j3))));
         } else {
             c10 = 0;
@@ -168,7 +168,7 @@ public final class e5 {
             TextView textView2 = this.l;
             Object[] objArr = new Object[1];
             objArr[c10] = aVar.d();
-            textView2.setText(mb.V0(hd.a0(null, null, 2131750282, objArr), true));
+            textView2.setText(lb.V0(hd.a0(null, null, 2131750282, objArr), true));
             if (z11) {
                 String d = aVar.d();
                 Object[] objArr2 = new Object[2];

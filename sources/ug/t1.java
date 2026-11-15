@@ -14,7 +14,7 @@ import android.util.Base64;
 import android.util.LongSparseArray;
 import android.widget.ImageView;
 import android.widget.TextView;
-import di.r9;
+import di.q9;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -493,7 +493,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     textView.setText(tL_chatInviteImporter.about);
                     textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
                     kVar.E.requestLayout();
-                    lVar2.s.setOnDismissListener(new r9(lVar2, 15));
+                    lVar2.s.setOnDismissListener(new q9(lVar2, 15));
                     lVar2.s.show();
                     return;
                 }

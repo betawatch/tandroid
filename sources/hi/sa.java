@@ -95,7 +95,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class sa implements is {
     public static sa G2;
@@ -269,7 +269,7 @@ public final class sa implements is {
     public s8 y2;
     public o8 z0;
     public View z1;
-    public ai.v0 z2;
+    public ai.w0 z2;
 
     public sa(Activity activity, int i7) {
         int i10;
@@ -465,7 +465,7 @@ public final class sa implements is {
         w6 w6Var = new w6(activity, i7);
         this.p0 = w6Var;
         w6Var.a(false, false);
-        this.p0.setOnClickListener(new ai.t2(22, this, activity));
+        this.p0.setOnClickListener(new ai.v2(22, this, activity));
         this.j0.addView(this.p0, c8.ja.d(-1, 56.0f, 51, 50.0f, 0.0f, 50.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(activity);
         this.q0 = j5Var;
@@ -2486,7 +2486,7 @@ public final class sa implements is {
         if (z10) {
             d7Var2 = d7Var;
             z11 = z10;
-            Utilities.g.c(new ai.j(this, createBitmap, z11, w10, d7Var2, 3));
+            Utilities.g.c(new ai.j(this, createBitmap, z11, w10, d7Var2, 2));
         } else {
             d7Var2 = d7Var;
             z11 = z10;

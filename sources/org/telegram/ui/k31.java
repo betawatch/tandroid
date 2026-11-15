@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class k31 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is, org.telegram.ui.Components.l30, ie0, te.b {
     public k0 E;
@@ -400,16 +400,16 @@ public final class k31 extends org.telegram.ui.ActionBar.e2 implements org.teleg
         }
         CharSequence charSequence3 = "";
         if (!k31Var.getMessagesController().k7) {
-            di.v8 y10 = di.v8.y(k31Var.currentAccount, false);
-            arrayList.add(g31.i(12, -1071598, -1608430, R.drawable.settings_stars, org.telegram.messenger.hd.M0(2131744215, null), null, (!y10.e || y10.p().amount <= 0) ? "" : di.mb.M0(y10.p(), 0.85f, ' ')));
+            di.u8 y10 = di.u8.y(k31Var.currentAccount, false);
+            arrayList.add(g31.i(12, -1071598, -1608430, R.drawable.settings_stars, org.telegram.messenger.hd.M0(2131744215, null), null, (!y10.e || y10.p().amount <= 0) ? "" : di.lb.M0(y10.p(), 0.85f, ' ')));
         }
-        di.v8.y(k31Var.currentAccount, true).p();
+        di.u8.y(k31Var.currentAccount, true).p();
         org.telegram.messenger.t0.n();
-        di.v8 y11 = di.v8.y(k31Var.currentAccount, true);
+        di.u8 y11 = di.u8.y(k31Var.currentAccount, true);
         long j3 = y11.p().amount;
         String M03 = org.telegram.messenger.hd.M0(2131749515, null);
         if (y11.e && j3 > 0) {
-            charSequence3 = di.mb.M0(y11.p(), 0.85f, ' ');
+            charSequence3 = di.lb.M0(y11.p(), 0.85f, ' ');
         }
         arrayList.add(g31.i(13, -14965523, -15431455, R.drawable.filled_gram_earnings, M03, null, charSequence3));
         if (!k31Var.getMessagesController().D3()) {
@@ -517,7 +517,7 @@ public final class k31 extends org.telegram.ui.ActionBar.e2 implements org.teleg
                 k31Var.k0(new PremiumPreviewFragment(0, "settings"));
                 break;
             case 12:
-                k31Var.k0(new di.mb());
+                k31Var.k0(new di.lb());
                 break;
             case 13:
                 k31Var.k0(new ii.f());

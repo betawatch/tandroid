@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.jt0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -527,7 +527,7 @@ public final /* synthetic */ class b4 implements Runnable {
                     return;
                 }
             case 11:
-                di.v8.y(((ez) obj2).currentAccount, false).d0((ArrayList) obj);
+                di.u8.y(((ez) obj2).currentAccount, false).d0((ArrayList) obj);
                 return;
             case 12:
                 h00 h00Var = (h00) obj2;

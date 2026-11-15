@@ -13,7 +13,7 @@ import android.text.SpannableString;
 import android.view.View;
 import androidx.car.app.hardware.common.CarResultStub;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
-import di.m9;
+import di.l9;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Map;
@@ -34,10 +34,10 @@ import org.telegram.ui.Components.c80;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.ff;
 import org.telegram.ui.Components.uj0;
-import tg.c2;
-import tg.f2;
+import tg.b2;
+import tg.e2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class e1 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        ai.r rVar;
+        ai.s sVar;
         p4.m1 m1Var;
         ji.j jVar;
         ji.j jVar2;
@@ -143,8 +143,8 @@ public final /* synthetic */ class e1 implements Runnable {
                 if (webPage != null && webPage.cached_page == null) {
                     t1Var.h = null;
                 }
-                if (!gz.w0 && t1Var.h != null && (rVar = t1Var.l) != null) {
-                    rVar.run();
+                if (!gz.w0 && t1Var.h != null && (sVar = t1Var.l) != null) {
+                    sVar.run();
                 }
                 t1Var.c();
                 return;
@@ -223,7 +223,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 fVar.y.add(eVar);
                 return;
             case 11:
-                ((m9) this.b).a((SpannableString) this.c);
+                ((l9) this.b).a((SpannableString) this.c);
                 return;
             case 12:
                 qi.p pVar = (qi.p) this.b;
@@ -361,16 +361,16 @@ public final /* synthetic */ class e1 implements Runnable {
                 ((tg.n1) this.b).s((Bitmap) this.c);
                 return;
             case 20:
-                f2 f2Var = (f2) this.b;
+                e2 e2Var = (e2) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
-                f2Var.H = false;
-                c2[] c2VarArr = (c2[]) arrayList3.toArray(new c2[0]);
-                f2Var.I = c2VarArr;
-                if (c2VarArr.length > 0) {
-                    f2Var.c0.setScaleX(0.3f);
-                    f2Var.c0.setScaleY(0.3f);
-                    f2Var.c0.setAlpha(0.0f);
-                    f2Var.c0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(er.f).start();
+                e2Var.H = false;
+                b2[] b2VarArr = (b2[]) arrayList3.toArray(new b2[0]);
+                e2Var.I = b2VarArr;
+                if (b2VarArr.length > 0) {
+                    e2Var.c0.setScaleX(0.3f);
+                    e2Var.c0.setScaleY(0.3f);
+                    e2Var.c0.setAlpha(0.0f);
+                    e2Var.c0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(er.f).start();
                     return;
                 }
                 return;
@@ -378,8 +378,8 @@ public final /* synthetic */ class e1 implements Runnable {
                 a();
                 return;
             case 22:
-                u2.r rVar2 = (u2.r) this.b;
-                rVar2.U.set(rVar2.w((k8.a) this.c, rVar2.O, 0));
+                u2.r rVar = (u2.r) this.b;
+                rVar.U.set(rVar.w((k8.a) this.c, rVar.O, 0));
                 return;
             case 23:
                 JobInfoSchedulerService jobInfoSchedulerService = (JobInfoSchedulerService) this.b;

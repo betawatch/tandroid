@@ -6,7 +6,7 @@ import java.util.Iterator;
 import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nl implements Runnable {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class nl implements Runnable {
                         }
                     }
                     new ArrayList(0);
-                    at.l0.c(new wq(14, notificationsController, hVar));
+                    at.l0.c(new pq(15, notificationsController, hVar));
                 }
                 h00 h00Var = npVar.r7;
                 h00Var.getClass();

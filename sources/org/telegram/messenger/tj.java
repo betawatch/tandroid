@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tj implements Runnable {
     public final /* synthetic */ int a;
@@ -123,16 +123,16 @@ public final /* synthetic */ class tj implements Runnable {
                 Iterator it2 = hashSet2.iterator();
                 while (it2.hasNext()) {
                     Pair pair = (Pair) it2.next();
-                    Pair pair2 = (Pair) hVar.f(((di.o8) pair.first).a);
+                    Pair pair2 = (Pair) hVar.f(((di.n8) pair.first).a);
                     if (pair2 == null) {
-                        long j3 = ((di.o8) pair.first).a;
+                        long j3 = ((di.n8) pair.first).a;
                         pair2 = new Pair(new HashSet(), (AtomicBoolean) pair.second);
                         hVar.k(pair2, j3);
                     }
                     if (!((AtomicBoolean) pair.second).get()) {
                         ((AtomicBoolean) pair2.second).set(false);
                     }
-                    ((HashSet) pair2.first).add(Integer.valueOf(((di.o8) pair.first).b));
+                    ((HashSet) pair2.first).add(Integer.valueOf(((di.n8) pair.first).b));
                 }
                 hashSet2.clear();
                 for (int i10 = 0; i10 < hVar.m(); i10++) {

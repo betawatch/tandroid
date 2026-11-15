@@ -21,10 +21,10 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d01;
 import org.telegram.ui.ec1;
-import org.telegram.ui.kl0;
+import org.telegram.ui.ll0;
 import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final /* synthetic */ class a3 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 9:
-                ((ai.f0) obj2).a(Integer.valueOf(((ib0) obj).getValue()));
+                ((ai.g0) obj2).a(Integer.valueOf(((ib0) obj).getValue()));
                 break;
             case 10:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj2;
@@ -163,9 +163,9 @@ public final /* synthetic */ class a3 implements DialogInterface.OnDismissListen
                 launchActivity.D0.remove(t1Var);
                 break;
             case 12:
-                kl0 kl0Var = (kl0) obj;
+                ll0 ll0Var = (ll0) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    kl0Var.a(Boolean.FALSE);
+                    ll0Var.a(Boolean.FALSE);
                     break;
                 }
                 break;

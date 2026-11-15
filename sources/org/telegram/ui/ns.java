@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ns {
     public static TextPaint f0;
@@ -87,7 +87,7 @@ public final class ns {
     public Activity w;
     public WindowManager.LayoutParams x;
     public k0 y;
-    public ai.j0 z;
+    public ai.k0 z;
     public float e = 0.0f;
     public i0.c q = i0.c.e;
 
@@ -123,9 +123,9 @@ public final class ns {
         ih.d.c(bVar, nsVar.y);
         nsVar.t.d();
         nsVar.e0 = false;
-        ai.j0 j0Var = nsVar.z;
-        if (j0Var != null) {
-            j0Var.invalidate();
+        ai.k0 k0Var = nsVar.z;
+        if (k0Var != null) {
+            k0Var.invalidate();
         }
     }
 
@@ -948,9 +948,9 @@ public final class ns {
         bs bsVar = new bs(this);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(k0Var2, bsVar);
-        ai.j0 j0Var = new ai.j0(this, activity);
-        this.z = j0Var;
-        j0Var.setFocusable(false);
+        ai.k0 k0Var3 = new ai.k0(this, activity);
+        this.z = k0Var3;
+        k0Var3.setFocusable(false);
         this.y.addView(this.z, c8.ja.e(-1, -1, 51));
         this.z.setOnTouchListener(new c0(this, 1));
         org.telegram.messenger.np.s1(this.r);

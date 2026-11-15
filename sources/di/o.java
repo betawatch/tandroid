@@ -16,7 +16,7 @@ import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.gt0;
 import org.telegram.ui.xa1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements y10, org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.n6, org.telegram.ui.ActionBar.o6, gt0, g9.k, u9.d, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
@@ -262,12 +262,12 @@ public final /* synthetic */ class o implements y10, org.telegram.ui.ActionBar.q
 
     @Override // org.telegram.ui.ActionBar.o6
     public void f(int i7, View view) {
-        ((u8) view).setColor(i7);
+        ((t8) view).setColor(i7);
     }
 
     @Override // org.telegram.ui.ActionBar.n6
     public int g(View view) {
-        return ((u8) view).y;
+        return ((t8) view).y;
     }
 
     @Override // org.telegram.ui.ActionBar.q1
@@ -302,7 +302,7 @@ public final /* synthetic */ class o implements y10, org.telegram.ui.ActionBar.q
 
     @Override // org.telegram.ui.Components.gt0
     public RecyclerView n(View view) {
-        return ((jb) view).a;
+        return ((ib) view).a;
     }
 
     @Override // org.telegram.ui.Components.gt0

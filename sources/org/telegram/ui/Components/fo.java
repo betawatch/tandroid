@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fo implements Runnable {
     public final /* synthetic */ int a;
@@ -305,55 +305,55 @@ public final /* synthetic */ class fo implements Runnable {
                 }
                 break;
             case 27:
-                final i90 i90Var = (i90) obj;
-                boolean z10 = i90Var.J;
+                final j90 j90Var = (j90) obj;
+                boolean z10 = j90Var.J;
                 boolean z11 = !z10;
-                jg.n1 n1Var = i90Var.e;
-                h90 h90Var = i90Var.b;
-                if (h90Var == null || n1Var == null) {
-                    i90Var.P = 0;
+                jg.n1 n1Var = j90Var.e;
+                i90 i90Var = j90Var.b;
+                if (i90Var == null || n1Var == null) {
+                    j90Var.P = 0;
                     break;
-                } else if (i90Var.M && (gVar = i90Var.L) != null && gVar.f && !z10) {
-                    i90Var.P = 0;
+                } else if (j90Var.M && (gVar = j90Var.L) != null && gVar.f && !z10) {
+                    j90Var.P = 0;
                     break;
                 } else {
-                    boolean g10 = i90Var.g();
+                    boolean g10 = j90Var.g();
                     if (z10) {
-                        int computeVerticalScrollRange = h90Var.computeVerticalScrollRange();
-                        float f11 = (computeVerticalScrollRange - n1Var.h) + i90Var.s;
-                        if (computeVerticalScrollRange <= 0 && i90Var.f.K() > 0 && (i7 = i90Var.P) < 3) {
-                            i90Var.P = i7 + 1;
-                            i90Var.o(true);
+                        int computeVerticalScrollRange = i90Var.computeVerticalScrollRange();
+                        float f11 = (computeVerticalScrollRange - n1Var.h) + j90Var.s;
+                        if (computeVerticalScrollRange <= 0 && j90Var.f.K() > 0 && (i7 = j90Var.P) < 3) {
+                            j90Var.P = i7 + 1;
+                            j90Var.o(true);
                             break;
                         } else {
                             f10 = f11;
                         }
                     } else {
-                        f10 = (-i90Var.s) - org.telegram.messenger.g0.L(6.0f);
+                        f10 = (-j90Var.s) - org.telegram.messenger.g0.L(6.0f);
                     }
-                    i90Var.P = 0;
-                    float f12 = i90Var.w;
+                    j90Var.P = 0;
+                    float f12 = j90Var.w;
                     float max = g10 ? -Math.max(0.0f, f12 - f10) : Math.max(0.0f, f12 - f10) + (-f12);
                     if (!z10 && !g10) {
-                        max += h90Var.computeVerticalScrollOffset();
+                        max += i90Var.computeVerticalScrollOffset();
                     }
                     final float f13 = max;
-                    r1.g gVar2 = i90Var.L;
+                    r1.g gVar2 = j90Var.L;
                     if (gVar2 != null) {
                         gVar2.d();
                     }
-                    i90Var.M = z11;
-                    final float translationY = h90Var.getTranslationY();
-                    final float f14 = i90Var.N;
+                    j90Var.M = z11;
+                    final float translationY = i90Var.getTranslationY();
+                    final float f14 = j90Var.N;
                     float f15 = z10 ? 0.0f : 1.0f;
                     if (translationY == f13) {
-                        i90Var.L = null;
+                        j90Var.L = null;
                         num = Integer.valueOf(z10 ? 0 : 8);
-                        if (i90Var.O && !z10) {
-                            i90Var.O = false;
-                            h90Var.setLayoutManager(i90Var.getNeededLayoutManager());
-                            i90Var.J = true;
-                            i90Var.o(true);
+                        if (j90Var.O && !z10) {
+                            j90Var.O = false;
+                            i90Var.setLayoutManager(j90Var.getNeededLayoutManager());
+                            j90Var.J = true;
+                            j90Var.o(true);
                         }
                     } else {
                         r1.g gVar3 = new r1.g(new r1.f(translationY));
@@ -361,34 +361,34 @@ public final /* synthetic */ class fo implements Runnable {
                         hVar.a(1.0f);
                         hVar.b(550.0f);
                         gVar3.m = hVar;
-                        i90Var.L = gVar3;
+                        j90Var.L = gVar3;
                         final float f16 = f15;
-                        r1.d dVar = new r1.d() { // from class: org.telegram.ui.Components.z80
+                        r1.d dVar = new r1.d() { // from class: org.telegram.ui.Components.a90
                             @Override // r1.d
                             public final void a(r1.g gVar4, float f17, float f18) {
-                                i90 i90Var2 = i90.this;
-                                i90Var2.b.setTranslationY(f17);
-                                i90Var2.i();
+                                j90 j90Var2 = j90.this;
+                                j90Var2.b.setTranslationY(f17);
+                                j90Var2.i();
                                 float f19 = translationY;
-                                i90Var2.N = org.telegram.messenger.g0.T1(f14, f16, (f17 - f19) / (f13 - f19));
+                                j90Var2.N = org.telegram.messenger.g0.T1(f14, f16, (f17 - f19) / (f13 - f19));
                             }
                         };
-                        i90Var = i90Var;
+                        j90Var = j90Var;
                         gVar3.b(dVar);
                         if (!z10) {
-                            i90Var.L.a(new hi.c4(i90Var, z11, 2));
+                            j90Var.L.a(new hi.c4(j90Var, z11, 2));
                         }
-                        i90Var.L.a(new a90());
-                        i90Var.L.h();
+                        j90Var.L.a(new b90());
+                        j90Var.L.h();
                     }
-                    if (num != null && i90Var.getVisibility() != num.intValue()) {
-                        i90Var.setVisibility(num.intValue());
+                    if (num != null && j90Var.getVisibility() != num.intValue()) {
+                        j90Var.setVisibility(num.intValue());
                         break;
                     }
                 }
                 break;
             case 28:
-                ((da0) ((v90) obj).T).n.f();
+                ((ea0) ((w90) obj).T).n.f();
                 break;
             default:
                 ((oa0) obj).a();

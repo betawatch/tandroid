@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class z20 extends AnimatorListenerAdapter {
                 ((c50) this.c).h = null;
                 break;
             case 4:
-                ym0 ym0Var = (ym0) this.c;
-                if (animator.equals(ym0Var.l0)) {
-                    ym0Var.l0 = null;
+                zm0 zm0Var = (zm0) this.c;
+                if (animator.equals(zm0Var.l0)) {
+                    zm0Var.l0 = null;
                     break;
                 }
                 break;
@@ -95,13 +95,13 @@ public final class z20 extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                ym0 ym0Var = (ym0) obj;
-                if (animator.equals(ym0Var.l0)) {
+                zm0 zm0Var = (zm0) obj;
+                if (animator.equals(zm0Var.l0)) {
                     if (!z10) {
-                        ym0Var.a0.setVisibility(4);
-                        ym0Var.b0.setVisibility(4);
+                        zm0Var.a0.setVisibility(4);
+                        zm0Var.b0.setVisibility(4);
                     }
-                    ym0Var.l0 = null;
+                    zm0Var.l0 = null;
                     break;
                 }
                 break;

@@ -1,19 +1,19 @@
 package ah;
 
-import ai.v2;
-import ai.z0;
+import ai.a1;
+import ai.x2;
 import android.view.View;
 import bi.f5;
 import bi.s2;
 import bi.t0;
 import bi.x0;
 import ch.b0;
-import di.bb;
-import di.db;
+import di.ab;
+import di.cb;
+import di.d9;
 import di.e5;
-import di.e9;
 import di.i1;
-import di.mb;
+import di.lb;
 import di.s0;
 import di.u2;
 import di.v0;
@@ -34,7 +34,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -58,10 +58,10 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 }
                 break;
             case 1:
-                v2 v2Var = (v2) this.b;
-                v2Var.getClass();
+                x2 x2Var = (x2) this.b;
+                x2Var.getClass();
                 DictationAsr.T(!DictationAsr.v());
-                v2Var.e0();
+                x2Var.e0();
                 break;
             case 2:
                 ((androidx.mediarouter.app.g) this.b).dismiss();
@@ -79,7 +79,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 if (((s2) this.b).a2.e > 0 && (Q = LaunchActivity.Q()) != null) {
                     c2 c2Var = new c2();
                     c2Var.a = true;
-                    Q.showAsSheet(new mb(), c2Var);
+                    Q.showAsSheet(new lb(), c2Var);
                     break;
                 }
                 break;
@@ -124,19 +124,19 @@ public final /* synthetic */ class d implements View.OnClickListener {
             case 16:
                 e5 e5Var = (e5) this.b;
                 e5Var.getClass();
-                new db(e5Var.b, e5Var.g).show();
+                new cb(e5Var.b, e5Var.g).show();
                 break;
             case 17:
                 ((y5) this.b).dismiss();
                 break;
             case 18:
-                ((e9) this.b).run();
+                ((d9) this.b).run();
                 break;
             case 19:
-                if (((bb) ((a) this.b).c).e > 0 && (Q2 = LaunchActivity.Q()) != null) {
+                if (((ab) ((a) this.b).c).e > 0 && (Q2 = LaunchActivity.Q()) != null) {
                     c2 c2Var2 = new c2();
                     c2Var2.a = true;
-                    Q2.showAsSheet(new mb(), c2Var2);
+                    Q2.showAsSheet(new lb(), c2Var2);
                     break;
                 }
                 break;
@@ -181,7 +181,7 @@ public final /* synthetic */ class d implements View.OnClickListener {
                 u0.a((u0) this.b);
                 break;
             default:
-                ((z0) this.b).run();
+                ((a1) this.b).run();
                 break;
         }
     }

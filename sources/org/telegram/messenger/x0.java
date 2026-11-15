@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class x0 implements Runnable {
         this.c = obj;
     }
 
-    /* JADX WARN: Not initialized variable reg: 3, insn: 0x00d9: MOVE (r4 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) (LINE:218), block:B:68:0x00d9 */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x058c  */
-    /* JADX WARN: Removed duplicated region for block: B:368:0x05b6  */
-    /* JADX WARN: Removed duplicated region for block: B:370:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x010c  */
+    /* JADX WARN: Not initialized variable reg: 3, insn: 0x00e7: MOVE (r4 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) (LINE:232), block:B:70:0x00e7 */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x059a  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x05c4  */
+    /* JADX WARN: Removed duplicated region for block: B:372:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x011a  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -468,15 +468,18 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             case 9:
-                ((org.telegram.ui.ag) this.c).a(this.b);
+                ((ai.u2) this.c).a(Integer.valueOf(this.b));
                 return;
             case 10:
-                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
+                ((org.telegram.ui.ag) this.c).a(this.b);
                 return;
             case 11:
-                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
+                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
                 return;
             case 12:
+                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
+                return;
+            case 13:
                 int i43 = this.b;
                 c cVar = (c) this.c;
                 try {

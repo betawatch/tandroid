@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class nj0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ek0 a;
@@ -249,7 +249,7 @@ public final class nj0 extends org.telegram.ui.ActionBar.j {
                             i12 = i14;
                             i11 = i13;
                             alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751354, null), new org.telegram.ui.Components.p0(this, S0, S02, S03, ef0Var, aVar, 1));
-                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751335, null), new ai.r1(this, i12, 18));
+                            alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751335, null), new ai.s1(this, i12, 18));
                             ek0Var.showDialog(t1Var);
                         }
                         z11 = z10;

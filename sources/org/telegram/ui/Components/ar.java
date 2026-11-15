@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ar extends ja {
     public final boolean T1;
@@ -20,12 +20,12 @@ public final class ar extends ja {
     public SpannableStringBuilder Z1;
     public p41 a2;
     public final boolean b2;
-    public ai.q2 c2;
+    public ai.r2 c2;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.u2, org.telegram.ui.Components.ar, org.telegram.ui.Components.ja] */
     /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.u2] */
-    public ar(Context context, int i7, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.u1 u1Var, fi.b bVar) {
+    public ar(Context context, int i7, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.v1 v1Var, fi.b bVar) {
         int i10;
         TLRPC.Chat M0;
         ar jaVar = new ja(context, null, false, false, bVar);
@@ -34,20 +34,20 @@ public final class ar extends ja {
         jaVar.U1 = null;
         jaVar.W1 = false;
         long n10 = org.telegram.messenger.m5.n(getgroupcallstreamrtmpurl.peer);
-        boolean z10 = u1Var != null && (n10 >= 0 || ((M0 = org.telegram.messenger.np.s1(i7).M0(Long.valueOf(-n10))) != null && M0.creator));
-        if (u1Var != null) {
+        boolean z10 = v1Var != null && (n10 >= 0 || ((M0 = org.telegram.messenger.np.s1(i7).M0(Long.valueOf(-n10))) != null && M0.creator));
+        if (v1Var != null) {
             jaVar.b2 = true;
             hi.d dVar = new hi.d(context, bVar, true);
             dVar.i(org.telegram.messenger.hd.M0(2131748802, null), false, true);
             jaVar.b.addView(dVar, c8.ja.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12));
-            dVar.setOnClickListener(new ah.g((Object) jaVar, u1Var, dVar, 27));
+            dVar.setOnClickListener(new ah.g((Object) jaVar, v1Var, dVar, 27));
             if (z10) {
                 hi.d dVar2 = new hi.d(context, bVar, false);
                 dVar2.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.r7, false));
                 dVar2.d.x(org.telegram.messenger.g0.o());
                 dVar2.i(org.telegram.messenger.hd.M0(2131748800, null), false, true);
                 jaVar = this;
-                dVar2.setOnClickListener(new di.w9(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i7));
+                dVar2.setOnClickListener(new di.v9(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i7));
                 jaVar.b.addView(dVar2, c8.ja.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 12.0f));
             }
         }

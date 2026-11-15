@@ -13,7 +13,7 @@ import java.io.File;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.t71;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d20 extends c5.a {
     public final /* synthetic */ int c;
@@ -158,20 +158,20 @@ public final class d20 extends c5.a {
                 textView2.setTag(t50Var.a);
                 TextView textView3 = new TextView(lVar.getContext());
                 textView3.setTag(t50Var.b);
-                ai.j0 j0Var = new ai.j0(lVar.getContext(), textView2, textView3);
+                ai.k0 k0Var = new ai.k0(lVar.getContext(), textView2, textView3);
                 int i14 = org.telegram.ui.ActionBar.j6.G6;
                 org.telegram.messenger.k5.m(textView2, i14, null, 1, 26.0f);
                 textView2.setGravity(17);
-                j0Var.addView(textView2, c8.ja.d(-1, -2.0f, 51, 18.0f, 244.0f, 18.0f, 0.0f));
+                k0Var.addView(textView2, c8.ja.d(-1, -2.0f, 51, 18.0f, 244.0f, 18.0f, 0.0f));
                 org.telegram.ui.ActionBar.q6.U(textView3, i14, null);
                 textView3.setTextSize(1, 15.0f);
                 textView3.setLineSpacing(org.telegram.messenger.g0.N(2.33f), 1.0f);
                 textView3.setGravity(17);
-                j0Var.addView(textView3, c8.ja.d(-1, -2.0f, 51, 16.0f, 286.0f, 16.0f, 0.0f));
-                lVar.addView(j0Var, 0);
+                k0Var.addView(textView3, c8.ja.d(-1, -2.0f, 51, 16.0f, 286.0f, 16.0f, 0.0f));
+                lVar.addView(k0Var, 0);
                 textView2.setText(t50Var.G[i7]);
                 textView3.setText(org.telegram.messenger.g0.X2(t50Var.H[i7]));
-                return j0Var;
+                return k0Var;
             case 3:
                 t71 t71Var = (t71) obj;
                 View view = i7 == 0 ? t71Var.v0 : t71Var.o0;

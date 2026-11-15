@@ -19,10 +19,10 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.z51;
-import tg.i2;
+import tg.h2;
 import ug.g1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h0 extends g1 {
     public final ArrayList M2;
@@ -37,7 +37,7 @@ public final class h0 extends g1 {
         this.v0 = false;
         this.t0 = 0;
         yg.a aVar = new yg.a(getContext(), this.J0);
-        aVar.setOnClickListener(new i2(this, 4));
+        aVar.setOnClickListener(new h2(this, 4));
         aVar.setCloseStyle(true);
         this.b.addView(aVar, ja.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         uj0 uj0Var = this.o1;

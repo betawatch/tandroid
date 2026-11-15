@@ -56,7 +56,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.y51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l0 implements og.n, tg.c, s51, OnCompleteListener, com.google.android.gms.common.api.internal.q, ii, c4.m, li.j0, l.i, n2.v, o0.a, b3.j, mm0, org.telegram.ui.Components.r4, oi.g0, org.telegram.messenger.za, ue.a, pm0 {
     public final /* synthetic */ int a;
@@ -395,7 +395,7 @@ public final class l0 implements og.n, tg.c, s51, OnCompleteListener, com.google
         k8.a aVar = ((FfmpegAudioRenderer) this.b).J;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new ai.v0(aVar, i7, 15));
+            handler.post(new ai.w0(aVar, i7, 15));
         }
     }
 

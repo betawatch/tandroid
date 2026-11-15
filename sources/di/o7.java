@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -24,8 +24,8 @@ public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ TLObject n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ o7(v8 v8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.f6 f6Var) {
-        this.e = v8Var;
+    public /* synthetic */ o7(u8 u8Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, bi.f6 f6Var) {
+        this.e = u8Var;
         this.f = zArr;
         this.h = starGift;
         this.b = z10;
@@ -56,7 +56,7 @@ public final /* synthetic */ class o7 implements Runnable {
         switch (i11) {
             case 0:
                 ((boolean[]) obj2)[0] = true;
-                ((v8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.f6) obj);
+                ((u8) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (bi.f6) obj);
                 break;
             default:
                 hi.sa saVar = (hi.sa) obj3;

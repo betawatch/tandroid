@@ -59,7 +59,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a80;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class ez extends c1 implements is {
     public static final p5 J = new p5("mediaSendQueue");
@@ -3096,7 +3096,7 @@ public final class ez extends c1 implements is {
                 String str75 = str58;
                 int U = U(cVar2, (String) arrayList24.get(i50), (String) arrayList25.get(i50), (Uri) arrayList26.get(i50), str75, j3, gjVar2, gjVar3, storyItem, qmVar, (ArrayList) arrayList27.get(i50), gjVar, jArr, (i51 == i47 || i50 == size3 + (-1)) ? true : z17, (CharSequence) arrayList28.get(i50), z13, i7, 0, null, z10, fwVar, j11, z14, j12, j13, ljVar, null, -1);
                 if (U != 0) {
-                    g0.h3(new x0(U, cVar2, 12));
+                    g0.h3(new x0(U, cVar2, 13));
                 }
                 i50++;
                 str58 = str75;
@@ -5945,7 +5945,7 @@ public final class ez extends c1 implements is {
                         ((t0.h) ffVar5.b).i();
                     }
                     if (i31 != 0) {
-                        g0.h3(new x0(i31, cVar6, 12));
+                        g0.h3(new x0(i31, cVar6, 13));
                     }
                 }
             });
@@ -7023,7 +7023,7 @@ public final class ez extends c1 implements is {
     }
 
     public static void z(c cVar, long j3, int i7) {
-        g0.h3(new di.z8(cVar, j3, i7, 6));
+        g0.h3(new di.y8(cVar, j3, i7, 6));
     }
 
     public final TLRPC.TL_photo A(String str, Uri uri, boolean z10) {
@@ -7458,7 +7458,7 @@ public final class ez extends c1 implements is {
                 ezVar.getConnectionsManager().sendRequest(tL_messages_uploadMedia, new RequestDelegate() { // from class: org.telegram.messenger.jx
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject4, TLRPC.TL_error tL_error) {
-                        g0.h3(new di.aa(ez.this, tLObject4, qyVar2, z10, i12));
+                        g0.h3(new di.z9(ez.this, tLObject4, qyVar2, z10, i12));
                     }
                 });
                 return;
@@ -7902,11 +7902,11 @@ public final class ez extends c1 implements is {
         }
         TLRPC.Message message = gjVar.k;
         f0(message, z11);
-        di.v8 y11 = di.v8.y(this.currentAccount, false);
+        di.u8 y11 = di.u8.y(this.currentAccount, false);
         lw lwVar = new lw(this, tLObject2, gjVar, str, qyVar, z10, qyVar2, obj, hashMap, z11, 1);
         if (gjVar.k != null) {
             int e12 = gjVar.e1();
-            if (di.v8.o(tLObject) > 0 && y11.Q.remove(Integer.valueOf(e12))) {
+            if (di.u8.o(tLObject) > 0 && y11.Q.remove(Integer.valueOf(e12))) {
                 y11.R.put(Integer.valueOf(e12), lwVar);
                 return;
             }
@@ -7933,7 +7933,7 @@ public final class ez extends c1 implements is {
             f0(((gj) arrayList.get(i7)).k, z10);
         }
         final int i10 = 0;
-        if (di.v8.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.ex
+        if (di.u8.y(this.currentAccount, false).c(tLObject, arrayList, new Runnable(this) { // from class: org.telegram.messenger.ex
             public final /* synthetic */ ez b;
 
             {
@@ -8224,7 +8224,7 @@ public final class ez extends c1 implements is {
             return;
         }
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new oq(messagesStorage, 23));
+        messagesStorage.a.c(new nq(messagesStorage, 23));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -8602,7 +8602,7 @@ public final class ez extends c1 implements is {
                     zyVar.a(str14, ((Long) objArr[c11]).longValue(), 1.0f);
                     xy xyVar2 = (xy) zyVar.a.get(str14);
                     if (xyVar2 != null) {
-                        xyVar2.a(zyVar.o.currentAccount, inputFile2, new wq(21, zyVar, str14));
+                        xyVar2.a(zyVar.o.currentAccount, inputFile2, new pq(22, zyVar, str14));
                     }
                 }
                 arrayList2 = (ArrayList) ezVar.a.get(str14);
@@ -8976,21 +8976,21 @@ public final class ez extends c1 implements is {
             if (i02 != null) {
                 getConnectionsManager().cancelRequest(i02.reqId, true);
             }
-            di.v8 y10 = di.v8.y(this.currentAccount, z10);
-            di.q8 q8Var = y10.N;
+            di.u8 y10 = di.u8.y(this.currentAccount, z10);
+            di.p8 p8Var = y10.N;
             ArrayList arrayList5 = arrayList4;
-            if (q8Var == null || q8Var.b != gj.B0(gjVar2.k)) {
+            if (p8Var == null || p8Var.b != gj.B0(gjVar2.k)) {
                 i11 = i15;
                 j3 = B0;
             } else {
-                di.q8 q8Var2 = y10.N;
+                di.p8 p8Var2 = y10.N;
                 int e12 = gjVar2.e1();
-                di.p8 p8Var = q8Var2.p;
-                org.telegram.ui.Components.rb rbVar = q8Var2.d;
+                di.o8 o8Var = p8Var2.p;
+                org.telegram.ui.Components.rb rbVar = p8Var2.d;
                 i11 = i15;
-                HashSet hashSet = q8Var2.k;
+                HashSet hashSet = p8Var2.k;
                 j3 = B0;
-                if (!q8Var2.n && !q8Var2.o) {
+                if (!p8Var2.n && !p8Var2.o) {
                     Iterator it = hashSet.iterator();
                     while (true) {
                         if (!it.hasNext()) {
@@ -9006,22 +9006,22 @@ public final class ez extends c1 implements is {
                         it = it2;
                     }
                     if (hashSet.isEmpty()) {
-                        q8Var2.n = true;
-                        q8Var2.c.b();
+                        p8Var2.n = true;
+                        p8Var2.c.b();
                         y10.N = null;
                     } else {
-                        q8Var2.g--;
+                        p8Var2.g--;
                         if (gjVar != null && (message = gjVar.k) != null) {
-                            q8Var2.h -= message.paid_message_stars;
+                            p8Var2.h -= message.paid_message_stars;
                         }
-                        di.u8 u8Var = q8Var2.f;
-                        if (u8Var != null) {
-                            u8Var.b = 3000L;
-                            g0.r(p8Var);
-                            g0.i3(p8Var, 3000L);
+                        di.t8 t8Var = p8Var2.f;
+                        if (t8Var != null) {
+                            t8Var.b = 3000L;
+                            g0.r(o8Var);
+                            g0.i3(o8Var, 3000L);
                         }
                         org.telegram.ui.Components.h6 h6Var = rbVar.b;
-                        int i17 = q8Var2.g;
+                        int i17 = p8Var2.g;
                         if (i17 == 1) {
                             G = hd.M0(2131747703, null);
                             i12 = 0;
@@ -9030,7 +9030,7 @@ public final class ez extends c1 implements is {
                             G = hd.G(i17, "PaidMessageSentTitle", new Object[0]);
                         }
                         h6Var.setText(G);
-                        rbVar.c.setText(g0.X2(hd.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) q8Var2.h))));
+                        rbVar.c.setText(g0.X2(hd.H(',', "PaidMessageSentSubtitle", Math.max(i12, (int) p8Var2.h))));
                         rbVar.a.d();
                     }
                 }
@@ -9393,7 +9393,7 @@ public final class ez extends c1 implements is {
         }
         if (z10 || i7 != 0) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new dq(messagesStorage, j3, B0, Integer.valueOf(i13), i13, gjVar.k.date));
+            messagesStorage.a.c(new cq(messagesStorage, j3, B0, Integer.valueOf(i13), i13, gjVar.k.date));
             gjVar.k.send_state = 0;
             gjVar.M1 = true;
             getNotificationCenter().k(ns.J, Integer.valueOf(i13));
@@ -10831,7 +10831,7 @@ public final class ez extends c1 implements is {
                                                     arrayList9 = arrayList17;
                                                     arrayList9.add(tL_message);
                                                     hVar2 = hVar6;
-                                                    di.v8.y(this.currentAccount, false).d(gjVar4);
+                                                    di.u8.y(this.currentAccount, false).d(gjVar4);
                                                     if (gjVar3.C != null) {
                                                         int i36 = 0;
                                                         while (i36 < arrayList.size()) {
@@ -10961,7 +10961,7 @@ public final class ez extends c1 implements is {
                                                             z23 = z33;
                                                             bmVar = new bm(this, tL_messages_forwardMessages, arrayList11, new qx(i7, j3, hVar9, arrayList9, arrayList11, gjVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z33), 4);
                                                             ezVar = this;
-                                                            if (di.v8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
+                                                            if (di.u8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
                                                                 bmVar.run();
                                                             }
                                                             if (i27 != arrayList10.size() - 1) {
@@ -11020,7 +11020,7 @@ public final class ez extends c1 implements is {
                                                     z23 = z332;
                                                     bmVar = new bm(this, tL_messages_forwardMessages, arrayList11, new qx(i7, j3, hVar92, arrayList9, arrayList11, gjVar3, this, peer7, tL_messages_forwardMessages, i7 != 2147483646, z332), 4);
                                                     ezVar = this;
-                                                    if (di.v8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
+                                                    if (di.u8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
                                                     }
                                                     if (i27 != arrayList10.size() - 1) {
                                                     }
@@ -11105,7 +11105,7 @@ public final class ez extends c1 implements is {
                                             arrayList9 = arrayList17;
                                             arrayList9.add(tL_message);
                                             hVar2 = hVar6;
-                                            di.v8.y(this.currentAccount, false).d(gjVar42);
+                                            di.u8.y(this.currentAccount, false).d(gjVar42);
                                             if (gjVar3.C != null) {
                                             }
                                             arrayList10 = arrayList;
@@ -11154,7 +11154,7 @@ public final class ez extends c1 implements is {
                                             z23 = z3322;
                                             bmVar = new bm(this, tL_messages_forwardMessages, arrayList11, new qx(i7, j3, hVar922, arrayList9, arrayList11, gjVar3, this, peer72, tL_messages_forwardMessages, i7 != 2147483646, z3322), 4);
                                             ezVar = this;
-                                            if (di.v8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
+                                            if (di.u8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
                                             }
                                             if (i27 != arrayList10.size() - 1) {
                                             }
@@ -11372,7 +11372,7 @@ public final class ez extends c1 implements is {
                 arrayList9 = arrayList17;
                 arrayList9.add(tL_message);
                 hVar2 = hVar6;
-                di.v8.y(this.currentAccount, false).d(gjVar422);
+                di.u8.y(this.currentAccount, false).d(gjVar422);
                 if (gjVar3.C != null) {
                 }
                 arrayList10 = arrayList;
@@ -11421,7 +11421,7 @@ public final class ez extends c1 implements is {
                 z23 = z33222;
                 bmVar = new bm(this, tL_messages_forwardMessages, arrayList11, new qx(i7, j3, hVar9222, arrayList9, arrayList11, gjVar3, this, peer722, tL_messages_forwardMessages, i7 != 2147483646, z33222), 4);
                 ezVar = this;
-                if (di.v8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
+                if (di.u8.y(ezVar.currentAccount, false).c(tL_messages_forwardMessages, arrayList11, bmVar)) {
                 }
                 if (i27 != arrayList10.size() - 1) {
                 }
@@ -13016,7 +13016,7 @@ public final class ez extends c1 implements is {
                     tL_messageMediaDice.value = tL_messageMediaDice2.value;
                     tL_messageMediaDice.flags = tL_messageMediaDice2.flags;
                     tL_messageMediaDice.game_outcome = tL_messageMediaDice2.game_outcome;
-                    di.v8.y(ezVar2.currentAccount, true).O();
+                    di.u8.y(ezVar2.currentAccount, true).O();
                 } else {
                     TLRPC.MessageMedia messageMedia12 = message6.media;
                     TLRPC.Photo photo8 = messageMedia12.photo;

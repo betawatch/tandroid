@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class eo implements View.OnClickListener {
                 org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
                 ho hoVar = (ho) this.f;
                 ioVar.a();
-                t4.D(this.b, e6Var, new ai.r1(this.c, hoVar, 9));
+                t4.D(this.b, e6Var, new ai.s1(this.c, hoVar, 9));
                 break;
             default:
                 org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) this.d;

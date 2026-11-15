@@ -33,7 +33,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.telegram.messenger.is {
     public static final /* synthetic */ int G0 = 0;
@@ -393,10 +393,10 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
                 g2Var.setLayoutParams(layoutParams);
             }
         }
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ((ai.j0) ((a8.r7) dlVar.F).b).getLayoutParams();
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ((ai.k0) ((a8.r7) dlVar.F).b).getLayoutParams();
         if (layoutParams2 != null && layoutParams2.height != dlVar.getMapContentHeight()) {
             layoutParams2.height = dlVar.getMapContentHeight();
-            ((ai.j0) ((a8.r7) dlVar.F).b).setLayoutParams(layoutParams2);
+            ((ai.k0) ((a8.r7) dlVar.F).b).setLayoutParams(layoutParams2);
         }
         dlVar.L.P(dlVar.q0);
         v4.e1 K = c1Var.K(0);
@@ -476,7 +476,7 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
                         public final void a(int i11) {
                             dl dlVar3 = dl.this;
                             ki kiVar2 = dlVar3.b;
-                            t4.X(kiVar2.H3, kiVar2.X0() + 1, kiVar2.b1(), new ai.x1(dlVar3, i11, 5));
+                            t4.X(kiVar2.H3, kiVar2.X0() + 1, kiVar2.b1(), new ai.y1(dlVar3, i11, 5));
                         }
                     }, dlVar2.a).show();
                     return;
@@ -830,11 +830,11 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
         ki kiVar = this.b;
         kiVar.V2.setTitle(org.telegram.messenger.hd.M0(2131745456, null));
         int i7 = 1;
-        if (((ai.j0) ((a8.r7) this.F).b).getParent() == null) {
-            ai.j0 j0Var = (ai.j0) ((a8.r7) this.F).b;
+        if (((ai.k0) ((a8.r7) this.F).b).getParent() == null) {
+            ai.k0 k0Var = (ai.k0) ((a8.r7) this.F).b;
             FrameLayout.LayoutParams e10 = c8.ja.e(-1, org.telegram.messenger.g0.L(10.0f) + this.q0, 51);
             bi.g2 g2Var = this.K;
-            g2Var.addView(j0Var, 0, e10);
+            g2Var.addView(k0Var, 0, e10);
             g2Var.addView(this.J, 1, c8.ja.c(-1.0f, -1));
         }
         this.x.setVisibility(0);
@@ -935,10 +935,10 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
         int i7 = this.q0;
         jg.r0 r0Var = this.L;
         r0Var.P(i7);
-        FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((ai.j0) ((a8.r7) this.F).b).getLayoutParams();
+        FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ((ai.k0) ((a8.r7) this.F).b).getLayoutParams();
         if (layoutParams4 != null) {
             layoutParams4.height = org.telegram.messenger.g0.L(10.0f) + this.r0;
-            ((ai.j0) ((a8.r7) this.F).b).setLayoutParams(layoutParams4);
+            ((ai.k0) ((a8.r7) this.F).b).setLayoutParams(layoutParams4);
         }
         r0Var.f();
         i0();
@@ -995,15 +995,15 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
         v4.e1 K = c1Var.K(0);
         int top = K != null ? K.a.getTop() + c1Var.getTop() : ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (K == null || top >= getMeasuredHeight()) {
-            if (((ai.j0) ((a8.r7) this.F).b).getVisibility() == 0) {
-                ((ai.j0) ((a8.r7) this.F).b).setVisibility(4);
+            if (((ai.k0) ((a8.r7) this.F).b).getVisibility() == 0) {
+                ((ai.k0) ((a8.r7) this.F).b).setVisibility(4);
                 g2Var.setVisibility(4);
                 return;
             }
             return;
         }
-        if (((ai.j0) ((a8.r7) this.F).b).getVisibility() == 4) {
-            ((ai.j0) ((a8.r7) this.F).b).setVisibility(0);
+        if (((ai.k0) ((a8.r7) this.F).b).getVisibility() == 4) {
+            ((ai.k0) ((a8.r7) this.F).b).setVisibility(0);
             g2Var.setVisibility(0);
         }
         float f10 = top;
@@ -1035,13 +1035,13 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
         float C = a8.p0.C(max + max2 + i7, 2.0f, max3, f12);
         int ceil2 = ((int) Math.ceil(max3)) + getMapExtraTop();
         float f13 = C - ceil2;
-        ((ai.j0) ((a8.r7) this.F).b).setTranslationY(f13 - f11);
+        ((ai.k0) ((a8.r7) this.F).b).setTranslationY(f13 - f11);
         int L = ((int) (C - f11)) - org.telegram.messenger.g0.L(48.0f);
         if (L != this.k0) {
             this.k0 = L;
             this.P.setTranslationY(L);
         }
-        int measuredHeight = ((ai.j0) ((a8.r7) this.F).b).getMeasuredHeight() > 0 ? ((ai.j0) ((a8.r7) this.F).b).getMeasuredHeight() : getMapContentHeight();
+        int measuredHeight = ((ai.k0) ((a8.r7) this.F).b).getMeasuredHeight() > 0 ? ((ai.k0) ((a8.r7) this.F).b).getMeasuredHeight() : getMapContentHeight();
         int max4 = Math.max(0, (int) (measuredHeight - (i7 - f13)));
         int i10 = ((ceil2 * 2) - measuredHeight) + max4;
         org.telegram.messenger.ea eaVar = this.E;
@@ -1344,7 +1344,7 @@ public final class dl extends ci implements org.telegram.ui.ActionBar.z5, org.te
         }
         org.telegram.messenger.ya yaVar = this.F;
         if (yaVar != null) {
-            ((ai.j0) ((a8.r7) yaVar).b).setTranslationY((-org.telegram.messenger.g0.q.y) * 3);
+            ((ai.k0) ((a8.r7) yaVar).b).setTranslationY((-org.telegram.messenger.g0.q.y) * 3);
         }
         try {
             org.telegram.messenger.ya yaVar2 = this.F;

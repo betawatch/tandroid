@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import di.bb;
 import di.cb;
-import di.db;
-import di.mb;
-import di.v8;
+import di.lb;
+import di.u8;
+import di.wa;
 import di.xa;
-import di.ya;
 import fi.b7;
 import fi.i9;
 import hi.u9;
@@ -39,7 +39,7 @@ import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.vp0;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
@@ -50,7 +50,7 @@ import org.telegram.ui.tp0;
 import org.telegram.ui.xw;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b6 implements gj0 {
     public final /* synthetic */ int a;
@@ -171,36 +171,36 @@ public final /* synthetic */ class b6 implements gj0 {
                 }
                 break;
             case 2:
-                mb.C0((mb) obj, i7);
+                lb.C0((lb) obj, i7);
                 break;
             case 3:
-                xa xaVar = (xa) obj;
-                p41 p41Var2 = xaVar.X1;
+                wa waVar = (wa) obj;
+                p41 p41Var2 = waVar.X1;
                 if (p41Var2 != null && (G2 = p41Var2.G(i7 - 1)) != null) {
-                    p41 p41Var3 = xaVar.X1;
+                    p41 p41Var3 = waVar.X1;
                     if (G2.d == -1) {
-                        xaVar.Y1 = !xaVar.Y1;
+                        waVar.Y1 = !waVar.Y1;
                         p41Var3.O(true);
-                        xaVar.o1.w0(0, org.telegram.messenger.g0.L(200.0f), er.g);
+                        waVar.o1.w0(0, org.telegram.messenger.g0.L(200.0f), er.g);
                         break;
-                    } else if (G2.H(ya.class) && (G2.G instanceof TL_stars.TL_starsGiftOption)) {
-                        Context W = org.telegram.messenger.g0.W(xaVar.getContext());
+                    } else if (G2.H(xa.class) && (G2.G instanceof TL_stars.TL_starsGiftOption)) {
+                        Context W = org.telegram.messenger.g0.W(waVar.getContext());
                         if (W == null) {
                             W = LaunchActivity.H1;
                         }
                         if (W != null) {
-                            long j11 = xaVar.V1.id;
-                            v8 y10 = v8.y(xaVar.a, false);
+                            long j11 = waVar.V1.id;
+                            u8 y10 = u8.y(waVar.a, false);
                             TL_stars.TL_starsGiftOption tL_starsGiftOption = (TL_stars.TL_starsGiftOption) G2.G;
-                            v5 v5Var = new v5(xaVar, G2, j11, 1);
+                            v5 v5Var = new v5(waVar, G2, j11, 1);
                             int i17 = y10.a;
                             if (np.s1(i17).k7) {
                                 org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
                                 if (Q != null && Q.getContext() != null) {
-                                    v8.c0(Q.getContext(), Q.getResourceProvider());
+                                    u8.c0(Q.getContext(), Q.getResourceProvider());
                                     break;
                                 } else {
-                                    v8.c0(W, null);
+                                    u8.c0(W, null);
                                     break;
                                 }
                             } else if (org.telegram.messenger.r2.b() || !org.telegram.messenger.r1.i().k()) {
@@ -212,7 +212,7 @@ public final /* synthetic */ class b6 implements gj0 {
                                 TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
                                 tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGift;
                                 TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-                                JSONObject u10 = ki.x2.u(v8.I(), false);
+                                JSONObject u10 = ki.x2.u(u8.I(), false);
                                 if (u10 != null) {
                                     TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                                     tL_payments_getPaymentForm.theme_params = tL_dataJSON;
@@ -239,43 +239,43 @@ public final /* synthetic */ class b6 implements gj0 {
                 }
                 break;
             case 4:
-                cb cbVar = (cb) obj;
-                p41 p41Var4 = cbVar.a2;
+                bb bbVar = (bb) obj;
+                p41 p41Var4 = bbVar.a2;
                 if (p41Var4 != null && (G3 = p41Var4.G(i7 - 1)) != null) {
-                    p41 p41Var5 = cbVar.a2;
+                    p41 p41Var5 = bbVar.a2;
                     if (G3.d == -1) {
-                        cbVar.b2 = !cbVar.b2;
+                        bbVar.b2 = !bbVar.b2;
                         p41Var5.O(true);
                         break;
-                    } else if (G3.H(ya.class) && (G3.G instanceof TL_stars.TL_starsTopupOption)) {
-                        Activity W2 = org.telegram.messenger.g0.W(cbVar.getContext());
+                    } else if (G3.H(xa.class) && (G3.G instanceof TL_stars.TL_starsTopupOption)) {
+                        Activity W2 = org.telegram.messenger.g0.W(bbVar.getContext());
                         if (W2 == null) {
                             W2 = LaunchActivity.H1;
                         }
                         if (W2 != null) {
-                            v8.y(cbVar.a, false).f(W2, (TL_stars.TL_starsTopupOption) G3.G, new e4(3, cbVar, G3), cbVar.Y1);
+                            u8.y(bbVar.a, false).f(W2, (TL_stars.TL_starsTopupOption) G3.G, new e4(3, bbVar, G3), bbVar.Y1);
                             break;
                         }
                     }
                 }
                 break;
             case 5:
-                db dbVar = (db) obj;
-                p41 p41Var6 = dbVar.U1;
+                cb cbVar = (cb) obj;
+                p41 p41Var6 = cbVar.U1;
                 if (p41Var6 != null && (G4 = p41Var6.G(i7 - 1)) != null) {
-                    p41 p41Var7 = dbVar.U1;
+                    p41 p41Var7 = cbVar.U1;
                     if (G4.d == -1) {
-                        dbVar.V1 = !dbVar.V1;
+                        cbVar.V1 = !cbVar.V1;
                         p41Var7.O(true);
-                        dbVar.o1.w0(0, org.telegram.messenger.g0.L(300.0f), null);
+                        cbVar.o1.w0(0, org.telegram.messenger.g0.L(300.0f), null);
                         break;
-                    } else if (G4.H(ya.class) && (G4.G instanceof TL_stars.TL_starsTopupOption)) {
-                        Activity W3 = org.telegram.messenger.g0.W(dbVar.getContext());
+                    } else if (G4.H(xa.class) && (G4.G instanceof TL_stars.TL_starsTopupOption)) {
+                        Activity W3 = org.telegram.messenger.g0.W(cbVar.getContext());
                         if (W3 == null) {
                             W3 = LaunchActivity.H1;
                         }
                         if (W3 != null) {
-                            v8.y(dbVar.a, false).f(W3, (TL_stars.TL_starsTopupOption) G4.G, new e4(i12, dbVar, G4), null);
+                            u8.y(cbVar.a, false).f(W3, (TL_stars.TL_starsTopupOption) G4.G, new e4(i12, cbVar, G4), null);
                             break;
                         }
                     }
@@ -382,8 +382,8 @@ public final /* synthetic */ class b6 implements gj0 {
                 e10.j = str;
                 e10.a.edit().putString("typeface", str).apply();
                 tg.j jVar = u9Var.t0;
-                if (jVar instanceof tg.o2) {
-                    ((tg.o2) jVar).setTypeface(a0Var);
+                if (jVar instanceof tg.n2) {
+                    ((tg.n2) jVar).setTypeface(a0Var);
                 }
                 u9Var.M0(false);
                 break;
@@ -482,7 +482,7 @@ public final /* synthetic */ class b6 implements gj0 {
                 if (O instanceof kg.u1) {
                     if (m10.i(kiVar.H3).q()) {
                         kg.u1 u1Var = (kg.u1) O;
-                        org.telegram.ui.Components.t4.X(kiVar.H3, u1Var.a(), kiVar.b1(), new ai.u1(22, g0Var3, u1Var));
+                        org.telegram.ui.Components.t4.X(kiVar.H3, u1Var.a(), kiVar.b1(), new ai.v1(22, g0Var3, u1Var));
                         break;
                     } else if (kiVar.a2 != null) {
                         new ug.x0(kiVar.a2, g0Var3.getContext(), kiVar.H3, true, 31, false, null).show();
@@ -549,8 +549,8 @@ public final /* synthetic */ class b6 implements gj0 {
                 e11.j = str2;
                 e11.a.edit().putString("typeface", str2).apply();
                 tg.j jVar2 = tp0Var.C0;
-                if (jVar2 instanceof tg.o2) {
-                    ((tg.o2) jVar2).setTypeface(a0Var3);
+                if (jVar2 instanceof tg.n2) {
+                    ((tg.n2) jVar2).setTypeface(a0Var3);
                 }
                 tp0Var.z0(false);
                 break;
@@ -613,7 +613,7 @@ public final /* synthetic */ class b6 implements gj0 {
                 }
                 break;
             case 24:
-                ((y80) obj).h(view);
+                ((z80) obj).h(view);
                 break;
             default:
                 ((zh.l) obj).h(view);

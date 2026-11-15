@@ -10,14 +10,14 @@ import j$.util.Objects;
 import org.telegram.ui.Components.lm0;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.nt;
 import org.telegram.ui.ou0;
 import org.telegram.ui.uv0;
 import org.telegram.ui.vw0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements eh.a {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class f implements eh.a {
                 ((t) this.b).f.d(canvas, rectF, (e) this.c);
                 break;
             case 1:
-                ((mb) this.b).V.d(canvas, rectF, (e) this.c);
+                ((lb) this.b).V.d(canvas, rectF, (e) this.c);
                 break;
             case 2:
                 ((ii.f) this.b).V.d(canvas, rectF, (e) this.c);
@@ -58,7 +58,7 @@ public final /* synthetic */ class f implements eh.a {
                 ((u20) this.b).n.L(canvas, rectF, (FrameLayout) this.c);
                 break;
             case 5:
-                ((x80) this.b).S.L(canvas, rectF, (bi.g2) this.c);
+                ((y80) this.b).S.L(canvas, rectF, (bi.g2) this.c);
                 break;
             case 6:
                 nt ntVar = (nt) this.b;

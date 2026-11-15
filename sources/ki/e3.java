@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import di.v7;
+import di.u7;
 import java.util.ArrayList;
 import org.telegram.messenger.m10;
 import org.telegram.messenger.np;
@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -41,10 +41,10 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
         long j3;
         switch (this.a) {
             case 0:
-                androidx.car.app.utils.a aVar = (androidx.car.app.utils.a) this.n;
+                ai.r rVar = (ai.r) this.n;
                 TL_payments.connectedBotStarRef connectedbotstarref = this.h;
                 if (!connectedbotstarref.revoked) {
-                    aVar.run();
+                    rVar.run();
                     break;
                 } else {
                     int i7 = this.b;
@@ -92,7 +92,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                     long j10 = j3;
                     int i12 = i10;
                     e6 e6Var2 = e6Var;
-                    m60Var.g(tLObject, j10 == this.e, new v7(i12, j10, this.f, this.h, u2Var, e6Var2));
+                    m60Var.g(tLObject, j10 == this.e, new u7(i12, j10, this.f, this.h, u2Var, e6Var2));
                     i10 = i12;
                     e6Var = e6Var2;
                 }
@@ -105,13 +105,13 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ e3(TL_payments.connectedBotStarRef connectedbotstarref, int i7, org.telegram.ui.ActionBar.u2 u2Var, Context context, long j3, e6 e6Var, androidx.car.app.utils.a aVar) {
+    public /* synthetic */ e3(TL_payments.connectedBotStarRef connectedbotstarref, int i7, org.telegram.ui.ActionBar.u2 u2Var, Context context, long j3, e6 e6Var, ai.r rVar) {
         this.h = connectedbotstarref;
         this.b = i7;
         this.c = u2Var;
         this.f = context;
         this.e = j3;
         this.d = e6Var;
-        this.n = aVar;
+        this.n = rVar;
     }
 }

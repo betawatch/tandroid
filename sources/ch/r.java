@@ -19,7 +19,7 @@ import org.telegram.ui.aj;
 import org.telegram.ui.an;
 import org.telegram.ui.lj;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final int[] E;
@@ -59,7 +59,7 @@ public final class r extends FrameLayout {
         this.y = false;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
         duration.addUpdateListener(new ah.h(this, 2));
-        duration.addListener(new ai.i0(this, 4));
+        duration.addListener(new ai.j0(this, 4));
         duration.start();
     }
 

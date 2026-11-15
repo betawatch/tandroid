@@ -27,7 +27,7 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class ka extends r41 implements is {
     public static void d0(ka kaVar, TL_wallet.tonConnectSession tonconnectsession, z10 z10Var) {

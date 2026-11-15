@@ -16,14 +16,14 @@ import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.uc;
 import org.telegram.ui.Components.zh;
 import org.telegram.ui.an;
+import org.telegram.ui.an0;
 import org.telegram.ui.bg0;
-import org.telegram.ui.bn0;
+import org.telegram.ui.cn0;
 import org.telegram.ui.i90;
-import org.telegram.ui.ym0;
 import org.telegram.ui.z51;
 import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -138,22 +138,22 @@ public final /* synthetic */ class x1 implements View.OnClickListener {
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    bn0 bn0Var = new bn0(hashMap, arrayList, 0, true, (an) e2Var);
+                    cn0 cn0Var = new cn0(hashMap, arrayList, 0, true, (an) e2Var);
                     zh zhVar = new zh(kiVar, hashMap, arrayList);
-                    ym0 ym0Var = bn0Var.a;
-                    ym0Var.t0 = zhVar;
-                    ym0 ym0Var2 = bn0Var.b;
-                    ym0Var2.t0 = zhVar;
-                    ym0Var.u0 = new zm0(bn0Var, i11);
-                    ym0Var2.u0 = new zm0(bn0Var, i10);
+                    zm0 zm0Var = cn0Var.a;
+                    zm0Var.t0 = zhVar;
+                    zm0 zm0Var2 = cn0Var.b;
+                    zm0Var2.t0 = zhVar;
+                    zm0Var.u0 = new an0(cn0Var, i11);
+                    zm0Var2.u0 = new an0(cn0Var, i10);
                     int i13 = kiVar.Q3;
                     boolean z13 = kiVar.R3;
-                    ym0Var.k0(i13, z13);
-                    ym0Var2.k0(i13, z13);
+                    zm0Var.k0(i13, z13);
+                    zm0Var2.k0(i13, z13);
                     if (z10) {
-                        e2Var.showAsSheet(bn0Var);
+                        e2Var.showAsSheet(cn0Var);
                     } else {
-                        e2Var.presentFragment(bn0Var);
+                        e2Var.presentFragment(cn0Var);
                     }
                     kiVar.dismiss();
                     break;

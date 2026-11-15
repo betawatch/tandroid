@@ -7,18 +7,18 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import di.ub;
+import di.tb;
 import org.telegram.messenger.m10;
 import org.telegram.messenger.oi;
 import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f5 extends LinearLayout {
     public final org.telegram.ui.Components.i9 a;
-    public final ub b;
+    public final tb b;
     public final TextView c;
     public final org.telegram.ui.Components.t8 d;
     public final org.telegram.ui.ActionBar.e6 e;
@@ -38,15 +38,15 @@ public final class f5 extends LinearLayout {
         this.a = i9Var;
         i9Var.setRoundRadius(org.telegram.messenger.g0.L(14.0f));
         addView(i9Var, c8.ja.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
-        ub ubVar = new ub(context, 7);
-        this.b = ubVar;
-        org.telegram.ui.ActionBar.q6.U(ubVar, org.telegram.ui.ActionBar.j6.G6, e6Var);
-        ubVar.setTextSize(1, 15.0f);
-        ubVar.setSingleLine(true);
-        ubVar.setGravity(3);
+        tb tbVar = new tb(context, 7);
+        this.b = tbVar;
+        org.telegram.ui.ActionBar.q6.U(tbVar, org.telegram.ui.ActionBar.j6.G6, e6Var);
+        tbVar.setTextSize(1, 15.0f);
+        tbVar.setSingleLine(true);
+        tbVar.setGravity(3);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        ubVar.setEllipsize(truncateAt);
-        addView(ubVar, c8.ja.t(-2, -2, 16, 12, 0, 0, 0));
+        tbVar.setEllipsize(truncateAt);
+        addView(tbVar, c8.ja.t(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
         org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.A6, e6Var);
@@ -77,8 +77,8 @@ public final class f5 extends LinearLayout {
             int L = org.telegram.messenger.g0.L(drawable instanceof org.telegram.ui.Components.g5 ? 24.0f : 20.0f);
             int L2 = org.telegram.messenger.g0.L(this.f instanceof org.telegram.ui.Components.g5 ? -2.0f : 0.0f);
             Drawable drawable2 = this.f;
-            ub ubVar = this.b;
-            drawable2.setBounds(ubVar.getLeft() + L2, ((ubVar.getBottom() + ubVar.getTop()) - L) / 2, ubVar.getLeft() + L2 + L, ((ubVar.getBottom() + ubVar.getTop()) + L) / 2);
+            tb tbVar = this.b;
+            drawable2.setBounds(tbVar.getLeft() + L2, ((tbVar.getBottom() + tbVar.getTop()) - L) / 2, tbVar.getLeft() + L2 + L, ((tbVar.getBottom() + tbVar.getTop()) + L) / 2);
             Drawable drawable3 = this.f;
             if (drawable3 instanceof org.telegram.ui.Components.g5) {
                 ((org.telegram.ui.Components.g5) drawable3).p(System.currentTimeMillis());
@@ -128,11 +128,11 @@ public final class f5 extends LinearLayout {
 
     public void setChat(TLRPC.Chat chat) {
         a();
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         org.telegram.ui.Components.i9 i9Var = this.a;
         TextView textView = this.c;
         if (chat == null) {
-            ubVar.setText("");
+            tbVar.setText("");
             textView.setText("");
             i9Var.setImageDrawable(null);
             return;
@@ -145,7 +145,7 @@ public final class f5 extends LinearLayout {
         } else {
             i9Var.f(chat, t8Var);
         }
-        ubVar.setText(chat.title);
+        tbVar.setText(chat.title);
         String K = org.telegram.messenger.t3.K(chat, false);
         if (K != null) {
             textView.setText("@".concat(K));
@@ -187,36 +187,36 @@ public final class f5 extends LinearLayout {
             }
         }
         Drawable drawable2 = this.f;
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         if (drawable2 != null) {
-            ubVar.setPadding(org.telegram.messenger.g0.L(22.0f), 0, 0, 0);
+            tbVar.setPadding(org.telegram.messenger.g0.L(22.0f), 0, 0, 0);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(":  ");
             sb2.append(oiVar.b);
-            ubVar.setText(sb2);
+            tbVar.setText(sb2);
             return;
         }
-        ubVar.setPadding(0, 0, 0, 0);
+        tbVar.setPadding(0, 0, 0, 0);
         StringBuilder sb3 = new StringBuilder();
         sb3.append(oiVar.a);
         sb3.append(":  ");
         sb3.append(oiVar.b);
-        ubVar.setText(sb3);
+        tbVar.setText(sb3);
     }
 
     public void setIsDarkTheme(boolean z10) {
         TextView textView = this.c;
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         if (z10) {
-            org.telegram.ui.ActionBar.q6.q(ubVar);
+            org.telegram.ui.ActionBar.q6.q(tbVar);
             org.telegram.ui.ActionBar.q6.q(textView);
-            ubVar.setTextColor(-1);
+            tbVar.setTextColor(-1);
             textView.setTextColor(-4473925);
             return;
         }
         int i7 = org.telegram.ui.ActionBar.j6.G6;
         org.telegram.ui.ActionBar.e6 e6Var = this.e;
-        org.telegram.ui.ActionBar.q6.U(ubVar, i7, e6Var);
+        org.telegram.ui.ActionBar.q6.U(tbVar, i7, e6Var);
         org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.A6, e6Var);
     }
 
@@ -229,11 +229,11 @@ public final class f5 extends LinearLayout {
 
     public void setUser(TLRPC.User user) {
         a();
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         org.telegram.ui.Components.i9 i9Var = this.a;
         TextView textView = this.c;
         if (user == null) {
-            ubVar.setText("");
+            tbVar.setText("");
             textView.setText("");
             i9Var.setImageDrawable(null);
             return;
@@ -246,7 +246,7 @@ public final class f5 extends LinearLayout {
         } else {
             i9Var.f(user, t8Var);
         }
-        ubVar.setText(q10.p(user));
+        tbVar.setText(q10.p(user));
         if (q10.n(user) != null) {
             textView.setText("@" + q10.n(user));
         } else {

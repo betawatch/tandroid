@@ -17,7 +17,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 k4 k4Var = c6Var.U1;
                 k4Var.getLocationInWindow(new int[2]);
                 m60 F = m60.F(k4Var, c6Var.J0, view);
-                boolean z12 = (c6Var.H1() == null || !c6.L1(c6Var.a, org.telegram.messenger.m5.o(c6Var.H1().owner_id)) || !(c6Var.C2 instanceof m8) || c6Var.B2 == null || c6Var.B1() == null) ? false : true;
+                boolean z12 = (c6Var.H1() == null || !c6.L1(c6Var.a, org.telegram.messenger.m5.o(c6Var.H1().owner_id)) || !(c6Var.C2 instanceof l8) || c6Var.B2 == null || c6Var.B1() == null) ? false : true;
                 TL_stars.SavedStarGift savedStarGift = c6Var.B2;
                 F.l((savedStarGift == null || !savedStarGift.pinned_to_top) ? R.drawable.msg_pin : R.drawable.msg_unpin, hd.M0((savedStarGift == null || !savedStarGift.pinned_to_top) ? 2131750078 : 2131749884, null), new l1(c6Var, 13), z12);
                 F.l(R.drawable.outline_craft, hd.M0(2131749801, null), new l1(c6Var, 16), c6Var.o1());
@@ -342,7 +342,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                                 if (messageAction2 instanceof TLRPC.TL_messageActionStarGiftUnique) {
                                     i7 = ((TLRPC.TL_messageActionStarGiftUnique) messageAction2).can_resell_at;
                                     if (i7 > ConnectionsManager.getInstance(c6Var.a).getCurrentTime()) {
-                                        mb.i1(c6Var.getContext(), c6Var.a, null, new q3(c6Var, H14, r6 ? 1 : 0), c6Var.J0);
+                                        lb.i1(c6Var.getContext(), c6Var.a, null, new q3(c6Var, H14, r6 ? 1 : 0), c6Var.J0);
                                         break;
                                     } else {
                                         Context context = c6Var.getContext();
@@ -374,7 +374,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
             case 25:
                 TL_stars.TL_starGiftUnique H15 = c6Var.H1();
                 if (H15 != null) {
-                    mb.i1(c6Var.getContext(), c6Var.a, H15, new q3(c6Var, H15, i11), c6Var.J0);
+                    lb.i1(c6Var.getContext(), c6Var.a, H15, new q3(c6Var, H15, i11), c6Var.J0);
                     break;
                 }
                 break;

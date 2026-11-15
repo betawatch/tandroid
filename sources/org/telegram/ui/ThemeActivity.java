@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int A0;
@@ -140,7 +140,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e2 implements org.t
     public int y0;
     public int z0;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -427,9 +427,9 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e2 implements org.t
             return;
         }
         if (i7 == themeActivity.changeUserColor) {
-            im0 im0Var = new im0();
-            im0Var.I = themeActivity;
-            themeActivity.presentFragment(im0Var);
+            jm0 jm0Var = new jm0();
+            jm0Var.I = themeActivity;
+            themeActivity.presentFragment(jm0Var);
             return;
         }
         if (i7 == themeActivity.H) {
@@ -973,7 +973,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e2 implements org.t
         if (i7 == themeActivity.stickersRow) {
             themeActivity.presentFragment(new StickersActivity(0, null));
         } else if (i7 == themeActivity.B0) {
-            themeActivity.presentFragment(new ai.v2());
+            themeActivity.presentFragment(new ai.x2());
         } else if (i7 == themeActivity.liteModeRow) {
             themeActivity.presentFragment(new x90());
         }
@@ -1771,7 +1771,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.e2 implements org.t
     @Override // org.telegram.ui.ActionBar.e2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.s6(this.b, 16, new Class[]{org.telegram.ui.Cells.v9.class, org.telegram.ui.Cells.q8.class, org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.i0.class, org.telegram.ui.Cells.aa.class, d61.class, t51.class, z51.class, org.telegram.ui.Cells.h5.class, org.telegram.ui.Cells.ga.class, b61.class, org.telegram.ui.Cells.l8.class, ol0.class, org.telegram.ui.Components.xw0.class, vt.class, org.telegram.ui.Cells.t.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.r6) null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.s6(this.b, 16, new Class[]{org.telegram.ui.Cells.v9.class, org.telegram.ui.Cells.q8.class, org.telegram.ui.Cells.n4.class, org.telegram.ui.Cells.i0.class, org.telegram.ui.Cells.aa.class, d61.class, t51.class, z51.class, org.telegram.ui.Cells.h5.class, org.telegram.ui.Cells.ga.class, b61.class, org.telegram.ui.Cells.l8.class, pl0.class, org.telegram.ui.Components.xw0.class, vt.class, org.telegram.ui.Cells.t.class}, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.r6) null, org.telegram.ui.ActionBar.j6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.s6(this.b, 32768, (Class[]) null, (Paint) null, (Drawable[]) null, (org.telegram.ui.ActionBar.r6) null, org.telegram.ui.ActionBar.j6.s8));
         int i7 = org.telegram.ui.ActionBar.j6.q6;
         arrayList.add(new org.telegram.ui.ActionBar.s6(this.b, 0, new Class[]{org.telegram.ui.Cells.l8.class}, new String[]{"textView"}, (Drawable[]) null, (org.telegram.ui.ActionBar.r6) null, i7));

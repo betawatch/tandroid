@@ -9,7 +9,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ae implements r4, ni0 {
     public final /* synthetic */ int a;
@@ -51,9 +51,9 @@ public final class ae implements r4, ni0 {
 
     public void b() {
         ChatActivityEnterView chatActivityEnterView = this.b;
-        ai.m0 m0Var = chatActivityEnterView.j1;
+        ai.n0 n0Var = chatActivityEnterView.j1;
         boolean z10 = false;
-        boolean z11 = (m0Var == null || m0Var.r == 0) ? false : true;
+        boolean z11 = (n0Var == null || n0Var.r == 0) ? false : true;
         xe xeVar = chatActivityEnterView.F0;
         Editable text = xeVar == null ? null : xeVar.getText();
         xe xeVar2 = chatActivityEnterView.F0;

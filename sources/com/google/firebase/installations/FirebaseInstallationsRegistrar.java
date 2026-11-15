@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutorService;
 import o9.g;
 import q9.a;
 import sa.e;
-import tg.a2;
+import tg.z1;
 import u9.b;
 import u9.q;
 import ug.x;
@@ -18,7 +18,7 @@ import v9.i;
 import va.c;
 import va.d;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
@@ -41,7 +41,7 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         sa.d dVar = new sa.d(0);
         j0 a11 = u9.a.a(sa.d.class);
         a11.b = 1;
-        a11.f = new a2(dVar, 6);
+        a11.f = new z1(dVar, 6);
         return Arrays.asList(b10, a11.b(), i8.a(LIBRARY_NAME, "19.1.2"));
     }
 }

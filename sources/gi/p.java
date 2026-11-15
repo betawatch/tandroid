@@ -1,6 +1,6 @@
 package gi;
 
-import ai.f0;
+import ai.g0;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import fi.i4;
@@ -10,14 +10,14 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p extends ja {
     public final int T1;
     public final CharSequence U1;
     public p41 V1;
 
-    public p(e2 e2Var, String str, f0 f0Var) {
+    public p(e2 e2Var, String str, g0 g0Var) {
         super(e2Var, true, false, e2Var.getResourceProvider());
         new FrameLayout(getContext());
         new ImageView(getContext());
@@ -32,7 +32,7 @@ public final class p extends ja {
         uj0 uj0Var = this.o1;
         int i7 = this.u0;
         uj0Var.setPadding(i7, 0, i7, 0);
-        this.o1.setOnItemClickListener(new i4(1, this, f0Var));
+        this.o1.setOnItemClickListener(new i4(1, this, g0Var));
     }
 
     @Override // org.telegram.ui.Components.ja

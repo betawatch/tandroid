@@ -1,6 +1,6 @@
 package vg;
 
-import ai.y0;
+import ai.z0;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.opengl.GLSurfaceView;
@@ -17,11 +17,11 @@ import hi.i9;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.g71;
-import tg.y1;
+import tg.x1;
 import ug.s1;
 import ug.t1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class e extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int L = 0;
@@ -160,7 +160,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
             ofFloat.setDuration(Math.round(10540.18445322793d));
             this.d.setRepeatCount(-1);
             this.d.setInterpolator(new LinearInterpolator());
-            this.d.addUpdateListener(new y1(this, 5));
+            this.d.addUpdateListener(new x1(this, 5));
             this.d.start();
         }
     }
@@ -287,7 +287,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
     public final void surfaceRedrawNeededAsync(SurfaceHolder surfaceHolder, Runnable runnable) {
         ArrayList arrayList;
         synchronized (this.I) {
-            this.I.add(new y0(5, runnable));
+            this.I.add(new z0(5, runnable));
             arrayList = new ArrayList(this.I);
         }
         super.surfaceRedrawNeededAsync(surfaceHolder, new t1(3, this, arrayList));

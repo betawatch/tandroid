@@ -1,52 +1,78 @@
 package ai;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.ui.Components.ae;
+import android.media.AudioRecord;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z implements n0, bi.w0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m0 b;
+public final class z {
+    public final Object a = new Object();
+    public byte[] b = new byte[320000];
+    public int c;
+    public boolean d;
+    public AudioRecord e;
+    public Thread f;
+    public volatile u1 g;
+    public double h;
+    public int i;
 
-    public /* synthetic */ z(m0 m0Var, int i7) {
-        this.a = i7;
-        this.b = m0Var;
-    }
-
-    @Override // bi.w0
-    public void a(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                m0 m0Var = this.b;
-                ae aeVar = m0Var.f;
-                aeVar.b.U1.getLocationInWindow(new int[2]);
-                m0Var.w.getLocationInWindow(new int[2]);
-                canvas.save();
-                canvas.translate(r1[0] - r0[0], r1[1] - r0[1]);
-                aeVar.a(canvas);
-                canvas.restore();
-                break;
-            default:
-                m0 m0Var2 = this.b;
-                ae aeVar2 = m0Var2.f;
-                aeVar2.b.U1.getLocationInWindow(new int[2]);
-                m0Var2.w.getLocationInWindow(new int[2]);
-                canvas.save();
-                canvas.translate(r1[0] - r0[0], r1[1] - r0[1]);
-                aeVar2.a(canvas);
-                canvas.restore();
-                break;
+    public final void a(int i7, byte[] bArr) {
+        synchronized (this.a) {
+            try {
+                int i10 = this.c + i7;
+                if (i10 > 19200000) {
+                    return;
+                }
+                byte[] bArr2 = this.b;
+                if (i10 > bArr2.length) {
+                    this.b = Arrays.copyOf(bArr2, Math.min(19200000, Math.max(bArr2.length * 2, i10)));
+                }
+                System.arraycopy(bArr, 0, this.b, this.c, i7);
+                this.c += i7;
+                this.a.notifyAll();
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 
-    public int b(float f10, float f11) {
-        m0 m0Var = this.b;
-        RectF rectF = m0Var.y;
-        if (m0Var.j(rectF)) {
-            return m0Var.x.a(f10, f11, rectF);
+    public final byte[] b(int i7, int i10) {
+        byte[] copyOfRange;
+        synchronized (this.a) {
+            int max = Math.max(0, Math.min(i7, this.c));
+            copyOfRange = Arrays.copyOfRange(this.b, max, Math.max(max, Math.min(i10, this.c)));
         }
-        return 0;
+        return copyOfRange;
+    }
+
+    public final int c() {
+        int i7;
+        synchronized (this.a) {
+            i7 = this.c;
+        }
+        return i7;
+    }
+
+    public final void d() {
+        synchronized (this.a) {
+            this.d = true;
+            this.a.notifyAll();
+        }
+        AudioRecord audioRecord = this.e;
+        if (audioRecord != null) {
+            try {
+                audioRecord.stop();
+            } catch (Exception unused) {
+            }
+            try {
+                Thread thread = this.f;
+                if (thread != null) {
+                    thread.join(300L);
+                }
+            } catch (InterruptedException unused2) {
+            }
+            this.e.release();
+            this.e = null;
+        }
     }
 }

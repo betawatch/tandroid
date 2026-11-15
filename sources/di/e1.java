@@ -25,7 +25,7 @@ import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.t70;
 import org.telegram.ui.w40;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements te.b {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final class e1 extends FrameLayout implements te.b {
         switch (this.a) {
             case 1:
                 Paint paint = (Paint) this.b;
-                if (((hb) this.d).e > 1) {
+                if (((gb) this.d).e > 1) {
                     paint.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, (org.telegram.ui.ActionBar.e6) this.c));
                     RectF rectF = org.telegram.messenger.g0.P;
                     rectF.set(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
@@ -227,13 +227,13 @@ public final class e1 extends FrameLayout implements te.b {
                 }
                 return drawChild;
             case 13:
-                tg.k2 k2Var = ((tg.m2) this.d).f;
-                if (view != k2Var) {
+                tg.j2 j2Var = ((tg.l2) this.d).f;
+                if (view != j2Var) {
                     return super.drawChild(canvas, view, j3);
                 }
                 canvas.save();
                 canvas.translate(((org.telegram.ui.Components.u5) this.b).e(false, view.getX()), ((org.telegram.ui.Components.u5) this.c).e(false, view.getY()));
-                k2Var.a(canvas);
+                j2Var.a(canvas);
                 canvas.restore();
                 return true;
             default:
@@ -288,9 +288,9 @@ public final class e1 extends FrameLayout implements te.b {
                 RectF rectF = (RectF) this.c;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
                 path.addRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), Path.Direction.CW);
-                tg.k2 k2Var = ((tg.m2) this.d).f;
-                if (k2Var != null) {
-                    k2Var.setMaxWidth(getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f));
+                tg.j2 j2Var = ((tg.l2) this.d).f;
+                if (j2Var != null) {
+                    j2Var.setMaxWidth(getMeasuredWidth() - org.telegram.messenger.g0.L(32.0f));
                     break;
                 }
                 break;
@@ -357,19 +357,19 @@ public final class e1 extends FrameLayout implements te.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e1(tg.m2 m2Var, Context context, int i7) {
+    public e1(tg.l2 l2Var, Context context, int i7) {
         super(context);
         this.a = i7;
         switch (i7) {
             case 13:
-                this.d = m2Var;
+                this.d = l2Var;
                 super(context);
                 er erVar = er.h;
                 this.b = new org.telegram.ui.Components.u5(this, 0L, 350L, erVar);
                 this.c = new org.telegram.ui.Components.u5(this, 0L, 350L, erVar);
                 break;
             default:
-                this.d = m2Var;
+                this.d = l2Var;
                 this.b = new Path();
                 this.c = new RectF();
                 break;
@@ -476,10 +476,10 @@ public final class e1 extends FrameLayout implements te.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e1(hb hbVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public e1(gb gbVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.a = 1;
-        this.d = hbVar;
+        this.d = gbVar;
         this.c = e6Var;
         this.b = new Paint(1);
     }

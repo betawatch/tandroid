@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class oo0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.e6 a;
@@ -1069,17 +1069,17 @@ public final class oo0 extends org.telegram.ui.ActionBar.j {
                     photoViewer2.s4 = true;
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", photoViewer2.E5);
-                    org.telegram.ui.Components.x80 x80Var = new org.telegram.ui.Components.x80(bundle, null);
+                    org.telegram.ui.Components.y80 y80Var = new org.telegram.ui.Components.y80(bundle, null);
                     anVar8 = photoViewer2.l4;
                     if (anVar8 != null) {
                         anVar9 = photoViewer2.l4;
-                        x80Var.e0(anVar9.Q8());
+                        y80Var.e0(anVar9.Q8());
                     }
                     photoViewer2.z0(false, false);
                     activity16 = photoViewer2.E;
                     if (activity16 instanceof LaunchActivity) {
                         activity17 = photoViewer2.E;
-                        ((LaunchActivity) activity17).u0(x80Var, false, true);
+                        ((LaunchActivity) activity17).u0(y80Var, false, true);
                         return;
                     }
                     return;

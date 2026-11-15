@@ -1,7 +1,7 @@
 package p4;
 
 import a8.ja;
-import ai.q1;
+import ai.r1;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -25,7 +25,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import c8.cb;
-import di.aa;
+import di.z9;
 import h9.s1;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.km;
 import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Wallet.k8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class m0 extends android.support.v4.media.session.s {
     public static final int z;
@@ -410,7 +410,7 @@ public final class m0 extends android.support.v4.media.session.s {
     @Override // android.support.v4.media.session.s
     public final void c(q4.h hVar) {
         if (hVar != null) {
-            i0(20, new q1(this, hVar, -1, 17), ((q4.l) this.n.b).c(), false);
+            i0(20, new r1(this, hVar, -1, 17), ((q4.l) this.n.b).c(), false);
         }
     }
 
@@ -418,7 +418,7 @@ public final class m0 extends android.support.v4.media.session.s {
     public final void d(q4.h hVar, int i7) {
         if (hVar != null) {
             if (i7 == -1 || i7 >= 0) {
-                i0(20, new q1(this, hVar, i7, 17), ((q4.l) this.n.b).c(), false);
+                i0(20, new r1(this, hVar, i7, 17), ((q4.l) this.n.b).c(), false);
             }
         }
     }
@@ -826,7 +826,7 @@ public final class m0 extends android.support.v4.media.session.s {
             return;
         }
         if (rVar != null) {
-            h2.l0.W(d0Var.l, new aa(this, i7, rVar, l0Var, z10));
+            h2.l0.W(d0Var.l, new z9(this, i7, rVar, l0Var, z10));
             return;
         }
         h2.a.b("MediaSessionLegacyStub", "RemoteUserInfo is null, ignoring command=" + i7);
@@ -834,7 +834,7 @@ public final class m0 extends android.support.v4.media.session.s {
 
     public final void j0(i1 i1Var, int i7, l0 l0Var, q4.r rVar) {
         if (rVar != null) {
-            h2.l0.W(this.h.l, new ai.f1(this, i1Var, i7, rVar, l0Var, 26));
+            h2.l0.W(this.h.l, new ai.g1(this, i1Var, i7, rVar, l0Var, 26));
             return;
         }
         StringBuilder sb2 = new StringBuilder("RemoteUserInfo is null, ignoring command=");

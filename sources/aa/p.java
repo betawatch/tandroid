@@ -67,7 +67,7 @@ import java.util.function.Supplier;
 import m.o3;
 import sg.h0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class p {
     public static final h r = new h(1);
@@ -709,7 +709,7 @@ public final class p {
                 str2 = str7;
                 str3 = str10;
                 i7 = 4;
-                ((ba.e) o3Var.b).b.a(new androidx.car.app.utils.a(2, o3Var, ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), ((f5.v) o3Var.f).o(), str));
+                ((ba.e) o3Var.b).b.a(new ai.r((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((f5.v) o3Var.f).o(), 3));
             }
         }
         ca.f fVar3 = this.i;

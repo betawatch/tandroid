@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -583,7 +583,7 @@ public final /* synthetic */ class n2 implements View.OnClickListener {
                         org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder3.a;
                         t1Var2.S = M02;
                         t1Var2.U = org.telegram.messenger.hd.M0(2131745454, null);
-                        alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131745455, null), new ai.q1(pa0Var, user, max, 12));
+                        alertDialog$Builder3.k(org.telegram.messenger.hd.M0(2131745455, null), new ai.r1(pa0Var, user, max, 12));
                         alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), null);
                         pa0Var.showDialog(t1Var2);
                     } else {

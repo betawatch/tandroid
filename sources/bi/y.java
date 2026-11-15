@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.na;
-import di.cb;
-import di.mb;
-import di.v8;
+import di.bb;
+import di.lb;
+import di.u8;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hd;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y extends ja implements u9 {
     public static final /* synthetic */ int w2 = 0;
@@ -46,9 +46,9 @@ public final class y extends ja implements u9 {
     public final s W1;
     public final bg.q X1;
     public final r Y1;
-    public final ai.j0 Z1;
-    public final ai.j0 a2;
-    public final ai.j0 b2;
+    public final ai.k0 Z1;
+    public final ai.k0 a2;
+    public final ai.k0 b2;
     public final org.telegram.ui.Cells.n4 c2;
     public final org.telegram.ui.Components.h6 d2;
     public final w e2;
@@ -155,37 +155,37 @@ public final class y extends ja implements u9 {
         linearLayout.addView(rVar2, c8.ja.t(-1, -2, 0, 0, -40, 0, -48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
-        ai.j0 j0Var = new ai.j0(context, e6Var);
-        this.Z1 = j0Var;
+        ai.k0 k0Var = new ai.k0(context, e6Var);
+        this.Z1 = k0Var;
         int L = org.telegram.messenger.g0.L(12.0f);
         int i16 = org.telegram.ui.ActionBar.j6.a7;
         int w02 = org.telegram.ui.ActionBar.j6.w0(i16, this.J0);
         int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.i6, this.J0), org.telegram.ui.ActionBar.j6.w0(i16, this.J0));
         org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.j6.k0(L, L, L, L, w02, k10, k10);
         org.telegram.ui.ActionBar.m6 M = org.telegram.ui.ActionBar.q6.M(i16);
-        j0Var.setBackground(k02);
-        org.telegram.ui.ActionBar.q6.j(j0Var, k02, M, null, e6Var);
-        j0Var.setOnClickListener(new m(this, i14));
-        ((TextView) j0Var.c).setText(hd.M0(2131750375, null));
-        ai.j0 j0Var2 = new ai.j0(context, e6Var);
-        this.a2 = j0Var2;
+        k0Var.setBackground(k02);
+        org.telegram.ui.ActionBar.q6.j(k0Var, k02, M, null, e6Var);
+        k0Var.setOnClickListener(new m(this, i14));
+        ((TextView) k0Var.c).setText(hd.M0(2131750375, null));
+        ai.k0 k0Var2 = new ai.k0(context, e6Var);
+        this.a2 = k0Var2;
         ShapeDrawable d02 = org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.j6.w0(i16, this.J0));
         org.telegram.ui.ActionBar.m6 M2 = org.telegram.ui.ActionBar.q6.M(i16);
-        j0Var2.setBackground(d02);
-        org.telegram.ui.ActionBar.q6.j(j0Var2, d02, M2, null, e6Var);
-        ((TextView) j0Var2.c).setText(hd.M0(2131750373, null));
-        ai.j0 j0Var3 = new ai.j0(context, e6Var);
-        this.b2 = j0Var3;
+        k0Var2.setBackground(d02);
+        org.telegram.ui.ActionBar.q6.j(k0Var2, d02, M2, null, e6Var);
+        ((TextView) k0Var2.c).setText(hd.M0(2131750373, null));
+        ai.k0 k0Var3 = new ai.k0(context, e6Var);
+        this.b2 = k0Var3;
         ShapeDrawable d03 = org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(12.0f), org.telegram.ui.ActionBar.j6.w0(i16, this.J0));
         org.telegram.ui.ActionBar.m6 M3 = org.telegram.ui.ActionBar.q6.M(i16);
-        j0Var3.setBackground(d03);
-        org.telegram.ui.ActionBar.q6.j(j0Var3, d03, M3, null, e6Var);
-        ((TextView) j0Var3.c).setText(hd.M0(2131750376, null));
-        linearLayout2.addView(j0Var, c8.ja.l(1.0f, 0, -1));
+        k0Var3.setBackground(d03);
+        org.telegram.ui.ActionBar.q6.j(k0Var3, d03, M3, null, e6Var);
+        ((TextView) k0Var3.c).setText(hd.M0(2131750376, null));
+        linearLayout2.addView(k0Var, c8.ja.l(1.0f, 0, -1));
         linearLayout2.addView(new View(context), c8.ja.l(0.0f, 10, -1));
-        linearLayout2.addView(j0Var2, c8.ja.l(1.0f, 0, -1));
+        linearLayout2.addView(k0Var2, c8.ja.l(1.0f, 0, -1));
         linearLayout2.addView(new View(context), c8.ja.l(0.0f, 10, -1));
-        linearLayout2.addView(j0Var3, c8.ja.l(1.0f, 0, -1));
+        linearLayout2.addView(k0Var3, c8.ja.l(1.0f, 0, -1));
         linearLayout.addView(linearLayout2, c8.ja.k(16.0f, 0.0f, 16.0f, 15.0f, -1, 56));
         if (l10.e.acquired_count > 0) {
             z70 z70Var = new z70(context, e6Var);
@@ -362,8 +362,8 @@ public final class y extends ja implements u9 {
         }
         long j3 = this.h2.e.bid_amount;
         long j10 = j3 > 0 ? i7 - j3 : i7;
-        if (v8.y(this.a, false).e && v8.y(this.a, false).q(null, false, false).amount < j10) {
-            new cb(getContext(), this.J0, j10, 14, null, null, 0L).show();
+        if (u8.y(this.a, false).e && u8.y(this.a, false).q(null, false, false).amount < j10) {
+            new bb(getContext(), this.J0, j10, 14, null, null, 0L).show();
             return;
         }
         this.v2 = true;
@@ -393,9 +393,9 @@ public final class y extends ja implements u9 {
         }
         eq[] eqVarArr = this.r2;
         if (j3 >= value || tL_StarGiftAuctionUserState.returned) {
-            sVar.i(mb.Y0(false, hd.a0(null, null, 2131750339, hd.E(value, ',')), eqVarArr), z10, true);
+            sVar.i(lb.Y0(false, hd.a0(null, null, 2131750339, hd.E(value, ',')), eqVarArr), z10, true);
         } else {
-            sVar.i(mb.Y0(false, hd.a0(null, null, 2131750338, hd.E(value - j3, ',')), eqVarArr), z10, true);
+            sVar.i(lb.Y0(false, hd.a0(null, null, 2131750338, hd.E(value - j3, ',')), eqVarArr), z10, true);
         }
         sVar.setOnClickListener(new m(this, i10));
     }
@@ -489,7 +489,7 @@ public final class y extends ja implements u9 {
         long e10 = (int) this.h2.e();
         sb2.append(e10 < 1000000 ? hd.E(e10, ',') : org.telegram.messenger.g0.o0((int) e10, 1000000));
         int i10 = 0;
-        h6Var.c(mb.a1(false, sb2.toString(), 0.78f, this.n2), z10, true);
+        h6Var.c(lb.a1(false, sb2.toString(), 0.78f, this.n2), z10, true);
         if (this.h2.f != null) {
             int currentTime = ConnectionsManager.getInstance(this.a).getCurrentTime();
             boolean g10 = this.h2.g(currentTime);
@@ -504,9 +504,9 @@ public final class y extends ja implements u9 {
                 k1(max2, z10);
             }
             org.telegram.ui.Components.p5 p5Var = this.o2;
-            ai.j0 j0Var = this.b2;
+            ai.k0 k0Var = this.b2;
             if (p5Var == null && this.h2.d.sticker != null) {
-                this.o2 = new org.telegram.ui.Components.p5(this.h2.d.sticker.id, ((org.telegram.ui.Components.h6) j0Var.b).getPaint().getFontMetricsInt());
+                this.o2 = new org.telegram.ui.Components.p5(this.h2.d.sticker.id, ((org.telegram.ui.Components.h6) k0Var.b).getPaint().getFontMetricsInt());
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             if (this.o2 != null) {
@@ -514,7 +514,7 @@ public final class y extends ja implements u9 {
                 spannableStringBuilder.setSpan(this.o2, 0, 1, 33);
             }
             spannableStringBuilder.append((CharSequence) hd.E(this.h2.f.gifts_left, ','));
-            ((org.telegram.ui.Components.h6) j0Var.b).c(spannableStringBuilder, z10, true);
+            ((org.telegram.ui.Components.h6) k0Var.b).c(spannableStringBuilder, z10, true);
             TextView textView = (TextView) this.a2.c;
             r9 r9Var = this.h2;
             r9Var.getClass();

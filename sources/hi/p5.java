@@ -23,7 +23,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.yb1;
 import org.telegram.ui.ye;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class p5 implements View.OnClickListener {
                 ChatActivityEnterView.g(((org.telegram.ui.Components.hd) ((ki.m0) obj).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 11:
-                ((androidx.car.app.utils.a) obj).run();
+                ((ai.r) obj).run();
                 break;
             case 12:
                 li.n nVar = (li.n) obj;

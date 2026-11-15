@@ -1,6 +1,6 @@
 package ci;
 
-import ai.u1;
+import ai.v1;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -44,7 +44,7 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.widget.OverScroller;
 import com.google.android.gms.internal.vision.e2;
-import di.m8;
+import di.l8;
 import fi.u2;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -82,7 +82,7 @@ import org.telegram.ui.Components.ou0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z0 extends View {
     public static int[] E9;
@@ -448,7 +448,7 @@ public final class z0 extends View {
     public float i9;
     public float j0;
     public float j1;
-    public m8 j2;
+    public l8 j2;
     public int j3;
     public int j4;
     public final boolean[] j5;
@@ -5921,7 +5921,7 @@ public final class z0 extends View {
                         } else {
                             z0Var.o8 = true;
                             f26 = A;
-                            TLRPC.TL_messages_stickerSet l02 = si.b0(i38).l0(z0Var.p8, null, false, false, new ai.f0(z0Var, 7));
+                            TLRPC.TL_messages_stickerSet l02 = si.b0(i38).l0(z0Var.p8, null, false, false, new ai.g0(z0Var, 7));
                             if (l02 != null && (arrayList2 = l02.documents) != null && !arrayList2.isEmpty()) {
                                 z0Var.q8 = l02.documents.get(0);
                             }
@@ -6428,9 +6428,9 @@ public final class z0 extends View {
         P0(this.G);
         P0(this.H);
         removeCallbacks(this.q9);
-        m8 m8Var = this.j2;
-        if (m8Var != null) {
-            m8Var.f();
+        l8 l8Var = this.j2;
+        if (l8Var != null) {
+            l8Var.f();
         }
         VelocityTracker velocityTracker = this.l0;
         if (velocityTracker != null) {
@@ -7242,7 +7242,7 @@ public final class z0 extends View {
         if (w0Var == null || w0Var.G || w0Var.a != 2 || w0Var.F != null || (document = w0Var.A) == null) {
             return;
         }
-        w0Var.F = new t(this.b, document, w0Var.B, org.telegram.messenger.g0.L(48.0f), new u1(5, this, w0Var));
+        w0Var.F = new t(this.b, document, w0Var.B, org.telegram.messenger.g0.L(48.0f), new v1(5, this, w0Var));
     }
 
     public final float X0(int i7, long j3) {
@@ -9293,7 +9293,7 @@ public final class z0 extends View {
         if (str == null) {
             this.v0 = null;
         } else {
-            Utilities.e.c(new ai.g0(str, new q0(this, str, 1)));
+            Utilities.e.c(new ai.h0(str, new q0(this, str, 1)));
         }
     }
 
@@ -9302,15 +9302,15 @@ public final class z0 extends View {
             return;
         }
         this.x1 = j3;
-        m8 m8Var = this.j2;
-        if (m8Var != null) {
-            m8Var.f();
+        l8 l8Var = this.j2;
+        if (l8Var != null) {
+            l8Var.f();
         }
-        m8 m8Var2 = new m8(this.b, j3, false);
-        this.j2 = m8Var2;
-        m8Var2.g = 776;
-        m8Var2.e = true;
-        m8Var2.j(true);
+        l8 l8Var2 = new l8(this.b, j3, false);
+        this.j2 = l8Var2;
+        l8Var2.g = 776;
+        l8Var2.e = true;
+        l8Var2.j(true);
         y0();
     }
 
@@ -9492,8 +9492,8 @@ public final class z0 extends View {
 
     public final void y0() {
         int i7;
-        m8 m8Var = this.j2;
-        if (m8Var == null) {
+        l8 l8Var = this.j2;
+        if (l8Var == null) {
             return;
         }
         w0 w0Var = this.G;
@@ -9504,7 +9504,7 @@ public final class z0 extends View {
         arrayList.clear();
         HashMap hashMap = this.z1;
         hashMap.clear();
-        ArrayList arrayList2 = m8Var.l;
+        ArrayList arrayList2 = l8Var.l;
         int size = arrayList2.size();
         int i11 = 0;
         int i12 = 0;
@@ -9541,10 +9541,10 @@ public final class z0 extends View {
             this.G.q = i11;
             this.M7 = i11;
         }
-        boolean z10 = m8Var.j;
+        boolean z10 = l8Var.j;
         this.y1 = z10;
-        if (!z10 && !m8Var.i) {
-            m8Var.a();
+        if (!z10 && !l8Var.i) {
+            l8Var.a();
         }
         if (!arrayList.isEmpty() && !this.m2) {
             this.m2 = true;

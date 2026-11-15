@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class vw0 extends FrameLayout {
     public RadialGradient E;
@@ -73,8 +73,8 @@ public final class vw0 extends FrameLayout {
                 this.H = i7;
                 this.I = org.telegram.ui.ActionBar.j6.r1(0.45f, i7);
             } else {
-                this.H = im0.B0(this.e);
-                this.I = org.telegram.ui.ActionBar.j6.r1(0.15f, im0.B0(this.e));
+                this.H = jm0.B0(this.e);
+                this.I = org.telegram.ui.ActionBar.j6.r1(0.15f, jm0.B0(this.e));
             }
         } else {
             profileActivity.c1 = this.a;
@@ -87,8 +87,8 @@ public final class vw0 extends FrameLayout {
                 this.H = org.telegram.ui.ActionBar.j6.r1(0.5f, org.telegram.ui.ActionBar.j6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0)));
                 this.I = org.telegram.ui.ActionBar.j6.r1(0.35f, org.telegram.ui.ActionBar.j6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0)));
             } else {
-                this.H = im0.B0(org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0));
-                this.I = org.telegram.ui.ActionBar.j6.r1(0.15f, im0.B0(org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0)));
+                this.H = jm0.B0(org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0));
+                this.I = org.telegram.ui.ActionBar.j6.r1(0.15f, jm0.B0(org.telegram.ui.ActionBar.j6.w0(i10, profileActivity.A0)));
             }
         }
         if (!z10) {

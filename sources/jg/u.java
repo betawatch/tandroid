@@ -14,7 +14,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c9;
 import org.telegram.ui.yt0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ci.p0((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 15));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new ai.f1(tLObject, this.b, (HashSet) obj2, tL_error, (e2) obj, 11));
+                org.telegram.messenger.g0.h3(new ai.g1(tLObject, this.b, (HashSet) obj2, tL_error, (e2) obj, 11));
                 break;
             case 5:
                 org.telegram.messenger.g0.h3(new ci.p0((e2) obj2, tLObject, this.b, (z10) obj, 23));

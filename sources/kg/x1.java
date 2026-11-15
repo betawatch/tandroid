@@ -26,13 +26,13 @@ import org.telegram.ui.Components.rj;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.vj;
 import org.telegram.ui.Components.y7;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.bn0;
+import org.telegram.ui.cn0;
 import org.telegram.ui.cu;
 import org.telegram.ui.ev;
 import org.telegram.ui.hw;
@@ -58,7 +58,7 @@ import org.telegram.ui.xw;
 import org.telegram.ui.y50;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x1 extends org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 ywVar.finishFragment();
                 return false;
             case 18:
-                ((bn0) this.b).finishFragment();
+                ((cn0) this.b).finishFragment();
                 return false;
             default:
                 return super.b();
@@ -328,9 +328,9 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 pa0Var.K0(false);
                 break;
             case 16:
-                y80 y80Var = (y80) ((t6) obj).b;
-                y80Var.y = false;
-                y80Var.j(null);
+                z80 z80Var = (z80) ((t6) obj).b;
+                z80Var.y = false;
+                z80Var.j(null);
                 break;
             case 17:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -521,7 +521,7 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 ((pa0) obj).u0 = true;
                 break;
             case 16:
-                ((y80) ((t6) obj).b).y = true;
+                ((z80) ((t6) obj).b).y = true;
                 break;
             case 17:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -529,10 +529,10 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 notificationsCustomSettingsActivity.c.setShowAtCenter(true);
                 break;
             case 18:
-                bn0 bn0Var = (bn0) obj;
-                bn0Var.a.getActionBar().C();
-                bn0Var.b.getActionBar().C();
-                bn0Var.c.getSearchField().requestFocus();
+                cn0 cn0Var = (cn0) obj;
+                cn0Var.a.getActionBar().C();
+                cn0Var.b.getActionBar().C();
+                cn0Var.c.getSearchField().requestFocus();
                 break;
             case 21:
                 k31 k31Var = (k31) obj;
@@ -582,9 +582,9 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 lbVar.Z0(true);
                 break;
             case 18:
-                bn0 bn0Var = (bn0) this.b;
-                bn0Var.a.getActionBar().B();
-                bn0Var.b.getActionBar().B();
+                cn0 cn0Var = (cn0) this.b;
+                cn0Var.a.getActionBar().B();
+                cn0Var.b.getActionBar().B();
                 break;
         }
     }
@@ -883,7 +883,7 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 }
                 break;
             case 16:
-                ((y80) ((t6) obj).b).j(editText.getText().toString());
+                ((z80) ((t6) obj).b).j(editText.getText().toString());
                 break;
             case 17:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
@@ -905,9 +905,9 @@ public final class x1 extends org.telegram.ui.ActionBar.m0 {
                 }
                 break;
             case 18:
-                bn0 bn0Var = (bn0) obj;
-                bn0Var.a.getActionBar().setSearchFieldText(editText.getText().toString());
-                bn0Var.b.getActionBar().setSearchFieldText(editText.getText().toString());
+                cn0 cn0Var = (cn0) obj;
+                cn0Var.a.getActionBar().setSearchFieldText(editText.getText().toString());
+                cn0Var.b.getActionBar().setSearchFieldText(editText.getText().toString());
                 break;
             case 19:
                 ((ProfileActivity) obj).e.I(editText.getText().toString().toLowerCase());

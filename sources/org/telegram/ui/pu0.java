@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class pu0 implements Runnable {
                 qu0Var.G.getNotificationCenter().j(qu0Var.F);
                 break;
             case 1:
-                ProfileActivity profileActivity = (ProfileActivity) ((ai.j0) obj).c;
+                ProfileActivity profileActivity = (ProfileActivity) ((ai.k0) obj).c;
                 if (profileActivity.r5 != 1.0f) {
                     yu0 yu0Var = profileActivity.o0;
                     while (yu0Var.E0.k(i10) != yu0Var.getRealCount() - 1) {

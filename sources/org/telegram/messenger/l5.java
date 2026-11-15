@@ -8,7 +8,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class l5 {
     public static void a(SQLiteDatabase sQLiteDatabase, String str) {
@@ -57,7 +57,7 @@ public abstract class l5 {
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS user_phones_v6(uid INTEGER, phone TEXT, sphone TEXT, deleted INTEGER, PRIMARY KEY (uid, phone))", "CREATE INDEX IF NOT EXISTS sphone_deleted_idx_user_phones ON user_phones_v6(sphone, deleted);", "CREATE INDEX IF NOT EXISTS mid_idx_randoms ON randoms(mid);", "CREATE TABLE IF NOT EXISTS sent_files_v2(uid TEXT, type INTEGER, data BLOB, PRIMARY KEY (uid, type))");
             k5.v(sQLiteDatabase2, "CREATE TABLE IF NOT EXISTS download_queue(uid INTEGER, type INTEGER, date INTEGER, data BLOB, PRIMARY KEY (uid, type));", "CREATE INDEX IF NOT EXISTS type_date_idx_download_queue ON download_queue(type, date);", "CREATE TABLE IF NOT EXISTS dialog_settings(did INTEGER PRIMARY KEY, flags INTEGER);", "CREATE INDEX IF NOT EXISTS unread_count_idx_dialogs ON dialogs(unread_count);");
             sQLiteDatabase2.executeFast("UPDATE messages SET send_state = 2 WHERE mid < 0 AND send_state = 1").stepThis().dispose();
-            p5Var.c(new oq(vrVar, 1));
+            p5Var.c(new nq(vrVar, 1));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 4").stepThis().dispose();
             i12 = 4;
         }
@@ -242,7 +242,7 @@ public abstract class l5 {
             i12 = 40;
         }
         if (i12 == 40) {
-            p5Var.c(new oq(vrVar, 1));
+            p5Var.c(new nq(vrVar, 1));
             sQLiteDatabase2.executeFast("PRAGMA user_version = 41").stepThis().dispose();
             i12 = 41;
         }

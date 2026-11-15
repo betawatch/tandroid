@@ -21,10 +21,10 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.di0;
-import org.telegram.ui.jl0;
 import org.telegram.ui.ka1;
+import org.telegram.ui.kl0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mx implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -429,18 +429,18 @@ public final /* synthetic */ class mx implements RequestDelegate {
                         }
                         if (cg.c.c(keyboardButtonProto2, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
                             if (tLObject3 instanceof TLRPC.TL_payments_paymentFormStars) {
-                                di.v8.y(ezVar3.currentAccount, false).X(gjVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new vw(ezVar3, str5, list2, 0), new fi.e(5));
+                                di.u8.y(ezVar3.currentAccount, false).X(gjVar3, ((TLRPC.TL_payments_getPaymentForm) tLObjectArr2[0]).invoice, (TLRPC.TL_payments_paymentFormStars) tLObject3, new vw(ezVar3, str5, list2, 0), new fi.e(5));
                                 return;
                             }
                             gj gjVar5 = gjVar3;
                             if (tLObject3 instanceof TLRPC.PaymentForm) {
                                 TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject3;
                                 ezVar3.getMessagesController().Y3(paymentForm.users, false);
-                                anVar2.presentFragment(new jl0(paymentForm, gjVar5, null, anVar2));
+                                anVar2.presentFragment(new kl0(paymentForm, gjVar5, null, anVar2));
                                 return;
                             } else if (!(tLObject3 instanceof TLRPC.TL_payments_paymentReceiptStars)) {
                                 if (tLObject3 instanceof TLRPC.PaymentReceipt) {
-                                    anVar2.presentFragment(new jl0((TLRPC.PaymentReceipt) tLObject3));
+                                    anVar2.presentFragment(new kl0((TLRPC.PaymentReceipt) tLObject3));
                                     return;
                                 }
                                 return;
@@ -449,7 +449,7 @@ public final /* synthetic */ class mx implements RequestDelegate {
                                 if (context == null) {
                                     context = t0.b;
                                 }
-                                di.mb.m1(context, ezVar3.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject3, null);
+                                di.lb.m1(context, ezVar3.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject3, null);
                                 return;
                             }
                         }

@@ -12,10 +12,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class cf0 extends FrameLayout {
-    public final ai.q2 E;
+    public final ai.r2 E;
     public final i9 F;
     public final TextView G;
     public final TextView H;
@@ -66,14 +66,14 @@ public final class cf0 extends FrameLayout {
         addView(u41Var, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;
-        ai.q2 q2Var = new ai.q2(context, 8);
-        this.E = q2Var;
-        q2Var.setOrientation(1);
-        frameLayout.addView(q2Var, c8.ja.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
+        ai.r2 r2Var = new ai.r2(context, 8);
+        this.E = r2Var;
+        r2Var.setOrientation(1);
+        frameLayout.addView(r2Var, c8.ja.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
         i9 i9Var = new i9(context);
         this.F = i9Var;
         i9Var.setVisibility(8);
-        q2Var.addView(i9Var, c8.ja.t(org.telegram.messenger.ns.O1, org.telegram.messenger.ns.O1, 1, 0, 0, 0, 12));
+        r2Var.addView(i9Var, c8.ja.t(org.telegram.messenger.ns.O1, org.telegram.messenger.ns.O1, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         this.G = textView;
         textView.setTextSize(1, 16.0f);
@@ -83,7 +83,7 @@ public final class cf0 extends FrameLayout {
         textView.setMaxLines(4);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        q2Var.addView(textView, c8.ja.r(-2, -2, 1));
+        r2Var.addView(textView, c8.ja.r(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.H = textView2;
         textView2.setTextSize(1, 14.0f);
@@ -91,15 +91,15 @@ public final class cf0 extends FrameLayout {
         textView2.setSingleLine(false);
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
-        q2Var.addView(textView2, c8.ja.t(-2, -2, 1, 0, 9, 0, 0));
+        r2Var.addView(textView2, c8.ja.t(-2, -2, 1, 0, 9, 0, 0));
         hi.d g10 = org.telegram.messenger.i20.g(24, context, null, true);
         this.I = g10;
-        q2Var.addView(g10, c8.ja.t(-1, 44, 7, 0, 19, 0, 0));
+        r2Var.addView(g10, c8.ja.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);
         this.J = textView3;
         textView3.setTextSize(1, 12.0f);
         textView3.setGravity(17);
-        q2Var.addView(textView3, c8.ja.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+        r2Var.addView(textView3, c8.ja.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         addView(frameLayout, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
         u41Var.setHideIfEmpty(false);
         u41Var.setEmptyView(frameLayout);
@@ -273,7 +273,7 @@ public final class cf0 extends FrameLayout {
             int i16 = i15 / 60;
             int i17 = i15 - (i16 * 60);
             dVar.setVisibility(0);
-            dVar.i(di.mb.U0(org.telegram.messenger.hd.H(',', "SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.V), true, true);
+            dVar.i(di.lb.U0(org.telegram.messenger.hd.H(',', "SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.V), true, true);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(i14 > 0 ? com.google.android.gms.internal.vision.e2.i(i14, ":") : "");
             sb2.append(i16 < 10 ? i5.c.i(i16, "0") : Integer.valueOf(i16));
@@ -410,7 +410,7 @@ public final class cf0 extends FrameLayout {
         }
         this.Q = true;
         org.telegram.messenger.np.e1().edit().putInt("searchpostsnew", org.telegram.messenger.np.e1().getInt("searchpostsnew", 0) + 1).apply();
-        di.v8.y(this.b, false).p();
+        di.u8.y(this.b, false).p();
     }
 
     @Override // android.view.View, android.view.ViewParent

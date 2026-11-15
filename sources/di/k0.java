@@ -24,7 +24,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.fq0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements s10 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class k0 implements s10 {
                 if (updates != null && tL_error == null) {
                     np.s1(i11).O3(updates, false);
                 }
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a(e2Var, tL_error, bVar, t1Var, 6));
+                org.telegram.messenger.g0.h3(new ai.r(e2Var, tL_error, bVar, t1Var, 7));
                 break;
             case 1:
                 boolean[] zArr = (boolean[]) obj5;
@@ -168,7 +168,7 @@ public final /* synthetic */ class k0 implements s10 {
                         np.s1(i14).B0(chat2.id, true);
                     }
                     org.telegram.messenger.g0.h3(new fq0(a1Var2, 5));
-                    org.telegram.messenger.g0.i3(new ai.v0(i14, chat2, 18), 1000L);
+                    org.telegram.messenger.g0.i3(new ai.w0(i14, chat2, 18), 1000L);
                     vr a02 = vr.a0(i14);
                     long j10 = chat2.id;
                     a02.R1(-j10, j10, new ArrayList(), null);

@@ -7,7 +7,7 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.FrameLayout;
 import c8.ja;
-import di.mb;
+import di.lb;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.fh0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final hi.d a;
@@ -91,10 +91,10 @@ public final class f extends FrameLayout implements org.telegram.ui.ActionBar.z5
         eq[] eqVarArr = this.n;
         org.telegram.ui.Components.h6 h6Var = this.c;
         if (d == 2 || d == 3) {
-            h6Var.c(mb.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750416, l10)), 0.66f, eqVarArr), z10, true);
+            h6Var.c(lb.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750416, l10)), 0.66f, eqVarArr), z10, true);
             org.telegram.ui.ActionBar.q6.Y(h6Var, org.telegram.ui.ActionBar.j6.q7, null);
         } else {
-            h6Var.c(mb.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750417, l10, Integer.valueOf(r9Var.i))), 0.66f, eqVarArr), z10, true);
+            h6Var.c(lb.a1(false, org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750417, l10, Integer.valueOf(r9Var.i))), 0.66f, eqVarArr), z10, true);
             org.telegram.ui.ActionBar.q6.Y(h6Var, org.telegram.ui.ActionBar.j6.G6, null);
         }
     }

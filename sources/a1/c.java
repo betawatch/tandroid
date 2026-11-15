@@ -6,7 +6,7 @@ import a8.b8;
 import a8.r7;
 import ab.m0;
 import ab.o0;
-import ai.h1;
+import ai.i1;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,11 +30,11 @@ import db.r;
 import db.t;
 import db.u;
 import di.e6;
-import di.mb;
+import di.lb;
 import di.n5;
 import di.s;
 import di.s0;
-import di.v8;
+import di.u8;
 import e2.m1;
 import h2.j;
 import h9.f0;
@@ -63,13 +63,13 @@ import org.telegram.ui.Components.r4;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.Wallet.t1;
-import org.telegram.ui.il0;
+import org.telegram.ui.jl0;
 import r0.k1;
 import r0.m;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, h1, bg.p, q1, m, org.telegram.messenger.q1, j, i, q, x10, r4, te.b, il0 {
+public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, i1, bg.p, q1, m, org.telegram.messenger.q1, j, i, q, x10, r4, te.b, jl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -172,7 +172,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         }
     }
 
-    @Override // ai.h1
+    @Override // ai.i1
     public void b(long j3, long j10) {
         long[] jArr = (long[]) this.b;
         ExecutorService executorService = DictationLid.a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         jVar2.b.add(iVar);
     }
 
-    @Override // org.telegram.ui.il0
+    @Override // org.telegram.ui.jl0
     public void e(int i7) {
         switch (this.a) {
             case 28:
@@ -283,12 +283,12 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                     i7 = ((e2) tVar).currentAccount;
                     TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) b41Var.G;
                     e6Var = ((e2) tVar).resourceProvider;
-                    mb.k1(context, true, j3, i7, starsTransaction, e6Var);
+                    lb.k1(context, true, j3, i7, starsTransaction, e6Var);
                     break;
                 }
                 break;
             default:
-                v8.b((v8) this.b, (ArrayList) obj, (Integer) obj2, (Long) number, (ArrayList) serializable, (ArrayList) serializable2);
+                u8.b((u8) this.b, (ArrayList) obj, (Integer) obj2, (Long) number, (ArrayList) serializable, (ArrayList) serializable2);
                 break;
         }
     }

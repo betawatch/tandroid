@@ -2,11 +2,11 @@ package oi;
 
 import android.text.SpannableString;
 import android.text.TextUtils;
-import di.m9;
+import di.l9;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Wallet.k8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g2 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,15 +36,15 @@ public final /* synthetic */ class g2 implements Runnable {
                             String str = ((TL_iv.pageBlockPreformatted) aVar2.b).language;
                             int i7 = y5Var.J + 1;
                             y5Var.J = i7;
-                            m9 m9Var = new m9(y5Var, i7, aVar2, obj, 2);
+                            l9 l9Var = new l9(y5Var, i7, aVar2, obj, 2);
                             qi.p pVar = qi.j.a;
                             SpannableString spannableString = new SpannableString(obj);
                             String b10 = qi.p.b(str);
                             if (!b10.isEmpty() && spannableString.length() != 0) {
-                                qi.j.a.d(spannableString.toString(), b10, new k8(14, spannableString, m9Var));
+                                qi.j.a.d(spannableString.toString(), b10, new k8(14, spannableString, l9Var));
                                 break;
                             } else {
-                                org.telegram.messenger.g0.h3(new org.telegram.ui.web.e1(11, m9Var, spannableString));
+                                org.telegram.messenger.g0.h3(new org.telegram.ui.web.e1(11, l9Var, spannableString));
                                 break;
                             }
                         }

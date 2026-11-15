@@ -17,16 +17,16 @@ import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.ht;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.vs;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import v4.t0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class b extends e51 {
     public final int O1;
-    public final y80 P1;
+    public final z80 P1;
     public final pz Q1;
     public final cv0 R1;
     public final cv0 S1;
@@ -48,46 +48,46 @@ public final class b extends e51 {
         Q(i7);
         this.B1 = false;
         this.C1 = false;
-        y80 y80Var = new y80(this, e2Var, this.c, j3);
-        this.P1 = y80Var;
-        y80Var.B = false;
+        z80 z80Var = new z80(this, e2Var, this.c, j3);
+        this.P1 = z80Var;
+        z80Var.B = false;
         this.q0 = 75;
         this.w1.K.setHint(hd.M0(2131745758, null));
-        g gVar = y80Var.f;
+        g gVar = z80Var.f;
         this.q1 = gVar;
         this.p1 = gVar;
         this.o1.setAdapter(gVar);
         this.o1.r1();
         c1 c1Var = this.o1;
-        y80Var.p = c1Var;
-        c1Var.setOnItemClickListener(new b6(y80Var, 24));
+        z80Var.p = c1Var;
+        c1Var.setOnItemClickListener(new b6(z80Var, 24));
         t0 onScrollListener = c1Var.getOnScrollListener();
         if (onScrollListener == null) {
-            c1Var.setOnScrollListener(y80Var.D);
+            c1Var.setOnScrollListener(z80Var.D);
         } else {
-            c1Var.setOnScrollListener(new w3(11, y80Var, onScrollListener));
+            c1Var.setOnScrollListener(new w3(11, z80Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.o1.getParent()).indexOfChild(this.o1);
-        pz b10 = y80Var.b();
+        pz b10 = z80Var.b();
         this.Q1 = b10;
         this.b.addView(b10, indexOfChild, ja.c(-1.0f, -1));
-        cv0 a10 = y80Var.a();
+        cv0 a10 = z80Var.a();
         this.R1 = a10;
         this.b.addView(a10, indexOfChild, ja.c(-1.0f, -1));
-        cv0 c10 = y80Var.c();
+        cv0 c10 = z80Var.c();
         this.S1 = c10;
         this.b.addView(c10, indexOfChild, ja.c(-1.0f, -1));
-        y80Var.e();
+        z80Var.e();
     }
 
     @Override // org.telegram.ui.Components.e51
     public final void J0(MotionEvent motionEvent, ah.i iVar) {
         e2 e2Var;
         int action = motionEvent.getAction();
-        y80 y80Var = this.P1;
+        z80 z80Var = this.P1;
         if (action == 0) {
             this.T1 = this.y1;
-            y80Var.i(false);
+            z80Var.i(false);
         } else if (motionEvent.getAction() == 1 && Math.abs(this.y1 - this.T1) < this.O1 && !this.U1) {
             Activity W = g0.W(getContext());
             if (W instanceof LaunchActivity) {
@@ -108,7 +108,7 @@ public final class b extends e51 {
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            y80Var.i(true);
+            z80Var.i(true);
         }
     }
 
@@ -172,11 +172,11 @@ public final class b extends e51 {
 
     @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
     public final void show() {
-        y80 y80Var = this.P1;
-        if (y80Var.b && this.y1 == 0) {
+        z80 z80Var = this.P1;
+        if (z80Var.b && this.y1 == 0) {
             this.y1 = g0.L(8.0f);
         }
         super.show();
-        y80Var.b = false;
+        z80Var.b = false;
     }
 }

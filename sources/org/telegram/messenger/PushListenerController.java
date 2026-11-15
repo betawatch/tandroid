@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -26,7 +26,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -5189,7 +5189,7 @@ public class PushListenerController {
                     tL_updateServiceNotification.media = new TLRPC.TL_messageMediaEmpty();
                     TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
                     tL_updates.updates.add(tL_updateServiceNotification);
-                    Utilities.d.c(new x0(i10, tL_updates, 11));
+                    Utilities.d.c(new x0(i10, tL_updates, 12));
                     ConnectionsManager.getInstance(i10).resumeNetworkMaybe();
                     countDownLatch.countDown();
                     break;
@@ -5431,6 +5431,6 @@ public class PushListenerController {
     }
 
     public static void sendRegistrationToServer(int i7, String str) {
-        Utilities.d.c(new x0(str, i7, 10));
+        Utilities.d.c(new x0(str, i7, 11));
     }
 }

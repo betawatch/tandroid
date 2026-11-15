@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IAlertCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class AlertCallbackDelegateImpl implements e {
     private final IAlertCallback mCallback;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class AlertCallbackStub extends IAlertCallback.Stub {
         private final d mCallback;
 
@@ -29,12 +29,12 @@ public class AlertCallbackDelegateImpl implements e {
 
         @Override // androidx.car.app.model.IAlertCallback
         public void onAlertCancelled(int i7, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.h.b(iOnDoneCallback, "onCancel", new g(this, i7, 0));
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onCancel", new g(this, i7, 0));
         }
 
         @Override // androidx.car.app.model.IAlertCallback
         public void onAlertDismissed(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.h.b(iOnDoneCallback, "onDismiss", new f(this, 0));
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onDismiss", new f(this, 0));
         }
     }
 
@@ -50,7 +50,7 @@ public class AlertCallbackDelegateImpl implements e {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
-            iAlertCallback.onAlertCancelled(i7, androidx.car.app.utils.h.a());
+            iAlertCallback.onAlertCancelled(i7, androidx.car.app.utils.g.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }
@@ -60,7 +60,7 @@ public class AlertCallbackDelegateImpl implements e {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
-            iAlertCallback.onAlertDismissed(androidx.car.app.utils.h.a());
+            iAlertCallback.onAlertDismissed(androidx.car.app.utils.g.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }

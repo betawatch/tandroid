@@ -14,7 +14,7 @@ import org.telegram.messenger.m10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class k6 extends FrameLayout {
     public ValueAnimator E;
@@ -83,7 +83,7 @@ public abstract class k6 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.F, 1.0f);
         this.E = ofFloat;
         ofFloat.addUpdateListener(new j3(this, 4));
-        this.E.addListener(new ai.i0(this, 25));
+        this.E.addListener(new ai.j0(this, 25));
         this.E.setInterpolator(er.h);
         this.E.setDuration(280L);
         this.E.start();

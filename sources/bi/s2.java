@@ -9,11 +9,11 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.na;
-import di.bb;
-import di.m8;
-import di.mb;
-import di.ra;
-import di.v8;
+import di.ab;
+import di.l8;
+import di.lb;
+import di.qa;
+import di.u8;
 import j$.util.Collection;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.vx0;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s2 extends ja implements is {
     public static final /* synthetic */ int u2 = 0;
@@ -60,7 +60,7 @@ public final class s2 extends ja implements is {
     public final long X1;
     public final boolean Y1;
     public final String Z1;
-    public final bb a2;
+    public final ab a2;
     public final v1 b2;
     public final FrameLayout c2;
     public final LinearLayout d2;
@@ -69,7 +69,7 @@ public final class s2 extends ja implements is {
     public final w1 g2;
     public final w1 h2;
     public final ArrayList i2;
-    public final m8 j2;
+    public final l8 j2;
     public int k2;
     public int l2;
     public int m2;
@@ -77,7 +77,7 @@ public final class s2 extends ja implements is {
     public boolean o2;
     public boolean p2;
     public boolean q2;
-    public ra r2;
+    public qa r2;
     public final z70 s2;
     public boolean t2;
 
@@ -150,7 +150,7 @@ public final class s2 extends ja implements is {
             z10 = true;
         }
         int i14 = this.T1;
-        v8 y10 = v8.y(i14, false);
+        u8 y10 = u8.y(i14, false);
         ArrayList arrayList3 = this.o2 ? y10.J : y10.I;
         if (this.W1 != null) {
             arrayList3 = (ArrayList) Collection.-EL.stream(arrayList3).filter(new ki.k1(this, i10)).collect(Collectors.toCollection(new lk(1)));
@@ -159,9 +159,9 @@ public final class s2 extends ja implements is {
             arrayList3 = (ArrayList) Collection.-EL.stream(arrayList3).filter(new aa.m(i7)).collect(Collectors.toCollection(new lk(1)));
         }
         long e10 = m10.i(i14).e();
-        m8 m8Var = this.j2;
-        if (j10 != e10 && m8Var != null) {
-            ArrayList arrayList4 = m8Var.l;
+        l8 l8Var = this.j2;
+        if (j10 != e10 && l8Var != null) {
+            ArrayList arrayList4 = l8Var.l;
             int size2 = arrayList4.size();
             int i15 = 0;
             while (i15 < size2) {
@@ -174,7 +174,7 @@ public final class s2 extends ja implements is {
             }
         }
         z11 = false;
-        if (np.s1(i14).Z5 || (arrayList3.isEmpty() && ((disallowedGiftsSettings3 = this.W1) == null || disallowedGiftsSettings3.disallow_unique_stargifts || m8Var == null || m8Var.l.isEmpty()))) {
+        if (np.s1(i14).Z5 || (arrayList3.isEmpty() && ((disallowedGiftsSettings3 = this.W1) == null || disallowedGiftsSettings3.disallow_unique_stargifts || l8Var == null || l8Var.l.isEmpty()))) {
             TLRPC.DisallowedGiftsSettings disallowedGiftsSettings5 = this.W1;
             if (disallowedGiftsSettings5 == null || disallowedGiftsSettings5.disallow_unique_stargifts || !arrayList3.isEmpty()) {
                 return;
@@ -230,9 +230,9 @@ public final class s2 extends ja implements is {
             duration.setInterpolator(erVar).start();
             this.h2.animate().alpha(z13 ? 1.0f : 0.0f).scaleX(z13 ? 1.0f : 0.85f).scaleY(z13 ? 1.0f : 0.85f).setDuration(380L).setInterpolator(erVar).start();
         }
-        if (m8Var != null && this.n2 == this.l2) {
+        if (l8Var != null && this.n2 == this.l2) {
             arrayList3 = new ArrayList();
-            ArrayList arrayList6 = m8Var.l;
+            ArrayList arrayList6 = l8Var.l;
             int size3 = arrayList6.size();
             int i19 = 0;
             while (i19 < size3) {
@@ -264,8 +264,8 @@ public final class s2 extends ja implements is {
         }
         int i25 = this.n2;
         int i26 = this.l2;
-        if (i25 == i26 && m8Var != null && !m8Var.j) {
-            m8Var.a();
+        if (i25 == i26 && l8Var != null && !l8Var.j) {
+            l8Var.a();
             b41 q13 = b41.q(4, 34);
             q13.u = 1;
             arrayList.add(q13);
@@ -478,8 +478,8 @@ public final class s2 extends ja implements is {
         int i14 = org.telegram.ui.ActionBar.j6.b6;
         w0(i14);
         Q(i14);
-        this.j2 = v8.y(i7, false).G(m10.i(i7).e(), true);
-        v8.y(i7, false).U();
+        this.j2 = u8.y(i7, false).G(m10.i(i7).e(), true);
+        u8.y(i7, false).U();
         i9 i9Var = new i9(context);
         i9Var.setImportantForAccessibility(2);
         t8 t8Var = new t8((org.telegram.ui.ActionBar.e6) null);
@@ -502,24 +502,24 @@ public final class s2 extends ja implements is {
             i9Var.f(M0, t8Var);
         }
         this.v1 = 0.1f;
-        bb bbVar = new bb(i7, context, this.J0);
-        this.a2 = bbVar;
-        na.a(bbVar);
-        bbVar.setOnClickListener(new ah.d(this, 6));
+        ab abVar = new ab(i7, context, this.J0);
+        this.a2 = abVar;
+        na.a(abVar);
+        abVar.setOnClickListener(new ah.d(this, 6));
         FrameLayout frameLayout = new FrameLayout(context);
         this.c2 = frameLayout;
         v1 v1Var = new v1(context, i13);
         this.b2 = v1Var;
         v1Var.setClipChildren(false);
         v1Var.setClipToPadding(false);
-        ra raVar = new ra(context, 70, 0, 0);
-        this.r2 = raVar;
-        v1Var.addView(raVar, c8.ja.c(-1.0f, -1));
+        qa qaVar = new qa(context, 70, 0, 0);
+        this.r2 = qaVar;
+        v1Var.addView(qaVar, c8.ja.c(-1.0f, -1));
         i9Var.setRoundRadius(org.telegram.messenger.g0.L(42.0f));
         v1Var.addView(i9Var, c8.ja.d(84, 84.0f, 17, 0.0f, 15.0f, 0.0f, 17.0f));
         na.a(i9Var);
         i9Var.setOnClickListener(new q(this, j3, i12));
-        v1Var.addView(bbVar, c8.ja.d(-2, -2.0f, 53, 0.0f, -3.0f, -10.0f, 0.0f));
+        v1Var.addView(abVar, c8.ja.d(-2, -2.0f, 53, 0.0f, -3.0f, -10.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         frameLayout.addView(linearLayout, c8.ja.e(-1, -2, 55));
@@ -590,7 +590,7 @@ public final class s2 extends ja implements is {
         } else {
             if (j3 >= 0) {
                 linearLayout2.addView(frameLayout2, c8.ja.t(-1, -2, 1, 0, 9, 0, 6));
-                m8 G = v8.y(i7, false).G(j3, true);
+                l8 G = u8.y(i7, false).G(j3, true);
                 r1 r1Var = new r1(this, G, j3, z10Var, context, 0);
                 r1Var.run();
                 w1Var.addOnAttachStateChangeListener(new x1(r1Var, 0));
@@ -598,7 +598,7 @@ public final class s2 extends ja implements is {
                 if (G.l.size() < 3) {
                     G.a();
                 }
-                ns.f(i7).h(w1Var, i17, new ai.u1(i10, G, r1Var));
+                ns.f(i7).h(w1Var, i17, new ai.v1(i10, G, r1Var));
                 oy oyVar = new oy(i11, false);
                 this.e2 = oyVar;
                 oyVar.O = new y1(this, 0);
@@ -635,11 +635,11 @@ public final class s2 extends ja implements is {
                             }
                             if (obj instanceof TL_stars.StarGift) {
                                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                                m8 m8Var = s2Var.j2;
+                                l8 l8Var = s2Var.j2;
                                 long j10 = j3;
                                 int i20 = 0;
-                                if (m8Var != null && s2Var.n2 == s2Var.l2) {
-                                    ArrayList arrayList = m8Var.l;
+                                if (l8Var != null && s2Var.n2 == s2Var.l2) {
+                                    ArrayList arrayList = l8Var.l;
                                     int size = arrayList.size();
                                     while (true) {
                                         if (i20 >= size) {
@@ -673,7 +673,7 @@ public final class s2 extends ja implements is {
                                     c2Var.a = true;
                                     c2Var.e = true;
                                     c2 c2Var2 = new c2(j10, starGift.title, starGift.id, s2Var.J0, k2Var.getViewTreeObserver(), new j1());
-                                    c2Var2.e = new ai.u1(1, s2Var, z10Var2);
+                                    c2Var2.e = new ai.v1(1, s2Var, z10Var2);
                                     T.showAsSheet(c2Var2, c2Var);
                                     return;
                                 }
@@ -686,31 +686,31 @@ public final class s2 extends ja implements is {
                                         new cc(k2Var, s2Var.J0).R(starGift.getDocument(), org.telegram.messenger.g0.X2(hd.H(',', "Gift2PerUserLimit", starGift.per_user_total))).j();
                                         return;
                                     }
-                                    ai.f1 f1Var = new ai.f1(s2Var, context2, i19, starGift, z10Var2, 1);
+                                    ai.g1 g1Var = new ai.g1(s2Var, context2, i19, starGift, z10Var2, 1);
                                     if (starGift.locked_until_date > ConnectionsManager.getInstance(i19).getCurrentTime()) {
                                         org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, s2Var.getContext(), null);
                                         t1Var.r(500L);
                                         TL_stars.checkCanSendGift checkcansendgift = new TL_stars.checkCanSendGift();
                                         checkcansendgift.gift_id = starGift.id;
-                                        ConnectionsManager.getInstance(i19).sendRequest(checkcansendgift, new l1(s2Var, t1Var, f1Var, z10Var2, 0));
+                                        ConnectionsManager.getInstance(i19).sendRequest(checkcansendgift, new l1(s2Var, t1Var, g1Var, z10Var2, 0));
                                         return;
                                     }
                                     if (!starGift.require_premium || m10.i(i19).q()) {
-                                        f1Var.run();
+                                        g1Var.run();
                                         return;
                                     }
                                     org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
                                     if (T2 == null) {
                                         return;
                                     }
-                                    ug.g1 g1Var = new ug.g1(T2, i19, null, null, starGift, s2Var.J0);
+                                    ug.g1 g1Var2 = new ug.g1(T2, i19, null, null, starGift, s2Var.J0);
                                     i9 i9Var2 = new i9(s2Var.getContext());
                                     org.telegram.ui.Components.e5 e5Var = new org.telegram.ui.Components.e5(org.telegram.messenger.g0.L(160.0f), 4, i9Var2, false);
                                     i9Var2.setImageDrawable(e5Var);
                                     i9Var2.addOnAttachStateChangeListener(new u1(e5Var, 0));
                                     e5Var.i(starGift.getDocument(), false);
-                                    g1Var.x2 = i9Var2;
-                                    g1Var.show();
+                                    g1Var2.x2 = i9Var2;
+                                    g1Var2.show();
                                     e5Var.f();
                                     return;
                                 }
@@ -724,7 +724,7 @@ public final class s2 extends ja implements is {
                                 f10.setClipChildren(false);
                                 f10.setClipToPadding(false);
                                 i9 i9Var3 = new i9(context2);
-                                mb.d1(i9Var3.getImageReceiver(), starGift, ns.q2);
+                                lb.d1(i9Var3.getImageReceiver(), starGift, ns.q2);
                                 f10.addView(i9Var3, c8.ja.t(ns.q2, ns.q2, 17, 0, -8, 0, 10));
                                 TextView textView2 = new TextView(context2);
                                 org.telegram.messenger.k5.m(textView2, org.telegram.ui.ActionBar.j6.j5, e6Var, 1, 20.0f);
@@ -742,9 +742,9 @@ public final class s2 extends ja implements is {
                                 if (starGift.last_sale_date != 0) {
                                     vx0Var.g(starGift.last_sale_date, hd.M0(2131749971, null));
                                 }
-                                vx0Var.c(hd.M0(2131749968, null), mb.a1(false, i5.c.l(starGift.stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                vx0Var.c(hd.M0(2131749968, null), lb.a1(false, i5.c.l(starGift.stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 if (starGift.limited) {
-                                    mb.H0(vx0Var, i19, starGift, e6Var);
+                                    lb.H0(vx0Var, i19, starGift, e6Var);
                                 }
                                 f10.addView(vx0Var, c8.ja.k(0.0f, 17.0f, 0.0f, 12.0f, -1, -2));
                                 hi.d dVar = new hi.d(context2, e6Var, true);
@@ -753,7 +753,7 @@ public final class s2 extends ja implements is {
                                 k10.O = f10;
                                 org.telegram.ui.ActionBar.u2[] u2VarArr = {k10};
                                 u2VarArr[0].U0 = false;
-                                dVar.setOnClickListener(new ai.p2(u2VarArr, 3));
+                                dVar.setOnClickListener(new ai.q2(u2VarArr, 3));
                                 u2VarArr[0].O();
                                 org.telegram.ui.ActionBar.e2 T3 = LaunchActivity.T();
                                 if (!org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.u1(T3)) {
@@ -819,11 +819,11 @@ public final class s2 extends ja implements is {
                     }
                     if (obj instanceof TL_stars.StarGift) {
                         TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
-                        m8 m8Var = s2Var.j2;
+                        l8 l8Var = s2Var.j2;
                         long j10 = j3;
                         int i20 = 0;
-                        if (m8Var != null && s2Var.n2 == s2Var.l2) {
-                            ArrayList arrayList = m8Var.l;
+                        if (l8Var != null && s2Var.n2 == s2Var.l2) {
+                            ArrayList arrayList = l8Var.l;
                             int size = arrayList.size();
                             while (true) {
                                 if (i20 >= size) {
@@ -857,7 +857,7 @@ public final class s2 extends ja implements is {
                             c2Var.a = true;
                             c2Var.e = true;
                             c2 c2Var2 = new c2(j10, starGift.title, starGift.id, s2Var.J0, k2Var.getViewTreeObserver(), new j1());
-                            c2Var2.e = new ai.u1(1, s2Var, z10Var2);
+                            c2Var2.e = new ai.v1(1, s2Var, z10Var2);
                             T.showAsSheet(c2Var2, c2Var);
                             return;
                         }
@@ -870,31 +870,31 @@ public final class s2 extends ja implements is {
                                 new cc(k2Var, s2Var.J0).R(starGift.getDocument(), org.telegram.messenger.g0.X2(hd.H(',', "Gift2PerUserLimit", starGift.per_user_total))).j();
                                 return;
                             }
-                            ai.f1 f1Var = new ai.f1(s2Var, context2, i19, starGift, z10Var2, 1);
+                            ai.g1 g1Var = new ai.g1(s2Var, context2, i19, starGift, z10Var2, 1);
                             if (starGift.locked_until_date > ConnectionsManager.getInstance(i19).getCurrentTime()) {
                                 org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, s2Var.getContext(), null);
                                 t1Var.r(500L);
                                 TL_stars.checkCanSendGift checkcansendgift = new TL_stars.checkCanSendGift();
                                 checkcansendgift.gift_id = starGift.id;
-                                ConnectionsManager.getInstance(i19).sendRequest(checkcansendgift, new l1(s2Var, t1Var, f1Var, z10Var2, 0));
+                                ConnectionsManager.getInstance(i19).sendRequest(checkcansendgift, new l1(s2Var, t1Var, g1Var, z10Var2, 0));
                                 return;
                             }
                             if (!starGift.require_premium || m10.i(i19).q()) {
-                                f1Var.run();
+                                g1Var.run();
                                 return;
                             }
                             org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
                             if (T2 == null) {
                                 return;
                             }
-                            ug.g1 g1Var = new ug.g1(T2, i19, null, null, starGift, s2Var.J0);
+                            ug.g1 g1Var2 = new ug.g1(T2, i19, null, null, starGift, s2Var.J0);
                             i9 i9Var2 = new i9(s2Var.getContext());
                             org.telegram.ui.Components.e5 e5Var = new org.telegram.ui.Components.e5(org.telegram.messenger.g0.L(160.0f), 4, i9Var2, false);
                             i9Var2.setImageDrawable(e5Var);
                             i9Var2.addOnAttachStateChangeListener(new u1(e5Var, 0));
                             e5Var.i(starGift.getDocument(), false);
-                            g1Var.x2 = i9Var2;
-                            g1Var.show();
+                            g1Var2.x2 = i9Var2;
+                            g1Var2.show();
                             e5Var.f();
                             return;
                         }
@@ -908,7 +908,7 @@ public final class s2 extends ja implements is {
                         f10.setClipChildren(false);
                         f10.setClipToPadding(false);
                         i9 i9Var3 = new i9(context2);
-                        mb.d1(i9Var3.getImageReceiver(), starGift, ns.q2);
+                        lb.d1(i9Var3.getImageReceiver(), starGift, ns.q2);
                         f10.addView(i9Var3, c8.ja.t(ns.q2, ns.q2, 17, 0, -8, 0, 10));
                         TextView textView2 = new TextView(context2);
                         org.telegram.messenger.k5.m(textView2, org.telegram.ui.ActionBar.j6.j5, e6Var, 1, 20.0f);
@@ -926,9 +926,9 @@ public final class s2 extends ja implements is {
                         if (starGift.last_sale_date != 0) {
                             vx0Var.g(starGift.last_sale_date, hd.M0(2131749971, null));
                         }
-                        vx0Var.c(hd.M0(2131749968, null), mb.a1(false, i5.c.l(starGift.stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                        vx0Var.c(hd.M0(2131749968, null), lb.a1(false, i5.c.l(starGift.stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                         if (starGift.limited) {
-                            mb.H0(vx0Var, i19, starGift, e6Var);
+                            lb.H0(vx0Var, i19, starGift, e6Var);
                         }
                         f10.addView(vx0Var, c8.ja.k(0.0f, 17.0f, 0.0f, 12.0f, -1, -2));
                         hi.d dVar = new hi.d(context2, e6Var, true);
@@ -937,7 +937,7 @@ public final class s2 extends ja implements is {
                         k10.O = f10;
                         org.telegram.ui.ActionBar.u2[] u2VarArr = {k10};
                         u2VarArr[0].U0 = false;
-                        dVar.setOnClickListener(new ai.p2(u2VarArr, 3));
+                        dVar.setOnClickListener(new ai.q2(u2VarArr, 3));
                         u2VarArr[0].O();
                         org.telegram.ui.ActionBar.e2 T3 = LaunchActivity.T();
                         if (!org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.u1(T3)) {

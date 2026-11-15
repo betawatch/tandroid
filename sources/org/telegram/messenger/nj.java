@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class nj implements RequestDelegate {
                     int i7 = tL_chatOnlines.onlines;
                     p5 p5Var = messagesStorage.a;
                     long j17 = this.c;
-                    p5Var.c(new xp(messagesStorage, i7, j17, 7));
+                    p5Var.c(new wp(messagesStorage, i7, j17, 7));
                     g0.h3(new a4(npVar10, j17, tL_chatOnlines, 16));
                     break;
                 }

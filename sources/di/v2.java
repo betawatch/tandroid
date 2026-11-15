@@ -21,11 +21,11 @@ import org.telegram.ui.Components.y31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fx;
 import org.telegram.ui.gx;
-import org.telegram.ui.jl0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.qn;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -189,20 +189,20 @@ public final /* synthetic */ class v2 implements View.OnClickListener {
                 ywVar.finishPreviewFragment();
                 break;
             default:
-                jl0 jl0Var = (jl0) obj2;
-                jl0Var.getClass();
+                kl0 kl0Var = (kl0) obj2;
+                kl0Var.getClass();
                 long longValue = ((Long) ((TextView) obj).getTag()).longValue();
-                Long l10 = jl0Var.I0;
+                Long l10 = kl0Var.I0;
                 if (l10 == null || longValue != l10.longValue()) {
-                    jl0Var.f[0].setText(hd.E0().q(this.b, false, true, true, jl0Var.D0.invoice.currency));
+                    kl0Var.f[0].setText(hd.E0().q(this.b, false, true, true, kl0Var.D0.invoice.currency));
                 } else {
-                    jl0Var.n0 = true;
-                    jl0Var.f[0].setText("");
-                    jl0Var.n0 = false;
-                    jl0Var.I0 = 0L;
-                    jl0Var.R0();
+                    kl0Var.n0 = true;
+                    kl0Var.f[0].setText("");
+                    kl0Var.n0 = false;
+                    kl0Var.I0 = 0L;
+                    kl0Var.R0();
                 }
-                EditTextBoldCursor editTextBoldCursor = jl0Var.f[0];
+                EditTextBoldCursor editTextBoldCursor = kl0Var.f[0];
                 editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
         }

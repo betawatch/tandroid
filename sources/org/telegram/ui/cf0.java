@@ -13,7 +13,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class cf0 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int E;
@@ -434,7 +434,7 @@ public final class cf0 extends org.telegram.ui.ActionBar.e2 implements org.teleg
                 }
             }
             this.X = true;
-            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getExportedChatInvites, new di.l8(this, this.p0 ? null : this.e, z12, 7)), getClassGuid());
+            getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tL_messages_getExportedChatInvites, new di.k8(this, this.p0 ? null : this.e, z12, 7)), getClassGuid());
         } else {
             this.X = true;
             TLRPC.TL_messages_getAdminsWithInvites tL_messages_getAdminsWithInvites = new TLRPC.TL_messages_getAdminsWithInvites();

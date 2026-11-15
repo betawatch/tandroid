@@ -30,11 +30,11 @@ import org.telegram.ui.Components.i41;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.wy0;
-import org.telegram.ui.Components.x80;
 import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i3 extends a8 {
     public final /* synthetic */ b4 A0;
@@ -115,7 +115,7 @@ public final class i3 extends a8 {
             Bundle bundle = new Bundle();
             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
             bundle.putString("hashtag", url);
-            i9Var.N(new x80(bundle, null));
+            i9Var.N(new y80(bundle, null));
             return;
         }
         String c10 = vf.c.c(url);
@@ -176,7 +176,7 @@ public final class i3 extends a8 {
         };
         k10.M = charSequenceArr;
         k10.L = onClickListener;
-        k10.I0 = new di.r9(c1Var, 3);
+        k10.I0 = new di.q9(c1Var, 3);
         k10.P(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.h5, e6Var));
         ((z8) b4Var.A1).h(k10);
     }

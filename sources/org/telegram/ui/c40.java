@@ -78,7 +78,7 @@ import org.telegram.ui.g20;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is, VoIPService.StateListener, te.b {
     public static c40 C5;
@@ -258,7 +258,7 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
     public int o5;
     public final l10 p1;
     public boolean p2;
-    public final ai.o2 p3;
+    public final ai.p2 p3;
     public ViewTreeObserver.OnPreDrawListener p4;
     public int p5;
     public final org.telegram.ui.Components.voip.r2 q1;
@@ -852,13 +852,13 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
         org.telegram.ui.ActionBar.z0 f11 = this.f3.f(null, org.telegram.messenger.hd.L0(2131743282), 11, true, R.drawable.msg_noise_on);
         this.l3 = f11;
         f11.setItemHeight(56);
-        org.telegram.ui.Components.voip.r0 r0Var = new org.telegram.ui.Components.voip.r0(ai.o2.a());
+        org.telegram.ui.Components.voip.r0 r0Var = new org.telegram.ui.Components.voip.r0(ai.p2.a());
         this.n3 = r0Var;
         org.telegram.ui.ActionBar.z0 f12 = this.f3.f(r0Var, "Live Captions", 14, false, 0);
         this.m3 = f12;
         f12.setItemHeight(56);
         f12.setRightIcon(R.drawable.msg_settings);
-        f12.setSubtext(org.telegram.messenger.hd.L0(ai.o2.a() ? 2131743280 : 2131743281));
+        f12.setSubtext(org.telegram.messenger.hd.L0(ai.p2.a() ? 2131743280 : 2131743281));
         f12.getRightIcon().setBackground(org.telegram.ui.ActionBar.j6.g0(org.telegram.ui.ActionBar.j6.v0(i19), 1));
         int i22 = (org.telegram.messenger.hd.a0 ? 3 : 5) | 16;
         ImageView rightIcon = f12.getRightIcon();
@@ -1040,7 +1040,7 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
         this.o3 = t0Var;
         t0Var.setOnContentHeightChanged(new s00(this, 1));
         this.b.addView(t0Var, c8.ja.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.p3 = new ai.o2(new g20(this));
+        this.p3 = new ai.p2(new g20(this));
         org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(launchActivity, false, true, true);
         this.H1 = h6Var;
         h6Var.setGravity(17);
@@ -2941,13 +2941,13 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
                 this.b.removeView(y10Var);
             }
         }
-        ai.o2 o2Var = this.p3;
-        if (o2Var.d) {
-            o2Var.d = false;
-            Thread thread = o2Var.e;
+        ai.p2 p2Var = this.p3;
+        if (p2Var.d) {
+            p2Var.d = false;
+            Thread thread = p2Var.e;
             if (thread != null) {
                 thread.interrupt();
-                o2Var.e = null;
+                p2Var.e = null;
             }
             try {
                 NativeInstance.setIncomingAudioCapture(false);
@@ -3726,20 +3726,20 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
             return;
         }
         int i7 = 0;
-        boolean z10 = (!ai.o2.a() || (r3Var = this.V2) == null || r3Var.j() || u1() || C5 != this) ? false : true;
+        boolean z10 = (!ai.p2.a() || (r3Var = this.V2) == null || r3Var.j() || u1() || C5 != this) ? false : true;
         if (z10 && !this.p3.d) {
-            final ai.o2 o2Var = this.p3;
+            final ai.p2 p2Var = this.p3;
             Context context = getContext();
             int i10 = this.o1.a;
             TLRPC.Chat chat = this.U2;
             long j3 = chat != null ? -chat.id : 0L;
-            if (o2Var.d) {
+            if (p2Var.d) {
                 return;
             }
-            o2Var.d = true;
-            final android.support.v4.media.session.a0 P = DictationAsr.P(ai.t0.b(context, j3), false);
+            p2Var.d = true;
+            final android.support.v4.media.session.a0 P = DictationAsr.P(ai.u0.b(context, j3), false);
             boolean v = DictationAsr.v();
-            o2Var.c = v;
+            p2Var.c = v;
             if (v) {
                 ExecutorService executorService = DictationLid.a;
                 if (DictationAsr.v()) {
@@ -3748,27 +3748,27 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
             }
             StringBuilder sb2 = new StringBuilder("live captions: ");
             sb2.append(P);
-            r.b.t(sb2, o2Var.c ? ", tinylid" : "", "Dictation");
-            c40 c40Var = o2Var.a.a;
-            DictationAsr.V((ai.s) P.b, new ai.t() { // from class: ai.j2
-                @Override // ai.t
+            r.b.t(sb2, p2Var.c ? ", tinylid" : "", "Dictation");
+            c40 c40Var = p2Var.a.a;
+            DictationAsr.V((ai.t) P.b, new ai.u() { // from class: ai.k2
+                @Override // ai.u
                 public final void a(boolean z11) {
-                    o2 o2Var2 = o2.this;
+                    p2 p2Var2 = p2.this;
                     android.support.v4.media.session.a0 a0Var = P;
-                    if (o2Var2.d) {
-                        g20 g20Var = o2Var2.a;
+                    if (p2Var2.d) {
+                        g20 g20Var = p2Var2.a;
                         char c10 = z11 ? (char) 1 : (char) 2;
                         c40 c40Var2 = g20Var.a;
                         if (c10 == 2) {
                             new cc(c40Var2.F, new fi.i0()).Q(R.raw.error, 36, "Live captions aren't available: the speech model couldn't be loaded.").k(c40Var2.q1());
                         }
                         if (!z11) {
-                            o2Var2.d = false;
+                            p2Var2.d = false;
                             return;
                         }
                         NativeInstance.setIncomingAudioCapture(true);
-                        Thread thread = new Thread(new a1.e(20, o2Var2, a0Var), "LiveCaptions");
-                        o2Var2.e = thread;
+                        Thread thread = new Thread(new a1.e(20, p2Var2, a0Var), "LiveCaptions");
+                        p2Var2.e = thread;
                         thread.start();
                     }
                 }
@@ -3778,13 +3778,13 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
         if (z10 || !this.p3.d) {
             return;
         }
-        ai.o2 o2Var2 = this.p3;
-        if (o2Var2.d) {
-            o2Var2.d = false;
-            Thread thread = o2Var2.e;
+        ai.p2 p2Var2 = this.p3;
+        if (p2Var2.d) {
+            p2Var2.d = false;
+            Thread thread = p2Var2.e;
             if (thread != null) {
                 thread.interrupt();
-                o2Var2.e = null;
+                p2Var2.e = null;
             }
             try {
                 NativeInstance.setIncomingAudioCapture(false);
@@ -4463,7 +4463,7 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void Q1(boolean z10) {
-        boolean a10 = ai.o2.a();
+        boolean a10 = ai.p2.a();
         org.telegram.ui.Components.voip.r0 r0Var = this.n3;
         if (r0Var.e == a10) {
             if (r0Var.f == null) {
@@ -6196,7 +6196,7 @@ public final class c40 extends org.telegram.ui.ActionBar.u2 implements org.teleg
             }
             TLRPC.TL_messages_exportChatInvite tL_messages_exportChatInvite = new TLRPC.TL_messages_exportChatInvite();
             tL_messages_exportChatInvite.peer = org.telegram.messenger.np.l1(this.U2);
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_exportChatInvite, new di.l8(this, N0, z10, 6));
+            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_exportChatInvite, new di.k8(this, N0, z10, 6));
             return;
         }
         if (this.V2 == null) {

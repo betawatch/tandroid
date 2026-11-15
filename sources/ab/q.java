@@ -54,11 +54,11 @@ import org.telegram.ui.r4;
 import org.telegram.ui.u4;
 import org.telegram.ui.w0;
 import org.telegram.ui.w4;
-import org.telegram.ui.xm0;
+import org.telegram.ui.ym0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final class q implements f3.q, xm0 {
+public final class q implements f3.q, ym0 {
     public static q e;
     public boolean a;
     public Object b;
@@ -394,7 +394,7 @@ public final class q implements f3.q, xm0 {
         return oVar2;
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public boolean e() {
         return ((m30) this.d).b.e();
     }
@@ -595,7 +595,7 @@ public final class q implements f3.q, xm0 {
         }
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void t0(int i7, boolean z10, boolean z11) {
         ArrayList arrayList = (ArrayList) this.c;
         m30 m30Var = (m30) this.d;
@@ -743,15 +743,15 @@ public final class q implements f3.q, xm0 {
         this.b = new AtomicMarkableReference(new ca.e(z10 ? TLObject.FLAG_13 : 1024), false);
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public /* synthetic */ void d0() {
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void y() {
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void A(Editable editable) {
     }
 }

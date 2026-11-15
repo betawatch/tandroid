@@ -39,8 +39,8 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.ok0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.b00;
@@ -49,8 +49,8 @@ import org.telegram.ui.ce0;
 import org.telegram.ui.ek0;
 import org.telegram.ui.ij0;
 import org.telegram.ui.jj0;
-import org.telegram.ui.jl0;
 import org.telegram.ui.kd0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.lm;
 import org.telegram.ui.oe;
@@ -58,7 +58,7 @@ import org.telegram.ui.tj0;
 import org.telegram.ui.vs;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,9 +70,9 @@ public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ j6(v8 v8Var, TLObject tLObject, gj gjVar, TLRPC.InputInvoice inputInvoice, z10 z10Var, org.telegram.ui.Components.cc ccVar, TLRPC.TL_error tL_error) {
+    public /* synthetic */ j6(u8 u8Var, TLObject tLObject, gj gjVar, TLRPC.InputInvoice inputInvoice, z10 z10Var, org.telegram.ui.Components.cc ccVar, TLRPC.TL_error tL_error) {
         this.a = 2;
-        this.b = v8Var;
+        this.b = u8Var;
         this.c = tLObject;
         this.d = gjVar;
         this.e = inputInvoice;
@@ -94,8 +94,8 @@ public final /* synthetic */ class j6 implements Runnable {
         int i11;
         int i12;
         hi.d7 m10;
-        jl0 jl0Var;
-        jl0 jl0Var2;
+        kl0 kl0Var;
+        kl0 kl0Var2;
         int i13 = this.a;
         int i14 = 13;
         int i15 = 8;
@@ -111,10 +111,10 @@ public final /* synthetic */ class j6 implements Runnable {
         switch (i13) {
             case 0:
                 ((boolean[]) obj5)[0] = true;
-                ((v8) obj7).Y((String) obj3, (TLRPC.ChatInvite) obj2, new l6((boolean[]) obj4, (s10) obj, (z10) obj6));
+                ((u8) obj7).Y((String) obj3, (TLRPC.ChatInvite) obj2, new l6((boolean[]) obj4, (s10) obj, (z10) obj6));
                 break;
             case 1:
-                v8 v8Var = (v8) obj7;
+                u8 u8Var = (u8) obj7;
                 List list = (List) obj5;
                 bi.v5 v5Var = (bi.v5) obj4;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj3;
@@ -135,12 +135,12 @@ public final /* synthetic */ class j6 implements Runnable {
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, org.telegram.messenger.r1.i().h(tL_starsGiftOption.currency)) * (a10.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(v8Var.a).sendRequest(tL_payments_canPurchaseStore, new u6(mVar, fVar, v5Var, activity, tL_inputStorePaymentStarsGift, list, 1));
+                        ConnectionsManager.getInstance(u8Var.a).sendRequest(tL_payments_canPurchaseStore, new u6(mVar, fVar, v5Var, activity, tL_inputStorePaymentStarsGift, list, 1));
                         break;
                     }
                 }
             case 2:
-                v8 v8Var2 = (v8) obj7;
+                u8 u8Var2 = (u8) obj7;
                 TLObject tLObject = (TLObject) obj5;
                 gj gjVar = (gj) obj4;
                 TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) obj3;
@@ -148,7 +148,7 @@ public final /* synthetic */ class j6 implements Runnable {
                 org.telegram.ui.Components.cc ccVar = (org.telegram.ui.Components.cc) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                    v8Var2.Z(gjVar, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, z10Var);
+                    u8Var2.Z(gjVar, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, z10Var);
                     break;
                 } else {
                     z10Var.a(Boolean.FALSE);
@@ -156,17 +156,17 @@ public final /* synthetic */ class j6 implements Runnable {
                     break;
                 }
             case 3:
-                jc jcVar = (jc) obj7;
+                ic icVar = (ic) obj7;
                 fi.n0[] n0VarArr = (fi.n0[]) obj5;
                 int[] iArr = (int[]) obj4;
                 RectF rectF = (RectF) obj3;
                 View view = (View) obj2;
                 ch.q0 q0Var = (ch.q0) obj;
                 ch.n0 n0Var = (ch.n0) obj6;
-                if (jcVar.o1) {
+                if (icVar.o1) {
                     fi.n0 n0Var2 = n0VarArr[0];
                     if (n0Var2 == null) {
-                        n0Var2 = jcVar.K1.d(jcVar.L1);
+                        n0Var2 = icVar.K1.d(icVar.L1);
                         n0VarArr[0] = n0Var2;
                     }
                     if (n0Var2 != null) {
@@ -309,7 +309,7 @@ public final /* synthetic */ class j6 implements Runnable {
                 String str6 = (String) obj3;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = (TLRPC.TL_payments_canPurchaseStore) obj;
-                ma0 ma0Var = (ma0) obj6;
+                u80 u80Var = (u80) obj6;
                 if (((f5.f) obj5).a == 0 && list2 != null && !list2.isEmpty()) {
                     for (Purchase purchase : list2) {
                         if (purchase.b().contains(str6)) {
@@ -319,12 +319,12 @@ public final /* synthetic */ class j6 implements Runnable {
                             tL_dataJSON.data = purchase.a;
                             tL_inputStorePaymentAuthCode.restore = true;
                             tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentAuthCode;
-                            kd0Var.w.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new k7(kd0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore2, ma0Var, 9), 74);
+                            kd0Var.w.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new k7(kd0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore2, u80Var, 9), 74);
                             break;
                         }
                     }
                 }
-                ma0Var.run();
+                u80Var.run();
                 break;
             case 9:
                 be0 be0Var = (be0) obj7;
@@ -598,13 +598,13 @@ public final /* synthetic */ class j6 implements Runnable {
                         TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject9;
                         paymentForm.invoice.recurring = true;
                         npVar.Y3(paymentForm.users, false);
-                        jl0Var = new jl0(paymentForm, tL_inputInvoicePremiumGiftCode, e2Var);
+                        kl0Var = new kl0(paymentForm, tL_inputInvoicePremiumGiftCode, e2Var);
                     } else {
-                        jl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new jl0((TLRPC.PaymentReceipt) tLObject9) : null;
+                        kl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new kl0((TLRPC.PaymentReceipt) tLObject9) : null;
                     }
-                    if (jl0Var != null) {
-                        jl0Var.a1 = new org.telegram.ui.Wallet.k8(25, tVar2, tVar);
-                        LaunchActivity.Q().showAsSheet(jl0Var, new org.telegram.ui.ActionBar.c2());
+                    if (kl0Var != null) {
+                        kl0Var.a1 = new org.telegram.ui.Wallet.k8(25, tVar2, tVar);
+                        LaunchActivity.Q().showAsSheet(kl0Var, new org.telegram.ui.ActionBar.c2());
                         break;
                     } else {
                         tVar.a(null);
@@ -627,13 +627,13 @@ public final /* synthetic */ class j6 implements Runnable {
                         TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject10;
                         paymentForm2.invoice.recurring = true;
                         npVar2.Y3(paymentForm2.users, false);
-                        jl0Var2 = new jl0(paymentForm2, tL_inputInvoicePremiumGiftCode2, e2Var2);
+                        kl0Var2 = new kl0(paymentForm2, tL_inputInvoicePremiumGiftCode2, e2Var2);
                     } else {
-                        jl0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new jl0((TLRPC.PaymentReceipt) tLObject10) : null;
+                        kl0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new kl0((TLRPC.PaymentReceipt) tLObject10) : null;
                     }
-                    if (jl0Var2 != null) {
-                        jl0Var2.a1 = new org.telegram.ui.Wallet.k8(26, z10Var3, z10Var2);
-                        LaunchActivity.Q().showAsSheet(jl0Var2, new org.telegram.ui.ActionBar.c2());
+                    if (kl0Var2 != null) {
+                        kl0Var2.a1 = new org.telegram.ui.Wallet.k8(26, z10Var3, z10Var2);
+                        LaunchActivity.Q().showAsSheet(kl0Var2, new org.telegram.ui.ActionBar.c2());
                         break;
                     } else {
                         z10Var2.a(null);
@@ -643,9 +643,9 @@ public final /* synthetic */ class j6 implements Runnable {
         }
     }
 
-    public /* synthetic */ j6(v8 v8Var, boolean[] zArr, String str, TLRPC.ChatInvite chatInvite, boolean[] zArr2, s10 s10Var, z10 z10Var) {
+    public /* synthetic */ j6(u8 u8Var, boolean[] zArr, String str, TLRPC.ChatInvite chatInvite, boolean[] zArr2, s10 s10Var, z10 z10Var) {
         this.a = 0;
-        this.b = v8Var;
+        this.b = u8Var;
         this.c = zArr;
         this.e = str;
         this.f = chatInvite;

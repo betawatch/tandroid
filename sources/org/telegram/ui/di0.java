@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class di0 {
     public static org.telegram.ui.ActionBar.u2 a;
@@ -375,7 +375,7 @@ public abstract class di0 {
             frameLayout2.setOnClickListener(new fi.d0(k10, frameLayout3, arrayList, iArr, ai0Var));
             boolean[] zArr2 = new boolean[1];
             final hi.d dVar5 = dVar;
-            dVar2.setOnClickListener(new di.y9(dVar5, tL_messages_requestUrlAuth, zArr2, k10, dVar2, v0Var, i7));
+            dVar2.setOnClickListener(new di.x9(dVar5, tL_messages_requestUrlAuth, zArr2, k10, dVar2, v0Var, i7));
             final boolean[] zArr3 = new boolean[1];
             final boolean z17 = z12;
             final bg.l0 l0Var = new bg.l0(tL_urlAuthResultRequest2, strArr, context, i7, new bi0(dVar5, dVar2, tL_urlAuthResultRequest2, inputtonconnectoauthsessionArr, tL_messages_requestUrlAuth, strArr, q8Var3, zArr3, zArr, iArr, zArr2, k10, str6, resourceProvider, z10, str, v0Var), T5, 12);

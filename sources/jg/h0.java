@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import bi.b6;
-import di.j9;
+import di.i9;
 import hi.g7;
 import hi.h4;
 import hi.q4;
@@ -50,7 +50,6 @@ import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.cm0;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.pz;
@@ -64,7 +63,7 @@ import org.telegram.ui.qz;
 import org.telegram.ui.yw;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class h0 extends tj0 {
     public boolean A0;
@@ -107,7 +106,7 @@ public abstract class h0 extends tj0 {
     public long o0;
     public View p0;
     public h4 q0;
-    public ai.z0 r;
+    public ai.a1 r;
     public ArrayList r0;
     public final yw s0;
     public final int t0;
@@ -555,7 +554,7 @@ public abstract class h0 extends tj0 {
         G(str != null ? str.trim() : null);
         f();
         int i7 = this.t0;
-        vr.a0(i7).a.c(new j9(i7, j3, 1));
+        vr.a0(i7).a.c(new i9(i7, j3, 1));
     }
 
     public final boolean R() {
@@ -601,9 +600,9 @@ public abstract class h0 extends tj0 {
             org.telegram.messenger.g0.r(nVar);
             this.h = null;
         }
-        ai.z0 z0Var = this.r;
-        if (z0Var != null) {
-            org.telegram.messenger.g0.r(z0Var);
+        ai.a1 a1Var = this.r;
+        if (a1Var != null) {
+            org.telegram.messenger.g0.r(a1Var);
             this.r = null;
         }
         if (this.n >= 0) {
@@ -625,7 +624,7 @@ public abstract class h0 extends tj0 {
                 TLRPC.TL_contacts_getSponsoredPeers tL_contacts_getSponsoredPeers = new TLRPC.TL_contacts_getSponsoredPeers();
                 this.S = trim;
                 tL_contacts_getSponsoredPeers.q = trim;
-                this.T = ConnectionsManager.getInstance(this.t0).sendRequest(tL_contacts_getSponsoredPeers, new ai.d1((cm0) this, 13));
+                this.T = ConnectionsManager.getInstance(this.t0).sendRequest(tL_contacts_getSponsoredPeers, new ai.e1((cm0) this, 13));
             }
         }
         if (TextUtils.isEmpty(trim)) {
@@ -728,9 +727,9 @@ public abstract class h0 extends tj0 {
                 p5Var.d(nVar2, 300L);
                 if (str2 == null) {
                     this.E0++;
-                    ai.z0 z0Var2 = new ai.z0(cm0Var, i12, str2, 18);
-                    this.r = z0Var2;
-                    org.telegram.messenger.g0.i3(z0Var2, 300L);
+                    ai.a1 a1Var2 = new ai.a1(cm0Var, i12, str2, 18);
+                    this.r = a1Var2;
+                    org.telegram.messenger.g0.i3(a1Var2, 300L);
                     return;
                 }
                 return;
@@ -2308,7 +2307,7 @@ public abstract class h0 extends tj0 {
                 v vVar = new v(this, i12);
                 z51 z51Var = new z51(context, 6);
                 z51Var.setOrientation(1);
-                i9 i9Var = new i9(context);
+                org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
                 i9Var.setImageDrawable(new ch0(R.raw.utyan_empty, org.telegram.messenger.g0.L(120.0f), org.telegram.messenger.g0.L(120.0f)));
                 z51Var.addView(i9Var, c8.ja.t(120, 120, 1, 0, 27, 0, 0));
                 TextView textView = new TextView(context);

@@ -25,7 +25,7 @@ import org.telegram.ui.Components.ih;
 import org.telegram.ui.Components.vv0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i2 implements VoIPService.StateListener, is {
     public static boolean T = false;
@@ -42,7 +42,7 @@ public final class i2 implements VoIPService.StateListener, is {
     public long M;
     public int N;
     public AnimatorSet P;
-    public final ai.j0 a;
+    public final ai.k0 a;
     public final h2 b;
     public WindowManager c;
     public WindowManager.LayoutParams d;
@@ -72,10 +72,10 @@ public final class i2 implements VoIPService.StateListener, is {
         float f11 = i7 * 0.4f;
         int i13 = ((int) ((1.05f * f11) - f11)) / 2;
         this.F = i13;
-        ai.j0 j0Var = new ai.j0(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), i11);
-        this.a = j0Var;
-        j0Var.setWillNotDraw(false);
-        j0Var.setPadding(i13, i12, i13, i12);
+        ai.k0 k0Var = new ai.k0(this, context, context.getDrawable(R.drawable.calls_pip_outershadow), i11);
+        this.a = k0Var;
+        k0Var.setWillNotDraw(false);
+        k0Var.setPadding(i13, i12, i13, i12);
         h2 h2Var = new h2(this, context);
         this.b = h2Var;
         o2 o2Var = new o2(context, false, true);
@@ -87,9 +87,9 @@ public final class i2 implements VoIPService.StateListener, is {
         h2Var.addView(o2Var);
         h2Var.addView(o2Var2);
         h2Var.setBackgroundColor(-7829368);
-        j0Var.addView(h2Var);
-        j0Var.setClipChildren(false);
-        j0Var.setClipToPadding(false);
+        k0Var.addView(h2Var);
+        k0Var.setClipChildren(false);
+        k0Var.setClipToPadding(false);
         if (z10) {
             View view = new View(context);
             this.n = view;

@@ -18,28 +18,28 @@ import org.telegram.messenger.ns;
 import org.telegram.ui.Components.bt0;
 import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cm0;
-import org.telegram.ui.Components.da0;
 import org.telegram.ui.Components.dl;
 import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.gz;
 import org.telegram.ui.Components.hm;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.im;
 import org.telegram.ui.Components.iz;
-import org.telegram.ui.Components.ja0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.jz;
+import org.telegram.ui.Components.ka0;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.mi0;
 import org.telegram.ui.Components.mj;
 import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.v90;
 import org.telegram.ui.Components.ve;
 import org.telegram.ui.Components.yi;
 import org.telegram.ui.PhotoViewer;
@@ -49,7 +49,7 @@ import org.telegram.ui.mp;
 import org.telegram.ui.pw;
 import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c1 extends uj0 {
     public final /* synthetic */ int f3;
@@ -175,7 +175,7 @@ public final class c1 extends uj0 {
         bj bjVar;
         ArrayList arrayList;
         c1 c1Var;
-        da0 da0Var;
+        ea0 ea0Var;
         int i7;
         c1 c1Var2;
         boolean z10;
@@ -232,8 +232,8 @@ public final class c1 extends uj0 {
                 ((org.telegram.ui.i8) this.g3).G = false;
                 break;
             case 21:
-                da0 da0Var2 = (da0) this.g3;
-                org.telegram.ui.v8 v8Var = da0Var2.b;
+                ea0 ea0Var2 = (ea0) this.g3;
+                org.telegram.ui.v8 v8Var = ea0Var2.b;
                 boolean z11 = false;
                 for (int i12 = 0; i12 < getChildCount(); i12++) {
                     View childAt2 = getChildAt(i12);
@@ -251,10 +251,10 @@ public final class c1 extends uj0 {
                 }
                 int i14 = 0;
                 while (i14 < 3) {
-                    ja0 ja0Var = da0Var2.d0;
-                    ArrayList arrayList2 = ja0Var.F;
-                    c1 c1Var4 = da0Var2.f;
-                    ja0Var.F.clear();
+                    ka0 ka0Var = ea0Var2.d0;
+                    ArrayList arrayList2 = ka0Var.F;
+                    c1 c1Var4 = ea0Var2.f;
+                    ka0Var.F.clear();
                     int i15 = 2;
                     if (i14 != 2 || c1Var4.W1) {
                         int i16 = z11 ? 1 : 0;
@@ -325,7 +325,7 @@ public final class c1 extends uj0 {
                                         arrayList = arrayList3;
                                         c1Var2 = c1Var4;
                                         z10 = z12;
-                                        da0Var = da0Var2;
+                                        ea0Var = ea0Var2;
                                         i7 = i22;
                                     } else {
                                         aj ajVar2 = bjVar3.m;
@@ -358,7 +358,7 @@ public final class c1 extends uj0 {
                                             arrayList = arrayList3;
                                             c1Var = c1Var4;
                                         }
-                                        da0Var = da0Var2;
+                                        ea0Var = ea0Var2;
                                         bj bjVar4 = bjVar;
                                         i7 = i22;
                                         c1Var2 = c1Var;
@@ -384,7 +384,7 @@ public final class c1 extends uj0 {
                                     }
                                     i22 = i7 + 1;
                                     c1Var4 = c1Var2;
-                                    da0Var2 = da0Var;
+                                    ea0Var2 = ea0Var;
                                     arrayList3 = arrayList;
                                     z12 = z10;
                                 }
@@ -392,7 +392,7 @@ public final class c1 extends uj0 {
                         }
                     }
                     i14++;
-                    da0Var2 = da0Var2;
+                    ea0Var2 = ea0Var2;
                     z11 = false;
                 }
                 super.dispatchDraw(canvas);
@@ -675,7 +675,7 @@ public final class c1 extends uj0 {
         switch (this.f3) {
             case 21:
                 if (i7 == 0) {
-                    ((da0) this.g3).e.V();
+                    ((ea0) this.g3).e.V();
                     break;
                 }
                 break;
@@ -716,7 +716,7 @@ public final class c1 extends uj0 {
                 }
                 break;
             case 21:
-                ((da0) this.g3).e.G();
+                ((ea0) this.g3).e.G();
                 break;
         }
     }
@@ -863,27 +863,27 @@ public final class c1 extends uj0 {
                 dlVar.i0();
                 break;
             case 21:
-                da0 da0Var = (da0) this.g3;
-                int i15 = da0Var.a;
-                if (da0Var.L) {
+                ea0 ea0Var = (ea0) this.g3;
+                int i15 = ea0Var.a;
+                if (ea0Var.L) {
                     if (i15 != 0) {
                         v0(0);
                     }
-                    da0Var.L = false;
+                    ea0Var.L = false;
                 }
                 super.onLayout(z10, i7, i10, i11, i12);
-                da0Var.j();
-                c1 c1Var = da0Var.f;
-                if (da0Var.V) {
+                ea0Var.j();
+                c1 c1Var = ea0Var.f;
+                if (ea0Var.V) {
                     if (c1Var.computeVerticalScrollRange() > c1Var.computeVerticalScrollExtent()) {
-                        da0Var.postDelayed(new u90(da0Var, 0), 0L);
+                        ea0Var.postDelayed(new v90(ea0Var, 0), 0L);
                     }
-                    da0Var.V = false;
+                    ea0Var.V = false;
                 }
-                if (da0Var.O && i15 == 0) {
-                    int i16 = da0Var.M;
-                    int i17 = da0Var.N;
-                    da0Var.O = false;
+                if (ea0Var.O && i15 == 0) {
+                    int i16 = ea0Var.M;
+                    int i17 = ea0Var.N;
+                    ea0Var.O = false;
                     post(new jg.q(this, i16, i17, 14));
                     break;
                 }

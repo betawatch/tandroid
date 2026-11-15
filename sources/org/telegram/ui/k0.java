@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -463,14 +463,14 @@ public final class k0 extends FrameLayout {
                 break;
             case 17:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(((nm0) this.b).b.size(), "AccDescrSendPhotos", new Object[0]));
+                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(((om0) this.b).b.size(), "AccDescrSendPhotos", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
                 break;
             case 18:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(((ym0) this.b).b.size(), "AccDescrSendPhotos", new Object[0]));
+                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(((zm0) this.b).b.size(), "AccDescrSendPhotos", new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -563,8 +563,8 @@ public final class k0 extends FrameLayout {
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
                 WindowInsets windowInsets = secretMediaViewer.f0;
                 int systemWindowInsetLeft = windowInsets != null ? windowInsets.getSystemWindowInsetLeft() : 0;
-                ai.j0 j0Var = secretMediaViewer.e;
-                j0Var.layout(systemWindowInsetLeft, 0, j0Var.getMeasuredWidth() + systemWindowInsetLeft, secretMediaViewer.e.getMeasuredHeight());
+                ai.k0 k0Var = secretMediaViewer.e;
+                k0Var.layout(systemWindowInsetLeft, 0, k0Var.getMeasuredWidth() + systemWindowInsetLeft, secretMediaViewer.e.getMeasuredHeight());
                 if (z10) {
                     if (secretMediaViewer.J0 == null) {
                         secretMediaViewer.x0 = 1.0f;
@@ -680,11 +680,11 @@ public final class k0 extends FrameLayout {
                 }
                 break;
             case 16:
-                im0 im0Var = (im0) this.b;
-                FrameLayout frameLayout = im0Var.M;
+                jm0 jm0Var = (jm0) this.b;
+                FrameLayout frameLayout = jm0Var.M;
                 if (frameLayout != null) {
                     ((ViewGroup.MarginLayoutParams) frameLayout.getLayoutParams()).height = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                    ((ViewGroup.MarginLayoutParams) im0Var.M.getLayoutParams()).topMargin = org.telegram.messenger.g0.m;
+                    ((ViewGroup.MarginLayoutParams) jm0Var.M.getLayoutParams()).topMargin = org.telegram.messenger.g0.m;
                 }
                 super.onMeasure(i7, i10);
                 break;

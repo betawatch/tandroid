@@ -29,7 +29,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class bw0 extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is {
     public static final /* synthetic */ int r2 = 0;
@@ -172,7 +172,7 @@ public class bw0 extends org.telegram.ui.ActionBar.u2 implements org.telegram.me
         org.telegram.ui.an anVar = e2Var instanceof org.telegram.ui.an ? (org.telegram.ui.an) e2Var : null;
         boolean z10 = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.creator) ? false : true;
         if (document == null || !document.mime_type.equals("image/webp")) {
-            org.telegram.messenger.g0.i3(new ai.j(e2Var, tL_messages_stickerSet, document, anVar, z10, 12), 300L);
+            org.telegram.messenger.g0.i3(new ai.j(e2Var, tL_messages_stickerSet, document, anVar, z10, 11), 300L);
             return;
         }
         ArrayList arrayList = new ArrayList();

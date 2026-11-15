@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e2 {
     public final org.telegram.messenger.y5 E;
@@ -400,10 +400,10 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.e2 {
                 org.telegram.ui.Cells.b5[] b5VarArr2 = b5VarArr;
                 int i21 = i11;
                 org.telegram.ui.Cells.m8[] m8VarArr2 = m8VarArr;
-                di.y9 y9Var = new di.y9(dataAutoDownloadActivity, m8Var, m8VarArr2, i21, b5VarArr2, q8VarArr2, animatorSetArr2);
+                di.x9 x9Var = new di.x9(dataAutoDownloadActivity, m8Var, m8VarArr2, i21, b5VarArr2, q8VarArr2, animatorSetArr2);
                 i11 = i21;
                 animatorSetArr = animatorSetArr2;
-                m8Var2.setOnClickListener(y9Var);
+                m8Var2.setOnClickListener(x9Var);
                 linearLayout.addView(m8VarArr2[i20], c8.ja.c(50.0f, -1));
                 i20++;
                 b5VarArr = b5VarArr2;

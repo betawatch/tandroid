@@ -33,7 +33,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class l1 implements Runnable {
                                     i20++;
                                     TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2 = (TL_stars.StarGiftUpgradePrice) obj;
                                     Date date = new Date(starGiftUpgradePrice2.date * 1000);
-                                    vx0Var.c(hd.E0().p0().format(date) + ", " + hd.E0().q0().format(date), mb.a1(false, i5.c.l((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                    vx0Var.c(hd.E0().p0().format(date) + ", " + hd.E0().q0().format(date), lb.a1(false, i5.c.l((int) starGiftUpgradePrice2.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 }
                             }
                             float f13 = f10 + f12;
@@ -171,7 +171,7 @@ public final /* synthetic */ class l1 implements Runnable {
                         } else {
                             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i19)).date || ((i7 = i19 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i7)).date)) {
                                 Date date2 = new Date(r8.date * 1000);
-                                vx0Var.c(hd.E0().p0().format(date2) + ", " + hd.E0().q0().format(date2), mb.a1(false, i5.c.l((int) r8.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                                vx0Var.c(hd.E0().p0().format(date2) + ", " + hd.E0().q0().format(date2), lb.a1(false, i5.c.l((int) r8.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                                 z12 = true;
                             }
                             i19++;
@@ -290,9 +290,9 @@ public final /* synthetic */ class l1 implements Runnable {
                                     ConnectionsManager.getInstance(c6Var.a).sendRequest(tL_payments_getPaymentForm, new t3(c6Var, i16));
                                 }
                                 if (z11) {
-                                    dVar2.i(mb.U0(hd.a0(null, null, 2131749877, Long.valueOf(j14)), 1.13f, eqVarArr), true, true);
+                                    dVar2.i(lb.U0(hd.a0(null, null, 2131749877, Long.valueOf(j14)), 1.13f, eqVarArr), true, true);
                                 } else {
-                                    dVar2.i(mb.U0(hd.a0(null, null, 2131750067, Long.valueOf(j14)), 1.13f, eqVarArr), true, true);
+                                    dVar2.i(lb.U0(hd.a0(null, null, 2131750067, Long.valueOf(j14)), 1.13f, eqVarArr), true, true);
                                 }
                                 y5Var = c6Var.m2;
                                 if (y5Var != null) {
@@ -342,7 +342,7 @@ public final /* synthetic */ class l1 implements Runnable {
                 TL_stars.SavedStarGift savedStarGift2 = c6Var.B2;
                 if (savedStarGift2.unsaved) {
                     savedStarGift2.unsaved = false;
-                    k8 F = v8.y(c6Var.a, false).F(c6Var.T1, false);
+                    j8 F = u8.y(c6Var.a, false).F(c6Var.T1, false);
                     if (F != null) {
                         TL_stars.SavedStarGift savedStarGift3 = c6Var.B2;
                         F.m(savedStarGift3, savedStarGift3.unsaved);
@@ -354,7 +354,7 @@ public final /* synthetic */ class l1 implements Runnable {
                 }
                 TL_stars.SavedStarGift savedStarGift4 = c6Var.B2;
                 boolean z13 = savedStarGift4.pinned_to_top;
-                if (((m8) c6Var.C2).o(savedStarGift4, !z13, false)) {
+                if (((l8) c6Var.C2).o(savedStarGift4, !z13, false)) {
                     new bi.h4(c6Var.getContext(), c6Var.T1, c6Var.B2, c6Var.J0, new w1(c6Var, i15)).show();
                     break;
                 } else if (z13) {
@@ -418,7 +418,7 @@ public final /* synthetic */ class l1 implements Runnable {
             case 17:
                 TL_stars.TL_starGiftUnique H1 = c6Var.H1();
                 if (H1 != null) {
-                    mb.i1(c6Var.getContext(), c6Var.a, H1, new q3(c6Var, H1, 2), c6Var.J0);
+                    lb.i1(c6Var.getContext(), c6Var.a, H1, new q3(c6Var, H1, 2), c6Var.J0);
                     break;
                 }
                 break;

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -720,13 +720,13 @@ public final /* synthetic */ class mf implements View.OnLongClickListener {
                             r62 = 0;
                             e6Var = e6Var2;
                             j10 = j13;
-                            org.telegram.ui.Components.ia0 ia0Var = new org.telegram.ui.Components.ia0(context, R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), e6Var);
+                            org.telegram.ui.Components.ja0 ja0Var = new org.telegram.ui.Components.ja0(context, R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), e6Var);
                             TLRPC.Message message = gjVar4.k;
                             boolean z21 = kiVar4.X1;
                             message.invert_media = z21;
-                            ia0Var.a(!z21, false);
-                            ia0Var.setOnClickListener(new ah.g(kiVar4, gjVar4, ia0Var, 26));
-                            F.q(ia0Var);
+                            ja0Var.a(!z21, false);
+                            ja0Var.setOnClickListener(new ah.g(kiVar4, gjVar4, ja0Var, 26));
+                            F.q(ja0Var);
                             if (kiVar4.F3 == null) {
                                 F.k();
                             }

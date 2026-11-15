@@ -14,7 +14,7 @@ import org.telegram.ui.Components.m60;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g7 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,12 +23,12 @@ public final /* synthetic */ class g7 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ g7(int i7, Object obj, Object obj2, Object obj3, String str) {
+    public /* synthetic */ g7(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
         this.a = i7;
         this.b = obj;
         this.d = obj2;
-        this.c = str;
         this.e = obj3;
+        this.c = obj4;
     }
 
     @Override // java.lang.Runnable
@@ -189,12 +189,12 @@ public final /* synthetic */ class g7 implements Runnable {
         }
     }
 
-    public /* synthetic */ g7(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
+    public /* synthetic */ g7(Object obj, Object obj2, String str, Object obj3, int i7) {
         this.a = i7;
         this.b = obj;
         this.d = obj2;
+        this.c = str;
         this.e = obj3;
-        this.c = obj4;
     }
 
     public /* synthetic */ g7(WalletEngine2 walletEngine2, String str, byte[] bArr, s10 s10Var) {

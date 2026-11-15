@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.Wallet.k8;
 import org.telegram.ui.ld0;
-import tg.a2;
+import tg.z1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final h5 a;
@@ -221,7 +221,7 @@ public final class p implements e0 {
                         e2.u uVar = new e2.u(tVar);
                         k8 k8Var = new k8(28, this, uVar);
                         wf.b bVar = this.b;
-                        a2 a2Var = new a2(k8Var, 14);
+                        z1 z1Var = new z1(k8Var, 14);
                         ld0 ld0Var = new ld0(7);
                         qb.a aVar = new qb.a(4);
                         if (this.c.L(uVar)) {
@@ -245,7 +245,7 @@ public final class p implements e0 {
                         e2.g0 g0Var4 = parse != null ? new e2.g0(parse, null, c0Var4.a != null ? new e2.d0(c0Var4) : uri, null, list3, null, s1Var, -9223372036854775807L) : uri;
                         e2.l0 l0Var3 = new e2.l0("", new e2.b0(zVar2), g0Var4, new e2.f0(e0Var), e2.o0.L, h0Var3);
                         g0Var4.getClass();
-                        aVarArr[i11] = new x0(l0Var3, bVar, a2Var, ld0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
+                        aVarArr[i11] = new x0(l0Var3, bVar, z1Var, ld0Var.s(l0Var3), aVar, TLObject.FLAG_20, uVar2);
                     } else {
                         wf.b bVar2 = this.b;
                         bVar2.getClass();

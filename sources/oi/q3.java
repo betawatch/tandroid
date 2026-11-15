@@ -73,7 +73,7 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.u41;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class q3 extends u41 {
     public static final ArrayList A4 = new ArrayList();
@@ -9325,7 +9325,7 @@ public final class q3 extends u41 {
                                     if (d2Var7 != null) {
                                         d2Var7.h();
                                     }
-                                    post(new ai.z0(k5Var, pagetablecell, i26, 23));
+                                    post(new ai.a1(k5Var, pagetablecell, i26, 23));
                                     return true;
                                 }
                             }

@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ft extends EditTextBoldCursor implements org.telegram.ui.ActionBar.h4 {
     public static final int[] d2 = {1, 2, 4, 8, 16, 256, TLObject.FLAG_14, 32768};
@@ -194,7 +194,7 @@ public class ft extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         ib0Var2.setMaxValue(org.telegram.messenger.ns.O3);
         ib0Var2.setValue(120);
         ib0Var2.setWrapSelectorWheel(false);
-        ib0Var2.setFormatter(new ai.r1(calendar, i20, 7));
+        ib0Var2.setFormatter(new ai.s1(calendar, i20, 7));
         ib0 ib0Var3 = new ib0(context, e6Var);
         ib0Var3.setContentDescriptionCallback(new ci.x(5));
         ib0Var3.setWrapSelectorWheel(true);
@@ -488,7 +488,7 @@ public class ft extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         c8.na.b(textView, 0.1f, 1.5f);
         frameLayout.addView(textView, c8.ja.d(-2, 26.0f, 21, 0.0f, 0.0f, 24.0f, 3.0f));
         textView.setVisibility(z10 ? 0 : 8);
-        ai.j jVar = new ai.j(this, z10, qVar, str4, textView, 10);
+        ai.j jVar = new ai.j(this, z10, qVar, str4, textView, 9);
         textView.setOnClickListener(new ah.g(this, qVar, jVar, 29));
         qVar.addTextChangedListener(new ah.j(jVar, 20));
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");

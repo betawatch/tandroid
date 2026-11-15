@@ -4,41 +4,41 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.w7;
 import org.telegram.ui.Components.fz0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f2 b;
+    public final /* synthetic */ e2 b;
 
-    public /* synthetic */ t1(f2 f2Var, int i7) {
+    public /* synthetic */ t1(e2 e2Var, int i7) {
         this.a = i7;
-        this.b = f2Var;
+        this.b = e2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                f2 f2Var = this.b;
-                d2 d2Var = f2Var.a0;
-                if (d2Var != null) {
-                    if (d2Var.r != null) {
-                        MediaController.B().i(f2Var.a0.r);
-                        w7.G(f2Var.a).b(f2Var.a0.b, false);
-                        f2Var.a0.getClass();
+                e2 e2Var = this.b;
+                c2 c2Var = e2Var.a0;
+                if (c2Var != null) {
+                    if (c2Var.r != null) {
+                        MediaController.B().i(e2Var.a0.r);
+                        w7.G(e2Var.a).b(e2Var.a0.b, false);
+                        e2Var.a0.getClass();
                     }
-                    f2Var.a0.a();
-                    f2Var.a0 = null;
+                    e2Var.a0.a();
+                    e2Var.a0 = null;
                 }
-                f2Var.e0.a();
-                f2Var.e0 = null;
+                e2Var.e0.a();
+                e2Var.e0 = null;
                 break;
             default:
-                f2 f2Var2 = this.b;
-                fz0 fz0Var = f2Var2.T;
+                e2 e2Var2 = this.b;
+                fz0 fz0Var = e2Var2.T;
                 if (fz0Var != null) {
-                    f2Var2.T = null;
-                    f2Var2.removeView(fz0Var);
+                    e2Var2.T = null;
+                    e2Var2.removeView(fz0Var);
                     break;
                 }
                 break;

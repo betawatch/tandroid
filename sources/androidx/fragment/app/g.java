@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-import ai.q2;
+import ai.r2;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
@@ -25,9 +25,9 @@ import org.telegram.ui.pz0;
 import org.telegram.ui.qn;
 import org.telegram.ui.t3;
 import org.telegram.ui.xr0;
-import tg.m2;
+import tg.l2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -268,14 +268,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             default:
-                m2 m2Var = (m2) this.d;
-                q2 q2Var = m2Var.c;
+                l2 l2Var = (l2) this.d;
+                r2 r2Var = l2Var.c;
                 float f12 = this.b ? 1.0f : 0.0f;
-                m2Var.E = f12;
-                q2Var.setAlpha(f12);
-                q2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, m2Var.E));
-                q2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, m2Var.E));
-                m2Var.b.invalidate();
+                l2Var.E = f12;
+                r2Var.setAlpha(f12);
+                r2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
+                r2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
+                l2Var.b.invalidate();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {
                     org.telegram.messenger.g0.h3(runnable6);

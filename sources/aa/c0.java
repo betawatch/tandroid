@@ -15,7 +15,7 @@ import android.view.View;
 import bi.o2;
 import ch.p0;
 import da.q2;
-import di.m8;
+import di.l8;
 import di.s0;
 import fi.b4;
 import fi.y2;
@@ -98,7 +98,7 @@ import org.telegram.ui.ol;
 import org.telegram.ui.q5;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -248,17 +248,17 @@ public final /* synthetic */ class c0 implements Runnable {
                 e0Var.b.e(q2Var, cVar.a, z11);
                 return;
             case 1:
-                m8 m8Var = (m8) this.c;
+                l8 l8Var = (l8) this.c;
                 int[] iArr = (int[]) this.d;
                 TLObject tLObject = (TLObject) this.e;
                 boolean z12 = this.b;
-                ArrayList arrayList5 = m8Var.l;
-                int i19 = m8Var.a;
-                if (iArr[0] != m8Var.m) {
+                ArrayList arrayList5 = l8Var.l;
+                int i19 = l8Var.a;
+                if (iArr[0] != l8Var.m) {
                     return;
                 }
-                m8Var.i = false;
-                m8Var.m = -1;
+                l8Var.i = false;
+                l8Var.m = -1;
                 if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
                     TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
                     np.s1(i19).Y3(tL_payments_savedStarGifts.users, false);
@@ -267,19 +267,19 @@ public final /* synthetic */ class c0 implements Runnable {
                         arrayList5.clear();
                     }
                     arrayList5.addAll(tL_payments_savedStarGifts.gifts);
-                    m8Var.k = tL_payments_savedStarGifts.next_offset;
-                    m8Var.n = tL_payments_savedStarGifts.count;
-                    m8Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
-                    m8Var.j = arrayList5.size() > m8Var.n || m8Var.k == null;
+                    l8Var.k = tL_payments_savedStarGifts.next_offset;
+                    l8Var.n = tL_payments_savedStarGifts.count;
+                    l8Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
+                    l8Var.j = arrayList5.size() > l8Var.n || l8Var.k == null;
                     c10 = 1;
                 } else {
                     c10 = 1;
-                    m8Var.j = true;
+                    l8Var.j = true;
                 }
                 ns f10 = ns.f(i19);
                 Object[] objArr = new Object[2];
-                objArr[0] = Long.valueOf(m8Var.b);
-                objArr[c10] = m8Var;
+                objArr[0] = Long.valueOf(l8Var.b);
+                objArr[c10] = l8Var;
                 f10.k(ns.G3, objArr);
                 return;
             case 2:

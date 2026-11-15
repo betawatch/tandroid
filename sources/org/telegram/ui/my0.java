@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class my0 extends org.telegram.ui.ActionBar.u2 {
     public static final /* synthetic */ int w1 = 0;
@@ -114,7 +114,7 @@ public final class my0 extends org.telegram.ui.ActionBar.u2 {
                             boolean[] zArr2 = zArr;
                             org.telegram.messenger.z10 z10Var2 = z10Var;
                             if (!z12 && !(reportResult instanceof TLRPC.TL_reportResultAddComment)) {
-                                org.telegram.messenger.g0.i3(new di.d8(1, z10Var2, zArr2), 200L);
+                                org.telegram.messenger.g0.i3(new di.c8(1, z10Var2, zArr2), 200L);
                                 return;
                             }
                             my0 my0Var = new my0(false, context, e6Var, j3, z10, z11, arrayList, null);
@@ -134,7 +134,7 @@ public final class my0 extends org.telegram.ui.ActionBar.u2 {
                                 }
                             }
                             my0Var.v1 = new ld0(zArr2, z10Var2, ccVar, 1);
-                            my0Var.n(new di.d8(2, z10Var2, zArr2));
+                            my0Var.n(new di.c8(2, z10Var2, zArr2));
                             my0Var.show();
                         }
                     });
@@ -155,7 +155,7 @@ public final class my0 extends org.telegram.ui.ActionBar.u2 {
                     boolean[] zArr2 = zArr;
                     org.telegram.messenger.z10 z10Var2 = z10Var;
                     if (!z12 && !(reportResult instanceof TLRPC.TL_reportResultAddComment)) {
-                        org.telegram.messenger.g0.i3(new di.d8(1, z10Var2, zArr2), 200L);
+                        org.telegram.messenger.g0.i3(new di.c8(1, z10Var2, zArr2), 200L);
                         return;
                     }
                     my0 my0Var = new my0(false, context, e6Var, j3, z10, z11, arrayList, null);
@@ -175,7 +175,7 @@ public final class my0 extends org.telegram.ui.ActionBar.u2 {
                         }
                     }
                     my0Var.v1 = new ld0(zArr2, z10Var2, ccVar, 1);
-                    my0Var.n(new di.d8(2, z10Var2, zArr2));
+                    my0Var.n(new di.c8(2, z10Var2, zArr2));
                     my0Var.show();
                 }
             });

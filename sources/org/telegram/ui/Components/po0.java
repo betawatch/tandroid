@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class po0 extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is {
     public static final /* synthetic */ int U2 = 0;
@@ -557,7 +557,7 @@ public class po0 extends org.telegram.ui.ActionBar.u2 implements org.telegram.me
                 this.E1.h1(0, this.l2 - uj0Var.getPaddingTop());
                 AtomicReference atomicReference = new AtomicReference();
                 yn0 yn0Var = new yn0(this, dialog, atomicReference, view);
-                atomicReference.set(new ma0(this, atomicReference, yn0Var, dialog, 3));
+                atomicReference.set(new u80(this, atomicReference, yn0Var, dialog, 4));
                 org.telegram.messenger.ns f10 = org.telegram.messenger.ns.f(this.a);
                 int i10 = org.telegram.messenger.ns.q5;
                 f10.b(yn0Var, i10);

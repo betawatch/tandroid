@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -310,7 +310,7 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                                         if (!isEmpty) {
                                             messagesController3.getNotificationCenter().k(3, new Object[0]);
                                         }
-                                        Pair pair = new Pair(new di.u7(messagesController3, i16, z11, i13), new org.telegram.messenger.l10(4, messagesController3, z11));
+                                        Pair pair = new Pair(new di.t7(messagesController3, i16, z11, i13), new org.telegram.messenger.l10(4, messagesController3, z11));
                                         undoView2.k(0L, 88, zzVar.Y1, Integer.valueOf(arrayList4.size()), new yf(zzVar, tL_chatlists_joinChatlistInvite, pair, 9), (Runnable) pair.second);
                                         zzVar.w2 = true;
                                         zzVar.dismiss();

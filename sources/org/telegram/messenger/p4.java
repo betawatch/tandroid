@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p4 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,6 @@ public final /* synthetic */ class p4 implements RequestDelegate {
         int indexOf;
         TL_iv.TL_inputRichMessage tL_inputRichMessage;
         int i7 = 2;
-        int i10 = 0;
         switch (this.a) {
             case 0:
                 g5 g5Var = (g5) this.d;
@@ -43,10 +42,10 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                     vr messagesStorage = g5Var.getMessagesStorage();
                     messagesStorage.getClass();
                     if (!arrayList.isEmpty()) {
-                        messagesStorage.a.c(new pp(messagesStorage, arrayList, i10));
+                        messagesStorage.a.c(new sp(messagesStorage, arrayList, 20));
                     }
                     Utilities.h.c(new w4(g5Var, arrayList2, i7));
-                    while (i10 < arrayList2.size()) {
+                    for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                         TLRPC.User user = (TLRPC.User) arrayList2.get(i10);
                         if (!TextUtils.isEmpty(user.phone)) {
                             g5Var.getMessagesStorage().f(user.phone, "");
@@ -55,7 +54,6 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                                 d5Var.h.set(indexOf, 1);
                             }
                         }
-                        i10++;
                     }
                     g0.h3(new aa.c0(g5Var, arrayList2, z10, str, 11));
                     break;
@@ -70,7 +68,14 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                 gj gjVar = (gj) this.e;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) this.f;
                 org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.b;
-                if (tL_error != null) {
+                if (tL_error == null) {
+                    if (z11 && gjVar != null) {
+                        gjVar.A2 = true;
+                    }
+                    ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    g0.h3(new as(ezVar, gjVar));
+                    break;
+                } else {
                     if (r8.r(tL_error.text)) {
                         String str2 = tL_error.text;
                         in inVar = new in(gjVar, ezVar, tL_messages_editMessage, e2Var, z11);
@@ -89,18 +94,11 @@ public final /* synthetic */ class p4 implements RequestDelegate {
                             }
                         }
                     }
-                    g0.h3(new wq(18, ezVar, gjVar));
+                    g0.h3(new pq(19, ezVar, gjVar));
                     if (e2Var != null) {
                         g0.h3(new rw(ezVar, tL_error, e2Var, tL_messages_editMessage, 1));
                         break;
                     }
-                } else {
-                    if (z11 && gjVar != null) {
-                        gjVar.A2 = true;
-                    }
-                    ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
-                    g0.h3(new as(ezVar, gjVar));
-                    break;
                 }
                 break;
         }

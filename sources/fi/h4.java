@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class h4 extends View {
     public float E;
@@ -87,7 +87,7 @@ public abstract class h4 extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, f10);
             this.N = ofFloat;
             ofFloat.addUpdateListener(new f4(this, 0));
-            this.N.addListener(new ai.i0(this, 14));
+            this.N.addListener(new ai.j0(this, 14));
             this.N.setInterpolator(er.f);
             this.N.setDuration(200L);
             this.N.start();

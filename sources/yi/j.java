@@ -1,8 +1,7 @@
 package yi;
 
 import a8.p0;
-import ai.e0;
-import ai.x0;
+import ai.y0;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
@@ -27,7 +26,7 @@ import yi.h;
 import yi.i;
 import yi.j;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class j {
     public static final sa.d H = new sa.d(29);
@@ -58,8 +57,8 @@ public final class j {
     public boolean y;
     public volatile i z;
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new x0(9));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new x0(10));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new y0(9));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new y0(10));
     public final Object l = new Object();
     public final ArrayList m = new ArrayList();
     public int G = 1;
@@ -341,7 +340,7 @@ public final class j {
                             }
                             jVar2.h.b("final trim completed: source=" + iVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j11 + ".." + j12 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
                             jVar2.a(iVar3, file.length());
-                            handler.post(new e0(jVar2, j12, j11, 4));
+                            handler.post(new ai.f0(jVar2, j12, j11, 4));
                         } catch (Throwable th2) {
                             th = th2;
                             jVar = absolutePath2;

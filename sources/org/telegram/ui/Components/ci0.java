@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ci0 extends rg.b {
     public final /* synthetic */ int d;
@@ -133,10 +133,10 @@ public final class ci0 extends rg.b {
                             } else {
                                 imageView.setVisibility(0);
                                 boolean q10 = org.telegram.ui.ActionBar.j6.I.q();
-                                ea0 ea0Var = new ea0(1);
-                                ea0Var.b(i12, i13);
-                                ea0Var.b = q10;
-                                imageView.setBackground(ea0Var);
+                                fa0 fa0Var = new fa0(1);
+                                fa0Var.b(i12, i13);
+                                fa0Var.b = q10;
+                                imageView.setBackground(fa0Var);
                                 imageView.setImageResource(i14);
                             }
                             dtVar.b.setText(charSequence);
@@ -203,7 +203,7 @@ public final class ci0 extends rg.b {
                                     h6 h6Var = w90Var.d;
                                     ImageView imageView4 = w90Var.a;
                                     fp fpVar = w90Var.h;
-                                    di.ub ubVar = w90Var.c;
+                                    di.tb tbVar = w90Var.c;
                                     int i19 = s90Var.a;
                                     CharSequence charSequence3 = s90Var.c;
                                     int i20 = s90Var.e;
@@ -211,7 +211,7 @@ public final class ci0 extends rg.b {
                                         fpVar.setVisibility(8);
                                         imageView4.setVisibility(0);
                                         imageView4.setImageResource(s90Var.d);
-                                        ubVar.setText(charSequence3);
+                                        tbVar.setText(charSequence3);
                                         boolean z13 = Integer.bitCount(i20) > 1;
                                         w90Var.w = z13;
                                         if (z13) {
@@ -222,7 +222,7 @@ public final class ci0 extends rg.b {
                                             h6Var.setVisibility(8);
                                             imageView3.setVisibility(8);
                                         }
-                                        ubVar.setTranslationX(0.0f);
+                                        tbVar.setTranslationX(0.0f);
                                         r32.setVisibility(0);
                                         r32.c(org.telegram.messenger.qc.e(i20), false);
                                         z10 = true;
@@ -235,8 +235,8 @@ public final class ci0 extends rg.b {
                                         r32.setVisibility(8);
                                         h6Var.setVisibility(8);
                                         imageView3.setVisibility(8);
-                                        ubVar.setText(charSequence3);
-                                        ubVar.setTranslationX(org.telegram.messenger.g0.L(41.0f) * (org.telegram.messenger.hd.a0 ? -2.2f : 1.0f));
+                                        tbVar.setText(charSequence3);
+                                        tbVar.setTranslationX(org.telegram.messenger.g0.L(41.0f) * (org.telegram.messenger.hd.a0 ? -2.2f : 1.0f));
                                         w90Var.w = false;
                                         w90Var.r = false;
                                     }
@@ -332,7 +332,7 @@ public final class ci0 extends rg.b {
                 } else if (i7 != 2) {
                     view = new ki0(mi0Var, mi0Var.getContext());
                 } else {
-                    mi0Var.T = new ai.j0(mi0Var, mi0Var.getContext());
+                    mi0Var.T = new ai.k0(mi0Var, mi0Var.getContext());
                     gr grVar = new gr(mi0Var, mi0Var.getContext());
                     mi0Var.w0 = grVar;
                     grVar.setImageResource(R.drawable.msg_reactions_expand);

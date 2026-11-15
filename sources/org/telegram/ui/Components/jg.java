@@ -17,7 +17,7 @@ import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class jg extends View implements l60 {
     public final g6 E;
@@ -286,7 +286,7 @@ public abstract class jg extends View implements l60 {
         this.x = i7;
         g6 g6Var = this.E;
         if (j3 > 0) {
-            g6Var.t(di.mb.Y0(false, i5.c.l(j3 * Math.max(1, this.x), ',', new StringBuilder("⭐️")), this.R), z10, true);
+            g6Var.t(di.lb.Y0(false, i5.c.l(j3 * Math.max(1, this.x), ',', new StringBuilder("⭐️")), this.R), z10, true);
         } else {
             g6Var.t("", z10, true);
         }

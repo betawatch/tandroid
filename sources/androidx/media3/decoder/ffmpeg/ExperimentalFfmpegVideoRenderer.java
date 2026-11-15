@@ -12,7 +12,7 @@ import i5.c;
 import k2.e;
 import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends d3.a {
     public static final int s0 = ((l0.g(720, 64) * l0.g(1280, 64)) * 6144) / 2;

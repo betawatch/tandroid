@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i71 extends FrameLayout {
     public static final /* synthetic */ int J = 0;

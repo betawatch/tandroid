@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.webkit.JavascriptInterface;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class zd0 {
     public final /* synthetic */ org.telegram.ui.bq0 a;
@@ -67,6 +67,6 @@ public final class zd0 {
         if (i7 == 3 && bq0Var.h.getVisibility() != 4) {
             org.telegram.messenger.g0.i3(new xd0(this, 1), 300L);
         }
-        org.telegram.messenger.g0.h3(new di.u7(this, z11, i7, 4));
+        org.telegram.messenger.g0.h3(new di.t7(this, z11, i7, 4));
     }
 }

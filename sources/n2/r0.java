@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import kg.j1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class r0 implements x {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -726,7 +726,7 @@ public final class r0 implements x {
             synchronized (g0.t) {
                 try {
                     if (g0.u == null) {
-                        g0.u = Executors.newSingleThreadScheduledExecutor(new ai.x0(1));
+                        g0.u = Executors.newSingleThreadScheduledExecutor(new ai.y0(1));
                     }
                     g0.v++;
                     g0.u.schedule(new ki.n(audioTrack, q10, rVar, 9), 20L, TimeUnit.MILLISECONDS);

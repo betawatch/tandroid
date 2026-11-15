@@ -1,6 +1,6 @@
 package li;
 
-import ai.u1;
+import ai.v1;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.u41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class e extends e2 implements is {
     public ui.c a;
@@ -55,7 +55,7 @@ public final class e extends e2 implements is {
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             eVar2.getMessagesController().M0(Long.valueOf(-eVar2.b));
-            eVar2.showDialog(new ni.a(eVar2.getParentActivity(), chat, eVar2.b, new u1(28, eVar2, chat)));
+            eVar2.showDialog(new ni.a(eVar2.getParentActivity(), chat, eVar2.b, new v1(28, eVar2, chat)));
         }
     }
 

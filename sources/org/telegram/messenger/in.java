@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class in implements Runnable {
     public final /* synthetic */ int a;
@@ -875,7 +875,7 @@ public final /* synthetic */ class in implements Runnable {
                             g0.h3(new kg(vrVar2, gjVar, arrayList5, 20));
                         }
                         if (arrayList != null) {
-                            g0.h3(new pp(vrVar2, arrayList, 14));
+                            g0.h3(new sp(vrVar2, arrayList, 14));
                         }
                         sQLiteDatabase3 = vrVar2.b;
                         if (sQLiteDatabase3 == null) {

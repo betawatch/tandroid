@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c50 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is, org.telegram.ui.Components.l30 {
     public TLRPC.FileLocation E;
@@ -661,7 +661,7 @@ public final class c50 extends org.telegram.ui.ActionBar.e2 implements org.teleg
             CountDownLatch countDownLatch = new CountDownLatch(1);
             ArrayList arrayList2 = new ArrayList();
             c50Var = this;
-            org.telegram.messenger.vr.a0(this.currentAccount).a.c(new org.telegram.ui.Components.ma0(c50Var, arrayList2, arrayList, countDownLatch, 13));
+            org.telegram.messenger.vr.a0(this.currentAccount).a.c(new org.telegram.ui.Components.u80((Object) c50Var, arrayList2, arrayList, (Object) countDownLatch, 14));
             try {
                 countDownLatch.await();
             } catch (Exception e10) {

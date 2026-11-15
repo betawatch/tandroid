@@ -17,8 +17,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.mb;
-import di.wa;
+import di.lb;
+import di.va;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.gj;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l60 {
     public final xh.l E;
@@ -50,7 +50,7 @@ public final class n0 extends FrameLayout implements l60 {
     public final boolean d;
     public Drawable e;
     public float f;
-    public final wa h;
+    public final va h;
     public final LinearLayout n;
     public final xh.l r;
     public final xh.l s;
@@ -68,18 +68,18 @@ public final class n0 extends FrameLayout implements l60 {
         this.M = new Paint(1);
         this.c = i7;
         this.d = z10;
-        wa waVar = new wa(this, context);
-        this.h = waVar;
-        waVar.setOrientation(0);
-        addView(waVar, ja.d(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
+        va vaVar = new va(this, context);
+        this.h = vaVar;
+        vaVar.setOrientation(0);
+        addView(vaVar, ja.d(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
         this.y = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
         org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
         this.x = i9Var;
         i9Var.setRoundRadius(org.telegram.messenger.g0.L(11.0f));
-        waVar.addView(i9Var, ja.q(22, 22, 0.0f, 51, 3, 2, 3, 2));
+        vaVar.addView(i9Var, ja.q(22, 22, 0.0f, 51, 3, 2, 3, 2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        waVar.addView(linearLayout, ja.q(-2, -2, 1.0f, 51, 4, 3, 7, 3));
+        vaVar.addView(linearLayout, ja.q(-2, -2, 1.0f, 51, 4, 3, 7, 3));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.n = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -111,14 +111,14 @@ public final class n0 extends FrameLayout implements l60 {
         textView.setTextSize(1, 11.0f);
         textView.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
         textView.setVisibility(8);
-        waVar.addView(textView, ja.q(-2, 16, 0.0f, 21, -3, 0, 6, 0));
+        vaVar.addView(textView, ja.q(-2, 16, 0.0f, 21, -3, 0, 6, 0));
         TextView textView2 = new TextView(context);
         this.G = textView2;
         textView2.setTextColor(-1);
         textView2.setAlpha(0.65f);
         textView2.setTextSize(1, 11.0f);
         textView2.setVisibility(8);
-        waVar.addView(textView2, ja.q(-2, -2, 0.0f, 85, 0, 3, 10, 0));
+        vaVar.addView(textView2, ja.q(-2, -2, 0.0f, 85, 0, 3, 10, 0));
     }
 
     public final void a() {
@@ -140,7 +140,7 @@ public final class n0 extends FrameLayout implements l60 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.K = ofFloat;
         ofFloat.addUpdateListener(new ah.h(this, 16));
-        this.K.addListener(new ai.i0(this, 10));
+        this.K.addListener(new ai.j0(this, 10));
         this.K.setDuration(350L);
         this.K.setInterpolator(er.h);
         this.K.start();
@@ -153,13 +153,13 @@ public final class n0 extends FrameLayout implements l60 {
 
     @Override // org.telegram.ui.Components.l60
     public final void h(Canvas canvas, float f10) {
-        wa waVar = this.h;
-        if (waVar.getBackground() == null) {
+        va vaVar = this.h;
+        if (vaVar.getBackground() == null) {
             int r12 = org.telegram.ui.ActionBar.j6.r1(f10 * 0.5f, -16777216);
             Paint paint = this.M;
             paint.setColor(r12);
             RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(waVar.getX(), waVar.getY(), waVar.getX() + waVar.getWidth(), waVar.getY() + waVar.getHeight());
+            rectF.set(vaVar.getX(), vaVar.getY(), vaVar.getX() + vaVar.getWidth(), vaVar.getY() + vaVar.getHeight());
             canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), paint);
         }
         draw(canvas);
@@ -183,14 +183,14 @@ public final class n0 extends FrameLayout implements l60 {
         CharSequence subSequence;
         int i11;
         this.L = s0Var;
-        wa waVar = this.h;
+        va vaVar = this.h;
         if ((s0Var == null || this.J != s0Var.a) && (valueAnimator = this.K) != null) {
             valueAnimator.cancel();
             this.K = null;
             Drawable drawable = this.e;
             if (drawable != null) {
                 drawable.setAlpha((int) (this.f * 255.0f));
-                waVar.invalidate();
+                vaVar.invalidate();
             }
         }
         long j3 = s0Var.c;
@@ -351,8 +351,8 @@ public final class n0 extends FrameLayout implements l60 {
         if (j10 > 0) {
             boolean z14 = j10 >= 250 ? z11 : false;
             this.a = z14;
-            waVar.setWillNotDraw(!z14);
-            waVar.invalidate();
+            vaVar.setWillNotDraw(!z14);
+            vaVar.invalidate();
             lVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
             int L = org.telegram.messenger.g0.L(13.0f);
             int i19 = org.telegram.ui.ActionBar.j6.a;
@@ -360,7 +360,7 @@ public final class n0 extends FrameLayout implements l60 {
             gradientDrawable.setShape(0);
             gradientDrawable.setCornerRadius(L);
             this.e = gradientDrawable;
-            waVar.setBackground(gradientDrawable);
+            vaVar.setBackground(gradientDrawable);
             Drawable drawable2 = this.e;
             float f10 = z10 ? 1.0f : 0.65f;
             this.f = f10;
@@ -370,23 +370,23 @@ public final class n0 extends FrameLayout implements l60 {
                 textView.setText("");
                 textView2.setVisibility(0);
                 textView2.setBackground(org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(13.0f), org.telegram.ui.ActionBar.j6.r1(0.25f, b12)));
-                textView2.setText(mb.X0(false, i5.c.l(s0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, org.telegram.messenger.g0.L(0.66f), 1.0f));
+                textView2.setText(lb.X0(false, i5.c.l(s0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, org.telegram.messenger.g0.L(0.66f), 1.0f));
                 eq eqVar2 = this.H[0];
                 if (eqVar2 != null) {
                     eqVar2.a = this.b;
                 }
             } else {
                 textView.setVisibility(0);
-                textView.setText(mb.X0(false, i5.c.l(s0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.I, 0.0f, 1.0f));
+                textView.setText(lb.X0(false, i5.c.l(s0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.I, 0.0f, 1.0f));
                 textView2.setVisibility(8);
                 textView2.setText("");
             }
         } else if (s0Var.b) {
             this.a = false;
-            waVar.setWillNotDraw(z11);
+            vaVar.setWillNotDraw(z11);
             ShapeDrawable d02 = org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(13.0f), -16777216);
             this.e = d02;
-            waVar.setBackground(d02);
+            vaVar.setBackground(d02);
             Drawable drawable3 = this.e;
             this.f = 0.5f;
             drawable3.setAlpha((int) 127.5f);
@@ -403,14 +403,14 @@ public final class n0 extends FrameLayout implements l60 {
             textView2.setVisibility(8);
         } else {
             this.a = false;
-            waVar.setWillNotDraw(true);
+            vaVar.setWillNotDraw(true);
             lVar.setShadowLayer(org.telegram.messenger.g0.L(2.5f), 0.0f, org.telegram.messenger.g0.L(1.5f), org.telegram.ui.ActionBar.j6.r1(0.6f, -16777216));
             this.e = null;
-            waVar.setBackground(null);
+            vaVar.setBackground(null);
             textView.setVisibility(8);
             textView2.setVisibility(8);
         }
-        waVar.invalidate();
+        vaVar.invalidate();
     }
 
     public void setDrawStar(boolean z10) {

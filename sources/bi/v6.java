@@ -8,8 +8,8 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import di.mb;
-import di.v8;
+import di.lb;
+import di.u8;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.i20;
@@ -17,7 +17,7 @@ import org.telegram.messenger.ns;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v6 extends View {
     public final di.e6 a;
@@ -44,10 +44,10 @@ public final class v6 extends View {
         e6Var.Q = null;
         e6Var.R = null;
         e6Var.p = false;
-        e6Var.k = (TL_stars.starGiftAttributeBackdrop) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        e6Var.l = (TL_stars.starGiftAttributePattern) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        e6Var.k = (TL_stars.starGiftAttributeBackdrop) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        e6Var.l = (TL_stars.starGiftAttributePattern) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeModel stargiftattributemodel = e6Var.m;
-        e6Var.m = (TL_stars.starGiftAttributeModel) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        e6Var.m = (TL_stars.starGiftAttributeModel) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
         Paint paint = e6Var.f;
         e6Var.h = null;
         paint.setShader(null);
@@ -62,7 +62,7 @@ public final class v6 extends View {
             imageReceiver.X(0);
             imageReceiver.e();
             imageReceiver.W(0);
-            mb.c1(imageReceiver, e6Var.m.document, ns.v1);
+            lb.c1(imageReceiver, e6Var.m.document, ns.v1);
         }
         boolean z11 = tL_starGiftUnique.burned;
         e6Var.L = z11;

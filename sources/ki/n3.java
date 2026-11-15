@@ -16,8 +16,8 @@ import bi.x5;
 import bi.z4;
 import c8.ja;
 import c8.na;
-import di.mb;
-import di.w9;
+import di.lb;
+import di.v9;
 import hi.p5;
 import hi.q4;
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.p00;
 import org.telegram.ui.rv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class n3 extends p00 implements is {
     public final long S;
@@ -154,7 +154,7 @@ public final class n3 extends p00 implements is {
                 H.l(R.drawable.msg_bot, hd.M0(2131746708, null), new kg.t1(7, n3Var, a22), a22.bot_has_main_app);
                 H.l(R.drawable.msg_bot, hd.M0(2131752912, null), new kg.t1(8, n3Var, connectedbotstarref), !a22.bot_has_main_app);
                 H.c(R.drawable.msg_link2, hd.M0(2131751762, null), new n(n3Var, connectedbotstarref, a22, 3), false);
-                H.m(R.drawable.msg_leave, new androidx.car.app.utils.a(n3Var, context, a22, connectedbotstarref, 23), hd.M0(2131749005, null), !connectedbotstarref.revoked, true);
+                H.m(R.drawable.msg_leave, new ai.r(n3Var, context, a22, connectedbotstarref, 24), hd.M0(2131749005, null), !connectedbotstarref.revoked, true);
                 H.V(5);
                 H.Z();
                 return true;
@@ -227,8 +227,8 @@ public final class n3 extends p00 implements is {
             textView2.setGravity(17);
             StringBuilder sb2 = new StringBuilder("⭐️ ");
             jArr = jArr2;
-            sb2.append((Object) mb.N0(starrefprogram.daily_revenue_per_user, 1.0f, ','));
-            textView2.setText(mb.U0(sb2.toString(), 0.75f, new eq[1]));
+            sb2.append((Object) lb.N0(starrefprogram.daily_revenue_per_user, 1.0f, ','));
+            textView2.setText(lb.U0(sb2.toString(), 0.75f, new eq[1]));
             frameLayout3.addView(textView2, ja.c(15.66f, -2));
             frameLayout2.addView(frameLayout3, ja.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, -4.0f));
         } else {
@@ -319,9 +319,9 @@ public final class n3 extends p00 implements is {
         textView6.setTextSize(1, 14.0f);
         textView6.setGravity(17);
         ns.i(textView6);
-        SpannableString spannableString2 = new SpannableString(mb.N0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
+        SpannableString spannableString2 = new SpannableString(lb.N0(starrefprogram.daily_revenue_per_user, 0.95f, ','));
         spannableString2.setSpan(new y31(org.telegram.messenger.g0.o()), 0, spannableString2.length(), 33);
-        textView6.setText(mb.a1(false, hd.V(null, null, 2131752503, spannableString2), 0.725f, null));
+        textView6.setText(lb.a1(false, hd.V(null, null, 2131752503, spannableString2), 0.725f, null));
         TextView f11 = i20.f(f10, textView6, ja.k(0.0f, 10.0f, 0.0f, 20.0f, -1, -2), context);
         q6.U(f11, i15, e6Var);
         f11.setTextSize(1, 14.0f);
@@ -426,13 +426,13 @@ public final class n3 extends p00 implements is {
                 });
                 dVar.setOnClickListener(new f3(dVar, jArr, i7, starrefprogram, k10, j3, z10, context, e6Var, a22));
                 k10.setOnDismissListener(new hi.f1(6));
-                ai.f1 f1Var = new ai.f1(jArr, i7, i9Var3, i9Var, textView, 6);
-                f1Var.run();
+                ai.g1 g1Var = new ai.g1(jArr, i7, i9Var3, i9Var, textView, 6);
+                g1Var.run();
                 if (linearLayout != null) {
                     di.e0.g(i7).n();
                     di.e0.g(i7).o();
                     LinearLayout linearLayout4 = linearLayout;
-                    linearLayout4.setOnClickListener(new w9(i7, k10, e6Var, linearLayout4, jArr, f1Var));
+                    linearLayout4.setOnClickListener(new v9(i7, k10, e6Var, linearLayout4, jArr, g1Var));
                 }
                 final int i21 = 0;
                 linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: ki.y2
@@ -516,8 +516,8 @@ public final class n3 extends p00 implements is {
         });
         dVar2.setOnClickListener(new f3(dVar2, jArr, i7, starrefprogram, k10, j3, z10, context, e6Var, a22));
         k10.setOnDismissListener(new hi.f1(6));
-        ai.f1 f1Var2 = new ai.f1(jArr, i7, i9Var3, i9Var, textView, 6);
-        f1Var2.run();
+        ai.g1 g1Var2 = new ai.g1(jArr, i7, i9Var3, i9Var, textView, 6);
+        g1Var2.run();
         if (linearLayout != null) {
         }
         final int i212 = 0;
@@ -803,11 +803,11 @@ public final class n3 extends p00 implements is {
         f10.addView(z70Var, ja.t(-1, -2, 49, 14, 12, 14, 2));
         org.telegram.ui.ActionBar.u2 u2Var2 = u2Var;
         u2Var2.O = f10;
-        androidx.car.app.utils.a aVar = new androidx.car.app.utils.a(connectedbotstarref, u2Var2, e6Var, a22, 22);
+        ai.r rVar = new ai.r(connectedbotstarref, u2Var2, e6Var, a22, 23);
         if (!connectedbotstarref.revoked) {
-            textView7.setOnClickListener(new p5(aVar, 11));
+            textView7.setOnClickListener(new p5(rVar, 11));
         }
-        e3 e3Var = new e3(connectedbotstarref, i7, u2Var2, context, j3, e6Var, aVar);
+        e3 e3Var = new e3(connectedbotstarref, i7, u2Var2, context, j3, e6Var, rVar);
         org.telegram.ui.ActionBar.u2 u2Var3 = u2Var2;
         dVar.setOnClickListener(e3Var);
         u2Var3.setOnDismissListener(new hi.f1(6));
@@ -822,7 +822,7 @@ public final class n3 extends p00 implements is {
         } else {
             connectedbotstarref2 = connectedbotstarref;
         }
-        linearLayout.setOnClickListener(new ai.t2(27, u2Var3, connectedbotstarref2));
+        linearLayout.setOnClickListener(new ai.v2(27, u2Var3, connectedbotstarref2));
         u2Var3.Q(j6.h5);
         org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
         if (!org.telegram.messenger.g0.Q1() && T != null && !org.telegram.messenger.g0.u1(T)) {

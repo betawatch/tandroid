@@ -1,7 +1,7 @@
 package ji;
 
-import ai.f2;
-import ai.v0;
+import ai.g2;
+import ai.w0;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -55,7 +55,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.gg;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class p extends View {
     public static int V1;
@@ -2064,7 +2064,7 @@ public final class p extends View {
                         performHapticFeedback(3, 2);
                     } catch (Exception unused) {
                     }
-                    post(new v0(this, i7, 12));
+                    post(new w0(this, i7, 12));
                 }
             }
             if (this.r1 && this.s1 && (velocityTracker = this.t1) != null) {
@@ -2132,7 +2132,7 @@ public final class p extends View {
             o oVar = (o) obj;
             int i10 = oVar.b;
             if (i10 > oVar.a && i10 <= spannableString.length()) {
-                spannableString.setSpan(new f2(oVar, 2), oVar.a, oVar.b, 65569);
+                spannableString.setSpan(new g2(oVar, 2), oVar.a, oVar.b, 65569);
             }
         }
         int i11 = this.w1;

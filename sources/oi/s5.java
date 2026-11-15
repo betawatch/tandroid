@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Components.p41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class s5 implements d1 {
     public final /* synthetic */ y5 a;
@@ -98,7 +98,7 @@ public final class s5 implements d1 {
                 y5Var.post(new ki.n(this, y5Var.y, s5, 13));
             }
         } else {
-            y5Var.post(new ai.z0(this, y5Var.y, i7, 24));
+            y5Var.post(new ai.a1(this, y5Var.y, i7, 24));
         }
         if (y5Var.W || ((aVar = y5Var.y) != null && (aVar.b instanceof TL_iv.pageBlockPullquote))) {
             y5Var.invalidate();

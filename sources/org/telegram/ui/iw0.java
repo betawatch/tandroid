@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class iw0 extends org.telegram.ui.Components.tj0 {
     public final Context c;
@@ -1042,9 +1042,9 @@ public final class iw0 extends org.telegram.ui.Components.tj0 {
                                                         if (spannableStringBuilder.length() > 0) {
                                                             spannableStringBuilder.append((CharSequence) " ");
                                                         }
-                                                        spannableStringBuilder.append((CharSequence) "XTR ").append((CharSequence) di.mb.N0(c10, 0.777f, ' '));
+                                                        spannableStringBuilder.append((CharSequence) "XTR ").append((CharSequence) di.lb.N0(c10, 0.777f, ' '));
                                                     }
-                                                    l8Var.s(org.telegram.messenger.hd.L0(2131752290), xd.K(di.mb.a1(false, spannableStringBuilder, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_feature_paid, true);
+                                                    l8Var.s(org.telegram.messenger.hd.L0(2131752290), xd.K(di.lb.a1(false, spannableStringBuilder, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_feature_paid, true);
                                                 } else {
                                                     i39 = profileActivity.C4;
                                                     if (i7 == i39) {
@@ -1054,9 +1054,9 @@ public final class iw0 extends org.telegram.ui.Components.tj0 {
                                                         TL_stars.StarsAmount c11 = g12.c(j22);
                                                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                                                         if (c11.amount > 0) {
-                                                            spannableStringBuilder2.append((CharSequence) "XTR ").append((CharSequence) di.mb.N0(c11, 0.777f, ' '));
+                                                            spannableStringBuilder2.append((CharSequence) "XTR ").append((CharSequence) di.lb.N0(c11, 0.777f, ' '));
                                                         }
-                                                        l8Var.s(org.telegram.messenger.hd.L0(2131753111), xd.K(di.mb.a1(false, spannableStringBuilder2, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_premium_main, true);
+                                                        l8Var.s(org.telegram.messenger.hd.L0(2131753111), xd.K(di.lb.a1(false, spannableStringBuilder2, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.menu_premium_main, true);
                                                     } else {
                                                         i40 = profileActivity.D4;
                                                         if (i7 == i40) {
@@ -1079,7 +1079,7 @@ public final class iw0 extends org.telegram.ui.Components.tj0 {
                                                                     spannableStringBuilder3.append((CharSequence) "TON ").append((CharSequence) decimalFormat2.format(d12));
                                                                 }
                                                             }
-                                                            l8Var.s(org.telegram.messenger.hd.L0(2131753110), xd.K(di.mb.a1(false, spannableStringBuilder3, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.outline_gram_24, true);
+                                                            l8Var.s(org.telegram.messenger.hd.L0(2131753110), xd.K(di.lb.a1(false, spannableStringBuilder3, 0.7f, null), l8Var.getTextView().getPaint(), 1.0f, 0.0f, true), R.drawable.outline_gram_24, true);
                                                         } else {
                                                             i41 = profileActivity.H4;
                                                             if (i7 == i41) {
@@ -1225,14 +1225,14 @@ public final class iw0 extends org.telegram.ui.Components.tj0 {
                                                                                                                                                                 i66 = profileActivity.e4;
                                                                                                                                                                 if (i7 == i66) {
                                                                                                                                                                     i77 = ((org.telegram.ui.ActionBar.e2) profileActivity).currentAccount;
-                                                                                                                                                                    di.v8 w10 = di.v8.w(i77);
+                                                                                                                                                                    di.u8 w10 = di.u8.w(i77);
                                                                                                                                                                     long j35 = w10.p().amount;
                                                                                                                                                                     String L018 = org.telegram.messenger.hd.L0(2131748604);
                                                                                                                                                                     CharSequence charSequence2 = str13;
                                                                                                                                                                     if (w10.e) {
                                                                                                                                                                         charSequence2 = str13;
                                                                                                                                                                         if (j35 > 0) {
-                                                                                                                                                                            charSequence2 = di.mb.M0(w10.p(), 0.85f, ' ');
+                                                                                                                                                                            charSequence2 = di.lb.M0(w10.p(), 0.85f, ' ');
                                                                                                                                                                         }
                                                                                                                                                                     }
                                                                                                                                                                     l8Var.t(L018, charSequence2, new org.telegram.ui.Components.f5(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), (ug.y0) ia.f.d().i), true);
@@ -1241,14 +1241,14 @@ public final class iw0 extends org.telegram.ui.Components.tj0 {
                                                                                                                                                                     i67 = profileActivity.f4;
                                                                                                                                                                     if (i7 == i67) {
                                                                                                                                                                         i76 = ((org.telegram.ui.ActionBar.e2) profileActivity).currentAccount;
-                                                                                                                                                                        di.v8 L = di.v8.L(i76);
+                                                                                                                                                                        di.u8 L = di.u8.L(i76);
                                                                                                                                                                         long j36 = L.p().amount;
                                                                                                                                                                         String L019 = org.telegram.messenger.hd.L0(2131748300);
                                                                                                                                                                         CharSequence charSequence3 = str13;
                                                                                                                                                                         if (L.e) {
                                                                                                                                                                             charSequence3 = str13;
                                                                                                                                                                             if (j36 > 0) {
-                                                                                                                                                                                charSequence3 = di.mb.M0(L.p(), 0.85f, ' ');
+                                                                                                                                                                                charSequence3 = di.lb.M0(L.p(), 0.85f, ' ');
                                                                                                                                                                             }
                                                                                                                                                                         }
                                                                                                                                                                         l8Var.s(L019, charSequence3, R.drawable.settings_gram_24, true);

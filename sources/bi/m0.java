@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import c8.na;
-import di.mb;
+import di.lb;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
@@ -38,7 +38,7 @@ import org.telegram.ui.Components.vx0;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.fs0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class m0 extends ja implements u9 {
     public static final ec[] l2 = new ec[1];
@@ -486,7 +486,7 @@ public final class m0 extends ja implements u9 {
         if (r9Var2 != null && (tL_starGiftAuctionStateFinished = r9Var2.g) != null) {
             ecVar2.setText(hd.x(tL_starGiftAuctionStateFinished.start_date, true));
             ecVar.setText(hd.x(this.i2.g.end_date, true));
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(mb.a1(false, i5.c.l(this.i2.g.average_price, ',', new StringBuilder("⭐️ ")), 0.8f, null));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(lb.a1(false, i5.c.l(this.i2.g.average_price, ',', new StringBuilder("⭐️ ")), 0.8f, null));
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) fc.b("?", new b0(this, 1), this.J0, null));
             this.a2.setText(spannableStringBuilder);
         } else if (r9Var2 != null && (tL_starGiftAuctionState = r9Var2.f) != null) {

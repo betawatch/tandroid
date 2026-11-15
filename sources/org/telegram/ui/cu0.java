@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cu0 implements Runnable {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final /* synthetic */ class cu0 implements Runnable {
                     i7 = org.telegram.ui.Wallet.d2.i("decrypt challenge", e12);
                     bArr = null;
                 }
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g7(7, bArr, x21Var, t2Var, i7));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g7((Object) bArr, (Object) x21Var, i7, (Object) t2Var, 7));
                 return;
             case 9:
                 org.telegram.ui.Wallet.d2 d2Var2 = (org.telegram.ui.Wallet.d2) obj5;
@@ -224,7 +224,7 @@ public final /* synthetic */ class cu0 implements Runnable {
                 ((WalletEngine2) obj5).lambda$prepareSend$49((org.telegram.messenger.u10) obj4, (TL_wallet.sendTransfer) obj3, (String) obj2, (String) obj);
                 return;
             case 12:
-                ((p4.g) obj4).run().b(new hn0((ab.c0) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 24), m9.r.a);
+                ((p4.g) obj4).run().b(new ok0((ab.c0) obj5, (AtomicBoolean) obj3, (p4.h) obj2, (AtomicBoolean) obj, 25), m9.r.a);
                 return;
             case 13:
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj;

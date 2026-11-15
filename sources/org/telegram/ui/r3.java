@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
@@ -174,32 +174,32 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.z10 {
                 }
                 break;
             case 16:
-                cm0 cm0Var = (cm0) obj2;
+                dm0 dm0Var = (dm0) obj2;
                 View view = (View) obj;
-                im0 im0Var = cm0Var.q0;
-                if (view instanceof fm0) {
-                    view.setBackgroundColor(im0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-                    ((fm0) view).updateColors();
+                jm0 jm0Var = dm0Var.q0;
+                if (view instanceof gm0) {
+                    view.setBackgroundColor(jm0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                    ((gm0) view).updateColors();
                     break;
                 } else if (view instanceof org.telegram.ui.Cells.l8) {
-                    view.setBackgroundColor(im0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                    view.setBackgroundColor(jm0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
                     ((org.telegram.ui.Cells.l8) view).updateColors();
                     break;
-                } else if (view instanceof bm0) {
-                    view.setBackgroundColor(im0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-                    ((bm0) view).updateColors();
+                } else if (view instanceof cm0) {
+                    view.setBackgroundColor(jm0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                    ((cm0) view).updateColors();
                     break;
                 } else if (view instanceof org.telegram.ui.Cells.n4) {
-                    view.setBackgroundColor(im0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
+                    view.setBackgroundColor(jm0Var.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
                     break;
-                } else if (view instanceof rl0) {
-                    ((rl0) view).d.invalidate();
+                } else if (view instanceof sl0) {
+                    ((sl0) view).d.invalidate();
                     break;
-                } else if (view instanceof hm0) {
-                    cm0Var.l((hm0) view);
+                } else if (view instanceof im0) {
+                    dm0Var.l((im0) view);
                     break;
-                } else if (view instanceof am0) {
-                    ((am0) view).updateColors();
+                } else if (view instanceof bm0) {
+                    ((bm0) view).updateColors();
                     break;
                 }
                 break;
@@ -207,7 +207,7 @@ public final /* synthetic */ class r3 implements org.telegram.messenger.z10 {
                 super/*android.widget.LinearLayout*/.draw((Canvas) obj);
                 break;
             case 18:
-                ((am0) obj2).c.e();
+                ((bm0) obj2).c.e();
                 break;
             case 19:
                 ((hi.i1) obj2).C(((Integer) obj).intValue());

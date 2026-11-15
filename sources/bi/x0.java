@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x0 extends FrameLayout {
     public final Path E;
@@ -109,7 +109,7 @@ public final class x0 extends FrameLayout {
     public final void a(FrameLayout frameLayout, int i7, Runnable runnable) {
         frameLayout.setBackground(org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.r1(0.08f, this.I), 2, -1));
         if (runnable != null) {
-            frameLayout.setOnClickListener(new ai.t2(2, this, runnable));
+            frameLayout.setOnClickListener(new ai.v2(2, this, runnable));
         }
         this.d.addView(frameLayout, ja.o(-1, i7));
     }

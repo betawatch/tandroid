@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements org.telegram.messenger.s10 {
     public final /* synthetic */ int a;
@@ -43,27 +43,27 @@ public final /* synthetic */ class d implements org.telegram.messenger.s10 {
         if (arVar.c2 == null) {
             Context context = arVar.getContext();
             org.telegram.ui.ActionBar.e6 e6Var = arVar.J0;
-            ai.q2 q2Var = new ai.q2(context, 7);
-            q2Var.setOrientation(1);
+            ai.r2 r2Var = new ai.r2(context, 7);
+            r2Var.setOrientation(1);
             fh0 fh0Var = new fh0(context);
             fh0Var.setAutoRepeat(true);
             fh0Var.f(R.raw.utyan_streaming, org.telegram.messenger.ns.x1, org.telegram.messenger.ns.x1, null);
             fh0Var.d();
-            q2Var.addView(fh0Var, c8.ja.t(org.telegram.messenger.ns.x1, org.telegram.messenger.ns.x1, 49, 0, 24, 0, 0));
+            r2Var.addView(fh0Var, c8.ja.t(org.telegram.messenger.ns.x1, org.telegram.messenger.ns.x1, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(org.telegram.messenger.g0.o());
             textView.setText(org.telegram.messenger.hd.a0(null, null, 2131744438, new Object[0]));
             textView.setTextSize(1, 20.0f);
             org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.G6, e6Var);
-            q2Var.addView(textView, c8.ja.t(-2, -2, 1, 0, 14, 0, 7));
+            r2Var.addView(textView, c8.ja.t(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             org.telegram.ui.ActionBar.q6.U(textView2, org.telegram.ui.ActionBar.j6.j5, e6Var);
             textView2.setText(org.telegram.messenger.hd.a0(null, null, 2131743236, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            q2Var.addView(textView2, c8.ja.t(-2, -2, 1, 28, 0, 28, 17));
-            arVar.c2 = q2Var;
+            r2Var.addView(textView2, c8.ja.t(-2, -2, 1, 28, 0, 28, 17));
+            arVar.c2 = r2Var;
         }
         arrayList.add(b41.k(arVar.c2));
         arrayList.add(b41.C(null));

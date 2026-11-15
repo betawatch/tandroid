@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.t51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class z5 extends c1 implements is {
     public static volatile z5[] U = new z5[4];
@@ -781,7 +781,7 @@ public final class z5 extends c1 implements is {
             if (i7 == 0 || i7 == 2) {
                 vr messagesStorage = getMessagesStorage();
                 long j3 = a6Var.c;
-                messagesStorage.a.c(new xp(messagesStorage, a6Var.b, j3, 6));
+                messagesStorage.a.c(new wp(messagesStorage, a6Var.b, j3, 6));
             }
             int i10 = a6Var.b;
             if (i10 == 1) {
@@ -975,22 +975,22 @@ public final class z5 extends c1 implements is {
         int m10 = m();
         if ((m10 & 1) != 0 && (i7 & 1) != 0 && this.b.isEmpty()) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new qp(messagesStorage, 1, 6));
+            messagesStorage.a.c(new tp(messagesStorage, 1, 5));
         }
         if ((m10 & 2) != 0 && (i7 & 2) != 0 && this.c.isEmpty()) {
             vr messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new qp(messagesStorage2, 2, 6));
+            messagesStorage2.a.c(new tp(messagesStorage2, 2, 5));
         }
         if ((m10 & 4) != 0 && (i7 & 4) != 0 && this.e.isEmpty()) {
             vr messagesStorage3 = getMessagesStorage();
-            messagesStorage3.a.c(new qp(messagesStorage3, 4, 6));
+            messagesStorage3.a.c(new tp(messagesStorage3, 4, 5));
         }
         int i10 = 8;
         if ((m10 & 8) == 0 || (i7 & 8) == 0 || !this.d.isEmpty()) {
             return;
         }
         vr messagesStorage4 = getMessagesStorage();
-        messagesStorage4.a.c(new qp(messagesStorage4, i10, 6));
+        messagesStorage4.a.c(new tp(messagesStorage4, i10, 5));
     }
 
     public final void u() {

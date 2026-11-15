@@ -1,7 +1,7 @@
 package bi;
 
-import di.v8;
-import di.xa;
+import di.u8;
+import di.wa;
 import org.telegram.messenger.np;
 import org.telegram.messenger.s10;
 import org.telegram.tgnet.TLRPC;
@@ -11,7 +11,7 @@ import org.telegram.ui.Components.e70;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.z60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v5 implements s10 {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class v5 implements s10 {
                 di.c5 c5Var = (di.c5) obj;
                 vf.b bVar = (vf.b) obj2;
                 bVar.d();
-                v8.x(z5Var.a, c5Var.a).h(c5Var.b, tL_starGiftUnique, this.b, null, true, new h0(z5Var, bVar, tL_starGiftUnique, 1));
+                u8.x(z5Var.a, c5Var.a).h(c5Var.b, tL_starGiftUnique, this.b, null, true, new h0(z5Var, bVar, tL_starGiftUnique, 1));
                 break;
             case 1:
-                xa.d1((xa) this.c, (b41) this.d, this.b, (Boolean) obj, (String) obj2);
+                wa.d1((wa) this.c, (b41) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             default:
                 e70 e70Var = (e70) this.c;
@@ -56,7 +56,7 @@ public final /* synthetic */ class v5 implements s10 {
                     }
                     updates = null;
                 }
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.m5(e70Var, tL_error, updates, tL_messages_importChatInvite, 27));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.l5((Object) e70Var, (Object) tL_error, (Object) updates, (Object) tL_messages_importChatInvite, 28));
                 break;
         }
     }

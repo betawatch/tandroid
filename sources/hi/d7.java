@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d7 {
     public String A;
@@ -1021,7 +1021,7 @@ public final class d7 {
                         tL_inputDocument.file_reference = new byte[0];
                     }
                     tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
-                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.l1(this, storyItem, tL_messages_getAttachedStickers, new ai.d1(this, 11), 7));
+                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.l1(this, storyItem, tL_messages_getAttachedStickers, new ai.e1(this, 11), 7));
                 }
             } else if (photo.has_stickers) {
                 TLRPC.TL_inputStickeredMediaPhoto tL_inputStickeredMediaPhoto = new TLRPC.TL_inputStickeredMediaPhoto();
@@ -1035,7 +1035,7 @@ public final class d7 {
                     tL_inputPhoto.file_reference = new byte[0];
                 }
                 tL_messages_getAttachedStickers.media = tL_inputStickeredMediaPhoto;
-                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.l1(this, storyItem, tL_messages_getAttachedStickers, new ai.d1(this, 11), 7));
+                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new bi.l1(this, storyItem, tL_messages_getAttachedStickers, new ai.e1(this, 11), 7));
             }
         }
     }
@@ -1346,13 +1346,13 @@ public final class d7 {
         String absolutePath = file == null ? null : file.getAbsolutePath();
         int[][] iArr = (int[][]) Array.newInstance((Class<?>) Integer.TYPE, Math.max(1, v() ? this.T.size() : 0), 11);
         iArr[0] = new int[11];
-        androidx.car.app.utils.a aVar = new androidx.car.app.utils.a(17, this, iArr, z10Var, absolutePath);
+        ai.r rVar = new ai.r((Object) this, absolutePath, (Object) iArr, (Object) z10Var, 18);
         if (!v()) {
             if (this.L == null) {
-                aVar.run();
+                rVar.run();
                 return;
             } else {
-                Utilities.e.c(new fi.s5(absolutePath, iArr, aVar, 12));
+                Utilities.e.c(new fi.s5(absolutePath, iArr, rVar, 12));
                 return;
             }
         }
@@ -1361,7 +1361,7 @@ public final class d7 {
             strArr[i10] = ((d7) this.T.get(i10)).L == null ? null : ((d7) this.T.get(i10)).L.getAbsolutePath();
             iArr[i10] = new int[11];
         }
-        Utilities.e.c(new fi.s5(strArr, iArr, aVar, 11));
+        Utilities.e.c(new fi.s5(strArr, iArr, rVar, 11));
     }
 
     public final boolean t() {

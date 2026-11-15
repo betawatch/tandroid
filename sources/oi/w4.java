@@ -10,7 +10,7 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class w4 implements is {
     public int E;
@@ -134,7 +134,7 @@ public final class w4 implements is {
                 tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
             }
         }
-        this.E = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new ai.d1(this, 22));
+        this.E = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new ai.e1(this, 22));
     }
 
     public final void d() {

@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -377,11 +377,11 @@ public final /* synthetic */ class lc0 implements Runnable {
                             Object obj = arrayList3.get(i38);
                             i38++;
                             org.telegram.ui.ActionBar.e2 e2Var2 = (org.telegram.ui.ActionBar.e2) obj;
-                            if ((e2Var2 instanceof jl0) && e2Var2 != e2Var) {
+                            if ((e2Var2 instanceof kl0) && e2Var2 != e2Var) {
                                 e2Var2.removeSelfFromStack();
                             }
                         }
-                        if (e2Var instanceof jl0) {
+                        if (e2Var instanceof kl0) {
                             z12 = true;
                             ((ActionBarLayout) parentLayout).l(true, false);
                             ce0Var3.y1(kd0Var.d, (TLRPC.auth_SentCode) tLObject3, z12);
@@ -509,7 +509,7 @@ public final /* synthetic */ class lc0 implements Runnable {
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity2 = oh0Var.n;
                 String lowerCase = str4.trim().toLowerCase();
                 if (lowerCase.length() == 0) {
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.ma0(oh0Var, new ArrayList(), new ArrayList(), new ArrayList(), 27));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.u80((Object) oh0Var, new ArrayList(), new ArrayList(), (Object) new ArrayList(), 28));
                     break;
                 } else {
                     String S02 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
@@ -656,7 +656,7 @@ public final /* synthetic */ class lc0 implements Runnable {
                         arrayList6 = arrayList;
                         notificationsCustomSettingsActivity2 = notificationsCustomSettingsActivity;
                     }
-                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.ma0(oh0Var, arrayList8, arrayList9, arrayList7, 27));
+                    org.telegram.messenger.g0.h3(new org.telegram.ui.Components.u80((Object) oh0Var, arrayList8, arrayList9, (Object) arrayList7, 28));
                     break;
                 }
                 break;
@@ -797,29 +797,29 @@ public final /* synthetic */ class lc0 implements Runnable {
                 }
                 break;
             case 16:
-                jl0.Z((jl0) this.b, (TL_account.Password) this.c, (byte[]) this.d);
+                kl0.Z((kl0) this.b, (TL_account.Password) this.c, (byte[]) this.d);
                 break;
             case 17:
-                jl0.g0((jl0) this.b, (TLRPC.TL_error) this.c, (TLRPC.TL_payments_sendPaymentForm) this.d);
+                kl0.g0((kl0) this.b, (TLRPC.TL_error) this.c, (TLRPC.TL_payments_sendPaymentForm) this.d);
                 break;
             case 18:
-                jl0 jl0Var = (jl0) this.b;
+                kl0 kl0Var = (kl0) this.b;
                 TLRPC.TL_payments_validatedRequestedInfo tL_payments_validatedRequestedInfo = (TLRPC.TL_payments_validatedRequestedInfo) this.c;
                 jd0 jd0Var = (jd0) this.d;
-                jl0Var.F0 = tL_payments_validatedRequestedInfo;
+                kl0Var.F0 = tL_payments_validatedRequestedInfo;
                 jd0Var.run();
-                jl0Var.J0(false);
-                jl0Var.N0(true, false);
+                kl0Var.J0(false);
+                kl0Var.N0(true, false);
                 break;
             case 19:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 Bitmap bitmap = (Bitmap) this.c;
-                dn0 dn0Var = (dn0) this.d;
+                en0 en0Var = (en0) this.d;
                 photoViewer.C4.v0(bitmap);
                 photoViewer.t5.setUndoCutState(true);
                 photoViewer.Y2(true, true);
-                org.telegram.messenger.g0.r(dn0Var);
-                org.telegram.messenger.g0.i3(dn0Var, 800L);
+                org.telegram.messenger.g0.r(en0Var);
+                org.telegram.messenger.g0.i3(en0Var, 800L);
                 break;
             case 20:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
@@ -1006,9 +1006,9 @@ public final /* synthetic */ class lc0 implements Runnable {
                 if (runnable != null) {
                     runnable.run();
                 }
-                ai.j0 j0Var = secretMediaViewer.e;
-                if (j0Var != null) {
-                    j0Var.setLayerType(0, null);
+                ai.k0 k0Var = secretMediaViewer.e;
+                if (k0Var != null) {
+                    k0Var.setLayerType(0, null);
                     secretMediaViewer.e.invalidate();
                     iz0 iz0Var = secretMediaViewer.n;
                     TLRPC.Message message2 = gjVar2.k;

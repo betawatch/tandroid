@@ -10,7 +10,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k9 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class k9 implements Runnable {
                 long j3 = this.b;
                 bi.x xVar = (bi.x) this.f;
                 long j10 = this.c;
-                if (di.v8.y(v9Var.currentAccount, false).e) {
+                if (di.u8.y(v9Var.currentAccount, false).e) {
                     v9Var.k(j3, xVar, j10, nVar);
                     return;
                 } else {
@@ -57,7 +57,7 @@ public final /* synthetic */ class k9 implements Runnable {
                     h00Var.getMessagesStorage().f2(j11, tL_forumTopic, 16);
                     if (messages_messages.count == 0 && h00Var.getMessagesController().y2(j11)) {
                         vr messagesStorage = h00Var.getMessagesStorage();
-                        messagesStorage.a.c(new sp(1, j11, j12, messagesStorage));
+                        messagesStorage.a.c(new pp(1, j11, j12, messagesStorage));
                         h00Var.s(-j11, j12);
                     }
                     ns.f(h00Var.currentAccount).k(ns.q5, Long.valueOf(-j11), Boolean.TRUE);

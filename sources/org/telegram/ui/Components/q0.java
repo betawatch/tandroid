@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class q0 implements TextView.OnEditorActionListener
     public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.m5 m5Var = (org.telegram.ui.ActionBar.m5) this.b;
+                org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) this.b;
                 if (i7 == 6) {
-                    m5Var.run();
+                    l5Var.run();
                     break;
                 }
                 break;

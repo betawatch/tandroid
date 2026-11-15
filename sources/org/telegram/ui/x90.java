@@ -11,7 +11,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x90 extends org.telegram.ui.ActionBar.e2 {
     public FrameLayout a;
@@ -51,7 +51,7 @@ public final class x90 extends org.telegram.ui.ActionBar.e2 {
                 return;
             }
             if (((s90) arrayList.get(i10)).e == i7) {
-                this.b.e1(new ai.r1(this, i10, 15), 700, true);
+                this.b.e1(new ai.s1(this, i10, 15), 700, true);
                 return;
             }
             i10++;

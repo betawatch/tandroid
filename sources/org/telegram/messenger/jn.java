@@ -35,7 +35,7 @@ import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.ra0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jn implements Runnable {
     public final /* synthetic */ int a;
@@ -1672,7 +1672,7 @@ public final /* synthetic */ class jn implements Runnable {
                     npVar4.S3(tL_channels_channelParticipants.chats, false);
                     npVar4.getMessagesStorage().m1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
                     vr messagesStorage = npVar4.getMessagesStorage();
-                    messagesStorage.a.c(new ir(messagesStorage, l10.longValue(), tL_channels_channelParticipants.participants, 2));
+                    messagesStorage.a.c(new hr(messagesStorage, l10.longValue(), tL_channels_channelParticipants.participants, 3));
                     npVar4.w1.add(l10);
                 }
                 npVar4.v1.remove(l10);
@@ -1800,11 +1800,11 @@ public final /* synthetic */ class jn implements Runnable {
                 gj gjVar2 = (gj) this.c;
                 String str8 = (String) this.d;
                 f3.s sVar = (f3.s) this.e;
-                di.m9 m9Var = (di.m9) this.f;
+                di.l9 l9Var = (di.l9) this.f;
                 gjVar2.k.originalLanguage = str8;
                 c10Var.getMessagesStorage().X1(sVar.a, gjVar2.k);
                 c10Var.L.remove(sVar);
-                m9Var.a(str8);
+                l9Var.a(str8);
                 break;
         }
     }

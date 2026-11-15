@@ -44,7 +44,7 @@ import org.telegram.ui.Components.y31;
 import org.telegram.ui.qv;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class q extends FrameLayout implements is, te.b {
     public Paint A0;
@@ -301,9 +301,9 @@ public abstract class q extends FrameLayout implements is, te.b {
                     iVar.setVisibility(0);
                     iVar2.setVisibility(4);
                     this.T.h1(0, 0);
-                    ai.v0 v0Var = np.s1(i11).P1().K;
-                    org.telegram.messenger.g0.r(v0Var);
-                    v0Var.run();
+                    ai.w0 w0Var = np.s1(i11).P1().K;
+                    org.telegram.messenger.g0.r(w0Var);
+                    w0Var.run();
                     i7 i7Var = this.s0;
                     if (i7Var != null) {
                         i7Var.a();

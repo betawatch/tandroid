@@ -35,7 +35,7 @@ import org.telegram.ui.l01;
 import org.telegram.ui.p01;
 import org.telegram.ui.x01;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int[] A;
@@ -46,7 +46,7 @@ public final class b0 {
     public int F;
     public final a0 a;
     public final WindowManager b;
-    public final ai.j0 c;
+    public final ai.k0 c;
     public final boolean d;
     public float e;
     public float g;
@@ -84,9 +84,9 @@ public final class b0 {
         this.r = e2Var;
         this.s = e6Var;
         Context context = e2Var != null ? e2Var.getContext() : mi0Var.getContext();
-        ai.j0 j0Var = new ai.j0(this, context);
-        this.c = j0Var;
-        j0Var.setOnClickListener(new ah.d(this, 8));
+        ai.k0 k0Var = new ai.k0(this, context);
+        this.c = k0Var;
+        k0Var.setOnClickListener(new ah.d(this, 8));
         boolean z11 = i7 == 2 || i7 == 4 || i7 == 5 || z10;
         this.d = z11;
         a0 a0Var = new a0(this, context);
@@ -122,23 +122,23 @@ public final class b0 {
         if (i7 == 5) {
             a0Var.setClipChildren(false);
             a0Var.setClipToPadding(false);
-            j0Var.setClipChildren(false);
-            j0Var.setClipToPadding(false);
+            k0Var.setClipChildren(false);
+            k0Var.setClipToPadding(false);
         }
         float f10 = i12;
-        j0Var.addView(a0Var, ja.d(-1, -1.0f, i7 == 5 ? 85 : 48, f10, f10, f10, 16.0f));
-        j0Var.setClipChildren(false);
+        k0Var.addView(a0Var, ja.d(-1, -1.0f, i7 == 5 ? 85 : 48, f10, f10, f10, 16.0f));
+        k0Var.setClipChildren(false);
         if (i7 == 1 || (mi0Var.getDelegate() != null && mi0Var.getDelegate().L())) {
             xVar.setBackgroundDelegate(new ab.g(i11, this, mi0Var));
         }
         if (z12) {
-            ((ViewGroup) mi0Var.getParent()).addView(j0Var);
+            ((ViewGroup) mi0Var.getParent()).addView(k0Var);
         } else {
             WindowManager.LayoutParams b10 = b(false);
             WindowManager windowManager = org.telegram.messenger.g0.W(context).getWindowManager();
             this.b = windowManager;
-            org.telegram.messenger.g0.x3(windowManager, j0Var, b10);
-            windowManager.addView(j0Var, b10);
+            org.telegram.messenger.g0.x3(windowManager, k0Var, b10);
+            windowManager.addView(k0Var, b10);
         }
         this.n = mi0Var;
         mi0Var.setOnSwitchedToLoopView(new s(this, i10));
@@ -193,9 +193,9 @@ public final class b0 {
                         valueAnimator.cancel();
                     }
                     mi0Var.C0 = 0.0f;
-                    ai.j0 j0Var = mi0Var.T;
-                    if (j0Var != null) {
-                        j0Var.invalidate();
+                    ai.k0 k0Var = mi0Var.T;
+                    if (k0Var != null) {
+                        k0Var.invalidate();
                     }
                     mi0Var.invalidate();
                 } else {
@@ -205,9 +205,9 @@ public final class b0 {
                         valueAnimator2.cancel();
                     }
                     mi0Var.C0 = 0.0f;
-                    ai.j0 j0Var2 = mi0Var.T;
-                    if (j0Var2 != null) {
-                        j0Var2.invalidate();
+                    ai.k0 k0Var2 = mi0Var.T;
+                    if (k0Var2 != null) {
+                        k0Var2.invalidate();
                     }
                     mi0Var.invalidate();
                 }
@@ -277,7 +277,7 @@ public final class b0 {
         boolean z12;
         x xVar = this.m;
         int i7 = this.y;
-        ai.j0 j0Var = this.c;
+        ai.k0 k0Var = this.c;
         int[] iArr = this.A;
         a0 a0Var = this.a;
         RectF rectF = this.f;
@@ -288,14 +288,14 @@ public final class b0 {
         if (z10) {
             mi0Var.getLocationOnScreen(iArr);
         }
-        j0Var.getLocationOnScreen(iArr2);
+        k0Var.getLocationOnScreen(iArr2);
         int i10 = 0;
         float topOffset = mi0Var.getTopOffset() + ((((iArr[1] - iArr2[1]) - org.telegram.messenger.g0.L(44.0f)) - org.telegram.messenger.g0.L(52.0f)) - (xVar.P0 ? org.telegram.messenger.g0.L(26.0f) : 0));
         if (mi0Var.G0) {
             topOffset = (iArr[1] - iArr2[1]) - org.telegram.messenger.g0.L(12.0f);
         }
-        if (a0Var.getMeasuredHeight() + topOffset > j0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(32.0f)) {
-            topOffset = (j0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(32.0f)) - a0Var.getMeasuredHeight();
+        if (a0Var.getMeasuredHeight() + topOffset > k0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(32.0f)) {
+            topOffset = (k0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(32.0f)) - a0Var.getMeasuredHeight();
         }
         if (topOffset < org.telegram.messenger.g0.L(16.0f)) {
             topOffset = org.telegram.messenger.g0.L(16.0f);
@@ -305,7 +305,7 @@ public final class b0 {
         }
         if (i7 == 1) {
             r18 = 1;
-            a0Var.setTranslationX(((j0Var.getMeasuredWidth() - a0Var.getMeasuredWidth()) / 2.0f) - org.telegram.messenger.g0.L(16.0f));
+            a0Var.setTranslationX(((k0Var.getMeasuredWidth() - a0Var.getMeasuredWidth()) / 2.0f) - org.telegram.messenger.g0.L(16.0f));
         } else {
             boolean z13 = true;
             if (i7 == 2 || i7 == 4) {
@@ -420,9 +420,9 @@ public final class b0 {
                 valueAnimator.cancel();
             }
             mi0Var.C0 = 0.0f;
-            ai.j0 j0Var = mi0Var.T;
-            if (j0Var != null) {
-                j0Var.invalidate();
+            ai.k0 k0Var = mi0Var.T;
+            if (k0Var != null) {
+                k0Var.invalidate();
             }
             mi0Var.invalidate();
         }
@@ -444,9 +444,9 @@ public final class b0 {
         }
         xb.e();
         this.q = true;
-        ai.j0 j0Var = this.c;
-        org.telegram.messenger.g0.v1(j0Var);
-        j0Var.animate().alpha(0.0f).setDuration(150L).setListener(new z(this, 1));
+        ai.k0 k0Var = this.c;
+        org.telegram.messenger.g0.v1(k0Var);
+        k0Var.animate().alpha(0.0f).setDuration(150L).setListener(new z(this, 1));
         if (this.v) {
             e2 e2Var = this.r;
             if (e2Var instanceof an) {

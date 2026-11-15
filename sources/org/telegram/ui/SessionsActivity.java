@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int E;
@@ -221,7 +221,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.e2 implements or
                 alertDialog$Builder3.o(frameLayout);
                 charSequence = M03;
             }
-            alertDialog$Builder3.k(charSequence, new ai.q1(sessionsActivity, i7, zArr, 15));
+            alertDialog$Builder3.k(charSequence, new ai.r1(sessionsActivity, i7, zArr, 15));
             alertDialog$Builder3.h(org.telegram.messenger.hd.M0(2131752589, null), null);
             sessionsActivity.showDialog(t1Var3);
             TextView textView2 = (TextView) t1Var3.d(-1);

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import di.v8;
+import di.u8;
 import fi.i7;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -57,14 +57,14 @@ import org.telegram.ui.cu0;
 import org.telegram.ui.e40;
 import org.telegram.ui.fg;
 import org.telegram.ui.g50;
-import org.telegram.ui.hn0;
 import org.telegram.ui.hp;
 import org.telegram.ui.i9;
 import org.telegram.ui.j70;
-import org.telegram.ui.jl0;
 import org.telegram.ui.kd0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.m40;
 import org.telegram.ui.o80;
+import org.telegram.ui.ok0;
 import org.telegram.ui.t8;
 import org.telegram.ui.te;
 import org.telegram.ui.tp;
@@ -72,7 +72,7 @@ import org.telegram.ui.u91;
 import org.telegram.ui.x60;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class u2 implements Runnable {
         this.h = e6Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x0493, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x0495, code lost:
     
         if (r11.chat.has_geo != false) goto L147;
      */
@@ -108,7 +108,7 @@ public final /* synthetic */ class u2 implements Runnable {
     */
     public final void run() {
         g50 g50Var;
-        jl0 jl0Var;
+        kl0 kl0Var;
         ?? r32;
         cc a02;
         int i7;
@@ -443,7 +443,7 @@ public final /* synthetic */ class u2 implements Runnable {
                         } else {
                             long j3 = tL_starsSubscriptionPricing.amount;
                             np.s1(i14).Q3(chatInvite.chat, false);
-                            v8.y(launchActivity.P, false).h0(str3, chatInvite, new n(launchActivity, j3, i13));
+                            u8.y(launchActivity.P, false).h0(str3, chatInvite, new n(launchActivity, j3, i13));
                         }
                     }
                     try {
@@ -525,23 +525,23 @@ public final /* synthetic */ class u2 implements Runnable {
                     if (tLObject9 instanceof TLRPC.TL_payments_paymentFormStars) {
                         h6 h6Var = launchActivity4.Y0;
                         launchActivity4.Y0 = null;
-                        v8.y(launchActivity4.P, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject9, new x60(g50Var3, 1), new j70(h6Var, z10 ? 1 : 0));
+                        u8.y(launchActivity4.P, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject9, new x60(g50Var3, 1), new j70(h6Var, z10 ? 1 : 0));
                         break;
                     } else {
                         if (tLObject9 instanceof TLRPC.PaymentForm) {
                             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject9;
                             np.s1(i14).Y3(paymentForm.users, false);
-                            jl0Var = new jl0(paymentForm, null, str8, launchActivity4.M().getLastFragment());
+                            kl0Var = new kl0(paymentForm, null, str8, launchActivity4.M().getLastFragment());
                         } else {
-                            jl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new jl0((TLRPC.PaymentReceipt) tLObject9) : null;
+                            kl0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new kl0((TLRPC.PaymentReceipt) tLObject9) : null;
                         }
-                        if (jl0Var != null) {
+                        if (kl0Var != null) {
                             h6 h6Var2 = launchActivity4.Y0;
                             if (h6Var2 != null) {
                                 launchActivity4.Y0 = null;
-                                jl0Var.a1 = new te(9, h6Var2);
+                                kl0Var.a1 = new te(9, h6Var2);
                             }
-                            launchActivity4.t0(jl0Var);
+                            launchActivity4.t0(kl0Var);
                         }
                     }
                 }
@@ -611,7 +611,7 @@ public final /* synthetic */ class u2 implements Runnable {
                     H.W(profileActivity.a.U0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, hd.M0(2131751767, null), new u11(profileActivity, str12, i14, 11), false);
-                    H.l(R.drawable.msg_translate, hd.M0(2131743956, null), new hn0(10, profileActivity, strArr2, str12, str13), zArr2[0]);
+                    H.l(R.drawable.msg_translate, hd.M0(2131743956, null), new ok0(profileActivity, strArr2, str13, str12, 11), zArr2[0]);
                     H.Z();
                     break;
                 }

@@ -32,11 +32,11 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.n8;
 import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Components.fb;
-import tg.a2;
+import tg.z1;
 import ug.p1;
 import ug.t1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF c0 = new RectF();
@@ -172,7 +172,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         this.b0.start();
         this.P = true;
         if (this.N && !this.U) {
-            b bVar = new b(new a2(this, 13));
+            b bVar = new b(new z1(this, 13));
             this.Q = bVar;
             RectF rectF = this.r;
             int width = (int) rectF.width();

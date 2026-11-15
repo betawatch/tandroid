@@ -29,8 +29,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
 import c8.na;
-import di.db;
-import di.r9;
+import di.cb;
+import di.q9;
 import hi.g7;
 import java.util.ArrayList;
 import java.util.Map;
@@ -50,7 +50,7 @@ import org.telegram.ui.Components.k70;
 import org.telegram.ui.Components.st;
 import org.telegram.ui.m60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class t1 extends Dialog implements Drawable.Callback, is {
     public static final /* synthetic */ int k1 = 0;
@@ -326,7 +326,7 @@ public class t1 extends Dialog implements Drawable.Callback, is {
                                 break;
                             case 1:
                                 t1 t1Var = this.b;
-                                new db(t1Var.getContext(), t1Var.S0).show();
+                                new cb(t1Var.getContext(), t1Var.S0).show();
                                 break;
                             default:
                                 t1 t1Var2 = this.b;
@@ -359,7 +359,7 @@ public class t1 extends Dialog implements Drawable.Callback, is {
                                 break;
                             case 1:
                                 t1 t1Var = this.b;
-                                new db(t1Var.getContext(), t1Var.S0).show();
+                                new cb(t1Var.getContext(), t1Var.S0).show();
                                 break;
                             default:
                                 t1 t1Var2 = this.b;
@@ -610,7 +610,7 @@ public class t1 extends Dialog implements Drawable.Callback, is {
                                     break;
                                 case 1:
                                     t1 t1Var = this.b;
-                                    new db(t1Var.getContext(), t1Var.S0).show();
+                                    new cb(t1Var.getContext(), t1Var.S0).show();
                                     break;
                                 default:
                                     t1 t1Var2 = this.b;
@@ -940,7 +940,7 @@ public class t1 extends Dialog implements Drawable.Callback, is {
             t1Var.U = hd.M0(2131744833, null);
             alertDialog$Builder.k(hd.M0(2131743213, null), null);
             alertDialog$Builder.h(hd.M0(2131744841, null), new z(this, 1));
-            alertDialog$Builder.j(new r9(this, 9));
+            alertDialog$Builder.j(new q9(this, 9));
             try {
                 this.L = alertDialog$Builder.p();
             } catch (Exception unused) {

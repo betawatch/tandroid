@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tp implements Runnable {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final /* synthetic */ class tp implements Runnable {
         this.d = obj3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:333:0x081a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:333:0x081b, code lost:
     
         if (org.telegram.messenger.q10.x(r2.getMessagesController().a2(java.lang.Long.valueOf(r0))) != false) goto L302;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:307:0x0798  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x07c9  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0864 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:307:0x0799  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x07ca  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0865 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r12v13 */
     /* JADX WARN: Type inference failed for: r12v14, types: [int] */
     /* JADX WARN: Type inference failed for: r12v18 */
@@ -345,6 +345,7 @@ public final /* synthetic */ class tp implements Runnable {
                     org.telegram.messenger.a8.g(e13, true);
                     return;
                 }
+                break;
             case 6:
                 hz hzVar = (hz) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
@@ -356,7 +357,7 @@ public final /* synthetic */ class tp implements Runnable {
                     TL_chatlists.TL_chatlists_exportedChatlistInvite tL_chatlists_exportedChatlistInvite = (TL_chatlists.TL_chatlists_exportedChatlistInvite) tLObject3;
                     hy hyVar = new hy(hzVar.r, tL_chatlists_exportedChatlistInvite.invite);
                     hyVar.y = new ly(hzVar, i16);
-                    hyVar.x = new ly(hzVar, i15);
+                    hyVar.x = new ly(hzVar, 2);
                     hzVar.presentFragment(hyVar);
                     org.telegram.messenger.g0.i3(new org.telegram.ui.Components.voip.u(21, hzVar, tL_chatlists_exportedChatlistInvite), 200L);
                     break;
@@ -400,7 +401,7 @@ public final /* synthetic */ class tp implements Runnable {
                 }
                 filtersSetupActivity.getMessagesController().h4(soVar2);
                 org.telegram.messenger.vr messagesStorage = filtersSetupActivity.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.wq(false ? 1 : 0, messagesStorage, soVar2));
+                messagesStorage.a.c(new org.telegram.messenger.pq(i15, messagesStorage, soVar2));
                 break;
             case 10:
                 u40 u40Var = (u40) this.b;

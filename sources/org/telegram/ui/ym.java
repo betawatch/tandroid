@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class ym implements org.telegram.ui.ActionBar.e6, org.telegram.ui.Components.fa0 {
+public final class ym implements org.telegram.ui.ActionBar.e6, org.telegram.ui.Components.ga0 {
     public Bitmap A;
     public int B;
     public boolean C;
@@ -861,7 +861,7 @@ public final class ym implements org.telegram.ui.ActionBar.e6, org.telegram.ui.C
                     ImageReceiver imageReceiver2 = new ImageReceiver(null);
                     imageReceiver2.A1 = false;
                     imageReceiver2.q0(b11, "40_40_firstframe", null, ".jpg", document2, 1);
-                    imageReceiver2.h1 = new ai.c0(dVar, h12, 3);
+                    imageReceiver2.h1 = new ai.d0(dVar, h12, 3);
                     org.telegram.messenger.fc.D().M(imageReceiver2, null);
                 }
                 p3Var2 = p3Var;

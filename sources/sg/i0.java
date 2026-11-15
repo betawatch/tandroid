@@ -13,7 +13,7 @@ import android.graphics.RectF;
 import android.opengl.GLES20;
 import c8.ec;
 import c8.gc;
-import di.aa;
+import di.z9;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,10 +33,9 @@ import org.telegram.messenger.ou;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.nt0;
 import org.telegram.ui.Components.u9;
-import org.telegram.ui.Components.z9;
 import org.telegram.ui.wn;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i0 {
     public final Bitmap A;
@@ -202,7 +201,7 @@ public final class i0 {
         if (this.r == null || this.i == null) {
             return;
         }
-        this.f.f(new aa(this, j0Var, i7, z10, sVar));
+        this.f.f(new z9(this, j0Var, i7, z10, sVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:52:0x0197  */
@@ -272,7 +271,7 @@ public final class i0 {
                 u9 u9Var = this.F;
                 if (u9Var != null) {
                     obj = u9Var.h;
-                    z9 z9Var = u9Var.m;
+                    org.telegram.ui.Components.z9 z9Var = u9Var.m;
                     GLES20.glBindTexture(3553, z9Var != null ? z9Var.s[2] : -1);
                     GLES20.glBlendFunc(1, 0);
                     GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.m);
@@ -470,7 +469,7 @@ public final class i0 {
                     GLES20.glTexParameteri(3553, 10241, 9729);
                     GLES20.glUniform1i(v0Var.d("blured"), 1);
                     GLES20.glActiveTexture(33985);
-                    z9 z9Var = this.F.m;
+                    org.telegram.ui.Components.z9 z9Var = this.F.m;
                     GLES20.glBindTexture(3553, z9Var != null ? z9Var.s[2] : -1);
                     GLES20.glUniform1f(v0Var.d("eraser"), 0.0f);
                     GLES20.glUniform1i(v0Var.d("mask"), 2);
@@ -897,7 +896,7 @@ public final class i0 {
             u9 u9Var = this.F;
             if (u9Var != null) {
                 obj = u9Var.h;
-                z9 z9Var = u9Var.m;
+                org.telegram.ui.Components.z9 z9Var = u9Var.m;
                 GLES20.glBindTexture(3553, z9Var != null ? z9Var.s[2] : -1);
                 GLES20.glBlendFunc(1, 771);
                 GLES20.glVertexAttribPointer(0, 2, 5126, false, 8, (Buffer) this.m);

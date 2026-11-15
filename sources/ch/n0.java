@@ -12,7 +12,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.internal.vision.e2;
-import di.bc;
+import di.ac;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.ImageReceiver;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.jq;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.v8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class n0 {
     public int A;
@@ -68,7 +68,7 @@ public abstract class n0 {
     public final View V;
     public final e6 W;
     public final dc X;
-    public final bc Y;
+    public final ac Y;
     public final ch0 Z;
     public final TLRPC.ReactionCount a;
     public int b;
@@ -104,7 +104,7 @@ public abstract class n0 {
     public final Path c0 = new Path();
 
     public n0(n0 n0Var, int i7, View view, TLRPC.ReactionCount reactionCount, boolean z10, e6 e6Var) {
-        bc bcVar;
+        ac acVar;
         ch0 ch0Var;
         a5.b bVar = new a5.b(this, 1);
         this.U = i7;
@@ -178,10 +178,10 @@ public abstract class n0 {
                 } else {
                     this.B.w0(org.telegram.messenger.t0.b.getResources().getDrawable(R.drawable.star_reaction).mutate());
                 }
-                if (n0Var == null || (bcVar = n0Var.Y) == null) {
-                    bcVar = new bc(1, gz.o() == 2 ? 18 : 8);
+                if (n0Var == null || (acVar = n0Var.Y) == null) {
+                    acVar = new ac(1, gz.o() == 2 ? 18 : 8);
                 }
-                this.Y = bcVar;
+                this.Y = acVar;
             } else if (d.f != null) {
                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.b0(i7).r.get(d.f);
                 if (tL_availableReaction != null) {
@@ -626,11 +626,11 @@ public abstract class n0 {
     }
 
     public final boolean f(Canvas canvas, float f10, float f11) {
-        bc bcVar = this.Y;
-        if (bcVar == null) {
+        ac acVar = this.Y;
+        if (acVar == null) {
             return false;
         }
-        RectF rectF = bcVar.c;
+        RectF rectF = acVar.c;
         if (!qc.e(8200) || !qc.e(131072)) {
             return false;
         }
@@ -639,16 +639,16 @@ public abstract class n0 {
         float f12 = this.A / 2.0f;
         rectF.set(rectF2);
         rectF.inset(-org.telegram.messenger.g0.L(4.0f), -org.telegram.messenger.g0.L(4.0f));
-        bcVar.g(rectF);
-        boolean d = bcVar.d();
-        bcVar.a(canvas, i0.a.f(j(), i0.a.o(this.I, ns.e4), i0.a.f(0.4f, this.L, i0.a.o(this.I, ns.e4))));
+        acVar.g(rectF);
+        boolean d = acVar.d();
+        acVar.a(canvas, i0.a.f(j(), i0.a.o(this.I, ns.e4), i0.a.f(0.4f, this.L, i0.a.o(this.I, ns.e4))));
         if (this.P) {
             Path path = this.c0;
             path.rewind();
             path.addRoundRect(rectF2, f12, f12, Path.Direction.CW);
             canvas.save();
             canvas.clipPath(path);
-            bcVar.a(canvas, this.J);
+            acVar.a(canvas, this.J);
             canvas.restore();
         }
         return d;

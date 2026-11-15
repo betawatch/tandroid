@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class zq implements TextWatcher {
     public final /* synthetic */ int a;
@@ -230,9 +230,9 @@ public final class zq implements TextWatcher {
                 }
                 break;
             default:
-                jl0 jl0Var = (jl0) this.d;
-                if (!jl0Var.o0) {
-                    org.telegram.ui.Components.y20 y20Var2 = (org.telegram.ui.Components.y20) jl0Var.f[9];
+                kl0 kl0Var = (kl0) this.d;
+                if (!kl0Var.o0) {
+                    org.telegram.ui.Components.y20 y20Var2 = (org.telegram.ui.Components.y20) kl0Var.f[9];
                     int selectionStart4 = y20Var2.getSelectionStart();
                     String obj5 = y20Var2.getText().toString();
                     if (this.b == 3) {
@@ -249,7 +249,7 @@ public final class zq implements TextWatcher {
                         }
                         i32 = i33;
                     }
-                    jl0Var.o0 = true;
+                    kl0Var.o0 = true;
                     String hintText4 = y20Var2.getHintText();
                     if (hintText4 != null) {
                         int i34 = 0;
@@ -278,7 +278,7 @@ public final class zq implements TextWatcher {
                         y20Var2.setSelection(Math.min(selectionStart4, y20Var2.length()));
                     }
                     y20Var2.invalidate();
-                    jl0Var.o0 = false;
+                    kl0Var.o0 = false;
                     break;
                 }
                 break;

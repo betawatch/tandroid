@@ -4,10 +4,10 @@ import android.content.Context;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.im0;
-import org.telegram.ui.kl0;
+import org.telegram.ui.jm0;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u5 implements z10 {
     public final /* synthetic */ int a = 0;
@@ -48,16 +48,16 @@ public final /* synthetic */ class u5 implements z10 {
                 }
                 break;
             default:
-                im0.a0((im0) this.e, this.b, this.c, this.d, (kl0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                jm0.a0((jm0) this.e, this.b, this.c, this.d, (ll0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
         }
     }
 
-    public /* synthetic */ u5(im0 im0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, kl0 kl0Var) {
-        this.e = im0Var;
+    public /* synthetic */ u5(jm0 jm0Var, cg.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, ll0 ll0Var) {
+        this.e = jm0Var;
         this.b = bVar;
         this.c = tL_starGiftUnique;
         this.d = j3;
-        this.f = kl0Var;
+        this.f = ll0Var;
     }
 }

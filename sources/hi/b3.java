@@ -13,9 +13,9 @@ import org.telegram.ui.lm;
 import org.telegram.ui.ln;
 import org.telegram.ui.qn;
 import org.telegram.ui.wn;
-import org.telegram.ui.ym0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -86,9 +86,9 @@ public final /* synthetic */ class b3 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new wn(this.c, (Object) tL_error, (Object) tLObject, this.b, 13));
                 break;
             case 10:
-                ym0 ym0Var = (ym0) this.c;
+                zm0 zm0Var = (zm0) this.c;
                 if (tLObject != null) {
-                    org.telegram.messenger.g0.h3(new f60(ym0Var, tLObject, this.b, 5));
+                    org.telegram.messenger.g0.h3(new f60(zm0Var, tLObject, this.b, 5));
                     break;
                 }
                 break;

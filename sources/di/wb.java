@@ -1,27 +1,27 @@
 package di;
 
 import android.os.Bundle;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class wb extends ProfileActivity {
-    public final /* synthetic */ boolean Z6;
-    public final /* synthetic */ jc a7;
+public final class wb extends an {
+    public final /* synthetic */ boolean ud;
+    public final /* synthetic */ ic vd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wb(jc jcVar, Bundle bundle, boolean z10) {
-        super(bundle, null);
-        this.a7 = jcVar;
-        this.Z6 = z10;
+    public wb(ic icVar, Bundle bundle, boolean z10) {
+        super(bundle);
+        this.vd = icVar;
+        this.ud = z10;
     }
 
-    @Override // org.telegram.ui.ProfileActivity, org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.e2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        if (this.Z6) {
+        if (this.ud) {
             return;
         }
-        this.a7.show();
+        this.vd.show();
     }
 }

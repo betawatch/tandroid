@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import c8.ja;
 import c8.na;
-import di.m8;
+import di.l8;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.wp0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c4 extends FrameLayout implements is {
     public final LinearLayout E;
@@ -36,7 +36,7 @@ public final class c4 extends FrameLayout implements is {
     public final int b;
     public final org.telegram.ui.ActionBar.e6 c;
     public boolean d;
-    public m8 e;
+    public l8 e;
     public final v3 f;
     public boolean h;
     public int n;
@@ -117,12 +117,12 @@ public final class c4 extends FrameLayout implements is {
                 public final void onClick(View view3) {
                     switch (i10) {
                         case 0:
-                            m8 m8Var = this.b.e;
-                            if (m8Var != null) {
-                                if (!m8Var.e || m8Var.g != 783) {
-                                    m8Var.g = 783;
-                                    m8Var.e = true;
-                                    m8Var.j(true);
+                            l8 l8Var = this.b.e;
+                            if (l8Var != null) {
+                                if (!l8Var.e || l8Var.g != 783) {
+                                    l8Var.g = 783;
+                                    l8Var.e = true;
+                                    l8Var.j(true);
                                     break;
                                 }
                             }
@@ -180,12 +180,12 @@ public final class c4 extends FrameLayout implements is {
             public final void onClick(View view3) {
                 switch (r2) {
                     case 0:
-                        m8 m8Var = this.b.e;
-                        if (m8Var != null) {
-                            if (!m8Var.e || m8Var.g != 783) {
-                                m8Var.g = 783;
-                                m8Var.e = true;
-                                m8Var.j(true);
+                        l8 l8Var = this.b.e;
+                        if (l8Var != null) {
+                            if (!l8Var.e || l8Var.g != 783) {
+                                l8Var.g = 783;
+                                l8Var.e = true;
+                                l8Var.j(true);
                                 break;
                             }
                         }
@@ -260,9 +260,9 @@ public final class c4 extends FrameLayout implements is {
 
     public final void e() {
         if (this.h) {
-            m8 m8Var = this.e;
-            if (m8Var != null) {
-                m8Var.n();
+            l8 l8Var = this.e;
+            if (l8Var != null) {
+                l8Var.n();
             }
             setReordering(false);
         }

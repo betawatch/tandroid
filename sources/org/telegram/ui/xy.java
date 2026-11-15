@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.ViewPropertyAnimator;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xy extends org.telegram.ui.Cells.n4 {
     public final /* synthetic */ hz E;
     public final TextView r;
-    public final di.ab s;
+    public final di.za s;
     public int w;
     public final org.telegram.ui.Components.x4 x;
     public boolean y;
@@ -34,16 +34,16 @@ public final class xy extends org.telegram.ui.Cells.n4 {
         float f10 = this.b;
         addView(textView, c8.ja.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
         textView.setAlpha(0.0f);
-        di.ab abVar = new di.ab(this, getContext());
-        this.s = abVar;
-        this.x = new org.telegram.ui.Components.x4(abVar, 320L, org.telegram.ui.Components.er.h, 0);
-        abVar.setTextSize(org.telegram.messenger.g0.L(10.0f));
-        abVar.setTypeface(org.telegram.messenger.g0.o());
-        abVar.setGravity(5);
-        abVar.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
+        di.za zaVar = new di.za(this, getContext());
+        this.s = zaVar;
+        this.x = new org.telegram.ui.Components.x4(zaVar, 320L, org.telegram.ui.Components.er.h, 0);
+        zaVar.setTextSize(org.telegram.messenger.g0.L(10.0f));
+        zaVar.setTypeface(org.telegram.messenger.g0.o());
+        zaVar.setGravity(5);
+        zaVar.setPadding(org.telegram.messenger.g0.L(4.66f), 0, org.telegram.messenger.g0.L(4.66f), 0);
         int i11 = (org.telegram.messenger.hd.a0 ? 3 : 5) | 48;
         float f11 = this.b;
-        addView(abVar, c8.ja.d(-1, -1.0f, i11, f11, 16.66f, f11, this.c));
+        addView(zaVar, c8.ja.d(-1, -1.0f, i11, f11, 16.66f, f11, this.c));
     }
 
     public final void d(int i7, boolean z10) {
@@ -58,9 +58,9 @@ public final class xy extends org.telegram.ui.Cells.n4 {
             i10 = hzVar.getThemedColor(iArr[i7 % iArr.length]);
         }
         this.w = i10;
-        di.ab abVar = this.s;
+        di.za zaVar = this.s;
         if (!z11) {
-            abVar.setEmojiColor(i10);
+            zaVar.setEmojiColor(i10);
         }
         if (!z10) {
             this.x.a(this.w, true);
@@ -70,7 +70,7 @@ public final class xy extends org.telegram.ui.Cells.n4 {
             ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
             org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.h;
             duration.setInterpolator(erVar).start();
-            abVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(erVar).start();
+            zaVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(erVar).start();
         }
     }
 
@@ -82,11 +82,11 @@ public final class xy extends org.telegram.ui.Cells.n4 {
         if (charSequence.length() > 12) {
             charSequence = charSequence.subSequence(0, 12);
         }
-        di.ab abVar = this.s;
-        CharSequence m10 = org.telegram.messenger.j6.m(charSequence, abVar.getPaint().getFontMetricsInt(), false, null, 0);
+        di.za zaVar = this.s;
+        CharSequence m10 = org.telegram.messenger.j6.m(charSequence, zaVar.getPaint().getFontMetricsInt(), false, null, 0);
         if (z10 && !org.telegram.messenger.hd.a0) {
             z11 = true;
         }
-        abVar.c(m10, z11, true);
+        zaVar.c(m10, z11, true);
     }
 }

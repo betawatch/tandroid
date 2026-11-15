@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -47,7 +47,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
             }
             vr a02 = vr.a0(i10);
             if (!arrayList.isEmpty()) {
-                a02.a.c(new ir(a02, arrayList, j3, 0));
+                a02.a.c(new hr(a02, arrayList, j3, 0));
             }
         }
         if (j10 == 0) {

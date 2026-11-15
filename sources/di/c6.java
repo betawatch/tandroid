@@ -65,13 +65,13 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.mg0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class c6 extends org.telegram.ui.Components.ja implements is {
     public static final /* synthetic */ int w3 = 0;
     public boolean A2;
     public TL_stars.SavedStarGift B2;
-    public n8 C2;
+    public m8 C2;
     public gj D2;
     public String E2;
     public TL_stars.TL_starGiftUnique F2;
@@ -390,7 +390,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         if (view != null) {
             arrayList.add(view);
         }
-        org.telegram.messenger.g0.m2(new ai.f0(h4Var, 10), 12.0f, 12, arrayList);
+        org.telegram.messenger.g0.m2(new ai.g0(h4Var, 10), 12.0f, 12, arrayList);
     }
 
     public static String A1(TL_stars.StarGift starGift) {
@@ -473,7 +473,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         boolean z10;
         TLRPC.Document document;
         boolean z11;
-        k8 F;
+        j8 F;
         TLRPC.Message message;
         hi.d dVar = c6Var.g2;
         if (dVar.R) {
@@ -509,7 +509,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         TL_stars.saveStarGift savestargift = new TL_stars.saveStarGift();
         savestargift.unsave = z12;
         savestargift.stargift = B1;
-        if (c6Var.B2 == null || (F = v8.y(c6Var.a, false).F(c6Var.T1, false)) == null) {
+        if (c6Var.B2 == null || (F = u8.y(c6Var.a, false).F(c6Var.T1, false)) == null) {
             z11 = false;
         } else {
             F.m(c6Var.B2, savestargift.unsave);
@@ -666,8 +666,8 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         if (i10 >= 0 && (!z10 ? i10 < D1 : i10 > D1)) {
             i7 = i10;
         }
-        n8 n8Var = c6Var.C2;
-        Object obj = (n8Var == null || i7 < 0 || i7 >= n8Var.e()) ? null : c6Var.C2.get(i7);
+        m8 m8Var = c6Var.C2;
+        Object obj = (m8Var == null || i7 < 0 || i7 >= m8Var.e()) ? null : c6Var.C2.get(i7);
         if (obj == null) {
             return;
         }
@@ -845,19 +845,19 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
 
     public final int D1() {
         int indexOf;
-        n8 n8Var = this.C2;
-        if (n8Var == null) {
+        m8 m8Var = this.C2;
+        if (m8Var == null) {
             return -1;
         }
         TL_stars.SavedStarGift savedStarGift = this.B2;
         if (savedStarGift != null) {
-            indexOf = n8Var.indexOf(savedStarGift);
+            indexOf = m8Var.indexOf(savedStarGift);
         } else {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = this.F2;
             if (tL_starGiftUnique == null) {
                 return -1;
             }
-            indexOf = n8Var.indexOf(tL_starGiftUnique);
+            indexOf = m8Var.indexOf(tL_starGiftUnique);
         }
         if (indexOf >= 0) {
             return indexOf;
@@ -906,8 +906,8 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         if (i10 >= 0 && (!z10 ? i10 < D1 : i10 > D1)) {
             i7 = i10;
         }
-        n8 n8Var = this.C2;
-        Object obj = (n8Var == null || i7 < 0 || i7 >= n8Var.e()) ? null : this.C2.get(i7);
+        m8 m8Var = this.C2;
+        Object obj = (m8Var == null || i7 < 0 || i7 >= m8Var.e()) ? null : this.C2.get(i7);
         if (obj instanceof TL_stars.SavedStarGift) {
             return (TL_stars.SavedStarGift) obj;
         }
@@ -924,8 +924,8 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         if (i10 >= 0 && (!z10 ? i10 < D1 : i10 > D1)) {
             i7 = i10;
         }
-        n8 n8Var = this.C2;
-        Object obj = (n8Var == null || i7 < 0 || i7 >= n8Var.e()) ? null : this.C2.get(i7);
+        m8 m8Var = this.C2;
+        Object obj = (m8Var == null || i7 < 0 || i7 >= m8Var.e()) ? null : this.C2.get(i7);
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             return (TL_stars.TL_starGiftUnique) obj;
         }
@@ -1028,7 +1028,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         if (this.F2 == null || !this.G2) {
             dVar.setLoading(true);
             long j3 = e10;
-            v8.x(this.a, bVar).H(H1, j3, null, true, new t1(this, null, bVar, H1, j3, null, true));
+            u8.x(this.a, bVar).H(H1, j3, null, true, new t1(this, null, bVar, H1, j3, null, true));
         } else {
             bi.f1 f1Var = new bi.f1(getContext(), this.J0, H1, e10);
             f1Var.F1 = new o3(this, f1Var, H1, e10, bVar, 0);
@@ -1268,7 +1268,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     Locale locale = Locale.ROOT;
                     String lowerCase = replaceAll.toLowerCase(locale);
                     if (H1 == null || (str4 = H1.title) == null || !lowerCase.equals(str4.replaceAll("[^\\p{L}\\p{N}]", "").toLowerCase(locale))) {
-                        v8 y10 = v8.y(i11, z10);
+                        u8 y10 = u8.y(i11, z10);
                         y10.U();
                         ArrayList arrayList3 = y10.H;
                         int size2 = arrayList3.size();
@@ -1680,9 +1680,9 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         textView.setText(org.telegram.messenger.g0.X2(j10 > 0 ? hd.K("Gift2TransferPriceText", (int) j10, ',', z1(), org.telegram.messenger.m5.t(j3)) : hd.a0(null, null, 2131749913, z1(), str)));
         linearLayout.addView(textView, c8.ja.t(-1, -2, 48, 24, 4, 24, 4));
         vx0 vx0Var = new vx0(getContext(), this.J0);
-        k1(vx0Var, v8.l(H1.attributes, TL_stars.starGiftAttributeModel.class));
-        k1(vx0Var, v8.l(H1.attributes, TL_stars.starGiftAttributeBackdrop.class));
-        k1(vx0Var, v8.l(H1.attributes, TL_stars.starGiftAttributePattern.class));
+        k1(vx0Var, u8.l(H1.attributes, TL_stars.starGiftAttributeModel.class));
+        k1(vx0Var, u8.l(H1.attributes, TL_stars.starGiftAttributeBackdrop.class));
+        k1(vx0Var, u8.l(H1.attributes, TL_stars.starGiftAttributePattern.class));
         if (!TextUtils.isEmpty(H1.slug) && (H1.flags & 256) != 0) {
             org.telegram.messenger.r1 i7 = org.telegram.messenger.r1.i();
             long j11 = H1.value_amount;
@@ -1694,7 +1694,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         linearLayout.addView(vx0Var, c8.ja.t(-1, -2, 48, 23, 16, 23, 4));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, getContext(), this.J0);
         alertDialog$Builder.o(linearLayout);
-        alertDialog$Builder.k(j10 > 0 ? mb.T0(hd.a0(null, null, 2131749920, Integer.valueOf((int) j10))) : hd.M0(2131749921, null), new a1.c(z10Var, 24));
+        alertDialog$Builder.k(j10 > 0 ? lb.T0(hd.a0(null, null, 2131749920, Integer.valueOf((int) j10))) : hd.M0(2131749921, null), new a1.c(z10Var, 24));
         alertDialog$Builder.h(hd.M0(2131752589, null), null);
         org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
         t1Var.Y0 = z10;
@@ -1798,7 +1798,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                 return;
             }
             if (arrayList == null) {
-                v8.y(this.a, false).K(j10, new n1(this, 2));
+                u8.y(this.a, false).K(j10, new n1(this, 2));
             }
             if (j11 > j3 || this.o3 != null) {
                 return;
@@ -1902,7 +1902,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                 arrayList4.clear();
                 arrayList3.clear();
                 arrayList2.clear();
-                ArrayList m10 = v8.m(arrayList, TL_stars.starGiftAttributeModel.class);
+                ArrayList m10 = u8.m(arrayList, TL_stars.starGiftAttributeModel.class);
                 int size2 = m10.size();
                 int i13 = 0;
                 while (i13 < size2) {
@@ -1914,7 +1914,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     }
                     arrayList4.add(j5Var);
                 }
-                ArrayList m11 = v8.m(arrayList, TL_stars.starGiftAttributeBackdrop.class);
+                ArrayList m11 = u8.m(arrayList, TL_stars.starGiftAttributeBackdrop.class);
                 int size3 = m11.size();
                 int i14 = 0;
                 while (i14 < size3) {
@@ -1922,7 +1922,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     i14++;
                     arrayList3.add(new i5((TL_stars.starGiftAttributeBackdrop) obj3));
                 }
-                ArrayList m12 = v8.m(arrayList, TL_stars.starGiftAttributePattern.class);
+                ArrayList m12 = u8.m(arrayList, TL_stars.starGiftAttributePattern.class);
                 int size4 = m12.size();
                 int i15 = 0;
                 while (i15 < size4) {
@@ -1964,9 +1964,9 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     v2();
                     eq[] eqVarArr = this.p3;
                     if (z10) {
-                        dVar.i(mb.U0(hd.a0(null, null, 2131750067, Long.valueOf(j10)), 1.13f, eqVarArr), true, true);
+                        dVar.i(lb.U0(hd.a0(null, null, 2131750067, Long.valueOf(j10)), 1.13f, eqVarArr), true, true);
                     } else {
-                        dVar.i(mb.U0(hd.a0(null, null, 2131749877, Long.valueOf(j10)), 1.13f, eqVarArr), true, true);
+                        dVar.i(lb.U0(hd.a0(null, null, 2131749877, Long.valueOf(j10)), 1.13f, eqVarArr), true, true);
                     }
                 } else {
                     dVar.i(hd.M0(2131751817, null), true, true);
@@ -2044,14 +2044,14 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         c1Var2.C2 = true;
         c1Var2.o1(false, true);
         wg.c1 c1Var3 = c1VarArr[0];
-        c1Var3.x2 = new ai.u1(6, this, c1VarArr);
+        c1Var3.x2 = new ai.v1(6, this, c1VarArr);
         c1Var3.show();
     }
 
     @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == ns.G3) {
-            if (this.C2 == ((m8) objArr[1])) {
+            if (this.C2 == ((l8) objArr[1])) {
                 y4 y4Var = this.b2.N;
                 if (y4Var == null || !y4Var.i0) {
                     w2();
@@ -2094,12 +2094,12 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         return e2(starGift.released_by);
     }
 
-    public final void i2(String str, TL_stars.TL_starGiftUnique tL_starGiftUnique, n8 n8Var) {
+    public final void i2(String str, TL_stars.TL_starGiftUnique tL_starGiftUnique, m8 m8Var) {
         l5 l5Var;
         TL_stars.TL_starGiftUnique tL_starGiftUnique2;
         this.E2 = str;
         this.F2 = tL_starGiftUnique;
-        this.C2 = n8Var;
+        this.C2 = m8Var;
         this.G2 = (tL_starGiftUnique.resell_amount == null || K1(this.a, org.telegram.messenger.m5.o(tL_starGiftUnique.owner_id))) ? false : true;
         if (!this.M2 && (l5Var = this.L2) != null && l5Var.o && (tL_starGiftUnique2 = l5Var.l) != null && tL_starGiftUnique2.id != tL_starGiftUnique.id) {
             l5Var.a();
@@ -2149,7 +2149,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         l5 l5Var;
         TL_stars.StarGiftAttribute starGiftAttribute2;
         c6 c6Var;
-        androidx.car.app.utils.a aVar;
+        ai.r rVar;
         int i7 = 0;
         if (starGiftAttribute instanceof TL_stars.starGiftAttributeModel) {
             M0 = hd.M0(2131750387, null);
@@ -2172,13 +2172,13 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             if (starGiftAttribute.rarity instanceof TL_stars.TL_starGiftAttributeRarity) {
                 starGiftAttribute2 = starGiftAttribute;
                 c6Var = this;
-                aVar = new androidx.car.app.utils.a(this, zArr, starGiftAttribute2, ecVarArr, 7);
+                rVar = new ai.r(this, zArr, starGiftAttribute2, ecVarArr, 8);
             } else {
                 starGiftAttribute2 = starGiftAttribute;
                 c6Var = this;
-                aVar = null;
+                rVar = null;
             }
-            ecVarArr[0] = (org.telegram.ui.Components.ec) ((sx0) c6Var.e2.e(M0, starGiftAttribute2.name, G1, aVar, numArr[0]).getChildAt(1)).getChildAt(0);
+            ecVarArr[0] = (org.telegram.ui.Components.ec) ((sx0) c6Var.e2.e(M0, starGiftAttribute2.name, G1, rVar, numArr[0]).getChildAt(1)).getChildAt(0);
             return;
         }
         q5 q5Var = new q5(getContext(), this.J0, new s1(this, i7));
@@ -2315,7 +2315,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void j2(gj gjVar, n8 n8Var) {
+    public final void j2(gj gjVar, m8 m8Var) {
         long j3;
         TLRPC.Peer peer;
         boolean z10;
@@ -2376,7 +2376,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         this.A2 = false;
         this.B2 = null;
         this.D2 = gjVar;
-        this.C2 = n8Var;
+        this.C2 = m8Var;
         this.a2.set(gjVar);
         long e10 = m10.i(this.a).e();
         boolean z25 = gj.B0(gjVar.k) == e10;
@@ -2629,10 +2629,10 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                             r14 = 0;
                             charSequence4 = org.telegram.ui.Components.fc.b(hd.H(',', "Gift2ButtonSell", (int) j10), new l1(this, 7), this.J0, null);
                         }
-                        vx0Var.c(M06, mb.a1(false, TextUtils.concat(l10, " ", charSequence4), 0.8f, r14), r14, r14);
+                        vx0Var.c(M06, lb.a1(false, TextUtils.concat(l10, " ", charSequence4), 0.8f, r14), r14, r14);
                     }
                     if (starGift.limited && !z17) {
-                        mb.H0(vx0Var, this.a, starGift, this.J0);
+                        lb.H0(vx0Var, this.a, starGift, this.J0);
                     }
                     if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text) && !z17) {
                         vx0Var.b(tL_textWithEntities.text, tL_textWithEntities.entities);
@@ -2729,7 +2729,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             if (starGift.stars > 0) {
             }
             if (starGift.limited) {
-                mb.H0(vx0Var, this.a, starGift, this.J0);
+                lb.H0(vx0Var, this.a, starGift, this.J0);
             }
             if (tL_textWithEntities != null) {
                 vx0Var.b(tL_textWithEntities.text, tL_textWithEntities.entities);
@@ -2775,7 +2775,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             }
             if (!this.J2 && !this.K2 && this.D2 != null && (B1 = B1()) != null) {
                 this.J2 = true;
-                v8.y(this.a, false).M(B1, new n1(this, i14));
+                u8.y(this.a, false).M(B1, new n1(this, i14));
             }
             if (this.M2 || (l5Var2 = this.L2) == null || !l5Var2.o || (tL_starGiftUnique = l5Var2.l) == null) {
                 z24 = z39;
@@ -2885,7 +2885,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void k2(TL_stars.SavedStarGift savedStarGift, n8 n8Var) {
+    public final void k2(TL_stars.SavedStarGift savedStarGift, m8 m8Var) {
         long j3;
         int i7;
         String M0;
@@ -2927,7 +2927,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         long j10 = this.T1;
         this.A2 = K1(i14, j10);
         this.B2 = savedStarGift;
-        this.C2 = n8Var;
+        this.C2 = m8Var;
         this.D2 = null;
         boolean z13 = this.M2;
         w5 w5Var = this.b2;
@@ -3019,10 +3019,10 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                                 r13 = 0;
                                 charSequence5 = org.telegram.ui.Components.fc.b(hd.H(',', "Gift2ButtonSell", (int) savedStarGift.convert_stars), new l1(this, i16), this.J0, null);
                             }
-                            vx0Var.c(M05, mb.a1(false, TextUtils.concat(l10, " ", charSequence5), 0.8f, r13), r13, r13);
+                            vx0Var.c(M05, lb.a1(false, TextUtils.concat(l10, " ", charSequence5), 0.8f, r13), r13, r13);
                             starGift2 = savedStarGift.gift;
                             if (starGift2.limited && !z15) {
-                                mb.H0(vx0Var, this.a, starGift2, this.J0);
+                                lb.H0(vx0Var, this.a, starGift2, this.J0);
                             }
                             tL_textWithEntities = savedStarGift.message;
                             if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text) && !z15) {
@@ -3155,10 +3155,10 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     if (n1()) {
                     }
                     r13 = 0;
-                    vx0Var.c(M052, mb.a1(false, TextUtils.concat(l102, " ", charSequence5), 0.8f, r13), r13, r13);
+                    vx0Var.c(M052, lb.a1(false, TextUtils.concat(l102, " ", charSequence5), 0.8f, r13), r13, r13);
                     starGift2 = savedStarGift.gift;
                     if (starGift2.limited) {
-                        mb.H0(vx0Var, this.a, starGift2, this.J0);
+                        lb.H0(vx0Var, this.a, starGift2, this.J0);
                     }
                     tL_textWithEntities = savedStarGift.message;
                     if (tL_textWithEntities != null) {
@@ -3197,7 +3197,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             if (n1()) {
             }
             r13 = 0;
-            vx0Var.c(M0522, mb.a1(false, TextUtils.concat(l1022, " ", charSequence5), 0.8f, r13), r13, r13);
+            vx0Var.c(M0522, lb.a1(false, TextUtils.concat(l1022, " ", charSequence5), 0.8f, r13), r13, r13);
             starGift2 = savedStarGift.gift;
             if (starGift2.limited) {
             }
@@ -3483,12 +3483,12 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                 org.telegram.ui.Wallet.g5 g5Var2 = this.c3;
                 org.telegram.ui.Wallet.c8 c8Var2 = g5Var2.c.k0;
                 boolean z17 = (c8Var2 == null || (nftitem = g5Var2.b) == null || (str = nftitem.address) == null || !str.equals(c8Var2.Q0)) ? false : true;
-                ai.j0 j0Var = w5Var.K;
-                j0Var.e(R.drawable.filled_card_color, hd.M0(z17 ? 2131743103 : 2131743109, null), false);
-                j0Var.setAlpha((F || z17) ? 1.0f : 0.5f);
+                ai.k0 k0Var = w5Var.K;
+                k0Var.e(R.drawable.filled_card_color, hd.M0(z17 ? 2131743103 : 2131743109, null), false);
+                k0Var.setAlpha((F || z17) ? 1.0f : 0.5f);
             }
         }
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) tL_starGiftUnique.title);
         spannableStringBuilder.append((CharSequence) " ");
@@ -3560,9 +3560,9 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     int i21 = i11;
                     this.f3 = ((sx0) this.e2.o(hd.M0(2131750086, null), this.a, o4, new m1(this, o4, i11)).getChildAt(i21 == true ? 1 : 0)).getChildAt(0);
                     r15 = i21;
-                    j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-                    j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
-                    j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                    j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+                    j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+                    j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
                     if (!z10) {
                         if (this.D2 == null) {
                             vx0Var.c(hd.M0(2131750054, r11), hd.H(',', "Gift2QuantityIssued1", tL_starGiftUnique.availability_issued) + hd.H(',', "Gift2QuantityIssued2", tL_starGiftUnique.availability_total), r11, r11);
@@ -3593,7 +3593,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                             this.e2.e(hd.M0(2131749591, r11), r.b.k("~", org.telegram.messenger.r1.g(str3, h, j10, r15)), hd.M0(2131749590, r11), new aa.r((Object) this, (Object) tL_starGiftUnique, org.telegram.messenger.r1.i().f(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency), 21), null);
                         }
                     }
-                    stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
+                    stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
                     if (stargiftattributeoriginaldetails != null) {
                         if ((stargiftattributeoriginaldetails.flags & r15) != 0) {
                             long o11 = org.telegram.messenger.m5.o(stargiftattributeoriginaldetails.sender_id);
@@ -3698,7 +3698,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                                 imageView.setImageResource(R.drawable.menu_delete_old);
                                 org.telegram.ui.ActionBar.q6.s(imageView, i25, this.J0, PorterDuff.Mode.SRC_IN);
                                 c8.na.a(imageView);
-                                imageView.setOnClickListener(new ai.t2(14, this, V));
+                                imageView.setOnClickListener(new ai.v2(14, this, V));
                                 linearLayout.addView(imageView, c8.ja.q(32, 32, 0.0f, 21, 8, 0, 0, 0));
                                 TableRow tableRow = new TableRow(getContext());
                                 TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(-2, -1);
@@ -3835,9 +3835,9 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                                         TL_stars.starGiftAttributeModel upgradeImageViewAttribute = w5Var2.getUpgradeImageViewAttribute();
                                         TL_stars.starGiftAttributePattern upgradePatternAttribute = w5Var2.getUpgradePatternAttribute();
                                         TL_stars.starGiftAttributeBackdrop upgradeBackdropAttribute = w5Var2.getUpgradeBackdropAttribute();
-                                        TL_stars.starGiftAttributeModel stargiftattributemodel2 = (TL_stars.starGiftAttributeModel) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-                                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-                                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                                        TL_stars.starGiftAttributeModel stargiftattributemodel2 = (TL_stars.starGiftAttributeModel) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
                                         l5Var2.o = true;
                                         l5Var2.l = tL_starGiftUnique;
                                         l5Var2.r = l1Var;
@@ -3986,12 +3986,12 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             r15 = i11;
             r11 = obj3;
             r13 = i12;
-            j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
-            j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
             if (!z10) {
             }
-            stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
+            stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
             if (stargiftattributeoriginaldetails != null) {
             }
             if (this.e3 != null) {
@@ -4009,12 +4009,12 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         }
         r15 = i7;
         r13 = i10;
-        j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-        j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
-        j1(v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+        j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+        j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+        j1(u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
         if (!z10) {
         }
-        stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
+        stargiftattributeoriginaldetails = (TL_stars.starGiftAttributeOriginalDetails) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeOriginalDetails.class);
         if (stargiftattributeoriginaldetails != null) {
         }
         if (this.e3 != null) {
@@ -4035,7 +4035,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         TLRPC.Message message;
         TL_stars.StarGift starGift;
         if (updates == null) {
-            v8.y(this.a, false).P(x1());
+            u8.y(this.a, false).P(x1());
             dismiss();
             return;
         }
@@ -4055,7 +4055,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             message = null;
         }
         if (message == null) {
-            v8.y(this.a, false).P(x1());
+            u8.y(this.a, false).P(x1());
             dismiss();
             return;
         }
@@ -4080,18 +4080,18 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                 k2(savedStarGift2, this.C2);
                 this.k3 = null;
                 this.M2 = false;
-                n8 n8Var = this.C2;
-                if (n8Var != null) {
-                    n8Var.d();
+                m8 m8Var = this.C2;
+                if (m8Var != null) {
+                    m8Var.d();
                 } else {
-                    v8.y(this.a, false).P(this.T1);
+                    u8.y(this.a, false).P(this.T1);
                 }
                 org.telegram.messenger.g0.h3(runnable);
                 return;
             }
         }
         if (this.C2 == null) {
-            v8.y(this.a, false).P(x1());
+            u8.y(this.a, false).P(x1());
         }
         this.M2 = true;
         this.B2 = null;
@@ -4109,10 +4109,10 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
         boolean z10 = tL_starGiftUnique.resale_ton_only;
         hi.d dVar = this.g2;
         if (z10) {
-            dVar.i(mb.s1(mb.V0(hd.a0(null, null, 2131746146, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true), !this.a3, true);
-            dVar.g(mb.T0(hd.H(',', "ResellGiftBuyEq", (int) resellAmount.a())), !this.a3);
+            dVar.i(lb.s1(lb.V0(hd.a0(null, null, 2131746146, tL_starGiftUnique.getResellAmount(cg.b.b).d()), true), true), !this.a3, true);
+            dVar.g(lb.T0(hd.H(',', "ResellGiftBuyEq", (int) resellAmount.a())), !this.a3);
         } else {
-            dVar.i(mb.T0(hd.H(',', "ResellGiftBuy", (int) resellAmount.a())), !this.a3, true);
+            dVar.i(lb.T0(hd.H(',', "ResellGiftBuy", (int) resellAmount.a())), !this.a3, true);
             dVar.g(null, !this.a3);
         }
     }
@@ -4521,7 +4521,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
             return;
         }
         long j12 = o4;
-        v8 y10 = v8.y(this.a, false);
+        u8 y10 = u8.y(this.a, false);
         if (!y10.e) {
             y10.r(new f2(this, y10, j3, z10Var, 0));
             return;
@@ -4587,7 +4587,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                     if (B1() != null) {
                         org.telegram.ui.ActionBar.t1 t1Var3 = new org.telegram.ui.ActionBar.t1(3, getContext(), null);
                         t1Var3.r(500L);
-                        v8.y(this.a, false).M(B1(), new ai.u1(7, this, t1Var3));
+                        u8.y(this.a, false).M(B1(), new ai.v1(7, this, t1Var3));
                         return;
                     }
                 }
@@ -4637,7 +4637,7 @@ public class c6 extends org.telegram.ui.Components.ja implements is {
                 return;
             }
             int i7 = 0;
-            v8 y10 = v8.y(this.a, false);
+            u8 y10 = u8.y(this.a, false);
             if (!y10.e) {
                 y10.r(new s2(0, this, y10));
                 return;

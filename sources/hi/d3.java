@@ -41,7 +41,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class d3 extends FrameLayout implements is {
     public static final ve k0 = new ve(-1, null, null);
@@ -297,7 +297,7 @@ public abstract class d3 extends FrameLayout implements is {
         org.telegram.ui.ActionBar.q6.U(lVar, org.telegram.ui.ActionBar.j6.y6, e6Var);
         lVar.setTypeface(null);
         lVar.setText(hd.M0(2131745760, null));
-        this.w = new p3(this, false, new ai.f0(this, 24));
+        this.w = new p3(this, false, new ai.g0(this, 24));
         frameLayout.addView(cv0Var, c8.ja.e(-1, -1, ns.E1));
         uj0Var.setEmptyView(cv0Var);
         org.telegram.ui.ActionBar.q0 a10 = s5.a(0, R.drawable.outline_header_search);
@@ -835,7 +835,7 @@ public abstract class d3 extends FrameLayout implements is {
                 }
             }
             u2Var.getPopupLayout().addView(aVar);
-            aVar.setOnClickListener(new ai.t2(20, this, veVar2));
+            aVar.setOnClickListener(new ai.v2(20, this, veVar2));
         }
     }
 

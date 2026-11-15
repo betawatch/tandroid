@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v8 extends org.telegram.ui.Components.st0 {
     public final /* synthetic */ int g0;
@@ -96,7 +96,7 @@ public final class v8 extends org.telegram.ui.Components.st0 {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.g0) {
             case 1:
-                if (motionEvent.getY() < ((org.telegram.ui.Components.da0) this.h0).U) {
+                if (motionEvent.getY() < ((org.telegram.ui.Components.ea0) this.h0).U) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -109,7 +109,7 @@ public final class v8 extends org.telegram.ui.Components.st0 {
     public Drawable getNewDrawable() {
         switch (this.g0) {
             case 1:
-                Drawable m10 = ((ym) ((org.telegram.ui.Components.da0) this.h0).d0.G).m();
+                Drawable m10 = ((ym) ((org.telegram.ui.Components.ea0) this.h0).d0.G).m();
                 if (m10 == null) {
                     break;
                 }

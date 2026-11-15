@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p9 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -357,15 +357,15 @@ public final class p9 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 15:
-                org.telegram.ui.Components.x80 x80Var = (org.telegram.ui.Components.x80) obj;
+                org.telegram.ui.Components.y80 y80Var = (org.telegram.ui.Components.y80) obj;
                 if (i7 != -1) {
                     if (i7 == 10) {
-                        org.telegram.ui.Components.w80 w80Var = x80Var.S;
-                        w80Var.r1(w80Var.getClosestTab(), false);
+                        org.telegram.ui.Components.x80 x80Var = y80Var.S;
+                        x80Var.r1(x80Var.getClosestTab(), false);
                         break;
                     }
-                } else if (!x80Var.S.V(true)) {
-                    x80Var.finishFragment();
+                } else if (!y80Var.S.V(true)) {
+                    y80Var.finishFragment();
                     break;
                 }
                 break;
@@ -643,7 +643,7 @@ public final class p9 extends org.telegram.ui.ActionBar.j {
                         arrayList4.add(org.telegram.messenger.ur.a(((Long) arrayList3.get(i20)).longValue(), 0L));
                     }
                     org.telegram.messenger.vr messagesStorage = gxVar.getMessagesStorage();
-                    messagesStorage.a.c(new org.telegram.messenger.rp(messagesStorage, i19, arrayList4, i15));
+                    messagesStorage.a.c(new org.telegram.messenger.op(messagesStorage, i19, arrayList4, i15));
                     SharedPreferences.Editor edit2 = gxVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
                     i12 = ((org.telegram.ui.ActionBar.e2) gxVar).currentAccount;
                     edit2.putInt("account" + i19, i12);

@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import di.m8;
+import di.l8;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
@@ -28,7 +28,6 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Cells.l8;
 import org.telegram.ui.Cells.ma;
 import org.telegram.ui.Cells.sa;
 import org.telegram.ui.Cells.ta;
@@ -69,7 +68,7 @@ import org.telegram.ui.yw;
 import org.telegram.ui.yy0;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,23 +101,23 @@ public final /* synthetic */ class x2 implements View.OnClickListener {
         Object obj2 = this.c;
         switch (i7) {
             case 0:
-                m8 m8Var = (m8) obj2;
+                l8 l8Var = (l8) obj2;
                 Runnable runnable = (Runnable) obj;
-                m8Var.getClass();
+                l8Var.getClass();
                 if ((i15 & 15) != 0) {
                     i13 = 15;
                 } else if ((i15 & 768) != 0) {
                     i13 = 768;
                 }
-                int flag = TLObject.setFlag(m8Var.g & i13, i15, !TLObject.hasFlag(r0, i15));
+                int flag = TLObject.setFlag(l8Var.g & i13, i15, !TLObject.hasFlag(r0, i15));
                 if (flag == 0) {
                     flag = (~i15) & i13;
                 }
-                int i16 = m8Var.g;
+                int i16 = l8Var.g;
                 int i17 = flag | ((~i13) & i16);
                 if (i16 != i17) {
-                    m8Var.g = i17;
-                    m8Var.j(true);
+                    l8Var.g = i17;
+                    l8Var.j(true);
                 }
                 runnable.run();
                 break;
@@ -167,7 +166,7 @@ public final /* synthetic */ class x2 implements View.OnClickListener {
             case 4:
                 ma maVar = (ma) obj2;
                 maVar.e.a(true, true);
-                np.s1(i15).U1().f(false, (ArrayList) obj, new ai.x1(maVar, i15, i11));
+                np.s1(i15).U1().f(false, (ArrayList) obj, new ai.y1(maVar, i15, i11));
                 break;
             case 5:
                 ((ta) obj2).a(i15, ((sa) obj).h);
@@ -443,7 +442,7 @@ public final /* synthetic */ class x2 implements View.OnClickListener {
                 SharedPreferences.Editor edit = np.e1().edit();
                 edit.putInt("searchEngineType", gz.p0);
                 edit.apply();
-                ((l8) ((View) obj2)).w(org.telegram.ui.web.d1.a().a, true);
+                ((org.telegram.ui.Cells.l8) ((View) obj2)).w(org.telegram.ui.web.d1.a().a, true);
                 ((Dialog) ((AtomicReference) obj).get()).dismiss();
                 break;
             default:

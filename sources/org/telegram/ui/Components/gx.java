@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.u91;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gx implements org.telegram.messenger.x10, org.telegram.ui.ActionBar.q1, jg.y1, te.b, org.telegram.messenger.j9, s70, hd0, ij0, org.telegram.ui.sw, fi.a7, org.telegram.messenger.tr, y61, org.telegram.messenger.oc, vt0, org.telegram.messenger.kc {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class gx implements org.telegram.messenger.x10, org
 
     @Override // te.b
     public void G(int i7, float f10, float f11, te.c cVar) {
-        ((x80) this.b).c0();
+        ((y80) this.b).c0();
     }
 
     @Override // org.telegram.ui.sw

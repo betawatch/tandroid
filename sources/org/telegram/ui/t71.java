@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.x5, org.telegram.messenger.is {
     public FrameLayout A0;
@@ -198,7 +198,7 @@ public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.me
     public AnimatorSet t1;
     public org.telegram.ui.ActionBar.k u0;
     public final PorterDuff.Mode u1;
-    public ai.k0 v0;
+    public ai.l0 v0;
     public int v1;
     public final org.telegram.ui.ActionBar.g6 w;
     public n61 w0;
@@ -1610,7 +1610,7 @@ public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.me
             l4 l4Var = new l4(context);
             this.q0 = l4Var;
             this.p0.setAdapter(l4Var);
-            this.v0 = new ai.k0(i7, context, this);
+            this.v0 = new ai.l0(i7, context, this);
             this.x0 = new p71(context, this);
             this.u0 = createActionBar(context);
             if (org.telegram.messenger.g0.Q1()) {
@@ -2421,10 +2421,10 @@ public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.me
                                 viewGroupArr2[i22].setPadding(0, i22 == 0 ? org.telegram.messenger.g0.L(12.0f) + rect.top : 0, 0, Z0() ? org.telegram.messenger.g0.n : 0);
                                 this.v0.addView(viewGroupArr2[i22], e10);
                                 if (i22 == 1 || i10 == 2) {
-                                    ai.j0 j0Var = new ai.j0(context, this);
+                                    ai.k0 k0Var2 = new ai.k0(context, this);
                                     ViewGroup[] viewGroupArr3 = this.Q0;
-                                    viewGroupArr3[i22] = j0Var;
-                                    j0Var.setWillNotDraw(false);
+                                    viewGroupArr3[i22] = k0Var2;
+                                    k0Var2.setWillNotDraw(false);
                                     viewGroupArr3[i22].setPadding(0, org.telegram.messenger.g0.L(3.0f), 0, 0);
                                     viewGroupArr3[i22].setClickable(true);
                                     f12 = 21.0f;
@@ -2952,9 +2952,9 @@ public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.me
         this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.p4());
         this.actionBar.setAddToContainer(false);
         this.actionBar.setTitle(org.telegram.messenger.hd.L0(2131744172));
-        k0 k0Var2 = new k0(26, context, this);
-        this.o0 = k0Var2;
-        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, k0Var2, getResourceProvider());
+        k0 k0Var3 = new k0(26, context, this);
+        this.o0 = k0Var3;
+        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, k0Var3, getResourceProvider());
         this.o0.addView(this.actionBar, c8.ja.c(-2.0f, -1));
         org.telegram.ui.Components.uj0 uj0Var3 = new org.telegram.ui.Components.uj0(context);
         this.p0 = uj0Var3;
@@ -2977,7 +2977,7 @@ public class t71 extends org.telegram.ui.ActionBar.e2 implements org.telegram.me
         l4 l4Var2 = new l4(context);
         this.q0 = l4Var2;
         this.p0.setAdapter(l4Var2);
-        this.v0 = new ai.k0(i7, context, this);
+        this.v0 = new ai.l0(i7, context, this);
         this.x0 = new p71(context, this);
         this.u0 = createActionBar(context);
         if (org.telegram.messenger.g0.Q1()) {

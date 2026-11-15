@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr implements org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.hj0, sw, org.telegram.ui.Components.at0, org.telegram.ui.Components.ij0, org.telegram.messenger.kc, OnCompleteListener {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class tr implements org.telegram.ui.ActionBar.q1, o
         launchActivity.O0(i7);
         pa0 pa0Var = new pa0(2);
         pa0Var.G0(qdVar.h);
-        pa0Var.H0 = new ai.c0(iArr, org.telegram.messenger.gj.B0(qdVar.h.k), 10);
+        pa0Var.H0 = new ai.d0(iArr, org.telegram.messenger.gj.B0(qdVar.h.k), 10);
         launchActivity.t0(pa0Var);
     }
 
@@ -134,8 +134,8 @@ public final /* synthetic */ class tr implements org.telegram.ui.ActionBar.q1, o
         ConferenceCall conferenceCall;
         int i10;
         int i11 = this.a;
-        int i12 = 2;
         org.telegram.ui.ActionBar.t1 t1Var2 = null;
+        int i12 = 2;
         int i13 = 1;
         int i14 = 0;
         Object obj = this.c;
@@ -209,7 +209,7 @@ public final /* synthetic */ class tr implements org.telegram.ui.ActionBar.q1, o
                         tL_contacts_resetTopPeerRating.category = new TLRPC.TL_topPeerCategoryBotsApp();
                         tL_contacts_resetTopPeerRating.peer = mediaDataController.getMessagesController().j1(j3);
                         mediaDataController.getConnectionsManager().sendRequest(tL_contacts_resetTopPeerRating, new fi.m5(11));
-                        mediaDataController.getMessagesStorage().a.c(new di.z8(mediaDataController, j3, 2, 4));
+                        mediaDataController.getMessagesStorage().a.c(new di.y8(mediaDataController, j3, 2, 4));
                         mediaDataController.getNotificationCenter().k(84, new Object[0]);
                         break;
                     }
@@ -223,7 +223,7 @@ public final /* synthetic */ class tr implements org.telegram.ui.ActionBar.q1, o
                 ywVar.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, null);
                 ywVar.getMessagesController().h4(soVar);
                 org.telegram.messenger.vr messagesStorage = ywVar.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.wq(i14, messagesStorage, soVar));
+                messagesStorage.a.c(new org.telegram.messenger.pq(i12, messagesStorage, soVar));
                 break;
             case 8:
                 g00 g00Var = (g00) obj2;

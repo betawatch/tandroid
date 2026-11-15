@@ -15,8 +15,8 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.t6;
 import di.i4;
-import di.r9;
-import di.yb;
+import di.q9;
+import di.xb;
 import hi.ha;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
@@ -53,9 +53,9 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.fs0;
 import org.telegram.ui.ss0;
 import org.telegram.ui.z51;
-import tg.i2;
+import tg.h2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class g1 extends ja implements is {
     public boolean A2;
@@ -90,7 +90,7 @@ public class g1 extends ja implements is {
     public final nz k2;
     public final z0 l2;
     public ki.f m2;
-    public yb n2;
+    public xb n2;
     public z51 o2;
     public final e2 p2;
     public Integer q2;
@@ -145,7 +145,7 @@ public class g1 extends ja implements is {
     public final void U0(st0 st0Var) {
         this.U1 = m10.t0;
         q0 q0Var = new q0(getContext(), this.J0, false);
-        q0Var.b(PremiumPreviewFragment.t0(this.U1, null), new i2(this, 2), false);
+        q0Var.b(PremiumPreviewFragment.t0(this.U1, null), new h2(this, 2), false);
         this.H2 = new FrameLayout(getContext());
         View view = new View(getContext());
         q6.h(j6.d7, view, this.J0);
@@ -454,9 +454,9 @@ public class g1 extends ja implements is {
         } else {
             view2.invalidate();
         }
-        yb ybVar = this.n2;
-        if (ybVar != null) {
-            ybVar.m(100L);
+        xb xbVar = this.n2;
+        if (xbVar != null) {
+            xbVar.m(100L);
         }
         this.E2.addUpdateListener(new d1(this, i7));
         this.E2.addListener(new y50(22, this, drawable));
@@ -490,12 +490,12 @@ public class g1 extends ja implements is {
 
     @Override // org.telegram.ui.ActionBar.u2, org.telegram.ui.ActionBar.a2
     public final boolean t(Dialog dialog) {
-        yb ybVar = this.n2;
-        if (ybVar != null) {
-            ybVar.setDialogVisible(true);
+        xb xbVar = this.n2;
+        if (xbVar != null) {
+            xbVar.setDialogVisible(true);
         }
         this.m2.setPaused(true);
-        dialog.setOnDismissListener(new r9(this, 14));
+        dialog.setOnDismissListener(new q9(this, 14));
         dialog.show();
         return true;
     }

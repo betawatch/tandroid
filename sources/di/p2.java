@@ -13,7 +13,7 @@ import org.telegram.ui.Components.hw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -71,8 +71,8 @@ public final /* synthetic */ class p2 implements Runnable {
                         T.presentFragment(ua2);
                     }
                 }
-                v8.y(c6Var.a, false).P(j3);
-                v8.y(c6Var.a, false).P(j10);
+                u8.y(c6Var.a, false).P(j3);
+                u8.y(c6Var.a, false).P(j10);
                 return;
             default:
                 org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) this.e;

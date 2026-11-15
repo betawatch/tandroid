@@ -12,7 +12,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class nn extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -269,12 +269,12 @@ public final class nn extends AnimatorListenerAdapter {
                 }
                 break;
             case 15:
-                org.telegram.ui.Components.ja0 ja0Var = (org.telegram.ui.Components.ja0) obj;
-                if (ja0Var.getParent() != null) {
-                    ((ViewGroup) ja0Var.getParent()).removeView(ja0Var);
+                org.telegram.ui.Components.ka0 ka0Var = (org.telegram.ui.Components.ka0) obj;
+                if (ka0Var.getParent() != null) {
+                    ((ViewGroup) ka0Var.getParent()).removeView(ka0Var);
                 }
                 boolean z12 = this.b;
-                lk lkVar = (lk) ja0Var;
+                lk lkVar = (lk) ka0Var;
                 org.telegram.messenger.kj kjVar = lkVar.I.w5;
                 if (kjVar != null) {
                     kjVar.x = null;
@@ -285,9 +285,9 @@ public final class nn extends AnimatorListenerAdapter {
                 }
                 break;
             case 16:
-                org.telegram.ui.Components.da0 da0Var = (org.telegram.ui.Components.da0) obj;
-                da0Var.Q = null;
-                da0Var.h(this.b, false);
+                org.telegram.ui.Components.ea0 ea0Var = (org.telegram.ui.Components.ea0) obj;
+                ea0Var.Q = null;
+                ea0Var.h(this.b, false);
                 break;
             case 17:
                 org.telegram.ui.Components.fc0 fc0Var = (org.telegram.ui.Components.fc0) obj;

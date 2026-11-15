@@ -1,6 +1,6 @@
 package wg;
 
-import ai.r1;
+import ai.s1;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.s2;
 import c8.na;
-import di.v8;
+import di.u8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -67,7 +67,7 @@ import org.telegram.ui.rv;
 import org.telegram.ui.s00;
 import org.telegram.ui.sc1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class c1 extends ja implements is {
     public static a1 F2;
@@ -261,7 +261,7 @@ public class c1 extends ja implements is {
         this.o1.j(new vh.d(this, 2));
         this.o1.setOnItemClickListener(new bt(this, i10, e6Var, i7));
         if (i10 == 4) {
-            this.o1.setOnItemLongClickListener((jj0) new r1(this, i10, 22));
+            this.o1.setOnItemLongClickListener((jj0) new s1(this, i10, 22));
         }
         v4.k kVar = new v4.k();
         kVar.n(350L);
@@ -270,7 +270,7 @@ public class c1 extends ja implements is {
         kVar.C = false;
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
-        this.o1.i(new ai.h0(this, 10));
+        this.o1.i(new ai.i0(this, 10));
         ng0Var.setText("");
         ng0Var.d.b(false);
         ng0Var.b(false, hashSet, new v0(this, 12), null);
@@ -289,7 +289,7 @@ public class c1 extends ja implements is {
             q.j(i7, null, new w0(this, i23));
         }
         if (i10 == 0 || i10 == 2) {
-            v8.y(i7, false).U();
+            u8.y(i7, false).U();
         }
     }
 

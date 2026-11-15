@@ -8,10 +8,10 @@ import android.widget.TextView;
 import java.util.HashSet;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final pl0 a;
+    public final ql0 a;
     public final ic b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final TextView d;
@@ -28,11 +28,11 @@ public final class jc extends FrameLayout implements org.telegram.ui.ActionBar.z
         this.h = qcVar;
         Context context = getContext();
         e6Var = ((org.telegram.ui.ActionBar.e2) qcVar).resourceProvider;
-        pl0 pl0Var = new pl0(context, e6Var);
-        this.a = pl0Var;
-        pl0Var.setProgressToGradient(1.0f);
-        pl0Var.G = true;
-        addView(pl0Var, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
+        ql0 ql0Var = new ql0(context, e6Var);
+        this.a = ql0Var;
+        ql0Var.setProgressToGradient(1.0f);
+        ql0Var.G = true;
+        addView(ql0Var, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
         Context context2 = getContext();
         i7 = ((org.telegram.ui.ActionBar.e2) qcVar).currentAccount;
         long j3 = qcVar.a;

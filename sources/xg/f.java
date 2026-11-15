@@ -25,7 +25,7 @@ import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.sc1;
-import tg.i2;
+import tg.h2;
 import ug.p1;
 import ug.t1;
 import v4.e1;
@@ -34,7 +34,7 @@ import yg.d0;
 import yg.r;
 import yg.t;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class f extends tj0 {
     public final e6 c;
@@ -165,7 +165,7 @@ public abstract class f extends tj0 {
                     dVar.setShowZero(false);
                     dVar.setEnabled(true);
                     dVar.i(hd.a0("Close", null, 2131752041, new Object[0]), false, true);
-                    aVar.setOnClickListener(new i2(this, 5));
+                    aVar.setOnClickListener(new h2(this, 5));
                     return;
                 }
                 return;

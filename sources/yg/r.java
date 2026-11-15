@@ -13,8 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.qa;
-import di.yb;
+import di.pa;
+import di.xb;
 import n2.o0;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.hd;
@@ -30,10 +30,10 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.z70;
 import ug.r1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
-    public final yb a;
+    public final xb a;
     public final o b;
     public final TextView c;
     public final z70 d;
@@ -46,18 +46,18 @@ public final class r extends FrameLayout {
         super(context);
         this.e = e6Var;
         LinearLayout f10 = k5.f(context, 1);
-        yb ybVar = new yb(context, 1, 0, 5);
-        this.a = ybVar;
+        xb xbVar = new xb(context, 1, 0, 5);
+        this.a = xbVar;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         int i7 = j6.Dk;
         canvas.drawColor(i0.a.f(0.5f, j6.w0(i7, e6Var), j6.w0(j6.h5, e6Var)));
-        ybVar.setBackgroundBitmap(createBitmap);
-        vg.f fVar = ybVar.b;
+        xbVar.setBackgroundBitmap(createBitmap);
+        vg.f fVar = xbVar.b;
         fVar.z = i7;
         fVar.A = j6.Ck;
         fVar.b();
-        f10.addView(ybVar, ja.r(ns.q2, ns.q2, 1));
+        f10.addView(xbVar, ja.r(ns.q2, ns.q2, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
@@ -67,9 +67,9 @@ public final class r extends FrameLayout {
         r1Var.K = false;
         r1Var.L = true;
         r1Var.H = true;
-        r1Var.l = new qa(this, 5);
+        r1Var.l = new pa(this, 5);
         r1Var.c();
-        ybVar.setStarParticlesView(oVar);
+        xbVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
         i20.o(textView, 1, 22.0f);
@@ -131,9 +131,9 @@ public final class r extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
-        yb ybVar = this.a;
+        xb xbVar = this.a;
         o oVar = this.b;
-        oVar.setTranslationY(((ybVar.getMeasuredHeight() / 2.0f) + ybVar.getTop()) - (oVar.getMeasuredHeight() / 2.0f));
+        oVar.setTranslationY(((xbVar.getMeasuredHeight() / 2.0f) + xbVar.getTop()) - (oVar.getMeasuredHeight() / 2.0f));
     }
 
     public void setBoostViaGifsText(TLRPC.Chat chat) {
@@ -162,14 +162,14 @@ public final class r extends FrameLayout {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        yb ybVar = this.a;
-        final float f10 = ybVar.b.l;
+        xb xbVar = this.a;
+        final float f10 = xbVar.b.l;
         final float f11 = z10 ? 1.0f : 0.0f;
         this.n = ValueAnimator.ofFloat(0.0f, 1.0f);
         final float[] fArr = {0.0f};
-        g0.r(ybVar.f0);
-        ybVar.d();
-        ybVar.l();
+        g0.r(xbVar.f0);
+        xbVar.d();
+        xbVar.l();
         this.n.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: yg.m
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {

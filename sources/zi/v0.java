@@ -21,7 +21,7 @@ import org.telegram.ui.Components.jy0;
 import org.telegram.ui.Components.l40;
 import org.telegram.ui.Components.q40;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class v0 {
     public boolean A;
@@ -70,8 +70,8 @@ public final class v0 {
     public final Object g = new Object();
     public final Matrix h = new Matrix();
     public final Handler i = new Handler(Looper.getMainLooper());
-    public final ExecutorService j = Executors.newSingleThreadExecutor(new ai.x0(11));
-    public final ExecutorService k = Executors.newSingleThreadExecutor(new ai.x0(12));
+    public final ExecutorService j = Executors.newSingleThreadExecutor(new ai.y0(11));
+    public final ExecutorService k = Executors.newSingleThreadExecutor(new ai.y0(12));
     public int a0 = 1;
     public int b0 = 1;
     public float v = 1.0f;

@@ -1,8 +1,8 @@
 package org.telegram.messenger.voip;
 
-import ai.f1;
-import ai.q1;
-import ai.z0;
+import ai.a1;
+import ai.g1;
+import ai.r1;
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.app.Notification;
@@ -76,7 +76,6 @@ import bi.v2;
 import c8.ka;
 import di.m6;
 import di.u1;
-import fi.a1;
 import hi.b3;
 import j$.util.Map;
 import j$.util.Objects;
@@ -165,7 +164,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class VoIPService extends Service implements SensorEventListener, AudioManager.OnAudioFocusChangeListener, is, VoIPServiceState {
     public static final String ACTION_HEADSET_PLUG = "android.intent.action.HEADSET_PLUG";
@@ -488,7 +487,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     private HashMap<String, ProxyVideoSink> remoteSinks = new HashMap<>();
     private final Runnable destroyConvertingRunnable = new o0(this, 0);
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class 1 implements Runnable {
         public 1() {
         }
@@ -547,7 +546,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class 5 implements VideoSink {
         final /* synthetic */ String val$endpointId;
         final /* synthetic */ boolean val$screencast;
@@ -595,7 +594,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class 9 implements Runnable {
         public 9() {
         }
@@ -622,7 +621,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class CallConnection extends Connection {
         public CallConnection() {
             setConnectionProperties(128);
@@ -700,7 +699,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class ProxyVideoSink implements VideoSink {
         private VideoSink background;
         private final ArrayList<VideoSink> extras = new ArrayList<>(1);
@@ -806,7 +805,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class RequestedParticipant {
         public int audioSsrc;
         public TLRPC.GroupCallParticipant participant;
@@ -819,14 +818,14 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class SharedUIParams {
         public boolean cameraAlertWasShowed;
         public boolean tapToVideoTooltipWasShowed;
         public boolean wasVideoCall;
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public interface StateListener {
         void onAudioSettingsChanged();
 
@@ -1163,7 +1162,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             boolean z13 = r2.a;
             int i13 = 4;
             i10 = 1;
-            this.tgVoip[i7] = NativeInstance.makeGroup(c2.d("voip_" + i7 + "_" + str), this.captureDevice[i7], i7 == 1, i7 == 0 && gz.I0, new q1(this, i7, zArr, i13), new n0(this, i7, i11), new n0(this, i7, i12), new n0(this, i7, 2), new n0(this, i7, 3), new n0(this, i7, i13), this.conference != null);
+            this.tgVoip[i7] = NativeInstance.makeGroup(c2.d("voip_" + i7 + "_" + str), this.captureDevice[i7], i7 == 1, i7 == 0 && gz.I0, new r1(this, i7, zArr, i13), new n0(this, i7, i11), new n0(this, i7, i12), new n0(this, i7, 2), new n0(this, i7, 3), new n0(this, i7, i13), this.conference != null);
             this.tgVoip[i7].setOnStateUpdatedListener(new n0(this, i7, 5));
             z12 = true;
         } else {
@@ -2404,7 +2403,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             str = i10 + "_" + j3 + "_" + i11;
         }
         final String str2 = str;
-        org.telegram.messenger.g0.h3(new z0(this, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(this.currentAccount).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.f0
+        org.telegram.messenger.g0.h3(new a1(this, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(this.currentAccount).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: org.telegram.messenger.voip.f0
             @Override // org.telegram.tgnet.RequestDelegateTimestamp
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j11) {
                 VoIPService.this.lambda$createGroupInstance$73(str2, i7, j3, i10, i11, tLObject, tL_error, j11);
@@ -2432,7 +2431,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         if (i7 != 0) {
             return;
         }
-        org.telegram.messenger.g0.h3(new a1(i10, i11, 3, j3, this));
+        org.telegram.messenger.g0.h3(new fi.a1(i10, i11, 3, j3, this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2935,7 +2934,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startConferenceGroupCall$34(int i7, String str, TLObject tLObject, TLRPC.TL_error tL_error) {
-        org.telegram.messenger.g0.h3(new f1(this, tLObject, i7, str, tL_error, 9));
+        org.telegram.messenger.g0.h3(new g1(this, tLObject, i7, str, tL_error, 9));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

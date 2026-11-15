@@ -1,40 +1,49 @@
 package di;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.et0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a9 implements Runnable {
+public final /* synthetic */ class a9 implements te.b, et0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLRPC.Chat d;
+    public final /* synthetic */ lb b;
 
-    public /* synthetic */ a9(an anVar, long j3, TLRPC.Chat chat, int i7) {
+    public /* synthetic */ a9(lb lbVar, int i7) {
         this.a = i7;
-        this.b = anVar;
-        this.c = j3;
-        this.d = chat;
+        this.b = lbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        TLRPC.Chat chat = this.d;
-        long j3 = this.c;
-        an anVar = this.b;
-        switch (i7) {
+    @Override // te.b
+    public /* synthetic */ void E(float f10, int i7) {
+        int i10 = this.a;
+    }
+
+    @Override // te.b
+    public void G(int i7, float f10, float f11, te.c cVar) {
+        switch (this.a) {
             case 0:
-                org.telegram.ui.Components.cc.a0(anVar).I(R.raw.stars_send, hd.M0(2131744994, null), org.telegram.messenger.g0.X2(hd.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
+                this.b.r1();
+                break;
+            case 1:
+                this.b.r1();
                 break;
             default:
-                String str = LaunchActivity.C1;
-                org.telegram.ui.Components.cc.a0(anVar).I(R.raw.stars_send, hd.M0(2131744994, null), org.telegram.messenger.g0.X2(hd.G((int) j3, "StarsSubscriptionCompletedText", chat.title))).k(true);
+                this.b.X.setAlpha(f10);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.et0
+    public int b() {
+        return this.b.b0;
+    }
+
+    private final /* synthetic */ void a(float f10, int i7) {
+    }
+
+    private final /* synthetic */ void c(float f10, int i7) {
+    }
+
+    private final /* synthetic */ void d(float f10, int i7) {
     }
 }

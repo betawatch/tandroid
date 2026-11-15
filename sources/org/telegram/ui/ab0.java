@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ab0 implements r1.d {
     public final /* synthetic */ int a;
@@ -37,14 +37,14 @@ public final /* synthetic */ class ab0 implements r1.d {
                 }
                 break;
             case 1:
-                fl0 fl0Var = (fl0) obj;
+                gl0 gl0Var = (gl0) obj;
                 float f12 = f10 / 100.0f;
-                fl0Var.b = f12;
-                TextView textView = fl0Var.d.V;
+                gl0Var.b = f12;
+                TextView textView = gl0Var.d.V;
                 if (textView != null) {
                     textView.setAlpha((f12 * 0.2f) + 0.8f);
                 }
-                fl0Var.invalidate();
+                gl0Var.invalidate();
                 break;
             case 2:
                 hq0 hq0Var = (hq0) obj;

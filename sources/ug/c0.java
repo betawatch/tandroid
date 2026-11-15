@@ -39,9 +39,9 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.z70;
-import tg.i2;
+import tg.h2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c0 extends tj0 {
     public final /* synthetic */ j0 c;
@@ -442,7 +442,7 @@ public final class c0 extends tj0 {
                         }
                     }
                 });
-                g80Var.setOnClickListener(new i2(z70Var, i19));
+                g80Var.setOnClickListener(new h2(z70Var, i19));
                 if (j0Var.s1()) {
                     hi.d dVar = new hi.d(context, j0Var.J0, true);
                     dVar.i(hd.M0(2131751767, null), false, true);

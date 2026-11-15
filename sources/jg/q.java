@@ -25,7 +25,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ho;
 import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.yn;
@@ -35,7 +35,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -224,9 +224,9 @@ public final /* synthetic */ class q implements Runnable {
                 ynVar.a(Integer.valueOf(i19));
                 break;
             case 14:
-                da0 da0Var = (da0) ((di.c1) this.d).g3;
-                View d = da0Var.d();
-                di.c1 c1Var = da0Var.f;
+                ea0 ea0Var = (ea0) ((di.c1) this.d).g3;
+                View d = ea0Var.d();
+                di.c1 c1Var = ea0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;

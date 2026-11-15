@@ -65,7 +65,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class at extends c1 implements is {
     public static String k0;
@@ -660,7 +660,7 @@ public final class at extends c1 implements is {
                         }
                         zsVar.e = zsVar.a();
                         vr messagesStorage = atVar3.getMessagesStorage();
-                        messagesStorage.a.c(new wq(5, messagesStorage, zsVar));
+                        messagesStorage.a.c(new pq(7, messagesStorage, zsVar));
                         z19 = z16;
                     } else {
                         zs zsVar2 = new zs(gjVar3.b, B0, e12, currentTimeMillis, currentTimeMillis + 86400000);
@@ -668,7 +668,7 @@ public final class at extends c1 implements is {
                         atVar3.E.add(zsVar2);
                         atVar3.F.k(zsVar2, B0);
                         vr messagesStorage2 = atVar3.getMessagesStorage();
-                        messagesStorage2.a.c(new wq(5, messagesStorage2, zsVar2));
+                        messagesStorage2.a.c(new pq(7, messagesStorage2, zsVar2));
                         z18 = z16;
                         z21 = z18;
                     }
@@ -1834,7 +1834,7 @@ public final class at extends c1 implements is {
         getAccountInstance().d().edit().putInt(q(i7), i10).commit();
         b0(i7);
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new oq(messagesStorage, 26));
+        messagesStorage.a.c(new nq(messagesStorage, 26));
         m(i7);
     }
 
@@ -3295,7 +3295,7 @@ public final class at extends c1 implements is {
                                                                 arrayList28.remove(0);
                                                             }
                                                             t0.b.grantUriPermission("com.android.systemui", d, 1);
-                                                            g0.i3(new wq(12, d, file3), 20000L);
+                                                            g0.i3(new pq(13, d, file3), 20000L);
                                                             if (!TextUtils.isEmpty(gjVar6.z)) {
                                                                 e0.w wVar5 = new e0.w(gjVar6.z, gjVar6.k.date * 1000, j0Var6);
                                                                 ArrayList arrayList29 = xVar4.e;
@@ -5793,7 +5793,7 @@ public final class at extends c1 implements is {
     }
 
     public final void a0(long j3, String str) {
-        l0.c(new fr(this, str, j3, 3));
+        l0.c(new dr(this, str, j3, 3));
     }
 
     public final void b0(int i7) {
@@ -5958,7 +5958,7 @@ public final class at extends c1 implements is {
     @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         if (i7 == ns.Y1) {
-            l0.c(new wq(11, this, (String) objArr[0]));
+            l0.c(new pq(12, this, (String) objArr[0]));
         }
     }
 

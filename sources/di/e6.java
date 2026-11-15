@@ -33,7 +33,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.oy0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e6 {
     public float A;
@@ -42,7 +42,7 @@ public final class e6 {
     public final RectF D;
     public final Path E;
     public final Paint F;
-    public final bc G;
+    public final ac G;
     public final org.telegram.ui.Components.dc H;
     public final org.telegram.ui.Components.dc I;
     public final org.telegram.ui.Components.dc J;
@@ -91,7 +91,7 @@ public final class e6 {
         this.D = new RectF();
         this.E = new Path();
         this.F = new Paint();
-        this.G = new bc(1, 25);
+        this.G = new ac(1, 25);
         this.K = new RectF();
         this.T = new te.c(0, new a1.c(this, 26), er.h, 320L);
         this.a = i7;
@@ -266,10 +266,10 @@ public final class e6 {
         RectF rectF2 = this.D;
         canvas.scale(a11, a11, rectF2.centerX(), rectF2.centerY());
         canvas.clipPath(this.E);
-        bc bcVar = this.G;
-        bcVar.g(rectF2);
-        bcVar.d();
-        bcVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.7f, -1));
+        ac acVar = this.G;
+        acVar.g(rectF2);
+        acVar.d();
+        acVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.7f, -1));
         this.C.c(rectF2.left + org.telegram.messenger.g0.L(15.0f), rectF2.centerY(), 1.0f, -1, canvas);
         canvas.restore();
         View view = this.b;
@@ -396,10 +396,10 @@ public final class e6 {
                     return;
                 }
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
-                this.k = (TL_stars.starGiftAttributeBackdrop) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                this.l = (TL_stars.starGiftAttributePattern) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                this.k = (TL_stars.starGiftAttributeBackdrop) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                this.l = (TL_stars.starGiftAttributePattern) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
                 TL_stars.starGiftAttributeModel stargiftattributemodel = this.m;
-                this.m = (TL_stars.starGiftAttributeModel) v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                this.m = (TL_stars.starGiftAttributeModel) u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
                 this.h = null;
                 this.f.setShader(null);
                 TL_stars.starGiftAttributePattern stargiftattributepattern = this.l;
@@ -419,7 +419,7 @@ public final class e6 {
                         imageReceiver.e();
                         imageReceiver.W(0);
                     }
-                    mb.c1(imageReceiver, this.m.document, ns.v1);
+                    lb.c1(imageReceiver, this.m.document, ns.v1);
                 }
                 boolean z12 = tL_starGiftUnique.burned;
                 this.L = z12;

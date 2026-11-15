@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class vh0 extends FrameLayout {
     public th0 E;
@@ -25,7 +25,7 @@ public final class vh0 extends FrameLayout {
     public sh0 H;
     public final ArrayList I;
     public final ArrayList J;
-    public n90 K;
+    public o90 K;
     public final org.telegram.ui.ActionBar.e6 L;
     public int a;
     public final int b;
@@ -271,9 +271,9 @@ public final class vh0 extends FrameLayout {
             return;
         }
         arrayList.addAll(arrayList2);
-        n90 n90Var = new n90(this.b, 1, getContext(), arrayList2, this.L);
-        this.K = n90Var;
-        n90Var.L = false;
+        o90 o90Var = new o90(this.b, 1, getContext(), arrayList2, this.L);
+        this.K = o90Var;
+        o90Var.L = false;
     }
 
     public final void j() {
@@ -283,9 +283,9 @@ public final class vh0 extends FrameLayout {
                 size = this.a;
             }
             int L = org.telegram.messenger.g0.L(size * 50);
-            n90 n90Var = this.K;
-            if (n90Var != null) {
-                L = org.telegram.messenger.k5.C(8.0f, n90Var.getMeasuredHeight(), L);
+            o90 o90Var = this.K;
+            if (o90Var != null) {
+                L = org.telegram.messenger.k5.C(8.0f, o90Var.getMeasuredHeight(), L);
             }
             nh0 nh0Var = this.e;
             if (nh0Var.getMeasuredHeight() != 0) {

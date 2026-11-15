@@ -31,12 +31,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s6 {
     public static final Comparator X = Comparator$-CC.comparingInt(new bg.d(8));
     public TL_stories.TL_storiesStealthMode B;
-    public final ai.v0 K;
+    public final ai.w0 K;
     public int N;
     public boolean R;
     public m6 S;
@@ -119,7 +119,7 @@ public final class s6 {
         this.B = tL_storiesStealthMode;
         f7 f7Var2 = this.k;
         f7Var2.b.a.c(new f6(8, f7Var2, new q5(this, 1)));
-        this.K = new ai.v0(this, i7, 5);
+        this.K = new ai.w0(this, i7, 5);
         this.w = new hi.a1(i7);
     }
 
@@ -574,7 +574,7 @@ public final class s6 {
     }
 
     public final void X(int i7, long j3) {
-        org.telegram.messenger.g0.h3(new di.z8(this, j3, i7, 1));
+        org.telegram.messenger.g0.h3(new di.y8(this, j3, i7, 1));
     }
 
     public final boolean Y(TL_stories.PeerStories peerStories, TL_stories.StoryItem storyItem, boolean z10) {
@@ -806,9 +806,9 @@ public final class s6 {
             f7 f7Var = this.k;
             f7Var.b.a.c(new r5(f7Var, arrayList4, z12, z10, oVar, 1));
         }
-        ai.v0 v0Var = this.K;
-        org.telegram.messenger.g0.r(v0Var);
-        v0Var.run();
+        ai.w0 w0Var = this.K;
+        org.telegram.messenger.g0.r(w0Var);
+        w0Var.run();
     }
 
     public final void c(int i7, long j3, TL_stories.StoryItem storyItem) {
@@ -1207,9 +1207,9 @@ public final class s6 {
             while (true) {
                 if (i10 >= arrayList2.size()) {
                     arrayList2.add(0, peerStories);
-                    ai.v0 v0Var = this.K;
-                    org.telegram.messenger.g0.r(v0Var);
-                    v0Var.run();
+                    ai.w0 w0Var = this.K;
+                    org.telegram.messenger.g0.r(w0Var);
+                    w0Var.run();
                     break;
                 }
                 if (org.telegram.messenger.m5.o(((TL_stories.PeerStories) arrayList2.get(i10)).peer) == j3) {
@@ -1601,7 +1601,7 @@ public final class s6 {
         togglepinned.pinned = z10;
         int i11 = this.a;
         togglepinned.peer = np.s1(i11).j1(j3);
-        ConnectionsManager.getInstance(i11).sendRequest(togglepinned, new di.w7(y2Var, 1));
+        ConnectionsManager.getInstance(i11).sendRequest(togglepinned, new di.v7(y2Var, 1));
     }
 
     public final void s(ArrayList arrayList, long j3) {

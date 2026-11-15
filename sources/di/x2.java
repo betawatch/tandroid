@@ -48,7 +48,7 @@ import org.telegram.ui.th;
 import org.telegram.ui.yw;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x2 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class x2 implements Runnable {
         Object obj = this.c;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.cc.a0((mb) obj).I(R.raw.stars_topup, hd.M0(2131750221, null), hd.H(',', "Gift2Converted", (int) j3)).k(true);
+                org.telegram.ui.Components.cc.a0((lb) obj).I(R.raw.stars_topup, hd.M0(2131750221, null), hd.H(',', "Gift2Converted", (int) j3)).k(true);
                 break;
             case 1:
                 org.telegram.ui.Components.cc.a0((z41) obj).I(R.raw.stars_topup, hd.M0(2131750221, null), hd.H(',', "Gift2ConvertedChannel", (int) j3)).k(true);
@@ -119,7 +119,7 @@ public final /* synthetic */ class x2 implements Runnable {
                 hi.q8 q8Var = l8Var.a0;
                 org.telegram.ui.ActionBar.e2 e2Var = q8Var.j1;
                 int i12 = hi.q8.Y1;
-                org.telegram.ui.Components.t4.P(context, e2Var, q8Var.J0, new ai.c0(l8Var, j3, 2));
+                org.telegram.ui.Components.t4.P(context, e2Var, q8Var.J0, new ai.d0(l8Var, j3, 2));
                 break;
             case 8:
                 hi.sa saVar2 = (hi.sa) obj;
@@ -338,7 +338,7 @@ public final /* synthetic */ class x2 implements Runnable {
                 } else if (T2 != null) {
                     e6Var = T2.getResourceProvider();
                 }
-                new cb(u02, e6Var, this.b, 15, "", new ze0(cf0Var, 0), 0L).show();
+                new bb(u02, e6Var, this.b, 15, "", new ze0(cf0Var, 0), 0L).show();
                 break;
             case 25:
                 yw ywVar = (yw) obj;

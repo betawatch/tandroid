@@ -40,7 +40,7 @@ import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.ri;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class z9 extends r41 {
     public String E;
@@ -126,7 +126,7 @@ public final class z9 extends r41 {
         }
         if (l02.startsWith("@")) {
             int i7 = z9Var.currentAccount;
-            np.s1(i7).d2().a(l02.substring(1), null, new ai.x1(new t9(z9Var, 1), i7));
+            np.s1(i7).d2().a(l02.substring(1), null, new ai.y1(new t9(z9Var, 1), i7));
             return;
         }
         z9Var.O.setText(l02);
@@ -139,11 +139,11 @@ public final class z9 extends r41 {
     public static void f0(z9 z9Var, String str, int i7) {
         z9Var.L = null;
         int i10 = z9Var.currentAccount;
-        ai.x1 x1Var = new ai.x1(z9Var, i7, 8);
+        ai.y1 y1Var = new ai.y1(z9Var, i7, 8);
         TL_toncenter.performApiRequest performapirequest = new TL_toncenter.performApiRequest();
         performapirequest.endpoint = "/api/v3/dns/records";
         performapirequest.query = "domain=" + Uri.encode(str) + "&limit=2";
-        z9Var.F = ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(1), new bi.e4(29, str, x1Var), np.s1(i10).O3, 0);
+        z9Var.F = ConnectionsManager.getInstance(i10).sendRequestTyped(performapirequest, new d3.b(1), new bi.e4(29, str, y1Var), np.s1(i10).O3, 0);
     }
 
     public static void g0(View view, boolean z10, boolean z11) {
@@ -374,7 +374,7 @@ public final class z9 extends r41 {
         if (obj instanceof TLRPC.User) {
             TLRPC.User user = (TLRPC.User) obj;
             int i7 = this.currentAccount;
-            vr.a0(i7).a.c(new di.j9(i7, user.id, 1));
+            vr.a0(i7).a.c(new di.i9(i7, user.id, 1));
             org.telegram.messenger.g0.v1(this.O);
             m0(null, user);
         }

@@ -11,7 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
-import di.mb;
+import di.lb;
 import hi.ia;
 import hi.sa;
 import hi.u9;
@@ -46,7 +46,7 @@ import org.telegram.ui.d8;
 import org.telegram.ui.dn;
 import org.telegram.ui.y7;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class o2 extends View {
     public final /* synthetic */ int a;
@@ -134,9 +134,9 @@ public final class o2 extends View {
                 if (n2Var != null && !n2Var.i) {
                     n2Var.i = true;
                     n2Var.a();
-                    ai.f0 f0Var = new ai.f0(n2Var, 1);
-                    n2Var.h = f0Var;
-                    qc.a(f0Var);
+                    ai.g0 g0Var = new ai.g0(n2Var, 1);
+                    n2Var.h = g0Var;
+                    qc.a(g0Var);
                     break;
                 }
                 break;
@@ -163,10 +163,10 @@ public final class o2 extends View {
                 if (n2Var != null && n2Var.i) {
                     n2Var.i = false;
                     n2Var.a();
-                    ai.f0 f0Var = n2Var.h;
+                    ai.g0 g0Var = n2Var.h;
                     HashSet hashSet = qc.n;
                     if (hashSet != null) {
-                        hashSet.remove(f0Var);
+                        hashSet.remove(g0Var);
                         break;
                     }
                 }
@@ -522,13 +522,13 @@ public final class o2 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 1:
-                mb mbVar = (mb) this.b;
-                if (mbVar.I) {
-                    i11 = (mbVar.p0().getMeasuredHeight() + mbVar.J) - org.telegram.messenger.g0.L(16.0f);
+                lb lbVar = (lb) this.b;
+                if (lbVar.I) {
+                    i11 = (lbVar.p0().getMeasuredHeight() + lbVar.J) - org.telegram.messenger.g0.L(16.0f);
                 } else {
-                    int L = org.telegram.messenger.g0.L(140.0f) + mbVar.J;
-                    if (org.telegram.messenger.g0.L(24.0f) + mbVar.E.getMeasuredHeight() > L) {
-                        L = org.telegram.messenger.g0.L(24.0f) + mbVar.E.getMeasuredHeight();
+                    int L = org.telegram.messenger.g0.L(140.0f) + lbVar.J;
+                    if (org.telegram.messenger.g0.L(24.0f) + lbVar.E.getMeasuredHeight() > L) {
+                        L = org.telegram.messenger.g0.L(24.0f) + lbVar.E.getMeasuredHeight();
                     }
                     i11 = L;
                 }
@@ -678,10 +678,10 @@ public final class o2 extends View {
                         if (n2Var.i) {
                             n2Var.i = false;
                             n2Var.a();
-                            ai.f0 f0Var = n2Var.h;
+                            ai.g0 g0Var = n2Var.h;
                             HashSet hashSet = qc.n;
                             if (hashSet != null) {
-                                hashSet.remove(f0Var);
+                                hashSet.remove(g0Var);
                             }
                         }
                     }
@@ -695,9 +695,9 @@ public final class o2 extends View {
                         if (!n2Var2.i) {
                             n2Var2.i = true;
                             n2Var2.a();
-                            ai.f0 f0Var2 = new ai.f0(n2Var2, 1);
-                            n2Var2.h = f0Var2;
-                            qc.a(f0Var2);
+                            ai.g0 g0Var2 = new ai.g0(n2Var2, 1);
+                            n2Var2.h = g0Var2;
+                            qc.a(g0Var2);
                             break;
                         }
                     }

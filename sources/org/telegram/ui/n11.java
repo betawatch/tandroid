@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class n11 extends FrameLayout implements org.telegram.messenger.is, org.telegram.ui.ActionBar.z5 {
     public static String[] c2;
@@ -88,7 +88,7 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
     public long R1;
     public boolean S;
     public List S0;
-    public di.bc S1;
+    public di.ac S1;
     public final ArrayList T;
     public x01 T0;
     public final rz0 T1;
@@ -137,7 +137,7 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
     public ValueAnimator j1;
     public final FrameLayout k0;
     public Drawable k1;
-    public final ai.j0 l0;
+    public final ai.k0 l0;
     public PorterDuffColorFilter l1;
     public final org.telegram.ui.Components.i9 m0;
     public final boolean m1;
@@ -996,7 +996,7 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
             }
             arrayList21.clear();
             if (i27 != 0 || i27 == 12 || i27 == 9 || i27 == 10) {
-                di.m8 G = di.v8.y(i26, false).G(getDialogId(), true);
+                di.l8 G = di.u8.y(i26, false).G(getDialogId(), true);
                 G.a();
                 arrayList4 = new ArrayList();
                 ArrayList arrayList29 = G.l;
@@ -1318,7 +1318,7 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
         arrayList21.clear();
         if (i27 != 0) {
         }
-        di.m8 G2 = di.v8.y(i26, false).G(getDialogId(), true);
+        di.l8 G2 = di.u8.y(i26, false).G(getDialogId(), true);
         G2.a();
         arrayList4 = new ArrayList();
         ArrayList arrayList292 = G2.l;
@@ -1584,9 +1584,9 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
         return Math.max(300L, Math.min(45, this.Q1 - this.P1) * 25) + f() + 16;
     }
 
-    public di.bc getCollectionParticles() {
+    public di.ac getCollectionParticles() {
         if (this.S1 == null) {
-            this.S1 = new di.bc(1, 8);
+            this.S1 = new di.ac(1, 8);
         }
         return this.S1;
     }
@@ -2469,10 +2469,10 @@ public abstract class n11 extends FrameLayout implements org.telegram.messenger.
         c01Var.O = new a01(this, 0);
         eh0 eh0Var = new eh0(context, 7);
         this.h0 = eh0Var;
-        ai.j0 j0Var = new ai.j0(this, context);
-        this.l0 = j0Var;
-        j0Var.addView(l01Var, c8.ja.d(-1, -1.0f, org.telegram.messenger.ns.E1, 0.0f, 0.0f, 0.0f, 0.0f));
-        eh0Var.addView(j0Var, c8.ja.d(-1, -1.0f, org.telegram.messenger.ns.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        ai.k0 k0Var = new ai.k0(this, context);
+        this.l0 = k0Var;
+        k0Var.addView(l01Var, c8.ja.d(-1, -1.0f, org.telegram.messenger.ns.E1, 0.0f, 0.0f, 0.0f, 0.0f));
+        eh0Var.addView(k0Var, c8.ja.d(-1, -1.0f, org.telegram.messenger.ns.E1, 0.0f, 0.0f, 0.0f, 0.0f));
         b01 b01Var = new b01(this, context);
         this.j0 = b01Var;
         if (b01Var.getItemAnimator() != null) {

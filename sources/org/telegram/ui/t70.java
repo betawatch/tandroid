@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t70 implements org.telegram.messenger.i9, org.telegram.messenger.j9, org.telegram.messenger.db, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.eb0, org.telegram.messenger.t10, org.telegram.ui.Components.vt0, org.telegram.ui.ActionBar.n6, org.telegram.ui.ActionBar.o6 {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class t70 implements org.telegram.messenger.i9, org
 
     @Override // org.telegram.messenger.t10
     public Object d(Number number, Object obj) {
-        return ((Integer) number).intValue() == 0 ? di.mb.a1(false, org.telegram.messenger.hd.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.hd.E(r4.intValue(), ',');
+        return ((Integer) number).intValue() == 0 ? di.lb.a1(false, org.telegram.messenger.hd.H(',', "Stars", ((Integer) obj).intValue()), 0.66f, null) : org.telegram.messenger.hd.E(r4.intValue(), ',');
     }
 
     @Override // org.telegram.ui.Components.eb0

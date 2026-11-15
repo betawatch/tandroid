@@ -110,7 +110,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.j71;
 import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class j6 {
     public static int A;
@@ -8369,7 +8369,7 @@ public abstract class j6 {
             return t02;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        Utilities.i.c(new ai.e1(countDownLatch, 1));
+        Utilities.i.c(new ai.f1(countDownLatch, 1));
         try {
             countDownLatch.await();
         } catch (Exception e10) {

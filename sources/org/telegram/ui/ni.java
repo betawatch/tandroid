@@ -6,7 +6,7 @@ import android.view.View;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ni implements org.telegram.ui.Components.hj0 {
     public final /* synthetic */ an a;
@@ -111,7 +111,7 @@ public final class ni implements org.telegram.ui.Components.hj0 {
         if (z11) {
             org.telegram.ui.Cells.t0 t0Var3 = (org.telegram.ui.Cells.t0) view;
             if (t0Var3.getMessageObject() != null && (t0Var3.getMessageObject().k.action instanceof TLRPC.TL_messageActionSetSameChatWallPaper)) {
-                org.telegram.messenger.g0.i3(new ai.v0(this, t0Var3.getMessageObject().N1(), 24), 16L);
+                org.telegram.messenger.g0.i3(new ai.w0(this, t0Var3.getMessageObject().N1(), 24), 16L);
                 return;
             }
         }

@@ -34,7 +34,7 @@ import org.telegram.ui.e81;
 import org.telegram.ui.k81;
 import org.telegram.ui.l81;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,10 +61,10 @@ public final /* synthetic */ class sp0 implements Runnable {
             try {
                 v5.d dVar = (v5.d) cVar.c;
                 Objects.requireNonNull(dVar);
-                ((v5.g) cVar2).f(new tg.a2(dVar, 3));
+                ((v5.g) cVar2).f(new tg.z1(dVar, 3));
                 NetworkInfo activeNetworkInfo = ((ConnectivityManager) ((Context) cVar.a).getSystemService("connectivity")).getActiveNetworkInfo();
                 if (activeNetworkInfo == null || !activeNetworkInfo.isConnected()) {
-                    ((v5.g) cVar2).f(new ai.q1(cVar, iVar, i7, 19));
+                    ((v5.g) cVar2).f(new ai.r1(cVar, iVar, i7, 19));
                 } else {
                     cVar.c(iVar, i7);
                 }
@@ -762,8 +762,8 @@ public final /* synthetic */ class sp0 implements Runnable {
                 b1Var.e.a(x0Var2);
                 return;
             case 23:
-                tg.f2 f2Var = (tg.f2) this.c;
-                f2Var.m((Bitmap) this.d, this.b, f2Var.U, f2Var.V, (org.telegram.ui.ln0) this.e);
+                tg.e2 e2Var = (tg.e2) this.c;
+                e2Var.m((Bitmap) this.d, this.b, e2Var.U, e2Var.V, (org.telegram.ui.ln0) this.e);
                 return;
             case 24:
                 a();

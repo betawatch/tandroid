@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.view.View;
-import di.v8;
+import di.u8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         }
                         final int i12 = 0;
                         if (starGift != null) {
-                            v8.y(i11, false).i(u6Var.Y1, u6Var.m2, u6Var.n2, u6Var.V1, u6Var.d1(), new f6(u6Var, i10));
+                            u8.y(i11, false).i(u6Var.Y1, u6Var.m2, u6Var.n2, u6Var.V1, u6Var.d1(), new f6(u6Var, i10));
                             break;
                         } else {
                             ug.j jVar = u6Var.a2;
@@ -134,10 +134,10 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                                         if (!(tLObject instanceof TLRPC.TL_premiumGiftCodeOption)) {
                                             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) tLObject;
                                             if (!"XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency)) {
-                                                wg.q.k(new ArrayList(Arrays.asList(a22)), tL_premiumGiftCodeOption, null, u6Var.d1(), new t6(u6Var, 0), new ai.u1(4, u6Var, a22), new ai.f0(u6Var, 3));
+                                                wg.q.k(new ArrayList(Arrays.asList(a22)), tL_premiumGiftCodeOption, null, u6Var.d1(), new t6(u6Var, 0), new ai.v1(4, u6Var, a22), new ai.g0(u6Var, 3));
                                                 break;
                                             } else {
-                                                v8.y(i11, false).g(u6Var.V1, tL_premiumGiftCodeOption, u6Var.d1(), new s10() { // from class: bi.g6
+                                                u8.y(i11, false).g(u6Var.V1, tL_premiumGiftCodeOption, u6Var.d1(), new s10() { // from class: bi.g6
                                                     @Override // org.telegram.messenger.s10
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i13 = i10;
@@ -211,7 +211,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                                                     }
                                                 }
                                             } else {
-                                                v8.y(i11, false).g(u6Var.V1, tL_premiumGiftOption, u6Var.d1(), new s10() { // from class: bi.g6
+                                                u8.y(i11, false).g(u6Var.V1, tL_premiumGiftOption, u6Var.d1(), new s10() { // from class: bi.g6
                                                     @Override // org.telegram.messenger.s10
                                                     public final void a(Object obj4, Object obj5) {
                                                         int i13 = i12;

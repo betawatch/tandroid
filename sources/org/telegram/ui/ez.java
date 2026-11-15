@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ez extends rg.b {
     public final Context d;
@@ -113,10 +113,10 @@ public final class ez extends rg.b {
                     hzVar.J.setText(org.telegram.messenger.hd.M0(2131750622, null));
                     break;
                 case 10:
-                    fm0 fm0Var = (fm0) view;
-                    fm0Var.setCloseAsLock(!hzVar.getUserConfig().q());
-                    fm0Var.a(hzVar.getUserConfig().q() ? hzVar.F : -1, false);
-                    fm0Var.setOnColorClick(new org.telegram.ui.Components.gh(16, this, fm0Var));
+                    gm0 gm0Var = (gm0) view;
+                    gm0Var.setCloseAsLock(!hzVar.getUserConfig().q());
+                    gm0Var.a(hzVar.getUserConfig().q() ? hzVar.F : -1, false);
+                    gm0Var.setOnColorClick(new org.telegram.ui.Components.gh(16, this, gm0Var));
                     break;
                 case 11:
                     yy yyVar = (yy) view;
@@ -262,7 +262,7 @@ public final class ez extends rg.b {
                 Activity parentActivity = hzVar.getParentActivity();
                 i12 = ((org.telegram.ui.ActionBar.e2) hzVar).currentAccount;
                 e6Var2 = ((org.telegram.ui.ActionBar.e2) hzVar).resourceProvider;
-                view = new fm0(2, i12, parentActivity, e6Var2);
+                view = new gm0(2, i12, parentActivity, e6Var2);
                 break;
             case 11:
                 e6Var3 = ((org.telegram.ui.ActionBar.e2) hzVar).resourceProvider;

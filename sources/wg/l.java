@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.ActionBar.u2;
 import org.telegram.ui.Components.xb;
-import tg.a2;
+import tg.z1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l extends u2 {
     public static l p1;
@@ -109,8 +109,8 @@ public final class l extends u2 {
         t1 t1Var = alertDialog$Builder.a;
         t1Var.S = M0;
         t1Var.U = i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.M0(2131753596, "BoostingApplyChangesCountries") : hd.M0(2131753597, "BoostingApplyChangesChannels") : hd.M0(2131753595, "BoostingApplyChangesUsers");
-        alertDialog$Builder.k(hd.M0(2131754216, "ApplyTheme"), new a2(p0Var, 11));
-        alertDialog$Builder.h(hd.M0(2131751406, "Discard"), new a2(p0Var2, 8));
+        alertDialog$Builder.k(hd.M0(2131754216, "ApplyTheme"), new z1(p0Var, 11));
+        alertDialog$Builder.h(hd.M0(2131751406, "Discard"), new z1(p0Var2, 8));
         alertDialog$Builder.p();
     }
 }

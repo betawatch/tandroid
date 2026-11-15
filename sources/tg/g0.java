@@ -92,14 +92,14 @@ import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.rt0;
 import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.u5;
-import org.telegram.ui.dn0;
 import org.telegram.ui.eh0;
+import org.telegram.ui.en0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.nb1;
 import org.telegram.ui.rv;
 import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
     public float A0;
@@ -197,15 +197,15 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r14v28, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r1v22, types: [tg.o2] */
-    /* JADX WARN: Type inference failed for: r1v25, types: [android.view.View, tg.g2, tg.y] */
+    /* JADX WARN: Type inference failed for: r1v22, types: [tg.n2] */
+    /* JADX WARN: Type inference failed for: r1v25, types: [android.view.View, tg.f2, tg.y] */
     /* JADX WARN: Type inference failed for: r1v6, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     /* JADX WARN: Type inference failed for: r26v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Components.rt0, org.telegram.ui.Components.st0, tg.c1, tg.g0, tg.g1] */
     /* JADX WARN: Type inference failed for: r4v43 */
     /* JADX WARN: Type inference failed for: r4v44, types: [int] */
     /* JADX WARN: Type inference failed for: r4v52 */
     /* JADX WARN: Type inference failed for: r5v10, types: [tg.u] */
-    public g0(Context context, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, xe xeVar, dn0 dn0Var, final e6 e6Var) {
+    public g0(Context context, Activity activity, int i7, Bitmap bitmap, Bitmap bitmap2, int i10, ArrayList arrayList, xe xeVar, en0 en0Var, final e6 e6Var) {
         super(context, activity);
         int i11;
         int i12;
@@ -375,7 +375,7 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         k1Var.a = new org.telegram.ui.ActionBar.z(tp0Var, 25);
         b0 b0Var = new b0(tp0Var, context, new sg.i0(getPaintingSize(), bitmap2, i10, null), bitmap, bitmap2);
         this.G0 = b0Var;
-        b0Var.setDelegate(new sg.h0(tp0Var, dn0Var, z10, i13));
+        b0Var.setDelegate(new sg.h0(tp0Var, en0Var, z10, i13));
         b0Var.setUndoStore(k1Var);
         b0Var.setQueue(q5Var);
         b0Var.setVisibility(4);
@@ -527,8 +527,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     case 2:
                         tp0 tp0Var4 = tp0Var;
                         j jVar = tp0Var4.C0;
-                        if (jVar instanceof o2) {
-                            org.telegram.messenger.g0.v1(((o2) jVar).getFocusedView());
+                        if (jVar instanceof n2) {
+                            org.telegram.messenger.g0.v1(((n2) jVar).getFocusedView());
                         }
                         if (tp0Var4.Q1) {
                             tp0Var4.k0(false);
@@ -608,8 +608,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     case 2:
                         tp0 tp0Var4 = tp0Var;
                         j jVar = tp0Var4.C0;
-                        if (jVar instanceof o2) {
-                            org.telegram.messenger.g0.v1(((o2) jVar).getFocusedView());
+                        if (jVar instanceof n2) {
+                            org.telegram.messenger.g0.v1(((n2) jVar).getFocusedView());
                         }
                         if (tp0Var4.Q1) {
                             tp0Var4.k0(false);
@@ -672,8 +672,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     case 2:
                         tp0 tp0Var4 = tp0Var;
                         j jVar = tp0Var4.C0;
-                        if (jVar instanceof o2) {
-                            org.telegram.messenger.g0.v1(((o2) jVar).getFocusedView());
+                        if (jVar instanceof n2) {
+                            org.telegram.messenger.g0.v1(((n2) jVar).getFocusedView());
                         }
                         if (tp0Var4.Q1) {
                             tp0Var4.k0(false);
@@ -738,8 +738,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     case 2:
                         tp0 tp0Var4 = tp0Var;
                         j jVar = tp0Var4.C0;
-                        if (jVar instanceof o2) {
-                            org.telegram.messenger.g0.v1(((o2) jVar).getFocusedView());
+                        if (jVar instanceof n2) {
+                            org.telegram.messenger.g0.v1(((n2) jVar).getFocusedView());
                         }
                         if (tp0Var4.Q1) {
                             tp0Var4.k0(false);
@@ -916,17 +916,17 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         if (jVar2 != null) {
             PointF A0 = g0Var.A0(jVar2);
             j jVar3 = g0Var.C0;
-            if (jVar3 instanceof g2) {
-                g2 g2Var = new g2(g0Var.getContext(), (g2) g0Var.C0, A0);
-                g2Var.setDelegate(g0Var);
-                c0Var.addView(g2Var);
-                jVar = g2Var;
-            } else if (jVar3 instanceof o2) {
-                o2 o2Var = new o2(g0Var.getContext(), (o2) g0Var.C0, A0);
-                o2Var.setDelegate(g0Var);
-                o2Var.setMaxWidth((int) (g0Var.getPaintingSize().a - 20.0f));
-                c0Var.addView(o2Var, ja.c(-2.0f, -2));
-                jVar = o2Var;
+            if (jVar3 instanceof f2) {
+                f2 f2Var = new f2(g0Var.getContext(), (f2) g0Var.C0, A0);
+                f2Var.setDelegate(g0Var);
+                c0Var.addView(f2Var);
+                jVar = f2Var;
+            } else if (jVar3 instanceof n2) {
+                n2 n2Var = new n2(g0Var.getContext(), (n2) g0Var.C0, A0);
+                n2Var.setDelegate(g0Var);
+                n2Var.setMaxWidth((int) (g0Var.getPaintingSize().a - 20.0f));
+                c0Var.addView(n2Var, ja.c(-2.0f, -2));
+                jVar = n2Var;
             } else {
                 jVar = null;
             }
@@ -1003,8 +1003,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
     private void setTextType(int i7) {
         this.E0 = i7;
         j jVar = this.C0;
-        if (jVar instanceof o2) {
-            ((o2) jVar).setType(i7);
+        if (jVar instanceof n2) {
+            ((n2) jVar).setType(i7);
         }
         sg.k0 e10 = sg.k0.e(this.z1);
         e10.h = i7;
@@ -1061,16 +1061,16 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         this.P0.addView(this.c1, ja.l(1.0f, 0, -2));
     }
 
-    public static void u0(o2 o2Var, int i7) {
-        o2Var.setAlign(i7);
+    public static void u0(n2 n2Var, int i7) {
+        n2Var.setAlign(i7);
         int i10 = 2;
-        o2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
+        n2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
         if (i7 == 1) {
             i10 = 4;
         } else if (i7 == 2 ? !hd.a0 : hd.a0) {
             i10 = 3;
         }
-        o2Var.getEditText().setTextAlignment(i10);
+        n2Var.getEditText().setTextAlignment(i10);
     }
 
     @Override // tg.g1
@@ -1212,8 +1212,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         this.X1 = z10;
         boolean z12 = this.R1;
         j jVar = this.C0;
-        if (jVar instanceof o2) {
-            this.R1 = ((o2) jVar).getEditText().isFocused() && i7 > 0;
+        if (jVar instanceof n2) {
+            this.R1 = ((n2) jVar).getEditText().isFocused() && i7 > 0;
         } else {
             this.R1 = false;
         }
@@ -1271,8 +1271,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
     @Override // tg.c1
     public final void c(int i7) {
         j jVar = this.C0;
-        if (jVar instanceof o2) {
-            u0((o2) jVar, i7);
+        if (jVar instanceof n2) {
+            u0((n2) jVar, i7);
             sg.k0 e10 = sg.k0.e(this.z1);
             e10.g = i7;
             e10.a.edit().putInt("text_alignment", i7).apply();
@@ -1291,15 +1291,15 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
     @Override // org.telegram.messenger.is
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c0 c0Var;
-        o2 o2Var;
+        n2 n2Var;
         String str;
         if (i7 != ns.C5 || (c0Var = this.J0) == null) {
             return;
         }
         for (int i11 = 0; i11 < c0Var.getChildCount(); i11++) {
             View childAt = c0Var.getChildAt(i11);
-            if ((childAt instanceof o2) && (str = (o2Var = (o2) childAt).B0) != null) {
-                o2Var.setTypeface(str);
+            if ((childAt instanceof n2) && (str = (n2Var = (n2) childAt).B0) != null) {
+                n2Var.setTypeface(str);
             }
         }
     }
@@ -1507,15 +1507,15 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                         while (i13 < c0Var.getChildCount()) {
                             View childAt = c0Var.getChildAt(i13);
                             sg.l0 l0Var3 = l0Var2;
-                            if (childAt instanceof g2) {
-                                g2 g2Var = (g2) childAt;
-                                if (g2Var.getAnchor() == i11) {
-                                    PointF position = g2Var.getPosition();
+                            if (childAt instanceof f2) {
+                                f2 f2Var = (f2) childAt;
+                                if (f2Var.getAnchor() == i11) {
+                                    PointF position = f2Var.getPosition();
                                     l5Var3 = l5Var4;
                                     i7 = size;
                                     f11 = f13;
                                     float hypot = (float) Math.hypot(position.x - r4.x, position.y - r4.y);
-                                    if ((j3 == g2Var.getSticker().id || this.X0.size() > 1) && hypot < f11) {
+                                    if ((j3 == f2Var.getSticker().id || this.X0.size() > 1) && hypot < f11) {
                                         break;
                                     }
                                     i13++;
@@ -1644,8 +1644,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         ArrayList arrayList = null;
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = c0Var.getChildAt(i7);
-            if (childAt instanceof g2) {
-                TLRPC.Document sticker = ((g2) childAt).getSticker();
+            if (childAt instanceof f2) {
+                TLRPC.Document sticker = ((f2) childAt).getSticker();
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
@@ -1658,8 +1658,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     tL_inputDocument.file_reference = new byte[0];
                 }
                 arrayList.add(tL_inputDocument);
-            } else if (childAt instanceof o2) {
-                CharSequence text = ((o2) childAt).getText();
+            } else if (childAt instanceof n2) {
+                CharSequence text = ((n2) childAt).getText();
                 if ((text instanceof Spanned) && (p5VarArr = (p5[]) ((Spanned) text).getSpans(0, text.length(), p5.class)) != null) {
                     for (p5 p5Var : p5VarArr) {
                         if (p5Var != null) {
@@ -1723,48 +1723,48 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         return this.K0;
     }
 
-    public final o2 h0(boolean z10) {
+    public final n2 h0(boolean z10) {
         ((tp0) this).Y1.h0.isFocusable();
         nt0 paintingSize = getPaintingSize();
         PointF A0 = A0(null);
-        o2 o2Var = new o2(getContext(), A0, (int) (paintingSize.a / 9.0f), "", this.u1, this.E0);
+        n2 n2Var = new n2(getContext(), A0, (int) (paintingSize.a / 9.0f), "", this.u1, this.E0);
         float f10 = paintingSize.a / 9.0f;
         n nVar = new n(this, 2);
-        o2Var.x0 = (int) (0.5f * f10);
-        o2Var.y0 = (int) (f10 * 2.0f);
-        o2Var.z0 = nVar;
+        n2Var.x0 = (int) (0.5f * f10);
+        n2Var.y0 = (int) (f10 * 2.0f);
+        n2Var.z0 = nVar;
         float f11 = A0.x;
         c0 c0Var = this.J0;
         if (f11 == c0Var.getMeasuredWidth() / 2.0f) {
-            o2Var.setStickyX(2);
+            n2Var.setStickyX(2);
         }
         if (A0.y == c0Var.getMeasuredHeight() / 2.0f) {
-            o2Var.setStickyY(2);
+            n2Var.setStickyY(2);
         }
-        o2Var.setDelegate(this);
-        o2Var.setMaxWidth((int) (paintingSize.a - 20.0f));
+        n2Var.setDelegate(this);
+        n2Var.setMaxWidth((int) (paintingSize.a - 20.0f));
         int i7 = this.z1;
-        o2Var.setTypeface(sg.k0.e(i7).j);
-        o2Var.setType(sg.k0.e(i7).h);
-        c0Var.addView(o2Var, ja.c(-2.0f, -2));
+        n2Var.setTypeface(sg.k0.e(i7).j);
+        n2Var.setType(sg.k0.e(i7).h);
+        c0Var.addView(n2Var, ja.c(-2.0f, -2));
         xe xeVar = this.r0;
         if (xeVar != null) {
-            o2Var.j(1.0f / xeVar.c);
-            o2Var.f(-(xeVar.k + xeVar.d));
+            n2Var.j(1.0f / xeVar.c);
+            n2Var.f(-(xeVar.k + xeVar.d));
         }
         if (z10) {
-            p0(o2Var);
-            o2Var.q();
-            r0(o2Var, false);
-            o2Var.getFocusedView().requestFocus();
-            org.telegram.messenger.g0.J3(o2Var.getFocusedView());
+            p0(n2Var);
+            n2Var.q();
+            r0(n2Var, false);
+            n2Var.getFocusedView().requestFocus();
+            org.telegram.messenger.g0.J3(n2Var.getFocusedView());
             this.D0 = true;
             int i10 = sg.k0.e(i7).g;
             e1 e1Var = this.e1;
             e1Var.d(i10, true);
             e1Var.setOutlineType(sg.k0.e(i7).h);
         }
-        return o2Var;
+        return n2Var;
     }
 
     public final boolean i(MotionEvent motionEvent) {
@@ -2016,7 +2016,7 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         if (jVar == jVar2 && jVar2 != null) {
             jVar2.l(jVar2.n0, false);
             this.C0 = null;
-            if (jVar instanceof o2) {
+            if (jVar instanceof n2) {
                 ValueAnimator valueAnimator = this.T0;
                 if (valueAnimator != null && this.R0 != 0) {
                     valueAnimator.cancel();
@@ -2046,7 +2046,7 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         g0 g0Var;
         boolean z11;
         int i7;
-        boolean z12 = jVar instanceof o2;
+        boolean z12 = jVar instanceof n2;
         int i10 = 2;
         if (z12 && (((i7 = this.R0) == -1 && this.Q0 != 2) || (i7 != -1 && i7 != 2))) {
             ValueAnimator valueAnimator = this.T0;
@@ -2059,8 +2059,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
             B0(2);
         }
         if (z12 && z10) {
-            o2 o2Var = (o2) jVar;
-            int gravity = o2Var.getEditText().getGravity();
+            n2 n2Var = (n2) jVar;
+            int gravity = n2Var.getEditText().getGravity();
             if (gravity == 17) {
                 i10 = 1;
             } else if (gravity != 21) {
@@ -2068,8 +2068,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
             }
             e1 e1Var = this.e1;
             e1Var.setAlignment(i10);
-            e1Var.setTypeface(o2Var.getTypeface().a);
-            e1Var.e(o2Var.getType(), true);
+            e1Var.setTypeface(n2Var.getTypeface().a);
+            e1Var.e(n2Var.getType(), true);
             this.N0.invalidate();
         }
         j jVar2 = this.C0;
@@ -2083,8 +2083,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
                     y0(new s(this, jVar2, 1), this, 51, i02[0], i02[1] - org.telegram.messenger.g0.L(32.0f));
                     return true;
                 }
-                if (jVar2 instanceof o2) {
-                    org.telegram.messenger.g0.J3(((o2) jVar2).getFocusedView());
+                if (jVar2 instanceof n2) {
+                    org.telegram.messenger.g0.J3(((n2) jVar2).getFocusedView());
                     k0(false);
                 }
                 return true;
@@ -2092,16 +2092,16 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
             g0Var = this;
             jVar2.l(jVar2.n0, false);
             j jVar3 = g0Var.C0;
-            if (jVar3 instanceof o2) {
-                o2 o2Var2 = (o2) jVar3;
-                n2 n2Var = o2Var2.r0;
-                n2Var.clearFocus();
-                n2Var.setEnabled(false);
-                n2Var.setClickable(false);
-                o2Var2.m();
+            if (jVar3 instanceof n2) {
+                n2 n2Var2 = (n2) jVar3;
+                m2 m2Var = n2Var2.r0;
+                m2Var.clearFocus();
+                m2Var.setEnabled(false);
+                m2Var.setClickable(false);
+                n2Var2.m();
                 if (!z12) {
                     g0Var.D0 = false;
-                    org.telegram.messenger.g0.v1(((o2) g0Var.C0).getFocusedView());
+                    org.telegram.messenger.g0.v1(((n2) g0Var.C0).getFocusedView());
                     k0(false);
                 }
             }
@@ -2109,7 +2109,7 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         }
         j jVar4 = g0Var.C0;
         g0Var.C0 = jVar;
-        if ((jVar4 instanceof o2) && TextUtils.isEmpty(((o2) jVar4).getText())) {
+        if ((jVar4 instanceof n2) && TextUtils.isEmpty(((n2) jVar4).getText())) {
             q0(jVar4);
         }
         j jVar5 = g0Var.C0;
@@ -2136,18 +2136,18 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         jVar5.l(eh0Var, true);
         g0Var.J0.bringChildToFront(g0Var.C0);
         j jVar6 = g0Var.C0;
-        if (!(jVar6 instanceof o2)) {
+        if (!(jVar6 instanceof n2)) {
             m1Var.setValueOverride(ffVar);
             m1Var.setShowPreview(true);
             h1Var.c = ffVar.get();
             s0(h1Var, null);
             return true;
         }
-        o2 o2Var3 = (o2) jVar6;
-        o2Var3.A0 = false;
-        o2Var3.getSwatch().c = h1Var.c;
-        s0(o2Var3.getSwatch(), null);
-        m1Var.setValueOverride(new w4(o2Var3, (int) (g0Var.B0.a / 9.0f), 1));
+        n2 n2Var3 = (n2) jVar6;
+        n2Var3.A0 = false;
+        n2Var3.getSwatch().c = h1Var.c;
+        s0(n2Var3.getSwatch(), null);
+        m1Var.setValueOverride(new w4(n2Var3, (int) (g0Var.B0.a / 9.0f), 1));
         m1Var.setShowPreview(false);
         return true;
     }
@@ -2186,8 +2186,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
             duration.start();
         }
         j jVar = this.C0;
-        if (jVar instanceof o2) {
-            ((o2) jVar).setSwatch(new sg.h1(h1Var.b, h1Var.c, h1Var.a));
+        if (jVar instanceof n2) {
+            ((n2) jVar).setSwatch(new sg.h1(h1Var.b, h1Var.c, h1Var.a));
         }
     }
 
@@ -2226,8 +2226,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         x0(!z10 ? 1 : 0);
         if (z10) {
             j jVar = this.C0;
-            if (jVar instanceof o2) {
-                org.telegram.messenger.g0.J3(((o2) jVar).getEditText());
+            if (jVar instanceof n2) {
+                org.telegram.messenger.g0.J3(((n2) jVar).getEditText());
             }
         }
     }
@@ -2478,8 +2478,8 @@ public abstract class g0 extends tt0 implements g1, h, c1, rt0, is {
         lyVar5.setLayoutParams(layoutParams);
         if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
             j jVar = this.C0;
-            if (jVar instanceof o2) {
-                org.telegram.messenger.g0.v1(((o2) jVar).getEditText());
+            if (jVar instanceof n2) {
+                org.telegram.messenger.g0.v1(((n2) jVar).getEditText());
             }
         }
         this.T1 = i12;

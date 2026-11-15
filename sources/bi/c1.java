@@ -9,7 +9,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cg;
 import org.telegram.ui.qm;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c1 implements cg {
     public final /* synthetic */ TL_stars.TL_starGiftUnique a;
@@ -40,7 +40,7 @@ public final class c1 implements cg {
         int i10 = f1Var.z1;
         int i11 = 1;
         if (i10 <= 0 || (i7 = i10 - codePointCount) > 15) {
-            h6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new ai.i0(this, i11));
+            h6Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new ai.j0(this, i11));
             return;
         }
         if (i7 < -9999) {

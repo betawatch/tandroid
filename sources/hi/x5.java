@@ -55,7 +55,7 @@ import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.wy;
 import org.telegram.ui.dn;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class x5 extends FrameLayout {
     public static final /* synthetic */ int C0 = 0;
@@ -207,7 +207,7 @@ public abstract class x5 extends FrameLayout {
             if (bitmapArr[0] == null) {
             }
         }
-        org.telegram.messenger.g0.h3(new androidx.car.app.utils.a(x5Var, bitmapArr, d7Var, zArr, 16));
+        org.telegram.messenger.g0.h3(new ai.r(x5Var, bitmapArr, d7Var, zArr));
     }
 
     public static Drawable e(Drawable drawable, int i7, long j3, boolean z10) {
@@ -1114,7 +1114,7 @@ public abstract class x5 extends FrameLayout {
         if (i7 == 0 || d7Var.B0 == 0) {
             Bitmap bitmap = this.a;
             if (bitmap != null) {
-                new ai.x1(this, measuredHeight, i10).a(c8.h0.b(bitmap, true));
+                new ai.y1(this, measuredHeight, i10).a(c8.h0.b(bitmap, true));
             } else {
                 paint.setShader(null);
             }
@@ -1312,16 +1312,16 @@ public abstract class x5 extends FrameLayout {
         } else {
             w5Var2.a(this.n);
         }
-        ai.f0 f0Var = new ai.f0(this, 28);
+        ai.g0 g0Var = new ai.g0(this, 28);
         c7 c7Var = d7Var.d1;
         if (c7Var != null) {
-            f0Var.a(c7Var);
+            g0Var.a(c7Var);
         } else if (!d7Var.K || Build.VERSION.SDK_INT < 24) {
             c7 c7Var2 = new c7();
             d7Var.d1 = c7Var2;
-            f0Var.a(c7Var2);
+            g0Var.a(c7Var2);
         } else {
-            Utilities.e.c(new y6(d7Var, f0Var, i7));
+            Utilities.e.c(new y6(d7Var, g0Var, i7));
         }
         File file = d7Var.Z0;
         if (file == null) {

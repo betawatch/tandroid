@@ -56,7 +56,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ec1 implements VoIPService.StateListener, org.telegram.messenger.is {
     public static ec1 m1;
@@ -1876,19 +1876,19 @@ public final class ec1 implements VoIPService.StateListener, org.telegram.messen
                                 pb1 pb1Var2 = new pb1(this, i13);
                                 org.telegram.ui.Components.voip.g1[] g1VarArr = (org.telegram.ui.Components.voip.g1[]) k4Var.d;
                                 k4Var.e = pb1Var2;
-                                ai.j0 j0Var = (ai.j0) k4Var.b;
-                                j0Var.setVisibility(i13);
+                                ai.k0 k0Var = (ai.k0) k4Var.b;
+                                k0Var.setVisibility(i13);
                                 ((FrameLayout) k4Var.c).setVisibility(i13);
                                 AnimatorSet animatorSet = new AnimatorSet();
                                 Property property = View.ALPHA;
-                                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(j0Var, (Property<ai.j0, Float>) property, 0.0f, 1.0f);
+                                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property, 0.0f, 1.0f);
                                 Property property2 = View.SCALE_X;
-                                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(j0Var, (Property<ai.j0, Float>) property2, 0.7f, 1.0f);
+                                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property2, 0.7f, 1.0f);
                                 Property property3 = View.SCALE_Y;
-                                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(j0Var, (Property<ai.j0, Float>) property3, 0.7f, 1.0f);
+                                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property3, 0.7f, 1.0f);
                                 float f14 = 0.0f;
                                 Property property4 = View.TRANSLATION_Y;
-                                animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(j0Var, (Property<ai.j0, Float>) property4, org.telegram.messenger.g0.L(24.0f), 0.0f));
+                                animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property4, org.telegram.messenger.g0.L(24.0f), 0.0f));
                                 animatorSet.setInterpolator(org.telegram.ui.Components.er.f);
                                 animatorSet.setDuration(250L);
                                 int i18 = 0;

@@ -6,18 +6,18 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public interface IStartCarApp extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IStartCarApp".replace('$', '.');
 
     void startCarApp(Intent intent);
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static abstract class Stub extends Binder implements IStartCarApp {
         static final int TRANSACTION_startCarApp = 2;
 
-        /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+        /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
         public static class Proxy implements IStartCarApp {
             private IBinder mRemote;
 
@@ -91,7 +91,7 @@ public interface IStartCarApp extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class Default implements IStartCarApp {
         @Override // android.os.IInterface
         public IBinder asBinder() {

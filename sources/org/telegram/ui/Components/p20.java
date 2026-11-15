@@ -17,7 +17,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p20 extends ja {
     public final /* synthetic */ int T1 = 0;
@@ -136,14 +136,14 @@ public final class p20 extends ja {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        di.ra raVar = new di.ra(context, 70, 0, 0);
-        frameLayout.addView(raVar, c8.ja.c(-1.0f, -1));
+        di.qa qaVar = new di.qa(context, 70, 0, 0);
+        frameLayout.addView(qaVar, c8.ja.c(-1.0f, -1));
         vg.m mVar = new vg.m(context, 1, 2);
         vg.f fVar = mVar.b;
         fVar.z = org.telegram.ui.ActionBar.j6.Wk;
         fVar.A = org.telegram.ui.ActionBar.j6.Xk;
         fVar.b();
-        mVar.setStarParticlesView(raVar);
+        mVar.setStarParticlesView(qaVar);
         frameLayout.addView(mVar, c8.ja.d(org.telegram.messenger.ns.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         mVar.setPaused(false);
         linearLayout.addView(frameLayout, c8.ja.c(150.0f, -1));

@@ -4,8 +4,8 @@ import a8.ha;
 import a8.ja;
 import a8.p0;
 import a8.u7;
-import ai.b2;
-import ai.z1;
+import ai.a2;
+import ai.c2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -75,7 +75,6 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.h4;
 import org.telegram.ui.Cells.h9;
 import org.telegram.ui.Cells.y0;
@@ -110,9 +109,9 @@ import org.telegram.ui.yt;
 import org.xml.sax.Attributes;
 import q4.t;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final class j implements z1, c4.m, a0, Continuation, com.google.android.gms.common.api.internal.q, d1, pm0, nr, ho, wa, i7, jj0, s51, h2.d, q5.b, te.b {
+public final class j implements a2, c4.m, a0, Continuation, com.google.android.gms.common.api.internal.q, d1, pm0, nr, ho, wa, i7, jj0, s51, h2.d, q5.b, te.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -661,9 +660,9 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
         return r9.c(L, new z(this, 16));
     }
 
-    @Override // ai.z1
+    @Override // ai.a2
     public void M(int i7, String str) {
-        m.b((m) this.c, (b2) this.b, str, i7);
+        m.b((m) this.c, (c2) this.b, str, i7);
     }
 
     @Override // org.telegram.ui.i7
@@ -675,36 +674,36 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
             ytVar.a2.e();
             ei.c cVar = ytVar.c2;
             hw0[] hw0VarArr = ytVar.X1;
-            c2[] c2VarArr = ytVar.Y1;
-            c2 c2Var = c2VarArr[0];
+            org.telegram.ui.Cells.c2[] c2VarArr = ytVar.Y1;
+            org.telegram.ui.Cells.c2 c2Var = c2VarArr[0];
             if (c2Var != null) {
                 hw0 hw0Var = hw0VarArr[0];
                 boolean z11 = cVar.m;
                 hw0Var.c = z11;
                 c2Var.c(z11, true);
             }
-            c2 c2Var2 = c2VarArr[1];
+            org.telegram.ui.Cells.c2 c2Var2 = c2VarArr[1];
             if (c2Var2 != null) {
                 hw0 hw0Var2 = hw0VarArr[1];
                 boolean z12 = cVar.n;
                 hw0Var2.c = z12;
                 c2Var2.c(z12, true);
             }
-            c2 c2Var3 = c2VarArr[2];
+            org.telegram.ui.Cells.c2 c2Var3 = c2VarArr[2];
             if (c2Var3 != null) {
                 hw0 hw0Var3 = hw0VarArr[2];
                 boolean z13 = cVar.o;
                 hw0Var3.c = z13;
                 c2Var3.c(z13, true);
             }
-            c2 c2Var4 = c2VarArr[3];
+            org.telegram.ui.Cells.c2 c2Var4 = c2VarArr[3];
             if (c2Var4 != null) {
                 hw0 hw0Var4 = hw0VarArr[3];
                 boolean z14 = cVar.p;
                 hw0Var4.c = z14;
                 c2Var4.c(z14, true);
             }
-            c2 c2Var5 = c2VarArr[4];
+            org.telegram.ui.Cells.c2 c2Var5 = c2VarArr[4];
             if (c2Var5 != null) {
                 hw0 hw0Var5 = hw0VarArr[4];
                 boolean z15 = cVar.q;
@@ -716,11 +715,11 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
         }
     }
 
-    @Override // ai.z1
+    @Override // ai.a2
     public void P(String str) {
-        b2 b2Var = (b2) this.b;
+        c2 c2Var = (c2) this.b;
         m mVar = (m) this.c;
-        if (b2Var == mVar.f) {
+        if (c2Var == mVar.f) {
             mVar.P(str);
         }
     }
@@ -773,33 +772,33 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
         e1Var.post(new e0(this, e1Var, i10, E, g0Var, i7));
     }
 
-    @Override // ai.z1
+    @Override // ai.a2
     public void a(String str, String str2) {
         m mVar = (m) this.c;
-        b2 b2Var = (b2) this.b;
+        c2 c2Var = (c2) this.b;
         if (!mVar.J) {
-            if (b2Var == mVar.f) {
+            if (c2Var == mVar.f) {
                 mVar.a(str, str2);
                 return;
             }
             return;
         }
-        if (b2Var == mVar.U) {
+        if (c2Var == mVar.U) {
             mVar.U = null;
             if (!str.isEmpty()) {
-                mVar.u(b2Var, str);
+                mVar.u(c2Var, str);
             }
             mVar.e();
             Log.d("VoiceLive", "field: final words in (" + mVar.L.size() + " words)");
             mVar.n();
             return;
         }
-        if (b2Var != mVar.f) {
+        if (c2Var != mVar.f) {
             return;
         }
         Log.d("VoiceLive", "field: recogniser ended by itself error=" + str2);
         if (!str.isEmpty()) {
-            mVar.u(b2Var, str);
+            mVar.u(c2Var, str);
         }
         mVar.f = null;
         if (xr.k == mVar) {
@@ -1064,11 +1063,11 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
         return null;
     }
 
-    @Override // ai.z1
+    @Override // ai.a2
     public void h(float f10) {
-        b2 b2Var = (b2) this.b;
+        c2 c2Var = (c2) this.b;
         m mVar = (m) this.c;
-        if (b2Var == mVar.f) {
+        if (c2Var == mVar.f) {
             mVar.h(f10);
         }
     }
@@ -1267,9 +1266,9 @@ public final class j implements z1, c4.m, a0, Continuation, com.google.android.g
         return false;
     }
 
-    @Override // ai.z1
+    @Override // ai.a2
     public void r(String str) {
-        m.b((m) this.c, (b2) this.b, str, -1);
+        m.b((m) this.c, (c2) this.b, str, -1);
     }
 
     @Override // com.google.android.gms.tasks.Continuation

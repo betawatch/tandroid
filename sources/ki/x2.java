@@ -70,7 +70,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.fq0;
 import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class x2 extends Dialog implements is, org.telegram.ui.ActionBar.g3 {
     public static final HashSet b1 = new HashSet();
@@ -653,7 +653,7 @@ public final class x2 extends Dialog implements is, org.telegram.ui.ActionBar.g3
                 z0Var.setRightIcon(0);
                 z0Var.b.setPadding(0, 0, 0, 0);
             }
-            z0Var.setOnClickListener(new ai.t2(26, this, h0Var2));
+            z0Var.setOnClickListener(new ai.v2(26, this, h0Var2));
         }
         org.telegram.messenger.g2 g2Var = this.c0;
         int size = arrayList.size();

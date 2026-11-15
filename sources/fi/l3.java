@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.my0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,9 +54,9 @@ public final /* synthetic */ class l3 implements View.OnClickListener {
                 e3 e3Var = b4Var.M0;
                 org.telegram.ui.ActionBar.e6 e6Var2 = this.c;
                 cc ccVar = new cc(e3Var, e6Var2);
-                ai.f0 f0Var = new ai.f0(i9Var, 16);
+                ai.g0 g0Var = new ai.g0(i9Var, 16);
                 int i11 = my0.w1;
-                my0.J0(i10, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ccVar, e6Var2, new byte[0], null, f0Var);
+                my0.J0(i10, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ccVar, e6Var2, new byte[0], null, g0Var);
                 t3 t3Var2 = b4Var.d1;
                 if (t3Var2 != null) {
                     t3Var2.a();

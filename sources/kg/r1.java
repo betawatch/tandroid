@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.x4;
 import c8.ja;
-import di.r9;
+import di.q9;
 import fi.m5;
 import hi.g7;
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class r1 extends e2 implements is {
     public static org.telegram.ui.ActionBar.t1 f;
@@ -239,7 +239,7 @@ public final class r1 extends e2 implements is {
             r10 = 0;
             t1Var.P = new g7(x0Var, 11);
             t1VarArr[0] = t1Var;
-            t1Var.setOnDismissListener(new r9(x0Var, 6));
+            t1Var.setOnDismissListener(new q9(x0Var, 6));
             final int i11 = 1;
             t1VarArr[0].setOnShowListener(new DialogInterface.OnShowListener() { // from class: kg.l1
                 @Override // android.content.DialogInterface.OnShowListener

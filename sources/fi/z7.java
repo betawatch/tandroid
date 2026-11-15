@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.ou0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z7 extends View implements org.telegram.ui.Cells.q9 {
     public final boolean E;
@@ -154,7 +154,7 @@ public final class z7 extends View implements org.telegram.ui.Cells.q9 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.H, 0.0f);
         this.J = ofFloat;
         ofFloat.addUpdateListener(new ah.h(this, 24));
-        this.J.addListener(new ai.i0(this, 17));
+        this.J.addListener(new ai.j0(this, 17));
         this.J.setDuration(180L);
         this.J.setInterpolator(er.g);
         this.J.start();

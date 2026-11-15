@@ -1,5 +1,6 @@
 package org.telegram.messenger.video;
 
+import ai.r;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -68,7 +69,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.my0;
 import ug.x0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -98,7 +99,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -229,7 +230,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -243,7 +244,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -473,9 +474,9 @@ public class VideoAds {
             if (tL_sponsoredMessage.can_report) {
                 m60Var.c(R.drawable.msg_info, hd.M0(2131754943, null), new u4(6, context2, i0Var), false);
                 String M0 = hd.M0(2131746234, null);
-                androidx.car.app.utils.a aVar = new androidx.car.app.utils.a(this, context2, tL_sponsoredMessage, m60Var, 28);
+                r rVar = new r(this, context2, tL_sponsoredMessage, m60Var, 29);
                 m60Var = m60Var;
-                m60Var.c(R.drawable.msg_block2, M0, aVar, false);
+                m60Var.c(R.drawable.msg_block2, M0, rVar, false);
                 if (!np.s1(this.currentAccount).D3()) {
                     m60Var.k();
                     final int i11 = 0;
@@ -1034,7 +1035,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class AdLayout extends va {
         public final ImageView buttonView;
         public final i9 imageView;
@@ -1103,7 +1104,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

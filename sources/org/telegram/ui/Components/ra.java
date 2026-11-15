@@ -6,7 +6,7 @@ import j$.util.Objects;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ra implements View.OnLayoutChangeListener {
     public final /* synthetic */ boolean a;

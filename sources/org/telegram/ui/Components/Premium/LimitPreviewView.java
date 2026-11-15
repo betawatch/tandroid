@@ -42,7 +42,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.h6;
 import org.telegram.ui.Components.my;
 import org.telegram.ui.z20;
-import tg.y1;
+import tg.x1;
 import ug.o;
 import ug.p;
 import ug.q;
@@ -50,7 +50,7 @@ import ug.r;
 import ug.s;
 import ug.z0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout implements z5 {
     public static final /* synthetic */ int p0 = 0;
@@ -775,7 +775,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         this.j0.setInterpolator(new OvershootInterpolator());
         if (this.a0) {
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat3.addUpdateListener(new y1(this, 2));
+            ofFloat3.addUpdateListener(new x1(this, 2));
             ofFloat3.setDuration(500L);
             ofFloat3.start();
             this.j0.setDuration(600L);

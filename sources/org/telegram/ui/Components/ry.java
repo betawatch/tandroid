@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ry extends View {
     public final Paint a;
@@ -20,7 +20,7 @@ public final class ry extends View {
     public oy0[] f;
     public RectF[] h;
     public float n;
-    public org.telegram.ui.kl0 r;
+    public org.telegram.ui.ll0 r;
     public int s;
 
     public ry(Context context) {
@@ -124,9 +124,9 @@ public final class ry extends View {
         }
         if (i7 >= 0 && i7 != this.s) {
             this.s = i7;
-            org.telegram.ui.kl0 kl0Var = this.r;
-            if (kl0Var != null) {
-                kl0Var.a(Integer.valueOf(i7));
+            org.telegram.ui.ll0 ll0Var = this.r;
+            if (ll0Var != null) {
+                ll0Var.a(Integer.valueOf(i7));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {

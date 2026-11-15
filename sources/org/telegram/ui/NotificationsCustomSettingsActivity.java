@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public final int[] E;
@@ -628,9 +628,9 @@ public class NotificationsCustomSettingsActivity extends org.telegram.ui.ActionB
                 i6Var2.setPadding(org.telegram.messenger.g0.L(4.0f), r42, org.telegram.messenger.g0.L(4.0f), r42);
                 i6VarArr[i19].a(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.g7, r42), org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.E5, r42));
                 i6VarArr[i19].b(org.telegram.messenger.hd.M0(i19 == 0 ? 2131747849 : 2131747850, null), i19 == 0 ? !zArr[r42] ? z25 : r42 : zArr[r42]);
-                ai.j1 j1Var = i6VarArr[i19];
+                ai.k1 k1Var = i6VarArr[i19];
                 int i20 = org.telegram.ui.ActionBar.j6.i6;
-                org.telegram.ui.ActionBar.q6.Q(j1Var, org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.x0(null, i20, r42), 2, -1), null, org.telegram.ui.ActionBar.q6.M(i20), null);
+                org.telegram.ui.ActionBar.q6.Q(k1Var, org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.x0(null, i20, r42), 2, -1), null, org.telegram.ui.ActionBar.q6.M(i20), null);
                 f12.addView(i6VarArr[i19]);
                 i6VarArr[i19].setOnClickListener(new bi.x2(zArr, i19, i6VarArr, i13));
                 i19++;

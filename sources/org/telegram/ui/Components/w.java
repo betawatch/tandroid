@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class w extends org.telegram.ui.n11 {
     public final /* synthetic */ org.telegram.ui.e11[] f2;
@@ -20,7 +20,7 @@ public final class w extends org.telegram.ui.n11 {
 
     @Override // org.telegram.ui.n11
     public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        return tL_starGiftUnique == null || di.v8.y(this.g2.a, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) >= 2;
+        return tL_starGiftUnique == null || di.u8.y(this.g2.a, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) >= 2;
     }
 
     @Override // org.telegram.ui.n11

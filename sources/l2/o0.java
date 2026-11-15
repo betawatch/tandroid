@@ -11,7 +11,7 @@ import android.os.Trace;
 import android.text.TextUtils;
 import android.util.Pair;
 import com.google.android.gms.internal.vision.e2;
-import di.u7;
+import di.t7;
 import h9.s1;
 import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -24,7 +24,7 @@ import java.util.List;
 import kg.t1;
 import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class o0 implements Handler.Callback, x2.c0, h1, d3.v {
     public static final long x0 = h2.l0.h0(10000);
@@ -1156,7 +1156,7 @@ public final class o0 implements Handler.Callback, x2.c0, h1, d3.v {
         boolean[] zArr = this.c;
         if (zArr[i7] != z10) {
             zArr[i7] = z10;
-            this.O.d(new u7(this, i7, z10, 1));
+            this.O.d(new t7(this, i7, z10, 1));
         }
     }
 
@@ -2975,7 +2975,7 @@ public final class o0 implements Handler.Callback, x2.c0, h1, d3.v {
             }
             int i7 = this.X;
             if (i7 > 0) {
-                this.O.d(new ai.v0(this, i7, 14));
+                this.O.d(new ai.w0(this, i7, 14));
             }
             this.X = 0;
             this.V = false;

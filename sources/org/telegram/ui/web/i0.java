@@ -16,7 +16,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import c8.za;
-import di.r9;
+import di.q9;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ import org.telegram.messenger.r2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.u2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class i0 extends WebViewClient {
     public boolean a = true;
@@ -275,7 +275,7 @@ public final class i0 extends WebViewClient {
             t1Var.S = hd.M0(2131752104, null);
             t1Var.U = org.telegram.messenger.g0.U2(hd.M0(2131752105, null), new h0(this, 2));
             alertDialog$Builder.k(hd.M0(2131747831, null), null);
-            t1Var.setOnDismissListener(new r9(this, 11));
+            t1Var.setOnDismissListener(new q9(this, 11));
             alertDialog$Builder.p();
             return true;
         } catch (Exception e10) {

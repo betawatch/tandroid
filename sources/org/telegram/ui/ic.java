@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class ic extends gm0 {
+public final class ic extends hm0 {
     public final /* synthetic */ jc H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class ic extends gm0 {
         this.H = jcVar;
     }
 
-    @Override // org.telegram.ui.gm0
+    @Override // org.telegram.ui.hm0
     public final void b(int i7, boolean z10) {
         super.b(i7, z10);
         jc jcVar = this.H;

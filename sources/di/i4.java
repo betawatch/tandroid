@@ -56,7 +56,7 @@ import org.telegram.ui.uh0;
 import org.telegram.ui.yt;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i4 extends tj0 {
     public final /* synthetic */ int c;
@@ -672,7 +672,7 @@ public final class i4 extends tj0 {
                     z51Var.setOrientation(1);
                     View view6 = g1Var.x2;
                     if (view6 == null) {
-                        g1Var.n2 = new yb(context4, 1, 0, 4);
+                        g1Var.n2 = new xb(context4, 1, 0, 4);
                         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
                         Canvas canvas = new Canvas(createBitmap);
                         int i16 = org.telegram.ui.ActionBar.j6.Dk;
@@ -731,10 +731,10 @@ public final class i4 extends tj0 {
                     m01Var.setClipChildren(false);
                     m01Var.addView(g1Var.m2);
                     m01Var.addView(z51Var);
-                    yb ybVar = g1Var.n2;
+                    xb xbVar = g1Var.n2;
                     view4 = m01Var;
-                    if (ybVar != null) {
-                        ybVar.setStarParticlesView(g1Var.m2);
+                    if (xbVar != null) {
+                        xbVar.setStarParticlesView(g1Var.m2);
                         view4 = m01Var;
                     }
                 } else if (i7 == 2) {
@@ -745,7 +745,7 @@ public final class i4 extends tj0 {
                 } else if (i7 == 3) {
                     view4 = new zh.f(context4, i12);
                 } else if (i7 == 4) {
-                    view4 = new ai.q2(context4);
+                    view4 = new ai.r2(context4);
                 } else if (i7 != 5) {
                     view4 = new ls0(this, context4, g1Var.J0);
                 } else {

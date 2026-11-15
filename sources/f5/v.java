@@ -45,7 +45,7 @@ import org.telegram.ui.Components.u51;
 import org.telegram.ui.j9;
 import org.telegram.ui.s9;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements s9, s51, h2.d, u2.u, f0 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class v implements s9, s51, h2.d, u2.u, f0 {
         if (TextUtils.isEmpty(c10)) {
             g0.h3(new ai.o(6));
         } else {
-            np.s1(this.b).d2().a(c10, null, new ai.f0((e2) this.c, 5));
+            np.s1(this.b).d2().a(c10, null, new ai.g0((e2) this.c, 5));
         }
     }
 

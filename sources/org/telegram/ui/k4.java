@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.DialogInterface;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -16,8 +16,9 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
 
     @Override // android.content.DialogInterface.OnClickListener
     public final void onClick(DialogInterface dialogInterface, int i7) {
-        int i10 = 0;
-        int i11 = 1;
+        int i10 = 2;
+        int i11 = 0;
+        int i12 = 1;
         switch (this.a) {
             case 0:
                 vy0 vy0Var = (vy0) this.b;
@@ -31,23 +32,23 @@ public final /* synthetic */ class k4 implements DialogInterface.OnClickListener
                     if (i7 == 1 && ywVar.f0 != null) {
                         while (true) {
                             xw[] xwVarArr = ywVar.f0;
-                            if (i10 >= xwVarArr.length) {
+                            if (i11 >= xwVarArr.length) {
                                 break;
                             } else {
-                                xw xwVar = xwVarArr[i10];
+                                xw xwVar = xwVarArr[i11];
                                 if (xwVar.s == 0 && xwVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.t2 c42 = yw.c4(ywVar.f0[i10]);
-                                    uw uwVar = ywVar.f0[i10].a;
-                                    int i12 = uw.C3;
+                                    org.telegram.ui.Cells.t2 c42 = yw.c4(ywVar.f0[i11]);
+                                    uw uwVar = ywVar.f0[i11].a;
+                                    int i13 = uw.C3;
                                     uwVar.C1(true, c42);
                                 }
-                                i10++;
+                                i11++;
                             }
                         }
                     }
                 } else {
                     org.telegram.messenger.vr messagesStorage = ywVar.getMessagesStorage();
-                    messagesStorage.a.c(new org.telegram.messenger.qp(messagesStorage, i11, 3));
+                    messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, i12, i10));
                     break;
                 }
                 break;

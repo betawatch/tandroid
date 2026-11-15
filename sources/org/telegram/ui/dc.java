@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class dc extends org.telegram.ui.Components.tj0 {
     public final /* synthetic */ qc c;
@@ -66,10 +66,10 @@ public final class dc extends org.telegram.ui.Components.tj0 {
         View view = e1Var.a;
         if (i15 == 1) {
             jc jcVar = (jc) view;
-            pl0 pl0Var = jcVar.a;
+            ql0 ql0Var = jcVar.a;
             ic icVar = jcVar.b;
             i10 = ((org.telegram.ui.ActionBar.e2) qcVar).currentAccount;
-            pl0Var.b(i10, qcVar.s, false);
+            ql0Var.b(i10, qcVar.s, false);
             icVar.b(qcVar.s, false);
             icVar.d(qcVar.x, false, false);
             icVar.setForum(qcVar.Y0());
@@ -82,7 +82,7 @@ public final class dc extends org.telegram.ui.Components.tj0 {
             return;
         }
         if (i15 == 4) {
-            ((fm0) view).a(qcVar.s, false);
+            ((gm0) view).a(qcVar.s, false);
             return;
         }
         if (i15 == 5) {
@@ -332,10 +332,10 @@ public final class dc extends org.telegram.ui.Components.tj0 {
             Activity parentActivity5 = qcVar.getParentActivity();
             i10 = ((org.telegram.ui.ActionBar.e2) qcVar).currentAccount;
             e6Var4 = ((org.telegram.ui.ActionBar.e2) qcVar).resourceProvider;
-            fm0 fm0Var = new fm0(0, i10, parentActivity5, e6Var4);
-            fm0Var.setDivider(false);
+            gm0 gm0Var = new gm0(0, i10, parentActivity5, e6Var4);
+            gm0Var.setDivider(false);
             final int i15 = 1;
-            fm0Var.setOnColorClick(new org.telegram.messenger.z10(this) { // from class: org.telegram.ui.cc
+            gm0Var.setOnColorClick(new org.telegram.messenger.z10(this) { // from class: org.telegram.ui.cc
                 public final /* synthetic */ dc b;
 
                 {
@@ -376,7 +376,7 @@ public final class dc extends org.telegram.ui.Components.tj0 {
                     }
                 }
             });
-            frameLayout = fm0Var;
+            frameLayout = gm0Var;
         } else if (i7 == 1) {
             FrameLayout jcVar = new jc(qcVar, qcVar.getParentActivity());
             frameLayout = jcVar;
@@ -391,7 +391,7 @@ public final class dc extends org.telegram.ui.Components.tj0 {
         } else if (i7 == 9) {
             Activity parentActivity7 = qcVar.getParentActivity();
             e6Var2 = ((org.telegram.ui.ActionBar.e2) qcVar).resourceProvider;
-            frameLayout = new rl0(parentActivity7, e6Var2, false);
+            frameLayout = new sl0(parentActivity7, e6Var2, false);
         } else if (i7 == 10) {
             Activity parentActivity8 = qcVar.getParentActivity();
             e6Var = ((org.telegram.ui.ActionBar.e2) qcVar).resourceProvider;

@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.j90;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class m2 extends i90 {
+public final class m2 extends j90 {
     public final /* synthetic */ b4 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,7 +18,7 @@ public final class m2 extends i90 {
         this.W = b4Var;
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void f(Canvas canvas, Rect rect, float f10) {
         b4 b4Var = this.W;
         a8.b8 b8Var = b4Var.z1;

@@ -1,12 +1,11 @@
 package bi;
 
 import android.widget.TextView;
-import di.v8;
+import di.u8;
 import hi.l8;
 import java.util.ArrayList;
 import org.telegram.messenger.gj;
 import org.telegram.messenger.np;
-import org.telegram.messenger.ou;
 import org.telegram.messenger.s10;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.RequestDelegate;
@@ -17,15 +16,13 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.ix;
-import org.telegram.ui.Components.ma0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.yf;
 import org.telegram.ui.Components.zz;
 import org.telegram.ui.cu0;
 import org.telegram.ui.hp;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -40,8 +37,8 @@ public final /* synthetic */ class j6 implements RequestDelegate {
         this.d = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0363  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x036e  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0362  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x036d  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -98,22 +95,22 @@ public final /* synthetic */ class j6 implements RequestDelegate {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new ai.b((v8) this.b, tL_error, (s10) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 6));
+                org.telegram.messenger.g0.h3(new ai.b((u8) this.b, tL_error, (s10) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 6));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new ai.b((v8) this.b, tL_error, (org.telegram.ui.Wallet.t1) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 9));
+                org.telegram.messenger.g0.h3(new ai.b((u8) this.b, tL_error, (org.telegram.ui.Wallet.t1) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 9));
                 break;
             case 5:
-                org.telegram.messenger.g0.h3(new ai.b((v8) this.b, tL_error, (v5) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 3));
+                org.telegram.messenger.g0.h3(new ai.b((u8) this.b, tL_error, (v5) this.c, tLObject, (TLRPC.TL_inputInvoiceStars) this.d, 3));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((fi.t3) this.b, tLObject, (TL_stories.StoryItem) this.c, (z10) this.d, 12));
+                org.telegram.messenger.g0.h3(new ai.r((fi.t3) this.b, tLObject, (TL_stories.StoryItem) this.c, (z10) this.d, 13));
                 break;
             case 7:
                 org.telegram.messenger.g0.h3(new ai.b((l8) this.b, (org.telegram.ui.ActionBar.t1) this.c, tLObject, (TL_phone.getGroupCallStreamRtmpUrl) this.d, tL_error, 14));
                 break;
             case 8:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((kg.y) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, (Runnable) this.d, 18));
+                org.telegram.messenger.g0.h3(new ai.r((kg.y) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, (Runnable) this.d, 19));
                 break;
             case 9:
                 org.telegram.messenger.g0.h3(new fi.s5(this.b, this.c, this.d, 26));
@@ -122,25 +119,25 @@ public final /* synthetic */ class j6 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.b((kg.v1) this.b, tLObject, (ArrayList) this.c, (TLRPC.TL_messages_sendQuickReplyMessages) this.d, tL_error, 18));
                 break;
             case 11:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((hi.d) this.b, tLObject, (org.telegram.ui.ActionBar.u2) this.c, (ki.p1) this.d, 21));
+                org.telegram.messenger.g0.h3(new ai.r((hi.d) this.b, tLObject, (org.telegram.ui.ActionBar.u2) this.c, (ki.p1) this.d, 22));
                 break;
             case 12:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a(tLObject, (boolean[]) this.b, (org.telegram.ui.web.o) this.c, (TLRPC.UserFull) this.d, 24));
+                org.telegram.messenger.g0.h3(new ai.r(tLObject, (boolean[]) this.b, (org.telegram.ui.web.o) this.c, (TLRPC.UserFull) this.d, 25));
                 break;
             case 13:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a(tLObject, (org.telegram.ui.ActionBar.g6) this.b, (org.telegram.ui.ActionBar.i6) this.c, (TLRPC.TL_theme) this.d, 29));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.l5(tLObject, (org.telegram.ui.ActionBar.g6) this.b, (org.telegram.ui.ActionBar.i6) this.c, (TLRPC.TL_theme) this.d, 0));
                 break;
             case 14:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.m5((ix) this.b, (org.telegram.ui.ActionBar.t1[]) this.c, tLObject, (ou) this.d, 22));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.l5(this.b, this.c, tLObject, this.d, 23));
                 break;
             case 15:
-                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.m5((fy) this.b, (TLRPC.TL_messages_getStickers) this.c, tLObject, (Runnable) this.d, 23));
+                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.l5(this.b, this.c, tLObject, this.d, 24));
                 break;
             case 16:
                 org.telegram.messenger.g0.h3(new yf((zz) this.b, (org.telegram.ui.ActionBar.e2) this.c, (ArrayList) this.d, 8));
                 break;
             case 17:
-                org.telegram.messenger.g0.h3(new ma0(tL_error, (hi.d) this.b, (org.telegram.ui.p6) this.c, (Runnable) this.d, 0));
+                org.telegram.messenger.g0.h3(new u80(tL_error, (hi.d) this.b, (org.telegram.ui.p6) this.c, (Runnable) this.d, 1));
                 break;
             case 18:
                 org.telegram.messenger.g0.h3(new hp((bw0) this.b, (String) this.c, tL_error, tLObject, (TextView) this.d));

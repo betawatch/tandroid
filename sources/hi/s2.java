@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.ef0;
-import org.telegram.ui.ym0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s2 extends org.telegram.ui.ActionBar.m0 {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
     public boolean b() {
         switch (this.a) {
             case 1:
-                ((ym0) this.c).finishFragment();
+                ((zm0) this.c).finishFragment();
                 return false;
             default:
                 return super.b();
@@ -168,7 +168,7 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                 animatorSet2.setDuration(320L);
                 ((AnimatorSet) this.b).setInterpolator(er.h);
                 ((AnimatorSet) this.b).playTogether(arrayList);
-                ((AnimatorSet) this.b).addListener(new ai.i0(this, 20));
+                ((AnimatorSet) this.b).addListener(new ai.j0(this, 20));
                 ((AnimatorSet) this.b).start();
                 break;
         }
@@ -178,7 +178,7 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
     public void k(EditTextBoldCursor editTextBoldCursor) {
         switch (this.a) {
             case 1:
-                ((ym0) this.c).g0(editTextBoldCursor);
+                ((zm0) this.c).g0(editTextBoldCursor);
                 break;
         }
     }
@@ -216,25 +216,25 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
                 }
             case 1:
                 ef0 ef0Var = (ef0) this.b;
-                ym0 ym0Var = (ym0) obj;
+                zm0 zm0Var = (zm0) obj;
                 if (editText.getText().length() != 0) {
                     org.telegram.messenger.g0.r(ef0Var);
                     org.telegram.messenger.g0.i3(ef0Var, 1200L);
                     break;
                 } else {
-                    ym0Var.f.clear();
-                    ym0Var.h.clear();
-                    ym0Var.w = null;
-                    ym0Var.s = true;
-                    ym0Var.r = false;
-                    if (ym0Var.y != 0) {
-                        i7 = ((org.telegram.ui.ActionBar.e2) ym0Var).currentAccount;
-                        ConnectionsManager.getInstance(i7).cancelRequest(ym0Var.y, true);
-                        ym0Var.y = 0;
+                    zm0Var.f.clear();
+                    zm0Var.h.clear();
+                    zm0Var.w = null;
+                    zm0Var.s = true;
+                    zm0Var.r = false;
+                    if (zm0Var.y != 0) {
+                        i7 = ((org.telegram.ui.ActionBar.e2) zm0Var).currentAccount;
+                        ConnectionsManager.getInstance(i7).cancelRequest(zm0Var.y, true);
+                        zm0Var.y = 0;
                     }
-                    ym0Var.O.d.setText(hd.M0(2131748169, null));
-                    ym0Var.O.e(false, true);
-                    ym0Var.o0();
+                    zm0Var.O.d.setText(hd.M0(2131748169, null));
+                    zm0Var.O.e(false, true);
+                    zm0Var.o0();
                     break;
                 }
             case 2:
@@ -288,9 +288,9 @@ public final class s2 extends org.telegram.ui.ActionBar.m0 {
         }
     }
 
-    public s2(ym0 ym0Var) {
+    public s2(zm0 zm0Var) {
         this.a = 1;
-        this.c = ym0Var;
+        this.c = zm0Var;
         this.b = new ef0(this, 15);
     }
 

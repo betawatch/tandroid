@@ -1,8 +1,8 @@
 package ah;
 
-import ai.a1;
-import ai.c0;
-import ai.v0;
+import ai.b1;
+import ai.d0;
+import ai.w0;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,9 +18,9 @@ import bi.t6;
 import bi.v2;
 import bi.y;
 import di.a7;
-import di.c8;
-import di.db;
-import di.f8;
+import di.b8;
+import di.cb;
+import di.e8;
 import di.i1;
 import di.p0;
 import di.s2;
@@ -78,7 +78,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ci;
 import org.telegram.ui.Components.fo;
 import org.telegram.ui.Components.ft;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ja0;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.od;
@@ -94,7 +94,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.an;
 import sg.k0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
     public final void onClick(View view) {
         ki kiVar;
         boolean u12;
-        ia0 ia0Var;
+        ja0 ja0Var;
         int i7 = this.a;
         int i10 = 4;
         int i11 = 3;
@@ -173,7 +173,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 Context context = (Context) obj2;
                 e6 e6Var3 = (e6) obj;
                 if (((p0) obj3).j2.a == cg.b.a) {
-                    new db(context, e6Var3).show();
+                    new cb(context, e6Var3).show();
                     break;
                 }
                 break;
@@ -182,7 +182,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 final hi.d dVar = (hi.d) obj;
                 u2Var.c0 = false;
                 dVar.setLoading(true);
-                ((f8) obj3).a(new z10() { // from class: di.w8
+                ((e8) obj3).a(new z10() { // from class: di.v8
                     @Override // org.telegram.messenger.z10
                     public final void a(Object obj4) {
                         Boolean bool = (Boolean) obj4;
@@ -193,7 +193,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i16 = 0;
                                     final hi.d dVar2 = dVar;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.x8
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i16) {
@@ -219,7 +219,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i17 = 1;
                                     final hi.d dVar3 = dVar;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.x8
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i17) {
@@ -249,7 +249,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 u2Var2.c0 = false;
                 dVar2.setLoading(true);
                 final int i16 = z10 ? 1 : 0;
-                ((c8) obj3).a(new z10() { // from class: di.w8
+                ((b8) obj3).a(new z10() { // from class: di.v8
                     @Override // org.telegram.messenger.z10
                     public final void a(Object obj4) {
                         Boolean bool = (Boolean) obj4;
@@ -260,7 +260,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i162 = 0;
                                     final hi.d dVar22 = dVar2;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.x8
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i162) {
@@ -286,7 +286,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i17 = 1;
                                     final hi.d dVar3 = dVar2;
-                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.y8
+                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: di.x8
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i17) {
@@ -366,8 +366,8 @@ public final /* synthetic */ class g implements View.OnClickListener {
                             m60 m60Var3 = iaVar.V0;
                             String N0 = i18 == Integer.MAX_VALUE ? hd.N0("StoryPeriodKeep") : hd.G(i18 / 3600, "Hours", new Object[0]);
                             int i19 = j6.E8;
-                            m60Var3.b(0, null, N0, i19, i19, new v0(oVar, i18, i12));
-                            m60Var3.M((q10 || i18 == 86400 || i18 == Integer.MAX_VALUE) ? null : new a1(oVar2, i18, 1));
+                            m60Var3.b(0, null, N0, i19, i19, new w0(oVar, i18, i12));
+                            m60Var3.M((q10 || i18 == 86400 || i18 == Integer.MAX_VALUE) ? null : new b1(oVar2, i18, 1));
                             if (iaVar.X0 == i17) {
                                 iaVar.V0.L();
                             }
@@ -532,7 +532,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                     if (kiVar2.F3 == null && (e2Var2 instanceof an)) {
                         an anVar = (an) e2Var2;
                         if (anVar.c()) {
-                            t4.J(kiVar2.getContext(), anVar.a(), new c0(kiVar2, k10, i10), e6Var5);
+                            t4.J(kiVar2.getContext(), anVar.a(), new d0(kiVar2, k10, i10), e6Var5);
                             kiVar = kiVar2;
                             kiVar.v1(false, false);
                             break;
@@ -565,11 +565,11 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 TLRPC.Message message = gjVar.k;
                 boolean z12 = kiVar3.X1;
                 message.invert_media = z12;
-                ((ia0) obj).a(!z12, true);
+                ((ja0) obj).a(!z12, true);
                 kiVar3.c2.f(gjVar);
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kiVar3.e2;
-                if (chatAttachAlertPhotoLayout != null && (ia0Var = chatAttachAlertPhotoLayout.e1) != null) {
-                    ia0Var.a(!kiVar3.X1, true);
+                if (chatAttachAlertPhotoLayout != null && (ja0Var = chatAttachAlertPhotoLayout.e1) != null) {
+                    ja0Var.a(!kiVar3.X1, true);
                 }
                 kiVar3.c2.n(!kiVar3.X1);
                 break;

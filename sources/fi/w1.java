@@ -4,7 +4,7 @@ import org.telegram.messenger.np;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements z10 {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class w1 implements z10 {
                 b4 b4Var = this.b;
                 if (tL_premium_boostsStatus != null) {
                     b4Var.t3 = tL_premium_boostsStatus;
-                    np.s1(b4Var.m2).G0().b(b4Var.l1, tL_premium_boostsStatus, new ai.u1(12, b4Var, tL_premium_boostsStatus));
+                    np.s1(b4Var.m2).G0().b(b4Var.l1, tL_premium_boostsStatus, new ai.v1(12, b4Var, tL_premium_boostsStatus));
                     break;
                 } else {
                     i9 i9Var = b4Var.t0;

@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v01 extends FrameLayout implements org.telegram.messenger.is {
     public static final /* synthetic */ int n0 = 0;
@@ -204,7 +204,7 @@ public final class v01 extends FrameLayout implements org.telegram.messenger.is 
                         if (anVar.Z9()) {
                             Bundle bundle = new Bundle();
                             bundle.putLong("dialog_id", anVar.getUserConfig().e());
-                            anVar.presentFragment(new x80(bundle, null));
+                            anVar.presentFragment(new y80(bundle, null));
                             break;
                         } else if (org.telegram.messenger.t3.p0(anVar.e)) {
                             anVar.presentFragment(ProfileActivity.C4(-anVar.e.linked_monoforum_id));
@@ -310,7 +310,7 @@ public final class v01 extends FrameLayout implements org.telegram.messenger.is 
                         if (anVar.Z9()) {
                             Bundle bundle = new Bundle();
                             bundle.putLong("dialog_id", anVar.getUserConfig().e());
-                            anVar.presentFragment(new x80(bundle, null));
+                            anVar.presentFragment(new y80(bundle, null));
                             break;
                         } else if (org.telegram.messenger.t3.p0(anVar.e)) {
                             anVar.presentFragment(ProfileActivity.C4(-anVar.e.linked_monoforum_id));

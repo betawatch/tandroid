@@ -13,7 +13,7 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sg0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements org.telegram.ui.ActionBar.q1, RequestTimeDelegate, yo, sg0, QuickAckDelegate {
     public final /* synthetic */ int a;

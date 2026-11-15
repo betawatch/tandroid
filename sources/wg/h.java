@@ -32,9 +32,9 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.st;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wn;
-import tg.a2;
+import tg.z1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class h {
     public static void a(t1 t1Var, boolean z10) {
@@ -297,7 +297,7 @@ public abstract class h {
         if (tL_payments_giveawayInfoResults.winner) {
             M0 = hd.M0(2131753357, null);
             if ((tL_payments_giveawayInfoResults.flags & 16) == 0) {
-                alertDialog$Builder.k(hd.M0(2131753359, "BoostingGiveawayViewPrize"), new a2(tL_payments_giveawayInfoResults, 9));
+                alertDialog$Builder.k(hd.M0(2131753359, "BoostingGiveawayViewPrize"), new z1(tL_payments_giveawayInfoResults, 9));
             }
             alertDialog$Builder.h(hd.M0(2131752041, "Close"), new ug.x(16));
         } else {

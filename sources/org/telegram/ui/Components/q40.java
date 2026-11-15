@@ -30,7 +30,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class q40 extends w40 {
     public static final /* synthetic */ int M0 = 0;
@@ -884,7 +884,7 @@ public final class q40 extends w40 {
             v0Var.m.b("resume requested: trim=" + v0Var.K + ".." + v0Var.L + ", sourceDurationMs=" + v0Var.I);
             v0Var.t();
             v0Var.x(6);
-            v0Var.j.execute(new ai.j(v0Var, v0Var.l(), v0Var.U, v0Var.T, v0Var.V, 18));
+            v0Var.j.execute(new ai.j(v0Var, v0Var.l(), v0Var.U, v0Var.T, v0Var.V, 17));
             this.U = null;
             this.i0 = true;
             this.j0 = false;
@@ -1120,7 +1120,7 @@ public final class q40 extends w40 {
             } else {
                 v0Var.t();
                 v0Var.x(7);
-                v0Var.j.execute(new di.fa(v0Var, v0Var.U, v0Var.l() || z10, v0Var.V, z11, v0Var.l() ? 1 : 2, v0Var.T));
+                v0Var.j.execute(new di.ea(v0Var, v0Var.U, v0Var.l() || z10, v0Var.V, z11, v0Var.l() ? 1 : 2, v0Var.T));
             }
             z12 = true;
         }

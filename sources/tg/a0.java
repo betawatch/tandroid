@@ -16,7 +16,7 @@ import org.telegram.ui.Components.mx;
 import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a0 implements mx {
     public final /* synthetic */ g0 a;
@@ -62,7 +62,7 @@ public final class a0 implements mx {
 
     @Override // org.telegram.ui.Components.mx
     public final boolean k() {
-        b editText = ((o2) this.a.C0).getEditText();
+        b editText = ((n2) this.a.C0).getEditText();
         if (editText == null || editText.length() == 0) {
             return false;
         }
@@ -72,17 +72,17 @@ public final class a0 implements mx {
 
     @Override // org.telegram.ui.Components.mx
     public final void l(String str) {
-        o2 o2Var;
+        n2 n2Var;
         b editText;
         g6[] g6VarArr;
         j jVar = this.a.C0;
-        if ((jVar instanceof o2) && (editText = (o2Var = (o2) jVar).getEditText()) != null) {
+        if ((jVar instanceof n2) && (editText = (n2Var = (n2) jVar).getEditText()) != null) {
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd < 0) {
                 selectionEnd = 0;
             }
             try {
-                CharSequence m10 = j6.m(str, o2Var.getFontMetricsInt(), false, null, 0);
+                CharSequence m10 = j6.m(str, n2Var.getFontMetricsInt(), false, null, 0);
                 if ((m10 instanceof Spanned) && (g6VarArr = (g6[]) ((Spanned) m10).getSpans(0, m10.length(), g6.class)) != null) {
                     for (g6 g6Var : g6VarArr) {
                         g6Var.b = 0.85f;
@@ -119,7 +119,7 @@ public final class a0 implements mx {
 
     @Override // org.telegram.ui.Components.mx
     public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
-        b editText = ((o2) this.a.C0).getEditText();
+        b editText = ((n2) this.a.C0).getEditText();
         if (editText == null) {
             return;
         }

@@ -12,7 +12,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class op0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -127,9 +127,9 @@ public final class op0 extends AnimatorListenerAdapter {
         di.k4 k4Var2 = photoViewer.Q0;
         Property property2 = View.ALPHA;
         arrayList2.add(ObjectAnimator.ofFloat(k4Var2, (Property<di.k4, Float>) property2, 1.0f));
-        tg.f2 f2Var = photoViewer.p5;
-        if (f2Var != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(f2Var, (Property<tg.f2, Float>) property2, 1.0f));
+        tg.e2 e2Var = photoViewer.p5;
+        if (e2Var != null) {
+            arrayList2.add(ObjectAnimator.ofFloat(e2Var, (Property<tg.e2, Float>) property2, 1.0f));
         }
         fi.w2 w2Var = photoViewer.s5;
         if (w2Var != null) {

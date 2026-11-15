@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xc implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -705,7 +705,7 @@ public final /* synthetic */ class xc implements View.OnClickListener {
                                 st0 st0Var = chatActivityEnterView.U1;
                                 m60 m60Var2 = new m60(st0Var != null ? st0Var : chatActivityEnterView, chatActivityEnterView.E4, wdVar, false, false, true);
                                 m60Var2.X = org.telegram.messenger.g0.L(280.0f);
-                                org.telegram.ui.an.C8(new j90(m60Var2, chatActivityEnterView.F0), anVar3.h, true, true, true, true);
+                                org.telegram.ui.an.C8(new k90(m60Var2, chatActivityEnterView.F0), anVar3.h, true, true, true, true);
                                 m60Var2.U = true;
                                 m60Var2.p = new org.telegram.ui.zg(29, chatActivityEnterView, m60Var2);
                                 chatActivityEnterView.t6 = m60Var2;

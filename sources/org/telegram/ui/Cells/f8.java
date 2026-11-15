@@ -15,7 +15,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import di.ub;
+import di.tb;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.fp;
 import org.telegram.ui.Components.qs;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f8 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final TextView E;
@@ -42,7 +42,7 @@ public final class f8 extends FrameLayout implements org.telegram.ui.ActionBar.z
     public final ImageView H;
     public AnimatorSet I;
     public final int a;
-    public final ub b;
+    public final tb b;
     public final TextView c;
     public final org.telegram.ui.Components.i9 d;
     public final fp e;
@@ -162,18 +162,18 @@ public final class f8 extends FrameLayout implements org.telegram.ui.ActionBar.z
         this.y.setPadding(org.telegram.messenger.g0.L(10.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
         addView(this.y, c8.ja.d(-2, -1.0f, hd.a0 ? 3 : 5, 0.0f, 0.0f, 0.0f, 0.0f));
         this.y.setOnClickListener(new z7(this, 1));
-        ub ubVar = new ub(context, 9);
-        this.b = ubVar;
-        ns.i(ubVar);
-        org.telegram.ui.ActionBar.q6.U(ubVar, org.telegram.ui.ActionBar.j6.G6, null);
-        ubVar.setTextSize(1, 16.0f);
-        ubVar.setTypeface(org.telegram.messenger.g0.o());
-        ubVar.setLines(1);
-        ubVar.setMaxLines(1);
-        ubVar.setSingleLine(true);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        ubVar.setGravity(c8.ja.y());
-        addView(ubVar, c8.ja.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
+        tb tbVar = new tb(context, 9);
+        this.b = tbVar;
+        ns.i(tbVar);
+        org.telegram.ui.ActionBar.q6.U(tbVar, org.telegram.ui.ActionBar.j6.G6, null);
+        tbVar.setTextSize(1, 16.0f);
+        tbVar.setTypeface(org.telegram.messenger.g0.o());
+        tbVar.setLines(1);
+        tbVar.setMaxLines(1);
+        tbVar.setSingleLine(true);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        tbVar.setGravity(c8.ja.y());
+        addView(tbVar, c8.ja.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
         org.telegram.ui.ActionBar.q6.U(textView3, org.telegram.ui.ActionBar.j6.z6, null);
@@ -423,17 +423,17 @@ public final class f8 extends FrameLayout implements org.telegram.ui.ActionBar.z
         this.s = z11;
         org.telegram.ui.Components.i9 i9Var = this.d;
         i9Var.setVisibility(0);
-        ub ubVar = this.b;
-        ubVar.setTranslationY(0.0f);
-        ubVar.setText(this.r.set.title);
+        tb tbVar = this.b;
+        tbVar.setTranslationY(0.0f);
+        tbVar.setText(this.r.set.title);
         boolean z12 = this.r.set.archived;
         TextView textView = this.c;
         if (z12) {
-            ubVar.setAlpha(0.5f);
+            tbVar.setAlpha(0.5f);
             textView.setAlpha(0.5f);
             i9Var.setAlpha(0.5f);
         } else {
-            ubVar.setAlpha(1.0f);
+            tbVar.setAlpha(1.0f);
             textView.setAlpha(1.0f);
             i9Var.setAlpha(1.0f);
         }
@@ -549,12 +549,12 @@ public final class f8 extends FrameLayout implements org.telegram.ui.ActionBar.z
         int measuredWidth = frameLayout.getMeasuredWidth() + org.telegram.messenger.g0.L(26.0f);
         boolean z12 = hd.a0;
         TextView textView3 = this.c;
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         if (z12) {
-            ((ViewGroup.MarginLayoutParams) ubVar.getLayoutParams()).leftMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) tbVar.getLayoutParams()).leftMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).leftMargin = measuredWidth;
         } else {
-            ((ViewGroup.MarginLayoutParams) ubVar.getLayoutParams()).rightMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) tbVar.getLayoutParams()).rightMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).rightMargin = measuredWidth;
         }
     }

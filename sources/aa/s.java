@@ -1,6 +1,6 @@
 package aa;
 
-import ai.i1;
+import ai.j1;
 import android.util.Log;
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Callable {
     public final /* synthetic */ int a;
@@ -49,8 +49,8 @@ public final /* synthetic */ class s implements Callable {
                 return Boolean.valueOf(z10);
             case 1:
                 ArrayList arrayList = (ArrayList) this.b;
-                ai.s[] sVarArr = DictationAsr.a;
-                return Integer.valueOf(DictationAsr.u("silero_vad.onnx", i1.f(arrayList, "silero-vad"), null));
+                ai.t[] tVarArr = DictationAsr.a;
+                return Integer.valueOf(DictationAsr.u("silero_vad.onnx", j1.f(arrayList, "silero-vad"), null));
             case 2:
                 return new e5.f((JsReplyProxyBoundaryInterface) this.b);
             default:

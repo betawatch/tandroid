@@ -3,15 +3,14 @@ package ai;
 import a8.xa;
 import android.graphics.Bitmap;
 import android.os.Looper;
-import di.mb;
-import di.v8;
+import di.lb;
+import di.u8;
 import fi.o5;
 import fi.s6;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Map;
-import ki.x2;
 import org.telegram.messenger.AppStartReceiver;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.Utilities;
@@ -34,7 +33,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +48,7 @@ public final /* synthetic */ class o implements Runnable {
         int i7 = 0;
         switch (this.a) {
             case 0:
-                s[] sVarArr = DictationAsr.a;
+                t[] tVarArr = DictationAsr.a;
                 ArrayList arrayList = new ArrayList(DictationAsr.g);
                 int size = arrayList.size();
                 while (i7 < size) {
@@ -117,10 +116,10 @@ public final /* synthetic */ class o implements Runnable {
                 if (T2 == null) {
                     return;
                 }
-                T2.presentFragment(new mb());
+                T2.presentFragment(new lb());
                 return;
             case 10:
-                v8[][] v8VarArr = v8.S;
+                u8[][] u8VarArr = u8.S;
                 return;
             case 11:
                 return;
@@ -151,7 +150,7 @@ public final /* synthetic */ class o implements Runnable {
                 kg.v1[] v1VarArr = kg.v1.g;
                 return;
             case 20:
-                HashSet hashSet = x2.b1;
+                HashSet hashSet = ki.x2.b1;
                 return;
             case 21:
                 int i13 = mi.h.I;

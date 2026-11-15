@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class bw extends c1 {
     public static volatile bw[] r = new bw[4];
@@ -204,7 +204,7 @@ public final class bw extends c1 {
         }
         encryptedChat.layer = (i7 << 16) | (encryptedChat.layer & 65535);
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new bq(messagesStorage, encryptedChat, 2));
+        messagesStorage.a.c(new aq(messagesStorage, encryptedChat, 2));
         if (X0 < 151) {
             w(encryptedChat, null);
         }
@@ -947,7 +947,7 @@ public final class bw extends c1 {
                         encryptedChat.ttl = decryptedMessageAction2.ttl_seconds;
                         tL_messageEncryptedAction.encryptedAction = decryptedMessageAction2;
                         vr messagesStorage = getMessagesStorage();
-                        messagesStorage.a.c(new bq(messagesStorage, encryptedChat, 0));
+                        messagesStorage.a.c(new aq(messagesStorage, encryptedChat, 0));
                     } else {
                         TLRPC.TL_messageEncryptedAction tL_messageEncryptedAction2 = new TLRPC.TL_messageEncryptedAction();
                         tL_messageService.action = tL_messageEncryptedAction2;
@@ -1153,7 +1153,7 @@ public final class bw extends c1 {
                 } else if (!decryptedMessageAction.random_ids.isEmpty()) {
                     int currentTime = getConnectionsManager().getCurrentTime();
                     vr messagesStorage4 = getMessagesStorage();
-                    messagesStorage4.a.c(new tq(messagesStorage4, encryptedChat.id, tL_decryptedMessageService.action.random_ids, 1, currentTime, currentTime));
+                    messagesStorage4.a.c(new sq(messagesStorage4, encryptedChat.id, tL_decryptedMessageService.action.random_ids, 1, currentTime, currentTime));
                     return null;
                 }
             } else if (r2.a) {
@@ -1176,7 +1176,7 @@ public final class bw extends c1 {
         vr messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
         if (!arrayList2.isEmpty()) {
-            messagesStorage.a.c(new pp(messagesStorage, arrayList2, 3));
+            messagesStorage.a.c(new sp(messagesStorage, arrayList2, 2));
         }
         arrayList.clear();
     }

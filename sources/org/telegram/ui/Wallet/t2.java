@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class t2 extends FrameLayout {
     public final org.telegram.ui.Components.u5 a;
@@ -44,19 +44,19 @@ public final class t2 extends FrameLayout {
         paint.setColor(intValue);
         View[] viewPages = w2Var.m1.getViewPages();
         this.d = 0.0f;
-        for (ai.j1 j1Var : viewPages) {
-            if (j1Var != 0) {
-                float i7 = Utilities.i(1.0f - Math.abs(j1Var.getTranslationX() / Math.max(1, j1Var.getMeasuredWidth())), 1.0f, 0.0f);
+        for (ai.k1 k1Var : viewPages) {
+            if (k1Var != 0) {
+                float i7 = Utilities.i(1.0f - Math.abs(k1Var.getTranslationX() / Math.max(1, k1Var.getMeasuredWidth())), 1.0f, 0.0f);
                 float f11 = this.d;
-                boolean z10 = j1Var instanceof u2;
+                boolean z10 = k1Var instanceof u2;
                 if (z10) {
-                    v2 v2Var = (v2) ((u2) j1Var);
+                    v2 v2Var = (v2) ((u2) k1Var);
                     f10 = Math.max(0.0f, v2Var.getHeight() - v2Var.a.getMeasuredHeight());
                 } else {
                     f10 = 0.0f;
                 }
                 this.d = (f10 * i7) + f11;
-                if (j1Var.getVisibility() == 0 && z10) {
+                if (k1Var.getVisibility() == 0 && z10) {
                 }
             }
         }

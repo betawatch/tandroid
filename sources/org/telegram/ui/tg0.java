@@ -13,7 +13,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class tg0 implements Choreographer.FrameCallback {
     public static final LinearGradient E;
@@ -30,7 +30,7 @@ public final class tg0 implements Choreographer.FrameCallback {
     public long r = 0;
     public float s = org.telegram.messenger.g0.L(40.0f);
     public View w;
-    public di.z8 x;
+    public di.y8 x;
 
     static {
         Paint paint = new Paint(1);
@@ -243,9 +243,9 @@ public final class tg0 implements Choreographer.FrameCallback {
                     view = e10;
                 }
             }
-            di.z8 z8Var = this.x;
-            if (z8Var != null) {
-                z8Var.run();
+            di.y8 y8Var = this.x;
+            if (y8Var != null) {
+                y8Var.run();
                 this.x = null;
             }
         }
@@ -395,7 +395,7 @@ public final class tg0 implements Choreographer.FrameCallback {
         e();
     }
 
-    public final void l(di.z8 z8Var) {
-        this.x = z8Var;
+    public final void l(di.y8 y8Var) {
+        this.x = y8Var;
     }
 }

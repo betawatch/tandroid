@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import di.v8;
+import di.u8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.Utilities;
@@ -26,10 +26,10 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
-import org.telegram.ui.jl0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class s2 implements org.telegram.ui.web.c0 {
     public boolean a;
@@ -199,29 +199,29 @@ public final class s2 implements org.telegram.ui.web.c0 {
         o2 o2Var = x2Var.x;
         w2 w2Var = x2Var.f;
         org.telegram.ui.ActionBar.e2 lastFragment = ((LaunchActivity) x2Var.m0).M().getLastFragment();
-        jl0 jl0Var = null;
+        kl0 kl0Var = null;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
             org.telegram.messenger.g0.v1(w2Var);
             org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, x2Var.getContext(), null);
             t1Var.r(150L);
-            v8.y(x2Var.I, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new di.s3(t1Var, 1), new ai.u1(27, this, str));
+            u8.y(x2Var.I, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new di.s3(t1Var, 1), new ai.v1(27, this, str));
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             np.s1(x2Var.I).Y3(paymentForm.users, false);
-            jl0Var = new jl0(paymentForm, null, str, lastFragment);
+            kl0Var = new kl0(paymentForm, null, str, lastFragment);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            jl0Var = new jl0((TLRPC.PaymentReceipt) tLObject);
+            kl0Var = new kl0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (jl0Var != null) {
+        if (kl0Var != null) {
             o2Var.e(o2Var.getTopActionBarOffsetY() + (-o2Var.getOffsetY()));
             org.telegram.messenger.g0.v1(w2Var);
             nb0 nb0Var = new nb0(this.b);
             nb0Var.show();
-            jl0Var.a1 = new a3.h((Object) this, (Object) nb0Var, str, 14);
-            jl0Var.Z0 = this.c;
-            nb0Var.c(jl0Var);
+            kl0Var.a1 = new a3.h((Object) this, (Object) nb0Var, str, 14);
+            kl0Var.Z0 = this.c;
+            nb0Var.c(kl0Var);
         }
     }
 

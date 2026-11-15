@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class v61 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int t0 = 0;
@@ -608,7 +608,7 @@ public abstract class v61 extends FrameLayout implements org.telegram.ui.ActionB
             yVar.h(z10 ? c1Var : null);
         }
         c1Var.setItemAnimator(z10 ? this.p0 : null);
-        org.telegram.messenger.g0.d0(c1Var, new di.t7(6, this, z10));
+        org.telegram.messenger.g0.d0(c1Var, new ai.u2(7, this, z10));
     }
 
     @Override // org.telegram.ui.ActionBar.z5

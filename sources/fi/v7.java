@@ -15,7 +15,7 @@ import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v7 {
     public static CharSequence[] y;
@@ -132,7 +132,7 @@ public final class v7 {
             return;
         }
         this.q = true;
-        np.s1(this.a).P1().g0(this.c.intValue(), this.b.longValue(), new ai.f0(this, 18));
+        np.s1(this.a).P1().g0(this.c.intValue(), this.b.longValue(), new ai.g0(this, 18));
     }
 
     public final void e(float f10, float f11, boolean z10) {

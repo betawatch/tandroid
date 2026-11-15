@@ -3,7 +3,7 @@ package fi;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h5 extends c5.a {
     public final /* synthetic */ i9 c;
@@ -30,7 +30,7 @@ public final class h5 extends c5.a {
     @Override // c5.a
     public final Object e(c5.l lVar, int i7) {
         k5 k5Var = this.e;
-        g5 g5Var = new g5(this, this.c, this.d, k5Var.I, new ai.f0(this, 17));
+        g5 g5Var = new g5(this, this.c, this.d, k5Var.I, new ai.g0(this, 17));
         g5Var.setTag(Integer.valueOf(i7));
         g5Var.setShadowDrawable(k5Var.s);
         g5Var.setPadding(0, org.telegram.messenger.g0.L(16.0f), 0, 0);

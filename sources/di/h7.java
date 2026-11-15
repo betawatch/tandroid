@@ -7,11 +7,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h7 implements RequestDelegate {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ v8 b;
+    public final /* synthetic */ u8 b;
     public final /* synthetic */ s10 c;
     public final /* synthetic */ Context d;
     public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
@@ -21,8 +21,8 @@ public final /* synthetic */ class h7 implements RequestDelegate {
     public final /* synthetic */ TLObject i;
     public final /* synthetic */ TLObject j;
 
-    public /* synthetic */ h7(v8 v8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = v8Var;
+    public /* synthetic */ h7(u8 u8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = u8Var;
         this.c = s10Var;
         this.d = context;
         this.e = e6Var;
@@ -45,8 +45,8 @@ public final /* synthetic */ class h7 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ h7(v8 v8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
-        this.b = v8Var;
+    public /* synthetic */ h7(u8 u8Var, s10 s10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+        this.b = u8Var;
         this.c = s10Var;
         this.d = context;
         this.e = e6Var;

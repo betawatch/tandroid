@@ -9,16 +9,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v8 b;
+    public final /* synthetic */ u8 b;
     public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ s7(v8 v8Var, TLObject tLObject, int i7) {
+    public /* synthetic */ s7(u8 u8Var, TLObject tLObject, int i7) {
         this.a = i7;
-        this.b = v8Var;
+        this.b = u8Var;
         this.c = tLObject;
     }
 
@@ -26,33 +26,33 @@ public final /* synthetic */ class s7 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v8 v8Var = this.b;
-                int i7 = v8Var.a;
-                v8Var.A = false;
+                u8 u8Var = this.b;
+                int i7 = u8Var.a;
+                u8Var.A = false;
                 TLObject tLObject = this.c;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
                     np.s1(i7).Y3(starsStatus.users, false);
                     np.s1(i7).S3(starsStatus.chats, false);
-                    v8Var.z.addAll(starsStatus.subscriptions);
-                    v8Var.i0(starsStatus.balance);
+                    u8Var.z.addAll(starsStatus.subscriptions);
+                    u8Var.i0(starsStatus.balance);
                     ns.f(i7).k(ns.A3, new Object[0]);
                     break;
                 }
                 break;
             case 1:
-                v8 v8Var2 = this.b;
-                int i10 = v8Var2.a;
-                v8Var2.x = false;
+                u8 u8Var2 = this.b;
+                int i10 = u8Var2.a;
+                u8Var2.x = false;
                 TLObject tLObject2 = this.c;
                 if (tLObject2 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus2 = (TL_stars.StarsStatus) tLObject2;
                     np.s1(i10).Y3(starsStatus2.users, false);
                     np.s1(i10).S3(starsStatus2.chats, false);
-                    v8Var2.v.addAll(starsStatus2.subscriptions);
-                    v8Var2.y = (starsStatus2.flags & 4) == 0;
-                    v8Var2.w = starsStatus2.subscriptions_next_offset;
-                    v8Var2.i0(starsStatus2.balance);
+                    u8Var2.v.addAll(starsStatus2.subscriptions);
+                    u8Var2.y = (starsStatus2.flags & 4) == 0;
+                    u8Var2.w = starsStatus2.subscriptions_next_offset;
+                    u8Var2.i0(starsStatus2.balance);
                     ns.f(i10).k(ns.A3, new Object[0]);
                     break;
                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class s7 implements Runnable {
                 final ArrayList arrayList2 = new ArrayList();
                 TLObject tLObject3 = this.c;
                 boolean z10 = tLObject3 instanceof Vector;
-                final v8 v8Var3 = this.b;
+                final u8 u8Var3 = this.b;
                 if (z10) {
                     ArrayList<T> arrayList3 = ((Vector) tLObject3).objects;
                     int size = arrayList3.size();
@@ -79,14 +79,14 @@ public final /* synthetic */ class s7 implements Runnable {
                             }
                         }
                     }
-                    v8Var3.i = true;
+                    u8Var3.i = true;
                 }
-                v8Var3.j = arrayList;
-                v8Var3.h = false;
-                ns.f(v8Var3.a).k(ns.v3, new Object[0]);
+                u8Var3.j = arrayList;
+                u8Var3.h = false;
+                ns.f(u8Var3.a).k(ns.v3, new Object[0]);
                 if (!arrayList2.isEmpty()) {
                     final int i12 = 0;
-                    Runnable runnable = new Runnable() { // from class: di.y7
+                    Runnable runnable = new Runnable() { // from class: di.x7
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i12) {
@@ -98,14 +98,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i13 >= arrayList5.size()) {
                                             org.telegram.messenger.r1 i14 = org.telegram.messenger.r1.i();
                                             final int i15 = 1;
-                                            final v8 v8Var4 = v8Var3;
+                                            final u8 u8Var4 = u8Var3;
                                             i14.o(arrayList4, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i15) {
                                                         case 0:
                                                             final int i16 = 1;
-                                                            final v8 v8Var5 = v8Var4;
+                                                            final u8 u8Var5 = u8Var4;
                                                             final ArrayList arrayList6 = arrayList5;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -120,7 +120,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i17 = fVar.a;
                                                                             if (i17 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i17)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i17)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -145,23 +145,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var6 = v8Var5;
-                                                                                if (v8Var6.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var6.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var6.m.get(i20);
+                                                                                u8 u8Var6 = u8Var5;
+                                                                                if (u8Var6.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var6.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var6.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var6.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var6.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -186,23 +186,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var7 = v8Var5;
-                                                                                if (v8Var7.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var7.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var7.p.get(i24);
+                                                                                u8 u8Var7 = u8Var5;
+                                                                                if (u8Var7.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var7.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var7.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var7.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var7.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -227,16 +227,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var5;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var5;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -246,7 +246,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i17 = 2;
-                                                            final v8 v8Var6 = v8Var4;
+                                                            final u8 u8Var6 = u8Var4;
                                                             final ArrayList arrayList7 = arrayList5;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -261,7 +261,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i172 = fVar.a;
                                                                             if (i172 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -286,23 +286,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var6;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var62.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i20);
+                                                                                u8 u8Var62 = u8Var6;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var62.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -327,23 +327,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var7 = v8Var6;
-                                                                                if (v8Var7.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var7.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var7.p.get(i24);
+                                                                                u8 u8Var7 = u8Var6;
+                                                                                if (u8Var7.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var7.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var7.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var7.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var7.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -368,16 +368,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var6;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var6;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -387,7 +387,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i18 = 0;
-                                                            final v8 v8Var7 = v8Var4;
+                                                            final u8 u8Var7 = u8Var4;
                                                             final ArrayList arrayList8 = arrayList5;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -402,7 +402,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i172 = fVar.a;
                                                                             if (i172 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -427,23 +427,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var7;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var62.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i20);
+                                                                                u8 u8Var62 = u8Var7;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var62.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -468,23 +468,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -509,16 +509,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -546,14 +546,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i16 >= arrayList7.size()) {
                                             org.telegram.messenger.r1 i17 = org.telegram.messenger.r1.i();
                                             final int i18 = 2;
-                                            final v8 v8Var5 = v8Var3;
+                                            final u8 u8Var5 = u8Var3;
                                             i17.o(arrayList6, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i18) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var5;
+                                                            final u8 u8Var52 = u8Var5;
                                                             final ArrayList arrayList62 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -568,7 +568,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i172 = fVar.a;
                                                                             if (i172 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i172)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -593,23 +593,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var52;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var62.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i20);
+                                                                                u8 u8Var62 = u8Var52;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var62.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -634,23 +634,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -675,16 +675,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -694,7 +694,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var6 = v8Var5;
+                                                            final u8 u8Var6 = u8Var5;
                                                             final ArrayList arrayList72 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -709,7 +709,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -734,23 +734,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var6;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var62.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i20);
+                                                                                u8 u8Var62 = u8Var6;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var62.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -775,23 +775,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var6;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var6;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -816,16 +816,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var6;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var6;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -835,7 +835,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var5;
+                                                            final u8 u8Var7 = u8Var5;
                                                             final ArrayList arrayList8 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -850,7 +850,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -875,23 +875,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var7;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i20 = 0; i20 < v8Var62.m.size(); i20++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i20);
+                                                                                u8 u8Var62 = u8Var7;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i20 = 0; i20 < u8Var62.m.size(); i20++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i20);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i21 = fVar.a;
                                                                             if (i21 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i21)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -916,23 +916,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -957,16 +957,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -994,14 +994,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i19 >= arrayList9.size()) {
                                             org.telegram.messenger.r1 i20 = org.telegram.messenger.r1.i();
                                             final int i21 = 0;
-                                            final v8 v8Var6 = v8Var3;
+                                            final u8 u8Var6 = u8Var3;
                                             i20.o(arrayList8, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i21) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var6;
+                                                            final u8 u8Var52 = u8Var6;
                                                             final ArrayList arrayList62 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1016,7 +1016,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1041,23 +1041,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var62 = v8Var52;
-                                                                                if (v8Var62.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var62.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var62.m.get(i202);
+                                                                                u8 u8Var62 = u8Var52;
+                                                                                if (u8Var62.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var62.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var62.m.get(i202);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var62.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var62.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1082,23 +1082,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1123,16 +1123,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1142,7 +1142,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var6;
+                                                            final u8 u8Var62 = u8Var6;
                                                             final ArrayList arrayList72 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1157,7 +1157,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1182,23 +1182,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1223,23 +1223,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1264,16 +1264,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1283,7 +1283,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var6;
+                                                            final u8 u8Var7 = u8Var6;
                                                             final ArrayList arrayList82 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1298,7 +1298,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1323,23 +1323,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption2 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption2 != null && tL_starsGiftOption2.loadingStorePrice) {
                                                                                             tL_starsGiftOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1364,23 +1364,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1405,16 +1405,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1451,7 +1451,7 @@ public final /* synthetic */ class s7 implements Runnable {
                 final ArrayList arrayList5 = new ArrayList();
                 TLObject tLObject4 = this.c;
                 boolean z11 = tLObject4 instanceof Vector;
-                final v8 v8Var4 = this.b;
+                final u8 u8Var4 = this.b;
                 if (z11) {
                     ArrayList<T> arrayList6 = ((Vector) tLObject4).objects;
                     int size2 = arrayList6.size();
@@ -1468,14 +1468,14 @@ public final /* synthetic */ class s7 implements Runnable {
                             }
                         }
                     }
-                    v8Var4.l = true;
+                    u8Var4.l = true;
                 }
-                v8Var4.m = arrayList4;
-                v8Var4.k = false;
-                ns.f(v8Var4.a).k(ns.w3, new Object[0]);
+                u8Var4.m = arrayList4;
+                u8Var4.k = false;
+                ns.f(u8Var4.a).k(ns.w3, new Object[0]);
                 if (!arrayList5.isEmpty()) {
                     final int i14 = 1;
-                    Runnable runnable2 = new Runnable() { // from class: di.y7
+                    Runnable runnable2 = new Runnable() { // from class: di.x7
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i14) {
@@ -1487,14 +1487,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i132 >= arrayList52.size()) {
                                             org.telegram.messenger.r1 i142 = org.telegram.messenger.r1.i();
                                             final int i15 = 1;
-                                            final v8 v8Var42 = v8Var4;
+                                            final u8 u8Var42 = u8Var4;
                                             i142.o(arrayList42, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i15) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var42;
+                                                            final u8 u8Var52 = u8Var42;
                                                             final ArrayList arrayList62 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1509,7 +1509,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1534,23 +1534,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var52;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var52;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1575,23 +1575,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1616,16 +1616,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1635,7 +1635,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var42;
+                                                            final u8 u8Var62 = u8Var42;
                                                             final ArrayList arrayList72 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1650,7 +1650,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1675,23 +1675,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1716,23 +1716,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1757,16 +1757,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1776,7 +1776,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var42;
+                                                            final u8 u8Var7 = u8Var42;
                                                             final ArrayList arrayList82 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1791,7 +1791,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1816,23 +1816,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -1857,23 +1857,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -1898,16 +1898,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -1935,14 +1935,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i16 >= arrayList7.size()) {
                                             org.telegram.messenger.r1 i17 = org.telegram.messenger.r1.i();
                                             final int i18 = 2;
-                                            final v8 v8Var5 = v8Var4;
+                                            final u8 u8Var5 = u8Var4;
                                             i17.o(arrayList62, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i18) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var5;
+                                                            final u8 u8Var52 = u8Var5;
                                                             final ArrayList arrayList622 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -1957,7 +1957,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -1982,23 +1982,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var52;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var52;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2023,23 +2023,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2064,16 +2064,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2083,7 +2083,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var5;
+                                                            final u8 u8Var62 = u8Var5;
                                                             final ArrayList arrayList72 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2098,7 +2098,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2123,23 +2123,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2164,23 +2164,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2205,16 +2205,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2224,7 +2224,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var5;
+                                                            final u8 u8Var7 = u8Var5;
                                                             final ArrayList arrayList82 = arrayList7;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2239,7 +2239,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2264,23 +2264,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2305,23 +2305,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2346,16 +2346,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2383,14 +2383,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i19 >= arrayList9.size()) {
                                             org.telegram.messenger.r1 i20 = org.telegram.messenger.r1.i();
                                             final int i21 = 0;
-                                            final v8 v8Var6 = v8Var4;
+                                            final u8 u8Var6 = u8Var4;
                                             i20.o(arrayList8, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i21) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var6;
+                                                            final u8 u8Var52 = u8Var6;
                                                             final ArrayList arrayList622 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2405,7 +2405,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2430,23 +2430,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var52;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var52;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2471,23 +2471,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2512,16 +2512,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2531,7 +2531,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var6;
+                                                            final u8 u8Var62 = u8Var6;
                                                             final ArrayList arrayList72 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2546,7 +2546,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2571,23 +2571,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2612,23 +2612,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2653,16 +2653,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2672,7 +2672,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var6;
+                                                            final u8 u8Var7 = u8Var6;
                                                             final ArrayList arrayList82 = arrayList9;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2687,7 +2687,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2712,23 +2712,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2753,23 +2753,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption2 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption2 != null && tL_starsGiveawayOption2.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption2.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -2794,16 +2794,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -2840,7 +2840,7 @@ public final /* synthetic */ class s7 implements Runnable {
                 final ArrayList arrayList8 = new ArrayList();
                 TLObject tLObject5 = this.c;
                 boolean z12 = tLObject5 instanceof Vector;
-                final v8 v8Var5 = this.b;
+                final u8 u8Var5 = this.b;
                 if (z12) {
                     ArrayList<T> arrayList9 = ((Vector) tLObject5).objects;
                     int size3 = arrayList9.size();
@@ -2857,14 +2857,14 @@ public final /* synthetic */ class s7 implements Runnable {
                             }
                         }
                     }
-                    v8Var5.o = true;
+                    u8Var5.o = true;
                 }
-                v8Var5.p = arrayList7;
-                v8Var5.n = false;
-                ns.f(v8Var5.a).k(ns.x3, new Object[0]);
+                u8Var5.p = arrayList7;
+                u8Var5.n = false;
+                ns.f(u8Var5.a).k(ns.x3, new Object[0]);
                 if (!arrayList8.isEmpty()) {
                     final int i16 = 2;
-                    Runnable runnable3 = new Runnable() { // from class: di.y7
+                    Runnable runnable3 = new Runnable() { // from class: di.x7
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i16) {
@@ -2876,14 +2876,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i132 >= arrayList52.size()) {
                                             org.telegram.messenger.r1 i142 = org.telegram.messenger.r1.i();
                                             final int i152 = 1;
-                                            final v8 v8Var42 = v8Var5;
+                                            final u8 u8Var42 = u8Var5;
                                             i142.o(arrayList42, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i152) {
                                                         case 0:
                                                             final int i162 = 1;
-                                                            final v8 v8Var52 = v8Var42;
+                                                            final u8 u8Var52 = u8Var42;
                                                             final ArrayList arrayList622 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -2898,7 +2898,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -2923,23 +2923,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var52;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var52;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -2964,23 +2964,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var52;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var52;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3005,16 +3005,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var52;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var52;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3024,7 +3024,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var42;
+                                                            final u8 u8Var62 = u8Var42;
                                                             final ArrayList arrayList72 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3039,7 +3039,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3064,23 +3064,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3105,23 +3105,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3146,16 +3146,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3165,7 +3165,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var42;
+                                                            final u8 u8Var7 = u8Var42;
                                                             final ArrayList arrayList82 = arrayList52;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3180,7 +3180,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3205,23 +3205,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3246,23 +3246,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3287,16 +3287,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3324,14 +3324,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i162 >= arrayList72.size()) {
                                             org.telegram.messenger.r1 i17 = org.telegram.messenger.r1.i();
                                             final int i18 = 2;
-                                            final v8 v8Var52 = v8Var5;
+                                            final u8 u8Var52 = u8Var5;
                                             i17.o(arrayList62, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i18) {
                                                         case 0:
                                                             final int i1622 = 1;
-                                                            final v8 v8Var522 = v8Var52;
+                                                            final u8 u8Var522 = u8Var52;
                                                             final ArrayList arrayList622 = arrayList72;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3346,7 +3346,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3371,23 +3371,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var522;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var522;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3412,23 +3412,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var522;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var522;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3453,16 +3453,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var522;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var522;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3472,7 +3472,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var52;
+                                                            final u8 u8Var62 = u8Var52;
                                                             final ArrayList arrayList722 = arrayList72;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3487,7 +3487,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3512,23 +3512,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3553,23 +3553,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3594,16 +3594,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3613,7 +3613,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var52;
+                                                            final u8 u8Var7 = u8Var52;
                                                             final ArrayList arrayList82 = arrayList72;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3628,7 +3628,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3653,23 +3653,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3694,23 +3694,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3735,16 +3735,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3772,14 +3772,14 @@ public final /* synthetic */ class s7 implements Runnable {
                                         if (i19 >= arrayList92.size()) {
                                             org.telegram.messenger.r1 i20 = org.telegram.messenger.r1.i();
                                             final int i21 = 0;
-                                            final v8 v8Var6 = v8Var5;
+                                            final u8 u8Var6 = u8Var5;
                                             i20.o(arrayList82, new org.telegram.messenger.q1() { // from class: di.s6
                                                 @Override // org.telegram.messenger.q1
                                                 public final void a(final f5.f fVar, final List list) {
                                                     switch (i21) {
                                                         case 0:
                                                             final int i1622 = 1;
-                                                            final v8 v8Var522 = v8Var6;
+                                                            final u8 u8Var522 = u8Var6;
                                                             final ArrayList arrayList622 = arrayList92;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3794,7 +3794,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3819,23 +3819,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var522;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var522;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -3860,23 +3860,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var522;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var522;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -3901,16 +3901,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var522;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var522;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -3920,7 +3920,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         case 1:
                                                             final int i172 = 2;
-                                                            final v8 v8Var62 = v8Var6;
+                                                            final u8 u8Var62 = u8Var6;
                                                             final ArrayList arrayList722 = arrayList92;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -3935,7 +3935,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -3960,23 +3960,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var62;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var62;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -4001,23 +4001,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var62;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var62;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -4042,16 +4042,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var62;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var62;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
@@ -4061,7 +4061,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                             break;
                                                         default:
                                                             final int i182 = 0;
-                                                            final v8 v8Var7 = v8Var6;
+                                                            final u8 u8Var7 = u8Var6;
                                                             final ArrayList arrayList822 = arrayList92;
                                                             org.telegram.messenger.g0.h3(new Runnable() { // from class: di.w6
                                                                 @Override // java.lang.Runnable
@@ -4076,7 +4076,7 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                         case 0:
                                                                             int i1722 = fVar.a;
                                                                             if (i1722 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i1722)));
                                                                                 break;
                                                                             } else {
                                                                                 List list2 = list;
@@ -4101,23 +4101,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var622 = v8Var7;
-                                                                                if (v8Var622.m != null) {
-                                                                                    for (int i202 = 0; i202 < v8Var622.m.size(); i202++) {
-                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) v8Var622.m.get(i202);
+                                                                                u8 u8Var622 = u8Var7;
+                                                                                if (u8Var622.m != null) {
+                                                                                    for (int i202 = 0; i202 < u8Var622.m.size(); i202++) {
+                                                                                        TL_stars.TL_starsGiftOption tL_starsGiftOption22 = (TL_stars.TL_starsGiftOption) u8Var622.m.get(i202);
                                                                                         if (tL_starsGiftOption22 != null && tL_starsGiftOption22.loadingStorePrice) {
                                                                                             tL_starsGiftOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var622.a).k(ns.w3, new Object[0]);
+                                                                                ns.f(u8Var622.a).k(ns.w3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         case 1:
                                                                             int i212 = fVar.a;
                                                                             if (i212 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i212)));
                                                                                 break;
                                                                             } else {
                                                                                 List list3 = list;
@@ -4142,23 +4142,23 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var72 = v8Var7;
-                                                                                if (v8Var72.p != null) {
-                                                                                    for (int i24 = 0; i24 < v8Var72.p.size(); i24++) {
-                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) v8Var72.p.get(i24);
+                                                                                u8 u8Var72 = u8Var7;
+                                                                                if (u8Var72.p != null) {
+                                                                                    for (int i24 = 0; i24 < u8Var72.p.size(); i24++) {
+                                                                                        TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption22 = (TL_stars.TL_starsGiveawayOption) u8Var72.p.get(i24);
                                                                                         if (tL_starsGiveawayOption22 != null && tL_starsGiveawayOption22.loadingStorePrice) {
                                                                                             tL_starsGiveawayOption22.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var72.a).k(ns.x3, new Object[0]);
+                                                                                ns.f(u8Var72.a).k(ns.x3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;
                                                                         default:
                                                                             int i25 = fVar.a;
                                                                             if (i25 != 0) {
-                                                                                v8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
+                                                                                u8.e("BILLING_".concat(org.telegram.messenger.r1.j(i25)));
                                                                                 break;
                                                                             } else {
                                                                                 List list4 = list;
@@ -4183,16 +4183,16 @@ public final /* synthetic */ class s7 implements Runnable {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                v8 v8Var8 = v8Var7;
-                                                                                if (v8Var8.j != null) {
-                                                                                    for (int i28 = 0; i28 < v8Var8.j.size(); i28++) {
-                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) v8Var8.j.get(i28);
+                                                                                u8 u8Var8 = u8Var7;
+                                                                                if (u8Var8.j != null) {
+                                                                                    for (int i28 = 0; i28 < u8Var8.j.size(); i28++) {
+                                                                                        TL_stars.TL_starsTopupOption tL_starsTopupOption3 = (TL_stars.TL_starsTopupOption) u8Var8.j.get(i28);
                                                                                         if (tL_starsTopupOption3 != null && tL_starsTopupOption3.loadingStorePrice) {
                                                                                             tL_starsTopupOption3.missingStorePrice = true;
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                ns.f(v8Var8.a).k(ns.v3, new Object[0]);
+                                                                                ns.f(u8Var8.a).k(ns.v3, new Object[0]);
                                                                                 break;
                                                                             }
                                                                             break;

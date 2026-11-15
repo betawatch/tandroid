@@ -14,11 +14,11 @@ import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.gj0;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ja0;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.w80;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements gj0 {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class f0 implements gj0 {
                 b41 G2 = l7Var.T1.G(i7 - 1);
                 if (G2 != null) {
                     if (G2.H(hi.j7.class) && (webPage = l7Var.c2) != null && !hi.l7.g1(webPage)) {
-                        tg.m2 m2Var = new tg.m2(context, l7Var.a);
+                        tg.l2 l2Var = new tg.l2(context, l7Var.a);
                         tg.h0 h0Var = new tg.h0();
                         h0Var.c = k3Var2.d.getText().toString();
                         h0Var.b = l7Var.i2 ? k3Var.d.getText().toString() : null;
@@ -122,16 +122,16 @@ public final /* synthetic */ class f0 implements gj0 {
                         h0Var.e = l7Var.k2;
                         h0Var.f = l7Var.j2;
                         hi.g7 g7Var = new hi.g7(l7Var, 0);
-                        m2Var.H = h0Var;
+                        l2Var.H = h0Var;
                         int i11 = (webPage2 == null || (webPage2.photo == null && !gj.K4(webPage2.document))) ? 8 : 0;
-                        ia0 ia0Var = m2Var.y;
-                        ia0Var.setVisibility(i11);
-                        m2Var.f.b(m2Var.a, h0Var, false);
-                        m2Var.x.a(!h0Var.f, false);
-                        ia0Var.a(!h0Var.e, false);
-                        m2Var.I = g7Var;
-                        m2Var.e.setImageDrawable(new hi.k3(x5Var, 9));
-                        m2Var.show();
+                        ja0 ja0Var = l2Var.y;
+                        ja0Var.setVisibility(i11);
+                        l2Var.f.b(l2Var.a, h0Var, false);
+                        l2Var.x.a(!h0Var.f, false);
+                        ja0Var.a(!h0Var.e, false);
+                        l2Var.I = g7Var;
+                        l2Var.e.setImageDrawable(new hi.k3(x5Var, 9));
+                        l2Var.show();
                         break;
                     } else if (G2.d == 2 && (view instanceof org.telegram.ui.Cells.q8)) {
                         boolean z11 = !l7Var.i2;

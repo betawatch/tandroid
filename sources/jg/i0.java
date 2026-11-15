@@ -5,9 +5,9 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.dz;
-import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.it0;
 import org.telegram.ui.Components.iz;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.mi0;
 import org.telegram.ui.Components.q61;
@@ -17,7 +17,7 @@ import org.telegram.ui.StickersActivity;
 import org.telegram.ui.pw;
 import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i0 extends v4.b0 {
     public final /* synthetic */ int I;
@@ -77,7 +77,7 @@ public final class i0 extends v4.b0 {
         switch (this.I) {
             case 3:
                 super.k1(z10);
-                ((i90) this.J).b.setTranslationY(org.telegram.messenger.g0.L(6.0f) * (z10 ? -1 : 1));
+                ((j90) this.J).b.setTranslationY(org.telegram.messenger.g0.L(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -116,9 +116,9 @@ public final class i0 extends v4.b0 {
                     } else {
                         i7 = 0;
                     }
-                    ai.j0 j0Var = mi0Var.T;
-                    if (j0Var != null) {
-                        j0Var.invalidate();
+                    ai.k0 k0Var = mi0Var.T;
+                    if (k0Var != null) {
+                        k0Var.invalidate();
                     }
                     c1Var.invalidate();
                 }
@@ -137,9 +137,9 @@ public final class i0 extends v4.b0 {
                         } catch (Exception unused2) {
                         }
                     }
-                    ai.j0 j0Var2 = mi0Var.T;
-                    if (j0Var2 != null) {
-                        j0Var2.invalidate();
+                    ai.k0 k0Var2 = mi0Var.T;
+                    if (k0Var2 != null) {
+                        k0Var2.invalidate();
                     }
                     c1Var.invalidate();
                 }

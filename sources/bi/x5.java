@@ -5,13 +5,13 @@ import android.content.Context;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import di.mb;
+import di.lb;
 import org.telegram.messenger.s10;
 import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.p00;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x5 extends p41 {
     public final /* synthetic */ int Q;
@@ -66,13 +66,13 @@ public final class x5 extends p41 {
                     break;
                 }
             case 1:
-                mb mbVar = (mb) this.R;
+                lb lbVar = (lb) this.R;
                 if (i7 != 42) {
                     break;
                 } else {
-                    Activity parentActivity = mbVar.getParentActivity();
+                    Activity parentActivity = lbVar.getParentActivity();
                     int i10 = org.telegram.ui.ActionBar.j6.L6;
-                    e6Var = ((org.telegram.ui.ActionBar.e2) mbVar).resourceProvider;
+                    e6Var = ((org.telegram.ui.ActionBar.e2) lbVar).resourceProvider;
                     org.telegram.ui.Cells.n4 n4Var = new org.telegram.ui.Cells.n4(parentActivity, i10, 21, 0, false, e6Var);
                     n4Var.setHeight(25);
                     break;

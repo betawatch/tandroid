@@ -13,8 +13,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import di.mb;
-import di.ub;
+import di.lb;
+import di.tb;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.is;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.fp;
 import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class c7 extends FrameLayout implements is {
     public final org.telegram.ui.ActionBar.e6 E;
@@ -44,7 +44,7 @@ public class c7 extends FrameLayout implements is {
     public long M;
     public oy0 N;
     public final org.telegram.ui.Components.i9 a;
-    public final ub b;
+    public final tb b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final fp d;
     public final a7 e;
@@ -76,16 +76,16 @@ public class c7 extends FrameLayout implements is {
         } else {
             addView(i9Var, c8.ja.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         }
-        ub ubVar = new ub(context, 8);
-        this.b = ubVar;
-        ns.i(ubVar);
-        org.telegram.ui.ActionBar.q6.U(ubVar, this.G ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, e6Var);
-        ubVar.setTextSize(1, 12.0f);
-        ubVar.setMaxLines(2);
-        ubVar.setGravity(49);
-        ubVar.setLines(2);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(ubVar, c8.ja.d(-1, -2.0f, 51, 6.0f, i7 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
+        tb tbVar = new tb(context, 8);
+        this.b = tbVar;
+        ns.i(tbVar);
+        org.telegram.ui.ActionBar.q6.U(tbVar, this.G ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, e6Var);
+        tbVar.setTextSize(1, 12.0f);
+        tbVar.setMaxLines(2);
+        tbVar.setGravity(49);
+        tbVar.setLines(2);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        addView(tbVar, c8.ja.d(-1, -2.0f, 51, 6.0f, i7 == 2 ? 58.0f : 66.0f, 6.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         org.telegram.ui.ActionBar.q6.X(j5Var, org.telegram.ui.ActionBar.j6.j5, e6Var);
@@ -124,9 +124,9 @@ public class c7 extends FrameLayout implements is {
         a7 a7Var = this.e;
         a7Var.p = 1.0f;
         org.telegram.ui.Components.i9 i9Var = this.a;
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         if (j3 == Long.MAX_VALUE) {
-            ubVar.setText(a());
+            tbVar.setText(a());
             if (this.f == null) {
                 this.f = new b7(getContext(), i9Var, true, R.drawable.large_repost_story, this.E);
             }
@@ -141,30 +141,30 @@ public class c7 extends FrameLayout implements is {
                 TL_account.RequirementToContact J2 = np.s1(i7).J2(j3);
                 this.G = J2 instanceof TL_account.requirementToContactPremium;
                 this.I = org.telegram.messenger.m5.k(J2);
-                org.telegram.ui.ActionBar.q6.U(ubVar, this.G ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, this.E);
+                org.telegram.ui.ActionBar.q6.U(tbVar, this.G ? org.telegram.ui.ActionBar.j6.C6 : org.telegram.ui.ActionBar.j6.j5, this.E);
                 u5Var2.a(this.G);
                 u5Var.a(this.I > 0);
                 invalidate();
                 a7Var.r(this.h);
                 int i10 = this.n;
                 if (i10 != 2 && q10.z(this.h)) {
-                    ubVar.setText(hd.M0(2131746266, null));
+                    tbVar.setText(hd.M0(2131746266, null));
                     a7Var.g(12);
                     i9Var.j(null, null, a7Var, this.h);
                 } else if (i10 == 2 || !q10.B(this.h)) {
                     if (charSequence != null) {
-                        ubVar.setText(charSequence);
+                        tbVar.setText(charSequence);
                     } else {
                         TLRPC.User user = this.h;
                         if (user != null) {
-                            ubVar.setText(org.telegram.messenger.g5.m(0, user.first_name, user.last_name));
+                            tbVar.setText(org.telegram.messenger.g5.m(0, user.first_name, user.last_name));
                         } else {
-                            ubVar.setText("");
+                            tbVar.setText("");
                         }
                     }
                     i9Var.f(this.h, a7Var);
                 } else {
-                    ubVar.setText(hd.M0(2131745901, null));
+                    tbVar.setText(hd.M0(2131745901, null));
                     a7Var.g(1);
                     i9Var.j(null, null, a7Var, this.h);
                 }
@@ -178,13 +178,13 @@ public class c7 extends FrameLayout implements is {
                 u5Var.e(true, 0.0f);
                 TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
                 if (charSequence != null) {
-                    ubVar.setText(charSequence);
+                    tbVar.setText(charSequence);
                 } else if (M0 == null) {
-                    ubVar.setText("");
+                    tbVar.setText("");
                 } else if (M0.monoforum) {
-                    ubVar.setText(qg.c.i(i7, M0, false));
+                    tbVar.setText(qg.c.i(i7, M0, false));
                 } else {
-                    ubVar.setText(M0.title);
+                    tbVar.setText(M0.title);
                 }
                 if (org.telegram.messenger.t3.p0(M0)) {
                     qg.c.o(i7, M0, a7Var, i9Var);
@@ -231,11 +231,11 @@ public class c7 extends FrameLayout implements is {
                     c7 c7Var = c7.this;
                     org.telegram.ui.ActionBar.j5 j5Var2 = c7Var.c;
                     j5Var2.setAlpha(f12);
-                    ub ubVar = c7Var.b;
+                    tb tbVar = c7Var.b;
                     float f13 = 1.0f - f12;
-                    ubVar.setAlpha(f13);
+                    tbVar.setAlpha(f13);
                     j5Var2.setTranslationX(f13 * (-org.telegram.messenger.g0.L(10.0f)));
-                    ubVar.setTranslationX(f12 * org.telegram.messenger.g0.L(10.0f));
+                    tbVar.setTranslationX(f12 * org.telegram.messenger.g0.L(10.0f));
                 }
             });
             gVar2.a(new r1.c() { // from class: org.telegram.ui.Cells.z6
@@ -247,17 +247,17 @@ public class c7 extends FrameLayout implements is {
             j5Var.setTag(R.id.spring_tag, gVar2);
             gVar2.h();
         } else {
-            ub ubVar = this.b;
+            tb tbVar = this.b;
             if (z13) {
                 j5Var.setAlpha(1.0f);
-                ubVar.setAlpha(0.0f);
+                tbVar.setAlpha(0.0f);
                 j5Var.setTranslationX(0.0f);
-                ubVar.setTranslationX(org.telegram.messenger.g0.L(10.0f));
+                tbVar.setTranslationX(org.telegram.messenger.g0.L(10.0f));
             } else {
                 j5Var.setAlpha(0.0f);
-                ubVar.setAlpha(1.0f);
+                tbVar.setAlpha(1.0f);
                 j5Var.setTranslationX(-org.telegram.messenger.g0.L(10.0f));
-                ubVar.setTranslationX(0.0f);
+                tbVar.setTranslationX(0.0f);
             }
         }
         this.x = z13;
@@ -355,7 +355,7 @@ public class c7 extends FrameLayout implements is {
                 long j14 = this.I;
                 this.M = j14;
                 sb2.append(org.telegram.messenger.g0.o0((int) j14, 0));
-                this.N = new oy0(mb.U0(sb2.toString(), 0.65f, null), 9.33f, org.telegram.messenger.g0.o());
+                this.N = new oy0(lb.U0(sb2.toString(), 0.65f, null), 9.33f, org.telegram.messenger.g0.o());
                 oy0 oy0Var22 = this.N;
                 float L4 = (oy0Var22 != null ? f10 : oy0Var22.c) + org.telegram.messenger.g0.L(10.0f);
                 float L22 = org.telegram.messenger.g0.L(14.33f);

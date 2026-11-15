@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class oa0 extends FrameLayout {
     public final int E;
@@ -133,7 +133,7 @@ public final class oa0 extends FrameLayout {
         final hi.d g10 = org.telegram.messenger.i20.g(24, context, e6Var, true);
         g10.i(org.telegram.messenger.hd.M0(z10 ? 2131747047 : 2131746957, null), false, true);
         f10.addView(g10, c8.ja.r(-1, 48, 1));
-        g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ka0
+        g10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.la0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 hi.d dVar = hi.d.this;
@@ -181,7 +181,7 @@ public final class oa0 extends FrameLayout {
             org.telegram.messenger.k5.q(null, null, z10 ? 2131747040 : 2131746950, new Object[]{j10}, textView4);
             f10.addView(textView4, c8.ja.t(-1, -2, 1, 32, 9, 32, 19));
             ug.q0 q0Var = new ug.q0(context, e6Var, true);
-            q0Var.setOnClickListener(new la0(z10, p6Var, runnable));
+            q0Var.setOnClickListener(new ma0(z10, p6Var, runnable));
             q0Var.c(org.telegram.messenger.hd.M0(z10 ? 2131747046 : 2131746956, null), false, false);
             f10.addView(q0Var, c8.ja.t(-1, 48, 1, 0, 0, 0, 4));
         }

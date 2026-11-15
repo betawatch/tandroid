@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.u91;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class sn extends FrameLayout implements te.b, org.telegram.messenger.is, org.telegram.ui.ActionBar.z5 {
     public org.telegram.ui.ActionBar.k A0;
@@ -757,9 +757,9 @@ public class sn extends FrameLayout implements te.b, org.telegram.messenger.is, 
                 if (anVar.g4 == 3) {
                     bundle2.putLong("topic_id", anVar.e9());
                 }
-                x80 x80Var = new x80(bundle2, qs0Var);
-                x80Var.c = anVar.q8;
-                anVar.presentFragment(x80Var, z11);
+                y80 y80Var = new y80(bundle2, qs0Var);
+                y80Var.c = anVar.q8;
+                anVar.presentFragment(y80Var, z11);
                 return;
             }
             if (anVar.g4 == 3) {
@@ -781,8 +781,8 @@ public class sn extends FrameLayout implements te.b, org.telegram.messenger.is, 
             if (org.telegram.messenger.q10.u(j3)) {
                 bundle2.putLong("topic_id", anVar.b());
             }
-            ai.k0 k0Var = anVar.Z1;
-            bundle2.putBoolean("reportSpam", (k0Var == null || (rgVar = anVar.b1) == null || !rgVar.d(k0Var) || anVar.c2.getVisibility() == 8) ? false : true);
+            ai.l0 l0Var = anVar.Z1;
+            bundle2.putBoolean("reportSpam", (l0Var == null || (rgVar = anVar.b1) == null || !rgVar.d(l0Var) || anVar.c2.getVisibility() == 8) ? false : true);
             bundle2.putInt("actionBarColor", org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.s8, this.e0));
             ProfileActivity profileActivity2 = new ProfileActivity(bundle2, qs0Var);
             if (!z14) {

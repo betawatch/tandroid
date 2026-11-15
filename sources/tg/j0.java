@@ -9,7 +9,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class j0 extends i {
     public final /* synthetic */ int n = 0;
@@ -492,8 +492,8 @@ public final class j0 extends i {
         }
     }
 
-    public j0(p2 p2Var, Context context) {
-        super(p2Var, context);
+    public j0(o2 o2Var, Context context) {
+        super(o2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
@@ -508,8 +508,8 @@ public final class j0 extends i {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public j0(o2 o2Var, Context context) {
-        super(o2Var, context);
+    public j0(n2 n2Var, Context context) {
+        super(n2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();

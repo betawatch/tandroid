@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f60 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,11 +45,11 @@ public final /* synthetic */ class f60 implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:16:0x008d  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0521 A[Catch: Exception -> 0x0424, TRY_ENTER, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0537, B:301:0x053c, B:302:0x053f, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
+    /* JADX WARN: Removed duplicated region for block: B:289:0x0521 A[Catch: Exception -> 0x0424, TRY_ENTER, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0538, B:301:0x053d, B:302:0x0540, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
     /* JADX WARN: Removed duplicated region for block: B:291:0x0526  */
-    /* JADX WARN: Removed duplicated region for block: B:299:0x0537 A[Catch: Exception -> 0x0424, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0537, B:301:0x053c, B:302:0x053f, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0538 A[Catch: Exception -> 0x0424, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0538, B:301:0x053d, B:302:0x0540, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x053c A[Catch: Exception -> 0x0424, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0537, B:301:0x053c, B:302:0x053f, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
+    /* JADX WARN: Removed duplicated region for block: B:301:0x053d A[Catch: Exception -> 0x0424, TryCatch #13 {Exception -> 0x0424, blocks: (B:230:0x0413, B:232:0x0419, B:234:0x0427, B:236:0x0434, B:237:0x0437, B:239:0x0444, B:241:0x044c, B:243:0x045d, B:245:0x0463, B:247:0x046b, B:249:0x0473, B:299:0x0538, B:301:0x053d, B:302:0x0540, B:289:0x0521, B:292:0x0511, B:293:0x0527), top: B:229:0x0413 }] */
     /* JADX WARN: Type inference failed for: r7v10, types: [boolean] */
     /* JADX WARN: Type inference failed for: r7v12 */
     /* JADX WARN: Type inference failed for: r7v9 */
@@ -166,7 +166,7 @@ public final /* synthetic */ class f60 implements Runnable {
                 ek0Var.Q1(M0, org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750686, objArr));
                 return;
             case 5:
-                ym0.Z((ym0) this.c, (TLObject) this.d, this.b);
+                zm0.Z((zm0) this.c, (TLObject) this.d, this.b);
                 return;
             case 6:
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
@@ -299,7 +299,7 @@ public final /* synthetic */ class f60 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            org.telegram.messenger.g0.h3(new hn0(t1Var2, zArr2, activity, file, 7));
+                                            org.telegram.messenger.g0.h3(new ok0(t1Var2, zArr2, activity, file, 8));
                                             return;
                                         } catch (Throwable th2) {
                                             th = th2;
@@ -334,7 +334,7 @@ public final /* synthetic */ class f60 implements Runnable {
                             }
                             if (zipOutputStream != null) {
                             }
-                            org.telegram.messenger.g0.h3(new hn0(t1Var2, zArr2, activity, file, 7));
+                            org.telegram.messenger.g0.h3(new ok0(t1Var2, zArr2, activity, file, 8));
                             return;
                         } catch (Throwable th4) {
                             th = th4;
@@ -349,7 +349,7 @@ public final /* synthetic */ class f60 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    org.telegram.messenger.g0.h3(new hn0(t1Var2, zArr2, activity, file, 7));
+                    org.telegram.messenger.g0.h3(new ok0(t1Var2, zArr2, activity, file, 8));
                     return;
                 } catch (Exception e15) {
                     e15.printStackTrace();
@@ -377,13 +377,13 @@ public final /* synthetic */ class f60 implements Runnable {
                 return;
             case 12:
                 org.telegram.ui.Wallet.u0 u0Var = (org.telegram.ui.Wallet.u0) this.c;
-                ai.c0 c0Var = (ai.c0) this.d;
+                ai.d0 d0Var = (ai.d0) this.d;
                 boolean z22 = this.b;
                 if (u0Var.b) {
                     return;
                 }
                 try {
-                    if (c0Var.b == ((org.telegram.ui.Wallet.p0) c0Var.c).l()) {
+                    if (d0Var.b == ((org.telegram.ui.Wallet.p0) d0Var.c).l()) {
                         c8.xa.b = u0Var;
                         LaunchActivity launchActivity3 = LaunchActivity.H1;
                         int i17 = Build.VERSION.SDK_INT;

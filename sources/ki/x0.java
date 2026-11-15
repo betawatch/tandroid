@@ -10,14 +10,14 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.ma0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.ay0;
 import org.telegram.ui.c40;
 import org.telegram.ui.gh;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -68,7 +68,7 @@ public final /* synthetic */ class x0 implements RequestDelegate {
                     hashSet.add(Long.valueOf(j3));
                 }
                 if (atomicInteger.incrementAndGet() == i10 && !hashSet.isEmpty()) {
-                    org.telegram.messenger.g0.h3(new ma0(c40Var, hashSet, r3Var, str, 10));
+                    org.telegram.messenger.g0.h3(new u80(c40Var, hashSet, r3Var, str, 11));
                     break;
                 }
                 break;

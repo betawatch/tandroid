@@ -4,7 +4,7 @@ import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.q1 {
     public final /* synthetic */ int a;
@@ -69,10 +69,10 @@ public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.q1, o
                 org.telegram.ui.Cells.c2[] c2VarArr = (org.telegram.ui.Cells.c2[]) this.h;
                 if (user != null) {
                     org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(cVar.a);
-                    a02.a.c(new org.telegram.messenger.sp(3, anVar.a(), user.id, a02));
+                    a02.a.c(new org.telegram.messenger.pp(3, anVar.a(), user.id, a02));
                 } else {
                     org.telegram.messenger.vr a03 = org.telegram.messenger.vr.a0(cVar.a);
-                    a03.a.c(new org.telegram.messenger.sp(3, anVar.a(), -chat.id, a03));
+                    a03.a.c(new org.telegram.messenger.pp(3, anVar.a(), -chat.id, a03));
                 }
                 TLRPC.TL_contacts_blockFromReplies tL_contacts_blockFromReplies = new TLRPC.TL_contacts_blockFromReplies();
                 tL_contacts_blockFromReplies.msg_id = gjVar.e1();

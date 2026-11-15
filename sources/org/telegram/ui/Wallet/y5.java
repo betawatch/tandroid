@@ -85,7 +85,7 @@ import org.telegram.ui.x21;
 import org.telegram.ui.xa1;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class y5 extends r41 implements is {
     public static Typeface V0;
@@ -133,7 +133,7 @@ public final class y5 extends r41 implements is {
     public float m0;
     public n5 n;
     public ValueAnimator n0;
-    public ai.q2 o0;
+    public ai.r2 o0;
     public boolean p0;
     public hi.i1 q0;
     public int r;
@@ -542,7 +542,7 @@ public final class y5 extends r41 implements is {
         String d12 = d1(c12);
         if (d12 != null) {
             int i7 = y5Var.currentAccount;
-            np.s1(i7).d2().a(d12, null, new ai.x1(new l4(y5Var, 4), i7));
+            np.s1(i7).d2().a(d12, null, new ai.y1(new l4(y5Var, 4), i7));
         } else {
             if ((y5Var.getParentActivity() instanceof LaunchActivity) && new q90((LaunchActivity) y5Var.getParentActivity(), y5Var.currentAccount, null, false).g(c12)) {
                 return;
@@ -1054,7 +1054,7 @@ public final class y5 extends r41 implements is {
                                 b5Var = b5Var2;
                                 imageView = imageView4;
                                 imageView2 = imageView5;
-                                lVar.setOnClickListener(new di.y9(new boolean[]{false}, x2VarArr, e6Var2, lVar, wallettransaction, i7, str));
+                                lVar.setOnClickListener(new di.x9(new boolean[]{false}, x2VarArr, e6Var2, lVar, wallettransaction, i7, str));
                                 SpannableString[] spannableStringArr2 = new SpannableString[i10];
                                 TextView[] textViewArr2 = new TextView[i10];
                                 vx0 vx0Var2 = new vx0(context, e6Var2);
@@ -1310,7 +1310,7 @@ public final class y5 extends r41 implements is {
                                     }
                                 });
                                 ImageView imageView9 = imageView2;
-                                imageView9.setOnClickListener(new di.w9(x2VarArr2, e6Var, imageView9, wallettransactionArr, context, i7));
+                                imageView9.setOnClickListener(new di.v9(x2VarArr2, e6Var, imageView9, wallettransactionArr, context, i7));
                                 return linearLayout3;
                             }
                         } else if (TextUtils.isEmpty(wallettransaction.comment)) {
@@ -1380,7 +1380,7 @@ public final class y5 extends r41 implements is {
                         }
                     });
                     ImageView imageView92 = imageView2;
-                    imageView92.setOnClickListener(new di.w9(x2VarArr2, e6Var, imageView92, wallettransactionArr2, context, i7));
+                    imageView92.setOnClickListener(new di.v9(x2VarArr2, e6Var, imageView92, wallettransactionArr2, context, i7));
                     return linearLayout32;
                 }
                 t6 = walletTransactionPeer.address;
@@ -1428,7 +1428,7 @@ public final class y5 extends r41 implements is {
                 }
             });
             ImageView imageView922 = imageView2;
-            imageView922.setOnClickListener(new di.w9(x2VarArr2, e6Var, imageView922, wallettransactionArr22, context, i7));
+            imageView922.setOnClickListener(new di.v9(x2VarArr2, e6Var, imageView922, wallettransactionArr22, context, i7));
             return linearLayout322;
         }
         if (wallettransaction.incoming) {
@@ -1476,7 +1476,7 @@ public final class y5 extends r41 implements is {
             }
         });
         ImageView imageView9222 = imageView2;
-        imageView9222.setOnClickListener(new di.w9(x2VarArr2, e6Var, imageView9222, wallettransactionArr222, context, i7));
+        imageView9222.setOnClickListener(new di.v9(x2VarArr2, e6Var, imageView9222, wallettransactionArr222, context, i7));
         return linearLayout3222;
     }
 
@@ -2150,9 +2150,9 @@ public final class y5 extends r41 implements is {
                 Z0(u41Var2, z10);
             }
         }
-        ai.q2 q2Var = this.o0;
-        if (q2Var != null) {
-            q2Var.post(new e4(this, 6));
+        ai.r2 r2Var = this.o0;
+        if (r2Var != null) {
+            r2Var.post(new e4(this, 6));
             this.o0.post(new e4(this, 7));
         }
     }
@@ -2200,9 +2200,9 @@ public final class y5 extends r41 implements is {
             if (this.S0 && !this.T0 && x10.v() > 500000000) {
                 arrayList.add(b41.k(this.d0));
             }
-            ai.q2 q2Var = this.o0;
+            ai.r2 r2Var = this.o0;
             b41 b41Var2 = new b41(-3);
-            b41Var2.c = q2Var;
+            b41Var2.c = r2Var;
             b41Var2.z = 0;
             b41Var2.y = 1;
             arrayList.add(b41Var2);
@@ -2276,7 +2276,7 @@ public final class y5 extends r41 implements is {
             this.X.setText(x0(2131743062, j3));
         }
         this.T.i(this.W, z11, z10);
-        long j11 = di.v8.y(this.currentAccount, true).p().amount;
+        long j11 = di.u8.y(this.currentAccount, true).p().amount;
         boolean z12 = j11 > 500000000;
         if (z12) {
             this.Z.setText(x0(2131743100, j11));
@@ -2626,9 +2626,9 @@ public final class y5 extends r41 implements is {
         oa0Var.addView(c8Var2, c8.ja.c(-1.0f, -1));
         this.l0 = "";
         int i18 = 9;
-        ai.q2 q2Var = new ai.q2(context, i18);
-        this.o0 = q2Var;
-        q2Var.setOrientation(1);
+        ai.r2 r2Var = new ai.r2(context, i18);
+        this.o0 = r2Var;
+        r2Var.setOrientation(1);
         org.telegram.ui.ActionBar.q6.h(i11, this.o0, getResourceProvider());
         hi.i1 i1Var = new hi.i1(this, context, this.resourceProvider, i18);
         this.q0 = i1Var;
@@ -3018,8 +3018,8 @@ public final class y5 extends r41 implements is {
     }
 
     public final boolean z0() {
-        ai.q2 q2Var;
-        if (this.p0 || (q2Var = this.o0) == null || !q2Var.isAttachedToWindow()) {
+        ai.r2 r2Var;
+        if (this.p0 || (r2Var = this.o0) == null || !r2Var.isAttachedToWindow()) {
             return false;
         }
         ViewParent parent = this.o0.getParent();

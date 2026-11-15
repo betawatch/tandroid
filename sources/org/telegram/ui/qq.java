@@ -25,7 +25,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class qq extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int A0;
@@ -2362,7 +2362,7 @@ public final class qq extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                 i14 = 2131745547;
                             }
                             H2.l(R.drawable.msg_admins, org.telegram.messenger.hd.M0(i14, str4), new bh(vpVar, 12), z21);
-                            H2.l(R.drawable.msg_permissions, org.telegram.messenger.hd.M0(2131752540, "ChangePermissions"), new org.telegram.ui.ActionBar.m5(this, tLObject, a22, vpVar, 13), z22);
+                            H2.l(R.drawable.msg_permissions, org.telegram.messenger.hd.M0(2131752540, "ChangePermissions"), new org.telegram.ui.ActionBar.l5((org.telegram.ui.ActionBar.e2) this, tLObject, (TLObject) a22, (Object) vpVar, 14), z22);
                             boolean z24 = org.telegram.messenger.t3.w(2, this.n) && z18;
                             if (z14) {
                                 str5 = "ChannelRemoveUser";

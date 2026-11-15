@@ -37,10 +37,10 @@ import org.json.JSONObject;
 import org.telegram.ui.Wallet.k8;
 import org.telegram.ui.ld0;
 import p1.g;
-import tg.a2;
+import tg.z1;
 import w7.s;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -238,7 +238,7 @@ public final class c {
                 if (bArr2 != null) {
                     v5.c cVar4 = (v5.c) cVar2.i;
                     Objects.requireNonNull(cVar4);
-                    r5.a aVar3 = (r5.a) gVar.f(new a2(cVar4, i14));
+                    r5.a aVar3 = (r5.a) gVar.f(new z1(cVar4, i14));
                     e0 e0Var = new e0();
                     e0Var.f = new HashMap();
                     e0Var.d = Long.valueOf(((x5.a) cVar2.g).s());
@@ -439,7 +439,7 @@ public final class c {
             if (i11 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new a2(cVar2, 4));
+                    gVar.f(new z1(cVar2, 4));
                 }
             } else if (i11 == 4) {
                 HashMap hashMap2 = new HashMap();

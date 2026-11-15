@@ -2,14 +2,14 @@ package a8;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class i8 {
     public static u9.a a(String str, String str2) {
         cb.a aVar = new cb.a(str, str2);
         e2.j0 a10 = u9.a.a(cb.a.class);
         a10.b = 1;
-        a10.f = new tg.a2(aVar, 6);
+        a10.f = new tg.z1(aVar, 6);
         return a10.b();
     }
 

@@ -1,12 +1,12 @@
 package bi;
 
-import di.m8;
+import di.l8;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.m10;
 import org.telegram.messenger.np;
 import org.telegram.ui.Components.m60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d6 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.q0 a;
@@ -24,7 +24,7 @@ public final class d6 extends org.telegram.ui.ActionBar.j {
         org.telegram.ui.ActionBar.z0 z0Var;
         org.telegram.ui.ActionBar.z0 z0Var2;
         e6 e6Var = this.c;
-        m8 m8Var = e6Var.U1;
+        l8 l8Var = e6Var.U1;
         if (i7 != 1) {
             if (i7 == -1) {
                 e6Var.dismiss();
@@ -66,14 +66,14 @@ public final class d6 extends org.telegram.ui.ActionBar.j {
         }
         c6 c6Var = new c6(this, z0Var3, h, h7, h10, h11, w10, z0Var, z0Var2);
         c6Var.run();
-        z0Var3.setOnClickListener(new ai.t2(6, this, c6Var));
-        i4.j(h, m8Var, c6Var, 1);
-        i4.j(h7, m8Var, c6Var, 2);
-        i4.j(h10, m8Var, c6Var, 4);
-        i4.j(h11, m8Var, c6Var, 8);
+        z0Var3.setOnClickListener(new ai.v2(6, this, c6Var));
+        i4.j(h, l8Var, c6Var, 1);
+        i4.j(h7, l8Var, c6Var, 2);
+        i4.j(h10, l8Var, c6Var, 4);
+        i4.j(h11, l8Var, c6Var, 8);
         if (w10) {
-            i4.j(z0Var, m8Var, c6Var, 256);
-            i4.j(z0Var2, m8Var, c6Var, 512);
+            i4.j(z0Var, l8Var, c6Var, 256);
+            i4.j(z0Var2, l8Var, c6Var, 512);
         }
         F.Y = true;
         F.J = false;

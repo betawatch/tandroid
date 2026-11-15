@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wn implements Runnable {
     public final /* synthetic */ int a;
@@ -384,15 +384,15 @@ public final /* synthetic */ class wn implements Runnable {
                     return;
                 }
             case 13:
-                jl0 jl0Var = (jl0) this.c;
+                kl0 kl0Var = (kl0) this.c;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) this.d;
                 TLObject tLObject7 = (TLObject) this.e;
                 boolean z23 = this.b;
                 if (tL_error5 == null) {
                     TL_account.Password password2 = (TL_account.Password) tLObject7;
-                    jl0Var.b0 = password2;
+                    kl0Var.b0 = password2;
                     TwoStepVerificationActivity.r0(password2);
-                    jl0Var.G0(z23);
+                    kl0Var.G0(z23);
                     return;
                 }
                 return;

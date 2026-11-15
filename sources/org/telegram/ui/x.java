@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
@@ -297,7 +297,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.z10 {
                             fbVar.a.setImageDrawable(org.telegram.messenger.j6.f("🎲"));
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.hd.M0(2131745236, null));
-                        spannableStringBuilder2.append((CharSequence) di.mb.P0(j3));
+                        spannableStringBuilder2.append((CharSequence) di.lb.P0(j3));
                         spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.fc.b(org.telegram.messenger.hd.M0(2131745234, null), new fy0(7, anVar3, vVar), anVar3.getResourceProvider(), null));
                         org.telegram.messenger.g0.E2(fbVar.b);
                         org.telegram.ui.Components.ec ecVar = new org.telegram.ui.Components.ec(anVar3.getContext());
@@ -308,7 +308,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.z10 {
                         fbVar.b.setEllipsize(TextUtils.TruncateAt.END);
                         fbVar.b.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
                         fbVar.addView(fbVar.b, c8.ja.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-                        fbVar.b.setText(di.mb.S0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
+                        fbVar.b.setText(di.lb.S0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
                         org.telegram.ui.ActionBar.q6.G(fbVar.b, org.telegram.ui.ActionBar.j6.xj, anVar3.getResourceProvider());
                         fbVar.setTextColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.yj, anVar3.getResourceProvider()));
                         fbVar.b.setSingleLine(false);
@@ -396,7 +396,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.z10 {
             case 10:
                 q90 q90Var = (q90) this.b;
                 TLRPC.User[] userArr = (TLRPC.User[]) this.c;
-                org.telegram.ui.Components.ma0 ma0Var = (org.telegram.ui.Components.ma0) this.d;
+                org.telegram.ui.Components.u80 u80Var = (org.telegram.ui.Components.u80) this.d;
                 Long l13 = (Long) obj;
                 TLRPC.User a22 = l13 == null ? null : org.telegram.messenger.np.s1(q90Var.b).a2(l13);
                 userArr[0] = a22;
@@ -405,7 +405,7 @@ public final /* synthetic */ class x implements org.telegram.messenger.z10 {
                     org.telegram.messenger.k5.o(null, 2131748134, q90.d(), null);
                     break;
                 } else {
-                    ma0Var.run();
+                    u80Var.run();
                     break;
                 }
             case 11:

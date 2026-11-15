@@ -11,7 +11,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.ns;
 import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p9 implements d6 {
     public final /* synthetic */ sa a;
@@ -252,7 +252,7 @@ public final class p9 implements d6 {
             if (b6Var != null) {
                 b6Var.c(true);
             }
-            saVar.Q1 = CameraController.getInstance().takePicture(saVar.H1, true, saVar.C0.getCameraSessionObject(), new ai.u1(19, this, z10Var));
+            saVar.Q1 = CameraController.getInstance().takePicture(saVar.H1, true, saVar.C0.getCameraSessionObject(), new ai.v1(19, this, z10Var));
             return;
         }
         saVar.Q1 = false;

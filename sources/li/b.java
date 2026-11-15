@@ -1,12 +1,12 @@
 package li;
 
-import ai.u1;
+import ai.v1;
 import java.io.Serializable;
 import org.telegram.messenger.tr;
 import org.telegram.messenger.x10;
 import org.telegram.ui.Components.b41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements x10, tr {
     public final /* synthetic */ e a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class b implements x10, tr {
     public void a(String str) {
         e eVar = this.a;
         eVar.getMessagesController().M0(Long.valueOf(-eVar.b));
-        eVar.showDialog(new ni.a(eVar.getParentActivity(), null, eVar.b, new u1(29, eVar, str)));
+        eVar.showDialog(new ni.a(eVar.getParentActivity(), null, eVar.b, new v1(29, eVar, str)));
     }
 
     @Override // org.telegram.messenger.x10

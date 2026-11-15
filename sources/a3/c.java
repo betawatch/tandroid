@@ -5,7 +5,7 @@ import ch.p0;
 import ch.q0;
 import da.h0;
 import da.v1;
-import di.cc;
+import di.bc;
 import fi.d4;
 import fi.t0;
 import h9.q1;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Comparator {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class c implements Comparator {
                 i10 = ((TL_stars.SavedStarGift) obj).date;
                 break;
             case 17:
-                return (int) (((cc) obj2).d - ((cc) obj).d);
+                return (int) (((bc) obj2).d - ((bc) obj).d);
             case 18:
                 long j3 = ((ei.b) obj2).c;
                 long j10 = ((ei.b) obj).c;

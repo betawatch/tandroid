@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class tt extends org.telegram.ui.Components.r41 {
     public static void d0(String str, StringBuilder sb2) {
@@ -206,7 +206,7 @@ public final class tt extends org.telegram.ui.Components.r41 {
     public final void b0(org.telegram.ui.Components.b41 b41Var, View view) {
         boolean z10;
         Long l10;
-        int i7 = 3;
+        int i7 = 2;
         int i10 = 0;
         switch (b41Var.d) {
             case 1:
@@ -239,7 +239,7 @@ public final class tt extends org.telegram.ui.Components.r41 {
                 break;
             case 5:
                 org.telegram.messenger.vr messagesStorage = getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.qp(messagesStorage, -1, i7));
+                messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, -1, i7));
                 z10 = true;
                 if (b41Var.a == 4) {
                 }
@@ -271,7 +271,7 @@ public final class tt extends org.telegram.ui.Components.r41 {
                 break;
             case 8:
                 org.telegram.messenger.vr messagesStorage2 = getMessagesStorage();
-                messagesStorage2.a.c(new org.telegram.messenger.oq(messagesStorage2, 11));
+                messagesStorage2.a.c(new org.telegram.messenger.nq(messagesStorage2, 11));
                 org.telegram.messenger.d4 f10 = org.telegram.messenger.d4.f(this.currentAccount);
                 f10.c = 0L;
                 f10.d = 0L;
@@ -713,7 +713,7 @@ public final class tt extends org.telegram.ui.Components.r41 {
                 for (int i20 = 0; i20 < 4; i20++) {
                     if (org.telegram.messenger.m10.i(i20).p()) {
                         org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(i20);
-                        a02.a.c(new org.telegram.messenger.oq(a02, i10));
+                        a02.a.c(new org.telegram.messenger.nq(a02, i10));
                     }
                 }
                 org.telegram.ui.Components.cc.a0(this).Q(R.raw.done, 36, "Widget heights cleared").j();

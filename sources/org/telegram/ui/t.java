@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -246,54 +246,54 @@ public final /* synthetic */ class t implements View.OnLongClickListener {
                 anVar.La(true);
                 return true;
             case 3:
-                nm0 nm0Var = (nm0) obj;
-                an anVar2 = nm0Var.G;
-                if (anVar2 == null || nm0Var.H == 1) {
+                om0 om0Var = (om0) obj;
+                an anVar2 = om0Var.G;
+                if (anVar2 == null || om0Var.H == 1) {
                     return false;
                 }
                 TLRPC.User j3 = anVar2.j();
-                if (nm0Var.K == null) {
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(nm0Var.getParentActivity(), null);
-                    nm0Var.K = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                if (om0Var.K == null) {
+                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(om0Var.getParentActivity(), null);
+                    om0Var.K = actionBarPopupWindow$ActionBarPopupWindowLayout;
                     actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-                    nm0Var.K.setOnTouchListener(new org.telegram.ui.Components.se(nm0Var));
-                    nm0Var.K.setDispatchKeyEventListener(new jm0(nm0Var, i14));
-                    nm0Var.K.setShownFromBottom(false);
-                    nm0Var.L = new org.telegram.ui.ActionBar.z0[2];
+                    om0Var.K.setOnTouchListener(new org.telegram.ui.Components.se(om0Var));
+                    om0Var.K.setDispatchKeyEventListener(new km0(om0Var, i14));
+                    om0Var.K.setShownFromBottom(false);
+                    om0Var.L = new org.telegram.ui.ActionBar.z0[2];
                     int i23 = 0;
                     while (i23 < 2) {
                         if ((i23 != 0 || anVar2.S6()) && (i23 != 1 || !org.telegram.messenger.q10.B(j3))) {
-                            nm0Var.L[i23] = new org.telegram.ui.ActionBar.z0(nm0Var.getParentActivity(), i23 == 0, i23 == 1);
+                            om0Var.L[i23] = new org.telegram.ui.ActionBar.z0(om0Var.getParentActivity(), i23 == 0, i23 == 1);
                             if (i23 != 0) {
-                                nm0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745583, null), R.drawable.input_notify_off, null);
+                                om0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745583, null), R.drawable.input_notify_off, null);
                             } else if (org.telegram.messenger.q10.B(j3)) {
-                                nm0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745514, null), R.drawable.msg_calendar2, null);
+                                om0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745514, null), R.drawable.msg_calendar2, null);
                             } else {
-                                nm0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745859, null), R.drawable.msg_calendar2, null);
+                                om0Var.L[i23].j(org.telegram.messenger.hd.M0(2131745859, null), R.drawable.msg_calendar2, null);
                             }
-                            nm0Var.L[i23].setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-                            nm0Var.K.a(nm0Var.L[i23], c8.ja.o(-1, 48));
-                            nm0Var.L[i23].setOnClickListener(new ci.q(nm0Var, i23, 27));
+                            om0Var.L[i23].setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+                            om0Var.K.a(om0Var.L[i23], c8.ja.o(-1, 48));
+                            om0Var.L[i23].setOnClickListener(new ci.q(om0Var, i23, 27));
                         }
                         i23++;
                     }
-                    nm0Var.K.setupRadialSelectors(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.I5, false));
-                    org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(nm0Var.K, -2, -2);
-                    nm0Var.J = g1Var;
+                    om0Var.K.setupRadialSelectors(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.I5, false));
+                    org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(om0Var.K, -2, -2);
+                    om0Var.J = g1Var;
                     g1Var.b = false;
                     g1Var.setAnimationStyle(R.style.PopupContextAnimation2);
-                    nm0Var.J.setOutsideTouchable(true);
-                    nm0Var.J.setClippingEnabled(true);
-                    nm0Var.J.setInputMethodMode(2);
-                    nm0Var.J.setSoftInputMode(0);
-                    nm0Var.J.getContentView().setFocusableInTouchMode(true);
+                    om0Var.J.setOutsideTouchable(true);
+                    om0Var.J.setClippingEnabled(true);
+                    om0Var.J.setInputMethodMode(2);
+                    om0Var.J.setSoftInputMode(0);
+                    om0Var.J.getContentView().setFocusableInTouchMode(true);
                 }
-                nm0Var.K.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
-                nm0Var.J.setFocusable(true);
+                om0Var.K.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
+                om0Var.J.setFocusable(true);
                 int[] iArr = new int[2];
                 view.getLocationInWindow(iArr);
-                nm0Var.J.showAtLocation(view, 51, org.telegram.messenger.g0.L(8.0f) + ((view.getMeasuredWidth() + iArr[0]) - nm0Var.K.getMeasuredWidth()), (iArr[1] - nm0Var.K.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f));
-                nm0Var.J.b();
+                om0Var.J.showAtLocation(view, 51, org.telegram.messenger.g0.L(8.0f) + ((view.getMeasuredWidth() + iArr[0]) - om0Var.K.getMeasuredWidth()), (iArr[1] - om0Var.K.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f));
+                om0Var.J.b();
                 try {
                     view.performHapticFeedback(3, 2);
                     return false;
@@ -301,54 +301,54 @@ public final /* synthetic */ class t implements View.OnLongClickListener {
                     return false;
                 }
             case 4:
-                ym0 ym0Var = (ym0) obj;
-                an anVar3 = ym0Var.V;
-                if (anVar3 == null || ym0Var.I == 1) {
+                zm0 zm0Var = (zm0) obj;
+                an anVar3 = zm0Var.V;
+                if (anVar3 == null || zm0Var.I == 1) {
                     return false;
                 }
                 TLRPC.User j10 = anVar3.j();
-                if (ym0Var.o0 == null) {
-                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(ym0Var.getParentActivity(), null);
-                    ym0Var.o0 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
+                if (zm0Var.o0 == null) {
+                    ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(zm0Var.getParentActivity(), null);
+                    zm0Var.o0 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                     actionBarPopupWindow$ActionBarPopupWindowLayout2.setAnimationEnabled(false);
-                    ym0Var.o0.setOnTouchListener(new org.telegram.ui.Components.se(ym0Var));
-                    ym0Var.o0.setDispatchKeyEventListener(new rm0(ym0Var, i12));
-                    ym0Var.o0.setShownFromBottom(false);
-                    ym0Var.p0 = new org.telegram.ui.ActionBar.z0[2];
+                    zm0Var.o0.setOnTouchListener(new org.telegram.ui.Components.se(zm0Var));
+                    zm0Var.o0.setDispatchKeyEventListener(new sm0(zm0Var, i12));
+                    zm0Var.o0.setShownFromBottom(false);
+                    zm0Var.p0 = new org.telegram.ui.ActionBar.z0[2];
                     int i24 = 0;
                     while (i24 < 2) {
                         if ((i24 != 0 || anVar3.S6()) && (i24 != 1 || !org.telegram.messenger.q10.B(j10))) {
-                            ym0Var.p0[i24] = new org.telegram.ui.ActionBar.z0(ym0Var.getParentActivity(), i24 == 0, i24 == 1);
+                            zm0Var.p0[i24] = new org.telegram.ui.ActionBar.z0(zm0Var.getParentActivity(), i24 == 0, i24 == 1);
                             if (i24 != 0) {
-                                ym0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745583, null), R.drawable.input_notify_off, null);
+                                zm0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745583, null), R.drawable.input_notify_off, null);
                             } else if (org.telegram.messenger.q10.B(j10)) {
-                                ym0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745514, null), R.drawable.msg_calendar2, null);
+                                zm0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745514, null), R.drawable.msg_calendar2, null);
                             } else {
-                                ym0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745859, null), R.drawable.msg_calendar2, null);
+                                zm0Var.p0[i24].j(org.telegram.messenger.hd.M0(2131745859, null), R.drawable.msg_calendar2, null);
                             }
-                            ym0Var.p0[i24].setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-                            ym0Var.o0.a(ym0Var.p0[i24], c8.ja.o(-1, 48));
-                            ym0Var.p0[i24].setOnClickListener(new ci.q(ym0Var, i24, 28));
+                            zm0Var.p0[i24].setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+                            zm0Var.o0.a(zm0Var.p0[i24], c8.ja.o(-1, 48));
+                            zm0Var.p0[i24].setOnClickListener(new ci.q(zm0Var, i24, 28));
                         }
                         i24++;
                     }
-                    ym0Var.o0.setupRadialSelectors(org.telegram.ui.ActionBar.j6.x0(null, ym0Var.x0, false));
-                    org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(ym0Var.o0, -2, -2);
-                    ym0Var.n0 = g1Var2;
+                    zm0Var.o0.setupRadialSelectors(org.telegram.ui.ActionBar.j6.x0(null, zm0Var.x0, false));
+                    org.telegram.ui.ActionBar.g1 g1Var2 = new org.telegram.ui.ActionBar.g1(zm0Var.o0, -2, -2);
+                    zm0Var.n0 = g1Var2;
                     g1Var2.b = false;
                     g1Var2.setAnimationStyle(R.style.PopupContextAnimation2);
-                    ym0Var.n0.setOutsideTouchable(true);
-                    ym0Var.n0.setClippingEnabled(true);
-                    ym0Var.n0.setInputMethodMode(2);
-                    ym0Var.n0.setSoftInputMode(0);
-                    ym0Var.n0.getContentView().setFocusableInTouchMode(true);
+                    zm0Var.n0.setOutsideTouchable(true);
+                    zm0Var.n0.setClippingEnabled(true);
+                    zm0Var.n0.setInputMethodMode(2);
+                    zm0Var.n0.setSoftInputMode(0);
+                    zm0Var.n0.getContentView().setFocusableInTouchMode(true);
                 }
-                ym0Var.o0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
-                ym0Var.n0.setFocusable(true);
+                zm0Var.o0.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(1000.0f), TLObject.FLAG_31));
+                zm0Var.n0.setFocusable(true);
                 int[] iArr2 = new int[2];
                 view.getLocationInWindow(iArr2);
-                ym0Var.n0.showAtLocation(view, 51, org.telegram.messenger.g0.L(8.0f) + ((view.getMeasuredWidth() + iArr2[0]) - ym0Var.o0.getMeasuredWidth()), (iArr2[1] - ym0Var.o0.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f));
-                ym0Var.n0.b();
+                zm0Var.n0.showAtLocation(view, 51, org.telegram.messenger.g0.L(8.0f) + ((view.getMeasuredWidth() + iArr2[0]) - zm0Var.o0.getMeasuredWidth()), (iArr2[1] - zm0Var.o0.getMeasuredHeight()) - org.telegram.messenger.g0.L(2.0f));
+                zm0Var.n0.b();
                 try {
                     view.performHapticFeedback(3, 2);
                     return false;
@@ -436,11 +436,11 @@ public final /* synthetic */ class t implements View.OnLongClickListener {
                                         sq0 sq0Var8 = photoViewer.d;
                                         boolean z17 = sq0Var8 == null && sq0Var8.H() > 1;
                                         F = org.telegram.ui.Components.m60.F(photoViewer.f0, new fi.b(), view);
-                                        F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new dn0(photoViewer, i13), z11);
-                                        F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new dn0(photoViewer, i12), z14);
-                                        F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new dn0(photoViewer, 4), z14);
-                                        F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new dn0(photoViewer, 5), z15);
-                                        F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new dn0(photoViewer, 6), z16);
+                                        F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new en0(photoViewer, i13), z11);
+                                        F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new en0(photoViewer, i12), z14);
+                                        F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new en0(photoViewer, 4), z14);
+                                        F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new en0(photoViewer, 5), z15);
+                                        F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new en0(photoViewer, 6), z16);
                                         if (F.x() != 0) {
                                             F.V(5);
                                             F.Z();
@@ -457,11 +457,11 @@ public final /* synthetic */ class t implements View.OnLongClickListener {
                                 if (sq0Var82 == null) {
                                 }
                                 F = org.telegram.ui.Components.m60.F(photoViewer.f0, new fi.b(), view);
-                                F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new dn0(photoViewer, i13), z11);
-                                F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new dn0(photoViewer, i12), z14);
-                                F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new dn0(photoViewer, 4), z14);
-                                F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new dn0(photoViewer, 5), z15);
-                                F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new dn0(photoViewer, 6), z16);
+                                F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new en0(photoViewer, i13), z11);
+                                F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new en0(photoViewer, i12), z14);
+                                F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new en0(photoViewer, 4), z14);
+                                F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new en0(photoViewer, 5), z15);
+                                F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new en0(photoViewer, 6), z16);
                                 if (F.x() != 0) {
                                 }
                             }
@@ -477,11 +477,11 @@ public final /* synthetic */ class t implements View.OnLongClickListener {
                         if (sq0Var822 == null) {
                         }
                         F = org.telegram.ui.Components.m60.F(photoViewer.f0, new fi.b(), view);
-                        F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new dn0(photoViewer, i13), z11);
-                        F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new dn0(photoViewer, i12), z14);
-                        F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new dn0(photoViewer, 4), z14);
-                        F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new dn0(photoViewer, 5), z15);
-                        F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new dn0(photoViewer, 6), z16);
+                        F.l(R.drawable.msg_sendfile, org.telegram.messenger.hd.M0(z17 ? 2131745635 : 2131745636, null), new en0(photoViewer, i13), z11);
+                        F.l(R.drawable.msg_send, org.telegram.messenger.hd.M0(2131745634, null), new en0(photoViewer, i12), z14);
+                        F.l(R.drawable.msg_replace, org.telegram.messenger.hd.M0(2131746269, null), new en0(photoViewer, 4), z14);
+                        F.l(R.drawable.msg_calendar2, org.telegram.messenger.hd.M0(B ? 2131745514 : 2131745859, null), new en0(photoViewer, 5), z15);
+                        F.l(R.drawable.input_notify_off, org.telegram.messenger.hd.M0(2131745583, null), new en0(photoViewer, 6), z16);
                         if (F.x() != 0) {
                         }
                     }

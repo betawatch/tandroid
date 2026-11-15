@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jd0 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,8 +42,8 @@ public final /* synthetic */ class jd0 implements Runnable {
         TLRPC.Chat M0;
         String a02;
         org.telegram.ui.Components.xb I;
-        il0 il0Var;
-        il0 il0Var2;
+        jl0 jl0Var;
+        jl0 jl0Var2;
         qj qjVar;
         int i11 = 4;
         String str = "";
@@ -346,52 +346,52 @@ public final /* synthetic */ class jd0 implements Runnable {
                 ((zj0) this.b).a.L = ((TLRPC.TL_error) this.c).text;
                 break;
             case 19:
-                jl0 jl0Var = (jl0) this.b;
+                kl0 kl0Var = (kl0) this.b;
                 View view = (View) this.c;
-                jl0Var.J0(false);
+                kl0Var.J0(false);
                 view.callOnClick();
                 break;
             case 20:
-                jl0 jl0Var2 = (jl0) this.b;
+                kl0 kl0Var2 = (kl0) this.b;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
-                jl0Var2.N0(true, false);
+                kl0Var2.N0(true, false);
                 if (tL_error3 != null) {
                     if (tL_error3.text.startsWith("CODE_INVALID")) {
-                        org.telegram.ui.Cells.l3 l3Var = jl0Var2.T;
+                        org.telegram.ui.Cells.l3 l3Var = kl0Var2.T;
                         try {
                             l3Var.performHapticFeedback(3, 2);
                         } catch (Exception unused) {
                         }
                         org.telegram.messenger.g0.F3(2.5f, l3Var, null);
-                        org.telegram.ui.Cells.l3 l3Var2 = jl0Var2.T;
+                        org.telegram.ui.Cells.l3 l3Var2 = kl0Var2.T;
                         l3Var2.a.setText("");
                         l3Var2.setWillNotDraw(true);
                         break;
                     } else if (tL_error3.text.startsWith("FLOOD_WAIT")) {
                         int intValue = Utilities.z(tL_error3.text).intValue();
-                        jl0Var2.L0(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750686, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
+                        kl0Var2.L0(org.telegram.messenger.hd.M0(R.string.AppName, null), org.telegram.messenger.hd.a0("FloodWaitTime", null, 2131750686, intValue < 60 ? org.telegram.messenger.hd.G(intValue, "Seconds", new Object[0]) : org.telegram.messenger.hd.G(intValue / 60, "Minutes", new Object[0])));
                         break;
                     } else {
-                        jl0Var2.L0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error3.text);
+                        kl0Var2.L0(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error3.text);
                         break;
                     }
-                } else if (jl0Var2.getParentActivity() != null) {
-                    kk0 kk0Var = jl0Var2.e0;
+                } else if (kl0Var2.getParentActivity() != null) {
+                    kk0 kk0Var = kl0Var2.e0;
                     if (kk0Var != null) {
                         org.telegram.messenger.g0.r(kk0Var);
-                        jl0Var2.e0 = null;
+                        kl0Var2.e0 = null;
                     }
-                    jl0Var2.z0();
+                    kl0Var2.z0();
                     break;
                 }
                 break;
             case 21:
-                jl0.b0((jl0) this.b, (TLRPC.TL_payments_validatedRequestedInfo) this.c);
+                kl0.b0((kl0) this.b, (TLRPC.TL_payments_validatedRequestedInfo) this.c);
                 break;
             case 22:
-                jl0 jl0Var3 = (jl0) this.b;
+                kl0 kl0Var3 = (kl0) this.b;
                 TLRPC.Message[] messageArr = (TLRPC.Message[]) this.c;
-                Context parentActivity = jl0Var3.getParentActivity();
+                Context parentActivity = kl0Var3.getParentActivity();
                 if (parentActivity == null) {
                     parentActivity = org.telegram.messenger.t0.b;
                 }
@@ -399,30 +399,30 @@ public final /* synthetic */ class jd0 implements Runnable {
                     parentActivity = LaunchActivity.H1;
                 }
                 if (parentActivity != null) {
-                    jl0Var3.b1 = true;
-                    jl0Var3.g1 = 1;
-                    TLRPC.InputInvoice inputInvoice = jl0Var3.c1;
+                    kl0Var3.b1 = true;
+                    kl0Var3.g1 = 1;
+                    TLRPC.InputInvoice inputInvoice = kl0Var3.c1;
                     boolean z10 = inputInvoice instanceof TLRPC.TL_inputInvoiceStars;
                     boolean z11 = z10 && (((TLRPC.TL_inputInvoiceStars) inputInvoice).purpose instanceof TLRPC.TL_inputStorePaymentStarsGift);
                     boolean z12 = z10 && (((TLRPC.TL_inputInvoiceStars) inputInvoice).purpose instanceof TLRPC.TL_inputStorePaymentStarsGiveaway);
-                    if (!z10 && (il0Var2 = jl0Var3.a1) != null) {
-                        il0Var2.e(1);
+                    if (!z10 && (jl0Var2 = kl0Var3.a1) != null) {
+                        jl0Var2.e(1);
                     }
-                    jl0Var3.z0();
-                    if (z10 && (il0Var = jl0Var3.a1) != null) {
-                        il0Var.e(jl0Var3.g1);
+                    kl0Var3.z0();
+                    if (z10 && (jl0Var = kl0Var3.a1) != null) {
+                        jl0Var.e(kl0Var3.g1);
                     }
-                    long w02 = jl0Var3.w0();
+                    long w02 = kl0Var3.w0();
                     if (w02 > 0) {
-                        str = org.telegram.messenger.q10.k(jl0Var3.getMessagesController().a2(Long.valueOf(w02)));
-                    } else if (w02 < 0 && (M0 = jl0Var3.getMessagesController().M0(Long.valueOf(-w02))) != null) {
+                        str = org.telegram.messenger.q10.k(kl0Var3.getMessagesController().a2(Long.valueOf(w02)));
+                    } else if (w02 < 0 && (M0 = kl0Var3.getMessagesController().M0(Long.valueOf(-w02))) != null) {
                         str = M0.title;
                     }
-                    long v02 = jl0Var3.v0();
+                    long v02 = kl0Var3.v0();
                     int i22 = z10 ? (z11 || z12) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
                     String M03 = z10 ? org.telegram.messenger.hd.M0(z12 ? 2131745092 : z11 ? 2131745100 : 2131745159, null) : null;
                     if (!z10) {
-                        a02 = org.telegram.messenger.hd.a0(null, null, 2131747401, jl0Var3.S0[0], jl0Var3.r0);
+                        a02 = org.telegram.messenger.hd.a0(null, null, 2131747401, kl0Var3.S0[0], kl0Var3.r0);
                     } else if (z12) {
                         a02 = org.telegram.messenger.hd.H(',', "StarsGiveawaySentPopupInfo", (int) v02);
                     } else {
@@ -441,7 +441,7 @@ public final /* synthetic */ class jd0 implements Runnable {
                         I.r = false;
                         I.j = 5000;
                         if (messageArr[0] != null) {
-                            fi.m3 m3Var = new fi.m3(jl0Var3, I, z11, messageArr, 3);
+                            fi.m3 m3Var = new fi.m3(kl0Var3, I, z11, messageArr, 3);
                             org.telegram.ui.Components.cb cbVar = I.e;
                             if (cbVar != null) {
                                 cbVar.setOnClickListener(m3Var);

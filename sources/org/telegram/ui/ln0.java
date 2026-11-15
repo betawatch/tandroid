@@ -15,7 +15,7 @@ import android.widget.TextView;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
@@ -37,20 +37,20 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
         switch (this.a) {
             case 0:
                 PhotoViewer photoViewer = this.b;
-                tg.c2 c2Var = (tg.c2) obj;
+                tg.b2 b2Var = (tg.b2) obj;
                 Drawable[] drawableArr = PhotoViewer.Z8;
                 try {
                     boolean isEmpty = TextUtils.isEmpty(((org.telegram.messenger.ye) photoViewer.g7.get(photoViewer.P4)).i);
-                    tg.f2 f2Var = photoViewer.p5;
-                    f2Var.M = true;
-                    f2Var.F = c2Var;
+                    tg.e2 e2Var = photoViewer.p5;
+                    e2Var.M = true;
+                    e2Var.F = b2Var;
                     Bitmap n10 = photoViewer.C4.n();
                     int i12 = photoViewer.C4.V;
-                    tg.c2 c2Var2 = f2Var.F;
-                    photoViewer.C4.v0(c2Var2 == null ? f2Var.J : (isEmpty || n10 == null) ? c2Var2.b() : f2Var.e(n10));
+                    tg.b2 b2Var2 = e2Var.F;
+                    photoViewer.C4.v0(b2Var2 == null ? e2Var.J : (isEmpty || n10 == null) ? b2Var2.b() : e2Var.e(n10));
                     photoViewer.t5.setUndoCutState(true);
                     photoViewer.Y2(true, true);
-                    photoViewer.t5.post(new dn0(photoViewer, i10));
+                    photoViewer.t5.post(new en0(photoViewer, i10));
                     break;
                 } catch (Exception e10) {
                     org.telegram.messenger.a8.g(e10, true);
@@ -72,7 +72,7 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
                         photoViewer2.C2.setVisibility(0);
                         photoViewer2.F3 = false;
                         photoViewer2.f0.invalidate();
-                        org.telegram.messenger.g0.i3(new dn0(photoViewer2, 17), 64L);
+                        org.telegram.messenger.g0.i3(new en0(photoViewer2, 17), 64L);
                         break;
                     }
                 }
@@ -85,7 +85,7 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
                 photoViewer3.M1.R1 = photoViewer3.L1.c();
                 photoViewer3.f0.invalidate();
                 int max = Math.max(((Integer) obj).intValue(), photoViewer3.M1.T1);
-                float L = (!(photoViewer3.M1.C0 instanceof tg.o2) || max <= 0) ? 0.0f : ((org.telegram.messenger.g0.q.y - max) - org.telegram.messenger.g0.L(80.0f)) - photoViewer3.M1.getSelectedEntityBottom();
+                float L = (!(photoViewer3.M1.C0 instanceof tg.n2) || max <= 0) ? 0.0f : ((org.telegram.messenger.g0.q.y - max) - org.telegram.messenger.g0.L(80.0f)) - photoViewer3.M1.getSelectedEntityBottom();
                 ValueAnimator valueAnimator = photoViewer3.s7;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
@@ -96,7 +96,7 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(photoViewer3.Z5, L);
                 photoViewer3.s7 = ofFloat;
-                ofFloat.addUpdateListener(new cn0(photoViewer3, i10));
+                ofFloat.addUpdateListener(new dn0(photoViewer3, i10));
                 photoViewer3.s7.setDuration(320L);
                 ValueAnimator valueAnimator2 = photoViewer3.s7;
                 org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.h;
@@ -107,7 +107,7 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
                     animatorSet.cancel();
                 }
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat2.addUpdateListener(new cn0(photoViewer3, i11));
+                ofFloat2.addUpdateListener(new dn0(photoViewer3, i11));
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 photoViewer3.K1 = animatorSet2;
                 tg.m1 m1Var = photoViewer3.M1.V0;
@@ -159,7 +159,7 @@ public final /* synthetic */ class ln0 implements org.telegram.messenger.z10 {
                         ud0Var.h = null;
                     }
                     photoViewer4.q5.b.setLoading(true);
-                    Utilities.e.c(new hn0(photoViewer4, ffVar, (org.telegram.messenger.ff) photoViewer4.g7.get(photoViewer4.P4), PhotoViewer.v1(), 0));
+                    Utilities.e.c(new ok0(photoViewer4, ffVar, (org.telegram.messenger.ff) photoViewer4.g7.get(photoViewer4.P4), PhotoViewer.v1(), 1));
                     break;
                 }
                 break;

@@ -1,43 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class nl0 extends pl0 {
-    public int H;
-    public final /* synthetic */ im0 I;
+public final /* synthetic */ class nl0 implements r0.m, org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jm0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nl0(im0 im0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.I = im0Var;
-        this.H = 0;
+    public /* synthetic */ nl0(jm0 jm0Var, int i7) {
+        this.a = i7;
+        this.b = jm0Var;
     }
 
-    @Override // org.telegram.ui.pl0
-    public final void a() {
-        im0 im0Var = this.I;
-        if (im0Var.getParentActivity() != null) {
-            org.telegram.messenger.g0.p3(im0Var.getParentActivity(), im0Var.isLightStatusBar());
+    @Override // r0.m
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        i0.c I0 = org.telegram.messenger.g0.I0(k1Var, false);
+        jm0 jm0Var = this.b;
+        jm0Var.c0 = I0;
+        ul0 ul0Var = jm0Var.h.b;
+        int i7 = I0.a;
+        int paddingTop = ul0Var.getPaddingTop();
+        i0.c cVar = jm0Var.c0;
+        ul0Var.setPadding(i7, paddingTop, cVar.c, org.telegram.messenger.g0.L(72.0f) + cVar.d);
+        ul0 ul0Var2 = jm0Var.n.b;
+        int i10 = jm0Var.c0.a;
+        int paddingTop2 = ul0Var2.getPaddingTop();
+        i0.c cVar2 = jm0Var.c0;
+        ul0Var2.setPadding(i10, paddingTop2, cVar2.c, org.telegram.messenger.g0.L(72.0f) + cVar2.d);
+        FrameLayout frameLayout = jm0Var.Q;
+        i0.c cVar3 = jm0Var.c0;
+        frameLayout.setPadding(cVar3.a, 0, cVar3.c, cVar3.d);
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.q1
+    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+        switch (this.a) {
+            case 1:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.D0();
+                break;
         }
-        int actionBarButtonColor = getActionBarButtonColor();
-        if (this.H != actionBarButtonColor) {
-            ImageView imageView = im0Var.K;
-            if (imageView != null) {
-                this.H = actionBarButtonColor;
-                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
-            ImageView imageView2 = im0Var.L;
-            if (imageView2 != null) {
-                this.H = actionBarButtonColor;
-                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
-        }
-        im0Var.K0();
-        im0Var.F0();
     }
 }

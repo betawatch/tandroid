@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ja;
 import c8.na;
-import di.v8;
+import di.u8;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.messenger.a8;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.Components.xe;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f1 extends org.telegram.ui.ActionBar.u2 {
     public int A1;
@@ -186,7 +186,7 @@ public final class f1 extends org.telegram.ui.ActionBar.u2 {
                                         f1Var2.G1 = true;
                                         f1Var2.C1.g(true);
                                     }
-                                    v8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
+                                    u8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
                                     break;
                                 }
                             }
@@ -265,7 +265,7 @@ public final class f1 extends org.telegram.ui.ActionBar.u2 {
                                         f1Var2.G1 = true;
                                         f1Var2.C1.g(true);
                                     }
-                                    v8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
+                                    u8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
                                     break;
                                 }
                             }
@@ -324,7 +324,7 @@ public final class f1 extends org.telegram.ui.ActionBar.u2 {
                                         f1Var2.G1 = true;
                                         f1Var2.C1.g(true);
                                     }
-                                    v8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
+                                    u8.x(c6Var.a, bVar).H(tL_starGiftUnique2, j10, textWithEntities, z10, new di.t1(c6Var, f1Var2, bVar, tL_starGiftUnique2, j10, textWithEntities, z10));
                                     break;
                                 }
                             }

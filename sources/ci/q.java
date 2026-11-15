@@ -65,7 +65,7 @@ import org.telegram.ui.Components.tr0;
 import org.telegram.ui.Components.vp0;
 import org.telegram.ui.Components.wi0;
 import org.telegram.ui.Components.wo0;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.Components.yo0;
 import org.telegram.ui.Components.ys0;
 import org.telegram.ui.PhotoViewer;
@@ -78,17 +78,17 @@ import org.telegram.ui.ek0;
 import org.telegram.ui.fj0;
 import org.telegram.ui.ie0;
 import org.telegram.ui.je0;
-import org.telegram.ui.jm0;
+import org.telegram.ui.km0;
 import org.telegram.ui.lb1;
-import org.telegram.ui.nm0;
 import org.telegram.ui.nx;
-import org.telegram.ui.rm0;
+import org.telegram.ui.om0;
+import org.telegram.ui.sm0;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.yb1;
-import org.telegram.ui.ym0;
 import org.telegram.ui.yw;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -153,7 +153,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 } else if (l9Var.e.size() > 1) {
                     l9Var.e.remove(Integer.valueOf(i12));
                 }
-                org.telegram.messenger.g0.d0(l9Var.b, new ai.f0(l9Var, 25));
+                org.telegram.messenger.g0.d0(l9Var.b, new ai.g0(l9Var, 25));
                 break;
             case 4:
                 r5 r5Var = ((o5) obj).b;
@@ -215,7 +215,7 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 d30Var.dismiss();
                 break;
             case 14:
-                ((x80) obj).S.k1(i12 + 8);
+                ((y80) obj).S.k1(i12 + 8);
                 break;
             case 15:
                 qb0 qb0Var = (qb0) obj;
@@ -677,31 +677,31 @@ public final /* synthetic */ class q implements View.OnClickListener {
                     break;
                 }
             case 27:
-                nm0 nm0Var = (nm0) obj;
-                g1 g1Var = nm0Var.J;
+                om0 om0Var = (om0) obj;
+                g1 g1Var = om0Var.J;
                 if (g1Var != null && g1Var.isShowing()) {
-                    nm0Var.J.d(true);
+                    om0Var.J.d(true);
                 }
                 if (i12 == 0) {
-                    t4.I(nm0Var.getParentActivity(), nm0Var.G.a(), new jm0(nm0Var, i10));
+                    t4.I(om0Var.getParentActivity(), om0Var.G.a(), new km0(om0Var, i10));
                     break;
                 } else {
-                    nm0Var.a0(nm0Var.b, nm0Var.c, true, 0);
-                    nm0Var.finishFragment();
+                    om0Var.a0(om0Var.b, om0Var.c, true, 0);
+                    om0Var.finishFragment();
                     break;
                 }
                 break;
             case 28:
-                ym0 ym0Var = (ym0) obj;
-                g1 g1Var2 = ym0Var.n0;
+                zm0 zm0Var = (zm0) obj;
+                g1 g1Var2 = zm0Var.n0;
                 if (g1Var2 != null && g1Var2.isShowing()) {
-                    ym0Var.n0.d(true);
+                    zm0Var.n0.d(true);
                 }
                 if (i12 == 0) {
-                    t4.I(ym0Var.getParentActivity(), ym0Var.V.a(), new rm0(ym0Var, r9));
+                    t4.I(zm0Var.getParentActivity(), zm0Var.V.a(), new sm0(zm0Var, r9));
                     break;
                 } else {
-                    ym0Var.j0(0, true);
+                    zm0Var.j0(0, true);
                     break;
                 }
                 break;

@@ -1,35 +1,31 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+import android.graphics.Rect;
+
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements b {
+public final /* synthetic */ class e implements a {
     public final /* synthetic */ int a;
     public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+    public final /* synthetic */ Rect c;
 
-    public /* synthetic */ e(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, float f10, float f11, int i7) {
+    public /* synthetic */ e(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, Rect rect, int i7) {
         this.a = i7;
         this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = f10;
-        this.d = f11;
+        this.c = rect;
     }
 
-    @Override // androidx.car.app.utils.b
+    @Override // androidx.car.app.utils.a
     public final Object a() {
-        Object lambda$onClick$7;
-        Object lambda$onScroll$4;
-        Object lambda$onFling$5;
+        Object lambda$onVisibleAreaChanged$1;
+        Object lambda$onStableAreaChanged$2;
         switch (this.a) {
             case 0:
-                lambda$onClick$7 = this.b.lambda$onClick$7(this.c, this.d);
-                return lambda$onClick$7;
-            case 1:
-                lambda$onScroll$4 = this.b.lambda$onScroll$4(this.c, this.d);
-                return lambda$onScroll$4;
+                lambda$onVisibleAreaChanged$1 = this.b.lambda$onVisibleAreaChanged$1(this.c);
+                return lambda$onVisibleAreaChanged$1;
             default:
-                lambda$onFling$5 = this.b.lambda$onFling$5(this.c, this.d);
-                return lambda$onFling$5;
+                lambda$onStableAreaChanged$2 = this.b.lambda$onStableAreaChanged$2(this.c);
+                return lambda$onStableAreaChanged$2;
         }
     }
 }

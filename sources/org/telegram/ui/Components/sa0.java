@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.RuntimeShader;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class sa0 {
     public final RuntimeShader a;
@@ -11,8 +11,8 @@ public final class sa0 {
     public final float[] c = {1.0f, 1.0f, 0.0f, 0.0f};
 
     public sa0(int i7) {
-        ai.q0.c();
-        this.a = ai.q0.b(org.telegram.messenger.g0.y2(null, i7));
+        ai.r0.c();
+        this.a = ai.r0.b(org.telegram.messenger.g0.y2(null, i7));
     }
 
     public final void a(float[] fArr) {

@@ -29,12 +29,12 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y1 extends e2 implements is {
     public u41 a;
     public LinearLayout b;
-    public ai.u1 c;
+    public ai.v1 c;
     public boolean d;
     public String e;
     public String f;
@@ -48,9 +48,9 @@ public final class y1 extends e2 implements is {
             if (!z10) {
                 String str = y1Var.f;
                 y1Var.n = str;
-                ai.u1 u1Var = y1Var.c;
-                if (u1Var != null) {
-                    u1Var.a(str);
+                ai.v1 v1Var = y1Var.c;
+                if (v1Var != null) {
+                    v1Var.a(str);
                 }
             }
             ((q8) view).setChecked(y1Var.h);
@@ -71,9 +71,9 @@ public final class y1 extends e2 implements is {
                 y1Var.h = false;
                 String str2 = tL_timezone.id;
                 y1Var.n = str2;
-                ai.u1 u1Var2 = y1Var.c;
-                if (u1Var2 != null) {
-                    u1Var2.a(str2);
+                ai.v1 v1Var2 = y1Var.c;
+                if (v1Var2 != null) {
+                    v1Var2.a(str2);
                 }
                 if (y1Var.d) {
                     y1Var.simpleActionBar.m(true);

@@ -87,7 +87,7 @@ import org.telegram.ui.lc0;
 import org.telegram.ui.m80;
 import org.telegram.ui.u91;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class np extends c1 implements is {
     public static volatile long B8;
@@ -1949,9 +1949,9 @@ public final class np extends c1 implements is {
     public static TLRPC.TL_emojiStatusCollectible q0(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = new TLRPC.TL_emojiStatusCollectible();
         tL_emojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) di.v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) di.v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) di.v8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) di.u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) di.u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) di.u8.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         tL_emojiStatusCollectible.title = tL_starGiftUnique.title + " #" + tL_starGiftUnique.num;
         if (stargiftattributemodel != null) {
             tL_emojiStatusCollectible.document_id = stargiftattributemodel.document.id;
@@ -2248,7 +2248,7 @@ public final class np extends c1 implements is {
         }
         getNotificationCenter().k(ns.I2, new Object[0]);
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new ar(messagesStorage, z10, i10));
+        messagesStorage.a.c(new zq(messagesStorage, z10, i10));
         Q();
         g5 contactsController = getContactsController();
         contactsController.getClass();
@@ -2437,7 +2437,7 @@ public final class np extends c1 implements is {
                                 z11 = getMessagesStorage().z(nativeByteBuffer);
                                 getConnectionsManager().sendRequest(tL_messages_toggleDialogPin, new nj(this, z11, 11));
                                 vr messagesStorage = getMessagesStorage();
-                                messagesStorage.a.c(new xp(messagesStorage, dialog.pinnedNum, j3, 3));
+                                messagesStorage.a.c(new wp(messagesStorage, dialog.pinnedNum, j3, 3));
                                 return true;
                             }
                         } catch (Exception e11) {
@@ -2451,7 +2451,7 @@ public final class np extends c1 implements is {
                 }
             }
             vr messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new xp(messagesStorage2, dialog.pinnedNum, j3, 3));
+            messagesStorage2.a.c(new wp(messagesStorage2, dialog.pinnedNum, j3, 3));
             return true;
         }
         if (dialog != null) {
@@ -2497,7 +2497,7 @@ public final class np extends c1 implements is {
                     final HashMap hashMap2 = hashMap;
                     final HashSet hashSet2 = hashSet;
                     final Runnable runnable2 = runnable;
-                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.er
+                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.cr
                         @Override // java.lang.Runnable
                         public final void run() {
                             vr.this.Y0(tL_messages_dialogs3, tL_messages_dialogs4, arrayList7, arrayList6, arrayList9, sparseArray2, arrayList10, hashMap2, hashSet2, runnable2);
@@ -3328,7 +3328,7 @@ public final class np extends c1 implements is {
             return;
         }
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new qp(messagesStorage, i7, 5));
+        messagesStorage.a.c(new tp(messagesStorage, i7, 4));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:43:0x00ed  */
@@ -4685,7 +4685,7 @@ public final class np extends c1 implements is {
             dialog.ttl_period = i7;
         }
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new xp(messagesStorage, i7, j3, 0));
+        messagesStorage.a.c(new wp(messagesStorage, i7, j3, 0));
         TLRPC.ChatFull chatFull = null;
         if (j3 > 0) {
             userFull = b2(j3);
@@ -6018,7 +6018,7 @@ public final class np extends c1 implements is {
             }
             longSparseIntArray.put(j3, i7);
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new xp(messagesStorage, i7, j3, 5));
+            messagesStorage.a.c(new wp(messagesStorage, i7, j3, 5));
             return;
         }
         if (i11 != i7) {
@@ -6274,8 +6274,8 @@ public final class np extends c1 implements is {
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
         jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r0v24 org.telegram.messenger.support.LongSparseIntArray, still in use, count: 2, list:
-          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d5e: IF  (r0v24 org.telegram.messenger.support.LongSparseIntArray) != (null org.telegram.messenger.support.LongSparseIntArray)  -> B:1318:0x1d66 A[HIDDEN]
-          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d66: PHI (r0v7 org.telegram.messenger.support.LongSparseIntArray) = (r0v24 org.telegram.messenger.support.LongSparseIntArray) binds: [B:1263:0x1d5e] A[DONT_GENERATE, DONT_INLINE]
+          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d26: IF  (r0v24 org.telegram.messenger.support.LongSparseIntArray) != (null org.telegram.messenger.support.LongSparseIntArray)  -> B:1321:0x1d2e A[HIDDEN]
+          (r0v24 org.telegram.messenger.support.LongSparseIntArray) from 0x1d2e: PHI (r0v7 org.telegram.messenger.support.LongSparseIntArray) = (r0v24 org.telegram.messenger.support.LongSparseIntArray) binds: [B:1266:0x1d26] A[DONT_GENERATE, DONT_INLINE]
         	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
         	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
         	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:125)
@@ -6311,56 +6311,57 @@ public final class np extends c1 implements is {
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.process(IfRegionVisitor.java:34)
         	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
         */
-    /* JADX WARN: Removed duplicated region for block: B:1010:0x17c3  */
-    /* JADX WARN: Removed duplicated region for block: B:1028:0x17e9  */
-    /* JADX WARN: Removed duplicated region for block: B:1067:0x18aa  */
-    /* JADX WARN: Removed duplicated region for block: B:1076:0x18cd  */
-    /* JADX WARN: Removed duplicated region for block: B:1086:0x192c  */
-    /* JADX WARN: Removed duplicated region for block: B:1107:0x199b  */
-    /* JADX WARN: Removed duplicated region for block: B:1113:0x19c6  */
-    /* JADX WARN: Removed duplicated region for block: B:1115:0x19d3  */
-    /* JADX WARN: Removed duplicated region for block: B:1118:0x19e3  */
-    /* JADX WARN: Removed duplicated region for block: B:1125:0x1a1e  */
-    /* JADX WARN: Removed duplicated region for block: B:1132:0x1a5a  */
-    /* JADX WARN: Removed duplicated region for block: B:1137:0x1a79  */
-    /* JADX WARN: Removed duplicated region for block: B:1138:0x1a35  */
-    /* JADX WARN: Removed duplicated region for block: B:1151:0x1a10  */
-    /* JADX WARN: Removed duplicated region for block: B:1153:0x19c9  */
-    /* JADX WARN: Removed duplicated region for block: B:1158:0x19aa  */
-    /* JADX WARN: Removed duplicated region for block: B:1162:0x18c7  */
-    /* JADX WARN: Removed duplicated region for block: B:1167:0x16ab  */
-    /* JADX WARN: Removed duplicated region for block: B:1266:0x1d7f  */
-    /* JADX WARN: Removed duplicated region for block: B:1273:0x1db8  */
-    /* JADX WARN: Removed duplicated region for block: B:1276:0x1ddd  */
-    /* JADX WARN: Removed duplicated region for block: B:1283:0x1e14  */
-    /* JADX WARN: Removed duplicated region for block: B:1285:0x1e33  */
-    /* JADX WARN: Removed duplicated region for block: B:1290:0x1e5a  */
-    /* JADX WARN: Removed duplicated region for block: B:1295:0x1e84  */
-    /* JADX WARN: Removed duplicated region for block: B:1300:0x1eb5  */
-    /* JADX WARN: Removed duplicated region for block: B:1305:0x1edc  */
-    /* JADX WARN: Removed duplicated region for block: B:1311:0x1f05  */
-    /* JADX WARN: Removed duplicated region for block: B:1316:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:1317:0x1dd9  */
-    /* JADX WARN: Removed duplicated region for block: B:751:0x1265  */
-    /* JADX WARN: Removed duplicated region for block: B:780:0x12c8  */
-    /* JADX WARN: Removed duplicated region for block: B:783:0x12da  */
-    /* JADX WARN: Removed duplicated region for block: B:786:0x12fb  */
-    /* JADX WARN: Removed duplicated region for block: B:789:0x1306  */
-    /* JADX WARN: Removed duplicated region for block: B:797:0x134c  */
-    /* JADX WARN: Removed duplicated region for block: B:800:0x135d  */
-    /* JADX WARN: Removed duplicated region for block: B:804:0x12fd  */
-    /* JADX WARN: Removed duplicated region for block: B:805:0x12cb  */
-    /* JADX WARN: Removed duplicated region for block: B:860:0x1590  */
-    /* JADX WARN: Removed duplicated region for block: B:929:0x1642  */
-    /* JADX WARN: Removed duplicated region for block: B:939:0x1679  */
-    /* JADX WARN: Removed duplicated region for block: B:948:0x16b2  */
-    /* JADX WARN: Removed duplicated region for block: B:969:0x172d  */
+    /* JADX WARN: Removed duplicated region for block: B:1014:0x179a  */
+    /* JADX WARN: Removed duplicated region for block: B:1034:0x17b3  */
+    /* JADX WARN: Removed duplicated region for block: B:1071:0x186e  */
+    /* JADX WARN: Removed duplicated region for block: B:1080:0x1891  */
+    /* JADX WARN: Removed duplicated region for block: B:1090:0x18f6  */
+    /* JADX WARN: Removed duplicated region for block: B:1111:0x1967  */
+    /* JADX WARN: Removed duplicated region for block: B:1117:0x1994  */
+    /* JADX WARN: Removed duplicated region for block: B:1119:0x199f  */
+    /* JADX WARN: Removed duplicated region for block: B:1122:0x19b1  */
+    /* JADX WARN: Removed duplicated region for block: B:1129:0x19ec  */
+    /* JADX WARN: Removed duplicated region for block: B:1136:0x1a28  */
+    /* JADX WARN: Removed duplicated region for block: B:1140:0x1a46  */
+    /* JADX WARN: Removed duplicated region for block: B:1141:0x1a03  */
+    /* JADX WARN: Removed duplicated region for block: B:1154:0x19de  */
+    /* JADX WARN: Removed duplicated region for block: B:1156:0x19a5  */
+    /* JADX WARN: Removed duplicated region for block: B:1157:0x1997  */
+    /* JADX WARN: Removed duplicated region for block: B:1161:0x1976  */
+    /* JADX WARN: Removed duplicated region for block: B:1165:0x188b  */
+    /* JADX WARN: Removed duplicated region for block: B:1170:0x1680  */
+    /* JADX WARN: Removed duplicated region for block: B:1269:0x1d47  */
+    /* JADX WARN: Removed duplicated region for block: B:1276:0x1d80  */
+    /* JADX WARN: Removed duplicated region for block: B:1279:0x1da7  */
+    /* JADX WARN: Removed duplicated region for block: B:1286:0x1dde  */
+    /* JADX WARN: Removed duplicated region for block: B:1288:0x1dfd  */
+    /* JADX WARN: Removed duplicated region for block: B:1293:0x1e24  */
+    /* JADX WARN: Removed duplicated region for block: B:1298:0x1e4e  */
+    /* JADX WARN: Removed duplicated region for block: B:1303:0x1e7f  */
+    /* JADX WARN: Removed duplicated region for block: B:1308:0x1ea6  */
+    /* JADX WARN: Removed duplicated region for block: B:1314:0x1ecf  */
+    /* JADX WARN: Removed duplicated region for block: B:1319:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1320:0x1da2  */
+    /* JADX WARN: Removed duplicated region for block: B:752:0x1242  */
+    /* JADX WARN: Removed duplicated region for block: B:781:0x12a5  */
+    /* JADX WARN: Removed duplicated region for block: B:784:0x12b7  */
+    /* JADX WARN: Removed duplicated region for block: B:787:0x12d8  */
+    /* JADX WARN: Removed duplicated region for block: B:790:0x12e3  */
+    /* JADX WARN: Removed duplicated region for block: B:798:0x1329  */
+    /* JADX WARN: Removed duplicated region for block: B:801:0x133a  */
+    /* JADX WARN: Removed duplicated region for block: B:805:0x12da  */
+    /* JADX WARN: Removed duplicated region for block: B:806:0x12a8  */
+    /* JADX WARN: Removed duplicated region for block: B:860:0x1567  */
+    /* JADX WARN: Removed duplicated region for block: B:929:0x1618  */
+    /* JADX WARN: Removed duplicated region for block: B:939:0x1650  */
+    /* JADX WARN: Removed duplicated region for block: B:948:0x1685  */
+    /* JADX WARN: Removed duplicated region for block: B:970:0x1706  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean N3(java.util.ArrayList r89, final java.util.ArrayList r90, final java.util.ArrayList r91, boolean r92, final int r93) {
+    public final boolean N3(java.util.ArrayList r91, final java.util.ArrayList r92, final java.util.ArrayList r93, boolean r94, final int r95) {
         /*
-            Method dump skipped, instructions count: 7982
+            Method dump skipped, instructions count: 7928
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.np.N3(java.util.ArrayList, java.util.ArrayList, java.util.ArrayList, boolean, int):boolean");
@@ -6550,7 +6551,7 @@ public final class np extends c1 implements is {
     
         r8.put(r11, r4.pts);
         r1 = r0.getMessagesStorage();
-        r1.a.c(new org.telegram.messenger.xp(r1, r4.pts, r11, 5));
+        r1.a.c(new org.telegram.messenger.wp(r1, r4.pts, r11, 5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:284:0x050e, code lost:
     
@@ -7175,7 +7176,7 @@ public final class np extends c1 implements is {
                         if (j17 != 0) {
                             longSparseIntArray3.put(j17, updates.pts);
                             vr messagesStorage19 = npVar.getMessagesStorage();
-                            messagesStorage19.a.c(new xp(messagesStorage19, updates.pts, updates.chat_id, 5));
+                            messagesStorage19.a.c(new wp(messagesStorage19, updates.pts, updates.chat_id, 5));
                         } else {
                             npVar.getMessagesStorage().I1(updates.pts);
                         }
@@ -8291,7 +8292,7 @@ public final class np extends c1 implements is {
                             i24 = size;
                             if (update instanceof TL_update.TL_updateMonoForumNoPaidException) {
                                 TL_update.TL_updateMonoForumNoPaidException tL_updateMonoForumNoPaidException = (TL_update.TL_updateMonoForumNoPaidException) update;
-                                di.v8.w(npVar.currentAccount).a0(tL_updateMonoForumNoPaidException.channel_id, m5.o(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
+                                di.u8.w(npVar.currentAccount).a0(tL_updateMonoForumNoPaidException.channel_id, m5.o(tL_updateMonoForumNoPaidException.saved_peer_id), tL_updateMonoForumNoPaidException.exception);
                             } else if (update instanceof TL_update.TL_updatePeerWallpaper) {
                                 d4.f(npVar.currentAccount).o((TL_update.TL_updatePeerWallpaper) update);
                             } else if (update instanceof TL_update.TL_updateUserEmojiStatus) {
@@ -8492,8 +8493,8 @@ public final class np extends c1 implements is {
                                                 if (update instanceof TL_update.TL_updateStarsBalance) {
                                                     TL_update.TL_updateStarsBalance tL_updateStarsBalance = (TL_update.TL_updateStarsBalance) update;
                                                     boolean z20 = tL_updateStarsBalance.balance instanceof TL_stars.TL_starsTonAmount;
-                                                    di.v8.y(npVar.currentAccount, z20).i0(tL_updateStarsBalance.balance);
-                                                    di.v8.y(npVar.currentAccount, z20).S(false);
+                                                    di.u8.y(npVar.currentAccount, z20).i0(tL_updateStarsBalance.balance);
+                                                    di.u8.y(npVar.currentAccount, z20).S(false);
                                                 } else if (update instanceof TL_update.TL_updateUser) {
                                                     TL_update.TL_updateUser tL_updateUser = (TL_update.TL_updateUser) update;
                                                     TLRPC.User a27 = npVar.a2(Long.valueOf(tL_updateUser.user_id));
@@ -8670,7 +8671,7 @@ public final class np extends c1 implements is {
                                                                 editor = editor3;
                                                             }
                                                             vr messagesStorage = npVar.getMessagesStorage();
-                                                            messagesStorage.a.c(new oq(messagesStorage, 26));
+                                                            messagesStorage.a.c(new nq(messagesStorage, 26));
                                                             editor2 = editor;
                                                         } else {
                                                             i26 = i26;
@@ -8841,7 +8842,7 @@ public final class np extends c1 implements is {
                                                                                         } else {
                                                                                             h00 S1 = npVar.S1();
                                                                                             S1.getClass();
-                                                                                            g0.h3(new di.sb(S1, -o10, z25, 4));
+                                                                                            g0.h3(new di.rb(S1, -o10, z25, 4));
                                                                                         }
                                                                                     } else if (update instanceof TL_update.TL_updateEditForumTopic) {
                                                                                         TL_update.TL_updateEditForumTopic tL_updateEditForumTopic = (TL_update.TL_updateEditForumTopic) update;
@@ -9017,10 +9018,10 @@ public final class np extends c1 implements is {
                                                                                     } else if (update instanceof TL_update.TL_updateMessageReactions) {
                                                                                         TL_update.TL_updateMessageReactions tL_updateMessageReactions = (TL_update.TL_updateMessageReactions) update;
                                                                                         long B1 = gj.B1(tL_updateMessageReactions.peer);
-                                                                                        long D = di.v8.w(npVar.currentAccount).D(tL_updateMessageReactions.msg_id, B1);
+                                                                                        long D = di.u8.w(npVar.currentAccount).D(tL_updateMessageReactions.msg_id, B1);
                                                                                         if (D != 0) {
                                                                                             j15 = B1;
-                                                                                            gj.g(npVar.currentAccount, tL_updateMessageReactions.reactions, (int) D, di.v8.w(npVar.currentAccount).A(di.o8.a(tL_updateMessageReactions.msg_id, B1), tL_updateMessageReactions.reactions), true);
+                                                                                            gj.g(npVar.currentAccount, tL_updateMessageReactions.reactions, (int) D, di.u8.w(npVar.currentAccount).A(di.n8.a(tL_updateMessageReactions.msg_id, B1), tL_updateMessageReactions.reactions), true);
                                                                                         } else {
                                                                                             j15 = B1;
                                                                                         }
@@ -9125,7 +9126,7 @@ public final class np extends c1 implements is {
                                                                                                                     npVar.getNotificationCenter().k(i30, Long.valueOf(j14), userFull);
                                                                                                                     npVar.getMessagesStorage().j2(userFull, false);
                                                                                                                     vr messagesStorage2 = npVar.getMessagesStorage();
-                                                                                                                    messagesStorage2.a.c(new xp(messagesStorage2, tL_updatePeerHistoryTTL.ttl_period, j14, 0));
+                                                                                                                    messagesStorage2.a.c(new wp(messagesStorage2, tL_updatePeerHistoryTTL.ttl_period, j14, 0));
                                                                                                                     dialog = (TLRPC.Dialog) npVar.R.f(j14);
                                                                                                                     if (dialog == null) {
                                                                                                                         dialog.ttl_period = tL_updatePeerHistoryTTL.ttl_period;
@@ -9138,7 +9139,7 @@ public final class np extends c1 implements is {
                                                                                                             }
                                                                                                             i30 = i22;
                                                                                                             vr messagesStorage22 = npVar.getMessagesStorage();
-                                                                                                            messagesStorage22.a.c(new xp(messagesStorage22, tL_updatePeerHistoryTTL.ttl_period, j14, 0));
+                                                                                                            messagesStorage22.a.c(new wp(messagesStorage22, tL_updatePeerHistoryTTL.ttl_period, j14, 0));
                                                                                                             dialog = (TLRPC.Dialog) npVar.R.f(j14);
                                                                                                             if (dialog == null) {
                                                                                                             }
@@ -9203,11 +9204,11 @@ public final class np extends c1 implements is {
                                                                                                                                 if (z30 != z31) {
                                                                                                                                     S0.view_forum_as_messages = z31;
                                                                                                                                     vr messagesStorage3 = npVar.getMessagesStorage();
-                                                                                                                                    messagesStorage3.a.c(new wp(1, -tL_updateChannelViewForumAsMessages.channel_id, messagesStorage3, tL_updateChannelViewForumAsMessages.enabled));
+                                                                                                                                    messagesStorage3.a.c(new vp(1, -tL_updateChannelViewForumAsMessages.channel_id, messagesStorage3, tL_updateChannelViewForumAsMessages.enabled));
                                                                                                                                 }
                                                                                                                             } else {
                                                                                                                                 vr messagesStorage4 = npVar.getMessagesStorage();
-                                                                                                                                messagesStorage4.a.c(new wp(1, -tL_updateChannelViewForumAsMessages.channel_id, messagesStorage4, tL_updateChannelViewForumAsMessages.enabled));
+                                                                                                                                messagesStorage4.a.c(new vp(1, -tL_updateChannelViewForumAsMessages.channel_id, messagesStorage4, tL_updateChannelViewForumAsMessages.enabled));
                                                                                                                             }
                                                                                                                         } else {
                                                                                                                             i31 = i29;
@@ -10813,7 +10814,7 @@ public final class np extends c1 implements is {
         longSparseIntArray.put(j3, (int) (SystemClock.elapsedRealtime() / 1000));
         if (z10) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new up(messagesStorage, j3, 7));
+            messagesStorage.a.c(new rp(messagesStorage, j3, 7));
             return;
         }
         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
@@ -11690,7 +11691,7 @@ public final class np extends c1 implements is {
     public final void W(long j3, long j10) {
         vr messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.I(new vq(messagesStorage, 0, j3, j10, 1));
+        messagesStorage.I(new uq(messagesStorage, 0, j3, j10, 1));
         TLRPC.TL_messages_deleteParticipantReactions tL_messages_deleteParticipantReactions = new TLRPC.TL_messages_deleteParticipantReactions();
         tL_messages_deleteParticipantReactions.peer = j1(j3);
         tL_messages_deleteParticipantReactions.participant = j1(j10);
@@ -11765,7 +11766,7 @@ public final class np extends c1 implements is {
         if (chat == null) {
             return;
         }
-        Utilities.d.c(new di.aa(this, chat, z10, i7, qfVar));
+        Utilities.d.c(new di.z9(this, chat, z10, i7, qfVar));
     }
 
     public final void X(int i7, long j3, boolean z10) {
@@ -12046,7 +12047,7 @@ public final class np extends c1 implements is {
                 G1().b();
             }
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new xp(messagesStorage, i10, j3, 1));
+            messagesStorage.a.c(new wp(messagesStorage, i10, j3, 1));
             return;
         }
         long j12 = j3;
@@ -12083,7 +12084,7 @@ public final class np extends c1 implements is {
         this.D1.l(j12);
         if (i7 == 1 && i11 == 0) {
             vr messagesStorage2 = getMessagesStorage();
-            messagesStorage2.a.c(new fr(messagesStorage2, j3, new an(this, j12, i10, z10, inputPeer, j10), 2));
+            messagesStorage2.a.c(new dr(messagesStorage2, j3, new an(this, j12, i10, z10, inputPeer, j10), 2));
             return;
         }
         if (i10 == 0 || i10 == 3) {
@@ -12100,9 +12101,9 @@ public final class np extends c1 implements is {
             }
             vr messagesStorage3 = getMessagesStorage();
             p5 p5Var = messagesStorage3.a;
-            xp xpVar = new xp(messagesStorage3, i10, j12, 1);
+            wp wpVar = new wp(messagesStorage3, i10, j12, 1);
             j12 = j12;
-            p5Var.c(xpVar);
+            p5Var.c(wpVar);
             TLRPC.Dialog dialog = (TLRPC.Dialog) this.R.f(j12);
             if (i10 == 0 || i10 == 3) {
                 z14 = true;
@@ -12521,7 +12522,7 @@ public final class np extends c1 implements is {
         if ((j11 == 0 || z15 || i16 == 8 || i16 == 3 || i16 == 5 || i16 == 9) && i16 != 2 && (z11 || m5.C(j3))) {
             vr messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
-            messagesStorage.a.c(new tp(messagesStorage, xz.d(xzVar2, "MessagesStorage.getMessages: storageQueue.postRunnable"), xzVar2, j3, j10, i7, i10, i11, i22, i13, i14, i16, j11, i17, z14, z15));
+            messagesStorage.a.c(new qp(messagesStorage, xz.d(xzVar2, "MessagesStorage.getMessages: storageQueue.postRunnable"), xzVar2, j3, j10, i7, i10, i11, i22, i13, i14, i16, j11, i17, z14, z15));
             return;
         }
         TLRPC.Chat M0 = j3 < 0 ? M0(Long.valueOf(-j3)) : null;
@@ -14281,7 +14282,7 @@ public final class np extends c1 implements is {
     public final void h0(long j3, int i7, long j10) {
         vr messagesStorage = getMessagesStorage();
         messagesStorage.getClass();
-        messagesStorage.I(new vq(messagesStorage, i7, j3, j10, 1));
+        messagesStorage.I(new uq(messagesStorage, i7, j3, j10, 1));
         TLRPC.TL_messages_deleteParticipantReaction tL_messages_deleteParticipantReaction = new TLRPC.TL_messages_deleteParticipantReaction();
         tL_messages_deleteParticipantReaction.peer = j1(j3);
         tL_messages_deleteParticipantReaction.participant = j1(j10);
@@ -14355,13 +14356,13 @@ public final class np extends c1 implements is {
     public final void i0(long j3, int i7, TLRPC.InputPeer inputPeer) {
         long n10 = m5.n(inputPeer);
         int[] iArr = {i7};
-        di.g9 g9Var = new di.g9(this, n10, j3, inputPeer, i7, iArr);
+        di.f9 f9Var = new di.f9(this, n10, j3, inputPeer, i7, iArr);
         if (iArr[0] > 0 || n10 != 0) {
-            g9Var.run();
+            f9Var.run();
             return;
         }
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new a4(messagesStorage, j3, new bn(iArr, g9Var), 29));
+        messagesStorage.a.c(new a4(messagesStorage, j3, new bn(iArr, f9Var), 29));
     }
 
     public final void i2(long j3, TLRPC.User user, TLRPC.Chat chat) {
@@ -14542,12 +14543,12 @@ public final class np extends c1 implements is {
                 }
                 TLRPC.EncryptedChat a12 = a1(Integer.valueOf((int) (j3 & 4294967295L)));
                 vr messagesStorage = getMessagesStorage();
-                messagesStorage.a.c(new yq(messagesStorage, j3, i7, i13, messagesStorage.H, i10, 2));
+                messagesStorage.a.c(new wq(messagesStorage, j3, i7, i13, messagesStorage.H, i10, 2));
                 getMessagesStorage().a.c(new eo(this, j3, i11, z10, i12, i10, 0));
                 if (a12 != null && a12.ttl > 0) {
                     int max = Math.max(getConnectionsManager().getCurrentTime(), i11);
                     vr messagesStorage2 = getMessagesStorage();
-                    messagesStorage2.a.c(new tq(messagesStorage2, a12.id, null, 0, i11, max));
+                    messagesStorage2.a.c(new sq(messagesStorage2, a12.id, null, 0, i11, max));
                 }
             } else {
                 if (i7 == 0) {
@@ -14559,7 +14560,7 @@ public final class np extends c1 implements is {
                 }
                 this.P.put(Long.valueOf(j3), Integer.valueOf(Math.max(num.intValue(), i7)));
                 vr messagesStorage3 = getMessagesStorage();
-                messagesStorage3.a.c(new yq(messagesStorage3, j3, i7, i13, messagesStorage3.H, i10, 2));
+                messagesStorage3.a.c(new wq(messagesStorage3, j3, i7, i13, messagesStorage3.H, i10, 2));
                 getMessagesStorage().a.c(new el(this, j3, i12, i7, z10, 1));
             }
         }
@@ -14683,7 +14684,7 @@ public final class np extends c1 implements is {
         long j3 = user != null ? user.id : chat2 != null ? chat2.id : 0L;
         if (i7 == 0) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new sp(3, -chat.id, j3, messagesStorage));
+            messagesStorage.a.c(new pp(3, -chat.id, j3, messagesStorage));
         }
         TLRPC.TL_channels_deleteParticipantHistory tL_channels_deleteParticipantHistory = new TLRPC.TL_channels_deleteParticipantHistory();
         tL_channels_deleteParticipantHistory.channel = i1(chat);
@@ -14913,7 +14914,7 @@ public final class np extends c1 implements is {
         }
         if (a22.photo != null) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new sp(4, a22.id, a22.photo.photo_id, messagesStorage));
+            messagesStorage.a.c(new pp(4, a22.id, a22.photo.photo_id, messagesStorage));
         }
         getNotificationCenter().k(ns.j0, new Object[0]);
         getNotificationCenter().k(ns.r, Integer.valueOf(D8));
@@ -15505,7 +15506,7 @@ public final class np extends c1 implements is {
                 }
             }
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new vp(messagesStorage, arrayList2, arrayList3, 0));
+            messagesStorage.a.c(new up(messagesStorage, arrayList2, arrayList3, 0));
             NativeByteBuffer nativeByteBuffer2 = null;
             try {
                 nativeByteBuffer = new NativeByteBuffer(i10 + 12);
@@ -15795,7 +15796,7 @@ public final class np extends c1 implements is {
                         };
                         npVar = this;
                         j13 = j3;
-                        messagesStorage.a.c(new br(messagesStorage, j3, prVar, 1));
+                        messagesStorage.a.c(new ar(messagesStorage, j3, prVar, 1));
                         z12 = true;
                     }
                 } else {
@@ -15933,7 +15934,7 @@ public final class np extends c1 implements is {
 
     public final void n3(long j3, int i7, long j10) {
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new vq(messagesStorage, i7, -j3, j10, 0));
+        messagesStorage.a.c(new uq(messagesStorage, i7, -j3, j10, 0));
         if (j3 == 0) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
             tL_messages_readMessageContents.id.add(Integer.valueOf(i7));
@@ -15947,13 +15948,13 @@ public final class np extends c1 implements is {
     }
 
     public final void n4(int i7, long j3, boolean z10) {
-        di.o8 o8Var = new di.o8(j3, i7);
+        di.n8 n8Var = new di.n8(j3, i7);
         HashSet hashSet = this.p8;
-        if (hashSet.contains(o8Var)) {
+        if (hashSet.contains(n8Var)) {
             return;
         }
-        hashSet.add(o8Var);
-        this.q8.add(new Pair(o8Var, new AtomicBoolean(z10)));
+        hashSet.add(n8Var);
+        this.q8.add(new Pair(n8Var, new AtomicBoolean(z10)));
         tj tjVar = this.r8;
         g0.r(tjVar);
         g0.h3(tjVar);
@@ -16035,7 +16036,7 @@ public final class np extends c1 implements is {
             return;
         }
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new vq(messagesStorage, j10, j3, 0, 7));
+        messagesStorage.a.c(new uq(messagesStorage, j10, j3, 0, 7));
         TLRPC.TL_messages_readMentions tL_messages_readMentions = new TLRPC.TL_messages_readMentions();
         tL_messages_readMentions.peer = j1(j3);
         if (j10 != 0) {
@@ -16260,7 +16261,7 @@ public final class np extends c1 implements is {
         ArrayList arrayList = new ArrayList();
         arrayList.add(Integer.valueOf(i7));
         vr messagesStorage = getMessagesStorage();
-        messagesStorage.a.c(new ir(messagesStorage, arrayList, j10, 1));
+        messagesStorage.a.c(new hr(messagesStorage, arrayList, j10, 2));
     }
 
     public final TLRPC.InputUser p1(TLRPC.InputPeer inputPeer) {
@@ -16305,7 +16306,7 @@ public final class np extends c1 implements is {
             if (i7 > 0) {
                 int currentTime = getConnectionsManager().getCurrentTime();
                 vr messagesStorage = getMessagesStorage();
-                messagesStorage.a.c(new tq(messagesStorage, a12.id, arrayList, 0, currentTime, currentTime));
+                messagesStorage.a.c(new sq(messagesStorage, a12.id, arrayList, 0, currentTime, currentTime));
             }
         }
     }
@@ -23604,7 +23605,7 @@ public final class np extends c1 implements is {
         int currentTime2 = getConnectionsManager().getCurrentTime();
         if (z10) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new yq(messagesStorage, currentTime2, currentTime2, i10, i7, j3));
+            messagesStorage.a.c(new wq(messagesStorage, currentTime2, currentTime2, i10, i7, j3));
         }
         if (h12 != null) {
             TLRPC.TL_messages_readMessageContents tL_messages_readMessageContents = new TLRPC.TL_messages_readMessageContents();
@@ -23974,7 +23975,7 @@ public final class np extends c1 implements is {
                         }
                         int i34 = i27;
                         TLRPC.Message message8 = message6;
-                        Collections.sort(arrayList4, new xq(longSparseIntArray, 1));
+                        Collections.sort(arrayList4, new vq(longSparseIntArray, 1));
                         while (true) {
                             j12 = 0;
                             if (arrayList4.size() >= size4) {
@@ -24182,7 +24183,7 @@ public final class np extends c1 implements is {
         ns.f(this.currentAccount).k(ns.r, 0);
         ns.f(this.currentAccount).k(ns.W3, Long.valueOf(j3), Long.valueOf(j10), str2);
         vr a02 = vr.a0(this.currentAccount);
-        a02.a.c(new nq(a02, -j3, j10, str2, 0));
+        a02.a.c(new mq(a02, -j3, j10, str2, 0));
     }
 
     public final void r(ArrayList arrayList) {
@@ -24296,7 +24297,7 @@ public final class np extends c1 implements is {
         ArrayList arrayList = new ArrayList();
         if (gjVar.k.mentioned) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new vq(messagesStorage, gjVar.e1(), -gjVar.k.peer_id.channel_id, gj.B0(gjVar.k), 0));
+            messagesStorage.a.c(new uq(messagesStorage, gjVar.e1(), -gjVar.k.peer_id.channel_id, gj.B0(gjVar.k), 0));
         }
         arrayList.add(Integer.valueOf(gjVar.e1()));
         long B0 = gj.B0(gjVar.k);
@@ -25626,12 +25627,12 @@ public final class np extends c1 implements is {
                             if (z13) {
                                 vr messagesStorage = npVar.getMessagesStorage();
                                 messagesStorage.getClass();
-                                messagesStorage.I(new vq(messagesStorage, j12, j11, i10, 6));
+                                messagesStorage.I(new uq(messagesStorage, j12, j11, i10, 6));
                             }
                             if (z11) {
                                 vr messagesStorage2 = npVar.getMessagesStorage();
                                 messagesStorage2.getClass();
-                                messagesStorage2.I(new vq(messagesStorage2, j12, j11, i10, 5));
+                                messagesStorage2.I(new uq(messagesStorage2, j12, j11, i10, 5));
                             }
                             g0.h3(new vm(aVar2, i10, 0));
                         }

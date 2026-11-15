@@ -70,7 +70,7 @@ import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class lm implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ an a;
@@ -720,7 +720,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                     final int currentTime = messagesStorage.getConnectionsManager().getCurrentTime();
                     p5 p5Var = messagesStorage.a;
                     final long j3 = M;
-                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.cr
+                    p5Var.c(new Runnable() { // from class: org.telegram.messenger.br
                         /* JADX WARN: Removed duplicated region for block: B:106:0x00e3  */
                         /* JADX WARN: Removed duplicated region for block: B:108:0x00ea  */
                         /* JADX WARN: Removed duplicated region for block: B:113:0x01ca  */
@@ -1003,7 +1003,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                     });
                     ezVar.getMessagesController().O3((TLRPC.Updates) tLObject, false);
                 }
-                g0.h3(new di.u7(ezVar, hash, z11, 3));
+                g0.h3(new di.t7(ezVar, hash, z11, 3));
             }
         });
         return true;
@@ -1114,12 +1114,12 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                 fe Lb = !gjVar.P3() ? this.a.Lb(gjVar, true) : null;
                 bi.m1 a52 = !gjVar.P3() ? an.a5(this.a, gjVar) : null;
                 Context context = pz0Var2.a;
-                ai.j0 j0Var = pz0Var2.c;
+                ai.k0 k0Var = pz0Var2.c;
                 pz0Var2.Y = Lb;
                 pz0Var2.Z = a52;
                 nz0 nz0Var2 = pz0Var2.O;
                 if (nz0Var2 != null) {
-                    j0Var.removeView(nz0Var2);
+                    k0Var.removeView(nz0Var2);
                     pz0Var2.O = null;
                 }
                 pz0Var2.P = q1Var;
@@ -1145,7 +1145,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                     int ceil = (int) Math.ceil((Math.min(width, height) * 0.92f) / org.telegram.messenger.g0.p);
                     j3 = 0;
                     int i10 = height;
-                    viewGroup = j0Var;
+                    viewGroup = k0Var;
                     nz0 nz0Var3 = new nz0(pz0Var2, pz0Var2.getContext(), org.telegram.messenger.m10.t0, pz0Var2.P.getResourcesProvider(), width, i10);
                     pz0Var2.O = nz0Var3;
                     pz0Var2.P.u0(nz0Var3);
@@ -1176,7 +1176,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                     i7 = ceil;
                 } else {
                     j3 = 0;
-                    viewGroup = j0Var;
+                    viewGroup = k0Var;
                     i7 = 360;
                 }
                 TextureView textureView = pz0Var2.Q;
@@ -1462,7 +1462,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
         hi hiVar;
         int i7;
         org.telegram.messenger.gj messageObject = q1Var.getMessageObject();
-        ai.v0 v0Var = null;
+        ai.w0 w0Var = null;
         if (!(messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview)) {
             TLRPC.Message message = messageObject.k;
             TLRPC.MessageMedia messageMedia = message.media;
@@ -1513,14 +1513,14 @@ public final class lm implements org.telegram.ui.Cells.l1 {
             anVar2.dc = hiVar;
         }
         i7 = ((org.telegram.ui.ActionBar.e2) this.a).currentAccount;
-        di.v8 y10 = di.v8.y(i7, false);
+        di.u8 y10 = di.u8.y(i7, false);
         Objects.requireNonNull(hiVar);
         bh bhVar = new bh(hiVar, 8);
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = org.telegram.messenger.t0.b;
         }
-        org.telegram.ui.ActionBar.e6 I = di.v8.I();
+        org.telegram.ui.ActionBar.e6 I = di.u8.I();
         if (messageObject != null && context != null) {
             long B0 = org.telegram.messenger.gj.B0(messageObject.k);
             int e12 = messageObject.e1();
@@ -1536,10 +1536,10 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceMessage;
-            v0Var = new ai.v0(y10, ConnectionsManager.getInstance(y10.a).sendRequest(tL_payments_getPaymentForm, new bi.l1(y10, messageObject, tL_inputInvoiceMessage, bhVar, 3)), 3);
+            w0Var = new ai.w0(y10, ConnectionsManager.getInstance(y10.a).sendRequest(tL_payments_getPaymentForm, new bi.l1(y10, messageObject, tL_inputInvoiceMessage, bhVar, 3)), 3);
         }
-        if (v0Var != null) {
-            hiVar.b = v0Var;
+        if (w0Var != null) {
+            hiVar.b = w0Var;
             hiVar.d();
         }
     }
@@ -2848,15 +2848,15 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                                             anVar.d8 = true;
                                         }
                                     }
-                                    ai.f1 f1Var = new ai.f1(this, i7, messageObject, num, bArr, 14);
+                                    ai.g1 g1Var = new ai.g1(this, i7, messageObject, num, bArr, 14);
                                     if (!anVar.D0.O) {
-                                        f1Var.run();
+                                        g1Var.run();
                                         return;
                                     }
                                     anVar.G3 = false;
                                     anVar.Rb(false, true, false);
                                     anVar.nd(anVar.getMediaDataController().c0(), anVar.getMediaDataController().f1, anVar.getMediaDataController().j0());
-                                    org.telegram.messenger.g0.i3(f1Var, 80L);
+                                    org.telegram.messenger.g0.i3(g1Var, 80L);
                                     return;
                                 }
                                 Integer num2 = num;
@@ -3957,7 +3957,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                 if (hiVar3 == null || i7 == 0) {
                     anVar.presentFragment(anVar2);
                 } else {
-                    org.telegram.messenger.g0.i3(new ai.f1(this, hiVar3, chat, i7, anVar2, 13), 5000L);
+                    org.telegram.messenger.g0.i3(new ai.g1(this, hiVar3, chat, i7, anVar2, 13), 5000L);
                     hiVar3.d();
                 }
             }
@@ -4755,7 +4755,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                     tL_inputStickerSetShortName.short_name = group;
                     tL_messages_getStickerSet.stickerset = tL_inputStickerSetShortName;
                     i11 = ((org.telegram.ui.ActionBar.e2) anVar).currentAccount;
-                    anVar.dc.b = new ai.v0(this, ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getStickerSet, new hi.b3(i15, this, z12)), 29);
+                    anVar.dc.b = new ai.w0(this, ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getStickerSet, new hi.b3(i15, this, z12)), 29);
                     return;
                 }
             }
@@ -5323,7 +5323,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
                 f12.d.setFocusableInTouchMode(true);
                 f12.d.setClipChildren(false);
                 f12.d.setClipToPadding(false);
-                f12.e = new ai.j0(f12, parentActivity);
+                f12.e = new ai.k0(f12, parentActivity);
                 View view = new View(parentActivity);
                 f12.f = view;
                 view.setBackgroundColor(2130706432);
@@ -5608,10 +5608,10 @@ public final class lm implements org.telegram.ui.Cells.l1 {
             t1Var.setOnCancelListener(new fg(0, zArr));
             t1Var.r(150L);
             an anVar4 = anVar;
-            org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(anVar4, messageObject, t1Var, zArr, 8);
+            org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(anVar4, messageObject, t1Var, zArr, 9);
             anVar2 = anVar4;
             messageObject = messageObject;
-            new Thread(m5Var).start();
+            new Thread(l5Var).start();
         }
         z11 = true;
         if (z11) {
@@ -5653,7 +5653,7 @@ public final class lm implements org.telegram.ui.Cells.l1 {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", anVar.k6);
         bundle.putInt("start_from", 10);
-        anVar.presentFragment(new org.telegram.ui.Components.x80(bundle, anVar.p1.getSharedMediaPreloader()));
+        anVar.presentFragment(new org.telegram.ui.Components.y80(bundle, anVar.p1.getSharedMediaPreloader()));
     }
 
     @Override // org.telegram.ui.Cells.l1

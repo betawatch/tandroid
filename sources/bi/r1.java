@@ -7,14 +7,14 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import di.cb;
-import di.jc;
-import di.k8;
-import di.m8;
-import di.nb;
+import di.bb;
+import di.ic;
+import di.j8;
+import di.l8;
+import di.mb;
+import di.r8;
 import di.s8;
-import di.t8;
-import di.v8;
+import di.u8;
 import di.z6;
 import java.io.File;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ import org.telegram.ui.qq;
 import org.telegram.ui.sq0;
 import org.telegram.ui.vo0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class r1 implements Runnable {
         switch (this.a) {
             case 0:
                 s2 s2Var = (s2) this.d;
-                m8 m8Var = (m8) this.e;
+                l8 l8Var = (l8) this.e;
                 long j3 = this.b;
                 z10 z10Var = (z10) this.c;
                 Context context = (Context) this.f;
@@ -142,8 +142,8 @@ public final /* synthetic */ class r1 implements Runnable {
                     int i15 = i12;
                     HashSet hashSet2 = new HashSet();
                     int i16 = i15;
-                    while (i16 < m8Var.l.size() && hashSet.size() < i10) {
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) m8Var.l.get(i16);
+                    while (i16 < l8Var.l.size() && hashSet.size() < i10) {
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) l8Var.l.get(i16);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
                             str = str4;
                         } else {
@@ -248,16 +248,16 @@ public final /* synthetic */ class r1 implements Runnable {
                     }
                 }
                 if (c6Var.B2 != null) {
-                    v8 y10 = v8.y(c6Var.a, false);
+                    u8 y10 = u8.y(c6Var.a, false);
                     TL_stars.SavedStarGift savedStarGift2 = c6Var.B2;
                     if (savedStarGift2 != null) {
-                        m8 G = y10.G(j11, false);
+                        l8 G = y10.G(j11, false);
                         if (G != null) {
                             G.l(savedStarGift2);
                         }
-                        k8 k8Var = (k8) y10.K.get(j11);
-                        if (k8Var != null) {
-                            ArrayList arrayList = k8Var.e;
+                        j8 j8Var = (j8) y10.K.get(j11);
+                        if (j8Var != null) {
+                            ArrayList arrayList = j8Var.e;
                             int size = arrayList.size();
                             boolean z10 = false;
                             int i18 = 0;
@@ -265,7 +265,7 @@ public final /* synthetic */ class r1 implements Runnable {
                                 Object obj = arrayList.get(i18);
                                 i18++;
                                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                                m8 e10 = k8Var.e(tL_starGiftCollection.collection_id);
+                                l8 e10 = j8Var.e(tL_starGiftCollection.collection_id);
                                 boolean z11 = e10 != null && e10.l(savedStarGift2);
                                 if (!z11) {
                                     z10 = z10;
@@ -274,32 +274,32 @@ public final /* synthetic */ class r1 implements Runnable {
                                 tL_starGiftCollection.gifts_count = Math.max(0, tL_starGiftCollection.gifts_count - 1);
                                 z10 = true;
                                 if (z11) {
-                                    k8Var.n(tL_starGiftCollection.collection_id);
+                                    j8Var.n(tL_starGiftCollection.collection_id);
                                 }
                             }
-                            m8 m8Var2 = k8Var.g;
-                            if (m8Var2 != null) {
-                                m8Var2.l(savedStarGift2);
+                            l8 l8Var2 = j8Var.g;
+                            if (l8Var2 != null) {
+                                l8Var2.l(savedStarGift2);
                             }
                             if (z10) {
-                                k8Var.j();
-                                ns.f(k8Var.a).k(ns.H3, Long.valueOf(k8Var.b), k8Var);
+                                j8Var.j();
+                                ns.f(j8Var.a).k(ns.H3, Long.valueOf(j8Var.b), j8Var);
                             }
                         }
                     }
                 } else {
-                    v8.y(c6Var.a, false).P(j11);
+                    u8.y(c6Var.a, false).P(j11);
                 }
                 c6Var.dismiss();
                 org.telegram.messenger.g0.h3(new ai.o(7));
                 return;
             case 3:
-                v8 v8Var = (v8) this.d;
+                u8 u8Var = (u8) this.d;
                 TLObject tLObject3 = (TLObject) this.e;
                 gj gjVar = (gj) this.c;
                 long j12 = this.b;
                 Runnable runnable = (Runnable) this.f;
-                int i19 = v8Var.a;
+                int i19 = u8Var.a;
                 if (!(tLObject3 instanceof TLRPC.TL_messages_messages)) {
                     runnable.run();
                     return;
@@ -312,34 +312,34 @@ public final /* synthetic */ class r1 implements Runnable {
                     return;
                 } else {
                     gjVar.k = tL_messages_messages.messages.get(0);
-                    v8Var.j0(gjVar, j12, runnable, true);
+                    u8Var.j0(gjVar, j12, runnable, true);
                     return;
                 }
             case 4:
-                v8 v8Var2 = (v8) this.d;
+                u8 u8Var2 = (u8) this.d;
                 s10 s10Var = (s10) this.e;
                 long j13 = this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
-                if (v8Var2.e) {
-                    v8Var2.g(j13, tLObject4, tL_textWithEntities, s10Var);
+                if (u8Var2.e) {
+                    u8Var2.g(j13, tLObject4, tL_textWithEntities, s10Var);
                     return;
                 } else {
-                    v8.e("NO_BALANCE");
+                    u8.e("NO_BALANCE");
                     s10Var.a(Boolean.FALSE, null);
                     return;
                 }
             case 5:
-                v8 v8Var3 = (v8) this.d;
+                u8 u8Var3 = (u8) this.d;
                 s10 s10Var2 = (s10) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.c;
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.f;
                 long j14 = this.b;
-                if (v8Var3.e) {
-                    v8Var3.h(tL_payments_paymentFormStarGift, starGift2, j14, null, true, s10Var2);
+                if (u8Var3.e) {
+                    u8Var3.h(tL_payments_paymentFormStarGift, starGift2, j14, null, true, s10Var2);
                     return;
                 } else {
-                    v8.e("NO_BALANCE");
+                    u8.e("NO_BALANCE");
                     s10Var2.a(Boolean.FALSE, null);
                     return;
                 }
@@ -359,63 +359,63 @@ public final /* synthetic */ class r1 implements Runnable {
                 a03.s(document3, M0, charSequence).k(false);
                 return;
             case 7:
-                t8 t8Var = (t8) this.d;
+                s8 s8Var = (s8) this.d;
                 TLObject tLObject5 = (TLObject) this.e;
                 np npVar = (np) this.c;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.f;
                 long j16 = this.b;
-                t8Var.getClass();
+                s8Var.getClass();
                 if (tLObject5 != null) {
                     Utilities.d.c(new di.s2(11, npVar, tLObject5));
                     return;
                 }
                 if (tL_error2 != null) {
-                    t8Var.b.f((int) (-t8Var.h), t8Var.c(), t8Var.g);
-                    ns.f(t8Var.q.a).k(ns.o1, Long.valueOf(gj.B0(t8Var.b.k)), Integer.valueOf(t8Var.b.e1()), t8Var.b.k.reactions);
+                    s8Var.b.f((int) (-s8Var.h), s8Var.c(), s8Var.g);
+                    ns.f(s8Var.q.a).k(ns.o1, Long.valueOf(gj.B0(s8Var.b.k)), Integer.valueOf(s8Var.b.e1()), s8Var.b.k.reactions);
                     if ("BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                        if (t8Var.a.a >= 0) {
-                            str2 = q10.k(t8Var.c.getMessagesController().a2(Long.valueOf(t8Var.a.a)));
+                        if (s8Var.a.a >= 0) {
+                            str2 = q10.k(s8Var.c.getMessagesController().a2(Long.valueOf(s8Var.a.a)));
                         } else {
-                            TLRPC.Chat M02 = t8Var.c.getMessagesController().M0(Long.valueOf(-t8Var.a.a));
+                            TLRPC.Chat M02 = s8Var.c.getMessagesController().M0(Long.valueOf(-s8Var.a.a));
                             str2 = M02 == null ? "" : M02.title;
                         }
                         String str7 = str2;
-                        Context parentActivity = t8Var.c.getParentActivity();
+                        Context parentActivity = s8Var.c.getParentActivity();
                         if (parentActivity == null) {
                             parentActivity = LaunchActivity.H1;
                         }
                         if (parentActivity == null) {
                             parentActivity = org.telegram.messenger.t0.b;
                         }
-                        new cb(parentActivity, t8Var.c.getResourceProvider(), j16, 5, str7, new s8(t8Var, j16, i13), 0L).show();
+                        new bb(parentActivity, s8Var.c.getResourceProvider(), j16, 5, str7, new r8(s8Var, j16, i13), 0L).show();
                     }
-                    t8Var.q.S(false);
-                    t8Var.q.O();
+                    s8Var.q.S(false);
+                    s8Var.q.O();
                     return;
                 }
                 return;
             case 8:
-                jc jcVar = (jc) this.d;
+                ic icVar = (ic) this.d;
                 long j17 = this.b;
-                v8 v8Var4 = (v8) this.e;
+                u8 u8Var4 = (u8) this.e;
                 gj gjVar2 = (gj) this.c;
                 an anVar = (an) this.f;
-                z6 z6Var = jcVar.M1;
+                z6 z6Var = icVar.M1;
                 if (z6Var == null) {
-                    t8 b02 = v8Var4.b0(gjVar2, anVar, j17, false, true, Long.valueOf(jcVar.z1));
+                    s8 b02 = u8Var4.b0(gjVar2, anVar, j17, false, true, Long.valueOf(icVar.z1));
                     if (b02 == null) {
                         return;
                     }
-                    org.telegram.messenger.g0.h3(new di.s2(13, jcVar, b02));
+                    org.telegram.messenger.g0.h3(new di.s2(13, icVar, b02));
                     return;
                 }
-                int intValue = ((Integer) z6Var.d(Long.valueOf(jcVar.z1), Long.valueOf(j17))).intValue();
-                jcVar.L1 = intValue;
+                int intValue = ((Integer) z6Var.d(Long.valueOf(icVar.z1), Long.valueOf(j17))).intValue();
+                icVar.L1 = intValue;
                 if (intValue == Integer.MIN_VALUE) {
-                    jcVar.dismiss();
+                    icVar.dismiss();
                     return;
                 } else {
-                    org.telegram.messenger.g0.h3(new nb(jcVar, i12));
+                    org.telegram.messenger.g0.h3(new mb(icVar, i12));
                     return;
                 }
             case 9:

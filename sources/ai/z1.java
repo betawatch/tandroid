@@ -1,15 +1,15 @@
 package ai;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public interface z1 {
-    void M(int i7, String str);
+public final class z1 {
+    public final int a;
+    public final String b;
+    public final String c;
 
-    void P(String str);
-
-    void a(String str, String str2);
-
-    void h(float f10);
-
-    void r(String str);
+    public z1(int i7, String str, String str2) {
+        this.a = i7;
+        this.b = str;
+        this.c = str2;
+    }
 }

@@ -73,7 +73,7 @@ import org.telegram.ui.Components.y31;
 import org.telegram.ui.Components.z31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class gj {
     public static Pattern m3;
@@ -5508,7 +5508,7 @@ public class gj {
                     if (!b10.f) {
                         b10.f = true;
                         vr a03 = vr.a0(i7);
-                        a03.a.c(new oq(a03, 6));
+                        a03.a.c(new nq(a03, 6));
                     }
                 }
             }
@@ -6222,7 +6222,7 @@ public class gj {
                             this.v = G;
                             Object[] objArr = new Object[1];
                             objArr[c10] = G;
-                            this.v = di.mb.T0(hd.Z(2131753949, objArr));
+                            this.v = di.lb.T0(hd.Z(2131753949, objArr));
                         } else if (n1(this.k) instanceof TLRPC.TL_messageMediaPhoto) {
                             if (n1(this.k).ttl_seconds != 0 && !(this.k instanceof TLRPC.TL_message_secret)) {
                                 this.v = hd.L0(2131753977);
@@ -6512,7 +6512,7 @@ public class gj {
                                 StringBuilder sb3 = new StringBuilder();
                                 sb3.append(tL_messageActionPaymentRefunded.currency);
                                 sb3.append(" ");
-                                this.v = di.mb.T0(E5(hd.Z(2131754580, i5.c.l(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", d211));
+                                this.v = di.lb.T0(E5(hd.Z(2131754580, i5.c.l(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", d211));
                             } else {
                                 boolean g10 = cg.d.g(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class);
                                 cg.b bVar = cg.b.b;
@@ -6536,13 +6536,13 @@ public class gj {
                                         if (r52 == null || (aVar2 = r52.a) == null) {
                                             this.v = hd.Z(z14 ? 2131744378 : 2131744380, m10, h);
                                         } else {
-                                            this.v = di.mb.V0(hd.Z(z14 ? 2131744379 : 2131744381, m10, h, aVar2.b()), aVar2.a == bVar);
+                                            this.v = di.lb.V0(hd.Z(z14 ? 2131744379 : 2131744381, m10, h, aVar2.b()), aVar2.a == bVar);
                                         }
                                     } else if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
                                         if (r52 == null || (aVar = r52.a) == null) {
                                             this.v = hd.Z(2131744383, h);
                                         } else {
-                                            this.v = di.mb.V0(hd.Z(2131744384, h, aVar.b()), aVar.a == bVar);
+                                            this.v = di.lb.V0(hd.Z(2131744384, h, aVar.b()), aVar.a == bVar);
                                         }
                                     }
                                 } else {
@@ -6917,7 +6917,7 @@ public class gj {
                                                         }
                                                         this.v = valueOf2.replace(indexOf3, indexOf3 + 3, (CharSequence) f11);
                                                     }
-                                                    this.v = di.mb.T0(this.v);
+                                                    this.v = di.lb.T0(this.v);
                                                 } else {
                                                     TLRPC.Message message5 = this.k;
                                                     TLRPC.MessageAction messageAction6 = message5.action;
@@ -7985,7 +7985,7 @@ public class gj {
             int i10 = this.K1;
             vr a02 = vr.a0(i10);
             TLRPC.Message message = this.k;
-            a02.I(new vq(a02, message.dialog_id, b2(i10, message, false, false), this.k.id, 6));
+            a02.I(new uq(a02, message.dialog_id, b2(i10, message, false, false), this.k.id, 6));
         }
     }
 
@@ -10137,7 +10137,7 @@ public class gj {
                 this.v = hd.a0(null, null, 2131747361, str, j3, m1(this.C).title);
             }
         }
-        this.v = di.mb.T0(this.v);
+        this.v = di.lb.T0(this.v);
     }
 
     public final boolean p2() {
@@ -10487,7 +10487,7 @@ public class gj {
                     break;
                 }
             }
-            return di.mb.T0(hd.a0(null, null, 2131753949, size == 1 ? hd.M0(z10 ? 2131753933 : 2131753948, null) : hd.G(size, z10 ? "Media" : "Photos", new Object[0])));
+            return di.lb.T0(hd.a0(null, null, 2131753949, size == 1 ? hd.M0(z10 ? 2131753933 : 2131753948, null) : hd.G(size, z10 ? "Media" : "Photos", new Object[0])));
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
             return (messageMedia.ttl_seconds == 0 || (this.k instanceof TLRPC.TL_message_secret)) ? c1() != 0 ? hd.M0(2131754305, null) : D3() ? hd.M0(2131753962, null) : hd.M0(2131753948, null) : hd.M0(2131753977, null);
@@ -11035,7 +11035,7 @@ public class gj {
                             String a02 = z12 ? hd.a0(null, null, 2131744362, str2, l10.b()) : hd.a0(null, null, 2131744354, l10.b());
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                            spannableStringBuilder.append((CharSequence) di.mb.V0(g0.X2(a02), bVar == bVar2));
+                            spannableStringBuilder.append((CharSequence) di.lb.V0(g0.X2(a02), bVar == bVar2));
                             int i12 = z14 ? z12 ? 2131744360 : 2131744352 : z12 ? 2131744361 : 2131744353;
                             spannableStringBuilder.append((CharSequence) "\n\n");
                             spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);

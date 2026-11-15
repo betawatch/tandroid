@@ -1,24 +1,33 @@
 package di;
 
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class la implements is {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] b;
+public final class la extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] a;
+    public final /* synthetic */ long b;
 
-    public la(boolean[] zArr, org.telegram.ui.ActionBar.u2[] u2VarArr) {
-        this.a = zArr;
-        this.b = u2VarArr;
+    public la(org.telegram.ui.ActionBar.u2[] u2VarArr, long j3) {
+        this.a = u2VarArr;
+        this.b = j3;
     }
 
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        org.telegram.ui.ActionBar.u2 u2Var;
-        if (i7 == ns.A3 && this.a[0] && (u2Var = this.b[0]) != null) {
-            u2Var.dismiss();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(an.ua(this.b));
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

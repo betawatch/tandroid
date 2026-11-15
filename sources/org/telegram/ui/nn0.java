@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nn0 implements org.telegram.ui.Components.r4, org.telegram.ui.ActionBar.q1, org.telegram.messenger.kc, r0.m {
     public final /* synthetic */ PhotoViewer a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class nn0 implements org.telegram.ui.Components.r4,
     @Override // r0.m
     public r0.k1 M0(View view, r0.k1 k1Var) {
         PhotoViewer photoViewer = this.a;
-        dn0 dn0Var = photoViewer.v4;
+        en0 en0Var = photoViewer.v4;
         Rect rect = photoViewer.t2;
         Rect rect2 = new Rect(rect);
         i0.c I0 = org.telegram.messenger.g0.I0(k1Var, false);
@@ -87,9 +87,9 @@ public final /* synthetic */ class nn0 implements org.telegram.ui.Components.r4,
         }
         photoViewer.f0.setPadding(i10, 0, i12, 0);
         if (photoViewer.G != null) {
-            org.telegram.messenger.g0.r(dn0Var);
+            org.telegram.messenger.g0.r(en0Var);
             if (photoViewer.e && photoViewer.n4 == 0) {
-                org.telegram.messenger.g0.i3(dn0Var, 200L);
+                org.telegram.messenger.g0.i3(en0Var, 200L);
             }
         }
         return r0.k1.b;

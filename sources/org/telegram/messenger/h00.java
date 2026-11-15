@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class h00 extends c1 {
     public static final int[] n = new int[5];
@@ -175,7 +175,7 @@ public final class h00 extends c1 {
         tL_messages_deleteTopicHistory.top_msg_id = i7;
         if (i10 == 0) {
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new sp(1, j10, i7, messagesStorage));
+            messagesStorage.a.c(new pp(1, j10, i7, messagesStorage));
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_deleteTopicHistory, new d00(this, j3, i7));
     }
@@ -343,7 +343,7 @@ public final class h00 extends c1 {
                 @Override // java.util.function.Consumer
                 /* renamed from: accept */
                 public final void x(Object obj) {
-                    g0.h3(new uq(h00.this, j3, (ArrayList) obj, z10, i7, 2));
+                    g0.h3(new rq(h00.this, j3, (ArrayList) obj, z10, i7, 2));
                 }
 
                 public /* synthetic */ Consumer andThen(Consumer consumer) {
@@ -486,7 +486,7 @@ public final class h00 extends c1 {
     public final void s(long j3, long j10) {
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(ur.a(-j3, j10));
-        g0.h3(new wq(22, this, arrayList));
+        g0.h3(new pq(23, this, arrayList));
     }
 
     public final void t(long j3, int i7, boolean z10, org.telegram.ui.ActionBar.e2 e2Var) {
@@ -716,7 +716,7 @@ public final class h00 extends c1 {
             vr messagesStorage = getMessagesStorage();
             arrayList4 = arrayList6;
             e0Var = null;
-            messagesStorage.a.c(new ir(messagesStorage, arrayList2, j3, 4));
+            messagesStorage.a.c(new hr(messagesStorage, arrayList2, j3, 5));
         }
         if (arrayList3 == null || i7 == 2) {
             if (i7 != 0 || z10) {

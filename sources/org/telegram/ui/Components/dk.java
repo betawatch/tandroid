@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class dk extends ci {
     public static final /* synthetic */ int h0 = 0;
@@ -376,17 +376,17 @@ public final class dk extends ci {
             ArrayList arrayList = new ArrayList();
             org.telegram.ui.ActionBar.e2 e2Var = kiVar.a2;
             org.telegram.ui.an anVar = e2Var instanceof org.telegram.ui.an ? (org.telegram.ui.an) e2Var : null;
-            org.telegram.ui.ym0 ym0Var = new org.telegram.ui.ym0(0, MediaController.a2, hashMap, arrayList, 0, anVar != null, anVar, false);
-            ym0Var.m0 = true;
-            ym0Var.t0 = new h6.m(dkVar, hashMap, arrayList, 26);
-            ym0Var.k0(dkVar.W, false);
+            org.telegram.ui.zm0 zm0Var = new org.telegram.ui.zm0(0, MediaController.a2, hashMap, arrayList, 0, anVar != null, anVar, false);
+            zm0Var.m0 = true;
+            zm0Var.t0 = new h6.m(dkVar, hashMap, arrayList, 26);
+            zm0Var.k0(dkVar.W, false);
             org.telegram.ui.ActionBar.e2 e2Var2 = kiVar.a2;
             if (e2Var2 != null) {
-                e2Var2.presentFragment(ym0Var);
+                e2Var2.presentFragment(zm0Var);
             } else {
                 org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
                 if (Q != null) {
-                    Q.presentFragment(ym0Var);
+                    Q.presentFragment(zm0Var);
                 }
             }
             kiVar.a(true);

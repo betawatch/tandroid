@@ -17,10 +17,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ja;
 import c8.na;
-import di.ca;
-import di.hb;
-import di.mb;
-import di.v8;
+import di.ba;
+import di.gb;
+import di.lb;
+import di.u8;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.k60;
 import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.t8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public static final int[] w0 = {-2781403, -3635939};
@@ -61,7 +61,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final o2 L;
     public final TextView M;
     public final TextView N;
-    public ca O;
+    public ba O;
     public boolean P;
     public float Q;
     public oy0 R;
@@ -500,17 +500,17 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         boolean z15;
         long j12;
         boolean z16;
-        ca caVar = this.O;
+        ba baVar = this.O;
         ColorFilter colorFilter = null;
-        if (caVar != null) {
-            caVar.run();
+        if (baVar != null) {
+            baVar.run();
             this.O = null;
         }
         j(starGift.getDocument(), starGift);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
         e2 e2Var = this.e;
         e2Var.d(stargiftattributebackdrop);
-        e2Var.e((TL_stars.starGiftAttributePattern) v8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+        e2Var.e((TL_stars.starGiftAttributePattern) u8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
         boolean z17 = starGift.auction;
         int[] iArr = w0;
         org.telegram.ui.ActionBar.e6 e6Var = this.b;
@@ -583,7 +583,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                     textView2.setPadding(org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(10.0f), 0);
                     long resellStars = starGift.getResellStars();
                     int w13 = org.telegram.ui.ActionBar.j6.w(stargiftattributebackdrop.center_color | (-16777216), org.telegram.ui.ActionBar.j6.r1(0.55f, stargiftattributebackdrop.pattern_color | (-16777216)));
-                    textView2.setText(mb.T0("XTR " + hd.E(resellStars, ',')));
+                    textView2.setText(lb.T0("XTR " + hd.E(resellStars, ',')));
                     this.t0 = 0;
                     o2Var.setBackground(new n2(1895825407, w13));
                     textView2.setTextColor(-1);
@@ -605,7 +605,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                                         StringBuilder sb3 = new StringBuilder("XTR ");
                                         sb3.append(hd.E(j11, ','));
                                         sb3.append(z15 ? "+" : "");
-                                        textView2.setText(mb.a1(false, sb3.toString(), 0.71f, null));
+                                        textView2.setText(lb.a1(false, sb3.toString(), 0.71f, null));
                                     } else {
                                         textView2.setText(hd.M0(starGift.sold_out ? 2131750336 : 2131750337, null));
                                     }
@@ -624,7 +624,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                             StringBuilder sb32 = new StringBuilder("XTR ");
                             sb32.append(hd.E(j11, ','));
                             sb32.append(z15 ? "+" : "");
-                            textView2.setText(mb.a1(false, sb32.toString(), 0.71f, null));
+                            textView2.setText(lb.a1(false, sb32.toString(), 0.71f, null));
                             this.t0 = 1;
                             this.u0 = starGift instanceof TL_stars.TL_starGiftUnique;
                             a();
@@ -646,7 +646,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                     StringBuilder sb322 = new StringBuilder("XTR ");
                     sb322.append(hd.E(j11, ','));
                     sb322.append(z15 ? "+" : "");
-                    textView2.setText(mb.a1(false, sb322.toString(), 0.71f, null));
+                    textView2.setText(lb.a1(false, sb322.toString(), 0.71f, null));
                     this.t0 = 1;
                     this.u0 = starGift instanceof TL_stars.TL_starGiftUnique;
                     a();
@@ -707,16 +707,16 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         boolean z12;
         o2 o2Var;
         boolean z13;
-        ca caVar = this.O;
-        if (caVar != null) {
-            caVar.run();
+        ba baVar = this.O;
+        if (baVar != null) {
+            baVar.run();
             this.O = null;
         }
         j(savedStarGift.gift.getDocument(), savedStarGift);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
         e2 e2Var = this.e;
         e2Var.d(stargiftattributebackdrop);
-        e2Var.e((TL_stars.starGiftAttributePattern) v8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class));
+        e2Var.e((TL_stars.starGiftAttributePattern) u8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class));
         e2Var.g(null);
         this.I.setVisibility(8);
         this.J.setVisibility(8);
@@ -767,7 +767,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
             j3 = 0;
         } else if (savedStarGift.name_hidden) {
             i9Var2.setVisibility(0);
-            fq a10 = hb.a(44, "anonymous");
+            fq a10 = gb.a(44, "anonymous");
             j3 = 0;
             int L2 = org.telegram.messenger.g0.L(16.0f);
             int L3 = org.telegram.messenger.g0.L(16.0f);
@@ -829,7 +829,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                 if (j11 <= j3) {
                     j11 = starGift.convert_stars;
                 }
-                textView.setText(mb.a1(false, i5.c.l(Math.max(j10, j11), ',', sb2), 0.66f, null));
+                textView.setText(lb.a1(false, i5.c.l(Math.max(j10, j11), ',', sb2), 0.66f, null));
             }
             if (z14) {
                 this.t0 = 0;
@@ -855,10 +855,10 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
             TL_stars.StarGift starGift2 = savedStarGift.gift;
             if (starGift2.resale_ton_only && org.telegram.messenger.m5.o(starGift2.owner_id) == m10.i(i11).e()) {
                 z13 = true;
-                textView.setText(mb.s1(mb.X0(true, "XTR " + ((Object) mb.M0(savedStarGift.gift.getResellAmount(cg.b.b).o(), 1.0f, ',')), 0.95f, eqVarArr, 0.0f, 1.0f), true));
+                textView.setText(lb.s1(lb.X0(true, "XTR " + ((Object) lb.M0(savedStarGift.gift.getResellAmount(cg.b.b).o(), 1.0f, ',')), 0.95f, eqVarArr, 0.0f, 1.0f), true));
             } else {
                 z13 = true;
-                textView.setText(mb.U0("XTR " + hd.E(savedStarGift.gift.getResellStars(), ','), 0.95f, eqVarArr));
+                textView.setText(lb.U0("XTR " + hd.E(savedStarGift.gift.getResellStars(), ','), 0.95f, eqVarArr));
             }
             eq eqVar = eqVarArr[0];
             if (eqVar != null) {
@@ -916,7 +916,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         if (this.Q != f10) {
             this.Q = f10;
             TL_stars.TL_starGiftUnique uniqueStarGift = getUniqueStarGift();
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = uniqueStarGift == null ? null : (TL_stars.starGiftAttributeBackdrop) v8.l(uniqueStarGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = uniqueStarGift == null ? null : (TL_stars.starGiftAttributeBackdrop) u8.l(uniqueStarGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             int i7 = stargiftattributebackdrop == null ? -11184811 : stargiftattributebackdrop.pattern_color | (-16777216);
             float f11 = 1.0f - f10;
             ColorMatrixColorFilter colorMatrixColorFilter = f10 <= 0.0f ? null : new ColorMatrixColorFilter(new float[]{f11, 0.0f, 0.0f, 0.0f, Color.red(i7) * f10, 0.0f, f11, 0.0f, 0.0f, Color.green(i7) * f10, 0.0f, 0.0f, f11, 0.0f, Color.blue(i7) * f10, 0.0f, 0.0f, 0.0f, 1.0f - (0.5686275f * f10), 0.0f});
@@ -972,7 +972,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
                 setRibbonColorKey(org.telegram.ui.ActionBar.j6.Cj);
                 j2Var.setStrokeColor(0);
                 this.p0 = false;
-                j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) v8.l(this.f0.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) u8.l(this.f0.gift.attributes, TL_stars.starGiftAttributeBackdrop.class));
                 j2Var.b(i5.c.l(this.f0.gift.num, ',', new StringBuilder("#")), true);
                 return;
             }
@@ -1013,7 +1013,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         if (this.h0 || this.j0) {
             j2Var.setVisibility(0);
             setRibbonColorKey(org.telegram.ui.ActionBar.j6.Cj);
-            j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) v8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) u8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
             j2Var.setStrokeColor(0);
             this.p0 = false;
             j2Var.b(i5.c.l(this.c0.num, ',', new StringBuilder("#")), true);
@@ -1033,7 +1033,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
             setRibbonColorKey(org.telegram.ui.ActionBar.j6.Cj);
             j2Var.setStrokeColor(0);
             this.p0 = false;
-            j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) v8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) u8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
             j2Var.b(hd.a0(null, null, 2131750135, org.telegram.messenger.g0.o0(this.c0.availability_issued, 0)), true);
             return;
         }
@@ -1351,7 +1351,7 @@ public class i2 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         setRibbonColorKey(org.telegram.ui.ActionBar.j6.Cj);
         j2Var.setStrokeColor(0);
         this.p0 = false;
-        j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) v8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
+        j2Var.setBackdrop((TL_stars.starGiftAttributeBackdrop) u8.l(this.c0.attributes, TL_stars.starGiftAttributeBackdrop.class));
         j2Var.b(hd.a0(null, null, 2131750135, org.telegram.messenger.g0.o0(i7, 0)), true);
     }
 

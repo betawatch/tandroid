@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nq implements Runnable {
     public final /* synthetic */ int a;
@@ -18,6 +18,7 @@ public final /* synthetic */ class nq implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        org.telegram.ui.ActionBar.l5 l5Var;
         switch (this.a) {
             case 0:
                 pq pqVar = this.b;
@@ -26,7 +27,6 @@ public final /* synthetic */ class nq implements Runnable {
                 break;
             default:
                 pq pqVar2 = this.b;
-                org.telegram.ui.ActionBar.m5 m5Var = null;
                 pqVar2.n = null;
                 qq qqVar = pqVar2.E;
                 TLRPC.Chat chat = qqVar.n;
@@ -36,10 +36,11 @@ public final /* synthetic */ class nq implements Runnable {
                 String str = this.c;
                 if (arrayList == null && arrayList2 == null) {
                     pqVar2.s = false;
+                    l5Var = null;
                 } else {
-                    m5Var = new org.telegram.ui.ActionBar.m5(pqVar2, str, arrayList, arrayList2);
+                    l5Var = new org.telegram.ui.ActionBar.l5(pqVar2, str, arrayList, arrayList2, 15);
                 }
-                pqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.t3.T(qqVar.n) ? qqVar.N : 0L, false, qqVar.O, 1, 0L, m5Var);
+                pqVar2.h.h(str, i7 != 0, false, true, false, false, org.telegram.messenger.t3.T(qqVar.n) ? qqVar.N : 0L, false, qqVar.O, 1, 0L, l5Var);
                 break;
         }
     }

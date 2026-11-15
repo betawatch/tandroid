@@ -3,7 +3,7 @@ package hi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f7 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class f7 implements Runnable {
                 TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                 l7 l7Var = this.b;
                 getwebpagepreview.message = l7Var.U1.d.getText().toString();
-                l7Var.e2 = ConnectionsManager.getInstance(l7Var.a).sendRequest(getwebpagepreview, new ai.d1(l7Var, 12));
+                l7Var.e2 = ConnectionsManager.getInstance(l7Var.a).sendRequest(getwebpagepreview, new ai.e1(l7Var, 12));
                 break;
             case 1:
                 this.b.h1();

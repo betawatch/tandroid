@@ -1,9 +1,9 @@
 package ji;
 
-import ai.f2;
-import ai.k1;
-import ai.m0;
-import ai.r0;
+import ai.g2;
+import ai.l1;
+import ai.n0;
+import ai.s0;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -33,7 +33,7 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import bi.p1;
 import com.google.android.gms.internal.vision.e2;
-import di.h8;
+import di.g8;
 import hi.g7;
 import hi.h4;
 import j$.util.Objects;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.uc;
 import org.telegram.ui.Components.xe;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class e extends View {
     public static int j3;
@@ -171,7 +171,7 @@ public final class e extends View {
     public int[] b1;
     public boolean b2;
     public LinearGradient b3;
-    public final r0 c;
+    public final s0 c;
     public float c0;
     public final ArrayList c1;
     public long c2;
@@ -265,11 +265,11 @@ public final class e extends View {
     public static final float l3 = g0.N(0.5f);
     public static final float m3 = g0.L(6.0f);
     public static final er r3 = new er(0.3d, 0.0d, 0.2d, 1.0d);
-    public static final er s3 = k1.E;
+    public static final er s3 = l1.E;
 
     public e(Context context, e6 e6Var, xi.e eVar) {
         super(context);
-        this.c = new r0();
+        this.c = new s0();
         this.d = new TextPaint(1);
         this.e = new TextPaint(1);
         this.f = new TextPaint(1);
@@ -614,18 +614,18 @@ public final class e extends View {
         int i7 = j6.d6;
         e6 e6Var = this.b;
         int w02 = j6.w0(i7, e6Var);
-        boolean c10 = r0.c(w02);
+        boolean c10 = s0.c(w02);
         this.M = c10;
-        r0 r0Var = this.c;
-        if (r0Var.h != c10) {
-            r0Var.h = c10;
+        s0 s0Var = this.c;
+        if (s0Var.h != c10) {
+            s0Var.h = c10;
         }
         int w03 = j6.w0(j6.Pe, e6Var) | (-16777216);
-        r0.h(w03);
-        r0Var.g(-6440822, w03);
+        s0.h(w03);
+        s0Var.g(-6440822, w03);
         this.N = j6.w0(j6.Le, e6Var) | (-16777216);
         boolean z10 = this.M;
-        this.O = z10 ? i0.a.f(0.12f, w03, -1) : m0.o(w03, w02, z10);
+        this.O = z10 ? i0.a.f(0.12f, w03, -1) : n0.o(w03, w02, z10);
         q3 = this.M ? g0.L(7.0f) : 0.0f;
         this.P = j6.r1(this.M ? 0.18f : 0.14f, this.O);
         j3 = this.O;
@@ -668,13 +668,13 @@ public final class e extends View {
             int[] iArr2 = this.c.B;
             boolean z10 = this.M;
             e6 e6Var = this.b;
-            int d = (z10 ? r0.d(j6.w0(j6.Me, e6Var)) : j6.w0(j6.Me, e6Var)) | (-16777216);
-            int e10 = this.M ? r0.e(-7359233) : i0.a.f(0.55f, iArr2[0], iArr2[4]);
-            int e11 = this.M ? r0.e(-7411982) : i0.a.f(0.55f, iArr2[1], iArr2[4]);
-            int e12 = this.M ? r0.e(-4940545) : i0.a.f(0.55f, iArr2[2], iArr2[4]);
+            int d = (z10 ? s0.d(j6.w0(j6.Me, e6Var)) : j6.w0(j6.Me, e6Var)) | (-16777216);
+            int e10 = this.M ? s0.e(-7359233) : i0.a.f(0.55f, iArr2[0], iArr2[4]);
+            int e11 = this.M ? s0.e(-7411982) : i0.a.f(0.55f, iArr2[1], iArr2[4]);
+            int e12 = this.M ? s0.e(-4940545) : i0.a.f(0.55f, iArr2[2], iArr2[4]);
             if (this.M) {
-                int e13 = r0.e(-7359233);
-                int e14 = r0.e(-5650177);
+                int e13 = s0.e(-7359233);
+                int e14 = s0.e(-5650177);
                 iArr = new int[]{i0.a.f(0.4f, d, e13), i0.a.f(0.3f, d, e14), i0.a.f(0.4f, d, e13), i0.a.f(0.3f, d, e14)};
             } else {
                 int w02 = j6.w0(j6.Me, e6Var);
@@ -714,7 +714,7 @@ public final class e extends View {
             Paint paint2 = this.L1;
             Paint paint3 = this.N1;
             if (linearGradient == null) {
-                LinearGradient linearGradient2 = new LinearGradient(-1.0f, 0.0f, 1.0f, 0.0f, new int[]{r0.e(-7447553), r0.e(-13649665), r0.e(-13665281)}, (float[]) null, Shader.TileMode.MIRROR);
+                LinearGradient linearGradient2 = new LinearGradient(-1.0f, 0.0f, 1.0f, 0.0f, new int[]{s0.e(-7447553), s0.e(-13649665), s0.e(-13665281)}, (float[]) null, Shader.TileMode.MIRROR);
                 this.I1 = linearGradient2;
                 paint2.setShader(linearGradient2);
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -862,9 +862,9 @@ public final class e extends View {
         if (z10 && this.M) {
             if (this.y1 == null) {
                 int color2 = textPaint.getColor() | (-16777216);
-                int f26 = i0.a.f(0.4f, color2, r0.e(-7359233));
+                int f26 = i0.a.f(0.4f, color2, s0.e(-7359233));
                 f15 = L6;
-                this.y1 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{f26, i0.a.f(0.28f, color2, r0.e(-5650177)), f26}, (float[]) null, Shader.TileMode.MIRROR);
+                this.y1 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{f26, i0.a.f(0.28f, color2, s0.e(-5650177)), f26}, (float[]) null, Shader.TileMode.MIRROR);
             } else {
                 f15 = L6;
             }
@@ -965,7 +965,7 @@ public final class e extends View {
                 float f16 = measureText;
                 f14 = 12.0f;
                 for (String str2 : DictationAsr.C()) {
-                    String l10 = m0.l(str2);
+                    String l10 = n0.l(str2);
                     if (l10 != null) {
                         f16 = Math.max(f16, textPaint.measureText(l10));
                     }
@@ -1425,7 +1425,7 @@ public final class e extends View {
                                 boolean v = DictationAsr.v();
                                 int i15 = v ? 0 : -1;
                                 for (int i16 = 0; i16 < C.length; i16++) {
-                                    arrayList.add(m0.l(C[i16]));
+                                    arrayList.add(n0.l(C[i16]));
                                     if (!v && i15 < 0 && DictationAsr.y(C[i16])) {
                                         i15 = i16 + 1;
                                     }
@@ -1443,7 +1443,7 @@ public final class e extends View {
                                     st0Var2.addView(frameLayout2, new FrameLayout.LayoutParams(-1, -1));
                                     View view2 = new View(chatActivityEnterView4.getContext());
                                     frameLayout2.addView(view2, new FrameLayout.LayoutParams((int) rectF2.width(), (int) rectF2.height(), 51));
-                                    frameLayout2.post(new h8(gfVar2, eVar5, frameLayout2, view2, rectF2, arrayList, i15, gVar, fVar));
+                                    frameLayout2.post(new g8(gfVar2, eVar5, frameLayout2, view2, rectF2, arrayList, i15, gVar, fVar));
                                     return true;
                                 }
                             }
@@ -1586,7 +1586,7 @@ public final class e extends View {
             this.V2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
             paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
         }
-        paint.setColorFilter(new PorterDuffColorFilter(r0.e(this.M ? -7358721 : -15363160), PorterDuff.Mode.SRC_IN));
+        paint.setColorFilter(new PorterDuffColorFilter(s0.e(this.M ? -7358721 : -15363160), PorterDuff.Mode.SRC_IN));
         this.A2 = this.E2;
         this.B2 = this.F2;
         this.C2 = this.G2;
@@ -1634,7 +1634,7 @@ public final class e extends View {
             nu0 nu0Var = this.r2;
             nu0Var.a();
             nu0Var.e(this.M);
-            nu0Var.a = r0.j(this.M);
+            nu0Var.a = s0.j(this.M);
             nu0Var.Q = g0.L(10.0f);
             this.v2 = SystemClock.uptimeMillis();
             float f15 = this.U1;
@@ -1944,7 +1944,7 @@ public final class e extends View {
             c cVar = (c) obj;
             int i10 = cVar.b;
             if (i10 > cVar.a && i10 <= spannableString.length()) {
-                spannableString.setSpan(new f2(cVar, 1), cVar.a, cVar.b, 33);
+                spannableString.setSpan(new g2(cVar, 1), cVar.a, cVar.b, 33);
             }
         }
         int i11 = 0;
@@ -2293,7 +2293,7 @@ public final class e extends View {
                                 }
                                 nu0Var6.a();
                                 nu0Var6.e(this.M);
-                                nu0Var6.a = r0.j(this.M);
+                                nu0Var6.a = s0.j(this.M);
                                 float f20 = 10.0f;
                                 nu0Var6.Q = g0.L(10.0f);
                                 int size5 = arrayList7.size();
@@ -2602,7 +2602,7 @@ public final class e extends View {
                                             int i57 = 0;
                                             nu0Var.a();
                                             nu0Var.e(this.M);
-                                            nu0Var.a = r0.j(this.M);
+                                            nu0Var.a = s0.j(this.M);
                                             nu0Var.Q = 0.0f;
                                             textPaint.setAlpha(ns.e4);
                                             StaticLayout b11 = b(spannableString2, textPaint);
@@ -2782,8 +2782,8 @@ public final class e extends View {
     public final void y(long j10) {
         if (this.R1) {
             if (this.b3 == null) {
-                int e10 = r0.e(this.M ? -10777345 : -15374904);
-                int e11 = r0.e(this.M ? -6128385 : -15823740);
+                int e10 = s0.e(this.M ? -10777345 : -15374904);
+                int e11 = s0.e(this.M ? -6128385 : -15823740);
                 float f10 = this.M ? 0.6f : 0.75f;
                 int f11 = i0.a.f(f10, this.N, e10);
                 int f12 = i0.a.f(f10, this.N, e11);

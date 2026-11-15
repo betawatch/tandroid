@@ -1,41 +1,25 @@
 package ai;
 
-import android.view.View;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import org.telegram.messenger.np;
+import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.g20;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] b;
+public final class p2 {
+    public final g20 a;
+    public boolean c;
+    public volatile boolean d;
+    public Thread e;
+    public final ConcurrentLinkedQueue b = new ConcurrentLinkedQueue();
+    public long f = 1;
 
-    public /* synthetic */ p2(org.telegram.ui.ActionBar.u2[] u2VarArr, int i7) {
-        this.a = i7;
-        this.b = u2VarArr;
+    public p2(g20 g20Var) {
+        this.a = g20Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.u2 u2Var = this.b[0];
-                if (u2Var != null) {
-                    u2Var.dismiss();
-                    break;
-                }
-                break;
-            case 1:
-                this.b[0].dismiss();
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.u2 u2Var2 = this.b[0];
-                if (u2Var2 != null) {
-                    u2Var2.dismiss();
-                    break;
-                }
-                break;
-            default:
-                this.b[0].dismiss();
-                break;
-        }
+    public static boolean a() {
+        return DictationAsr.B() && np.e1().getBoolean("asr_live_captions", false);
     }
 }

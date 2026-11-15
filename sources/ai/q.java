@@ -10,7 +10,6 @@ import hi.u9;
 import hi.w6;
 import hi.z2;
 import java.util.ArrayList;
-import ki.x2;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.np;
@@ -41,7 +40,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ll;
 import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -61,16 +60,16 @@ public final /* synthetic */ class q implements Runnable {
         switch (this.a) {
             case 0:
                 boolean z10 = this.b;
-                s sVar = (s) this.c;
-                s[] sVarArr = DictationAsr.a;
-                if (z10 == (sVar.d == 0 ? 0 : 1)) {
-                    ArrayList arrayList = new ArrayList(sVar.j);
-                    sVar.j.clear();
+                t tVar = (t) this.c;
+                t[] tVarArr = DictationAsr.a;
+                if (z10 == (tVar.d == 0 ? 0 : 1)) {
+                    ArrayList arrayList = new ArrayList(tVar.j);
+                    tVar.j.clear();
                     int size = arrayList.size();
                     while (i7 < size) {
                         Object obj = arrayList.get(i7);
                         i7++;
-                        ((t) obj).a(z10);
+                        ((u) obj).a(z10);
                     }
                     break;
                 }
@@ -129,7 +128,7 @@ public final /* synthetic */ class q implements Runnable {
                     vp0Var.b(mVar.a.E);
                     break;
                 } else {
-                    new gi.p(vp0Var.a, hd.M0(2131746693, null), new f0(vp0Var, 19)).show();
+                    new gi.p(vp0Var.a, hd.M0(2131746693, null), new g0(vp0Var, 19)).show();
                     break;
                 }
             case 6:
@@ -172,7 +171,7 @@ public final /* synthetic */ class q implements Runnable {
                     break;
                 }
             case 11:
-                x2 x2Var = (x2) this.c;
+                ki.x2 x2Var = (ki.x2) this.c;
                 boolean z14 = this.b;
                 ki.v2 v2Var = x2Var.F;
                 ki.p2 p2Var = x2Var.E;
@@ -195,9 +194,9 @@ public final /* synthetic */ class q implements Runnable {
             case 13:
                 k8.a aVar = (k8.a) this.c;
                 boolean z15 = this.b;
-                n2.s sVar2 = (n2.s) aVar.c;
+                n2.s sVar = (n2.s) aVar.c;
                 String str = h2.l0.a;
-                l2.f0 f0Var = ((l2.z) sVar2).a;
+                l2.f0 f0Var = ((l2.z) sVar).a;
                 if (f0Var.d0 != z15) {
                     f0Var.d0 = z15;
                     f0Var.m.e(23, new l2.v(r5, z15));
@@ -330,9 +329,9 @@ public final /* synthetic */ class q implements Runnable {
         }
     }
 
-    public /* synthetic */ q(boolean z10, s sVar) {
+    public /* synthetic */ q(boolean z10, t tVar) {
         this.a = 0;
         this.b = z10;
-        this.c = sVar;
+        this.c = tVar;
     }
 }

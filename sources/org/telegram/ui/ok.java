@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ok extends org.telegram.ui.ActionBar.j5 {
     public final /* synthetic */ int N0;
@@ -38,7 +38,7 @@ public final class ok extends org.telegram.ui.ActionBar.j5 {
         switch (this.N0) {
             case 2:
                 super.onAttachedToWindow();
-                ((gm0) this.O0).s.a();
+                ((hm0) this.O0).s.a();
                 break;
             default:
                 super.onAttachedToWindow();
@@ -51,7 +51,7 @@ public final class ok extends org.telegram.ui.ActionBar.j5 {
         switch (this.N0) {
             case 2:
                 super.onDetachedFromWindow();
-                ((gm0) this.O0).s.b();
+                ((hm0) this.O0).s.b();
                 break;
             default:
                 super.onDetachedFromWindow();

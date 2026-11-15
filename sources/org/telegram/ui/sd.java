@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class sd extends org.telegram.ui.Components.n61 {
     public final Context a;
@@ -30,7 +30,7 @@ public final class sd extends org.telegram.ui.Components.n61 {
 
     @Override // org.telegram.ui.Components.n61
     public final View d(int i7) {
-        return new rd(this.f, this.a, i7, this.b, this.c, new ai.v0(this, i7, 21), this.d);
+        return new rd(this.f, this.a, i7, this.b, this.c, new ai.w0(this, i7, 21), this.d);
     }
 
     @Override // org.telegram.ui.Components.n61

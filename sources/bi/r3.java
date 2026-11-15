@@ -1,6 +1,6 @@
 package bi;
 
-import di.k8;
+import di.j8;
 import java.util.ArrayList;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.z10;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.wp0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r3 implements z10 {
     public final /* synthetic */ int a;
@@ -36,12 +36,12 @@ public final /* synthetic */ class r3 implements z10 {
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
                 wp0 wp0Var = c4Var.a;
-                k8 k8Var = wp0Var.e;
+                j8 j8Var = wp0Var.e;
                 int i11 = tL_starGiftCollection.collection_id;
-                k8Var.getClass();
+                j8Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
-                k8Var.a(i11, arrayList);
+                j8Var.a(i11, arrayList);
                 wp0Var.f(true);
                 v61 v61Var = wp0Var.n;
                 int i12 = tL_starGiftCollection.collection_id;

@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ol extends org.telegram.ui.Components.st0 {
     public int g0;
@@ -623,8 +623,8 @@ public final class ol extends org.telegram.ui.Components.st0 {
         float f14;
         float f15;
         View view3;
-        org.telegram.ui.Components.i90 i90Var;
-        org.telegram.ui.Components.i90 i90Var2;
+        org.telegram.ui.Components.j90 j90Var;
+        org.telegram.ui.Components.j90 j90Var2;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         org.telegram.ui.ActionBar.k kVar3;
@@ -674,7 +674,7 @@ public final class ol extends org.telegram.ui.Components.st0 {
         boolean z10;
         sl slVar4;
         sl slVar5;
-        org.telegram.ui.Components.i90 i90Var3;
+        org.telegram.ui.Components.j90 j90Var3;
         float f22;
         float f23;
         qj qjVar;
@@ -754,19 +754,19 @@ public final class ol extends org.telegram.ui.Components.st0 {
         float f51;
         Integer num12;
         org.telegram.ui.Components.ve veVar;
-        org.telegram.ui.Components.i90 i90Var4;
-        org.telegram.ui.Components.i90 i90Var5;
+        org.telegram.ui.Components.j90 j90Var4;
+        org.telegram.ui.Components.j90 j90Var5;
         sl slVar20;
         float f52;
         org.telegram.ui.Cells.q1 q1Var3;
         boolean z11;
-        org.telegram.ui.Components.i90 i90Var6;
+        org.telegram.ui.Components.j90 j90Var6;
         float f53;
-        org.telegram.ui.Components.i90 i90Var7;
+        org.telegram.ui.Components.j90 j90Var7;
         float f54;
         sl slVar21;
-        org.telegram.ui.Components.i90 i90Var8;
-        org.telegram.ui.Components.i90 i90Var9;
+        org.telegram.ui.Components.j90 j90Var8;
+        org.telegram.ui.Components.j90 j90Var9;
         sl slVar22;
         View view11;
         float f55;
@@ -1124,18 +1124,18 @@ public final class ol extends org.telegram.ui.Components.st0 {
                                     }
                                     canvas3.save();
                                     float measuredHeight7 = ((getMeasuredHeight() - viVar2.e()) - anVar.Zc) - org.telegram.messenger.g0.L(9.0f);
-                                    i90Var6 = anVar.X1;
-                                    if (i90Var6 != null) {
-                                        i90Var9 = anVar.X1;
-                                        f53 = i90Var9.d();
+                                    j90Var6 = anVar.X1;
+                                    if (j90Var6 != null) {
+                                        j90Var9 = anVar.X1;
+                                        f53 = j90Var9.d();
                                     } else {
                                         f53 = f14;
                                     }
                                     float f82 = measuredHeight7 - f53;
-                                    i90Var7 = anVar.X1;
-                                    if (i90Var7 != null) {
-                                        i90Var8 = anVar.X1;
-                                        f54 = i90Var8.e();
+                                    j90Var7 = anVar.X1;
+                                    if (j90Var7 != null) {
+                                        j90Var8 = anVar.X1;
+                                        f54 = j90Var8.e();
                                     } else {
                                         f54 = f14;
                                     }
@@ -1161,12 +1161,12 @@ public final class ol extends org.telegram.ui.Components.st0 {
                                     slVar5 = anVar.A0;
                                     float right2 = slVar5.getRight();
                                     float measuredHeight8 = (((getMeasuredHeight() - viVar.e()) - anVar.Zc) - anVar.t9(org.telegram.ui.Components.l11.c)) - org.telegram.messenger.g0.L(f21);
-                                    i90Var3 = anVar.X1;
-                                    if (i90Var3 == null) {
-                                        i90Var4 = anVar.X1;
-                                        float max = Math.max(0.0f, i90Var4.e());
-                                        i90Var5 = anVar.X1;
-                                        f23 = Math.max(0.0f, i90Var5.d());
+                                    j90Var3 = anVar.X1;
+                                    if (j90Var3 == null) {
+                                        j90Var4 = anVar.X1;
+                                        float max = Math.max(0.0f, j90Var4.e());
+                                        j90Var5 = anVar.X1;
+                                        f23 = Math.max(0.0f, j90Var5.d());
                                         f22 = max;
                                     } else {
                                         f22 = 0.0f;
@@ -1481,8 +1481,8 @@ public final class ol extends org.telegram.ui.Components.st0 {
                             slVar5 = anVar.A0;
                             float right22 = slVar5.getRight();
                             float measuredHeight82 = (((getMeasuredHeight() - viVar.e()) - anVar.Zc) - anVar.t9(org.telegram.ui.Components.l11.c)) - org.telegram.messenger.g0.L(f21);
-                            i90Var3 = anVar.X1;
-                            if (i90Var3 == null) {
+                            j90Var3 = anVar.X1;
+                            if (j90Var3 == null) {
                             }
                             qjVar = anVar.a0;
                             if (qjVar != null) {
@@ -1700,9 +1700,9 @@ public final class ol extends org.telegram.ui.Components.st0 {
         }
         view3 = anVar.Y8;
         if (view3 != null || ((ArrayList) anVar.ia.c).size() > 0) {
-            i90Var = anVar.X1;
-            if (i90Var != null) {
-                i90Var2 = anVar.X1;
+            j90Var = anVar.X1;
+            if (j90Var != null) {
+                j90Var2 = anVar.X1;
             }
             super.drawChild(canvas3, anVar.y1, SystemClock.uptimeMillis());
             ij ijVar = anVar.m3;
@@ -2252,7 +2252,7 @@ public final class ol extends org.telegram.ui.Components.st0 {
                                             kVar2 = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
                                             i17 = kVar2.getMeasuredHeight();
                                         } else if (childAt != anVar.q3 && childAt != anVar.r3 && childAt != anVar.x0) {
-                                            if (childAt instanceof org.telegram.ui.Components.ja0) {
+                                            if (childAt instanceof org.telegram.ui.Components.ka0) {
                                                 i17 = org.telegram.messenger.g0.m;
                                             } else if (childAt != anVar.V) {
                                                 if (childAt != anVar.c4) {
@@ -2528,7 +2528,7 @@ public final class ol extends org.telegram.ui.Components.st0 {
                                                             plVar2.w();
                                                         }
                                                         childAt2.measure(makeMeasureSpec5, View.MeasureSpec.makeMeasureSpec(i21, TLObject.FLAG_30));
-                                                    } else if (childAt2 instanceof org.telegram.ui.Components.ja0) {
+                                                    } else if (childAt2 instanceof org.telegram.ui.Components.ka0) {
                                                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((size2 - org.telegram.messenger.g0.m) - org.telegram.messenger.g0.n, TLObject.FLAG_30));
                                                     } else if (childAt2 == anVar.g2) {
                                                         kVar5 = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
@@ -2565,7 +2565,7 @@ public final class ol extends org.telegram.ui.Components.st0 {
                             }
                             i12 = anVar.M4;
                             if (i12 != -1) {
-                                org.telegram.messenger.g0.h3(new ai.v0(this, i12, 28));
+                                org.telegram.messenger.g0.h3(new ai.w0(this, i12, 28));
                                 anVar.M4 = -1;
                             }
                             xbVar = org.telegram.ui.Components.xb.w;

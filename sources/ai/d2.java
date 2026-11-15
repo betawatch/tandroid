@@ -1,33 +1,30 @@
 package ai;
 
-import android.graphics.Color;
 import android.os.SystemClock;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.text.style.UpdateAppearance;
+import android.util.Log;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d2 extends CharacterStyle implements UpdateAppearance {
-    public final long a;
-    public long b;
-    public final int c;
-    public final int d;
-    public boolean e;
+    public long a;
 
-    public d2(long j3, int i7, int i10) {
-        this.a = j3;
-        this.c = i7;
-        this.d = i10;
+    public final float a(long j3) {
+        if (this.a == 0) {
+            return 0.5f;
+        }
+        return (h2.b(Math.max(0.0f, Math.min(1.0f, (j3 - r0) / 300.0f))) * 0.5f) + 0.5f;
     }
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        textPaint.setColor(i0.a.f(g2.b(Math.max(0.0f, Math.min(1.0f, (uptimeMillis - this.a) / 750.0f))), this.c, this.d));
-        if (this.b > 0) {
-            float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (uptimeMillis - r5) / 220.0f));
-            textPaint.setAlpha((int) (Color.alpha(r2) * org.telegram.ui.Cells.y0.x(max, max, max, 1.0f)));
+        int alpha = textPaint.getAlpha();
+        textPaint.setAlpha((int) (a(SystemClock.uptimeMillis()) * alpha));
+        if (SystemClock.uptimeMillis() - h2.o > 300) {
+            h2.o = SystemClock.uptimeMillis();
+            Log.d("DICTDBG", "draft draw settle=" + this.a + " alpha " + alpha + " -> " + textPaint.getAlpha() + " color=" + Integer.toHexString(textPaint.getColor()));
         }
     }
 }

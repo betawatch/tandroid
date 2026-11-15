@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ln implements RequestDelegate {
     public final /* synthetic */ int a = 2;
@@ -47,7 +47,7 @@ public final /* synthetic */ class ln implements RequestDelegate {
                     }
                     npVar.M3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
                     vr messagesStorage = npVar.getMessagesStorage();
-                    messagesStorage.a.c(new up(messagesStorage, j10, 5));
+                    messagesStorage.a.c(new rp(messagesStorage, j10, 5));
                     break;
                 }
                 break;

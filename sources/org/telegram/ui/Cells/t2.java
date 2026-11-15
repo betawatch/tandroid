@@ -36,7 +36,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.OvershootInterpolator;
-import di.mb;
+import di.lb;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -95,7 +95,7 @@ import org.telegram.ui.uv;
 import org.telegram.ui.uy0;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class t2 extends z implements fi.y6, org.telegram.ui.ActionBar.z5 {
     public boolean A0;
@@ -1642,7 +1642,7 @@ public class t2 extends z implements fi.y6, org.telegram.ui.ActionBar.z5 {
             charSequence2 = r.b.l("🎧 \u2068", gjVar7.w1(true), " - ", this.g1.y1(true), "\u2069");
         } else if (messageMedia instanceof TLRPC.TL_messageMediaPaidMedia) {
             int size = ((TLRPC.TL_messageMediaPaidMedia) messageMedia).extended_media.size();
-            charSequence2 = mb.T0(hd.a0(null, null, 2131753949, this.T1 ? size > 1 ? hd.G(size, "Media", new Object[0]) : hd.M0(2131753933, null) : size > 1 ? hd.G(size, "Photos", new Object[0]) : hd.M0(2131753948, null)));
+            charSequence2 = lb.T0(hd.a0(null, null, 2131753949, this.T1 ? size > 1 ? hd.G(size, "Media", new Object[0]) : hd.M0(2131753933, null) : size > 1 ? hd.G(size, "Photos", new Object[0]) : hd.M0(2131753948, null)));
             i11 = org.telegram.ui.ActionBar.j6.p9;
         } else if (this.S1 > 1) {
             if (this.T1) {
@@ -7000,7 +7000,7 @@ public class t2 extends z implements fi.y6, org.telegram.ui.ActionBar.z5 {
                                                                                                             }
                                                                                                             Object[] objArr = new Object[i14];
                                                                                                             objArr[c12] = G2;
-                                                                                                            SpannableStringBuilder T0 = mb.T0(hd.Z(2131753949, objArr));
+                                                                                                            SpannableStringBuilder T0 = lb.T0(hd.Z(2131753949, objArr));
                                                                                                             this.b0 = org.telegram.ui.ActionBar.j6.H0[this.F0];
                                                                                                             charSequence36 = T0;
                                                                                                         } else if (this.S1 > 1) {

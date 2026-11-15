@@ -8,7 +8,7 @@ import android.widget.TextView;
 import bi.b6;
 import bi.x5;
 import c8.ja;
-import di.ub;
+import di.tb;
 import di.z6;
 import hi.q4;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.p00;
 import org.telegram.ui.rv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class k extends p00 implements is {
     public final long S;
@@ -153,24 +153,24 @@ public final class k extends p00 implements is {
         textView.setText(org.telegram.messenger.g0.X2(hd.M0(2131754322, null)));
         linearLayout.addView(textView, ja.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
         int i12 = 3;
-        ub ubVar = new ub(kVar.getParentActivity(), i12);
-        ubVar.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
-        ubVar.setTextSize(1, 16.0f);
-        q6.U(ubVar, i11, kVar.resourceProvider);
-        ubVar.setText(org.telegram.messenger.g0.X2(hd.M0(2131754321, null)));
-        linearLayout.addView(ubVar, ja.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        ub ubVar2 = new ub(kVar.getParentActivity(), i12);
-        ubVar2.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
-        ubVar2.setTextSize(1, 16.0f);
-        q6.U(ubVar2, i11, kVar.resourceProvider);
-        ubVar2.setText(org.telegram.messenger.g0.X2(hd.M0(2131754320, null)));
-        linearLayout.addView(ubVar2, ja.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        ub ubVar3 = new ub(kVar.getParentActivity(), i12);
-        ubVar3.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
-        ubVar3.setTextSize(1, 16.0f);
-        q6.U(ubVar3, i11, kVar.resourceProvider);
-        ubVar3.setText(org.telegram.messenger.g0.X2(hd.M0(2131754319, null)));
-        linearLayout.addView(ubVar3, ja.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
+        tb tbVar = new tb(kVar.getParentActivity(), i12);
+        tbVar.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
+        tbVar.setTextSize(1, 16.0f);
+        q6.U(tbVar, i11, kVar.resourceProvider);
+        tbVar.setText(org.telegram.messenger.g0.X2(hd.M0(2131754321, null)));
+        linearLayout.addView(tbVar, ja.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
+        tb tbVar2 = new tb(kVar.getParentActivity(), i12);
+        tbVar2.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
+        tbVar2.setTextSize(1, 16.0f);
+        q6.U(tbVar2, i11, kVar.resourceProvider);
+        tbVar2.setText(org.telegram.messenger.g0.X2(hd.M0(2131754320, null)));
+        linearLayout.addView(tbVar2, ja.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
+        tb tbVar3 = new tb(kVar.getParentActivity(), i12);
+        tbVar3.setPadding(org.telegram.messenger.g0.L(15.0f), 0, 0, 0);
+        tbVar3.setTextSize(1, 16.0f);
+        q6.U(tbVar3, i11, kVar.resourceProvider);
+        tbVar3.setText(org.telegram.messenger.g0.X2(hd.M0(2131754319, null)));
+        linearLayout.addView(tbVar3, ja.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, kVar.getParentActivity(), kVar.resourceProvider);
         alertDialog$Builder.a.S = hd.M0(2131754347, null);
         alertDialog$Builder.o(linearLayout);
@@ -374,7 +374,7 @@ public final class k extends p00 implements is {
         sVar.setRoundRadius(24);
         this.W = sVar;
         sVar.i(hd.M0(2131754332, null), false, true);
-        this.W.setOnClickListener(new ai.t2(25, this, context));
+        this.W.setOnClickListener(new ai.v2(25, this, context));
         this.V.addView(this.W, ja.k(10.0f, 10.0f, 10.0f, 7.0f, -1, 48));
         z70 z70Var = new z70(context, this.resourceProvider);
         this.X = z70Var;

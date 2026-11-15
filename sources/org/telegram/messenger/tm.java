@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tm implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class tm implements RequestDelegate {
                     }
                     npVar.M3(tL_messages_affectedHistory.pts, -1, tL_messages_affectedHistory.pts_count);
                     vr messagesStorage = npVar.getMessagesStorage();
-                    messagesStorage.a.c(new up(messagesStorage, j3, 5));
+                    messagesStorage.a.c(new rp(messagesStorage, j3, 5));
                     break;
                 }
                 break;
@@ -55,7 +55,7 @@ public final /* synthetic */ class tm implements RequestDelegate {
                     long j10 = this.c;
                     if (!equals) {
                         if ("PINNED_TOPIC_NOT_MODIFIED".equals(tL_error.text)) {
-                            g0.h3(new di.sb((Object) h00Var, j10, false, 4));
+                            g0.h3(new di.rb((Object) h00Var, j10, false, 4));
                             break;
                         }
                     } else if (e2Var != null) {

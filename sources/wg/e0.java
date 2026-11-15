@@ -15,10 +15,10 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.Wallet.k8;
 import org.telegram.ui.yw;
-import tg.i2;
+import tg.h2;
 import ug.g1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e0 extends g1 {
     public static e0 O2;
@@ -35,7 +35,7 @@ public final class e0 extends g1 {
             uj0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(68.0f));
             yg.a aVar = new yg.a(getContext(), this.J0);
             this.M2 = aVar;
-            aVar.setOnClickListener(new i2(this, 3));
+            aVar.setOnClickListener(new h2(this, 3));
             yg.a aVar2 = this.M2;
             aVar2.e = true;
             hi.d dVar = aVar2.a;

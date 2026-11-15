@@ -6,12 +6,12 @@ import androidx.car.app.model.IOnItemVisibilityChangedListener;
 import androidx.car.app.model.OnItemVisibilityChangedDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class OnItemVisibilityChangedDelegateImpl implements f0 {
     private final IOnItemVisibilityChangedListener mStub;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class OnItemVisibilityChangedListenerStub extends IOnItemVisibilityChangedListener.Stub {
         private final s mListener;
 
@@ -25,8 +25,8 @@ public class OnItemVisibilityChangedDelegateImpl implements f0 {
 
         @Override // androidx.car.app.model.IOnItemVisibilityChangedListener
         public void onItemVisibilityChanged(final int i7, final int i10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.h.b(iOnDoneCallback, "onItemVisibilityChanged", new androidx.car.app.utils.b() { // from class: androidx.car.app.model.g0
-                @Override // androidx.car.app.utils.b
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onItemVisibilityChanged", new androidx.car.app.utils.a() { // from class: androidx.car.app.model.g0
+                @Override // androidx.car.app.utils.a
                 public final Object a() {
                     Object lambda$onItemVisibilityChanged$0;
                     lambda$onItemVisibilityChanged$0 = OnItemVisibilityChangedDelegateImpl.OnItemVisibilityChangedListenerStub.this.lambda$onItemVisibilityChanged$0(i7, i10);
@@ -48,7 +48,7 @@ public class OnItemVisibilityChangedDelegateImpl implements f0 {
         try {
             IOnItemVisibilityChangedListener iOnItemVisibilityChangedListener = this.mStub;
             Objects.requireNonNull(iOnItemVisibilityChangedListener);
-            iOnItemVisibilityChangedListener.onItemVisibilityChanged(i7, i10, androidx.car.app.utils.h.a());
+            iOnItemVisibilityChangedListener.onItemVisibilityChanged(i7, i10, androidx.car.app.utils.g.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }

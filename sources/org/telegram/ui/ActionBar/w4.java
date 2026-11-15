@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.vb;
+import di.ub;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class w4 extends FrameLayout implements te.b, is, z5, q4 {
     public CharSequence E;
@@ -56,7 +56,7 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
     public j W;
     public final e6 a;
     public boolean a0;
-    public final vb b;
+    public final ub b;
     public int b0;
     public final v4 c;
     public boolean c0;
@@ -106,12 +106,12 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
         v4 v4Var = new v4(this, context);
         this.c = v4Var;
         addView(v4Var, ja.e(-1, -2, 51));
-        vb vbVar = new vb(this, context);
-        this.b = vbVar;
-        vbVar.setVisibility(8);
-        vbVar.setContentDescription(hd.M0(2131754878, null));
-        vbVar.setOnClickListener(new t4(this, 0));
-        addView(vbVar, ja.e(46, 46, 51));
+        ub ubVar = new ub(this, context);
+        this.b = ubVar;
+        ubVar.setVisibility(8);
+        ubVar.setContentDescription(hd.M0(2131754878, null));
+        ubVar.setOnClickListener(new t4(this, 0));
+        addView(ubVar, ja.e(46, 46, 51));
     }
 
     public static void B(View view, float f10) {
@@ -282,14 +282,14 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
         this.c0 = this.d0;
         int L = org.telegram.messenger.g0.L(6.0f);
         if (this.I != null) {
-            vb vbVar = this.b;
-            if (vbVar.getVisibility() == 0 && vbVar.getAlpha() > 0.0f) {
-                float width = (vbVar.getWidth() / 2.0f) + vbVar.getX();
-                float height = (vbVar.getHeight() / 2.0f) + vbVar.getY();
-                float scaleX = vbVar.getScaleX() * (vbVar.getWidth() / 2.0f);
-                float scaleY = vbVar.getScaleY() * (vbVar.getHeight() / 2.0f);
+            ub ubVar = this.b;
+            if (ubVar.getVisibility() == 0 && ubVar.getAlpha() > 0.0f) {
+                float width = (ubVar.getWidth() / 2.0f) + ubVar.getX();
+                float height = (ubVar.getHeight() / 2.0f) + ubVar.getY();
+                float scaleX = ubVar.getScaleX() * (ubVar.getWidth() / 2.0f);
+                float scaleY = ubVar.getScaleY() * (ubVar.getHeight() / 2.0f);
                 this.I.setBounds(((int) (width - scaleX)) - L, ((int) (height - scaleY)) - L, ((int) (width + scaleX)) + L, ((int) (height + scaleY)) + L);
-                this.I.setAlpha((int) (vbVar.getAlpha() * 255.0f));
+                this.I.setAlpha((int) (ubVar.getAlpha() * 255.0f));
                 this.I.draw(canvas);
             }
         }
@@ -595,19 +595,19 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
             n(rectF);
             this.r.setTranslationX(Math.max(0.0f, rectF.left - getSearchPillLeft()));
         }
-        vb vbVar = this.b;
-        if (((Drawable) vbVar.c) != null) {
-            vbVar.setVisibility(0);
-            vbVar.setAlpha(1.0f);
-            vbVar.setScaleX(1.0f);
-            vbVar.setScaleY(1.0f);
+        ub ubVar = this.b;
+        if (((Drawable) ubVar.c) != null) {
+            ubVar.setVisibility(0);
+            ubVar.setAlpha(1.0f);
+            ubVar.setScaleX(1.0f);
+            ubVar.setScaleY(1.0f);
         } else {
-            vbVar.setVisibility(actionModeFactor <= 0.0f ? 8 : 0);
-            vbVar.setAlpha(actionModeFactor);
-            vbVar.setScaleX(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
-            vbVar.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
+            ubVar.setVisibility(actionModeFactor <= 0.0f ? 8 : 0);
+            ubVar.setAlpha(actionModeFactor);
+            ubVar.setScaleX(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
+            ubVar.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
         }
-        vbVar.invalidate();
+        ubVar.invalidate();
         invalidate();
     }
 
@@ -775,10 +775,10 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
         int rowTop = getRowTop();
         int currentActionBarHeight = k.getCurrentActionBarHeight();
         int i11 = rowTop + currentActionBarHeight + this.b0;
-        vb vbVar = this.b;
-        boolean z10 = ((Drawable) vbVar.c) != null;
+        ub ubVar = this.b;
+        boolean z10 = ((Drawable) ubVar.c) != null;
         int L = ((currentActionBarHeight - org.telegram.messenger.g0.L(46.0f)) / 2) + rowTop;
-        C(vbVar, org.telegram.messenger.g0.L(6.0f), L, 0);
+        C(ubVar, org.telegram.messenger.g0.L(6.0f), L, 0);
         c5 c5Var = this.d;
         float targetPillWidth = (c5Var == null || c5Var.getVisibility() == 8) ? 0.0f : this.d.getTargetPillWidth();
         float t6 = t(true);
@@ -955,16 +955,16 @@ public class w4 extends FrameLayout implements te.b, is, z5, q4 {
 
     public void setBackButtonImageAnimated(int i7) {
         Drawable mutate = getContext().getDrawable(i7).mutate();
-        vb vbVar = this.b;
-        Drawable drawable = (Drawable) vbVar.c;
+        ub ubVar = this.b;
+        Drawable drawable = (Drawable) ubVar.c;
         boolean z10 = drawable != null;
-        te.c cVar = (te.c) vbVar.f;
-        if (drawable == null || !((w4) vbVar.h).w()) {
-            vbVar.c(mutate);
+        te.c cVar = (te.c) ubVar.f;
+        if (drawable == null || !((w4) ubVar.h).w()) {
+            ubVar.c(mutate);
         } else {
-            Drawable drawable2 = (Drawable) vbVar.c;
-            vbVar.c(mutate);
-            vbVar.d = drawable2;
+            Drawable drawable2 = (Drawable) ubVar.c;
+            ubVar.c(mutate);
+            ubVar.d = drawable2;
             cVar.c(0.0f);
             cVar.a(1.0f);
         }

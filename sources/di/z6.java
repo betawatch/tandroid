@@ -55,13 +55,13 @@ import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Components.vp0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.il0;
+import org.telegram.ui.jl0;
 import org.telegram.ui.qv;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij0, t10, hj0, fi.a7, fi.c9, xh.j, r0.m, h9.g1, org.telegram.ui.ActionBar.q1, vi0, sg.j1, CameraController.VideoTakeCallback, gt0, f3.g {
+public final /* synthetic */ class z6 implements jl0, x10, OnSuccessListener, ij0, t10, hj0, fi.a7, fi.c9, xh.j, r0.m, h9.g1, org.telegram.ui.ActionBar.q1, vi0, sg.j1, CameraController.VideoTakeCallback, gt0, f3.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -1450,7 +1450,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             bundle.putLong("dialog_id", org.telegram.messenger.m10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
-                                            ywVar2.presentFragment(new org.telegram.ui.Components.x80(bundle, null));
+                                            ywVar2.presentFragment(new org.telegram.ui.Components.y80(bundle, null));
                                             break;
                                         default:
                                             Bundle bundle2 = new Bundle();
@@ -1458,7 +1458,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             i36 = ((org.telegram.ui.ActionBar.e2) ywVar3).currentAccount;
                                             bundle2.putLong("dialog_id", org.telegram.messenger.m10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                            ywVar3.presentFragment(new org.telegram.ui.Components.x80(bundle2, null));
+                                            ywVar3.presentFragment(new org.telegram.ui.Components.y80(bundle2, null));
                                             break;
                                     }
                                 }
@@ -1479,7 +1479,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             bundle.putLong("dialog_id", org.telegram.messenger.m10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
-                                            ywVar2.presentFragment(new org.telegram.ui.Components.x80(bundle, null));
+                                            ywVar2.presentFragment(new org.telegram.ui.Components.y80(bundle, null));
                                             break;
                                         default:
                                             Bundle bundle2 = new Bundle();
@@ -1487,7 +1487,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             i36 = ((org.telegram.ui.ActionBar.e2) ywVar3).currentAccount;
                                             bundle2.putLong("dialog_id", org.telegram.messenger.m10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                            ywVar3.presentFragment(new org.telegram.ui.Components.x80(bundle2, null));
+                                            ywVar3.presentFragment(new org.telegram.ui.Components.y80(bundle2, null));
                                             break;
                                     }
                                 }
@@ -1508,7 +1508,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             bundle.putLong("dialog_id", org.telegram.messenger.m10.i(i35).e());
                                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 1);
                                             bundle.putInt("start_from", 9);
-                                            ywVar2.presentFragment(new org.telegram.ui.Components.x80(bundle, null));
+                                            ywVar2.presentFragment(new org.telegram.ui.Components.y80(bundle, null));
                                             break;
                                         default:
                                             Bundle bundle2 = new Bundle();
@@ -1516,7 +1516,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                                             i36 = ((org.telegram.ui.ActionBar.e2) ywVar3).currentAccount;
                                             bundle2.putLong("dialog_id", org.telegram.messenger.m10.i(i36).e());
                                             bundle2.putInt(TeXSymbolParser.TYPE_ATTR, 1);
-                                            ywVar3.presentFragment(new org.telegram.ui.Components.x80(bundle2, null));
+                                            ywVar3.presentFragment(new org.telegram.ui.Components.y80(bundle2, null));
                                             break;
                                     }
                                 }
@@ -1618,12 +1618,12 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                 if (((Integer) number).intValue() != -1) {
                     return Boolean.FALSE;
                 }
-                new gi.p(vp0Var.a, hd.M0(2131746693, null), new ai.f0(vp0Var, 19)).show();
+                new gi.p(vp0Var.a, hd.M0(2131746693, null), new ai.g0(vp0Var, 19)).show();
                 return Boolean.TRUE;
         }
     }
 
-    @Override // org.telegram.ui.il0
+    @Override // org.telegram.ui.jl0
     public void e(int i7) {
         bi.v5 v5Var = (bi.v5) this.b;
         if (i7 == 1) {
@@ -1865,10 +1865,10 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
         final int i11 = 0;
         switch (this.a) {
             case 1:
-                jb jbVar = (jb) this.b;
+                ib ibVar = (ib) this.b;
                 b41 b41Var = (b41) obj;
                 if (b41Var.G instanceof TL_stars.StarsTransaction) {
-                    mb.k1(jbVar.getContext(), false, 0L, jbVar.c, (TL_stars.StarsTransaction) b41Var.G, jbVar.b);
+                    lb.k1(ibVar.getContext(), false, 0L, ibVar.c, (TL_stars.StarsTransaction) b41Var.G, ibVar.b);
                     break;
                 }
                 break;
@@ -1882,20 +1882,20 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                 if (d7Var != saVar.L1 && !saVar.Y1) {
                     saVar.e1.setSelected(i12);
                     saVar.Y1 = true;
-                    ai.v0 v0Var = new ai.v0(saVar, i12, 9);
+                    ai.w0 w0Var = new ai.w0(saVar, i12, 9);
                     hi.u9 u9Var = saVar.w1;
                     hi.d7 d7Var2 = saVar.L1;
                     if (u9Var != null && d7Var2 != null) {
                         if (u9Var.r0()) {
                             d7Var2.f();
-                            Utilities.g.c(new hi.v8(saVar, u9Var, d7Var2.i0, d7Var2.j0, d7Var2, u9Var.y0.getPainting().E, u9Var.r0(), v0Var, 0));
+                            Utilities.g.c(new hi.v8(saVar, u9Var, d7Var2.i0, d7Var2.j0, d7Var2, u9Var.y0.getPainting().E, u9Var.r0(), w0Var, 0));
                             break;
                         } else {
-                            v0Var.run();
+                            w0Var.run();
                             break;
                         }
                     } else {
-                        v0Var.run();
+                        w0Var.run();
                         break;
                     }
                 }
@@ -1916,7 +1916,7 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
                 } else if (i13 == -2) {
                     kg.y1 y1Var = new kg.y1(null);
                     y1Var.n = c1Var.n;
-                    y1Var.c = new ai.u1(23, c1Var, view);
+                    y1Var.c = new ai.v1(23, c1Var, view);
                     c1Var.presentFragment(y1Var);
                     break;
                 } else if (b41Var3.a == 5 && i13 >= 0 && i13 < c1Var.f.length) {
@@ -2138,8 +2138,8 @@ public final /* synthetic */ class z6 implements il0, x10, OnSuccessListener, ij
 
     @Override // org.telegram.ui.Components.gt0
     public RecyclerView n(View view) {
-        ((lb) this.b).getClass();
-        return ((jb) view).a;
+        ((kb) this.b).getClass();
+        return ((ib) view).a;
     }
 
     @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback

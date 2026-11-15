@@ -4,18 +4,18 @@ import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class lk extends org.telegram.ui.Components.ja0 {
+public final class lk extends org.telegram.ui.Components.ka0 {
     public final /* synthetic */ an I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lk(an anVar, Context context, an anVar2, dh.c cVar, org.telegram.messenger.kj kjVar, TLRPC.User user, TLRPC.Chat chat, int i7, org.telegram.ui.Components.fa0 fa0Var, int i10, boolean z10) {
-        super(context, anVar2, cVar, kjVar, user, chat, i7, fa0Var, i10, z10);
+    public lk(an anVar, Context context, an anVar2, dh.c cVar, org.telegram.messenger.kj kjVar, TLRPC.User user, TLRPC.Chat chat, int i7, org.telegram.ui.Components.ga0 ga0Var, int i10, boolean z10) {
+        super(context, anVar2, cVar, kjVar, user, chat, i7, ga0Var, i10, z10);
         this.I = anVar;
     }
 
-    @Override // org.telegram.ui.Components.ja0
+    @Override // org.telegram.ui.Components.ka0
     public final void b() {
         org.telegram.messenger.gj gjVar;
         qm qmVar;
@@ -26,7 +26,7 @@ public final class lk extends org.telegram.ui.Components.ja0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ja0
+    @Override // org.telegram.ui.Components.ka0
     public final void c(boolean z10) {
         int i7;
         boolean z11;

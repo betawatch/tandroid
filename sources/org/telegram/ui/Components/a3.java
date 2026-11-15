@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -21,7 +21,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ a3(FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.u2 u2Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.ActionBar.m5 m5Var) {
+    public /* synthetic */ a3(FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.u2 u2Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.ActionBar.l5 l5Var) {
         this.c = frameLayout;
         this.d = e6Var;
         this.e = u2Var;
@@ -29,7 +29,7 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
         this.b = iArr;
         this.h = strArr;
         this.n = iArr2;
-        this.r = m5Var;
+        this.r = l5Var;
     }
 
     @Override // android.view.View.OnClickListener

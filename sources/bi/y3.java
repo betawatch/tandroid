@@ -2,7 +2,7 @@ package bi;
 
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import di.m8;
+import di.l8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.wp0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y3 extends v4.v {
     public final /* synthetic */ wp0 d;
@@ -71,11 +71,11 @@ public final class y3 extends v4.v {
             c4Var.e.m(indexOf, indexOf2);
             wp0Var.e.n(c4Var.e.d);
         } else {
-            m8 m8Var = c4Var.e;
-            if (m8Var.q == null) {
-                m8Var.q = m8Var.i();
+            l8 l8Var = c4Var.e;
+            if (l8Var.q == null) {
+                l8Var.q = l8Var.i();
             }
-            m8Var.m(indexOf, indexOf2);
+            l8Var.m(indexOf, indexOf2);
         }
         v3Var.g3.j(b10, b11);
         v3Var.g3.T();
@@ -104,22 +104,22 @@ public final class y3 extends v4.v {
             }
             return;
         }
-        m8 m8Var = c4Var.e;
-        if (m8Var != null) {
-            ArrayList arrayList = m8Var.q;
+        l8 l8Var = c4Var.e;
+        if (l8Var != null) {
+            ArrayList arrayList = l8Var.q;
             if (arrayList != null) {
-                ArrayList i10 = m8Var.i();
+                ArrayList i10 = l8Var.i();
                 if (arrayList.size() == i10.size()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if (arrayList.get(i11) == i10.get(i11)) {
                         }
                     }
                 }
-                m8Var.n();
-                m8Var.q = null;
+                l8Var.n();
+                l8Var.q = null;
                 return;
             }
-            m8Var.q = null;
+            l8Var.q = null;
         }
     }
 

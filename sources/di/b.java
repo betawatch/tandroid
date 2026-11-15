@@ -13,7 +13,7 @@ import org.telegram.messenger.ns;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class b extends LinearLayout implements is {
     public final int a;
@@ -30,14 +30,14 @@ public final class b extends LinearLayout implements is {
     public final void a() {
         cg.b bVar = this.e;
         int i7 = this.a;
-        cg.a s5 = v8.x(i7, bVar).s();
+        cg.a s5 = u8.x(i7, bVar).s();
         cg.b bVar2 = this.e;
         cg.b bVar3 = cg.b.a;
         TextView textView = this.c;
         org.telegram.ui.ActionBar.e6 e6Var = this.b;
         z70 z70Var = this.d;
         if (bVar2 == bVar3) {
-            textView.setText(mb.a1(false, hd.a0(null, null, 2131750116, hd.E(s5.a(), ',')), 0.6f, null));
+            textView.setText(lb.a1(false, hd.a0(null, null, 2131750116, hd.E(s5.a(), ',')), 0.6f, null));
             int i10 = org.telegram.ui.ActionBar.j6.xj;
             org.telegram.ui.ActionBar.q6.U(z70Var, i10, e6Var);
             org.telegram.ui.ActionBar.q6.G(z70Var, i10, e6Var);
@@ -47,7 +47,7 @@ public final class b extends LinearLayout implements is {
         if (bVar2 == cg.b.b) {
             SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750114, s5.b()));
             eq[] eqVarArr = this.f;
-            textView.setText(mb.a1(true, X2, 0.6f, eqVarArr));
+            textView.setText(lb.a1(true, X2, 0.6f, eqVarArr));
             eqVarArr[0].a(org.telegram.ui.ActionBar.j6.xj);
             StringBuilder sb2 = new StringBuilder(10);
             sb2.append('~');

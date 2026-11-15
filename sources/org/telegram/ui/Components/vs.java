@@ -16,7 +16,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vs implements Runnable {
     public final /* synthetic */ int a;
@@ -271,11 +271,11 @@ public final /* synthetic */ class vs implements Runnable {
                         if (uri != null) {
                             bundle.putParcelable("photoUri", uri);
                         }
-                        org.telegram.ui.qm0 qm0Var = new org.telegram.ui.qm0(bundle);
-                        qm0Var.e = false;
-                        qm0Var.f = false;
-                        qm0Var.c = m30Var;
-                        launchActivity.t0(qm0Var);
+                        org.telegram.ui.rm0 rm0Var = new org.telegram.ui.rm0(bundle);
+                        rm0Var.e = false;
+                        rm0Var.f = false;
+                        rm0Var.c = m30Var;
+                        launchActivity.t0(rm0Var);
                         break;
                     } else {
                         break;
@@ -396,11 +396,11 @@ public final /* synthetic */ class vs implements Runnable {
                 ((n2.o0) obj2).o((d80) obj, false);
                 break;
             case 23:
-                x80 x80Var = (x80) obj2;
-                if (!((boolean[]) obj)[0] && (m6Var = x80Var.R) != null) {
+                y80 y80Var = (y80) obj2;
+                if (!((boolean[]) obj)[0] && (m6Var = y80Var.R) != null) {
                     m6Var.run();
                 }
-                x80Var.R = null;
+                y80Var.R = null;
                 break;
             case 24:
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) obj;

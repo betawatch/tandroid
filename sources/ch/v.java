@@ -10,8 +10,8 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import di.jc;
 import di.kc;
-import di.lc;
 import fi.c1;
 import java.util.ArrayList;
 import org.telegram.messenger.gz;
@@ -44,7 +44,7 @@ import org.telegram.ui.xw;
 import org.telegram.ui.yw;
 import tg.q1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateList
                 b0Var.m.l0.invalidate();
                 break;
             case 1:
-                lc lcVar = (lc) this.b;
-                kc kcVar = (kc) this.c;
-                lcVar.getClass();
-                kcVar.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lcVar.f1();
+                kc kcVar = (kc) this.b;
+                jc jcVar = (jc) this.c;
+                kcVar.getClass();
+                jcVar.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kcVar.f1();
                 break;
             case 2:
                 fi.p pVar = (fi.p) this.b;

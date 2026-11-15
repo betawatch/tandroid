@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import c8.ja;
-import di.m8;
-import di.mb;
+import di.l8;
+import di.lb;
 import fi.i9;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,14 +33,14 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ja0;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.l70;
 import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.m70;
-import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.p70;
 import org.telegram.ui.Components.t70;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.an;
 import org.telegram.ui.ax0;
 import org.telegram.ui.bg0;
@@ -48,7 +48,7 @@ import org.telegram.ui.fx0;
 import org.telegram.ui.kd0;
 import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,10 +79,10 @@ public final /* synthetic */ class f4 implements View.OnClickListener {
         switch (i7) {
             case 0:
                 h4 h4Var = (h4) obj4;
-                m8 m8Var = (m8) obj3;
+                l8 l8Var = (l8) obj3;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
                 r10 r10Var = (r10) obj;
-                ArrayList i11 = m8Var.i();
+                ArrayList i11 = l8Var.i();
                 int i12 = 0;
                 while (true) {
                     if (i12 >= i11.size()) {
@@ -98,14 +98,14 @@ public final /* synthetic */ class f4 implements View.OnClickListener {
                     savedStarGift.pinned_to_top = false;
                     i11.set(i12, savedStarGift2);
                     savedStarGift2.pinned_to_top = true;
-                    ArrayList arrayList = m8Var.l;
+                    ArrayList arrayList = l8Var.l;
                     arrayList.removeAll(i11);
-                    if (m8Var.e && !m8Var.c) {
+                    if (l8Var.e && !l8Var.c) {
                         Collections.sort(arrayList, new a3.c(16));
                     }
                     arrayList.addAll(0, i11);
-                    ns.f(m8Var.a).k(ns.G3, Long.valueOf(m8Var.b), m8Var);
-                    m8Var.n();
+                    ns.f(l8Var.a).k(ns.G3, Long.valueOf(l8Var.b), l8Var);
+                    l8Var.n();
                     h4Var.dismiss();
                     ((cc) r10Var.run()).I(R.raw.ic_pin, hd.a0(null, null, 2131750031, di.c6.A1(savedStarGift2.gift)), hd.a0(null, null, 2131750032, di.c6.A1(savedStarGift.gift))).j();
                     break;
@@ -194,13 +194,13 @@ public final /* synthetic */ class f4 implements View.OnClickListener {
             case 11:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 ArrayList arrayList3 = (ArrayList) obj3;
-                ia0 ia0Var = (ia0) obj2;
+                ja0 ja0Var = (ja0) obj2;
                 bg0 bg0Var = (bg0) obj;
                 chatActivityEnterView.m6 = !chatActivityEnterView.m6;
                 for (int i14 = 0; i14 < arrayList3.size(); i14++) {
                     ((gj) arrayList3.get(i14)).k.invert_media = chatActivityEnterView.m6;
                 }
-                ia0Var.a(!chatActivityEnterView.m6, true);
+                ja0Var.a(!chatActivityEnterView.m6, true);
                 if (!arrayList3.isEmpty()) {
                     bg0Var.f((gj) arrayList3.get(0));
                 }
@@ -237,7 +237,7 @@ public final /* synthetic */ class f4 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kiVar.e2;
                 if (chatAttachAlertPhotoLayout != null) {
-                    mb.j1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new e4(13, kiVar, z0Var), e6Var);
+                    lb.j1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new e4(13, kiVar, z0Var), e6Var);
                     break;
                 }
                 break;
@@ -303,7 +303,7 @@ public final /* synthetic */ class f4 implements View.OnClickListener {
             case 15:
                 kd0 kd0Var = (kd0) obj4;
                 m60 H = m60.H(kd0Var.w, kd0Var.a);
-                H.c(R.drawable.msg_help, hd.M0(2131745479, null), new ma0(kd0Var, (String) obj3, (String) obj2, (String) obj, 23), false);
+                H.c(R.drawable.msg_help, hd.M0(2131745479, null), new u80(kd0Var, (String) obj3, (String) obj2, (String) obj, 24), false);
                 H.V(5);
                 H.Z();
                 break;

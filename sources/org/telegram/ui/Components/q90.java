@@ -1,38 +1,66 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class q90 extends n61 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ja0 b;
+public final class q90 extends w61 {
+    public final /* synthetic */ ka0 W;
 
-    public q90(ja0 ja0Var, Context context) {
-        this.b = ja0Var;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q90(ka0 ka0Var, Context context, ga0 ga0Var) {
+        super(context, ga0Var);
+        this.W = ka0Var;
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final void b(View view, int i7, int i10) {
-        da0 da0Var = (da0) view;
-        da0Var.i();
-        da0Var.l(false);
+    @Override // org.telegram.ui.Components.w61, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int i7 = 0;
+        while (true) {
+            View[] viewArr = this.W.f.e;
+            if (i7 >= viewArr.length) {
+                z10 = false;
+                break;
+            }
+            View view = viewArr[i7];
+            if (view != null) {
+                ea0 ea0Var = (ea0) view;
+                if (ea0Var.a == 0) {
+                    z10 = ea0Var.e.i;
+                    break;
+                }
+            }
+            i7++;
+        }
+        if (z10) {
+            return false;
+        }
+        return z(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final View d(int i7) {
-        return new da0(this.b, this.a, i7);
+    @Override // org.telegram.ui.Components.w61
+    public final void r() {
+        View view = this.e[0];
+        if (view instanceof ea0) {
+            ((ea0) view).e.V();
+        }
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final int h(int i7) {
-        return ((ga0) this.b.e.a.get(i7)).a;
+    @Override // org.telegram.ui.Components.w61
+    public final void t(boolean z10) {
+        ka0 ka0Var = this.W;
+        ka0Var.e.setSelectedTab(ka0Var.f.getPositionAnimated());
+        View[] viewArr = this.e;
+        View view = viewArr[0];
+        if (view instanceof ea0) {
+            ((ea0) view).e.G();
+        }
+        View view2 = viewArr[1];
+        if (view2 instanceof ea0) {
+            ((ea0) view2).e.G();
+        }
     }
 }

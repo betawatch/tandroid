@@ -1,7 +1,7 @@
 package a3;
 
 import ab.d0;
-import ai.h1;
+import ai.i1;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -47,6 +47,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
+import jg.h1;
 import kg.x0;
 import ki.s2;
 import ki.y3;
@@ -105,15 +106,15 @@ import org.telegram.ui.Components.t4;
 import org.telegram.ui.Components.zi0;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.an;
-import org.telegram.ui.il0;
+import org.telegram.ui.jl0;
 import org.telegram.ui.sw;
 import org.telegram.ui.u91;
 import org.telegram.ui.v7;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h implements p, SuccessContinuation, h1, androidx.car.app.utils.c, Continuation, sw, tr, d9, OnFailureListener, pi, q1, il0, cl, l0, gb0, r4 {
+public final /* synthetic */ class h implements p, SuccessContinuation, i1, androidx.car.app.utils.b, Continuation, sw, tr, d9, OnFailureListener, pi, q1, jl0, cl, l0, gb0, r4 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -165,10 +166,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
         b4Var.getStoriesController().r(b4Var.l1, str, new bi.j(t3Var, storyItem, e6Var, 5));
     }
 
-    @Override // ai.h1
+    @Override // ai.i1
     public void b(long j3, long j10) {
         String str = (String) this.b;
-        ai.s sVar = (ai.s) this.c;
+        ai.t tVar = (ai.t) this.c;
         long[] jArr = (long[]) this.d;
         long[] jArr2 = (long[]) DictationAsr.h.get(str);
         if (jArr2 != null) {
@@ -180,8 +181,8 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
         if (j10 <= 0) {
             return;
         }
-        if (sVar != null) {
-            sVar.i = Math.min(1.0f, j3 / j10);
+        if (tVar != null) {
+            tVar.i = Math.min(1.0f, j3 / j10);
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (elapsedRealtime - jArr[0] > 100) {
@@ -335,7 +336,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
         }
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.b
     public void call() {
         w.b bVar;
         switch (this.a) {
@@ -349,7 +350,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
                     try {
                         bVar = new w.b(obj);
                     } catch (w.f e10) {
-                        androidx.car.app.utils.h.f(iOnDoneCallback, str, e10);
+                        androidx.car.app.utils.g.f(iOnDoneCallback, str, e10);
                         return;
                     }
                 }
@@ -426,7 +427,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
         }
     }
 
-    @Override // org.telegram.ui.il0
+    @Override // org.telegram.ui.jl0
     public void e(int i7) {
         switch (this.a) {
             case 14:
@@ -480,7 +481,7 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
                 ((q8) this.c).N0((o8) this.b, (Runnable) this.d, true);
                 break;
             case 12:
-                jg.h1 h1Var = (jg.h1) this.c;
+                h1 h1Var = (h1) this.c;
                 boolean[] zArr = (boolean[]) this.b;
                 TLRPC.User user = (TLRPC.User) this.d;
                 h1Var.getClass();
@@ -748,10 +749,10 @@ public final /* synthetic */ class h implements p, SuccessContinuation, h1, andr
         this.b = str;
     }
 
-    public /* synthetic */ h(String str, ai.s sVar, long[] jArr) {
+    public /* synthetic */ h(String str, ai.t tVar, long[] jArr) {
         this.a = 2;
         this.b = str;
-        this.c = sVar;
+        this.c = tVar;
         this.d = jArr;
     }
 

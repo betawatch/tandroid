@@ -34,9 +34,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x2.c1, com.google.android.gms.common.api.internal.q, tg.l1, sg.t0, u4.c, com.google.android.gms.common.api.internal.n, v4.d0, v4.j1 {
+public final class ff implements ce0, g90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x2.c1, com.google.android.gms.common.api.internal.q, tg.l1, sg.t0, u4.c, com.google.android.gms.common.api.internal.n, v4.d0, v4.j1 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -597,7 +597,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
         return false;
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.g90
     public Paint.FontMetricsInt Q() {
         return ((ki) this.b).C2.getEditText().getPaint().getFontMetricsInt();
     }
@@ -866,7 +866,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
             int i10 = org.telegram.ui.ActionBar.j6.p7;
             e10.d(ys0Var.s0(i10), ys0Var.s0(i10));
         }
-        e10.setOnClickListener(new la0(this, z11, runnable));
+        e10.setOnClickListener(new ma0(this, z11, runnable));
         return e10;
     }
 
@@ -876,7 +876,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
         return (buVar.O1 == buVar.m1 && buVar.y1 && "inapp".equals(org.telegram.messenger.np.s1(buVar.a).B3)) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.g90
     public void p0(int i7, int i10, CharSequence charSequence, boolean z10) {
         ki kiVar = (ki) this.b;
         if (kiVar.a1() == null) {
@@ -1586,7 +1586,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
     public /* synthetic */ void u0(int i7) {
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.g90
     public /* synthetic */ void v0(String str) {
     }
 
@@ -1618,7 +1618,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
     public /* synthetic */ void s(float f10, float f11) {
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.g90
     public /* synthetic */ void a0(TLRPC.TL_document tL_document, String str, Object obj) {
     }
 
@@ -1634,7 +1634,7 @@ public final class ff implements ce0, f90, wi.l, r0.m, xr0, ue.a, jg.y1, q5.b, x
     public /* synthetic */ void o0(Canvas canvas, int i7, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.g90
     public /* synthetic */ void r(TLRPC.BotInlineResult botInlineResult, boolean z10, int i7) {
     }
 

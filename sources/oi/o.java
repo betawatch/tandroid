@@ -57,7 +57,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.qj;
 import org.telegram.ui.qm;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class o extends ci implements is {
     public static final int[] R = {1, 2, 16, 8, 256, 4, TLObject.FLAG_14, 32768};
@@ -438,7 +438,7 @@ public final class o extends ci implements is {
     }
 
     public final void U(m60 m60Var, a aVar, TL_iv.PageBlock pageBlock, int i7, String str, int i10, m60 m60Var2) {
-        m60Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i7, null, str, new androidx.car.app.utils.a(this, aVar, pageBlock, m60Var2, 25));
+        m60Var.j(aVar != null && aVar.b.getClass() == pageBlock.getClass(), i7, null, str, new ai.r(this, aVar, pageBlock, m60Var2, 26));
         m60Var.y().a.setTypeface(org.telegram.messenger.g0.o1("fonts/mw_bold.ttf"));
         m60Var.y().a.setTextSize(1, i10);
     }

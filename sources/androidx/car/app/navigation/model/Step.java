@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class Step {
     private final CarText mCue;
@@ -17,7 +17,7 @@ public final class Step {
 
     public Step(Maneuver maneuver, List<Lane> list, CarIcon carIcon, CarText carText, CarText carText2) {
         this.mManeuver = maneuver;
-        this.mLanes = androidx.car.app.utils.h.g(list);
+        this.mLanes = androidx.car.app.utils.g.g(list);
         t.b.b.a(carIcon);
         this.mLanesImage = carIcon;
         this.mCue = carText;

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ri implements org.telegram.messenger.nr {
     public final /* synthetic */ boolean a;
@@ -21,7 +21,7 @@ public final class ri implements org.telegram.messenger.nr {
             boolean z11 = this.a;
             if (user != null || z11) {
                 org.telegram.messenger.vr messagesStorage = anVar.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.br(messagesStorage, anVar.k6, new qi(1, this, z11), 0));
+                messagesStorage.a.c(new org.telegram.messenger.ar(messagesStorage, anVar.k6, new qi(1, this, z11), 0));
                 return;
             }
         }

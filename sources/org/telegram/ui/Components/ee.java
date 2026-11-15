@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ee extends FrameLayout {
     public final Paint a;
@@ -142,9 +142,9 @@ public final class ee extends FrameLayout {
                     }
                     chatActivityEnterView.q1 = false;
                     chatActivityEnterView.p1 = 0.0f;
-                    ai.m0 m0Var = chatActivityEnterView.j1;
-                    if (m0Var != null && m0Var.r != 0) {
-                        m0Var.i();
+                    ai.n0 n0Var = chatActivityEnterView.j1;
+                    if (n0Var != null && n0Var.r != 0) {
+                        n0Var.i();
                     }
                     if (!chatActivityEnterView.M2) {
                         tfVar.run();
@@ -579,16 +579,16 @@ public final class ee extends FrameLayout {
                                         chatActivityEnterView.w1 = false;
                                     }
                                 }
-                                ai.m0 o02 = chatActivityEnterView.o0();
+                                ai.n0 o02 = chatActivityEnterView.o0();
                                 int u02 = chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.ag);
                                 o02.h0 = fArr2;
                                 o02.n0 = u02;
-                                ai.m0 o03 = chatActivityEnterView.o0();
+                                ai.n0 o03 = chatActivityEnterView.o0();
                                 int u03 = chatActivityEnterView.u0(org.telegram.ui.ActionBar.j6.Uf);
                                 o03.i0 = fArr;
                                 o03.j0 = u03;
-                                ai.m0 o04 = chatActivityEnterView.o0();
-                                ai.a0 a0Var = o04.m0;
+                                ai.n0 o04 = chatActivityEnterView.o0();
+                                ai.b0 b0Var = o04.m0;
                                 ae aeVar = o04.f;
                                 int i14 = o04.r;
                                 if (i14 != 1 && i14 != 2) {
@@ -613,9 +613,9 @@ public final class ee extends FrameLayout {
                                         o04.w.setRevert(false);
                                         o04.w.setSettings(false);
                                         o04.w();
-                                        ai.g2 g2Var = o04.F;
-                                        if (g2Var != null) {
-                                            g2Var.f(false);
+                                        ai.h2 h2Var = o04.F;
+                                        if (h2Var != null) {
+                                            h2Var.f(false);
                                         }
                                     }
                                     o04.J = null;
@@ -638,39 +638,39 @@ public final class ee extends FrameLayout {
                                     aeVar.b();
                                     o04.U = SystemClock.uptimeMillis();
                                     org.telegram.messenger.g0.r(o04.k0);
-                                    DictationAsr.N(a0Var);
-                                    DictationAsr.g.add(a0Var);
+                                    DictationAsr.N(b0Var);
+                                    DictationAsr.g.add(b0Var);
                                     o04.B(true);
                                     o04.b(1.0f, 220L, er.h);
                                     org.telegram.messenger.g0.r(o04.s0);
-                                    ai.p0 p0Var = o04.s;
+                                    ai.q0 q0Var = o04.s;
                                     float[] fArr3 = o04.h0;
                                     int i16 = o04.n0;
-                                    p0Var.getClass();
+                                    q0Var.getClass();
                                     boolean z18 = fArr3 != null;
-                                    p0Var.R = z18;
+                                    q0Var.R = z18;
                                     if (z18) {
-                                        p0Var.S = fArr3[0] - p0Var.getLeft();
-                                        p0Var.T = fArr3[1] - p0Var.getTop();
-                                        p0Var.U.setColor(i16);
+                                        q0Var.S = fArr3[0] - q0Var.getLeft();
+                                        q0Var.T = fArr3[1] - q0Var.getTop();
+                                        q0Var.U.setColor(i16);
                                     }
-                                    ai.p0 p0Var2 = o04.s;
+                                    ai.q0 q0Var2 = o04.s;
                                     float[] fArr4 = o04.i0;
                                     int i17 = o04.j0;
-                                    int[] iArr2 = p0Var2.o0;
+                                    int[] iArr2 = q0Var2.o0;
                                     boolean z19 = fArr4 != null;
-                                    p0Var2.A0 = z19;
+                                    q0Var2.A0 = z19;
                                     if (z19) {
-                                        p0Var2.getLocationInWindow(iArr2);
-                                        p0Var2.B0 = fArr4[0] - iArr2[0];
-                                        p0Var2.C0 = fArr4[1] - iArr2[1];
-                                        p0Var2.D0 = fArr4[2];
-                                        p0Var2.E0 = i17;
-                                        p0Var2.F0 = 0L;
-                                        if (p0Var2.J0 == null) {
-                                            p0Var2.J0 = p0Var2.getResources().getDrawable(R.drawable.input_mic_pressed).mutate();
+                                        q0Var2.getLocationInWindow(iArr2);
+                                        q0Var2.B0 = fArr4[0] - iArr2[0];
+                                        q0Var2.C0 = fArr4[1] - iArr2[1];
+                                        q0Var2.D0 = fArr4[2];
+                                        q0Var2.E0 = i17;
+                                        q0Var2.F0 = 0L;
+                                        if (q0Var2.J0 == null) {
+                                            q0Var2.J0 = q0Var2.getResources().getDrawable(R.drawable.input_mic_pressed).mutate();
                                         }
-                                        p0Var2.J0.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+                                        q0Var2.J0.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                                     }
                                     StringBuilder sb2 = new StringBuilder("commit morph from circle ");
                                     if (o04.i0 == null) {
@@ -688,7 +688,7 @@ public final class ee extends FrameLayout {
                                     o04.u(true);
                                     o04.s.setStopIsland(true);
                                     String U = DictationAsr.U();
-                                    o04.w.setLanguage(U != null ? ai.m0.l(U) : null);
+                                    o04.w.setLanguage(U != null ? ai.n0.l(U) : null);
                                     o04.w.setSettings(true);
                                     long uptimeMillis = SystemClock.uptimeMillis();
                                     o04.q0 = uptimeMillis;
@@ -698,15 +698,15 @@ public final class ee extends FrameLayout {
                                     org.telegram.messenger.g0.i3(o04.r0, 300L);
                                     boolean z20 = org.telegram.messenger.np.e1().getInt("design_dictation_mode", 1) == 2;
                                     boolean z21 = z20;
-                                    o04.G = new ai.b2(o04.h, chatActivityEnterView3.R, chatActivityEnterView3.y3, z20, o04);
+                                    o04.G = new ai.c2(o04.h, chatActivityEnterView3.R, chatActivityEnterView3.y3, z20, o04);
                                     xe xeVar = chatActivityEnterView3.F0;
                                     if (xeVar != null) {
                                         xeVar.n1 = true;
                                     }
                                     Log.d("Dictation", "start simulated=" + z21);
-                                    ai.b2 b2Var = o04.G;
-                                    b2Var.m();
-                                    org.telegram.messenger.g0.i3(new a1.e(15, o04, b2Var), z21 ? 120L : 420L);
+                                    ai.c2 c2Var = o04.G;
+                                    c2Var.m();
+                                    org.telegram.messenger.g0.i3(new a1.e(15, o04, c2Var), z21 ? 120L : 420L);
                                 }
                             }
                         }

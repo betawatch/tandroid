@@ -15,11 +15,11 @@ import org.telegram.messenger.vr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.i9;
 import org.telegram.ui.Wallet.d2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -74,13 +74,13 @@ public final /* synthetic */ class w0 implements Runnable {
                 String str3 = (String) obj5;
                 vr vrVar = (vr) obj;
                 String str4 = (String) obj4;
-                d90 d90Var = h1Var.W;
+                e90 e90Var = h1Var.W;
                 if (str2.equals(h1Var.s0)) {
                     h1Var.v0 = 0;
                     if (z11 && tLObject == null) {
                         h1Var.T(false, user, str2, str3);
-                    } else if (d90Var != null) {
-                        d90Var.b(false);
+                    } else if (e90Var != null) {
+                        e90Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -132,7 +132,7 @@ public final /* synthetic */ class w0 implements Runnable {
                         h1Var.L = r32;
                         h1Var.Q = r32;
                         h1Var.p0 = false;
-                        d90Var.a((h1Var.S.isEmpty() && h1Var.U == null && h1Var.V == null) ? false : true);
+                        e90Var.a((h1Var.S.isEmpty() && h1Var.U == null && h1Var.V == null) ? false : true);
                         if (!z10) {
                             h1Var.f();
                             break;

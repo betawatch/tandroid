@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ef0 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class ef0 implements Runnable {
         int[] iArr;
         int i10;
         org.telegram.ui.ActionBar.g6 k10;
-        cm0 cm0Var;
+        dm0 dm0Var;
         boolean z10;
         Drawable drawable;
         int i11;
@@ -167,20 +167,20 @@ public final /* synthetic */ class ef0 implements Runnable {
                 }
                 break;
             case 10:
-                vf.c.t(((wk0) this.b).c.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                vf.c.t(((xk0) this.b).c.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 11:
-                jl0 jl0Var = (jl0) ((f) this.b).b;
-                jl0Var.z0();
-                jl0Var.N0(true, false);
-                jl0Var.J0(false);
+                kl0 kl0Var = (kl0) ((f) this.b).b;
+                kl0Var.z0();
+                kl0Var.N0(true, false);
+                kl0Var.J0(false);
                 break;
             case 12:
-                vf.c.t(((wk0) this.b).c.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                vf.c.t(((xk0) this.b).c.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 13:
-                im0 im0Var = (im0) this.b;
-                im0Var.T = !im0Var.T;
+                jm0 jm0Var = (jm0) this.b;
+                jm0Var.T = !jm0Var.T;
                 SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("themeconfig", 0);
                 String str2 = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
@@ -196,54 +196,54 @@ public final /* synthetic */ class ef0 implements Runnable {
                 if (string.equals(string2)) {
                     if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str3 = string2;
-                        Q0 = !im0Var.T ? org.telegram.ui.ActionBar.j6.Q0(str3) : org.telegram.ui.ActionBar.j6.Q0(str2);
-                        im0Var.w.clear();
+                        Q0 = !jm0Var.T ? org.telegram.ui.ActionBar.j6.Q0(str3) : org.telegram.ui.ActionBar.j6.Q0(str2);
+                        jm0Var.w.clear();
                         strArr = new String[1];
                         String str4 = Q0.d;
                         T0 = str4 == null ? org.telegram.ui.ActionBar.j6.T0(null, str4, strArr) : org.telegram.ui.ActionBar.j6.T0(new File(Q0.b), null, strArr);
                         iArr = org.telegram.ui.ActionBar.j6.hm;
                         if (iArr != null) {
                             for (int i21 = 0; i21 < iArr.length; i21++) {
-                                im0Var.w.put(i21, iArr[i21]);
+                                jm0Var.w.put(i21, iArr[i21]);
                             }
                         }
                         for (i10 = 0; i10 < T0.size(); i10++) {
-                            im0Var.w.put(T0.keyAt(i10), T0.valueAt(i10));
+                            jm0Var.w.put(T0.keyAt(i10), T0.valueAt(i10));
                         }
                         k10 = Q0.k(false);
                         if (k10 != null) {
-                            k10.d(T0, im0Var.w);
+                            k10.d(T0, jm0Var.w);
                         }
-                        cm0Var = im0Var.h;
-                        if (cm0Var != null && cm0Var.w != null) {
-                            a8.r7 I = org.telegram.ui.ActionBar.j6.I(Q0, im0Var.w, strArr[0], 0, true);
-                            xl0 xl0Var = im0Var.h.w;
+                        dm0Var = jm0Var.h;
+                        if (dm0Var != null && dm0Var.w != null) {
+                            a8.r7 I = org.telegram.ui.ActionBar.j6.I(Q0, jm0Var.w, strArr[0], 0, true);
+                            yl0 yl0Var = jm0Var.h.w;
                             drawable = (BitmapDrawable) I.c;
                             if (drawable == null) {
                                 drawable = (Drawable) I.b;
                             }
-                            xl0Var.setOverrideBackground(drawable);
+                            yl0Var.setOverrideBackground(drawable);
                         }
-                        z10 = im0Var.T;
-                        if (im0Var.b0 != z10) {
-                            im0Var.b0 = z10;
-                            org.telegram.ui.Components.ch0 ch0Var = im0Var.U;
+                        z10 = jm0Var.T;
+                        if (jm0Var.b0 != z10) {
+                            jm0Var.b0 = z10;
+                            org.telegram.ui.Components.ch0 ch0Var = jm0Var.U;
                             ch0Var.P(z10 ? ch0Var.e[0] : 0);
-                            org.telegram.ui.Components.ch0 ch0Var2 = im0Var.U;
+                            org.telegram.ui.Components.ch0 ch0Var2 = jm0Var.U;
                             if (ch0Var2 != null) {
                                 ch0Var2.start();
                             }
                         }
-                        im0Var.J0();
+                        jm0Var.J0();
                         break;
                     }
                 } else {
                     str3 = string2;
                 }
                 str2 = string;
-                if (!im0Var.T) {
+                if (!jm0Var.T) {
                 }
-                im0Var.w.clear();
+                jm0Var.w.clear();
                 strArr = new String[1];
                 String str42 = Q0.d;
                 if (str42 == null) {
@@ -256,55 +256,55 @@ public final /* synthetic */ class ef0 implements Runnable {
                 k10 = Q0.k(false);
                 if (k10 != null) {
                 }
-                cm0Var = im0Var.h;
-                if (cm0Var != null) {
-                    a8.r7 I2 = org.telegram.ui.ActionBar.j6.I(Q0, im0Var.w, strArr[0], 0, true);
-                    xl0 xl0Var2 = im0Var.h.w;
+                dm0Var = jm0Var.h;
+                if (dm0Var != null) {
+                    a8.r7 I2 = org.telegram.ui.ActionBar.j6.I(Q0, jm0Var.w, strArr[0], 0, true);
+                    yl0 yl0Var2 = jm0Var.h.w;
                     drawable = (BitmapDrawable) I2.c;
                     if (drawable == null) {
                     }
-                    xl0Var2.setOverrideBackground(drawable);
+                    yl0Var2.setOverrideBackground(drawable);
                 }
-                z10 = im0Var.T;
-                if (im0Var.b0 != z10) {
+                z10 = jm0Var.T;
+                if (jm0Var.b0 != z10) {
                 }
-                im0Var.J0();
+                jm0Var.J0();
                 break;
             case 14:
-                am0 am0Var = (am0) this.b;
-                cm0 cm0Var2 = am0Var.c;
-                hm0 hm0Var = cm0Var2.F;
-                im0 im0Var2 = cm0Var2.q0;
-                if (hm0Var != null && cm0Var2.M.size() > 1) {
-                    hm0Var.a(1, true);
-                    TL_stars.StarGift starGift = (TL_stars.StarGift) cm0Var2.N.get(1);
-                    cm0Var2.L = starGift;
+                bm0 bm0Var = (bm0) this.b;
+                dm0 dm0Var2 = bm0Var.c;
+                im0 im0Var = dm0Var2.F;
+                jm0 jm0Var2 = dm0Var2.q0;
+                if (im0Var != null && dm0Var2.M.size() > 1) {
+                    im0Var.a(1, true);
+                    TL_stars.StarGift starGift = (TL_stars.StarGift) dm0Var2.N.get(1);
+                    dm0Var2.L = starGift;
                     if (starGift == null) {
-                        bi.o5 o5Var = cm0Var2.K;
+                        bi.o5 o5Var = dm0Var2.K;
                         if (o5Var != null) {
                             o5Var.f();
-                            cm0Var2.K = null;
+                            dm0Var2.K = null;
                         }
                     } else {
-                        bi.o5 o5Var2 = cm0Var2.K;
+                        bi.o5 o5Var2 = dm0Var2.K;
                         if (o5Var2 == null || o5Var2.b != starGift.id) {
-                            i11 = ((org.telegram.ui.ActionBar.e2) im0Var2).currentAccount;
-                            bi.o5 o5Var3 = new bi.o5(i11, cm0Var2.L.id, new r3(am0Var, 18));
-                            cm0Var2.K = o5Var3;
+                            i11 = ((org.telegram.ui.ActionBar.e2) jm0Var2).currentAccount;
+                            bi.o5 o5Var3 = new bi.o5(i11, dm0Var2.L.id, new r3(bm0Var, 18));
+                            dm0Var2.K = o5Var3;
                             o5Var3.g(false);
                         }
                     }
-                    cm0.a(cm0Var2);
-                    (im0Var2.J.getCurrentPosition() == 1 ? im0Var2.n : im0Var2.h).e();
+                    dm0.a(dm0Var2);
+                    (jm0Var2.J.getCurrentPosition() == 1 ? jm0Var2.n : jm0Var2.h).e();
                     break;
                 }
                 break;
             case 15:
-                ym0 ym0Var = (ym0) ((hi.s2) this.b).c;
-                ym0Var.g0(ym0Var.Q.getSearchField());
+                zm0 zm0Var = (zm0) ((hi.s2) this.b).c;
+                zm0Var.g0(zm0Var.Q.getSearchField());
                 break;
             case 16:
-                ((um0) this.b).j0.M.f();
+                ((vm0) this.b).j0.M.f();
                 break;
             case 17:
                 ((oq0) this.b).invalidate();

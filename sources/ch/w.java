@@ -6,10 +6,10 @@ import android.opengl.Matrix;
 import di.a6;
 import di.b5;
 import di.b6;
+import di.bb;
 import di.cb;
-import di.db;
 import di.i1;
-import di.mb;
+import di.lb;
 import di.o4;
 import di.p4;
 import di.q4;
@@ -43,7 +43,7 @@ import org.telegram.ui.qv;
 import org.telegram.ui.yw;
 import ug.x0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class w implements Runnable {
             case 5:
                 di.b bVar = (di.b) obj;
                 bVar.getClass();
-                new db(bVar.getContext(), bVar.b).show();
+                new cb(bVar.getContext(), bVar.b).show();
                 break;
             case 6:
                 di.s sVar = (di.s) obj;
@@ -328,10 +328,10 @@ public final /* synthetic */ class w implements Runnable {
                 }
                 break;
             case 20:
-                mb mbVar = (mb) obj;
-                if (mbVar.V != null && mbVar.b0 != -1) {
-                    mbVar.n1("POSTED_ALIGN");
-                    mbVar.V.a();
+                lb lbVar = (lb) obj;
+                if (lbVar.V != null && lbVar.b0 != -1) {
+                    lbVar.n1("POSTED_ALIGN");
+                    lbVar.V.a();
                     break;
                 }
                 break;
@@ -345,10 +345,10 @@ public final /* synthetic */ class w implements Runnable {
                 ((v0[]) obj)[0].dismiss();
                 break;
             case 24:
-                vf.c.t(((cb) obj).getContext(), hd.M0(2131744966, null));
+                vf.c.t(((bb) obj).getContext(), hd.M0(2131744966, null));
                 break;
             case 25:
-                vf.c.t(((db) obj).getContext(), hd.M0(2131744966, null));
+                vf.c.t(((cb) obj).getContext(), hd.M0(2131744966, null));
                 break;
             case 26:
                 ab.q qVar = (ab.q) obj;

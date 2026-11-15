@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yq implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -306,7 +306,7 @@ public final /* synthetic */ class yq implements View.OnClickListener {
                                     int i38 = yVar.f2;
                                     int i39 = yg.u.w;
                                     boolean z13 = i38 == 1;
-                                    di.v8 y10 = di.v8.y(yVar.a, false);
+                                    di.u8 y10 = di.u8.y(yVar.a, false);
                                     int i40 = 4;
                                     int l11 = wg.q.l(yVar.i2);
                                     boolean z14 = yVar.t2;
@@ -364,7 +364,7 @@ public final /* synthetic */ class yq implements View.OnClickListener {
                                             TLRPC.TL_inputInvoiceStars tL_inputInvoiceStars = new TLRPC.TL_inputInvoiceStars();
                                             tL_inputInvoiceStars.purpose = tL_inputStorePaymentStarsGiveaway;
                                             TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm2 = new TLRPC.TL_payments_getPaymentForm();
-                                            JSONObject u11 = ki.x2.u(di.v8.I(), false);
+                                            JSONObject u11 = ki.x2.u(di.u8.I(), false);
                                             if (u11 != null) {
                                                 TLRPC.TL_dataJSON tL_dataJSON2 = new TLRPC.TL_dataJSON();
                                                 tL_payments_getPaymentForm2.theme_params = tL_dataJSON2;
@@ -378,10 +378,10 @@ public final /* synthetic */ class yq implements View.OnClickListener {
                                     } else {
                                         org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
                                         if (Q != null && Q.getContext() != null) {
-                                            di.v8.c0(Q.getContext(), Q.getResourceProvider());
+                                            di.u8.c0(Q.getContext(), Q.getResourceProvider());
                                             break;
                                         } else {
-                                            di.v8.c0(W, null);
+                                            di.u8.c0(W, null);
                                             break;
                                         }
                                     }
@@ -398,7 +398,7 @@ public final /* synthetic */ class yq implements View.OnClickListener {
                             org.telegram.ui.ActionBar.t1 t1Var5 = alertDialog$Builder4.a;
                             t1Var5.S = M04;
                             t1Var5.U = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131753192, null));
-                            alertDialog$Builder4.k(org.telegram.messenger.hd.M0(2131744915, null), new tg.a2(aoVar, 10));
+                            alertDialog$Builder4.k(org.telegram.messenger.hd.M0(2131744915, null), new tg.z1(aoVar, 10));
                             alertDialog$Builder4.h(org.telegram.messenger.hd.M0(2131752589, null), new ug.x(19));
                             alertDialog$Builder4.p();
                             break;

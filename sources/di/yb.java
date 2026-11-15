@@ -1,97 +1,71 @@
 package di;
 
-import android.content.Context;
-import org.telegram.ui.rs0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class yb extends vg.m {
-    public final /* synthetic */ int j0;
+public final class yb extends AnimatorListenerAdapter {
+    public final /* synthetic */ ch.n0 a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ fi.n0[] c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ RectF e;
+    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ ic h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yb(Context context, int i7, int i10, int i11) {
-        super(context, i7, i10);
-        this.j0 = i11;
+    public yb(ic icVar, ch.n0 n0Var, View view, fi.n0[] n0VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
+        this.h = icVar;
+        this.a = n0Var;
+        this.b = view;
+        this.c = n0VarArr;
+        this.d = zArr;
+        this.e = rectF;
+        this.f = runnable;
     }
 
-    @Override // vg.m
-    public void h() {
-        switch (this.j0) {
-            case 2:
-                boolean z10 = org.telegram.messenger.r2.a;
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        r80 r80Var;
+        ic icVar = this.h;
+        xb xbVar = icVar.F1;
+        xbVar.setVisibility(4);
+        xbVar.setPaused(true);
+        ch.n0 n0Var = this.a;
+        if (n0Var != null) {
+            n0Var.k = true;
         }
-    }
-
-    @Override // vg.m
-    public void n() {
-        switch (this.j0) {
-            case 0:
-                break;
-            default:
-                super.n();
-                break;
+        View view = this.b;
+        if (view != null) {
+            view.invalidate();
         }
-    }
-
-    @Override // vg.m, android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.j0) {
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-            default:
-                super.onAttachedToWindow();
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 4:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 5:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
+        fi.n0 n0Var2 = this.c[0];
+        if (n0Var2 != null) {
+            n0Var2.setDrawStar(true);
         }
-    }
-
-    @Override // vg.m, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.j0) {
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-            default:
-                super.onDetachedFromWindow();
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 4:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 5:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
+        super/*org.telegram.ui.ActionBar.u2*/.L();
+        boolean[] zArr = this.d;
+        if (!zArr[0]) {
+            zArr[0] = true;
+            RectF rectF = this.e;
+            LaunchActivity.b0(rectF.centerX(), rectF.centerY(), 1.5f);
+            try {
+                icVar.c.performHapticFeedback(0, 1);
+            } catch (Exception unused) {
+            }
+            Runnable runnable = this.f;
+            if (runnable != null) {
+                runnable.run();
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yb(rs0 rs0Var, Context context, int i7, int i10, Context context2) {
-        super(context, i7, i10);
-        this.j0 = 2;
-    }
-
-    private final void p() {
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null || (r80Var = launchActivity.w0) == null) {
+            return;
+        }
+        r80Var.c(true);
     }
 }

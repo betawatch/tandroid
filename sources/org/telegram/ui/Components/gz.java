@@ -19,7 +19,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class gz extends View {
     public float E;
@@ -97,7 +97,7 @@ public final class gz extends View {
         ofFloat.addUpdateListener(new bz(this, 1));
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(50L);
-        animatorSet.addListener(new di.fc(this, i7, f10, 1));
+        animatorSet.addListener(new di.ec(this, i7, f10, 1));
         animatorSet.start();
     }
 

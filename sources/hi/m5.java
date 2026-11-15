@@ -77,7 +77,7 @@ import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.u51;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
     public final t4 A0;
@@ -319,8 +319,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     case 2:
                         u9 u9Var6 = u9Var3;
                         tg.j jVar = u9Var6.t0;
-                        if (jVar instanceof tg.o2) {
-                            org.telegram.messenger.g0.v1(((tg.o2) jVar).getFocusedView());
+                        if (jVar instanceof tg.n2) {
+                            org.telegram.messenger.g0.v1(((tg.n2) jVar).getFocusedView());
                         }
                         if (u9Var6.a2) {
                             u9Var6.s0(false);
@@ -424,8 +424,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     case 2:
                         u9 u9Var6 = u9Var3;
                         tg.j jVar = u9Var6.t0;
-                        if (jVar instanceof tg.o2) {
-                            org.telegram.messenger.g0.v1(((tg.o2) jVar).getFocusedView());
+                        if (jVar instanceof tg.n2) {
+                            org.telegram.messenger.g0.v1(((tg.n2) jVar).getFocusedView());
                         }
                         if (u9Var6.a2) {
                             u9Var6.s0(false);
@@ -513,8 +513,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     case 2:
                         u9 u9Var6 = u9Var3;
                         tg.j jVar = u9Var6.t0;
-                        if (jVar instanceof tg.o2) {
-                            org.telegram.messenger.g0.v1(((tg.o2) jVar).getFocusedView());
+                        if (jVar instanceof tg.n2) {
+                            org.telegram.messenger.g0.v1(((tg.n2) jVar).getFocusedView());
                         }
                         if (u9Var6.a2) {
                             u9Var6.s0(false);
@@ -603,8 +603,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     case 2:
                         u9 u9Var6 = u9Var3;
                         tg.j jVar = u9Var6.t0;
-                        if (jVar instanceof tg.o2) {
-                            org.telegram.messenger.g0.v1(((tg.o2) jVar).getFocusedView());
+                        if (jVar instanceof tg.n2) {
+                            org.telegram.messenger.g0.v1(((tg.n2) jVar).getFocusedView());
                         }
                         if (u9Var6.a2) {
                             u9Var6.s0(false);
@@ -744,8 +744,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     case 2:
                         u9 u9Var6 = u9Var3;
                         tg.j jVar = u9Var6.t0;
-                        if (jVar instanceof tg.o2) {
-                            org.telegram.messenger.g0.v1(((tg.o2) jVar).getFocusedView());
+                        if (jVar instanceof tg.n2) {
+                            org.telegram.messenger.g0.v1(((tg.n2) jVar).getFocusedView());
                         }
                         if (u9Var6.a2) {
                             u9Var6.s0(false);
@@ -825,20 +825,20 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             Point point = org.telegram.messenger.g0.q;
             setSystemGestureExclusionRects(Arrays.asList(new Rect(0, (int) (point.y * 0.35f), org.telegram.messenger.g0.L(100.0f), (int) (point.y * 0.65d))));
         }
-        this.y1 = new v4(u9Var3, raVar, new ai.u1(14, u9Var3, raVar));
+        this.y1 = new v4(u9Var3, raVar, new ai.v1(14, u9Var3, raVar));
         i2.C1 = 1;
     }
 
-    public static void D0(tg.o2 o2Var, int i7) {
-        o2Var.setAlign(i7);
+    public static void D0(tg.n2 n2Var, int i7) {
+        n2Var.setAlign(i7);
         int i10 = 2;
-        o2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
+        n2Var.getEditText().setGravity(i7 != 1 ? i7 != 2 ? 19 : 21 : 17);
         if (i7 == 1) {
             i10 = 4;
         } else if (i7 == 2 ? !hd.a0 : hd.a0) {
             i10 = 3;
         }
-        o2Var.getEditText().setTextAlignment(i10);
+        n2Var.getEditText().setTextAlignment(i10);
     }
 
     public static void X(u9 u9Var, sg.k0 k0Var, Integer num) {
@@ -888,8 +888,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                 return;
             }
             View childAt = h5Var.getChildAt(i7);
-            if (childAt instanceof tg.g2) {
-                ImageReceiver imageReceiver = ((tg.g2) childAt).y0;
+            if (childAt instanceof tg.f2) {
+                ImageReceiver imageReceiver = ((tg.f2) childAt).y0;
                 ch0 B = imageReceiver.B();
                 org.telegram.ui.Components.t5 m10 = imageReceiver.m();
                 boolean z11 = !z10;
@@ -931,8 +931,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
     private void setTextType(int i7) {
         this.v0 = i7;
         tg.j jVar = this.t0;
-        if (jVar instanceof tg.o2) {
-            ((tg.o2) jVar).setType(i7);
+        if (jVar instanceof tg.n2) {
+            ((tg.n2) jVar).setType(i7);
         }
         sg.k0 e10 = sg.k0.e(this.p1);
         e10.h = i7;
@@ -986,7 +986,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     default:
                         m5 m5Var2 = this.b;
                         m5Var2.O0(2);
-                        if (!(m5Var2.t0 instanceof tg.o2)) {
+                        if (!(m5Var2.t0 instanceof tg.n2)) {
                             m5Var2.V1 = true;
                             m5Var2.l0(true);
                             break;
@@ -1026,7 +1026,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     default:
                         m5 m5Var2 = this.b;
                         m5Var2.O0(2);
-                        if (!(m5Var2.t0 instanceof tg.o2)) {
+                        if (!(m5Var2.t0 instanceof tg.n2)) {
                             m5Var2.V1 = true;
                             m5Var2.l0(true);
                             break;
@@ -1079,7 +1079,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     default:
                         m5 m5Var2 = this.b;
                         m5Var2.O0(2);
-                        if (!(m5Var2.t0 instanceof tg.o2)) {
+                        if (!(m5Var2.t0 instanceof tg.n2)) {
                             m5Var2.V1 = true;
                             m5Var2.l0(true);
                             break;
@@ -1114,7 +1114,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         cb cbVar2;
         mi0 mi0Var;
         int i7;
-        boolean z12 = jVar instanceof tg.o2;
+        boolean z12 = jVar instanceof tg.n2;
         int i10 = 2;
         if (z12 && (((i7 = this.J0) == -1 && this.I0 != 2) || (i7 != -1 && i7 != 2))) {
             ValueAnimator valueAnimator = this.L0;
@@ -1128,8 +1128,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         }
         boolean z13 = true;
         if (z12 && z10) {
-            tg.o2 o2Var = (tg.o2) jVar;
-            int gravity = o2Var.getEditText().getGravity();
+            tg.n2 n2Var = (tg.n2) jVar;
+            int gravity = n2Var.getEditText().getGravity();
             if (gravity == 17) {
                 i10 = 1;
             } else if (gravity != 21) {
@@ -1137,11 +1137,11 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             }
             tg.e1 e1Var = this.V0;
             e1Var.setAlignment(i10);
-            sg.a0 typeface = o2Var.getTypeface();
+            sg.a0 typeface = n2Var.getTypeface();
             if (typeface != null) {
                 e1Var.setTypeface(typeface.a);
             }
-            e1Var.e(o2Var.getType(), true);
+            e1Var.e(n2Var.getType(), true);
             this.E0.invalidate();
         }
         tg.j jVar2 = this.t0;
@@ -1155,9 +1155,9 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                         n0Var.setType((n0Var.getType() + 1) % n0Var.getTypesCount());
                         return true;
                     }
-                    if (jVar instanceof tg.p2) {
-                        tg.p2 p2Var = (tg.p2) jVar;
-                        p2Var.setType((p2Var.getType() + 1) % p2Var.getTypesCount());
+                    if (jVar instanceof tg.o2) {
+                        tg.o2 o2Var = (tg.o2) jVar;
+                        o2Var.setType((o2Var.getType() + 1) % o2Var.getTypesCount());
                         return true;
                     }
                     if (jVar instanceof tg.k0) {
@@ -1171,7 +1171,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                         return true;
                     }
                     if (!this.u0) {
-                        if (jVar instanceof tg.o2) {
+                        if (jVar instanceof tg.n2) {
                             this.w0 = true;
                             o0();
                             return true;
@@ -1187,7 +1187,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                         }
                         tg.q1 q1Var2 = this.K1;
                         if (q1Var2 != null && q1Var2 != q1Var && (mi0Var = this.J1) != null) {
-                            mi0Var.animate().alpha(0.0f).setListener(new ai.i0(mi0Var, 22));
+                            mi0Var.animate().alpha(0.0f).setListener(new ai.j0(mi0Var, 22));
                             this.J1 = null;
                             this.M1 = false;
                             this.L1 = 0.0f;
@@ -1208,8 +1208,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                         L0(true);
                         return true;
                     }
-                    if (jVar2 instanceof tg.o2) {
-                        org.telegram.messenger.g0.J3(((tg.o2) jVar2).getFocusedView());
+                    if (jVar2 instanceof tg.n2) {
+                        org.telegram.messenger.g0.J3(((tg.n2) jVar2).getFocusedView());
                         s0(false);
                     }
                 }
@@ -1217,16 +1217,16 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             }
             jVar2.l(jVar2.n0, false);
             tg.j jVar3 = this.t0;
-            if (jVar3 instanceof tg.o2) {
-                tg.o2 o2Var2 = (tg.o2) jVar3;
-                tg.n2 n2Var = o2Var2.r0;
-                n2Var.clearFocus();
-                n2Var.setEnabled(false);
-                n2Var.setClickable(false);
-                o2Var2.m();
+            if (jVar3 instanceof tg.n2) {
+                tg.n2 n2Var2 = (tg.n2) jVar3;
+                tg.m2 m2Var = n2Var2.r0;
+                m2Var.clearFocus();
+                m2Var.setEnabled(false);
+                m2Var.setClickable(false);
+                n2Var2.m();
                 if (!z12) {
                     this.u0 = false;
-                    org.telegram.messenger.g0.v1(((tg.o2) this.t0).getFocusedView());
+                    org.telegram.messenger.g0.v1(((tg.n2) this.t0).getFocusedView());
                     s0(false);
                 }
             } else if ((jVar3 instanceof tg.r1) && (cbVar2 = ((u9) this).k2.a1) != null) {
@@ -1236,7 +1236,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         }
         tg.j jVar4 = this.t0;
         this.t0 = jVar;
-        if ((jVar4 instanceof tg.o2) && TextUtils.isEmpty(((tg.o2) jVar4).getText())) {
+        if ((jVar4 instanceof tg.n2) && TextUtils.isEmpty(((tg.n2) jVar4).getText())) {
             z0(jVar4);
         }
         tg.j jVar5 = this.t0;
@@ -1252,12 +1252,12 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             jVar6.n0 = t4Var;
             jVar6.l(t4Var, true);
             tg.j jVar7 = this.t0;
-            if (jVar7 instanceof tg.o2) {
-                tg.o2 o2Var3 = (tg.o2) jVar7;
-                o2Var3.getSwatch().c = h1Var.c;
-                o2Var3.A0 = false;
-                C0(o2Var3.getSwatch());
-                m1Var.setValueOverride(new w4(o2Var3, (int) (this.r0.a / 9.0f), 0));
+            if (jVar7 instanceof tg.n2) {
+                tg.n2 n2Var3 = (tg.n2) jVar7;
+                n2Var3.getSwatch().c = h1Var.c;
+                n2Var3.A0 = false;
+                C0(n2Var3.getSwatch());
+                m1Var.setValueOverride(new w4(n2Var3, (int) (this.r0.a / 9.0f), 0));
                 m1Var.setShowPreview(false);
             } else {
                 m1Var.setValueOverride(bVar);
@@ -1311,16 +1311,16 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             duration.start();
         }
         tg.j jVar = this.t0;
-        if (jVar instanceof tg.o2) {
-            ((tg.o2) jVar).setSwatch(new sg.h1(h1Var.b, h1Var.c, h1Var.a));
+        if (jVar instanceof tg.n2) {
+            ((tg.n2) jVar).setSwatch(new sg.h1(h1Var.b, h1Var.c, h1Var.a));
             return;
         }
         if (z10 && (jVar instanceof tg.n0)) {
             ((tg.n0) jVar).setColor(h1Var.a);
             ((tg.n0) this.t0).setType(3);
-        } else if (z10 && (jVar instanceof tg.p2)) {
-            ((tg.p2) jVar).setColor(h1Var.a);
-            ((tg.p2) this.t0).setType(3);
+        } else if (z10 && (jVar instanceof tg.o2)) {
+            ((tg.o2) jVar).setColor(h1Var.a);
+            ((tg.o2) this.t0).setType(3);
         } else if (z10 && (jVar instanceof tg.k0)) {
             ((tg.k0) jVar).setColor(h1Var.a);
             ((tg.k0) this.t0).setType(0);
@@ -1377,7 +1377,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                 i7 = size;
                 jVar2 = k02;
             } else if (b10 == 1) {
-                tg.o2 l02 = l0(z10);
+                tg.n2 l02 = l0(z10);
                 l02.setType(e20Var.b);
                 l02.setTypeface(e20Var.n);
                 l02.setBaseFontSize(e20Var.m);
@@ -1457,7 +1457,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                 size = i7;
                                 z10 = false;
                             } else {
-                                tg.p2 m0 = m0(pbVar);
+                                tg.o2 m0 = m0(pbVar);
                                 int i13 = e20Var.l;
                                 if (i13 != 0) {
                                     m0.setColor(i13);
@@ -1680,8 +1680,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
             lyVar4.setLayoutParams(layoutParams);
             if (!org.telegram.messenger.g0.E && !org.telegram.messenger.g0.Q1()) {
                 tg.j jVar = this.t0;
-                if (jVar instanceof tg.o2) {
-                    org.telegram.messenger.g0.v1(((tg.o2) jVar).getEditText());
+                if (jVar instanceof tg.n2) {
+                    org.telegram.messenger.g0.v1(((tg.n2) jVar).getEditText());
                 }
             }
             this.d2 = paddingUnderContainer;
@@ -1725,7 +1725,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
     }
 
     public final void H0(tg.k0 k0Var) {
-        l7 l7Var = new l7(getContext(), this.q1, this.Q1, new ai.u1(16, this, k0Var));
+        l7 l7Var = new l7(getContext(), this.q1, this.Q1, new ai.v1(16, this, k0Var));
         if (k0Var != null) {
             tg.h0 h0Var = k0Var.v0;
             l7Var.Y1 = true;
@@ -1889,8 +1889,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         this.i2 = z10;
         boolean z13 = this.b2;
         tg.j jVar = this.t0;
-        if (jVar instanceof tg.o2) {
-            this.b2 = ((tg.o2) jVar).getEditText().isFocused() && v4Var.c();
+        if (jVar instanceof tg.n2) {
+            this.b2 = ((tg.n2) jVar).getEditText().isFocused() && v4Var.c();
         } else {
             this.b2 = false;
         }
@@ -2108,7 +2108,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
     */
     public final void R0() {
         boolean z10;
-        if (this.t0 instanceof tg.o2) {
+        if (this.t0 instanceof tg.n2) {
             v4 v4Var = this.y1;
             if ((v4Var.c() || this.d2 > 0) && !v4Var.d) {
                 z10 = true;
@@ -2169,8 +2169,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
     @Override // tg.c1
     public final void c(int i7) {
         tg.j jVar = this.t0;
-        if (jVar instanceof tg.o2) {
-            D0((tg.o2) jVar, i7);
+        if (jVar instanceof tg.n2) {
+            D0((tg.n2) jVar, i7);
             sg.k0 e10 = sg.k0.e(this.p1);
             e10.g = i7;
             e10.a.edit().putInt("text_alignment", i7).apply();
@@ -2202,10 +2202,10 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     break;
                 }
                 View childAt = h5Var.getChildAt(i7);
-                boolean z12 = childAt instanceof tg.o2;
+                boolean z12 = childAt instanceof tg.n2;
                 int i10 = this.p1;
                 if (z12) {
-                    CharSequence text = ((tg.o2) childAt).getText();
+                    CharSequence text = ((tg.n2) childAt).getText();
                     if (text instanceof Spanned) {
                         for (org.telegram.ui.Components.p5 p5Var : (org.telegram.ui.Components.p5[]) ((Spanned) text).getSpans(0, text.length(), org.telegram.ui.Components.p5.class)) {
                             TLRPC.Document document = p5Var.document;
@@ -2224,8 +2224,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                         continue;
                     }
                     i7++;
-                } else if (childAt instanceof tg.g2) {
-                    TLRPC.Document sticker = ((tg.g2) childAt).getSticker();
+                } else if (childAt instanceof tg.f2) {
+                    TLRPC.Document sticker = ((tg.f2) childAt).getSticker();
                     org.telegram.messenger.w7.G(i10);
                     if (d7.u(sticker, org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath())) {
                         break;
@@ -2413,8 +2413,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         ArrayList arrayList = null;
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = h5Var.getChildAt(i7);
-            if (childAt instanceof tg.g2) {
-                TLRPC.Document sticker = ((tg.g2) childAt).getSticker();
+            if (childAt instanceof tg.f2) {
+                TLRPC.Document sticker = ((tg.f2) childAt).getSticker();
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
@@ -2427,8 +2427,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                     tL_inputDocument.file_reference = new byte[0];
                 }
                 arrayList.add(tL_inputDocument);
-            } else if (childAt instanceof tg.o2) {
-                CharSequence text = ((tg.o2) childAt).getText();
+            } else if (childAt instanceof tg.n2) {
+                CharSequence text = ((tg.n2) childAt).getText();
                 if ((text instanceof Spanned) && (p5VarArr = (org.telegram.ui.Components.p5[]) ((Spanned) text).getSpans(0, text.length(), org.telegram.ui.Components.p5.class)) != null) {
                     for (org.telegram.ui.Components.p5 p5Var : p5VarArr) {
                         if (p5Var != null) {
@@ -2662,51 +2662,51 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         return d5Var;
     }
 
-    public final tg.o2 l0(boolean z10) {
+    public final tg.n2 l0(boolean z10) {
         nt0 paintingSize = getPaintingSize();
         PointF N0 = N0(null);
-        tg.o2 o2Var = new tg.o2(getContext(), N0, (int) (paintingSize.a / 9.0f), "", this.k1, this.v0);
+        tg.n2 n2Var = new tg.n2(getContext(), N0, (int) (paintingSize.a / 9.0f), "", this.k1, this.v0);
         float f10 = paintingSize.a / 9.0f;
         j4 j4Var = new j4(this, 0);
-        o2Var.x0 = (int) (0.5f * f10);
-        o2Var.y0 = (int) (f10 * 2.0f);
-        o2Var.z0 = j4Var;
+        n2Var.x0 = (int) (0.5f * f10);
+        n2Var.y0 = (int) (f10 * 2.0f);
+        n2Var.z0 = j4Var;
         float f11 = N0.x;
         h5 h5Var = this.B0;
         if (f11 == h5Var.getMeasuredWidth() / 2.0f) {
-            o2Var.setStickyX(2);
+            n2Var.setStickyX(2);
         }
         if (N0.y == h5Var.getMeasuredHeight() / 2.0f) {
-            o2Var.setStickyY(2);
+            n2Var.setStickyY(2);
         }
-        o2Var.setDelegate(this);
-        o2Var.setMaxWidth(this.B1 - org.telegram.messenger.g0.L(32.0f));
+        n2Var.setDelegate(this);
+        n2Var.setMaxWidth(this.B1 - org.telegram.messenger.g0.L(32.0f));
         int i7 = this.p1;
-        o2Var.setTypeface(sg.k0.e(i7).j);
-        o2Var.setType(sg.k0.e(i7).h);
-        h5Var.addView(o2Var, c8.ja.c(-2.0f, -2));
+        n2Var.setTypeface(sg.k0.e(i7).j);
+        n2Var.setType(sg.k0.e(i7).h);
+        h5Var.addView(n2Var, c8.ja.c(-2.0f, -2));
         d0();
         xe xeVar = this.p0;
         if (xeVar != null) {
-            o2Var.j(1.0f / xeVar.c);
-            o2Var.f(-(xeVar.k + xeVar.d));
+            n2Var.j(1.0f / xeVar.c);
+            n2Var.f(-(xeVar.k + xeVar.d));
         }
         if (z10) {
-            y0(o2Var);
-            o2Var.q();
-            A0(o2Var, false);
-            o2Var.getFocusedView().requestFocus();
-            org.telegram.messenger.g0.J3(o2Var.getFocusedView());
+            y0(n2Var);
+            n2Var.q();
+            A0(n2Var, false);
+            n2Var.getFocusedView().requestFocus();
+            org.telegram.messenger.g0.J3(n2Var.getFocusedView());
             this.u0 = true;
             int i10 = sg.k0.e(i7).g;
             tg.e1 e1Var = this.V0;
             e1Var.d(i10, true);
             e1Var.setOutlineType(sg.k0.e(i7).h);
         }
-        return o2Var;
+        return n2Var;
     }
 
-    public final tg.p2 m0(pb pbVar) {
+    public final tg.o2 m0(pb pbVar) {
         int i7;
         this.V1 = true;
         getPaintingSize();
@@ -2714,27 +2714,27 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         h5 h5Var = this.B0;
         float measuredWidth = h5Var.getMeasuredWidth() <= 0 ? this.B1 : h5Var.getMeasuredWidth();
         int L = ((int) measuredWidth) - org.telegram.messenger.g0.L(58.0f);
-        tg.p2 p2Var = new tg.p2(getContext(), N0, this.p1, pbVar, measuredWidth / 240.0f, L);
+        tg.o2 o2Var = new tg.o2(getContext(), N0, this.p1, pbVar, measuredWidth / 240.0f, L);
         if (N0.x == h5Var.getMeasuredWidth() / 2.0f) {
-            p2Var.setStickyX(2);
+            o2Var.setStickyX(2);
         }
         if (N0.y == h5Var.getMeasuredHeight() / 2.0f) {
-            p2Var.setStickyY(2);
+            o2Var.setStickyY(2);
         }
         sg.h1 h1Var = this.k1;
         if (h1Var != null && (i7 = h1Var.a) != -47814) {
-            p2Var.setColor(i7);
+            o2Var.setColor(i7);
         }
-        p2Var.setDelegate(this);
-        p2Var.setMaxWidth(L);
-        h5Var.addView(p2Var, c8.ja.c(-2.0f, -2));
+        o2Var.setDelegate(this);
+        o2Var.setMaxWidth(L);
+        h5Var.addView(o2Var, c8.ja.c(-2.0f, -2));
         d0();
         xe xeVar = this.p0;
         if (xeVar != null) {
-            p2Var.j(1.0f / xeVar.c);
-            p2Var.f(-(xeVar.k + xeVar.d));
+            o2Var.j(1.0f / xeVar.c);
+            o2Var.f(-(xeVar.k + xeVar.d));
         }
-        return p2Var;
+        return o2Var;
     }
 
     @Override // tg.h
@@ -2930,12 +2930,12 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                             jVar.getPosition();
                             e20 e20Var = new e20();
                             if (arrayList != null) {
-                                boolean z21 = jVar instanceof tg.o2;
+                                boolean z21 = jVar instanceof tg.n2;
                                 int i16 = m5Var.p1;
                                 if (z21) {
                                     e20Var.a = b11;
-                                    tg.o2 o2Var = (tg.o2) jVar;
-                                    CharSequence text = o2Var.getText();
+                                    tg.n2 n2Var = (tg.n2) jVar;
+                                    CharSequence text = n2Var.getText();
                                     if (text instanceof Spanned) {
                                         Spanned spanned2 = (Spanned) text;
                                         h5Var = h5Var2;
@@ -3005,30 +3005,30 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                     i11 = childCount;
                                     i12 = i15;
                                     e20Var.j = text.toString();
-                                    e20Var.b = (byte) o2Var.getType();
-                                    e20Var.l = o2Var.getSwatch().a;
-                                    e20Var.m = o2Var.getTextSize();
-                                    e20Var.n = o2Var.getTypeface();
-                                    e20Var.p = o2Var.getAlign();
+                                    e20Var.b = (byte) n2Var.getType();
+                                    e20Var.l = n2Var.getSwatch().a;
+                                    e20Var.m = n2Var.getTextSize();
+                                    e20Var.n = n2Var.getTypeface();
+                                    e20Var.p = n2Var.getAlign();
                                 } else {
                                     h5Var = h5Var2;
                                     i11 = childCount;
                                     i12 = i15;
-                                    if (jVar instanceof tg.g2) {
+                                    if (jVar instanceof tg.f2) {
                                         e20Var.a = (byte) 0;
-                                        tg.g2 g2Var = (tg.g2) jVar;
-                                        nt0 baseSize = g2Var.getBaseSize();
+                                        tg.f2 f2Var = (tg.f2) jVar;
+                                        nt0 baseSize = f2Var.getBaseSize();
                                         e20Var.f = baseSize.a;
                                         e20Var.g = baseSize.b;
-                                        e20Var.B = g2Var.getSticker();
-                                        e20Var.C = g2Var.getParentObject();
-                                        TLRPC.Document sticker = g2Var.getSticker();
+                                        e20Var.B = f2Var.getSticker();
+                                        e20Var.C = f2Var.getParentObject();
+                                        TLRPC.Document sticker = f2Var.getSticker();
                                         org.telegram.messenger.w7.G(m10.t0);
                                         e20Var.j = org.telegram.messenger.w7.J(sticker, null, true, true).getAbsolutePath();
                                         if (gj.K2(sticker, true) || u0(sticker)) {
                                             boolean K22 = gj.K2(sticker, true);
                                             e20Var.b = (byte) (e20Var.b | (K22 ? (byte) 1 : (byte) 4));
-                                            r21 = (K22 || u0(sticker)) ? g2Var.getDuration() : 5000L;
+                                            r21 = (K22 || u0(sticker)) ? f2Var.getDuration() : 5000L;
                                             if (r21 != 0) {
                                                 BigInteger valueOf2 = BigInteger.valueOf(r21);
                                                 m5Var.Q0 = m5Var.Q0.multiply(valueOf2).divide(m5Var.Q0.gcd(valueOf2));
@@ -3038,7 +3038,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                             e20Var.l = -1;
                                             e20Var.b = (byte) (e20Var.b | 8);
                                         }
-                                        if (g2Var.u0) {
+                                        if (f2Var.u0) {
                                             e20Var.b = (byte) (e20Var.b | 2);
                                         }
                                     } else if (jVar instanceof tg.n1) {
@@ -3079,19 +3079,19 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                             }
                                             e20Var.k.add(d20Var2);
                                         }
-                                    } else if (jVar instanceof tg.p2) {
-                                        tg.p2 p2Var = (tg.p2) jVar;
-                                        tg.m0 m0Var2 = p2Var.r0;
+                                    } else if (jVar instanceof tg.o2) {
+                                        tg.o2 o2Var = (tg.o2) jVar;
+                                        tg.m0 m0Var2 = o2Var.r0;
                                         e20Var.a = (byte) 8;
-                                        e20Var.b = (byte) p2Var.getType();
+                                        e20Var.b = (byte) o2Var.getType();
                                         e20Var.f = m0Var2.getWidth();
                                         e20Var.g = m0Var2.getHeight();
                                         e20Var.j = m0Var2.getText();
-                                        e20Var.l = p2Var.s0 ? p2Var.getColor() : 0;
+                                        e20Var.l = o2Var.s0 ? o2Var.getColor() : 0;
                                         e20Var.P = m0Var2.E;
-                                        e20Var.O = p2Var.v0;
+                                        e20Var.O = o2Var.v0;
                                         TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = new TL_stories.TL_mediaAreaWeather();
-                                        tL_mediaAreaWeather.emoji = p2Var.v0.c;
+                                        tL_mediaAreaWeather.emoji = o2Var.v0.c;
                                         tL_mediaAreaWeather.temperature_c = Math.round(r4.d);
                                         tL_mediaAreaWeather.color = m0Var2.f.getColor();
                                         e20Var.M = tL_mediaAreaWeather;
@@ -3132,8 +3132,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                         e20Var.v = scaleX;
                                         if (jVar instanceof tg.u0) {
                                             z18 = z16;
-                                            if (jVar instanceof tg.g2) {
-                                                ImageReceiver imageReceiver5 = ((tg.g2) jVar).y0;
+                                            if (jVar instanceof tg.f2) {
+                                                ImageReceiver imageReceiver5 = ((tg.f2) jVar).y0;
                                                 RectF rectF = imageReceiver5.Q0;
                                                 if (imageReceiver5.V % ns.K2 != 0) {
                                                     width = rectF.height();
@@ -3159,7 +3159,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                                 }
                                             } else {
                                                 TL_stories.MediaArea mediaArea3 = e20Var.M;
-                                                if (mediaArea3 != null && (((z19 = jVar instanceof tg.n0)) || (jVar instanceof tg.p2) || (jVar instanceof tg.k0) || (jVar instanceof tg.q1))) {
+                                                if (mediaArea3 != null && (((z19 = jVar instanceof tg.n0)) || (jVar instanceof tg.o2) || (jVar instanceof tg.k0) || (jVar instanceof tg.q1))) {
                                                     TL_stories.MediaAreaCoordinates mediaAreaCoordinates2 = mediaArea3.coordinates;
                                                     float f15 = e20Var.c;
                                                     float f16 = e20Var.f;
@@ -3169,8 +3169,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                                         tg.m0 m0Var3 = ((tg.n0) jVar).r0;
                                                         mediaAreaCoordinates2.w = i20.x(m0Var3.J * 2 * scaleX, h5Var.getMeasuredWidth(), f16, 100.0f);
                                                         e20Var.M.coordinates.h = i20.x(m0Var3.K * 2 * scaleY, h5Var.getMeasuredHeight(), e20Var.g, 100.0f);
-                                                    } else if (jVar instanceof tg.p2) {
-                                                        tg.m0 m0Var4 = ((tg.p2) jVar).r0;
+                                                    } else if (jVar instanceof tg.o2) {
+                                                        tg.m0 m0Var4 = ((tg.o2) jVar).r0;
                                                         mediaAreaCoordinates2.w = i20.x(m0Var4.J * 2 * scaleX, h5Var.getMeasuredWidth(), f16, 100.0f);
                                                         e20Var.M.coordinates.h = i20.x(m0Var4.K * 2 * scaleY, h5Var.getMeasuredHeight(), e20Var.g, 100.0f);
                                                     } else if (jVar instanceof tg.k0) {
@@ -3188,8 +3188,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                                     e20Var.M.coordinates.rotation = ((-e20Var.e) / 3.141592653589793d) * 180.0d;
                                                     if (z19) {
                                                         radius = ((tg.n0) jVar).r0.getRadius();
-                                                    } else if (jVar instanceof tg.p2) {
-                                                        radius = ((tg.p2) jVar).r0.getRadius();
+                                                    } else if (jVar instanceof tg.o2) {
+                                                        radius = ((tg.o2) jVar).r0.getRadius();
                                                     } else if (jVar instanceof tg.k0) {
                                                         radius = ((tg.k0) jVar).r0.getRadius();
                                                     }
@@ -3395,7 +3395,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                                             z15 = z18;
                                                         } else {
                                                             imageReceiver3.O0(false, false);
-                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) di.v8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) di.u8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
                                                             if (stargiftattributemodel != null) {
                                                                 float L = org.telegram.messenger.g0.L(110.0f);
                                                                 float r11 = imageReceiver3.r() + t0Var.getX() + p0Var2.getX() + t0Var.G0;
@@ -3619,7 +3619,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                                         canvas3.scale(view.getScaleX(), view.getScaleY());
                                         canvas3.rotate(view.getRotation(), ((e20Var.f / 2.0f) / view.getScaleX()) * h5Var.getMeasuredWidth(), ((e20Var.g / 2.0f) / view.getScaleY()) * h5Var.getMeasuredHeight());
                                         view2 = view;
-                                        if (!(view2 instanceof tg.o2) || view2.getHeight() <= 0 || view2.getWidth() <= 0) {
+                                        if (!(view2 instanceof tg.n2) || view2.getHeight() <= 0 || view2.getWidth() <= 0) {
                                             canvas = canvas2;
                                             if (view2 instanceof tg.u0) {
                                                 tg.u0 u0Var4 = (tg.u0) view2;
@@ -3767,8 +3767,8 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
                 return;
             }
             View childAt = h5Var.getChildAt(i7);
-            if (childAt instanceof tg.g2) {
-                ImageReceiver imageReceiver = ((tg.g2) childAt).y0;
+            if (childAt instanceof tg.f2) {
+                ImageReceiver imageReceiver = ((tg.f2) childAt).y0;
                 ch0 B = imageReceiver.B();
                 imageReceiver.m();
                 if (B != null) {
@@ -3803,9 +3803,9 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         }
         if (this.a2) {
             tg.j jVar = this.t0;
-            if (jVar instanceof tg.o2) {
+            if (jVar instanceof tg.n2) {
                 this.y1.e = true;
-                org.telegram.messenger.g0.J3(((tg.o2) jVar).getEditText());
+                org.telegram.messenger.g0.J3(((tg.n2) jVar).getEditText());
             }
         }
         G0(!this.a2 ? 1 : 0);
@@ -3944,7 +3944,7 @@ public abstract class m5 extends tt0 implements tg.g1, tg.h, tg.c1, rt0, oa {
         if (jVar == jVar2 && jVar2 != null) {
             jVar2.l(jVar2.n0, false);
             A0(null, true);
-            if (jVar instanceof tg.o2) {
+            if (jVar instanceof tg.n2) {
                 ValueAnimator valueAnimator = this.L0;
                 if (valueAnimator != null && this.J0 != 0) {
                     valueAnimator.cancel();

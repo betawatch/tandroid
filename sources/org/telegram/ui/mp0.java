@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mp0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class mp0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i7;
-        ai.k2 k2Var;
+        ai.l2 l2Var;
         ArrayList arrayList;
         String str;
         int i10;
@@ -226,8 +226,8 @@ public final /* synthetic */ class mp0 implements Runnable {
                 ProfileActivity profileActivity9 = (ProfileActivity) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
                 RectF rectF9 = ProfileActivity.X6;
-                if (!zArr2[0] && (k2Var = profileActivity9.B5) != null) {
-                    k2Var.run();
+                if (!zArr2[0] && (l2Var = profileActivity9.B5) != null) {
+                    l2Var.run();
                 }
                 profileActivity9.B5 = null;
                 break;

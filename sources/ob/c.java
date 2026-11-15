@@ -31,7 +31,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import d9.o;
-import di.mb;
+import di.lb;
 import e5.n;
 import f5.g;
 import f6.d0;
@@ -69,7 +69,7 @@ import org.telegram.ui.Components.ft0;
 import org.telegram.ui.l11;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c implements a0, androidx.activity.result.b, l11, q0, ft0, n, q, fo0, i1, OnCompleteListener, ib.b, j6.n, g1 {
     public final /* synthetic */ int a;
@@ -309,12 +309,12 @@ public final class c implements a0, androidx.activity.result.b, l11, q0, ft0, n,
 
     @Override // org.telegram.ui.Components.ft0
     public void F(boolean z10) {
-        mb mbVar = (mb) this.b;
-        te.a aVar = mbVar.Z;
+        lb lbVar = (lb) this.b;
+        te.a aVar = lbVar.Z;
         if (aVar != null) {
             aVar.a(z10, true);
         }
-        o00 o00Var = mbVar.s;
+        o00 o00Var = lbVar.s;
         if (o00Var != null) {
             o00Var.invalidate();
         }
@@ -322,7 +322,7 @@ public final class c implements a0, androidx.activity.result.b, l11, q0, ft0, n,
 
     @Override // org.telegram.ui.Components.ft0
     public float U0() {
-        return i5.c.d(9.66f, ri.a.d(((mb) this.b).c0), 0);
+        return i5.c.d(9.66f, ri.a.d(((lb) this.b).c0), 0);
     }
 
     @Override // h9.g1
@@ -350,7 +350,7 @@ public final class c implements a0, androidx.activity.result.b, l11, q0, ft0, n,
 
     @Override // org.telegram.ui.Components.ft0
     public int b1() {
-        return ((mb) this.b).d0;
+        return ((lb) this.b).d0;
     }
 
     public void c(StringBuilder sb2, Iterator it) {

@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.messenger.dq;
+import org.telegram.messenger.cq;
 import org.telegram.messenger.gj;
 import org.telegram.messenger.m10;
 import org.telegram.messenger.np;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d6 {
     public final int a;
@@ -112,7 +112,7 @@ public final class d6 {
         ConnectionsManager.getInstance(i11).sendRequest(tL_channels_getMessages, new RequestDelegate() { // from class: org.telegram.ui.Cells.c6
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                org.telegram.messenger.g0.h3(new di.v7(d6.this, tLObject, vrVar, j3, i7, arrayList));
+                org.telegram.messenger.g0.h3(new di.u7(d6.this, tLObject, vrVar, j3, i7, arrayList));
             }
         });
     }
@@ -157,6 +157,6 @@ public final class d6 {
         int i11 = this.a;
         long e10 = m10.i(i11).e();
         vr a02 = vr.a0(i11);
-        a02.a.c(new dq(this, i7, a02, j3, e10, i10));
+        a02.a.c(new cq(this, i7, a02, j3, e10, i10));
     }
 }

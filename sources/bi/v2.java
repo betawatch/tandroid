@@ -2,7 +2,7 @@ package bi;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import di.v8;
+import di.u8;
 import hi.l8;
 import hi.q8;
 import java.io.File;
@@ -22,7 +22,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.wp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class v2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new aa.r((di.t) this.b, tLObject, (Context) this.c, 13));
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((di.s) this.b, tLObject, (String) this.c, tL_error, 5));
+                org.telegram.messenger.g0.h3(new ai.r(this.b, (Object) tLObject, (String) this.c, (Object) tL_error, 6));
                 break;
             case 4:
                 di.c6 c6Var = (di.c6) this.b;
@@ -78,7 +78,7 @@ public final /* synthetic */ class v2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new c1.c(28, t1Var, tL_error));
                 break;
             case 5:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((di.c6) this.b, tLObject, (aa.r) this.c, tL_error, 9));
+                org.telegram.messenger.g0.h3(new ai.r((di.c6) this.b, tLObject, (aa.r) this.c, tL_error, 10));
                 break;
             case 6:
                 di.c6 c6Var2 = (di.c6) this.b;
@@ -88,16 +88,16 @@ public final /* synthetic */ class v2 implements RequestDelegate {
                     np.s1(c6Var2.a).Y3(updates.users, false);
                     np.s1(c6Var2.a).S3(updates.chats, false);
                 }
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a(c6Var2, tL_error, tLObject, inputSavedStarGift, 10));
+                org.telegram.messenger.g0.h3(new ai.r(c6Var2, tL_error, tLObject, inputSavedStarGift, 11));
                 break;
             case 7:
                 org.telegram.messenger.g0.h3(new aa.r((Object) tLObject, this.b, (String) this.c, 22));
                 break;
             case 8:
-                org.telegram.messenger.g0.h3(new aa.r((v8) this.b, tLObject, tL_error, (z10) this.c, 23));
+                org.telegram.messenger.g0.h3(new aa.r((u8) this.b, tLObject, tL_error, (z10) this.c, 23));
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new aa.r((v8) this.b, tLObject, (Runnable) this.c, 24));
+                org.telegram.messenger.g0.h3(new aa.r((u8) this.b, tLObject, (Runnable) this.c, 24));
                 break;
             case 10:
                 fi.t3 t3Var = (fi.t3) this.b;
@@ -111,7 +111,7 @@ public final /* synthetic */ class v2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new fi.s5((fi.c6) this.b, tLObject, (Runnable) this.c, 2));
                 break;
             case 12:
-                org.telegram.messenger.g0.h3(new androidx.car.app.utils.a((fi.g6) this.b, tLObject, (z10) this.c, tL_error, 14));
+                org.telegram.messenger.g0.h3(new ai.r((fi.g6) this.b, tLObject, (z10) this.c, tL_error, 15));
                 break;
             case 13:
                 org.telegram.messenger.g0.h3(new fi.s5(this.b, (Object) tLObject, this.c, 4));

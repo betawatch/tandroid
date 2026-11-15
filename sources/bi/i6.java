@@ -7,7 +7,7 @@ import org.telegram.messenger.s10;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i6 implements q0.a {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class i6 implements q0.a {
                     ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
                     duration.setInterpolator(er.f);
                     duration.addUpdateListener(new ki.w1(x2Var, 1));
-                    duration.addListener(new ai.i0(x2Var, 29));
+                    duration.addListener(new ai.j0(x2Var, 29));
                     duration.start();
                     break;
                 }

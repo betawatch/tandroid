@@ -1,198 +1,70 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLiteException;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class up implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ vr b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ up(vr vrVar, long j3, int i7) {
+    public /* synthetic */ up(vr vrVar, ArrayList arrayList, ArrayList arrayList2, int i7) {
         this.a = i7;
         this.b = vrVar;
-        this.c = j3;
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        long e10;
-        SQLiteCursor queryFinalized;
-        SQLiteCursor queryFinalized2;
-        int i7 = this.a;
-        SQLiteCursor sQLiteCursor = null;
-        long j3 = this.c;
-        vr vrVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
+                ArrayList arrayList = this.c;
+                ArrayList arrayList2 = this.d;
+                vr vrVar = this.b;
                 vrVar.getClass();
-                try {
-                    vrVar.b.executeFast("DELETE FROM dialog_photos WHERE uid = " + j3).stepThis().dispose();
-                    vrVar.b.executeFast("DELETE FROM dialog_photos_count WHERE uid = " + j3).stepThis().dispose();
-                    return;
-                } catch (Exception e11) {
-                    vrVar.o(e11, true);
-                    return;
-                }
-            case 1:
-                vrVar.getClass();
-                try {
-                    vrVar.b.executeFast("DELETE FROM wallpapers2 WHERE uid = " + j3).stepThis().dispose();
-                    return;
-                } catch (Exception e12) {
-                    vrVar.o(e12, true);
-                    return;
-                }
-            case 2:
-                vrVar.getClass();
-                try {
-                    SQLiteDatabase sQLiteDatabase = vrVar.b;
-                    Locale locale = Locale.US;
-                    sQLiteDatabase.executeFast("DELETE FROM topics WHERE did = " + j3).stepThis().dispose();
-                    return;
-                } catch (SQLiteException e13) {
-                    e13.printStackTrace();
-                    return;
-                }
-            case 3:
-                vr vrVar2 = this.b;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
                     try {
-                        e10 = vrVar2.getUserConfig().e();
-                        queryFinalized = vrVar2.b.queryFinalized("SELECT mid FROM messages_topics WHERE uid = ? AND topic_id = ?", Long.valueOf(e10), Long.valueOf(j3));
-                    } catch (Exception e14) {
-                        e = e14;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                }
-                try {
-                    ArrayList arrayList = new ArrayList();
-                    while (queryFinalized.next()) {
-                        arrayList.add(Integer.valueOf(queryFinalized.intValue(0)));
-                    }
-                    queryFinalized.dispose();
-                    queryFinalized = vrVar2.b.queryFinalized("SELECT mid, data FROM messages_v2 WHERE uid = ?", Long.valueOf(e10));
-                    while (queryFinalized.next()) {
-                        int intValue = queryFinalized.intValue(0);
-                        if (!arrayList.contains(Integer.valueOf(intValue))) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(1);
-                            if (gj.Q1(e10, TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false)) == j3) {
-                                arrayList.add(Integer.valueOf(intValue));
-                            }
-                            byteBufferValue.reuse();
+                        sQLitePreparedStatement = vrVar.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                        int size = arrayList.size();
+                        for (int i7 = 0; i7 < size; i7++) {
+                            sQLitePreparedStatement.requery();
+                            sQLitePreparedStatement.bindInteger(1, ((Integer) arrayList2.get(i7)).intValue());
+                            sQLitePreparedStatement.bindLong(2, ((Long) arrayList.get(i7)).longValue());
+                            sQLitePreparedStatement.step();
                         }
-                    }
-                    queryFinalized.dispose();
-                    if (arrayList.isEmpty()) {
+                        sQLitePreparedStatement.dispose();
                         return;
-                    }
-                    vrVar2.Q0(0, 0, e10, arrayList, true);
-                    vrVar2.R1(e10, -e10, arrayList, null);
-                    try {
-                        ir irVar = new ir(vrVar2, e10, arrayList, 7);
-                        vrVar2 = vrVar2;
-                        g0.h3(irVar);
-                        return;
-                    } catch (Exception e15) {
-                        e = e15;
-                        vrVar2 = vrVar2;
-                        vrVar2.o(e, true);
-                        if (sQLiteCursor != null) {
-                            sQLiteCursor.dispose();
+                    } catch (Exception e10) {
+                        vrVar.o(e10, true);
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
                             return;
                         }
                         return;
                     }
-                } catch (Exception e16) {
-                    e = e16;
-                    sQLiteCursor = queryFinalized;
-                } catch (Throwable th3) {
-                    th = th3;
-                    sQLiteCursor = queryFinalized;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
                     }
-                    throw th;
-                }
-            case 4:
-                vrVar.getClass();
-                try {
-                    vrVar.b.executeFast("DELETE FROM story_pushes WHERE uid = " + j3).stepThis().dispose();
-                    return;
-                } catch (Exception e17) {
-                    vrVar.o(e17, true);
-                    return;
-                }
-            case 5:
-                vrVar.getClass();
-                try {
-                    vrVar.b.executeFast("DELETE FROM media_counts_v2 WHERE uid = " + j3).stepThis().dispose();
-                    return;
-                } catch (Exception e18) {
-                    vrVar.o(e18, true);
-                    return;
-                }
-            case 6:
-                vrVar.getClass();
-                try {
-                    vrVar.b.executeFast("DELETE FROM pending_tasks WHERE id = " + j3).stepThis().dispose();
-                    return;
-                } catch (Exception e19) {
-                    vrVar.o(e19, true);
-                    return;
+                    throw th2;
                 }
             default:
-                long j10 = this.c;
-                boolean z10 = true;
-                try {
-                    try {
-                        queryFinalized2 = vrVar.b.queryFinalized("SELECT uid, data FROM channel_admins_v3 WHERE did = " + j10, new Object[0]);
-                    } catch (Throwable th4) {
-                        th = th4;
-                    }
-                } catch (Exception e20) {
-                    e = e20;
+                vr vrVar2 = this.b;
+                vrVar2.getClass();
+                ArrayList arrayList3 = this.c;
+                if (!arrayList3.isEmpty()) {
+                    vrVar2.getMessagesController().Y3(arrayList3, true);
                 }
-                try {
-                    a0.h hVar = new a0.h();
-                    while (queryFinalized2.next()) {
-                        NativeByteBuffer byteBufferValue2 = queryFinalized2.byteBufferValue(1);
-                        if (byteBufferValue2 != null) {
-                            TLRPC.ChannelParticipant TLdeserialize = TLRPC.ChannelParticipant.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), false);
-                            byteBufferValue2.reuse();
-                            if (TLdeserialize != null) {
-                                hVar.k(TLdeserialize, queryFinalized2.longValue(0));
-                            }
-                        }
-                    }
-                    queryFinalized2.dispose();
-                    np messagesController = vrVar.getMessagesController();
-                    messagesController.getClass();
-                    g0.h3(new qg(messagesController, j10, hVar, z10));
-                } catch (Exception e21) {
-                    e = e21;
-                    sQLiteCursor = queryFinalized2;
-                    vrVar.o(e, true);
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
+                ArrayList arrayList4 = this.d;
+                if (arrayList4.isEmpty()) {
                     return;
-                } catch (Throwable th5) {
-                    th = th5;
-                    sQLiteCursor = queryFinalized2;
-                    if (sQLiteCursor != null) {
-                        sQLiteCursor.dispose();
-                    }
-                    throw th;
                 }
+                vrVar2.getMessagesController().S3(arrayList4, true);
                 return;
         }
     }

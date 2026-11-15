@@ -1,109 +1,216 @@
 package ai;
 
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.net.Uri;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.np;
+import org.telegram.messenger.ns;
+import org.telegram.messenger.vr;
+import org.telegram.messenger.xp;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.e4;
+import org.telegram.ui.g4;
+import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class v {
-    public final y a;
-    public final s b;
-    public final String c;
-    public final q1 d;
-    public volatile int[] g;
-    public int i;
-    public boolean j;
-    public volatile boolean k;
-    public volatile boolean l;
-    public volatile String n;
-    public n1 o;
-    public final StringBuilder e = new StringBuilder();
-    public final ArrayList f = new ArrayList();
-    public String h = "";
-    public volatile int m = -1;
+public final /* synthetic */ class v implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public v(y yVar, android.support.v4.media.session.a0 a0Var, q1 q1Var) {
-        this.a = yVar;
-        this.b = (s) a0Var.b;
-        this.c = (String) a0Var.c;
-        this.d = q1Var;
+    public /* synthetic */ v(w wVar, int[] iArr, String str, String str2, boolean z10, int i7, Runnable runnable) {
+        this.e = wVar;
+        this.f = iArr;
+        this.d = str;
+        this.h = str2;
+        this.c = z10;
+        this.b = i7;
+        this.n = runnable;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(String str) {
-        int i7;
-        if (str == null || str.length() <= 2) {
-            return;
-        }
-        int i10 = 0;
-        try {
-            JSONArray jSONArray = new JSONArray(str);
-            i7 = 0;
-            while (i10 < jSONArray.length()) {
-                try {
-                    JSONObject jSONObject = jSONArray.getJSONObject(i10);
-                    String optString = jSONObject.optString(TeXSymbolParser.TYPE_ATTR);
-                    int hashCode = optString.hashCode();
-                    if (hashCode != -1613589672) {
-                        if (hashCode != -1354815177) {
-                            if (hashCode == -792934015 && optString.equals("partial")) {
-                                StringBuilder sb2 = new StringBuilder();
-                                this.j = DictationAsr.h(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("open"), null);
-                                this.i = sb2.length();
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("tail"), null);
-                                this.h = sb2.toString();
-                                i7 = 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        v4.e1 K;
+        int i7 = 0;
+        switch (this.a) {
+            case 0:
+                w wVar = (w) this.e;
+                int[] iArr = (int[]) this.f;
+                String str = (String) this.d;
+                String str2 = (String) this.h;
+                boolean z10 = this.c;
+                int i10 = this.b;
+                Runnable runnable = (Runnable) this.n;
+                if (!wVar.l) {
+                    wVar.g = iArr;
+                    r1 r1Var = wVar.d;
+                    c2 c2Var = (c2) r1Var.c;
+                    int i11 = r1Var.b;
+                    android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) r1Var.d;
+                    if (!c2Var.j && i11 == c2Var.C) {
+                        String p10 = DictationAsr.p(str, str2, z10);
+                        c2Var.B = p10;
+                        if (!p10.trim().isEmpty()) {
+                            w wVar2 = c2Var.A;
+                            String str3 = wVar2 != null ? wVar2.n : null;
+                            if (str3 == null) {
+                                str3 = a0Var.i();
                             }
-                        } else if (optString.equals("commit")) {
-                            DictationAsr.n(this.e, jSONObject.optJSONArray("words"), this.f);
-                            i7 = 1;
+                            c2Var.r(str3);
                         }
-                    } else if (optString.equals("language")) {
-                        String optString2 = jSONObject.optString("lang");
-                        Log.d("Dictation", "tinyasr: language → " + optString2);
-                        if (!TextUtils.isEmpty(optString2)) {
-                            this.n = optString2;
+                        int length = i10 <= 0 ? str.length() : DictationAsr.p(str, str2.substring(0, i10), z10).length();
+                        if (!c2Var.i) {
+                            c2Var.d.M(length, c2Var.B);
                         }
                     }
-                    i10++;
-                } catch (Exception e10) {
-                    e = e10;
-                    i10 = i7;
-                    Log.e("Dictation", "tinyasr: events ".concat(str), e);
-                    i7 = i10;
-                    if (i7 == 0) {
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
                     }
                 }
-            }
-        } catch (Exception e11) {
-            e = e11;
-        }
-        if (i7 == 0) {
-            b(null);
+                break;
+            case 1:
+                g4 g4Var = (g4) this.e;
+                TLObject tLObject = (TLObject) this.f;
+                int i12 = this.b;
+                TLRPC.WebPage webPage = (TLRPC.WebPage) this.h;
+                gj gjVar = (gj) this.n;
+                boolean z11 = this.c;
+                String str4 = (String) this.d;
+                boolean z12 = tLObject instanceof TLRPC.TL_messages_webPage;
+                TLObject tLObject2 = tLObject;
+                if (z12) {
+                    TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
+                    np.s1(i12).Y3(tL_messages_webPage.users, false);
+                    np.s1(i12).S3(tL_messages_webPage.chats, false);
+                    tLObject2 = tL_messages_webPage.webpage;
+                }
+                if (!(tLObject2 instanceof TLRPC.TL_webPage)) {
+                    if (tLObject2 instanceof TLRPC.TL_webPageNotModified) {
+                        TLRPC.TL_webPageNotModified tL_webPageNotModified = (TLRPC.TL_webPageNotModified) tLObject2;
+                        TL_iv.Page page = webPage.cached_page;
+                        if (page != null) {
+                            int i13 = page.views;
+                            int i14 = tL_webPageNotModified.cached_page_views;
+                            if (i13 != i14) {
+                                page.views = i14;
+                                page.flags |= 8;
+                                while (true) {
+                                    k3[] k3VarArr = g4Var.v0;
+                                    if (i7 >= k3VarArr.length) {
+                                        if (gjVar != null) {
+                                            TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
+                                            tL_messages_messages.messages.add(gjVar.k);
+                                            vr.a0(i12).h1(-2, 0, gjVar.r1 ? 1 : 0, gj.B0(gjVar.k), 0L, tL_messages_messages, false);
+                                            break;
+                                        }
+                                    } else {
+                                        e4 e4Var = k3VarArr[i7].c;
+                                        if (e4Var.F == webPage && (K = g4Var.v0[i7].b.K(e4Var.b() - 1)) != null) {
+                                            g4Var.v0[i7].c.y(K);
+                                        }
+                                        i7++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject2;
+                    if (tL_webPage.cached_page != null) {
+                        if (!g4Var.e0.isEmpty() && g4Var.e0.get(0) == webPage) {
+                            if (gjVar != null) {
+                                gjVar.k.media.webpage = tL_webPage;
+                                TLRPC.TL_messages_messages tL_messages_messages2 = new TLRPC.TL_messages_messages();
+                                tL_messages_messages2.messages.add(gjVar.k);
+                                vr.a0(i12).h1(-2, 0, gjVar.r1 ? 1 : 0, gj.B0(gjVar.k), 0L, tL_messages_messages2, false);
+                            }
+                            if (z11) {
+                                g4Var.e0.add(tL_webPage);
+                            } else {
+                                g4Var.e0.set(0, tL_webPage);
+                            }
+                            if (g4Var.e0.size() == 1) {
+                                org.telegram.messenger.t0.b.getSharedPreferences("articles", 0).edit().remove("article" + tL_webPage.id).commit();
+                                g4Var.c0(z11 ? 1 : 0, tL_webPage, false);
+                                if (str4 != null) {
+                                    g4Var.T(str4, false);
+                                }
+                            }
+                        }
+                        a0.h hVar = new a0.h(1);
+                        hVar.k(tL_webPage, tL_webPage.id);
+                        vr a02 = vr.a0(i12);
+                        if (!vr.s0(hVar)) {
+                            a02.a.c(new xp(a02, hVar, i7));
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                vf.b bVar = (vf.b) this.e;
+                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.f;
+                TLObject tLObject3 = (TLObject) this.d;
+                int i15 = this.b;
+                Uri uri = (Uri) this.h;
+                Context context = (Context) this.n;
+                boolean z13 = this.c;
+                if (bVar != null) {
+                    bVar.b();
+                } else {
+                    try {
+                        t1VarArr[0].dismiss();
+                    } catch (Throwable unused) {
+                    }
+                    t1VarArr[0] = null;
+                }
+                if (tLObject3 instanceof TL_account.webPagePreview) {
+                    TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject3;
+                    np.s1(i15).Y3(webpagepreview.users, false);
+                    np.s1(i15).S3(webpagepreview.chats, false);
+                    TLRPC.MessageMedia messageMedia = webpagepreview.media;
+                    if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                        TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
+                        TLRPC.WebPage webPage2 = tL_messageMediaWebPage.webpage;
+                        if ((webPage2 instanceof TLRPC.TL_webPage) && webPage2.cached_page != null) {
+                            ns.f(i15).k(91, tL_messageMediaWebPage.webpage, uri.toString());
+                            break;
+                        }
+                    }
+                }
+                vf.c.q(context, uri, z13, false);
+                break;
         }
     }
 
-    public final void b(Runnable runnable) {
-        String sb2 = this.e.toString();
-        String str = this.h;
-        boolean z10 = this.j;
-        int i7 = this.i;
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int[] iArr = new int[size];
-        for (int i10 = 0; i10 < size; i10++) {
-            iArr[i10] = ((Integer) arrayList.get(i10)).intValue();
-        }
-        org.telegram.messenger.g0.h3(new u(this, iArr, sb2, str, z10, i7, runnable));
+    public /* synthetic */ v(g4 g4Var, TLObject tLObject, int i7, TLRPC.WebPage webPage, gj gjVar, boolean z10, String str) {
+        this.e = g4Var;
+        this.f = tLObject;
+        this.b = i7;
+        this.h = webPage;
+        this.n = gjVar;
+        this.c = z10;
+        this.d = str;
+    }
+
+    public /* synthetic */ v(vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, TLObject tLObject, int i7, Uri uri, Context context, boolean z10) {
+        this.e = bVar;
+        this.f = t1VarArr;
+        this.d = tLObject;
+        this.b = i7;
+        this.h = uri;
+        this.n = context;
+        this.c = z10;
     }
 }

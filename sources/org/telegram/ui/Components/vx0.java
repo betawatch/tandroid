@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class vx0 extends TableLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.ActionBar.e6 a;
@@ -252,7 +252,7 @@ public final class vx0 extends TableLayout implements org.telegram.ui.ActionBar.
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
             str3 = org.telegram.messenger.hd.M0(2131744949, null);
-            fq a10 = di.hb.a(44, "anonymous");
+            fq a10 = di.gb.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
             a10.e = L;
@@ -262,7 +262,7 @@ public final class vx0 extends TableLayout implements org.telegram.ui.ActionBar.
             z11 = false;
         } else if (org.telegram.messenger.q10.A(j3)) {
             str3 = org.telegram.messenger.hd.M0(2131744925, null);
-            fq a11 = di.hb.a(44, "fragment");
+            fq a11 = di.gb.a(44, "fragment");
             int L3 = org.telegram.messenger.g0.L(16.0f);
             int L4 = org.telegram.messenger.g0.L(16.0f);
             a11.e = L3;
@@ -319,7 +319,7 @@ public final class vx0 extends TableLayout implements org.telegram.ui.ActionBar.
         ImageReceiver imageReceiver = f5Var.b;
         if (j3 == 2666000) {
             str2 = org.telegram.messenger.hd.M0(2131744949, null);
-            fq a10 = di.hb.a(44, "anonymous");
+            fq a10 = di.gb.a(44, "anonymous");
             int L = org.telegram.messenger.g0.L(16.0f);
             int L2 = org.telegram.messenger.g0.L(16.0f);
             a10.e = L;
@@ -329,7 +329,7 @@ public final class vx0 extends TableLayout implements org.telegram.ui.ActionBar.
         } else {
             if (org.telegram.messenger.q10.A(j3)) {
                 str2 = org.telegram.messenger.hd.M0(2131744925, null);
-                fq a11 = di.hb.a(44, "fragment");
+                fq a11 = di.gb.a(44, "fragment");
                 int L3 = org.telegram.messenger.g0.L(16.0f);
                 int L4 = org.telegram.messenger.g0.L(16.0f);
                 a11.e = L3;

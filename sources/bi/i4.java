@@ -11,9 +11,9 @@ import android.widget.TextView;
 import c8.i9;
 import c8.ja;
 import c8.na;
-import di.k8;
-import di.m8;
-import di.v8;
+import di.j8;
+import di.l8;
+import di.u8;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +45,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.eh0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class i4 extends FrameLayout implements is {
     public static final HashMap V = new HashMap();
@@ -69,8 +69,8 @@ public abstract class i4 extends FrameLayout implements is {
     public final org.telegram.ui.ActionBar.e2 a;
     public final int b;
     public final long c;
-    public final m8 d;
-    public final k8 e;
+    public final l8 d;
+    public final j8 e;
     public final org.telegram.ui.ActionBar.e6 f;
     public final f3 h;
     public final v61 n;
@@ -110,11 +110,11 @@ public abstract class i4 extends FrameLayout implements is {
         } else {
             this.c = j3;
         }
-        v8.y(i7, false).P(this.c);
+        u8.y(i7, false).P(this.c);
         int i12 = 1;
-        m8 G = v8.y(i7, false).G(this.c, true);
+        l8 G = u8.y(i7, false).G(this.c, true);
         this.d = G;
-        k8 F = v8.y(i7, false).F(this.c, true);
+        j8 F = u8.y(i7, false).F(this.c, true);
         this.e = F;
         F.g = G;
         G.o = true;
@@ -247,24 +247,24 @@ public abstract class i4 extends FrameLayout implements is {
         o();
     }
 
-    public static void j(org.telegram.ui.ActionBar.z0 z0Var, m8 m8Var, Runnable runnable, int i7) {
-        z0Var.setOnClickListener(new x2(m8Var, i7, runnable, 0));
-        z0Var.setOnLongClickListener(new y2(m8Var, i7, runnable));
+    public static void j(org.telegram.ui.ActionBar.z0 z0Var, l8 l8Var, Runnable runnable, int i7) {
+        z0Var.setOnClickListener(new x2(l8Var, i7, runnable, 0));
+        z0Var.setOnLongClickListener(new y2(l8Var, i7, runnable));
     }
 
     public final void a() {
-        m8 m8Var;
+        l8 l8Var;
         c4 currentPage = getCurrentPage();
-        if (currentPage == null || (m8Var = currentPage.e) == null || !currentPage.d) {
+        if (currentPage == null || (l8Var = currentPage.e) == null || !currentPage.d) {
             return;
         }
-        int i7 = m8Var.d;
+        int i7 = l8Var.d;
         new e6(this.a, this.c, i7, new w2(this, i7, currentPage, 0)).show();
     }
 
     public final boolean b() {
-        k8 k8Var = this.e;
-        return k8Var.h() && k8Var.d().size() < ((org.telegram.messenger.j0) np.s1(this.b).y7.t.b).c;
+        j8 j8Var = this.e;
+        return j8Var.h() && j8Var.d().size() < ((org.telegram.messenger.j0) np.s1(this.b).y7.t.b).c;
     }
 
     public final boolean c() {
@@ -365,7 +365,7 @@ public abstract class i4 extends FrameLayout implements is {
         return (int) (org.telegram.messenger.g0.L(this.y) - translationY);
     }
 
-    public m8 getCurrentList() {
+    public l8 getCurrentList() {
         c4 currentPage = getCurrentPage();
         return currentPage != null ? currentPage.e : this.d;
     }
@@ -388,15 +388,15 @@ public abstract class i4 extends FrameLayout implements is {
 
     public int getGiftsCount() {
         int i7;
-        m8 m8Var;
+        l8 l8Var;
         int i10;
         c4 currentPage = getCurrentPage();
-        m8 m8Var2 = this.d;
-        if (currentPage == null || (m8Var = currentPage.e) == m8Var2) {
-            if (m8Var2 != null && (i7 = m8Var2.n) > 0) {
+        l8 l8Var2 = this.d;
+        if (currentPage == null || (l8Var = currentPage.e) == l8Var2) {
+            if (l8Var2 != null && (i7 = l8Var2.n) > 0) {
                 return i7;
             }
-        } else if (m8Var != null && (i10 = m8Var.n) > 0) {
+        } else if (l8Var != null && (i10 = l8Var.n) > 0) {
             return i10;
         }
         long j3 = this.c;
@@ -417,12 +417,12 @@ public abstract class i4 extends FrameLayout implements is {
 
     public long getLastEmojisHash() {
         long j3 = 0;
-        m8 m8Var = this.d;
-        if (m8Var != null && !m8Var.l.isEmpty()) {
+        l8 l8Var = this.d;
+        if (l8Var != null && !l8Var.l.isEmpty()) {
             HashSet hashSet = new HashSet();
             int i7 = 0;
-            for (int i10 = 0; i7 < 3 && i10 < m8Var.l.size(); i10++) {
-                TLRPC.Document document = ((TL_stars.SavedStarGift) m8Var.l.get(i10)).gift.getDocument();
+            for (int i10 = 0; i7 < 3 && i10 < l8Var.l.size(); i10++) {
+                TLRPC.Document document = ((TL_stars.SavedStarGift) l8Var.l.get(i10)).gift.getDocument();
                 if (document != null && hashSet.add(Long.valueOf(document.id))) {
                     j3 = Objects.hash(Long.valueOf(j3), Long.valueOf(document.id));
                     i7++;
@@ -523,9 +523,9 @@ public abstract class i4 extends FrameLayout implements is {
         }
         int i10 = i7 - 1;
         if (i10 >= 0) {
-            k8 k8Var = this.e;
-            if (i10 < k8Var.d().size()) {
-                m8 e10 = (i10 < 0 || i10 >= k8Var.d().size()) ? null : k8Var.e(((TL_stars.TL_starGiftCollection) k8Var.d().get(i10)).collection_id);
+            j8 j8Var = this.e;
+            if (i10 < j8Var.d().size()) {
+                l8 e10 = (i10 < 0 || i10 >= j8Var.d().size()) ? null : j8Var.e(((TL_stars.TL_starGiftCollection) j8Var.d().get(i10)).collection_id);
                 if (e10 != null) {
                     return e10.l.isEmpty();
                 }
@@ -639,15 +639,15 @@ public abstract class i4 extends FrameLayout implements is {
         }
         f(false);
         o();
-        m8 m8Var = this.d;
-        if (m8Var != null) {
-            m8Var.o = true;
-            m8Var.a();
+        l8 l8Var = this.d;
+        if (l8Var != null) {
+            l8Var.o = true;
+            l8Var.a();
         }
-        k8 k8Var = this.e;
-        if (k8Var != null) {
-            k8Var.j = true;
-            k8Var.i();
+        j8 j8Var = this.e;
+        if (j8Var != null) {
+            j8Var.j = true;
+            j8Var.i();
         }
     }
 
@@ -663,13 +663,13 @@ public abstract class i4 extends FrameLayout implements is {
         ns.f(i7).n(this, ns.G3);
         ns.f(i7).n(this, ns.H3);
         ns.f(i7).n(this, ns.r);
-        m8 m8Var = this.d;
-        if (m8Var != null) {
-            m8Var.o = false;
+        l8 l8Var = this.d;
+        if (l8Var != null) {
+            l8Var.o = false;
         }
-        k8 k8Var = this.e;
-        if (k8Var != null) {
-            k8Var.j = false;
+        j8 j8Var = this.e;
+        if (j8Var != null) {
+            j8Var.j = false;
         }
     }
 

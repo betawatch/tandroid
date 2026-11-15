@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import di.mb;
+import di.lb;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.np;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.vx0;
 import org.telegram.ui.Components.w61;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements z10 {
     public final /* synthetic */ int a = 1;
@@ -124,7 +124,7 @@ public final /* synthetic */ class r implements z10 {
                 Integer num = (Integer) obj;
                 long intValue = num.intValue();
                 jArr[0] = intValue;
-                ((hi.d) view).i(mb.Y0(false, hd.a0(null, null, 2131745156, hd.E(intValue, ',')), (eq[]) obj8), true, true);
+                ((hi.d) view).i(lb.Y0(false, hd.a0(null, null, 2131745156, hd.E(intValue, ',')), (eq[]) obj8), true, true);
                 s0Var.g = jArr[0];
                 ((n0) obj6).set(s0Var);
                 int intValue2 = num.intValue();
@@ -623,7 +623,7 @@ public final /* synthetic */ class r implements z10 {
                     eqVar.s = L;
                     spannableStringBuilder4.setSpan(eqVar, 0, 1, 33);
                     spannableStringBuilder4.append((CharSequence) hd.M0(2131743118, null));
-                    vx0Var.e(hd.M0(2131743121, null), spannableStringBuilder4, "?", new di.x7(i7, 7, j3, context, e6Var), null);
+                    vx0Var.e(hd.M0(2131743121, null), spannableStringBuilder4, "?", new di.w7(i7, 7, j3, context, e6Var), null);
                 }
                 r52 = 0;
                 if (wallettransaction.date == 0) {

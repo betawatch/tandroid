@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class p00 extends org.telegram.ui.ActionBar.e2 {
     public ah.a E;
@@ -216,7 +216,7 @@ public abstract class p00 extends org.telegram.ui.ActionBar.e2 {
     }
 
     public boolean n0() {
-        return !(this instanceof di.mb);
+        return !(this instanceof di.lb);
     }
 
     public View o0(Context context) {
@@ -390,7 +390,7 @@ public abstract class p00 extends org.telegram.ui.ActionBar.e2 {
     }
 
     public boolean z0() {
-        return this instanceof di.mb;
+        return this instanceof di.lb;
     }
 
     public void s0(boolean z10) {

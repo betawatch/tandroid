@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.t71;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ep extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is {
     public static final /* synthetic */ int g2 = 0;
@@ -59,7 +59,7 @@ public final class ep extends org.telegram.ui.ActionBar.u2 implements org.telegr
     public org.telegram.ui.ActionBar.p3 Q1;
     public org.telegram.ui.ActionBar.e2 R1;
     public ki S1;
-    public ai.j0 T1;
+    public ai.k0 T1;
     public h6 U1;
     public boolean V1;
     public eq W1;

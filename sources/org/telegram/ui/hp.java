@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hp implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class hp implements Runnable {
         TLRPC.GroupCall groupCall;
         int i7;
         TLRPC.TL_wallPaper tL_wallPaper;
-        jl0 jl0Var;
+        kl0 kl0Var;
         org.telegram.ui.Components.cc d;
         int i10;
         int i11;
@@ -121,7 +121,7 @@ public final /* synthetic */ class hp implements Runnable {
                         Object obj6 = y10.get(i20);
                         i20++;
                         ai.h hVar3 = (ai.h) obj6;
-                        a82.c(new ai.l0(chatActivityEnterView.getContext(), hVar3, u02, chatActivityEnterView.R, false), 48, new org.telegram.ui.Components.od(i19, hVar2, hVar3));
+                        a82.c(new ai.m0(chatActivityEnterView.getContext(), hVar3, u02, chatActivityEnterView.R, false), 48, new org.telegram.ui.Components.od(i19, hVar2, hVar3));
                     }
                     a82.I = new org.telegram.ui.Components.od(2, gfVar, nVar);
                     chatActivityEnterView.m1 = true;
@@ -480,23 +480,23 @@ public final /* synthetic */ class hp implements Runnable {
                     if (tLObject8 instanceof TLRPC.TL_payments_paymentFormStars) {
                         bi.h6 h6Var = launchActivity5.Y0;
                         launchActivity5.Y0 = null;
-                        di.v8.y(i23, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject8, new l90(q90Var, 1), new j70(h6Var, i19));
+                        di.u8.y(i23, false).X(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject8, new l90(q90Var, 1), new j70(h6Var, i19));
                         break;
                     } else {
                         if (tLObject8 instanceof TLRPC.PaymentForm) {
                             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject8;
                             org.telegram.messenger.np.s1(i23).Y3(paymentForm.users, false);
-                            jl0Var = new jl0(paymentForm, null, str12, LaunchActivity.T());
+                            kl0Var = new kl0(paymentForm, null, str12, LaunchActivity.T());
                         } else {
-                            jl0Var = tLObject8 instanceof TLRPC.PaymentReceipt ? new jl0((TLRPC.PaymentReceipt) tLObject8) : null;
+                            kl0Var = tLObject8 instanceof TLRPC.PaymentReceipt ? new kl0((TLRPC.PaymentReceipt) tLObject8) : null;
                         }
-                        if (jl0Var != null) {
+                        if (kl0Var != null) {
                             bi.h6 h6Var2 = launchActivity5.Y0;
                             if (h6Var2 != null) {
                                 launchActivity5.Y0 = null;
-                                jl0Var.a1 = new te(i18, h6Var2);
+                                kl0Var.a1 = new te(i18, h6Var2);
                             }
-                            q90Var.u(jl0Var, false);
+                            q90Var.u(kl0Var, false);
                         }
                     }
                 }
@@ -612,9 +612,9 @@ public final /* synthetic */ class hp implements Runnable {
                 if (tLObject12 instanceof TLRPC.PaymentForm) {
                     final TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject12;
                     ce0Var4.getMessagesController().Y3(paymentForm2.users, false);
-                    jl0 jl0Var2 = new jl0(tL_inputInvoicePremiumAuthCode, paymentForm2, null, null, 4, null, null, null, null, null, null, false, null, ce0Var4, true);
-                    jl0Var2.W0 = true;
-                    jl0Var2.d1 = new org.telegram.messenger.z10() { // from class: org.telegram.ui.gd0
+                    kl0 kl0Var2 = new kl0(tL_inputInvoicePremiumAuthCode, paymentForm2, null, null, 4, null, null, null, null, null, null, false, null, ce0Var4, true);
+                    kl0Var2.W0 = true;
+                    kl0Var2.d1 = new org.telegram.messenger.z10() { // from class: org.telegram.ui.gd0
                         @Override // org.telegram.messenger.z10
                         public final void a(Object obj7) {
                             switch (i20) {
@@ -711,7 +711,7 @@ public final /* synthetic */ class hp implements Runnable {
                             }
                         }
                     };
-                    jl0Var2.e1 = new org.telegram.messenger.z10() { // from class: org.telegram.ui.gd0
+                    kl0Var2.e1 = new org.telegram.messenger.z10() { // from class: org.telegram.ui.gd0
                         @Override // org.telegram.messenger.z10
                         public final void a(Object obj7) {
                             switch (i19) {
@@ -808,8 +808,8 @@ public final /* synthetic */ class hp implements Runnable {
                             }
                         }
                     };
-                    jl0Var2.f1 = new l00(kd0Var, i19);
-                    ce0Var4.presentFragment(jl0Var2);
+                    kl0Var2.f1 = new l00(kd0Var, i19);
+                    ce0Var4.presentFragment(kl0Var2);
                     break;
                 } else if (tL_error11 != null) {
                     if ("PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error11.text)) {
@@ -903,7 +903,7 @@ public final /* synthetic */ class hp implements Runnable {
                 ek0Var2.B1();
                 break;
             case 25:
-                jl0.k0((jl0) obj5, (TLRPC.TL_error) obj4, (TLObject) obj3, (String) obj2, (TL_account.getPassword) obj);
+                kl0.k0((kl0) obj5, (TLRPC.TL_error) obj4, (TLObject) obj3, (String) obj2, (TL_account.getPassword) obj);
                 break;
             case 26:
                 ClippingImageView[] clippingImageViewArr = (ClippingImageView[]) obj4;

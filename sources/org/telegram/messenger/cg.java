@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cg implements Runnable {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final /* synthetic */ class cg implements Runnable {
                         }
                         z10 = true;
                         npVar.t7.M(user.id);
-                        di.v8.y(npVar.currentAccount, false).Q(userFull);
+                        di.u8.y(npVar.currentAccount, false).Q(userFull);
                         npVar.r1.remove(Long.valueOf(user.id));
                         npVar.s1.put(user.id, System.currentTimeMillis());
                         str = user.first_name + user.last_name + q10.n(user);
@@ -187,7 +187,7 @@ public final /* synthetic */ class cg implements Runnable {
                 }
                 z10 = false;
                 npVar.t7.M(user.id);
-                di.v8.y(npVar.currentAccount, false).Q(userFull);
+                di.u8.y(npVar.currentAccount, false).Q(userFull);
                 npVar.r1.remove(Long.valueOf(user.id));
                 npVar.s1.put(user.id, System.currentTimeMillis());
                 str = user.first_name + user.last_name + q10.n(user);

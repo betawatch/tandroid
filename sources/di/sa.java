@@ -1,59 +1,49 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.ui.Components.a41;
+import org.telegram.ui.Components.b41;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class sa extends org.telegram.ui.Components.i9 {
-    public xh.e H;
-    public Path I;
-    public RectF J;
-    public Drawable K;
+public final class sa extends a41 {
+    public static final /* synthetic */ int b = 0;
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        RectF rectF = this.J;
-        Path path = this.I;
-        Drawable drawable = this.K;
-        super.dispatchDraw(canvas);
-        if (this.H == null) {
-            this.H = xh.e.e(this);
-        }
-        if (this.H != null) {
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            path.rewind();
-            path.addRoundRect(rectF, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
-            canvas2 = canvas;
-            this.H.c(canvas2, this, getWidth(), getHeight(), 1.0f, false);
-            canvas2.restore();
+    static {
+        a41.h(new sa());
+    }
+
+    @Override // org.telegram.ui.Components.a41
+    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        ta taVar = (ta) view;
+        org.telegram.ui.Components.h6 h6Var = taVar.a;
+        ImageView imageView = taVar.b;
+        int i7 = taVar.c;
+        int i10 = b41Var.d;
+        boolean z11 = i7 == i10;
+        taVar.c = i10;
+        h6Var.c(b41Var.l, z11, true);
+        org.telegram.ui.ActionBar.j6.v0(b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6);
+        org.telegram.ui.ActionBar.q6.Y(h6Var, b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, null);
+        org.telegram.ui.ActionBar.q6.s(imageView, b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, null, PorterDuff.Mode.SRC_IN);
+        if (z11) {
+            imageView.animate().rotation(b41Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(er.h);
         } else {
-            canvas2 = canvas;
+            imageView.setRotation(b41Var.f ? 0.0f : 180.0f);
         }
-        drawable.setBounds((getWidth() - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
-        drawable.draw(canvas2);
+        taVar.d = z10;
+        taVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
-    public final void onAttachedToWindow() {
-        xh.e eVar = this.H;
-        if (eVar != null) {
-            eVar.a(this);
-        }
-        super.onAttachedToWindow();
-    }
-
-    @Override // org.telegram.ui.Components.i9, android.view.View
-    public final void onDetachedFromWindow() {
-        xh.e eVar = this.H;
-        if (eVar != null) {
-            eVar.b(this);
-        }
-        super.onDetachedFromWindow();
+    @Override // org.telegram.ui.Components.a41
+    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new ta(context);
     }
 }

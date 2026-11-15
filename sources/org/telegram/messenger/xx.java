@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -192,7 +192,7 @@ public final /* synthetic */ class xx implements Runnable {
                             ezVar8.getMessagesController().Q.put(Long.valueOf(message6.dialog_id), num);
                         }
                         message6.unread = num.intValue() < message6.id;
-                        Utilities.d.c(new wq(19, ezVar8, tL_updateShortSentMessage));
+                        Utilities.d.c(new pq(20, ezVar8, tL_updateShortSentMessage));
                         arrayList6.add(message6);
                         i10 = o12;
                         j3 = 0;
@@ -645,10 +645,10 @@ public final /* synthetic */ class xx implements Runnable {
                     r52.getMessagesStorage().N0(r62, message3);
                     message3.send_state = 2;
                     if (tL_error != null && (str = tL_error.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                        di.v8.y(r52.currentAccount, false);
-                        message3.errorAllowedPriceStars = di.v8.o(tLObject);
+                        di.u8.y(r52.currentAccount, false);
+                        message3.errorAllowedPriceStars = di.u8.o(tLObject);
                         message3.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                        di.v8.y(r52.currentAccount, false).d0(Arrays.asList(gjVar));
+                        di.u8.y(r52.currentAccount, false).d0(Arrays.asList(gjVar));
                         r52.getMessagesStorage().X1(gj.B0(message3), message3);
                     }
                     r52.getNotificationCenter().k(23, Integer.valueOf(message3.id));

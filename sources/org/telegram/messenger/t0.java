@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.w80;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class t0 extends Application {
     public static volatile boolean E = true;
@@ -324,7 +324,7 @@ public abstract class t0 extends Application {
             if (f10 != null) {
                 np.s1(i7).X3(f10, true, false);
                 vr messagesStorage = ez.C(i7).getMessagesStorage();
-                messagesStorage.a.c(new oq(messagesStorage, 23));
+                messagesStorage.a.c(new nq(messagesStorage, 23));
             }
         }
         ((t0) b).getClass();

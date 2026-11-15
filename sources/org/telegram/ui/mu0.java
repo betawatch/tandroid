@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mu0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -52,9 +52,9 @@ public final /* synthetic */ class mu0 implements View.OnClickListener {
                 }
                 if (!org.telegram.ui.Components.ys0.J0(profileActivity.O.getClosestTab())) {
                     long e10 = profileActivity.getUserConfig().e();
-                    ai.k2 k2Var = profileActivity.B5;
-                    if (k2Var != null) {
-                        k2Var.run();
+                    ai.l2 l2Var = profileActivity.B5;
+                    if (l2Var != null) {
+                        l2Var.run();
                         profileActivity.B5 = null;
                     }
                     org.telegram.ui.Components.xb.e();
@@ -88,7 +88,7 @@ public final /* synthetic */ class mu0 implements View.OnClickListener {
                         profileActivity.getMessagesController().P1().q0(e10, arrayList, false);
                         boolean[] zArr2 = {false};
                         boolean z11 = z10;
-                        profileActivity.B5 = new ai.k2(profileActivity, e10, arrayList, z10, 3);
+                        profileActivity.B5 = new ai.l2(profileActivity, e10, arrayList, z10, 3);
                         bi.r1 r1Var = new bi.r1(profileActivity, zArr2, arrayList, zArr, e10, 16);
                         (z11 ? org.telegram.ui.Components.cc.a0(profileActivity).L(R.raw.contact_check, org.telegram.messenger.hd.G(i7, "StorySavedTitle", new Object[0]), org.telegram.messenger.hd.M0(2131744484, null), org.telegram.messenger.hd.M0(2131743885, null), r1Var).j() : org.telegram.ui.Components.cc.a0(profileActivity).J(R.raw.chats_archived, org.telegram.messenger.hd.G(i7, "StoryArchived", new Object[0]), org.telegram.messenger.hd.M0(2131743885, null), 5000, false, r1Var).j()).v = new mp0(19, profileActivity, zArr2);
                         break;
@@ -98,9 +98,9 @@ public final /* synthetic */ class mu0 implements View.OnClickListener {
                     uv0 uv0Var3 = profileActivity.O;
                     int w12 = uv0Var3.w1(uv0Var3.getClosestTab());
                     String w10 = profileActivity.getMessagesController().P1().w(w12, a10);
-                    ai.k2 k2Var2 = profileActivity.B5;
-                    if (k2Var2 != null) {
-                        k2Var2.run();
+                    ai.l2 l2Var2 = profileActivity.B5;
+                    if (l2Var2 != null) {
+                        l2Var2.run();
                         profileActivity.B5 = null;
                     }
                     org.telegram.ui.Components.xb.e();
@@ -116,9 +116,9 @@ public final /* synthetic */ class mu0 implements View.OnClickListener {
                     }
                     profileActivity.O.V(false);
                     if (!arrayList2.isEmpty()) {
-                        di.x7 x7Var = new di.x7(profileActivity, a10, w12, arrayList2);
+                        di.w7 w7Var = new di.w7(profileActivity, a10, w12, arrayList2);
                         profileActivity.getMessagesController().P1().f0(w12, a10, arrayList2);
-                        org.telegram.ui.Components.cc.a0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.hd.M0(2131743885, null), x7Var).j();
+                        org.telegram.ui.Components.cc.a0(profileActivity).K(R.raw.chats_archived, org.telegram.messenger.g0.X2(org.telegram.messenger.hd.G(arrayList2.size(), "StoryRemovedFromAlbumTitle", w10)), org.telegram.messenger.hd.M0(2131743885, null), w7Var).j();
                         break;
                     }
                 }

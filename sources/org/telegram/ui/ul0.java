@@ -1,72 +1,60 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ul0 implements org.telegram.messenger.z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vl0 b;
+public final class ul0 extends org.telegram.ui.Components.uj0 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ dm0 g3;
 
-    public /* synthetic */ ul0(vl0 vl0Var, int i7) {
-        this.a = i7;
-        this.b = vl0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ul0(dm0 dm0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
+        super(context, e6Var);
+        this.g3 = dm0Var;
+        this.f3 = i7;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7;
-        gm0 gm0Var;
-        cm0 cm0Var;
-        switch (this.a) {
-            case 0:
-                Integer num = (Integer) obj;
-                vl0 vl0Var = this.b;
-                cm0 cm0Var2 = vl0Var.e;
-                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) cm0Var2.N.get(num);
-                cm0Var2.L = starGift;
-                im0 im0Var = cm0Var2.q0;
-                if (starGift == null) {
-                    bi.o5 o5Var = cm0Var2.K;
-                    if (o5Var != null) {
-                        o5Var.f();
-                        cm0Var2.K = null;
-                    }
-                } else {
-                    bi.o5 o5Var2 = cm0Var2.K;
-                    if (o5Var2 == null || o5Var2.b != starGift.id) {
-                        i7 = ((org.telegram.ui.ActionBar.e2) im0Var).currentAccount;
-                        bi.o5 o5Var3 = new bi.o5(i7, cm0Var2.L.id, new ul0(vl0Var, 2));
-                        cm0Var2.K = o5Var3;
-                        o5Var3.g(false);
-                    }
-                }
-                cm0.a(cm0Var2);
-                (im0Var.J.getCurrentPosition() == 1 ? im0Var.n : im0Var.h).e();
-                break;
-            case 1:
-                cm0 cm0Var3 = this.b.e;
-                cm0Var3.h = ((Integer) obj).intValue();
-                cm0Var3.r = null;
-                cm0Var3.s = null;
-                cm0Var3.J = null;
-                cm0Var3.j(true);
-                cm0Var3.i();
-                cm0Var3.f(true);
-                bm0 bm0Var = cm0Var3.E;
-                if (bm0Var != null) {
-                    bm0Var.invalidate();
-                }
-                im0 im0Var2 = cm0Var3.q0;
-                cm0 cm0Var4 = im0Var2.n;
-                if (cm0Var4 != null && (gm0Var = cm0Var4.a) != null && (cm0Var = im0Var2.h) != null) {
-                    gm0Var.a(cm0Var.h);
-                    break;
-                }
-                break;
-            default:
-                this.b.e.e();
-                break;
+    @Override // org.telegram.ui.Components.uj0
+    public final Integer V0(int i7) {
+        dm0 dm0Var = this.g3;
+        if ((i7 < dm0Var.c0 || i7 >= dm0Var.d0) && (i7 < dm0Var.e0 || i7 >= dm0Var.f0)) {
+            return super.V0(i7);
         }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        dm0 dm0Var = this.g3;
+        if (!dm0Var.H || dm0Var.F == null || dm0Var.G == null) {
+            return;
+        }
+        int save = canvas.save();
+        canvas.translate(dm0Var.F.getLeft() + dm0Var.G.getLeft(), dm0Var.G.getTop());
+        dm0Var.F.draw(canvas);
+        canvas.restoreToCount(save);
+    }
+
+    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        dm0 dm0Var = this.g3;
+        jm0 jm0Var = dm0Var.q0;
+        dm0Var.h();
+        if (dm0Var.L != null) {
+            if (dm0Var.K == null || !dm0Var.c()) {
+                return;
+            }
+            dm0Var.K.g(false);
+            return;
+        }
+        di.l8 l8Var = this.f3 == 1 ? jm0Var.c : jm0Var.b;
+        if (l8Var == null || !dm0Var.c()) {
+            return;
+        }
+        l8Var.a();
     }
 }

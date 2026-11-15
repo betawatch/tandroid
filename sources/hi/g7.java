@@ -27,7 +27,7 @@ import org.telegram.ui.hw;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g7 implements z10 {
     public final /* synthetic */ int a;
@@ -394,20 +394,20 @@ public final /* synthetic */ class g7 implements z10 {
                 }
                 break;
             case 28:
-                tg.m2 m2Var = (tg.m2) this.b;
-                m2Var.n = (Bitmap) obj;
+                tg.l2 l2Var = (tg.l2) this.b;
+                l2Var.n = (Bitmap) obj;
                 Paint paint2 = new Paint(1);
-                m2Var.s = paint2;
-                Bitmap bitmap4 = m2Var.n;
+                l2Var.s = paint2;
+                Bitmap bitmap4 = l2Var.n;
                 Shader.TileMode tileMode3 = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader2 = new BitmapShader(bitmap4, tileMode3, tileMode3);
-                m2Var.r = bitmapShader2;
+                l2Var.r = bitmapShader2;
                 paint2.setShader(bitmapShader2);
                 ColorMatrix colorMatrix2 = new ColorMatrix();
                 org.telegram.messenger.g0.i(colorMatrix2, org.telegram.ui.ActionBar.j6.I.q() ? 0.08f : 0.25f);
                 org.telegram.messenger.g0.h(colorMatrix2, org.telegram.ui.ActionBar.j6.I.q() ? -0.02f : -0.07f);
-                m2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-                m2Var.w = new Matrix();
+                l2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+                l2Var.w = new Matrix();
                 break;
             default:
                 ((ug.j0) this.b).y1((HashMap) obj);

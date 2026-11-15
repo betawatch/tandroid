@@ -21,11 +21,11 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.su;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.wu;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t6 extends org.telegram.ui.ActionBar.e2 {
     public final /* synthetic */ int a;
@@ -52,51 +52,51 @@ public final class t6 extends org.telegram.ui.ActionBar.e2 {
                 this.actionBar.setActionBarMenuOnItemClick(new lx(this, 17));
                 this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
                 org.telegram.ui.ActionBar.k kVar = this.actionBar;
-                y80 y80Var = (y80) this.b;
-                kVar.setTitle(hd.M0(y80Var.a ? 2131744436 : 2131748635, null));
+                z80 z80Var = (z80) this.b;
+                kVar.setTitle(hd.M0(z80Var.a ? 2131744436 : 2131748635, null));
                 org.telegram.ui.ActionBar.q0 a10 = this.actionBar.s().a(0, R.drawable.outline_header_search);
                 a10.O();
                 a10.I = new kg.x1(this, 16);
                 a10.setSearchFieldHint(hd.M0(2131745836, null));
                 a10.setVisibility(8);
-                org.telegram.ui.ActionBar.e2 e2Var = y80Var.g;
-                if (y80Var.m == null) {
+                org.telegram.ui.ActionBar.e2 e2Var = z80Var.g;
+                if (z80Var.m == null) {
                     FrameLayout frameLayout = new FrameLayout(e2Var.getParentActivity());
-                    y80Var.m = frameLayout;
+                    z80Var.m = frameLayout;
                     org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.a7, frameLayout, e2Var.getResourceProvider());
-                    pz b10 = y80Var.b();
-                    y80Var.q = b10;
-                    y80Var.m.addView(b10, -1, -1);
-                    cv0 c10 = y80Var.c();
-                    y80Var.o = c10;
-                    y80Var.m.addView(c10, -1, -1);
-                    cv0 a11 = y80Var.a();
-                    y80Var.n = a11;
-                    y80Var.m.addView(a11, ja.c(-1.0f, -1));
+                    pz b10 = z80Var.b();
+                    z80Var.q = b10;
+                    z80Var.m.addView(b10, -1, -1);
+                    cv0 c10 = z80Var.c();
+                    z80Var.o = c10;
+                    z80Var.m.addView(c10, -1, -1);
+                    cv0 a11 = z80Var.a();
+                    z80Var.n = a11;
+                    z80Var.m.addView(a11, ja.c(-1.0f, -1));
                     e2Var.getParentActivity();
                     v4.b0 b0Var = new v4.b0();
                     uj0 uj0Var = new uj0(e2Var.getParentActivity(), null);
-                    y80Var.p = uj0Var;
-                    uj0Var.setAdapter(y80Var.f);
-                    y80Var.p.r1();
-                    y80Var.p.setLayoutManager(b0Var);
-                    y80Var.p.setOnItemClickListener(new b6(y80Var, 25));
-                    y80Var.p.setOnScrollListener(y80Var.D);
-                    org.telegram.ui.ActionBar.q6.J(y80Var.p, org.telegram.ui.ActionBar.j6.i6, e2Var.getResourceProvider());
-                    y80Var.m.addView(y80Var.p, -1, -1);
+                    z80Var.p = uj0Var;
+                    uj0Var.setAdapter(z80Var.f);
+                    z80Var.p.r1();
+                    z80Var.p.setLayoutManager(b0Var);
+                    z80Var.p.setOnItemClickListener(new b6(z80Var, 25));
+                    z80Var.p.setOnScrollListener(z80Var.D);
+                    org.telegram.ui.ActionBar.q6.J(z80Var.p, org.telegram.ui.ActionBar.j6.i6, e2Var.getResourceProvider());
+                    z80Var.m.addView(z80Var.p, -1, -1);
                     v4.k kVar2 = new v4.k();
                     kVar2.n(350L);
                     kVar2.o(er.h);
                     kVar2.C = false;
                     kVar2.m = false;
-                    y80Var.p.setItemAnimator(kVar2);
+                    z80Var.p.setItemAnimator(kVar2);
                 }
-                FrameLayout frameLayout2 = y80Var.m;
+                FrameLayout frameLayout2 = z80Var.m;
                 org.telegram.ui.ActionBar.k kVar3 = this.actionBar;
-                uj0 uj0Var2 = y80Var.p;
+                uj0 uj0Var2 = z80Var.p;
                 kVar3.getClass();
                 kVar3.D(uj0Var2, org.telegram.ui.ActionBar.j6.a7, org.telegram.ui.ActionBar.j6.s8);
-                y80Var.e();
+                z80Var.e();
                 this.fragmentView = frameLayout2;
                 return frameLayout2;
             default:
@@ -301,7 +301,7 @@ public final class t6 extends org.telegram.ui.ActionBar.e2 {
     public boolean onBackPressed(boolean z10) {
         switch (this.a) {
             case 10:
-                zh.k kVar = ((y80) this.b).s;
+                zh.k kVar = ((z80) this.b).s;
                 if (kVar == null) {
                     return true;
                 }
@@ -388,7 +388,7 @@ public final class t6 extends org.telegram.ui.ActionBar.e2 {
     public t6(long j3) {
         super(null);
         this.a = 10;
-        this.b = new y80(this, this, getLayoutContainer(), j3);
+        this.b = new z80(this, this, getLayoutContainer(), j3);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

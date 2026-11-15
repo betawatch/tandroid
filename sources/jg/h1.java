@@ -15,7 +15,7 @@ import android.widget.TextView;
 import bi.v2;
 import c8.ja;
 import di.a3;
-import di.ub;
+import di.tb;
 import fi.s5;
 import j$.util.List;
 import j$.util.Map;
@@ -58,7 +58,7 @@ import org.telegram.ui.Cells.f5;
 import org.telegram.ui.Cells.h2;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.e90;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.i9;
@@ -67,7 +67,7 @@ import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h1 extends tj0 implements is {
     public Location A0;
@@ -98,7 +98,7 @@ public final class h1 extends tj0 implements is {
     public long T;
     public TLRPC.TL_inlineBotSwitchPM U;
     public TLRPC.TL_inlineBotWebView V;
-    public final d90 W;
+    public final e90 W;
     public a0.h X;
     public int Y;
     public int Z;
@@ -144,10 +144,10 @@ public final class h1 extends tj0 implements is {
     public boolean M0 = false;
     public int N0 = -1;
 
-    public h1(Context context, long j3, long j10, d90 d90Var, e6 e6Var, boolean z10) {
+    public h1(Context context, long j3, long j10, e90 e90Var, e6 e6Var, boolean z10) {
         this.I0 = e6Var;
         this.h = context;
-        this.W = d90Var;
+        this.W = e90Var;
         this.n = j3;
         this.s = z10;
         this.r = j10;
@@ -486,7 +486,7 @@ public final class h1 extends tj0 implements is {
         TLRPC.Chat chat;
         this.u0 = 0;
         this.J0.p();
-        d90 d90Var = this.W;
+        e90 e90Var = this.W;
         if (user == null || !user.bot || user.bot_inline_placeholder == null) {
             this.x0 = null;
             this.U = null;
@@ -504,7 +504,7 @@ public final class h1 extends tj0 implements is {
                 this.i0 = t6;
                 if (!t6) {
                     f();
-                    d90Var.a(true);
+                    e90Var.a(true);
                     return;
                 }
             }
@@ -529,8 +529,8 @@ public final class h1 extends tj0 implements is {
             this.w0 = true;
             this.U = null;
         } else {
-            if (d90Var != null) {
-                d90Var.b(true);
+            if (e90Var != null) {
+                e90Var.b(true);
             }
             T(true, this.x0, this.s0, "");
         }
@@ -550,12 +550,12 @@ public final class h1 extends tj0 implements is {
         TLRPC.User user = this.x0;
         if (user == null || (str4 = user.username) == null || !str4.equals(str) || (str5 = this.s0) == null || !str5.equals(str2)) {
             TLRPC.User user2 = this.x0;
-            d90 d90Var = this.W;
+            e90 e90Var = this.W;
             if (user2 != null) {
                 if (!this.i0 && str != null && str2 != null) {
                     return;
                 } else {
-                    d90Var.a(false);
+                    e90Var.a(false);
                 }
             }
             z0 z0Var = this.z0;
@@ -579,19 +579,19 @@ public final class h1 extends tj0 implements is {
                 this.s0 = null;
                 this.J0.p();
                 this.w0 = false;
-                if (d90Var != null) {
-                    d90Var.b(false);
+                if (e90Var != null) {
+                    e90Var.b(false);
                 }
                 if (str != null) {
                 }
             }
             if (str2 != null) {
-                if (d90Var != null) {
+                if (e90Var != null) {
                     if (this.x0 != null) {
-                        d90Var.b(true);
+                        e90Var.b(true);
                     } else if (str.equals("gif")) {
                         this.r0 = "gif";
-                        d90Var.b(false);
+                        e90Var.b(false);
                     }
                 }
                 np s12 = np.s1(this.f);
@@ -607,8 +607,8 @@ public final class h1 extends tj0 implements is {
                 this.v0 = 0;
             }
             this.s0 = null;
-            if (d90Var != null) {
-                d90Var.b(false);
+            if (e90Var != null) {
+                e90Var.b(false);
             }
         }
     }
@@ -620,9 +620,9 @@ public final class h1 extends tj0 implements is {
             this.v0 = 0;
         }
         if (!this.i0 || !this.d) {
-            d90 d90Var = this.W;
-            if (d90Var != null) {
-                d90Var.b(false);
+            e90 e90Var = this.W;
+            if (e90Var != null) {
+                e90Var.b(false);
                 return;
             }
             return;
@@ -747,7 +747,7 @@ public final class h1 extends tj0 implements is {
     /* JADX WARN: Type inference failed for: r11v58 */
     /* JADX WARN: Type inference failed for: r11v81 */
     /* JADX WARN: Type inference failed for: r11v82 */
-    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.d90] */
+    /* JADX WARN: Type inference failed for: r12v0, types: [org.telegram.ui.Components.e90] */
     /* JADX WARN: Type inference failed for: r27v0, types: [java.lang.Object, jg.h1, v4.h0] */
     /* JADX WARN: Type inference failed for: r3v24, types: [jg.f1] */
     /* JADX WARN: Type inference failed for: r6v18 */
@@ -1608,7 +1608,7 @@ public final class h1 extends tj0 implements is {
         String str;
         String str2;
         int i7 = this.N0;
-        d90 d90Var = this.W;
+        e90 e90Var = this.W;
         int i10 = 0;
         if (i7 != -1 && this.L0 != null) {
             int K = K();
@@ -1643,15 +1643,15 @@ public final class h1 extends tj0 implements is {
             }
             p(min, i7 - min);
             o(min, K - min);
-            if (z10 && d90Var != null) {
-                d90Var.c();
+            if (z10 && e90Var != null) {
+                e90Var.c();
             }
             this.L0 = objArr;
             return;
         }
-        if (d90Var != null) {
+        if (e90Var != null) {
             this.N0 = K();
-            d90Var.c();
+            e90Var.c();
         }
         super.f();
         int K2 = K();
@@ -1839,7 +1839,7 @@ public final class h1 extends tj0 implements is {
                         ArrayList arrayList9 = this.R;
                         boolean booleanValue = ((arrayList9 == null || i10 < 0 || i10 >= arrayList9.size()) ? null : (Boolean) this.R.get(i10)).booleanValue();
                         String str3 = (String) this.K.get(i10);
-                        ub ubVar = f5Var.b;
+                        tb tbVar = f5Var.b;
                         TextView textView2 = f5Var.c;
                         t8 t8Var = f5Var.d;
                         i9 i9Var2 = f5Var.a;
@@ -1864,9 +1864,9 @@ public final class h1 extends tj0 implements is {
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str3);
                             spannableStringBuilder.append((CharSequence) " *");
                             spannableStringBuilder.setSpan(eqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                            ubVar.setText(spannableStringBuilder);
+                            tbVar.setText(spannableStringBuilder);
                         } else {
-                            ubVar.setText(str3);
+                            tbVar.setText(str3);
                         }
                         textView2.setText(j6.m(str2, textView2.getPaint().getFontMetricsInt(), false, null, 0));
                     }

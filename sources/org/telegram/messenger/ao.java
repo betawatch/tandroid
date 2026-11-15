@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ao implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -319,11 +319,11 @@ public final /* synthetic */ class ao implements RequestDelegate {
                     Typeface typeface2 = g0.a;
                     encryptedChat2.layer = (i13 & (-65536)) | ns.h2;
                     vr messagesStorage = bwVar2.getMessagesStorage();
-                    messagesStorage.a.c(new bq(messagesStorage, encryptedChat2, 2));
+                    messagesStorage.a.c(new aq(messagesStorage, encryptedChat2, 2));
                 }
                 if (tL_error != null) {
                     bwVar2.getMessagesStorage().N0(0, message);
-                    g0.h3(new wq(17, bwVar2, message));
+                    g0.h3(new pq(18, bwVar2, message));
                     break;
                 } else {
                     String str2 = message.attachPath;

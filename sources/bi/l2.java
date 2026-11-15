@@ -10,13 +10,13 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.text.TextUtils;
 import android.view.View;
-import di.bc;
+import di.ac;
 import org.telegram.messenger.a20;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class l2 extends a5.h {
     public oy0 c;
@@ -27,7 +27,7 @@ public class l2 extends a5.h {
     public final Paint n;
     public final Paint r;
     public final float s;
-    public bc w;
+    public ac w;
     public boolean x;
     public int y;
 
@@ -104,9 +104,9 @@ public class l2 extends a5.h {
             canvas.drawPath(path, paint);
         }
         canvas.drawPath(path, (Paint) this.b);
-        bc bcVar = this.w;
+        ac acVar = this.w;
         float f10 = this.s;
-        if (bcVar != null) {
+        if (acVar != null) {
             float f11 = f10 * 48.0f;
             canvas2 = canvas;
             canvas2.saveLayer(0.0f, 0.0f, org.telegram.messenger.g0.L(f11), org.telegram.messenger.g0.L(f11), null);

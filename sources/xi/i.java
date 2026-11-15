@@ -37,11 +37,11 @@ import org.telegram.ui.Components.lv0;
 import org.telegram.ui.ld0;
 import org.telegram.ui.n1;
 import org.telegram.ui.web.p1;
-import tg.a2;
+import tg.z1;
 import ug.t1;
 import vg.o;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class i implements c00 {
     public static i A;
@@ -130,7 +130,7 @@ public final class i implements c00 {
                         webView.setWebViewClient(new n1(iVar, 4));
                         HashSet hashSet = new HashSet();
                         hashSet.add(iVar.f);
-                        d5.b.a(webView, "TelegramWebProxy", hashSet, new a2(iVar, 16));
+                        d5.b.a(webView, "TelegramWebProxy", hashSet, new z1(iVar, 16));
                         webView.loadUrl(iVar.g);
                     } catch (Exception e10) {
                         a8.g(e10, true);

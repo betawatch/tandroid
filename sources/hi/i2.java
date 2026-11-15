@@ -8,7 +8,7 @@ import org.telegram.messenger.ns;
 import org.telegram.messenger.si;
 import org.telegram.messenger.v10;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class i2 extends org.telegram.ui.ActionBar.u2 implements is {
     public static int C1 = 1;
@@ -110,7 +110,7 @@ public class i2 extends org.telegram.ui.ActionBar.u2 implements is {
 
     public final void M0(int i7) {
         if (I0(Integer.valueOf(i7))) {
-            if ((i7 != 1 || K0(new ai.v0(this, i7, 7))) && ((Boolean) this.B1.a(Integer.valueOf(i7))).booleanValue()) {
+            if ((i7 != 1 || K0(new ai.w0(this, i7, 7))) && ((Boolean) this.B1.a(Integer.valueOf(i7))).booleanValue()) {
                 dismiss();
             }
         }

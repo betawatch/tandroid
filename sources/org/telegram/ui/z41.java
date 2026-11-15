@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z41 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public boolean A0;
@@ -334,7 +334,7 @@ public final class z41 extends org.telegram.ui.ActionBar.e2 implements org.teleg
                 long j3 = -z41Var.b;
                 int i22 = z41Var.classGuid;
                 messagesStorage.getClass();
-                messagesStorage.a.c(new org.telegram.messenger.tp(messagesStorage, org.telegram.messenger.xz.d(null, "MessagesStorage.getMessages: storageQueue.postRunnable"), null, j3, 0L, size2, b10, 0, 0, i22, 0, 0, 0L, 0, true, false));
+                messagesStorage.a.c(new org.telegram.messenger.qp(messagesStorage, org.telegram.messenger.xz.d(null, "MessagesStorage.getMessages: storageQueue.postRunnable"), null, j3, 0L, size2, b10, 0, 0, i22, 0, 0, 0L, 0, true, false));
             }
             r15 = 0;
             final Object[] objArr = 0 == true ? 1 : 0;

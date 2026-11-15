@@ -3,7 +3,7 @@ package bi;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import di.v8;
+import di.u8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.s10;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements s10 {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class n implements s10 {
                     textView2.setMaxLines(5);
                     yVar.h1();
                     xb.f(frameLayout, tbVar, 2750).j();
-                    v8.y(yVar.a, false).q(null, false, true);
+                    u8.y(yVar.a, false).q(null, false, true);
                 }
                 if (str != null) {
                     yVar.h1();

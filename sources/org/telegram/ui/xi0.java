@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.q1, ss, org.telegram.ui.Components.r4, org.telegram.messenger.j9, org.telegram.messenger.pi, org.telegram.ui.Components.hj0, org.telegram.ui.Components.ij0, mr0, org.telegram.messenger.nr, ex0 {
     public final /* synthetic */ int a;
@@ -256,10 +256,10 @@ public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.q1, 
                 ek0.Z((ek0) obj2, (TLRPC.TL_auth_passwordRecovery) obj);
                 break;
             case 4:
-                jl0 jl0Var = (jl0) obj2;
-                jl0Var.c0 = true;
-                jl0Var.b0.email_unconfirmed_pattern = (String) obj;
-                jl0Var.P0();
+                kl0 kl0Var = (kl0) obj2;
+                kl0Var.c0 = true;
+                kl0Var.b0.email_unconfirmed_pattern = (String) obj;
+                kl0Var.P0();
                 break;
             case 7:
                 PhotoViewer.u(((oo0) obj2).b, (ArrayList) obj);
@@ -341,7 +341,7 @@ public final /* synthetic */ class xi0 implements org.telegram.ui.ActionBar.q1, 
                                     org.telegram.messenger.np.s1(photoViewer.U).l0(tL_inputPhoto);
                                 }
                                 org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(photoViewer.U);
-                                a02.a.c(new org.telegram.messenger.sp(4, photoViewer.z5, photo.id, a02));
+                                a02.a.c(new org.telegram.messenger.pp(4, photoViewer.z5, photo.id, a02));
                                 arrayList2.remove(photoViewer.P4);
                                 photoViewer.c7.remove(photoViewer.P4);
                                 photoViewer.b7.remove(photoViewer.P4);

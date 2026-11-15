@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class d4 extends c1 {
     public static volatile p5 s = new p5("chatThemeQueue");
@@ -279,7 +279,7 @@ public final class d4 extends c1 {
         vr messagesStorage = getMessagesStorage();
         u3 u3Var = new u3(this, 0);
         messagesStorage.getClass();
-        messagesStorage.I(new wq(4, messagesStorage, u3Var));
+        messagesStorage.I(new pq(6, messagesStorage, u3Var));
         n("❌");
         if (this.b.isEmpty()) {
             return;
@@ -375,7 +375,7 @@ public final class d4 extends c1 {
             hashMap.put(tL_chatThemeUniqueGift.gift.slug, p3Var);
             vr messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
-            messagesStorage.I(new wq(3, messagesStorage, Collections.singletonList(chatTheme)));
+            messagesStorage.I(new pq(5, messagesStorage, Collections.singletonList(chatTheme)));
         }
     }
 

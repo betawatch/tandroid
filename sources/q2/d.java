@@ -35,16 +35,16 @@ import sg.j1;
 import sg.k1;
 import sg.s0;
 import sg.x0;
-import tg.a2;
-import tg.d2;
-import tg.o2;
+import tg.c2;
+import tg.n2;
+import tg.z1;
 import ug.j0;
 import ug.m1;
 import ug.q0;
 import ug.w1;
 import v4.b0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -184,10 +184,10 @@ public final /* synthetic */ class d implements Runnable {
                 c5Var.s();
                 return;
             case 17:
-                si.b0(m10.t0).d(2, null, ((d2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                si.b0(m10.t0).d(2, null, ((c2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 18:
-                org.telegram.messenger.g0.J3(((o2) this.b).r0);
+                org.telegram.messenger.g0.J3(((n2) this.b).r0);
                 return;
             case 19:
                 u2.f fVar = (u2.f) this.b;
@@ -213,7 +213,7 @@ public final /* synthetic */ class d implements Runnable {
                 }
             case 20:
                 c0 c0Var = (c0) this.b;
-                ((v5.g) ((w5.c) c0Var.e)).f(new a2(c0Var, 5));
+                ((v5.g) ((w5.c) c0Var.e)).f(new z1(c0Var, 5));
                 return;
             case 21:
                 j0 j0Var = ((ug.c0) this.b).c;

@@ -11,10 +11,10 @@ import android.widget.TextView;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.i20;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.f30;
+import org.telegram.ui.Components.fa0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final TextView a;
@@ -68,11 +68,11 @@ public final class x5 extends FrameLayout {
         this.a.setText(str);
         org.telegram.ui.ActionBar.e6 e6Var = this.h;
         boolean a10 = e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
-        ea0 ea0Var = new ea0(1);
-        ea0Var.b(f30Var.a, f30Var.b);
-        ea0Var.b = a10;
+        fa0 fa0Var = new fa0(1);
+        fa0Var.b(f30Var.a, f30Var.b);
+        fa0Var.b = a10;
         ImageView imageView = this.c;
-        imageView.setBackground(ea0Var);
+        imageView.setBackground(fa0Var);
         imageView.setImageResource(i7);
         boolean z11 = this.e;
         Switch r02 = this.d;

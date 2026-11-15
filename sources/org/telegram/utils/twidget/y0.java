@@ -10,14 +10,14 @@ import org.json.JSONObject;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.vr;
-import org.telegram.messenger.yq;
+import org.telegram.messenger.wq;
 import org.telegram.ui.Components.hk0;
 import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.q71;
 import org.telegram.ui.ah0;
 import org.telegram.ui.n31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class y0 {
     public boolean A;
@@ -260,7 +260,7 @@ public final class y0 {
                     boolean z12 = this.l;
                     if (f10 > 0 && h.f == 0 && !h.k && n0.l(h.a()).a(f10, max2, z12)) {
                         vr a02 = vr.a0(h.b);
-                        a02.a.c(new yq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
+                        a02.a.c(new wq(a02, h.c, h.d, f10, max2, z12 ? 1 : 0, 1));
                     }
                     hk0 hk0Var = h.u;
                     if (hk0Var != null) {

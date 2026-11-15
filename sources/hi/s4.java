@@ -15,7 +15,7 @@ import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.zg;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s4 implements a20 {
     public final /* synthetic */ int a;
@@ -55,13 +55,14 @@ public final /* synthetic */ class s4 implements a20 {
                     m5Var.I0(null, new bi.b(m5Var, 29));
                     return Boolean.TRUE;
                 }
-                int i12 = 3;
-                int i13 = 2;
+                int i12 = 4;
+                int i13 = 3;
                 if (num.intValue() == 5) {
                     zArr[0] = false;
-                    c8.ka.c(R.raw.permission_request_location, 2131747302, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new di.t7(i12, new di.t7(i13, new ai.u1(15, m5Var, a5Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
+                    c8.ka.c(R.raw.permission_request_location, 2131747302, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new String[]{"android.permission.ACCESS_COARSE_LOCATION"}, new ai.u2(i12, new ai.u2(i13, new ai.v1(15, m5Var, a5Var), c12 == true ? 1 : 0), c11 == true ? 1 : 0));
                     return Boolean.FALSE;
                 }
+                int i14 = 2;
                 if (num.intValue() == 2) {
                     a5Var.dismiss();
                     sa saVar = ((u9) m5Var).k2;
@@ -73,8 +74,8 @@ public final /* synthetic */ class s4 implements a20 {
                 }
                 if (num.intValue() == 1) {
                     zArr[0] = false;
-                    v6 v6Var = new v6(m5Var.getContext(), false, null, new ai.f0(m5Var, 27), new fi.b());
-                    v6Var.n(new j4(m5Var, i13));
+                    v6 v6Var = new v6(m5Var.getContext(), false, null, new ai.g0(m5Var, 27), new fi.b());
+                    v6Var.n(new j4(m5Var, i14));
                     v6Var.show();
                     return Boolean.TRUE;
                 }
@@ -94,13 +95,13 @@ public final /* synthetic */ class s4 implements a20 {
                     new cc(k2Var, e5Var).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.x2(hd.M0(2131744635, null), new j4(m5Var, c10 == true ? 1 : 0))).k(true);
                     return Boolean.FALSE;
                 }
-                int i14 = 0;
-                for (int i15 = 0; i15 < h5Var.getChildCount(); i15++) {
-                    if (h5Var.getChildAt(i15) instanceof tg.k0) {
-                        i14++;
+                int i15 = 0;
+                for (int i16 = 0; i16 < h5Var.getChildCount(); i16++) {
+                    if (h5Var.getChildAt(i16) instanceof tg.k0) {
+                        i15++;
                     }
                 }
-                if (i14 >= 3) {
+                if (i15 >= 3) {
                     new cc(k2Var, e5Var).I(R.raw.linkbroken, hd.M0(2131744638, null), hd.G(3, "StoryLinkLimitMessage", new Object[0])).k(true);
                     return Boolean.FALSE;
                 }
@@ -123,11 +124,11 @@ public final /* synthetic */ class s4 implements a20 {
                 F.l(R.drawable.msg_edit, hd.M0(2131754996, null), new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i16 = i10;
+                        int i17 = i10;
                         TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
                         org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
                         d0 d0Var2 = d0Var;
-                        switch (i16) {
+                        switch (i17) {
                             case 0:
                                 y yVar = new y(d0Var2.getContext(), e6Var2);
                                 yVar.f2 = tL_aiComposeTone2;
@@ -157,16 +158,16 @@ public final /* synthetic */ class s4 implements a20 {
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, hd.M0(2131754983, null), new org.telegram.ui.ActionBar.m5(d0Var, tL_aiComposeTone, context, e6Var, 15), false);
+                F.c(R.drawable.msg_share, hd.M0(2131754983, null), new org.telegram.ui.ActionBar.l5(d0Var, tL_aiComposeTone, context, e6Var, 16), false);
                 F.m(R.drawable.msg_delete, new zg(19, d0Var, tL_aiComposeTone), hd.M0(2131754985, null), !tL_aiComposeTone.creator, true);
                 F.m(R.drawable.msg_delete, new Runnable() { // from class: org.telegram.ui.Components.e
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i16 = i11;
+                        int i17 = i11;
                         TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
                         org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
                         d0 d0Var2 = d0Var;
-                        switch (i16) {
+                        switch (i17) {
                             case 0:
                                 y yVar = new y(d0Var2.getContext(), e6Var2);
                                 yVar.f2 = tL_aiComposeTone2;

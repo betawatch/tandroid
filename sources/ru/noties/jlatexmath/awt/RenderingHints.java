@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public class RenderingHints {
     public static final Key KEY_ANTIALIASING = null;
@@ -10,7 +10,7 @@ public class RenderingHints {
     public static final Object VALUE_RENDER_QUALITY = null;
     public static final Object VALUE_TEXT_ANTIALIAS_ON = null;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static abstract class Key {
     }
 }

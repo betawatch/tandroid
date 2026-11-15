@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.s81;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p11 extends FrameLayout implements org.telegram.messenger.is, te.b, org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int m0 = 0;
@@ -1771,7 +1771,7 @@ public final class p11 extends FrameLayout implements org.telegram.messenger.is,
                 npVar = s12;
                 p11Var = this;
                 tL_forumTopic2 = tL_forumTopic;
-                I.c(z12 ? R.drawable.msg_unpin : R.drawable.msg_pin, org.telegram.messenger.hd.M0(z12 ? 2131751452 : 2131751453, null), new ma0(this, I, npVar, tL_forumTopic, 7), false);
+                I.c(z12 ? R.drawable.msg_unpin : R.drawable.msg_pin, org.telegram.messenger.hd.M0(z12 ? 2131751452 : 2131751453, null), new u80(this, I, npVar, tL_forumTopic, 8), false);
                 if (tL_forumTopic2.pinned && !z10) {
                     I.c(R.drawable.tabs_reorder, org.telegram.messenger.hd.M0(2131750707, null), new z01(p11Var, i12), false);
                 }
@@ -1868,7 +1868,7 @@ public final class p11 extends FrameLayout implements org.telegram.messenger.is,
             final org.telegram.ui.ActionBar.z0 y11 = J.y();
             J.c(R.drawable.msg_mute_period, org.telegram.messenger.hd.M0(2131748308, null), new ci.p0(I, resourceProvider, currentAccount, ynVar, 21), false);
             J.c(R.drawable.msg_customize, org.telegram.messenger.hd.M0(2131747917, null), new ao(I, j13, j12, anVar, resourceProvider), false);
-            J.c(0, "", new di.g9(I, currentAccount, j13, j12, anVar, resourceProvider), false);
+            J.c(0, "", new di.f9(I, currentAccount, j13, j12, anVar, resourceProvider), false);
             final org.telegram.ui.ActionBar.z0 y12 = J.y();
             new Runnable() { // from class: org.telegram.ui.Components.bo
                 @Override // java.lang.Runnable

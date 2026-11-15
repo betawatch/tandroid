@@ -1,8 +1,8 @@
 package d3;
 
 import a8.p0;
+import di.bb;
 import di.c6;
-import di.cb;
 import di.f2;
 import di.k3;
 import fi.u0;
@@ -25,7 +25,7 @@ import org.telegram.ui.yw;
 import zi.r0;
 import zi.v0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -58,9 +58,9 @@ public final /* synthetic */ class e0 implements Runnable {
                 return;
             case 1:
                 c6 c6Var = (c6) this.d;
-                cb cbVar = new cb(c6Var.getContext(), c6Var.J0, this.b, 11, null, new f2(c6Var, new boolean[]{false}, this.c, (z10) this.e, 2), 0L);
-                cbVar.setOnDismissListener(new k3(c6Var, 1));
-                cbVar.show();
+                bb bbVar = new bb(c6Var.getContext(), c6Var.J0, this.b, 11, null, new f2(c6Var, new boolean[]{false}, this.c, (z10) this.e, 2), 0L);
+                bbVar.setOnDismissListener(new k3(c6Var, 1));
+                bbVar.show();
                 return;
             case 2:
                 ((u0) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);

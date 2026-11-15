@@ -6,10 +6,10 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.ActionBar.m5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class g2 implements RequestDelegate {
                 VoIPPreNotificationService.lambda$decline$4(i11, tLObject, tL_error);
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new l5(i11, tLObject));
+                org.telegram.messenger.g0.h3(new m5(i11, tLObject));
                 break;
             case 4:
                 if (tLObject instanceof TLRPC.TL_updates) {
@@ -46,11 +46,11 @@ public final /* synthetic */ class g2 implements RequestDelegate {
                 break;
             case 5:
                 String str = LaunchActivity.C1;
-                org.telegram.messenger.g0.h3(new l5(i11, 2, tLObject));
+                org.telegram.messenger.g0.h3(new m5(i11, 2, tLObject));
                 break;
             default:
                 String str2 = LaunchActivity.C1;
-                org.telegram.messenger.g0.h3(new l5(i11, i10, tLObject));
+                org.telegram.messenger.g0.h3(new m5(i11, i10, tLObject));
                 break;
         }
     }

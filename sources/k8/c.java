@@ -2,7 +2,7 @@ package k8;
 
 import a8.q;
 import a8.r7;
-import ai.j0;
+import ai.k0;
 import android.location.Location;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.rk;
 import org.telegram.ui.y90;
 import v7.i;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c extends q {
     public final /* synthetic */ int b = 1;
@@ -82,7 +82,7 @@ public final class c extends q {
                     eaVar2.c = new HashMap();
                     eaVar2.a = aVar;
                     aVar2.accept(eaVar2);
-                    r7Var.n((j0) r7Var.b);
+                    r7Var.n((k0) r7Var.b);
                     parcel2.writeNoException();
                     break;
                 }

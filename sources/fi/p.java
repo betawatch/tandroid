@@ -31,7 +31,7 @@ import org.telegram.ui.Components.gh0;
 import org.telegram.ui.Components.i10;
 import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p extends FrameLayout {
     public org.telegram.ui.ActionBar.j5 E;
@@ -319,7 +319,7 @@ public final class p extends FrameLayout {
                     h7Var2.e = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     ofFloat.addUpdateListener(new ah.h(this, 13));
-                    ofFloat.addListener(new ai.i0(this, 9));
+                    ofFloat.addListener(new ai.j0(this, 9));
                     qvVar2 = qvVar3;
                     ofFloat.setDuration(100L);
                     ofFloat.start();

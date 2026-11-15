@@ -1,16 +1,16 @@
 package li;
 
 import android.view.View;
-import di.wa;
+import di.va;
 import org.telegram.messenger.hd;
 import org.telegram.ui.Components.n61;
 import org.telegram.ui.Wallet.u2;
 import org.telegram.ui.Wallet.w2;
-import org.telegram.ui.im0;
+import org.telegram.ui.jm0;
 import org.telegram.ui.kt;
 import org.telegram.ui.nt;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class x extends n61 {
     public final /* synthetic */ int a;
@@ -58,19 +58,19 @@ public final class x extends n61 {
                 ntVar.e.add(ktVar);
                 return ktVar;
             case 2:
-                im0 im0Var = (im0) this.b;
+                jm0 jm0Var = (jm0) this.b;
                 if (i7 == 1) {
-                    return im0Var.h;
+                    return jm0Var.h;
                 }
                 if (i7 == 0) {
-                    return im0Var.n;
+                    return jm0Var.n;
                 }
                 return null;
             case 3:
                 return (View) ((w2) this.b).n1.get(i7);
             default:
-                wa waVar = (wa) this.b;
-                return i7 != 1 ? i7 != 2 ? (sg.o) waVar.b : (sg.p) waVar.d : (sg.n) waVar.c;
+                va vaVar = (va) this.b;
+                return i7 != 1 ? i7 != 2 ? (sg.o) vaVar.b : (sg.p) vaVar.d : (sg.n) vaVar.c;
         }
     }
 

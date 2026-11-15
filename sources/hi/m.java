@@ -42,7 +42,7 @@ import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.st0;
 import org.telegram.ui.yo0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
@@ -173,7 +173,7 @@ public abstract class m extends FrameLayout {
         jVar2.g.setColor(0);
         jVar2.invalidateSelf();
         paint.setColor(TLObject.FLAG_31);
-        this.M = new p3(frameLayout, false, new ai.f0(this, 20));
+        this.M = new p3(frameLayout, false, new ai.g0(this, 20));
         g gVar = new g(this, context, st0Var, getEditTextStyle(), new fi.b(), e6Var, u9Var);
         this.f = gVar;
         gVar.T = true;

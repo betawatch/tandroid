@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -153,7 +153,7 @@ public final /* synthetic */ class l1 implements View.OnClickListener {
                     int intValue = ((Integer) arrayList2.get(i10)).intValue();
                     TLRPC.User f10 = org.telegram.messenger.m10.i(intValue).f();
                     if (f10 != null) {
-                        F.e(intValue, iArr2[0] == intValue, new ai.f1(iArr2, intValue, t8Var, f10, i9Var, 25));
+                        F.e(intValue, iArr2[0] == intValue, new ai.g1(iArr2, intValue, t8Var, f10, i9Var, 25));
                     }
                     i10 = i11;
                 }

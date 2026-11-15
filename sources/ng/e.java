@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.mb;
+import di.lb;
 import j6.o;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -218,7 +218,7 @@ public class e extends FrameLayout {
                         charSequence = String.format("%.2f", Float.valueOf(f11)) + g0.g0[i22];
                     }
                 } else if (i20 == 0) {
-                    charSequence = mb.a1(false, i5.c.l(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = lb.a1(false, i5.c.l(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + r1.i().f((long) (j11 / f10), "USD");
                 }
@@ -226,7 +226,7 @@ public class e extends FrameLayout {
                 if (i10 == 1) {
                     textView3.setText(hd.a0(null, null, i20 == 0 ? 2131752251 : 2131752250, aVar.d));
                 } else if (i10 == 2) {
-                    textView3.setText(mb.a1(false, hd.a0(null, null, i20 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
+                    textView3.setText(lb.a1(false, hd.a0(null, null, i20 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
                 } else {
                     textView3.setText(aVar.d);
                 }

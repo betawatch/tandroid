@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class qc extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public TLRPC.EmojiStatus E;
@@ -1259,8 +1259,8 @@ public class qc extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
             this.I = f10;
             z9Var.setOverrideBackground(f10);
         }
-        if (F02 instanceof fm0) {
-            ((fm0) F02).a(this.f, z10);
+        if (F02 instanceof gm0) {
+            ((gm0) F02).a(this.f, z10);
         } else if (F02 instanceof hc) {
             ((hc) F02).a(this.f, z10);
         }
@@ -1312,8 +1312,8 @@ public class qc extends org.telegram.ui.ActionBar.e2 implements org.telegram.mes
             icVar3.a(this.f);
             jcVar3.updateColors();
         }
-        if (F02 instanceof fm0) {
-            ((fm0) F02).a(this.s, true);
+        if (F02 instanceof gm0) {
+            ((gm0) F02).a(this.s, true);
         } else if (F02 instanceof hc) {
             ((hc) F02).a(this.f, true);
         }

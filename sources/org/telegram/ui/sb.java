@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class sb extends FrameLayout {
     public int E;
@@ -105,7 +105,7 @@ public final class sb extends FrameLayout {
         addView(this.I, c8.ja.d(org.telegram.messenger.ns.P3, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         this.I.setAlpha(0.0f);
         this.I.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-        di.v8.y(i7, false).v();
+        di.u8.y(i7, false).v();
     }
 
     public final void a(CountDownLatch countDownLatch, ob obVar) {

@@ -30,7 +30,7 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class u extends ja {
     public final int T1;
@@ -97,7 +97,7 @@ public final class u extends ja {
                                     TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
                                     inputaicomposetonesingleuse.custom_prompt = trim;
                                     tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
-                                    uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.d1(uVar, 21));
+                                    uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.e1(uVar, 21));
                                     org.telegram.messenger.g0.v1(k3Var.d);
                                     break;
                                 }
@@ -172,7 +172,7 @@ public final class u extends ja {
                                     TL_aicompose.inputAiComposeToneSingleUse inputaicomposetonesingleuse = new TL_aicompose.inputAiComposeToneSingleUse();
                                     inputaicomposetonesingleuse.custom_prompt = trim;
                                     tL_messages_composeRichMessageWithAI.tone = inputaicomposetonesingleuse;
-                                    uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.d1(uVar, 21));
+                                    uVar.d2 = ConnectionsManager.getInstance(uVar.T1).sendRequest(tL_messages_composeRichMessageWithAI, new ai.e1(uVar, 21));
                                     org.telegram.messenger.g0.v1(k3Var2.d);
                                     break;
                                 }

@@ -32,7 +32,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class mi0 extends FrameLayout implements org.telegram.messenger.is, org.telegram.ui.ActionBar.z5 {
     public static final org.telegram.ui.Cells.g1 m1 = new org.telegram.ui.Cells.g1(Float.class, "transitionProgress", 2);
@@ -70,7 +70,7 @@ public class mi0 extends FrameLayout implements org.telegram.messenger.is, org.t
     public boolean R0;
     public FrameLayout S;
     public z70 S0;
-    public ai.j0 T;
+    public ai.k0 T;
     public int T0;
     public final ArrayList U;
     public int U0;
@@ -211,7 +211,7 @@ public class mi0 extends FrameLayout implements org.telegram.messenger.is, org.t
         c1Var.i(new yh0(this, i12));
         int i13 = 11;
         c1Var.setOnItemClickListener(new j(this, i13));
-        c1Var.setOnItemLongClickListener((ij0) new ai.r1(this, i7, i13));
+        c1Var.setOnItemLongClickListener((ij0) new ai.s1(this, i7, i13));
         addView(c1Var, c8.ja.c(-1.0f, -1));
         setClipChildren(false);
         setClipToPadding(false);
@@ -1396,9 +1396,9 @@ public class mi0 extends FrameLayout implements org.telegram.messenger.is, org.t
         org.telegram.messenger.g0.d0(c1Var, xh0Var);
         this.D0.clear();
         c1Var.invalidate();
-        ai.j0 j0Var = this.T;
-        if (j0Var != null) {
-            j0Var.invalidate();
+        ai.k0 k0Var = this.T;
+        if (k0Var != null) {
+            k0Var.invalidate();
         }
         invalidate();
     }

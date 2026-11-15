@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import di.sb;
+import di.rb;
 import di.x2;
 import hi.lb;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.wb;
 import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class k0 implements mi.e {
     public final Context a;
@@ -43,7 +43,7 @@ public final class k0 implements mi.e {
     public final long e;
     public final TLRPC.Chat f;
     public j0 h;
-    public sb i;
+    public rb i;
     public String k;
     public int l;
     public boolean m;
@@ -159,9 +159,9 @@ public final class k0 implements mi.e {
                 q6.U(textView, j6.q7, null);
                 return;
             }
-            sb sbVar = this.i;
-            if (sbVar != null) {
-                sbVar.run();
+            rb rbVar = this.i;
+            if (rbVar != null) {
+                rbVar.run();
             }
             this.i = null;
             t1 t1Var = new t1(3, this.a, this.b);
@@ -190,11 +190,11 @@ public final class k0 implements mi.e {
         int i10 = z10 ? 2131751880 : 2131751879;
         int i11 = this.d;
         SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, i10, m5.s(i11, j3)));
-        sb sbVar = this.i;
-        if (sbVar != null) {
-            sbVar.run();
+        rb rbVar = this.i;
+        if (rbVar != null) {
+            rbVar.run();
         }
-        this.i = new sb(this, j3, z10, 2);
+        this.i = new rb(this, j3, z10, 2);
         Context context = this.a;
         e6 e6Var = this.b;
         wb wbVar = new wb(context, e6Var, false);

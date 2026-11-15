@@ -24,7 +24,7 @@ import org.telegram.ui.sw;
 import org.telegram.ui.u91;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -57,7 +57,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 if (s0Var.u1.d0) {
                     int i7 = this.b;
                     if (!np.s1(i7).v2()) {
-                        v8 x10 = v8.x(i7, s0Var.C1.a);
+                        u8 x10 = u8.x(i7, s0Var.C1.a);
                         cg.a l10 = x10.e ? cg.a.l(x10.p()) : null;
                         if (!s0Var.n1 && (l10 == null || l10.b < s0Var.C1.b)) {
                             cg.a aVar = s0Var.C1;
@@ -70,7 +70,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                             } else {
                                 long a10 = aVar.a();
                                 long j3 = this.c;
-                                new cb(context, e6Var, a10, 13, qg.c.h(i7, j3), null, j3).show();
+                                new bb(context, e6Var, a10, 13, qg.c.h(i7, j3), null, j3).show();
                                 break;
                             }
                         } else {

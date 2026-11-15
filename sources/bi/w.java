@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.LinearLayout;
 import c8.ja;
-import di.mb;
+import di.lb;
 import org.telegram.messenger.is;
 import org.telegram.messenger.ns;
 import org.telegram.messenger.q10;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.t8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class w extends LinearLayout implements is {
     public final i9 a;
@@ -56,7 +56,7 @@ public final class w extends LinearLayout implements is {
     }
 
     public final void a(long j3, boolean z10) {
-        this.d.c(mb.a1(false, i5.c.l((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(lb.a1(false, i5.c.l((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i7, boolean z10, boolean z11) {

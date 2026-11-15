@@ -24,10 +24,10 @@ import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.mt0;
 import org.telegram.ui.Components.um0;
 import org.telegram.ui.g71;
-import tg.y1;
+import tg.x1;
 import ug.x;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class h {
     public static final mt0 Q = new mt0(new x(21), new x(22));
@@ -244,7 +244,7 @@ public final class h {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.v = duration;
         duration.setInterpolator(er.f);
-        this.v.addUpdateListener(new y1(this, 7));
+        this.v.addUpdateListener(new x1(this, 7));
         this.v.addListener(new g71(this, 25));
         this.v.start();
     }

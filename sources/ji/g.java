@@ -1,12 +1,12 @@
 package ji;
 
-import ai.b2;
-import ai.m0;
-import ai.s;
+import ai.c2;
+import ai.n0;
+import ai.t;
 import org.telegram.messenger.z10;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements z10 {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final /* synthetic */ class g implements z10 {
 
     @Override // org.telegram.messenger.z10
     public final void a(Object obj) {
-        b2 b2Var;
+        c2 c2Var;
         p pVar;
-        b2 b2Var2;
+        c2 c2Var2;
         Integer num = (Integer) obj;
         switch (this.a) {
             case 0:
@@ -31,7 +31,7 @@ public final /* synthetic */ class g implements z10 {
                 mVar.getClass();
                 if (num.intValue() != 0) {
                     String str = this.c[num.intValue() - 1];
-                    s H = DictationAsr.H(str);
+                    t H = DictationAsr.H(str);
                     boolean z10 = (H == null || DictationAsr.w(H)) ? false : true;
                     DictationAsr.S(str);
                     DictationAsr.s(H);
@@ -61,10 +61,10 @@ public final /* synthetic */ class g implements z10 {
                     }
                     p pVar2 = mVar.h;
                     if (pVar2 != null) {
-                        pVar2.setLanguage(m0.l(str));
+                        pVar2.setLanguage(n0.l(str));
                     }
-                    if (mVar.c == 2 && (b2Var = mVar.f) != null) {
-                        b2Var.p(str);
+                    if (mVar.c == 2 && (c2Var = mVar.f) != null) {
+                        c2Var.p(str);
                     }
                     mVar.t();
                     break;
@@ -76,7 +76,7 @@ public final /* synthetic */ class g implements z10 {
             default:
                 if (num.intValue() != 0) {
                     String str2 = this.c[num.intValue() - 1];
-                    s H2 = DictationAsr.H(str2);
+                    t H2 = DictationAsr.H(str2);
                     boolean z11 = (H2 == null || DictationAsr.w(H2)) ? false : true;
                     DictationAsr.S(str2);
                     DictationAsr.s(H2);
@@ -85,14 +85,14 @@ public final /* synthetic */ class g implements z10 {
                         mVar2.M.clear();
                         mVar2.n();
                     }
-                    String l10 = m0.l(str2);
+                    String l10 = n0.l(str2);
                     mVar2.l0 = l10;
                     e eVar = mVar2.K;
                     if (eVar != null) {
                         eVar.setLanguage(l10);
                     }
-                    if (mVar2.c == 2 && (b2Var2 = mVar2.f) != null) {
-                        b2Var2.p(str2);
+                    if (mVar2.c == 2 && (c2Var2 = mVar2.f) != null) {
+                        c2Var2.p(str2);
                     }
                     mVar2.t();
                     break;

@@ -31,7 +31,7 @@ import org.telegram.ui.e81;
 import org.telegram.ui.nb1;
 import org.telegram.ui.rc1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u11 implements Runnable {
     public final /* synthetic */ int a;
@@ -220,7 +220,7 @@ public final /* synthetic */ class u11 implements Runnable {
                 org.telegram.ui.ek0.c0((org.telegram.ui.ek0) this.c, (org.telegram.messenger.cw) this.d, this.b);
                 break;
             case 7:
-                org.telegram.ui.jl0 jl0Var = (org.telegram.ui.jl0) this.c;
+                org.telegram.ui.kl0 kl0Var = (org.telegram.ui.kl0) this.c;
                 int i19 = this.b;
                 Intent intent = (Intent) this.d;
                 if (i19 != -1) {
@@ -232,9 +232,9 @@ public final /* synthetic */ class u11 implements Runnable {
                         sb2.append(status != null ? status.b : "");
                         org.telegram.messenger.a8.d(sb2.toString());
                     }
-                    jl0Var.N0(z10, false);
-                    jl0Var.J0(false);
-                    frameLayout = jl0Var.Q;
+                    kl0Var.N0(z10, false);
+                    kl0Var.J0(false);
+                    frameLayout = kl0Var.Q;
                     if (frameLayout == null) {
                         frameLayout.setClickable(z10);
                         break;
@@ -249,24 +249,24 @@ public final /* synthetic */ class u11 implements Runnable {
                             JSONObject jSONObject2 = jSONObject.getJSONObject("tokenizationData");
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
-                            if (jl0Var.L0 == null && jl0Var.N0 == null) {
+                            if (kl0Var.L0 == null && kl0Var.N0 == null) {
                                 org.telegram.ui.ld0 a10 = c8.yc.a(string);
-                                jl0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a10.b, (String) a10.d);
+                                kl0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a10.b, (String) a10.d);
                                 uc.a aVar = (uc.a) a10.c;
-                                jl0Var.y0 = aVar.a() + " *" + aVar.b();
-                                jl0Var.z0();
+                                kl0Var.y0 = aVar.a() + " *" + aVar.b();
+                                kl0Var.z0();
                             }
                             TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay = new TLRPC.TL_inputPaymentCredentialsGooglePay();
-                            jl0Var.K0 = tL_inputPaymentCredentialsGooglePay;
+                            kl0Var.K0 = tL_inputPaymentCredentialsGooglePay;
                             tL_inputPaymentCredentialsGooglePay.payment_token = new TLRPC.TL_dataJSON();
-                            jl0Var.K0.payment_token.data = jSONObject2.toString();
+                            kl0Var.K0.payment_token.data = jSONObject2.toString();
                             String optString = jSONObject.optString("description");
                             if (TextUtils.isEmpty(optString)) {
-                                jl0Var.y0 = "Android Pay";
+                                kl0Var.y0 = "Android Pay";
                             } else {
-                                jl0Var.y0 = optString;
+                                kl0Var.y0 = optString;
                             }
-                            jl0Var.z0();
+                            kl0Var.z0();
                         } catch (JSONException e12) {
                             z10 = true;
                             org.telegram.messenger.a8.g(e12, true);
@@ -274,9 +274,9 @@ public final /* synthetic */ class u11 implements Runnable {
                     }
                 }
                 z10 = true;
-                jl0Var.N0(z10, false);
-                jl0Var.J0(false);
-                frameLayout = jl0Var.Q;
+                kl0Var.N0(z10, false);
+                kl0Var.J0(false);
+                frameLayout = kl0Var.Q;
                 if (frameLayout == null) {
                 }
                 break;

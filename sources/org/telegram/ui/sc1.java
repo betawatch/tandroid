@@ -29,7 +29,7 @@ import org.telegram.ui.an;
 import vg.o;
 import wg.z;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sc1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
         boolean z10;
         View view2;
         FrameLayout frameLayout;
-        tg.c2 j3;
+        tg.b2 j3;
         int i7 = 24;
         final int i10 = 0;
         final int i11 = 1;
@@ -167,10 +167,10 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                 org.telegram.ui.Components.jn.i0((an) this.c, 41026, new hi.g7((sh.b) this.b, 26), null);
                 return;
             case 4:
-                tg.f2 f2Var = (tg.f2) this.b;
+                tg.e2 e2Var = (tg.e2) this.b;
                 hi.kb kbVar = (hi.kb) this.c;
-                tg.c2[] c2VarArr = f2Var.I;
-                if (c2VarArr == null || c2VarArr.length == 0 || f2Var.J == null || (j3 = f2Var.j(f2Var.o0, f2Var.p0)) == null) {
+                tg.b2[] b2VarArr = e2Var.I;
+                if (b2VarArr == null || b2VarArr.length == 0 || e2Var.J == null || (j3 = e2Var.j(e2Var.o0, e2Var.p0)) == null) {
                     return;
                 }
                 kbVar.a(j3);
@@ -178,7 +178,7 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
             case 5:
                 ug.j0 j0Var = (ug.j0) this.b;
                 Context context2 = (Context) this.c;
-                org.telegram.ui.ActionBar.e2 e2Var = j0Var.G2;
+                org.telegram.ui.ActionBar.e2 e2Var2 = j0Var.G2;
                 int i12 = j0Var.d2;
                 if (i12 == 11 || i12 == 34) {
                     return;
@@ -193,13 +193,13 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                         j0Var.dismiss();
                         return;
                     } else {
-                        if (e2Var == null) {
+                        if (e2Var2 == null) {
                             return;
                         }
-                        if (e2Var.getVisibleDialog() != null) {
-                            e2Var.getVisibleDialog().dismiss();
+                        if (e2Var2.getVisibleDialog() != null) {
+                            e2Var2.getVisibleDialog().dismiss();
                         }
-                        e2Var.presentFragment(new PremiumPreviewFragment(0, ug.j0.u1(i12)));
+                        e2Var2.presentFragment(new PremiumPreviewFragment(0, ug.j0.u1(i12)));
                         j0Var.dismiss();
                         return;
                     }
@@ -226,11 +226,11 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                     }
                     j0Var.b2 = true;
                     j0Var.t2.e0 = false;
-                    org.telegram.ui.ActionBar.e2 e2Var2 = j0Var.s1;
+                    org.telegram.ui.ActionBar.e2 e2Var3 = j0Var.s1;
                     org.telegram.messenger.e3 e3Var2 = j0Var.Y1;
-                    wg.o0 o0Var = new wg.o0(e2Var2, e3Var2.h, e3Var2.k);
+                    wg.o0 o0Var = new wg.o0(e2Var3, e3Var2.h, e3Var2.k);
                     o0Var.show();
-                    o0Var.I0 = new di.r9(j0Var, 13);
+                    o0Var.I0 = new di.q9(j0Var, 13);
                     return;
                 }
                 if (!z11) {
@@ -332,11 +332,11 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                             case 0:
                                 TLRPC.User user2 = user;
                                 if (user2 != null) {
-                                    e2 e2Var3 = c1Var2.s1;
-                                    if (e2Var3 != null) {
+                                    e2 e2Var4 = c1Var2.s1;
+                                    if (e2Var4 != null) {
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("user_id", user2.id);
-                                        e2Var3.presentFragment(new an(bundle));
+                                        e2Var4.presentFragment(new an(bundle));
                                         break;
                                     } else {
                                         e2 T = LaunchActivity.T();
@@ -354,11 +354,11 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                             default:
                                 TLRPC.User user3 = user;
                                 if (user3 != null) {
-                                    e2 e2Var4 = c1Var2.s1;
-                                    if (e2Var4 != null) {
+                                    e2 e2Var5 = c1Var2.s1;
+                                    if (e2Var5 != null) {
                                         Bundle bundle3 = new Bundle();
                                         bundle3.putLong("user_id", user3.id);
-                                        e2Var4.presentFragment(new ProfileActivity(bundle3, null));
+                                        e2Var5.presentFragment(new ProfileActivity(bundle3, null));
                                         break;
                                     } else {
                                         e2 T2 = LaunchActivity.T();
@@ -383,11 +383,11 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                             case 0:
                                 TLRPC.User user2 = user;
                                 if (user2 != null) {
-                                    e2 e2Var3 = c1Var2.s1;
-                                    if (e2Var3 != null) {
+                                    e2 e2Var4 = c1Var2.s1;
+                                    if (e2Var4 != null) {
                                         Bundle bundle = new Bundle();
                                         bundle.putLong("user_id", user2.id);
-                                        e2Var3.presentFragment(new an(bundle));
+                                        e2Var4.presentFragment(new an(bundle));
                                         break;
                                     } else {
                                         e2 T = LaunchActivity.T();
@@ -405,11 +405,11 @@ public final /* synthetic */ class sc1 implements View.OnClickListener {
                             default:
                                 TLRPC.User user3 = user;
                                 if (user3 != null) {
-                                    e2 e2Var4 = c1Var2.s1;
-                                    if (e2Var4 != null) {
+                                    e2 e2Var5 = c1Var2.s1;
+                                    if (e2Var5 != null) {
                                         Bundle bundle3 = new Bundle();
                                         bundle3.putLong("user_id", user3.id);
-                                        e2Var4.presentFragment(new ProfileActivity(bundle3, null));
+                                        e2Var5.presentFragment(new ProfileActivity(bundle3, null));
                                         break;
                                     } else {
                                         e2 T2 = LaunchActivity.T();

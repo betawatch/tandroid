@@ -1,47 +1,187 @@
 package di;
 
 import android.content.Context;
-import org.telegram.messenger.hd;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import org.telegram.messenger.i20;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class tb extends gc {
-    public final /* synthetic */ boolean n0;
-    public final /* synthetic */ int o0;
-    public final /* synthetic */ jc p0;
+public final class tb extends TextView {
+    public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tb(jc jcVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, int i7) {
-        super(context, e6Var);
-        this.p0 = jcVar;
-        this.n0 = z10;
-        this.o0 = i7;
+    public /* synthetic */ tb(Context context, int i7) {
+        super(context);
+        this.a = i7;
     }
 
-    @Override // di.gc
-    public final void e(int i7) {
-        long j3 = i7;
-        jc jcVar = this.p0;
-        jcVar.N0(j3);
-        hi.d dVar = jcVar.x1;
-        if (dVar != null) {
-            dVar.i(mb.Y0(false, hd.a0(null, null, 2131745047, hd.E(j3, ',')), jcVar.N1), true, true);
-        }
-        if (this.n0) {
-            fi.s0 s0Var = jcVar.B1;
-            s0Var.g = j3;
-            jcVar.C1.set(s0Var);
-            int i10 = this.o0;
-            f(fi.t.b(i10, i7, 3), fi.t.b(i10, i7, 4), true);
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                if (getPaddingLeft() > 0) {
+                    canvas.drawCircle((getPaddingLeft() - org.telegram.messenger.g0.L(2.5f)) / 2.0f, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(2.5f), getPaint());
+                }
+                super.dispatchDraw(canvas);
+                break;
+            case 3:
+                super.dispatchDraw(canvas);
+                canvas.drawCircle(org.telegram.messenger.g0.L(3.5f), org.telegram.messenger.g0.L(11.5f), org.telegram.messenger.g0.L(2.5f), getPaint());
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // di.gc
-    public final void setValue(int i7) {
-        super.setValue(i7);
-        if (this.n0) {
-            int i10 = this.o0;
-            f(fi.t.b(i10, i7, 3), fi.t.b(i10, i7, 4), true);
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 14:
+                return Button.class.getName();
+            case 15:
+                return Button.class.getName();
+            case 16:
+                return Button.class.getName();
+            case 17:
+                return Button.class.getName();
+            case 18:
+                return Button.class.getName();
+            case 19:
+                return Button.class.getName();
+            case 20:
+                return Button.class.getName();
+            case 21:
+                return Button.class.getName();
+            case 22:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 5:
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.g4.t1);
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                break;
+            case 10:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(220.0f)), View.MeasureSpec.getMode(i7)), i10);
+                break;
+            case 11:
+                if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout = getLayout();
+                    int i11 = 0;
+                    for (int i12 = 0; i12 < layout.getLineCount(); i12++) {
+                        i11 = Math.max(i11, (int) Math.ceil(layout.getLineWidth(i12)));
+                    }
+                    i7 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i11, TLObject.FLAG_30);
+                }
+                super.onMeasure(i7, i10);
+                break;
+            case 12:
+                if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout2 = getLayout();
+                    int i13 = 0;
+                    for (int i14 = 0; i14 < layout2.getLineCount(); i14++) {
+                        i13 = Math.max(i13, (int) Math.ceil(layout2.getLineWidth(i14)));
+                    }
+                    i7 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i13, TLObject.FLAG_30);
+                }
+                super.onMeasure(i7, i10);
+                break;
+            case 13:
+                if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout3 = getLayout();
+                    int i15 = 0;
+                    for (int i16 = 0; i16 < layout3.getLineCount(); i16++) {
+                        i15 = Math.max(i15, (int) Math.ceil(layout3.getLineWidth(i16)));
+                    }
+                    i7 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i15, TLObject.FLAG_30);
+                }
+                super.onMeasure(i7, i10);
+                break;
+            case 24:
+                super.onMeasure(i7, i10);
+                try {
+                    Layout layout4 = getLayout();
+                    if (layout4.getLineCount() <= 1) {
+                        break;
+                    } else {
+                        int i17 = 0;
+                        for (int lineCount = layout4.getLineCount() - 1; lineCount >= 0; lineCount--) {
+                            i17 = Math.max(i17, Math.round(layout4.getPaint().measureText(getText(), layout4.getLineStart(lineCount), layout4.getLineEnd(lineCount))));
+                        }
+                        super.onMeasure(Math.min(i17 + getPaddingLeft() + getPaddingRight(), getMeasuredWidth()) | TLObject.FLAG_30, 1073741824 | getMeasuredHeight());
+                        break;
+                    }
+                } catch (Exception unused) {
+                    return;
+                }
+            case 25:
+                super.onMeasure(i7, i10);
+                break;
+            case 27:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30));
+                break;
+            case 28:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i7) - org.telegram.messenger.g0.L(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(42.0f), TLObject.FLAG_30));
+                break;
+            case 29:
+                if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
+                    i7 = i20.c(52.0f, View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+                }
+                super.onMeasure(i7, i10);
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        switch (this.a) {
+            case 4:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            case 6:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            case 7:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            case 8:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            case 9:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            case 23:
+                super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
+                break;
+            default:
+                super.setText(charSequence, bufferType);
+                break;
         }
     }
 }

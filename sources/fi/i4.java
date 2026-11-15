@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.ua;
+import di.ta;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -46,13 +46,13 @@ import org.telegram.ui.Components.dl;
 import org.telegram.ui.Components.dp;
 import org.telegram.ui.Components.ei;
 import org.telegram.ui.Components.ek;
-import org.telegram.ui.Components.f90;
+import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.gj;
 import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.ib0;
 import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.kn;
@@ -86,6 +86,7 @@ import org.telegram.ui.dc;
 import org.telegram.ui.dk;
 import org.telegram.ui.gx;
 import org.telegram.ui.hc;
+import org.telegram.ui.i90;
 import org.telegram.ui.jf0;
 import org.telegram.ui.mb0;
 import org.telegram.ui.mp;
@@ -97,7 +98,7 @@ import org.telegram.ui.w40;
 import org.telegram.ui.wc1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements gj0 {
     public final /* synthetic */ int a;
@@ -344,7 +345,7 @@ public final /* synthetic */ class i4 implements gj0 {
                 return;
             }
             if (!(view instanceof yg.w)) {
-                if (view instanceof ua) {
+                if (view instanceof ta) {
                     yVar.g2 = true;
                     yVar.k1(true, true);
                     return;
@@ -572,12 +573,12 @@ public final /* synthetic */ class i4 implements gj0 {
                 break;
             case 1:
                 gi.p pVar = (gi.p) obj2;
-                ai.f0 f0Var = (ai.f0) obj;
+                ai.g0 g0Var = (ai.g0) obj;
                 p41 p41Var = pVar.V1;
                 if (p41Var != null && (G = p41Var.G(i7 - 1)) != null) {
                     Object obj3 = G.G;
                     if (obj3 instanceof org.telegram.messenger.v00) {
-                        f0Var.a(((org.telegram.messenger.v00) obj3).a);
+                        g0Var.a(((org.telegram.messenger.v00) obj3).a);
                         pVar.dismiss();
                         break;
                     }
@@ -753,10 +754,10 @@ public final /* synthetic */ class i4 implements gj0 {
                                 }
                             } else if (intValue == 11) {
                                 if (kiVar.n2 == null) {
-                                    kg.g0 g0Var = new kg.g0(kiVar.getContext(), kiVar.J0, kiVar);
-                                    kiVar.n2 = g0Var;
-                                    ciVarArr[7] = g0Var;
-                                    g0Var.setupBlurredSearchField(kiVar.F4);
+                                    kg.g0 g0Var2 = new kg.g0(kiVar.getContext(), kiVar.J0, kiVar);
+                                    kiVar.n2 = g0Var2;
+                                    ciVarArr[7] = g0Var2;
+                                    g0Var2.setupBlurredSearchField(kiVar.F4);
                                 }
                                 kiVar.F1(kiVar.n2);
                             } else if (intValue == 12) {
@@ -926,48 +927,48 @@ public final /* synthetic */ class i4 implements gj0 {
                 }
                 break;
             case 12:
-                i90 i90Var = (i90) obj2;
-                f90 f90Var = (f90) obj;
+                j90 j90Var = (j90) obj2;
+                g90 g90Var = (g90) obj;
                 if (i7 != 0) {
-                    jg.h1 adapter2 = i90Var.getAdapter();
+                    jg.h1 adapter2 = j90Var.getAdapter();
                     if (adapter2.x0 == null || adapter2.i0) {
                         int i23 = i7 - 1;
-                        Object J = i90Var.getAdapter().J(i23);
-                        int i24 = i90Var.getAdapter().Y;
-                        int i25 = i90Var.getAdapter().Z;
-                        if (i90Var.getAdapter().G == null || i23 != 1) {
-                            if (i90Var.getAdapter().G == null || i23 != 0) {
+                        Object J = j90Var.getAdapter().J(i23);
+                        int i24 = j90Var.getAdapter().Y;
+                        int i25 = j90Var.getAdapter().Z;
+                        if (j90Var.getAdapter().G == null || i23 != 1) {
+                            if (j90Var.getAdapter().G == null || i23 != 0) {
                                 if (J instanceof TLRPC.TL_document) {
                                     if (view instanceof org.telegram.ui.Cells.w7) {
                                         ((org.telegram.ui.Cells.w7) view).getSendAnimationData();
                                     }
                                     TLRPC.TL_document tL_document = (TLRPC.TL_document) J;
-                                    f90Var.a0(tL_document, org.telegram.messenger.gj.U(tL_document), i90Var.getAdapter().L(i23));
+                                    g90Var.a0(tL_document, org.telegram.messenger.gj.U(tL_document), j90Var.getAdapter().L(i23));
                                 } else if (J instanceof TLRPC.Chat) {
                                     String K = org.telegram.messenger.t3.K((TLRPC.Chat) J, false);
                                     if (K != null) {
-                                        f90Var.p0(i24, i25, a8.p0.p("@", K, " "), false);
+                                        g90Var.p0(i24, i25, a8.p0.p("@", K, " "), false);
                                     }
                                 } else if (J instanceof TLRPC.User) {
                                     TLRPC.User user3 = (TLRPC.User) J;
                                     if (q10.n(user3) != null) {
-                                        f90Var.p0(i24, i25, "@" + q10.n(user3) + " ", false);
+                                        g90Var.p0(i24, i25, "@" + q10.n(user3) + " ", false);
                                     } else {
                                         SpannableString spannableString = new SpannableString(r.b.v(q10.j(user3, false), " "));
                                         spannableString.setSpan(new i41("" + user3.id, 3, null), 0, spannableString.length(), 33);
-                                        f90Var.p0(i24, i25, spannableString, false);
+                                        g90Var.p0(i24, i25, spannableString, false);
                                     }
                                 } else if (J instanceof String) {
-                                    f90Var.p0(i24, i25, J + " ", false);
+                                    g90Var.p0(i24, i25, J + " ", false);
                                 } else if (J instanceof oi) {
                                     String str7 = ((oi) J).a;
-                                    f90Var.v0(str7);
+                                    g90Var.v0(str7);
                                     if (str7 == null || !str7.startsWith("animated_")) {
-                                        f90Var.p0(i24, i25, str7, true);
+                                        g90Var.p0(i24, i25, str7, true);
                                     } else {
                                         try {
                                             try {
-                                                fontMetricsInt = f90Var.Q();
+                                                fontMetricsInt = g90Var.Q();
                                             } catch (Exception e10) {
                                                 org.telegram.messenger.a8.g(e10, false);
                                                 fontMetricsInt = null;
@@ -976,43 +977,43 @@ public final /* synthetic */ class i4 implements gj0 {
                                             TLRPC.Document e11 = org.telegram.ui.Components.g5.e(m10.t0, parseLong);
                                             SpannableString spannableString2 = new SpannableString(org.telegram.messenger.gj.U(e11));
                                             spannableString2.setSpan(e11 != null ? new org.telegram.ui.Components.p5(e11, fontMetricsInt) : new org.telegram.ui.Components.p5(parseLong, fontMetricsInt), 0, spannableString2.length(), 33);
-                                            f90Var.p0(i24, i25, spannableString2, false);
+                                            g90Var.p0(i24, i25, spannableString2, false);
                                         } catch (Exception unused) {
-                                            f90Var.p0(i24, i25, str7, true);
+                                            g90Var.p0(i24, i25, str7, true);
                                         }
                                     }
-                                    i90Var.o(false);
+                                    j90Var.o(false);
                                 }
                                 if (J instanceof TLRPC.BotInlineResult) {
                                     TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
                                     if ((!botInlineResult.type.equals("photo") || (botInlineResult.photo == null && botInlineResult.content == null)) && ((!botInlineResult.type.equals("gif") || (botInlineResult.document == null && botInlineResult.content == null)) && (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) || botInlineResult.document == null))) {
-                                        f90Var.r(botInlineResult, true, 0);
+                                        g90Var.r(botInlineResult, true, 0);
                                         break;
                                     } else {
-                                        ArrayList arrayList5 = new ArrayList(i90Var.getAdapter().S);
-                                        i90Var.Q = arrayList5;
-                                        PhotoViewer.p1().I2(null, i90Var.h, i90Var.a);
-                                        PhotoViewer.p1().f2(arrayList5, i90Var.getAdapter().M(i23), 3, false, i90Var.R, null);
+                                        ArrayList arrayList5 = new ArrayList(j90Var.getAdapter().S);
+                                        j90Var.Q = arrayList5;
+                                        PhotoViewer.p1().I2(null, j90Var.h, j90Var.a);
+                                        PhotoViewer.p1().f2(arrayList5, j90Var.getAdapter().M(i23), 3, false, j90Var.R, null);
                                         break;
                                     }
                                 }
                             } else {
-                                f90Var.p0(i24, i25, a8.p0.s(new StringBuilder(), i90Var.getAdapter().G, " "), false);
+                                g90Var.p0(i24, i25, a8.p0.s(new StringBuilder(), j90Var.getAdapter().G, " "), false);
                                 break;
                             }
                         } else {
-                            TLRPC.Chat chat2 = i90Var.getAdapter().m0;
-                            if (chat2 == null && i90Var.getAdapter().H0 != null) {
-                                chat2 = i90Var.getAdapter().H0.e;
+                            TLRPC.Chat chat2 = j90Var.getAdapter().m0;
+                            if (chat2 == null && j90Var.getAdapter().H0 != null) {
+                                chat2 = j90Var.getAdapter().H0.e;
                             }
                             StringBuilder sb2 = new StringBuilder();
-                            sb2.append(i90Var.getAdapter().G);
-                            f90Var.p0(i24, i25, a8.p0.s(sb2, chat2 != null ? "@" + org.telegram.messenger.t3.K(chat2, false) : "", " "), false);
+                            sb2.append(j90Var.getAdapter().G);
+                            g90Var.p0(i24, i25, a8.p0.s(sb2, chat2 != null ? "@" + org.telegram.messenger.t3.K(chat2, false) : "", " "), false);
                             break;
                         }
                     }
                 } else {
-                    i90Var.getClass();
+                    j90Var.getClass();
                     break;
                 }
                 break;
@@ -1151,9 +1152,9 @@ public final /* synthetic */ class i4 implements gj0 {
                         break;
                     }
                 } else if (i7 == cf0Var.y) {
-                    org.telegram.ui.i90 i90Var2 = new org.telegram.ui.i90(0, cf0Var.n);
-                    i90Var2.T = cf0Var.t0;
-                    cf0Var.presentFragment(i90Var2);
+                    i90 i90Var = new i90(0, cf0Var.n);
+                    i90Var.T = cf0Var.t0;
+                    cf0Var.presentFragment(i90Var);
                     break;
                 } else {
                     int i28 = cf0Var.E;

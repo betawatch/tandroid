@@ -11,7 +11,7 @@ import org.telegram.messenger.xe;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.ke0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class u9 extends m5 {
     public boolean j2;
@@ -114,13 +114,13 @@ public final class u9 extends m5 {
         saVar.d1.f.d();
         saVar.k0(0, false, true);
         tg.j jVar = this.t0;
-        if (!(jVar instanceof tg.o2) || this.u0) {
+        if (!(jVar instanceof tg.n2) || this.u0) {
             return;
         }
-        tg.o2 o2Var = (tg.o2) jVar;
+        tg.n2 n2Var = (tg.n2) jVar;
         this.u0 = true;
-        o2Var.q();
-        View focusedView = o2Var.getFocusedView();
+        n2Var.q();
+        View focusedView = n2Var.getFocusedView();
         focusedView.requestFocus();
         org.telegram.messenger.g0.J3(focusedView);
     }

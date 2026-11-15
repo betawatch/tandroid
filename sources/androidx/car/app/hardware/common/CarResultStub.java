@@ -4,7 +4,7 @@ import ab.j;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.h;
+import androidx.car.app.utils.g;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ import r.a;
 import r.d;
 import w.b;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -69,7 +69,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
     public void onCarHardwareResult(int i7, boolean z10, b bVar, IBinder iBinder) {
-        h.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z10, bVar, 12));
+        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z10, bVar, 12));
     }
 
     public boolean removeListener(d dVar) {
@@ -86,7 +86,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i7 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        h.d("unsubscribeCarHardwareResult", new q0(aVar, i7, bVar));
+        g.d("unsubscribeCarHardwareResult", new q0(aVar, i7, bVar));
         return true;
     }
 }

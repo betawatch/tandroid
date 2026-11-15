@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.u9;
 import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
             case 6:
                 c2 c2Var = b4Var.v0;
                 if (!b4Var.B0(false)) {
-                    di.v8 y10 = di.v8.y(b4Var.m2, false);
+                    di.u8 y10 = di.u8.y(b4Var.m2, false);
                     if (y10.e && y10.f.amount <= 0) {
                         c2Var.k(b4Var.B0(false));
                         break;
@@ -208,7 +208,7 @@ public final /* synthetic */ class v1 implements View.OnClickListener {
                 spannableStringBuilder.setSpan(eqVar, 0, 1, 33);
                 dVar.g(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) hd.M0(2131747771, null)), false);
                 linearLayout.addView(dVar, ja.r(-1, 48, 1));
-                dVar.setOnClickListener(new ai.t2(18, b4Var, u2Var));
+                dVar.setOnClickListener(new ai.v2(18, b4Var, u2Var));
                 u2Var.O = linearLayout;
                 ((z8) b4Var.A1).h(u2Var);
                 t3 t3Var = b4Var.d1;

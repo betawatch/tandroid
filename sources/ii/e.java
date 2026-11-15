@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import bi.b6;
-import di.v8;
-import di.wa;
+import di.u8;
+import di.va;
 import hi.l3;
 import hi.q4;
 import org.telegram.messenger.a8;
@@ -31,11 +31,11 @@ import org.telegram.ui.an;
 import org.telegram.ui.qj;
 import v4.k;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e extends ja implements is {
     public final cg.a T1;
-    public final wa U1;
+    public final va U1;
     public final FrameLayout V1;
     public Runnable W1;
     public int X1;
@@ -66,11 +66,11 @@ public final class e extends ja implements is {
         this.o1.setItemAnimator(kVar);
         v0(j6.w0(j6.h5, e6Var));
         this.T1 = aVar;
-        wa waVar = new wa(2, context, e6Var);
-        this.U1 = waVar;
+        va vaVar = new va(2, context, e6Var);
+        this.U1 = vaVar;
         final int i11 = 1;
-        ((TextView) waVar.c).setText(hd.a0(null, null, 2131744045, cg.a.i(aVar.b - v8.y(this.a, true).s().b, cg.b.b).d()));
-        TextView textView = (TextView) waVar.d;
+        ((TextView) vaVar.c).setText(hd.a0(null, null, 2131744045, cg.a.i(aVar.b - u8.y(this.a, true).s().b, cg.b.b).d()));
+        TextView textView = (TextView) vaVar.d;
         textView.setText(g0.X2(hd.M0(2131750520, null)));
         textView.setMaxWidth(l3.a(textView.getText(), textView.getPaint()));
         this.p1.setTitle(O0());
@@ -155,11 +155,11 @@ public final class e extends ja implements is {
 
     @Override // org.telegram.ui.Components.ja
     public final CharSequence O0() {
-        wa waVar = this.U1;
-        if (waVar == null) {
+        va vaVar = this.U1;
+        if (vaVar == null) {
             return null;
         }
-        return ((TextView) waVar.c).getText();
+        return ((TextView) vaVar.c).getText();
     }
 
     @Override // org.telegram.messenger.is
@@ -170,7 +170,7 @@ public final class e extends ja implements is {
             if (p41Var != null) {
                 p41Var.O(true);
             }
-            cg.a s5 = v8.y(this.a, true).s();
+            cg.a s5 = u8.y(this.a, true).s();
             TextView textView = (TextView) this.U1.c;
             cg.a aVar = this.T1;
             textView.setText(hd.a0(null, null, 2131744045, cg.a.i(aVar.b - s5.b, cg.b.b).d()));
@@ -190,9 +190,9 @@ public final class e extends ja implements is {
     @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
     public final void dismiss() {
         super.dismiss();
-        wa waVar = this.U1;
-        if (waVar != null) {
-            ((w6) waVar.b).setPaused(true);
+        va vaVar = this.U1;
+        if (vaVar != null) {
+            ((w6) vaVar.b).setPaused(true);
         }
     }
 
@@ -213,7 +213,7 @@ public final class e extends ja implements is {
     @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
     public final void show() {
         qj qjVar;
-        if (v8.y(this.a, true).s().b >= this.T1.b) {
+        if (u8.y(this.a, true).s().b >= this.T1.b) {
             Runnable runnable = this.W1;
             if (runnable != null) {
                 runnable.run();

@@ -4,7 +4,7 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vj implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class vj implements Runnable {
                                     z11 = true;
                                 }
                                 vr messagesStorage = npVar.getMessagesStorage();
-                                messagesStorage.a.c(new vp(messagesStorage, arrayList6, arrayList7, 0));
+                                messagesStorage.a.c(new up(messagesStorage, arrayList6, arrayList7, 0));
                             } else {
                                 z10 = false;
                             }
@@ -164,7 +164,7 @@ public final /* synthetic */ class vj implements Runnable {
                                 npVar.getNotificationCenter().k(3, new Object[0]);
                             }
                             vr messagesStorage2 = npVar.getMessagesStorage();
-                            messagesStorage2.a.c(new rp(messagesStorage2, arrayList5, i12));
+                            messagesStorage2.a.c(new op(messagesStorage2, arrayList5, i12));
                             npVar.getMessagesStorage().d1(this.n, 1);
                             npVar.getUserConfig().y(i12, true);
                             npVar.getUserConfig().v(false);
@@ -180,7 +180,7 @@ public final /* synthetic */ class vj implements Runnable {
                 if (z11) {
                 }
                 vr messagesStorage22 = npVar.getMessagesStorage();
-                messagesStorage22.a.c(new rp(messagesStorage22, arrayList52, i12));
+                messagesStorage22.a.c(new op(messagesStorage22, arrayList52, i12));
                 npVar.getMessagesStorage().d1(this.n, 1);
                 npVar.getUserConfig().y(i12, true);
                 npVar.getUserConfig().v(false);

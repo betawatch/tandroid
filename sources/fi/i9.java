@@ -23,7 +23,7 @@ import android.view.WindowManager;
 import android.window.OnBackInvokedDispatcher;
 import c8.ja;
 import c8.zc;
-import di.ub;
+import di.tb;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.ImageReceiver;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.ft;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i9 implements is, org.telegram.ui.ActionBar.a2 {
     public static boolean A1;
@@ -235,10 +235,10 @@ public final class i9 implements is, org.telegram.ui.ActionBar.a2 {
     }
 
     public static void g(i9 i9Var) {
-        ub ubVar;
+        tb tbVar;
         ft editField;
         b4 currentPeerView = i9Var.o0.getCurrentPeerView();
-        if (currentPeerView == null || currentPeerView.L1 == null || (((ubVar = currentPeerView.L2) != null && ubVar.getVisibility() == 0) || (editField = currentPeerView.L1.getEditField()) == null)) {
+        if (currentPeerView == null || currentPeerView.L1 == null || (((tbVar = currentPeerView.L2) != null && tbVar.getVisibility() == 0) || (editField = currentPeerView.L1.getEditField()) == null)) {
             i9Var.m();
             return;
         }
@@ -1405,7 +1405,7 @@ public final class i9 implements is, org.telegram.ui.ActionBar.a2 {
     public final boolean t(Dialog dialog) {
         try {
             this.v0 = dialog;
-            dialog.setOnDismissListener(new di.r9(this, 4));
+            dialog.setOnDismissListener(new di.q9(this, 4));
             dialog.show();
             V();
             return true;

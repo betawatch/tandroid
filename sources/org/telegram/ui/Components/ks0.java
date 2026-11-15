@@ -12,7 +12,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ks0 extends tj0 {
     public int F;
@@ -156,7 +156,7 @@ public final class ks0 extends tj0 {
             return;
         }
         org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(i7);
-        a02.a.c(new org.telegram.messenger.lr(a02, this.x, 0L, this.y.g(), 100, this.n.size(), false, new fi.y1(1, this, f0Var)));
+        a02.a.c(new org.telegram.messenger.kr(a02, this.x, 0L, this.y.g(), 100, this.n.size(), false, new fi.y1(1, this, f0Var)));
     }
 
     public final void G(boolean z10) {

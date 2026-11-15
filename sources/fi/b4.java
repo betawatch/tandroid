@@ -40,8 +40,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
 import c8.na;
-import di.mb;
-import di.ub;
+import di.lb;
+import di.tb;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -93,8 +93,8 @@ import org.telegram.ui.Components.mi0;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.st0;
 import org.telegram.ui.Components.ud;
-import org.telegram.ui.Components.x80;
 import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.Components.ys;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -105,7 +105,7 @@ import org.telegram.ui.jx;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class b4 extends st0 implements is {
     public org.telegram.ui.Components.g6 A0;
@@ -154,7 +154,7 @@ public abstract class b4 extends st0 implements is {
     public float K3;
     public boolean L0;
     public k2 L1;
-    public ub L2;
+    public tb L2;
     public final Path L3;
     public final e3 M0;
     public lh.h M1;
@@ -481,7 +481,7 @@ public abstract class b4 extends st0 implements is {
                         } else {
                             Bundle f10 = r.b.f(1, TeXSymbolParser.TYPE_ATTR);
                             f10.putLong("dialog_id", b4Var.l1);
-                            i9Var2.N(new x80(f10, null));
+                            i9Var2.N(new y80(f10, null));
                             break;
                         }
                     default:
@@ -575,7 +575,7 @@ public abstract class b4 extends st0 implements is {
                         } else {
                             Bundle f10 = r.b.f(1, TeXSymbolParser.TYPE_ATTR);
                             f10.putLong("dialog_id", b4Var.l1);
-                            i9Var2.N(new x80(f10, null));
+                            i9Var2.N(new y80(f10, null));
                             break;
                         }
                     default:
@@ -738,7 +738,7 @@ public abstract class b4 extends st0 implements is {
             b4Var.Y0();
             return;
         }
-        MediaController.d0(h.toString(), b4Var.getContext(), z10 ? 1 : 0, null, null, new di.t7(1, b4Var, z10));
+        MediaController.d0(h.toString(), b4Var.getContext(), z10 ? 1 : 0, null, null, new ai.u2(2, b4Var, z10));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1454,7 +1454,7 @@ public abstract class b4 extends st0 implements is {
                     org.telegram.ui.Components.voip.u0 u0Var = g1Var.e;
                     g1Var.e = null;
                     g1Var.d.a = null;
-                    g1Var.a.a(new ai.f0(u0Var, 15));
+                    g1Var.a.a(new ai.g0(u0Var, 15));
                 }
             }
             e1 e1Var3 = z8Var.d.B0;
@@ -2531,7 +2531,7 @@ public abstract class b4 extends st0 implements is {
                                                     spannableStringBuilder2.append((CharSequence) str4);
                                                 }
                                             }
-                                            x3Var.setOnSubtitleClick(new ai.t2(17, this, i33));
+                                            x3Var.setOnSubtitleClick(new ai.v2(17, this, i33));
                                             SpannableString spannableString3 = new SpannableString(".");
                                             ls lsVar = new ls();
                                             lsVar.b = org.telegram.messenger.g0.L(1.5f);
@@ -2798,9 +2798,9 @@ public abstract class b4 extends st0 implements is {
                                 y0();
                                 this.L2.setVisibility(0);
                             } else {
-                                ub ubVar = this.L2;
-                                if (ubVar != null) {
-                                    ubVar.setVisibility(8);
+                                tb tbVar = this.L2;
+                                if (tbVar != null) {
+                                    tbVar.setVisibility(8);
                                 }
                             }
                             if (linearLayout2 != null) {
@@ -5228,9 +5228,9 @@ public abstract class b4 extends st0 implements is {
                 layoutParams3.topMargin = (L2 + size2) - org.telegram.messenger.g0.L(48.0f);
             }
         }
-        ub ubVar = this.L2;
-        if (ubVar != null) {
-            FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) ubVar.getLayoutParams();
+        tb tbVar = this.L2;
+        if (tbVar != null) {
+            FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) tbVar.getLayoutParams();
             if (this.h2) {
                 c10 = 0;
                 this.L2.setTextColor(i0.a.f(0.5f, -16777216, -1));
@@ -5336,7 +5336,7 @@ public abstract class b4 extends st0 implements is {
             if (this.r1 > 0) {
                 this.U2 = false;
                 this.L1.setEnabled(true);
-                this.L1.A1(mb.T0(hd.a0(null, null, 2131743926, hd.E(this.r1, ','))), z10);
+                this.L1.A1(lb.T0(hd.a0(null, null, 2131743926, hd.E(this.r1, ','))), z10);
                 return;
             }
             if (!z3Var.f && tL_storiesStealthMode != null) {
@@ -5374,7 +5374,7 @@ public abstract class b4 extends st0 implements is {
                 this.L1.A1(hd.M0(2131752005, null), z10);
                 return;
             }
-            this.L1.A1(mb.Y0(false, hd.a0(null, null, 2131752004, hd.E((int) r0, ',')), this.L1.j6), z10);
+            this.L1.A1(lb.Y0(false, hd.a0(null, null, 2131752004, hd.E((int) r0, ',')), this.L1.j6), z10);
             eq eqVar = this.L1.j6[0];
             if (eqVar != null) {
                 eqVar.H = 0.9f;
@@ -5726,9 +5726,9 @@ public abstract class b4 extends st0 implements is {
         if (this.L2 != null) {
             return;
         }
-        ub ubVar = new ub(getContext(), 1);
-        this.L2 = ubVar;
-        ubVar.setTextSize(1, 14.0f);
+        tb tbVar = new tb(getContext(), 1);
+        this.L2 = tbVar;
+        tbVar.setTextSize(1, 14.0f);
         this.L2.setTextColor(i0.a.f(0.5f, -16777216, -1));
         this.L2.setGravity(19);
         this.L2.setText(hd.M0(2131744491, null));

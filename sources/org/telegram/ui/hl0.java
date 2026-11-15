@@ -1,16 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public interface hl0 {
-    void a(TL_account.Password password);
+public final class hl0 extends ClickableSpan {
+    public final /* synthetic */ kl0 a;
 
-    void b();
+    public hl0(kl0 kl0Var) {
+        this.a = kl0Var;
+    }
 
-    boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        kl0 kl0Var = this.a;
+        kl0Var.presentFragment(new xa1(6, kl0Var.b0));
+    }
 
-    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(false);
+    }
 }

@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class l implements Runnable {
             case 0:
                 boolean[] zArr = this.b;
                 ki.r1 r1Var = this.c;
-                s[] sVarArr = DictationAsr.a;
+                t[] tVarArr = DictationAsr.a;
                 if (!zArr[0]) {
                     r1Var.a(null, null, true);
                     break;
@@ -30,7 +30,7 @@ public final /* synthetic */ class l implements Runnable {
             default:
                 boolean[] zArr2 = this.b;
                 ki.r1 r1Var2 = this.c;
-                s[] sVarArr2 = DictationAsr.a;
+                t[] tVarArr2 = DictationAsr.a;
                 if (!zArr2[0]) {
                     r1Var2.a(null, null, true);
                     break;

@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class bg0 extends Dialog implements org.telegram.messenger.is {
     public boolean A0;
@@ -42,7 +42,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.is {
     public org.telegram.ui.Components.e5 J;
     public final xf0 K;
     public final hi.w L;
-    public final org.telegram.ui.Components.v90 M;
+    public final org.telegram.ui.Components.w90 M;
     public final ArrayList N;
     public int O;
     public final a0.h P;
@@ -184,10 +184,10 @@ public class bg0 extends Dialog implements org.telegram.messenger.is {
         xf0Var.setOnItemClickListener(new h(this, 17));
         xf0Var.setOnScrollListener(new g3(this, 19));
         xf0Var.setItemAnimator(new zf0(null, xf0Var, e6Var));
-        org.telegram.ui.Components.v90 v90Var = new org.telegram.ui.Components.v90(this, i10);
-        this.M = v90Var;
-        v90Var.O = new bi.y1(this, 14);
-        xf0Var.setLayoutManager(v90Var);
+        org.telegram.ui.Components.w90 w90Var = new org.telegram.ui.Components.w90(this, i10);
+        this.M = w90Var;
+        w90Var.O = new bi.y1(this, 14);
+        xf0Var.setLayoutManager(w90Var);
         xf0Var.i(new fi.k(13));
         hi.w wVar = new hi.w(this, context, e6Var, i10);
         this.L = wVar;
@@ -479,13 +479,13 @@ public class bg0 extends Dialog implements org.telegram.messenger.is {
     }
 
     public final void n(boolean z10) {
-        org.telegram.ui.Components.v90 v90Var;
+        org.telegram.ui.Components.w90 w90Var;
         xf0 xf0Var = this.K;
-        if (xf0Var == null || xf0Var.getAdapter() == null || (v90Var = this.M) == null) {
+        if (xf0Var == null || xf0Var.getAdapter() == null || (w90Var = this.M) == null) {
             return;
         }
         int b10 = xf0Var.getAdapter().b();
-        v90Var.i1(z10 ? b10 > 10 ? b10 % 10 : 0 : b10 - 1, org.telegram.messenger.g0.L(12.0f), z10);
+        w90Var.i1(z10 ? b10 > 10 ? b10 % 10 : 0 : b10 - 1, org.telegram.messenger.g0.L(12.0f), z10);
         this.A0 = z10;
     }
 
@@ -776,7 +776,7 @@ public class bg0 extends Dialog implements org.telegram.messenger.is {
     public final void t(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.C0 = j3 > 0 ? new org.telegram.ui.Components.oy0(di.mb.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
+        this.C0 = j3 > 0 ? new org.telegram.ui.Components.oy0(di.lb.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o()) : null;
         if (this.D0 == null) {
             Paint paint = new Paint(1);
             this.D0 = paint;

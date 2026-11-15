@@ -10,8 +10,8 @@ import android.widget.TextView;
 import bi.s;
 import c8.ja;
 import c8.na;
-import di.bb;
-import di.ra;
+import di.ab;
+import di.qa;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.ns;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.z70;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -125,22 +125,22 @@ public final class a extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        ra raVar = new ra(context, 70, 0, 0);
-        frameLayout.addView(raVar, ja.c(-1.0f, -1));
+        qa qaVar = new qa(context, 70, 0, 0);
+        frameLayout.addView(qaVar, ja.c(-1.0f, -1));
         vg.m mVar = new vg.m(context, 1, 2);
         this.b = mVar;
         vg.f fVar = mVar.b;
         fVar.z = j6.Wk;
         fVar.A = j6.Xk;
         fVar.b();
-        mVar.setStarParticlesView(raVar);
+        mVar.setStarParticlesView(qaVar);
         frameLayout.addView(mVar, ja.d(ns.A2, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         mVar.setPaused(false);
-        bb bbVar = new bb(i7, context, e6Var);
-        this.c = bbVar;
-        na.a(bbVar);
-        bbVar.setOnClickListener(new d(this, 19));
-        frameLayout.addView(bbVar, ja.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        ab abVar = new ab(i7, context, e6Var);
+        this.c = abVar;
+        na.a(abVar);
+        abVar.setOnClickListener(new d(this, 19));
+        frameLayout.addView(abVar, ja.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         addView(frameLayout, ja.c(150.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;

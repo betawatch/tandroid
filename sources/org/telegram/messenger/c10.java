@@ -28,7 +28,7 @@ import org.telegram.ui.Components.p21;
 import org.telegram.ui.oy0;
 import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c10 extends c1 {
     public static final List N = Arrays.asList("en", "ar", "zh", "fr", "de", "it", "ja", "ko", "pt", "ru", "es", "uk");
@@ -319,9 +319,9 @@ public final class c10 extends c1 {
                                 w00Var = new w00();
                                 arrayList.add(w00Var);
                             }
-                            fr frVar = w00Var.a;
-                            if (frVar != null) {
-                                g0.r(frVar);
+                            dr drVar = w00Var.a;
+                            if (drVar != null) {
+                                g0.r(drVar);
                             }
                             this.x.add(Integer.valueOf(gjVar.e1()));
                             w00Var.b.add(Integer.valueOf(gjVar.e1()));
@@ -331,9 +331,9 @@ public final class c10 extends c1 {
                             w00Var.e = str;
                             w00Var.g = w00Var.g + length;
                             w00 w00Var2 = w00Var;
-                            fr frVar2 = new fr(this, B0, w00Var2, 8);
-                            w00Var2.a = frVar2;
-                            g0.i3(frVar2, w00Var2.f);
+                            dr drVar2 = new dr(this, B0, w00Var2, 8);
+                            w00Var2.a = drVar2;
+                            g0.i3(drVar2, w00Var2.f);
                             w00Var2.f /= 2;
                         }
                     } catch (Throwable th4) {
@@ -1288,9 +1288,9 @@ public final class c10 extends c1 {
                                             x00Var = new x00();
                                             arrayList.add(x00Var);
                                         }
-                                        fr frVar = x00Var.a;
-                                        if (frVar != null) {
-                                            g0.r(frVar);
+                                        dr drVar = x00Var.a;
+                                        if (drVar != null) {
+                                            g0.r(drVar);
                                         }
                                         this.x.add(Integer.valueOf(gjVar2.e1()));
                                         x00Var.b.add(Integer.valueOf(gjVar2.e1()));
@@ -1298,9 +1298,9 @@ public final class c10 extends c1 {
                                         x00Var.c.add(u10Var);
                                         x00Var.d = m10;
                                         x00 x00Var2 = x00Var;
-                                        fr frVar2 = new fr(this, B03, x00Var2, 7);
-                                        x00Var2.a = frVar2;
-                                        g0.i3(frVar2, x00Var2.e);
+                                        dr drVar2 = new dr(this, B03, x00Var2, 7);
+                                        x00Var2.a = drVar2;
+                                        g0.i3(drVar2, x00Var2.e);
                                         x00Var2.e /= 2;
                                         return;
                                     } catch (Throwable th2) {
@@ -1430,13 +1430,13 @@ public final class c10 extends c1 {
         this.y.clear();
     }
 
-    public final void k(gj gjVar, di.m9 m9Var) {
+    public final void k(gj gjVar, di.l9 l9Var) {
         TLRPC.Message message = gjVar.k;
         if (message == null || TextUtils.isEmpty(message.message)) {
             return;
         }
         if (!TextUtils.isEmpty(gjVar.k.originalLanguage)) {
-            m9Var.a(gjVar.k.originalLanguage);
+            l9Var.a(gjVar.k.originalLanguage);
             return;
         }
         f3.s sVar = new f3.s(gjVar);
@@ -1445,7 +1445,7 @@ public final class c10 extends c1 {
             return;
         }
         hashSet.add(sVar);
-        b6.d(gjVar.k.message, new i00(this, gjVar, sVar, m9Var), new i00(this, gjVar, sVar, m9Var), false);
+        b6.d(gjVar.k.message, new i00(this, gjVar, sVar, l9Var), new i00(this, gjVar, sVar, l9Var), false);
     }
 
     public final void l(TL_stories.StoryItem storyItem) {

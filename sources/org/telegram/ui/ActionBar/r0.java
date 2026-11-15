@@ -30,7 +30,7 @@ import org.telegram.ui.Components.lv0;
 import org.telegram.ui.Components.z7;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -324,7 +324,7 @@ public final /* synthetic */ class r0 implements Runnable {
                     length += org.telegram.ui.web.n1.e0(file2, null);
                 }
                 File file3 = new File(org.telegram.messenger.t0.b.getApplicationInfo().dataDir, "app_webview");
-                org.telegram.messenger.g0.h3(new ai.e0(n1Var, length, file3.exists() ? org.telegram.ui.web.n1.e0(file3, Boolean.TRUE) : 0L, 3));
+                org.telegram.messenger.g0.h3(new ai.f0(n1Var, length, file3.exists() ? org.telegram.ui.web.n1.e0(file3, Boolean.TRUE) : 0L, 3));
                 break;
         }
     }

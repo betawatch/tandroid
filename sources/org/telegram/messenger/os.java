@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class os implements Runnable {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class os implements Runnable {
                     i14++;
                 }
                 vr messagesStorage = atVar5.getMessagesStorage();
-                messagesStorage.a.c(new oq(messagesStorage, 17));
+                messagesStorage.a.c(new nq(messagesStorage, 18));
                 if (z10) {
                     atVar5.Z(false);
                     break;
@@ -233,7 +233,7 @@ public final /* synthetic */ class os implements Runnable {
                 arrayList4.clear();
                 atVar8.F.b();
                 vr messagesStorage2 = atVar8.getMessagesStorage();
-                messagesStorage2.a.c(new oq(messagesStorage2, 14));
+                messagesStorage2.a.c(new nq(messagesStorage2, 14));
                 if (!isEmpty) {
                     atVar8.Z(false);
                     break;
@@ -257,12 +257,12 @@ public final /* synthetic */ class os implements Runnable {
                     if (z11) {
                         if (zsVar.c.isEmpty()) {
                             vr messagesStorage3 = atVar9.getMessagesStorage();
-                            messagesStorage3.a.c(new up(messagesStorage3, zsVar.a, 4));
+                            messagesStorage3.a.c(new rp(messagesStorage3, zsVar.a, 4));
                             arrayList5.remove(i16);
                             i16--;
                         } else {
                             vr messagesStorage4 = atVar9.getMessagesStorage();
-                            messagesStorage4.a.c(new wq(5, messagesStorage4, zsVar));
+                            messagesStorage4.a.c(new pq(7, messagesStorage4, zsVar));
                         }
                     }
                     i16++;

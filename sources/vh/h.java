@@ -1,6 +1,6 @@
 package vh;
 
-import ai.d1;
+import ai.e1;
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.TextUtils;
@@ -47,7 +47,7 @@ import r0.a0;
 import ug.p1;
 import v4.k;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h extends ja implements te.b {
     public static final /* synthetic */ int n2 = 0;
@@ -154,7 +154,7 @@ public final class h extends ja implements te.b {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
         TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
         tL_help_getCountriesList.lang_code = hd.E0().B != null ? hd.E0().B.c() : Locale.getDefault().getCountry();
-        connectionsManager.sendRequest(tL_help_getCountriesList, new d1(p1Var, 25));
+        connectionsManager.sendRequest(tL_help_getCountriesList, new e1(p1Var, 25));
         a0.i(this.c, new b(this));
     }
 

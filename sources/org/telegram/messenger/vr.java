@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class vr extends c1 {
     public static volatile vr[] f0 = new vr[4];
@@ -124,7 +124,7 @@ public final class vr extends c1 {
         p5 p5Var = new p5(i5.c.i(i7, "storageQueue_"));
         this.a = p5Var;
         p5Var.setPriority(8);
-        p5Var.c(new oq(this, 8));
+        p5Var.c(new nq(this, 8));
     }
 
     public static void A(SQLiteDatabase sQLiteDatabase) {
@@ -876,7 +876,7 @@ public final class vr extends c1 {
                                         n(e);
                                         sQLiteCursor3.dispose();
                                         D(arrayList, true);
-                                        g0.h3(new pp(this, arrayList3, 4));
+                                        g0.h3(new sp(this, arrayList3, 4));
                                         getFileLoader().getClass();
                                         w7.p(i7, arrayList2);
                                         String str12 = "DELETE FROM widget_heights WHERE uid = ";
@@ -909,7 +909,7 @@ public final class vr extends c1 {
                                         si mediaDataController = vrVar.getMediaDataController();
                                         mediaDataController.getClass();
                                         g0.h3(new xg(mediaDataController, j10, 0));
-                                        g0.h3(new oq(vrVar, 10));
+                                        g0.h3(new nq(vrVar, 10));
                                         vrVar.t1(false);
                                         ArrayList arrayList5 = new ArrayList();
                                         arrayList5.add(Long.valueOf(j10));
@@ -979,7 +979,7 @@ public final class vr extends c1 {
                 arrayList = arrayList4;
                 sQLiteCursor3.dispose();
                 D(arrayList, true);
-                g0.h3(new pp(this, arrayList3, 4));
+                g0.h3(new sp(this, arrayList3, 4));
                 getFileLoader().getClass();
                 w7.p(i7, arrayList2);
             } catch (Exception e16) {
@@ -1025,7 +1025,7 @@ public final class vr extends c1 {
                         si mediaDataController2 = vrVar.getMediaDataController();
                         mediaDataController2.getClass();
                         g0.h3(new xg(mediaDataController2, j10, 0));
-                        g0.h3(new oq(vrVar, 10));
+                        g0.h3(new nq(vrVar, 10));
                         vrVar.t1(false);
                         ArrayList arrayList52 = new ArrayList();
                         arrayList52.add(Long.valueOf(j10));
@@ -1451,7 +1451,7 @@ public final class vr extends c1 {
             si mediaDataController22 = vrVar.getMediaDataController();
             mediaDataController22.getClass();
             g0.h3(new xg(mediaDataController22, j10, 0));
-            g0.h3(new oq(vrVar, 10));
+            g0.h3(new nq(vrVar, 10));
             vrVar.t1(false);
             ArrayList arrayList522 = new ArrayList();
             arrayList522.add(Long.valueOf(j10));
@@ -1497,7 +1497,7 @@ public final class vr extends c1 {
     }
 
     public final void A1(int i7, int i10, int i11, int i12) {
-        this.a.c(new gr(this, i7, i10, i11, i12, 0));
+        this.a.c(new fr(this, i7, i10, i11, i12, 0));
     }
 
     public final void B(long j3, SparseArray sparseArray) {
@@ -2375,7 +2375,7 @@ public final class vr extends c1 {
                                 queryFinalized2.dispose();
                                 sQLiteCursor2 = null;
                             }
-                            g0.h3(new yp(vrVar, hVar, 2));
+                            g0.h3(new xp(vrVar, hVar, 1));
                         } catch (Exception e30) {
                             e = e30;
                         }
@@ -2803,7 +2803,7 @@ public final class vr extends c1 {
     }
 
     public final void C1(int i7, long j3, List list, boolean z10) {
-        this.a.c(new uq(this, j3, list, z10, i7, 1));
+        this.a.c(new rq(this, j3, list, z10, i7, 1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x0075  */
@@ -2853,7 +2853,7 @@ public final class vr extends c1 {
             if (z10) {
                 this.b.commitTransaction();
             }
-            g0.h3(new pp(this, arrayList, 10));
+            g0.h3(new sp(this, arrayList, 11));
             if (!z10 || (sQLiteDatabase3 = this.b) == null) {
                 return;
             }
@@ -3631,7 +3631,7 @@ public final class vr extends c1 {
     }
 
     public final void E1(long j3, long j10) {
-        this.a.c(new sp(0, j3, j10, this));
+        this.a.c(new pp(0, j3, j10, this));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x00e0  */
@@ -3783,7 +3783,7 @@ public final class vr extends c1 {
 
     public final TLRPC.ChatFull F0(final long j3, final boolean z10, final CountDownLatch countDownLatch, final boolean z11, final boolean z12, final int i7) {
         final TLRPC.ChatFull[] chatFullArr = new TLRPC.ChatFull[1];
-        this.a.c(new Runnable(chatFullArr, j3, z10, z11, z12, i7, countDownLatch) { // from class: org.telegram.messenger.hr
+        this.a.c(new Runnable(chatFullArr, j3, z10, z11, z12, i7, countDownLatch) { // from class: org.telegram.messenger.gr
             public final /* synthetic */ TLRPC.ChatFull[] b;
             public final /* synthetic */ long c;
             public final /* synthetic */ boolean d;
@@ -3814,7 +3814,7 @@ public final class vr extends c1 {
     }
 
     public final void F1(long j3, boolean z10) {
-        this.a.c(new wp(0, j3, this, z10));
+        this.a.c(new vp(0, j3, this, z10));
     }
 
     public final void G(int i7, long j3, long j10, String str) {
@@ -7210,7 +7210,7 @@ public final class vr extends c1 {
         if (chatParticipants == null) {
             return;
         }
-        this.a.c(new fi(29, this, chatParticipants));
+        this.a.c(new pq(1, this, chatParticipants));
     }
 
     public final TLRPC.Chat P(long j3) {
@@ -7232,15 +7232,15 @@ public final class vr extends c1 {
         if (!z10) {
             return Q0(i7, i10, j3, arrayList, z11);
         }
-        this.a.c(new op(this, j3, arrayList, z11, i7, i10));
+        this.a.c(new mr(this, j3, arrayList, z11, i7, i10));
         return null;
     }
 
     public final void P1(int i7) {
-        g0.h3(new oq(this, 4));
+        g0.h3(new nq(this, 4));
         a8.b("MessagesStorage start db migration from " + i7 + " to 181");
         a8.b("MessagesStorage db migration finished to varsion " + l5.c(this, this.b, i7));
-        g0.h3(new oq(this, 5));
+        g0.h3(new nq(this, 5));
     }
 
     public final void Q(String str, ArrayList arrayList) {
@@ -7317,7 +7317,7 @@ public final class vr extends c1 {
     }
 
     public final void Q1(long j3, int i7, boolean z10, boolean z11) {
-        this.a.c(new uq(this, z10, z11 ? "unread_reactions" : "unread_poll_votes", j3, i7, z11 ? "unread_reactions" : "unread_poll_votes"));
+        this.a.c(new rq(this, z10, z11 ? "unread_reactions" : "unread_poll_votes", j3, i7, z11 ? "unread_reactions" : "unread_poll_votes"));
     }
 
     public final SQLiteDatabase R() {
@@ -7978,7 +7978,7 @@ public final class vr extends c1 {
                         th = th6;
                     }
                     try {
-                        this.a.c(new ir(this, arrayList2, j3, 1));
+                        this.a.c(new hr(this, arrayList2, j3, 2));
                     } catch (Exception e13) {
                         e = e13;
                         exc = e;
@@ -8035,7 +8035,7 @@ public final class vr extends c1 {
     public final int U(final long j3, final boolean z10) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         final Integer[] numArr = {0};
-        this.a.c(new Runnable() { // from class: org.telegram.messenger.dr
+        this.a.c(new Runnable() { // from class: org.telegram.messenger.er
             /* JADX WARN: Code restructure failed: missing block: B:22:0x0075, code lost:
             
                 if (r9 == null) goto L21;
@@ -8095,7 +8095,7 @@ public final class vr extends c1 {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
-        g0.h3(new pp(this, arrayList, 5));
+        g0.h3(new sp(this, arrayList, 5));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:45:0x0414 A[Catch: Exception -> 0x00c1, TRY_LEAVE, TryCatch #1 {Exception -> 0x00c1, blocks: (B:3:0x000d, B:36:0x031c, B:38:0x0322, B:43:0x0404, B:45:0x0414, B:50:0x032e, B:52:0x033b, B:53:0x0349, B:55:0x034f, B:57:0x035b, B:59:0x03ae, B:60:0x0363, B:62:0x0387, B:63:0x038d, B:65:0x0392, B:67:0x0399, B:71:0x03b2, B:72:0x03bf, B:74:0x03c5, B:75:0x03ce, B:77:0x03d4, B:79:0x03de, B:81:0x03f8, B:82:0x03e6, B:85:0x03fa, B:86:0x03fd, B:93:0x0080, B:96:0x0087, B:98:0x008d, B:102:0x00a3, B:103:0x017b, B:105:0x019b, B:106:0x01a1, B:108:0x01e0, B:110:0x01f2, B:116:0x00c9, B:117:0x00ed, B:121:0x00f5, B:123:0x00fc, B:125:0x012a, B:126:0x0161, B:127:0x014b, B:128:0x0165, B:130:0x009b, B:132:0x01fc, B:134:0x0207, B:136:0x020e, B:137:0x0244, B:139:0x024a, B:141:0x0263, B:143:0x0269, B:145:0x026f, B:147:0x0276, B:149:0x0296, B:150:0x029d, B:152:0x02ad, B:154:0x02b8, B:156:0x02c1, B:160:0x02cf, B:162:0x02d9, B:164:0x02e0, B:169:0x02e7, B:172:0x02ee, B:174:0x02f4), top: B:2:0x000d }] */
@@ -8545,22 +8545,22 @@ public final class vr extends c1 {
                 return;
             }
         }
-        g0.h3(new oq(this, i11));
-        this.a.c(new oq(this, 27));
-        this.a.c(new oq(this, 22));
-        this.a.c(new oq(this, 28));
+        g0.h3(new nq(this, i11));
+        this.a.c(new nq(this, 27));
+        this.a.c(new nq(this, 22));
+        this.a.c(new nq(this, 28));
         try {
             this.Q.countDown();
         } catch (Throwable unused) {
         }
-        g0.h3(new oq(this, r5));
+        g0.h3(new nq(this, r5));
     }
 
     public final void V1(TLRPC.EncryptedChat encryptedChat) {
         if (encryptedChat == null) {
             return;
         }
-        this.a.c(new bq(this, encryptedChat, 1));
+        this.a.c(new aq(this, encryptedChat, 1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:23:0x0057  */
@@ -9217,7 +9217,7 @@ public final class vr extends c1 {
             }
             TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
             tL_updates.updates.add(tL_updateDeleteScheduledMessages);
-            Utilities.d.c(new wq(1, this, tL_updates));
+            Utilities.d.c(new pq(3, this, tL_updates));
             try {
                 SQLiteDatabase sQLiteDatabase2 = this.b;
                 Locale locale2 = Locale.US;
@@ -10136,7 +10136,7 @@ public final class vr extends c1 {
     }
 
     public final void b2(final int i7, final long j3, final long j10, final String str, final boolean z10) {
-        this.a.c(new Runnable() { // from class: org.telegram.messenger.pq
+        this.a.c(new Runnable() { // from class: org.telegram.messenger.oq
             @Override // java.lang.Runnable
             public final void run() {
                 TLRPC.TL_message e02;
@@ -10262,12 +10262,12 @@ public final class vr extends c1 {
 
     public final void c1(ArrayList arrayList, boolean z10) {
         if (!arrayList.isEmpty() || z10) {
-            this.a.c(new aq(this, z10, new ArrayList(arrayList)));
+            this.a.c(new zp(this, z10, new ArrayList(arrayList)));
         }
     }
 
     public final void c2(final long j3, final ArrayList arrayList, final boolean z10, final int i7, final int i10, final boolean z11, final HashMap hashMap) {
-        this.a.c(new Runnable() { // from class: org.telegram.messenger.mr
+        this.a.c(new Runnable() { // from class: org.telegram.messenger.lr
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Removed duplicated region for block: B:61:0x0353  */
             /* JADX WARN: Removed duplicated region for block: B:63:0x0358  */
@@ -10428,7 +10428,7 @@ public final class vr extends c1 {
                                 sQLitePreparedStatement2.dispose();
                                 final int i20 = 0;
                                 final int i21 = max2;
-                                g0.h3(new Runnable() { // from class: org.telegram.messenger.sq
+                                g0.h3(new Runnable() { // from class: org.telegram.messenger.tq
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         int i22 = i20;
@@ -10580,7 +10580,7 @@ public final class vr extends c1 {
                             final HashMap hashMap4 = hashMap2;
                             final ArrayList arrayList6 = arrayList2;
                             final int i24 = i11;
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.sq
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.tq
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     int i222 = i22;
@@ -10848,7 +10848,7 @@ public final class vr extends c1 {
                                 Locale locale4 = Locale.ENGLISH;
                                 sQLiteDatabase5.executeFast("UPDATE topics SET max_read_id = " + i7 + ", unread_count = " + i12 + " WHERE did = " + j3 + " AND topic_id = " + j10).stepThis().dispose();
                             }
-                            g0.h3(new Runnable() { // from class: org.telegram.messenger.kr
+                            g0.h3(new Runnable() { // from class: org.telegram.messenger.jr
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     h00 h00Var = vr.this.getMessagesController().r7;
@@ -10938,19 +10938,19 @@ public final class vr extends c1 {
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 6 */
-    public final org.telegram.messenger.zq f0(long r83, long r85, int r87, int r88, int r89, int r90, int r91, int r92, int r93, long r94, int r96, boolean r97, boolean r98, org.telegram.messenger.xz r99) {
+    public final org.telegram.messenger.yq f0(long r83, long r85, int r87, int r88, int r89, int r90, int r91, int r92, int r93, long r94, int r96, boolean r97, boolean r98, org.telegram.messenger.xz r99) {
         /*
             Method dump skipped, instructions count: 9534
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.vr.f0(long, long, int, int, int, int, int, int, int, long, int, boolean, boolean, org.telegram.messenger.xz):org.telegram.messenger.zq");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.vr.f0(long, long, int, int, int, int, int, int, int, long, int, boolean, boolean, org.telegram.messenger.xz):org.telegram.messenger.yq");
     }
 
     public final void f1(ArrayList arrayList, boolean z10) {
         if (arrayList.isEmpty()) {
             return;
         }
-        I(new aq(this, arrayList, z10, 1));
+        I(new zp(this, arrayList, z10, 1));
     }
 
     public final void f2(long j3, TLRPC.TL_forumTopic tL_forumTopic, int i7) {
@@ -11106,7 +11106,7 @@ public final class vr extends c1 {
     }
 
     public final void h() {
-        g0.h3(new oq(this, 13));
+        g0.h3(new nq(this, 13));
     }
 
     public final HashMap h0() {
@@ -11149,7 +11149,7 @@ public final class vr extends c1 {
     }
 
     public final void h2(int i7, long j3, long j10, boolean z10) {
-        this.a.c(new di.g8(this, j10, z10, "unread_poll_votes", j3, i7, "poll_votes_mentions_topics", "unread_poll_votes", "poll_votes_mentions"));
+        this.a.c(new di.f8(this, j10, z10, "unread_poll_votes", j3, i7, "poll_votes_mentions_topics", "unread_poll_votes", "poll_votes_mentions"));
     }
 
     public final void i(Long l10) {
@@ -11196,7 +11196,7 @@ public final class vr extends c1 {
     }
 
     public final void i2(int i7, long j3, long j10, boolean z10) {
-        this.a.c(new di.g8(this, j10, z10, "unread_reactions", j3, i7, "reaction_mentions_topics", "unread_reactions", "reaction_mentions"));
+        this.a.c(new di.f8(this, j10, z10, "unread_reactions", j3, i7, "reaction_mentions_topics", "unread_reactions", "reaction_mentions"));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
@@ -11334,7 +11334,7 @@ public final class vr extends c1 {
         if (!z11) {
             k1(arrayList, z10, z12, i7, z13, i10, j3);
         } else {
-            this.a.c(new Runnable() { // from class: org.telegram.messenger.mq
+            this.a.c(new Runnable() { // from class: org.telegram.messenger.kq
                 @Override // java.lang.Runnable
                 public final void run() {
                     vr.this.k1(arrayList, z10, z12, i7, z13, i10, j3);
@@ -11372,16 +11372,16 @@ public final class vr extends c1 {
         return userArr[0];
     }
 
-    /*  JADX ERROR: Type inference failed
+    /*  JADX ERROR: Types fix failed
         jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
+        	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:96)
         */
-    public final void k1(java.util.ArrayList r65, boolean r66, boolean r67, int r68, boolean r69, int r70, long r71) {
+    public final void k1(java.util.ArrayList r63, boolean r64, boolean r65, int r66, boolean r67, int r68, long r69) {
         /*
-            Method dump skipped, instructions count: 9101
+            Method dump skipped, instructions count: 8586
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.vr.k1(java.util.ArrayList, boolean, boolean, int, boolean, int, long):void");
@@ -11391,29 +11391,33 @@ public final class vr extends c1 {
         if (arrayList.isEmpty()) {
             return;
         }
-        this.a.c(new aq(this, arrayList, z10, 0));
+        this.a.c(new zp(this, arrayList, z10, 0));
     }
 
     public final void l(int i7) {
-        boolean z10;
         SQLiteCursor sQLiteCursor = null;
         try {
             try {
-                int i10 = 0;
+                boolean z10 = false;
                 sQLiteCursor = this.b.queryFinalized("SELECT did FROM dialogs WHERE folder_id = ?", Integer.valueOf(i7));
-                while (sQLiteCursor.next()) {
+                while (true) {
+                    if (!sQLiteCursor.next()) {
+                        z10 = true;
+                        break;
+                    }
                     long longValue = sQLiteCursor.longValue(0);
                     if (!m5.E(longValue) && !m5.C(longValue)) {
                         TLRPC.Chat O = O(-longValue);
-                        if (t3.r0(O) || O.migrated_to != null) {
+                        if (!t3.r0(O) && O.migrated_to == null) {
+                            break;
                         }
+                    } else {
+                        break;
                     }
-                    z10 = false;
                 }
-                z10 = true;
                 sQLiteCursor.dispose();
                 if (z10) {
-                    g0.h3(new qp(this, i7, i10));
+                    g0.h3(new tp(this, i7, 6));
                     this.b.executeFast("DELETE FROM dialogs WHERE did = " + (2305843009213693952L | i7)).stepThis().dispose();
                 }
                 sQLiteCursor.dispose();
@@ -11477,7 +11481,7 @@ public final class vr extends c1 {
     public final boolean m(long j3) {
         boolean[] zArr = new boolean[1];
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.a.c(new cq(this, j3, zArr, countDownLatch, 2));
+        this.a.c(new bq(this, j3, zArr, countDownLatch, 2));
         try {
             countDownLatch.await();
         } catch (Exception e10) {
@@ -11746,7 +11750,7 @@ public final class vr extends c1 {
             }
             vrVar2.T = false;
             vrVar2.s();
-            g0.h3(new oq(vrVar2, 24));
+            g0.h3(new nq(vrVar2, 24));
             a8.g(new Exception("database restored!!"), true);
             return;
         }
@@ -12093,11 +12097,11 @@ public final class vr extends c1 {
     }
 
     public final void p0() {
-        this.a.c(new oq(this, 21));
+        this.a.c(new nq(this, 21));
     }
 
     public final void p1(int i7, ArrayList arrayList) {
-        this.a.c(new rp(this, i7, arrayList, 0));
+        this.a.c(new op(this, i7, arrayList, 0));
     }
 
     public final void q() {
@@ -12122,7 +12126,7 @@ public final class vr extends c1 {
 
     public final void q0(final int i7, final int i10, final ArrayList arrayList, final ArrayList arrayList2, final ArrayList arrayList3, final boolean z10) {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.a.c(new Runnable() { // from class: org.telegram.messenger.jr
+        this.a.c(new Runnable() { // from class: org.telegram.messenger.ir
             @Override // java.lang.Runnable
             public final void run() {
                 ArrayList arrayList4;
@@ -12241,11 +12245,11 @@ public final class vr extends c1 {
     }
 
     public final void q1(long j3) {
-        this.a.c(new up(this, j3, 6));
+        this.a.c(new rp(this, j3, 6));
     }
 
     public final void r(int i7) {
-        this.a.c(new qp(this, i7, 4));
+        this.a.c(new tp(this, i7, 3));
     }
 
     public final boolean r0(a0.h hVar, TLRPC.Chat chat) {
@@ -12278,7 +12282,7 @@ public final class vr extends c1 {
 
     public final void s1() {
         q();
-        g0.h3(new oq(this, 9));
+        g0.h3(new nq(this, 9));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -12719,7 +12723,7 @@ public final class vr extends c1 {
             }
         }
         j(false);
-        g0.h3(new oq(this, 25));
+        g0.h3(new nq(this, 25));
     }
 
     public final void u(int i7, int i10, long j3, long j10, String str) {
@@ -13103,7 +13107,7 @@ public final class vr extends c1 {
     }
 
     public final void w1(int i7, long j3) {
-        this.a.c(new xp(this, i7, j3, 2));
+        this.a.c(new wp(this, i7, j3, 2));
     }
 
     public final SQLiteCursor x(int i7, int i10, long j3) {
@@ -13286,7 +13290,7 @@ public final class vr extends c1 {
     }
 
     public final void y1() {
-        this.a.c(new pp(this, new ArrayList(getMessagesController().Q0), 7));
+        this.a.c(new sp(this, new ArrayList(getMessagesController().Q0), 6));
     }
 
     public final long z(NativeByteBuffer nativeByteBuffer) {
@@ -13594,7 +13598,7 @@ public final class vr extends c1 {
                     this.b.executeFast("VACUUM").stepThis().dispose();
                     this.b.executeFast("PRAGMA journal_size_limit = -1").stepThis().dispose();
                     getMessagesController().S1().b();
-                    g0.h3(new oq(this, 20));
+                    g0.h3(new nq(this, 20));
                     SQLiteDatabase sQLiteDatabase4 = this.b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.commitTransaction();

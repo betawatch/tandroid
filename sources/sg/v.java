@@ -21,7 +21,7 @@ import org.telegram.ui.Components.md;
 import org.telegram.ui.Components.nt0;
 import org.telegram.ui.Components.sp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v {
     public static final er B = new er(0.0d, 0.5d, 0.0d, 1.0d);

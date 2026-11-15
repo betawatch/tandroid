@@ -46,7 +46,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements org.telegram.messenger.is, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener, org.telegram.ui.ActionBar.z5 {
     public static final float[] X0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -2628,7 +2628,7 @@ public class FragmentContextView extends FrameLayout implements org.telegram.mes
                 launchActivity.O0(qdVar.h.K1);
                 org.telegram.ui.pa0 pa0Var = new org.telegram.ui.pa0(2);
                 pa0Var.G0(qdVar.h);
-                pa0Var.H0 = new ai.c0(qdVar, org.telegram.messenger.gj.B0(qdVar.h.k), 5);
+                pa0Var.H0 = new ai.d0(qdVar, org.telegram.messenger.gj.B0(qdVar.h.k), 5);
                 launchActivity.t0(pa0Var);
             }
         }

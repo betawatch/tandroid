@@ -22,9 +22,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui.Components.pm0, org.telegram.ui.Components.r4, org.telegram.ui.Components.zk0, org.telegram.ui.Components.hj0, org.telegram.ui.Cells.l1, l71, org.telegram.ui.Components.ft0, kl, ue.a, org.telegram.ui.Components.jj0, org.telegram.ui.Cells.m7, org.telegram.ui.Components.fo0, v4.d0, org.telegram.ui.Components.c8, org.telegram.ui.Components.c10, r0.m, ex0, xm0 {
+public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui.Components.pm0, org.telegram.ui.Components.r4, org.telegram.ui.Components.zk0, org.telegram.ui.Components.hj0, org.telegram.ui.Cells.l1, l71, org.telegram.ui.Components.ft0, kl, ue.a, org.telegram.ui.Components.jj0, org.telegram.ui.Cells.m7, org.telegram.ui.Components.fo0, v4.d0, org.telegram.ui.Components.c8, org.telegram.ui.Components.c10, r0.m, ex0, ym0 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -33,11 +33,11 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void A(Editable editable) {
-        nm0 nm0Var = (nm0) this.b;
-        org.telegram.ui.Components.rt rtVar = nm0Var.N;
-        nm0Var.a = editable;
+        om0 om0Var = (om0) this.b;
+        org.telegram.ui.Components.rt rtVar = om0Var.N;
+        om0Var.a = editable;
         rtVar.setText(editable);
     }
 
@@ -132,7 +132,7 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
 
     @Override // org.telegram.ui.Components.r4
     public void L(int i7, int i10, boolean z10) {
-        org.telegram.messenger.g0.i3(new ai.v0(this, i7, 19), 50L);
+        org.telegram.messenger.g0.i3(new ai.w0(this, i7, 19), 50L);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -394,7 +394,7 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
         ((c50) this.b).x.dismiss();
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -779,14 +779,14 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void t0(int i7, boolean z10, boolean z11) {
-        nm0 nm0Var = (nm0) this.b;
-        nm0Var.removeSelfFromStack();
+        om0 om0Var = (om0) this.b;
+        om0Var.removeSelfFromStack();
         if (z10) {
             return;
         }
-        nm0Var.a0(nm0Var.b, nm0Var.c, z11, i7);
+        om0Var.a0(om0Var.b, om0Var.c, z11, i7);
     }
 
     @Override // ue.a
@@ -908,16 +908,16 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public void y() {
-        nm0 nm0Var = (nm0) this.b;
-        if (nm0Var.b.size() != 0) {
-            nm0Var.R.invalidate();
-            nm0Var.b0(true);
+        om0 om0Var = (om0) this.b;
+        if (om0Var.b.size() != 0) {
+            om0Var.R.invalidate();
+            om0Var.b0(true);
         } else {
-            nm0Var.R.setPivotX(0.0f);
-            nm0Var.R.setPivotY(0.0f);
-            nm0Var.b0(false);
+            om0Var.R.setPivotX(0.0f);
+            om0Var.R.setPivotY(0.0f);
+            om0Var.b0(false);
         }
     }
 
@@ -927,16 +927,16 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
     }
 
     public void y1(Exception exc) {
-        jl0 jl0Var = (jl0) this.b;
-        if (jl0Var.R0) {
+        kl0 kl0Var = (kl0) this.b;
+        if (kl0Var.R0) {
             return;
         }
-        jl0Var.N0(true, false);
-        jl0Var.J0(false);
+        kl0Var.N0(true, false);
+        kl0Var.J0(false);
         if ((exc instanceof tc.a) || (exc instanceof tc.b)) {
-            org.telegram.ui.Components.t4.t0(org.telegram.messenger.hd.M0(2131747404, null), jl0Var);
+            org.telegram.ui.Components.t4.t0(org.telegram.messenger.hd.M0(2131747404, null), kl0Var);
         } else {
-            org.telegram.ui.Components.t4.t0(exc.getMessage(), jl0Var);
+            org.telegram.ui.Components.t4.t0(exc.getMessage(), kl0Var);
         }
     }
 
@@ -1132,7 +1132,7 @@ public final class f implements s9, br0, org.telegram.ui.web.u0, org.telegram.ui
     public /* synthetic */ void W() {
     }
 
-    @Override // org.telegram.ui.xm0
+    @Override // org.telegram.ui.ym0
     public /* synthetic */ void d0() {
     }
 

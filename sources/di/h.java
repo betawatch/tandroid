@@ -30,7 +30,7 @@ import org.telegram.ui.ka1;
 import org.telegram.ui.pv0;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ka1, org.telegram.ui.ActionBar.q1, org.telegram.messenger.kc, hj0, ap, w5.b, v5.e, ua.a {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class h implements ka1, org.telegram.ui.ActionBar.q
         long s5 = ((x5.a) cVar.g).s() + this.b;
         v5.g gVar = (v5.g) dVar;
         gVar.getClass();
-        gVar.c(new ai.c0(s5, iVar, 14));
+        gVar.c(new ai.d0(s5, iVar, 14));
         return null;
     }
 

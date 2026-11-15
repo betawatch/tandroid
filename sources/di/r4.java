@@ -7,11 +7,11 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class r4 {
     public final s4 a;
-    public androidx.car.app.utils.a d;
+    public ai.r d;
     public int f;
     public int g;
     public float j;
@@ -32,7 +32,7 @@ public final class r4 {
     }
 
     public final void b() {
-        androidx.car.app.utils.a aVar;
+        ai.r rVar;
         boolean z10 = this.e;
         s4 s4Var = this.a;
         if (!z10) {
@@ -123,7 +123,7 @@ public final class r4 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 s4Var.H = ofFloat;
                 ofFloat.addUpdateListener(new ah.h(s4Var, 7));
-                s4Var.H.addListener(new ai.i0(s4Var, 6));
+                s4Var.H.addListener(new ai.j0(s4Var, 6));
                 s4Var.H.setDuration(i12 * 16);
                 s4Var.H.setInterpolator(er.h);
                 s4Var.H.start();
@@ -131,10 +131,10 @@ public final class r4 {
             }
         }
         s4Var.I = null;
-        if (this.e || (aVar = this.d) == null) {
+        if (this.e || (rVar = this.d) == null) {
             return;
         }
-        aVar.run();
+        rVar.run();
     }
 
     public final void c(float f10, float f11) {

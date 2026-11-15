@@ -1,78 +1,44 @@
 package ai;
 
-import android.media.AudioRecord;
-import java.util.Arrays;
+import android.os.ParcelFileDescriptor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y {
-    public final Object a = new Object();
-    public byte[] b = new byte[320000];
-    public int c;
-    public boolean d;
-    public AudioRecord e;
-    public Thread f;
-    public volatile t1 g;
-    public double h;
-    public int i;
+    public final ParcelFileDescriptor a;
+    public final ParcelFileDescriptor b;
+    public final Thread c;
+    public volatile int d;
+    public volatile boolean e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public long i;
+    public final /* synthetic */ z j;
 
-    public final void a(int i7, byte[] bArr) {
-        synchronized (this.a) {
-            try {
-                int i10 = this.c + i7;
-                if (i10 > 19200000) {
-                    return;
-                }
-                byte[] bArr2 = this.b;
-                if (i10 > bArr2.length) {
-                    this.b = Arrays.copyOf(bArr2, Math.min(19200000, Math.max(bArr2.length * 2, i10)));
-                }
-                System.arraycopy(bArr, 0, this.b, this.c, i7);
-                this.c += i7;
-                this.a.notifyAll();
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public y(z zVar, int i7, int i10, int i11) {
+        this.j = zVar;
+        ParcelFileDescriptor[] createPipe = ParcelFileDescriptor.createPipe();
+        this.a = createPipe[0];
+        this.b = createPipe[1];
+        this.d = i7;
+        this.f = i7;
+        this.g = i10;
+        this.h = i11;
+        Thread thread = new Thread(new a3.f(this, 5), "DictationFeed");
+        this.c = thread;
+        thread.start();
     }
 
-    public final byte[] b(int i7, int i10) {
-        byte[] copyOfRange;
-        synchronized (this.a) {
-            int max = Math.max(0, Math.min(i7, this.c));
-            copyOfRange = Arrays.copyOfRange(this.b, max, Math.max(max, Math.min(i10, this.c)));
+    public final void a() {
+        this.e = true;
+        synchronized (this.j.a) {
+            this.j.a.notifyAll();
         }
-        return copyOfRange;
-    }
-
-    public final int c() {
-        int i7;
-        synchronized (this.a) {
-            i7 = this.c;
-        }
-        return i7;
-    }
-
-    public final void d() {
-        synchronized (this.a) {
-            this.d = true;
-            this.a.notifyAll();
-        }
-        AudioRecord audioRecord = this.e;
-        if (audioRecord != null) {
-            try {
-                audioRecord.stop();
-            } catch (Exception unused) {
-            }
-            try {
-                Thread thread = this.f;
-                if (thread != null) {
-                    thread.join(300L);
-                }
-            } catch (InterruptedException unused2) {
-            }
-            this.e.release();
-            this.e = null;
+        this.c.interrupt();
+        try {
+            this.a.close();
+        } catch (Exception unused) {
         }
     }
 }

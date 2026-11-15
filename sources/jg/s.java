@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ij0;
 import org.telegram.ui.jw;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements f0, ij0 {
     public final /* synthetic */ h0 a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class s implements f0, ij0 {
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = M0;
                 t1Var.U = org.telegram.messenger.g0.X2(hd.a0("ChatHintsDeleteAlert", null, 2131752235, g5.m(0, a22.first_name, a22.last_name)));
-                alertDialog$Builder.k(hd.M0(2131744855, null), new ai.c0(jwVar, longValue, 9));
+                alertDialog$Builder.k(hd.M0(2131744855, null), new ai.d0(jwVar, longValue, 9));
                 alertDialog$Builder.h(hd.M0(2131752589, null), null);
                 ywVar.showDialog(t1Var);
                 TextView textView = (TextView) t1Var.d(-1);

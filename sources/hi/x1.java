@@ -8,7 +8,7 @@ import android.util.SparseIntArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import di.vb;
+import di.ub;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.zw;
 import org.telegram.ui.n11;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x1 extends v4.h0 {
     public final TLRPC.TL_inputStickerSetShortName F;
@@ -550,9 +550,9 @@ public final class x1 extends v4.h0 {
             v1Var.addView(textView, c8.ja.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             i8Var = v1Var;
         } else if (i7 == 4) {
-            vb vbVar = new vb(i2Var, y1Var.getContext());
-            vbVar.f = new d1(i2Var, 2);
-            i8Var = vbVar;
+            ub ubVar = new ub(i2Var, y1Var.getContext());
+            ubVar.f = new d1(i2Var, 2);
+            i8Var = ubVar;
         } else {
             i8Var = new n1(y1Var.getContext(), y1Var.b);
         }

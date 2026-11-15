@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t50 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public boolean E;
@@ -49,7 +49,7 @@ public final class t50 extends org.telegram.ui.ActionBar.e2 implements org.teleg
     public GradientDrawable h;
     public gi.j n;
     public FrameLayout r;
-    public ai.j0 s;
+    public ai.k0 s;
     public org.telegram.ui.Components.ch0 w;
     public int x;
     public boolean y;
@@ -218,9 +218,9 @@ public final class t50 extends org.telegram.ui.ActionBar.e2 implements org.teleg
         org.telegram.ui.Components.fh0 fh0Var = new org.telegram.ui.Components.fh0(context);
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.addView(fh0Var, c8.ja.e(28, 28, 17));
-        ai.j0 j0Var = new ai.j0(this, context, frameLayout, 23);
-        this.s = j0Var;
-        scrollView.addView(j0Var, c8.ja.x(-1, -2, 51));
+        ai.k0 k0Var = new ai.k0(this, context, frameLayout, 23);
+        this.s = k0Var;
+        scrollView.addView(k0Var, c8.ja.x(-1, -2, 51));
         org.telegram.ui.Components.ch0 ch0Var = new org.telegram.ui.Components.ch0(R.raw.sun, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
         this.w = ch0Var;
         ch0Var.h = true;

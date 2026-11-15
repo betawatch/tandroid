@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rz implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a = 1;
@@ -53,7 +53,7 @@ public final /* synthetic */ class rz implements org.telegram.messenger.z10 {
                     } else {
                         org.telegram.ui.yw ywVar = (org.telegram.ui.yw) e2Var3;
                         ywVar.W3();
-                        org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.m5(ywVar, num, ghVar, e2Var2, 25), 80L);
+                        org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.l5(ywVar, num, ghVar, e2Var2, 26), 80L);
                         break;
                     }
                 }

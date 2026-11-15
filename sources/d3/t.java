@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import h9.s1;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class t {
     public static final b q = new b(0);
@@ -27,22 +27,22 @@ public final class t {
     public long o;
     public int p;
 
-    public t(ai.w wVar) {
-        this.a = (Context) wVar.d;
-        r rVar = (r) wVar.f;
+    public t(ai.x xVar) {
+        this.a = (Context) xVar.d;
+        r rVar = (r) xVar.f;
         rVar.getClass();
         this.b = rVar;
         this.c = new SparseArray();
         h9.g0 g0Var = h9.i0.b;
         s1 s1Var = s1.e;
-        this.d = wVar.a;
-        h2.g0 g0Var2 = (h2.g0) wVar.g;
+        this.d = xVar.a;
+        h2.g0 g0Var2 = (h2.g0) xVar.g;
         this.f = g0Var2;
-        long j3 = wVar.c;
+        long j3 = xVar.c;
         this.h = j3 != -9223372036854775807L ? -j3 : -9223372036854775807L;
-        y yVar = (y) wVar.h;
+        y yVar = (y) xVar.h;
         this.i = yVar;
-        this.e = new e((x) wVar.e, yVar, g0Var2);
+        this.e = new e((x) xVar.e, yVar, g0Var2);
         this.g = new CopyOnWriteArraySet();
         new e2.t().a();
         this.o = -9223372036854775807L;

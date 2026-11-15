@@ -10,7 +10,7 @@ import org.telegram.messenger.np;
 import org.telegram.messenger.ns;
 import org.telegram.ui.Components.cc;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a5 extends i2 {
     public final /* synthetic */ int D1;
@@ -72,7 +72,7 @@ public final class a5 extends i2 {
                 if (i7 >= h5Var.getChildCount()) {
                     break;
                 }
-                if (h5Var.getChildAt(i7) instanceof tg.p2) {
+                if (h5Var.getChildAt(i7) instanceof tg.o2) {
                     z10 = true;
                     break;
                 }
@@ -95,14 +95,14 @@ public final class a5 extends i2 {
                 return true;
             }
             activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_AUDIO"}, ns.A1);
-            saVar.z2 = (ai.v0) runnable;
+            saVar.z2 = (ai.w0) runnable;
             return false;
         }
         if (activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") == 0) {
             return true;
         }
         activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, ns.A1);
-        saVar.z2 = (ai.v0) runnable;
+        saVar.z2 = (ai.w0) runnable;
         return false;
     }
 

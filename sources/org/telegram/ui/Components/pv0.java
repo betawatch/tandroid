@@ -4,7 +4,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class pv0 implements org.telegram.ui.ls {
     public final /* synthetic */ bw0 a;
@@ -29,7 +29,7 @@ public final class pv0 implements org.telegram.ui.ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ m60 E(ai.j0 j0Var) {
+    public final /* synthetic */ m60 E(ai.k0 k0Var) {
         return null;
     }
 
@@ -46,7 +46,7 @@ public final class pv0 implements org.telegram.ui.ls {
         t1Var.r(350L);
         TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
         tL_stickers_removeStickerFromSet.sticker = org.telegram.messenger.si.a0(document, "").document;
-        ConnectionsManager.getInstance(bw0Var.a).sendRequest(tL_stickers_removeStickerFromSet, new di.l8(this, isEmpty, t1Var, 4));
+        ConnectionsManager.getInstance(bw0Var.a).sendRequest(tL_stickers_removeStickerFromSet, new di.k8(this, isEmpty, t1Var, 4));
     }
 
     @Override // org.telegram.ui.ls

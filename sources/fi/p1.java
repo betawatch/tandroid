@@ -10,13 +10,13 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import c8.na;
-import di.bc;
+import di.ac;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p1 extends View {
     public long E;
@@ -26,7 +26,7 @@ public final class p1 extends View {
     public final o1 a;
     public final RectF b;
     public final Path c;
-    public final bc d;
+    public final ac d;
     public final org.telegram.ui.Components.u5 e;
     public final org.telegram.ui.Components.u5 f;
     public final org.telegram.ui.Components.g6 h;
@@ -70,7 +70,7 @@ public final class p1 extends View {
         eqVar.I = 1.8f;
         eqVar.J = 1.8f;
         setCount(0);
-        this.d = new bc(1, 50);
+        this.d = new ac(1, 50);
     }
 
     @Override // android.view.View
@@ -110,11 +110,11 @@ public final class p1 extends View {
         path.addRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, Path.Direction.CW);
         canvas.clipPath(path);
         float T1 = org.telegram.messenger.g0.T1(5.0f, 15.0f, d);
-        bc bcVar = this.d;
-        bcVar.h = T1;
-        bcVar.g(rectF);
-        bcVar.d();
-        bcVar.b(canvas, -1, org.telegram.messenger.g0.T1(0.5f, 1.0f, d));
+        ac acVar = this.d;
+        acVar.h = T1;
+        acVar.g(rectF);
+        acVar.d();
+        acVar.b(canvas, -1, org.telegram.messenger.g0.T1(0.5f, 1.0f, d));
         invalidate();
         canvas.restore();
         if (d2 > 0.0f) {

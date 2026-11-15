@@ -1,6 +1,6 @@
 package ci;
 
-import ai.r1;
+import ai.s1;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -86,7 +86,7 @@ import org.telegram.ui.uf;
 import org.telegram.ui.vm;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -388,7 +388,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 if (h0Var.H0) {
                     h0Var.p(i25, max);
                     if (z16) {
-                        org.telegram.messenger.g0.i3(new ai.v0(h0Var, i24, i13), 350L);
+                        org.telegram.messenger.g0.i3(new ai.w0(h0Var, i24, i13), 350L);
                     } else {
                         h0Var.g(i24);
                     }
@@ -793,7 +793,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 hmVar.i(imVar.Q, false);
                 return;
             case 21:
-                t4.D(((m60) obj3).e, (e6) obj, new r1(i14, (yn) obj2, i13));
+                t4.D(((m60) obj3).e, (e6) obj, new s1(i14, (yn) obj2, i13));
                 return;
             case 22:
                 int[] iArr6 = (int[]) obj3;

@@ -2,7 +2,7 @@ package wg;
 
 import android.graphics.Canvas;
 import android.view.ViewGroup;
-import di.v8;
+import di.u8;
 import fi.i4;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y extends ja implements is {
     public final ArrayList T1;
@@ -231,7 +231,7 @@ public final class y extends ja implements is {
     }
 
     public final TL_stars.TL_starsGiveawayOption g1(long j3) {
-        ArrayList v = v8.y(this.a, false).v();
+        ArrayList v = u8.y(this.a, false).v();
         if (v == null) {
             return null;
         }
@@ -377,7 +377,7 @@ public final class y extends ja implements is {
                 aVar5.c = M0;
                 aVar5.i = f12;
                 arrayList.add(aVar5);
-                ArrayList v = v8.y(this.a, false).v();
+                ArrayList v = u8.y(this.a, false).v();
                 ArrayList arrayList6 = new ArrayList();
                 if (v != null) {
                     for (int i17 = 0; i17 < v.size(); i17++) {

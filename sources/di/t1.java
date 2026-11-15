@@ -6,7 +6,7 @@ import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements z10 {
     public final /* synthetic */ c6 a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class t1 implements z10 {
                 vf.b bVar = (vf.b) obj3;
                 bVar.d();
                 c6 c6Var2 = c6.this;
-                v8 x10 = v8.x(c6Var2.a, c5Var2.a);
+                u8 x10 = u8.x(c6Var2.a, c5Var2.a);
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift2 = c5Var2.b;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = tL_starGiftUnique;
                 long j10 = j3;

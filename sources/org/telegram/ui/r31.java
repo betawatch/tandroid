@@ -19,7 +19,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class r31 extends org.telegram.ui.Components.ja {
     public static final /* synthetic */ int Z1 = 0;
@@ -127,7 +127,7 @@ public final class r31 extends org.telegram.ui.Components.ja {
         org.telegram.ui.ActionBar.q6.C(editTextBoldCursor, org.telegram.ui.ActionBar.j6.lg, e6Var);
         org.telegram.ui.ActionBar.q6.l(editTextBoldCursor, 36, org.telegram.ui.ActionBar.j6.mg, e6Var);
         editTextBoldCursor.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new di.o9(mb0Var, editTextBoldCursor, 2));
+        editTextBoldCursor.setOnFocusChangeListener(new di.n9(mb0Var, editTextBoldCursor, 2));
         LinearLayout linearLayout4 = new LinearLayout(context);
         linearLayout4.setOrientation(0);
         ImageView imageView2 = new ImageView(context);
@@ -144,7 +144,7 @@ public final class r31 extends org.telegram.ui.Components.ja {
         mb0Var.addView(textView, c8.ja.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
         long j3 = tL_emojiGameDiceInfo.prev_stake;
         j3 = j3 <= 0 ? 1000000000L : j3;
-        editTextBoldCursor.setText(di.mb.P0(j3));
+        editTextBoldCursor.setText(di.lb.P0(j3));
         textView.setAlpha(1.0f);
         StringBuilder sb2 = new StringBuilder("≈");
         org.telegram.messenger.r1 i11 = org.telegram.messenger.r1.i();
@@ -170,7 +170,7 @@ public final class r31 extends org.telegram.ui.Components.ja {
                 org.telegram.ui.ActionBar.m6 K = org.telegram.ui.ActionBar.q6.K(0.15f, i12);
                 textView2.setBackground(d02);
                 org.telegram.ui.ActionBar.q6.j(textView2, d02, K, null, e6Var2);
-                textView2.setText(di.mb.R0(di.mb.P0(l10.longValue()) + " 💎", 0.75f));
+                textView2.setText(di.lb.R0(di.lb.P0(l10.longValue()) + " 💎", 0.75f));
                 c8.na.a(textView2);
                 textView2.setOnClickListener(new a90(19, editTextBoldCursor, l10));
                 return textView2;
@@ -210,7 +210,7 @@ public final class r31 extends org.telegram.ui.Components.ja {
                                 return;
                             }
                             if (TextUtils.isEmpty(text) || parseDouble >= org.telegram.messenger.np.s1(i14).a7 / 1.0E9d) {
-                                if (di.v8.y(i14, true).f.toDouble() < parseDouble) {
+                                if (di.u8.y(i14, true).f.toDouble() < parseDouble) {
                                     new ii.e(context, e6Var, cg.a.i((long) (parseDouble * 1.0E9d), cg.b.b), true, new ah0(3));
                                     return;
                                 } else {

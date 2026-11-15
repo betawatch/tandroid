@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p50 extends org.telegram.ui.ActionBar.u2 {
     public static final /* synthetic */ int i2 = 0;
@@ -348,7 +348,7 @@ public final class p50 extends org.telegram.ui.ActionBar.u2 {
             obj = "min";
             Object[] objArr = new Object[1];
             objArr[z10] = Long.valueOf(tL_starsSubscriptionPricing.amount);
-            f11.setText(di.mb.a1(z10, org.telegram.messenger.hd.a0(null, null, 2131744983, objArr), 0.8f, null));
+            f11.setText(di.lb.a1(z10, org.telegram.messenger.hd.a0(null, null, 2131744983, objArr), 0.8f, null));
             i10 = i12;
         } else {
             obj = "min";
@@ -359,7 +359,7 @@ public final class p50 extends org.telegram.ui.ActionBar.u2 {
             Object[] objArr2 = new Object[2];
             objArr2[z11 ? 1 : 0] = Long.valueOf(tL_starsSubscriptionPricing.amount);
             objArr2[1] = obj2;
-            f11.setText(di.mb.a1(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
+            f11.setText(di.lb.a1(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
         }
         TextView f12 = org.telegram.messenger.i20.f(f10, f11, c8.ja.t(-1, -2, 17, 20, 0, 20, 4), context);
         f12.setTextSize(1, 14.0f);

@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements org.telegram.ui.ActionBar.q1, hj0, eb0, fb0, gb0, te.d, org.telegram.messenger.kc, r4, r0.m, wh.a, t0.e, ij0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.o5, fi.e9, org.telegram.ui.ActionBar.l0, org.telegram.ui.ActionBar.e1 {
     public final /* synthetic */ int a;
@@ -371,7 +371,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.q1, hj
                 ConnectionsManager.getInstance(yVar.a).sendRequestTyped(deletetone, new d3.b(1), new bi.h0(yVar, h, t1Var, 7));
                 break;
             case 2:
-                ((org.telegram.ui.ActionBar.m5) this.b).run();
+                ((org.telegram.ui.ActionBar.l5) this.b).run();
                 break;
             case 3:
                 ((di.x2) this.b).run();

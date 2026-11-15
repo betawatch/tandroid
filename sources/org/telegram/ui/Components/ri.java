@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ri extends v4.t0 {
     public final /* synthetic */ int a;
@@ -104,9 +104,9 @@ public final class ri extends v4.t0 {
                 }
                 break;
             case 11:
-                h90 h90Var = (h90) obj;
-                h90Var.f3 = i7 != 0;
-                h90Var.g3 = i7 == 1;
+                i90 i90Var = (i90) obj;
+                i90Var.f3 = i7 != 0;
+                i90Var.g3 = i7 == 1;
                 break;
             case 13:
                 te0 te0Var = (te0) obj;
@@ -335,35 +335,35 @@ public final class ri extends v4.t0 {
                 jz.I0((jz) this.b);
                 break;
             case 11:
-                h90 h90Var = (h90) this.b;
-                v4.o0 layoutManager = h90Var.getLayoutManager();
-                i90 i90Var = h90Var.j3;
-                b90 b90Var = i90Var.d;
-                int N02 = layoutManager == b90Var ? b90Var.N0() : i90Var.c.N0();
+                i90 i90Var = (i90) this.b;
+                v4.o0 layoutManager = i90Var.getLayoutManager();
+                j90 j90Var = i90Var.j3;
+                c90 c90Var = j90Var.d;
+                int N02 = layoutManager == c90Var ? c90Var.N0() : j90Var.c.N0();
                 if ((N02 == -1 ? 0 : N02) > 0) {
-                    jg.h1 h1Var = i90Var.f;
+                    jg.h1 h1Var = j90Var.f;
                     if (N02 > h1Var.N0 - 5 && h1Var.v0 == 0 && (str = h1Var.t0) != null && str.length() != 0 && (user = h1Var.x0) != null && (str2 = h1Var.s0) != null) {
                         h1Var.T(true, user, str2, h1Var.t0);
                     }
                 }
-                boolean z10 = !h90Var.canScrollVertically(-1);
-                h90Var.canScrollVertically(1);
-                i90Var.n(z10);
-                i90Var.b();
+                boolean z10 = !i90Var.canScrollVertically(-1);
+                i90Var.canScrollVertically(1);
+                j90Var.n(z10);
+                j90Var.b();
                 break;
             case 12:
-                da0 da0Var = (da0) this.b;
-                org.telegram.ui.v8 v8Var = da0Var.b;
-                di.c1 c1Var = da0Var.f;
+                ea0 ea0Var = (ea0) this.b;
+                org.telegram.ui.v8 v8Var = ea0Var.b;
+                di.c1 c1Var = ea0Var.f;
                 for (int i11 = 0; i11 < c1Var.getChildCount(); i11++) {
                     View childAt = c1Var.getChildAt(i11);
                     if (childAt instanceof org.telegram.ui.Cells.q1) {
                         ((org.telegram.ui.Cells.q1) childAt).z3(v8Var.getMeasuredWidth(), v8Var.getBackgroundSizeY());
                     }
                 }
-                x90 x90Var = da0Var.e;
-                if (x90Var != null) {
-                    x90Var.w();
+                y90 y90Var = ea0Var.e;
+                if (y90Var != null) {
+                    y90Var.w();
                     break;
                 }
                 break;

@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.uc;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -62,7 +62,7 @@ public final class y {
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
             ns.f(this.a).k(ns.J1, new Object[0]);
-            cc.a0(vVar).U(hd.M0(2131752715, null), true, new ai.z0(this, indexOf, c10, 19), new s5((Object) this, (Object) str, (Object) c10, 25)).j();
+            cc.a0(vVar).U(hd.M0(2131752715, null), true, new ai.a1(this, indexOf, c10, 19), new s5((Object) this, (Object) str, (Object) c10, 25)).j();
         }
     }
 

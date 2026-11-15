@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class js implements Runnable {
     public final /* synthetic */ ns a;
@@ -51,22 +51,22 @@ public final class js implements Runnable {
         TLRPC.Document document;
         TLRPC.Document document2;
         boolean z10;
-        ai.j0 j0Var;
+        ai.k0 k0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2;
         i0.c cVar;
         i0.c cVar2;
         i0.c cVar3;
-        ai.j0 j0Var2;
-        ai.j0 j0Var3;
+        ai.k0 k0Var2;
+        ai.k0 k0Var3;
         float f10;
-        ai.j0 j0Var4;
+        ai.k0 k0Var4;
         float f11;
-        ai.j0 j0Var5;
-        ai.j0 j0Var6;
+        ai.k0 k0Var5;
+        ai.k0 k0Var6;
         int i14;
         float f12;
         float f13;
-        ai.j0 j0Var7;
+        ai.k0 k0Var7;
         org.telegram.ui.ActionBar.e6 e6Var;
         int i15;
         TLRPC.Document document3;
@@ -86,20 +86,20 @@ public final class js implements Runnable {
         int i17;
         TLRPC.Document document8;
         TLRPC.Document document9;
-        ai.j0 j0Var8;
+        ai.k0 k0Var8;
         i0.c cVar4;
         i0.c cVar5;
         i0.c cVar6;
-        ai.j0 j0Var9;
-        ai.j0 j0Var10;
+        ai.k0 k0Var9;
+        ai.k0 k0Var10;
         float f14;
-        ai.j0 j0Var11;
+        ai.k0 k0Var11;
         float f15;
-        ai.j0 j0Var12;
-        ai.j0 j0Var13;
+        ai.k0 k0Var12;
+        ai.k0 k0Var13;
         float f16;
         float f17;
-        ai.j0 j0Var14;
+        ai.k0 k0Var14;
         org.telegram.ui.ActionBar.e6 e6Var2;
         TLRPC.Document document10;
         int i18;
@@ -111,24 +111,24 @@ public final class js implements Runnable {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3;
         TLRPC.Document document14;
         ls lsVar14;
-        ai.j0 j0Var15;
+        ai.k0 k0Var15;
         i0.c cVar7;
         i0.c cVar8;
         i0.c cVar9;
         int i20;
-        ai.j0 j0Var16;
-        ai.j0 j0Var17;
+        ai.k0 k0Var16;
+        ai.k0 k0Var17;
         float min;
         int i21;
-        ai.j0 j0Var18;
-        ai.j0 j0Var19;
+        ai.k0 k0Var18;
+        ai.k0 k0Var19;
         float f18;
-        ai.j0 j0Var20;
-        ai.j0 j0Var21;
-        ai.j0 j0Var22;
-        ai.j0 j0Var23;
-        ai.j0 j0Var24;
-        ai.j0 j0Var25;
+        ai.k0 k0Var20;
+        ai.k0 k0Var21;
+        ai.k0 k0Var22;
+        ai.k0 k0Var23;
+        ai.k0 k0Var24;
+        ai.k0 k0Var25;
         org.telegram.ui.ActionBar.e6 e6Var3;
         TLRPC.Document document15;
         int i22;
@@ -150,18 +150,18 @@ public final class js implements Runnable {
         ls lsVar25;
         int i26;
         boolean z11;
-        ai.j0 j0Var26;
-        ai.j0 j0Var27;
+        ai.k0 k0Var26;
+        ai.k0 k0Var27;
         int i27;
         b61 b61Var;
         i0.c cVar10;
         i0.c cVar11;
         i0.c cVar12;
-        ai.j0 j0Var28;
-        ai.j0 j0Var29;
+        ai.k0 k0Var28;
+        ai.k0 k0Var29;
         float f19;
-        ai.j0 j0Var30;
-        ai.j0 j0Var31;
+        ai.k0 k0Var30;
+        ai.k0 k0Var31;
         View view;
         View view2;
         View view3;
@@ -170,7 +170,7 @@ public final class js implements Runnable {
         View view6;
         View view7;
         View view8;
-        ai.j0 j0Var32;
+        ai.k0 k0Var32;
         org.telegram.ui.Components.m60 E;
         TLRPC.Document unused;
         Integer valueOf = Integer.valueOf(R.drawable.msg_smile_status);
@@ -332,7 +332,7 @@ public final class js implements Runnable {
                     ConnectionsManager.getInstance(nsVar.r).sendRequest(tL_messages_getMyStickers, new z9(nsVar, arrayList4, tL_messages_getMyStickers, i31));
                     b61Var = new b61(8, nsVar.w, e6Var4);
                     b61Var.setLayoutManager(new v4.b0());
-                    b61Var.i(new ai.h0(arrayList4, 5));
+                    b61Var.i(new ai.i0(arrayList4, 5));
                     b61Var.setAdapter(new ks(nsVar, arrayList4));
                 }
                 b61Var.setOnItemClickListener(new h(this, 6));
@@ -355,15 +355,15 @@ public final class js implements Runnable {
                 int i34 = i33 + cVar11.b;
                 cVar12 = nsVar.q;
                 int i35 = cVar12.b;
-                j0Var28 = nsVar.z;
-                int width = j0Var28.getWidth();
-                j0Var29 = nsVar.z;
-                int min3 = (int) (Math.min(width, j0Var29.getHeight() - i34) / 1.8f);
+                k0Var28 = nsVar.z;
+                int width = k0Var28.getWidth();
+                k0Var29 = nsVar.z;
+                int min3 = (int) (Math.min(width, k0Var29.getHeight() - i34) / 1.8f);
                 f19 = nsVar.e;
-                j0Var30 = nsVar.z;
-                int L2 = org.telegram.messenger.g0.L(84.0f) + ((int) (f19 + Math.max(i35 + r3, ((j0Var30.getHeight() - i34) - nsVar.I) / 2) + (min3 / 2)));
-                j0Var31 = nsVar.z;
-                j0Var31.addView(actionBarPopupWindow$ActionBarPopupWindowLayout4, c8.ja.d(-2, -2.0f, 49, 0.0f, L2 / org.telegram.messenger.g0.p, 0.0f, 0.0f));
+                k0Var30 = nsVar.z;
+                int L2 = org.telegram.messenger.g0.L(84.0f) + ((int) (f19 + Math.max(i35 + r3, ((k0Var30.getHeight() - i34) - nsVar.I) / 2) + (min3 / 2)));
+                k0Var31 = nsVar.z;
+                k0Var31.addView(actionBarPopupWindow$ActionBarPopupWindowLayout4, c8.ja.d(-2, -2.0f, 49, 0.0f, L2 / org.telegram.messenger.g0.p, 0.0f, 0.0f));
                 nsVar.L = actionBarPopupWindow$ActionBarPopupWindowLayout4;
                 view = nsVar.L;
                 view.setTranslationY(-org.telegram.messenger.g0.L(12.0f));
@@ -404,8 +404,8 @@ public final class js implements Runnable {
                 nsVar.Q.setAlpha(0.0f);
                 org.telegram.messenger.g0.i3(new as(nsVar, 2), 10L);
                 nsVar.K = true;
-                j0Var32 = nsVar.z;
-                j0Var32.invalidate();
+                k0Var32 = nsVar.z;
+                k0Var32.invalidate();
                 actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout4;
             } else {
                 i10 = nsVar.V;
@@ -415,9 +415,9 @@ public final class js implements Runnable {
                         i26 = nsVar.r;
                         if (!org.telegram.messenger.c.a(i26).e().q()) {
                             if (nsVar.O == null) {
-                                k0 k0Var = new k0(nsVar.z.getContext(), nsVar.c0);
-                                nsVar.O = k0Var;
-                                nsVar.z.addView(k0Var, c8.ja.c(-1.0f, -1));
+                                k0 k0Var33 = new k0(nsVar.z.getContext(), nsVar.c0);
+                                nsVar.O = k0Var33;
+                                nsVar.z.addView(k0Var33, c8.ja.c(-1.0f, -1));
                                 nsVar.O.setOnClickListener(new cs(nsVar, i29));
                                 z11 = true;
                                 ((ug.q0) nsVar.O.b).w.setOnClickListener(new cs(nsVar, 1 == true ? 1 : 0));
@@ -428,11 +428,11 @@ public final class js implements Runnable {
                             org.telegram.messenger.g0.W3(nsVar.O, z11);
                             nsVar.O.setTranslationY(0.0f);
                             nsVar.K = true;
-                            j0Var26 = nsVar.z;
-                            j0Var26.invalidate();
+                            k0Var26 = nsVar.z;
+                            k0Var26.invalidate();
                             try {
-                                j0Var27 = nsVar.z;
-                                j0Var27.performHapticFeedback(0);
+                                k0Var27 = nsVar.z;
+                                k0Var27.performHapticFeedback(0);
                                 return;
                             } catch (Exception unused3) {
                                 return;
@@ -541,8 +541,8 @@ public final class js implements Runnable {
                         return;
                     }
                     nsVar.K = true;
-                    j0Var15 = nsVar.z;
-                    j0Var15.invalidate();
+                    k0Var15 = nsVar.z;
+                    k0Var15.invalidate();
                     fs fsVar = new fs(this, arrayList6, A0);
                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout5 = actionBarPopupWindow$ActionBarPopupWindowLayout3;
                     ns.g(nsVar, actionBarPopupWindow$ActionBarPopupWindowLayout5);
@@ -584,21 +584,21 @@ public final class js implements Runnable {
                     int i40 = cVar9.b;
                     i20 = nsVar.V;
                     if (i20 == 1) {
-                        j0Var24 = nsVar.z;
-                        int width2 = j0Var24.getWidth();
-                        j0Var25 = nsVar.z;
-                        i21 = Math.min(width2, j0Var25.getHeight() - i39) - org.telegram.messenger.g0.L(40.0f);
+                        k0Var24 = nsVar.z;
+                        int width2 = k0Var24.getWidth();
+                        k0Var25 = nsVar.z;
+                        i21 = Math.min(width2, k0Var25.getHeight() - i39) - org.telegram.messenger.g0.L(40.0f);
                     } else {
                         if (nsVar.S) {
-                            j0Var18 = nsVar.z;
-                            int width3 = j0Var18.getWidth();
-                            j0Var19 = nsVar.z;
-                            min = Math.min(width3, j0Var19.getHeight() - i39) - org.telegram.messenger.g0.N(40.0f);
+                            k0Var18 = nsVar.z;
+                            int width3 = k0Var18.getWidth();
+                            k0Var19 = nsVar.z;
+                            min = Math.min(width3, k0Var19.getHeight() - i39) - org.telegram.messenger.g0.N(40.0f);
                         } else {
-                            j0Var16 = nsVar.z;
-                            int width4 = j0Var16.getWidth();
-                            j0Var17 = nsVar.z;
-                            min = Math.min(width4, j0Var17.getHeight() - i39) / 1.8f;
+                            k0Var16 = nsVar.z;
+                            int width4 = k0Var16.getWidth();
+                            k0Var17 = nsVar.z;
+                            min = Math.min(width4, k0Var17.getHeight() - i39) / 1.8f;
                         }
                         i21 = (int) min;
                     }
@@ -606,18 +606,18 @@ public final class js implements Runnable {
                     int i41 = i21 / 2;
                     int i42 = i40 + i41;
                     int L3 = nsVar.G != null ? org.telegram.messenger.g0.L(40.0f) : 0;
-                    j0Var20 = nsVar.z;
-                    int L4 = org.telegram.messenger.g0.L(24.0f) + ((int) (f18 + Math.max(i42 + L3, ((j0Var20.getHeight() - i39) - nsVar.I) / 2) + i41));
+                    k0Var20 = nsVar.z;
+                    int L4 = org.telegram.messenger.g0.L(24.0f) + ((int) (f18 + Math.max(i42 + L3, ((k0Var20.getHeight() - i39) - nsVar.I) / 2) + i41));
                     if (nsVar.S) {
                         L4 += org.telegram.messenger.g0.L(24.0f);
                     }
                     org.telegram.ui.ActionBar.g1 g1Var = nsVar.k;
-                    j0Var21 = nsVar.z;
-                    j0Var22 = nsVar.z;
-                    g1Var.showAtLocation(j0Var21, 0, (int) ((j0Var22.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout7.getMeasuredWidth()) / 2.0f), L4);
+                    k0Var21 = nsVar.z;
+                    k0Var22 = nsVar.z;
+                    g1Var.showAtLocation(k0Var21, 0, (int) ((k0Var22.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout7.getMeasuredWidth()) / 2.0f), L4);
                     try {
-                        j0Var23 = nsVar.z;
-                        j0Var23.performHapticFeedback(0);
+                        k0Var23 = nsVar.z;
+                        k0Var23.performHapticFeedback(0);
                     } catch (Exception unused4) {
                     }
                     actionBarPopupWindow$ActionBarPopupWindowLayout2 = actionBarPopupWindow$ActionBarPopupWindowLayout7;
@@ -684,13 +684,13 @@ public final class js implements Runnable {
                                 return;
                             }
                             nsVar.K = true;
-                            j0Var8 = nsVar.z;
-                            j0Var8.invalidate();
+                            k0Var8 = nsVar.z;
+                            k0Var8.invalidate();
                             int[] iArr = new int[arrayList10.size()];
                             for (int i43 = 0; i43 < arrayList10.size(); i43++) {
                                 iArr[i43] = ((Integer) arrayList10.get(i43)).intValue();
                             }
-                            org.telegram.ui.Components.la0 la0Var = new org.telegram.ui.Components.la0(this, arrayList9, A02);
+                            org.telegram.ui.Components.ma0 ma0Var = new org.telegram.ui.Components.ma0(this, arrayList9, A02);
                             boolean g11 = ns.g(nsVar, actionBarPopupWindow$ActionBarPopupWindowLayout8);
                             int i44 = 0;
                             while (i44 < arrayList8.size()) {
@@ -705,7 +705,7 @@ public final class js implements Runnable {
                                     c13.c(org.telegram.ui.ActionBar.j6.q7, org.telegram.ui.ActionBar.j6.p7);
                                 }
                                 c13.setTag(Integer.valueOf(i44));
-                                c13.setOnClickListener(la0Var);
+                                c13.setOnClickListener(ma0Var);
                                 i44++;
                                 actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout9;
                             }
@@ -728,27 +728,27 @@ public final class js implements Runnable {
                             int i46 = i45 + cVar5.b;
                             cVar6 = nsVar.q;
                             int i47 = cVar6.b;
-                            j0Var9 = nsVar.z;
-                            int width5 = j0Var9.getWidth();
-                            j0Var10 = nsVar.z;
-                            int min4 = Math.min(width5, j0Var10.getHeight() - i46) - org.telegram.messenger.g0.L(40.0f);
+                            k0Var9 = nsVar.z;
+                            int width5 = k0Var9.getWidth();
+                            k0Var10 = nsVar.z;
+                            int min4 = Math.min(width5, k0Var10.getHeight() - i46) - org.telegram.messenger.g0.L(40.0f);
                             f14 = nsVar.e;
                             int i48 = min4 / 2;
                             int i49 = i47 + i48;
                             int L5 = nsVar.G != null ? org.telegram.messenger.g0.L(40.0f) : 0;
-                            j0Var11 = nsVar.z;
-                            float max = (int) (f14 + Math.max(i49 + L5, ((j0Var11.getHeight() - i46) - nsVar.I) / 2) + i48);
+                            k0Var11 = nsVar.z;
+                            float max = (int) (f14 + Math.max(i49 + L5, ((k0Var11.getHeight() - i46) - nsVar.I) / 2) + i48);
                             float L6 = org.telegram.messenger.g0.L(24.0f);
                             f15 = nsVar.e;
                             int i50 = (int) ((L6 - f15) + max);
                             org.telegram.ui.ActionBar.g1 g1Var2 = nsVar.k;
-                            j0Var12 = nsVar.z;
-                            j0Var13 = nsVar.z;
-                            g1Var2.showAtLocation(j0Var12, 0, (int) ((j0Var13.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) / 2.0f), i50);
+                            k0Var12 = nsVar.z;
+                            k0Var13 = nsVar.z;
+                            g1Var2.showAtLocation(k0Var12, 0, (int) ((k0Var13.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) / 2.0f), i50);
                             org.telegram.ui.ActionBar.g1.i(actionBarPopupWindow$ActionBarPopupWindowLayout);
                             try {
-                                j0Var14 = nsVar.z;
-                                j0Var14.performHapticFeedback(0);
+                                k0Var14 = nsVar.z;
+                                k0Var14.performHapticFeedback(0);
                             } catch (Exception unused5) {
                             }
                             f16 = nsVar.e;
@@ -875,8 +875,8 @@ public final class js implements Runnable {
                             return;
                         }
                         nsVar.K = true;
-                        j0Var = nsVar.z;
-                        j0Var.invalidate();
+                        k0Var = nsVar.z;
+                        k0Var.invalidate();
                         int[] iArr2 = new int[arrayList13.size()];
                         for (int i53 = 0; i53 < arrayList13.size(); i53++) {
                             iArr2[i53] = ((Integer) arrayList13.get(i53)).intValue();
@@ -916,27 +916,27 @@ public final class js implements Runnable {
                         int i56 = i55 + cVar2.b;
                         cVar3 = nsVar.q;
                         int i57 = cVar3.b;
-                        j0Var2 = nsVar.z;
-                        int width6 = j0Var2.getWidth();
-                        j0Var3 = nsVar.z;
-                        int min5 = Math.min(width6, j0Var3.getHeight() - i56) - org.telegram.messenger.g0.L(40.0f);
+                        k0Var2 = nsVar.z;
+                        int width6 = k0Var2.getWidth();
+                        k0Var3 = nsVar.z;
+                        int min5 = Math.min(width6, k0Var3.getHeight() - i56) - org.telegram.messenger.g0.L(40.0f);
                         f10 = nsVar.e;
                         int i58 = min5 / 2;
                         int i59 = i57 + i58;
                         int L7 = nsVar.G != null ? org.telegram.messenger.g0.L(40.0f) : 0;
-                        j0Var4 = nsVar.z;
-                        float max2 = (int) (f10 + Math.max(i59 + L7, ((j0Var4.getHeight() - i56) - nsVar.I) / 2) + i58);
+                        k0Var4 = nsVar.z;
+                        float max2 = (int) (f10 + Math.max(i59 + L7, ((k0Var4.getHeight() - i56) - nsVar.I) / 2) + i58);
                         float L8 = org.telegram.messenger.g0.L(24.0f);
                         f11 = nsVar.e;
                         int i60 = (int) ((L8 - f11) + max2);
                         org.telegram.ui.ActionBar.g1 g1Var3 = nsVar.k;
-                        j0Var5 = nsVar.z;
-                        j0Var6 = nsVar.z;
+                        k0Var5 = nsVar.z;
+                        k0Var6 = nsVar.z;
                         i14 = 0;
-                        g1Var3.showAtLocation(j0Var5, 0, (int) ((j0Var6.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredWidth()) / 2.0f), i60);
+                        g1Var3.showAtLocation(k0Var5, 0, (int) ((k0Var6.getMeasuredWidth() - actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredWidth()) / 2.0f), i60);
                         try {
-                            j0Var7 = nsVar.z;
-                            j0Var7.performHapticFeedback(0);
+                            k0Var7 = nsVar.z;
+                            k0Var7.performHapticFeedback(0);
                         } catch (Exception unused6) {
                         }
                         f12 = nsVar.e;

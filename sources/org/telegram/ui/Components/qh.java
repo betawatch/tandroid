@@ -8,7 +8,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class qh implements org.telegram.ui.web.c0 {
     public ValueAnimator a;
@@ -74,29 +74,29 @@ public final class qh implements org.telegram.ui.web.c0 {
         org.telegram.ui.ActionBar.e2 e2Var = kiVar.a2;
         boolean z10 = tLObject instanceof TLRPC.TL_payments_paymentFormStars;
         ki.y3 y3Var = this.b;
-        org.telegram.ui.jl0 jl0Var = null;
+        org.telegram.ui.kl0 kl0Var = null;
         if (z10) {
             org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, kiVar.getContext(), null);
             t1Var.r(150L);
-            di.v8.y(i7, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new y1(t1Var, 1), new gh(0, y3Var, str));
+            di.u8.y(i7, false).X(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new y1(t1Var, 1), new gh(0, y3Var, str));
             org.telegram.messenger.g0.v1(y3Var);
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             org.telegram.messenger.np.s1(i7).Y3(paymentForm.users, false);
-            jl0Var = new org.telegram.ui.jl0(paymentForm, null, str, e2Var);
+            kl0Var = new org.telegram.ui.kl0(paymentForm, null, str, e2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            jl0Var = new org.telegram.ui.jl0((TLRPC.PaymentReceipt) tLObject);
+            kl0Var = new org.telegram.ui.kl0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (jl0Var != null) {
+        if (kl0Var != null) {
             y3Var.K();
             org.telegram.messenger.g0.v1(y3Var);
             nb0 nb0Var = new nb0(e2Var.getParentActivity());
             nb0Var.show();
-            jl0Var.a1 = new a3.h((Object) nb0Var, (Object) y3Var, str, 26);
-            jl0Var.Z0 = kiVar.J0;
-            nb0Var.c(jl0Var);
+            kl0Var.a1 = new a3.h((Object) nb0Var, (Object) y3Var, str, 26);
+            kl0Var.Z0 = kiVar.J0;
+            nb0Var.c(kl0Var);
         }
     }
 

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class hm extends ViewGroup {
     public long E;
@@ -481,7 +481,7 @@ public final class hm extends ViewGroup {
             } else {
                 if (gmVar.u == null || gmVar.v != j3) {
                     gmVar.v = j3;
-                    gmVar.u = new oy0(di.mb.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    gmVar.u = new oy0(di.lb.a1(false, org.telegram.messenger.hd.H(',', "UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
                 float L = org.telegram.messenger.g0.L(28.0f) + gmVar.u.c;
                 float L2 = org.telegram.messenger.g0.L(32.0f);

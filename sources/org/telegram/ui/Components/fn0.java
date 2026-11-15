@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class fn0 extends org.telegram.ui.ActionBar.g1 {
     public boolean A;
@@ -149,7 +149,7 @@ public abstract class fn0 extends org.telegram.ui.ActionBar.g1 {
                 ((en0) childAt).a.a(false, true);
             }
         }
-        org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.m5(chatActivityEnterView, jt0Var2, iArr, en0Var, 19), isSelected ? 0L : 200L);
+        org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.l5(chatActivityEnterView, jt0Var2, iArr, en0Var, 20), isSelected ? 0L : 200L);
     }
 
     @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow

@@ -36,7 +36,7 @@ import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.pj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class e extends pj0 {
     public ArrayList E;
@@ -579,11 +579,11 @@ public abstract class e extends pj0 {
             view = new x3(context, null);
         } else if (i7 != 3) {
             if (i7 == 4) {
-                FrameLayout j0Var = new ai.j0(this, context, viewGroup, 7);
-                j0Var.addView(new gq(context), ja.e(-1, -2, 17));
-                j0Var.setLayoutParams(new v4.p0(-1, -2));
-                j0Var.setTag(-33024);
-                view2 = j0Var;
+                FrameLayout k0Var = new ai.k0(this, context, viewGroup, 7);
+                k0Var.addView(new gq(context), ja.e(-1, -2, 17));
+                k0Var.setLayoutParams(new v4.p0(-1, -2));
+                k0Var.setTag(-33024);
+                view2 = k0Var;
             } else if (i7 == 7) {
                 view = new n4(this.s, j6.L6, 21, 14, 5, false, false, null);
             } else if (i7 == 8) {

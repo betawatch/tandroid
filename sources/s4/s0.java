@@ -1,6 +1,5 @@
 package s4;
 
-import ai.d1;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.os.SystemClock;
@@ -23,13 +22,13 @@ import org.telegram.ui.Components.z9;
 import org.telegram.ui.tp0;
 import sg.u0;
 import sg.v0;
-import tg.o2;
+import tg.n2;
 import ug.j1;
 import ug.s1;
 import v4.e1;
 import wg.c1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -201,8 +200,8 @@ public final class s0 implements Runnable {
                 return;
             case 3:
                 tg.j jVar = ((tp0) this.b).C0;
-                if (jVar instanceof o2) {
-                    ((o2) jVar).getEditText();
+                if (jVar instanceof n2) {
+                    ((n2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -352,7 +351,7 @@ public final class s0 implements Runnable {
                     }
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str2;
-                    c1Var.t2 = ConnectionsManager.getInstance(c1Var.a).sendRequest(tL_contacts_search, new d1(c1Var, 26));
+                    c1Var.t2 = ConnectionsManager.getInstance(c1Var.a).sendRequest(tL_contacts_search, new ai.e1(c1Var, 26));
                     return;
                 }
                 return;

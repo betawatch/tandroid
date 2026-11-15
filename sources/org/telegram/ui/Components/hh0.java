@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hh0 implements Runnable {
     public final /* synthetic */ int a;
@@ -143,11 +143,11 @@ public final /* synthetic */ class hh0 implements Runnable {
                 v1Var.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(220L).setListener(new h60(v1Var, 20)).start();
                 break;
             case 9:
-                di.m8 m8Var = (di.m8) this.b;
+                di.l8 l8Var = (di.l8) this.b;
                 Runnable[] runnableArr = (Runnable[]) this.c;
-                m8Var.e = !m8Var.e;
+                l8Var.e = !l8Var.e;
                 runnableArr[0].run();
-                m8Var.j(true);
+                l8Var.j(true);
                 break;
             case 10:
                 cc.a0(((kr0) this.b).f.y1).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.a0(null, null, 2131742836, ((TLRPC.Chat) this.c).title)).k(true);
@@ -294,7 +294,7 @@ public final /* synthetic */ class hh0 implements Runnable {
                 UndoView undoView = (UndoView) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 if (tLObject6 instanceof TLRPC.PaymentReceipt) {
-                    undoView.s.presentFragment(new org.telegram.ui.jl0((TLRPC.PaymentReceipt) tLObject6));
+                    undoView.s.presentFragment(new org.telegram.ui.kl0((TLRPC.PaymentReceipt) tLObject6));
                     break;
                 } else {
                     int i17 = UndoView.j0;

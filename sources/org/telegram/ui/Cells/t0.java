@@ -40,8 +40,8 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.zc;
-import di.cb;
-import di.mb;
+import di.bb;
+import di.lb;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -96,13 +96,12 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dn;
 import org.telegram.ui.g71;
 import org.telegram.ui.ij;
-import org.telegram.ui.lb;
 import org.telegram.ui.ol;
 import org.telegram.ui.pf;
 import org.telegram.ui.tw0;
 import org.telegram.ui.uf;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
     public static final HashMap t2;
@@ -1420,7 +1419,7 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
             starsTransaction.gift = true;
             starsTransaction.sent_by = peer;
             starsTransaction.received_by = peer2;
-            mb.k1(context, false, 0L, this.I, starsTransaction, e6Var);
+            lb.k1(context, false, 0L, this.I, starsTransaction, e6Var);
             return;
         }
         if (messageAction instanceof TLRPC.TL_messageActionPrizeStars) {
@@ -1446,7 +1445,7 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
             starsTransaction2.giveaway_post_id = tL_messageActionPrizeStars.giveaway_msg_id;
             starsTransaction2.sent_by = peer3;
             starsTransaction2.received_by = peer4;
-            mb.k1(context2, false, 0L, this.I, starsTransaction2, e6Var2);
+            lb.k1(context2, false, 0L, this.I, starsTransaction2, e6Var2);
             return;
         }
         if (messageAction instanceof TLRPC.TL_messageActionGiftTon) {
@@ -1472,7 +1471,7 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
             starsTransaction3.gift = true;
             starsTransaction3.sent_by = peer5;
             starsTransaction3.received_by = peer6;
-            mb.k1(context3, false, 0L, this.I, starsTransaction3, e6Var3);
+            lb.k1(context3, false, 0L, this.I, starsTransaction3, e6Var3);
             return;
         }
         if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
@@ -1911,7 +1910,7 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
         if (gjVar4.J0 != -1) {
             c8.na.b(this, 0.02f, 1.2f);
             this.g2 = Math.max(org.telegram.messenger.g0.L(250.0f), hi.l3.a(gjVar4.v, (TextPaint) R("paintChatActionText")));
-            tw0 X0 = lb.X0(gjVar4.v);
+            tw0 X0 = org.telegram.ui.lb.X0(gjVar4.v);
             if (X0 != null) {
                 X0.h = this;
             }
@@ -2038,8 +2037,8 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
                                     } else {
                                         e6Var2 = e6Var;
                                     }
-                                    this.T0.d((TL_stars.starGiftAttributeBackdrop) di.v8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                    this.T0.e((TL_stars.starGiftAttributePattern) di.v8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+                                    this.T0.d((TL_stars.starGiftAttributeBackdrop) di.u8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                    this.T0.e((TL_stars.starGiftAttributePattern) di.u8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
                                 } else {
                                     e6Var2 = e6Var;
                                     document5 = null;
@@ -2318,8 +2317,8 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
                                     if (this.T0 == null) {
                                         this.T0 = new bi.e2(this, e6Var2, false);
                                     }
-                                    this.T0.d((TL_stars.starGiftAttributeBackdrop) di.v8.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                    this.T0.e((TL_stars.starGiftAttributePattern) di.v8.l(starGift4.attributes, TL_stars.starGiftAttributePattern.class));
+                                    this.T0.d((TL_stars.starGiftAttributeBackdrop) di.u8.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                    this.T0.e((TL_stars.starGiftAttributePattern) di.u8.l(starGift4.attributes, TL_stars.starGiftAttributePattern.class));
                                 } else {
                                     document4 = null;
                                 }
@@ -4274,13 +4273,13 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
                                                         }
                                                         aVar = ljVar.a;
                                                         if (aVar != null && aVar.a == cg.b.a) {
-                                                            new cb(getContext(), this.h1, ljVar.a.a(), 13, qg.c.h(i13, gj.B0(this.Q0.k)), null, gj.B0(this.Q0.k)).show();
+                                                            new bb(getContext(), this.h1, ljVar.a.a(), 13, qg.c.h(i13, gj.B0(this.Q0.k)), null, gj.B0(this.Q0.k)).show();
                                                         }
                                                     }
                                                     ljVar = null;
                                                     aVar = ljVar.a;
                                                     if (aVar != null) {
-                                                        new cb(getContext(), this.h1, ljVar.a.a(), 13, qg.c.h(i13, gj.B0(this.Q0.k)), null, gj.B0(this.Q0.k)).show();
+                                                        new bb(getContext(), this.h1, ljVar.a.a(), 13, qg.c.h(i13, gj.B0(this.Q0.k)), null, gj.B0(this.Q0.k)).show();
                                                     }
                                                 }
                                             }
@@ -5275,9 +5274,9 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
                                             frameLayout.setClipToPadding(false);
                                             vx0 vx0Var = new vx0(context, e6Var);
                                             frameLayout.addView(vx0Var, c8.ja.e(-1, -1, ns.E1));
-                                            di.c6.k1(vx0Var, di.v8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class));
-                                            di.c6.k1(vx0Var, di.v8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                                            di.c6.k1(vx0Var, di.v8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
+                                            di.c6.k1(vx0Var, di.u8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class));
+                                            di.c6.k1(vx0Var, di.u8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                                            di.c6.k1(vx0Var, di.u8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class));
                                             f13.addView(frameLayout, c8.ja.t(-1, -2, 48, 23, 16, 23, 4));
                                             cg.a j10 = cg.a.j(starGift.value_usd_amount / Math.pow(10.0d, org.telegram.messenger.r1.i().h("USD")), bVar);
                                             if (j10.c() > 0.0d && starGift.value_usd_amount > j3) {
@@ -5306,7 +5305,7 @@ public class t0 extends z implements org.telegram.messenger.x5, is, p4 {
                                             }
                                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, e6Var);
                                             alertDialog$Builder.o(f13);
-                                            alertDialog$Builder.k(mb.V0(hd.a0(null, null, 2131749702, d2), z10), new di.i0(e12, i15, Q));
+                                            alertDialog$Builder.k(lb.V0(hd.a0(null, null, 2131749702, d2), z10), new di.i0(e12, i15, Q));
                                             alertDialog$Builder.h(hd.M0(2131752589, null), null);
                                             alertDialog$Builder.a.show();
                                         }

@@ -51,7 +51,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is, org.telegram.ui.ActionBar.o2, te.b {
     public static final /* synthetic */ int I4 = 0;
@@ -100,7 +100,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
     public long L2;
     public boolean L3;
     public boolean M1;
-    public final ai.j0 M2;
+    public final ai.k0 M2;
     public boolean M3;
     public final fc0 N1;
     public final ph N2;
@@ -580,13 +580,13 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         ci ciVar2 = this.w2;
         boolean z12 = (ciVar2 == this.e2 || ciVar2 == this.l2) && this.X1;
         o7 o7Var2 = this.V2;
-        ai.j0 j0Var = this.M2;
+        ai.k0 k0Var = this.M2;
         kg.j jVar = this.A2;
         sh shVar = this.G2;
         if (z11) {
             this.K2 = new AnimatorSet();
             if (z12) {
-                j0Var.setVisibility(0);
+                k0Var.setVisibility(0);
             }
             ArrayList arrayList = new ArrayList();
             Property property = View.ALPHA;
@@ -599,7 +599,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                 o7Var = o7Var2;
                 arrayList.add(ObjectAnimator.ofFloat(jVar, (Property<kg.j, Float>) View.TRANSLATION_Y, 0.0f));
             }
-            arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<ai.j0, Float>) property, (z10 && z12) ? 1.0f : 0.0f));
+            arrayList.add(ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property, (z10 && z12) ? 1.0f : 0.0f));
             Property property2 = View.SCALE_X;
             arrayList.add(ObjectAnimator.ofFloat(khVar3, (Property<kh, Float>) property2, z10 ? 1.0f : 0.2f));
             Property property3 = View.SCALE_Y;
@@ -639,8 +639,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
             khVar3.setScaleX(z10 ? 1.0f : 0.2f);
             khVar3.setScaleY(z10 ? 1.0f : 0.2f);
             khVar3.setAlpha(z10 ? 1.0f : f10);
-            j0Var.setVisibility((z10 && z12) ? i7 : 8);
-            j0Var.setAlpha((z10 && z12) ? 1.0f : f10);
+            k0Var.setVisibility((z10 && z12) ? i7 : 8);
+            k0Var.setAlpha((z10 && z12) ? 1.0f : f10);
             shVar.setScaleX(z10 ? 1.0f : 0.2f);
             shVar.setScaleY(z10 ? 1.0f : 0.2f);
             if (o7Var2.getTag() != null) {
@@ -1040,8 +1040,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
             ci ciVar = this.w2;
             ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e2;
             if ((ciVar == chatAttachAlertPhotoLayout || ciVar == this.l2) && this.X1) {
-                ai.j0 j0Var = this.M2;
-                alpha = (j0Var.getAlpha() * j0Var.getMeasuredHeight()) + (j0Var.getY() - this.C4.getTop());
+                ai.k0 k0Var = this.M2;
+                alpha = (k0Var.getAlpha() * k0Var.getMeasuredHeight()) + (k0Var.getY() - this.C4.getTop());
             } else {
                 alpha = -nhVar.getHeight();
             }
@@ -1557,9 +1557,9 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         float L = alpha != 0.0f ? 0.0f : org.telegram.messenger.g0.L((1.0f - khVar.getAlpha()) * 26.0f);
         boolean z10 = this.o3;
         org.telegram.ui.ActionBar.q0 q0Var2 = this.Y2;
-        ai.j0 j0Var = this.M2;
+        ai.k0 k0Var = this.M2;
         if (z10 && this.O2 == 0 && !this.R2) {
-            q0Var2.setTranslationY(Math.max((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(3.0f)) - org.telegram.messenger.g0.L(i10 + 37), ((c12 - org.telegram.messenger.g0.L((i10 * f15) + 37.0f)) + L) - (j0Var.getAlpha() * j0Var.getMeasuredHeight())) + this.j4);
+            q0Var2.setTranslationY(Math.max((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(3.0f)) - org.telegram.messenger.g0.L(i10 + 37), ((c12 - org.telegram.messenger.g0.L((i10 * f15) + 37.0f)) + L) - (k0Var.getAlpha() * k0Var.getMeasuredHeight())) + this.j4);
         } else {
             q0Var2.setTranslationY(((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(3.0f)) - org.telegram.messenger.g0.L(i10 + 37)) + this.j4);
         }
@@ -1582,10 +1582,10 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
             if (q0Var != null) {
                 q0Var.setTranslationY(((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - org.telegram.messenger.g0.L(4.0f)) - org.telegram.messenger.g0.L(i10 + 37)) + this.j4);
             }
-            float L2 = ((((c12 - org.telegram.messenger.g0.L((i10 * f15) + 25.0f)) + L) + this.j4) + f10) - (j0Var.getAlpha() * j0Var.getMeasuredHeight());
+            float L2 = ((((c12 - org.telegram.messenger.g0.L((i10 * f15) + 25.0f)) + L) + this.j4) + f10) - (k0Var.getAlpha() * k0Var.getMeasuredHeight());
             this.n3 = L2;
             khVar.setTranslationY(Math.max(this.j4, L2));
-            j0Var.setTranslationY(Math.max(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.j4, (khVar.getAlpha() * org.telegram.messenger.g0.L(26.0f)) + this.n3 + org.telegram.messenger.g0.L(8.0f)));
+            k0Var.setTranslationY(Math.max(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.j4, (khVar.getAlpha() * org.telegram.messenger.g0.L(26.0f)) + this.n3 + org.telegram.messenger.g0.L(8.0f)));
             if (this.X1) {
                 J1();
             }
@@ -1678,10 +1678,10 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         q0Var = this.c3;
         if (q0Var != null) {
         }
-        float L22 = ((((c12 - org.telegram.messenger.g0.L((i10 * f15) + 25.0f)) + L) + this.j4) + f10) - (j0Var.getAlpha() * j0Var.getMeasuredHeight());
+        float L22 = ((((c12 - org.telegram.messenger.g0.L((i10 * f15) + 25.0f)) + L) + this.j4) + f10) - (k0Var.getAlpha() * k0Var.getMeasuredHeight());
         this.n3 = L22;
         khVar.setTranslationY(Math.max(this.j4, L22));
-        j0Var.setTranslationY(Math.max(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.j4, (khVar.getAlpha() * org.telegram.messenger.g0.L(26.0f)) + this.n3 + org.telegram.messenger.g0.L(8.0f)));
+        k0Var.setTranslationY(Math.max(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + this.j4, (khVar.getAlpha() * org.telegram.messenger.g0.L(26.0f)) + this.n3 + org.telegram.messenger.g0.L(8.0f)));
         if (this.X1) {
         }
         U0();
@@ -1749,8 +1749,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         int i7 = 0;
         P1(0);
         this.p3.invalidate();
-        ai.j0 j0Var = this.M2;
-        j0Var.invalidate();
+        ai.k0 k0Var = this.M2;
+        k0Var.invalidate();
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.e2;
         if (chatAttachAlertPhotoLayout != null) {
             ql qlVar = chatAttachAlertPhotoLayout.F;
@@ -1759,7 +1759,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                 zi0 fastScroll = qlVar.getFastScroll();
                 int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + chatAttachAlertPhotoLayout.q1;
                 if (this.X1) {
-                    i7 = (int) (j0Var.getAlpha() * j0Var.getMeasuredHeight());
+                    i7 = (int) (k0Var.getAlpha() * k0Var.getMeasuredHeight());
                 }
                 fastScroll.i0 = currentActionBarHeight + i7;
                 qlVar.getFastScroll().invalidate();
@@ -1793,8 +1793,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
     public final void U0() {
         sh shVar = this.G2;
         kh khVar = this.F2;
-        ai.j0 j0Var = this.M2;
-        if (j0Var == null || j0Var.getVisibility() != 0 || j0Var.getAlpha() == 0.0f) {
+        ai.k0 k0Var = this.M2;
+        if (k0Var == null || k0Var.getVisibility() != 0 || k0Var.getAlpha() == 0.0f) {
             khVar.setTranslationY(this.e4);
             shVar.setAlpha(1.0f);
             return;
@@ -1802,7 +1802,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         float f10 = this.m1.e;
         float abs = Math.abs(org.telegram.messenger.g0.T1(-1.0f, 1.0f, f10));
         shVar.setAlpha(abs * abs * abs * abs);
-        khVar.setTranslationY(org.telegram.messenger.g0.T1(this.e4, ((j0Var.getTranslationY() + j0Var.getTop()) - khVar.getTop()) + org.telegram.messenger.g0.L(8.0f), er.j.getInterpolation(f10)));
+        khVar.setTranslationY(org.telegram.messenger.g0.T1(this.e4, ((k0Var.getTranslationY() + k0Var.getTop()) - khVar.getTop()) + org.telegram.messenger.g0.L(8.0f), er.j.getInterpolation(f10)));
     }
 
     @Override // org.telegram.ui.ActionBar.u2
@@ -2832,7 +2832,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
             if (ljVar == null) {
                 ljVar = org.telegram.messenger.lj.b(this.F3.k.suggested_post);
             }
-            if (!di.v8.T(i7, ljVar.a)) {
+            if (!di.u8.T(i7, ljVar.a)) {
                 anVar.Ac(ljVar);
                 return;
             }
@@ -3226,11 +3226,11 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         final boolean z12 = this.B2.getTag() != null;
         ci ciVar = this.w2;
         final boolean z13 = this.X1 && (ciVar == this.e2 || ciVar == this.l2);
-        ai.j0 j0Var = this.M2;
+        ai.k0 k0Var = this.M2;
         kg.j jVar = this.A2;
         if (z11) {
-            j0Var.setVisibility(z12 ? 0 : 8);
-            ViewPropertyAnimator duration = j0Var.animate().alpha((z13 && z12) ? 1.0f : 0.0f).setDuration(320L);
+            k0Var.setVisibility(z12 ? 0 : 8);
+            ViewPropertyAnimator duration = k0Var.animate().alpha((z13 && z12) ? 1.0f : 0.0f).setDuration(320L);
             er erVar = er.h;
             final int i7 = 0;
             duration.setInterpolator(erVar).setUpdateListener(new tg(this, i7)).withEndAction(new Runnable(this) { // from class: org.telegram.ui.Components.ug
@@ -3289,8 +3289,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                 }
             }).start();
         } else {
-            j0Var.setVisibility((z13 && z12) ? 0 : 8);
-            j0Var.setAlpha((z13 && z12) ? 1.0f : 0.0f);
+            k0Var.setVisibility((z13 && z12) ? 0 : 8);
+            k0Var.setAlpha((z13 && z12) ? 1.0f : 0.0f);
             Q1();
             jVar.setAlpha((z13 || !z12) ? 0.0f : 1.0f);
             jVar.setTranslationY((z13 || !z12) ? jVar.getMeasuredHeight() : 0.0f);
@@ -4331,9 +4331,9 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         fVar3.setFadeZoneTop(org.telegram.messenger.g0.L(5.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + org.telegram.messenger.g0.m);
         this.b.addView(fVar3, c8.ja.g());
         this.b.addView(khVar, c8.ja.d(-1, -2.0f, 51, 23.0f, 0.0f, 21.0f, 0.0f));
-        ai.j0 j0Var = new ai.j0(context, 14);
-        this.M2 = j0Var;
-        this.b.addView(j0Var, c8.ja.e(-1, -2, 55));
+        ai.k0 k0Var = new ai.k0(context, 14);
+        this.M2 = k0Var;
+        this.b.addView(k0Var, c8.ja.e(-1, -2, 55));
         this.b.addView(o7Var, c8.ja.c(-2.0f, -1));
         this.b.addView(q0Var2, c8.ja.e(48, 48, 53));
         this.b.addView(q0Var, c8.ja.d(48, 48.0f, 53, 0.0f, 0.0f, 48.0f, 0.0f));
@@ -4837,8 +4837,8 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         jVar5.setClipChildren(false);
         khVar3.setClipChildren(false);
         nhVar.setClipChildren(false);
-        j0Var.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f));
-        j0Var.setWillNotDraw(false);
+        k0Var.setPadding(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f));
+        k0Var.setWillNotDraw(false);
         ph phVar = new ph(this, context, xhVar, e6Var);
         this.N2 = phVar;
         phVar.K = true;
@@ -4848,15 +4848,15 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         phVar.getEditText().setTextSize(1, 17.0f);
         phVar.getEmojiButton().setLayoutParams(c8.ja.d(40, 40.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         phVar.setHint(org.telegram.messenger.hd.M0(2131754454, "AddCaption"));
-        j0Var.addView(phVar, c8.ja.e(-1, -2, org.telegram.messenger.ns.E1));
-        j0Var.setAlpha(0.0f);
-        j0Var.setVisibility(8);
+        k0Var.addView(phVar, c8.ja.e(-1, -2, org.telegram.messenger.ns.E1));
+        k0Var.setAlpha(0.0f);
+        k0Var.setVisibility(8);
         nhVar.addView(imageView3, c8.ja.d(40, 40.0f, 85, 0.0f, 0.0f, 0.0f, 4.0f));
-        fh.g c13 = this.F4.c(j0Var, c8.g0.n(e6Var), false);
+        fh.g c13 = this.F4.c(k0Var, c8.g0.n(e6Var), false);
         c13.r(org.telegram.messenger.g0.L(22.0f));
         c13.q(org.telegram.messenger.g0.L(7.0f));
-        j0Var.setBackground(c13);
-        j0Var.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(9.0f));
+        k0Var.setBackground(c13);
+        k0Var.setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(9.0f));
         h6 h6Var3 = new h6(context, false, false, false);
         this.v1 = h6Var3;
         h6Var3.setScaleProperty(0.6f);
@@ -4866,7 +4866,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         h6Var3.setTypeface(org.telegram.messenger.g0.o());
         h6Var3.setGravity(17);
         h6Var3.setAllowCancel(true);
-        j0Var.addView(h6Var3, c8.ja.d(56, 20.0f, 53, 3.0f, 45.0f, 3.0f, 0.0f));
+        k0Var.addView(h6Var3, c8.ja.d(56, 20.0f, 53, 3.0f, 45.0f, 3.0f, 0.0f));
         ImageView imageView5 = new ImageView(context);
         imageView5.setScaleType(scaleType);
         imageView5.setImageResource(R.drawable.menu_link_below);
@@ -4995,7 +4995,7 @@ public class ki extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         org.telegram.ui.ActionBar.m6 M6 = org.telegram.ui.ActionBar.q6.M(i26);
         imageView6.setBackground(h07);
         org.telegram.ui.ActionBar.q6.j(imageView6, h07, null, M6, e6Var);
-        j0Var.addView(imageView6, c8.ja.d(44, 44.0f, 85, 0.0f, 1.0f, 0.0f, 0.0f));
+        k0Var.addView(imageView6, c8.ja.d(44, 44.0f, 85, 0.0f, 1.0f, 0.0f, 0.0f));
         imageView6.setContentDescription(org.telegram.messenger.hd.M0(2131755006, null));
         c8.na.a(imageView6);
         final int i29 = 1;

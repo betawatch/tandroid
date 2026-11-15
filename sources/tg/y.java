@@ -9,9 +9,9 @@ import org.telegram.ui.Components.u51;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.tp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class y extends g2 {
+public final class y extends f2 {
     public final /* synthetic */ g0 z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -20,7 +20,7 @@ public final class y extends g2 {
         this.z0 = g0Var;
     }
 
-    @Override // tg.g2
+    @Override // tg.f2
     public final void q(ch0 ch0Var) {
         PhotoViewer photoViewer = ((tp0) this.z0).Y1;
         u51 u51Var = photoViewer.G2;

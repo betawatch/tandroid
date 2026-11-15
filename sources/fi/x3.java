@@ -17,7 +17,7 @@ import org.telegram.messenger.ns;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.gh0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x3 extends FrameLayout {
     public final v3 a;
@@ -153,7 +153,7 @@ public final class x3 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new ah.h(this, 19));
-        this.s.addListener(new ai.i0(this, 12));
+        this.s.addListener(new ai.j0(this, 12));
         this.s.setInterpolator(er.h);
         this.s.setDuration(340L);
         this.s.start();

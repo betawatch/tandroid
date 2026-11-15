@@ -18,13 +18,13 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.cm0;
 import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.yf;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q4 implements s10 {
     public final /* synthetic */ int a;
@@ -186,8 +186,8 @@ public final /* synthetic */ class q4 implements s10 {
                     z10 = false;
                     I.c(R.drawable.msg_channel, hd.M0(2131745248, null), new bi.n3(I, J, i12), false);
                 }
-                I.c(R.drawable.msg_info, hd.M0(2131754943, str), new ma0(cm0Var, ywVar, cm0Var.K0, I, 1), z10);
-                I.c(R.drawable.msg_block2, hd.M0(2131746234, str), new ma0(cm0Var, ywVar, tL_sponsoredPeer, I, 2), z10);
+                I.c(R.drawable.msg_info, hd.M0(2131754943, str), new u80(cm0Var, ywVar, cm0Var.K0, I, 2), z10);
+                I.c(R.drawable.msg_block2, hd.M0(2131746234, str), new u80(cm0Var, ywVar, tL_sponsoredPeer, I, 3), z10);
                 I.k();
                 I.c(R.drawable.msg_cancel, hd.M0(2131746320, str), new yf(cm0Var, ywVar, I, 20), z10);
                 I.V(hd.a0 ? 3 : 5);

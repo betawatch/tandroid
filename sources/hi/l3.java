@@ -38,7 +38,7 @@ import org.telegram.ui.Components.u70;
 import org.telegram.ui.Components.y31;
 import org.telegram.ui.py;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class l3 extends View {
     public float A0;
@@ -1079,7 +1079,7 @@ public class l3 extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.z0 = ofFloat;
             ofFloat.addUpdateListener(new j3(this, 0));
-            this.z0.addListener(new ai.i0(this, 21));
+            this.z0.addListener(new ai.j0(this, 21));
             this.z0.setInterpolator(er.k);
             this.z0.setDuration(300L);
             this.z0.start();

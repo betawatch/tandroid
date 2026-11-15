@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messenger.is {
     public static boolean r1;
@@ -110,7 +110,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
     public boolean d0;
     public final org.telegram.ui.ActionBar.z0 d1;
     public boolean e0;
-    public final ia0 e1;
+    public final ja0 e1;
     public float f0;
     public final boolean f1;
     public final int[] g0;
@@ -270,9 +270,9 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
         textView.setPadding(0, 0, org.telegram.messenger.g0.L(10.0f), 0);
         u2Var.addView(textView, c8.ja.d(-2, -2.0f, 16, 16.0f, 0.0f, 0.0f, 0.0f));
         X(false);
-        ia0 ia0Var = new ia0(context, R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), e6Var);
-        this.e1 = ia0Var;
-        ia0Var.a(!this.b.X1, false);
+        ja0 ja0Var = new ja0(context, R.raw.position_below, org.telegram.messenger.hd.M0(2131752560, null), R.raw.position_above, org.telegram.messenger.hd.M0(2131752559, null), e6Var);
+        this.e1 = ja0Var;
+        ja0Var.a(!this.b.X1, false);
         this.d1 = this.b.Y2.e(7, R.drawable.msg_view_file, org.telegram.messenger.hd.M0(2131753957, null));
         this.b.Y2.a(5);
         this.b.Y2.e(4, R.drawable.msg_openin, org.telegram.messenger.hd.M0(2131747796, null));
@@ -283,17 +283,17 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
         this.b1 = this.b.Y2.e(2, R.drawable.menu_quality_hd, org.telegram.messenger.hd.M0(2131745621, null));
         org.telegram.ui.ActionBar.q0 q0Var = this.b.Y2;
         q0Var.q();
-        ia0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
-        ia0Var.setTag(8);
-        q0Var.b.addView(ia0Var);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ia0Var.getLayoutParams();
+        ja0Var.setMinimumWidth(org.telegram.messenger.g0.L(196.0f));
+        ja0Var.setTag(8);
+        q0Var.b.addView(ja0Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ja0Var.getLayoutParams();
         if (org.telegram.messenger.hd.a0) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = org.telegram.messenger.g0.L(48.0f);
-        ia0Var.setLayoutParams(layoutParams);
-        ia0Var.setOnClickListener(new org.telegram.ui.ActionBar.a0(q0Var, 2));
+        ja0Var.setLayoutParams(layoutParams);
+        ja0Var.setOnClickListener(new org.telegram.ui.ActionBar.a0(q0Var, 2));
         this.c1 = this.b.Y2.e(9, R.drawable.menu_feature_paid, org.telegram.messenger.hd.M0(2131747730, null));
         this.b.Y2.setFitSubItems(true);
         ql qlVar = new ql(this, context, e6Var, i11);
@@ -1126,11 +1126,11 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                                                 q0Var2.u(2);
                                             }
                                         }
-                                        ia0 ia0Var = this.e1;
+                                        ja0 ja0Var = this.e1;
                                         if (z14) {
-                                            ia0Var.setVisibility(0);
+                                            ja0Var.setVisibility(0);
                                         } else {
-                                            ia0Var.setVisibility(8);
+                                            ja0Var.setVisibility(8);
                                         }
                                         if ((!z12 || z14) && (z11 || z13)) {
                                             kiVar.Y2.T(6);
@@ -1162,7 +1162,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                                 }
                                 if (kiVar != null) {
                                 }
-                                ia0 ia0Var2 = this.e1;
+                                ja0 ja0Var2 = this.e1;
                                 if (z14) {
                                 }
                                 if (z12) {
@@ -1181,7 +1181,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                                 }
                                 if (kiVar != null) {
                                 }
-                                ia0 ia0Var22 = this.e1;
+                                ja0 ja0Var22 = this.e1;
                                 if (z14) {
                                 }
                                 if (z12) {
@@ -1196,7 +1196,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                         }
                         if (kiVar != null) {
                         }
-                        ia0 ia0Var222 = this.e1;
+                        ja0 ja0Var222 = this.e1;
                         if (z14) {
                         }
                         if (z12) {
@@ -1218,7 +1218,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                     }
                     if (kiVar != null) {
                     }
-                    ia0 ia0Var2222 = this.e1;
+                    ja0 ja0Var2222 = this.e1;
                     if (z14) {
                     }
                     if (z12) {
@@ -1250,7 +1250,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                         }
                         if (kiVar != null) {
                         }
-                        ia0 ia0Var22222 = this.e1;
+                        ja0 ja0Var22222 = this.e1;
                         if (z14) {
                         }
                         if (z12) {
@@ -1272,7 +1272,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                     }
                     if (kiVar != null) {
                     }
-                    ia0 ia0Var222222 = this.e1;
+                    ja0 ja0Var222222 = this.e1;
                     if (z14) {
                     }
                     if (z12) {
@@ -1313,7 +1313,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
             }
             if (kiVar != null) {
             }
-            ia0 ia0Var2222222 = this.e1;
+            ja0 ja0Var2222222 = this.e1;
             if (z14) {
             }
             if (z12) {
@@ -1346,7 +1346,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
         }
         if (kiVar != null) {
         }
-        ia0 ia0Var22222222 = this.e1;
+        ja0 ja0Var22222222 = this.e1;
         if (z14) {
         }
         if (z12) {
@@ -1563,10 +1563,10 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                     ki kiVar = this.b;
                     ViewGroup viewGroup = kiVar.b;
                     lh lhVar = kiVar.w3;
-                    ai.j0 j0Var = kiVar.M2;
+                    ai.k0 k0Var = kiVar.M2;
                     float y11 = viewGroup.getY() + y10;
                     float x10 = (kiVar.b.getX() + (getX() + (qlVar.getX() + childAt.getX()))) - getRootWindowInsets().getSystemWindowInsetLeft();
-                    float alpha = (j0Var.getAlpha() * j0Var.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (!kiVar.b2 ? org.telegram.messenger.g0.m : 0);
+                    float alpha = (k0Var.getAlpha() * k0Var.getMeasuredHeight()) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (!kiVar.b2 ? org.telegram.messenger.g0.m : 0);
                     hi.i iVar = kiVar.C4;
                     if (iVar != null && iVar.g()) {
                         alpha = Math.max(alpha, (kiVar.C4.e() + kiVar.C4.getY()) - kiVar.j4);
@@ -3284,7 +3284,7 @@ public class ChatAttachAlertPhotoLayout extends ci implements org.telegram.messe
                 return;
             }
             if (i7 == 9) {
-                di.mb.j1(getContext(), getStarsPrice(), true, new d(this, 6), this.a);
+                di.lb.j1(getContext(), getStarsPrice(), true, new d(this, 6), this.a);
                 return;
             }
             if (i7 >= 10) {

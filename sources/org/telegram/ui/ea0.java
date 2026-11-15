@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea0 implements q0.a {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class ea0 implements q0.a {
                 pa0Var.F.o(org.telegram.messenger.g0.L(70.0f), 0, org.telegram.messenger.g0.L(70.0f), pa0Var.t0());
                 int i12 = 5;
                 if (pa0Var.F != null) {
-                    ((ai.j0) ((a8.r7) pa0Var.H).b).animate().alpha(1.0f).setStartDelay(200L).setDuration(100L).setUpdateListener(new a3(pa0Var, 15)).start();
+                    ((ai.k0) ((a8.r7) pa0Var.H).b).animate().alpha(1.0f).setStartDelay(200L).setDuration(100L).setUpdateListener(new a3(pa0Var, 15)).start();
                     float f10 = pa0Var.P0 ? pa0Var.F.f() + 4.0f : pa0Var.F.e() - 4.0f;
                     TLRPC.TL_channelLocation tL_channelLocation = pa0Var.C0;
                     if (tL_channelLocation != null) {

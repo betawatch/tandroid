@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import di.ub;
+import di.tb;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.m10;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.fp;
 import org.telegram.ui.Components.jq;
 import org.telegram.ui.Components.kq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class o4 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public final org.telegram.ui.Components.u5 E;
@@ -36,7 +36,7 @@ public final class o4 extends FrameLayout implements org.telegram.ui.ActionBar.z
     public ug.z0 J;
     public Drawable K;
     public final org.telegram.ui.Components.i9 a;
-    public final ub b;
+    public final tb b;
     public final org.telegram.ui.Components.t8 c;
     public int d;
     public TLRPC.User e;
@@ -63,16 +63,16 @@ public final class o4 extends FrameLayout implements org.telegram.ui.ActionBar.z
         this.a = i9Var;
         i9Var.setRoundRadius(org.telegram.messenger.g0.L(27.0f));
         addView(i9Var, c8.ja.d(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
-        ub ubVar = new ub(context, 6);
-        this.b = ubVar;
-        ns.i(ubVar);
-        org.telegram.ui.ActionBar.q6.U(ubVar, org.telegram.ui.ActionBar.j6.G6, e6Var);
-        ubVar.setTextSize(1, 12.0f);
-        ubVar.setMaxLines(1);
-        ubVar.setGravity(49);
-        ubVar.setLines(1);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(ubVar, c8.ja.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
+        tb tbVar = new tb(context, 6);
+        this.b = tbVar;
+        ns.i(tbVar);
+        org.telegram.ui.ActionBar.q6.U(tbVar, org.telegram.ui.ActionBar.j6.G6, e6Var);
+        tbVar.setTextSize(1, 12.0f);
+        tbVar.setMaxLines(1);
+        tbVar.setGravity(49);
+        tbVar.setLines(1);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        addView(tbVar, c8.ja.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
         kq kqVar = new kq(context, e6Var);
         this.s = kqVar;
         addView(kqVar, c8.ja.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
@@ -105,27 +105,27 @@ public final class o4 extends FrameLayout implements org.telegram.ui.ActionBar.z
         org.telegram.ui.Components.i9 i9Var = this.a;
         org.telegram.ui.Components.t8 t8Var = this.c;
         int i7 = this.h;
-        ub ubVar = this.b;
+        tb tbVar = this.b;
         if (E) {
             TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(j3));
             this.e = a22;
             if (charSequence != null) {
-                ubVar.setText(charSequence);
+                tbVar.setText(charSequence);
             } else if (a22 != null) {
-                ubVar.setText(q10.j(a22, true));
+                tbVar.setText(q10.j(a22, true));
             } else {
-                ubVar.setText("");
+                tbVar.setText("");
             }
             t8Var.r(this.e);
             i9Var.f(this.e, t8Var);
         } else {
             TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
             if (charSequence != null) {
-                ubVar.setText(charSequence);
+                tbVar.setText(charSequence);
             } else if (M0 != null) {
-                ubVar.setText(M0.title);
+                tbVar.setText(M0.title);
             } else {
-                ubVar.setText("");
+                tbVar.setText("");
             }
             t8Var.q(M0);
             this.e = null;

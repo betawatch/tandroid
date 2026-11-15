@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int E;
@@ -138,7 +138,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.e2 implements or
                 }
                 ib0Var.setFormatter(new t70(i11));
                 alertDialog$Builder2.o(ib0Var);
-                alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131751354, null), new ai.q1(passcodeActivity, ib0Var, i7, 13));
+                alertDialog$Builder2.h(org.telegram.messenger.hd.M0(2131751354, null), new ai.r1(passcodeActivity, ib0Var, i7, 13));
                 passcodeActivity.showDialog(t1Var2);
                 return;
             }
@@ -178,12 +178,12 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.e2 implements or
                 org.telegram.ui.Wallet.l0 x11 = org.telegram.ui.Wallet.l0.x(passcodeActivity.currentAccount);
                 boolean J = x11.J();
                 boolean z11 = !J;
-                di.t7 t7Var = new di.t7(7, view, J);
+                ai.u2 u2Var = new ai.u2(8, view, J);
                 org.telegram.ui.Wallet.p0 p0Var = x11.c;
                 if (p0Var == null) {
-                    t7Var.a(Boolean.FALSE);
+                    u2Var.a(Boolean.FALSE);
                 } else {
-                    org.telegram.ui.Wallet.p0.h.execute(new ai.k2(p0Var, p0Var.l(), z11, new org.telegram.ui.Wallet.k(t7Var, i10), 4));
+                    org.telegram.ui.Wallet.p0.h.execute(new ai.l2(p0Var, p0Var.l(), z11, new org.telegram.ui.Wallet.k(u2Var, i10), 4));
                 }
             }
         }
@@ -442,7 +442,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.e2 implements or
                             drVar.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             drVar.setTextSize(1, 24.0f);
                             drVar.addTextChangedListener(new ki0(this, i12));
-                            drVar.setOnFocusChangeListener(new di.o9(this, drVar, 3));
+                            drVar.setOnFocusChangeListener(new di.n9(this, drVar, 3));
                         }
                         frameLayout3.addView(this.n, c8.ja.d(-2, -2.0f, 1, 40.0f, 10.0f, 40.0f, 0.0f));
                         linearLayout.addView(frameLayout3, c8.ja.t(-1, -2, 1, 0, 32, 0, 72));

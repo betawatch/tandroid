@@ -1,6 +1,6 @@
 package org.telegram.messenger.voip;
 
-import di.aa;
+import di.z9;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -8,7 +8,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ds;
 import org.telegram.ui.Components.p41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,10 +32,10 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$54(this.b, this.c, (String) this.e, tLObject, tL_error);
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new aa((bs) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
+                org.telegram.messenger.g0.h3(new z9((bs) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new aa((ds) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
+                org.telegram.messenger.g0.h3(new z9((ds) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
                 break;
         }
     }

@@ -4,7 +4,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class hj implements org.telegram.ui.ActionBar.e6 {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class hj implements org.telegram.ui.ActionBar.e6 {
             case 0:
                 return org.telegram.ui.ActionBar.j6.I.q();
             case 1:
-                return ((im0) this.b).T;
+                return ((jm0) this.b).T;
             default:
                 return ((p71) this.b).f.a.a();
         }
@@ -104,10 +104,10 @@ public final class hj implements org.telegram.ui.ActionBar.e6 {
             case 0:
                 break;
             case 1:
-                im0 im0Var = (im0) this.b;
+                jm0 jm0Var = (jm0) this.b;
                 if (!str.equals("drawableMsgIn")) {
                     if (!str.equals("drawableMsgInSelected")) {
-                        org.telegram.ui.ActionBar.e6 e6Var = im0Var.s;
+                        org.telegram.ui.ActionBar.e6 e6Var = jm0Var.s;
                         if (e6Var == null) {
                             break;
                         } else {
@@ -153,12 +153,12 @@ public final class hj implements org.telegram.ui.ActionBar.e6 {
             case 0:
                 return ((an) this.b).getThemedColor(i7);
             case 1:
-                im0 im0Var = (im0) this.b;
-                int indexOfKey = im0Var.w.indexOfKey(i7);
+                jm0 jm0Var = (jm0) this.b;
+                int indexOfKey = jm0Var.w.indexOfKey(i7);
                 if (indexOfKey >= 0) {
-                    return im0Var.w.valueAt(indexOfKey);
+                    return jm0Var.w.valueAt(indexOfKey);
                 }
-                org.telegram.ui.ActionBar.e6 e6Var = im0Var.s;
+                org.telegram.ui.ActionBar.e6 e6Var = jm0Var.s;
                 return e6Var != null ? e6Var.h(i7) : org.telegram.ui.ActionBar.j6.v0(i7);
             default:
                 return ((p71) this.b).f.a.h(i7);

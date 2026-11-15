@@ -33,9 +33,9 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ma0;
 import org.telegram.ui.Components.p21;
 import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ai0;
@@ -51,7 +51,7 @@ import org.telegram.ui.t71;
 import org.telegram.ui.u91;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -170,15 +170,15 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                         if (t3Var4 != null) {
                             t3Var4.a();
                         }
-                        androidx.car.app.utils.a aVar = new androidx.car.app.utils.a(t3Var3, W, i9Var2, y3Var2, 13);
+                        ai.r rVar = new ai.r(t3Var3, W, i9Var2, y3Var2, 14);
                         i9 i9Var3 = ((z8) b4Var2.A1).d;
                         h9 h9Var = i9Var3.A0;
                         if (h9Var != null) {
-                            z12 = h9Var.release(aVar);
+                            z12 = h9Var.release(rVar);
                             i9Var3.A0 = null;
                         }
                         if (!z12) {
-                            aVar.run();
+                            rVar.run();
                             break;
                         }
                     }
@@ -496,7 +496,7 @@ public final /* synthetic */ class d0 implements View.OnClickListener {
                     dVar2.setLoading(true);
                     org.telegram.ui.r3 r3Var = new org.telegram.ui.r3(kd0Var, 11);
                     org.telegram.messenger.a8.b("LoginBilling, querying done purchases...");
-                    org.telegram.messenger.r1.i().p("inapp", new di.i6(kd0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new ma0(kd0Var, mVar, r3Var, tL_inputStorePaymentAuthCode, 24)));
+                    org.telegram.messenger.r1.i().p("inapp", new di.i6(kd0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new u80(kd0Var, mVar, r3Var, tL_inputStorePaymentAuthCode, 25)));
                     break;
                 }
                 break;

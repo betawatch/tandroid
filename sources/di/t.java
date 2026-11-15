@@ -48,7 +48,7 @@ import org.telegram.ui.ud;
 import org.telegram.ui.xd;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t extends org.telegram.ui.ActionBar.e2 implements is {
     public final ud E;
@@ -58,13 +58,13 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
     public final ud I;
     public final ud J;
     public final SpannableStringBuilder K;
-    public lb L;
+    public kb L;
     public FrameLayout M;
     public FrameLayout N;
     public w61 O;
     public boolean P;
     public int Q;
-    public ai.q2 R;
+    public ai.r2 R;
     public LinearLayout S;
     public RelativeSizeSpan T;
     public org.telegram.ui.Components.h6 U;
@@ -82,7 +82,7 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
     public sn d;
     public final eq[] d0;
     public u41 e;
-    public ai.q2 e0;
+    public ai.r2 e0;
     public it0 f;
     public RelativeSizeSpan f0;
     public org.telegram.ui.Components.h6 g0;
@@ -145,8 +145,8 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
     }
 
     public static void a0(t tVar, b41 b41Var) {
-        if (b41Var.H(gb.class)) {
-            mb.k1(tVar.getParentActivity(), true, tVar.b, tVar.currentAccount, (TL_stars.StarsTransaction) b41Var.G, tVar.getResourceProvider());
+        if (b41Var.H(fb.class)) {
+            lb.k1(tVar.getParentActivity(), true, tVar.b, tVar.currentAccount, (TL_stars.StarsTransaction) b41Var.G, tVar.getResourceProvider());
         } else if (b41Var.G instanceof TL_stats.BroadcastRevenueTransaction) {
             xd.M(tVar.getParentActivity(), tVar.currentAccount, (TL_stats.BroadcastRevenueTransaction) b41Var.G, tVar.b, tVar.resourceProvider);
         } else if (b41Var.d == 2) {
@@ -475,7 +475,7 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
     public final View createView(Context context) {
         FrameLayout frameLayout;
         boolean z10;
-        lb lbVar;
+        kb kbVar;
         boolean z11;
         boolean z12 = this.c;
         int i7 = 17;
@@ -511,12 +511,12 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
         this.simpleActionBar.setBackground(null);
         if (i10 != 0 || this.f == null) {
             z10 = false;
-            lbVar = null;
+            kbVar = null;
         } else {
             z10 = false;
-            lbVar = new lb(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider(), this.f);
+            kbVar = new kb(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider(), this.f);
         }
-        this.L = lbVar;
+        this.L = kbVar;
         if (i10 == 1) {
             FrameLayout frameLayout3 = new FrameLayout(context);
             this.M = frameLayout3;
@@ -530,16 +530,16 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
             frameLayout4.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
             this.N.addView(wj0Var.i(-2, true), c8.ja.e(-1, 48, 48));
             this.M.addView(wj0Var, c8.ja.c(-1.0f, -1));
-        } else if (lbVar != null) {
-            this.O = lbVar.getViewPager();
+        } else if (kbVar != null) {
+            this.O = kbVar.getViewPager();
             this.N = this.L.getTabsContainer();
         }
-        ai.q2 q2Var = new ai.q2(context, i11);
-        this.R = q2Var;
-        q2Var.setOrientation(1);
-        ai.q2 q2Var2 = this.R;
+        ai.r2 r2Var = new ai.r2(context, i11);
+        this.R = r2Var;
+        r2Var.setOrientation(1);
+        ai.r2 r2Var2 = this.R;
         int i12 = org.telegram.ui.ActionBar.j6.d6;
-        org.telegram.ui.ActionBar.q6.h(i12, q2Var2, getResourceProvider());
+        org.telegram.ui.ActionBar.q6.h(i12, r2Var2, getResourceProvider());
         this.R.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
         org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, true, true);
         this.U = h6Var;
@@ -639,16 +639,16 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
         this.c0 = dVar;
         dVar.setEnabled(true);
         this.c0.i(hd.M0(2131748374, null), false, true);
-        this.c0.setOnClickListener(new ai.t2(7, this, context));
+        this.c0.setOnClickListener(new ai.v2(7, this, context));
         this.S.addView(this.b0, c8.ja.p(-1, 48, 1.0f, ns.E1));
         if (!z12) {
             this.S.addView(new Space(context), c8.ja.p(8, 48, 0.0f, ns.E1));
             this.S.addView(this.c0, c8.ja.p(-1, 48, 1.0f, ns.E1));
         }
         this.R.addView(this.S, c8.ja.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
-        ai.q2 q2Var3 = new ai.q2(context, 2);
-        this.e0 = q2Var3;
-        q2Var3.setOrientation(1);
+        ai.r2 r2Var3 = new ai.r2(context, 2);
+        this.e0 = r2Var3;
+        r2Var3.setOrientation(1);
         org.telegram.ui.ActionBar.q6.h(i12, this.e0, this.resourceProvider);
         this.e0.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
         org.telegram.ui.Components.h6 h6Var5 = new org.telegram.ui.Components.h6(context, false, true, true);
@@ -744,9 +744,9 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
         aVar.a(z11, false);
         if (this.f != null) {
             getBaseSimpleGlass().n = this.f;
-            lb lbVar2 = this.L;
-            if (lbVar2 != null) {
-                lbVar2.setGlassEngine(this.glassEngine);
+            kb kbVar2 = this.L;
+            if (kbVar2 != null) {
+                kbVar2.setGlassEngine(this.glassEngine);
             } else {
                 this.glassEngine.c(this.O);
             }
@@ -925,7 +925,7 @@ public final class t extends org.telegram.ui.ActionBar.e2 implements is {
             return;
         }
         long j3 = (long) (this.j0 * starsAmount.amount * 100.0d);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(mb.a1(false, TextUtils.concat("XTR ", mb.M0(starsAmount, 0.8f, ' ')), 1.0f, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(lb.a1(false, TextUtils.concat("XTR ", lb.M0(starsAmount, 0.8f, ' ')), 1.0f, null));
         int indexOf = TextUtils.indexOf(spannableStringBuilder, ".");
         if (indexOf >= 0) {
             spannableStringBuilder.setSpan(this.T, indexOf, spannableStringBuilder.length(), 33);

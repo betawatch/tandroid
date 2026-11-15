@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-import ai.k2;
+import ai.l2;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 import android.graphics.SurfaceTexture;
@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.s51;
 import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
@@ -63,7 +63,7 @@ public class VideoPlayerHolderBase {
     public Uri uri;
     u51 videoPlayer;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class 2 implements s51 {
         public 2() {
         }
@@ -724,7 +724,7 @@ public class VideoPlayerHolderBase {
     }
 
     public void seekTo(long j3, boolean z10, Runnable runnable) {
-        this.dispatchQueue.postRunnable(new k2(this, j3, z10, runnable, 1));
+        this.dispatchQueue.postRunnable(new l2(this, j3, z10, runnable, 1));
     }
 
     public VideoPlayerHolderBase with(TextureView textureView) {

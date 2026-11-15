@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ce implements org.telegram.ui.Components.s40, org.telegram.ui.Components.v40, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.wn, org.telegram.messenger.nr, org.telegram.ui.Components.sh0, ResultCallback, ri.m, zh.c, lh.a, lh.b, r40, or, org.telegram.ui.Components.ij0 {
     public final /* synthetic */ int a;
@@ -220,9 +220,9 @@ public final /* synthetic */ class ce implements org.telegram.ui.Components.s40,
                 adapter.x.c();
                 adapter.J.clear();
                 adapter.f();
-                org.telegram.ui.Components.d90 d90Var = adapter.W;
-                if (d90Var != null) {
-                    d90Var.a(false);
+                org.telegram.ui.Components.e90 e90Var = adapter.W;
+                if (e90Var != null) {
+                    e90Var.a(false);
                     break;
                 }
                 break;

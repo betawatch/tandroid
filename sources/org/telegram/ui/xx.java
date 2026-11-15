@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xx extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -106,38 +106,38 @@ public final class xx extends AnimatorListenerAdapter {
                 }
                 break;
             case 9:
-                im0 im0Var = (im0) obj;
-                bc bcVar = im0Var.Y;
+                jm0 jm0Var = (jm0) obj;
+                bc bcVar = jm0Var.Y;
                 if (bcVar != null) {
                     if (bcVar.getParent() != null) {
-                        ((ViewGroup) im0Var.Y.getParent()).removeView(im0Var.Y);
+                        ((ViewGroup) jm0Var.Y.getParent()).removeView(jm0Var.Y);
                     }
-                    im0Var.Y = null;
+                    jm0Var.Y = null;
                 }
-                im0Var.a0 = null;
+                jm0Var.a0 = null;
                 super.onAnimationEnd(animator);
                 break;
             case 10:
-                an0 an0Var = (an0) obj;
-                bn0 bn0Var = an0Var.n0;
-                org.telegram.ui.ActionBar.v4[] v4VarArr = bn0Var.n;
-                bn0Var.r = null;
-                if (bn0Var.x) {
+                bn0 bn0Var = (bn0) obj;
+                cn0 cn0Var = bn0Var.n0;
+                org.telegram.ui.ActionBar.v4[] v4VarArr = cn0Var.n;
+                cn0Var.r = null;
+                if (cn0Var.x) {
                     v4VarArr[1].setVisibility(8);
                 } else {
                     org.telegram.ui.ActionBar.v4 v4Var = v4VarArr[0];
                     v4VarArr[0] = v4VarArr[1];
                     v4VarArr[1] = v4Var;
                     v4Var.setVisibility(8);
-                    bn0Var.e = bn0Var.n[0].b == bn0Var.h.getFirstTabId();
-                    bn0Var.h.i(1.0f, bn0Var.n[0].b);
+                    cn0Var.e = cn0Var.n[0].b == cn0Var.h.getFirstTabId();
+                    cn0Var.h.i(1.0f, cn0Var.n[0].b);
                 }
-                bn0Var.s = false;
-                an0Var.i0 = false;
-                an0Var.h0 = false;
-                kVar = ((org.telegram.ui.ActionBar.e2) bn0Var).actionBar;
+                cn0Var.s = false;
+                bn0Var.i0 = false;
+                bn0Var.h0 = false;
+                kVar = ((org.telegram.ui.ActionBar.e2) cn0Var).actionBar;
                 kVar.setEnabled(true);
-                bn0Var.h.setEnabled(true);
+                cn0Var.h.setEnabled(true);
                 break;
             case 11:
                 PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.y50) obj).c;

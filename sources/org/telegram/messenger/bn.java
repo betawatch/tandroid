@@ -1,14 +1,14 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bn implements pr {
     public final /* synthetic */ int[] a;
-    public final /* synthetic */ di.g9 b;
+    public final /* synthetic */ di.f9 b;
 
-    public /* synthetic */ bn(int[] iArr, di.g9 g9Var) {
+    public /* synthetic */ bn(int[] iArr, di.f9 f9Var) {
         this.a = iArr;
-        this.b = g9Var;
+        this.b = f9Var;
     }
 
     @Override // org.telegram.messenger.pr

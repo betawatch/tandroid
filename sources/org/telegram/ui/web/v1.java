@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class v1 {
     public static final HashMap e = new HashMap();
@@ -117,7 +117,7 @@ public final class v1 {
         return null;
     }
 
-    public static ai.r e(s0 s0Var, z10 z10Var) {
+    public static ai.s e(s0 s0Var, z10 z10Var) {
         if (s0Var == null) {
             z10Var.a(null);
             return null;
@@ -130,7 +130,7 @@ public final class v1 {
         o1 o1Var = new o1(xz.d(xzVar, "getHTML"), zArr, xzVar, v1Var, z10Var, 0);
         System.currentTimeMillis();
         s0Var.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new p1(v1Var, s0Var, new File(org.telegram.messenger.g0.E0(), "archive.mht"), o1Var, 0));
-        return new ai.r(i7, zArr);
+        return new ai.s(i7, zArr);
     }
 
     public static boolean f(JSONArray jSONArray) {

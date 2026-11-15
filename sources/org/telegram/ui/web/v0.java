@@ -38,7 +38,7 @@ import bi.t6;
 import c8.ja;
 import c8.sa;
 import di.a3;
-import di.r9;
+import di.q9;
 import fi.b8;
 import fi.i7;
 import fi.v3;
@@ -111,12 +111,12 @@ import org.telegram.ui.Components.t8;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.g71;
-import org.telegram.ui.hn0;
 import org.telegram.ui.o9;
+import org.telegram.ui.ok0;
 import org.telegram.ui.t70;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements is, z5 {
     public static boolean R0 = true;
@@ -428,7 +428,7 @@ public abstract class v0 extends FrameLayout implements is, z5 {
         if (s0Var == null) {
             return;
         }
-        ns.f(i7).d(new hn0(23, s0Var, i7Var, jSONObject, str));
+        ns.f(i7).d(new ok0(s0Var, i7Var, str, jSONObject, 24));
     }
 
     public final boolean D() {
@@ -2149,7 +2149,7 @@ public abstract class v0 extends FrameLayout implements is, z5 {
                             }
                         }
                     });
-                    alertDialog$Builder3.j(new r9(runnableArr, 10));
+                    alertDialog$Builder3.j(new q9(runnableArr, 10));
                     alertDialog$Builder3.p();
                     return;
                 case '2':

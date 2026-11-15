@@ -1,6 +1,6 @@
 package bg;
 
-import ai.f1;
+import ai.g1;
 import android.content.Context;
 import android.view.KeyEvent;
 import fi.d8;
@@ -24,7 +24,7 @@ import org.telegram.ui.m40;
 import org.telegram.ui.pr;
 import org.telegram.ui.tp;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new l0((hi.d) obj4, tLObject, (u2[]) obj2, (e6) obj, this.b, (TLRPC.TL_messages_checkChatInvite) obj3));
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new f1((hi.d) obj4, (u2[]) obj2, this.b, (TLObject) obj, (String) obj3, 2));
+                org.telegram.messenger.g0.h3(new g1((hi.d) obj4, (u2[]) obj2, this.b, (TLObject) obj, (String) obj3, 2));
                 break;
             case 3:
                 org.telegram.messenger.g0.h3(new l0((d8) obj4, tLObject, this.d, (ArrayList) obj, (boolean[]) obj3, this.b));

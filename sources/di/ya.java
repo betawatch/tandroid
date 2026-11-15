@@ -1,86 +1,100 @@
 package di;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.e80;
+import org.telegram.messenger.i20;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class ya extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final class ya extends FrameLayout {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final Drawable b;
+    public final Drawable c;
+    public final TextView d;
+    public final org.telegram.ui.Components.h6 e;
+    public SpannableString f;
+    public boolean h;
+    public int n;
+    public final org.telegram.ui.Components.u5 r;
 
-    static {
-        a41.h(new ya());
+    public ya(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.r = new org.telegram.ui.Components.u5(this, 0L, 500L, er.h);
+        this.a = e6Var;
+        Drawable g10 = i5.c.g(context, R.drawable.star_small_outline);
+        this.b = g10;
+        org.telegram.ui.ActionBar.q6.x(this, g10, org.telegram.ui.ActionBar.j6.h5, e6Var, PorterDuff.Mode.SRC_IN);
+        this.c = i5.c.g(context, R.drawable.star_small_inner);
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.d = textView;
+        i20.o(textView, 1, 15.0f);
+        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.G6, e6Var);
+        addView(textView, c8.ja.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, false, false);
+        this.e = h6Var;
+        h6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        org.telegram.ui.ActionBar.q6.Y(h6Var, org.telegram.ui.ActionBar.j6.z6, e6Var);
+        h6Var.setGravity(hd.a0 ? 3 : 5);
+        addView(h6Var, c8.ja.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
 
-    public static b41 i(int i7, int i10, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        b41 K = b41.K(ya.class);
-        K.d = i7;
-        K.z = i10;
-        long j3 = tL_starsTopupOption.stars;
-        K.B = j3;
-        K.l = hd.H(' ', "StarsCount", (int) j3);
-        K.m = tL_starsTopupOption.loadingStorePrice ? null : org.telegram.messenger.r1.i().f(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
-        K.G = tL_starsTopupOption;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        za zaVar = (za) view;
-        int i7 = b41Var.z;
-        CharSequence charSequence = b41Var.l;
-        CharSequence charSequence2 = b41Var.m;
-        org.telegram.ui.Components.h6 h6Var = zaVar.e;
-        TextView textView = zaVar.d;
-        boolean equals = TextUtils.equals(textView.getText(), charSequence);
-        zaVar.n = i7;
-        if (!equals) {
-            zaVar.r.e(true, i7);
-        }
-        textView.setText(charSequence);
-        if (charSequence2 == null) {
-            if (zaVar.f == null) {
-                SpannableString spannableString = new SpannableString("x");
-                zaVar.f = spannableString;
-                spannableString.setSpan(new e80(org.telegram.messenger.g0.L(55.0f), h6Var), 0, zaVar.f.length(), 33);
-            }
-            charSequence2 = zaVar.f;
-        }
-        h6Var.setText(charSequence2);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float e10 = this.r.e(false, this.n);
         float f10 = hd.a0 ? -1.0f : 1.0f;
-        if (equals) {
-            textView.animate().translationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f)).setDuration(320L).setInterpolator(er.h).start();
-        } else {
-            textView.setTranslationX(f10 * (i7 - 1) * org.telegram.messenger.g0.L(2.66f));
+        float L = org.telegram.messenger.g0.L(24.0f);
+        float L2 = org.telegram.messenger.g0.L(24.0f);
+        float L3 = org.telegram.messenger.g0.L(2.5f);
+        float width = hd.a0 ? (getWidth() - org.telegram.messenger.g0.L(19.0f)) - L : org.telegram.messenger.g0.L(19.0f);
+        int ceil = ((int) Math.ceil(e10)) - 1;
+        while (true) {
+            if (ceil < 0) {
+                break;
+            }
+            float i7 = Utilities.i(e10 - ceil, 1.0f, 0.0f);
+            float f11 = (((ceil - 1) - (1.0f - i7)) * L3 * f10) + width;
+            float measuredHeight = (getMeasuredHeight() - L2) / 2.0f;
+            int i10 = (int) f11;
+            int i11 = (int) measuredHeight;
+            int i12 = (int) (f11 + L);
+            int i13 = (int) (measuredHeight + L2);
+            Drawable drawable = this.b;
+            drawable.setBounds(i10, i11, i12, i13);
+            int i14 = (int) (i7 * 255.0f);
+            drawable.setAlpha(i14);
+            drawable.draw(canvas);
+            Drawable drawable2 = this.c;
+            drawable2.setBounds(i10, i11, i12, i13);
+            drawable2.setAlpha(i14);
+            drawable2.draw(canvas);
+            ceil--;
         }
-        zaVar.h = z10;
-        zaVar.invalidate();
+        if (this.h) {
+            org.telegram.ui.ActionBar.e6 e6Var = this.a;
+            Paint d = e6Var != null ? e6Var.d("paintDivider") : null;
+            if (d == null) {
+                d = org.telegram.ui.ActionBar.j6.k0;
+            }
+            canvas.drawRect(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight(), d);
+        }
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final boolean c(b41 b41Var, b41 b41Var2) {
-        return b41Var.z == b41Var2.z && b41Var.d == b41Var2.d && TextUtils.equals(b41Var.m, b41Var2.m);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new za(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final boolean e(b41 b41Var, b41 b41Var2) {
-        return b41Var.d == b41Var2.d;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
     }
 }

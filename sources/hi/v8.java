@@ -17,7 +17,7 @@ import org.telegram.messenger.fc;
 import org.telegram.messenger.is;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class v8 implements Runnable {
                 sa saVar = (sa) this.b;
                 m5 m5Var5 = (m5) this.c;
                 final d7 d7Var3 = (d7) this.f;
-                final ai.v0 v0Var = (ai.v0) this.r;
+                final ai.w0 w0Var = (ai.w0) this.r;
                 int i15 = saVar.c;
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
@@ -217,7 +217,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                             switch (i21) {
                                                                                 case 0:
                                                                                     d7 d7Var4 = d7Var3;
-                                                                                    s8 s8Var = (s8) v0Var;
+                                                                                    s8 s8Var = (s8) w0Var;
                                                                                     try {
                                                                                         File file17 = d7Var4.P0;
                                                                                         if (file17 != null) {
@@ -272,7 +272,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                                     break;
                                                                                 default:
                                                                                     d7 d7Var5 = d7Var3;
-                                                                                    ai.v0 v0Var2 = (ai.v0) v0Var;
+                                                                                    ai.w0 w0Var2 = (ai.w0) w0Var;
                                                                                     try {
                                                                                         File file22 = d7Var5.P0;
                                                                                         if (file22 != null) {
@@ -323,7 +323,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                                     d7Var5.X0 = file5;
                                                                                     d7Var5.Q0 = file8;
                                                                                     d7Var5.U0 = arrayList3;
-                                                                                    v0Var2.run();
+                                                                                    w0Var2.run();
                                                                                     break;
                                                                             }
                                                                         }
@@ -354,7 +354,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                     switch (i212) {
                                                                         case 0:
                                                                             d7 d7Var4 = d7Var3;
-                                                                            s8 s8Var = (s8) v0Var;
+                                                                            s8 s8Var = (s8) w0Var;
                                                                             try {
                                                                                 File file17 = d7Var4.P0;
                                                                                 if (file17 != null) {
@@ -409,7 +409,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                             break;
                                                                         default:
                                                                             d7 d7Var5 = d7Var3;
-                                                                            ai.v0 v0Var2 = (ai.v0) v0Var;
+                                                                            ai.w0 w0Var2 = (ai.w0) w0Var;
                                                                             try {
                                                                                 File file22 = d7Var5.P0;
                                                                                 if (file22 != null) {
@@ -460,7 +460,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                             d7Var5.X0 = file5;
                                                                             d7Var5.Q0 = file8;
                                                                             d7Var5.U0 = arrayList3;
-                                                                            v0Var2.run();
+                                                                            w0Var2.run();
                                                                             break;
                                                                     }
                                                                 }
@@ -498,7 +498,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                         switch (i2122) {
                                                             case 0:
                                                                 d7 d7Var4 = d7Var3;
-                                                                s8 s8Var = (s8) v0Var;
+                                                                s8 s8Var = (s8) w0Var;
                                                                 try {
                                                                     File file17 = d7Var4.P0;
                                                                     if (file17 != null) {
@@ -553,7 +553,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                 break;
                                                             default:
                                                                 d7 d7Var5 = d7Var3;
-                                                                ai.v0 v0Var2 = (ai.v0) v0Var;
+                                                                ai.w0 w0Var2 = (ai.w0) w0Var;
                                                                 try {
                                                                     File file22 = d7Var5.P0;
                                                                     if (file22 != null) {
@@ -604,7 +604,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                 d7Var5.X0 = file5;
                                                                 d7Var5.Q0 = file8;
                                                                 d7Var5.U0 = arrayList3;
-                                                                v0Var2.run();
+                                                                w0Var2.run();
                                                                 break;
                                                         }
                                                     }
@@ -646,7 +646,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                 switch (i21222) {
                                     case 0:
                                         d7 d7Var4 = d7Var3;
-                                        s8 s8Var = (s8) v0Var;
+                                        s8 s8Var = (s8) w0Var;
                                         try {
                                             File file17 = d7Var4.P0;
                                             if (file17 != null) {
@@ -701,7 +701,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                         break;
                                     default:
                                         d7 d7Var5 = d7Var3;
-                                        ai.v0 v0Var2 = (ai.v0) v0Var;
+                                        ai.w0 w0Var2 = (ai.w0) w0Var;
                                         try {
                                             File file22 = d7Var5.P0;
                                             if (file22 != null) {
@@ -752,7 +752,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                         d7Var5.X0 = file5;
                                         d7Var5.Q0 = file8;
                                         d7Var5.U0 = arrayList3;
-                                        v0Var2.run();
+                                        w0Var2.run();
                                         break;
                                 }
                             }
@@ -799,7 +799,7 @@ public final /* synthetic */ class v8 implements Runnable {
                         switch (i212222) {
                             case 0:
                                 d7 d7Var4 = d7Var3;
-                                s8 s8Var = (s8) v0Var;
+                                s8 s8Var = (s8) w0Var;
                                 try {
                                     File file17 = d7Var4.P0;
                                     if (file17 != null) {
@@ -854,7 +854,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                 break;
                             default:
                                 d7 d7Var5 = d7Var3;
-                                ai.v0 v0Var2 = (ai.v0) v0Var;
+                                ai.w0 w0Var2 = (ai.w0) w0Var;
                                 try {
                                     File file22 = d7Var5.P0;
                                     if (file22 != null) {
@@ -905,7 +905,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                 d7Var5.X0 = file5;
                                 d7Var5.Q0 = file8;
                                 d7Var5.U0 = arrayList3;
-                                v0Var2.run();
+                                w0Var2.run();
                                 break;
                         }
                     }
@@ -1120,7 +1120,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                     break;
                                                                 default:
                                                                     d7 d7Var52 = d7Var5;
-                                                                    ai.v0 v0Var2 = (ai.v0) s8Var;
+                                                                    ai.w0 w0Var2 = (ai.w0) s8Var;
                                                                     try {
                                                                         File file22 = d7Var52.P0;
                                                                         if (file22 != null) {
@@ -1171,7 +1171,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                     d7Var52.X0 = file20;
                                                                     d7Var52.Q0 = file18;
                                                                     d7Var52.U0 = arrayList9;
-                                                                    v0Var2.run();
+                                                                    w0Var2.run();
                                                                     break;
                                                             }
                                                         }
@@ -1263,7 +1263,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                         break;
                                                     default:
                                                         d7 d7Var522 = d7Var52;
-                                                        ai.v0 v0Var2 = (ai.v0) s8Var;
+                                                        ai.w0 w0Var2 = (ai.w0) s8Var;
                                                         try {
                                                             File file22 = d7Var522.P0;
                                                             if (file22 != null) {
@@ -1314,7 +1314,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                         d7Var522.X0 = file202;
                                                         d7Var522.Q0 = file182;
                                                         d7Var522.U0 = arrayList9;
-                                                        v0Var2.run();
+                                                        w0Var2.run();
                                                         break;
                                                 }
                                             }
@@ -1410,7 +1410,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                 break;
                             default:
                                 d7 d7Var5222 = d7Var522;
-                                ai.v0 v0Var2 = (ai.v0) s8Var;
+                                ai.w0 w0Var2 = (ai.w0) s8Var;
                                 try {
                                     File file22 = d7Var5222.P0;
                                     if (file22 != null) {
@@ -1461,7 +1461,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                 d7Var5222.X0 = file2022;
                                 d7Var5222.Q0 = file1822;
                                 d7Var5222.U0 = arrayList9;
-                                v0Var2.run();
+                                w0Var2.run();
                                 break;
                         }
                     }

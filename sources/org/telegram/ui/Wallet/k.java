@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.r60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements z10 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class k implements z10 {
         Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ((di.t7) obj2).a(Boolean.valueOf(((String) obj) == null));
+                ((ai.u2) obj2).a(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
                 i0 i0Var = (i0) obj;

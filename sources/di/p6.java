@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.r80;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p6 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -29,8 +29,8 @@ public final /* synthetic */ class p6 implements RequestDelegate {
     public final /* synthetic */ Object h;
     public final /* synthetic */ TLObject i;
 
-    public /* synthetic */ p6(v8 v8Var, s10 s10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.e6 e6Var, TLRPC.ChatInvite chatInvite, String str2) {
-        this.d = v8Var;
+    public /* synthetic */ p6(u8 u8Var, s10 s10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.e6 e6Var, TLRPC.ChatInvite chatInvite, String str2) {
+        this.d = u8Var;
         this.e = s10Var;
         this.c = j3;
         this.f = str;
@@ -44,7 +44,7 @@ public final /* synthetic */ class p6 implements RequestDelegate {
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                final v8 v8Var = (v8) this.d;
+                final u8 u8Var = (u8) this.d;
                 final s10 s10Var = (s10) this.e;
                 final String str = (String) this.f;
                 final org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.h;
@@ -56,7 +56,7 @@ public final /* synthetic */ class p6 implements RequestDelegate {
                     @Override // java.lang.Runnable
                     public final void run() {
                         r80 r80Var;
-                        v8 v8Var2 = v8.this;
+                        u8 u8Var2 = u8.this;
                         TLObject tLObject2 = tLObject;
                         s10 s10Var2 = s10Var;
                         long j10 = j3;
@@ -74,20 +74,20 @@ public final /* synthetic */ class p6 implements RequestDelegate {
                                 s10Var2.a(0L, Boolean.FALSE);
                                 a02.Q(R.raw.error, 36, hd.a0(null, null, 2131743878, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
                                 return;
-                            } else if (np.s1(v8Var2.a).k7) {
+                            } else if (np.s1(u8Var2.a).k7) {
                                 s10Var2.a(0L, Boolean.FALSE);
-                                v8.c0(context2, e6Var2);
+                                u8.c0(context2, e6Var2);
                                 return;
                             } else {
                                 boolean[] zArr = {false};
-                                cb cbVar = new cb(context2, e6Var2, j10, 1, chatInvite2.title, new ai.b(v8Var2, zArr, str4, chatInvite2, s10Var2), 0L);
-                                cbVar.setOnDismissListener(new m7(s10Var2, zArr, 0));
-                                cbVar.show();
+                                bb bbVar = new bb(context2, e6Var2, j10, 1, chatInvite2.title, new ai.b(u8Var2, zArr, str4, chatInvite2, s10Var2), 0L);
+                                bbVar.setOnDismissListener(new m7(s10Var2, zArr, 0));
+                                bbVar.show();
                                 return;
                             }
                         }
                         TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject2;
-                        Utilities.d.c(new i7(v8Var2, tL_payments_paymentResult, i7));
+                        Utilities.d.c(new i7(u8Var2, tL_payments_paymentResult, i7));
                         TLRPC.Updates updates = tL_payments_paymentResult.updates;
                         TLRPC.Update update = updates.update;
                         long j11 = update instanceof TL_update.TL_updateChannel ? -((TL_update.TL_updateChannel) update).channel_id : 0L;
@@ -106,8 +106,8 @@ public final /* synthetic */ class p6 implements RequestDelegate {
                         if (launchActivity != null && (r80Var = launchActivity.w0) != null) {
                             r80Var.c(true);
                         }
-                        v8Var2.S(true);
-                        v8Var2.R();
+                        u8Var2.S(true);
+                        u8Var2.R();
                     }
                 });
                 break;

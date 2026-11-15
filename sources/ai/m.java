@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -26,16 +26,16 @@ public final /* synthetic */ class m implements Runnable {
                 final android.support.v4.media.session.a0 a0Var = this.c;
                 final ki.r1 r1Var = this.d;
                 final float[] fArr = this.b;
-                s[] sVarArr = DictationAsr.a;
+                t[] tVarArr = DictationAsr.a;
                 if (!zArr[0]) {
-                    DictationAsr.V((s) a0Var.b, new t() { // from class: ai.n
-                        @Override // ai.t
+                    DictationAsr.V((t) a0Var.b, new u() { // from class: ai.n
+                        @Override // ai.u
                         public final void a(boolean z10) {
                             boolean[] zArr2 = zArr;
                             ki.r1 r1Var2 = r1Var;
                             float[] fArr2 = fArr;
                             android.support.v4.media.session.a0 a0Var2 = a0Var;
-                            s[] sVarArr2 = DictationAsr.a;
+                            t[] tVarArr2 = DictationAsr.a;
                             if (zArr2[0]) {
                                 return;
                             }
@@ -50,7 +50,7 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 break;
             default:
-                DictationAsr.a(this.b, this.c, this.d, this.e);
+                DictationAsr.b(this.b, this.c, this.d, this.e);
                 break;
         }
     }

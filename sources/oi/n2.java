@@ -32,9 +32,9 @@ import org.telegram.ui.Components.au0;
 import org.telegram.ui.Components.yt0;
 import org.telegram.ui.Components.zt0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.ym0;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n2 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -527,13 +527,13 @@ public final /* synthetic */ class n2 implements Runnable {
                 org.telegram.ui.Components.voip.c2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             case 3:
-                ym0 ym0Var = (ym0) this.d;
+                zm0 zm0Var = (zm0) this.d;
                 String str4 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user2 = (TLRPC.User) this.h;
-                HashMap hashMap = ym0Var.h;
-                ArrayList arrayList = ym0Var.f;
-                ArrayList arrayList2 = ym0Var.n;
+                HashMap hashMap = zm0Var.h;
+                ArrayList arrayList = zm0Var.f;
+                ArrayList arrayList2 = zm0Var.n;
                 int size = arrayList2.size();
                 int i28 = 0;
                 int i29 = 0;
@@ -550,14 +550,14 @@ public final /* synthetic */ class n2 implements Runnable {
                 while (arrayList2.size() > 20) {
                     a8.p0.z(1, arrayList2);
                 }
-                ym0Var.h0();
-                if (this.b != ym0Var.E) {
+                zm0Var.h0();
+                if (this.b != zm0Var.E) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    ym0Var.x = messages_botresults.next_offset;
+                    zm0Var.x = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     int i30 = 0;
                     i18 = 0;
@@ -615,7 +615,7 @@ public final /* synthetic */ class n2 implements Runnable {
                                         if (photo2 == null) {
                                             user = user2;
                                             i19 = size3;
-                                            TLRPC.PhotoSize w12 = w7.w(photo2.sizes, ym0Var.S, true, null, false);
+                                            TLRPC.PhotoSize w12 = w7.w(photo2.sizes, zm0Var.S, true, null, false);
                                             if (w12 != null) {
                                                 botInlineResult.document.thumbs.add(w12);
                                                 botInlineResult.document.flags |= 1;
@@ -652,18 +652,18 @@ public final /* synthetic */ class n2 implements Runnable {
                         size3 = i19;
                         i28 = 0;
                     }
-                    ym0Var.s = size2 == arrayList.size() || ym0Var.x == null;
+                    zm0Var.s = size2 == arrayList.size() || zm0Var.x == null;
                 } else {
                     i18 = 0;
                 }
-                ym0Var.r = false;
+                zm0Var.r = false;
                 if (i18 != 0) {
-                    ym0Var.M.o(size2, i18);
-                } else if (ym0Var.s) {
+                    zm0Var.M.o(size2, i18);
+                } else if (zm0Var.s) {
                     z10 = true;
-                    ym0Var.M.s(arrayList.size() - 1);
+                    zm0Var.M.s(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        ym0Var.O.e(false, z10);
+                        zm0Var.O.e(false, z10);
                         return;
                     }
                     return;
@@ -718,8 +718,8 @@ public final /* synthetic */ class n2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ n2(ym0 ym0Var, String str, int i7, TLObject tLObject, boolean z10, TLRPC.User user) {
-        this.d = ym0Var;
+    public /* synthetic */ n2(zm0 zm0Var, String str, int i7, TLObject tLObject, boolean z10, TLRPC.User user) {
+        this.d = zm0Var;
         this.f = str;
         this.b = i7;
         this.e = tLObject;

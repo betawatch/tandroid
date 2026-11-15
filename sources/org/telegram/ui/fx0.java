@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class fx0 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public int E;
@@ -515,23 +515,23 @@ public final class fx0 extends org.telegram.ui.ActionBar.e2 implements org.teleg
             linearLayout.setOrientation(0);
             linearLayout.setWeightSum(1.0f);
             n3Var.addView(linearLayout, c8.ja.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
-            di.ub ubVar = new di.ub(parentActivity2, 18);
+            di.tb tbVar = new di.tb(parentActivity2, 18);
             linearLayout.addView(e4Var, c8.ja.l(0.4f, 0, org.telegram.messenger.ns.t4));
             linearLayout.addView(ib0Var, c8.ja.p(0, -2, 0.2f, 16));
             linearLayout.addView(f4Var, c8.ja.l(0.4f, 0, org.telegram.messenger.ns.t4));
-            ubVar.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
-            ubVar.setGravity(17);
-            ubVar.setTextColor(f12);
-            ubVar.setTextSize(1, 14.0f);
-            ubVar.setTypeface(org.telegram.messenger.g0.o());
+            tbVar.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
+            tbVar.setGravity(17);
+            tbVar.setTextColor(f12);
+            tbVar.setTextSize(1, 14.0f);
+            tbVar.setTypeface(org.telegram.messenger.g0.o());
             int L = org.telegram.messenger.g0.L(8.0f);
-            ubVar.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, f13, f14, f14));
-            ubVar.setText(org.telegram.messenger.hd.M0(2131753866, null));
-            n3Var.addView(ubVar, c8.ja.t(-1, 48, 83, 16, 15, 16, 16));
+            tbVar.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, f13, f14, f14));
+            tbVar.setText(org.telegram.messenger.hd.M0(2131753866, null));
+            n3Var.addView(tbVar, c8.ja.t(-1, 48, 83, 16, 15, 16, 16));
             br brVar = new br(10);
             e4Var.setOnValueChangedListener(brVar);
             f4Var.setOnValueChangedListener(brVar);
-            ubVar.setOnClickListener(new bi.f4(e4Var, f4Var, ax0Var, ouVar, 8));
+            tbVar.setOnClickListener(new bi.f4(e4Var, f4Var, ax0Var, ouVar, 8));
             org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) ouVar.b;
             u2Var.O = n3Var;
             u2Var.show();

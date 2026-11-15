@@ -12,7 +12,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class k50 extends tj0 {
     public final /* synthetic */ p50 c;
@@ -247,7 +247,7 @@ public final class k50 extends tj0 {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(org.telegram.messenger.hd.a0(null, null, 2131748892, Long.valueOf(tL_starsSubscriptionPricing2.amount)));
                 sb4.append(i17 > 0 ? i5.c.i(i17, " x ") : "");
-                textView2.setText(di.mb.a1(false, sb4.toString(), 0.8f, null));
+                textView2.setText(di.lb.a1(false, sb4.toString(), 0.8f, null));
                 if (i17 == 0) {
                     a02 = org.telegram.messenger.hd.M0(2131748185, null);
                 } else {
@@ -264,7 +264,7 @@ public final class k50 extends tj0 {
             Locale locale2 = Locale.US;
             sb5.append(String.format(locale2, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing2.amount), str3));
             sb5.append(i17 > 0 ? i5.c.i(i17, " x ") : "");
-            textView2.setText(di.mb.a1(false, sb5.toString(), 0.8f, null));
+            textView2.setText(di.lb.a1(false, sb5.toString(), 0.8f, null));
             if (i17 == 0) {
                 format = org.telegram.messenger.hd.M0(2131748185, null);
             } else {
@@ -377,7 +377,7 @@ public final class k50 extends tj0 {
                             int i27 = tL_chatInviteImporter2.date;
                             TextView textView3 = n50Var.d0;
                             TextView textView4 = n50Var.c0;
-                            SpannableStringBuilder a12 = di.mb.a1(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
+                            SpannableStringBuilder a12 = di.lb.a1(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
                             int i28 = tL_starsSubscriptionPricing.period;
                             String M0 = i28 == 2592000 ? org.telegram.messenger.hd.M0(2131745056, null) : i28 == 300 ? "per 5 minutes" : "per each minute";
                             textView4.setText(a12);

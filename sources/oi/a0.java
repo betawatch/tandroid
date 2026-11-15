@@ -12,14 +12,14 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class a0 extends View {
     public final du a;
     public final int b;
     public boolean c;
     public boolean d;
-    public final ai.v0 e;
+    public final ai.w0 e;
     public final /* synthetic */ d0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,7 +36,7 @@ public final class a0 extends View {
         TL_keyboard.InlineButtonType inlineButtonType = pageButton.type;
         du duVar = new du(ivVar, d, l10, pageButton, inlineButtonType, pageButton.style, inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeDisabled, false, false, false, false, Boolean.FALSE, j1Var);
         this.a = duVar;
-        this.e = new ai.v0(this, i7, 16);
+        this.e = new ai.w0(this, i7, 16);
         duVar.e = duVar.h();
         setContentDescription(a6.l(pageButton.text));
         setClickable(true);
@@ -79,20 +79,20 @@ public final class a0 extends View {
         b0 b0Var;
         a aVar;
         int actionMasked = motionEvent.getActionMasked();
-        ai.v0 v0Var = this.e;
+        ai.w0 w0Var = this.e;
         du duVar = this.a;
         if (actionMasked == 0) {
             this.c = true;
             this.d = false;
             duVar.m(true);
-            org.telegram.messenger.g0.i3(v0Var, ViewConfiguration.getLongPressTimeout());
+            org.telegram.messenger.g0.i3(w0Var, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if (actionMasked == 1) {
             boolean z10 = this.c && !this.d;
             this.c = false;
             duVar.m(false);
-            org.telegram.messenger.g0.r(v0Var);
+            org.telegram.messenger.g0.r(w0Var);
             if (z10 && (b0Var = (d0Var = this.f).F) != null && (aVar = d0Var.a) != null) {
                 q3 q3Var = ((i3) b0Var).a;
                 TL_iv.PageBlock pageBlock = aVar.b;
@@ -134,13 +134,13 @@ public final class a0 extends View {
                 }
                 this.c = false;
                 duVar.m(false);
-                org.telegram.messenger.g0.r(v0Var);
+                org.telegram.messenger.g0.r(w0Var);
                 return true;
             }
             if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
                 this.c = false;
                 duVar.m(false);
-                org.telegram.messenger.g0.r(v0Var);
+                org.telegram.messenger.g0.r(w0Var);
                 return true;
             }
         }

@@ -1,97 +1,59 @@
 package di;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.mb0;
+import android.graphics.Paint;
+import android.view.KeyEvent;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.a20;
+import org.telegram.messenger.gj;
+import org.telegram.messenger.hd;
+import org.telegram.ui.Components.ki;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class pa implements TextWatcher {
-    public boolean a;
-    public int b = 2;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ mb0 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ hi.d h;
-    public final /* synthetic */ TextView n;
+public final /* synthetic */ class pa implements a20 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public pa(EditTextBoldCursor editTextBoldCursor, mb0 mb0Var, long j3, boolean z10, hi.d dVar, TextView textView) {
-        this.c = editTextBoldCursor;
-        this.d = mb0Var;
-        this.e = j3;
-        this.f = z10;
-        this.h = dVar;
-        this.n = textView;
+    public /* synthetic */ pa(KeyEvent.Callback callback, int i7) {
+        this.a = i7;
+        this.b = callback;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a6  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        long j3;
-        mb0 mb0Var = this.d;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
-        }
-        try {
-            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-            try {
-                if (j3 > np.s1(m10.t0).T5) {
-                    this.a = true;
-                    j3 = np.s1(m10.t0).T5;
-                    editTextBoldCursor.setText(Long.toString(j3));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i7 = -this.b;
-                    this.b = i7;
-                    org.telegram.messenger.g0.F3(i7, mb0Var, null);
+    @Override // org.telegram.messenger.a20
+    public final Object a(Object obj) {
+        int i7 = this.a;
+        KeyEvent.Callback callback = this.b;
+        switch (i7) {
+            case 0:
+                qa qaVar = (qa) callback;
+                return qaVar.s[((Integer) obj).intValue() % qaVar.s.length];
+            case 1:
+                gj gjVar = (gj) obj;
+                ((hi.v6) callback).m2 = gjVar;
+                return Boolean.valueOf(MediaController.B().o0(org.telegram.messenger.k5.j(gjVar), gjVar, 0L, true, null, 0L));
+            case 2:
+                qa qaVar2 = (qa) callback;
+                return qaVar2.s[((Integer) obj).intValue() % qaVar2.s.length];
+            case 3:
+                return new org.telegram.ui.web.e1(0, (org.telegram.ui.l0) callback, (Integer) obj);
+            case 4:
+                tg.g0 g0Var = (tg.g0) callback;
+                if (((Integer) obj).intValue() == 2) {
+                    ki kiVar = new ki(g0Var.getContext(), new tg.w(g0Var), false, false, false, g0Var.A1);
+                    kiVar.n = true;
+                    kiVar.A1(hd.M0(2131754428, null));
+                    kiVar.X3 = new tg.x(g0Var, kiVar);
+                    kiVar.setOnDismissListener(new hi.f1(8));
+                    kiVar.y1(1, false);
+                    kiVar.e1();
+                    MediaController.h2 = true;
+                    kiVar.e2.i0();
+                    kiVar.show();
                 }
-            } catch (Exception unused) {
-                this.a = true;
-                long j10 = this.e;
-                editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                this.a = false;
-                if (!this.f) {
-                }
-                mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                TextView textView = this.n;
-                if (j3 != 0) {
-                }
-            }
-        } catch (Exception unused2) {
-            j3 = 0;
+                return Boolean.TRUE;
+            default:
+                Paint[] paintArr = ((yg.r) callback).h;
+                return paintArr[((Integer) obj).intValue() % paintArr.length];
         }
-        this.a = false;
-        if (!this.f) {
-            this.h.setEnabled(j3 > 0);
-        }
-        mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.n;
-        if (j3 != 0) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
-        } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * np.s1(m10.t0).d6), "USD"));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

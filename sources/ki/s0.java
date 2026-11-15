@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class s0 {
     public static final HashMap g = new HashMap();
@@ -203,7 +203,7 @@ public final class s0 {
                             boolean a10 = s0Var.a();
                             org.telegram.ui.web.o oVar2 = oVar;
                             if (!a10) {
-                                ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.u1(24, s0Var, oVar2));
+                                ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.v1(24, s0Var, oVar2));
                                 break;
                             } else {
                                 s0Var.d = true;
@@ -257,7 +257,7 @@ public final class s0 {
                         boolean a10 = s0Var.a();
                         org.telegram.ui.web.o oVar2 = oVar;
                         if (!a10) {
-                            ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.u1(24, s0Var, oVar2));
+                            ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.v1(24, s0Var, oVar2));
                             break;
                         } else {
                             s0Var.d = true;
@@ -407,7 +407,7 @@ public final class s0 {
                             case 0:
                                 s0 s0Var = this.b;
                                 if (!s0Var.a()) {
-                                    ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.u1(25, s0Var, mp0Var));
+                                    ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.v1(25, s0Var, mp0Var));
                                     break;
                                 } else {
                                     s0Var.d = true;
@@ -453,7 +453,7 @@ public final class s0 {
                         case 0:
                             s0 s0Var = this.b;
                             if (!s0Var.a()) {
-                                ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.u1(25, s0Var, mp0Var));
+                                ka.e(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new ai.v1(25, s0Var, mp0Var));
                                 break;
                             } else {
                                 s0Var.d = true;

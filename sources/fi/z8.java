@@ -10,7 +10,7 @@ import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z8 implements u3 {
     public final /* synthetic */ k6 a;
@@ -254,7 +254,7 @@ public final class z8 implements u3 {
             }
             arrayList.remove(indexOf);
             if (i9Var.o0.E(true)) {
-                i9Var.o0.H0 = new ai.z0(this, arrayList, indexOf, 11);
+                i9Var.o0.H0 = new ai.a1(this, arrayList, indexOf, 11);
                 return;
             } else {
                 i9Var.u(false);

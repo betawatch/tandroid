@@ -51,7 +51,7 @@ import org.telegram.ui.m90;
 import org.telegram.ui.r60;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class d2 {
     public final int a;
@@ -850,7 +850,7 @@ public final class d2 {
         String string = np.s1(d2Var.a).f7.getString(l(j3, i10), null);
         if (string == null) {
             d2Var.h = true;
-            d2Var.b.m0(new di.x7(d2Var, j3, k60Var, i10));
+            d2Var.b.m0(new di.w7(d2Var, j3, k60Var, i10));
             return;
         }
         d2Var.h = true;

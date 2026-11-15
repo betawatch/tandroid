@@ -1,7 +1,7 @@
 package ab;
 
 import a8.r7;
-import ai.u1;
+import ai.v1;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -31,7 +31,7 @@ import di.c6;
 import di.f2;
 import di.g3;
 import di.j4;
-import di.v8;
+import di.u8;
 import di.x2;
 import e2.c1;
 import fi.b4;
@@ -99,9 +99,9 @@ import org.telegram.ui.ka1;
 import org.telegram.ui.ma0;
 import org.telegram.ui.o01;
 import org.telegram.ui.pa0;
-import org.telegram.ui.rl0;
+import org.telegram.ui.sl0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements OnCompleteListener, Continuation, ai.g, q1, j4, x10, hj0, OnFailureListener, u9.d, o01, CameraView.CameraViewDelegate, jh.i, ka1, w7, v10, ma0, ij0, h2.p, h2.o {
     public final /* synthetic */ int a;
@@ -338,7 +338,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                             t1Var3.r(400L);
                             long e10 = m10.i(z5Var.a).e();
                             cg.b bVar = tL_starGiftUnique.resale_ton_only ? cg.b.b : cg.b.a;
-                            v8.x(z5Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new u5(z5Var, t1Var3, bVar, tL_starGiftUnique, e10));
+                            u8.x(z5Var.a, bVar).H(tL_starGiftUnique, e10, null, true, new u5(z5Var, t1Var3, bVar, tL_starGiftUnique, e10));
                             break;
                         }
                         i5.c.C(r42, 2131747831, alertDialog$Builder, r42);
@@ -393,7 +393,7 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
                                         m60 F = m60.F(l8Var, q8Var.J0, view);
                                         F.c(R.drawable.msg_addfolder, hd.M0(2131744785, null), new x2(l8Var, n10, i13), false);
                                         F.k();
-                                        m60.f(F, np.s1(q8Var.a).P1().B(n10, true), q8Var.v1, false, null, new u1(17, l8Var, F));
+                                        m60.f(F, np.s1(q8Var.a).P1().B(n10, true), q8Var.v1, false, null, new v1(17, l8Var, F));
                                         F.Z();
                                         break;
                                     }
@@ -605,12 +605,12 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
 
     @Override // ai.g
     public void g(String str) {
-        ai.m0 m0Var = (ai.m0) this.b;
+        ai.n0 n0Var = (ai.n0) this.b;
         ai.h hVar = (ai.h) this.c;
-        if (m0Var.r != 4) {
+        if (n0Var.r != 4) {
             return;
         }
-        org.telegram.messenger.g0.i3(new aa.r(m0Var, str, hVar, 2), Math.max(0L, (m0Var.V + 1200) - SystemClock.uptimeMillis()));
+        org.telegram.messenger.g0.i3(new aa.r(n0Var, str, hVar, 2), Math.max(0L, (n0Var.V + 1200) - SystemClock.uptimeMillis()));
     }
 
     @Override // org.telegram.ui.ActionBar.q1
@@ -798,9 +798,9 @@ public final /* synthetic */ class g implements OnCompleteListener, Continuation
             ViewGroup viewGroup = (ViewGroup) view.getParent();
             for (int i7 = 0; i7 < viewGroup.getChildCount(); i7++) {
                 View childAt = viewGroup.getChildAt(i7);
-                if (childAt instanceof rl0) {
-                    rl0 rl0Var = (rl0) childAt;
-                    rl0Var.b(h4Var.m1 == rl0Var.getGiftId(), true);
+                if (childAt instanceof sl0) {
+                    sl0 sl0Var = (sl0) childAt;
+                    sl0Var.b(h4Var.m1 == sl0Var.getGiftId(), true);
                 }
             }
         }

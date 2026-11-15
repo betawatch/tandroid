@@ -17,7 +17,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e81 extends Dialog {
     public float E;
@@ -54,7 +54,7 @@ public final class e81 extends Dialog {
     public ValueAnimator e0;
     public final TextView f;
     public ValueAnimator f0;
-    public final org.telegram.ui.Components.ha0 h;
+    public final org.telegram.ui.Components.ia0 h;
     public i0.c n;
     public Bitmap r;
     public BitmapShader s;
@@ -91,22 +91,22 @@ public final class e81 extends Dialog {
         b81 b81Var3 = new b81(this, activity, 2);
         this.d = b81Var3;
         b81Var2.addView(b81Var3, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
-        org.telegram.ui.Components.ha0 ha0Var = new org.telegram.ui.Components.ha0(activity, e6Var);
-        this.h = ha0Var;
-        ha0Var.a(0, org.telegram.messenger.hd.M0(2131744069, null));
-        ha0Var.a(1, org.telegram.messenger.hd.M0(2131744070, null));
-        b81Var2.addView(ha0Var, c8.ja.e(-1, 66, 80));
-        ha0Var.setOnTabClick(new r3(i1Var, 25));
-        fh.g c10 = cVar.c(ha0Var, null, false);
+        org.telegram.ui.Components.ia0 ia0Var = new org.telegram.ui.Components.ia0(activity, e6Var);
+        this.h = ia0Var;
+        ia0Var.a(0, org.telegram.messenger.hd.M0(2131744069, null));
+        ia0Var.a(1, org.telegram.messenger.hd.M0(2131744070, null));
+        b81Var2.addView(ia0Var, c8.ja.e(-1, 66, 80));
+        ia0Var.setOnTabClick(new r3(i1Var, 25));
+        fh.g c10 = cVar.c(ia0Var, null, false);
         c10.p(c8.g0.k(e6Var));
         c10.R.e = true;
         c10.q(org.telegram.messenger.g0.L(8.0f));
         c10.r(org.telegram.messenger.g0.L(16.0f));
-        ha0Var.setBackground(c10);
+        ia0Var.setBackground(c10);
         TextView textView = new TextView(activity);
         this.f = textView;
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(ha0Var.getColor());
+        textView.setTextColor(ia0Var.getColor());
         textView.setText(org.telegram.messenger.hd.M0(2131744071, null));
         textView.setGravity(17);
         b81Var2.addView(textView, c8.ja.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
@@ -374,9 +374,9 @@ public final class e81 extends Dialog {
         TextView textView = this.f;
         textView.setTranslationX(W1);
         textView.setAlpha(this.y);
-        org.telegram.ui.Components.ha0 ha0Var = this.h;
-        ha0Var.setSelectedTab(positionAnimated);
-        ha0Var.setAlpha(this.y);
+        org.telegram.ui.Components.ia0 ia0Var = this.h;
+        ia0Var.setSelectedTab(positionAnimated);
+        ia0Var.setAlpha(this.y);
     }
 
     @Override // android.app.Dialog

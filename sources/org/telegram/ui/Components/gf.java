@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class gf {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -51,8 +51,8 @@ public final class gf {
         if ((chatActivityEnterView.M2 && chatActivityEnterView.d1) || !chatActivityEnterView.z0 || chatActivityEnterView.x3 == null || chatActivityEnterView.F0 == null || MediaController.B().K()) {
             return false;
         }
-        ai.m0 m0Var = chatActivityEnterView.j1;
-        return (m0Var == null || m0Var.r == 0) && !chatActivityEnterView.M1;
+        ai.n0 n0Var = chatActivityEnterView.j1;
+        return (n0Var == null || n0Var.r == 0) && !chatActivityEnterView.M1;
     }
 
     public final void e() {
@@ -78,10 +78,10 @@ public final class gf {
             return;
         }
         int i7 = ChatActivityEnterView.N6;
-        ai.m0 o02 = this.a.o0();
+        ai.n0 o02 = this.a.o0();
         o02.g();
         long uptimeMillis = SystemClock.uptimeMillis();
-        o02.H.a((ai.h) obj, str, new ai.c0(uptimeMillis, z10Var, 0));
+        o02.H.a((ai.h) obj, str, new ai.d0(uptimeMillis, z10Var, 0));
     }
 
     public final void g(float f10, float f11) {

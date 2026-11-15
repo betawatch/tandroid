@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class pz0 extends Dialog {
     public TextView E;
@@ -54,7 +54,7 @@ public final class pz0 extends Dialog {
     public final kz0 a0;
     public final k0 b;
     public float b0;
-    public final ai.j0 c;
+    public final ai.k0 c;
     public boolean c0;
     public org.telegram.ui.Components.fz0 d;
     public org.telegram.ui.ActionBar.t1 d0;
@@ -85,10 +85,10 @@ public final class pz0 extends Dialog {
         k0 k0Var = new k0(23, activity, this);
         this.b = k0Var;
         k0Var.setOnClickListener(new lz0(this, i7));
-        ai.j0 j0Var = new ai.j0(this, activity);
-        this.c = j0Var;
-        j0Var.setClipToPadding(false);
-        k0Var.addView(j0Var, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
+        ai.k0 k0Var2 = new ai.k0(this, activity);
+        this.c = k0Var2;
+        k0Var2.setClipToPadding(false);
+        k0Var.addView(k0Var2, c8.ja.e(-1, -1, org.telegram.messenger.ns.E1));
         mz0 mz0Var = new mz0(this, i7);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(k0Var, mz0Var);

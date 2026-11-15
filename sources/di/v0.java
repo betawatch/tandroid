@@ -13,7 +13,7 @@ import org.telegram.messenger.ns;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v0 extends org.telegram.ui.ActionBar.u2 {
     public int A1;
@@ -32,7 +32,7 @@ public final class v0 extends org.telegram.ui.ActionBar.u2 {
     public final cg.a y1;
     public cg.a z1;
 
-    public v0(Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7, cg.a aVar, ai.u1 u1Var) {
+    public v0(Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7, cg.a aVar, ai.v1 v1Var) {
         super(1, context, e6Var, true);
         this.a = i7;
         this.Q0 = true;
@@ -113,7 +113,7 @@ public final class v0 extends org.telegram.ui.ActionBar.u2 {
         linearLayout.addView(linearLayout3, c8.ja.r(-1, -2, 80));
         hi.d g10 = i20.g(24, context, e6Var, true);
         this.q1 = g10;
-        g10.setOnClickListener(new ai.t2(9, this, u1Var));
+        g10.setOnClickListener(new ai.v2(9, this, v1Var));
         g10.i(hd.M0(2131746151, null), false, true);
         linearLayout3.addView(g10, c8.ja.k(18.0f, 0.0f, 18.0f, 8.0f, -1, 48));
         if (aVar != null) {

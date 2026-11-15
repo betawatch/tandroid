@@ -12,7 +12,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -59,7 +59,7 @@ public final /* synthetic */ class k2 implements Runnable {
                         }
                     } else {
                         c6Var.dismiss();
-                        v8.y(c6Var.a, false).P(j3);
+                        u8.y(c6Var.a, false).P(j3);
                         if (j3 < 0) {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", -j3);
@@ -79,12 +79,12 @@ public final /* synthetic */ class k2 implements Runnable {
                                     b22.flags2 &= -257;
                                 }
                             }
-                            v8.y(c6Var.a, false).O();
-                            v8.y(c6Var.a, false).S(true);
-                            if (!(T instanceof mb)) {
-                                mb mbVar = new mb();
-                                mbVar.whenFullyVisible(new x2(mbVar, j11, 0));
-                                T.presentFragment(mbVar);
+                            u8.y(c6Var.a, false).O();
+                            u8.y(c6Var.a, false).S(true);
+                            if (!(T instanceof lb)) {
+                                lb lbVar = new lb();
+                                lbVar.whenFullyVisible(new x2(lbVar, j11, 0));
+                                T.presentFragment(lbVar);
                                 break;
                             } else {
                                 org.telegram.ui.Components.cc.a0(T).I(R.raw.stars_topup, hd.M0(2131750221, null), hd.H(',', "Gift2Converted", (int) j11)).k(true);
@@ -105,7 +105,7 @@ public final /* synthetic */ class k2 implements Runnable {
                 if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error2 != null && "BALANCE_TOO_LOW".equals(tL_error2.text)) {
                         if (!np.s1(c6Var2.a).k7) {
-                            v8 y10 = v8.y(c6Var2.a, false);
+                            u8 y10 = u8.y(c6Var2.a, false);
                             d3.e0 e0Var = new d3.e0(c6Var2, j14, j12, z10Var, 1);
                             y10.e = false;
                             y10.q(e0Var, false, true);
@@ -113,7 +113,7 @@ public final /* synthetic */ class k2 implements Runnable {
                             break;
                         } else {
                             c6Var2.g2.setLoading(false);
-                            v8.c0(c6Var2.getContext(), c6Var2.J0);
+                            u8.c0(c6Var2.getContext(), c6Var2.J0);
                             break;
                         }
                     } else {
@@ -125,10 +125,10 @@ public final /* synthetic */ class k2 implements Runnable {
                     TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject2;
                     np.s1(c6Var2.a).Y3(tL_payments_paymentResult.updates.users, false);
                     np.s1(c6Var2.a).S3(tL_payments_paymentResult.updates.chats, false);
-                    v8.y(c6Var2.a, false).S(false);
-                    v8.y(c6Var2.a, false).P(j12);
-                    v8.y(c6Var2.a, false).P(j13);
-                    v8.y(c6Var2.a, false).O();
+                    u8.y(c6Var2.a, false).S(false);
+                    u8.y(c6Var2.a, false).P(j12);
+                    u8.y(c6Var2.a, false).P(j13);
+                    u8.y(c6Var2.a, false).O();
                     z10Var.a(null);
                     org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
                     if (T2 != null) {

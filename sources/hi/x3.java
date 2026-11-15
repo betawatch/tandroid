@@ -20,7 +20,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.p41;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class x3 extends FrameLayout {
     public final RectF E;
@@ -119,7 +119,7 @@ public abstract class x3 extends FrameLayout {
                             i11++;
                             l9Var2.d.add(Integer.valueOf(((b41) obj3).d));
                         }
-                        org.telegram.messenger.g0.d0(l9Var2.b, new ai.f0(l9Var2, 25));
+                        org.telegram.messenger.g0.d0(l9Var2.b, new ai.g0(l9Var2, 25));
                         break;
                 }
             }
@@ -173,7 +173,7 @@ public abstract class x3 extends FrameLayout {
                             i11++;
                             l9Var2.d.add(Integer.valueOf(((b41) obj3).d));
                         }
-                        org.telegram.messenger.g0.d0(l9Var2.b, new ai.f0(l9Var2, 25));
+                        org.telegram.messenger.g0.d0(l9Var2.b, new ai.g0(l9Var2, 25));
                         break;
                 }
             }
@@ -421,6 +421,6 @@ public abstract class x3 extends FrameLayout {
             return;
         }
         this.f = i7;
-        org.telegram.messenger.g0.d0(this.b, new ai.x1(this, i7, 1));
+        org.telegram.messenger.g0.d0(this.b, new ai.y1(this, i7, 1));
     }
 }

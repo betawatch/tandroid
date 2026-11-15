@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class k6 {
     public static HashMap B;
@@ -635,7 +635,7 @@ public class k6 {
         ArrayList arrayList2 = new ArrayList(this.g);
         c(arrayList, true, true);
         vr a02 = vr.a0(this.c);
-        a02.a.c(new androidx.car.app.utils.a(this, arrayList, a02, arrayList2, 15));
+        a02.a.c(new ai.r(this, arrayList, a02, arrayList2, 16));
     }
 
     public final gj y(TL_stories.StoryItem storyItem) {

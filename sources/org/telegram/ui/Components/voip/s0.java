@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.u5;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class s0 extends ViewGroup {
     public int E;
@@ -27,7 +27,7 @@ public final class s0 extends ViewGroup {
     public long c;
     public final ImageReceiver d;
     public final TextView e;
-    public final ai.g2 f;
+    public final ai.h2 f;
     public final Paint h;
     public final u5 n;
     public final u5 r;
@@ -56,9 +56,9 @@ public final class s0 extends ViewGroup {
         textView.setTextColor(-1);
         textView.setIncludeFontPadding(false);
         addView(textView);
-        ai.g2 g2Var = new ai.g2(textView);
-        this.f = g2Var;
-        g2Var.c(-9717249, -1, true);
+        ai.h2 h2Var = new ai.h2(textView);
+        this.f = h2Var;
+        h2Var.c(-9717249, -1, true);
         imageReceiver.J0(org.telegram.messenger.g0.L(11.0f));
         paint.setColor(-13946053);
         setWillNotDraw(false);

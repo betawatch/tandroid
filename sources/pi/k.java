@@ -59,7 +59,7 @@ import r0.i0;
 import v4.b1;
 import v4.e1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public abstract class k extends v4.k {
     public static final er V = new er(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);

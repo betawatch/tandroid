@@ -11,7 +11,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class x1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        k8 F;
+        j8 F;
         int i7 = this.a;
         boolean z10 = this.c;
         Object obj = this.e;
@@ -55,7 +55,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (T != null) {
                     if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error != null) {
-                            if (z11 && c6Var.B2 != null && (F = v8.y(c6Var.a, false).F(c6Var.T1, false)) != null) {
+                            if (z11 && c6Var.B2 != null && (F = u8.y(c6Var.a, false).F(c6Var.T1, false)) != null) {
                                 F.m(c6Var.B2, !savestargift.unsave);
                             }
                             c6Var.k().t(hd.a0(null, null, 2131743878, tL_error.text), null).k(false);
@@ -65,7 +65,7 @@ public final /* synthetic */ class x1 implements Runnable {
                         c6Var.dismiss();
                         long x12 = c6Var.x1();
                         if (!z11) {
-                            v8.y(c6Var.a, false).P(x12);
+                            u8.y(c6Var.a, false).P(x12);
                         }
                         if (x12 < 0) {
                             org.telegram.ui.Components.cc.a0(T).s(document, hd.M0(z10 ? 2131750260 : 2131750258, null), hd.M0(z10 ? 2131750261 : 2131750259, null)).j();

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class oh0 extends v4.h0 {
     public final /* synthetic */ int c;
@@ -46,10 +46,10 @@ public final class oh0 extends v4.h0 {
         FrameLayout l6Var;
         if (i7 != 0) {
             vh0 vh0Var = this.h;
-            n90 n90Var = vh0Var.K;
-            if (n90Var == null) {
+            o90 o90Var = vh0Var.K;
+            if (o90Var == null) {
                 vh0Var.i();
-            } else if (n90Var.getParent() != null) {
+            } else if (o90Var.getParent() != null) {
                 ((ViewGroup) vh0Var.K.getParent()).removeView(vh0Var.K);
             }
             Context context = this.d;

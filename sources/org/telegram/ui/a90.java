@@ -31,7 +31,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a90 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -323,7 +323,7 @@ public final /* synthetic */ class a90 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.q6.s(passcodeActivity.s, atomicBoolean.get() ? org.telegram.ui.ActionBar.j6.l6 : org.telegram.ui.ActionBar.j6.H6, null, PorterDuff.Mode.SRC_ATOP);
                 break;
             case 8:
-                jl0.m0((jl0) this.b, (String) this.c, view);
+                kl0.m0((kl0) this.b, (String) this.c, view);
                 break;
             case 9:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
@@ -575,7 +575,7 @@ public final /* synthetic */ class a90 implements View.OnClickListener {
                         linearLayout.setWeightSum(1.0f);
                         n3Var.addView(linearLayout, c8.ja.q(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                         Calendar calendar = Calendar.getInstance();
-                        di.ub ubVar = new di.ub(context6, 17);
+                        di.tb tbVar = new di.tb(context6, 17);
                         linearLayout.addView(ib0Var, c8.ja.l(0.5f, 0, org.telegram.messenger.ns.t4));
                         ib0Var.setMinValue(0);
                         ib0Var.setMaxValue(365);
@@ -613,17 +613,17 @@ public final /* synthetic */ class a90 implements View.OnClickListener {
                             }
                         }
                         org.telegram.ui.Components.t4.g(null, null, 0L, 0L, 0, ib0Var, a4Var, b4Var);
-                        ubVar.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
-                        ubVar.setGravity(17);
-                        ubVar.setTextColor(x04);
-                        ubVar.setTextSize(1, 14.0f);
-                        ubVar.setTypeface(org.telegram.messenger.g0.o());
+                        tbVar.setPadding(org.telegram.messenger.g0.L(34.0f), 0, org.telegram.messenger.g0.L(34.0f), 0);
+                        tbVar.setGravity(17);
+                        tbVar.setTextColor(x04);
+                        tbVar.setTextSize(1, 14.0f);
+                        tbVar.setTypeface(org.telegram.messenger.g0.o());
                         int L = org.telegram.messenger.g0.L(8.0f);
-                        ubVar.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, x05, x06, x06));
-                        ubVar.setText(org.telegram.messenger.hd.M0(2131745528, null));
-                        n3Var.addView(ubVar, c8.ja.t(-1, 48, 83, 16, 15, 16, 16));
+                        tbVar.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, x05, x06, x06));
+                        tbVar.setText(org.telegram.messenger.hd.M0(2131745528, null));
+                        n3Var.addView(tbVar, c8.ja.t(-1, 48, 83, 16, 15, 16, 16));
                         ouVar = ouVar2;
-                        ubVar.setOnClickListener(new org.telegram.ui.Components.l1(ib0Var, a4Var, b4Var, calendar, xi0Var, ouVar2, 0));
+                        tbVar.setOnClickListener(new org.telegram.ui.Components.l1(ib0Var, a4Var, b4Var, calendar, xi0Var, ouVar2, 0));
                         org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) ouVar.b;
                         u2Var.O = n3Var;
                         u2Var.show();
@@ -664,7 +664,7 @@ public final /* synthetic */ class a90 implements View.OnClickListener {
                 break;
             case 19:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
-                editTextBoldCursor.setText(di.mb.P0(((Long) this.c).longValue()));
+                editTextBoldCursor.setText(di.lb.P0(((Long) this.c).longValue()));
                 editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
                 break;
             case 20:

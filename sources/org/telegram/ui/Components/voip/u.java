@@ -14,11 +14,11 @@ import org.telegram.messenger.np;
 import org.telegram.messenger.ns;
 import org.telegram.messenger.ol;
 import org.telegram.messenger.p5;
+import org.telegram.messenger.pq;
 import org.telegram.messenger.s3;
 import org.telegram.messenger.so;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.vr;
-import org.telegram.messenger.wq;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -61,7 +61,7 @@ import org.telegram.ui.yw;
 import org.telegram.ui.zv;
 import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -319,7 +319,7 @@ public final /* synthetic */ class u implements Runnable {
                 }
                 hzVar4.getMessagesController().h4(soVar);
                 vr messagesStorage2 = hzVar4.getMessagesStorage();
-                messagesStorage2.a.c(new wq(i12, messagesStorage2, soVar));
+                messagesStorage2.a.c(new pq(i11, messagesStorage2, soVar));
                 hzVar4.finishFragment();
                 break;
             case 21:

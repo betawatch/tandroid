@@ -10,11 +10,11 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
-import di.vb;
+import di.ub;
 import org.telegram.messenger.i20;
 import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f2 extends e2 {
     public Drawable i;
@@ -23,18 +23,18 @@ public final class f2 extends e2 {
     public float l;
     public float m;
     public Paint n;
-    public final /* synthetic */ vb o;
+    public final /* synthetic */ ub o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(vb vbVar, int i7, int i10, String str) {
-        super(vbVar);
-        this.o = vbVar;
+    public f2(ub ubVar, int i7, int i10, String str) {
+        super(ubVar);
+        this.o = ubVar;
         this.a = i7;
-        Drawable mutate = vbVar.getContext().getResources().getDrawable(i10).mutate();
+        Drawable mutate = ubVar.getContext().getResources().getDrawable(i10).mutate();
         this.i = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         String upperCase = str.toUpperCase();
-        TextPaint textPaint = (TextPaint) vbVar.c;
+        TextPaint textPaint = (TextPaint) ubVar.c;
         StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(upperCase, textPaint, org.telegram.messenger.g0.q.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.k = staticLayout;
         this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;
@@ -82,11 +82,11 @@ public final class f2 extends e2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f2(vb vbVar, CharSequence charSequence) {
-        super(vbVar);
-        this.o = vbVar;
+    public f2(ub ubVar, CharSequence charSequence) {
+        super(ubVar);
+        this.o = ubVar;
         this.a = 5;
-        TextPaint textPaint = (TextPaint) vbVar.c;
+        TextPaint textPaint = (TextPaint) ubVar.c;
         StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(charSequence, textPaint, org.telegram.messenger.g0.q.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.k = staticLayout;
         this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;

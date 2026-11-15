@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p7 extends FrameLayout {
     public final i9[] a;
@@ -22,7 +22,7 @@ public final class p7 extends FrameLayout {
         this.a = new i9[2];
         for (int i7 = 0; i7 < 2; i7++) {
             this.a[i7] = new i9(context);
-            this.a[i7].getImageReceiver().h1 = new ai.r1(this, i7, 8);
+            this.a[i7].getImageReceiver().h1 = new ai.s1(this, i7, 8);
             this.a[i7].setRoundRadius(org.telegram.messenger.g0.L(4.0f));
             if (i7 == 1) {
                 this.a[i7].setVisibility(8);

@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.ka0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class kj {
     public ij a;
@@ -39,7 +39,7 @@ public final class kj {
     public boolean u;
     public TLRPC.WebPage v;
     public URLSpan w;
-    public ja0 x;
+    public ka0 x;
 
     public kj(boolean z10, boolean z11, boolean z12) {
         this.i = z10;
@@ -259,32 +259,32 @@ public final class kj {
                 }
             }
         }
-        ja0 ja0Var = this.x;
-        if (ja0Var == null) {
+        ka0 ka0Var = this.x;
+        if (ka0Var == null) {
             return;
         }
-        kj kjVar = ja0Var.d;
+        kj kjVar = ka0Var.d;
         int i11 = 0;
         while (true) {
-            View[] viewArr = ja0Var.f.e;
+            View[] viewArr = ka0Var.f.e;
             if (i11 >= viewArr.length) {
                 return;
             }
             View view = viewArr[i11];
             if (view != null) {
-                da0 da0Var = (da0) view;
-                FrameLayout frameLayout = da0Var.G;
-                if (da0Var.a == 2) {
-                    ia0 ia0Var = da0Var.I;
-                    ia0 ia0Var2 = da0Var.H;
+                ea0 ea0Var = (ea0) view;
+                FrameLayout frameLayout = ea0Var.G;
+                if (ea0Var.a == 2) {
+                    ja0 ja0Var = ea0Var.I;
+                    ja0 ja0Var2 = ea0Var.H;
                     frameLayout.setVisibility((!kjVar.n || kjVar.o) ? 0 : 8);
-                    ia0Var2.setVisibility(kjVar.p ? 4 : 0);
-                    ia0Var.setVisibility(kjVar.p ? 0 : 4);
+                    ja0Var2.setVisibility(kjVar.p ? 4 : 0);
+                    ja0Var.setVisibility(kjVar.p ? 0 : 4);
                     frameLayout.animate().alpha(kjVar.o ? 1.0f : 0.5f).start();
-                    ia0Var2.a(kjVar.q, true);
-                    ia0Var.a(kjVar.q, true);
-                    da0Var.F.a(!kjVar.r, true);
-                    da0Var.i();
+                    ja0Var2.a(kjVar.q, true);
+                    ja0Var.a(kjVar.q, true);
+                    ea0Var.F.a(!kjVar.r, true);
+                    ea0Var.i();
                 }
             }
             i11++;

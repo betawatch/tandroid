@@ -11,7 +11,7 @@ import android.view.ViewTreeObserver;
 import android.view.animation.DecelerateInterpolator;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class zb0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final class zb0 implements ViewTreeObserver.OnGlobalLayoutListener {
             i20 = 1;
         }
         int i25 = i11;
-        arrayList2.add(ObjectAnimator.ofFloat(fc0Var.w, (Property<ai.j0, Float>) View.ALPHA, 0.0f, 1.0f));
+        arrayList2.add(ObjectAnimator.ofFloat(fc0Var.w, (Property<ai.k0, Float>) View.ALPHA, 0.0f, 1.0f));
         ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
         arrayList2.add(ofFloat3);
         ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xb0

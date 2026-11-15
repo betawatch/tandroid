@@ -20,12 +20,12 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ki0 extends FrameLayout {
     public int E;
     public boolean F;
-    public di.bc G;
+    public di.ac G;
     public final hi0 H;
     public boolean I;
     public float J;
@@ -334,7 +334,7 @@ public final class ki0 extends FrameLayout {
             ji0Var2.getImageReceiver().w0(new ch0(R.raw.star_reaction, org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(30.0f)));
             ji0Var3.getImageReceiver().w0(getContext().getResources().getDrawable(R.drawable.star_reaction));
             if (this.G == null) {
-                this.G = new di.bc(1, org.telegram.messenger.gz.o() == 2 ? 45 : 18);
+                this.G = new di.ac(1, org.telegram.messenger.gz.o() == 2 ? 45 : 18);
                 return;
             }
             return;

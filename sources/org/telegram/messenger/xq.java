@@ -1,45 +1,36 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xq implements Comparator {
+public final /* synthetic */ class xq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LongSparseIntArray b;
+    public final /* synthetic */ vr b;
+    public final /* synthetic */ TLRPC.TL_chatFull c;
 
-    public /* synthetic */ xq(LongSparseIntArray longSparseIntArray, int i7) {
+    public /* synthetic */ xq(vr vrVar, TLRPC.TL_chatFull tL_chatFull, int i7) {
         this.a = i7;
-        this.b = longSparseIntArray;
+        this.b = vrVar;
+        this.c = tL_chatFull;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Long l10 = (Long) obj;
-        Long l11 = (Long) obj2;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        TLRPC.TL_chatFull tL_chatFull = this.c;
+        vr vrVar = this.b;
+        switch (i7) {
             case 0:
-                long longValue = l10.longValue();
-                LongSparseIntArray longSparseIntArray = this.b;
-                int i7 = longSparseIntArray.get(longValue);
-                int i10 = longSparseIntArray.get(l11.longValue());
-                if (i7 <= i10) {
-                    if (i7 < i10) {
-                    }
-                }
+                ns notificationCenter = vrVar.getNotificationCenter();
+                Boolean bool = Boolean.FALSE;
+                notificationCenter.k(30, tL_chatFull, 0, bool, bool);
                 break;
             default:
-                long longValue2 = l10.longValue();
-                LongSparseIntArray longSparseIntArray2 = this.b;
-                int i11 = longSparseIntArray2.get(longValue2);
-                int i12 = longSparseIntArray2.get(l11.longValue());
-                if (i11 >= i12) {
-                    if (i11 > i12) {
-                    }
-                }
+                ns notificationCenter2 = vrVar.getNotificationCenter();
+                Boolean bool2 = Boolean.FALSE;
+                notificationCenter2.k(30, tL_chatFull, 0, bool2, bool2);
                 break;
         }
-        return 0;
     }
 }

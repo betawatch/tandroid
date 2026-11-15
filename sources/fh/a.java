@@ -11,7 +11,7 @@ import org.telegram.ui.ActionBar.e2;
 import org.telegram.ui.Cells.q5;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.am;
-import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.voip.o2;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.voip.r1;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final class a extends ViewOutlineProvider {
                 outline.setOval(0, 0, i12, i12);
                 break;
             case 5:
-                outline.setRoundRect(0, ((da0) obj).U + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), g0.L(8.0f));
+                outline.setRoundRect(0, ((ea0) obj).U + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), g0.L(8.0f));
                 break;
             case 6:
                 outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), ((org.telegram.ui.Components.voip.k) obj).d);

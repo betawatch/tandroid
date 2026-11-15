@@ -2,8 +2,8 @@ package bi;
 
 import android.util.SparseIntArray;
 import c8.i9;
-import di.k8;
-import di.m9;
+import di.j8;
+import di.l9;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.Utilities;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.Components.zz;
 import org.telegram.ui.ln0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements z10 {
     public final /* synthetic */ int a;
@@ -40,12 +40,12 @@ public final /* synthetic */ class w2 implements z10 {
                 c4 c4Var = (c4) this.d;
                 ArrayList arrayList = (ArrayList) obj;
                 org.telegram.ui.ActionBar.e2 e2Var = i4Var.a;
-                k8 k8Var = i4Var.e;
-                k8Var.a(i7, arrayList);
+                j8 j8Var = i4Var.e;
+                j8Var.a(i7, arrayList);
                 c4Var.f(true);
                 i4Var.f(true);
                 i4Var.o();
-                TL_stars.TL_starGiftCollection c10 = k8Var.c(i7);
+                TL_stars.TL_starGiftCollection c10 = j8Var.c(i7);
                 if (c10 != null) {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class w2 implements z10 {
                 org.telegram.ui.ActionBar.e2 e2Var2 = (org.telegram.ui.ActionBar.e2) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                e2Var2.showDialog(new ni.a(e2Var2.getContext(), chat, -chat2.id, new m9(e2Var2, this.b, chat2, chat, 1)));
+                e2Var2.showDialog(new ni.a(e2Var2.getContext(), chat, -chat2.id, new l9(e2Var2, this.b, chat2, chat, 1)));
                 break;
             case 3:
                 org.telegram.messenger.g0.h3(new ci.p0(this.b, (kg.j1) this.c, (SparseIntArray) obj, (aa.c0) this.d, 12));
@@ -93,7 +93,7 @@ public final /* synthetic */ class w2 implements z10 {
                 z10Var.a(Integer.valueOf(i11));
                 break;
             default:
-                Utilities.i.c(new ai.f1((tg.f2) this.c, this.b, (List) obj, new ArrayList(), (ln0) this.d, 27));
+                Utilities.i.c(new ai.g1((tg.e2) this.c, this.b, (List) obj, new ArrayList(), (ln0) this.d, 27));
                 break;
         }
     }

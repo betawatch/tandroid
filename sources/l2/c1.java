@@ -4,7 +4,7 @@ import android.util.Pair;
 import di.m3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c1 implements x2.j0, q2.l {
     public final e1 a;
@@ -43,7 +43,7 @@ public final class c1 implements x2.j0, q2.l {
     public final void I(int i7, x2.f0 f0Var, x2.t tVar, x2.b0 b0Var, int i10) {
         Pair a10 = a(i7, f0Var);
         if (a10 != null) {
-            this.b.i.d(new ai.f1(this, a10, tVar, b0Var, i10, 8));
+            this.b.i.d(new ai.g1(this, a10, tVar, b0Var, i10, 8));
         }
     }
 
@@ -59,7 +59,7 @@ public final class c1 implements x2.j0, q2.l {
     public final void N(int i7, x2.f0 f0Var, int i10) {
         Pair a10 = a(i7, f0Var);
         if (a10 != null) {
-            this.b.i.d(new ai.z0(this, a10, i10, 22));
+            this.b.i.d(new ai.a1(this, a10, i10, 22));
         }
     }
 

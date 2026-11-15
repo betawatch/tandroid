@@ -3,11 +3,11 @@ package bi;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
+import di.bb;
 import di.cb;
-import di.db;
-import di.m8;
-import di.mb;
-import di.v8;
+import di.l8;
+import di.lb;
+import di.u8;
 import fi.p9;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,13 +61,13 @@ import org.telegram.ui.an;
 import org.telegram.ui.c40;
 import org.telegram.ui.di0;
 import org.telegram.ui.fs0;
-import org.telegram.ui.kl0;
+import org.telegram.ui.ll0;
 import org.telegram.ui.lm;
 import org.telegram.ui.q90;
-import org.telegram.ui.ql0;
+import org.telegram.ui.rl0;
 import org.telegram.ui.x21;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e4 implements s10 {
     public final /* synthetic */ int a;
@@ -195,7 +195,7 @@ public final /* synthetic */ class e4 implements s10 {
             case 0:
                 h4 h4Var = (h4) obj4;
                 ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = ((m8) obj3).l;
+                ArrayList arrayList2 = ((l8) obj3).l;
                 int size = arrayList2.size();
                 int i12 = 0;
                 while (i12 < size) {
@@ -203,8 +203,8 @@ public final /* synthetic */ class e4 implements s10 {
                     i12++;
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj5;
                     if (savedStarGift.pinned_to_top) {
-                        int i13 = ql0.b;
-                        b41 K = b41.K(ql0.class);
+                        int i13 = rl0.b;
+                        b41 K = b41.K(rl0.class);
                         K.G = savedStarGift;
                         K.L(h4Var.m1 == savedStarGift.gift.id);
                         K.u = 1;
@@ -334,11 +334,11 @@ public final /* synthetic */ class e4 implements s10 {
                     i16 = 80;
                 }
                 int i17 = i16;
-                di.q4 q4Var = new di.q4(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new ai.z0(y4Var, i15, starGift2, 5));
+                di.q4 q4Var = new di.q4(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new ai.a1(y4Var, i15, starGift2, 5));
                 ArrayList arrayList5 = r4Var.b;
                 arrayList5.add(q4Var);
                 arrayList5.add(new di.q4(4, 0.0f, 0.0f, i17, i15, -90, null, null));
-                r4Var.d = new androidx.car.app.utils.a(y4Var, starGift2, arrayList3, runnable, 11);
+                r4Var.d = new ai.r(y4Var, starGift2, arrayList3, runnable, 12);
                 r4Var.e = false;
                 r4Var.c = 0;
                 r4Var.l = false;
@@ -364,38 +364,38 @@ public final /* synthetic */ class e4 implements s10 {
                 }
                 break;
             case 2:
-                mb.D0((mb) obj4, (b41) obj3, (Boolean) obj, (String) obj2);
+                lb.D0((lb) obj4, (b41) obj3, (Boolean) obj, (String) obj2);
                 return;
             case 3:
-                cb cbVar = (cb) obj4;
+                bb bbVar = (bb) obj4;
                 b41 b41Var = (b41) obj3;
                 Boolean bool = (Boolean) obj;
                 String str2 = (String) obj2;
-                if (cbVar.getContext() == null) {
+                if (bbVar.getContext() == null) {
                     return;
                 }
                 if (bool.booleanValue()) {
-                    new cc((FrameLayout) cbVar.b, cbVar.J0).I(R.raw.stars_topup, hd.M0(2131745159, null), org.telegram.messenger.g0.X2(hd.G((int) b41Var.B, "StarsAcquiredInfo", new Object[0]))).j();
-                    cbVar.W1.c(true);
-                    v8.y(cbVar.a, false).S(true);
+                    new cc((FrameLayout) bbVar.b, bbVar.J0).I(R.raw.stars_topup, hd.M0(2131745159, null), org.telegram.messenger.g0.X2(hd.G((int) b41Var.B, "StarsAcquiredInfo", new Object[0]))).j();
+                    bbVar.W1.c(true);
+                    u8.y(bbVar.a, false).S(true);
                     return;
                 } else {
                     if (str2 != null) {
-                        new cc((FrameLayout) cbVar.b, cbVar.J0).Q(R.raw.error, 36, hd.a0(null, null, 2131743878, str2)).j();
+                        new cc((FrameLayout) bbVar.b, bbVar.J0).Q(R.raw.error, 36, hd.a0(null, null, 2131743878, str2)).j();
                         return;
                     }
                     return;
                 }
             case 4:
-                db dbVar = (db) obj4;
+                cb cbVar = (cb) obj4;
                 b41 b41Var2 = (b41) obj3;
                 Boolean bool2 = (Boolean) obj;
                 String str3 = (String) obj2;
-                if (dbVar.getContext() == null) {
+                if (cbVar.getContext() == null) {
                     return;
                 }
-                dbVar.dismiss();
-                v8.y(dbVar.a, false).S(true);
+                cbVar.dismiss();
+                u8.y(cbVar.a, false).S(true);
                 org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
                 if (T == null) {
                     return;
@@ -550,7 +550,7 @@ public final /* synthetic */ class e4 implements s10 {
                                         n6Var.a(Boolean.TRUE, tL_messageMediaWebPage.webpage);
                                         return;
                                     } else {
-                                        anVar.getMessagesStorage().a.c(new org.telegram.ui.ActionBar.m5(anVar, tL_messageMediaWebPage, tL_webPageAttributeStory, n6Var, 10));
+                                        anVar.getMessagesStorage().a.c(new org.telegram.ui.ActionBar.l5((Object) anVar, (Object) tL_messageMediaWebPage, (Object) tL_webPageAttributeStory, (Object) n6Var, 11));
                                         return;
                                     }
                                 }
@@ -847,7 +847,7 @@ public final /* synthetic */ class e4 implements s10 {
                 return;
             case 21:
                 ((vf.b) obj4).b();
-                ((kl0) obj3).a((Boolean) obj);
+                ((ll0) obj3).a((Boolean) obj);
                 return;
             case 22:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj4;
@@ -924,7 +924,7 @@ public final /* synthetic */ class e4 implements s10 {
                 return;
             default:
                 String str9 = (String) obj4;
-                ai.x1 x1Var = (ai.x1) obj3;
+                ai.y1 y1Var = (ai.y1) obj3;
                 TL_toncenter.apiResponse apiresponse2 = (TL_toncenter.apiResponse) obj;
                 if (((TLRPC.TL_error) obj2) == null && apiresponse2 != null && apiresponse2.response != null) {
                     try {
@@ -942,7 +942,7 @@ public final /* synthetic */ class e4 implements s10 {
                         a8.g(e11, true);
                     }
                 }
-                x1Var.a(bArr);
+                y1Var.a(bArr);
                 return;
         }
     }

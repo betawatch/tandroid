@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ki0;
 import org.telegram.ui.aj;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i0 extends FrameLayout {
     public final /* synthetic */ e2 a;
@@ -474,7 +474,7 @@ public final class i0 extends FrameLayout {
                         l0Var9.s = true;
                         l0Var9.y = System.currentTimeMillis();
                         this.y.f.i.setTag(R.id.parent_tag, 1);
-                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.i0(this, 5));
+                        animate().scaleX(0.0f).scaleY(0.0f).setStartDelay(1000L).setDuration(150L).setListener(new ai.j0(this, 5));
                     }
                 }
                 l0 l0Var10 = this.y;

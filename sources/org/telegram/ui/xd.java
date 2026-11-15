@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xd extends org.telegram.ui.Components.it0 implements org.telegram.ui.ActionBar.z5 {
     public static xd u1;
@@ -38,7 +38,7 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
     public final org.telegram.ui.Components.h6 A0;
     public final hi.d B0;
     public int C0;
-    public final ai.q2 D0;
+    public final ai.r2 D0;
     public TL_stars.StarsAmount E0;
     public final org.telegram.ui.Components.h6 F0;
     public final org.telegram.ui.Components.h6 G0;
@@ -91,7 +91,7 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
     public final SpannableStringBuilder u0;
     public final SpannableStringBuilder v0;
     public final SpannableStringBuilder w0;
-    public final ai.q2 x0;
+    public final ai.r2 x0;
     public final RelativeSizeSpan y0;
     public final org.telegram.ui.Components.h6 z0;
 
@@ -174,12 +174,12 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
         this.U0 = new bi.o2(26, activity, this);
         td tdVar = new td(this, activity, i7, j3, z41Var.getClassGuid(), new cd(this, 2), e6Var);
         this.b1 = tdVar;
-        ai.q2 q2Var = new ai.q2(activity, 4);
-        this.x0 = q2Var;
-        q2Var.setOrientation(1);
+        ai.r2 r2Var = new ai.r2(activity, 4);
+        this.x0 = r2Var;
+        r2Var.setOrientation(1);
         int i12 = org.telegram.ui.ActionBar.j6.d6;
-        org.telegram.ui.ActionBar.q6.h(i12, q2Var, e6Var);
-        q2Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
+        org.telegram.ui.ActionBar.q6.h(i12, r2Var, e6Var);
+        r2Var.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
         org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(activity, false, true, true);
         this.z0 = h6Var;
         h6Var.setTypeface(org.telegram.messenger.g0.o());
@@ -188,14 +188,14 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
         h6Var.setTextSize(org.telegram.messenger.g0.L(32.0f));
         h6Var.setGravity(17);
         this.y0 = new RelativeSizeSpan(0.6770833f);
-        q2Var.addView(h6Var, c8.ja.t(-1, 38, 49, 22, 15, 22, 0));
+        r2Var.addView(h6Var, c8.ja.t(-1, 38, 49, 22, 15, 22, 0));
         org.telegram.ui.Components.h6 h6Var2 = new org.telegram.ui.Components.h6(activity, true, true, true);
         this.A0 = h6Var2;
         h6Var2.setGravity(17);
         int i14 = org.telegram.ui.ActionBar.j6.y6;
         org.telegram.ui.ActionBar.q6.Y(h6Var2, i14, e6Var);
         h6Var2.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        q2Var.addView(h6Var2, c8.ja.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
+        r2Var.addView(h6Var2, c8.ja.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
         hi.d dVar = new hi.d(activity, e6Var, true);
         dVar.setRoundRadius(24);
         this.B0 = dVar;
@@ -203,12 +203,12 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
         dVar.i(org.telegram.messenger.hd.M0(2131748351, null), false, true);
         dVar.setVisibility(8);
         dVar.setOnClickListener(new org.telegram.messenger.video.e(14, this, z41Var));
-        q2Var.addView(dVar, c8.ja.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
-        ai.q2 q2Var2 = new ai.q2(activity, 5);
-        this.D0 = q2Var2;
-        q2Var2.setOrientation(1);
-        org.telegram.ui.ActionBar.q6.h(i12, q2Var2, e6Var);
-        q2Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
+        r2Var.addView(dVar, c8.ja.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
+        ai.r2 r2Var2 = new ai.r2(activity, 5);
+        this.D0 = r2Var2;
+        r2Var2.setOrientation(1);
+        org.telegram.ui.ActionBar.q6.h(i12, r2Var2, e6Var);
+        r2Var2.setPadding(0, 0, 0, org.telegram.messenger.g0.L(17.0f));
         org.telegram.ui.Components.h6 h6Var3 = new org.telegram.ui.Components.h6(activity, false, true, true);
         this.F0 = h6Var3;
         h6Var3.setTypeface(org.telegram.messenger.g0.o());
@@ -216,13 +216,13 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
         h6Var3.setTextSize(org.telegram.messenger.g0.L(32.0f));
         h6Var3.setGravity(17);
         new RelativeSizeSpan(0.6770833f);
-        q2Var2.addView(h6Var3, c8.ja.t(-1, 38, 49, 22, 15, 22, 0));
+        r2Var2.addView(h6Var3, c8.ja.t(-1, 38, 49, 22, 15, 22, 0));
         org.telegram.ui.Components.h6 h6Var4 = new org.telegram.ui.Components.h6(activity, true, true, true);
         this.G0 = h6Var4;
         h6Var4.setGravity(17);
         org.telegram.ui.ActionBar.q6.Y(h6Var4, i14, e6Var);
         h6Var4.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        q2Var2.addView(h6Var4, c8.ja.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
+        r2Var2.addView(h6Var4, c8.ja.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
         di.p pVar = new di.p(1, activity, this);
         this.L0 = pVar;
         pVar.setVisibility(8);
@@ -255,7 +255,7 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
         linearLayout.addView(qVar2, c8.ja.p(-1, -2, 1.0f, org.telegram.messenger.ns.E1));
         pVar.e(qVar2);
         pVar.addView(linearLayout, c8.ja.e(-1, -2, 48));
-        q2Var2.addView(pVar, c8.ja.t(-1, -2, 1, 18, 14, 18, 2));
+        r2Var2.addView(pVar, c8.ja.t(-1, -2, 1, 18, 14, 18, 2));
         LinearLayout linearLayout2 = new LinearLayout(activity);
         this.J0 = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -277,7 +277,7 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
             linearLayout2.addView(new Space(activity), c8.ja.p(8, 48, 0.0f, org.telegram.messenger.ns.E1));
             linearLayout2.addView(dVar2, c8.ja.p(-1, 48, 1.0f, org.telegram.messenger.ns.E1));
         }
-        q2Var2.addView(linearLayout2, c8.ja.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
+        r2Var2.addView(linearLayout2, c8.ja.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
         qVar2.setOnEditorActionListener(new ld(0, this, z41Var));
         int i15 = 2;
         this.g1 = new dd(this, i7, i15);
@@ -762,7 +762,7 @@ public final class xd extends org.telegram.ui.Components.it0 implements org.tele
                 i7 = 0;
             } else {
                 udVar = udVar3;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(di.mb.a1(false, TextUtils.concat("XTR ", di.mb.M0(starsAmount, 0.8f, ' ')), 1.0f, null));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(di.lb.a1(false, TextUtils.concat("XTR ", di.lb.M0(starsAmount, 0.8f, ' ')), 1.0f, null));
                 int indexOf2 = TextUtils.indexOf(spannableStringBuilder2, ".");
                 if (indexOf2 >= 0) {
                     spannableStringBuilder2.setSpan(relativeSizeSpan, indexOf2, spannableStringBuilder2.length(), 33);

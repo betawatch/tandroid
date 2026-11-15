@@ -14,7 +14,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class r8 extends View {
     public static final /* synthetic */ int a = 0;
@@ -43,7 +43,7 @@ public abstract class r8 extends View {
                     }
                     if (!hashSet.isEmpty()) {
                         vr a02 = vr.a0(i7);
-                        a02.a.c(new ai.z0(a02, hashSet, i7, 16));
+                        a02.a.c(new ai.a1(a02, hashSet, i7, 16));
                     }
                 }
             }

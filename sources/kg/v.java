@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.v3;
 import c8.ja;
-import di.r9;
+import di.q9;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g5;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.xb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v extends r41 implements is {
     public static org.telegram.ui.ActionBar.t1 e;
@@ -116,7 +116,7 @@ public final class v extends r41 implements is {
         t1Var.a = org.telegram.messenger.g0.L(292.0f);
         sVar.setOnEditorActionListener(new q(sVar, i7, tL_businessChatLink, t1VarArr, currentFocus, 0));
         int i12 = 2;
-        v1Var.k(hd.M0(2131751354, null), new ai.q1(sVar, i7, tL_businessChatLink, i12));
+        v1Var.k(hd.M0(2131751354, null), new ai.r1(sVar, i7, tL_businessChatLink, i12));
         v1Var.h(hd.M0(2131752589, null), new i0.b(11));
         if (z10) {
             e = t1Var;
@@ -125,9 +125,9 @@ public final class v extends r41 implements is {
             e.setOnShowListener(new bi.l(sVar, i12));
             e.r(250L);
         } else {
-            t1Var.P = new ai.u1(21, currentFocus, sVar);
+            t1Var.P = new ai.v1(21, currentFocus, sVar);
             t1VarArr[0] = t1Var;
-            t1Var.setOnDismissListener(new r9(sVar, 5));
+            t1Var.setOnDismissListener(new q9(sVar, 5));
             t1VarArr[0].setOnShowListener(new o(currentFocus, sVar, i10));
             t1VarArr[0].show();
         }

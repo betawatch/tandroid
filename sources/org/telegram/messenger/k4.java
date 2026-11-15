@@ -6,7 +6,7 @@ import android.provider.ContactsContract;
 import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k4 implements Runnable {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class k4 implements Runnable {
                 return;
             case 7:
                 vr messagesStorage = this.b.getMessagesStorage();
-                messagesStorage.a.c(new ar(messagesStorage, true, 0));
+                messagesStorage.a.c(new zq(messagesStorage, true, 0));
                 return;
             case 8:
                 g5 g5Var5 = this.b;

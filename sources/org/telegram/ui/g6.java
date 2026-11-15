@@ -5,7 +5,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g6 implements org.telegram.ui.ActionBar.r6 {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class g6 implements org.telegram.ui.ActionBar.r6 {
                 ((NotificationsCustomSettingsActivity) e2Var).getClass();
                 break;
             case 15:
-                ((im0) e2Var).J0();
+                ((jm0) e2Var).J0();
                 break;
             case 16:
                 ((PremiumPreviewFragment) e2Var).z0();
@@ -115,32 +115,32 @@ public final /* synthetic */ class g6 implements org.telegram.ui.ActionBar.r6 {
                     View childAt = themeActivity.b.getChildAt(i10);
                     if (childAt instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) childAt).getAdapter().f();
-                    } else if (childAt instanceof ol0) {
-                        ((ol0) childAt).updateColors();
+                    } else if (childAt instanceof pl0) {
+                        ((pl0) childAt).updateColors();
                     }
                 }
                 for (int i11 = 0; i11 < themeActivity.b.getCachedChildCount(); i11++) {
                     View P = themeActivity.b.P(i11);
                     if (P instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) P).getAdapter().f();
-                    } else if (P instanceof ol0) {
-                        ((ol0) P).updateColors();
+                    } else if (P instanceof pl0) {
+                        ((pl0) P).updateColors();
                     }
                 }
                 for (int i12 = 0; i12 < themeActivity.b.getHiddenChildCount(); i12++) {
                     View V = themeActivity.b.V(i12);
                     if (V instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) V).getAdapter().f();
-                    } else if (V instanceof ol0) {
-                        ((ol0) V).updateColors();
+                    } else if (V instanceof pl0) {
+                        ((pl0) V).updateColors();
                     }
                 }
                 for (int i13 = 0; i13 < themeActivity.b.getAttachedScrapChildCount(); i13++) {
                     View O = themeActivity.b.O(i13);
                     if (O instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) O).getAdapter().f();
-                    } else if (O instanceof ol0) {
-                        ((ol0) O).updateColors();
+                    } else if (O instanceof pl0) {
+                        ((pl0) O).updateColors();
                     }
                 }
                 break;

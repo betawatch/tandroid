@@ -9,7 +9,7 @@ import org.telegram.ui.Components.et0;
 import org.telegram.ui.Components.gt0;
 import org.telegram.ui.xa1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements te.b, et0, gt0, org.telegram.ui.ActionBar.q1, x10 {
     public final /* synthetic */ t a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class d implements te.b, et0, gt0, org.telegram.ui.
             return ((s) view).c;
         }
         tVar.L.getClass();
-        return ((jb) view).a;
+        return ((ib) view).a;
     }
 
     @Override // org.telegram.ui.Components.gt0

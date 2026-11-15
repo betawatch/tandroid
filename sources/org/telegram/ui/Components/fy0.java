@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class fy0 extends ReplacementSpan {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final class fy0 extends ReplacementSpan {
     }
 
     public void a(int i7) {
-        org.telegram.ui.dm0 dm0Var = (org.telegram.ui.dm0) this.c;
-        if (dm0Var != null) {
-            dm0Var.a = i7 / 2.0f;
-            dm0Var.d();
+        org.telegram.ui.em0 em0Var = (org.telegram.ui.em0) this.c;
+        if (em0Var != null) {
+            em0Var.a = i7 / 2.0f;
+            em0Var.d();
             this.b = i7;
         }
     }
@@ -43,12 +43,12 @@ public final class fy0 extends ReplacementSpan {
                 canvas.drawRoundRect(rectF, f11, f11, paint2);
                 break;
             default:
-                org.telegram.ui.dm0 dm0Var = (org.telegram.ui.dm0) this.c;
-                if (dm0Var != null) {
+                org.telegram.ui.em0 em0Var = (org.telegram.ui.em0) this.c;
+                if (em0Var != null) {
                     int i14 = (i11 + i13) / 2;
                     int i15 = this.b;
-                    dm0Var.setBounds((int) (org.telegram.messenger.g0.L(3.0f) + f10), i14 - this.b, (int) (f10 + org.telegram.messenger.g0.L(5.0f) + i15), i14 + i15);
-                    dm0Var.draw(canvas);
+                    em0Var.setBounds((int) (org.telegram.messenger.g0.L(3.0f) + f10), i14 - this.b, (int) (f10 + org.telegram.messenger.g0.L(5.0f) + i15), i14 + i15);
+                    em0Var.draw(canvas);
                     break;
                 }
                 break;
@@ -68,6 +68,6 @@ public final class fy0 extends ReplacementSpan {
     public fy0(boolean z10, int i7, int i10) {
         this.a = 1;
         this.b = org.telegram.messenger.g0.L(21.0f);
-        this.c = z10 ? org.telegram.ui.dm0.c(i7, i10) : org.telegram.ui.dm0.a(i7, i10);
+        this.c = z10 ? org.telegram.ui.em0.c(i7, i10) : org.telegram.ui.em0.a(i7, i10);
     }
 }

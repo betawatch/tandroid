@@ -2,11 +2,11 @@ package hi;
 
 import android.graphics.Canvas;
 import android.graphics.RectF;
-import di.vb;
+import di.ub;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class e2 {
     public int a;
@@ -18,9 +18,9 @@ public abstract class e2 {
     public final dc g;
     public final org.telegram.ui.Components.u5 h;
 
-    public e2(vb vbVar) {
-        this.g = new dc(vbVar);
-        this.h = new org.telegram.ui.Components.u5(vbVar, 350L, er.h);
+    public e2(ub ubVar) {
+        this.g = new dc(ubVar);
+        this.h = new org.telegram.ui.Components.u5(ubVar, 350L, er.h);
     }
 
     public abstract void a(Canvas canvas, float f10, float f11);

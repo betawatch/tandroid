@@ -1,7 +1,6 @@
 package org.telegram.ui.Components;
 
 import android.R;
-import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
@@ -13,7 +12,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -22,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class x11 {
     public static HashMap O;
@@ -411,7 +409,7 @@ public abstract class x11 {
         int i7 = gjVar.K1;
         long B0 = org.telegram.messenger.gj.B0(gjVar.k);
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        ArrayList arrayList = (ArrayList) ai.t0.a.get(Long.valueOf(B0));
+        ArrayList arrayList = (ArrayList) ai.u0.a.get(Long.valueOf(B0));
         android.support.v4.media.session.a0 P2 = DictationAsr.P(arrayList != null ? new ArrayList(arrayList) : new ArrayList(), false);
         if (org.telegram.messenger.r2.a) {
             org.telegram.messenger.a8.b("local transcription of msg_id=" + gjVar.e1() + " with " + P2);
@@ -420,16 +418,9 @@ public abstract class x11 {
         HashMap hashMap = T;
         ki.r1 r1Var = new ki.r1(valueOf, gjVar, i7, B0, elapsedRealtime);
         boolean[] zArr = {false};
-        boolean z10 = DictationAsr.v() || DictationAsr.U() == null;
-        if (z10) {
-            Context context = org.telegram.messenger.t0.b;
-            ExecutorService executorService = DictationLid.a;
-            if (DictationAsr.v()) {
-                DictationLid.d(context);
-            }
-        }
-        new Thread(new ai.j(str, zArr, r1Var, z10, P2), "DictationAsrFile").start();
-        hashMap.put(valueOf, new ai.r(0, zArr));
+        DictationLid.d(org.telegram.messenger.t0.b);
+        new Thread(new ai.r(str, zArr, r1Var, P2, 0), "DictationAsrFile").start();
+        hashMap.put(valueOf, new ai.s(0, zArr));
     }
 
     public static void x(final org.telegram.messenger.gj gjVar, boolean z10, final org.telegram.ui.Cells.l1 l1Var) {

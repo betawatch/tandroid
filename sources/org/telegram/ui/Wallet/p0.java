@@ -47,12 +47,12 @@ import org.telegram.ui.Components.hw0;
 import org.telegram.ui.ah0;
 import org.telegram.ui.f60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class p0 {
     public static final Object f = new Object();
     public static final HashMap g = new HashMap();
-    public static final ExecutorService h = Executors.newSingleThreadExecutor(new ai.x0(4));
+    public static final ExecutorService h = Executors.newSingleThreadExecutor(new ai.y0(4));
     public static final CopyOnWriteArrayList i = new CopyOnWriteArrayList();
     public final Context a;
     public final int b;
@@ -266,10 +266,10 @@ public final class p0 {
             c(j3);
         }
         String absolutePath = this.d.getAbsolutePath();
-        ai.c0 c0Var = new ai.c0(this, j3, 12);
+        ai.d0 d0Var = new ai.d0(this, j3, 12);
         u0 u0Var = new u0();
         u0Var.d = absolutePath;
-        org.telegram.messenger.g0.h3(new f60(u0Var, c0Var, z10, 12));
+        org.telegram.messenger.g0.h3(new f60(u0Var, d0Var, z10, 12));
         try {
             if (u0Var.a.await(90L, TimeUnit.SECONDS)) {
                 str = u0Var.c;

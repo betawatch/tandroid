@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t5 extends p00 implements org.telegram.messenger.is {
     public final long S;
@@ -99,7 +99,7 @@ public final class t5 extends p00 implements org.telegram.messenger.is {
                     t5Var.presentFragment(ProfileActivity.C4(bVar.getDialogId()));
                 }
             } else {
-                di.mb.h1(context, t5Var.T, t5Var.S, boost, t5Var.getResourceProvider());
+                di.lb.h1(context, t5Var.T, t5Var.S, boost, t5Var.getResourceProvider());
             }
         }
         if (view instanceof org.telegram.ui.Cells.l8) {

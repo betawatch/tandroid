@@ -1,6 +1,7 @@
 package bg;
 
 import a8.ja;
+import ai.w0;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,7 +10,7 @@ import android.view.View;
 import c8.ga;
 import com.android.billingclient.api.Purchase;
 import com.google.android.gms.internal.clearcut.y0;
-import di.v8;
+import di.u8;
 import fi.b8;
 import fi.d8;
 import fi.i7;
@@ -85,10 +86,9 @@ import p4.c1;
 import p4.g1;
 import p4.i1;
 import p4.m1;
-import p4.w0;
 import v4.e1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         m10.i(i12).w(a22);
                         m10.i(i12).v(r92);
                         bhVar.run();
-                        cc.a0(o4Var.getLastFragment()).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(hd.M0(2131754219, null)), org.telegram.messenger.g0.U2(hd.M0(2131754220, null), new ai.v0(i12, o4Var, (int) r92)), null).j();
+                        cc.a0(o4Var.getLastFragment()).V(Collections.singletonList(a22), org.telegram.messenger.g0.X2(hd.M0(2131754219, null)), org.telegram.messenger.g0.U2(hd.M0(2131754220, null), new w0(i12, o4Var, (int) r92)), null).j();
                         break;
                     }
                 }
@@ -194,14 +194,14 @@ public final /* synthetic */ class l0 implements Runnable {
                         break;
                     } else {
                         final long j3 = tL_starsSubscriptionPricing.amount;
-                        v8.y(i12, false).h0(tL_messages_checkChatInvite.hash, chatInvite, new s10() { // from class: di.x8
+                        u8.y(i12, false).h0(tL_messages_checkChatInvite.hash, chatInvite, new s10() { // from class: di.w8
                             @Override // org.telegram.messenger.s10
                             public final void a(Object obj6, Object obj7) {
                                 Long l10 = (Long) obj7;
                                 if (!"paid".equals((String) obj6) || l10.longValue() == 0) {
                                     return;
                                 }
-                                org.telegram.messenger.g0.h3(new z8(l10, i12, j3, 0));
+                                org.telegram.messenger.g0.h3(new y8(l10, i12, j3, 0));
                             }
                         });
                         break;
@@ -384,8 +384,8 @@ public final /* synthetic */ class l0 implements Runnable {
                         Context context4 = chatActivityEnterView.getContext();
                         CharSequence charSequence = (CharSequence) arrayList4.get(i19);
                         boolean z12 = i19 == i12;
-                        er erVar = ai.m0.H0;
-                        a82.c(new ai.k0(context4, charSequence, u02, z12), 44, new a2(gVar, i19, 6));
+                        er erVar = ai.n0.H0;
+                        a82.c(new ai.l0(context4, charSequence, u02, z12), 44, new a2(gVar, i19, 6));
                         i19++;
                     }
                     a82.I = new dg(nVar, 22);
@@ -580,7 +580,7 @@ public final /* synthetic */ class l0 implements Runnable {
                             i1 i1Var2 = d.a;
                             if (i1Var2 != null) {
                                 ja.p(i1Var2.a == 40010);
-                                c1Var.j1(lVar, i25, null, 40010, new p4.t0(new w0(d), i15));
+                                c1Var.j1(lVar, i25, null, 40010, new p4.t0(new p4.w0(d), i15));
                                 break;
                             } else {
                                 g1 g1Var = d0Var.t;
@@ -597,7 +597,7 @@ public final /* synthetic */ class l0 implements Runnable {
                                     obj7.getClass();
                                     c1Var.q1(vVar, i25, 31, new p4.t0(new k8(11, new ab.z(9, (e2.l0) obj7, c12 == true ? 1 : 0), new p4.q0(19)), c11 == true ? 1 : 0));
                                 } else {
-                                    c1Var.q1(vVar, i25, i26, c1.s1(new w0(d)));
+                                    c1Var.q1(vVar, i25, i26, c1.s1(new p4.w0(d)));
                                 }
                                 c0Var.l(vVar);
                                 break;

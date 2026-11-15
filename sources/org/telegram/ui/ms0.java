@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ms0 extends org.telegram.ui.Components.tj0 {
     public final /* synthetic */ PremiumPreviewFragment c;
@@ -234,7 +234,7 @@ public final class ms0 extends org.telegram.ui.Components.tj0 {
                 ls0Var.setTag(-33024);
                 break;
             case 4:
-                ls0Var = new ai.q2(context);
+                ls0Var = new ai.r2(context);
                 break;
             case 5:
                 ls0Var = new org.telegram.ui.Cells.y8(context);

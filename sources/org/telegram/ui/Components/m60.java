@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class m60 {
     public ViewGroup A;
@@ -625,7 +625,7 @@ public final class m60 {
                     org.telegram.ui.ActionBar.e6 e6Var = this.d;
                     if (z10) {
                         ((org.telegram.ui.ActionBar.z0) childAt2).n(true, childAt2 == childAt3);
-                    } else if ((childAt2 instanceof ia0) || (childAt2 instanceof FrameLayout)) {
+                    } else if ((childAt2 instanceof ja0) || (childAt2 instanceof FrameLayout)) {
                         int i10 = org.telegram.ui.ActionBar.j6.I5;
                         org.telegram.ui.ActionBar.q6.Q(childAt2, org.telegram.ui.ActionBar.j6.a0(org.telegram.ui.ActionBar.j6.w0(i10, e6Var), 12, childAt2 == childAt3 ? 12 : 0), null, org.telegram.ui.ActionBar.q6.M(i10), e6Var);
                     } else if (childAt2 != null && (childAt2.getBackground() instanceof RippleDrawable)) {
@@ -637,7 +637,7 @@ public final class m60 {
                     }
                     if (childAt3 instanceof org.telegram.ui.ActionBar.z0) {
                         ((org.telegram.ui.ActionBar.z0) childAt3).n(childAt3 == childAt2, true);
-                    } else if ((childAt3 instanceof ia0) || (childAt3 instanceof FrameLayout)) {
+                    } else if ((childAt3 instanceof ja0) || (childAt3 instanceof FrameLayout)) {
                         int i12 = org.telegram.ui.ActionBar.j6.I5;
                         org.telegram.ui.ActionBar.q6.Q(childAt3, org.telegram.ui.ActionBar.j6.a0(org.telegram.ui.ActionBar.j6.w0(i12, e6Var), childAt2 == childAt3 ? 12 : 0, 12), null, org.telegram.ui.ActionBar.q6.M(i12), e6Var);
                     } else if (childAt3 != null && (childAt3.getBackground() instanceof RippleDrawable)) {
@@ -1403,18 +1403,18 @@ public final class m60 {
     }
 
     public final void p(int i7, int i10, CharSequence charSequence) {
-        di.ub ubVar = new di.ub(this.e, 25);
-        ubVar.setTextSize(1, i7);
-        org.telegram.ui.ActionBar.q6.U(ubVar, org.telegram.ui.ActionBar.j6.j5, this.d);
-        ubVar.setPadding(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
-        ubVar.setText(org.telegram.messenger.j6.m(charSequence, ubVar.getPaint().getFontMetricsInt(), false, null, 0));
-        ubVar.setTag(R.id.fit_width_tag, 1);
-        ubVar.setTypeface(null);
-        org.telegram.messenger.ns.i(ubVar);
+        di.tb tbVar = new di.tb(this.e, 25);
+        tbVar.setTextSize(1, i7);
+        org.telegram.ui.ActionBar.q6.U(tbVar, org.telegram.ui.ActionBar.j6.j5, this.d);
+        tbVar.setPadding(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(8.0f));
+        tbVar.setText(org.telegram.messenger.j6.m(charSequence, tbVar.getPaint().getFontMetricsInt(), false, null, 0));
+        tbVar.setTag(R.id.fit_width_tag, 1);
+        tbVar.setTypeface(null);
+        org.telegram.messenger.ns.i(tbVar);
         if (i10 > 0) {
-            ubVar.setMaxWidth(i10);
+            tbVar.setMaxWidth(i10);
         }
-        r(ubVar, c8.ja.o(-1, -2));
+        r(tbVar, c8.ja.o(-1, -2));
     }
 
     public final void q(View view) {

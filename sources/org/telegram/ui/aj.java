@@ -37,7 +37,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class aj extends sl {
     public final r1.f A3;
@@ -2613,7 +2613,7 @@ public final class aj extends sl {
                             org.telegram.messenger.bj currentMessagesGroup2 = q1Var.getCurrentMessagesGroup();
                             if (currentMessagesGroup2 == null || currentMessagesGroup2 != bjVar2) {
                                 org.telegram.messenger.yi currentPosition = q1Var.getCurrentPosition();
-                                org.telegram.ui.Components.k90 backgroundDrawable = q1Var.getBackgroundDrawable();
+                                org.telegram.ui.Components.l90 backgroundDrawable = q1Var.getBackgroundDrawable();
                                 if ((backgroundDrawable.f || q1Var.z2()) && (currentPosition == null || (2 & currentPosition.l) != 0)) {
                                     boolean z12 = q1Var.x6;
                                     org.telegram.ui.ActionBar.e6 e6Var = ajVar2.o2;
@@ -2668,7 +2668,7 @@ public final class aj extends sl {
                                                 if (childAt2 instanceof org.telegram.ui.Cells.q1) {
                                                     org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt2;
                                                     if (q1Var2.getCurrentMessagesGroup() == currentMessagesGroup2) {
-                                                        org.telegram.ui.Components.k90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
+                                                        org.telegram.ui.Components.l90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
                                                         i18 = i20;
                                                         y10 = Math.min(y10, (int) q1Var2.getY());
                                                         measuredHeight5 = Math.max(measuredHeight5, q1Var2.getMeasuredHeight() + ((int) q1Var2.getY()));

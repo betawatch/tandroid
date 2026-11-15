@@ -1,8 +1,8 @@
 package org.telegram.tgnet;
 
 import a8.p0;
-import ai.v0;
-import ai.y0;
+import ai.w0;
+import ai.z0;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -99,11 +99,11 @@ import org.telegram.messenger.z2;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.y0;
 import org.telegram.ui.Components.u51;
 import org.telegram.ui.ce0;
-import tg.v1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class ConnectionsManager extends c1 {
     private static final int CORE_POOL_SIZE;
@@ -162,7 +162,7 @@ public class ConnectionsManager extends c1 {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -317,12 +317,12 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public interface INativeTlTest {
         boolean test(long j3);
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -451,7 +451,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -465,7 +465,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class RequestException extends RuntimeException {
         public final int code;
         public final String text;
@@ -488,7 +488,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -617,7 +617,7 @@ public class ConnectionsManager extends c1 {
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -839,7 +839,7 @@ public class ConnectionsManager extends c1 {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$cancelRequest$10(Runnable runnable, int i7, boolean z10) {
         if (runnable != null) {
-            listenCancel(i7, new y0(4, runnable));
+            listenCancel(i7, new z0(4, runnable));
         }
         native_cancelRequest(this.currentAccount, i7, z10);
     }
@@ -993,7 +993,7 @@ public class ConnectionsManager extends c1 {
         sb2.append(": server requests integrity classic check with project = ");
         sb2.append(str);
         sb2.append(" nonce = ");
-        org.telegram.ui.Cells.y0.t(str2, sb2);
+        y0.t(str2, sb2);
         try {
             IntegrityManagerFactory.create(t0.b).requestIntegrityToken(IntegrityTokenRequest.builder().setNonce(str2).setCloudProjectNumber(Long.parseLong(str)).build()).addOnSuccessListener(new f(i7, currentTimeMillis, str2, i10)).addOnFailureListener(new f(i7, currentTimeMillis, str2, i10));
         } catch (Exception unused) {
@@ -1744,7 +1744,7 @@ public class ConnectionsManager extends c1 {
             wrap.reused = true;
             TLRPC.TL_config TLdeserialize = TLRPC.TL_config.TLdeserialize(wrap, wrap.readInt32(true), true);
             if (TLdeserialize != null) {
-                Utilities.d.c(new v0(i7, TLdeserialize, 17));
+                Utilities.d.c(new w0(i7, TLdeserialize, 17));
             }
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -1939,7 +1939,7 @@ public class ConnectionsManager extends c1 {
             xi.e eVar2 = eVar;
             ki.e eVar3 = new ki.e(this, 26);
             if (aVar.a == 3 && aVar.g() && requestTimeDelegate != null) {
-                g0.h3(new v1(eVar2, eVar3, aVar, requestTimeDelegate, 3));
+                g0.h3(new t5.a(eVar2, eVar3, aVar, requestTimeDelegate, 4));
                 return 0L;
             }
             if (requestTimeDelegate != null) {

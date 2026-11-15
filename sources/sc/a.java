@@ -8,10 +8,10 @@ import org.telegram.messenger.g0;
 import org.telegram.ui.Components.cf;
 import org.telegram.ui.ef0;
 import org.telegram.ui.f;
-import org.telegram.ui.jl0;
+import org.telegram.ui.kl0;
 import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
@@ -46,11 +46,11 @@ public final class a extends AsyncTask {
         ld0 ld0Var = bVar.a;
         f fVar = this.c;
         if (ld0Var != null) {
-            jl0 jl0Var = (jl0) fVar.b;
-            if (jl0Var.R0) {
+            kl0 kl0Var = (kl0) fVar.b;
+            if (kl0Var.R0) {
                 return;
             }
-            jl0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) ld0Var.b, (String) ld0Var.d);
+            kl0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) ld0Var.b, (String) ld0Var.d);
             g0.h3(new ef0(fVar, 11));
             return;
         }

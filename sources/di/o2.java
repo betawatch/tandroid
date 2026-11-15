@@ -16,7 +16,7 @@ import org.telegram.ui.Components.lh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.tp;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,12 +43,12 @@ public final /* synthetic */ class o2 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new bi.r1((c6) obj2, (vf.b) obj, tLObject, this.b, tL_error, 2));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new f2((v8) obj2, (Object) tLObject, this.b, obj, 7));
+                org.telegram.messenger.g0.h3(new f2((u8) obj2, (Object) tLObject, this.b, obj, 7));
                 break;
             case 2:
-                t8 t8Var = (t8) obj2;
-                t8Var.getClass();
-                org.telegram.messenger.g0.h3(new bi.r1(t8Var, tLObject, (np) obj, tL_error, this.b, 7));
+                s8 s8Var = (s8) obj2;
+                s8Var.getClass();
+                org.telegram.messenger.g0.h3(new bi.r1(s8Var, tLObject, (np) obj, tL_error, this.b, 7));
                 break;
             case 3:
                 fi.e1 e1Var = (fi.e1) obj2;

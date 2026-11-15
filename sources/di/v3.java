@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements z10 {
     public final /* synthetic */ int a = 1;
@@ -163,7 +163,7 @@ public final /* synthetic */ class v3 implements z10 {
                         c2Var.getCheckBoxView().setLayoutParams(layoutParams);
                         c2Var.e(hd.M0(2131750138, null), "", true, false, false);
                         c2Var.setPadding(hd.a0 ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(12.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(12.0f));
-                        c2Var.setOnClickListener(new ai.t2(12, c6Var, c2Var));
+                        c2Var.setOnClickListener(new ai.v2(12, c6Var, c2Var));
                         linearLayout.addView(c2Var, c8.ja.k(8.0f, 4.0f, 8.0f, 0.0f, -1, -2));
                         alertDialog$Builder3.o(linearLayout);
                         t1Var2.H = 20;

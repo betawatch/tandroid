@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class p41 extends rg.b {
     public lg.f F;
@@ -1060,16 +1060,16 @@ public class p41 extends rg.b {
                         boolean z20 = G.f;
                         CharSequence charSequence13 = G.o;
                         View.OnClickListener onClickListener = G.D;
-                        di.wa waVar = c2Var.w;
-                        if (waVar != null) {
-                            h6 h6Var3 = (h6) waVar.c;
+                        di.va vaVar = c2Var.w;
+                        if (vaVar != null) {
+                            h6 h6Var3 = (h6) vaVar.c;
                             h6Var3.a();
                             h6Var3.setText(charSequence13);
-                            View view6 = waVar.d;
+                            View view6 = vaVar.d;
                             view6.animate().cancel();
                             view6.animate().rotation(z20 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(er.h).start();
                             if (onClickListener != null) {
-                                waVar.setOnClickListener(onClickListener);
+                                vaVar.setOnClickListener(onClickListener);
                                 break;
                             }
                         }

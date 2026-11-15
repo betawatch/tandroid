@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.q6;
 import org.telegram.ui.ActionBar.z5;
 import org.telegram.ui.Components.ft;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class e0 extends ft implements z5 {
     public final e6 e2;
@@ -86,7 +86,7 @@ public abstract class e0 extends ft implements z5 {
                 setCursorVisible(false);
                 ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
                 ofInt.addUpdateListener(new a(bVar, this, 1));
-                ofInt.addListener(new ai.i0(cVar, 2));
+                ofInt.addListener(new ai.j0(cVar, 2));
                 ofInt.setDuration(200L);
                 ofInt.start();
             } else {

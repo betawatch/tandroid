@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class gy extends org.telegram.ui.Components.tj0 {
     public final /* synthetic */ hy c;
@@ -81,11 +81,11 @@ public final class gy extends org.telegram.ui.Components.tj0 {
         if (i10 == 3) {
             zx zxVar = (zx) view;
             String str3 = tL_exportedChatlistInvite == null ? null : tL_exportedChatlistInvite.url;
-            di.ub ubVar = zxVar.h;
+            di.tb tbVar = zxVar.h;
             org.telegram.ui.ActionBar.j5 j5Var = zxVar.c;
             TextView textView = zxVar.n;
             ImageView imageView = zxVar.d;
-            di.ub ubVar2 = zxVar.f;
+            di.tb tbVar2 = zxVar.f;
             zxVar.s = str3;
             if (str3 != null) {
                 if (str3.startsWith("http://")) {
@@ -107,7 +107,7 @@ public final class gy extends org.telegram.ui.Components.tj0 {
                 yx yxVar = zxVar.e;
                 yxVar.d = f10;
                 yxVar.invalidate();
-                ubVar2.setAlpha(zxVar.w);
+                tbVar2.setAlpha(zxVar.w);
                 zxVar.h.setAlpha(zxVar.w);
                 imageView.setAlpha(zxVar.w);
                 textView.setAlpha(1.0f - zxVar.w);
@@ -116,14 +116,14 @@ public final class gy extends org.telegram.ui.Components.tj0 {
                 if (str3 == null) {
                     textView.setVisibility(0);
                     imageView.setVisibility(8);
-                    ubVar2.setVisibility(8);
-                    ubVar.setVisibility(8);
+                    tbVar2.setVisibility(8);
+                    tbVar.setVisibility(8);
                     return;
                 }
                 textView.setVisibility(8);
                 imageView.setVisibility(0);
-                ubVar2.setVisibility(0);
-                ubVar.setVisibility(0);
+                tbVar2.setVisibility(0);
+                tbVar.setVisibility(0);
                 return;
             }
             return;

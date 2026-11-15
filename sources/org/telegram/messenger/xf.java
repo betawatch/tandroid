@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -300,7 +300,7 @@ public final /* synthetic */ class xf implements Runnable {
         vr vrVar = (vr) this.c;
         vrVar.x1((so) this.d, this.b);
         vrVar.j(false);
-        g0.h3(new oq(vrVar, 16));
+        g0.h3(new nq(vrVar, 16));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -364,7 +364,7 @@ public final /* synthetic */ class xf implements Runnable {
                                 vrVar.b.executeFast("DROP TABLE IF EXISTS user_contacts_v6;").stepThis().dispose();
                                 vrVar.b.executeFast("DROP TABLE IF EXISTS user_phones_v6;").stepThis().dispose();
                                 sQLitePreparedStatement = null;
-                                vrVar.a.c(new ar(vrVar, z10 ? 1 : 0, false ? 1 : 0));
+                                vrVar.a.c(new zq(vrVar, z10 ? 1 : 0, false ? 1 : 0));
                             }
                             SQLiteDatabase sQLiteDatabase2 = vrVar.b;
                             vrVar = sQLiteDatabase2;
@@ -577,7 +577,7 @@ public final /* synthetic */ class xf implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x0189, code lost:
     
-        org.telegram.messenger.g0.h3(new org.telegram.messenger.yp(r2, r0, 1));
+        org.telegram.messenger.g0.h3(new org.telegram.messenger.xp(r2, r0, 2));
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x0192, code lost:
     

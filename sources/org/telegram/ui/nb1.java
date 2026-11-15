@@ -5,7 +5,7 @@ import android.content.ClipboardManager;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nb1 implements Runnable {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class nb1 implements Runnable {
                 break;
             case 11:
                 org.telegram.messenger.ns.f(i13).k(org.telegram.messenger.ns.s3, Boolean.FALSE);
-                ((tg.f2) obj).h();
+                ((tg.e2) obj).h();
                 break;
             case 12:
                 org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) obj;

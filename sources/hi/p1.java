@@ -23,7 +23,7 @@ import org.telegram.ui.gx;
 import org.telegram.ui.ns;
 import org.telegram.ui.xi0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -153,7 +153,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                     int i17 = i10;
                     int i18 = i13;
                     String str2 = str;
-                    AlertDialog$Builder w10 = org.telegram.ui.Components.t4.w(context, i7, i11, i17, i12, i14, i18, M0, intValue == 8, new ai.q1(ek0Var, intValue, editTextBoldCursor, 14));
+                    AlertDialog$Builder w10 = org.telegram.ui.Components.t4.w(context, i7, i11, i17, i12, i14, i18, M0, intValue == 8, new ai.r1(ek0Var, intValue, editTextBoldCursor, 14));
                     if (intValue == 8) {
                         w10.h(hd.M0(2131747465, str2), new xi0(1, ek0Var, editTextBoldCursor));
                     }

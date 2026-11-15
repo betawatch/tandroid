@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.is;
 import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t1 extends u1 implements is {
     public final di.c1 b;
@@ -33,7 +33,7 @@ public final class t1 extends u1 implements is {
         s1 s1Var = new s1(this);
         this.e = s1Var;
         c1Var.setLayoutManager(s1Var);
-        c1Var.i(new ai.h0(this, 1));
+        c1Var.i(new ai.i0(this, 1));
         c1Var.setClipToPadding(true);
         c1Var.setVerticalScrollBarEnabled(false);
         bi.b6 b6Var = new bi.b6(this, 9);

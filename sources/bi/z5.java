@@ -29,7 +29,7 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z5 extends ja {
     public static final /* synthetic */ int g2 = 0;
@@ -73,7 +73,7 @@ public final class z5 extends ja {
         this.W1 = f5Var;
         f5Var.setSorting(y5Var.c.p);
         linearLayout.addView(f5Var, c8.ja.t(-2, -2, 16, 0, 0, 6, 0));
-        f5Var.setOnClickListener(new ai.t2(4, this, y5Var));
+        f5Var.setOnClickListener(new ai.v2(4, this, y5Var));
         f5 f5Var2 = new f5(context, this.J0, false);
         this.X1 = f5Var2;
         f5Var2.setValue(hd.M0(2131750387, null));
@@ -2725,7 +2725,7 @@ public final class z5 extends ja {
         h4Var.n = L2;
         h4Var.setRoundRadius(org.telegram.messenger.g0.L(22.0f));
         h4Var.setFullRect(true);
-        org.telegram.messenger.g0.m2(new ai.f0(h4Var, 10), 12.0f, 12, new ArrayList());
+        org.telegram.messenger.g0.m2(new ai.g0(h4Var, 10), 12.0f, 12, new ArrayList());
         h4Var.setPivotY(0.0f);
         this.c.addView(h4Var, c8.ja.e(-1, -2, 55));
         this.e2.O(false);

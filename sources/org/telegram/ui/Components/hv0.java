@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class hv0 extends FrameLayout {
     public static int H;
@@ -21,7 +21,7 @@ public final class hv0 extends FrameLayout {
     public boolean d;
     public final i9 e;
     public final ImageView f;
-    public final di.ub h;
+    public final di.tb h;
     public final View n;
     public boolean r;
     public final int s;
@@ -58,16 +58,16 @@ public final class hv0 extends FrameLayout {
             addView(i9Var2, c8.ja.e(26, 26, 17));
             this.n = i9Var2;
         }
-        di.ub ubVar = new di.ub(context, 26);
-        this.h = ubVar;
-        ubVar.addOnLayoutChangeListener(new c60(this, 1));
-        ubVar.setLines(1);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        ubVar.setTextSize(1, 11.0f);
-        ubVar.setGravity(1);
-        org.telegram.ui.ActionBar.q6.U(ubVar, org.telegram.ui.ActionBar.j6.G6, null);
-        addView(ubVar, c8.ja.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
-        ubVar.setVisibility(8);
+        di.tb tbVar = new di.tb(context, 26);
+        this.h = tbVar;
+        tbVar.addOnLayoutChangeListener(new c60(this, 1));
+        tbVar.setLines(1);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        tbVar.setTextSize(1, 11.0f);
+        tbVar.setGravity(1);
+        org.telegram.ui.ActionBar.q6.U(tbVar, org.telegram.ui.ActionBar.j6.G6, null);
+        addView(tbVar, c8.ja.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
+        tbVar.setVisibility(8);
     }
 
     public final void a(float f10) {
@@ -91,10 +91,10 @@ public final class hv0 extends FrameLayout {
         view.setTranslationY((((org.telegram.messenger.g0.L(36.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(86.0f - f12) / 2.0f)) * f13) - (org.telegram.messenger.g0.L(8.0f) * f10));
         view.setTranslationX(((org.telegram.messenger.g0.L(33.0f - f11) / 2.0f) - (org.telegram.messenger.g0.L(64.0f - f12) / 2.0f)) * f13);
         float max = Math.max(0.0f, (f10 - 0.5f) / 0.5f);
-        di.ub ubVar = this.h;
-        ubVar.setAlpha(max);
-        ubVar.setTranslationY((-org.telegram.messenger.g0.L(40.0f)) * f13);
-        ubVar.setTranslationX((-org.telegram.messenger.g0.L(12.0f)) * f13);
+        di.tb tbVar = this.h;
+        tbVar.setAlpha(max);
+        tbVar.setTranslationY((-org.telegram.messenger.g0.L(40.0f)) * f13);
+        tbVar.setTranslationX((-org.telegram.messenger.g0.L(12.0f)) * f13);
         view.setPivotX(0.0f);
         view.setPivotY(0.0f);
         float f14 = ((f11 / f12) * f13) + f10;

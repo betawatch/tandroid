@@ -29,9 +29,9 @@ import org.telegram.ui.Components.m01;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.g71;
 import org.telegram.ui.z20;
-import tg.y1;
+import tg.x1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements c80 {
     public final org.telegram.ui.Components.voip.n E;
@@ -269,7 +269,7 @@ public class q0 extends FrameLayout implements c80 {
             this.Q = z10;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z10 ? 1.0f : 0.0f);
             this.R = ofFloat;
-            ofFloat.addUpdateListener(new y1(this, 3));
+            ofFloat.addUpdateListener(new x1(this, 3));
             this.R.addListener(new z20(17, this, z10));
             this.R.setDuration(320L);
             this.R.setInterpolator(er.h);

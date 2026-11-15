@@ -15,7 +15,7 @@ import android.util.StateSet;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.Toast;
-import di.mb;
+import di.lb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.st0;
 import org.telegram.ui.q90;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f1 {
     public final q1 a;
@@ -88,7 +88,7 @@ public final class f1 {
                         c0Var.s.setHotspot(f10, N1);
                         c0Var.s.setState(q1Var.N2);
                         c0Var.b(!c0Var.m);
-                        q1Var.postDelayed(new ai.v0(this, q1Var.N5, 20), ViewConfiguration.getLongPressTimeout() - 1);
+                        q1Var.postDelayed(new ai.w0(this, q1Var.N5, 20), ViewConfiguration.getLongPressTimeout() - 1);
                         return true;
                     }
                 }
@@ -725,7 +725,7 @@ public final class f1 {
                                 if (cg.c.c(c0Var2.i, TL_keyboard.TL_inlineButtonTypeBuy.class)) {
                                     charSequence4 = charSequence2;
                                     if (gj.n1(gjVar.k) instanceof TLRPC.TL_messageMediaInvoice) {
-                                        charSequence4 = mb.T0(charSequence2);
+                                        charSequence4 = lb.T0(charSequence2);
                                     }
                                 }
                                 if (cg.c.c(c0Var2.i, TL_keyboard.TL_inlineButtonTypeCopy.class)) {

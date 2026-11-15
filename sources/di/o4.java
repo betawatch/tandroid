@@ -11,7 +11,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class o4 extends Drawable {
     public final Paint a;
@@ -19,7 +19,7 @@ public final class o4 extends Drawable {
     public final Matrix c;
     public final org.telegram.ui.Components.u5 d;
     public final Path e;
-    public final bc f;
+    public final ac f;
     public int g;
     public int h;
 
@@ -31,7 +31,7 @@ public final class o4 extends Drawable {
         this.c = new Matrix();
         this.d = new org.telegram.ui.Components.u5(1.0f, new ch.w(this, 15), 0L, 420L, er.h);
         this.e = new Path();
-        this.f = new bc(1, 45);
+        this.f = new ac(1, 45);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(117440511);
@@ -69,11 +69,11 @@ public final class o4 extends Drawable {
                 path.addRoundRect(rectF, L, L, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                bc bcVar = this.f;
-                bcVar.g(rectF);
-                bcVar.h = 30.0f;
-                bcVar.d();
-                bcVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.6f, -1));
+                ac acVar = this.f;
+                acVar.g(rectF);
+                acVar.h = 30.0f;
+                acVar.d();
+                acVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.6f, -1));
                 invalidateSelf();
                 canvas.restore();
                 org.telegram.messenger.g0.P(canvas, rectF, L);

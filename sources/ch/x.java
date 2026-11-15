@@ -15,7 +15,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.n11;
 import org.telegram.ui.x01;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class x extends n11 {
     public final /* synthetic */ mi0 f2;
@@ -37,16 +37,16 @@ public final class x extends n11 {
 
     @Override // org.telegram.ui.n11
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        ai.j0 j0Var = this.h2.c;
+        ai.k0 k0Var = this.h2.c;
         int i7 = 0;
         mi0 mi0Var = this.f2;
         e2 e2Var = this.g2;
         if (e2Var != null && !mi0Var.B0 && mi0Var.getWindowType() != 13 && !m10.i(e2Var.getCurrentAccount()).q()) {
             try {
-                j0Var.performHapticFeedback(3);
+                k0Var.performHapticFeedback(3);
             } catch (Exception unused) {
             }
-            new cc(j0Var, null).r(document, org.telegram.messenger.g0.X2(hd.M0(2131743861, null)), hd.M0(2131747033, null), new w(this, i7)).j();
+            new cc(k0Var, null).r(document, org.telegram.messenger.g0.X2(hd.M0(2131743861, null)), hd.M0(2131747033, null), new w(this, i7)).j();
             return;
         }
         if (l10 == null && document == null) {
@@ -60,7 +60,7 @@ public final class x extends n11 {
         p0Var.g = longValue;
         p0Var.h = longValue;
         mi0Var.l(view, p0Var, false);
-        org.telegram.messenger.g0.v1(j0Var);
+        org.telegram.messenger.g0.v1(k0Var);
     }
 
     @Override // org.telegram.ui.n11

@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.hd;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 1:
                                     try {
-                                        ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                        ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
                                     }
@@ -121,8 +121,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 5:
                                     tg.j jVar5 = jVar;
-                                    if (jVar5 instanceof tg.g2) {
-                                        ((tg.g2) jVar5).r(true);
+                                    if (jVar5 instanceof tg.f2) {
+                                        ((tg.f2) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.q1) {
                                         ((tg.q1) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.r1) {
@@ -155,19 +155,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                     tg.j jVar6 = jVar;
                                     if (jVar6 != null) {
                                         PointF N0 = m5Var9.N0(jVar6);
-                                        if (jVar6 instanceof tg.g2) {
-                                            tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                            g2Var.setDelegate(m5Var9);
-                                            h5Var2.addView(g2Var);
+                                        if (jVar6 instanceof tg.f2) {
+                                            tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                            f2Var.setDelegate(m5Var9);
+                                            h5Var2.addView(f2Var);
                                             m5Var9.d0();
-                                            jVar2 = g2Var;
-                                        } else if (jVar6 instanceof tg.o2) {
-                                            tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                            o2Var.setDelegate(m5Var9);
-                                            o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                            h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                            jVar2 = f2Var;
+                                        } else if (jVar6 instanceof tg.n2) {
+                                            tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                            n2Var.setDelegate(m5Var9);
+                                            n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                            h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                             m5Var9.d0();
-                                            jVar2 = o2Var;
+                                            jVar2 = n2Var;
                                         }
                                         m5Var9.y0(jVar2);
                                         m5Var9.A0(null, true);
@@ -185,7 +185,7 @@ public final /* synthetic */ class i4 implements Runnable {
                     linearLayout.addView(textView, c8.ja.o(-2, 44));
                 }
                 final int i12 = 3;
-                if (jVar instanceof tg.o2) {
+                if (jVar instanceof tg.n2) {
                     TextView textView2 = new TextView(m5Var.getContext());
                     org.telegram.ui.ActionBar.q6.U(textView2, org.telegram.ui.ActionBar.j6.E8, e5Var);
                     textView2.setGravity(16);
@@ -224,7 +224,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 1:
                                         try {
-                                            ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                            ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                         } catch (Exception e10) {
                                             org.telegram.messenger.a8.g(e10, true);
                                         }
@@ -268,8 +268,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 5:
                                         tg.j jVar5 = jVar;
-                                        if (jVar5 instanceof tg.g2) {
-                                            ((tg.g2) jVar5).r(true);
+                                        if (jVar5 instanceof tg.f2) {
+                                            ((tg.f2) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.q1) {
                                             ((tg.q1) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.r1) {
@@ -302,19 +302,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                         tg.j jVar6 = jVar;
                                         if (jVar6 != null) {
                                             PointF N0 = m5Var9.N0(jVar6);
-                                            if (jVar6 instanceof tg.g2) {
-                                                tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                                g2Var.setDelegate(m5Var9);
-                                                h5Var2.addView(g2Var);
+                                            if (jVar6 instanceof tg.f2) {
+                                                tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                                f2Var.setDelegate(m5Var9);
+                                                h5Var2.addView(f2Var);
                                                 m5Var9.d0();
-                                                jVar2 = g2Var;
-                                            } else if (jVar6 instanceof tg.o2) {
-                                                tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                                o2Var.setDelegate(m5Var9);
-                                                o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                                h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                                jVar2 = f2Var;
+                                            } else if (jVar6 instanceof tg.n2) {
+                                                tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                                n2Var.setDelegate(m5Var9);
+                                                n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                                h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                                 m5Var9.d0();
-                                                jVar2 = o2Var;
+                                                jVar2 = n2Var;
                                             }
                                             m5Var9.y0(jVar2);
                                             m5Var9.A0(null, true);
@@ -357,7 +357,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 1:
                                         try {
-                                            ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                            ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                         } catch (Exception e10) {
                                             org.telegram.messenger.a8.g(e10, true);
                                         }
@@ -401,8 +401,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 5:
                                         tg.j jVar5 = jVar;
-                                        if (jVar5 instanceof tg.g2) {
-                                            ((tg.g2) jVar5).r(true);
+                                        if (jVar5 instanceof tg.f2) {
+                                            ((tg.f2) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.q1) {
                                             ((tg.q1) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.r1) {
@@ -435,19 +435,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                         tg.j jVar6 = jVar;
                                         if (jVar6 != null) {
                                             PointF N0 = m5Var9.N0(jVar6);
-                                            if (jVar6 instanceof tg.g2) {
-                                                tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                                g2Var.setDelegate(m5Var9);
-                                                h5Var2.addView(g2Var);
+                                            if (jVar6 instanceof tg.f2) {
+                                                tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                                f2Var.setDelegate(m5Var9);
+                                                h5Var2.addView(f2Var);
                                                 m5Var9.d0();
-                                                jVar2 = g2Var;
-                                            } else if (jVar6 instanceof tg.o2) {
-                                                tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                                o2Var.setDelegate(m5Var9);
-                                                o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                                h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                                jVar2 = f2Var;
+                                            } else if (jVar6 instanceof tg.n2) {
+                                                tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                                n2Var.setDelegate(m5Var9);
+                                                n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                                h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                                 m5Var9.d0();
-                                                jVar2 = o2Var;
+                                                jVar2 = n2Var;
                                             }
                                             m5Var9.y0(jVar2);
                                             m5Var9.A0(null, true);
@@ -493,7 +493,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 1:
                                     try {
-                                        ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                        ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
                                     }
@@ -537,8 +537,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 5:
                                     tg.j jVar5 = jVar;
-                                    if (jVar5 instanceof tg.g2) {
-                                        ((tg.g2) jVar5).r(true);
+                                    if (jVar5 instanceof tg.f2) {
+                                        ((tg.f2) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.q1) {
                                         ((tg.q1) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.r1) {
@@ -571,19 +571,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                     tg.j jVar6 = jVar;
                                     if (jVar6 != null) {
                                         PointF N0 = m5Var9.N0(jVar6);
-                                        if (jVar6 instanceof tg.g2) {
-                                            tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                            g2Var.setDelegate(m5Var9);
-                                            h5Var2.addView(g2Var);
+                                        if (jVar6 instanceof tg.f2) {
+                                            tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                            f2Var.setDelegate(m5Var9);
+                                            h5Var2.addView(f2Var);
                                             m5Var9.d0();
-                                            jVar2 = g2Var;
-                                        } else if (jVar6 instanceof tg.o2) {
-                                            tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                            o2Var.setDelegate(m5Var9);
-                                            o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                            h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                            jVar2 = f2Var;
+                                        } else if (jVar6 instanceof tg.n2) {
+                                            tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                            n2Var.setDelegate(m5Var9);
+                                            n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                            h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                             m5Var9.d0();
-                                            jVar2 = o2Var;
+                                            jVar2 = n2Var;
                                         }
                                         m5Var9.y0(jVar2);
                                         m5Var9.A0(null, true);
@@ -629,7 +629,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 1:
                                         try {
-                                            ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                            ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                         } catch (Exception e10) {
                                             org.telegram.messenger.a8.g(e10, true);
                                         }
@@ -673,8 +673,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                         break;
                                     case 5:
                                         tg.j jVar5 = jVar;
-                                        if (jVar5 instanceof tg.g2) {
-                                            ((tg.g2) jVar5).r(true);
+                                        if (jVar5 instanceof tg.f2) {
+                                            ((tg.f2) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.q1) {
                                             ((tg.q1) jVar5).r(true);
                                         } else if (jVar5 instanceof tg.r1) {
@@ -707,19 +707,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                         tg.j jVar6 = jVar;
                                         if (jVar6 != null) {
                                             PointF N0 = m5Var9.N0(jVar6);
-                                            if (jVar6 instanceof tg.g2) {
-                                                tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                                g2Var.setDelegate(m5Var9);
-                                                h5Var2.addView(g2Var);
+                                            if (jVar6 instanceof tg.f2) {
+                                                tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                                f2Var.setDelegate(m5Var9);
+                                                h5Var2.addView(f2Var);
                                                 m5Var9.d0();
-                                                jVar2 = g2Var;
-                                            } else if (jVar6 instanceof tg.o2) {
-                                                tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                                o2Var.setDelegate(m5Var9);
-                                                o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                                h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                                jVar2 = f2Var;
+                                            } else if (jVar6 instanceof tg.n2) {
+                                                tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                                n2Var.setDelegate(m5Var9);
+                                                n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                                h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                                 m5Var9.d0();
-                                                jVar2 = o2Var;
+                                                jVar2 = n2Var;
                                             }
                                             m5Var9.y0(jVar2);
                                             m5Var9.A0(null, true);
@@ -737,7 +737,7 @@ public final /* synthetic */ class i4 implements Runnable {
                         linearLayout.addView(e03, c8.ja.o(-2, 44));
                     }
                 }
-                if ((jVar instanceof tg.g2) || (jVar instanceof tg.r1) || (jVar instanceof tg.n1) || (jVar instanceof tg.q1)) {
+                if ((jVar instanceof tg.f2) || (jVar instanceof tg.r1) || (jVar instanceof tg.n1) || (jVar instanceof tg.q1)) {
                     TextView e04 = m5Var.e0(4, hd.M0(2131750690, null));
                     final int i15 = 5;
                     e04.setOnClickListener(new View.OnClickListener() { // from class: hi.n4
@@ -765,7 +765,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 1:
                                     try {
-                                        ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                        ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
                                     }
@@ -809,8 +809,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 5:
                                     tg.j jVar5 = jVar;
-                                    if (jVar5 instanceof tg.g2) {
-                                        ((tg.g2) jVar5).r(true);
+                                    if (jVar5 instanceof tg.f2) {
+                                        ((tg.f2) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.q1) {
                                         ((tg.q1) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.r1) {
@@ -843,19 +843,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                     tg.j jVar6 = jVar;
                                     if (jVar6 != null) {
                                         PointF N0 = m5Var9.N0(jVar6);
-                                        if (jVar6 instanceof tg.g2) {
-                                            tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                            g2Var.setDelegate(m5Var9);
-                                            h5Var2.addView(g2Var);
+                                        if (jVar6 instanceof tg.f2) {
+                                            tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                            f2Var.setDelegate(m5Var9);
+                                            h5Var2.addView(f2Var);
                                             m5Var9.d0();
-                                            jVar2 = g2Var;
-                                        } else if (jVar6 instanceof tg.o2) {
-                                            tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                            o2Var.setDelegate(m5Var9);
-                                            o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                            h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                            jVar2 = f2Var;
+                                        } else if (jVar6 instanceof tg.n2) {
+                                            tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                            n2Var.setDelegate(m5Var9);
+                                            n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                            h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                             m5Var9.d0();
-                                            jVar2 = o2Var;
+                                            jVar2 = n2Var;
                                         }
                                         m5Var9.y0(jVar2);
                                         m5Var9.A0(null, true);
@@ -911,7 +911,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 1:
                                     try {
-                                        ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                        ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
                                     }
@@ -955,8 +955,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 5:
                                     tg.j jVar5 = jVar;
-                                    if (jVar5 instanceof tg.g2) {
-                                        ((tg.g2) jVar5).r(true);
+                                    if (jVar5 instanceof tg.f2) {
+                                        ((tg.f2) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.q1) {
                                         ((tg.q1) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.r1) {
@@ -989,19 +989,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                     tg.j jVar6 = jVar;
                                     if (jVar6 != null) {
                                         PointF N0 = m5Var9.N0(jVar6);
-                                        if (jVar6 instanceof tg.g2) {
-                                            tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                            g2Var.setDelegate(m5Var9);
-                                            h5Var2.addView(g2Var);
+                                        if (jVar6 instanceof tg.f2) {
+                                            tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                            f2Var.setDelegate(m5Var9);
+                                            h5Var2.addView(f2Var);
                                             m5Var9.d0();
-                                            jVar2 = g2Var;
-                                        } else if (jVar6 instanceof tg.o2) {
-                                            tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                            o2Var.setDelegate(m5Var9);
-                                            o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                            h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                            jVar2 = f2Var;
+                                        } else if (jVar6 instanceof tg.n2) {
+                                            tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                            n2Var.setDelegate(m5Var9);
+                                            n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                            h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                             m5Var9.d0();
-                                            jVar2 = o2Var;
+                                            jVar2 = n2Var;
                                         }
                                         m5Var9.y0(jVar2);
                                         m5Var9.A0(null, true);
@@ -1017,7 +1017,7 @@ public final /* synthetic */ class i4 implements Runnable {
                         }
                     });
                     linearLayout.addView(textView3, c8.ja.o(-2, 44));
-                } else if (!z11 && !z10 && !(jVar instanceof tg.r1) && !(jVar instanceof tg.n0) && !(jVar instanceof tg.p2) && !(jVar instanceof tg.k0) && !(jVar instanceof tg.q1)) {
+                } else if (!z11 && !z10 && !(jVar instanceof tg.r1) && !(jVar instanceof tg.n0) && !(jVar instanceof tg.o2) && !(jVar instanceof tg.k0) && !(jVar instanceof tg.q1)) {
                     TextView textView4 = new TextView(m5Var.getContext());
                     org.telegram.ui.ActionBar.q6.U(textView4, org.telegram.ui.ActionBar.j6.E8, e5Var);
                     textView4.setLines(1);
@@ -1055,7 +1055,7 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 1:
                                     try {
-                                        ((tg.o2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
+                                        ((tg.n2) jVar).getEditText().onTextContextMenuItem(R.id.pasteAsPlainText);
                                     } catch (Exception e10) {
                                         org.telegram.messenger.a8.g(e10, true);
                                     }
@@ -1099,8 +1099,8 @@ public final /* synthetic */ class i4 implements Runnable {
                                     break;
                                 case 5:
                                     tg.j jVar5 = jVar;
-                                    if (jVar5 instanceof tg.g2) {
-                                        ((tg.g2) jVar5).r(true);
+                                    if (jVar5 instanceof tg.f2) {
+                                        ((tg.f2) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.q1) {
                                         ((tg.q1) jVar5).r(true);
                                     } else if (jVar5 instanceof tg.r1) {
@@ -1133,19 +1133,19 @@ public final /* synthetic */ class i4 implements Runnable {
                                     tg.j jVar6 = jVar;
                                     if (jVar6 != null) {
                                         PointF N0 = m5Var9.N0(jVar6);
-                                        if (jVar6 instanceof tg.g2) {
-                                            tg.j g2Var = new tg.g2(m5Var9.getContext(), (tg.g2) jVar6, N0);
-                                            g2Var.setDelegate(m5Var9);
-                                            h5Var2.addView(g2Var);
+                                        if (jVar6 instanceof tg.f2) {
+                                            tg.j f2Var = new tg.f2(m5Var9.getContext(), (tg.f2) jVar6, N0);
+                                            f2Var.setDelegate(m5Var9);
+                                            h5Var2.addView(f2Var);
                                             m5Var9.d0();
-                                            jVar2 = g2Var;
-                                        } else if (jVar6 instanceof tg.o2) {
-                                            tg.o2 o2Var = new tg.o2(m5Var9.getContext(), (tg.o2) jVar6, N0);
-                                            o2Var.setDelegate(m5Var9);
-                                            o2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
-                                            h5Var2.addView(o2Var, c8.ja.c(-2.0f, -2));
+                                            jVar2 = f2Var;
+                                        } else if (jVar6 instanceof tg.n2) {
+                                            tg.n2 n2Var = new tg.n2(m5Var9.getContext(), (tg.n2) jVar6, N0);
+                                            n2Var.setDelegate(m5Var9);
+                                            n2Var.setMaxWidth(m5Var9.B1 - org.telegram.messenger.g0.L(32.0f));
+                                            h5Var2.addView(n2Var, c8.ja.c(-2.0f, -2));
                                             m5Var9.d0();
-                                            jVar2 = o2Var;
+                                            jVar2 = n2Var;
                                         }
                                         m5Var9.y0(jVar2);
                                         m5Var9.A0(null, true);

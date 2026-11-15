@@ -1,10 +1,10 @@
 package tg;
 
 import android.view.View;
-import di.qa;
-import di.z9;
+import di.pa;
+import di.y9;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -34,19 +34,19 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 g0Var2.postDelayed(new n(g0Var2, 1), 350L);
                 v vVar = new v(g0Var2.getContext(), g0Var2.A1, false, false);
                 vVar.z1 = new q(g0Var2);
-                vVar.N0(new qa(g0Var2, 4));
-                vVar.setOnDismissListener(new z9(g0Var2, i7));
+                vVar.N0(new pa(g0Var2, 4));
+                vVar.setOnDismissListener(new y9(g0Var2, i7));
                 vVar.show();
                 g0Var2.o0(true);
                 break;
             case 2:
                 g0 g0Var3 = this.b;
                 j jVar = g0Var3.C0;
-                if ((jVar instanceof o2) && !g0Var3.D0) {
-                    o2 o2Var = (o2) jVar;
+                if ((jVar instanceof n2) && !g0Var3.D0) {
+                    n2 n2Var = (n2) jVar;
                     g0Var3.D0 = true;
-                    o2Var.q();
-                    View focusedView = o2Var.getFocusedView();
+                    n2Var.q();
+                    View focusedView = n2Var.getFocusedView();
                     focusedView.requestFocus();
                     org.telegram.messenger.g0.J3(focusedView);
                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
             default:
                 g0 g0Var4 = this.b;
                 g0Var4.B0(2);
-                if (!(g0Var4.C0 instanceof o2)) {
+                if (!(g0Var4.C0 instanceof n2)) {
                     g0Var4.h0(true);
                     break;
                 }

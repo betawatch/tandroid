@@ -1,303 +1,278 @@
 package ai;
 
+import a8.sa;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.text.style.CharacterStyle;
 import android.util.Log;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Locale;
+import android.view.inputmethod.BaseInputConnection;
+import android.widget.EditText;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h2 {
-    public static final HashSet h = new HashSet(Arrays.asList("a", "an", "and", "the", "but", "so", "or", "to", "of", "in", "on", "at", "for", "with", "it", "it's", "that", "this", "these", "those", "then", "than", "also", "because", "which", "who", "if", "when", "while", "just", "like", "is", "are", "was", "were", "be", "been", "we", "you", "they", "he", "she", "my", "our", "your", "their", "his", "her", "not", "as", "what", "how", "why", "where", "there", "here", "now", "do", "does", "did", "have", "has", "had", "will", "would", "can", "could", "should", "maybe", "really", "very", "too", "и", "а", "но", "что", "как", "это", "в", "во", "на", "с", "со", "к", "по", "за", "из", "у", "о", "об", "от", "до", "для", "что-то", "где", "почему", "зачем", "сейчас", "не", "ни", "же", "ли", "бы", "то", "так", "там", "тут", "вот", "ну", "или", "если", "когда", "потому", "чтобы", "мы", "вы", "он", "она", "они", "оно", "ты", "я", "мой", "моя", "мне", "меня", "его", "её", "их", "был", "была", "было", "были", "будет", "уже", "ещё", "еще", "тоже", "очень", "просто", "наверное", "может"));
-    public boolean d;
-    public boolean f;
-    public a3.l g;
-    public final StringBuilder a = new StringBuilder();
-    public String b = "";
-    public String c = "";
-    public int e = -1;
+    public static long o;
+    public final TextView a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public boolean g;
+    public a0 h;
+    public d2 i;
+    public g2 j;
+    public LinearGradient k;
+    public float m;
+    public float f = 0.5f;
+    public final Matrix l = new Matrix();
+    public final sa n = new sa(this, 3);
 
-    public static String c(String str) {
-        if (str == null) {
-            return "null";
-        }
-        if (str.length() <= 48) {
-            return str;
-        }
-        return "…" + str.substring(str.length() - 46);
+    public h2(TextView textView) {
+        this.a = textView;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00ab, code lost:
-    
-        r1 = r1 - 1;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static String e(String str, String str2) {
-        if (!str.isEmpty() && !str2.isEmpty()) {
-            ArrayList o4 = o(str);
-            ArrayList o10 = o(str2);
-            if (!o10.isEmpty()) {
-                if (o4.size() >= 2 && m(o10, o4, o4.size())) {
-                    return f(o4.size(), str2);
-                }
-                if (o10.size() >= 3 && o10.size() <= o4.size() && o10.size() <= o4.size()) {
-                    int size = o4.size() - o10.size();
-                    for (int i7 = 0; i7 < o10.size(); i7++) {
-                        if (((String) o4.get(size + i7)).equals(o10.get(i7))) {
-                        }
-                    }
-                    return "";
-                }
-                int min = Math.min(16, Math.min(o10.size(), o4.size()));
-                while (min >= 3) {
-                    for (int i10 = 0; i10 < min; i10++) {
-                        if (!((String) o4.get((o4.size() - min) + i10)).equals(o10.get(i10))) {
-                            break;
-                        }
-                    }
-                    return f(min, str2);
-                }
-            }
-        }
-        return str2;
+    public static float b(float f10) {
+        return f10 < 0.5f ? com.google.android.gms.internal.vision.e2.D(f10, 4.0f, f10, f10) : 1.0f - (((float) Math.pow((f10 * (-2.0f)) + 2.0f, 3.0d)) / 2.0f);
     }
 
-    public static String f(int i7, String str) {
-        String[] split = str.trim().split("\\s+");
-        int i10 = 0;
-        int i11 = 0;
-        while (i10 < split.length && i11 < i7) {
-            if (!k(split[i10]).isEmpty()) {
-                i11++;
+    public final void a() {
+        Editable editableText = this.a.getEditableText();
+        if (editableText == null) {
+            return;
+        }
+        for (e2 e2Var : (e2[]) editableText.getSpans(0, editableText.length(), e2.class)) {
+            editableText.removeSpan(e2Var);
+        }
+        for (f2 f2Var : (f2[]) editableText.getSpans(0, editableText.length(), f2.class)) {
+            editableText.removeSpan(f2Var);
+        }
+        for (d2 d2Var : (d2[]) editableText.getSpans(0, editableText.length(), d2.class)) {
+            editableText.removeSpan(d2Var);
+        }
+        this.i = null;
+    }
+
+    public final void c(int i7, int i10, boolean z10) {
+        this.b = i7;
+        this.c = i10;
+        this.d = s0.e(z10 ? -10777345 : -15374904);
+        this.e = s0.e(z10 ? -6128385 : -15823740);
+        this.f = z10 ? 0.6f : 0.75f;
+        this.k = null;
+    }
+
+    public final void d(Editable editable, int i7) {
+        int length = editable.length();
+        int max = Math.max(0, Math.min(i7, length));
+        long uptimeMillis = SystemClock.uptimeMillis();
+        Object obj = this.i;
+        if (obj != null) {
+            int spanStart = editable.getSpanStart(obj);
+            if (spanStart >= 0 && spanStart < max) {
+                d2 d2Var = new d2();
+                d2Var.a = uptimeMillis;
+                editable.setSpan(d2Var, spanStart, max, 33);
             }
-            i10++;
+            editable.removeSpan(this.i);
+            this.i = null;
+        }
+        for (Object obj2 : (d2[]) editable.getSpans(0, length, d2.class)) {
+            int spanStart2 = editable.getSpanStart(obj2);
+            int spanEnd = editable.getSpanEnd(obj2);
+            editable.removeSpan(obj2);
+            if (spanEnd > spanStart2) {
+                editable.setSpan(obj2, spanStart2, spanEnd, 33);
+            }
+        }
+        if (max < length) {
+            d2 d2Var2 = new d2();
+            this.i = d2Var2;
+            editable.setSpan(d2Var2, max, length, 33);
         }
         StringBuilder sb2 = new StringBuilder();
-        while (i10 < split.length) {
-            if (sb2.length() > 0) {
-                sb2.append(' ');
-            }
-            sb2.append(split[i10]);
-            i10++;
+        for (Object obj3 : (CharacterStyle[]) editable.getSpans(0, length, CharacterStyle.class)) {
+            sb2.append(' ');
+            sb2.append(obj3.getClass().getSimpleName());
+            sb2.append('[');
+            sb2.append(editable.getSpanStart(obj3));
+            sb2.append(',');
+            sb2.append(editable.getSpanEnd(obj3));
+            sb2.append(')');
         }
-        return sb2.toString();
+        StringBuilder n10 = i5.c.n("draft from=", max, " len=", length, " spans:");
+        n10.append((Object) sb2);
+        Log.d("DICTDBG", n10.toString());
+        g();
     }
 
-    public static String i(String str, String str2) {
-        String trim = str == null ? "" : str.trim();
-        String trim2 = str2 != null ? str2.trim() : "";
-        if (trim.isEmpty()) {
-            return trim2;
+    public final void e(int i7, int i10, String str) {
+        long j3;
+        TextView textView = this.a;
+        Editable editableText = textView.getEditableText();
+        if (editableText == null) {
+            return;
         }
-        if (trim2.isEmpty()) {
-            return trim;
+        boolean z10 = false;
+        int max = Math.max(0, Math.min(i7, editableText.length()));
+        String charSequence = editableText.subSequence(max, editableText.length()).toString();
+        if (charSequence.equals(str)) {
+            d(editableText, i10 < 0 ? editableText.length() : max + i10);
+            return;
         }
-        boolean z10 = true;
-        char charAt = trim.charAt(trim.length() - 1);
-        if (charAt != '.' && charAt != '?' && charAt != '!' && charAt != 8230) {
-            z10 = false;
+        int min = Math.min(charSequence.length(), str.length());
+        int i11 = 0;
+        while (i11 < min && charSequence.charAt(i11) == str.charAt(i11)) {
+            i11++;
         }
-        int codePointAt = trim2.codePointAt(0);
-        if (z10) {
-            if (Character.isLowerCase(codePointAt)) {
-                trim2 = new String(Character.toChars(Character.toUpperCase(codePointAt))) + trim2.substring(Character.charCount(codePointAt));
-            }
-        } else if (Character.isUpperCase(codePointAt)) {
-            int i7 = 0;
+        String substring = str.substring(i11);
+        int i12 = 0;
+        for (String str2 : charSequence.substring(i11).trim().split("\\s+")) {
+            int length = str2.length();
+            int i13 = 0;
             while (true) {
-                if ((i7 >= trim2.length() || !Character.isLetter(trim2.charAt(i7))) && (i7 >= trim2.length() || trim2.charAt(i7) != '\'')) {
+                if (i13 >= length) {
                     break;
                 }
-                i7++;
-            }
-            String substring = trim2.substring(0, i7);
-            Locale locale = Locale.ROOT;
-            String lowerCase = substring.toLowerCase(locale);
-            if (trim2.substring(Character.charCount(codePointAt), i7).equals(trim2.substring(Character.charCount(codePointAt), i7).toLowerCase(locale)) && h.contains(lowerCase)) {
-                trim2 = new String(Character.toChars(Character.toLowerCase(codePointAt))) + trim2.substring(Character.charCount(codePointAt));
+                if (Character.isLetterOrDigit(str2.charAt(i13))) {
+                    i12++;
+                    break;
+                }
+                i13++;
             }
         }
-        return a8.p0.E(trim, " ", trim2);
-    }
-
-    public static String k(String str) {
-        StringBuilder sb2 = new StringBuilder();
-        for (int i7 = 0; i7 < str.length(); i7++) {
-            char charAt = str.charAt(i7);
-            if (Character.isLetterOrDigit(charAt) || charAt == '\'') {
-                sb2.append(Character.toLowerCase(charAt));
-            }
+        BaseInputConnection.removeComposingSpans(editableText);
+        int i14 = i11 + max;
+        boolean z11 = i14 == editableText.length();
+        if (z11) {
+            editableText.append((CharSequence) substring);
+        } else {
+            editableText.replace(i14, editableText.length(), substring);
         }
-        return sb2.toString();
-    }
-
-    public static boolean l(String str, String str2) {
-        return str.length() >= 3 && str2.length() >= 3 && str.regionMatches(0, str2, 0, Math.min(3, Math.min(str.length(), str2.length()))) && Math.abs(str.length() - str2.length()) <= 4;
-    }
-
-    public static boolean m(ArrayList arrayList, ArrayList arrayList2, int i7) {
-        if (i7 > 0 && arrayList.size() >= i7 && arrayList2.size() >= i7) {
-            for (int i10 = 0; i10 < i7; i10++) {
-                if (((String) arrayList.get(i10)).equals(arrayList2.get(i10))) {
+        int length2 = substring.length() + i14;
+        if (z11) {
+            i12 = 0;
+        }
+        long uptimeMillis = SystemClock.uptimeMillis();
+        int i15 = 0;
+        int i16 = 0;
+        while (i14 < length2) {
+            while (i14 < length2 && Character.isWhitespace(editableText.charAt(i14))) {
+                i14++;
+            }
+            if (i14 >= length2) {
+                break;
+            }
+            int i17 = i14;
+            while (i17 < length2 && !Character.isWhitespace(editableText.charAt(i17))) {
+                i17++;
+            }
+            boolean z12 = i15 < i12 ? true : z10;
+            int i18 = i14;
+            while (true) {
+                if (i18 >= i17) {
+                    break;
+                }
+                if (Character.isLetterOrDigit(editableText.charAt(i18))) {
+                    i15++;
+                    break;
+                }
+                i18++;
+            }
+            int i19 = i15;
+            long j10 = z12 ? 0L : (i16 * 22) + uptimeMillis;
+            int i20 = i14;
+            while (true) {
+                if (i20 <= 0) {
+                    j3 = 0;
+                    break;
+                }
+                j3 = 0;
+                if (Character.isWhitespace(editableText.charAt(i20 - 1))) {
+                    break;
+                } else {
+                    i20--;
                 }
             }
-            return true;
-        }
-        return false;
-    }
-
-    public static ArrayList o(String str) {
-        ArrayList arrayList = new ArrayList();
-        if (str != null) {
-            for (String str2 : str.trim().split("\\s+")) {
-                String k10 = k(str2);
-                if (!k10.isEmpty()) {
-                    arrayList.add(k10);
-                }
+            int i21 = length2;
+            int i22 = i17;
+            while (i22 < editableText.length() && !Character.isWhitespace(editableText.charAt(i22))) {
+                i22++;
             }
+            Object[] objArr = (e2[]) editableText.getSpans(i20, i22, e2.class);
+            int i23 = max;
+            int length3 = objArr.length;
+            int i24 = 0;
+            while (i24 < length3) {
+                int i25 = i24;
+                Object obj = objArr[i25];
+                int i26 = length3;
+                if (editableText.getSpanStart(obj) < i22 && editableText.getSpanEnd(obj) > i20) {
+                    editableText.removeSpan(obj);
+                }
+                i24 = i25 + 1;
+                length3 = i26;
+            }
+            if (j10 > j3) {
+                f2 f2Var = new f2(j10, this.b);
+                f2Var.c = i17 - i14;
+                editableText.setSpan(f2Var, i14, i17, 33);
+            }
+            int i27 = i14;
+            editableText.setSpan(new e2(Math.max(uptimeMillis, j10), this.b, this.c), i20, i22, 33);
+            if (!z12) {
+                i16 += i17 - i27;
+            }
+            i15 = i19;
+            i14 = i17;
+            length2 = i21;
+            max = i23;
+            z10 = false;
         }
-        return arrayList;
+        d(editableText, i10 < 0 ? editableText.length() : max + i10);
+        if (textView instanceof EditText) {
+            ((EditText) textView).setSelection(editableText.length());
+        }
+        g();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00a8, code lost:
-    
-        if (r0.charAt(0) != ((java.lang.String) r1.get(0)).charAt(0)) goto L58;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0114, code lost:
-    
-        if (m(r0, r1, r1.size()) != false) goto L59;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(String str, boolean z10) {
-        int i7;
-        String e10 = e(this.a.toString(), str);
-        if (e10.isEmpty()) {
+    public final void f(boolean z10) {
+        Editable editableText = this.a.getEditableText();
+        if (editableText == null) {
             return;
         }
-        if (!this.b.isEmpty()) {
-            ArrayList o4 = o(e10);
-            ArrayList o10 = o(this.b);
-            if (m(o4, o10, o10.size())) {
-                e10 = f(o10.size(), e10);
-                if (e10.isEmpty()) {
-                    this.c = "";
-                    return;
-                }
-            } else {
-                e10 = e(this.b, e10);
-                if (e10.isEmpty()) {
-                    return;
-                }
+        if (!z10) {
+            g2 g2Var = this.j;
+            if (g2Var != null) {
+                this.m = 0.0f;
+                editableText.removeSpan(g2Var);
+                return;
             }
-        }
-        if (!this.c.isEmpty()) {
-            if (!z10 || this.d) {
-                ArrayList o11 = o(this.c);
-                ArrayList o12 = o(e10);
-                if (!o11.isEmpty() && !o12.isEmpty()) {
-                    if (o11.size() == 1) {
-                        String str2 = (String) o11.get(0);
-                        if (o12.size() >= 3) {
-                            if (!o12.contains(str2)) {
-                                if (!l(str2, (String) o12.get(0))) {
-                                }
-                            }
-                        }
-                    } else {
-                        int min = Math.min(4, Math.min(o11.size(), o12.size()));
-                        int i10 = 0;
-                        int i11 = 0;
-                        while (i10 < min) {
-                            String str3 = (String) o11.get(i10);
-                            int max = Math.max(0, i10 - 1);
-                            while (true) {
-                                i7 = i10 + 1;
-                                if (max > Math.min(o12.size() - 1, i7)) {
-                                    break;
-                                }
-                                if (str3.equals(o12.get(max)) || l(str3, (String) o12.get(max))) {
-                                    break;
-                                } else {
-                                    max++;
-                                }
-                            }
-                            i11++;
-                            i10 = i7;
-                        }
-                        if (i11 < Math.max(1, (min + 1) / 2)) {
-                            if (o12.size() < o11.size()) {
-                            }
-                        }
-                    }
-                }
-            }
-            j("session " + this.e + " phrase reset: kept \"" + c(this.c) + "\", new \"" + c(e10) + "\"");
-            String i12 = i(this.b, this.c);
-            this.b = i12;
-            e10 = e(i12, e10);
-        }
-        this.c = e10;
-        this.d = z10;
-    }
-
-    public final void b(int i7) {
-        if (this.f) {
-            d("superseded");
-        }
-        this.e = i7;
-        this.f = true;
-        this.b = "";
-        this.c = "";
-        this.d = false;
-        j("session " + i7 + " begin");
-    }
-
-    public final void d(String str) {
-        String i7 = i(this.b, this.c);
-        this.b = "";
-        this.c = "";
-        this.d = false;
-        this.f = false;
-        if (i7.isEmpty()) {
-            j("session " + this.e + " close(" + str + ") empty");
             return;
         }
-        StringBuilder sb2 = this.a;
-        String e10 = e(sb2.toString(), i7);
-        if (!e10.isEmpty()) {
-            String i10 = i(sb2.toString(), e10);
-            sb2.setLength(0);
-            sb2.append(i10);
+        if (this.k == null) {
+            float L = org.telegram.messenger.g0.L(150.0f);
+            int f10 = i0.a.f(this.f, this.c, this.d);
+            int f11 = i0.a.f(this.f, this.c, this.e);
+            this.k = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{this.c, f10, i0.a.f(0.5f, f10, f11), f11, this.c}, new float[]{0.0f, 0.3f, 0.5f, 0.7f, 1.0f}, Shader.TileMode.MIRROR);
         }
-        j("session " + this.e + " close(" + str + ") +\"" + c(e10) + "\" → " + sb2.length() + " chars");
+        int i7 = 0;
+        if (this.j == null) {
+            this.j = new g2(this, i7);
+        }
+        this.m = 1.0f;
+        editableText.setSpan(this.j, 0, editableText.length(), 18);
+        g();
     }
 
-    public final void g(int i7, String str) {
-        if (h(i7)) {
-            d(str);
+    public final void g() {
+        if (this.g) {
             return;
         }
-        j("session " + i7 + " end(" + str + ") for a closed session ignored");
-    }
-
-    public final boolean h(int i7) {
-        return this.f && i7 == this.e;
-    }
-
-    public final void j(String str) {
-        a3.l lVar = this.g;
-        if (lVar != null) {
-            lVar.getClass();
-            Log.d("Dictation", str);
-        }
-    }
-
-    public final String n() {
-        return i(i(this.a.toString(), this.b), this.c);
+        this.g = true;
+        this.a.postOnAnimation(this.n);
     }
 }

@@ -12,7 +12,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class vd extends LinearLayout {
     public final LinearLayout a;
@@ -98,9 +98,9 @@ public final class vd extends LinearLayout {
                         if (i7 == 0) {
                             spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.E(udVar.d, ' '));
                         } else {
-                            spannableStringBuilder.append((CharSequence) di.mb.M0(udVar.i, 0.8f, ' '));
+                            spannableStringBuilder.append((CharSequence) di.lb.M0(udVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = di.mb.a1(false, spannableStringBuilder, 0.7f, null);
+                        spannableStringBuilder = di.lb.a1(false, spannableStringBuilder, 0.7f, null);
                     } else {
                         spannableStringBuilder.append((CharSequence) Long.toString(udVar.d));
                     }

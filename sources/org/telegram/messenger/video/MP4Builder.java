@@ -26,7 +26,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -541,7 +541,7 @@ public class MP4Builder {
     public void createSidx(Track track, i5.q qVar) {
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class InterleaveChunkMdat implements i5.b {
         private long contentSize;
         private long dataOffset;

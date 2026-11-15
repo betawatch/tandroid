@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import c8.ja;
-import di.ub;
+import di.tb;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.ns;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.cj0;
 import org.telegram.ui.Components.eq;
 import org.telegram.ui.Components.tj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class z extends tj0 {
     public ArrayList c;
@@ -81,16 +81,16 @@ public final class z extends tj0 {
         y yVar = new y(context);
         yVar.setOrientation(0);
         yVar.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
-        ub ubVar = new ub(context, 4);
-        yVar.b = ubVar;
-        ns.i(ubVar);
-        ubVar.setTextSize(1, 16.0f);
+        tb tbVar = new tb(context, 4);
+        yVar.b = tbVar;
+        ns.i(tbVar);
+        tbVar.setTextSize(1, 16.0f);
         int i10 = j6.G6;
-        q6.U(ubVar, i10, null);
-        ubVar.setTag(Integer.valueOf(i10));
-        ubVar.setMaxLines(2);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        yVar.addView(ubVar, ja.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.g0.L(8.0f), 0));
+        q6.U(tbVar, i10, null);
+        tbVar.setTag(Integer.valueOf(i10));
+        tbVar.setMaxLines(2);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        yVar.addView(tbVar, ja.q(-1, -2, 1.0f, 16, 0, 0, org.telegram.messenger.g0.L(8.0f), 0));
         TextView textView = new TextView(context);
         yVar.a = textView;
         textView.setTextSize(1, 14.0f);

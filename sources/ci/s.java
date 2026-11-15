@@ -29,7 +29,7 @@ import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.wi0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class s extends FrameLayout implements is {
     public static final long[] L = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -209,7 +209,7 @@ public abstract class s extends FrameLayout implements is {
             this.F = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet l02 = si.b0(i10).l0(tL_inputStickerSetShortName, null, false, true, new ai.f0(this, i14));
+            TLRPC.TL_messages_stickerSet l02 = si.b0(i10).l0(tL_inputStickerSetShortName, null, false, true, new ai.g0(this, i14));
             if (l02 != null && (arrayList4 = l02.documents) != null && !arrayList4.isEmpty()) {
                 this.E = l02;
             }

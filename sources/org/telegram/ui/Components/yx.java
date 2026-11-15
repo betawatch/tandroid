@@ -13,7 +13,7 @@ import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class yx extends FrameLayout implements org.telegram.ui.ActionBar.z5, te.b {
     public ValueAnimator E;
@@ -29,7 +29,7 @@ public abstract class yx extends FrameLayout implements org.telegram.ui.ActionBa
     public final ImageView h;
     public final FrameLayout n;
     public final xx r;
-    public final ai.j0 s;
+    public final ai.k0 s;
     public final View w;
     public float x;
     public boolean y;
@@ -74,9 +74,9 @@ public abstract class yx extends FrameLayout implements org.telegram.ui.ActionBa
         } else {
             addView(frameLayout, c8.ja.d(-1, 36.0f, org.telegram.messenger.ns.E1, 10.0f, 6.0f, 10.0f, 8.0f));
         }
-        ai.j0 j0Var = new ai.j0(16, context, this);
-        this.s = j0Var;
-        frameLayout.addView(j0Var, c8.ja.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        ai.k0 k0Var = new ai.k0(16, context, this);
+        this.s = k0Var;
+        frameLayout.addView(k0Var, c8.ja.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         kl0 kl0Var = new kl0();
         this.c = kl0Var;
@@ -150,7 +150,7 @@ public abstract class yx extends FrameLayout implements org.telegram.ui.ActionBa
         zpVar2.setCursorSize(org.telegram.messenger.g0.L(20.0f));
         zpVar2.setCursorWidth(1.5f);
         zpVar2.setTranslationY(org.telegram.messenger.g0.L(-2.0f));
-        j0Var.addView(zpVar2, c8.ja.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
+        k0Var.addView(zpVar2, c8.ja.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
         zpVar2.addTextChangedListener(new ah.j(this, 21));
         if (lyVar.v0) {
             View view3 = new View(context);
@@ -164,7 +164,7 @@ public abstract class yx extends FrameLayout implements org.telegram.ui.ActionBa
             org.telegram.ui.ActionBar.q6.k(this, g10, p10.a, p10.b, 4, 0.0f, e6Var, PorterDuff.Mode.MULTIPLY);
             view3.setBackground(g10);
             view3.setAlpha(0.0f);
-            j0Var.addView(view3, c8.ja.e(18, -1, 3));
+            k0Var.addView(view3, c8.ja.e(18, -1, 3));
         } else {
             zpVar = zpVar2;
             scaleType = scaleType2;

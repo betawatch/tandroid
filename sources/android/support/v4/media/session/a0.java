@@ -99,11 +99,11 @@ import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ii;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.vg;
-import org.telegram.ui.mm0;
+import org.telegram.ui.nm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public class a0 implements oa.a, mm0, com.google.android.gms.common.api.internal.q, ib.b, ii {
+public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal.q, ib.b, ii {
     public static int e;
     public static a0 f;
     public final /* synthetic */ int a;
@@ -381,13 +381,13 @@ public class a0 implements oa.a, mm0, com.google.android.gms.common.api.internal
         vgVar.run();
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void f(ArrayList arrayList) {
         String str = !arrayList.isEmpty() ? ((dz) arrayList.get(0)).c : null;
         if (str == null) {
             return;
         }
-        Utilities.e.c(new androidx.car.app.utils.a(str, (a20) this.b, (e2) this.c, (z10) this.d));
+        Utilities.e.c(new ai.r(str, (a20) this.b, (e2) this.c, (z10) this.d, 5));
     }
 
     @Override // org.telegram.ui.Components.ii
@@ -811,7 +811,7 @@ public class a0 implements oa.a, mm0, com.google.android.gms.common.api.internal
         String str = "";
         switch (this.a) {
             case 7:
-                return ((ai.s) this.b).a + ":" + ((String) this.c);
+                return ((ai.t) this.b).a + ":" + ((String) this.c);
             case 12:
                 StringBuilder sb2 = new StringBuilder(32);
                 sb2.append((String) this.b);
@@ -1108,7 +1108,7 @@ public class a0 implements oa.a, mm0, com.google.android.gms.common.api.internal
     public /* synthetic */ void K0() {
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void s0() {
     }
 

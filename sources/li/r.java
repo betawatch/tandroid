@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import bi.x4;
 import bi.z4;
 import c8.ja;
-import di.sb;
+import di.rb;
 import hi.q4;
 import java.util.WeakHashMap;
 import kg.t1;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class r extends e2 implements te.b {
     public final te.a a;
@@ -222,9 +222,9 @@ public final class r extends e2 implements te.b {
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         k0 k0Var = this.w;
-        sb sbVar = k0Var.i;
-        if (sbVar != null) {
-            sbVar.run();
+        rb rbVar = k0Var.i;
+        if (rbVar != null) {
+            rbVar.run();
         }
         k0Var.i = null;
     }

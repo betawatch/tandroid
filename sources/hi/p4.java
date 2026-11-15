@@ -18,7 +18,7 @@ import org.telegram.ui.Components.m60;
 import org.telegram.ui.an;
 import org.telegram.ui.bg0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class p4 implements View.OnLongClickListener {
                             }
                             bg0 bg0Var2 = new bg0(oVar.getContext(), e6Var2);
                             oVar.P = bg0Var2;
-                            bg0Var2.setOnDismissListener(new di.r9(oVar, 7));
+                            bg0Var2.setOnDismissListener(new di.q9(oVar, 7));
                             long b12 = kiVar.b1();
                             gj gjVar = anVar != null ? anVar.E5 : null;
                             TLRPC.TL_message tL_message = new TLRPC.TL_message();

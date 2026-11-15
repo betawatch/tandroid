@@ -2,18 +2,18 @@ package di;
 
 import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r6 implements z10 {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ v8 b;
+    public final /* synthetic */ u8 b;
     public final /* synthetic */ int c;
     public final /* synthetic */ z10 d;
     public final /* synthetic */ boolean[] e;
     public final /* synthetic */ z10 f;
 
-    public /* synthetic */ r6(v8 v8Var, int i7, z10 z10Var, boolean[] zArr, z10 z10Var2) {
-        this.b = v8Var;
+    public /* synthetic */ r6(u8 u8Var, int i7, z10 z10Var, boolean[] zArr, z10 z10Var2) {
+        this.b = u8Var;
         this.c = i7;
         this.d = z10Var;
         this.e = zArr;
@@ -57,8 +57,8 @@ public final /* synthetic */ class r6 implements z10 {
         }
     }
 
-    public /* synthetic */ r6(v8 v8Var, boolean[] zArr, int i7, z10 z10Var, z10 z10Var2) {
-        this.b = v8Var;
+    public /* synthetic */ r6(u8 u8Var, boolean[] zArr, int i7, z10 z10Var, z10 z10Var2) {
+        this.b = u8Var;
         this.e = zArr;
         this.c = i7;
         this.d = z10Var;

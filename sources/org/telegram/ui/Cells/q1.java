@@ -61,8 +61,8 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import android.widget.Toast;
 import c8.ua;
 import c8.zc;
-import di.bc;
-import di.mb;
+import di.ac;
+import di.lb;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -143,8 +143,8 @@ import org.telegram.ui.Components.fv0;
 import org.telegram.ui.Components.hk0;
 import org.telegram.ui.Components.i01;
 import org.telegram.ui.Components.jk0;
-import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.l60;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.m51;
 import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.ou0;
@@ -177,7 +177,7 @@ import org.telegram.ui.ol;
 import org.telegram.ui.tg0;
 import org.telegram.ui.xq0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is, te.b, p4, l60 {
     public static final float[] wd = new float[8];
@@ -456,7 +456,7 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
     public final ImageReceiver T7;
     public float T8;
     public float[] T9;
-    public final k90 Ta;
+    public final l90 Ta;
     public final ArrayList Tb;
     public final RectF Tc;
     public u70 U;
@@ -819,7 +819,7 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
     public int t5;
     public long t6;
     public int t7;
-    public bc t8;
+    public ac t8;
     public float t9;
     public TLRPC.User ta;
     public boolean tb;
@@ -9896,9 +9896,9 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
                             n1 = gj.n1(this.Q5.k);
                             if (n1 instanceof TLRPC.TL_messageMediaDice) {
                                 TLRPC.MessageMedia n12 = gj.n1(this.Q5.k);
-                                CharSequence concat = TextUtils.concat("💎", mb.P0(((n12 instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) n12).game_outcome) == null) ? j3 : tL_messages_emojiGameOutcome.stake_ton_amount), "  ", this.E9);
+                                CharSequence concat = TextUtils.concat("💎", lb.P0(((n12 instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) n12).game_outcome) == null) ? j3 : tL_messages_emojiGameOutcome.stake_ton_amount), "  ", this.E9);
                                 this.E9 = concat;
-                                this.E9 = mb.S0(concat, 0.55f, org.telegram.messenger.g0.L(-0.33f), 1.05f);
+                                this.E9 = lb.S0(concat, 0.55f, org.telegram.messenger.g0.L(-0.33f), 1.05f);
                             }
                             if (gj.B0(this.Q5.k) >= j3) {
                             }
@@ -10047,15 +10047,15 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
         n1 = gj.n1(this.Q5.k);
         if ((n1 instanceof TLRPC.TL_messageMediaDice) && ((TLRPC.TL_messageMediaDice) n1).game_outcome != null) {
             TLRPC.MessageMedia n122 = gj.n1(this.Q5.k);
-            CharSequence concat2 = TextUtils.concat("💎", mb.P0(((n122 instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) n122).game_outcome) == null) ? j3 : tL_messages_emojiGameOutcome.stake_ton_amount), "  ", this.E9);
+            CharSequence concat2 = TextUtils.concat("💎", lb.P0(((n122 instanceof TLRPC.TL_messageMediaDice) || (tL_messages_emojiGameOutcome = ((TLRPC.TL_messageMediaDice) n122).game_outcome) == null) ? j3 : tL_messages_emojiGameOutcome.stake_ton_amount), "  ", this.E9);
             this.E9 = concat2;
-            this.E9 = mb.S0(concat2, 0.55f, org.telegram.messenger.g0.L(-0.33f), 1.05f);
+            this.E9 = lb.S0(concat2, 0.55f, org.telegram.messenger.g0.L(-0.33f), 1.05f);
         }
         starsPrice = gj.B0(this.Q5.k) >= j3 ? getStarsPrice() : j3;
         if (starsPrice > j3) {
             CharSequence concat3 = TextUtils.concat("⭐️", org.telegram.messenger.g0.o0((int) starsPrice, 0), "  ", this.E9);
             this.E9 = concat3;
-            this.E9 = mb.X0(false, concat3, 0.8f, null, org.telegram.messenger.g0.L(-0.33f), 0.94f);
+            this.E9 = lb.X0(false, concat3, 0.8f, null, org.telegram.messenger.g0.L(-0.33f), 0.94f);
         }
         message = this.Q5.k;
         if (message != null && (i11 = message.schedule_repeat_period) != 0) {
@@ -14657,7 +14657,7 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
         return null;
     }
 
-    public k90 getBackgroundDrawable() {
+    public l90 getBackgroundDrawable() {
         return this.Ta;
     }
 
@@ -18080,7 +18080,7 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
                             canvas2.scale(T13, T13, rectF2.centerX(), rectF2.centerY());
                             int i18 = this.r8.i();
                             if (this.t8 == null) {
-                                this.t8 = new bc(2, 30);
+                                this.t8 = new ac(2, 30);
                             }
                             this.t8.g(rectF2);
                             this.t8.d();
@@ -20181,24 +20181,24 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
             if (checkBoxBase2 != null) {
                 checkBoxBase2.f(-1, z10, z12);
             }
-            k90 k90Var = this.Ta;
-            if (k90Var.e == z11) {
-                if (k90Var.f == z12 || z12) {
+            l90 l90Var = this.Ta;
+            if (l90Var.e == z11) {
+                if (l90Var.f == z12 || z12) {
                     return;
                 }
-                k90Var.d = z11 ? 1.0f : 0.0f;
-                k90Var.f = false;
+                l90Var.d = z11 ? 1.0f : 0.0f;
+                l90Var.f = false;
                 return;
             }
-            k90Var.e = z11;
-            k90Var.f = z12;
+            l90Var.e = z11;
+            l90Var.f = z12;
             if (z12) {
-                k90Var.c = SystemClock.elapsedRealtime();
+                l90Var.c = SystemClock.elapsedRealtime();
             } else {
-                k90Var.d = z11 ? 1.0f : 0.0f;
+                l90Var.d = z11 ? 1.0f : 0.0f;
             }
-            k90Var.a();
-            q1 q1Var = k90Var.m;
+            l90Var.a();
+            q1 q1Var = l90Var.m;
             if (q1Var != null) {
                 q1Var.invalidate();
                 if (q1Var.getParent() != null) {
@@ -20375,7 +20375,7 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
                         au0 au0Var2 = (au0) ah0Var;
                         if (au0Var2.n0 == null && !au0Var2.Z0) {
                             au0Var2.Z0 = true;
-                            Utilities.e.c(new ai.f1(au0Var2, n02, getMessageObject().K1, getMessageObject(), q1Var, 19));
+                            Utilities.e.c(new ai.g1(au0Var2, n02, getMessageObject().K1, getMessageObject(), q1Var, 19));
                             return true;
                         }
                     }
@@ -22004,10 +22004,10 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
                     float N12 = N1(motionEvent);
                     this.i1 = N12;
                     float f19 = this.h1;
-                    k90 k90Var = this.Ta;
-                    k90Var.h = f19;
-                    k90Var.i = N12;
-                    k90Var.l = SystemClock.elapsedRealtime();
+                    l90 l90Var = this.Ta;
+                    l90Var.h = f19;
+                    l90Var.i = N12;
+                    l90Var.l = SystemClock.elapsedRealtime();
                     boolean f02 = f0(0, motionEvent);
                     if (!f02) {
                         f02 = i0(motionEvent);
@@ -29277,15 +29277,15 @@ public class q1 extends z implements mm0, kc, org.telegram.messenger.x5, p9, is,
         }
         setClipChildren(false);
         setClipToPadding(false);
-        k90 k90Var = new k90();
-        k90Var.a = new Paint(1);
-        k90Var.b = null;
-        k90Var.h = -1.0f;
-        k90Var.i = -1.0f;
-        k90Var.j = -1.0f;
-        k90Var.k = -1.0f;
-        k90Var.m = this;
-        this.Ta = k90Var;
+        l90 l90Var = new l90();
+        l90Var.a = new Paint(1);
+        l90Var.b = null;
+        l90Var.h = -1.0f;
+        l90Var.i = -1.0f;
+        l90Var.j = -1.0f;
+        l90Var.k = -1.0f;
+        l90Var.m = this;
+        this.Ta = l90Var;
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.A7 = imageReceiver;
         imageReceiver.A1 = true;

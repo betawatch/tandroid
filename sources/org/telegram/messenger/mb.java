@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mb implements Runnable {
     public final /* synthetic */ int a;
@@ -31,88 +31,58 @@ public final /* synthetic */ class mb implements Runnable {
         this.c = i7;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(17:(8:(3:153|154|(27:156|158|159|160|10|11|12|13|(3:16|17|14)|38|39|40|41|(5:43|45|46|(1:48)(1:134)|49)(1:140)|50|51|(3:113|114|(3:116|(2:118|(1:120))|121))|53|54|(10:56|57|58|59|60|61|62|63|64|(2:66|(2:68|69)))(1:107)|70|71|(2:75|(1:77))|78|(1:80)|82|83))|70|71|(3:73|75|(0))|78|(0)|82|83)|10|11|12|13|(1:14)|38|39|40|41|(0)(0)|50|51|(0)|53|54|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0227, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(15:(8:(3:153|154|(27:156|158|159|160|10|11|12|13|(3:16|17|14)|38|39|40|41|(5:43|45|46|(1:48)(1:134)|49)(1:140)|50|51|(3:113|114|(3:116|(2:118|(1:120))|121))|53|54|(10:56|57|58|59|60|61|62|63|64|(2:66|(2:68|69)))(1:107)|70|71|(2:75|(1:77))|78|(1:80)|82|83))|70|71|(3:73|75|(0))|78|(0)|82|83)|12|13|(1:14)|38|39|40|41|(0)(0)|50|51|(0)|53|54|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0228, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:110:0x0228, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x0229, code lost:
     
         r16 = r9;
         r9 = null;
         r8 = r12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x0221, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0222, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x0222, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x0223, code lost:
     
         r16 = r9;
         r9 = null;
         r8 = r12;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:128:0x0237, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:128:0x0238, code lost:
     
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x0238, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:129:0x0239, code lost:
     
         r16 = r9;
         r8 = r12;
         r12 = r18;
         r11 = r19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:131:0x022d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:131:0x022e, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x022e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x022f, code lost:
     
         r16 = r9;
         r8 = r12;
         r12 = r18;
         r11 = r19;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:143:0x0260, code lost:
-    
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:144:0x0261, code lost:
-    
-        r20 = 0;
-        r16 = r9;
-        r8 = r12;
-        r13 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x0253, code lost:
-    
-        r11 = r20;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:146:0x0257, code lost:
-    
-        r0 = th;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x0258, code lost:
-    
-        r20 = 0;
-        r16 = r9;
-        r8 = r12;
-        r13 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:148:0x0248, code lost:
-    
-        r11 = r20;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:107:0x01bd  */
     /* JADX WARN: Removed duplicated region for block: B:113:0x0120 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:140:0x0117  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x00aa A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x02a3  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x02a4  */
     /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x02bb  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00f3 A[Catch: all -> 0x00bd, Exception -> 0x00c6, TRY_ENTER, TRY_LEAVE, TryCatch #19 {Exception -> 0x00c6, all -> 0x00bd, blocks: (B:17:0x00aa, B:43:0x00f3), top: B:16:0x00aa }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x02bc  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00f3 A[Catch: all -> 0x00bd, Exception -> 0x00c6, TRY_ENTER, TRY_LEAVE, TryCatch #20 {Exception -> 0x00c6, all -> 0x00bd, blocks: (B:17:0x00aa, B:43:0x00f3), top: B:16:0x00aa }] */
     /* JADX WARN: Removed duplicated region for block: B:56:0x016a  */
     /* JADX WARN: Removed duplicated region for block: B:77:0x01d6 A[Catch: all -> 0x01a1, Exception -> 0x01a4, TRY_LEAVE, TryCatch #31 {Exception -> 0x01a4, all -> 0x01a1, blocks: (B:64:0x017f, B:66:0x0185, B:68:0x018d, B:73:0x01c8, B:75:0x01ce, B:77:0x01d6, B:80:0x01e3), top: B:63:0x017f }] */
     /* JADX WARN: Removed duplicated region for block: B:80:0x01e3 A[Catch: all -> 0x01a1, Exception -> 0x01a4, TRY_ENTER, TRY_LEAVE, TryCatch #31 {Exception -> 0x01a4, all -> 0x01a1, blocks: (B:64:0x017f, B:66:0x0185, B:68:0x018d, B:73:0x01c8, B:75:0x01ce, B:77:0x01d6, B:80:0x01e3), top: B:63:0x017f }] */
@@ -230,36 +200,129 @@ public final /* synthetic */ class mb implements Runnable {
                     try {
                         try {
                             try {
-                                if (queryFinalized.next()) {
-                                    try {
-                                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                                        if (byteBufferValue != null) {
-                                            TLRPC.UserFull TLdeserialize = TLRPC.UserFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                            try {
-                                                TLdeserialize.pinned_msg_id = queryFinalized.intValue(1);
-                                                byteBufferValue.reuse();
-                                                userFull2 = TLdeserialize;
-                                                queryFinalized.dispose();
-                                                SQLiteDatabase sQLiteDatabase = vrVar.getMessagesStorage().b;
-                                                Locale locale = Locale.US;
-                                                queryFinalized = sQLiteDatabase.queryFinalized("SELECT mid FROM chat_pinned_v2 WHERE uid = " + user.id + " ORDER BY mid DESC", new Object[0]);
-                                                while (queryFinalized.next()) {
-                                                    try {
-                                                        int intValue = queryFinalized.intValue(0);
-                                                        arrayList5.add(Integer.valueOf(intValue));
-                                                        hashMap3.put(Integer.valueOf(intValue), null);
-                                                    } catch (Exception e10) {
-                                                        e = e10;
-                                                        sQLiteCursor = queryFinalized;
-                                                        i11 = 0;
-                                                        arrayList = arrayList5;
-                                                        userFull = userFull2;
-                                                        z10 = i11;
+                                try {
+                                    if (queryFinalized.next()) {
+                                        try {
+                                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                                            if (byteBufferValue != null) {
+                                                TLRPC.UserFull TLdeserialize = TLRPC.UserFull.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                                                try {
+                                                    TLdeserialize.pinned_msg_id = queryFinalized.intValue(1);
+                                                    byteBufferValue.reuse();
+                                                    userFull2 = TLdeserialize;
+                                                    queryFinalized.dispose();
+                                                    SQLiteDatabase sQLiteDatabase = vrVar.getMessagesStorage().b;
+                                                    Locale locale = Locale.US;
+                                                    queryFinalized = sQLiteDatabase.queryFinalized("SELECT mid FROM chat_pinned_v2 WHERE uid = " + user.id + " ORDER BY mid DESC", new Object[0]);
+                                                    while (queryFinalized.next()) {
                                                         try {
-                                                            vrVar.o(e, true);
-                                                            final np messagesController = vrVar.getMessagesController();
-                                                            messagesController.getClass();
-                                                            final ArrayList arrayList6 = arrayList;
+                                                            int intValue = queryFinalized.intValue(0);
+                                                            arrayList5.add(Integer.valueOf(intValue));
+                                                            hashMap3.put(Integer.valueOf(intValue), null);
+                                                        } catch (Exception e10) {
+                                                            e = e10;
+                                                            sQLiteCursor = queryFinalized;
+                                                            i11 = 0;
+                                                            arrayList = arrayList5;
+                                                            userFull = userFull2;
+                                                            z10 = i11;
+                                                            try {
+                                                                vrVar.o(e, true);
+                                                                final np messagesController = vrVar.getMessagesController();
+                                                                messagesController.getClass();
+                                                                final ArrayList arrayList6 = arrayList;
+                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        np npVar = np.this;
+                                                                        a0.h hVar = npVar.l1;
+                                                                        LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                        LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                        TLRPC.User user2 = user;
+                                                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                            npVar.W2(user2, i16, z13, null);
+                                                                        }
+                                                                        TLRPC.UserFull userFull3 = userFull;
+                                                                        if (userFull3 != null) {
+                                                                            if (hVar.f(user2.id) == null) {
+                                                                                hVar.k(userFull3, user2.id);
+                                                                                npVar.t7.M(user2.id);
+                                                                                di.u8.y(npVar.currentAccount, false).Q(userFull3);
+                                                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                                boolean z14 = userFull3.blocked;
+                                                                                int i17 = ns.g0;
+                                                                                if (z14) {
+                                                                                    if (indexOfKey < 0) {
+                                                                                        longSparseIntArray.put(user2.id, 1);
+                                                                                        npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                    }
+                                                                                } else if (indexOfKey >= 0) {
+                                                                                    longSparseIntArray.removeAt(indexOfKey);
+                                                                                    npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                }
+                                                                            }
+                                                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull3);
+                                                                        }
+                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                    }
+                                                                });
+                                                                if (sQLiteCursor == null) {
+                                                                }
+                                                            } catch (Throwable th2) {
+                                                                th = th2;
+                                                                final np messagesController2 = vrVar.getMessagesController();
+                                                                messagesController2.getClass();
+                                                                final ArrayList arrayList7 = arrayList;
+                                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        np npVar = np.this;
+                                                                        a0.h hVar = npVar.l1;
+                                                                        LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                        LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                        TLRPC.User user2 = user;
+                                                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                            npVar.W2(user2, i16, z13, null);
+                                                                        }
+                                                                        TLRPC.UserFull userFull3 = userFull;
+                                                                        if (userFull3 != null) {
+                                                                            if (hVar.f(user2.id) == null) {
+                                                                                hVar.k(userFull3, user2.id);
+                                                                                npVar.t7.M(user2.id);
+                                                                                di.u8.y(npVar.currentAccount, false).Q(userFull3);
+                                                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                                boolean z14 = userFull3.blocked;
+                                                                                int i17 = ns.g0;
+                                                                                if (z14) {
+                                                                                    if (indexOfKey < 0) {
+                                                                                        longSparseIntArray.put(user2.id, 1);
+                                                                                        npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                    }
+                                                                                } else if (indexOfKey >= 0) {
+                                                                                    longSparseIntArray.removeAt(indexOfKey);
+                                                                                    npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                }
+                                                                            }
+                                                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull3);
+                                                                        }
+                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                    }
+                                                                });
+                                                                if (sQLiteCursor != null) {
+                                                                    sQLiteCursor.dispose();
+                                                                }
+                                                                throw th;
+                                                            }
+                                                        } catch (Throwable th3) {
+                                                            th = th3;
+                                                            sQLiteCursor = queryFinalized;
+                                                            i11 = 0;
+                                                            arrayList = arrayList5;
+                                                            userFull = userFull2;
+                                                            z10 = i11;
+                                                            final np messagesController22 = vrVar.getMessagesController();
+                                                            messagesController22.getClass();
+                                                            final ArrayList arrayList72 = arrayList;
                                                             g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
@@ -276,7 +339,7 @@ public final /* synthetic */ class mb implements Runnable {
                                                                         if (hVar.f(user2.id) == null) {
                                                                             hVar.k(userFull3, user2.id);
                                                                             npVar.t7.M(user2.id);
-                                                                            di.v8.y(npVar.currentAccount, false).Q(userFull3);
+                                                                            di.u8.y(npVar.currentAccount, false).Q(userFull3);
                                                                             int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                             boolean z14 = userFull3.blocked;
                                                                             int i17 = ns.g0;
@@ -292,16 +355,85 @@ public final /* synthetic */ class mb implements Runnable {
                                                                         }
                                                                         npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull3);
                                                                     }
-                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                }
+                                                            });
+                                                            if (sQLiteCursor != null) {
+                                                            }
+                                                            throw th;
+                                                        }
+                                                    }
+                                                    queryFinalized.dispose();
+                                                    queryFinalized = vrVar.b.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + user.id, new Object[0]);
+                                                    if (queryFinalized.next()) {
+                                                        z12 = false;
+                                                        i12 = 0;
+                                                    } else {
+                                                        int intValue2 = queryFinalized.intValue(0);
+                                                        try {
+                                                            z12 = queryFinalized.intValue(1) != 0;
+                                                            i12 = intValue2;
+                                                        } catch (Exception e11) {
+                                                            e = e11;
+                                                            TLRPC.UserFull userFull3 = userFull2;
+                                                            z11 = false;
+                                                            userFull = userFull3;
+                                                            arrayList = arrayList5;
+                                                            i11 = intValue2;
+                                                            sQLiteCursor = queryFinalized;
+                                                            z10 = z11;
+                                                            vrVar.o(e, true);
+                                                            final np messagesController3 = vrVar.getMessagesController();
+                                                            messagesController3.getClass();
+                                                            final ArrayList arrayList62 = arrayList;
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    np npVar = np.this;
+                                                                    a0.h hVar = npVar.l1;
+                                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                    TLRPC.User user2 = user;
+                                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                        npVar.W2(user2, i16, z13, null);
+                                                                    }
+                                                                    TLRPC.UserFull userFull32 = userFull;
+                                                                    if (userFull32 != null) {
+                                                                        if (hVar.f(user2.id) == null) {
+                                                                            hVar.k(userFull32, user2.id);
+                                                                            npVar.t7.M(user2.id);
+                                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                            boolean z14 = userFull32.blocked;
+                                                                            int i17 = ns.g0;
+                                                                            if (z14) {
+                                                                                if (indexOfKey < 0) {
+                                                                                    longSparseIntArray.put(user2.id, 1);
+                                                                                    npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                }
+                                                                            } else if (indexOfKey >= 0) {
+                                                                                longSparseIntArray.removeAt(indexOfKey);
+                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                            }
+                                                                        }
+                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                                    }
+                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                                 }
                                                             });
                                                             if (sQLiteCursor == null) {
                                                             }
-                                                        } catch (Throwable th2) {
-                                                            th = th2;
-                                                            final np messagesController2 = vrVar.getMessagesController();
-                                                            messagesController2.getClass();
-                                                            final ArrayList arrayList7 = arrayList;
+                                                        } catch (Throwable th4) {
+                                                            th = th4;
+                                                            TLRPC.UserFull userFull4 = userFull2;
+                                                            z10 = 0;
+                                                            userFull = userFull4;
+                                                            arrayList = arrayList5;
+                                                            i11 = intValue2;
+                                                            sQLiteCursor = queryFinalized;
+                                                            final np messagesController222 = vrVar.getMessagesController();
+                                                            messagesController222.getClass();
+                                                            final ArrayList arrayList722 = arrayList;
                                                             g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
@@ -313,14 +445,14 @@ public final /* synthetic */ class mb implements Runnable {
                                                                     if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
                                                                         npVar.W2(user2, i16, z13, null);
                                                                     }
-                                                                    TLRPC.UserFull userFull3 = userFull;
-                                                                    if (userFull3 != null) {
+                                                                    TLRPC.UserFull userFull32 = userFull;
+                                                                    if (userFull32 != null) {
                                                                         if (hVar.f(user2.id) == null) {
-                                                                            hVar.k(userFull3, user2.id);
+                                                                            hVar.k(userFull32, user2.id);
                                                                             npVar.t7.M(user2.id);
-                                                                            di.v8.y(npVar.currentAccount, false).Q(userFull3);
+                                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
                                                                             int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                            boolean z14 = userFull3.blocked;
+                                                                            boolean z14 = userFull32.blocked;
                                                                             int i17 = ns.g0;
                                                                             if (z14) {
                                                                                 if (indexOfKey < 0) {
@@ -332,312 +464,250 @@ public final /* synthetic */ class mb implements Runnable {
                                                                                 npVar.getNotificationCenter().k(i17, new Object[0]);
                                                                             }
                                                                         }
-                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull3);
+                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                                     }
-                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                                 }
                                                             });
                                                             if (sQLiteCursor != null) {
-                                                                sQLiteCursor.dispose();
                                                             }
                                                             throw th;
                                                         }
-                                                    } catch (Throwable th3) {
-                                                        th = th3;
-                                                        sQLiteCursor = queryFinalized;
-                                                        i11 = 0;
-                                                        arrayList = arrayList5;
-                                                        userFull = userFull2;
-                                                        z10 = i11;
-                                                        final np messagesController22 = vrVar.getMessagesController();
-                                                        messagesController22.getClass();
-                                                        final ArrayList arrayList72 = arrayList;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                np npVar = np.this;
-                                                                a0.h hVar = npVar.l1;
-                                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                TLRPC.User user2 = user;
-                                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                    npVar.W2(user2, i16, z13, null);
-                                                                }
-                                                                TLRPC.UserFull userFull3 = userFull;
-                                                                if (userFull3 != null) {
-                                                                    if (hVar.f(user2.id) == null) {
-                                                                        hVar.k(userFull3, user2.id);
-                                                                        npVar.t7.M(user2.id);
-                                                                        di.v8.y(npVar.currentAccount, false).Q(userFull3);
-                                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                        boolean z14 = userFull3.blocked;
-                                                                        int i17 = ns.g0;
-                                                                        if (z14) {
-                                                                            if (indexOfKey < 0) {
-                                                                                longSparseIntArray.put(user2.id, 1);
-                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                            }
-                                                                        } else if (indexOfKey >= 0) {
-                                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                                            npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                        }
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull3);
-                                                                }
-                                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                            }
-                                                        });
-                                                        if (sQLiteCursor != null) {
-                                                        }
-                                                        throw th;
                                                     }
-                                                }
-                                                queryFinalized.dispose();
-                                                queryFinalized = vrVar.b.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + user.id, new Object[0]);
-                                                if (queryFinalized.next()) {
-                                                    z12 = false;
-                                                    i12 = 0;
-                                                } else {
-                                                    int intValue2 = queryFinalized.intValue(0);
-                                                    try {
-                                                        z12 = queryFinalized.intValue(1) != 0;
-                                                        i12 = intValue2;
-                                                    } catch (Exception e11) {
-                                                        e = e11;
-                                                        TLRPC.UserFull userFull3 = userFull2;
-                                                        z11 = false;
-                                                        userFull = userFull3;
-                                                        arrayList = arrayList5;
-                                                        i11 = intValue2;
-                                                        sQLiteCursor = queryFinalized;
-                                                        z10 = z11;
-                                                        vrVar.o(e, true);
-                                                        final np messagesController3 = vrVar.getMessagesController();
-                                                        messagesController3.getClass();
-                                                        final ArrayList arrayList62 = arrayList;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                np npVar = np.this;
-                                                                a0.h hVar = npVar.l1;
-                                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                TLRPC.User user2 = user;
-                                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                    npVar.W2(user2, i16, z13, null);
-                                                                }
-                                                                TLRPC.UserFull userFull32 = userFull;
-                                                                if (userFull32 != null) {
-                                                                    if (hVar.f(user2.id) == null) {
-                                                                        hVar.k(userFull32, user2.id);
-                                                                        npVar.t7.M(user2.id);
-                                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                        boolean z14 = userFull32.blocked;
-                                                                        int i17 = ns.g0;
-                                                                        if (z14) {
-                                                                            if (indexOfKey < 0) {
-                                                                                longSparseIntArray.put(user2.id, 1);
-                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                            }
-                                                                        } else if (indexOfKey >= 0) {
-                                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                                            npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                        }
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                }
-                                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                            }
-                                                        });
-                                                        if (sQLiteCursor == null) {
-                                                        }
-                                                    } catch (Throwable th4) {
-                                                        th = th4;
-                                                        TLRPC.UserFull userFull4 = userFull2;
-                                                        z10 = 0;
-                                                        userFull = userFull4;
-                                                        arrayList = arrayList5;
-                                                        i11 = intValue2;
-                                                        sQLiteCursor = queryFinalized;
-                                                        final np messagesController222 = vrVar.getMessagesController();
-                                                        messagesController222.getClass();
-                                                        final ArrayList arrayList722 = arrayList;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                np npVar = np.this;
-                                                                a0.h hVar = npVar.l1;
-                                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                TLRPC.User user2 = user;
-                                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                    npVar.W2(user2, i16, z13, null);
-                                                                }
-                                                                TLRPC.UserFull userFull32 = userFull;
-                                                                if (userFull32 != null) {
-                                                                    if (hVar.f(user2.id) == null) {
-                                                                        hVar.k(userFull32, user2.id);
-                                                                        npVar.t7.M(user2.id);
-                                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                        boolean z14 = userFull32.blocked;
-                                                                        int i17 = ns.g0;
-                                                                        if (z14) {
-                                                                            if (indexOfKey < 0) {
-                                                                                longSparseIntArray.put(user2.id, 1);
-                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                            }
-                                                                        } else if (indexOfKey >= 0) {
-                                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                                            npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                        }
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                }
-                                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                            }
-                                                        });
-                                                        if (sQLiteCursor != null) {
-                                                        }
-                                                        throw th;
-                                                    }
-                                                }
-                                                queryFinalized.dispose();
-                                                if (userFull2 != null) {
-                                                    try {
-                                                        if (userFull2.pinned_msg_id != 0) {
-                                                            if (!arrayList5.isEmpty()) {
-                                                                if (userFull2.pinned_msg_id > ((Integer) arrayList5.get(0)).intValue()) {
-                                                                }
-                                                            }
-                                                            arrayList5.clear();
-                                                            arrayList5.add(Integer.valueOf(userFull2.pinned_msg_id));
-                                                            hashMap3.put(Integer.valueOf(userFull2.pinned_msg_id), null);
-                                                        }
-                                                    } catch (Exception e12) {
-                                                        e = e12;
-                                                        arrayList = arrayList5;
-                                                        sQLiteCursor = null;
-                                                        userFull = userFull2;
-                                                        z10 = z12;
-                                                        i11 = i12;
-                                                        vrVar.o(e, true);
-                                                        final np messagesController32 = vrVar.getMessagesController();
-                                                        messagesController32.getClass();
-                                                        final ArrayList arrayList622 = arrayList;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                np npVar = np.this;
-                                                                a0.h hVar = npVar.l1;
-                                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                TLRPC.User user2 = user;
-                                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                    npVar.W2(user2, i16, z13, null);
-                                                                }
-                                                                TLRPC.UserFull userFull32 = userFull;
-                                                                if (userFull32 != null) {
-                                                                    if (hVar.f(user2.id) == null) {
-                                                                        hVar.k(userFull32, user2.id);
-                                                                        npVar.t7.M(user2.id);
-                                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                        boolean z14 = userFull32.blocked;
-                                                                        int i17 = ns.g0;
-                                                                        if (z14) {
-                                                                            if (indexOfKey < 0) {
-                                                                                longSparseIntArray.put(user2.id, 1);
-                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                            }
-                                                                        } else if (indexOfKey >= 0) {
-                                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                                            npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                        }
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                }
-                                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList622, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                            }
-                                                        });
-                                                        if (sQLiteCursor == null) {
-                                                        }
-                                                    } catch (Throwable th5) {
-                                                        th = th5;
-                                                        arrayList = arrayList5;
-                                                        sQLiteCursor = null;
-                                                        userFull = userFull2;
-                                                        z10 = z12;
-                                                        i11 = i12;
-                                                        final np messagesController2222 = vrVar.getMessagesController();
-                                                        messagesController2222.getClass();
-                                                        final ArrayList arrayList7222 = arrayList;
-                                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                            @Override // java.lang.Runnable
-                                                            public final void run() {
-                                                                np npVar = np.this;
-                                                                a0.h hVar = npVar.l1;
-                                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                TLRPC.User user2 = user;
-                                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                    npVar.W2(user2, i16, z13, null);
-                                                                }
-                                                                TLRPC.UserFull userFull32 = userFull;
-                                                                if (userFull32 != null) {
-                                                                    if (hVar.f(user2.id) == null) {
-                                                                        hVar.k(userFull32, user2.id);
-                                                                        npVar.t7.M(user2.id);
-                                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                        boolean z14 = userFull32.blocked;
-                                                                        int i17 = ns.g0;
-                                                                        if (z14) {
-                                                                            if (indexOfKey < 0) {
-                                                                                longSparseIntArray.put(user2.id, 1);
-                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                            }
-                                                                        } else if (indexOfKey >= 0) {
-                                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                                            npVar.getNotificationCenter().k(i17, new Object[0]);
-                                                                        }
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                }
-                                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                            }
-                                                        });
-                                                        if (sQLiteCursor != null) {
-                                                        }
-                                                        throw th;
-                                                    }
-                                                }
-                                                if (arrayList5.isEmpty()) {
-                                                    try {
-                                                        TLRPC.UserFull userFull5 = userFull2;
+                                                    queryFinalized.dispose();
+                                                    if (userFull2 != null) {
                                                         try {
-                                                            userFull = userFull5;
-                                                            arrayList = arrayList5;
-                                                            sQLiteCursor2 = null;
-                                                            try {
-                                                                ArrayList P0 = vrVar.getMediaDataController().P0(user.id, 0L, arrayList, true);
-                                                                if (P0 != null) {
-                                                                    int size3 = P0.size();
-                                                                    for (int i17 = 0; i17 < size3; i17++) {
-                                                                        gj gjVar = (gj) P0.get(i17);
-                                                                        hashMap3.put(Integer.valueOf(gjVar.e1()), gjVar);
+                                                            if (userFull2.pinned_msg_id != 0) {
+                                                                if (!arrayList5.isEmpty()) {
+                                                                    if (userFull2.pinned_msg_id > ((Integer) arrayList5.get(0)).intValue()) {
                                                                     }
                                                                 }
-                                                            } catch (Exception e13) {
-                                                                e = e13;
+                                                                arrayList5.clear();
+                                                                arrayList5.add(Integer.valueOf(userFull2.pinned_msg_id));
+                                                                hashMap3.put(Integer.valueOf(userFull2.pinned_msg_id), null);
+                                                            }
+                                                        } catch (Exception e12) {
+                                                            e = e12;
+                                                            arrayList = arrayList5;
+                                                            sQLiteCursor = null;
+                                                            userFull = userFull2;
+                                                            z10 = z12;
+                                                            i11 = i12;
+                                                            vrVar.o(e, true);
+                                                            final np messagesController32 = vrVar.getMessagesController();
+                                                            messagesController32.getClass();
+                                                            final ArrayList arrayList622 = arrayList;
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    np npVar = np.this;
+                                                                    a0.h hVar = npVar.l1;
+                                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                    TLRPC.User user2 = user;
+                                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                        npVar.W2(user2, i16, z13, null);
+                                                                    }
+                                                                    TLRPC.UserFull userFull32 = userFull;
+                                                                    if (userFull32 != null) {
+                                                                        if (hVar.f(user2.id) == null) {
+                                                                            hVar.k(userFull32, user2.id);
+                                                                            npVar.t7.M(user2.id);
+                                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                            boolean z14 = userFull32.blocked;
+                                                                            int i17 = ns.g0;
+                                                                            if (z14) {
+                                                                                if (indexOfKey < 0) {
+                                                                                    longSparseIntArray.put(user2.id, 1);
+                                                                                    npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                }
+                                                                            } else if (indexOfKey >= 0) {
+                                                                                longSparseIntArray.removeAt(indexOfKey);
+                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                            }
+                                                                        }
+                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                                    }
+                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList622, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                }
+                                                            });
+                                                            if (sQLiteCursor == null) {
+                                                            }
+                                                        } catch (Throwable th5) {
+                                                            th = th5;
+                                                            arrayList = arrayList5;
+                                                            sQLiteCursor = null;
+                                                            userFull = userFull2;
+                                                            z10 = z12;
+                                                            i11 = i12;
+                                                            final np messagesController2222 = vrVar.getMessagesController();
+                                                            messagesController2222.getClass();
+                                                            final ArrayList arrayList7222 = arrayList;
+                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    np npVar = np.this;
+                                                                    a0.h hVar = npVar.l1;
+                                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                    TLRPC.User user2 = user;
+                                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                        npVar.W2(user2, i16, z13, null);
+                                                                    }
+                                                                    TLRPC.UserFull userFull32 = userFull;
+                                                                    if (userFull32 != null) {
+                                                                        if (hVar.f(user2.id) == null) {
+                                                                            hVar.k(userFull32, user2.id);
+                                                                            npVar.t7.M(user2.id);
+                                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                            boolean z14 = userFull32.blocked;
+                                                                            int i17 = ns.g0;
+                                                                            if (z14) {
+                                                                                if (indexOfKey < 0) {
+                                                                                    longSparseIntArray.put(user2.id, 1);
+                                                                                    npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                                }
+                                                                            } else if (indexOfKey >= 0) {
+                                                                                longSparseIntArray.removeAt(indexOfKey);
+                                                                                npVar.getNotificationCenter().k(i17, new Object[0]);
+                                                                            }
+                                                                        }
+                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                                    }
+                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                }
+                                                            });
+                                                            if (sQLiteCursor != null) {
+                                                            }
+                                                            throw th;
+                                                        }
+                                                    }
+                                                    if (arrayList5.isEmpty()) {
+                                                        try {
+                                                            TLRPC.UserFull userFull5 = userFull2;
+                                                            try {
+                                                                userFull = userFull5;
+                                                                arrayList = arrayList5;
+                                                                sQLiteCursor2 = null;
+                                                                try {
+                                                                    ArrayList P0 = vrVar.getMediaDataController().P0(user.id, 0L, arrayList, true);
+                                                                    if (P0 != null) {
+                                                                        int size3 = P0.size();
+                                                                        for (int i17 = 0; i17 < size3; i17++) {
+                                                                            gj gjVar = (gj) P0.get(i17);
+                                                                            hashMap3.put(Integer.valueOf(gjVar.e1()), gjVar);
+                                                                        }
+                                                                    }
+                                                                } catch (Exception e13) {
+                                                                    e = e13;
+                                                                    sQLiteCursor = sQLiteCursor2;
+                                                                    z10 = z12;
+                                                                    i11 = i12;
+                                                                    vrVar.o(e, true);
+                                                                    final np messagesController322 = vrVar.getMessagesController();
+                                                                    messagesController322.getClass();
+                                                                    final ArrayList arrayList6222 = arrayList;
+                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            np npVar = np.this;
+                                                                            a0.h hVar = npVar.l1;
+                                                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                            TLRPC.User user2 = user;
+                                                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                                npVar.W2(user2, i16, z13, null);
+                                                                            }
+                                                                            TLRPC.UserFull userFull32 = userFull;
+                                                                            if (userFull32 != null) {
+                                                                                if (hVar.f(user2.id) == null) {
+                                                                                    hVar.k(userFull32, user2.id);
+                                                                                    npVar.t7.M(user2.id);
+                                                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                                    boolean z14 = userFull32.blocked;
+                                                                                    int i172 = ns.g0;
+                                                                                    if (z14) {
+                                                                                        if (indexOfKey < 0) {
+                                                                                            longSparseIntArray.put(user2.id, 1);
+                                                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                                        }
+                                                                                    } else if (indexOfKey >= 0) {
+                                                                                        longSparseIntArray.removeAt(indexOfKey);
+                                                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                                    }
+                                                                                }
+                                                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                                            }
+                                                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                        }
+                                                                    });
+                                                                    if (sQLiteCursor == null) {
+                                                                        sQLiteCursor.dispose();
+                                                                        return;
+                                                                    }
+                                                                    return;
+                                                                } catch (Throwable th6) {
+                                                                    th = th6;
+                                                                    sQLiteCursor = sQLiteCursor2;
+                                                                    z10 = z12;
+                                                                    i11 = i12;
+                                                                    final np messagesController22222 = vrVar.getMessagesController();
+                                                                    messagesController22222.getClass();
+                                                                    final ArrayList arrayList72222 = arrayList;
+                                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            np npVar = np.this;
+                                                                            a0.h hVar = npVar.l1;
+                                                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                                            TLRPC.User user2 = user;
+                                                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                                npVar.W2(user2, i16, z13, null);
+                                                                            }
+                                                                            TLRPC.UserFull userFull32 = userFull;
+                                                                            if (userFull32 != null) {
+                                                                                if (hVar.f(user2.id) == null) {
+                                                                                    hVar.k(userFull32, user2.id);
+                                                                                    npVar.t7.M(user2.id);
+                                                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                                    boolean z14 = userFull32.blocked;
+                                                                                    int i172 = ns.g0;
+                                                                                    if (z14) {
+                                                                                        if (indexOfKey < 0) {
+                                                                                            longSparseIntArray.put(user2.id, 1);
+                                                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                                        }
+                                                                                    } else if (indexOfKey >= 0) {
+                                                                                        longSparseIntArray.removeAt(indexOfKey);
+                                                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                                    }
+                                                                                }
+                                                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                                            }
+                                                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                        }
+                                                                    });
+                                                                    if (sQLiteCursor != null) {
+                                                                    }
+                                                                    throw th;
+                                                                }
+                                                            } catch (Exception e14) {
+                                                                e = e14;
+                                                                arrayList = arrayList5;
+                                                                userFull = userFull5;
+                                                                sQLiteCursor2 = null;
                                                                 sQLiteCursor = sQLiteCursor2;
                                                                 z10 = z12;
                                                                 i11 = i12;
                                                                 vrVar.o(e, true);
-                                                                final np messagesController322 = vrVar.getMessagesController();
-                                                                messagesController322.getClass();
-                                                                final ArrayList arrayList6222 = arrayList;
+                                                                final np messagesController3222 = vrVar.getMessagesController();
+                                                                messagesController3222.getClass();
+                                                                final ArrayList arrayList62222 = arrayList;
                                                                 g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
@@ -654,7 +724,7 @@ public final /* synthetic */ class mb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull32, user2.id);
                                                                                 npVar.t7.M(user2.id);
-                                                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                                di.u8.y(npVar.currentAccount, false).Q(userFull32);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z14 = userFull32.blocked;
                                                                                 int i172 = ns.g0;
@@ -670,22 +740,22 @@ public final /* synthetic */ class mb implements Runnable {
                                                                             }
                                                                             npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                                         }
-                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                                     }
                                                                 });
                                                                 if (sQLiteCursor == null) {
-                                                                    sQLiteCursor.dispose();
-                                                                    return;
                                                                 }
-                                                                return;
-                                                            } catch (Throwable th6) {
-                                                                th = th6;
+                                                            } catch (Throwable th7) {
+                                                                th = th7;
+                                                                arrayList = arrayList5;
+                                                                userFull = userFull5;
+                                                                sQLiteCursor2 = null;
                                                                 sQLiteCursor = sQLiteCursor2;
                                                                 z10 = z12;
                                                                 i11 = i12;
-                                                                final np messagesController22222 = vrVar.getMessagesController();
-                                                                messagesController22222.getClass();
-                                                                final ArrayList arrayList72222 = arrayList;
+                                                                final np messagesController222222 = vrVar.getMessagesController();
+                                                                messagesController222222.getClass();
+                                                                final ArrayList arrayList722222 = arrayList;
                                                                 g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                                                     @Override // java.lang.Runnable
                                                                     public final void run() {
@@ -702,7 +772,7 @@ public final /* synthetic */ class mb implements Runnable {
                                                                             if (hVar.f(user2.id) == null) {
                                                                                 hVar.k(userFull32, user2.id);
                                                                                 npVar.t7.M(user2.id);
-                                                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                                di.u8.y(npVar.currentAccount, false).Q(userFull32);
                                                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                                                 boolean z14 = userFull32.blocked;
                                                                                 int i172 = ns.g0;
@@ -718,434 +788,445 @@ public final /* synthetic */ class mb implements Runnable {
                                                                             }
                                                                             npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                                         }
-                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                                     }
                                                                 });
                                                                 if (sQLiteCursor != null) {
                                                                 }
                                                                 throw th;
                                                             }
-                                                        } catch (Exception e14) {
-                                                            e = e14;
+                                                        } catch (Exception e15) {
+                                                            e = e15;
                                                             arrayList = arrayList5;
-                                                            userFull = userFull5;
-                                                            sQLiteCursor2 = null;
-                                                            sQLiteCursor = sQLiteCursor2;
-                                                            z10 = z12;
-                                                            i11 = i12;
-                                                            vrVar.o(e, true);
-                                                            final np messagesController3222 = vrVar.getMessagesController();
-                                                            messagesController3222.getClass();
-                                                            final ArrayList arrayList62222 = arrayList;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                                @Override // java.lang.Runnable
-                                                                public final void run() {
-                                                                    np npVar = np.this;
-                                                                    a0.h hVar = npVar.l1;
-                                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                    TLRPC.User user2 = user;
-                                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                        npVar.W2(user2, i16, z13, null);
-                                                                    }
-                                                                    TLRPC.UserFull userFull32 = userFull;
-                                                                    if (userFull32 != null) {
-                                                                        if (hVar.f(user2.id) == null) {
-                                                                            hVar.k(userFull32, user2.id);
-                                                                            npVar.t7.M(user2.id);
-                                                                            di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                            boolean z14 = userFull32.blocked;
-                                                                            int i172 = ns.g0;
-                                                                            if (z14) {
-                                                                                if (indexOfKey < 0) {
-                                                                                    longSparseIntArray.put(user2.id, 1);
-                                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                                }
-                                                                            } else if (indexOfKey >= 0) {
-                                                                                longSparseIntArray.removeAt(indexOfKey);
-                                                                                npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                            }
-                                                                        }
-                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                                }
-                                                            });
-                                                            if (sQLiteCursor == null) {
-                                                            }
-                                                        } catch (Throwable th7) {
-                                                            th = th7;
+                                                            userFull = userFull2;
+                                                        } catch (Throwable th8) {
+                                                            th = th8;
                                                             arrayList = arrayList5;
-                                                            userFull = userFull5;
-                                                            sQLiteCursor2 = null;
-                                                            sQLiteCursor = sQLiteCursor2;
-                                                            z10 = z12;
-                                                            i11 = i12;
-                                                            final np messagesController222222 = vrVar.getMessagesController();
-                                                            messagesController222222.getClass();
-                                                            final ArrayList arrayList722222 = arrayList;
-                                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                                @Override // java.lang.Runnable
-                                                                public final void run() {
-                                                                    np npVar = np.this;
-                                                                    a0.h hVar = npVar.l1;
-                                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                                    TLRPC.User user2 = user;
-                                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                                        npVar.W2(user2, i16, z13, null);
-                                                                    }
-                                                                    TLRPC.UserFull userFull32 = userFull;
-                                                                    if (userFull32 != null) {
-                                                                        if (hVar.f(user2.id) == null) {
-                                                                            hVar.k(userFull32, user2.id);
-                                                                            npVar.t7.M(user2.id);
-                                                                            di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                            boolean z14 = userFull32.blocked;
-                                                                            int i172 = ns.g0;
-                                                                            if (z14) {
-                                                                                if (indexOfKey < 0) {
-                                                                                    longSparseIntArray.put(user2.id, 1);
-                                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                                }
-                                                                            } else if (indexOfKey >= 0) {
-                                                                                longSparseIntArray.removeAt(indexOfKey);
-                                                                                npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                            }
-                                                                        }
-                                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                                    }
-                                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                                }
-                                                            });
-                                                            if (sQLiteCursor != null) {
-                                                            }
-                                                            throw th;
+                                                            userFull = userFull2;
                                                         }
-                                                    } catch (Exception e15) {
-                                                        e = e15;
+                                                    } else {
                                                         arrayList = arrayList5;
-                                                        userFull = userFull2;
-                                                    } catch (Throwable th8) {
-                                                        th = th8;
-                                                        arrayList = arrayList5;
+                                                        sQLiteCursor2 = null;
                                                         userFull = userFull2;
                                                     }
-                                                } else {
+                                                    arrayList2 = new ArrayList();
+                                                    if (userFull != null && (userFull.flags2 & 64) != 0) {
+                                                        j3 = userFull.personal_channel_id;
+                                                        if (j3 != 0) {
+                                                            arrayList2.add(Long.valueOf(j3));
+                                                        }
+                                                    }
+                                                    if (!arrayList2.isEmpty()) {
+                                                        ArrayList arrayList8 = new ArrayList();
+                                                        vrVar.Q(TextUtils.join(",", arrayList2), arrayList8);
+                                                        g0.h3(new sp(vrVar, arrayList8, 9));
+                                                    }
+                                                    final np messagesController4 = vrVar.getMessagesController();
+                                                    messagesController4.getClass();
+                                                    final ArrayList arrayList9 = arrayList;
+                                                    final boolean z14 = z12;
+                                                    final int i18 = i12;
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            np npVar = np.this;
+                                                            a0.h hVar = npVar.l1;
+                                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                            TLRPC.User user2 = user;
+                                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                npVar.W2(user2, i16, z13, null);
+                                                            }
+                                                            TLRPC.UserFull userFull32 = userFull;
+                                                            if (userFull32 != null) {
+                                                                if (hVar.f(user2.id) == null) {
+                                                                    hVar.k(userFull32, user2.id);
+                                                                    npVar.t7.M(user2.id);
+                                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                    boolean z142 = userFull32.blocked;
+                                                                    int i172 = ns.g0;
+                                                                    if (z142) {
+                                                                        if (indexOfKey < 0) {
+                                                                            longSparseIntArray.put(user2.id, 1);
+                                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                        }
+                                                                    } else if (indexOfKey >= 0) {
+                                                                        longSparseIntArray.removeAt(indexOfKey);
+                                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                    }
+                                                                }
+                                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                            }
+                                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList9, hashMap3, Integer.valueOf(i18), Boolean.valueOf(z14));
+                                                        }
+                                                    });
+                                                    return;
+                                                } catch (Exception e16) {
+                                                    e = e16;
+                                                    i11 = 0;
+                                                    z11 = false;
                                                     arrayList = arrayList5;
-                                                    sQLiteCursor2 = null;
-                                                    userFull = userFull2;
-                                                }
-                                                arrayList2 = new ArrayList();
-                                                if (userFull != null && (userFull.flags2 & 64) != 0) {
-                                                    j3 = userFull.personal_channel_id;
-                                                    if (j3 != 0) {
-                                                        arrayList2.add(Long.valueOf(j3));
-                                                    }
-                                                }
-                                                if (!arrayList2.isEmpty()) {
-                                                    ArrayList arrayList8 = new ArrayList();
-                                                    vrVar.Q(TextUtils.join(",", arrayList2), arrayList8);
-                                                    g0.h3(new pp(vrVar, arrayList8, 6));
-                                                }
-                                                final np messagesController4 = vrVar.getMessagesController();
-                                                messagesController4.getClass();
-                                                final ArrayList arrayList9 = arrayList;
-                                                final boolean z14 = z12;
-                                                final int i18 = i12;
-                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        np npVar = np.this;
-                                                        a0.h hVar = npVar.l1;
-                                                        LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                        LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                        TLRPC.User user2 = user;
-                                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                            npVar.W2(user2, i16, z13, null);
-                                                        }
-                                                        TLRPC.UserFull userFull32 = userFull;
-                                                        if (userFull32 != null) {
-                                                            if (hVar.f(user2.id) == null) {
-                                                                hVar.k(userFull32, user2.id);
-                                                                npVar.t7.M(user2.id);
-                                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                boolean z142 = userFull32.blocked;
-                                                                int i172 = ns.g0;
-                                                                if (z142) {
-                                                                    if (indexOfKey < 0) {
-                                                                        longSparseIntArray.put(user2.id, 1);
+                                                    userFull = TLdeserialize;
+                                                    sQLiteCursor = queryFinalized;
+                                                    z10 = z11;
+                                                    vrVar.o(e, true);
+                                                    final np messagesController32222 = vrVar.getMessagesController();
+                                                    messagesController32222.getClass();
+                                                    final ArrayList arrayList622222 = arrayList;
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            np npVar = np.this;
+                                                            a0.h hVar = npVar.l1;
+                                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                            TLRPC.User user2 = user;
+                                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                npVar.W2(user2, i16, z13, null);
+                                                            }
+                                                            TLRPC.UserFull userFull32 = userFull;
+                                                            if (userFull32 != null) {
+                                                                if (hVar.f(user2.id) == null) {
+                                                                    hVar.k(userFull32, user2.id);
+                                                                    npVar.t7.M(user2.id);
+                                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                    boolean z142 = userFull32.blocked;
+                                                                    int i172 = ns.g0;
+                                                                    if (z142) {
+                                                                        if (indexOfKey < 0) {
+                                                                            longSparseIntArray.put(user2.id, 1);
+                                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                        }
+                                                                    } else if (indexOfKey >= 0) {
+                                                                        longSparseIntArray.removeAt(indexOfKey);
                                                                         npVar.getNotificationCenter().k(i172, new Object[0]);
                                                                     }
-                                                                } else if (indexOfKey >= 0) {
-                                                                    longSparseIntArray.removeAt(indexOfKey);
-                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
                                                                 }
+                                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                             }
-                                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList622222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                         }
-                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList9, hashMap3, Integer.valueOf(i18), Boolean.valueOf(z14));
+                                                    });
+                                                    if (sQLiteCursor == null) {
                                                     }
-                                                });
-                                                return;
-                                            } catch (Exception e16) {
-                                                e = e16;
-                                                i11 = 0;
-                                                z11 = false;
-                                                arrayList = arrayList5;
-                                                userFull = TLdeserialize;
-                                                sQLiteCursor = queryFinalized;
-                                                z10 = z11;
-                                                vrVar.o(e, true);
-                                                final np messagesController32222 = vrVar.getMessagesController();
-                                                messagesController32222.getClass();
-                                                final ArrayList arrayList622222 = arrayList;
-                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        np npVar = np.this;
-                                                        a0.h hVar = npVar.l1;
-                                                        LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                        LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                        TLRPC.User user2 = user;
-                                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                            npVar.W2(user2, i16, z13, null);
-                                                        }
-                                                        TLRPC.UserFull userFull32 = userFull;
-                                                        if (userFull32 != null) {
-                                                            if (hVar.f(user2.id) == null) {
-                                                                hVar.k(userFull32, user2.id);
-                                                                npVar.t7.M(user2.id);
-                                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                boolean z142 = userFull32.blocked;
-                                                                int i172 = ns.g0;
-                                                                if (z142) {
-                                                                    if (indexOfKey < 0) {
-                                                                        longSparseIntArray.put(user2.id, 1);
+                                                } catch (Throwable th9) {
+                                                    th = th9;
+                                                    i11 = 0;
+                                                    z10 = 0;
+                                                    arrayList = arrayList5;
+                                                    userFull = TLdeserialize;
+                                                    sQLiteCursor = queryFinalized;
+                                                    final np messagesController2222222 = vrVar.getMessagesController();
+                                                    messagesController2222222.getClass();
+                                                    final ArrayList arrayList7222222 = arrayList;
+                                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                        @Override // java.lang.Runnable
+                                                        public final void run() {
+                                                            np npVar = np.this;
+                                                            a0.h hVar = npVar.l1;
+                                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                            TLRPC.User user2 = user;
+                                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                                npVar.W2(user2, i16, z13, null);
+                                                            }
+                                                            TLRPC.UserFull userFull32 = userFull;
+                                                            if (userFull32 != null) {
+                                                                if (hVar.f(user2.id) == null) {
+                                                                    hVar.k(userFull32, user2.id);
+                                                                    npVar.t7.M(user2.id);
+                                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                                    boolean z142 = userFull32.blocked;
+                                                                    int i172 = ns.g0;
+                                                                    if (z142) {
+                                                                        if (indexOfKey < 0) {
+                                                                            longSparseIntArray.put(user2.id, 1);
+                                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                        }
+                                                                    } else if (indexOfKey >= 0) {
+                                                                        longSparseIntArray.removeAt(indexOfKey);
                                                                         npVar.getNotificationCenter().k(i172, new Object[0]);
                                                                     }
-                                                                } else if (indexOfKey >= 0) {
-                                                                    longSparseIntArray.removeAt(indexOfKey);
-                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
                                                                 }
+                                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                             }
-                                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                         }
-                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList622222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                    });
+                                                    if (sQLiteCursor != null) {
                                                     }
-                                                });
-                                                if (sQLiteCursor == null) {
+                                                    throw th;
                                                 }
-                                            } catch (Throwable th9) {
-                                                th = th9;
-                                                i11 = 0;
-                                                z10 = 0;
-                                                arrayList = arrayList5;
-                                                userFull = TLdeserialize;
-                                                sQLiteCursor = queryFinalized;
-                                                final np messagesController2222222 = vrVar.getMessagesController();
-                                                messagesController2222222.getClass();
-                                                final ArrayList arrayList7222222 = arrayList;
-                                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                                    @Override // java.lang.Runnable
-                                                    public final void run() {
-                                                        np npVar = np.this;
-                                                        a0.h hVar = npVar.l1;
-                                                        LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                        LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                        TLRPC.User user2 = user;
-                                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                            npVar.W2(user2, i16, z13, null);
-                                                        }
-                                                        TLRPC.UserFull userFull32 = userFull;
-                                                        if (userFull32 != null) {
-                                                            if (hVar.f(user2.id) == null) {
-                                                                hVar.k(userFull32, user2.id);
-                                                                npVar.t7.M(user2.id);
-                                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                                boolean z142 = userFull32.blocked;
-                                                                int i172 = ns.g0;
-                                                                if (z142) {
-                                                                    if (indexOfKey < 0) {
-                                                                        longSparseIntArray.put(user2.id, 1);
-                                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                    }
-                                                                } else if (indexOfKey >= 0) {
-                                                                    longSparseIntArray.removeAt(indexOfKey);
-                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
-                                                                }
-                                                            }
-                                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                        }
-                                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                                    }
-                                                });
-                                                if (sQLiteCursor != null) {
-                                                }
-                                                throw th;
                                             }
-                                        }
-                                    } catch (Exception e17) {
-                                        e = e17;
-                                        sQLiteCursor = queryFinalized;
-                                        z10 = 0;
-                                        arrayList = arrayList5;
-                                        userFull = null;
-                                        i11 = 0;
-                                        vrVar.o(e, true);
-                                        final np messagesController322222 = vrVar.getMessagesController();
-                                        messagesController322222.getClass();
-                                        final ArrayList arrayList6222222 = arrayList;
-                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                np npVar = np.this;
-                                                a0.h hVar = npVar.l1;
-                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                TLRPC.User user2 = user;
-                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                    npVar.W2(user2, i16, z13, null);
-                                                }
-                                                TLRPC.UserFull userFull32 = userFull;
-                                                if (userFull32 != null) {
-                                                    if (hVar.f(user2.id) == null) {
-                                                        hVar.k(userFull32, user2.id);
-                                                        npVar.t7.M(user2.id);
-                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                        boolean z142 = userFull32.blocked;
-                                                        int i172 = ns.g0;
-                                                        if (z142) {
-                                                            if (indexOfKey < 0) {
-                                                                longSparseIntArray.put(user2.id, 1);
+                                        } catch (Exception e17) {
+                                            e = e17;
+                                            sQLiteCursor = queryFinalized;
+                                            z10 = 0;
+                                            arrayList = arrayList5;
+                                            userFull = null;
+                                            i11 = 0;
+                                            vrVar.o(e, true);
+                                            final np messagesController322222 = vrVar.getMessagesController();
+                                            messagesController322222.getClass();
+                                            final ArrayList arrayList6222222 = arrayList;
+                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    np npVar = np.this;
+                                                    a0.h hVar = npVar.l1;
+                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                    TLRPC.User user2 = user;
+                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                        npVar.W2(user2, i16, z13, null);
+                                                    }
+                                                    TLRPC.UserFull userFull32 = userFull;
+                                                    if (userFull32 != null) {
+                                                        if (hVar.f(user2.id) == null) {
+                                                            hVar.k(userFull32, user2.id);
+                                                            npVar.t7.M(user2.id);
+                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                            boolean z142 = userFull32.blocked;
+                                                            int i172 = ns.g0;
+                                                            if (z142) {
+                                                                if (indexOfKey < 0) {
+                                                                    longSparseIntArray.put(user2.id, 1);
+                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                }
+                                                            } else if (indexOfKey >= 0) {
+                                                                longSparseIntArray.removeAt(indexOfKey);
                                                                 npVar.getNotificationCenter().k(i172, new Object[0]);
                                                             }
-                                                        } else if (indexOfKey >= 0) {
-                                                            longSparseIntArray.removeAt(indexOfKey);
-                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
                                                         }
+                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                                     }
-                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                                 }
-                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList6222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                            });
+                                            if (sQLiteCursor == null) {
                                             }
-                                        });
-                                        if (sQLiteCursor == null) {
-                                        }
-                                    } catch (Throwable th10) {
-                                        th = th10;
-                                        sQLiteCursor = queryFinalized;
-                                        z10 = 0;
-                                        arrayList = arrayList5;
-                                        userFull = null;
-                                        i11 = 0;
-                                        final np messagesController22222222 = vrVar.getMessagesController();
-                                        messagesController22222222.getClass();
-                                        final ArrayList arrayList72222222 = arrayList;
-                                        g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                np npVar = np.this;
-                                                a0.h hVar = npVar.l1;
-                                                LongSparseIntArray longSparseIntArray = npVar.H0;
-                                                LongSparseLongArray longSparseLongArray = npVar.s1;
-                                                TLRPC.User user2 = user;
-                                                if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                                    npVar.W2(user2, i16, z13, null);
-                                                }
-                                                TLRPC.UserFull userFull32 = userFull;
-                                                if (userFull32 != null) {
-                                                    if (hVar.f(user2.id) == null) {
-                                                        hVar.k(userFull32, user2.id);
-                                                        npVar.t7.M(user2.id);
-                                                        di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                        int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                        boolean z142 = userFull32.blocked;
-                                                        int i172 = ns.g0;
-                                                        if (z142) {
-                                                            if (indexOfKey < 0) {
-                                                                longSparseIntArray.put(user2.id, 1);
+                                        } catch (Throwable th10) {
+                                            th = th10;
+                                            sQLiteCursor = queryFinalized;
+                                            z10 = 0;
+                                            arrayList = arrayList5;
+                                            userFull = null;
+                                            i11 = 0;
+                                            final np messagesController22222222 = vrVar.getMessagesController();
+                                            messagesController22222222.getClass();
+                                            final ArrayList arrayList72222222 = arrayList;
+                                            g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    np npVar = np.this;
+                                                    a0.h hVar = npVar.l1;
+                                                    LongSparseIntArray longSparseIntArray = npVar.H0;
+                                                    LongSparseLongArray longSparseLongArray = npVar.s1;
+                                                    TLRPC.User user2 = user;
+                                                    if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                        npVar.W2(user2, i16, z13, null);
+                                                    }
+                                                    TLRPC.UserFull userFull32 = userFull;
+                                                    if (userFull32 != null) {
+                                                        if (hVar.f(user2.id) == null) {
+                                                            hVar.k(userFull32, user2.id);
+                                                            npVar.t7.M(user2.id);
+                                                            di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                            int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                            boolean z142 = userFull32.blocked;
+                                                            int i172 = ns.g0;
+                                                            if (z142) {
+                                                                if (indexOfKey < 0) {
+                                                                    longSparseIntArray.put(user2.id, 1);
+                                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                                }
+                                                            } else if (indexOfKey >= 0) {
+                                                                longSparseIntArray.removeAt(indexOfKey);
                                                                 npVar.getNotificationCenter().k(i172, new Object[0]);
                                                             }
-                                                        } else if (indexOfKey >= 0) {
-                                                            longSparseIntArray.removeAt(indexOfKey);
+                                                        }
+                                                        npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                                    }
+                                                    npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                                }
+                                            });
+                                            if (sQLiteCursor != null) {
+                                            }
+                                            throw th;
+                                        }
+                                    }
+                                    arrayList2 = new ArrayList();
+                                    if (userFull != null) {
+                                        j3 = userFull.personal_channel_id;
+                                        if (j3 != 0) {
+                                        }
+                                    }
+                                    if (!arrayList2.isEmpty()) {
+                                    }
+                                    final np messagesController42 = vrVar.getMessagesController();
+                                    messagesController42.getClass();
+                                    final ArrayList arrayList92 = arrayList;
+                                    final boolean z142 = z12;
+                                    final int i182 = i12;
+                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            np npVar = np.this;
+                                            a0.h hVar = npVar.l1;
+                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                            TLRPC.User user2 = user;
+                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                npVar.W2(user2, i16, z13, null);
+                                            }
+                                            TLRPC.UserFull userFull32 = userFull;
+                                            if (userFull32 != null) {
+                                                if (hVar.f(user2.id) == null) {
+                                                    hVar.k(userFull32, user2.id);
+                                                    npVar.t7.M(user2.id);
+                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                    boolean z1422 = userFull32.blocked;
+                                                    int i172 = ns.g0;
+                                                    if (z1422) {
+                                                        if (indexOfKey < 0) {
+                                                            longSparseIntArray.put(user2.id, 1);
                                                             npVar.getNotificationCenter().k(i172, new Object[0]);
                                                         }
-                                                    }
-                                                    npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
-                                                }
-                                                npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList72222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
-                                            }
-                                        });
-                                        if (sQLiteCursor != null) {
-                                        }
-                                        throw th;
-                                    }
-                                }
-                                arrayList2 = new ArrayList();
-                                if (userFull != null) {
-                                    j3 = userFull.personal_channel_id;
-                                    if (j3 != 0) {
-                                    }
-                                }
-                                if (!arrayList2.isEmpty()) {
-                                }
-                                final np messagesController42 = vrVar.getMessagesController();
-                                messagesController42.getClass();
-                                final ArrayList arrayList92 = arrayList;
-                                final boolean z142 = z12;
-                                final int i182 = i12;
-                                g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        np npVar = np.this;
-                                        a0.h hVar = npVar.l1;
-                                        LongSparseIntArray longSparseIntArray = npVar.H0;
-                                        LongSparseLongArray longSparseLongArray = npVar.s1;
-                                        TLRPC.User user2 = user;
-                                        if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
-                                            npVar.W2(user2, i16, z13, null);
-                                        }
-                                        TLRPC.UserFull userFull32 = userFull;
-                                        if (userFull32 != null) {
-                                            if (hVar.f(user2.id) == null) {
-                                                hVar.k(userFull32, user2.id);
-                                                npVar.t7.M(user2.id);
-                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
-                                                int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
-                                                boolean z1422 = userFull32.blocked;
-                                                int i172 = ns.g0;
-                                                if (z1422) {
-                                                    if (indexOfKey < 0) {
-                                                        longSparseIntArray.put(user2.id, 1);
+                                                    } else if (indexOfKey >= 0) {
+                                                        longSparseIntArray.removeAt(indexOfKey);
                                                         npVar.getNotificationCenter().k(i172, new Object[0]);
                                                     }
-                                                } else if (indexOfKey >= 0) {
-                                                    longSparseIntArray.removeAt(indexOfKey);
-                                                    npVar.getNotificationCenter().k(i172, new Object[0]);
                                                 }
+                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                             }
-                                            npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList92, hashMap3, Integer.valueOf(i182), Boolean.valueOf(z142));
                                         }
-                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList92, hashMap3, Integer.valueOf(i182), Boolean.valueOf(z142));
+                                    });
+                                    return;
+                                } catch (Exception e18) {
+                                    e = e18;
+                                    z10 = z12;
+                                    i11 = i12;
+                                    sQLiteCursor = sQLiteCursor2;
+                                    vrVar.o(e, true);
+                                    final np messagesController3222222 = vrVar.getMessagesController();
+                                    messagesController3222222.getClass();
+                                    final ArrayList arrayList62222222 = arrayList;
+                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            np npVar = np.this;
+                                            a0.h hVar = npVar.l1;
+                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                            TLRPC.User user2 = user;
+                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                npVar.W2(user2, i16, z13, null);
+                                            }
+                                            TLRPC.UserFull userFull32 = userFull;
+                                            if (userFull32 != null) {
+                                                if (hVar.f(user2.id) == null) {
+                                                    hVar.k(userFull32, user2.id);
+                                                    npVar.t7.M(user2.id);
+                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                    boolean z1422 = userFull32.blocked;
+                                                    int i172 = ns.g0;
+                                                    if (z1422) {
+                                                        if (indexOfKey < 0) {
+                                                            longSparseIntArray.put(user2.id, 1);
+                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                        }
+                                                    } else if (indexOfKey >= 0) {
+                                                        longSparseIntArray.removeAt(indexOfKey);
+                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                    }
+                                                }
+                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                            }
+                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                        }
+                                    });
+                                    if (sQLiteCursor == null) {
                                     }
-                                });
-                                return;
-                            } catch (Exception e18) {
-                                e = e18;
-                                z10 = z12;
-                                i11 = i12;
-                                sQLiteCursor = sQLiteCursor2;
+                                } catch (Throwable th11) {
+                                    th = th11;
+                                    z10 = z12;
+                                    i11 = i12;
+                                    sQLiteCursor = sQLiteCursor2;
+                                    final np messagesController222222222 = vrVar.getMessagesController();
+                                    messagesController222222222.getClass();
+                                    final ArrayList arrayList722222222 = arrayList;
+                                    g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            np npVar = np.this;
+                                            a0.h hVar = npVar.l1;
+                                            LongSparseIntArray longSparseIntArray = npVar.H0;
+                                            LongSparseLongArray longSparseLongArray = npVar.s1;
+                                            TLRPC.User user2 = user;
+                                            if (System.currentTimeMillis() - longSparseLongArray.get(user2.id, 0L) > 60000) {
+                                                npVar.W2(user2, i16, z13, null);
+                                            }
+                                            TLRPC.UserFull userFull32 = userFull;
+                                            if (userFull32 != null) {
+                                                if (hVar.f(user2.id) == null) {
+                                                    hVar.k(userFull32, user2.id);
+                                                    npVar.t7.M(user2.id);
+                                                    di.u8.y(npVar.currentAccount, false).Q(userFull32);
+                                                    int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
+                                                    boolean z1422 = userFull32.blocked;
+                                                    int i172 = ns.g0;
+                                                    if (z1422) {
+                                                        if (indexOfKey < 0) {
+                                                            longSparseIntArray.put(user2.id, 1);
+                                                            npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                        }
+                                                    } else if (indexOfKey >= 0) {
+                                                        longSparseIntArray.removeAt(indexOfKey);
+                                                        npVar.getNotificationCenter().k(i172, new Object[0]);
+                                                    }
+                                                }
+                                                npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
+                                            }
+                                            npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                        }
+                                    });
+                                    if (sQLiteCursor != null) {
+                                    }
+                                    throw th;
+                                }
+                                SQLiteDatabase sQLiteDatabase2 = vrVar.getMessagesStorage().b;
+                                Locale locale2 = Locale.US;
+                                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT mid FROM chat_pinned_v2 WHERE uid = " + user.id + " ORDER BY mid DESC", new Object[0]);
+                                while (queryFinalized.next()) {
+                                }
+                                queryFinalized.dispose();
+                                queryFinalized = vrVar.b.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + user.id, new Object[0]);
+                                if (queryFinalized.next()) {
+                                }
+                                queryFinalized.dispose();
+                                if (userFull2 != null) {
+                                }
+                                if (arrayList5.isEmpty()) {
+                                }
+                            } catch (Exception e19) {
+                                e = e19;
+                                i10 = 0;
+                                arrayList = arrayList5;
+                                userFull = userFull2;
+                                sQLiteCursor = null;
+                                i11 = i10;
+                                z10 = i11;
                                 vrVar.o(e, true);
-                                final np messagesController3222222 = vrVar.getMessagesController();
-                                messagesController3222222.getClass();
-                                final ArrayList arrayList62222222 = arrayList;
+                                final np messagesController32222222 = vrVar.getMessagesController();
+                                messagesController32222222.getClass();
+                                final ArrayList arrayList622222222 = arrayList;
                                 g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -1162,7 +1243,7 @@ public final /* synthetic */ class mb implements Runnable {
                                             if (hVar.f(user2.id) == null) {
                                                 hVar.k(userFull32, user2.id);
                                                 npVar.t7.M(user2.id);
-                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
+                                                di.u8.y(npVar.currentAccount, false).Q(userFull32);
                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                 boolean z1422 = userFull32.blocked;
                                                 int i172 = ns.g0;
@@ -1178,19 +1259,22 @@ public final /* synthetic */ class mb implements Runnable {
                                             }
                                             npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                         }
-                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList62222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList622222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                     }
                                 });
                                 if (sQLiteCursor == null) {
                                 }
-                            } catch (Throwable th11) {
-                                th = th11;
-                                z10 = z12;
-                                i11 = i12;
-                                sQLiteCursor = sQLiteCursor2;
-                                final np messagesController222222222 = vrVar.getMessagesController();
-                                messagesController222222222.getClass();
-                                final ArrayList arrayList722222222 = arrayList;
+                            } catch (Throwable th12) {
+                                th = th12;
+                                i7 = 0;
+                                arrayList = arrayList5;
+                                userFull = userFull2;
+                                sQLiteCursor = null;
+                                i11 = i7;
+                                z10 = i11;
+                                final np messagesController2222222222 = vrVar.getMessagesController();
+                                messagesController2222222222.getClass();
+                                final ArrayList arrayList7222222222 = arrayList;
                                 g0.h3(new Runnable() { // from class: org.telegram.messenger.ml
                                     @Override // java.lang.Runnable
                                     public final void run() {
@@ -1207,7 +1291,7 @@ public final /* synthetic */ class mb implements Runnable {
                                             if (hVar.f(user2.id) == null) {
                                                 hVar.k(userFull32, user2.id);
                                                 npVar.t7.M(user2.id);
-                                                di.v8.y(npVar.currentAccount, false).Q(userFull32);
+                                                di.u8.y(npVar.currentAccount, false).Q(userFull32);
                                                 int indexOfKey = longSparseIntArray.indexOfKey(user2.id);
                                                 boolean z1422 = userFull32.blocked;
                                                 int i172 = ns.g0;
@@ -1223,7 +1307,7 @@ public final /* synthetic */ class mb implements Runnable {
                                             }
                                             npVar.getNotificationCenter().k(ns.E0, Long.valueOf(user2.id), userFull32);
                                         }
-                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList722222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
+                                        npVar.getNotificationCenter().k(ns.F0, Long.valueOf(user2.id), arrayList7222222222, hashMap3, Integer.valueOf(i11), Boolean.valueOf(z10));
                                     }
                                 });
                                 if (sQLiteCursor != null) {
@@ -1231,65 +1315,45 @@ public final /* synthetic */ class mb implements Runnable {
                                 throw th;
                             }
                             queryFinalized.dispose();
-                            SQLiteDatabase sQLiteDatabase2 = vrVar.getMessagesStorage().b;
-                            Locale locale2 = Locale.US;
-                            queryFinalized = sQLiteDatabase2.queryFinalized("SELECT mid FROM chat_pinned_v2 WHERE uid = " + user.id + " ORDER BY mid DESC", new Object[0]);
-                            while (queryFinalized.next()) {
-                            }
-                            queryFinalized.dispose();
-                            queryFinalized = vrVar.b.queryFinalized("SELECT count, end FROM chat_pinned_count WHERE uid = " + user.id, new Object[0]);
-                            if (queryFinalized.next()) {
-                            }
-                            queryFinalized.dispose();
-                            if (userFull2 != null) {
-                            }
-                            if (arrayList5.isEmpty()) {
-                            }
-                        } catch (Exception e19) {
-                            e = e19;
+                        } catch (Exception e20) {
+                            e = e20;
                             i10 = 0;
                             arrayList = arrayList5;
                             userFull = userFull2;
                             sQLiteCursor = queryFinalized;
-                            break;
-                        } catch (Throwable th12) {
-                            th = th12;
+                        } catch (Throwable th13) {
+                            th = th13;
                             i7 = 0;
                             arrayList = arrayList5;
                             userFull = userFull2;
                             sQLiteCursor = queryFinalized;
-                            break;
                         }
                         userFull2 = null;
-                    } catch (Exception e20) {
-                        e = e20;
+                    } catch (Exception e21) {
+                        e = e21;
                         i10 = 0;
                         arrayList = arrayList5;
                         sQLiteCursor = queryFinalized;
                         userFull = null;
-                        break;
-                    } catch (Throwable th13) {
-                        th = th13;
+                    } catch (Throwable th14) {
+                        th = th14;
                         i7 = 0;
                         arrayList = arrayList5;
                         sQLiteCursor = queryFinalized;
                         userFull = null;
-                        break;
                     }
-                } catch (Exception e21) {
-                    e = e21;
+                } catch (Exception e22) {
+                    e = e22;
                     i10 = 0;
                     arrayList = arrayList5;
                     userFull = null;
                     sQLiteCursor = null;
-                    break;
-                } catch (Throwable th14) {
-                    th = th14;
+                } catch (Throwable th15) {
+                    th = th15;
                     i7 = 0;
                     arrayList = arrayList5;
                     userFull = null;
                     sQLiteCursor = null;
-                    break;
                 }
         }
     }

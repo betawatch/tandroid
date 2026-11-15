@@ -4,7 +4,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ro implements org.telegram.ui.ActionBar.r6 {
     public boolean a = false;
@@ -52,12 +52,12 @@ public final class ro implements org.telegram.ui.ActionBar.r6 {
             this.a = false;
         }
         epVar.Y0();
-        ai.j0 j0Var = epVar.T1;
-        if (j0Var != null) {
+        ai.k0 k0Var = epVar.T1;
+        if (k0Var != null) {
             int L = org.telegram.messenger.g0.L(0.0f);
             int w03 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, epVar.J0);
             int o4 = i0.a.o(org.telegram.ui.ActionBar.j6.w0(i11, epVar.J0), 76);
-            j0Var.setBackground(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, w03, o4, o4));
+            k0Var.setBackground(org.telegram.ui.ActionBar.j6.k0(L, L, L, L, w03, o4, o4));
         }
         h6 h6Var = epVar.U1;
         if (h6Var != null) {

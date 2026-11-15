@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -192,9 +192,9 @@ public final /* synthetic */ class c6 implements ValueAnimator.AnimatorUpdateLis
                 yxVar.x = floatValue6;
                 View view2 = yxVar.w;
                 if (view2 == null) {
-                    ai.j0 j0Var = yxVar.s;
-                    if (j0Var != null) {
-                        j0Var.invalidate();
+                    ai.k0 k0Var = yxVar.s;
+                    if (k0Var != null) {
+                        k0Var.invalidate();
                         break;
                     }
                 } else {

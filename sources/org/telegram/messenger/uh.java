@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uh implements Runnable {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class uh implements Runnable {
                     if (z10 != z11) {
                         dialog.view_forum_as_messages = z11;
                         vr messagesStorage = npVar.getMessagesStorage();
-                        messagesStorage.a.c(new wp(1, j12, messagesStorage, tL_messages_chatFull.full_chat.view_forum_as_messages));
+                        messagesStorage.a.c(new vp(1, j12, messagesStorage, tL_messages_chatFull.full_chat.view_forum_as_messages));
                         break;
                     }
                 }

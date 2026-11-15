@@ -14,13 +14,13 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class w90 extends FrameLayout {
     public final /* synthetic */ x90 E;
     public final ImageView a;
     public final LinearLayout b;
-    public final di.ub c;
+    public final di.tb c;
     public final org.telegram.ui.Components.h6 d;
     public final ImageView e;
     public final Switch f;
@@ -44,16 +44,16 @@ public final class w90 extends FrameLayout {
         org.telegram.ui.ActionBar.q6.s(imageView, i7, null, mode);
         imageView.setVisibility(8);
         addView(imageView, c8.ja.d(24, 24.0f, (org.telegram.messenger.hd.a0 ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
-        di.ub ubVar = new di.ub(context, 29);
-        this.c = ubVar;
-        ubVar.setLines(1);
-        ubVar.setSingleLine(true);
-        ubVar.setEllipsize(TextUtils.TruncateAt.END);
-        ubVar.setTextSize(1, 16.0f);
+        di.tb tbVar = new di.tb(context, 29);
+        this.c = tbVar;
+        tbVar.setLines(1);
+        tbVar.setSingleLine(true);
+        tbVar.setEllipsize(TextUtils.TruncateAt.END);
+        tbVar.setTextSize(1, 16.0f);
         int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.q6.U(ubVar, i10, null);
-        ubVar.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        ubVar.setImportantForAccessibility(2);
+        org.telegram.ui.ActionBar.q6.U(tbVar, i10, null);
+        tbVar.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
+        tbVar.setImportantForAccessibility(2);
         org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, true, true);
         this.d = h6Var;
         h6Var.b(0.35f, 200L, org.telegram.ui.Components.er.h);
@@ -73,9 +73,9 @@ public final class w90 extends FrameLayout {
         if (org.telegram.messenger.hd.a0) {
             linearLayout.addView(imageView2, c8.ja.q(16, 16, 0.0f, 16, 0, 0, 6, 0));
             linearLayout.addView(h6Var, c8.ja.q(-2, -2, 0.0f, 16, 0, 0, 6, 0));
-            linearLayout.addView(ubVar, c8.ja.p(-2, -2, 1.0f, 16));
+            linearLayout.addView(tbVar, c8.ja.p(-2, -2, 1.0f, 16));
         } else {
-            linearLayout.addView(ubVar, c8.ja.p(-2, -2, 1.0f, 16));
+            linearLayout.addView(tbVar, c8.ja.p(-2, -2, 1.0f, 16));
             linearLayout.addView(h6Var, c8.ja.q(-2, -2, 0.0f, 16, 6, 0, 0, 0));
             linearLayout.addView(imageView2, c8.ja.q(16, 16, 0.0f, 16, 2, 0, 0, 0));
         }
@@ -191,14 +191,14 @@ public final class w90 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         boolean z10 = org.telegram.messenger.hd.a0;
-        di.ub ubVar = this.c;
+        di.tb tbVar = this.c;
         if (z10) {
             if (this.r) {
                 float L = org.telegram.messenger.g0.L(75.0f);
                 canvas.drawRect(L - org.telegram.messenger.g0.L(0.66f), (getMeasuredHeight() - org.telegram.messenger.g0.L(20.0f)) / 2.0f, L, (org.telegram.messenger.g0.L(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.j6.k0);
             }
             if (this.n) {
-                canvas.drawLine((getMeasuredWidth() - org.telegram.messenger.g0.L(64.0f)) + (ubVar.getTranslationX() < 0.0f ? org.telegram.messenger.g0.L(-32.0f) : 0), getMeasuredHeight() - 1, 0.0f, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+                canvas.drawLine((getMeasuredWidth() - org.telegram.messenger.g0.L(64.0f)) + (tbVar.getTranslationX() < 0.0f ? org.telegram.messenger.g0.L(-32.0f) : 0), getMeasuredHeight() - 1, 0.0f, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
                 return;
             }
             return;
@@ -208,7 +208,7 @@ public final class w90 extends FrameLayout {
             canvas.drawRect(measuredWidth - org.telegram.messenger.g0.L(0.66f), (getMeasuredHeight() - org.telegram.messenger.g0.L(20.0f)) / 2.0f, measuredWidth, (org.telegram.messenger.g0.L(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.j6.k0);
         }
         if (this.n) {
-            canvas.drawLine(ubVar.getTranslationX() + org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+            canvas.drawLine(tbVar.getTranslationX() + org.telegram.messenger.g0.L(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
     }
 

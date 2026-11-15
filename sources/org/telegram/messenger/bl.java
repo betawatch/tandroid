@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bl implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -44,7 +44,7 @@ public final /* synthetic */ class bl implements RequestDelegate {
                             messagesStorage.getClass();
                             CountDownLatch countDownLatch = new CountDownLatch(1);
                             boolean[] zArr = new boolean[1];
-                            messagesStorage.a.c(new cq(messagesStorage, j10, zArr, countDownLatch, 0));
+                            messagesStorage.a.c(new bq(messagesStorage, j10, zArr, countDownLatch, 0));
                             try {
                                 countDownLatch.await();
                             } catch (Exception e10) {
@@ -63,7 +63,7 @@ public final /* synthetic */ class bl implements RequestDelegate {
                             j3 = j11;
                             CountDownLatch countDownLatch2 = new CountDownLatch(1);
                             boolean[] zArr2 = new boolean[1];
-                            messagesStorage2.a.c(new cq(messagesStorage2, j3, zArr2, countDownLatch2, 1));
+                            messagesStorage2.a.c(new bq(messagesStorage2, j3, zArr2, countDownLatch2, 1));
                             try {
                                 countDownLatch2.await();
                             } catch (Exception e11) {
@@ -109,7 +109,7 @@ public final /* synthetic */ class bl implements RequestDelegate {
                                 ArrayList arrayList3 = arrayList;
                                 vr messagesStorage3 = npVar.getMessagesStorage();
                                 long j13 = j3;
-                                messagesStorage3.a.c(new sp(2, tL_channels_channelParticipant.participant.inviter_id, j13, messagesStorage3));
+                                messagesStorage3.a.c(new pp(2, tL_channels_channelParticipant.participant.inviter_id, j13, messagesStorage3));
                                 g0.h3(new gm(npVar, j13, arrayList3, tL_channels_channelParticipant, 5));
                                 break;
                             }
@@ -120,7 +120,7 @@ public final /* synthetic */ class bl implements RequestDelegate {
                         ArrayList arrayList32 = arrayList;
                         vr messagesStorage32 = npVar.getMessagesStorage();
                         long j132 = j3;
-                        messagesStorage32.a.c(new sp(2, tL_channels_channelParticipant.participant.inviter_id, j132, messagesStorage32));
+                        messagesStorage32.a.c(new pp(2, tL_channels_channelParticipant.participant.inviter_id, j132, messagesStorage32));
                         g0.h3(new gm(npVar, j132, arrayList32, tL_channels_channelParticipant, 5));
                     }
                 }

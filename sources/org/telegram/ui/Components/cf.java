@@ -27,9 +27,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public class cf implements r4, xj0, yy, org.telegram.ui.mm0, org.telegram.messenger.kc, jg.y1, xr0, u61, org.telegram.ui.s9, te.b, tg.c, tg.l1, com.google.android.gms.common.api.internal.q, v4.j1, l51 {
+public class cf implements r4, xj0, yy, org.telegram.ui.nm0, org.telegram.messenger.kc, jg.y1, xr0, u61, org.telegram.ui.s9, te.b, tg.c, tg.l1, com.google.android.gms.common.api.internal.q, v4.j1, l51 {
     public final Object a;
 
     public /* synthetic */ cf(Object obj) {
@@ -164,7 +164,7 @@ public class cf implements r4, xj0, yy, org.telegram.ui.mm0, org.telegram.messen
         return i7 == ((mo0) this.a).r;
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void f(ArrayList arrayList) {
         m30.a((m30) this.a, false, arrayList);
     }
@@ -182,7 +182,7 @@ public class cf implements r4, xj0, yy, org.telegram.ui.mm0, org.telegram.messen
 
     @Override // tg.l1
     public float get() {
-        return ((tg.f2) this.a).G;
+        return ((tg.e2) this.a).G;
     }
 
     @Override // org.telegram.ui.Components.yy
@@ -661,10 +661,10 @@ public class cf implements r4, xj0, yy, org.telegram.ui.mm0, org.telegram.messen
 
     @Override // tg.l1
     public void r0(float f10) {
-        ((tg.f2) this.a).setOutlineWidth(f10);
+        ((tg.e2) this.a).setOutlineWidth(f10);
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void s0() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c61 extends org.telegram.ui.Components.tj0 {
     public final Context c;
@@ -398,7 +398,7 @@ public final class c61 extends org.telegram.ui.Components.tj0 {
                 }
             }
             if (i22 == 21) {
-                ((ol0) view).set(themeActivity.getUserConfig().f());
+                ((pl0) view).set(themeActivity.getUserConfig().f());
                 return;
             }
             switch (i22) {
@@ -633,9 +633,9 @@ public final class c61 extends org.telegram.ui.Components.tj0 {
                 break;
             case 16:
                 o4Var = ((org.telegram.ui.ActionBar.e2) themeActivity).parentLayout;
-                View xl0Var = new xl0(context, o4Var, 0);
-                xl0Var.setImportantForAccessibility(4);
-                view = xl0Var;
+                View yl0Var = new yl0(context, o4Var, 0);
+                yl0Var.setImportantForAccessibility(4);
+                view = yl0Var;
                 break;
             case 17:
                 View vtVar = new vt(themeActivity.f, context, themeActivity);
@@ -659,14 +659,14 @@ public final class c61 extends org.telegram.ui.Components.tj0 {
                 tVar.g3 = b0Var2;
                 tVar.setLayoutManager(b0Var2);
                 tVar.setAdapter(new y7(tVar, i14));
-                tVar.i(new ai.h0(tVar, i13));
+                tVar.i(new ai.i0(tVar, i13));
                 tVar.setOnItemClickListener(new fi.f0(tVar, themeActivity, context, r2));
                 tVar.z1();
                 view = tVar;
                 break;
             case 21:
                 i12 = ((org.telegram.ui.ActionBar.e2) themeActivity).currentAccount;
-                view = new ol0(i12, 0L, this.c, themeActivity.getResourceProvider());
+                view = new pl0(i12, 0L, this.c, themeActivity.getResourceProvider());
                 break;
         }
         return new org.telegram.ui.Components.cj0(view);

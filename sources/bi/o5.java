@@ -1,6 +1,6 @@
 package bi;
 
-import di.n8;
+import di.m8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,9 +8,9 @@ import org.telegram.messenger.z10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class o5 implements n8 {
+public final class o5 implements m8 {
     public final int a;
     public final long b;
     public final z10 c;
@@ -40,22 +40,22 @@ public final class o5 implements n8 {
         this.c = z10Var;
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final void a() {
         g(false);
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final int b(int i7) {
         return -1;
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final int c() {
         return this.e;
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final int e() {
         return this.d.size();
     }
@@ -159,7 +159,7 @@ public final class o5 implements n8 {
         }
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final Object get(int i7) {
         return this.d.get(i7);
     }
@@ -182,12 +182,12 @@ public final class o5 implements n8 {
         }
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // di.n8
+    @Override // di.m8
     public final void d() {
     }
 }

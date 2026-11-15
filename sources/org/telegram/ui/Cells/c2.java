@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import di.wa;
+import di.va;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.i20;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.fp;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c2 extends FrameLayout {
     public final int E;
@@ -45,7 +45,7 @@ public final class c2 extends FrameLayout {
     public final CheckBoxSquare n;
     public final fp r;
     public View s;
-    public final wa w;
+    public final va w;
     public final org.telegram.ui.Components.i9 x;
     public final org.telegram.ui.Components.t8 y;
 
@@ -248,10 +248,10 @@ public final class c2 extends FrameLayout {
             int i13 = measuredWidth / 2;
             textView.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
             int measuredWidth2 = textView.getMeasuredWidth();
-            wa waVar = this.w;
-            if (waVar != null) {
-                waVar.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-                measuredWidth2 = i20.D(11.0f, waVar.getMeasuredWidth(), measuredWidth2);
+            va vaVar = this.w;
+            if (vaVar != null) {
+                vaVar.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+                measuredWidth2 = i20.D(11.0f, vaVar.getMeasuredWidth(), measuredWidth2);
             }
             if (view2.getLayoutParams().width == -1) {
                 view2.measure(i20.c(8.0f, (measuredWidth - ((int) Math.abs(view2.getTranslationX()))) - measuredWidth2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_31));
@@ -529,13 +529,13 @@ public final class c2 extends FrameLayout {
             }
         }
         if (i7 == 6) {
-            wa waVar = new wa(this, context, R.drawable.msg_folders_groups);
-            this.w = waVar;
-            addView(waVar, c8.ja.i(-2.0f, -2.0f, 8388629, f10, 0.0f, i10 - 11, 0.0f));
+            va vaVar = new va(this, context, R.drawable.msg_folders_groups);
+            this.w = vaVar;
+            addView(vaVar, c8.ja.i(-2.0f, -2.0f, 8388629, f10, 0.0f, i10 - 11, 0.0f));
         } else if (i7 == 8) {
-            wa waVar2 = new wa(this, context, 0);
-            this.w = waVar2;
-            addView(waVar2, c8.ja.i(-2.0f, -2.0f, 8388629, f10, 0.0f, i10 - 11, 0.0f));
+            va vaVar2 = new va(this, context, 0);
+            this.w = vaVar2;
+            addView(vaVar2, c8.ja.i(-2.0f, -2.0f, 8388629, f10, 0.0f, i10 - 11, 0.0f));
         } else if (i7 == 7) {
             this.y = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
             org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);

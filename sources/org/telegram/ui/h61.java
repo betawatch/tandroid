@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h61 implements org.telegram.messenger.kc, org.telegram.ui.Components.hj0, org.telegram.ui.Components.y61, org.telegram.ui.ActionBar.q1 {
     public final /* synthetic */ int a;

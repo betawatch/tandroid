@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class jj extends org.telegram.ui.Components.i90 {
+public final class jj extends org.telegram.ui.Components.j90 {
     public boolean W;
     public final /* synthetic */ an a0;
 
@@ -21,7 +21,7 @@ public final class jj extends org.telegram.ui.Components.i90 {
         this.W = true;
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final boolean a() {
         an anVar = this.a0;
         return anVar.T.getVisibility() != 0 || anVar.C3;
@@ -35,12 +35,12 @@ public final class jj extends org.telegram.ui.Components.i90 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void j() {
         this.a0.ad();
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void k(TLRPC.BotInlineResult botInlineResult) {
         an anVar = this.a0;
         if (anVar.getParentActivity() == null || botInlineResult.content == null) {
@@ -61,7 +61,7 @@ public final class jj extends org.telegram.ui.Components.i90 {
         org.telegram.ui.Components.bu.N0(anVar, null, rhVar, str, str2, str3, str3, g12[0], g12[1], -1, anVar.V9());
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void l(boolean z10) {
         String M0;
         an anVar = this.a0;
@@ -90,7 +90,7 @@ public final class jj extends org.telegram.ui.Components.i90 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void m() {
         an anVar = this.a0;
         if (anVar.q5 && ((getAdapter().S == null || anVar.r5 || anVar.s5) && anVar.h != null && getAdapter().S != null)) {
@@ -109,7 +109,7 @@ public final class jj extends org.telegram.ui.Components.i90 {
         anVar.ad();
     }
 
-    @Override // org.telegram.ui.Components.i90
+    @Override // org.telegram.ui.Components.j90
     public final void n(boolean z10) {
         if (this.W != z10) {
             an anVar = this.a0;

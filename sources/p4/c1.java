@@ -25,9 +25,9 @@ import java.util.Set;
 import org.telegram.messenger.ka;
 import org.telegram.ui.Components.bt;
 import org.telegram.ui.Wallet.k8;
-import org.telegram.ui.hn0;
+import org.telegram.ui.ok0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class c1 extends Binder implements m {
     public final WeakReference a;
@@ -53,7 +53,7 @@ public final class c1 extends Binder implements m {
         }
         m9.y yVar = (m9.y) a1Var.k(d0Var, vVar, i7);
         m9.e0 e0Var = new m9.e0();
-        yVar.b(new hn0(d0Var, e0Var, jVar, yVar, 27), m9.r.a);
+        yVar.b(new ok0(d0Var, e0Var, jVar, yVar, 28), m9.r.a);
         return e0Var;
     }
 
@@ -181,7 +181,7 @@ public final class c1 extends Binder implements m {
                 d0 d0Var2 = (d0) weakReference.get();
                 if (d0Var2 != null && !d0Var2.j()) {
                     this.c.add(vVar);
-                    h2.l0.W(d0Var2.l, new hn0(this, vVar, d0Var2, lVar, 26));
+                    h2.l0.W(d0Var2.l, new ok0(this, vVar, d0Var2, lVar, 27));
                 }
                 hb.a(lVar);
             } finally {
@@ -1114,7 +1114,7 @@ public final class c1 extends Binder implements m {
             return;
         }
         try {
-            q1(p10, i7, 31, new t0(new k8(11, new ai.c0(e2.l0.a(p10.c, bundle), j3, 13), new q0(19)), 1));
+            q1(p10, i7, 31, new t0(new k8(11, new ai.d0(e2.l0.a(p10.c, bundle), j3, 13), new q0(19)), 1));
         } catch (RuntimeException e10) {
             h2.a.m("MediaSessionStub", "Ignoring malformed Bundle for MediaItem", e10);
         }

@@ -24,7 +24,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import c8.ja;
-import di.dc;
+import di.cc;
 import di.m6;
 import hi.p5;
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ import org.telegram.ui.c40;
 import org.telegram.ui.y10;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z extends FrameLayout implements n0 {
     public boolean A0;
@@ -1260,7 +1260,7 @@ public final class z extends FrameLayout implements n0 {
                 this.F0 = i7;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.H0 = ofFloat;
-                ofFloat.addUpdateListener(new dc(this, i10, i7, i11, x02, 2));
+                ofFloat.addUpdateListener(new cc(this, i10, i7, i11, x02, 2));
                 this.H0.addListener(new ki.m2(this, i7, x02, 3));
                 this.H0.start();
                 return;

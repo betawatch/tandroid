@@ -19,13 +19,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.gb0;
 import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.ma0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.av0;
 import org.telegram.ui.kd0;
 import org.telegram.ui.n11;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i6 implements org.telegram.messenger.q1, OnFailureListener, fi.c9, org.telegram.ui.ActionBar.q1, gb0, f5.n, pi {
     public final /* synthetic */ Object a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class i6 implements org.telegram.messenger.q1, OnFa
 
     @Override // org.telegram.messenger.q1
     public void a(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new j6((v8) this.a, list, (bi.v5) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
+        org.telegram.messenger.g0.h3(new j6((u8) this.a, list, (bi.v5) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, fVar, (Activity) this.e, 1));
     }
 
     @Override // org.telegram.messenger.pi
@@ -74,7 +74,7 @@ public final /* synthetic */ class i6 implements org.telegram.messenger.q1, OnFa
 
     @Override // f5.n
     public void f(f5.f fVar, List list) {
-        org.telegram.messenger.g0.h3(new j6((kd0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (ma0) this.e, 8));
+        org.telegram.messenger.g0.h3(new j6((kd0) this.a, fVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (u80) this.e, 8));
     }
 
     @Override // fi.c9

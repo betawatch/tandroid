@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.yb1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class m01 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -39,17 +39,17 @@ public final class m01 extends FrameLayout {
                 canvas.restoreToCount(save);
                 break;
             case 10:
-                tg.m2 m2Var = (tg.m2) this.b;
-                if (m2Var.E <= 0.0f || m2Var.s == null) {
+                tg.l2 l2Var = (tg.l2) this.b;
+                if (l2Var.E <= 0.0f || l2Var.s == null) {
                     canvas2 = canvas;
                 } else {
-                    m2Var.w.reset();
-                    float width = getWidth() / m2Var.n.getWidth();
-                    m2Var.w.postScale(width, width);
-                    m2Var.r.setLocalMatrix(m2Var.w);
-                    m2Var.s.setAlpha((int) (m2Var.E * 255.0f));
+                    l2Var.w.reset();
+                    float width = getWidth() / l2Var.n.getWidth();
+                    l2Var.w.postScale(width, width);
+                    l2Var.r.setLocalMatrix(l2Var.w);
+                    l2Var.s.setAlpha((int) (l2Var.E * 255.0f));
                     canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), m2Var.s);
+                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), l2Var.s);
                 }
                 super.dispatchDraw(canvas2);
                 break;
@@ -66,7 +66,7 @@ public final class m01 extends FrameLayout {
                 if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
                     return super.dispatchKeyEventPreIme(keyEvent);
                 }
-                ((tg.m2) this.b).onBackPressed();
+                ((tg.l2) this.b).onBackPressed();
                 return true;
             default:
                 return super.dispatchKeyEventPreIme(keyEvent);
@@ -187,12 +187,12 @@ public final class m01 extends FrameLayout {
                 }
                 break;
             case 9:
-                tg.g2 g2Var = (tg.g2) this.b;
-                ImageReceiver imageReceiver = g2Var.y0;
-                nt0 nt0Var2 = g2Var.w0;
-                if (g2Var.x0 != null) {
+                tg.f2 f2Var = (tg.f2) this.b;
+                ImageReceiver imageReceiver = f2Var.y0;
+                nt0 nt0Var2 = f2Var.w0;
+                if (f2Var.x0 != null) {
                     canvas.save();
-                    float d10 = g2Var.v0.d(g2Var.u0);
+                    float d10 = f2Var.v0.d(f2Var.u0);
                     canvas.scale(1.0f - (d10 * 2.0f), 1.0f, nt0Var2.a / 2.0f, 0.0f);
                     canvas.skew(0.0f, org.telegram.messenger.k5.A(1.0f, d10, 4.0f * d10, 0.25f));
                     imageReceiver.y0(0.0f, 0.0f, (int) nt0Var2.a, (int) nt0Var2.b);
@@ -273,8 +273,8 @@ public final class m01 extends FrameLayout {
             case 13:
                 super.onMeasure(i7, i10);
                 ug.g1 g1Var = (ug.g1) ((di.i4) this.b).d;
-                di.yb ybVar = g1Var.n2;
-                if (ybVar == null) {
+                di.xb xbVar = g1Var.n2;
+                if (xbVar == null) {
                     View view = g1Var.x2;
                     if (view == null) {
                         f10 = 0.0f;
@@ -285,7 +285,7 @@ public final class m01 extends FrameLayout {
                         measuredHeight = g1Var.x2.getMeasuredHeight();
                     }
                 } else {
-                    top = ybVar.getTop();
+                    top = xbVar.getTop();
                     measuredHeight = g1Var.n2.getMeasuredHeight();
                 }
                 f10 = (measuredHeight / 2.0f) + top;
@@ -379,10 +379,10 @@ public final class m01 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m01(tg.g2 g2Var, Context context) {
+    public m01(tg.f2 f2Var, Context context) {
         super(context);
         this.a = 9;
-        this.b = g2Var;
+        this.b = f2Var;
         setWillNotDraw(false);
     }
 

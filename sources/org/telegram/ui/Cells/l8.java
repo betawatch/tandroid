@@ -23,11 +23,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.fh0;
 import org.telegram.ui.fz;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class l8 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int W = 0;
@@ -204,10 +204,10 @@ public class l8 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         fh0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         org.telegram.ui.ActionBar.e6 e6Var = this.F;
         boolean a10 = e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
-        ea0 ea0Var = new ea0(1);
-        ea0Var.b(i7, i10);
-        ea0Var.b = a10;
-        fh0Var.setBackground(ea0Var);
+        fa0 fa0Var = new fa0(1);
+        fa0Var.b(i7, i10);
+        fa0Var.b = a10;
+        fh0Var.setBackground(fa0Var);
     }
 
     public final void g(int i7, int i10) {

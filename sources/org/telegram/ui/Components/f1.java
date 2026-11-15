@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.q1, r4, org.telegram.messenger.ab, org.telegram.ui.Cells.p5, org.telegram.messenger.kc, si, org.telegram.ui.ActionBar.f1, ij0, org.telegram.messenger.nr, hj0, jj0 {
     public final /* synthetic */ int a;
@@ -356,7 +356,7 @@ public final /* synthetic */ class f1 implements org.telegram.ui.ActionBar.q1, r
                 if (i11 != encryptedChat.ttl) {
                     org.telegram.messenger.bw.i(org.telegram.messenger.m10.t0).z(encryptedChat, null);
                     org.telegram.messenger.vr a02 = org.telegram.messenger.vr.a0(org.telegram.messenger.m10.t0);
-                    a02.a.c(new org.telegram.messenger.bq(a02, encryptedChat, 0));
+                    a02.a.c(new org.telegram.messenger.aq(a02, encryptedChat, 0));
                     break;
                 }
                 break;

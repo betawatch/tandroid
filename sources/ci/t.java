@@ -1,6 +1,6 @@
 package ci;
 
-import ai.u1;
+import ai.v1;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.is;
 import org.telegram.messenger.ns;
@@ -8,22 +8,22 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t implements is {
     public final int a;
     public final TLRPC.Document b;
     public final int c;
-    public final u1 d;
+    public final v1 d;
     public boolean e;
     public boolean f;
     public boolean h;
 
-    public t(int i7, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10, u1 u1Var) {
+    public t(int i7, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10, v1 v1Var) {
         this.a = i7;
         this.b = document;
         this.c = i10;
-        this.d = u1Var;
+        this.d = v1Var;
         ns.f(i7).b(this, ns.Y1);
         w7.G(i7);
         if (!w7.J(document, null, true, true).exists()) {

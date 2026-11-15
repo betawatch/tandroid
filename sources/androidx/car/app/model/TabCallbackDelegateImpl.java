@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ITabCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class TabCallbackDelegateImpl implements t0 {
     private final ITabCallback mStubCallback;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class TabCallbackStub extends ITabCallback.Stub {
         private final w0 mCallback;
 
@@ -24,7 +24,7 @@ public class TabCallbackDelegateImpl implements t0 {
 
         @Override // androidx.car.app.model.ITabCallback
         public void onTabSelected(String str, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.h.b(iOnDoneCallback, "onTabSelected", new p(this, str, 2));
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onTabSelected", new p(this, str, 2));
         }
     }
 
@@ -40,7 +40,7 @@ public class TabCallbackDelegateImpl implements t0 {
         try {
             ITabCallback iTabCallback = this.mStubCallback;
             Objects.requireNonNull(iTabCallback);
-            iTabCallback.onTabSelected(str, androidx.car.app.utils.h.a());
+            iTabCallback.onTabSelected(str, androidx.car.app.utils.g.a());
         } catch (RemoteException e10) {
             throw new RuntimeException(e10);
         }

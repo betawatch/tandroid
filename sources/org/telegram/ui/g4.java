@@ -65,7 +65,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g4 extends n50 implements org.telegram.messenger.is {
     public static Paint A1;
@@ -126,7 +126,7 @@ public final class g4 extends n50 implements org.telegram.messenger.is {
     public boolean W;
     public bg.u0 W0;
     public boolean X;
-    public ai.z0 X0;
+    public ai.a1 X0;
     public int Y;
     public int Y0;
     public int Z;
@@ -2411,22 +2411,22 @@ public final class g4 extends n50 implements org.telegram.messenger.is {
                     this.R0 = h9Var;
                     h9Var.S(linearLayout);
                     this.R0.D = new n0(this, i10);
-                    di.ub ubVar = new di.ub(this.M, 5);
-                    ubVar.setTextSize(1, 16.0f);
-                    ubVar.setTypeface(org.telegram.messenger.g0.o());
-                    ubVar.setText(org.telegram.messenger.hd.M0(2131749192, null));
-                    ubVar.setGravity((this.v0[0].c.H ? 5 : 3) | 16);
-                    ubVar.setTextColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
-                    ubVar.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-                    linearLayout.addView(ubVar, new LinearLayout.LayoutParams(-1, org.telegram.messenger.g0.L(48.0f) + 1));
+                    di.tb tbVar = new di.tb(this.M, 5);
+                    tbVar.setTextSize(1, 16.0f);
+                    tbVar.setTypeface(org.telegram.messenger.g0.o());
+                    tbVar.setText(org.telegram.messenger.hd.M0(2131749192, null));
+                    tbVar.setGravity((this.v0[0].c.H ? 5 : 3) | 16);
+                    tbVar.setTextColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
+                    tbVar.setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
+                    linearLayout.addView(tbVar, new LinearLayout.LayoutParams(-1, org.telegram.messenger.g0.L(48.0f) + 1));
                     view.setTag("bottomSheet");
                     linearLayout.addView(view, c8.ja.k(0.0f, 7.0f, 0.0f, 0.0f, -1, -2));
                     org.telegram.ui.Cells.t9 n10 = this.R0.n(this.M);
-                    ai.j0 j0Var = new ai.j0(this, this.M, linearLayout, 9);
+                    ai.k0 k0Var = new ai.k0(this, this.M, linearLayout, 9);
                     i11.z0 = new h0(this, i7);
-                    j0Var.addView(linearLayout, -1, -2);
-                    j0Var.addView(n10, -1, -2);
-                    i11.O = j0Var;
+                    k0Var.addView(linearLayout, -1, -2);
+                    k0Var.addView(n10, -1, -2);
+                    i11.O = k0Var;
                     if (this.Q0.x()) {
                         this.Q0.f(false);
                     }

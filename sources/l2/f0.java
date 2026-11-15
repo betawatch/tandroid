@@ -28,7 +28,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import kg.t1;
 import org.telegram.ui.Components.n51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class f0 extends com.google.android.gms.common.api.q implements p {
     public final ei.a A;
@@ -575,7 +575,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         }
         boolean z17 = g1Var2.g != g1Var.g;
         if (!equals) {
-            this.m.c(0, new r1(g1Var, i7, 3));
+            this.m.c(0, new ai.s1(g1Var, i7, 3));
         }
         if (z10) {
             e2.i1 i1Var2 = new e2.i1();
@@ -650,14 +650,14 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             long h04 = h2.l0.h0(j3);
             long h05 = this.p0.b.b() ? h2.l0.h0(m1(this.p0)) : h04;
             x2.f0 f0Var5 = this.p0.b;
-            this.m.c(11, new ai.q1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, f0Var5.b, f0Var5.c), 3));
+            this.m.c(11, new r1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, f0Var5.b, f0Var5.c), 3));
         } else {
             z12 = booleanValue;
             z13 = equals2;
             z14 = z16;
         }
         if (z12) {
-            this.m.c(1, new r1(l0Var, intValue, 4));
+            this.m.c(1, new ai.s1(l0Var, intValue, 4));
         }
         if (g1Var2.f != g1Var.f) {
             final int i19 = 7;

@@ -32,13 +32,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ch0 extends BitmapDrawable implements Animatable, bg.g {
     public static final AtomicInteger Q0 = new AtomicInteger();
     public static final AtomicInteger R0 = new AtomicInteger();
-    public static final ExecutorService S0 = Executors.newFixedThreadPool(4, new ai.x0(2));
-    public static final ExecutorService T0 = Executors.newFixedThreadPool(2, new ai.x0(3));
+    public static final ExecutorService S0 = Executors.newFixedThreadPool(4, new ai.y0(2));
+    public static final ExecutorService T0 = Executors.newFixedThreadPool(2, new ai.y0(3));
     public static org.telegram.messenger.q5 U0;
     public final Runnable A0;
     public Runnable B0;

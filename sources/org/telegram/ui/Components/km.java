@@ -23,7 +23,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class km implements org.telegram.ui.ActionBar.q1, org.telegram.messenger.c20, org.telegram.messenger.pi, r4, org.telegram.messenger.kc, org.telegram.messenger.nr, p4.l0, m9.q, w5.b, v5.e, h2.j {
     public final /* synthetic */ int a;
@@ -410,10 +410,10 @@ public final /* synthetic */ class km implements org.telegram.ui.ActionBar.q1, o
 
     @Override // w5.b
     public Object g() {
-        t5.a aVar = (t5.a) this.b;
+        t5.b bVar = (t5.b) this.b;
         o5.i iVar = (o5.i) this.c;
         o5.h hVar = (o5.h) this.d;
-        v5.g gVar = (v5.g) aVar.d;
+        v5.g gVar = (v5.g) bVar.d;
         gVar.getClass();
         l5.d dVar = iVar.c;
         String str = hVar.a;
@@ -428,7 +428,7 @@ public final /* synthetic */ class km implements org.telegram.ui.ActionBar.q1, o
             r.b.t(sb2, str2, c10);
         }
         ((Long) gVar.c(new km(gVar, hVar, iVar, 14))).getClass();
-        aVar.a.H(iVar, 1, false);
+        bVar.a.H(iVar, 1, false);
         return null;
     }
 
@@ -521,7 +521,7 @@ public final /* synthetic */ class km implements org.telegram.ui.ActionBar.q1, o
                 p4.v vVar = (p4.v) obj3;
                 List list = (List) obj;
                 Handler handler2 = d0Var2.l;
-                org.telegram.ui.web.e1 e1Var2 = new org.telegram.ui.web.e1(d0Var2, vVar, new org.telegram.ui.hn0(d0Var2, (p4.z0) obj2, vVar, list, 28));
+                org.telegram.ui.web.e1 e1Var2 = new org.telegram.ui.web.e1(d0Var2, vVar, new org.telegram.ui.ok0(d0Var2, (p4.z0) obj2, vVar, list, 29));
                 p4.m1 m1Var2 = new p4.m1(0);
                 String str2 = h2.l0.a;
                 m9.e0 e0Var2 = new m9.e0();

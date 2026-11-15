@@ -13,7 +13,7 @@ import org.telegram.ui.Cells.q1;
 import org.telegram.ui.Cells.t9;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.j8;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.q8;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.Components.tm0;
@@ -22,7 +22,7 @@ import org.telegram.ui.bg0;
 import org.telegram.ui.nz0;
 import org.telegram.ui.pz0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -123,12 +123,12 @@ public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateList
                 r40Var.x();
                 break;
             case 8:
-                n90 n90Var = (n90) this.c;
-                n90Var.getClass();
-                n90Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n90Var.invalidate();
+                o90 o90Var = (o90) this.c;
+                o90Var.getClass();
+                o90Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o90Var.invalidate();
                 if (this.b) {
-                    n90Var.requestLayout();
+                    o90Var.requestLayout();
                     break;
                 }
                 break;

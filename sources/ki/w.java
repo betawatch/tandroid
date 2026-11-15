@@ -11,7 +11,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.ve;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public abstract class w extends FrameLayout {
     public ObjectAnimator a;
@@ -52,7 +52,7 @@ public abstract class w extends FrameLayout {
         di.c1 c1Var = this.c;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(c1Var, (Property<di.c1, Float>) FrameLayout.TRANSLATION_Y, c1Var.getTranslationY(), (getMeasuredHeight() - this.h) + org.telegram.messenger.g0.L(40.0f));
         this.a = ofFloat;
-        ofFloat.addListener(new ai.i0(this, 28));
+        ofFloat.addListener(new ai.j0(this, 28));
         this.a.setDuration(150L);
         this.a.setInterpolator(er.f);
         this.a.start();

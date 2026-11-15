@@ -1,6 +1,6 @@
 package wg;
 
-import ai.d1;
+import ai.e1;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -42,9 +42,9 @@ import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.a31;
-import tg.a2;
+import tg.z1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class u0 extends ja {
     public final hi.d T1;
@@ -133,14 +133,14 @@ public final class u0 extends ja {
         int i13 = this.u0;
         uj0Var.setPadding(i13, 0, i13, org.telegram.messenger.g0.L(60.0f));
         this.o1.j(new vh.d(this, 1));
-        this.o1.setOnItemClickListener(new a2(this, 12));
+        this.o1.setOnItemClickListener(new z1(this, 12));
         v4.k kVar = new v4.k();
         kVar.n(350L);
         kVar.o(erVar);
         kVar.C = false;
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
-        this.o1.i(new ai.h0(this, 9));
+        this.o1.i(new ai.i0(this, 9));
         n1(false, true);
         f1(1, null, true);
         f1(3, null, true);
@@ -270,7 +270,7 @@ public final class u0 extends ja {
             ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(m10.t0);
             TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
             tL_help_getCountriesList.lang_code = hd.E0().B != null ? hd.E0().B.c() : Locale.getDefault().getCountry();
-            connectionsManager2.sendRequest(tL_help_getCountriesList, new d1(s0Var2, 24));
+            connectionsManager2.sendRequest(tL_help_getCountriesList, new e1(s0Var2, 24));
             return;
         }
         long j10 = chat.id;

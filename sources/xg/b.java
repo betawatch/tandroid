@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import di.ua;
+import di.ta;
 import fi.w3;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +49,7 @@ import yg.w;
 import yg.x;
 import yg.y;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class b extends rg.b {
     public final e6 d;
@@ -413,26 +413,26 @@ public final class b extends rg.b {
                 view = new w(context, e6Var);
                 break;
             case 18:
-                ua uaVar = new ua(context);
+                ta taVar = new ta(context);
                 String M0 = hd.M0(2131747836, null);
-                boolean z10 = uaVar.c == -1;
-                uaVar.c = -1;
-                h6 h6Var = uaVar.a;
+                boolean z10 = taVar.c == -1;
+                taVar.c = -1;
+                h6 h6Var = taVar.a;
                 h6Var.c(M0, z10, true);
                 int i11 = j6.o6;
                 j6.v0(i11);
                 q6.Y(h6Var, i11, null);
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-                ImageView imageView = uaVar.b;
+                ImageView imageView = taVar.b;
                 q6.s(imageView, i11, null, mode);
                 if (z10) {
                     imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(er.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }
-                uaVar.d = false;
-                uaVar.setWillNotDraw(true);
-                view = uaVar;
+                taVar.d = false;
+                taVar.setWillNotDraw(true);
+                view = taVar;
                 break;
             default:
                 view = new r(context, e6Var);

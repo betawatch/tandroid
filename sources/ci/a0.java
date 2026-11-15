@@ -55,7 +55,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a0 extends FrameLayout {
     public static final er A0 = new er(0.05d, 0.7d, 0.1d, 1.0d);
@@ -328,7 +328,7 @@ public final class a0 extends FrameLayout {
         a0 a0Var = new a0(r41Var.getParentActivity(), new RectF(width - f10, height - f10, width + f10, height + f10), new RectF(), new wf.b(10, z10Var, runnable));
         a0Var.setPlainButton(true);
         a0Var.setAccept(a20Var);
-        a0Var.setOnGallery(new androidx.car.app.utils.a(r41Var, a0Var, a20Var, z10Var, 3));
+        a0Var.setOnGallery(new ai.r(r41Var, a0Var, a20Var, z10Var, 4));
         overlayContainerView.addView(a0Var, ja.c(-1.0f, -1));
         return a0Var;
     }
@@ -368,7 +368,7 @@ public final class a0 extends FrameLayout {
         if (parentLayout == null || ((parentLayout.getLastFragment() == e2Var && !((ActionBarLayout) parentLayout).B()) || i7 >= 40)) {
             yVar.run();
         } else {
-            org.telegram.messenger.g0.i3(new ai.z0(e2Var, i7, yVar, 4), 50L);
+            org.telegram.messenger.g0.i3(new ai.a1(e2Var, i7, yVar, 4), 50L);
         }
     }
 

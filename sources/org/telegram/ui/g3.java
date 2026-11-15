@@ -6,7 +6,7 @@ import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g3 extends v4.t0 {
     public final /* synthetic */ int a;
@@ -159,7 +159,7 @@ public final class g3 extends v4.t0 {
                 break;
             case 23:
                 if (i7 == 1) {
-                    org.telegram.messenger.g0.v1(((ym0) this.b).getParentActivity().getCurrentFocus());
+                    org.telegram.messenger.g0.v1(((zm0) this.b).getParentActivity().getCurrentFocus());
                     break;
                 }
                 break;
@@ -362,12 +362,12 @@ public final class g3 extends v4.t0 {
                 }
                 break;
             case 23:
-                ym0 ym0Var = (ym0) obj;
-                if (ym0Var.K == null) {
-                    int L03 = ym0Var.N.L0();
-                    int abs2 = L03 == -1 ? 0 : Math.abs(ym0Var.N.N0() - L03) + 1;
-                    if (abs2 > 0 && L03 + abs2 > ym0Var.N.B() - 2 && !ym0Var.r && !ym0Var.s) {
-                        ym0Var.i0(ym0Var.w, ym0Var.x, ym0Var.a == 1, true);
+                zm0 zm0Var = (zm0) obj;
+                if (zm0Var.K == null) {
+                    int L03 = zm0Var.N.L0();
+                    int abs2 = L03 == -1 ? 0 : Math.abs(zm0Var.N.N0() - L03) + 1;
+                    if (abs2 > 0 && L03 + abs2 > zm0Var.N.B() - 2 && !zm0Var.r && !zm0Var.s) {
+                        zm0Var.i0(zm0Var.w, zm0Var.x, zm0Var.a == 1, true);
                         break;
                     }
                 }

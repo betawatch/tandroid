@@ -1,7 +1,7 @@
 package pb;
 
 import a8.r7;
-import ai.j0;
+import ai.k0;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Paint;
@@ -67,7 +67,7 @@ import org.telegram.ui.Components.p5;
 import org.telegram.ui.dr0;
 import org.xml.sax.Attributes;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.e, fm0, com.google.android.gms.common.api.internal.q, u9.d, q5.b, IMapsProvider, gh.a, l1, q0, OnFailureListener, s2.t, u4.c, x5.a {
     public final /* synthetic */ int a;
@@ -702,7 +702,7 @@ public final class b implements a4.h, c4.k, eg.a, f3.g, fg.a, ia.e, fm0, com.goo
     @Override // org.telegram.messenger.IMapsProvider
     public ya onCreateMapView(Context context) {
         r7 r7Var = new r7(13, (byte) 0);
-        r7Var.b = new j0(r7Var, context);
+        r7Var.b = new k0(r7Var, context);
         return r7Var;
     }
 

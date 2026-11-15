@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class vv extends n11 {
     public final /* synthetic */ e11[] f2;
@@ -26,7 +26,7 @@ public final class vv extends n11 {
             return true;
         }
         i7 = ((org.telegram.ui.ActionBar.e2) this.g2).currentAccount;
-        return di.v8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) >= 2;
+        return di.u8.y(i7, false).n(tL_starGiftUnique.id) == null || org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) >= 2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -45,7 +45,7 @@ public final class vv extends n11 {
         } else {
             if (tL_starGiftUnique != null) {
                 i7 = ((org.telegram.ui.ActionBar.e2) ywVar).currentAccount;
-                TL_stars.SavedStarGift n10 = di.v8.y(i7, false).n(tL_starGiftUnique.id);
+                TL_stars.SavedStarGift n10 = di.u8.y(i7, false).n(tL_starGiftUnique.id);
                 if (n10 != null && org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) < 2) {
                     org.telegram.messenger.np.e1().edit().putInt("statusgiftpage", org.telegram.messenger.np.e1().getInt("statusgiftpage", 0) + 1).apply();
                     Context context = getContext();

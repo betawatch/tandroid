@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.yb;
+import di.xb;
 import org.telegram.messenger.i20;
 import org.telegram.messenger.k5;
 import org.telegram.messenger.m10;
@@ -23,7 +23,7 @@ import org.telegram.ui.Components.i10;
 import org.telegram.ui.Components.i9;
 import org.telegram.ui.Components.t8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final i9 a;
@@ -66,19 +66,19 @@ public final class f extends FrameLayout {
         if (i7 == 1) {
             ki.f fVar = new ki.f(context, 4);
             addView(fVar, ja.e(-1, ns.U2, 55));
-            yb ybVar = new yb(context, 1, 1, 3);
-            ybVar.setStarParticlesView(fVar);
+            xb xbVar = new xb(context, 1, 1, 3);
+            xbVar.setStarParticlesView(fVar);
             Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
             int i10 = j6.Dk;
             canvas.drawColor(i0.a.f(0.5f, j6.w0(i10, e6Var), j6.w0(j6.h5, e6Var)));
-            ybVar.setBackgroundBitmap(createBitmap);
-            vg.f fVar2 = ybVar.b;
+            xbVar.setBackgroundBitmap(createBitmap);
+            vg.f fVar2 = xbVar.b;
             fVar2.z = i10;
             fVar2.A = j6.Ck;
             fVar2.b();
-            addView(ybVar, ja.e(ns.q2, ns.q2, 1));
-            ybVar.m(100L);
+            addView(xbVar, ja.e(ns.q2, ns.q2, 1));
+            xbVar.m(100L);
             TextView g10 = k5.g(context, 1, 20.0f);
             g10.setTypeface(org.telegram.messenger.g0.o());
             i20.q(g10, j6.G6, e6Var, null, 2131744252);

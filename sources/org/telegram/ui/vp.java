@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a = 1;
@@ -78,13 +78,13 @@ public final /* synthetic */ class vp implements org.telegram.messenger.z10 {
                             N1 = org.telegram.messenger.m5.k(org.telegram.messenger.np.s1(i10).J2(longValue));
                         }
                         edit.putLong(r.b.j(longValue, "ask_paid_message_", "_price"), N1);
-                        di.v8.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
+                        di.u8.y(i10, false).O.put(l10, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
                 org.telegram.messenger.ob obVar = new org.telegram.messenger.ob(i10, this.c, activity, arrayList, hashMap, z10Var, e6Var);
-                if (!di.v8.y(i10, false).e) {
-                    di.v8 y10 = di.v8.y(i10, false);
+                if (!di.u8.y(i10, false).e) {
+                    di.u8 y10 = di.u8.y(i10, false);
                     y10.e = false;
                     y10.q(obVar, false, true);
                     y10.e = true;

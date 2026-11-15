@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vd implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -101,7 +101,7 @@ public final /* synthetic */ class vd implements Runnable {
                         a8.g(e11, true);
                     }
                     MediaController.j0(false);
-                    g0.h3(new di.z8(mediaController, i10, j3, 3));
+                    g0.h3(new di.y8(mediaController, i10, j3, 3));
                     return;
                 }
             default:

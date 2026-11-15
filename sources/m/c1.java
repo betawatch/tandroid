@@ -7,7 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public static StaticLayout a(CharSequence charSequence, Layout.Alignment alignment, int i7, int i10, TextView textView, TextPaint textPaint, f1 f1Var) {

@@ -64,7 +64,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionBar.z5, org.telegram.messenger.is, org.telegram.ui.Cells.p2, oj0 {
     public static final int[] t2 = {0, 1, 2, 4};
@@ -560,7 +560,7 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
                         org.telegram.ui.ActionBar.y s5 = ys0Var2.H.s();
                         s5.addOnLayoutChangeListener(new wq0(ys0Var2));
                         f10 = 10.0f;
-                        if (ys0Var2.m1 == ys0Var2.y1.getUserConfig().e() && (ys0Var2.y1 instanceof x80) && ys0Var2.I()) {
+                        if (ys0Var2.m1 == ys0Var2.y1.getUserConfig().e() && (ys0Var2.y1 instanceof y80) && ys0Var2.I()) {
                             ys0Var2.p0 = s5.a(11, R.drawable.outline_header_search);
                         }
                         a10 = s5.a(0, 0);
@@ -3865,21 +3865,21 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
                         } else {
                             String M03 = org.telegram.messenger.hd.M0(2131746676, null);
                             HashMap hashMap = bi.i4.V;
-                            di.m8 m8Var = wp0Var2.d;
+                            di.l8 l8Var = wp0Var2.d;
                             Object obj2 = "";
-                            if (m8Var == null) {
+                            if (l8Var == null) {
                                 wp0Var = wp0Var2;
                                 str6 = M03;
                                 i11 = i21;
                                 z17 = z14;
                             } else {
-                                ArrayList arrayList3 = m8Var.l;
+                                ArrayList arrayList3 = l8Var.l;
                                 str6 = M03;
                                 i11 = i21;
                                 z17 = z14;
                                 Pair pair = new Pair(Integer.valueOf(org.telegram.messenger.m10.t0), Long.valueOf(wp0Var2.c));
                                 if (arrayList3.isEmpty()) {
-                                    if (m8Var.i && (obj = (CharSequence) hashMap.get(pair)) != null) {
+                                    if (l8Var.i && (obj = (CharSequence) hashMap.get(pair)) != null) {
                                         obj2 = obj;
                                     }
                                     wp0Var = wp0Var2;
@@ -5078,19 +5078,19 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
             wp0 wp0Var = this.b0;
             if (wp0Var != null) {
                 bi.c4 currentPage = wp0Var.getCurrentPage();
-                di.m8 m8Var = currentPage == null ? null : currentPage.e;
-                if (m8Var != null) {
+                di.l8 l8Var = currentPage == null ? null : currentPage.e;
+                if (l8Var != null) {
                     long j10 = wp0Var.c;
                     int i19 = wp0Var.b;
                     boolean w10 = j10 == org.telegram.messenger.m10.i(i19).e() ? true : j10 >= 0 ? false : org.telegram.messenger.t3.w(5, org.telegram.messenger.np.s1(i19).M0(Long.valueOf(-j10)));
                     Runnable[] runnableArr = new Runnable[1];
-                    if (m8Var.c) {
+                    if (l8Var.c) {
                         i11 = 11;
                         z0Var = null;
                         z11 = false;
                     } else {
                         i11 = 11;
-                        z0Var = xr0Var.n0(R.drawable.menu_sort_value, new hh0(i17, m8Var, runnableArr), org.telegram.messenger.hd.M0(2131750197, null), false, false);
+                        z0Var = xr0Var.n0(R.drawable.menu_sort_value, new hh0(i17, l8Var, runnableArr), org.telegram.messenger.hd.M0(2131750197, null), false, false);
                         z11 = true;
                     }
                     if (wp0Var.b()) {
@@ -5098,7 +5098,7 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
                         z11 = true;
                     }
                     if (wp0Var.e.h()) {
-                        if (!m8Var.i().isEmpty() || currentPage.d) {
+                        if (!l8Var.i().isEmpty() || currentPage.d) {
                             xr0Var.n0(R.drawable.tabs_reorder, new wo0(this, 12), org.telegram.messenger.hd.M0(2131750033, null), false, true);
                             xr0Var4 = xr0Var;
                         } else {
@@ -5123,19 +5123,19 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
                         z0Var2 = null;
                         z0Var3 = null;
                     }
-                    di.m8 m8Var2 = m8Var;
-                    bi.c6 c6Var = new bi.c6(z0Var, m8Var2, J, J2, J3, J4, w10, z0Var2, z0Var3);
+                    di.l8 l8Var2 = l8Var;
+                    bi.c6 c6Var = new bi.c6(z0Var, l8Var2, J, J2, J3, J4, w10, z0Var2, z0Var3);
                     org.telegram.ui.ActionBar.z0 z0Var4 = z0Var2;
                     org.telegram.ui.ActionBar.z0 z0Var5 = z0Var3;
                     runnableArr[0] = c6Var;
                     c6Var.run();
-                    bi.i4.j(J, m8Var2, runnableArr[0], 1);
-                    bi.i4.j(J2, m8Var2, runnableArr[0], 2);
-                    bi.i4.j(J3, m8Var2, runnableArr[0], 4);
-                    bi.i4.j(J4, m8Var2, runnableArr[0], 8);
+                    bi.i4.j(J, l8Var2, runnableArr[0], 1);
+                    bi.i4.j(J2, l8Var2, runnableArr[0], 2);
+                    bi.i4.j(J3, l8Var2, runnableArr[0], 4);
+                    bi.i4.j(J4, l8Var2, runnableArr[0], 8);
                     if (w10) {
-                        bi.i4.j(z0Var4, m8Var2, runnableArr[0], 256);
-                        bi.i4.j(z0Var5, m8Var2, runnableArr[0], 512);
+                        bi.i4.j(z0Var4, l8Var2, runnableArr[0], 256);
+                        bi.i4.j(z0Var5, l8Var2, runnableArr[0], 512);
                         return true;
                     }
                 }
@@ -5519,7 +5519,7 @@ public abstract class ys0 extends FrameLayout implements org.telegram.ui.ActionB
     }
 
     public final void b1(org.telegram.ui.ActionBar.e2 e2Var, long j3, int i7) {
-        t4.s0(e2Var, org.telegram.messenger.hd.M0(2131751598, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131744795, getStoriesController().w(i7, j3))), org.telegram.messenger.hd.M0(2131751598, null), true, new di.z8(this, j3, i7, 8));
+        t4.s0(e2Var, org.telegram.messenger.hd.M0(2131751598, null), org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0(null, null, 2131744795, getStoriesController().w(i7, j3))), org.telegram.messenger.hd.M0(2131751598, null), true, new di.y8(this, j3, i7, 8));
     }
 
     public final void c0(int i7, uj0 uj0Var, boolean z10) {

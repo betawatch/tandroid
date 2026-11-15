@@ -18,7 +18,7 @@ import org.telegram.ui.Components.d31;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements s10 {
     public final /* synthetic */ int a;
@@ -71,15 +71,15 @@ public final /* synthetic */ class b2 implements s10 {
                     np.s1(c6Var.a).O3(updates, false);
                     if (gjVar == null) {
                         s10Var.a(null, null);
-                        v8.y(c6Var.a, false).O();
-                        m8 G = v8.y(c6Var.a, false).G(m10.i(c6Var.a).e(), false);
+                        u8.y(c6Var.a, false).O();
+                        l8 G = u8.y(c6Var.a, false).G(m10.i(c6Var.a).e(), false);
                         if (G != null) {
                             G.k(arrayList, null);
                             break;
                         }
                     } else {
                         TL_stars.StarGift starGift = ((TLRPC.TL_messageActionStarGiftUnique) gjVar.k.action).gift;
-                        s10Var.a(starGift, new androidx.car.app.utils.a(c6Var, gjVar, arrayList, starGift, 8));
+                        s10Var.a(starGift, new ai.r(c6Var, gjVar, arrayList, starGift, 9));
                         break;
                     }
                 } else if (tL_error != null) {

@@ -17,12 +17,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class WidgetEngineService extends Service {
     public static volatile String b;
     public static String c;
-    public static final ExecutorService d = Executors.newSingleThreadExecutor(new ai.x0(6));
+    public static final ExecutorService d = Executors.newSingleThreadExecutor(new ai.y0(6));
     public final z a = new z(this);
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue

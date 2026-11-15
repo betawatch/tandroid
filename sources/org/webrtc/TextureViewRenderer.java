@@ -1,6 +1,6 @@
 package org.webrtc;
 
-import ai.e1;
+import ai.f1;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Point;
@@ -9,8 +9,8 @@ import android.os.Looper;
 import android.view.TextureView;
 import android.view.View;
 import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.fr;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gr;
 import org.telegram.messenger.ns;
 import org.telegram.messenger.qc;
 import org.telegram.messenger.voip.VoIPService;
@@ -19,7 +19,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -317,9 +317,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    gr grVar = new gr(this, i7, i10, i18, i17, 2);
-                    this.updateScreenRunnable = grVar;
-                    postOrRun(grVar);
+                    fr frVar = new fr(this, i7, i10, i18, i17, 2);
+                    this.updateScreenRunnable = frVar;
+                    postOrRun(frVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -570,7 +570,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;
@@ -659,7 +659,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
             ThreadUtils.checkIsOnMainThread();
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            releaseEglSurface(new e1(countDownLatch, 1), false);
+            releaseEglSurface(new f1(countDownLatch, 1), false);
             ThreadUtils.awaitUninterruptibly(countDownLatch);
             return true;
         }

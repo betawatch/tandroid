@@ -32,7 +32,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.f20;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l8 extends FrameLayout implements View.OnClickListener, is {
     public final org.telegram.ui.Cells.x3 E;
@@ -1424,7 +1424,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, is {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, c10);
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new j3(this, 6));
-            this.Q.addListener(new ai.i0(this, 26));
+            this.Q.addListener(new ai.j0(this, 26));
             this.Q.setInterpolator(new LinearInterpolator());
             this.Q.setDuration(180L);
             this.Q.start();
@@ -1577,7 +1577,7 @@ public final class l8 extends FrameLayout implements View.OnClickListener, is {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
                 j8Var.d = ofFloat;
                 ofFloat.addUpdateListener(new i8(j8Var, 1));
-                j8Var.d.addListener(new ai.i0(j8Var, 27));
+                j8Var.d.addListener(new ai.j0(j8Var, 27));
                 j8Var.d.setDuration(250L);
                 ValueAnimator valueAnimator2 = j8Var.d;
                 er erVar = org.telegram.ui.ActionBar.i1.w;

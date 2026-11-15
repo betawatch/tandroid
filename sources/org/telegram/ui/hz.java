@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class hz extends org.telegram.ui.ActionBar.e2 {
     public int E;
@@ -44,7 +44,7 @@ public final class hz extends org.telegram.ui.ActionBar.e2 {
     public float R;
     public hi.l3 S;
     public boolean T;
-    public di.u7 U;
+    public di.t7 U;
     public int V;
     public int W;
     public int X;
@@ -1209,9 +1209,9 @@ public final class hz extends org.telegram.ui.ActionBar.e2 {
     public final void onResume() {
         super.onResume();
         C0();
-        di.u7 u7Var = this.U;
-        if (u7Var != null) {
-            u7Var.run();
+        di.t7 t7Var = this.U;
+        if (t7Var != null) {
+            t7Var.run();
         }
     }
 
@@ -1350,7 +1350,7 @@ public final class hz extends org.telegram.ui.ActionBar.e2 {
         org.telegram.messenger.so soVar;
         if (!this.T && (soVar = this.r) != null && soVar.d() && soVar.f()) {
             this.T = true;
-            this.U = new di.u7(this, z10, i7, 7);
+            this.U = new di.t7(this, z10, i7, 7);
             if (getLayoutContainer() != null) {
                 this.U.run();
                 this.U = null;

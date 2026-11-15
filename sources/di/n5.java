@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class n5 extends a5.h {
     public org.telegram.ui.Components.g6 E;
@@ -35,7 +35,7 @@ public final class n5 extends a5.h {
     public int L;
     public final Path c;
     public final RectF d;
-    public final bc e;
+    public final ac e;
     public final int f;
     public final View h;
     public final ImageReceiver n;
@@ -68,7 +68,7 @@ public final class n5 extends a5.h {
         this.f = i7;
         if (starGift instanceof TL_stars.TL_starGift) {
             float f13 = i7;
-            mb.c1(imageReceiver, starGift.sticker, (int) (0.75f * f13));
+            lb.c1(imageReceiver, starGift.sticker, (int) (0.75f * f13));
             String str = starGift.title;
             oy0 oy0Var = new oy0(str == null ? "Gift" : str, 16.0f, org.telegram.messenger.g0.o());
             this.x = oy0Var;
@@ -83,12 +83,12 @@ public final class n5 extends a5.h {
             oy0Var2.p(org.telegram.messenger.g0.L(f14));
             oy0Var2.a();
             oy0Var2.m(1);
-            bc bcVar = new bc(1, 40);
-            this.e = bcVar;
+            ac acVar = new ac(1, 40);
+            this.e = acVar;
             float f15 = 0.45f * f13;
-            bcVar.f(-org.telegram.messenger.g0.L(f15), -org.telegram.messenger.g0.L(f15), org.telegram.messenger.g0.L(f15), org.telegram.messenger.g0.L(f13 * 0.25f));
+            acVar.f(-org.telegram.messenger.g0.L(f15), -org.telegram.messenger.g0.L(f15), org.telegram.messenger.g0.L(f15), org.telegram.messenger.g0.L(f13 * 0.25f));
             float L = org.telegram.messenger.g0.L(30.0f);
-            RectF rectF = bcVar.c;
+            RectF rectF = acVar.c;
             int width = (int) rectF.width();
             int height = (int) rectF.height();
             ArrayList arrayList = new ArrayList();
@@ -193,17 +193,17 @@ public final class n5 extends a5.h {
                 i15 = 0;
             }
             int size = arrayList.size();
-            ArrayList arrayList3 = bcVar.b;
+            ArrayList arrayList3 = acVar.b;
             int size2 = size - arrayList3.size();
             for (int i27 = 0; i27 < size2; i27++) {
-                arrayList3.add(new ac(bcVar));
+                arrayList3.add(new zb(acVar));
             }
             int size3 = arrayList.size();
-            bcVar.j = size3;
-            if (bcVar.l != null) {
+            acVar.j = size3;
+            if (acVar.l != null) {
                 a4.k kVar = new a4.k(size3);
-                bcVar.l = kVar;
-                Bitmap bitmap = bcVar.d;
+                acVar.l = kVar;
+                Bitmap bitmap = acVar.d;
                 float width2 = bitmap.getWidth();
                 float height2 = bitmap.getHeight();
                 int i28 = 0;
@@ -214,19 +214,19 @@ public final class n5 extends a5.h {
                 }
             }
             long currentTimeMillis = System.currentTimeMillis();
-            for (int i30 = 0; i30 < bcVar.j; i30++) {
-                ac acVar = (ac) arrayList3.get(i30);
+            for (int i30 = 0; i30 < acVar.j; i30++) {
+                zb zbVar = (zb) arrayList3.get(i30);
                 PointF pointF5 = (PointF) arrayList.get(i30);
-                bcVar.c(acVar, currentTimeMillis, true);
-                acVar.a = pointF5.x + rectF.left;
-                acVar.b = pointF5.y + rectF.top;
-                acVar.h = org.telegram.messenger.g0.T1(0.4f, 1.0f, Utilities.c.nextFloat());
-                acVar.e *= 1.25f;
+                acVar.c(zbVar, currentTimeMillis, true);
+                zbVar.a = pointF5.x + rectF.left;
+                zbVar.b = pointF5.y + rectF.top;
+                zbVar.h = org.telegram.messenger.g0.T1(0.4f, 1.0f, Utilities.c.nextFloat());
+                zbVar.e *= 1.25f;
             }
         } else if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) v8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) u8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) u8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             if (stargiftattributepattern != null) {
                 e5Var.i(stargiftattributepattern.document, false);
             }
@@ -235,7 +235,7 @@ public final class n5 extends a5.h {
                 e5Var.k(Integer.valueOf(stargiftattributebackdrop.pattern_color | (-16777216)));
             }
             if (stargiftattributemodel != null) {
-                mb.c1(imageReceiver, stargiftattributemodel.document, (int) (i7 * 0.75f));
+                lb.c1(imageReceiver, stargiftattributemodel.document, (int) (i7 * 0.75f));
             }
         }
         ((Paint) this.b).setShader(this.s);
@@ -316,9 +316,9 @@ public final class n5 extends a5.h {
         canvas.save();
         canvas.translate(rectF.centerX(), rectF.centerY());
         w0.a(canvas, this.L, this.r, rectF.width(), rectF.height(), 1.0f, this.F);
-        bc bcVar = this.e;
-        if (bcVar != null) {
-            bcVar.b(canvas, -1, 1.0f);
+        ac acVar = this.e;
+        if (acVar != null) {
+            acVar.b(canvas, -1, 1.0f);
         }
         canvas.restore();
         oy0 oy0Var2 = this.x;

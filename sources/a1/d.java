@@ -17,7 +17,7 @@ import bi.p1;
 import c8.ja;
 import ch.p0;
 import com.google.android.gms.tasks.OnFailureListener;
-import di.v8;
+import di.u8;
 import e2.m1;
 import e2.u;
 import h2.l0;
@@ -93,7 +93,7 @@ import org.telegram.ui.u91;
 import org.telegram.ui.x11;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, p, q1, sw, org.telegram.ui.ActionBar.q1, r4, gb0, pi, qr, t10 {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class d implements OnFailureListener, p, q1, sw, or
                 g0.h3(new ai.b(list, (s10) this.b, (TLRPC.TL_inputStorePaymentStarsTopup) this.c, (TL_stars.TL_starsTopupOption) this.d, (Activity) this.e, 7));
                 break;
             default:
-                g0.h3(new p1((v8) this.b, list, (t1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, fVar, (Activity) this.e, 3));
+                g0.h3(new p1((u8) this.b, list, (t1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, fVar, (Activity) this.e, 3));
                 break;
         }
     }

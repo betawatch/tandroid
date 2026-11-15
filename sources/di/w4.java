@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class w4 extends FrameLayout {
     public final bi.e2 a;
@@ -73,13 +73,13 @@ public final class w4 extends FrameLayout {
     public final void a(TL_stars.StarGift starGift, boolean z10) {
         this.h = starGift;
         if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) v8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) v8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) u8.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) u8.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) u8.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             bi.e2 e2Var = this.a;
             e2Var.d(stargiftattributebackdrop);
             e2Var.e(stargiftattributepattern);
-            mb.c1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
+            lb.c1(this.c.getImageReceiver(), stargiftattributemodel.document, 52);
             int b10 = org.telegram.ui.ActionBar.j6.b(-0.05f, -0.15f, org.telegram.ui.ActionBar.j6.r1(0.88f, stargiftattributebackdrop.edge_color | (-16777216)));
             String J0 = ki.k.J0(starGift.craft_chance_permille);
             TextView textView = this.d;

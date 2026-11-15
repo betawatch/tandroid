@@ -1,332 +1,307 @@
 package ai;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import android.view.MotionEvent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import c8.ja;
+import androidx.recyclerview.widget.RecyclerView;
+import di.k7;
+import di.u8;
+import fi.b4;
+import fi.e3;
+import hi.h4;
+import hi.kb;
+import hi.lb;
+import hi.mb;
+import hi.nb;
+import hi.qb;
+import j$.util.DesugarTimeZone;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ez;
 import org.telegram.messenger.hd;
+import org.telegram.messenger.m10;
 import org.telegram.messenger.np;
+import org.telegram.messenger.z10;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.fp;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.cf;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.an;
+import org.telegram.ui.f60;
+import org.telegram.ui.gc;
+import org.telegram.ui.hc;
+import org.telegram.ui.pv0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class u2 extends FrameLayout {
-    public final Path E;
-    public final u5 F;
-    public final u5 G;
-    public final u5 H;
-    public final dc I;
-    public float J;
-    public long K;
-    public boolean L;
-    public boolean M;
-    public float N;
-    public final String a;
-    public final String b;
-    public final String c;
-    public final boolean d;
-    public final s e;
-    public final fp f;
-    public final TextPaint h;
-    public final TextPaint n;
-    public final Paint r;
-    public final Paint s;
-    public final TextPaint w;
-    public final RectF x;
-    public final RectF y;
+public final /* synthetic */ class u2 implements z10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public u2(Context context, String str, String str2, String str3, boolean z10) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.h = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.n = textPaint2;
-        Paint paint = new Paint(1);
-        this.r = paint;
-        this.s = new Paint(1);
-        TextPaint textPaint3 = new TextPaint(1);
-        this.w = textPaint3;
-        this.x = new RectF();
-        this.y = new RectF();
-        this.E = new Path();
-        er erVar = er.h;
-        u5 u5Var = new u5(this, 0L, 300L, erVar);
-        this.F = u5Var;
-        u5 u5Var2 = new u5(this, 0L, 420L, erVar);
-        this.G = u5Var2;
-        u5 u5Var3 = new u5(this, 0L, 420L, erVar);
-        this.H = u5Var3;
-        this.I = new dc(this);
-        setWillNotDraw(false);
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = z10;
-        this.e = str != null ? DictationAsr.H(str) : null;
-        textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        textPaint2.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
-        textPaint3.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        textPaint3.setTypeface(org.telegram.messenger.g0.o());
-        fp fpVar = new fp(26, context, null);
-        this.f = fpVar;
-        fpVar.setDrawUnchecked(false);
-        fpVar.b(-1, -1, j6.Fi);
-        fpVar.setDrawBackgroundAsArc(-1);
-        addView(fpVar, ja.d(26, 26.0f, (hd.a0 ? 3 : 5) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
-        b();
-        u5Var.e(true, this.N);
-        u5Var2.e(true, this.L ? 1.0f : 0.0f);
-        u5Var3.e(true, (this.M || this.L) ? 1.0f : 0.0f);
+    public /* synthetic */ u2(int i7, Object obj, boolean z10) {
+        this.a = i7;
+        this.c = obj;
+        this.b = z10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0042  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0197 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // org.telegram.messenger.z10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a() {
-        int i7;
-        if (this.L) {
-            boolean v = DictationAsr.v();
-            String str = this.a;
-            if (v) {
-                DictationAsr.S(str);
-            } else {
-                boolean y10 = DictationAsr.y(str);
-                StringBuilder sb2 = new StringBuilder();
-                String[] C = DictationAsr.C();
-                int length = C.length;
-                while (i7 < length) {
-                    String str2 = C[i7];
-                    if (str2.equals(str)) {
-                        i7 = y10 ? i7 + 1 : 0;
-                        if (sb2.length() > 0) {
-                            sb2.append(',');
-                        }
-                        sb2.append(str2);
+    public final void a(Object obj) {
+        int[] iArr;
+        u61 u61Var;
+        r4 = false;
+        boolean z10 = false;
+        switch (this.a) {
+            case 0:
+                x2 x2Var = (x2) this.c;
+                Integer num = (Integer) obj;
+                if (this.b) {
+                    cc.a0(x2Var).Q(R.raw.ic_delete, 36, num + " local transcriptions deleted").j();
+                    break;
+                }
+                break;
+            case 1:
+                u8 u8Var = (u8) this.c;
+                HashSet hashSet = (HashSet) obj;
+                if (this.b) {
+                    ez.C(u8Var.a).f(new ArrayList(hashSet));
+                    break;
+                } else {
+                    u8Var.getClass();
+                    break;
+                }
+            case 2:
+                b4 b4Var = (b4) this.c;
+                boolean z11 = this.b;
+                e3 e3Var = b4Var.M0;
+                e6 e6Var = b4Var.l0;
+                new cc(e3Var, e6Var).o(z11 ? bc.h : bc.e, e6Var).j();
+                break;
+            case 3:
+                z10 z10Var = (z10) this.c;
+                boolean z12 = this.b;
+                Location location = (Location) obj;
+                if (location == null) {
+                    z10Var.a(null);
+                    break;
+                } else {
+                    Activity activity = LaunchActivity.H1;
+                    if (activity == null) {
+                        activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
+                    }
+                    if (activity == null || activity.isFinishing()) {
+                        z10Var.a(null);
+                        break;
                     } else {
-                        if (!DictationAsr.y(str2)) {
+                        org.telegram.ui.ActionBar.t1 t1Var = z12 ? new org.telegram.ui.ActionBar.t1(3, activity, new fi.b()) : null;
+                        if (z12) {
+                            t1Var.r(200L);
                         }
-                        if (sb2.length() > 0) {
+                        double latitude = location.getLatitude();
+                        double longitude = location.getLongitude();
+                        kb kbVar = new kb(z12, t1Var, z10Var, r4 ? 1 : 0);
+                        Date date = new Date();
+                        Calendar calendar = Calendar.getInstance(DesugarTimeZone.getTimeZone("UTC"));
+                        calendar.setTime(date);
+                        String str = Math.round(latitude * 1000.0d) + ":" + Math.round(longitude * 1000.0d) + "at" + (((calendar.getTimeInMillis() / 1000) / 60) / 60);
+                        if (qb.b == null || !TextUtils.equals(qb.a, str)) {
+                            int[] iArr2 = new int[1];
+                            np s12 = np.s1(m10.t0);
+                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
+                            String str2 = s12.W5;
+                            TLObject f22 = s12.f2(str2);
+                            TLRPC.User[] userArr = {f22 instanceof TLRPC.User ? (TLRPC.User) f22 : null};
+                            mb mbVar = new mb(s12, userArr, latitude, longitude, iArr2, connectionsManager, kbVar, str);
+                            if (userArr[0] == 0) {
+                                TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
+                                tL_contacts_resolveUsername.username = str2;
+                                iArr = iArr2;
+                                iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new k7(iArr2, s12, userArr, mbVar, kbVar, 1));
+                            } else {
+                                iArr = iArr2;
+                                mbVar.run();
+                            }
+                            r2 = new h4(17, iArr, connectionsManager);
+                        } else {
+                            kbVar.a(qb.b);
                         }
-                        sb2.append(str2);
+                        if (z12 && r2 != null) {
+                            t1Var.setOnCancelListener(new lb(r2, r4 ? 1 : 0));
+                            break;
+                        }
                     }
                 }
-                SharedPreferences.Editor putString = np.e1().edit().putString("asr_langs", sb2.toString());
-                if (sb2.length() == 0) {
-                    putString.putBoolean("asr_auto", true);
+                break;
+            case 4:
+                u2 u2Var = (u2) this.c;
+                boolean z13 = this.b;
+                if (!((Boolean) obj).booleanValue()) {
+                    u2Var.a(null);
+                    break;
+                } else {
+                    final LocationManager locationManager = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
+                    List<String> providers = locationManager.getProviders(true);
+                    Location location2 = null;
+                    for (int size = providers.size() - 1; size >= 0; size--) {
+                        location2 = locationManager.getLastKnownLocation(providers.get(size));
+                        if (location2 != null) {
+                            if (location2 == null && z13) {
+                                if (locationManager.isProviderEnabled("gps")) {
+                                    Context context = LaunchActivity.H1;
+                                    if (context == null) {
+                                        context = org.telegram.messenger.t0.b;
+                                    }
+                                    if (context != null) {
+                                        try {
+                                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
+                                            int i7 = j6.L5;
+                                            alertDialog$Builder.m(R.raw.permission_request_location, 72, j6.x0(null, i7, false), null);
+                                            alertDialog$Builder.n(i7, null);
+                                            alertDialog$Builder.a.U = hd.M0(2131749530, null);
+                                            alertDialog$Builder.k(hd.M0(2131751160, null), new nb(context, r4 ? 1 : 0));
+                                            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                                            alertDialog$Builder.p();
+                                        } catch (Exception e10) {
+                                            a8.g(e10, true);
+                                        }
+                                    }
+                                } else {
+                                    try {
+                                        final z10[] z10VarArr = {u2Var};
+                                        final LocationListener[] locationListenerArr = {null};
+                                        LocationListener locationListener = new LocationListener() { // from class: hi.ob
+                                            @Override // android.location.LocationListener
+                                            public final void onLocationChanged(Location location3) {
+                                                LocationListener[] locationListenerArr2 = locationListenerArr;
+                                                LocationListener locationListener2 = locationListenerArr2[0];
+                                                if (locationListener2 != null) {
+                                                    locationManager.removeUpdates(locationListener2);
+                                                    locationListenerArr2[0] = null;
+                                                }
+                                                z10[] z10VarArr2 = z10VarArr;
+                                                z10 z10Var2 = z10VarArr2[0];
+                                                if (z10Var2 != null) {
+                                                    z10Var2.a(location3);
+                                                    z10VarArr2[0] = null;
+                                                }
+                                            }
+                                        };
+                                        locationListenerArr[0] = locationListener;
+                                        locationManager.requestLocationUpdates("gps", 1L, 0.0f, locationListener);
+                                        break;
+                                    } catch (Exception e11) {
+                                        a8.g(e11, true);
+                                        u2Var.a(null);
+                                        return;
+                                    }
+                                }
+                            }
+                            u2Var.a(location2);
+                            break;
+                        }
+                    }
+                    if (location2 == null) {
+                        if (locationManager.isProviderEnabled("gps")) {
+                        }
+                    }
+                    u2Var.a(location2);
                 }
-                putString.apply();
-            }
-        } else if (!this.M) {
-            DictationAsr.s(this.e);
-        }
-        b();
-    }
-
-    public final void b() {
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        if (this.e == null) {
-            this.L = true;
-            z11 = DictationAsr.v();
-        } else {
-            String str = this.a;
-            s[] I = DictationAsr.I();
-            int length = I.length;
-            int i7 = 0;
-            while (true) {
-                if (i7 >= length) {
-                    z10 = false;
+            case 5:
+                hc hcVar = (hc) this.c;
+                boolean z14 = this.b;
+                View view = (View) obj;
+                gc gcVar = (gc) view;
+                hcVar.b.getClass();
+                r4 = RecyclerView.R(view) == hcVar.e;
+                gcVar.s = r4;
+                if (!z14) {
+                    gcVar.w.f(r4, true);
+                }
+                gcVar.invalidate();
+                break;
+            case 6:
+                an anVar = (an) this.c;
+                boolean z15 = this.b;
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Cells.q1) {
+                    org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view2;
+                    if (q1Var.W6 && q1Var.Y6) {
+                        z10 = true;
+                    }
+                    if (z10 != z15 && anVar.aa()) {
+                        q1Var.W6 = z15;
+                        q1Var.Y6 = anVar.aa();
+                        q1Var.F6 = true;
+                        q1Var.forceLayout();
+                        break;
+                    }
+                } else if (view2 instanceof org.telegram.ui.Cells.t0) {
+                    ((org.telegram.ui.Cells.t0) view2).f0 = z15;
                     break;
                 }
-                s sVar = I[i7];
-                if (sVar.b(str) && DictationAsr.w(sVar)) {
-                    z10 = true;
+                break;
+            case 7:
+                v61 v61Var = (v61) this.c;
+                boolean z16 = this.b;
+                View view3 = (View) obj;
+                v61Var.w.getClass();
+                int R = RecyclerView.R(view3);
+                if (view3 instanceof t61) {
+                    ((t61) view3).setReordering(z16 && (u61Var = v61Var.E) != null && ((cf) u61Var).l(R));
                     break;
                 }
-                i7++;
-            }
-            this.L = z10;
-            z11 = z10 && !DictationAsr.v() && DictationAsr.y(this.a);
-        }
-        if (!this.L && this.e != null) {
-            String str2 = this.a;
-            for (s sVar2 : DictationAsr.I()) {
-                if (sVar2.b(str2) && sVar2.h) {
-                    z12 = true;
+                break;
+            case 8:
+                View view4 = (View) this.c;
+                boolean z17 = this.b;
+                if (((Boolean) obj).booleanValue()) {
+                    ((q8) view4).setChecked(!z17);
                     break;
                 }
-            }
-        }
-        z12 = false;
-        this.M = z12;
-        float f10 = 0.0f;
-        if (this.e != null) {
-            String str3 = this.a;
-            for (s sVar3 : DictationAsr.I()) {
-                if (sVar3.b(str3) && sVar3.h) {
-                    f10 = Math.max(f10, sVar3.i);
+                break;
+            case 9:
+                pv0 pv0Var = (pv0) this.c;
+                boolean z18 = this.b;
+                ProfileActivity profileActivity = pv0Var.b;
+                if (profileActivity.getParentActivity() != null) {
+                    cc.a0(profileActivity).o(z18 ? bc.h : bc.e, null).j();
+                    break;
                 }
-            }
+                break;
+            case 10:
+                org.telegram.messenger.g0.h3(new f60((org.telegram.ui.web.k) this.c, (String) obj, this.b, 15));
+                break;
+            default:
+                org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.c;
+                n1Var.getMessagesController().p((String) obj, this.b);
+                n1Var.a.g3.O(true);
+                break;
         }
-        this.N = f10;
-        this.f.a(z11, isAttachedToWindow());
-        boolean z13 = this.L;
-        if (z13 != (getBackground() != null)) {
-            setBackground(z13 ? j6.N0(false) : null);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z10;
-        float f10;
-        boolean z11 = hd.a0;
-        int x02 = j6.x0(null, j6.z6, false);
-        int x03 = j6.x0(null, j6.Fi, false);
-        float L = org.telegram.messenger.g0.L(25.0f);
-        int x04 = j6.x0(null, j6.G6, false);
-        TextPaint textPaint = this.h;
-        textPaint.setColor(x04);
-        TextPaint textPaint2 = this.n;
-        textPaint2.setColor(x02);
-        String str = this.b;
-        float measureText = textPaint.measureText(str);
-        float L2 = org.telegram.messenger.g0.L(5.5f) + L;
-        canvas.drawText(str, z11 ? (getWidth() - org.telegram.messenger.g0.L(21.0f)) - measureText : org.telegram.messenger.g0.L(21.0f), L2, textPaint);
-        String str2 = this.c;
-        if (str2 != null) {
-            canvas.drawText(str2, z11 ? (((getWidth() - org.telegram.messenger.g0.L(21.0f)) - measureText) - org.telegram.messenger.g0.L(8.0f)) - textPaint2.measureText(str2) : org.telegram.messenger.g0.L(21.0f) + measureText + org.telegram.messenger.g0.L(8.0f), L2, textPaint2);
-        }
-        float d = this.G.d(this.L);
-        float d2 = this.H.d(this.M || this.L);
-        float e10 = this.F.e(false, this.N);
-        this.f.setAlpha(d);
-        if (d < 1.0f) {
-            TextPaint textPaint3 = this.w;
-            float measureText2 = textPaint3.measureText("Download");
-            float L3 = measureText2 + org.telegram.messenger.g0.L(28.0f);
-            float L4 = org.telegram.messenger.g0.L(30.0f);
-            float L5 = z11 ? org.telegram.messenger.g0.L(17.0f) + L3 : getWidth() - org.telegram.messenger.g0.L(17.0f);
-            float f11 = L4 / 2.0f;
-            RectF rectF = this.y;
-            rectF.set(L5 - L3, L - f11, L5, L + f11);
-            float f12 = 1.0f - d;
-            float a10 = this.I.a(0.08f) * (1.0f - (0.2f * d));
-            canvas.save();
-            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-            int r12 = j6.r1(f12, x03);
-            Paint paint = this.s;
-            paint.setColor(r12);
-            canvas.drawRoundRect(rectF, f11, f11, paint);
-            int x05 = j6.x0(null, j6.Ji, false);
-            canvas.save();
-            Path path = this.E;
-            path.rewind();
-            path.addRoundRect(rectF, f11, f11, Path.Direction.CW);
-            canvas.clipPath(path);
-            float L6 = org.telegram.messenger.g0.L(16.0f);
-            if (d2 < 1.0f) {
-                textPaint3.setColor(j6.r1((1.0f - d2) * f12, x05));
-                canvas.save();
-                canvas.translate(0.0f, (-d2) * L6);
-                canvas.scale(1.0f, 1.0f - (0.4f * d2), rectF.centerX(), rectF.centerY());
-                canvas.drawText("Download", rectF.centerX() - (measureText2 / 2.0f), rectF.centerY() + org.telegram.messenger.g0.L(5.0f), textPaint3);
-                canvas.restore();
-            }
-            if (d2 > 0.0f) {
-                long uptimeMillis = SystemClock.uptimeMillis();
-                z10 = z11;
-                if (this.K != 0) {
-                    this.J = (((uptimeMillis - r6) * 0.36f) + this.J) % 360.0f;
-                }
-                this.K = uptimeMillis;
-                float L7 = org.telegram.messenger.g0.L(8.0f);
-                float z12 = com.google.android.gms.internal.vision.e2.z(1.0f, d2, L6, rectF.centerY());
-                RectF rectF2 = this.x;
-                rectF2.set(rectF.centerX() - L7, z12 - L7, rectF.centerX() + L7, z12 + L7);
-                int r13 = j6.r1(f12 * d2, x05);
-                Paint paint2 = this.r;
-                paint2.setColor(r13);
-                canvas.drawArc(rectF2, this.J - 90.0f, Math.max(0.1f, Math.min(0.9f, e10)) * 360.0f, false, paint2);
-            } else {
-                z10 = z11;
-            }
-            canvas.restore();
-            canvas.restore();
-            f10 = 0.0f;
-            if (d2 > 0.0f || d > 0.0f) {
-                invalidate();
-            }
-        } else {
-            z10 = z11;
-            f10 = 0.0f;
-            this.K = 0L;
-        }
-        if (this.d) {
-            float L8 = z10 ? f10 : org.telegram.messenger.g0.L(21.0f);
-            float height = getHeight() - 1;
-            int width = getWidth();
-            if (z10) {
-                width -= org.telegram.messenger.g0.L(21.0f);
-            }
-            canvas.drawLine(L8, height, width, getHeight() - 1, j6.k0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        RectF rectF = this.y;
-        dc dcVar = this.I;
-        if (action == 0) {
-            boolean z10 = (this.L || this.M || !rectF.contains(motionEvent.getX(), motionEvent.getY())) ? false : true;
-            dcVar.c(z10);
-            if (z10) {
-                return true;
-            }
-        } else if (action == 2) {
-            if (dcVar.i && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                dcVar.c(false);
-            }
-            if (dcVar.i) {
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            boolean z11 = dcVar.i;
-            dcVar.c(false);
-            if (z11) {
-                if (action == 1) {
-                    performHapticFeedback(3);
-                    a();
-                }
-                return true;
-            }
-        }
-        return dcVar.i || super.onTouchEvent(motionEvent);
     }
 }

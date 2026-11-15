@@ -31,7 +31,7 @@ import org.telegram.ui.Wallet.c6;
 import org.telegram.ui.Wallet.z5;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class o1 implements Runnable {
                 int length = lowerCase.length();
                 int i14 = this.b;
                 if (length == 0) {
-                    org.telegram.messenger.g0.h3(new ai.f1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
+                    org.telegram.messenger.g0.h3(new ai.g1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
                     break;
                 } else {
                     String S0 = hd.E0().S0(lowerCase, true, false);
@@ -189,7 +189,7 @@ public final /* synthetic */ class o1 implements Runnable {
                             arrayList5.add(r1Var2.b);
                         }
                     }
-                    org.telegram.messenger.g0.h3(new ai.f1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
+                    org.telegram.messenger.g0.h3(new ai.g1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
                     break;
                 }
                 break;

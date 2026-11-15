@@ -1,6 +1,6 @@
 package kg;
 
-import ai.t2;
+import ai.v2;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i0 extends ja {
     public static final int g2 = -1;
@@ -120,7 +120,7 @@ public final class i0 extends ja {
         dVar2.setRoundRadius(24);
         this.Z1 = dVar2;
         dVar2.setText(hd.M0(2131752785, null));
-        dVar2.setOnClickListener(new t2(24, this, tL_connectedBot));
+        dVar2.setOnClickListener(new v2(24, this, tL_connectedBot));
         frameLayout.addView(dVar2, c8.ja.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         d1(false);
         FrameLayout.LayoutParams e10 = c8.ja.e(-1, -2, 80);

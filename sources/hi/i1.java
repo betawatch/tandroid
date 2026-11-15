@@ -10,16 +10,16 @@ import org.telegram.messenger.hd;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w61;
 import org.telegram.ui.an;
-import org.telegram.ui.cm0;
+import org.telegram.ui.dm0;
 import org.telegram.ui.e81;
-import org.telegram.ui.im0;
+import org.telegram.ui.jm0;
 import org.telegram.ui.jy0;
 import org.telegram.ui.ly0;
 import org.telegram.ui.my0;
 import org.telegram.ui.nj;
 import org.telegram.ui.xr0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i1 extends w61 {
     public final /* synthetic */ int W;
@@ -211,18 +211,18 @@ public final class i1 extends w61 {
                 anVar.A7();
                 break;
             case 4:
-                im0 im0Var = (im0) this.a0;
-                float positionAnimated = im0Var.J.getPositionAnimated();
-                im0Var.N.setSelected(positionAnimated);
-                im0Var.e.setProgressToGradient(1.0f - c8.i9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                im0Var.K0();
-                cm0 H0 = im0Var.H0();
-                d dVar = im0Var.R;
-                if (dVar != null && H0 != null && H0 != im0Var.S) {
-                    im0Var.S = H0;
+                jm0 jm0Var = (jm0) this.a0;
+                float positionAnimated = jm0Var.J.getPositionAnimated();
+                jm0Var.N.setSelected(positionAnimated);
+                jm0Var.e.setProgressToGradient(1.0f - c8.i9.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
+                jm0Var.K0();
+                dm0 H0 = jm0Var.H0();
+                d dVar = jm0Var.R;
+                if (dVar != null && H0 != null && H0 != jm0Var.S) {
+                    jm0Var.S = H0;
                     ji.j jVar = H0.e;
                     dVar.i((CharSequence) jVar.b, true, true);
-                    im0Var.R.g((SpannableStringBuilder) jVar.c, true);
+                    jm0Var.R.g((SpannableStringBuilder) jVar.c, true);
                     break;
                 }
                 break;

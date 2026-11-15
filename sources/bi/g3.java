@@ -4,8 +4,8 @@ import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.view.View;
 import android.widget.LinearLayout;
-import di.k8;
-import di.m8;
+import di.j8;
+import di.l8;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.hd;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.n61;
 import org.telegram.ui.Components.wp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g3 extends n61 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class g3 extends n61 {
     public final void a(ArrayList arrayList) {
         wp0 wp0Var = this.c;
         t2 t2Var = wp0Var.R;
-        k8 k8Var = wp0Var.e;
+        j8 j8Var = wp0Var.e;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i7 = 0;
@@ -43,9 +43,9 @@ public final class g3 extends n61 {
                 arrayList2.add(num);
             }
         }
-        k8Var.getClass();
+        j8Var.getClass();
         HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = k8Var.e;
+        ArrayList arrayList3 = j8Var.e;
         int size2 = arrayList3.size();
         int i10 = 0;
         while (i10 < size2) {
@@ -69,10 +69,10 @@ public final class g3 extends n61 {
         }
         arrayList3.clear();
         arrayList3.addAll(arrayList4);
-        k8Var.j();
+        j8Var.j();
         c4 currentPage = wp0Var.getCurrentPage();
         if (currentPage != null) {
-            int f10 = currentPage.d ? k8Var.f(currentPage.e.d) + 1 : 0;
+            int f10 = currentPage.d ? j8Var.f(currentPage.e.d) + 1 : 0;
             wp0Var.n.e(0.0f, f10, f10);
         }
         org.telegram.messenger.g0.r(t2Var);
@@ -81,29 +81,29 @@ public final class g3 extends n61 {
 
     @Override // org.telegram.ui.Components.n61
     public final void b(View view, int i7, int i10) {
-        m8 m8Var;
+        l8 l8Var;
         boolean z10;
         wp0 wp0Var = this.c;
-        k8 k8Var = wp0Var.e;
+        j8 j8Var = wp0Var.e;
         c4 c4Var = (c4) view;
         if (i10 == 0) {
-            m8Var = wp0Var.d;
+            l8Var = wp0Var.d;
             z10 = false;
         } else {
             int i11 = i7 - 1;
             if (i11 < 0) {
-                k8Var.getClass();
-            } else if (i11 < k8Var.d().size()) {
-                m8Var = k8Var.e(((TL_stars.TL_starGiftCollection) k8Var.d().get(i11)).collection_id);
+                j8Var.getClass();
+            } else if (i11 < j8Var.d().size()) {
+                l8Var = j8Var.e(((TL_stars.TL_starGiftCollection) j8Var.d().get(i11)).collection_id);
                 z10 = true;
             }
-            m8Var = null;
+            l8Var = null;
             z10 = true;
         }
         c4Var.d = z10;
-        c4Var.e = m8Var;
-        if (m8Var != null) {
-            m8Var.a();
+        c4Var.e = l8Var;
+        if (l8Var != null) {
+            l8Var.a();
         }
         c4Var.f(false);
         LinearLayout linearLayout = c4Var.E;
@@ -111,7 +111,7 @@ public final class g3 extends n61 {
             linearLayout.setVisibility(c4Var.a.e.h() ? 0 : 8);
         }
         c4Var.setVisibleHeight(wp0Var.U);
-        c4Var.setHasTabs(!k8Var.d().isEmpty());
+        c4Var.setHasTabs(!j8Var.d().isEmpty());
     }
 
     @Override // org.telegram.ui.Components.n61

@@ -27,7 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
 import c8.na;
-import di.r9;
+import di.q9;
 import hi.g7;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ import org.telegram.ui.qj;
 import org.telegram.ui.qm;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class z1 extends org.telegram.ui.ActionBar.e2 implements is {
     public ga.d A0;
@@ -217,7 +217,7 @@ public final class z1 extends org.telegram.ui.ActionBar.e2 implements is {
                 }
                 bg0 bg0Var2 = new bg0(z1Var.getParentActivity(), z1Var.getResourceProvider());
                 z1Var.P0 = bg0Var2;
-                bg0Var2.setOnDismissListener(new r9(z1Var, 8));
+                bg0Var2.setOnDismissListener(new q9(z1Var, 8));
                 long a10 = z1Var.K.a();
                 gj gjVar = z1Var.K.E5;
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -1279,7 +1279,7 @@ public final class z1 extends org.telegram.ui.ActionBar.e2 implements is {
         na.a(this.c0);
         this.c0.setContentDescription(hd.M0(2131754884, null));
         this.c0.setOnClickListener(new g1(this, 5));
-        h0(R.drawable.iv_text, 1, false).setOnClickListener(new ai.t2(29, this, context));
+        h0(R.drawable.iv_text, 1, false).setOnClickListener(new ai.v2(29, this, context));
         h0(R.drawable.iv_lists, 2, true).setOnClickListener(new g1(this, 6));
         h0(R.drawable.iv_table, 4, true).setOnClickListener(new g1(this, 7));
         h0(R.drawable.iv_math, 7, true).setOnClickListener(new g1(this, 8));

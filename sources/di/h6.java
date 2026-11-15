@@ -19,7 +19,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h6 extends View {
     public float E;
@@ -87,14 +87,14 @@ public final class h6 extends View {
         if (getMessageObject() != null) {
             gj messageObject = getMessageObject();
             an anVar = this.a;
-            v8 y10 = v8.y(anVar.getCurrentAccount(), false);
+            u8 y10 = u8.y(anVar.getCurrentAccount(), false);
             long E = y10.E(messageObject);
             if (!y10.e || y10.q(null, false, false).amount >= E) {
                 return;
             }
-            t8 t8Var = v8.y(anVar.getCurrentAccount(), false).B;
-            if (t8Var != null) {
-                t8Var.a();
+            s8 s8Var = u8.y(anVar.getCurrentAccount(), false).B;
+            if (s8Var != null) {
+                s8Var.a();
             }
             long a10 = anVar.a();
             if (a10 >= 0) {
@@ -103,7 +103,7 @@ public final class h6 extends View {
                 TLRPC.Chat M0 = anVar.getMessagesController().M0(Long.valueOf(-a10));
                 str = M0 == null ? "" : M0.title;
             }
-            new cb(anVar.getParentActivity(), anVar.getResourceProvider(), E, 5, str, new f2(this, y10, messageObject, E, 3), 0L).show();
+            new bb(anVar.getParentActivity(), anVar.getResourceProvider(), E, 5, str, new f2(this, y10, messageObject, E, 3), 0L).show();
         }
     }
 
@@ -142,7 +142,7 @@ public final class h6 extends View {
             return;
         }
         an anVar = this.a;
-        v8 y10 = v8.y(anVar.getCurrentAccount(), false);
+        u8 y10 = u8.y(anVar.getCurrentAccount(), false);
         while (true) {
             arrayList = this.K;
             if (arrayList.size() <= 4) {
@@ -169,7 +169,7 @@ public final class h6 extends View {
                 performHapticFeedback(3, 1);
             } catch (Exception unused) {
             }
-            v8.y(anVar.getCurrentAccount(), false).b0(messageObject, this.a, 1L, true, false, null);
+            u8.y(anVar.getCurrentAccount(), false).b0(messageObject, this.a, 1L, true, false, null);
         }
         org.telegram.ui.Components.g6 g6Var = this.w;
         g6Var.a();

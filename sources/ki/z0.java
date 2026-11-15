@@ -34,7 +34,7 @@ import org.telegram.ui.wc1;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -97,7 +97,7 @@ public final /* synthetic */ class z0 implements Runnable {
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                             getwebpagepreview.message = str;
                             iArr[0] = ConnectionsManager.getInstance(i10).sendRequestTyped(getwebpagepreview, new d3.b(1), new di.k0(iArr, a1Var, isVarArr, i10, 2));
-                            t1Var.setOnCancelListener(new lb(new ai.z0(iArr, i10, isVarArr, 20), 1));
+                            t1Var.setOnCancelListener(new lb(new ai.a1(iArr, i10, isVarArr, 20), 1));
                             break;
                         }
                     }
@@ -116,7 +116,7 @@ public final /* synthetic */ class z0 implements Runnable {
                                 b1Var.run();
                                 break;
                             } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.u1(26, fileArr, b1Var), null);
+                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.v1(26, fileArr, b1Var), null);
                                 httpGetFileTask.setDestFile(file);
                                 httpGetFileTask.setMaxSize(8388608L);
                                 httpGetFileTask.execute(str2);

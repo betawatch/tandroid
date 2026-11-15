@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class tf implements Runnable {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -99,22 +99,22 @@ public final class tf implements Runnable {
                     org.telegram.messenger.g0.h3(new ai.a(context.getApplicationContext(), i7));
                 }
             }
-            ArrayList b10 = ai.t0.b(chatActivityEnterView.getContext(), chatActivityEnterView.y3);
+            ArrayList b10 = ai.u0.b(chatActivityEnterView.getContext(), chatActivityEnterView.y3);
             android.support.v4.media.session.a0 P = DictationAsr.P(b10, true);
             if (P != null) {
-                ai.s sVar = (ai.s) P.b;
+                ai.t tVar = (ai.t) P.b;
                 long currentTimeMillis = System.currentTimeMillis();
                 SharedPreferences e12 = org.telegram.messenger.np.e1();
                 StringBuilder sb2 = new StringBuilder("tinyasr_checked_");
-                sb2.append(sVar.a);
+                sb2.append(tVar.a);
                 boolean z12 = currentTimeMillis - e12.getLong(sb2.toString(), 0L) > 86400000;
-                boolean w10 = DictationAsr.w(sVar);
-                if (w10 && !sVar.g) {
-                    sVar.g = true;
-                    DictationAsr.d.execute(new ai.p(sVar, i7));
+                boolean w10 = DictationAsr.w(tVar);
+                if (w10 && !tVar.g) {
+                    tVar.g = true;
+                    DictationAsr.d.execute(new ai.p(tVar, i7));
                 }
-                if ((w10 || ai.i1.b()) && (!w10 || z12)) {
-                    DictationAsr.t(sVar);
+                if ((w10 || ai.j1.b()) && (!w10 || z12)) {
+                    DictationAsr.t(tVar);
                 }
                 Context context2 = chatActivityEnterView.getContext();
                 ExecutorService executorService = DictationLid.a;

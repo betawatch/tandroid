@@ -8,9 +8,9 @@ import android.view.TextureView;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class wi implements org.telegram.ui.ActionBar.n0, br0, org.telegram.ui.Components.u40, kl, mm0 {
+public final class wi implements org.telegram.ui.ActionBar.n0, br0, org.telegram.ui.Components.u40, kl, nm0 {
     public final /* synthetic */ an a;
 
     public /* synthetic */ wi(an anVar) {
@@ -92,7 +92,7 @@ public final class wi implements org.telegram.ui.ActionBar.n0, br0, org.telegram
         org.telegram.ui.Components.ok0.d(new je(this.a, 2));
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void s0() {
         try {
             Intent intent = new Intent();
@@ -114,7 +114,7 @@ public final class wi implements org.telegram.ui.ActionBar.n0, br0, org.telegram
         this.a.Ga(str, false);
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void f(ArrayList arrayList) {
     }
 

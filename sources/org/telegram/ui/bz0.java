@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bz0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final /* synthetic */ class bz0 implements Runnable {
                 org.telegram.messenger.g0.i3(new bz0(secretMediaViewer, i10), 50L);
                 break;
             case 1:
-                ai.j0 j0Var = secretMediaViewer.e;
-                if (j0Var != null) {
-                    j0Var.setLayerType(0, null);
+                ai.k0 k0Var = secretMediaViewer.e;
+                if (k0Var != null) {
+                    k0Var.setLayerType(0, null);
                     secretMediaViewer.e.setVisibility(4);
                     secretMediaViewer.l0 = 0;
                     secretMediaViewer.s = false;

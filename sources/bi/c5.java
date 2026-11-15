@@ -4,15 +4,15 @@ import android.content.Context;
 import android.text.SpannableString;
 import android.widget.LinearLayout;
 import c8.ja;
-import di.mb;
-import di.v8;
+import di.lb;
+import di.u8;
 import org.telegram.messenger.is;
 import org.telegram.messenger.ns;
 import org.telegram.messenger.z10;
 import org.telegram.ui.Components.e80;
 import org.telegram.ui.Components.eq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c5 extends LinearLayout implements is {
     public final int a;
@@ -55,8 +55,8 @@ public final class c5 extends LinearLayout implements is {
 
     public final void b(boolean z10) {
         int i7 = this.a;
-        v8 y10 = v8.y(i7, false);
-        v8 y11 = v8.y(i7, true);
+        u8 y10 = u8.y(i7, false);
+        u8 y11 = u8.y(i7, true);
         long j3 = y10.p().amount;
         cg.a s5 = y11.s();
         boolean z11 = y10.e;
@@ -73,14 +73,14 @@ public final class c5 extends LinearLayout implements is {
             this.n = -1L;
             return;
         }
-        h6Var.c(mb.a1(false, i5.c.l(j3, ' ', new StringBuilder("⭐️")), 0.7f, this.d), z10, true);
+        h6Var.c(lb.a1(false, i5.c.l(j3, ' ', new StringBuilder("⭐️")), 0.7f, this.d), z10, true);
         if (s5.k()) {
             h6Var2.setVisibility(8);
         } else {
             h6Var2.setVisibility(0);
             String str = "⭐️" + s5.d();
             eq[] eqVarArr = this.e;
-            h6Var2.c(mb.a1(true, str, 0.7f, eqVarArr), z10, true);
+            h6Var2.c(lb.a1(true, str, 0.7f, eqVarArr), z10, true);
             eq eqVar = eqVarArr[0];
             if (eqVar != null) {
                 eqVar.a(org.telegram.ui.ActionBar.j6.Zl);

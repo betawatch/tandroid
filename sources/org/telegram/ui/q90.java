@@ -26,7 +26,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class q90 {
     public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
@@ -38,7 +38,7 @@ public final class q90 {
     public boolean f;
     public boolean g;
     public int h = -1;
-    public ai.f1 i;
+    public ai.g1 i;
     public boolean j;
 
     public q90(LaunchActivity launchActivity, int i7, vf.b bVar, boolean z10) {
@@ -330,9 +330,9 @@ public final class q90 {
 
     public final void b() {
         this.j = true;
-        ai.f1 f1Var = this.i;
-        if (f1Var != null) {
-            org.telegram.messenger.g0.r(f1Var);
+        ai.g1 g1Var = this.i;
+        if (g1Var != null) {
+            org.telegram.messenger.g0.r(g1Var);
         }
         if (this.h >= 0) {
             ConnectionsManager.getInstance(this.b).cancelRequest(this.h, true);
@@ -665,7 +665,7 @@ public final class q90 {
         }
         o();
         TLRPC.User[] userArr = {null};
-        org.telegram.messenger.np.s1(this.b).d2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.ma0(this, T, userArr, tL_requestPeerTypeCreateBot, 17), 10));
+        org.telegram.messenger.np.s1(this.b).d2().a(str, null, new x(this, userArr, new org.telegram.ui.Components.u80(this, T, userArr, tL_requestPeerTypeCreateBot, 18), 10));
     }
 
     public final boolean k(Uri uri, String str) {
@@ -1377,7 +1377,7 @@ public final class q90 {
                                 }
                             } else {
                                 if (!TextUtils.isEmpty(str9) && ("your-color".equalsIgnoreCase(str4) || "color".equalsIgnoreCase(str4))) {
-                                    t(new im0());
+                                    t(new jm0());
                                     return true;
                                 }
                                 if (TextUtils.isEmpty(str9) || !"stickers-and-emoji".equalsIgnoreCase(str4)) {
@@ -1455,7 +1455,7 @@ public final class q90 {
                                 LaunchActivity launchActivity = this.a;
                                 if (equalsIgnoreCase2) {
                                     if ("top-up".equalsIgnoreCase(str4)) {
-                                        new di.db(launchActivity, null).show();
+                                        new di.cb(launchActivity, null).show();
                                         return true;
                                     }
                                     if ("stats".equalsIgnoreCase(str4)) {
@@ -1463,7 +1463,7 @@ public final class q90 {
                                         return true;
                                     }
                                     if ("gift".equalsIgnoreCase(str4)) {
-                                        di.v8.w(i13).u();
+                                        di.u8.w(i13).u();
                                         wg.c1.l1(1, org.telegram.messenger.v1.a(i13).b());
                                         return true;
                                     }
@@ -1471,7 +1471,7 @@ public final class q90 {
                                         t(new ki.n3(f().e()));
                                         return true;
                                     }
-                                    t(new di.mb());
+                                    t(new di.lb());
                                     return true;
                                 }
                                 if ("premium".equalsIgnoreCase(str3)) {
@@ -1548,7 +1548,7 @@ public final class q90 {
                                         break;
                                     }
                                     if (((s90) arrayList.get(i14)).f == 1) {
-                                        x90Var.b.e1(new ai.r1(x90Var, i14, 15), 700, true);
+                                        x90Var.b.e1(new ai.s1(x90Var, i14, 15), 700, true);
                                         return true;
                                     }
                                     i14++;

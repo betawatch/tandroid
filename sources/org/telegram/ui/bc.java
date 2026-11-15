@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class bc extends View {
     public final /* synthetic */ int a;
@@ -64,24 +64,24 @@ public final class bc extends View {
                 break;
             case 1:
                 super.onDraw(canvas);
-                im0 im0Var = (im0) this.w;
-                boolean z11 = im0Var.T;
+                jm0 jm0Var = (jm0) this.w;
+                boolean z11 = jm0Var.T;
                 Paint paint2 = this.n;
                 float f14 = this.e;
                 float f15 = this.d;
                 float f16 = this.c;
                 if (z11) {
-                    float f17 = im0Var.Z;
+                    float f17 = jm0Var.Z;
                     if (f17 > 0.0f) {
                         this.b.drawCircle(f16, f15, f14 * f17, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f16, f15, (1.0f - im0Var.Z) * f14, paint2);
+                    canvas.drawCircle(f16, f15, (1.0f - jm0Var.Z) * f14, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                im0Var.L.draw(canvas);
+                jm0Var.L.draw(canvas);
                 canvas.restore();
                 break;
             default:

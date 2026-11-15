@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,17 +72,17 @@ public final /* synthetic */ class o1 implements Runnable {
             case 1:
                 String str5 = (String) obj2;
                 String str6 = (String) obj;
-                jl0 jl0Var = ((PaymentFormActivity$TelegramWebviewProxy) obj3).a;
-                if (jl0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
+                kl0 kl0Var = ((PaymentFormActivity$TelegramWebviewProxy) obj3).a;
+                if (kl0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
                     try {
                         JSONObject jSONObject = new JSONObject(str6);
-                        jl0Var.x0 = jSONObject.getJSONObject("credentials").toString();
-                        jl0Var.y0 = jSONObject.getString("title");
+                        kl0Var.x0 = jSONObject.getJSONObject("credentials").toString();
+                        kl0Var.y0 = jSONObject.getString("title");
                     } catch (Throwable th2) {
-                        jl0Var.x0 = str6;
+                        kl0Var.x0 = str6;
                         org.telegram.messenger.a8.g(th2, true);
                     }
-                    jl0Var.z0();
+                    kl0Var.z0();
                     return;
                 }
                 return;

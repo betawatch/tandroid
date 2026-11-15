@@ -88,7 +88,7 @@ import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ChatActivityEnterView extends FrameLayout implements org.telegram.messenger.is, rt0, yv0, pw0, te.b, org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int N6 = 0;
@@ -351,7 +351,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     public final Path i5;
     public uc i6;
     public String j0;
-    public ai.m0 j1;
+    public ai.n0 j1;
     public final ImageView j2;
     public final boolean j3;
     public AnimatorSet j4;
@@ -476,7 +476,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     public float z5;
     public final Matrix z6;
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class RecordCircle extends View {
         public int E;
         public final float F;
@@ -1500,7 +1500,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         }
     }
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class SlideTextView extends View {
         public StaticLayout E;
         public StaticLayout F;
@@ -3657,10 +3657,10 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
 
     public final void H1(boolean z10) {
         org.telegram.ui.an anVar;
-        ai.m0 m0Var;
+        ai.n0 n0Var;
         int i7 = 0;
         int i10 = 1;
-        boolean z11 = (z10 || this.l2) && (anVar = this.x3) != null && !anVar.z() && ((m0Var = this.j1) == null || m0Var.r == 0);
+        boolean z11 = (z10 || this.l2) && (anVar = this.x3) != null && !anVar.z() && ((n0Var = this.j1) == null || n0Var.r == 0);
         if (this.c6 == z11) {
             return;
         }
@@ -5186,9 +5186,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     public final void N1(boolean z10) {
         boolean z11;
         org.telegram.ui.an anVar;
-        ai.m0 m0Var = this.j1;
+        ai.n0 n0Var = this.j1;
         int i7 = 1;
-        boolean z12 = (m0Var == null || m0Var.r == 0) ? false : true;
+        boolean z12 = (n0Var == null || n0Var.r == 0) ? false : true;
         if (z12 || (!(this.l2 || z10) || (anVar = this.x3) == null || anVar.z() || this.H2 != null)) {
             z11 = false;
         } else {
@@ -5369,20 +5369,20 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             }
             this.k1 = null;
         }
-        ai.m0 m0Var = this.j1;
-        if (m0Var != null) {
-            DictationAsr.N(m0Var.m0);
-            m0Var.i();
-            ai.g2 g2Var = m0Var.F;
-            if (g2Var != null) {
-                g2Var.a();
+        ai.n0 n0Var = this.j1;
+        if (n0Var != null) {
+            DictationAsr.N(n0Var.m0);
+            n0Var.i();
+            ai.h2 h2Var = n0Var.F;
+            if (h2Var != null) {
+                h2Var.a();
             }
-            jh.f fVar = m0Var.a0;
+            jh.f fVar = n0Var.a0;
             if (fVar != null) {
                 fVar.f = null;
             }
-            org.telegram.messenger.g0.E2(m0Var.s);
-            org.telegram.messenger.g0.E2(m0Var.w);
+            org.telegram.messenger.g0.E2(n0Var.s);
+            org.telegram.messenger.g0.E2(n0Var.w);
             this.j1 = null;
         }
         oi0 oi0Var = this.i1;
@@ -6513,8 +6513,8 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
 
     @Override // org.telegram.ui.Components.pw0
     public final boolean a() {
-        ai.m0 m0Var = this.j1;
-        return m0Var != null && m0Var.k();
+        ai.n0 n0Var = this.j1;
+        return n0Var != null && n0Var.k();
     }
 
     public final void a0() {
@@ -6649,7 +6649,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         }
         eq[] eqVarArr = this.j6;
         if (z13) {
-            this.F0.setHintText(N1 > 0 ? di.mb.T0(org.telegram.messenger.hd.a0(null, null, 2131744403, org.telegram.messenger.hd.E((int) N1, ','), eqVarArr)) : org.telegram.messenger.hd.a0(null, null, 2131744404, new Object[0]));
+            this.F0.setHintText(N1 > 0 ? di.lb.T0(org.telegram.messenger.hd.a0(null, null, 2131744403, org.telegram.messenger.hd.E((int) N1, ','), eqVarArr)) : org.telegram.messenger.hd.a0(null, null, 2131744404, new Object[0]));
             eq eqVar = eqVarArr[0];
             if (eqVar != null) {
                 eqVar.H = 0.9f;
@@ -6671,7 +6671,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             return;
         }
         if (N1 > 0) {
-            this.F0.setHintText(di.mb.Y0(false, org.telegram.messenger.hd.a0(null, null, 2131743926, org.telegram.messenger.hd.E((int) N1, ',')), eqVarArr));
+            this.F0.setHintText(di.lb.Y0(false, org.telegram.messenger.hd.a0(null, null, 2131743926, org.telegram.messenger.hd.E((int) N1, ',')), eqVarArr));
             eq eqVar2 = eqVarArr[0];
             if (eqVar2 != null) {
                 eqVar2.H = 0.9f;
@@ -9782,7 +9782,7 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
             if (anVar == null || (b11 = anVar.x5) == null) {
                 b11 = org.telegram.messenger.lj.b(this.H2.k.suggested_post);
             }
-            if (!di.v8.T(this.R, b11.a)) {
+            if (!di.u8.T(this.R, b11.a)) {
                 if (anVar != null) {
                     anVar.Ac(b11);
                     return;
@@ -9927,8 +9927,8 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
     }
 
     public boolean j1() {
-        ai.m0 m0Var = this.j1;
-        if (m0Var != null && m0Var.r == 4) {
+        ai.n0 n0Var = this.j1;
+        if (n0Var != null && n0Var.r == 4) {
             return false;
         }
         boolean z10 = this.l2;
@@ -10430,10 +10430,10 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
                                         }
                                     } else {
                                         this.h0 = z12;
-                                        org.telegram.messenger.op opVar = new org.telegram.messenger.op(this, charSequence2, z10, i7, i10, j3);
+                                        org.telegram.messenger.mr mrVar = new org.telegram.messenger.mr(this, charSequence2, z10, i7, i10, j3);
                                         chatActivityEnterView3 = this;
-                                        chatActivityEnterView3.g0 = opVar;
-                                        org.telegram.messenger.g0.i3(opVar, 200L);
+                                        chatActivityEnterView3.g0 = mrVar;
+                                        org.telegram.messenger.g0.i3(mrVar, 200L);
                                     }
                                     chatActivityEnterView3.k3 = 0L;
                                     chatActivityEnterView3.l2();
@@ -11022,9 +11022,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         return ofFloat;
     }
 
-    public final ai.m0 o0() {
+    public final ai.n0 o0() {
         if (this.j1 == null) {
-            this.j1 = new ai.m0(getContext(), new ae(this, 3));
+            this.j1 = new ai.n0(getContext(), new ae(this, 3));
         }
         return this.j1;
     }
@@ -12468,9 +12468,9 @@ public class ChatActivityEnterView extends FrameLayout implements org.telegram.m
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
-        ai.m0 m0Var = this.j1;
-        if (m0Var != null) {
-            m0Var.A();
+        ai.n0 n0Var = this.j1;
+        if (n0Var != null) {
+            n0Var.A();
         }
         g2();
         RecordCircle recordCircle = this.v2;

@@ -1,30 +1,192 @@
 package di;
 
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.RequestDelegate;
+import android.content.Context;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.np;
+import org.telegram.messenger.vr;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.an;
+import org.telegram.ui.k60;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w7 implements RequestDelegate {
+public final /* synthetic */ class w7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z10 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ w7(z10 z10Var, int i7) {
-        this.a = i7;
-        this.b = z10Var;
+    public /* synthetic */ w7(int i7, int i10, long j3, Object obj, Object obj2) {
+        this.a = i10;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i7;
+        this.c = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        SQLitePreparedStatement sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        sQLitePreparedStatement = null;
+        long j3 = this.c;
+        int i10 = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new b8(tLObject, this.b, 0));
-                break;
+                ArrayList arrayList = (ArrayList) obj;
+                SQLiteDatabase sQLiteDatabase = ((vr) obj2).b;
+                try {
+                    try {
+                        sQLiteDatabase.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
+                        if (arrayList != null) {
+                            sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
+                            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i11);
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindLong(1, starGift.id);
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
+                                starGift.serializeToStream(nativeByteBuffer);
+                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
+                                sQLitePreparedStatement.bindLong(3, i10);
+                                sQLitePreparedStatement.bindLong(4, j3);
+                                sQLitePreparedStatement.bindInteger(5, i11);
+                                sQLitePreparedStatement.step();
+                                nativeByteBuffer.reuse();
+                            }
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
+                }
+            case 1:
+                ((hi.d) obj2).setLoading(false);
+                org.telegram.ui.ActionBar.u2 u2Var = ((org.telegram.ui.ActionBar.u2[]) obj)[0];
+                if (u2Var != null) {
+                    u2Var.dismiss();
+                }
+                u8.y(i10, false).R();
+                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                if (T == null) {
+                    return;
+                }
+                T.presentFragment(an.ua(j3));
+                return;
+            case 2:
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) obj2;
+                TLObject tLObject = (TLObject) obj;
+                if (g4Var.I0 == 0) {
+                    return;
+                }
+                g4Var.I0 = 0;
+                g4Var.Z(false);
+                if (tLObject != null) {
+                    TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
+                    np.s1(i10).Y3(tL_contacts_resolvedPeer.users, false);
+                    vr.a0(i10).m1(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
+                    if (tL_contacts_resolvedPeer.users.isEmpty()) {
+                        return;
+                    }
+                    g4Var.N(j3, tL_contacts_resolvedPeer.users.get(0));
+                    return;
+                }
+                return;
+            case 3:
+                ((org.telegram.ui.n6) obj2).a(Float.valueOf(((int[]) obj)[0] / i10), Boolean.valueOf(System.currentTimeMillis() - j3 > 250));
+                return;
+            case 4:
+                RectF rectF = ProfileActivity.X6;
+                ((ProfileActivity) obj2).getMessagesController().P1().b(i10, j3, (ArrayList) obj);
+                return;
+            case 5:
+                rc.u uVar = (rc.u) obj;
+                org.telegram.ui.Wallet.y0 y0Var = ((org.telegram.ui.Wallet.x0) obj2).c;
+                if (!y0Var.c(uVar, i10)) {
+                    y0Var.d("closing stale connected websocket; attempt=" + i10);
+                    uVar.c();
+                    return;
+                }
+                y0Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j3) + " ms");
+                org.telegram.ui.Wallet.v0 v0Var = y0Var.o;
+                try {
+                    JSONArray put = new JSONArray().put(y0Var.b);
+                    StringBuilder sb2 = new StringBuilder("wallet-");
+                    int i12 = y0Var.g + 1;
+                    y0Var.g = i12;
+                    sb2.append(i12);
+                    y0Var.f = sb2.toString();
+                    JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", y0Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
+                    org.telegram.messenger.g0.r(v0Var);
+                    org.telegram.messenger.g0.i3(v0Var, 30000L);
+                    y0Var.g(put2.toString());
+                    return;
+                } catch (JSONException unused) {
+                    y0Var.f("could not encode subscription");
+                    return;
+                }
+            case 6:
+                org.telegram.ui.Wallet.d2 d2Var = (org.telegram.ui.Wallet.d2) obj2;
+                d2Var.getClass();
+                TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
+                long j10 = this.c;
+                tonconnectgetpending.session_id = Long.valueOf(j10);
+                d2Var.f.sendRequestTyped(tonconnectgetpending, new d3.b(1), new org.telegram.ui.Wallet.n1(d2Var, (k60) obj, j10, this.b, 0));
+                return;
             default:
-                org.telegram.messenger.g0.h3(new s2(27, this.b, tL_error));
-                break;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, (Context) obj2, (org.telegram.ui.ActionBar.e6) obj);
+                String M0 = hd.M0(2131743073, null);
+                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
+                t1Var.S = M0;
+                t1Var.U = org.telegram.messenger.g0.W2(hd.V(null, null, 2131743071, org.telegram.ui.Wallet.l0.x(i10).m(j3, true)));
+                i5.c.C(null, 2131743063, alertDialog$Builder, null);
+                return;
         }
+    }
+
+    public /* synthetic */ w7(ProfileActivity profileActivity, long j3, int i7, ArrayList arrayList) {
+        this.a = 4;
+        this.d = profileActivity;
+        this.c = j3;
+        this.b = i7;
+        this.e = arrayList;
+    }
+
+    public /* synthetic */ w7(org.telegram.ui.Wallet.d2 d2Var, long j3, k60 k60Var, int i7) {
+        this.a = 6;
+        this.d = d2Var;
+        this.c = j3;
+        this.e = k60Var;
+        this.b = i7;
     }
 }

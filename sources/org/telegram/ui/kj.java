@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class kj implements ls {
     public final /* synthetic */ an a;
@@ -28,7 +28,7 @@ public final class kj implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ org.telegram.ui.Components.m60 E(ai.j0 j0Var) {
+    public final /* synthetic */ org.telegram.ui.Components.m60 E(ai.k0 k0Var) {
         return null;
     }
 

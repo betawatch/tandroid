@@ -4,20 +4,20 @@ import android.content.Context;
 import android.graphics.Rect;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class h1 extends qh.c implements te.b {
     public static final /* synthetic */ int w = 0;
     public final te.c f;
-    public final ai.f0 h;
+    public final ai.g0 h;
     public final qh.b[] n;
     public final org.telegram.ui.ActionBar.e6 r;
     public int s;
 
-    public h1(Context context, org.telegram.ui.ActionBar.e6 e6Var, ai.f0 f0Var) {
+    public h1(Context context, org.telegram.ui.ActionBar.e6 e6Var, ai.g0 g0Var) {
         super(context);
         this.f = new te.c(0, this, er.h, 1600L);
-        this.h = f0Var;
+        this.h = g0Var;
         this.r = e6Var;
         int i7 = org.telegram.ui.ActionBar.j6.Nl;
         int r12 = org.telegram.ui.ActionBar.j6.r1(0.09411765f, org.telegram.ui.ActionBar.j6.w0(i7, e6Var));

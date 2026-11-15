@@ -27,7 +27,7 @@ import java.util.LinkedList;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class fc0 extends FrameLayout implements org.telegram.messenger.is {
     public static final int[] j0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -69,7 +69,7 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
     public final cc0 n;
     public final EditTextBoldCursor r;
     public final hi.y7 s;
-    public final ai.j0 w;
+    public final ai.k0 w;
     public final TextView x;
     public final TextView y;
 
@@ -95,12 +95,12 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
         this.i0 = new int[2];
         setWillNotDraw(false);
         setVisibility(8);
-        ai.j0 j0Var = new ai.j0(this, context);
-        this.w = j0Var;
-        j0Var.setWillNotDraw(false);
-        addView(j0Var, c8.ja.c(-1.0f, -1));
-        cVar.h = new jh.k(j0Var);
-        cVar.i = j0Var;
+        ai.k0 k0Var = new ai.k0(this, context);
+        this.w = k0Var;
+        k0Var.setWillNotDraw(false);
+        addView(k0Var, c8.ja.c(-1.0f, -1));
+        cVar.h = new jh.k(k0Var);
+        cVar.i = k0Var;
         cVar.g = bVar2;
         fh0 fh0Var = new fh0(context);
         this.N = fh0Var;
@@ -109,7 +109,7 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
         addView(fh0Var, c8.ja.e(58, 58, 51));
         FrameLayout frameLayout = new FrameLayout(context);
         this.h = frameLayout;
-        j0Var.addView(frameLayout, c8.ja.c(-1.0f, -1));
+        k0Var.addView(frameLayout, c8.ja.c(-1.0f, -1));
         TextView textView = new TextView(context);
         this.x = textView;
         textView.setTextColor(-1);
@@ -123,7 +123,7 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
         k10.setTextSize(1, 15.0f);
         k10.setGravity(1);
         k10.setVisibility(4);
-        j0Var.addView(k10, c8.ja.e(-2, -2, 17));
+        k0Var.addView(k10, c8.ja.e(-2, -2, 17));
         hi.y7 y7Var = new hi.y7(this, context);
         this.s = y7Var;
         frameLayout.addView(y7Var, c8.ja.d(-1, -2.0f, 81, 70.0f, 0.0f, 70.0f, 46.0f));
@@ -806,7 +806,7 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
-        j0Var.addView(frameLayout2, c8.ja.e(-1, -1, 51));
+        k0Var.addView(frameLayout2, c8.ja.e(-1, -1, 51));
         bi.v1 v1Var = new bi.v1(context, 18);
         this.e = v1Var;
         v1Var.setClipChildren(false);
@@ -1460,11 +1460,11 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
         setTranslationY(0.0f);
         this.a = null;
         boolean z12 = org.telegram.ui.ActionBar.j6.s0() instanceof ra0;
-        ai.j0 j0Var = this.w;
+        ai.k0 k0Var = this.w;
         if (z12) {
             z11 = !org.telegram.ui.ActionBar.j6.I.q();
             this.a = org.telegram.ui.ActionBar.j6.s0();
-            j0Var.setBackgroundColor(-1090519040);
+            k0Var.setBackgroundColor(-1090519040);
         } else {
             if (!org.telegram.ui.ActionBar.j6.W || "CJz3BZ6YGEYBAAAABboWp6SAv04".equals(org.telegram.ui.ActionBar.j6.K0()) || "qeZWES8rGVIEAAAARfWlK1lnfiI".equals(org.telegram.ui.ActionBar.j6.K0())) {
                 if (!"d".equals(org.telegram.ui.ActionBar.j6.K0())) {
@@ -1473,15 +1473,15 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
                         Drawable s02 = org.telegram.ui.ActionBar.j6.s0();
                         this.a = s02;
                         if (s02 instanceof h9) {
-                            j0Var.setBackgroundColor(570425344);
+                            k0Var.setBackgroundColor(570425344);
                         } else if (s02 != null) {
-                            j0Var.setBackgroundColor(-1090519040);
+                            k0Var.setBackgroundColor(-1090519040);
                         } else {
-                            j0Var.setBackgroundColor(-11436898);
+                            k0Var.setBackgroundColor(-11436898);
                         }
                     }
                 }
-                j0Var.setBackgroundColor(-11436898);
+                k0Var.setBackgroundColor(-11436898);
             } else {
                 org.telegram.ui.ActionBar.b6 b6Var = org.telegram.ui.ActionBar.j6.I.j0;
                 h9 h9Var = (b6Var == null || (i11 = b6Var.d) == 0 || (i12 = b6Var.e) == 0) ? null : new h9(h9.d(b6Var.h), new int[]{i11, i12});
@@ -1490,9 +1490,9 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
                     this.a = org.telegram.ui.ActionBar.j6.s0();
                 }
                 if (this.a instanceof h9) {
-                    j0Var.setBackgroundColor(570425344);
+                    k0Var.setBackgroundColor(570425344);
                 } else {
-                    j0Var.setBackgroundColor(-1090519040);
+                    k0Var.setBackgroundColor(-1090519040);
                 }
             }
             z11 = false;
@@ -1510,11 +1510,11 @@ public class fc0 extends FrameLayout implements org.telegram.messenger.is {
             }
             this.a = new ra0(false, iArr[0], iArr[1], iArr[2], iArr[3]);
             if (ra0Var.u == null || ra0Var.q >= 0) {
-                j0Var.setBackgroundColor(570425344);
+                k0Var.setBackgroundColor(570425344);
             } else {
-                j0Var.setBackgroundColor(2130706432);
+                k0Var.setBackgroundColor(2130706432);
             }
-            ((ra0) this.a).q(j0Var);
+            ((ra0) this.a).q(k0Var);
         }
         this.x.setText(org.telegram.messenger.hd.M0(2131754232, null));
         int i15 = org.telegram.messenger.gz.r;

@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class tv {
     public final int a;
@@ -117,7 +117,7 @@ public final class tv {
         if (!z10) {
             this.o = true;
             vr a02 = vr.a0(i7);
-            a02.a.c(new wq(this, a02));
+            a02.a.c(new pq(this, a02));
         }
         this.b = true;
         np.s1(i7).f7.edit().remove("savedMessagesUnsupported").apply();

@@ -53,7 +53,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class lb extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public static int R0 = 10;
@@ -78,7 +78,7 @@ public final class lb extends org.telegram.ui.ActionBar.e2 implements org.telegr
     public org.telegram.ui.Cells.q1 K0;
     public ImageView L;
     public int L0;
-    public di.ub M;
+    public di.tb M;
     public final kb M0;
     public org.telegram.ui.Cells.t0 N;
     public long N0;
@@ -1852,13 +1852,13 @@ public final class lb extends org.telegram.ui.ActionBar.e2 implements org.telegr
         this.L.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.L.setVisibility(8);
         this.K.addView(this.L, c8.ja.t(54, 54, 17, 16, 20, 16, -4));
-        di.ub ubVar = new di.ub(context, 10);
-        this.M = ubVar;
-        ubVar.setTextSize(1, 14.0f);
+        di.tb tbVar = new di.tb(context, 10);
+        this.M = tbVar;
+        tbVar.setTextSize(1, 14.0f);
         this.M.setGravity(17);
-        di.ub ubVar2 = this.M;
+        di.tb tbVar2 = this.M;
         int i13 = org.telegram.ui.ActionBar.j6.Zc;
-        org.telegram.ui.ActionBar.q6.U(ubVar2, i13, null);
+        org.telegram.ui.ActionBar.q6.U(tbVar2, i13, null);
         this.M.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(5.0f));
         this.K.addView(this.M, c8.ja.t(-2, -2, 17, 0, 0, 0, 0));
         this.I.addView(this.K, c8.ja.d(-2, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
@@ -2299,9 +2299,9 @@ public final class lb extends org.telegram.ui.ActionBar.e2 implements org.telegr
                 }
                 this.Y.U(org.telegram.ui.ActionBar.j6.s0());
                 this.r.invalidate();
-                di.ub ubVar = this.M;
-                if (ubVar != null) {
-                    ubVar.invalidate();
+                di.tb tbVar = this.M;
+                if (tbVar != null) {
+                    tbVar.invalidate();
                 }
                 this.w.g1();
                 return;
@@ -2410,16 +2410,16 @@ public final class lb extends org.telegram.ui.ActionBar.e2 implements org.telegr
         this.L.setVisibility(0);
         this.M.setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
         if (this.f.megagroup) {
-            di.ub ubVar = this.M;
+            di.tb tbVar = this.M;
             SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131751012, null));
             f1(X2);
-            ubVar.setText(X2);
+            tbVar.setText(X2);
             return;
         }
-        di.ub ubVar2 = this.M;
+        di.tb tbVar2 = this.M;
         SpannableStringBuilder X22 = org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131751011, null));
         f1(X22);
-        ubVar2.setText(X22);
+        tbVar2.setText(X22);
     }
 
     @Override // org.telegram.ui.ActionBar.e2

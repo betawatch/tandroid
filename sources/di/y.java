@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class y implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new ai.e((c6) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new bi.r1((v8) this.c, tLObject, (gj) this.d, this.b, (Runnable) this.e, 3));
+                org.telegram.messenger.g0.h3(new bi.r1((u8) this.c, tLObject, (gj) this.d, this.b, (Runnable) this.e, 3));
                 break;
             case 3:
                 org.telegram.messenger.g0.h3(new bi.r1((org.telegram.ui.ActionBar.t1) this.d, tLObject, this.b, (org.telegram.messenger.c) this.c, (nr) this.e, 14));

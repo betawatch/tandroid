@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class uu0 implements org.telegram.ui.Components.ij0 {
     public int a = 0;
@@ -59,13 +59,13 @@ public final class uu0 implements org.telegram.ui.Components.ij0 {
             profileActivity2.getContactsController().A(0L, false);
             return;
         }
+        int i20 = 2;
         if (i7 == 2) {
             ProfileActivity profileActivity3 = uu0Var.c;
             RectF rectF3 = ProfileActivity.X6;
             profileActivity3.getContactsController().K();
             return;
         }
-        int i20 = 3;
         if (i7 == 3) {
             uu0Var.c.getMessagesController().A0();
             return;
@@ -99,7 +99,7 @@ public final class uu0 implements org.telegram.ui.Components.ij0 {
         int i21 = 11;
         if (i7 == 6) {
             org.telegram.messenger.vr messagesStorage = uu0Var.c.getMessagesStorage();
-            messagesStorage.a.c(new org.telegram.messenger.oq(messagesStorage, i21));
+            messagesStorage.a.c(new org.telegram.messenger.nq(messagesStorage, i21));
             org.telegram.messenger.gz.D(false);
             org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.k5.d(org.telegram.messenger.np.e1().edit().remove("archivehint").remove("proximityhint"), "archivehint_l", "searchpostsnew", "speedhint", "gifhint"), "reminderhint", "soundHint", "themehint", "bganimationhint"), "filterhint", "n_0", "storyprvhint", "storyhint"), "storyhint2", "storydualhint", "storysvddualhint", "stories_camera"), "dualcam", "dualmatrix", "dual_available", "archivehint"), "askNotificationsAfter", "askNotificationsDuration", "viewoncehint", "voicepausehint"), "taptostorysoundhint", "nothanos", "voiceoncehint", "savedhint"), "savedsearchhint", "savedsearchtaghint", "newppsms", "monetizationadshint"), "seekSpeedHintShowed", "unsupport_video/av01", "statusgiftpage", "multistorieshint").remove("trimvoicehint").remove("taptostoryhighlighthint").apply();
             c8.ia.a();
@@ -165,7 +165,7 @@ public final class uu0 implements org.telegram.ui.Components.ij0 {
         }
         if (i7 == 10) {
             org.telegram.messenger.vr messagesStorage2 = uu0Var.c.getMessagesStorage();
-            messagesStorage2.a.c(new org.telegram.messenger.qp(messagesStorage2, -1, i20));
+            messagesStorage2.a.c(new org.telegram.messenger.tp(messagesStorage2, -1, i20));
             return;
         }
         if (i7 == 11) {

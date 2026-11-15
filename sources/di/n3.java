@@ -14,7 +14,7 @@ import org.telegram.ui.my0;
 import org.telegram.ui.wn0;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -53,7 +53,7 @@ public final /* synthetic */ class n3 implements Runnable {
                 t1Var.dismiss();
                 if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error != null && "BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
-                        new cb(c6Var.getContext(), c6Var.J0, this.b, 16, null, new s2(6, c6Var, charSequence), 0L).show();
+                        new bb(c6Var.getContext(), c6Var.J0, this.b, 16, null, new s2(6, c6Var, charSequence), 0L).show();
                         break;
                     } else if (tL_error != null) {
                         c6Var.k().f0(tL_error, false);

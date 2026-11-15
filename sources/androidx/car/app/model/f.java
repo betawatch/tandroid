@@ -5,9 +5,9 @@ import androidx.car.app.model.AlertCallbackDelegateImpl;
 import androidx.car.app.model.OnClickDelegateImpl;
 import androidx.car.app.model.OnContentRefreshDelegateImpl;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements androidx.car.app.utils.b {
+public final /* synthetic */ class f implements androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Binder b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class f implements androidx.car.app.utils.b {
         this.b = binder;
     }
 
-    @Override // androidx.car.app.utils.b
+    @Override // androidx.car.app.utils.a
     public final Object a() {
         Object lambda$onAlertDismissed$1;
         Object lambda$onClick$0;

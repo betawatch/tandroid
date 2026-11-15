@@ -13,9 +13,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.o90;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class m4 implements ij0 {
     public final /* synthetic */ i9 a;
@@ -198,9 +198,9 @@ public final class m4 implements ij0 {
                     F.k();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(c10);
-                    n90 n90Var = new n90(c5Var.w, 3, c5Var.getContext(), arrayList, bVar);
-                    n90Var.setOnClickListener(new ah.g(this, arrayList, F, 12));
-                    F.q(n90Var);
+                    o90 o90Var = new o90(c5Var.w, 3, c5Var.getContext(), arrayList, bVar);
+                    o90Var.setOnClickListener(new ah.g(this, arrayList, F, 12));
+                    F.q(o90Var);
                     z10 = true;
                 }
                 if (F.x() <= 0 && !z10) {

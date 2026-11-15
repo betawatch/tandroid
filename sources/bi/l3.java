@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.hd;
 import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l3 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -66,20 +66,20 @@ public final class l3 implements TextWatcher {
                 }
                 break;
             default:
-                tg.o2 o2Var = (tg.o2) view;
-                tg.n2 n2Var = o2Var.r0;
-                if (this.b && o2Var.x0 > 0 && o2Var.y0 > 0 && !o2Var.A0 && n2Var.getLayout() != null) {
+                tg.n2 n2Var = (tg.n2) view;
+                tg.m2 m2Var = n2Var.r0;
+                if (this.b && n2Var.x0 > 0 && n2Var.y0 > 0 && !n2Var.A0 && m2Var.getLayout() != null) {
                     float f10 = org.telegram.messenger.g0.q.y / 3.0f;
-                    float height = n2Var.getLayout().getHeight();
-                    if (height > f10 && (j3 = Utilities.j((int) ((f10 / height) * o2Var.getBaseFontSize()), o2Var.y0, o2Var.x0)) != o2Var.getBaseFontSize()) {
-                        o2Var.setBaseFontSize(j3);
-                        Runnable runnable = o2Var.z0;
+                    float height = m2Var.getLayout().getHeight();
+                    if (height > f10 && (j3 = Utilities.j((int) ((f10 / height) * n2Var.getBaseFontSize()), n2Var.y0, n2Var.x0)) != n2Var.getBaseFontSize()) {
+                        n2Var.setBaseFontSize(j3);
+                        Runnable runnable = n2Var.z0;
                         if (runnable != null) {
                             runnable.run();
                         }
                     }
                 }
-                o2Var.s();
+                n2Var.s();
                 break;
         }
     }

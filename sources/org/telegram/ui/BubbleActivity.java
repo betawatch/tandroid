@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.l4 {
     public static BubbleActivity b0;
@@ -150,7 +150,7 @@ public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.l4 {
         int i7 = this.P;
         if (i7 != -1) {
             boolean z10 = false;
-            org.telegram.messenger.at.l0.c(new di.sb(org.telegram.messenger.at.t(org.telegram.messenger.c.a(i7).a), z10, this.a0, 3));
+            org.telegram.messenger.at.l0.c(new di.rb(org.telegram.messenger.at.t(org.telegram.messenger.c.a(i7).a), z10, this.a0, 3));
             ConnectionsManager.getInstance(org.telegram.messenger.c.a(this.P).a).setAppPaused(false, false);
         }
         if (!this.Q) {
@@ -289,7 +289,7 @@ public class BubbleActivity extends g5 implements org.telegram.ui.ActionBar.l4 {
         org.telegram.messenger.ns.f(this.P).k(org.telegram.messenger.ns.t, Long.valueOf(this.a0));
         this.T.a0();
         this.T.c(-1, anVar);
-        org.telegram.messenger.at.l0.c(new di.sb(org.telegram.messenger.at.t(org.telegram.messenger.c.a(this.P).a), z13, this.a0, 3));
+        org.telegram.messenger.at.l0.c(new di.rb(org.telegram.messenger.at.t(org.telegram.messenger.c.a(this.P).a), z13, this.a0, 3));
         ConnectionsManager.getInstance(org.telegram.messenger.c.a(this.P).a).setAppPaused(false, false);
         this.T.f0();
     }

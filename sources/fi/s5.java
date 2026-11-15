@@ -41,7 +41,7 @@ import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.l31;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s5 implements Runnable {
     public final /* synthetic */ int a;
@@ -411,21 +411,21 @@ public final /* synthetic */ class s5 implements Runnable {
             case 11:
                 String[] strArr = (String[]) this.b;
                 int[][] iArr4 = (int[][]) this.c;
-                androidx.car.app.utils.a aVar = (androidx.car.app.utils.a) this.d;
+                ai.r rVar = (ai.r) this.d;
                 for (int i19 = 0; i19 < strArr.length; i19++) {
                     String str4 = strArr[i19];
                     if (str4 != null) {
                         AnimatedFileNative.d(str4, iArr4[i19], 0L);
                     }
                 }
-                org.telegram.messenger.g0.h3(aVar);
+                org.telegram.messenger.g0.h3(rVar);
                 return;
             case 12:
                 String str5 = (String) this.b;
                 int[][] iArr5 = (int[][]) this.c;
-                androidx.car.app.utils.a aVar2 = (androidx.car.app.utils.a) this.d;
+                ai.r rVar2 = (ai.r) this.d;
                 AnimatedFileNative.d(str5, iArr5[0], 0L);
-                org.telegram.messenger.g0.h3(aVar2);
+                org.telegram.messenger.g0.h3(rVar2);
                 return;
             case 13:
                 hi.l8 l8Var = (hi.l8) this.b;

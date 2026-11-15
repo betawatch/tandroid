@@ -1,5 +1,6 @@
 package org.telegram.ui.web;
 
+import ai.u2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -20,7 +21,6 @@ import bi.v3;
 import c8.ja;
 import c8.na;
 import com.google.android.gms.internal.vision.e2;
-import di.t7;
 import hi.e5;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.bn;
 import org.telegram.ui.qv0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final i E;
@@ -336,7 +336,7 @@ public final class k extends FrameLayout {
             }
             return;
         }
-        y0 y0Var = new y0(new t7(9, this, z10));
+        y0 y0Var = new y0(new u2(10, this, z10));
         String str3 = d1.a().c;
         if (str3 != null) {
             StringBuilder m10 = e2.m(str3);

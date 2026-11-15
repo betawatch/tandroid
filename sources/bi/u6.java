@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import di.mb;
-import di.v8;
+import di.lb;
+import di.u8;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class u6 extends ja implements is, u9 {
     public final boolean T1;
@@ -607,10 +607,10 @@ public class u6 extends ja implements is, u9 {
         TL_stars.StarGift starGift = this.Y1;
         eq[] eqVarArr = this.s2;
         if (starGift != null) {
-            long j3 = v8.y(i7, false).p().amount;
+            long j3 = u8.y(i7, false).p().amount;
             long j10 = starGift.stars + (this.n2 ? starGift.upgrade_stars : 0L) + (TextUtils.isEmpty(this.p2.getText()) ? 0L : this.f2);
-            dVar.i(mb.Y0(false, hd.H(',', this.T1 ? "Gift2SendSelf" : "Gift2Send", (int) j10), eqVarArr), z10, true);
-            if (!v8.y(i7, false).e || j10 <= j3) {
+            dVar.i(lb.Y0(false, hd.H(',', this.T1 ? "Gift2SendSelf" : "Gift2Send", (int) j10), eqVarArr), z10, true);
+            if (!u8.y(i7, false).e || j10 <= j3) {
                 dVar.g(null, z10);
                 return;
             } else {
@@ -621,7 +621,7 @@ public class u6 extends ja implements is, u9 {
         ug.j jVar = this.a2;
         if (jVar != null) {
             if (this.o2) {
-                dVar.i(mb.U0(hd.a0(null, null, 2131749994, hd.E(jVar.g(), ',')), 1.0f, eqVarArr), z10, true);
+                dVar.i(lb.U0(hd.a0(null, null, 2131749994, hd.E(jVar.g(), ',')), 1.0f, eqVarArr), z10, true);
                 eqVarArr[0].H = 0.85f;
                 charSequence = null;
             } else {

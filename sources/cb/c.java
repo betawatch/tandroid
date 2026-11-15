@@ -4,7 +4,7 @@ import a8.ja;
 import a8.sa;
 import a8.xa;
 import aa.p;
-import ai.o0;
+import ai.p0;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -62,7 +62,6 @@ import fi.e9;
 import fi.f9;
 import fi.g3;
 import g.s;
-import gb.p0;
 import j$.util.DesugarCollections;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
@@ -98,6 +97,7 @@ import org.telegram.messenger.ns;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.Cells.o0;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.Components.ft0;
 import org.telegram.ui.Stories.ProfileStoriesView;
@@ -107,9 +107,9 @@ import q6.m;
 import q7.l1;
 import q7.m1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final class c implements SuccessContinuation, o0, a0, androidx.activity.result.b, j, te.b, q0, i0, q, ft0, kc, WebMessageListenerBoundaryInterface, e9, w, OnSuccessListener, OnCompleteListener, ib.b {
+public final class c implements SuccessContinuation, p0, a0, androidx.activity.result.b, j, te.b, q0, i0, q, ft0, kc, WebMessageListenerBoundaryInterface, e9, w, OnSuccessListener, OnCompleteListener, ib.b {
     public static volatile c c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -159,7 +159,7 @@ public final class c implements SuccessContinuation, o0, a0, androidx.activity.r
             return;
         }
         B.N(0, false, false);
-        g0.h3(new org.telegram.ui.Cells.o0(B, 0));
+        g0.h3(new o0(B, 0));
         zArr[0] = true;
     }
 
@@ -304,8 +304,8 @@ public final class c implements SuccessContinuation, o0, a0, androidx.activity.r
     public Object get() {
         g firebaseApp = (g) ((d9.o) this.b).b;
         kotlin.jvm.internal.j.e(firebaseApp, "firebaseApp");
-        p0 p0Var = p0.a;
-        return p0.a(firebaseApp);
+        gb.p0 p0Var = gb.p0.a;
+        return gb.p0.a(firebaseApp);
     }
 
     @Override // org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface

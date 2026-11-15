@@ -32,11 +32,11 @@ import org.telegram.messenger.kc;
 import org.telegram.messenger.ns;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.ff;
-import org.telegram.ui.dn0;
+import org.telegram.ui.en0;
 import org.telegram.ui.tp0;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements e1, q1, r0.m, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.f1, kc, d5.a, c0.j, p4.c0, p4.a1, h2.j, p4.y0, g9.k, ri.m, sg.y, te.b, t0.e, sg.j1, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -242,7 +242,7 @@ public final /* synthetic */ class z implements e1, q1, r0.m, GlGenericDrawer.Te
                 ((org.telegram.ui.web.x) this.b).run();
                 break;
             case 26:
-                ((dn0) this.b).run();
+                ((en0) this.b).run();
                 break;
             default:
                 ((tg.a0) this.b).a.P1.r();
@@ -387,13 +387,13 @@ public final /* synthetic */ class z implements e1, q1, r0.m, GlGenericDrawer.Te
                 ArrayList arrayList = new ArrayList();
                 for (int i7 = 0; i7 < bVar.a.size(); i7++) {
                     zb.a aVar = (zb.a) bVar.a.get(i7);
-                    tg.e2 e2Var = new tg.e2();
-                    e2Var.a = aVar.a;
-                    e2Var.b = aVar.d;
-                    e2Var.c = aVar.e;
-                    e2Var.d = aVar.b;
-                    e2Var.e = aVar.c;
-                    arrayList.add(e2Var);
+                    tg.d2 d2Var = new tg.d2();
+                    d2Var.a = aVar.a;
+                    d2Var.b = aVar.d;
+                    d2Var.c = aVar.e;
+                    d2Var.d = aVar.b;
+                    d2Var.e = aVar.c;
+                    arrayList.add(d2Var);
                 }
                 w2Var.a(arrayList);
                 break;

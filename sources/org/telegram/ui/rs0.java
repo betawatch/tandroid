@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class rs0 extends LinearLayout {
     public final TextView a;
     public final TextView b;
     public final FrameLayout c;
-    public final di.yb d;
+    public final di.xb d;
     public final zq0 e;
     public boolean f;
     public boolean h;
@@ -37,9 +37,9 @@ public final class rs0 extends LinearLayout {
         int i7 = premiumPreviewFragment.h0;
         int i10 = i7 == 1 ? org.telegram.messenger.ns.F2 : org.telegram.messenger.ns.U2;
         addView(frameLayout, c8.ja.r(i10, i10, 1));
-        di.yb ybVar = new di.yb(this, context, premiumPreviewFragment.i0 ? 1 : 0, i7 == 1 ? 1 : 0, context);
-        this.d = ybVar;
-        frameLayout.addView(ybVar, c8.ja.c(-1.0f, -1));
+        di.xb xbVar = new di.xb(this, context, premiumPreviewFragment.i0 ? 1 : 0, i7 == 1 ? 1 : 0, context);
+        this.d = xbVar;
+        frameLayout.addView(xbVar, c8.ja.c(-1.0f, -1));
         frameLayout.setClipChildren(false);
         setClipChildren(false);
         TextView textView = new TextView(context);

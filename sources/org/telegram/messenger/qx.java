@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qx implements Runnable {
     public final /* synthetic */ ez a;
@@ -373,8 +373,8 @@ public final /* synthetic */ class qx implements Runnable {
                     TLRPC.Message message6 = (TLRPC.Message) arrayList13.get(i26);
                     ezVar2.getMessagesStorage().N0(i10 != 0 ? i11 : r52, message6);
                     if (tL_error != null && (str2 = tL_error.text) != null && str2.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                        di.v8.y(ezVar2.currentAccount, r52);
-                        message6.errorAllowedPriceStars = di.v8.o(tL_messages_forwardMessages2);
+                        di.u8.y(ezVar2.currentAccount, r52);
+                        message6.errorAllowedPriceStars = di.u8.o(tL_messages_forwardMessages2);
                         message6.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23)) / tL_messages_forwardMessages2.id.size();
                         ezVar2.getMessagesStorage().X1(gj.B0(message6), message6);
                     }

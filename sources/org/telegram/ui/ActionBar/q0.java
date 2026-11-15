@@ -52,12 +52,12 @@ import org.telegram.ui.ch;
 import org.telegram.ui.eh;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout {
     public int E;
     public final TextView F;
-    public ai.k0 G;
+    public ai.l0 G;
     public boolean H;
     public m0 I;
     public Rect J;
@@ -186,8 +186,8 @@ public class q0 extends FrameLayout {
         ArrayList arrayList = this.h0;
         boolean isEmpty = arrayList.isEmpty();
         ArrayList arrayList2 = new ArrayList(arrayList);
-        ai.k0 k0Var = this.G;
-        if (k0Var != null && k0Var.getTag() != null) {
+        ai.l0 l0Var = this.G;
+        if (l0Var != null && l0Var.getTag() != null) {
             TransitionSet transitionSet = new TransitionSet();
             ChangeBounds changeBounds = new ChangeBounds();
             changeBounds.setDuration(150L);
@@ -243,8 +243,8 @@ public class q0 extends FrameLayout {
     public void G(boolean z10) {
         y yVar;
         l();
-        ai.k0 k0Var = this.G;
-        if (k0Var == null || k0Var.getVisibility() == 0 || (yVar = this.c) == null) {
+        ai.l0 l0Var = this.G;
+        if (l0Var == null || l0Var.getVisibility() == 0 || (yVar = this.c) == null) {
             return;
         }
         yVar.b.A(U(z10));
@@ -423,8 +423,8 @@ public class q0 extends FrameLayout {
             }
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.x0 = animatorSet2;
-            ai.k0 k0Var = this.G;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(k0Var, (Property<ai.k0, Float>) property, k0Var.getAlpha(), 1.0f));
+            ai.l0 l0Var = this.G;
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(l0Var, (Property<ai.l0, Float>) property, l0Var.getAlpha(), 1.0f));
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 this.x0.playTogether(ObjectAnimator.ofFloat((View) arrayList.get(i10), (Property<View, Float>) property, ((View) arrayList.get(i10)).getAlpha(), 0.0f));
             }
@@ -453,8 +453,8 @@ public class q0 extends FrameLayout {
         }
         AnimatorSet animatorSet4 = new AnimatorSet();
         this.x0 = animatorSet4;
-        ai.k0 k0Var2 = this.G;
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(k0Var2, (Property<ai.k0, Float>) property, k0Var2.getAlpha(), 0.0f));
+        ai.l0 l0Var2 = this.G;
+        animatorSet4.playTogether(ObjectAnimator.ofFloat(l0Var2, (Property<ai.l0, Float>) property, l0Var2.getAlpha(), 0.0f));
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             ((View) arrayList.get(i11)).setAlpha(0.0f);
             this.x0.playTogether(ObjectAnimator.ofFloat((View) arrayList.get(i11), (Property<View, Float>) property, ((View) arrayList.get(i11)).getAlpha(), 1.0f));
@@ -596,7 +596,7 @@ public class q0 extends FrameLayout {
                 this.d.setInputMethodMode(2);
                 this.d.setSoftInputMode(0);
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setFocusableInTouchMode(true);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setOnKeyListener(new ai.d0(3, this));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setOnKeyListener(new ai.e0(3, this));
                 this.d.setOnDismissListener(new hi.m4(i7, this));
                 Point point = org.telegram.messenger.g0.q;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.measure(i20.c(40.0f, point.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31));
@@ -1053,15 +1053,15 @@ public class q0 extends FrameLayout {
     public final void l() {
         if (this.G == null && this.H) {
             int i7 = 1;
-            ai.k0 k0Var = new ai.k0(1, getContext(), this);
-            this.G = k0Var;
+            ai.l0 l0Var = new ai.l0(1, getContext(), this);
+            this.G = l0Var;
             int i10 = 0;
-            k0Var.setClipChildren(this.o0 != 0);
+            l0Var.setClipChildren(this.o0 != 0);
             this.a = null;
-            ai.k0 k0Var2 = this.G;
+            ai.l0 l0Var2 = this.G;
             LinearLayout.LayoutParams m10 = ja.m(1.0f, 0, -1, this.o0 + 6, 0, 0);
             y yVar = this.c;
-            yVar.addView(k0Var2, 0, m10);
+            yVar.addView(l0Var2, 0, m10);
             this.G.setVisibility(8);
             TextView textView = new TextView(getContext());
             this.h = textView;
@@ -1557,12 +1557,12 @@ public class q0 extends FrameLayout {
 
     public void setSearchPaddingStart(int i7) {
         this.o0 = i7;
-        ai.k0 k0Var = this.G;
-        if (k0Var != null) {
-            ((ViewGroup.MarginLayoutParams) k0Var.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(i7);
+        ai.l0 l0Var = this.G;
+        if (l0Var != null) {
+            ((ViewGroup.MarginLayoutParams) l0Var.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(i7);
             this.G.setClipChildren(this.o0 != 0);
-            ai.k0 k0Var2 = this.G;
-            k0Var2.setLayoutParams(k0Var2.getLayoutParams());
+            ai.l0 l0Var2 = this.G;
+            l0Var2.setLayoutParams(l0Var2.getLayoutParams());
         }
     }
 
@@ -1656,13 +1656,13 @@ public class q0 extends FrameLayout {
     }
 
     public boolean w() {
-        ai.k0 k0Var = this.G;
-        return k0Var != null && k0Var.getVisibility() == 0;
+        ai.l0 l0Var = this.G;
+        return l0Var != null && l0Var.getVisibility() == 0;
     }
 
     public boolean x() {
-        ai.k0 k0Var = this.G;
-        return (k0Var == null || k0Var.getTag() == null) ? false : true;
+        ai.l0 l0Var = this.G;
+        return (l0Var == null || l0Var.getTag() == null) ? false : true;
     }
 
     public final boolean y() {

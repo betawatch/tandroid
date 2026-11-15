@@ -41,7 +41,7 @@ import org.telegram.ui.xo0;
 import org.telegram.ui.yo0;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class k4 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -838,11 +838,11 @@ public final class k4 extends FrameLayout {
         super(activity);
         this.d = new org.telegram.ui.Components.voip.g1[5];
         setWillNotDraw(false);
-        ai.j0 j0Var = new ai.j0(activity, m1Var);
-        this.b = j0Var;
+        ai.k0 k0Var = new ai.k0(activity, m1Var);
+        this.b = k0Var;
         FrameLayout frameLayout = new FrameLayout(activity);
         this.c = frameLayout;
-        j0Var.setVisibility(8);
+        k0Var.setVisibility(8);
         frameLayout.setVisibility(8);
         for (int i7 = 0; i7 < 5; i7++) {
             ((org.telegram.ui.Components.voip.g1[]) this.d)[i7] = new org.telegram.ui.Components.voip.g1(activity);
@@ -852,7 +852,7 @@ public final class k4 extends FrameLayout {
             g1Var.f = i7;
             ((FrameLayout) this.c).addView(g1Var, c8.ja.d(-2, -2.0f, 51, i7 * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView((ai.j0) this.b, c8.ja.d(ns.X4, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView((ai.k0) this.b, c8.ja.d(ns.X4, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
         addView((FrameLayout) this.c, c8.ja.d(ns.f3, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 

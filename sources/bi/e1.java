@@ -8,11 +8,11 @@ import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.n7;
 import org.telegram.ui.Components.wa;
-import org.telegram.ui.Components.x80;
 import org.telegram.ui.Components.xb;
 import org.telegram.ui.Components.xl;
+import org.telegram.ui.Components.y80;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e1 implements wa {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final class e1 implements wa {
             case 0:
                 return 0;
             case 1:
-                return (int) ((ch.b0) ((ai.j0) this.b).c).u;
+                return (int) ((ch.b0) ((ai.k0) this.b).c).u;
             case 2:
                 if (((fi.e3) this.b).y.h2) {
                     return 0;
@@ -122,7 +122,7 @@ public final class e1 implements wa {
                 L = ((xl) this.b).c.b.R();
                 break;
             case 9:
-                cVar = ((org.telegram.ui.ActionBar.e2) ((x80) this.b)).mSystemInsets;
+                cVar = ((org.telegram.ui.ActionBar.e2) ((y80) this.b)).mSystemInsets;
                 editTextHeight = cVar.d;
                 L = org.telegram.messenger.g0.L(72.0f);
                 break;

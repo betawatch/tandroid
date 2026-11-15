@@ -1,10 +1,10 @@
 package ni;
 
-import ai.t2;
+import ai.v2;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.widget.TextView;
-import di.wa;
+import di.va;
 import hi.d;
 import hi.p5;
 import hi.q4;
@@ -25,10 +25,10 @@ import org.telegram.ui.Components.t8;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class b extends ja {
-    public final wa T1;
+    public final va T1;
     public p41 U1;
 
     public b(Context context, TLRPC.Chat chat, Runnable runnable) {
@@ -47,13 +47,13 @@ public final class b extends ja {
         d dVar2 = new d(context, this.J0, true);
         dVar2.setText(hd.M0(V ? 2131751924 : 2131751922, null));
         dVar2.f();
-        dVar2.setOnClickListener(new t2(28, this, runnable));
-        wa waVar = new wa(context, 3);
-        TextView textView = (TextView) waVar.d;
-        TextView textView2 = (TextView) waVar.c;
-        this.T1 = waVar;
-        waVar.setPadding(g0.L(20.0f), 0, g0.L(20.0f), g0.L(17.0f));
-        ((i9) waVar.b).f(chat, new t8(chat));
+        dVar2.setOnClickListener(new v2(28, this, runnable));
+        va vaVar = new va(context, 3);
+        TextView textView = (TextView) vaVar.d;
+        TextView textView2 = (TextView) vaVar.c;
+        this.T1 = vaVar;
+        vaVar.setPadding(g0.L(20.0f), 0, g0.L(20.0f), g0.L(17.0f));
+        ((i9) vaVar.b).f(chat, new t8(chat));
         textView2.setText(m5.m(chat));
         int i10 = j6.G6;
         q6.U(textView2, i10, this.J0);

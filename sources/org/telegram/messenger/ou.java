@@ -44,12 +44,12 @@ import org.telegram.ui.Components.u51;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dr0;
-import org.telegram.ui.mm0;
+import org.telegram.ui.nm0;
 import org.telegram.ui.po0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
-public final class ou implements kc, l51, org.telegram.ui.Cells.l1, te.d, ce0, s51, og.n, mm0, o2.i, pm0, com.google.android.gms.common.api.internal.q, tg.l1, u2.m {
+public final class ou implements kc, l51, org.telegram.ui.Cells.l1, te.d, ce0, s51, og.n, nm0, o2.i, pm0, com.google.android.gms.common.api.internal.q, tg.l1, u2.m {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -487,7 +487,7 @@ public final class ou implements kc, l51, org.telegram.ui.Cells.l1, te.d, ce0, s
         ((MediaCodec) this.b).queueSecureInputBuffer(i7, 0, dVar.i, j3, i10);
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void f(ArrayList arrayList) {
         a8.r7 r7Var = (a8.r7) this.b;
         try {
@@ -788,7 +788,7 @@ public final class ou implements kc, l51, org.telegram.ui.Cells.l1, te.d, ce0, s
         return false;
     }
 
-    @Override // org.telegram.ui.mm0
+    @Override // org.telegram.ui.nm0
     public void s0() {
         try {
             Intent intent = new Intent("android.intent.action.PICK");

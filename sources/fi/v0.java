@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
@@ -135,7 +135,7 @@ public final /* synthetic */ class v0 implements NativeInstance.PayloadCallback,
                         str = i7 + "_" + j3 + "_" + i10;
                     }
                     final String str2 = str;
-                    org.telegram.messenger.g0.h3(new ai.z0(e1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(e1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: fi.w0
+                    org.telegram.messenger.g0.h3(new ai.a1(e1Var, str2, ConnectionsManager.getInstance(org.telegram.messenger.c.a(e1Var.e).a).sendRequest(tL_upload_getFile, new RequestDelegateTimestamp() { // from class: fi.w0
                         @Override // org.telegram.tgnet.RequestDelegateTimestamp
                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error, long j11) {
                             e1 e1Var2 = e1.this;
@@ -233,7 +233,7 @@ public final /* synthetic */ class v0 implements NativeInstance.PayloadCallback,
             if (e1Var.w == null || e1Var.F == null) {
                 return;
             }
-            ConnectionsManager.getInstance(i7).sendRequest(getgroupcallstreamchannels, new ai.c0(e1Var, j3, 1), 65536, 2, e1Var.h());
+            ConnectionsManager.getInstance(i7).sendRequest(getgroupcallstreamchannels, new ai.d0(e1Var, j3, 1), 65536, 2, e1Var.h());
             return;
         }
         NativeInstance nativeInstance = e1Var.F;

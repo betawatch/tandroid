@@ -8,15 +8,15 @@ import android.text.TextUtils;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class xo0 extends org.telegram.ui.Components.pc {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xo0(PhotoViewer photoViewer, Context context, tq0 tq0Var, org.telegram.ui.Components.st0 st0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.u9 u9Var, dn0 dn0Var) {
-        super(context, tq0Var, st0Var, frameLayout, e6Var, u9Var, dn0Var);
+    public xo0(PhotoViewer photoViewer, Context context, tq0 tq0Var, org.telegram.ui.Components.st0 st0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.u9 u9Var, en0 en0Var) {
+        super(context, tq0Var, st0Var, frameLayout, e6Var, u9Var, en0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }

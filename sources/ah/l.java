@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
+import di.jc;
 import di.kc;
-import di.lc;
 import fi.c1;
 import hi.b8;
 import hi.d3;
@@ -58,7 +58,7 @@ import org.telegram.ui.tm;
 import org.telegram.ui.wo;
 import tg.r1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -149,9 +149,9 @@ public final class l extends AnimatorListenerAdapter {
                 ((o) nVar.n).b.setAllowDrawCursor(true);
                 break;
             case 1:
-                lc lcVar = (lc) obj2;
-                lcVar.b.remove((kc) obj);
-                lcVar.f1();
+                kc kcVar = (kc) obj2;
+                kcVar.b.remove((jc) obj);
+                kcVar.f1();
                 break;
             case 2:
                 super.onAnimationEnd(animator);

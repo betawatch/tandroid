@@ -3,7 +3,7 @@ package org.telegram.ui.Stories;
 import a8.t9;
 import ah.h;
 import ah.l;
-import ai.i0;
+import ai.j0;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -58,7 +58,7 @@ import org.telegram.ui.Components.u5;
 import org.telegram.ui.av0;
 import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ProfileStoriesView extends View implements is {
     public static final /* synthetic */ int t0 = 0;
@@ -511,7 +511,7 @@ public class ProfileStoriesView extends View implements is {
                 ofFloat.addUpdateListener(hVar);
                 ofFloat2.addUpdateListener(hVar);
                 animatorSet.playSequentially(ofFloat, ofFloat2);
-                animatorSet.addListener(new i0(profileStoriesView5, 13));
+                animatorSet.addListener(new j0(profileStoriesView5, 13));
                 animatorSet.start();
             }
         } else {

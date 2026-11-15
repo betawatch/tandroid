@@ -3,21 +3,21 @@ package bi;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import di.k8;
+import di.j8;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.kj;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.ka0;
 import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.t90;
+import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.wp0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -55,40 +55,40 @@ public final /* synthetic */ class m3 implements View.OnClickListener {
                     wp0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
                     cc.a0(wp0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750037, di.c6.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
-                    k8 k8Var = wp0Var.e;
+                    j8 j8Var = wp0Var.e;
                     int i11 = tL_starGiftCollection.collection_id;
-                    k8Var.getClass();
+                    j8Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
-                    k8Var.a(i11, arrayList);
+                    j8Var.a(i11, arrayList);
                     cc.a0(wp0Var.a).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750393, di.c6.A1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 m60Var.u();
                 wp0Var.o();
                 break;
             default:
-                da0 da0Var = (da0) frameLayout;
+                ea0 ea0Var = (ea0) frameLayout;
                 Context context = (Context) obj3;
-                ia0 ia0Var = (ia0) obj2;
-                ia0 ia0Var2 = (ia0) obj;
-                ja0 ja0Var = da0Var.d0;
-                kj kjVar = ja0Var.d;
+                ja0 ja0Var = (ja0) obj2;
+                ja0 ja0Var2 = (ja0) obj;
+                ka0 ka0Var = ea0Var.d0;
+                kj kjVar = ka0Var.d;
                 if (!z10) {
-                    new cc(ja0Var, ja0Var.G).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.U2(hd.M0(2131750583, null), new t90(da0Var, context, i10))).j();
+                    new cc(ka0Var, ka0Var.G).Q(R.raw.star_premium_2, 36, org.telegram.messenger.g0.U2(hd.M0(2131750583, null), new u90(ea0Var, context, i10))).j();
                     break;
                 } else {
                     boolean z11 = kjVar.k;
                     kjVar.k = !z11;
-                    ja0Var.y = false;
+                    ka0Var.y = false;
                     if (z11) {
                         kjVar.l = false;
-                        if (ia0Var != null) {
-                            ia0Var.a(false, true);
+                        if (ja0Var != null) {
+                            ja0Var.a(false, true);
                         }
                     }
-                    ia0Var2.a(kjVar.k, true);
-                    da0Var.i();
-                    da0Var.l(true);
+                    ja0Var2.a(kjVar.k, true);
+                    ea0Var.i();
+                    ea0Var.l(true);
                     break;
                 }
         }

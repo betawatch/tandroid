@@ -1,10 +1,11 @@
 package jh;
 
-import ai.j1;
-import ai.m0;
-import ai.r0;
+import ai.a0;
+import ai.h2;
+import ai.l1;
+import ai.n0;
 import ai.s0;
-import ai.z;
+import ai.t0;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -39,7 +40,7 @@ import org.telegram.ui.Components.wd;
 import org.telegram.ui.Components.xe;
 import r0.k1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout implements z5 {
     public float E;
@@ -59,7 +60,7 @@ public final class f extends FrameLayout implements z5 {
     public final FrameLayout c;
     public final g2 d;
     public boolean e;
-    public z f;
+    public a0 f;
     public fh.g h;
     public fh.g n;
     public final Path r;
@@ -181,7 +182,7 @@ public final class f extends FrameLayout implements z5 {
     */
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
-        m0 m0Var;
+        n0 n0Var;
         float d;
         int[] iArr;
         float f10;
@@ -206,82 +207,82 @@ public final class f extends FrameLayout implements z5 {
         if (this.e) {
             this.h.draw(canvas);
         }
-        z zVar = this.f;
-        if (zVar != null && this.e) {
+        a0 a0Var = this.f;
+        if (a0Var != null && this.e) {
             Rect rect2 = this.h.R.m;
-            m0 m0Var2 = zVar.b;
-            e6 e6Var2 = m0Var2.n;
-            RectF rectF = m0Var2.y;
-            int[] iArr2 = m0Var2.E;
-            RectF rectF2 = m0Var2.Z;
-            r0 r0Var = m0Var2.x;
-            ae aeVar = m0Var2.f;
-            j1 j1Var = m0Var2.w;
-            if (j1Var != null && (j1Var.S || j1Var.V.c > 0.0f || j1Var.w0 || j1Var.A0.c > 0.0f)) {
-                j1Var.invalidate();
+            n0 n0Var2 = a0Var.b;
+            e6 e6Var2 = n0Var2.n;
+            RectF rectF = n0Var2.y;
+            int[] iArr2 = n0Var2.E;
+            RectF rectF2 = n0Var2.Z;
+            s0 s0Var = n0Var2.x;
+            ae aeVar = n0Var2.f;
+            ai.k1 k1Var = n0Var2.w;
+            if (k1Var != null && (k1Var.S || k1Var.V.c > 0.0f || k1Var.w0 || k1Var.A0.c > 0.0f)) {
+                k1Var.invalidate();
             }
-            if (m0Var2.Y != null) {
-                boolean z12 = m0Var2.r == 4;
-                ai.k1 k1Var = m0Var2.a;
-                boolean z13 = k1Var != null && k1Var.d;
-                boolean z14 = SystemClock.uptimeMillis() < m0Var2.W;
+            if (n0Var2.Y != null) {
+                boolean z12 = n0Var2.r == 4;
+                l1 l1Var = n0Var2.a;
+                boolean z13 = l1Var != null && l1Var.d;
+                boolean z14 = SystemClock.uptimeMillis() < n0Var2.W;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 boolean z15 = z14;
-                long j3 = m0Var2.b;
+                long j3 = n0Var2.b;
                 if (j3 <= 0 || uptimeMillis < j3) {
                     z10 = z13;
-                    m0Var = m0Var2;
+                    n0Var = n0Var2;
                 } else {
-                    m0Var = m0Var2;
-                    if (m0Var.X || z12) {
+                    n0Var = n0Var2;
+                    if (n0Var.X || z12) {
                         z10 = z13;
                     } else {
                         float min = Math.min(1.0f, (uptimeMillis - j3) / 580.0f);
                         if (min >= 1.0f) {
                             z10 = z13;
-                            m0Var.b = 0L;
-                            m0Var.Y.e(true, 0.0f);
+                            n0Var.b = 0L;
+                            n0Var.Y.e(true, 0.0f);
                             d = 0.0f;
                         } else {
                             z10 = z13;
-                            m0Var.Y.e(true, 1.0f);
-                            d = 1.0f - m0.H0.getInterpolation(min);
+                            n0Var.Y.e(true, 1.0f);
+                            d = 1.0f - n0.H0.getInterpolation(min);
                         }
                         if (d > 0.0f) {
-                            m0Var.d = false;
-                            m0Var.x(0.0f, 0.0f);
+                            n0Var.d = false;
+                            n0Var.x(0.0f, 0.0f);
                             aeVar.d(0.0f, 0);
                         } else {
                             long uptimeMillis2 = SystemClock.uptimeMillis();
                             boolean z16 = z12;
-                            float min2 = m0Var.R == 0 ? 0.016f : Math.min(0.05f, (uptimeMillis2 - r0) / 1000.0f);
-                            m0Var.R = uptimeMillis2;
-                            float f13 = z16 ? 0.55f : m0Var.P;
-                            float f14 = m0Var.Q;
+                            float min2 = n0Var.R == 0 ? 0.016f : Math.min(0.05f, (uptimeMillis2 - r0) / 1000.0f);
+                            n0Var.R = uptimeMillis2;
+                            float f13 = z16 ? 0.55f : n0Var.P;
+                            float f14 = n0Var.Q;
                             boolean z17 = z10;
                             float z18 = e2.z(1.0f, (float) Math.exp((-min2) / (f13 > f14 ? 0.12f : 0.4f)), f13 - f14, f14);
-                            m0Var.Q = z18;
-                            if (m0Var.X && !z16) {
-                                float f15 = m0Var.P;
-                                if (f15 > 0.3f && f15 > (z18 * 1.5f) + 0.08f && uptimeMillis2 - m0Var.S > 1000) {
-                                    m0Var.S = uptimeMillis2;
-                                    m0Var.T = (float) (((Math.random() * 3.141592653589793d) * 2.0d) - 3.141592653589793d);
+                            n0Var.Q = z18;
+                            if (n0Var.X && !z16) {
+                                float f15 = n0Var.P;
+                                if (f15 > 0.3f && f15 > (z18 * 1.5f) + 0.08f && uptimeMillis2 - n0Var.S > 1000) {
+                                    n0Var.S = uptimeMillis2;
+                                    n0Var.T = (float) (((Math.random() * 3.141592653589793d) * 2.0d) - 3.141592653589793d);
                                 }
                             }
-                            float f16 = (uptimeMillis2 - m0Var.S) / 1200.0f;
+                            float f16 = (uptimeMillis2 - n0Var.S) / 1200.0f;
                             float interpolation2 = (f16 < 0.0f || f16 >= 1.0f || z16) ? -1.0f : er.g.getInterpolation(f16);
-                            float f17 = m0Var.T;
-                            r0Var.C = interpolation2;
-                            int[] iArr3 = r0Var.B;
-                            r0Var.D = f17;
-                            m0Var.c = (f16 < 0.0f || f16 >= 1.0f) ? 0.0f : (float) Math.sin(f16 * 3.141592653589793d);
+                            float f17 = n0Var.T;
+                            s0Var.C = interpolation2;
+                            int[] iArr3 = s0Var.B;
+                            s0Var.D = f17;
+                            n0Var.c = (f16 < 0.0f || f16 >= 1.0f) ? 0.0f : (float) Math.sin(f16 * 3.141592653589793d);
                             rectF2.set(rect2);
                             if (z16) {
-                                ai.g2 g2Var = m0Var.F;
+                                h2 h2Var = n0Var.F;
                                 iArr = iArr3;
-                                float uptimeMillis3 = (SystemClock.uptimeMillis() - m0Var.V) / 1000.0f;
-                                Matrix matrix = g2Var.l;
-                                if (g2Var.k == null) {
+                                float uptimeMillis3 = (SystemClock.uptimeMillis() - n0Var.V) / 1000.0f;
+                                Matrix matrix = h2Var.l;
+                                if (h2Var.k == null) {
                                     f10 = 0.7f;
                                 } else {
                                     f10 = 0.7f;
@@ -289,42 +290,42 @@ public final class f extends FrameLayout implements z5 {
                                     matrix.reset();
                                     matrix.setRotate(sin);
                                     matrix.postTranslate(g0.L(46.0f) * uptimeMillis3, g0.L(10.0f) * ((float) Math.sin(uptimeMillis3 * 0.7f)));
-                                    g2Var.k.setLocalMatrix(matrix);
+                                    h2Var.k.setLocalMatrix(matrix);
                                 }
                                 z11 = true;
                             } else {
                                 iArr = iArr3;
                                 f10 = 0.7f;
                                 if (z17) {
-                                    ai.k1 k1Var2 = m0Var.a;
-                                    if (!k1Var2.d) {
+                                    l1 l1Var2 = n0Var.a;
+                                    if (!l1Var2.d) {
                                         z11 = true;
                                         interpolation = -1.0f;
-                                    } else if (k1Var2.e == 0) {
+                                    } else if (l1Var2.e == 0) {
                                         z11 = true;
                                         interpolation = 0.0f;
                                     } else {
-                                        interpolation = ai.k1.E.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - k1Var2.e) / k1Var2.a));
+                                        interpolation = l1.E.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - l1Var2.e) / l1Var2.a));
                                         z11 = true;
                                     }
-                                    m0Var.d = z11;
+                                    n0Var.d = z11;
                                     f11 = interpolation;
                                 } else {
                                     z11 = true;
-                                    if (m0Var.d) {
+                                    if (n0Var.d) {
                                         f11 = 1.0f;
                                     }
                                 }
-                                float e10 = d * m0Var.e.e(false, !m0Var.X ? 1.0f : (z16 || z17 || m0Var.d) ? 0.85f : f10);
+                                float e10 = d * n0Var.e.e(false, !n0Var.X ? 1.0f : (z16 || z17 || n0Var.d) ? 0.85f : f10);
                                 boolean z19 = z11;
-                                m0Var.x.b(Math.min(g0.L(22.0f), rectF2.height() / 2.0f), e10, f11, m0Var.Q, canvas, rectF2);
-                                m0Var.x(e10, m0Var.c);
+                                n0Var.x.b(Math.min(g0.L(22.0f), rectF2.height() / 2.0f), e10, f11, n0Var.Q, canvas, rectF2);
+                                n0Var.x(e10, n0Var.c);
                                 wdVar = aeVar.b.R0;
-                                if (wdVar == null && wdVar.getVisibility() == 0 && wdVar.getAlpha() > 0.01f && m0Var.j(rectF)) {
+                                if (wdVar == null && wdVar.getVisibility() == 0 && wdVar.getAlpha() > 0.01f && n0Var.j(rectF)) {
                                     wdVar.getLocationInWindow(iArr2);
-                                    int a10 = r0Var.a((wdVar.getWidth() / 2.0f) + iArr2[0], (wdVar.getHeight() / 2.0f) + iArr2[z19 ? 1 : 0], rectF);
+                                    int a10 = s0Var.a((wdVar.getWidth() / 2.0f) + iArr2[0], (wdVar.getHeight() / 2.0f) + iArr2[z19 ? 1 : 0], rectF);
                                     e6Var = e6Var2;
-                                    boolean c10 = r0.c(j6.w0(j6.d6, e6Var));
+                                    boolean c10 = s0.c(j6.w0(j6.d6, e6Var));
                                     if (c10) {
                                         i7 = -1;
                                         f12 = 0.4f;
@@ -332,30 +333,30 @@ public final class f extends FrameLayout implements z5 {
                                         i7 = iArr[4];
                                         f12 = 0.5f;
                                     }
-                                    aeVar.d(e10 * (c10 ? 1.0f : s0.c(11)), i0.a.f(f12, a10, i7));
+                                    aeVar.d(e10 * (c10 ? 1.0f : t0.c(11)), i0.a.f(f12, a10, i7));
                                 } else {
                                     e6Var = e6Var2;
                                     aeVar.d(0.0f, 0);
                                 }
-                                Matrix matrix2 = m0Var.y0;
+                                Matrix matrix2 = n0Var.y0;
                                 xeVar = aeVar.b.F0;
                                 if (xeVar != null) {
-                                    if (m0Var.r == z19) {
-                                        boolean c11 = r0.c(j6.w0(j6.d6, e6Var));
-                                        if (m0Var.v0 == null || m0Var.w0 != c11 || m0Var.x0 != r0.R) {
-                                            m0Var.w0 = c11;
-                                            m0Var.x0 = r0.R;
+                                    if (n0Var.r == z19) {
+                                        boolean c11 = s0.c(j6.w0(j6.d6, e6Var));
+                                        if (n0Var.v0 == null || n0Var.w0 != c11 || n0Var.x0 != s0.R) {
+                                            n0Var.w0 = c11;
+                                            n0Var.x0 = s0.R;
                                             int w02 = j6.w0(j6.Me, e6Var);
                                             if (c11) {
-                                                w02 = r0.d(w02);
+                                                w02 = s0.d(w02);
                                             }
                                             int i11 = w02 | (-16777216);
-                                            int e11 = c11 ? r0.e(-7359233) : i0.a.f(0.55f, iArr[0], iArr[4]);
-                                            int e12 = c11 ? r0.e(-7411982) : i0.a.f(0.55f, iArr[z19 ? 1 : 0], iArr[4]);
-                                            int e13 = c11 ? r0.e(-4940545) : i0.a.f(0.55f, iArr[2], iArr[4]);
+                                            int e11 = c11 ? s0.e(-7359233) : i0.a.f(0.55f, iArr[0], iArr[4]);
+                                            int e12 = c11 ? s0.e(-7411982) : i0.a.f(0.55f, iArr[z19 ? 1 : 0], iArr[4]);
+                                            int e13 = c11 ? s0.e(-4940545) : i0.a.f(0.55f, iArr[2], iArr[4]);
                                             float f18 = c11 ? 0.92f : 0.9f;
                                             if (c11) {
-                                                m0Var.v0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i0.a.f(f18, i11, e11), i0.a.f(f18, i11, e12), i0.a.f(f18, i11, e13), i0.a.f(f18, i11, e11)}, (float[]) null, Shader.TileMode.MIRROR);
+                                                n0Var.v0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i0.a.f(f18, i11, e11), i0.a.f(f18, i11, e12), i0.a.f(f18, i11, e13), i0.a.f(f18, i11, e11)}, (float[]) null, Shader.TileMode.MIRROR);
                                             } else {
                                                 int w03 = j6.w0(j6.Me, e6Var);
                                                 int alpha = Color.alpha(w03);
@@ -367,41 +368,41 @@ public final class f extends FrameLayout implements z5 {
                                                 for (int i12 = 0; i12 < 4; i12++) {
                                                     iArr4[i12] = i0.a.o(i0.a.f(0.12f, w03 | (-16777216), iArr4[i12]), alpha);
                                                 }
-                                                m0Var.v0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, iArr4, (float[]) null, Shader.TileMode.MIRROR);
+                                                n0Var.v0 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, iArr4, (float[]) null, Shader.TileMode.MIRROR);
                                             }
                                         }
                                         float L = g0.L(160.0f);
                                         matrix2.setScale(L, 1.0f);
                                         matrix2.postTranslate(((SystemClock.uptimeMillis() % 6000) / 6000.0f) * 2.0f * L, 0.0f);
-                                        m0Var.v0.setLocalMatrix(matrix2);
-                                        xeVar.m1 = m0Var.v0;
+                                        n0Var.v0.setLocalMatrix(matrix2);
+                                        xeVar.m1 = n0Var.v0;
                                         xeVar.invalidate();
                                     } else if (xeVar.m1 != null) {
                                         xeVar.m1 = null;
                                         xeVar.invalidate();
                                     }
                                 }
-                                m0Var.a0.postInvalidateOnAnimation();
+                                n0Var.a0.postInvalidateOnAnimation();
                             }
                             f11 = -1.0f;
-                            float e102 = d * m0Var.e.e(false, !m0Var.X ? 1.0f : (z16 || z17 || m0Var.d) ? 0.85f : f10);
+                            float e102 = d * n0Var.e.e(false, !n0Var.X ? 1.0f : (z16 || z17 || n0Var.d) ? 0.85f : f10);
                             boolean z192 = z11;
-                            m0Var.x.b(Math.min(g0.L(22.0f), rectF2.height() / 2.0f), e102, f11, m0Var.Q, canvas, rectF2);
-                            m0Var.x(e102, m0Var.c);
+                            n0Var.x.b(Math.min(g0.L(22.0f), rectF2.height() / 2.0f), e102, f11, n0Var.Q, canvas, rectF2);
+                            n0Var.x(e102, n0Var.c);
                             wdVar = aeVar.b.R0;
                             if (wdVar == null) {
                             }
                             e6Var = e6Var2;
                             aeVar.d(0.0f, 0);
-                            Matrix matrix22 = m0Var.y0;
+                            Matrix matrix22 = n0Var.y0;
                             xeVar = aeVar.b.F0;
                             if (xeVar != null) {
                             }
-                            m0Var.a0.postInvalidateOnAnimation();
+                            n0Var.a0.postInvalidateOnAnimation();
                         }
                     }
                 }
-                d = m0Var.Y.d(m0Var.X || z12 || z15 || z10 || j3 > 0);
+                d = n0Var.Y.d(n0Var.X || z12 || z15 || z10 || j3 > 0);
                 if (d > 0.0f) {
                 }
             }

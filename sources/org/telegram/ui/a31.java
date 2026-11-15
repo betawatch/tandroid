@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a31 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class a31 implements RequestDelegate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0169  */
     @Override // org.telegram.tgnet.RequestDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -31,7 +31,6 @@ public final /* synthetic */ class a31 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         String str;
         String str2;
-        String str3;
         JSONException jSONException;
         long[] jArr;
         switch (this.a) {
@@ -39,57 +38,54 @@ public final /* synthetic */ class a31 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new fy0(6, (k31) this.b, (TLRPC.TL_attachMenuBot) this.c));
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new hn0((k31) this.b, tL_error, tLObject, (String) this.c, 17));
+                org.telegram.messenger.g0.h3(new ok0((org.telegram.ui.ActionBar.e2) this.b, (Object) tL_error, tLObject, this.c, 18));
                 break;
             case 2:
                 l41 l41Var = (l41) this.b;
                 org.telegram.messenger.r10 r10Var = (org.telegram.messenger.r10) this.c;
                 int i7 = l41Var.i;
-                String str4 = null;
+                String str3 = null;
                 if (tL_error == null) {
                     if (tLObject instanceof TL_stats.TL_statsGraph) {
                         try {
                             mg.b h02 = z41.h0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i7, l41Var.m);
                             try {
-                                str4 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
+                                str3 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
                                 if (i7 == 4 && (jArr = h02.a) != null && jArr.length > 0) {
                                     long j3 = jArr[jArr.length - 1];
                                     l41Var.e = new mg.e(h02, j3);
                                     l41Var.c = j3;
                                 }
-                                str3 = str4;
-                                str4 = h02;
+                                str2 = str3;
+                                str3 = h02;
                             } catch (JSONException e10) {
                                 jSONException = e10;
-                                str3 = str4;
-                                str4 = h02;
+                                str2 = str3;
+                                str3 = h02;
                                 jSONException.printStackTrace();
                                 if (tLObject instanceof TL_stats.TL_statsGraphError) {
                                 }
-                                str2 = str3;
-                                str = str4;
-                                org.telegram.messenger.g0.h3(new hn0(19, l41Var, str, r10Var, str2));
+                                str = str2;
+                                org.telegram.messenger.g0.h3(new ok0(l41Var, str3, str, r10Var, 20));
                                 return;
                             }
                         } catch (JSONException e11) {
                             jSONException = e11;
-                            str3 = null;
+                            str2 = null;
                         }
                     } else {
-                        str3 = null;
+                        str2 = null;
                     }
                     if (tLObject instanceof TL_stats.TL_statsGraphError) {
                         l41Var.l = false;
                         l41Var.a = true;
                         l41Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
                     }
-                    str2 = str3;
-                    str = str4;
+                    str = str2;
                 } else {
                     str = null;
-                    str2 = null;
                 }
-                org.telegram.messenger.g0.h3(new hn0(19, l41Var, str, r10Var, str2));
+                org.telegram.messenger.g0.h3(new ok0(l41Var, str3, str, r10Var, 20));
                 break;
             case 3:
                 org.telegram.messenger.g0.h3(new q21((w71) this.b, (String) this.c, tL_error));
@@ -108,7 +104,7 @@ public final /* synthetic */ class a31 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new q21((q91) this.b, (String) this.c, tLObject, 8));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new hn0(22, (xa1) this.b, tLObject, tL_error, (String) this.c));
+                org.telegram.messenger.g0.h3(new ok0(this.b, tLObject, this.c, tL_error, 23));
                 break;
             case 7:
                 xa1 xa1Var = (xa1) this.b;
@@ -124,7 +120,7 @@ public final /* synthetic */ class a31 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.r(21, (mc1) this.b, (int[]) this.c));
                 break;
             case 9:
-                org.telegram.messenger.g0.h3(new tg.v1((tg.f2) this.b, tLObject, (tg.d2) this.c, tL_error, 1));
+                org.telegram.messenger.g0.h3(new t5.a((tg.e2) this.b, tLObject, (tg.c2) this.c, tL_error, 2));
                 break;
             case 10:
                 org.telegram.messenger.g0.h3(new org.telegram.ui.Components.lv0(tLObject, (org.telegram.messenger.np) this.b, (wg.s0) this.c, 24));

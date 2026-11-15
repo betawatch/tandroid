@@ -46,7 +46,7 @@ import s2.t;
 import sg.h0;
 import x2.e0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class u51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.is {
     public static int k0;
@@ -1067,19 +1067,19 @@ public class u51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.is {
             }
             return this.a0.b(l0Var);
         }
-        ai.c0 c0Var2 = new ai.c0(this, j3, 7);
-        tg.a2 a2Var = new tg.a2(new f3.m(), 14);
+        ai.d0 d0Var2 = new ai.d0(this, j3, 7);
+        tg.z1 z1Var = new tg.z1(new f3.m(), 14);
         Object obj = new Object();
         qb.a aVar = new qb.a(4);
         g0Var.getClass();
         l0Var.b.getClass();
-        e2.d0 d0Var2 = l0Var.b.c;
-        if (d0Var2 == null) {
+        e2.d0 d0Var3 = l0Var.b.c;
+        if (d0Var3 == null) {
             nVar = q2.n.A;
         } else {
             synchronized (obj) {
                 try {
-                    o4 = !d0Var2.equals(null) ? org.telegram.ui.ld0.o(d0Var2) : null;
+                    o4 = !d0Var3.equals(null) ? org.telegram.ui.ld0.o(d0Var3) : null;
                     o4.getClass();
                 } catch (Throwable th2) {
                     throw th2;
@@ -1087,7 +1087,7 @@ public class u51 implements e2.a1, e2.w1, m2.b, org.telegram.messenger.is {
             }
             nVar = o4;
         }
-        return new x2.x0(l0Var, c0Var2, a2Var, nVar, aVar, TLObject.FLAG_20, null);
+        return new x2.x0(l0Var, d0Var2, z1Var, nVar, aVar, TLObject.FLAG_20, null);
     }
 
     public void g0() {

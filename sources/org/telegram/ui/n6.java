@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n6 implements org.telegram.messenger.s10 {
     public final /* synthetic */ int a;
@@ -31,11 +31,11 @@ public final /* synthetic */ class n6 implements org.telegram.messenger.s10 {
         final int i11 = 0;
         switch (i7) {
             case 0:
-                org.telegram.ui.ActionBar.m5 m5Var = (org.telegram.ui.ActionBar.m5) obj3;
+                org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) obj3;
                 ((float[]) obj5)[0] = ((Float) obj).floatValue();
                 ((boolean[]) obj4)[0] = ((Boolean) obj2).booleanValue();
-                org.telegram.messenger.g0.r(m5Var);
-                org.telegram.messenger.g0.h3(m5Var);
+                org.telegram.messenger.g0.r(l5Var);
+                org.telegram.messenger.g0.h3(l5Var);
                 break;
             case 1:
                 an anVar = (an) obj5;

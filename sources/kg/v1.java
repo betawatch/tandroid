@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v1 {
     public static volatile v1[] g = new v1[4];
@@ -176,7 +176,7 @@ public final class v1 {
         loop0: while (true) {
             ArrayList arrayList = this.b;
             if (i13 >= arrayList.size()) {
-                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getQuickReplies, new ai.d1(this, 19));
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_getQuickReplies, new ai.e1(this, 19));
                 return;
             }
             u1 u1Var = (u1) arrayList.get(i13);
@@ -323,7 +323,7 @@ public final class v1 {
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
                                 vr a03 = vr.a0(i13);
-                                a03.a.c(new ai.v0(a03, i14, 13));
+                                a03.a.c(new ai.w0(a03, i14, 13));
                                 v1Var2.l();
                                 ns.f(i13).k(ns.F1, new Object[0]);
                                 break;
@@ -451,7 +451,7 @@ public final class v1 {
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
                                 vr a03 = vr.a0(i13);
-                                a03.a.c(new ai.v0(a03, i14, 13));
+                                a03.a.c(new ai.w0(a03, i14, 13));
                                 v1Var2.l();
                                 ns.f(i13).k(ns.F1, new Object[0]);
                                 break;
@@ -579,7 +579,7 @@ public final class v1 {
                                 v1Var2.a(c11.b);
                                 int i14 = c11.a;
                                 vr a03 = vr.a0(i13);
-                                a03.a.c(new ai.v0(a03, i14, 13));
+                                a03.a.c(new ai.w0(a03, i14, 13));
                                 v1Var2.l();
                                 ns.f(i13).k(ns.F1, new Object[0]);
                                 break;
@@ -709,7 +709,7 @@ public final class v1 {
                             v1Var2.a(c11.b);
                             int i14 = c11.a;
                             vr a03 = vr.a0(i132);
-                            a03.a.c(new ai.v0(a03, i14, 13));
+                            a03.a.c(new ai.w0(a03, i14, 13));
                             v1Var2.l();
                             ns.f(i132).k(ns.F1, new Object[0]);
                             break;

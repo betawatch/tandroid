@@ -1,48 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class xl0 extends org.telegram.ui.Cells.z9 {
-    public final /* synthetic */ int I = 1;
+public final class xl0 extends v4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dm0 b;
 
-    public /* synthetic */ xl0(Context context, org.telegram.ui.ActionBar.o4 o4Var, int i7) {
-        super(context, o4Var, i7);
+    public xl0(dm0 dm0Var, int i7) {
+        this.b = dm0Var;
+        this.a = i7;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.I) {
-            case 0:
-                if (!canvas.isHardwareAccelerated()) {
-                    bg.t0.a(canvas, this, new r3(this, 17));
-                    break;
-                } else {
-                    super.draw(canvas);
-                    break;
-                }
-            default:
-                super.draw(canvas);
-                break;
+    @Override // v4.t0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        dm0 dm0Var = this.b;
+        jm0 jm0Var = dm0Var.q0;
+        dm0Var.h();
+        if (dm0Var.L != null) {
+            if (dm0Var.K == null || !dm0Var.c()) {
+                return;
+            }
+            dm0Var.K.g(false);
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.z9, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.I) {
-            case 1:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
+        di.l8 l8Var = this.a == 1 ? jm0Var.c : jm0Var.b;
+        if (l8Var == null || !dm0Var.c()) {
+            return;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    public /* synthetic */ xl0(Context context, org.telegram.ui.ActionBar.o4 o4Var, int i7, long j3, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, o4Var, i7, j3, e6Var);
+        l8Var.a();
     }
 }

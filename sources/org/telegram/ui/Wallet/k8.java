@@ -32,16 +32,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.km;
 import org.telegram.ui.Components.lv0;
-import org.telegram.ui.il0;
+import org.telegram.ui.jl0;
 import org.telegram.ui.sw;
 import org.telegram.ui.u91;
 import org.telegram.ui.vc1;
 import org.telegram.ui.x21;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k8 implements org.telegram.ui.ActionBar.q1, OnSuccessListener, p4.l0, h2.j, p4.a1, qi.m, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.c, v5.e, il0, sw, f3.r {
+public final /* synthetic */ class k8 implements org.telegram.ui.ActionBar.q1, OnSuccessListener, p4.l0, h2.j, p4.a1, qi.m, OnFailureListener, u2.v, w5.b, ua.a, androidx.car.app.utils.b, v5.e, jl0, sw, f3.r {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -69,7 +69,7 @@ public final /* synthetic */ class k8 implements org.telegram.ui.ActionBar.q1, O
                 org.telegram.messenger.g0.h3(new lv0((SpannableString) this.b, jVar, (oi.u4) this.c, 21));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new lv0((SpannableString) this.b, jVar, (di.m9) this.c, 22));
+                org.telegram.messenger.g0.h3(new lv0((SpannableString) this.b, jVar, (di.l9) this.c, 22));
                 break;
         }
     }
@@ -203,7 +203,7 @@ public final /* synthetic */ class k8 implements org.telegram.ui.ActionBar.q1, O
         return ((str.equals(uVar.s) || str.equals(u2.w.c(uVar))) && oVar.c(context, uVar, false) && oVar.d(uVar)) ? 1 : 0;
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.b
     public void call() {
         IStartCarApp iStartCarApp = (IStartCarApp) this.b;
         Intent intent = (Intent) this.c;
@@ -218,7 +218,7 @@ public final /* synthetic */ class k8 implements org.telegram.ui.ActionBar.q1, O
         return new f3.o[]{pVar.c.L(uVar) ? new c4.h(pVar.c.f(uVar), null) : new n3.a(uVar)};
     }
 
-    @Override // org.telegram.ui.il0
+    @Override // org.telegram.ui.jl0
     public void e(int i7) {
         switch (this.a) {
             case 25:

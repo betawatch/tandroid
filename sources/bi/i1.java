@@ -20,13 +20,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dn0;
+import org.telegram.ui.en0;
 import org.telegram.ui.qn;
 import org.telegram.ui.sw;
 import org.telegram.ui.yw;
 import org.telegram.ui.zv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements z10 {
     public final /* synthetic */ int a;
@@ -155,7 +155,7 @@ public final /* synthetic */ class i1 implements z10 {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.Z8;
                 if (bitmap == null) {
-                    org.telegram.messenger.g0.h3(new dn0(photoViewer, 18));
+                    org.telegram.messenger.g0.h3(new en0(photoViewer, 18));
                     break;
                 } else {
                     try {
@@ -173,7 +173,7 @@ public final /* synthetic */ class i1 implements z10 {
                         break;
                     } catch (Exception e10) {
                         a8.g(e10, true);
-                        org.telegram.messenger.g0.h3(new dn0(photoViewer, 19));
+                        org.telegram.messenger.g0.h3(new en0(photoViewer, 19));
                     }
                 }
         }

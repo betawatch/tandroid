@@ -11,7 +11,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lt implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class lt implements View.OnClickListener {
                             mtVar.m();
                             m60 m60Var = new m60(st0Var, e6Var, kVar, false, false, true);
                             m60Var.X = org.telegram.messenger.g0.L(280.0f);
-                            mtVar.o(null, new j90(m60Var, mtVar));
+                            mtVar.o(null, new k90(m60Var, mtVar));
                             m60Var.U = true;
                             m60Var.Z();
                             break;
@@ -102,27 +102,27 @@ public final /* synthetic */ class lt implements View.OnClickListener {
                 }
                 break;
             case 3:
-                da0 da0Var = (da0) this.b;
-                ia0 ia0Var = (ia0) this.c;
-                ia0 ia0Var2 = (ia0) this.d;
-                ja0 ja0Var = da0Var.d0;
-                org.telegram.messenger.kj kjVar = ja0Var.d;
+                ea0 ea0Var = (ea0) this.b;
+                ja0 ja0Var = (ja0) this.c;
+                ja0 ja0Var2 = (ja0) this.d;
+                ka0 ka0Var = ea0Var.d0;
+                org.telegram.messenger.kj kjVar = ka0Var.d;
                 boolean z10 = kjVar.l;
                 boolean z11 = !z10;
                 kjVar.l = z11;
                 if (z10) {
-                    if (ja0Var.y) {
+                    if (ka0Var.y) {
                         kjVar.k = false;
                     }
-                    ja0Var.y = false;
+                    ka0Var.y = false;
                 } else if (!kjVar.k) {
                     kjVar.k = true;
-                    ja0Var.y = true;
+                    ka0Var.y = true;
                 }
-                ia0Var.a(z11, true);
-                ia0Var2.a(kjVar.k, true);
-                da0Var.i();
-                da0Var.l(true);
+                ja0Var.a(z11, true);
+                ja0Var2.a(kjVar.k, true);
+                ea0Var.i();
+                ea0Var.l(true);
                 break;
             case 4:
                 nc0.J0((nc0) this.b, (TLRPC.ChatFull) this.c, (org.telegram.ui.w40) this.d);

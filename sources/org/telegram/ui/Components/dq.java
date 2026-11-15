@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class dq extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public static final /* synthetic */ int g0 = 0;
@@ -67,7 +67,7 @@ public class dq extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public Bitmap s;
     public final ColorPicker$RadioButton[] w;
     public final FrameLayout x;
-    public final di.wa y;
+    public final di.va y;
 
     public dq(Context context, boolean z10, cq cqVar) {
         super(context);
@@ -96,11 +96,11 @@ public class dq extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
         this.e = paint;
         paint.setColor(301989888);
         setClipChildren(false);
-        di.wa waVar = new di.wa(this, context);
-        this.y = waVar;
-        waVar.setOrientation(0);
-        addView(waVar, c8.ja.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
-        waVar.setWillNotDraw(false);
+        di.va vaVar = new di.va(this, context);
+        this.y = vaVar;
+        vaVar.setOrientation(0);
+        addView(vaVar, c8.ja.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
+        vaVar.setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         frameLayout.setClipChildren(false);

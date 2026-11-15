@@ -1,59 +1,99 @@
 package di;
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.s10;
+import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q9 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ s10 c;
-    public final /* synthetic */ hi.d d;
-    public final /* synthetic */ EditTextBoldCursor e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] f;
+public final /* synthetic */ class q9 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ q9(boolean[] zArr, s10 s10Var, hi.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.u2[] u2VarArr) {
-        this.b = zArr;
-        this.c = s10Var;
-        this.d = dVar;
-        this.e = editTextBoldCursor;
-        this.f = u2VarArr;
+    public /* synthetic */ q9(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        org.telegram.ui.web.c0 c0Var;
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    EditTextBoldCursor editTextBoldCursor = this.e;
-                    String obj = editTextBoldCursor.getText().toString();
-                    zArr[0] = true;
-                    this.d.setLoading(true);
-                    this.c.a(Long.valueOf(TextUtils.isEmpty(obj) ? 0L : Long.parseLong(obj)), new t9(editTextBoldCursor, this.f, 2));
+                org.telegram.messenger.g0.v1((EditTextBoldCursor) this.b);
+                break;
+            case 1:
+                ((s2) this.b).run();
+                break;
+            case 2:
+                ((c8) this.b).run();
+                break;
+            case 3:
+                ((fi.c1) this.b).run();
+                break;
+            case 4:
+                fi.i9 i9Var = (fi.i9) this.b;
+                if (dialogInterface == i9Var.v0) {
+                    i9Var.v0 = null;
+                    i9Var.V();
                     break;
                 }
+                break;
+            case 5:
+                org.telegram.messenger.g0.v1((kg.s) this.b);
+                break;
+            case 6:
+                org.telegram.messenger.g0.v1((kg.x0) this.b);
+                break;
+            case 7:
+                ((oi.o) this.b).P = null;
+                break;
+            case 8:
+                ((oi.z1) this.b).P0 = null;
+                break;
+            case 9:
+                ((org.telegram.ui.ActionBar.t1) this.b).L = null;
+                break;
+            case 10:
+                Runnable[] runnableArr = (Runnable[]) this.b;
+                Runnable runnable = runnableArr[0];
+                if (runnable != null) {
+                    runnable.run();
+                    runnableArr[0] = null;
+                    break;
+                }
+                break;
+            case 11:
+                org.telegram.ui.web.v0 v0Var = ((org.telegram.ui.web.i0) this.b).e.R;
+                if (v0Var != null && (c0Var = v0Var.c) != null) {
+                    c0Var.z();
+                    break;
+                }
+                break;
+            case 12:
+                org.telegram.ui.web.c0 c0Var2 = ((org.telegram.ui.web.o0) this.b).b.e.R.c;
+                if (c0Var2 != null) {
+                    c0Var2.z();
+                    break;
+                }
+                break;
+            case 13:
+                ug.j0 j0Var = (ug.j0) this.b;
+                j0Var.b2 = false;
+                j0Var.t2.e0 = true;
+                j0Var.A2.invalidate();
+                j0Var.t2.invalidate();
+                break;
+            case 14:
+                ug.g1 g1Var = (ug.g1) this.b;
+                xb xbVar = g1Var.n2;
+                if (xbVar != null) {
+                    xbVar.setDialogVisible(false);
+                }
+                g1Var.m2.setPaused(false);
                 break;
             default:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    this.d.setLoading(true);
-                    this.c.a(0L, new aa.r(zArr2, this.e, this.f, 26));
-                    break;
-                }
+                ((zh.l) this.b).s = null;
                 break;
         }
-    }
-
-    public /* synthetic */ q9(boolean[] zArr, s10 s10Var, EditTextBoldCursor editTextBoldCursor, hi.d dVar, org.telegram.ui.ActionBar.u2[] u2VarArr) {
-        this.b = zArr;
-        this.c = s10Var;
-        this.e = editTextBoldCursor;
-        this.d = dVar;
-        this.f = u2VarArr;
     }
 }

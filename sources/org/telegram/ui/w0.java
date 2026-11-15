@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements org.telegram.ui.Components.mm0, ki.w3, gb1, r0.m, org.telegram.ui.ActionBar.q1, ug.s, org.telegram.ui.Components.dc0, org.telegram.ui.Components.hj0, org.telegram.ui.Components.gt0, org.telegram.ui.Components.vt0, fi.d9, org.telegram.ui.Components.vi0, CameraView.CameraViewDelegate, org.telegram.messenger.x10, org.telegram.messenger.nc, org.telegram.ui.Components.sh0, org.telegram.messenger.nr, org.telegram.ui.Cells.d0, cx {
     public final /* synthetic */ int a;
@@ -171,14 +171,14 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.mm0,
                 p6Var.c0 = false;
                 p6Var.setCancelable(false);
                 Context context = q6Var.getContext();
-                ai.j0 j0Var = new ai.j0(11, context, (boolean) (null == true ? 1 : 0));
+                ai.k0 k0Var = new ai.k0(11, context, (boolean) (null == true ? 1 : 0));
                 org.telegram.ui.Components.fh0 fh0Var = new org.telegram.ui.Components.fh0(context);
                 fh0Var.setAutoRepeat(true);
                 fh0Var.f(R.raw.utyan_cache, org.telegram.messenger.ns.g2, org.telegram.messenger.ns.g2, null);
-                j0Var.addView(fh0Var, c8.ja.d(org.telegram.messenger.ns.g2, 150.0f, 49, 0.0f, 16.0f, 0.0f, 0.0f));
+                k0Var.addView(fh0Var, c8.ja.d(org.telegram.messenger.ns.g2, 150.0f, 49, 0.0f, 16.0f, 0.0f, 0.0f));
                 fh0Var.d();
                 org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, true, true);
-                j0Var.b = h6Var;
+                k0Var.b = h6Var;
                 org.telegram.ui.Components.er erVar = org.telegram.ui.Components.er.g;
                 h6Var.b(0.35f, 120L, erVar);
                 h6Var.setGravity(1);
@@ -186,7 +186,7 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.mm0,
                 org.telegram.ui.ActionBar.q6.Y(h6Var, i12, null);
                 h6Var.setTextSize(org.telegram.messenger.g0.L(24.0f));
                 h6Var.setTypeface(org.telegram.messenger.g0.o());
-                j0Var.addView(h6Var, c8.ja.d(-1, 32.0f, 49, 0.0f, 176.0f, 0.0f, 0.0f));
+                k0Var.addView(h6Var, c8.ja.d(-1, 32.0f, 49, 0.0f, 176.0f, 0.0f, 0.0f));
                 r6 r6Var = new r6(context);
                 Paint paint = new Paint(1);
                 r6Var.a = paint;
@@ -196,29 +196,29 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.mm0,
                 int i13 = org.telegram.ui.ActionBar.j6.N6;
                 paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i13, false));
                 paint2.setColor(org.telegram.ui.ActionBar.j6.r1(0.2f, org.telegram.ui.ActionBar.j6.x0(null, i13, false)));
-                j0Var.c = r6Var;
-                j0Var.addView(r6Var, c8.ja.d(org.telegram.messenger.ns.P3, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
+                k0Var.c = r6Var;
+                k0Var.addView(r6Var, c8.ja.d(org.telegram.messenger.ns.P3, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
                 TextView textView = new TextView(context);
                 textView.setGravity(1);
                 org.telegram.messenger.k5.m(textView, i12, null, 1, 16.0f);
                 textView.setText(org.telegram.messenger.hd.M0(2131752046, null));
-                j0Var.addView(textView, c8.ja.d(-1, -2.0f, 49, 0.0f, 261.0f, 0.0f, 0.0f));
+                k0Var.addView(textView, c8.ja.d(-1, -2.0f, 49, 0.0f, 261.0f, 0.0f, 0.0f));
                 TextView textView2 = new TextView(context);
                 textView2.setGravity(1);
                 org.telegram.ui.ActionBar.q6.U(textView2, i12, null);
                 i5.c.w(textView2, 1, 14.0f, null, 2131752045);
-                j0Var.addView(textView2, c8.ja.d(org.telegram.messenger.ns.P3, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
-                j0Var.f(0.0f);
-                p6Var.O = j0Var;
+                k0Var.addView(textView2, c8.ja.d(org.telegram.messenger.ns.P3, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
+                k0Var.f(0.0f);
+                p6Var.O = k0Var;
                 boolean[] zArr = {false};
                 float[] fArr = {0.0f};
                 boolean[] zArr2 = {false};
-                org.telegram.ui.ActionBar.m5 m5Var = new org.telegram.ui.ActionBar.m5(q6Var, j0Var, fArr, zArr2, 1);
+                org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(q6Var, k0Var, fArr, zArr2, 2);
                 long[] jArr = {-1};
-                org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.m5(q6Var, zArr, jArr, p6Var, 2), 150L);
+                org.telegram.messenger.g0.i3(new org.telegram.ui.ActionBar.l5(q6Var, zArr, jArr, p6Var, 3), 150L);
                 y6 y6Var = q6Var.d;
-                n6 n6Var = new n6(fArr, zArr2, m5Var, null == true ? 1 : 0);
-                o6 o6Var = new o6(zArr, j0Var, jArr, p6Var, 0);
+                n6 n6Var = new n6(fArr, zArr2, l5Var, null == true ? 1 : 0);
+                o6 o6Var = new o6(zArr, k0Var, jArr, p6Var, 0);
                 ei.c cVar = y6Var.e0;
                 if (cVar != null) {
                     cVar.d();
@@ -365,7 +365,7 @@ public final /* synthetic */ class w0 implements org.telegram.ui.Components.mm0,
                         break;
                     }
                 } else {
-                    di.mb.k1(rdVar.getContext(), true, tdVar.e, rdVar.c, (TL_stars.StarsTransaction) b41Var.G, rdVar.b);
+                    di.lb.k1(rdVar.getContext(), true, tdVar.e, rdVar.c, (TL_stars.StarsTransaction) b41Var.G, rdVar.b);
                     break;
                 }
                 break;

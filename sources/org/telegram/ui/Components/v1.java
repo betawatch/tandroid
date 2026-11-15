@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 org.telegram.messenger.g0.h3(new yf((bw0) obj, tL_error, tLObject, 29));
                 break;
             case 13:
-                org.telegram.messenger.g0.h3(new di.b8(tLObject, (org.telegram.messenger.z10) obj, 1));
+                org.telegram.messenger.g0.h3(new di.a8(tLObject, (org.telegram.messenger.z10) obj, 1));
                 break;
             case 14:
                 p11 p11Var = (p11) obj;

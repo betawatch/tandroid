@@ -23,7 +23,7 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 }
                 break;
             case 10:
-                ((j90) obj).b.a(Integer.valueOf(i13));
+                ((k90) obj).b.a(Integer.valueOf(i13));
                 break;
             case 11:
                 zd0 zd0Var = (zd0) obj;
@@ -364,7 +364,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 ((org.telegram.ui.ai0) obj).a(Integer.valueOf(i13));
                 break;
             case 24:
-                ((org.telegram.ui.vl0) obj).e.q0.J.C(1 - i13);
+                ((org.telegram.ui.wl0) obj).e.q0.J.C(1 - i13);
                 break;
             case 25:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
@@ -384,7 +384,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
                 t1Var.S = M02;
                 t1Var.U = org.telegram.messenger.hd.M0(2131746648, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751598, null), new ai.r1(profileActivity, i13, 20));
+                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751598, null), new ai.s1(profileActivity, i13, 20));
                 alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.p();

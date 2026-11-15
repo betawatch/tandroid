@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hk implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -143,14 +143,14 @@ public final /* synthetic */ class hk implements View.OnTouchListener {
                 }
                 return true;
             case 4:
-                i90 i90Var = (i90) this.b;
-                i90Var.getClass();
-                return org.telegram.ui.ns.p().r(motionEvent, i90Var.getListView(), i90Var.x, null, i90Var.a);
+                j90 j90Var = (j90) this.b;
+                j90Var.getClass();
+                return org.telegram.ui.ns.p().r(motionEvent, j90Var.getListView(), j90Var.x, null, j90Var.a);
             case 5:
-                da0 da0Var = (da0) this.b;
-                da0Var.getClass();
+                ea0 ea0Var = (ea0) this.b;
+                ea0Var.getClass();
                 if (motionEvent.getAction() == 1) {
-                    da0Var.d0.a(true);
+                    ea0Var.d0.a(true);
                 }
                 return true;
             default:

@@ -3,9 +3,9 @@ package bi;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
-import di.mb;
-import di.v8;
-import di.x7;
+import di.lb;
+import di.u8;
+import di.w7;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.hd;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.cc;
 import org.telegram.ui.Components.y31;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f6 implements s10 {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class f6 implements s10 {
                     } else {
                         arrayList.add(b41.B(-3, null));
                         int i12 = 2;
-                        b41 i13 = b41.i(2, mb.a1(false, hd.a0(null, null, z12 ? 2131749854 : 2131749878, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
+                        b41 i13 = b41.i(2, lb.a1(false, hd.a0(null, null, z12 ? 2131749854 : 2131749878, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
                         i13.L(u6Var.n2);
                         arrayList.add(i13);
                         if (z11) {
@@ -118,12 +118,12 @@ public final /* synthetic */ class f6 implements s10 {
                         arrayList.add(b41.B(-3, hd.a0(null, null, 2131750118, str)));
                     }
                     if (jVar != null && (jVar.c != null || jVar.d != null)) {
-                        b41 i16 = b41.i(3, mb.a1(false, hd.a0(null, null, 2131750117, Integer.valueOf((int) jVar.g())), 0.78f, null));
+                        b41 i16 = b41.i(3, lb.a1(false, hd.a0(null, null, 2131750117, Integer.valueOf((int) jVar.g())), 0.78f, null));
                         i16.L(u6Var.o2);
                         arrayList.add(i16);
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.E(v8.y(i11, false).p().amount, ','));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(hd.E(u8.y(i11, false).p().amount, ','));
                         spannableStringBuilder.setSpan(new y31(org.telegram.messenger.g0.o()), 0, spannableStringBuilder.length(), 33);
-                        arrayList.add(b41.B(-7, TextUtils.concat(mb.a1(false, hd.V(null, null, 2131750116, spannableStringBuilder), 0.66f, null), " ", org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(hd.M0(2131750115, null), new h6(u6Var, 4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)))));
+                        arrayList.add(b41.B(-7, TextUtils.concat(lb.a1(false, hd.V(null, null, 2131750116, spannableStringBuilder), 0.66f, null), " ", org.telegram.messenger.g0.I2(org.telegram.messenger.g0.U2(hd.M0(2131750115, null), new h6(u6Var, 4)), true, org.telegram.messenger.g0.L(2.6666667f), org.telegram.messenger.g0.L(1.0f)))));
                     }
                 }
                 if (u6Var.K1) {
@@ -149,7 +149,7 @@ public final /* synthetic */ class f6 implements s10 {
                     } else {
                         org.telegram.messenger.g0.v1(o6Var);
                         u6Var.dismiss();
-                        v8 y10 = v8.y(u6Var.U1, false);
+                        u8 y10 = u8.y(u6Var.U1, false);
                         int i17 = y10.a;
                         if (starGift2 != null && y10.D) {
                             starGift2.availability_remains = 0;
@@ -157,7 +157,7 @@ public final /* synthetic */ class f6 implements s10 {
                             int i18 = y10.F;
                             long j10 = y10.G;
                             vr a04 = vr.a0(i17);
-                            a04.a.c(new x7(i18, 0, j10, a04, arrayList2));
+                            a04.a.c(new w7(i18, 0, j10, a04, arrayList2));
                             ns.f(i17).k(ns.I3, starGift2);
                             break;
                         }

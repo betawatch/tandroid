@@ -47,7 +47,7 @@ import org.telegram.ui.Components.vn;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class n extends r41 implements is {
     public String E;
@@ -451,7 +451,7 @@ public final class n extends r41 implements is {
             b22.flags2 &= -17;
             b22.business_intro = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessintro, new ai.d1(this, 16));
+        getConnectionsManager().sendRequest(updatebusinessintro, new ai.e1(this, 16));
         getMessagesStorage().j2(b22, false);
     }
 

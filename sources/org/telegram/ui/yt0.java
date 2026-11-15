@@ -4,7 +4,7 @@ import android.graphics.RectF;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class yt0 implements Runnable {
                         profileActivity2.v2.participants = new TLRPC.TL_chatParticipants();
                         profileActivity2.getMessagesStorage().m1(tL_channels_channelParticipants.users, tL_channels_channelParticipants.chats, true, true);
                         org.telegram.messenger.vr messagesStorage = profileActivity2.getMessagesStorage();
-                        messagesStorage.a.c(new org.telegram.messenger.ir(messagesStorage, profileActivity2.f1, tL_channels_channelParticipants.participants, 2));
+                        messagesStorage.a.c(new org.telegram.messenger.hr(messagesStorage, profileActivity2.f1, tL_channels_channelParticipants.participants, 3));
                     }
                     for (int i7 = 0; i7 < tL_channels_channelParticipants.participants.size(); i7++) {
                         TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();

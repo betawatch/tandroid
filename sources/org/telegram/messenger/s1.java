@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final /* synthetic */ class s1 implements RequestDelegate {
             default:
                 m10 m10Var = (m10) this.b;
                 m10Var.getClass();
-                g0.h3(new wq(23, m10Var, tLObject));
+                g0.h3(new pq(24, m10Var, tLObject));
                 break;
         }
     }

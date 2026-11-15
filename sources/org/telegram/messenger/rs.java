@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rs implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class rs implements Runnable {
                         hVar2.l(j3);
                         atVar.E.remove(zsVar);
                         vr messagesStorage = atVar.getMessagesStorage();
-                        messagesStorage.a.c(new up(messagesStorage, j3, 4));
+                        messagesStorage.a.c(new rp(messagesStorage, j3, 4));
                         z10 = true;
                         i7 = 0;
                         while (i7 < arrayList.size()) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class rs implements Runnable {
                         }
                     } else {
                         vr messagesStorage2 = atVar.getMessagesStorage();
-                        messagesStorage2.a.c(new wq(5, messagesStorage2, zsVar));
+                        messagesStorage2.a.c(new pq(7, messagesStorage2, zsVar));
                     }
                 }
                 z10 = false;
@@ -91,7 +91,7 @@ public final /* synthetic */ class rs implements Runnable {
                     hVar4.l(j10);
                     atVar2.E.remove(zsVar2);
                     vr messagesStorage3 = atVar2.getMessagesStorage();
-                    messagesStorage3.a.c(new up(messagesStorage3, j10, 4));
+                    messagesStorage3.a.c(new rp(messagesStorage3, j10, 4));
                     z11 = true;
                 } else {
                     z11 = false;

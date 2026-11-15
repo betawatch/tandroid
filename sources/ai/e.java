@@ -7,7 +7,7 @@ import android.view.View;
 import di.c6;
 import di.d3;
 import di.e3;
-import di.v8;
+import di.u8;
 import fi.h7;
 import fi.k7;
 import fi.l7;
@@ -39,7 +39,7 @@ import org.telegram.ui.an;
 import org.telegram.ui.de;
 import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class e implements Runnable {
                 if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error != null && "BALANCE_TOO_LOW".equals(tL_error.text)) {
                         if (!np.s1(c6Var.a).k7) {
-                            v8 y10 = v8.y(c6Var.a, false);
+                            u8 y10 = u8.y(c6Var.a, false);
                             di.m1 m1Var = new di.m1(c6Var, j10, 6);
                             y10.e = false;
                             y10.q(m1Var, false, true);
@@ -107,7 +107,7 @@ public final /* synthetic */ class e implements Runnable {
                             break;
                         } else {
                             c6Var.g2.setLoading(false);
-                            v8.c0(c6Var.getContext(), c6Var.J0);
+                            u8.c0(c6Var.getContext(), c6Var.J0);
                             break;
                         }
                     } else {
@@ -118,8 +118,8 @@ public final /* synthetic */ class e implements Runnable {
                     TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject;
                     np.s1(c6Var.a).Y3(tL_payments_paymentResult.updates.users, false);
                     np.s1(c6Var.a).S3(tL_payments_paymentResult.updates.chats, false);
-                    v8.y(c6Var.a, false).S(false);
-                    v8.y(c6Var.a, false).O();
+                    u8.y(c6Var.a, false).S(false);
+                    u8.y(c6Var.a, false).O();
                     if (!TextUtils.isEmpty(str2) && (savedStarGift = c6Var.B2) != null) {
                         savedStarGift.flags &= -65537;
                         savedStarGift.prepaid_upgrade_hash = null;
@@ -132,24 +132,24 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             case 2:
-                v8 v8Var = (v8) this.d;
+                u8 u8Var = (u8) this.d;
                 boolean[] zArr2 = (boolean[]) this.e;
                 long j11 = this.c;
                 TLObject tLObject2 = (TLObject) this.f;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.b;
                 s10 s10Var = (s10) this.h;
                 zArr2[0] = true;
-                v8Var.g(j11, tLObject2, tL_textWithEntities, s10Var);
+                u8Var.g(j11, tLObject2, tL_textWithEntities, s10Var);
                 break;
             case 3:
-                v8 v8Var2 = (v8) this.d;
+                u8 u8Var2 = (u8) this.d;
                 boolean[] zArr3 = (boolean[]) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.f;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.b;
                 long j12 = this.c;
                 s10 s10Var2 = (s10) this.h;
                 zArr3[0] = true;
-                v8Var2.h(tL_payments_paymentFormStarGift, starGift, j12, null, true, s10Var2);
+                u8Var2.h(tL_payments_paymentFormStarGift, starGift, j12, null, true, s10Var2);
                 break;
             case 4:
                 k7 k7Var = (k7) this.d;
@@ -261,9 +261,9 @@ public final /* synthetic */ class e implements Runnable {
         }
     }
 
-    public /* synthetic */ e(v8 v8Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, s10 s10Var) {
+    public /* synthetic */ e(u8 u8Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, s10 s10Var) {
         this.a = 3;
-        this.d = v8Var;
+        this.d = u8Var;
         this.e = zArr;
         this.f = tL_payments_paymentFormStarGift;
         this.b = starGift;

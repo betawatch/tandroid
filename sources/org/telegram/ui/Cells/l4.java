@@ -10,7 +10,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import android.view.MotionEvent;
-import di.mb;
+import di.lb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.oy0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l4 {
     public int A;
@@ -1307,16 +1307,16 @@ public final class l4 {
             l4Var.g = (int) ((j4Var4.d / 1000.0f) * l4Var.f);
             l4Var.h = (int) (j4Var4.g * j4Var4.i);
             if (l4Var.i) {
-                oy0 oy0Var = new oy0(mb.a1(false, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                oy0 oy0Var = new oy0(lb.a1(false, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 l4Var.q = oy0Var;
                 if (oy0Var.c > l4Var.g - org.telegram.messenger.g0.L(30.0f)) {
-                    l4Var.q = new oy0(mb.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    l4Var.q = new oy0(lb.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
             if (l4Var.r == null || l4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j3 = tL_messageMediaPaidMedia3.stars_amount;
                 l4Var.s = j3;
-                l4Var.r = new oy0(mb.U0(hd.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
+                l4Var.r = new oy0(lb.U0(hd.H(',', "PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, org.telegram.messenger.g0.o());
             }
         }
     }
@@ -1467,10 +1467,10 @@ public final class l4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = gjVar == null ? null : (TLRPC.TL_messageMediaPaidMedia) gjVar.k.media;
             if (tL_messageMediaPaidMedia != null) {
-                oy0 oy0Var = new oy0(mb.a1(z16, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                oy0 oy0Var = new oy0(lb.a1(z16, hd.H(',', "UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 this.q = oy0Var;
                 if (oy0Var.c > this.g - org.telegram.messenger.g0.L(30.0f)) {
-                    this.q = new oy0(mb.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
+                    this.q = new oy0(lb.a1(false, hd.H(',', "UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, org.telegram.messenger.g0.o());
                 }
             }
         }

@@ -1,25 +1,24 @@
 package di;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.messenger.is;
+import org.telegram.messenger.ns;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class ka extends ClickableSpan {
-    public final /* synthetic */ e9 a;
+public final class ka implements is {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u2[] b;
 
-    public ka(e9 e9Var) {
-        this.a = e9Var;
+    public ka(boolean[] zArr, org.telegram.ui.ActionBar.u2[] u2VarArr) {
+        this.a = zArr;
+        this.b = u2VarArr;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a.run();
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.messenger.is
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        org.telegram.ui.ActionBar.u2 u2Var;
+        if (i7 == ns.A3 && this.a[0] && (u2Var = this.b[0]) != null) {
+            u2Var.dismiss();
+        }
     }
 }

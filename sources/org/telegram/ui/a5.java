@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a5 implements org.telegram.messenger.s10 {
     public final /* synthetic */ int a;
@@ -396,8 +396,8 @@ public final /* synthetic */ class a5 implements org.telegram.messenger.s10 {
                 while (i11 < size3) {
                     Object obj5 = arrayList6.get(i11);
                     i11++;
-                    int i21 = di.gb.b;
-                    org.telegram.ui.Components.b41 K3 = org.telegram.ui.Components.b41.K(di.gb.class);
+                    int i21 = di.fb.b;
+                    org.telegram.ui.Components.b41 K3 = org.telegram.ui.Components.b41.K(di.fb.class);
                     K3.G = (TL_stars.StarsTransaction) obj5;
                     K3.q = true;
                     arrayList5.add(K3);

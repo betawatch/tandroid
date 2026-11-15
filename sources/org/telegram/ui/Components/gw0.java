@@ -7,14 +7,14 @@ import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class gw0 {
     public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.ui.ActionBar.e6 e6Var) {
         int i7 = org.telegram.messenger.m10.t0;
         Context context = e2Var.getContext();
         hi.i2 i2Var = new hi.i2(context, e6Var, true, false);
-        i2Var.z1 = new ai.q1(i7, context, tL_messages_stickerSet, 9);
+        i2Var.z1 = new ai.r1(i7, context, tL_messages_stickerSet, 9);
         if (e2Var.visibleDialog != null) {
             i2Var.show();
         } else {

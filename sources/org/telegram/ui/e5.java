@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((p50) this.b).b.P();
                 break;
             case 4:
-                org.telegram.ui.Components.e5 e5Var = ((dm0) this.b).i;
+                org.telegram.ui.Components.e5 e5Var = ((em0) this.b).i;
                 if (e5Var != null) {
                     e5Var.a();
                     break;
@@ -54,7 +54,7 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((p50) this.b).b.R();
                 break;
             case 4:
-                org.telegram.ui.Components.e5 e5Var = ((dm0) this.b).i;
+                org.telegram.ui.Components.e5 e5Var = ((em0) this.b).i;
                 if (e5Var != null) {
                     e5Var.b();
                     break;

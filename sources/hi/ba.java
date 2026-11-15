@@ -2,11 +2,11 @@ package hi;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.is;
-import org.telegram.ui.im0;
+import org.telegram.ui.jm0;
 import org.telegram.ui.qc;
 import org.telegram.ui.t71;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ba implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final class ba implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 2:
-                im0 im0Var = (im0) this.c;
-                im0Var.Z = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                im0Var.Y.invalidate();
-                if (!this.b && im0Var.Z > 0.5f) {
+                jm0 jm0Var = (jm0) this.c;
+                jm0Var.Z = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jm0Var.Y.invalidate();
+                if (!this.b && jm0Var.Z > 0.5f) {
                     this.b = true;
                     break;
                 }

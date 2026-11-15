@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iv0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -69,12 +69,12 @@ public final /* synthetic */ class iv0 implements View.OnClickListener {
                         bw0Var.t1 = bw0Var.s1.i(R.drawable.msg_delete, null, org.telegram.messenger.hd.M0(2131751598, null), actionBarPopupWindow$ActionBarPopupWindowLayout);
                     }
                     bw0Var.s1.a(-1);
-                    n90 n90Var = new n90(bw0Var.a, 4, bw0Var.getContext(), new ArrayList(), bw0Var.J0);
-                    n90Var.setOnClickListener(new iv0(bw0Var, 8));
-                    n90Var.setTag(R.id.fit_width_tag, 1);
+                    o90 o90Var = new o90(bw0Var.a, 4, bw0Var.getContext(), new ArrayList(), bw0Var.J0);
+                    o90Var.setOnClickListener(new iv0(bw0Var, 8));
+                    o90Var.setTag(R.id.fit_width_tag, 1);
                     org.telegram.ui.ActionBar.q0 q0Var = bw0Var.s1;
                     q0Var.q();
-                    q0Var.b.a(n90Var, new LinearLayout.LayoutParams(-1, -2));
+                    q0Var.b.a(o90Var, new LinearLayout.LayoutParams(-1, -2));
                     int w02 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.q7, bw0Var.J0);
                     bw0Var.t1.d(w02, w02);
                     bw0Var.t1.setSelectorColor(org.telegram.ui.ActionBar.j6.r1(0.1f, w02));

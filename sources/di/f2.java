@@ -60,7 +60,7 @@ import org.telegram.ui.tp;
 import org.telegram.ui.xw;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ f2(v8 v8Var, Object obj, long j3, Object obj2, int i7) {
+    public /* synthetic */ f2(u8 u8Var, Object obj, long j3, Object obj2, int i7) {
         this.a = i7;
-        this.d = v8Var;
+        this.d = u8Var;
         this.b = obj;
         this.c = j3;
         this.e = obj2;
@@ -366,10 +366,10 @@ public final /* synthetic */ class f2 implements Runnable {
         switch (this.a) {
             case 0:
                 c6 c6Var = (c6) this.b;
-                v8 v8Var = (v8) this.d;
+                u8 u8Var = (u8) this.d;
                 long j3 = this.c;
                 z10 z10Var = (z10) this.e;
-                if (v8Var.e) {
+                if (u8Var.e) {
                     c6Var.s1(j3, z10Var);
                     return;
                 }
@@ -396,18 +396,18 @@ public final /* synthetic */ class f2 implements Runnable {
                 c6Var3.s1(j11, z10Var2);
                 return;
             case 3:
-                ((v8) this.d).b0((gj) this.e, ((h6) this.b).a, this.c, true, true, null);
+                ((u8) this.d).b0((gj) this.e, ((h6) this.b).a, this.c, true, true, null);
                 return;
             case 4:
-                v8 v8Var2 = (v8) this.d;
+                u8 u8Var2 = (u8) this.d;
                 z10 z10Var3 = (z10) this.e;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.b;
                 long j12 = this.c;
-                if (v8Var2.e) {
-                    v8Var2.H(starGift, j12, null, true, z10Var3);
+                if (u8Var2.e) {
+                    u8Var2.H(starGift, j12, null, true, z10Var3);
                     return;
                 } else {
-                    v8.e("NO_BALANCE");
+                    u8.e("NO_BALANCE");
                     z10Var3.a(null);
                     return;
                 }
@@ -425,20 +425,20 @@ public final /* synthetic */ class f2 implements Runnable {
                 a02.s(document, M0, charSequence).k(true);
                 return;
             case 6:
-                ((v8) this.d).f0((LaunchActivity) this.b, this.c, (String) this.e);
+                ((u8) this.d).f0((LaunchActivity) this.b, this.c, (String) this.e);
                 return;
             case 7:
-                v8 v8Var3 = (v8) this.d;
+                u8 u8Var3 = (u8) this.d;
                 TLObject tLObject = (TLObject) this.b;
                 long j14 = this.c;
                 z10 z10Var4 = (z10) this.e;
                 if (!(tLObject instanceof TL_stars.starGiftUpgradePreview)) {
-                    v8Var3.getClass();
+                    u8Var3.getClass();
                     z10Var4.a(null);
                     return;
                 } else {
                     TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) tLObject;
-                    v8Var3.M.put(Long.valueOf(j14), stargiftupgradepreview);
+                    u8Var3.M.put(Long.valueOf(j14), stargiftupgradepreview);
                     z10Var4.a(stargiftupgradepreview);
                     return;
                 }
@@ -649,7 +649,7 @@ public final /* synthetic */ class f2 implements Runnable {
                 boolean T = org.telegram.messenger.t3.T(chat);
                 TLRPC.ChatFull G0 = vrVar.G0(j19, T, true, true);
                 if (G0 == null || (chatParticipants = G0.participants) == null || ((arrayList2 = chatParticipants.participants) != null && arrayList2.size() < G0.participants_count - 1)) {
-                    org.telegram.messenger.g0.h3(new sb(l8Var, T, j19, 1));
+                    org.telegram.messenger.g0.h3(new rb(l8Var, T, j19, 1));
                     return;
                 } else {
                     org.telegram.messenger.g0.h3(new bi.m1(l8Var, j19, G0, 11));
@@ -860,7 +860,7 @@ public final /* synthetic */ class f2 implements Runnable {
                 TLRPC.User a23 = np.s1(p11Var.e).a2(Long.valueOf(j23));
                 if (a23 != null) {
                     an anVar3 = p11Var.s;
-                    org.telegram.ui.Components.t4.q(anVar3, -1, a23, chat2, true, new ai.c0(p11Var, j23, 6), anVar3.getResourceProvider());
+                    org.telegram.ui.Components.t4.q(anVar3, -1, a23, chat2, true, new ai.d0(p11Var, j23, 6), anVar3.getResourceProvider());
                     return;
                 }
                 return;
@@ -991,9 +991,9 @@ public final /* synthetic */ class f2 implements Runnable {
         }
     }
 
-    public /* synthetic */ f2(v8 v8Var, z10 z10Var, TL_stars.StarGift starGift, long j3) {
+    public /* synthetic */ f2(u8 u8Var, z10 z10Var, TL_stars.StarGift starGift, long j3) {
         this.a = 4;
-        this.d = v8Var;
+        this.d = u8Var;
         this.e = z10Var;
         this.b = starGift;
         this.c = j3;

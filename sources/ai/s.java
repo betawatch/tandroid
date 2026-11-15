@@ -1,37 +1,29 @@
 package ai;
 
-import java.util.ArrayList;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class s {
-    public final String a;
-    public final String[] b;
-    public volatile long c;
-    public volatile long d;
-    public int e;
-    public boolean g;
-    public boolean h;
-    public volatile float i;
-    public final ArrayList f = new ArrayList();
-    public final ArrayList j = new ArrayList();
+public final /* synthetic */ class s implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
 
-    public s(String str, String[] strArr, long j3) {
-        this.a = str;
-        this.b = strArr;
-        this.c = j3;
+    public /* synthetic */ s(int i7, boolean[] zArr) {
+        this.a = i7;
+        this.b = zArr;
     }
 
-    public final String a() {
-        return a8.p0.s(new StringBuilder(), this.a, ".tzf");
-    }
-
-    public final boolean b(String str) {
-        for (String str2 : this.b) {
-            if (str2.equals(str)) {
-                return true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                t[] tVarArr = DictationAsr.a;
+                zArr[0] = true;
+                break;
+            default:
+                this.b[0] = true;
+                break;
         }
-        return false;
     }
 }

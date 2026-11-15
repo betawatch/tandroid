@@ -10,16 +10,16 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.wp0;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.z80;
 import org.telegram.ui.an;
-import org.telegram.ui.bn0;
 import org.telegram.ui.bu;
+import org.telegram.ui.cn0;
 import org.telegram.ui.cu;
 import org.telegram.ui.pr;
 import org.telegram.ui.rd;
 import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class w3 extends v4.t0 {
     public final /* synthetic */ int a;
@@ -73,11 +73,11 @@ public final class w3 extends v4.t0 {
                 }
                 break;
             case 9:
-                bn0 bn0Var = (bn0) this.c;
-                org.telegram.ui.ActionBar.v4[] v4VarArr = bn0Var.n;
+                cn0 cn0Var = (cn0) this.c;
+                org.telegram.ui.ActionBar.v4[] v4VarArr = cn0Var.n;
                 ((v4.t0) this.b).a(recyclerView, i7);
                 if (i7 != 1) {
-                    kVar2 = ((org.telegram.ui.ActionBar.e2) bn0Var).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.e2) cn0Var).actionBar;
                     int i13 = (int) (-kVar2.getTranslationY());
                     int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                     if (i13 != 0 && i13 != currentActionBarHeight2) {
@@ -93,7 +93,7 @@ public final class w3 extends v4.t0 {
                 break;
             case 11:
                 ((v4.t0) this.b).a(recyclerView, i7);
-                ((y80) this.c).D.getClass();
+                ((z80) this.c).D.getClass();
                 break;
         }
     }
@@ -153,7 +153,7 @@ public final class w3 extends v4.t0 {
                     }
                     break;
                 }
-                ((ai.v0) this.b).run();
+                ((ai.w0) this.b).run();
                 break;
             case 4:
                 an anVar = (an) this.c;
@@ -234,9 +234,9 @@ public final class w3 extends v4.t0 {
                 break;
             case 9:
                 ((v4.t0) this.b).b(recyclerView, i7, i10);
-                bn0 bn0Var = (bn0) this.c;
-                if (recyclerView == ((uj0) bn0Var.n[0].f)) {
-                    kVar2 = ((org.telegram.ui.ActionBar.e2) bn0Var).actionBar;
+                cn0 cn0Var = (cn0) this.c;
+                if (recyclerView == ((uj0) cn0Var.n[0].f)) {
+                    kVar2 = ((org.telegram.ui.ActionBar.e2) cn0Var).actionBar;
                     float translationY3 = kVar2.getTranslationY();
                     float f12 = translationY3 - i10;
                     if (f12 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
@@ -245,7 +245,7 @@ public final class w3 extends v4.t0 {
                         f12 = 0.0f;
                     }
                     if (f12 != translationY3) {
-                        bn0.l0(bn0Var, f12);
+                        cn0.l0(cn0Var, f12);
                         break;
                     }
                 }
@@ -262,7 +262,7 @@ public final class w3 extends v4.t0 {
                 break;
             default:
                 ((v4.t0) this.b).b(recyclerView, i7, i10);
-                ((y80) this.c).D.b(recyclerView, i7, i10);
+                ((z80) this.c).D.b(recyclerView, i7, i10);
                 break;
         }
     }

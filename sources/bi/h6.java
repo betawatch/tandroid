@@ -1,9 +1,9 @@
 package bi;
 
-import di.db;
-import di.v8;
+import di.cb;
+import di.u8;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h6 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class h6 implements Runnable {
                 long j3 = u6Var.Y1.id;
                 String str = u6Var.b2;
                 c6Var.j3 = true;
-                v8.y(c6Var.a, false).K(j3, new ai.u1(8, c6Var, str));
+                u8.y(c6Var.a, false).K(j3, new ai.v1(8, c6Var, str));
                 break;
             case 3:
                 u6 u6Var2 = this.b;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h6 implements Runnable {
                 break;
             case 4:
                 u6 u6Var3 = this.b;
-                new db(u6Var3.getContext(), u6Var3.J0).show();
+                new cb(u6Var3.getContext(), u6Var3.J0).show();
                 break;
             default:
                 this.b.dismiss();

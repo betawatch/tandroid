@@ -4,12 +4,12 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.o90;
 import org.telegram.ui.Components.xg0;
 import org.telegram.ui.Wallet.h6;
 import org.telegram.ui.Wallet.q7;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class u5 extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class u5 extends CharacterStyle {
                 textPaint.setTypeface(org.telegram.messenger.g0.o());
                 int alpha2 = textPaint.getAlpha();
                 int i7 = j6.n6;
-                ((n90) this.b).getClass();
+                ((o90) this.b).getClass();
                 textPaint.setColor(j6.v0(i7));
                 textPaint.setAlpha(alpha2);
                 break;

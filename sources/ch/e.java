@@ -1,12 +1,12 @@
 package ch;
 
-import ai.v0;
+import ai.w0;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import org.telegram.messenger.z10;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -31,7 +31,7 @@ public final class e extends ImageView {
             this.a = System.currentTimeMillis();
             fVar.b = true;
             fVar.c = false;
-            org.telegram.messenger.g0.i3(new v0(fVar, 350, 2), 350);
+            org.telegram.messenger.g0.i3(new w0(fVar, 350, 2), 350);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
             if (!fVar.c && (z10Var = fVar.d) != null) {

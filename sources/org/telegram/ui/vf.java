@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vf implements org.telegram.messenger.s10 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class vf implements org.telegram.messenger.s10 {
         Object obj4 = this.c;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new ai.f1((an) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 12));
+                org.telegram.messenger.g0.h3(new ai.g1((an) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 12));
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
@@ -49,7 +49,7 @@ public final /* synthetic */ class vf implements org.telegram.messenger.s10 {
                     }
                     updates = null;
                 }
-                org.telegram.messenger.g0.h3(new ai.f1(launchActivity, g50Var, tL_error, updates, this.b, 21));
+                org.telegram.messenger.g0.h3(new ai.g1(launchActivity, g50Var, tL_error, updates, this.b, 21));
                 break;
             case 2:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;

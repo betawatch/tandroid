@@ -8,20 +8,20 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import di.bc;
+import di.ac;
 import org.telegram.messenger.qc;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class n2 extends Drawable {
     public final int a;
     public final RectF b;
     public final Path c;
     public final Paint d;
-    public final bc e;
+    public final ac e;
     public boolean f;
     public a3.f g;
-    public ai.f0 h;
+    public ai.g0 h;
     public boolean i;
 
     public n2(int i7) {
@@ -50,15 +50,15 @@ public final class n2 extends Drawable {
         Paint paint = this.d;
         Path path = this.c;
         canvas.drawPath(path, paint);
-        bc bcVar = this.e;
-        if (bcVar != null) {
+        ac acVar = this.e;
+        if (acVar != null) {
             if (this.f || !this.i) {
                 canvas.save();
                 canvas.clipPath(path);
                 if (this.g == null) {
-                    bcVar.d();
+                    acVar.d();
                 }
-                bcVar.a(canvas, this.a);
+                acVar.a(canvas, this.a);
                 canvas.restore();
                 if (this.g == null) {
                     invalidateSelf();
@@ -81,9 +81,9 @@ public final class n2 extends Drawable {
         Path path = this.c;
         path.rewind();
         path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        bc bcVar = this.e;
-        if (bcVar != null) {
-            bcVar.g(rectF);
+        ac acVar = this.e;
+        if (acVar != null) {
+            acVar.g(rectF);
         }
     }
 
@@ -105,7 +105,7 @@ public final class n2 extends Drawable {
         this.a = i7;
         paint.setColor(i10);
         if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new bc(1, 25);
+            this.e = new ac(1, 25);
         } else {
             this.e = null;
         }

@@ -3,7 +3,7 @@ package fi;
 import org.telegram.messenger.w10;
 import org.telegram.ui.Components.fh0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p3 implements w10 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class p3 implements w10 {
                     ((z8) b4Var.A1).g(false);
                     b4Var.setActive(true);
                     b4Var.E3 = false;
-                    b4Var.S0 = new ai.y0(2, runnable);
+                    b4Var.S0 = new ai.z0(2, runnable);
                     if (bool.booleanValue()) {
                         b4Var.d1(false);
                     }
@@ -89,7 +89,7 @@ public final /* synthetic */ class p3 implements w10 {
                     ((z8) b4Var2.A1).g(false);
                     b4Var2.setActive(true);
                     b4Var2.E3 = false;
-                    b4Var2.S0 = new ai.y0(3, runnable2);
+                    b4Var2.S0 = new ai.z0(3, runnable2);
                     if (bool2.booleanValue()) {
                         b4Var2.d1(false);
                     }

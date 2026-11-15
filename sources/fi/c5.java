@@ -34,7 +34,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class c5 extends FrameLayout implements org.telegram.ui.ActionBar.z5, is {
     public j5 E;
@@ -47,7 +47,7 @@ public abstract class c5 extends FrameLayout implements org.telegram.ui.ActionBa
     public final i9 L;
     public final n4 M;
     public final o4 N;
-    public final ai.f0 O;
+    public final ai.g0 O;
     public final o4 P;
     public final s4 Q;
     public boolean R;
@@ -72,12 +72,12 @@ public abstract class c5 extends FrameLayout implements org.telegram.ui.ActionBa
     public final y4 x;
     public final qy y;
 
-    public c5(i9 i9Var, Context context, o4 o4Var, ai.f0 f0Var) {
+    public c5(i9 i9Var, Context context, o4 o4Var, ai.g0 g0Var) {
         super(context);
         this.e = 96;
         this.P = new o4();
         this.N = o4Var;
-        this.O = f0Var;
+        this.O = g0Var;
         b bVar = i9Var.E;
         this.s = bVar;
         this.L = i9Var;
@@ -398,7 +398,7 @@ public abstract class c5 extends FrameLayout implements org.telegram.ui.ActionBa
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 s4Var.x = ofFloat;
                 ofFloat.addUpdateListener(new ah.h(s4Var, 21));
-                s4Var.x.addListener(new ai.i0(s4Var, 15));
+                s4Var.x.addListener(new ai.j0(s4Var, 15));
                 s4Var.x.setDuration(250L);
                 s4Var.x.setInterpolator(er.f);
                 s4Var.x.start();

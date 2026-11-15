@@ -36,7 +36,7 @@ import org.telegram.ui.Cells.y0;
 import org.telegram.ui.Wallet.k8;
 import x2.b1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class l extends u2.r {
     public static final int[] T1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -2600,19 +2600,19 @@ public final class l extends u2.r {
         x xVar = this.f1;
         if (!z13) {
             if (this.r1 != null && this.o1 == null) {
-                ai.w wVar = new ai.w(this.a1, xVar);
-                wVar.a = true;
+                ai.x xVar2 = new ai.x(this.a1, xVar);
+                xVar2.a = true;
                 long j3 = this.i1;
-                wVar.c = j3 != -9223372036854775807L ? -j3 : -9223372036854775807L;
+                xVar2.c = j3 != -9223372036854775807L ? -j3 : -9223372036854775807L;
                 h2.g0 g0Var = this.h;
                 g0Var.getClass();
-                wVar.g = g0Var;
-                ja.p(!wVar.b);
-                if (((r) wVar.f) == null) {
-                    wVar.f = new r();
+                xVar2.g = g0Var;
+                ja.p(!xVar2.b);
+                if (((r) xVar2.f) == null) {
+                    xVar2.f = new r();
                 }
-                t tVar = new t(wVar);
-                wVar.b = true;
+                t tVar = new t(xVar2);
+                xVar2.b = true;
                 if (1 >= tVar.p) {
                     tVar.p = 1;
                 }

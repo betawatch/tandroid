@@ -1,37 +1,97 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.ui.Components.oy0;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import org.telegram.messenger.m10;
+import org.telegram.messenger.np;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final class oa extends ReplacementSpan {
-    public final Paint a;
-    public final oy0 b;
-    public final /* synthetic */ int c;
+public final class oa implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ mb0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ hi.d h;
+    public final /* synthetic */ TextView n;
 
-    public oa(int i7, String str) {
-        this.c = i7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(org.telegram.ui.ActionBar.j6.r1(0.1f, i7));
-        this.b = new oy0(str, 13.0f, org.telegram.messenger.g0.o());
+    public oa(EditTextBoldCursor editTextBoldCursor, mb0 mb0Var, long j3, boolean z10, hi.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = mb0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(f10, (r12 - org.telegram.messenger.g0.L(20.0f)) / 2.0f, org.telegram.messenger.g0.L(12.0f) + f10 + this.b.c, (org.telegram.messenger.g0.L(20.0f) + r12) / 2.0f);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), this.a);
-        int i14 = this.c;
-        this.b.c(f10 + org.telegram.messenger.g0.L(6.0f), (i11 + i13) / 2.0f, 1.0f, i14, canvas);
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a6  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        mb0 mb0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
+        }
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+            try {
+                if (j3 > np.s1(m10.t0).T5) {
+                    this.a = true;
+                    j3 = np.s1(m10.t0).T5;
+                    editTextBoldCursor.setText(Long.toString(j3));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i7 = -this.b;
+                    this.b = i7;
+                    org.telegram.messenger.g0.F3(i7, mb0Var, null);
+                }
+            } catch (Exception unused) {
+                this.a = true;
+                long j10 = this.e;
+                editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                this.a = false;
+                if (!this.f) {
+                }
+                mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                TextView textView = this.n;
+                if (j3 != 0) {
+                }
+            }
+        } catch (Exception unused2) {
+            j3 = 0;
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * np.s1(m10.t0).d6), "USD"));
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (org.telegram.messenger.g0.L(12.0f) + this.b.c);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

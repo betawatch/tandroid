@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class rv extends View {
     public final /* synthetic */ int a;
@@ -110,36 +110,36 @@ public final class rv extends View {
                 canvas.drawColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.e7, ((qg0) obj).J0));
                 break;
             case 4:
-                nm0 nm0Var = (nm0) obj;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, nm0Var.c.size())));
-                int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(nm0Var.T.measureText(format))), org.telegram.messenger.g0.L(24.0f));
+                om0 om0Var = (om0) obj;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, om0Var.c.size())));
+                int max = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(om0Var.T.measureText(format))), org.telegram.messenger.g0.L(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                nm0Var.T.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.C5, false));
-                nm0Var.V.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                om0Var.T.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.C5, false));
+                om0Var.V.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
                 int i10 = max / 2;
-                nm0Var.U.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(nm0Var.U, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), nm0Var.V);
-                nm0Var.V.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.B5, false));
-                nm0Var.U.set(org.telegram.messenger.g0.L(2.0f) + r9, org.telegram.messenger.g0.L(2.0f), r4 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
-                canvas.drawRoundRect(nm0Var.U, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), nm0Var.V);
-                canvas.drawText(format, measuredWidth - (r3 / 2), org.telegram.messenger.g0.L(16.2f), nm0Var.T);
+                om0Var.U.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(om0Var.U, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), om0Var.V);
+                om0Var.V.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.B5, false));
+                om0Var.U.set(org.telegram.messenger.g0.L(2.0f) + r9, org.telegram.messenger.g0.L(2.0f), r4 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
+                canvas.drawRoundRect(om0Var.U, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), om0Var.V);
+                canvas.drawText(format, measuredWidth - (r3 / 2), org.telegram.messenger.g0.L(16.2f), om0Var.T);
                 break;
             case 5:
-                ym0 ym0Var = (ym0) obj;
-                String format2 = String.format("%d", Integer.valueOf(Math.max(1, ym0Var.c.size())));
-                int max2 = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(ym0Var.i0.measureText(format2))), org.telegram.messenger.g0.L(24.0f));
+                zm0 zm0Var = (zm0) obj;
+                String format2 = String.format("%d", Integer.valueOf(Math.max(1, zm0Var.c.size())));
+                int max2 = Math.max(org.telegram.messenger.g0.L(16.0f) + ((int) Math.ceil(zm0Var.i0.measureText(format2))), org.telegram.messenger.g0.L(24.0f));
                 int measuredWidth2 = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                ym0Var.i0.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.C5, false));
-                ym0Var.k0.setColor(org.telegram.ui.ActionBar.j6.x0(null, ym0Var.v0, false));
+                zm0Var.i0.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.C5, false));
+                zm0Var.k0.setColor(org.telegram.ui.ActionBar.j6.x0(null, zm0Var.v0, false));
                 int i11 = max2 / 2;
-                ym0Var.j0.set(measuredWidth2 - i11, 0.0f, i11 + measuredWidth2, getMeasuredHeight());
-                canvas.drawRoundRect(ym0Var.j0, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), ym0Var.k0);
-                ym0Var.k0.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.B5, false));
-                ym0Var.j0.set(org.telegram.messenger.g0.L(2.0f) + r11, org.telegram.messenger.g0.L(2.0f), r4 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
-                canvas.drawRoundRect(ym0Var.j0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), ym0Var.k0);
-                canvas.drawText(format2, measuredWidth2 - (r3 / 2), org.telegram.messenger.g0.L(16.2f), ym0Var.i0);
+                zm0Var.j0.set(measuredWidth2 - i11, 0.0f, i11 + measuredWidth2, getMeasuredHeight());
+                canvas.drawRoundRect(zm0Var.j0, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), zm0Var.k0);
+                zm0Var.k0.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.B5, false));
+                zm0Var.j0.set(org.telegram.messenger.g0.L(2.0f) + r11, org.telegram.messenger.g0.L(2.0f), r4 - org.telegram.messenger.g0.L(2.0f), getMeasuredHeight() - org.telegram.messenger.g0.L(2.0f));
+                canvas.drawRoundRect(zm0Var.j0, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), zm0Var.k0);
+                canvas.drawText(format2, measuredWidth2 - (r3 / 2), org.telegram.messenger.g0.L(16.2f), zm0Var.i0);
                 break;
             case 6:
                 ((PhotoViewer) obj).q3.a(canvas, this);

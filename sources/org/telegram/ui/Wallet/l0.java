@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.Base64;
 import android.util.LruCache;
-import di.mb;
+import di.lb;
 import j$.util.DesugarCollections;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Array;
@@ -53,7 +53,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.qv0;
 import org.telegram.ui.xi0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class l0 {
     public static volatile l0[] O = new l0[4];
@@ -677,7 +677,7 @@ public final class l0 {
 
     public static String o(long j3, boolean z10) {
         if ((j3 > -10000000 && j3 < 10000000) || z10) {
-            return mb.P0(j3);
+            return lb.P0(j3);
         }
         if (R == null) {
             R = new DecimalFormat("0.##", new DecimalFormatSymbols(Locale.US));

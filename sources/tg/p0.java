@@ -10,10 +10,10 @@ import org.telegram.messenger.aj;
 import org.telegram.messenger.bj;
 import org.telegram.messenger.yi;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p0 extends uj0 {
     public final ArrayList f3;
@@ -72,7 +72,7 @@ public final class p0 extends uj0 {
                     bj currentMessagesGroup2 = q1Var.getCurrentMessagesGroup();
                     if (currentMessagesGroup2 == null || currentMessagesGroup2 != bjVar) {
                         yi currentPosition = q1Var.getCurrentPosition();
-                        k90 backgroundDrawable = q1Var.getBackgroundDrawable();
+                        l90 backgroundDrawable = q1Var.getBackgroundDrawable();
                         if ((backgroundDrawable.f || q1Var.z2()) && (currentPosition == null || (2 & currentPosition.l) != 0)) {
                             int y10 = (int) q1Var.getY();
                             canvas.save();
@@ -87,7 +87,7 @@ public final class p0 extends uj0 {
                                     if (childAt2 instanceof org.telegram.ui.Cells.q1) {
                                         org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) childAt2;
                                         if (q1Var2.getCurrentMessagesGroup() == currentMessagesGroup2) {
-                                            k90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
+                                            l90 backgroundDrawable2 = q1Var2.getBackgroundDrawable();
                                             int min = Math.min(y10, (int) q1Var2.getY());
                                             int max = Math.max(measuredHeight, q1Var2.getMeasuredHeight() + ((int) q1Var2.getY()));
                                             long j10 = backgroundDrawable2.l;

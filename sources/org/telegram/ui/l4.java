@@ -31,7 +31,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l4 extends org.telegram.ui.Components.tj0 {
     public final /* synthetic */ int c;
@@ -753,16 +753,16 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
 
     private final void I(v4.e1 e1Var, int i7) {
         boolean K1;
-        ym0 ym0Var = (ym0) this.e;
-        org.telegram.messenger.ve veVar = ym0Var.K;
-        ArrayList arrayList = ym0Var.n;
-        ArrayList arrayList2 = ym0Var.c;
-        HashMap hashMap = ym0Var.b;
+        zm0 zm0Var = (zm0) this.e;
+        org.telegram.messenger.ve veVar = zm0Var.K;
+        ArrayList arrayList = zm0Var.n;
+        ArrayList arrayList2 = zm0Var.c;
+        HashMap hashMap = zm0Var.b;
         int i10 = e1Var.f;
         View view = e1Var.a;
         if (i10 == 0) {
             org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
-            q5Var.setItemSize(ym0Var.S);
+            q5Var.setItemSize(zm0Var.S);
             org.telegram.ui.Components.i9 imageView = q5Var.getImageView();
             q5Var.setTag(Integer.valueOf(i7));
             imageView.r();
@@ -770,24 +770,24 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
                 org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) veVar.e.get(i7);
                 q5Var.d(ffVar, arrayList2.size() > 1, true, false, false);
                 int i11 = ffVar.C;
-                q5Var.b(ym0Var.e ? arrayList2.indexOf(Integer.valueOf(i11)) : -1, hashMap.containsKey(Integer.valueOf(i11)), false);
+                q5Var.b(zm0Var.e ? arrayList2.indexOf(Integer.valueOf(i11)) : -1, hashMap.containsKey(Integer.valueOf(i11)), false);
                 K1 = PhotoViewer.K1(ffVar.I);
             } else {
-                org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) ym0Var.f.get(i7);
+                org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) zm0Var.f.get(i7);
                 q5Var.e(jfVar);
                 q5Var.getVideoInfoContainer().setVisibility(4);
-                q5Var.b(ym0Var.e ? arrayList2.indexOf(jfVar.B) : -1, hashMap.containsKey(jfVar.B), false);
+                q5Var.b(zm0Var.e ? arrayList2.indexOf(jfVar.B) : -1, hashMap.containsKey(jfVar.B), false);
                 K1 = PhotoViewer.K1(jfVar.g());
             }
             imageView.getImageReceiver().O0(!K1, true);
-            q5Var.getCheckBox().setVisibility((ym0Var.U != 0 || K1) ? 8 : 0);
+            q5Var.getCheckBox().setVisibility((zm0Var.U != 0 || K1) ? 8 : 0);
             return;
         }
         if (i10 == 1) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             if (layoutParams != null) {
                 layoutParams.width = -1;
-                layoutParams.height = ym0Var.S;
+                layoutParams.height = zm0Var.S;
                 view.setLayoutParams(layoutParams);
                 return;
             }
@@ -1107,8 +1107,8 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
             case 13:
                 return true;
             case 14:
-                ym0 ym0Var = (ym0) this.e;
-                return ym0Var.K != null || (!TextUtils.isEmpty(ym0Var.w) ? e1Var.b() >= ym0Var.f.size() : e1Var.f != 3);
+                zm0 zm0Var = (zm0) this.e;
+                return zm0Var.K != null || (!TextUtils.isEmpty(zm0Var.w) ? e1Var.b() >= zm0Var.f.size() : e1Var.f != 3);
             case 15:
                 return false;
             case 16:
@@ -1226,23 +1226,23 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
             case 12:
                 return ((PasscodeActivity) this.e).Q;
             case 13:
-                if (((nm0) this.e).d != null) {
+                if (((om0) this.e).d != null) {
                     return (int) Math.ceil(r1.size() / r0.f);
                 }
                 return 0;
             case 14:
-                ym0 ym0Var = (ym0) this.e;
-                org.telegram.messenger.ve veVar = ym0Var.K;
+                zm0 zm0Var = (zm0) this.e;
+                org.telegram.messenger.ve veVar = zm0Var.K;
                 if (veVar != null) {
                     return veVar.e.size();
                 }
-                if (!ym0Var.f.isEmpty()) {
-                    return ym0Var.f.size() + (!ym0Var.s ? 1 : 0);
+                if (!zm0Var.f.isEmpty()) {
+                    return zm0Var.f.size() + (!zm0Var.s ? 1 : 0);
                 }
-                if (!TextUtils.isEmpty(ym0Var.w) || ym0Var.n.isEmpty()) {
+                if (!TextUtils.isEmpty(zm0Var.w) || zm0Var.n.isEmpty()) {
                     return 0;
                 }
-                return ym0Var.n.size() + 2;
+                return zm0Var.n.size() + 2;
             case 15:
                 PhotoViewer photoViewer = (PhotoViewer) this.e;
                 sq0 sq0Var = photoViewer.d;
@@ -1574,15 +1574,15 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
             case 13:
                 return 0;
             case 14:
-                ym0 ym0Var = (ym0) this.e;
-                if (ym0Var.Z) {
+                zm0 zm0Var = (zm0) this.e;
+                if (zm0Var.Z) {
                     return 2;
                 }
-                if (ym0Var.K == null) {
-                    if (ym0Var.f.isEmpty()) {
-                        return i7 == ym0Var.n.size() ? 4 : 3;
+                if (zm0Var.K == null) {
+                    if (zm0Var.f.isEmpty()) {
+                        return i7 == zm0Var.n.size() ? 4 : 3;
                     }
-                    if (i7 >= ym0Var.f.size()) {
+                    if (i7 >= zm0Var.f.size()) {
                         return 1;
                     }
                 }
@@ -2334,17 +2334,17 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
                 break;
             case 13:
                 org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) e1Var.a;
-                nm0 nm0Var = (nm0) obj2;
-                v5Var.setAlbumsCount(nm0Var.f);
+                om0 om0Var = (om0) obj2;
+                v5Var.setAlbumsCount(om0Var.f);
                 while (true) {
-                    int i52 = nm0Var.f;
+                    int i52 = om0Var.f;
                     if (i31 >= i52) {
                         v5Var.requestLayout();
                         break;
                     } else {
                         int i53 = (i52 * i7) + i31;
-                        if (i53 < nm0Var.d.size()) {
-                            v5Var.a(i31, (org.telegram.messenger.ve) nm0Var.d.get(i53));
+                        if (i53 < om0Var.d.size()) {
+                            v5Var.a(i31, (org.telegram.messenger.ve) om0Var.d.get(i53));
                         } else {
                             v5Var.a(i31, null);
                         }
@@ -2841,13 +2841,13 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
                 v5Var.setDelegate(new ni0(this, i18));
                 return new org.telegram.ui.Components.cj0(v5Var);
             case 14:
-                ym0 ym0Var = (ym0) obj;
-                boolean z11 = ym0Var.s0;
+                zm0 zm0Var = (zm0) obj;
+                boolean z11 = zm0Var.s0;
                 Context context11 = (Context) obj2;
                 if (i7 == 0) {
                     org.telegram.ui.Cells.q5 q5Var = new org.telegram.ui.Cells.q5(context11, null);
-                    q5Var.setDelegate(new wm0(this));
-                    q5Var.getCheckFrame().setVisibility(ym0Var.U == 0 ? 0 : 8);
+                    q5Var.setDelegate(new xm0(this));
+                    q5Var.getCheckFrame().setVisibility(zm0Var.U == 0 ? 0 : 8);
                     viewGroup2 = q5Var;
                 } else if (i7 == 1) {
                     ViewGroup frameLayout5 = new FrameLayout(context11);
@@ -2867,7 +2867,7 @@ public final class l4 extends org.telegram.ui.Components.tj0 {
                     l8Var2.setLayoutParams(new v4.p0(-1, -2));
                     viewGroup2 = l8Var2;
                     if (z11) {
-                        org.telegram.ui.ActionBar.q6.X(l8Var2.a, ym0Var.w0, null);
+                        org.telegram.ui.ActionBar.q6.X(l8Var2.a, zm0Var.w0, null);
                         org.telegram.ui.ActionBar.q6.s(l8Var2.e, org.telegram.ui.ActionBar.j6.ih, null, PorterDuff.Mode.MULTIPLY);
                         viewGroup2 = l8Var2;
                     }

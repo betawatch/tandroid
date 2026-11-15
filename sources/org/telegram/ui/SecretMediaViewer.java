@@ -45,7 +45,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements org.telegram.messenger.is, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer w1;
@@ -110,7 +110,7 @@ public class SecretMediaViewer implements org.telegram.messenger.is, GestureDete
     public k0 d;
     public float d0;
     public boolean d1;
-    public ai.j0 e;
+    public ai.k0 e;
     public long e0;
     public boolean e1;
     public View f;
@@ -160,7 +160,7 @@ public class SecretMediaViewer implements org.telegram.messenger.is, GestureDete
     public boolean j0 = true;
     public final PhotoBackgroundDrawable k0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public fy0 a;
         public int b;
@@ -698,8 +698,8 @@ public class SecretMediaViewer implements org.telegram.messenger.is, GestureDete
                         if (z10) {
                             l(false, true);
                             AnimatorSet animatorSet = new AnimatorSet();
-                            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, (Property<ai.j0, Float>) View.SCALE_X, 0.9f);
-                            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.e, (Property<ai.j0, Float>) View.SCALE_Y, 0.9f);
+                            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, (Property<ai.k0, Float>) View.SCALE_X, 0.9f);
+                            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.e, (Property<ai.k0, Float>) View.SCALE_Y, 0.9f);
                             ObjectAnimator ofInt = ObjectAnimator.ofInt(photoBackgroundDrawable, org.telegram.ui.Components.k6.d, 0);
                             org.telegram.ui.Components.o7 o7Var = this.G;
                             Property property = View.ALPHA;

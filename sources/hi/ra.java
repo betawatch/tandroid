@@ -19,7 +19,7 @@ import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.mi0;
 import org.telegram.ui.Components.st0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ra extends st0 {
     public final ff g0;
@@ -368,10 +368,10 @@ public final class ra extends st0 {
             if (mi0Var != null) {
                 int i20 = saVar.Z;
                 mi0Var.layout(i20, saVar.a0, mi0Var.getMeasuredWidth() + i20, saVar.w1.J1.getMeasuredHeight() + saVar.a0);
-                ai.j0 j0Var = saVar.w1.J1.getReactionsWindow() != null ? saVar.w1.J1.getReactionsWindow().c : null;
-                if (j0Var != null) {
+                ai.k0 k0Var = saVar.w1.J1.getReactionsWindow() != null ? saVar.w1.J1.getReactionsWindow().c : null;
+                if (k0Var != null) {
                     int i21 = saVar.Z;
-                    j0Var.layout(i21, saVar.a0, j0Var.getMeasuredWidth() + i21, j0Var.getMeasuredHeight() + saVar.a0);
+                    k0Var.layout(i21, saVar.a0, k0Var.getMeasuredWidth() + i21, k0Var.getMeasuredHeight() + saVar.a0);
                 }
             }
         }

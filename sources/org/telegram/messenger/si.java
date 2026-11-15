@@ -71,7 +71,7 @@ import org.telegram.ui.Components.xg0;
 import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class si extends c1 {
     public static final Pattern S1 = Pattern.compile("\\*\\*(.+?)\\*\\*");
@@ -1940,7 +1940,7 @@ public final class si extends c1 {
                 tL_contacts_resetTopPeerRating.category = new TLRPC.TL_topPeerCategoryBotsInline();
                 tL_contacts_resetTopPeerRating.peer = getMessagesController().j1(j3);
                 getConnectionsManager().sendRequest(tL_contacts_resetTopPeerRating, new fi.m5(11));
-                getMessagesStorage().a.c(new di.z8(this, j3, 1, 4));
+                getMessagesStorage().a.c(new di.y8(this, j3, 1, 4));
                 getNotificationCenter().k(ns.T0, new Object[0]);
                 return;
             }
@@ -2199,7 +2199,7 @@ public final class si extends c1 {
                 TLRPC.TL_contacts_resetTopPeerRating tL_contacts_resetTopPeerRating = new TLRPC.TL_contacts_resetTopPeerRating();
                 tL_contacts_resetTopPeerRating.category = new TLRPC.TL_topPeerCategoryCorrespondents();
                 tL_contacts_resetTopPeerRating.peer = getMessagesController().j1(j3);
-                getMessagesStorage().a.c(new di.z8(this, j3, i7, 4));
+                getMessagesStorage().a.c(new di.y8(this, j3, i7, 4));
                 getConnectionsManager().sendRequest(tL_contacts_resetTopPeerRating, new fi.m5(11));
                 return;
             }
@@ -4989,9 +4989,9 @@ public final class si extends c1 {
                     };
                     p5 p5Var = messagesStorage.a;
                     String str5 = str2;
-                    lr lrVar = new lr(messagesStorage, str5, j18, g10, ns.X4, size, true, w10Var);
+                    kr krVar = new kr(messagesStorage, str5, j18, g10, ns.X4, size, true, w10Var);
                     str3 = str5;
-                    p5Var.c(lrVar);
+                    p5Var.c(krVar);
                 }
                 if (this.P0 != 0) {
                     if (j13 == getUserConfig().e() || getMessagesController().y2(j13)) {

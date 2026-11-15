@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fm implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,11 +49,11 @@ public final /* synthetic */ class fm implements RequestDelegate {
                                     hVar.k(tL_messages_forumTopics.messages.get(i10), tL_messages_forumTopics.messages.get(i10).id);
                                     i10++;
                                 }
-                                g0.h3(new di.v7(h00Var, tL_messages_forumTopics, j3, tL_messages_forumTopics, hVar, i7));
+                                g0.h3(new di.u7(h00Var, tL_messages_forumTopics, j3, tL_messages_forumTopics, hVar, i7));
                                 break;
                             }
                         } else {
-                            g0.h3(new fr(h00Var, j3, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, 5));
+                            g0.h3(new dr(h00Var, j3, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, 5));
                             break;
                         }
                     } else {
@@ -75,7 +75,7 @@ public final /* synthetic */ class fm implements RequestDelegate {
                     break;
                 }
             default:
-                g0.h3(new di.x7(this.c, 2, this.b, (org.telegram.ui.g4) this.d, tLObject));
+                g0.h3(new di.w7(this.c, 2, this.b, (org.telegram.ui.g4) this.d, tLObject));
                 break;
         }
     }

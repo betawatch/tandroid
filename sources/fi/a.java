@@ -19,7 +19,7 @@ import org.telegram.messenger.i20;
 import org.telegram.messenger.ns;
 import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ImageView a;
@@ -116,7 +116,7 @@ public final class a extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.n = ofFloat;
             ofFloat.addUpdateListener(new ah.h(this, 12));
-            this.n.addListener(new ai.i0(this, 8));
+            this.n.addListener(new ai.j0(this, 8));
             i20.k(2.5f, this.n);
             this.n.setDuration(200L);
             this.n.start();

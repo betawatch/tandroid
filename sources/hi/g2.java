@@ -3,14 +3,14 @@ package hi;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import di.vb;
+import di.ub;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Timer;
 import org.telegram.messenger.si;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g2 extends e2 {
     public ch.g0 i;
@@ -20,21 +20,21 @@ public final class g2 extends e2 {
     public Timer m;
     public final fi.o8 n;
     public final ArrayList o;
-    public final /* synthetic */ vb p;
+    public final /* synthetic */ ub p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g2(vb vbVar) {
-        super(vbVar);
-        this.p = vbVar;
-        this.i = new ch.g0(vbVar);
-        this.j = new ch.g0(vbVar);
-        this.l = new org.telegram.ui.Components.u5(vbVar);
-        this.n = new fi.o8(vbVar);
+    public g2(ub ubVar) {
+        super(ubVar);
+        this.p = ubVar;
+        this.i = new ch.g0(ubVar);
+        this.j = new ch.g0(ubVar);
+        this.l = new org.telegram.ui.Components.u5(ubVar);
+        this.n = new fi.o8(ubVar);
         this.o = new ArrayList();
         this.a = 3;
         this.b = org.telegram.messenger.g0.L(44.0f);
         this.c = org.telegram.messenger.g0.L(36.0f);
-        i2 i2Var = (i2) vbVar.h;
+        i2 i2Var = (i2) ubVar.h;
         int i7 = i2.C1;
         ArrayList arrayList = si.b0(i2Var.a).h;
         for (int i10 = 0; i10 < Math.min(arrayList.size(), 8); i10++) {

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.messenger.is {
     public static Pattern Q1;
@@ -100,7 +100,7 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         this.y1 = sVar;
         vVar.setLayoutManager(sVar);
         int i11 = 3;
-        vVar.i(new ai.h0(this, i11));
+        vVar.i(new ai.i0(this, i11));
         vVar.j(new ri(this, 8));
         om omVar = new om(this, arrayList, e2Var, resourceProvider);
         vVar.setOnItemClickListener(omVar);
@@ -154,7 +154,7 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         frameLayout.addView(q0Var, c8.ja.d(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f));
     }
 
-    public static void J0(final org.telegram.ui.ActionBar.e2 e2Var, TLObject tLObject, final boolean z10, final di.m9 m9Var, final fo foVar) {
+    public static void J0(final org.telegram.ui.ActionBar.e2 e2Var, TLObject tLObject, final boolean z10, final di.l9 l9Var, final fo foVar) {
         final int currentAccount = e2Var == null ? org.telegram.messenger.m10.t0 : e2Var.getCurrentAccount();
         TLRPC.StickerSet stickerSet = null;
         final View fragmentView = e2Var == null ? null : e2Var.getFragmentView();
@@ -174,8 +174,8 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
         Runnable runnable = (Runnable) org.telegram.messenger.si.b0(currentAccount).U.f(stickerSet2.id);
         if (runnable != null) {
             runnable.run();
-            if (m9Var != null) {
-                m9Var.a(Boolean.TRUE);
+            if (l9Var != null) {
+                l9Var.a(Boolean.TRUE);
                 return;
             }
             return;
@@ -194,7 +194,7 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                 final org.telegram.ui.ActionBar.e2 e2Var2 = e2Var;
                 final TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
                 final int i7 = currentAccount;
-                final org.telegram.messenger.z10 z10Var = m9Var;
+                final org.telegram.messenger.z10 z10Var = l9Var;
                 final Runnable runnable2 = foVar;
                 org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.Components.fu
                     @Override // java.lang.Runnable
@@ -395,7 +395,7 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                             int size2 = arrayList5.size();
                             int[] iArr = new int[2];
                             for (int i20 = 0; i20 < arrayList5.size(); i20++) {
-                                wu.J0(wuVar4.n1, (TLObject) arrayList5.get(i20), size2 == 1, size2 > 1 ? new di.m9(wuVar4, iArr, size2, arrayList5) : null, null);
+                                wu.J0(wuVar4.n1, (TLObject) arrayList5.get(i20), size2 == 1, size2 > 1 ? new di.l9(wuVar4, iArr, size2, arrayList5) : null, null);
                             }
                             wuVar4.K0(true);
                             if (size2 <= 1) {
@@ -536,7 +536,7 @@ public class wu extends org.telegram.ui.ActionBar.u2 implements org.telegram.mes
                         int size2 = arrayList5.size();
                         int[] iArr = new int[2];
                         for (int i20 = 0; i20 < arrayList5.size(); i20++) {
-                            wu.J0(wuVar4.n1, (TLObject) arrayList5.get(i20), size2 == 1, size2 > 1 ? new di.m9(wuVar4, iArr, size2, arrayList5) : null, null);
+                            wu.J0(wuVar4.n1, (TLObject) arrayList5.get(i20), size2 == 1, size2 > 1 ? new di.l9(wuVar4, iArr, size2, arrayList5) : null, null);
                         }
                         wuVar4.K0(true);
                         if (size2 <= 1) {

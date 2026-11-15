@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import c8.ja;
-import di.mb;
+import di.lb;
 import hi.sa;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
@@ -56,11 +56,11 @@ import org.telegram.ui.Components.st0;
 import org.telegram.ui.Components.tr0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.vj0;
-import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.x80;
 import org.telegram.ui.Components.xt;
+import org.telegram.ui.Components.y80;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -347,7 +347,7 @@ public final class g2 extends FrameLayout {
         tr0 tr0Var;
         switch (this.a) {
             case 3:
-                if (((mb) this.b).u0) {
+                if (((lb) this.b).u0) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -363,13 +363,13 @@ public final class g2 extends FrameLayout {
                 }
                 return false;
             case 22:
-                x80 x80Var = (x80) this.b;
-                w80 w80Var = x80Var.S;
-                if (w80Var != null && (tr0Var = (tr0VarArr = w80Var.n0)[0]) != null && tr0Var.h.getFastScroll() != null && tr0VarArr[0].h.getFastScroll().n) {
-                    return x80Var.S.Z(motionEvent);
+                y80 y80Var = (y80) this.b;
+                x80 x80Var = y80Var.S;
+                if (x80Var != null && (tr0Var = (tr0VarArr = x80Var.n0)[0]) != null && tr0Var.h.getFastScroll() != null && tr0VarArr[0].h.getFastScroll().n) {
+                    return y80Var.S.Z(motionEvent);
                 }
-                w80 w80Var2 = x80Var.S;
-                if (w80Var2 == null || !w80Var2.P(motionEvent)) {
+                x80 x80Var2 = y80Var.S;
+                if (x80Var2 == null || !x80Var2.P(motionEvent)) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return true;

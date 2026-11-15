@@ -35,10 +35,9 @@ import org.telegram.ui.Components.fp0;
 import org.telegram.ui.Components.z30;
 import org.telegram.ui.f60;
 import org.telegram.ui.nb1;
-import tg.v1;
 import y7.f7;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes4.dex */
 public final class l {
     public CameraCaptureSession A;
@@ -1455,7 +1454,7 @@ public final class l {
             n0 n0Var2 = this.F;
             Handler handler = uVar.u;
             if (uVar.r0 && handler != null) {
-                handler.post(new v1(uVar, n0Var2, n0Var, handler, 4));
+                handler.post(new t5.a(uVar, n0Var2, n0Var, handler, 5));
             }
         }
         s();

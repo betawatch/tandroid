@@ -1,177 +1,171 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wp implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ vr b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ wp(int i7, long j3, vr vrVar, boolean z10) {
-        this.a = i7;
+    public /* synthetic */ wp(vr vrVar, int i7, long j3, int i10) {
+        this.a = i10;
         this.b = vrVar;
-        this.c = j3;
-        this.d = z10;
+        this.c = i7;
+        this.d = j3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0044, code lost:
-    
-        if (r3 == null) goto L27;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006b A[Catch: all -> 0x0038, Exception -> 0x003a, TRY_ENTER, TryCatch #4 {Exception -> 0x003a, blocks: (B:12:0x0034, B:16:0x0050, B:36:0x006b, B:37:0x006e), top: B:11:0x0034, outer: #7 }] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00c6  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x00e9 A[Catch: all -> 0x00b0, Exception -> 0x00b2, TRY_ENTER, TryCatch #10 {Exception -> 0x00b2, blocks: (B:50:0x00ac, B:54:0x00cb, B:68:0x00e9, B:69:0x00ec, B:63:0x00be), top: B:43:0x0088, outer: #0 }] */
-    /* JADX WARN: Type inference failed for: r3v13, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r3v24, types: [org.telegram.SQLite.SQLiteCursor] */
-    /* JADX WARN: Type inference failed for: r3v27 */
-    /* JADX WARN: Type inference failed for: r3v28 */
-    /* JADX WARN: Type inference failed for: r3v29 */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        SQLiteCursor sQLiteCursor;
-        int i7;
-        SQLiteCursor sQLiteCursor2;
         switch (this.a) {
             case 0:
-                long j3 = this.c;
+                int i7 = this.c;
+                long j3 = this.d;
                 vr vrVar = this.b;
                 vrVar.getClass();
+                try {
+                    SQLiteDatabase sQLiteDatabase = vrVar.b;
+                    Locale locale = Locale.US;
+                    sQLiteDatabase.executeFast("UPDATE dialogs SET ttl_period = " + i7 + " WHERE did = " + j3).stepThis().dispose();
+                    return;
+                } catch (SQLiteException e10) {
+                    vrVar.o(e10, true);
+                    return;
+                }
+            case 1:
+                this.b.A0(this.c, this.d);
+                return;
+            case 2:
+                int i10 = this.c;
+                long j10 = this.d;
+                vr vrVar2 = this.b;
+                vrVar2.getClass();
                 SQLitePreparedStatement sQLitePreparedStatement = null;
                 try {
                     try {
-                        try {
-                            sQLiteCursor = vrVar.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j3, new Object[0]);
-                            try {
-                                try {
-                                    i7 = sQLiteCursor.next() ? sQLiteCursor.intValue(0) : 0;
-                                    sQLiteCursor.dispose();
-                                } catch (Exception e10) {
-                                    e = e10;
-                                    vrVar.o(e, true);
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    i7 = 0;
-                                    if (!this.d) {
-                                    }
-                                    sQLitePreparedStatement = vrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
-                                    sQLitePreparedStatement.bindInteger(1, r3);
-                                    sQLitePreparedStatement.bindLong(2, j3);
-                                    sQLitePreparedStatement.step();
-                                    sQLitePreparedStatement.dispose();
-                                    vrVar.t1(false);
-                                    sQLitePreparedStatement.dispose();
-                                    return;
-                                }
-                            } catch (Throwable th2) {
-                                th = th2;
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
-                            }
-                        } catch (Throwable th3) {
-                            if (0 != 0) {
-                                sQLitePreparedStatement.dispose();
-                            }
-                            throw th3;
+                        sQLitePreparedStatement = vrVar2.b.executeFast("UPDATE chat_settings_v2 SET links = ? WHERE uid = ?");
+                        sQLitePreparedStatement.requery();
+                        sQLitePreparedStatement.bindInteger(1, i10);
+                        sQLitePreparedStatement.bindLong(2, j10);
+                        sQLitePreparedStatement.step();
+                        sQLitePreparedStatement.dispose();
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement != null) {
+                            sQLitePreparedStatement.dispose();
                         }
-                    } catch (Exception e11) {
-                        e = e11;
-                        sQLiteCursor = null;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor = null;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
+                        throw th2;
                     }
-                    int i10 = !this.d ? i7 | 1 : i7 & (-2);
-                    sQLitePreparedStatement = vrVar.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
-                    sQLitePreparedStatement.bindInteger(1, i10);
-                    sQLitePreparedStatement.bindLong(2, j3);
-                    sQLitePreparedStatement.step();
-                    sQLitePreparedStatement.dispose();
-                    vrVar.t1(false);
-                } catch (Exception e12) {
-                    vrVar.o(e12, true);
-                    if (0 == 0) {
-                        return;
+                } catch (Exception e11) {
+                    vrVar2.o(e11, true);
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
                     }
                 }
-                sQLitePreparedStatement.dispose();
                 return;
-            default:
-                long j10 = this.c;
-                vr vrVar2 = this.b;
-                vrVar2.getClass();
-                SQLiteCursor sQLiteCursor3 = "SELECT flags FROM dialogs WHERE did = ";
+            case 3:
+                int i11 = this.c;
+                long j11 = this.d;
+                vr vrVar3 = this.b;
+                vrVar3.getClass();
                 SQLitePreparedStatement sQLitePreparedStatement2 = null;
-                int i11 = 0;
                 try {
                     try {
-                        sQLiteCursor2 = vrVar2.b.queryFinalized("SELECT flags FROM dialogs WHERE did = " + j10, new Object[0]);
-                        try {
-                            boolean next = sQLiteCursor2.next();
-                            sQLiteCursor3 = sQLiteCursor2;
-                            if (next) {
-                                i11 = sQLiteCursor2.intValue(0);
-                                sQLiteCursor3 = sQLiteCursor2;
-                            }
-                        } catch (Exception e13) {
-                            e = e13;
-                            vrVar2.o(e, true);
-                            sQLiteCursor3 = sQLiteCursor2;
-                            break;
-                        }
-                    } catch (Throwable th5) {
-                        th = th5;
-                        if (sQLiteCursor3 != 0) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
-                    }
-                } catch (Exception e14) {
-                    e = e14;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th6) {
-                    th = th6;
-                    sQLiteCursor3 = 0;
-                    if (sQLiteCursor3 != 0) {
-                    }
-                    throw th;
-                }
-                try {
-                    try {
-                        sQLiteCursor3.dispose();
-                        int i12 = this.d ? i11 | 64 : i11 & (-65);
-                        sQLitePreparedStatement2 = vrVar2.b.executeFast("UPDATE dialogs SET flags = ? WHERE did = ?");
-                        sQLitePreparedStatement2.bindInteger(1, i12);
-                        sQLitePreparedStatement2.bindLong(2, j10);
+                        sQLitePreparedStatement2 = vrVar3.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                        sQLitePreparedStatement2.bindInteger(1, i11);
+                        sQLitePreparedStatement2.bindLong(2, j11);
                         sQLitePreparedStatement2.step();
                         sQLitePreparedStatement2.dispose();
-                    } catch (Exception e15) {
-                        vrVar2.o(e15, true);
-                        if (0 == 0) {
+                        return;
+                    } catch (Exception e12) {
+                        vrVar3.o(e12, true);
+                        if (sQLitePreparedStatement2 != null) {
+                            sQLitePreparedStatement2.dispose();
                             return;
                         }
+                        return;
                     }
-                    sQLitePreparedStatement2.dispose();
-                    return;
-                } catch (Throwable th7) {
-                    if (0 != 0) {
+                } catch (Throwable th3) {
+                    if (sQLitePreparedStatement2 != null) {
                         sQLitePreparedStatement2.dispose();
                     }
-                    throw th7;
+                    throw th3;
+                }
+            case 4:
+                int i12 = this.c;
+                long j12 = this.d;
+                vr vrVar4 = this.b;
+                vrVar4.getClass();
+                try {
+                    SQLiteDatabase sQLiteDatabase2 = vrVar4.b;
+                    Locale locale2 = Locale.US;
+                    sQLiteDatabase2.executeFast("UPDATE messages_v2 SET mention = 1, read_state = read_state & ~2 WHERE mid = " + i12 + " AND uid = " + j12).stepThis().dispose();
+                    return;
+                } catch (Exception e13) {
+                    vrVar4.o(e13, true);
+                    return;
+                }
+            case 5:
+                int i13 = this.c;
+                long j13 = this.d;
+                vr vrVar5 = this.b;
+                vrVar5.getClass();
+                try {
+                    SQLitePreparedStatement executeFast = vrVar5.b.executeFast("UPDATE dialogs SET pts = ? WHERE did = ?");
+                    executeFast.bindInteger(1, i13);
+                    executeFast.bindLong(2, -j13);
+                    executeFast.step();
+                    executeFast.dispose();
+                    return;
+                } catch (Exception e14) {
+                    vrVar5.o(e14, true);
+                    return;
+                }
+            case 6:
+                vr vrVar6 = this.b;
+                int i14 = this.c;
+                long j14 = this.d;
+                try {
+                    SQLiteDatabase sQLiteDatabase3 = vrVar6.b;
+                    Locale locale3 = Locale.US;
+                    sQLiteDatabase3.executeFast("DELETE FROM download_queue WHERE uid = " + j14 + " AND type = " + i14).stepThis().dispose();
+                    return;
+                } catch (Exception e15) {
+                    vrVar6.o(e15, true);
+                    return;
+                }
+            default:
+                int i15 = this.c;
+                long j15 = this.d;
+                vr vrVar7 = this.b;
+                vrVar7.getClass();
+                SQLitePreparedStatement sQLitePreparedStatement3 = null;
+                try {
+                    try {
+                        sQLitePreparedStatement3 = vrVar7.b.executeFast("UPDATE chat_settings_v2 SET online = ? WHERE uid = ?");
+                        sQLitePreparedStatement3.requery();
+                        sQLitePreparedStatement3.bindInteger(1, i15);
+                        sQLitePreparedStatement3.bindLong(2, j15);
+                        sQLitePreparedStatement3.step();
+                        sQLitePreparedStatement3.dispose();
+                        return;
+                    } catch (Exception e16) {
+                        vrVar7.o(e16, true);
+                        if (sQLitePreparedStatement3 != null) {
+                            sQLitePreparedStatement3.dispose();
+                            return;
+                        }
+                        return;
+                    }
+                } catch (Throwable th4) {
+                    if (sQLitePreparedStatement3 != null) {
+                        sQLitePreparedStatement3.dispose();
+                    }
+                    throw th4;
                 }
         }
     }

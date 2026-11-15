@@ -14,7 +14,7 @@ import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class l7 extends org.telegram.ui.Components.ja implements is {
     public di.f0 T1;
@@ -24,7 +24,7 @@ public final class l7 extends org.telegram.ui.Components.ja implements is {
     public final d X1;
     public boolean Y1;
     public boolean Z1;
-    public ai.u1 a2;
+    public ai.v1 a2;
     public long b2;
     public TLRPC.WebPage c2;
     public boolean d2;
@@ -36,10 +36,10 @@ public final class l7 extends org.telegram.ui.Components.ja implements is {
     public boolean j2;
     public boolean k2;
 
-    public l7(Context context, e5 e5Var, x5 x5Var, ai.u1 u1Var) {
+    public l7(Context context, e5 e5Var, x5 x5Var, ai.v1 v1Var) {
         super(context, null, true, true, 2, e5Var);
         this.g2 = new f7(this, 0);
-        this.a2 = u1Var;
+        this.a2 = v1Var;
         O();
         Y0();
         this.D1 = org.telegram.messenger.g0.L(4.0f);
@@ -76,7 +76,7 @@ public final class l7 extends org.telegram.ui.Components.ja implements is {
         c8.na.b(textView, 0.1f, 1.5f);
         k3Var.addView(textView, c8.ja.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         h4 h4Var = new h4(12, this, textView);
-        textView.setOnClickListener(new ai.t2(21, this, h4Var));
+        textView.setOnClickListener(new ai.v2(21, this, h4Var));
         h4Var.run();
         i3Var.addTextChangedListener(new bi.v(7, this, h4Var));
         org.telegram.ui.Cells.k3 k3Var2 = new org.telegram.ui.Cells.k3(context, hd.M0(2131744636, null), true, false, -1, e5Var);

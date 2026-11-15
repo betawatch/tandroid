@@ -27,9 +27,9 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.r4;
 import org.telegram.ui.Components.pi0;
 import org.telegram.ui.Components.u9;
-import org.telegram.ui.Components.v90;
+import org.telegram.ui.Components.w90;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public abstract class u0 extends j {
     public int A0;
@@ -193,9 +193,9 @@ public abstract class u0 extends j {
         p0 p0Var = new p0(c5Var, context, this.E0);
         this.s0 = p0Var;
         p0Var.setAdapter(new s0(c5Var, context, u9Var, w5Var, z10));
-        v90 v90Var = new v90(c5Var, 2);
-        v90Var.O = new bi.y1(c5Var, 18);
-        p0Var.setLayoutManager(v90Var);
+        w90 w90Var = new w90(c5Var, 2);
+        w90Var.O = new bi.y1(c5Var, 18);
+        p0Var.setLayoutManager(w90Var);
         p0Var.i(new fi.k(16));
         k4Var.addView(p0Var, ja.c(-1.0f, -1));
         if (w5Var != null && w5Var.g) {

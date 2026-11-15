@@ -1,40 +1,65 @@
 package di;
 
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ga implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bb b;
+public final class ga extends LinearLayout {
+    public final Path a;
+    public final /* synthetic */ Matrix b;
+    public final /* synthetic */ RadialGradient c;
+    public final /* synthetic */ Paint d;
+    public final /* synthetic */ org.telegram.ui.Components.e5 e;
 
-    public /* synthetic */ ga(bb bbVar, int i7) {
-        this.a = i7;
-        this.b = bbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ga(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.e5 e5Var) {
+        super(context);
+        this.b = matrix;
+        this.c = radialGradient;
+        this.d = paint;
+        this.e = e5Var;
+        this.a = new Path();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.ActionBar.e2 Q;
-        org.telegram.ui.ActionBar.e2 Q2;
-        switch (this.a) {
-            case 0:
-                if (this.b.e > 0 && (Q = LaunchActivity.Q()) != null) {
-                    org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                    c2Var.a = true;
-                    Q.showAsSheet(new mb(), c2Var);
-                    break;
-                }
-                break;
-            default:
-                if (this.b.e > 0 && (Q2 = LaunchActivity.Q()) != null) {
-                    org.telegram.ui.ActionBar.c2 c2Var2 = new org.telegram.ui.ActionBar.c2();
-                    c2Var2.a = true;
-                    Q2.showAsSheet(new mb(), c2Var2);
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float L = org.telegram.messenger.g0.L(10.0f);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, org.telegram.messenger.g0.L(2.0f) + 1, getWidth(), getHeight() + L);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, L, L, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        Matrix matrix = this.b;
+        matrix.reset();
+        matrix.postTranslate(getWidth() / 2.0f, org.telegram.messenger.g0.L(100.0f));
+        this.c.setLocalMatrix(matrix);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, org.telegram.messenger.g0.L(100.0f));
+        w0.a(canvas, 0, this.e, getWidth(), org.telegram.messenger.g0.L(180.0f), 1.0f, 1.0f);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e.b();
     }
 }

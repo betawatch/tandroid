@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.FrameLayout;
 import c8.na;
-import di.m8;
+import di.l8;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
@@ -21,11 +21,11 @@ import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class e6 extends ja implements is {
     public final int T1;
-    public final m8 U1;
+    public final l8 U1;
     public final HashSet V1;
     public final oy W1;
     public final FrameLayout X1;
@@ -67,7 +67,7 @@ public final class e6 extends ja implements is {
         v0(org.telegram.ui.ActionBar.j6.w0(i11, this.J0));
         Y0();
         this.T1 = i7;
-        this.U1 = new m8(this.a, j3, true);
+        this.U1 = new l8(this.a, j3, true);
         this.p1.setActionBarMenuOnItemClick(new d6(this, this.p1.s().a(1, R.drawable.ic_ab_other), j3));
         hi.d dVar = new hi.d(getContext(), this.J0, true);
         this.Y1 = dVar;
@@ -82,7 +82,7 @@ public final class e6 extends ja implements is {
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
         frameLayout2.addView(dVar, c8.ja.c(-1.0f, -1));
-        frameLayout2.setOnClickListener(new ai.t2(5, this, w2Var));
+        frameLayout2.setOnClickListener(new ai.v2(5, this, w2Var));
         fh.g c10 = cVar2.c(frameLayout2, null, false);
         c10.p(c8.g0.j(this.J0));
         c10.r(org.telegram.messenger.g0.L(28.0f));

@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class e5 extends Drawable implements m5 {
     public boolean E;
-    public di.bc F;
+    public di.ac F;
     public Integer G;
     public int H;
     public PorterDuffColorFilter I;
@@ -89,13 +89,13 @@ public class e5 extends Drawable implements m5 {
         float d = this.e.d(this.E);
         dg dgVar = this.M;
         if (d > 0.0f) {
-            di.bc bcVar = this.F;
-            bcVar.c.set(rect);
-            bcVar.e();
+            di.ac acVar = this.F;
+            acVar.c.set(rect);
+            acVar.e();
             this.F.d();
-            di.bc bcVar2 = this.F;
+            di.ac acVar2 = this.F;
             Integer num = this.G;
-            bcVar2.a(canvas, org.telegram.ui.ActionBar.j6.r1(d, num == null ? -1 : num.intValue()));
+            acVar2.a(canvas, org.telegram.ui.ActionBar.j6.r1(d, num == null ? -1 : num.intValue()));
             bg.k.d().a(15, dgVar);
         } else {
             bg.k.d().f(dgVar);
@@ -380,7 +380,7 @@ public class e5 extends Drawable implements m5 {
         }
         if (z11) {
             if (this.F == null) {
-                this.F = new di.bc(1, 8);
+                this.F = new di.ac(1, 8);
             }
             this.E = z10;
             invalidate();
@@ -388,7 +388,7 @@ public class e5 extends Drawable implements m5 {
         }
         this.E = z10;
         if (z10 && this.F == null) {
-            this.F = new di.bc(1, 8);
+            this.F = new di.ac(1, 8);
         } else if (!z10 && this.F != null) {
             this.F = null;
         }

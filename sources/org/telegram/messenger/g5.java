@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final class g5 extends c1 {
     public static Locale o0;
@@ -308,7 +308,7 @@ public final class g5 extends c1 {
                 a8.b("load contacts from cache");
             }
             vr messagesStorage = getMessagesStorage();
-            messagesStorage.a.c(new oq(messagesStorage, 18));
+            messagesStorage.a.c(new nq(messagesStorage, 17));
             return;
         }
         if (r2.a) {
@@ -1158,7 +1158,7 @@ public final class g5 extends c1 {
             vr messagesStorage = getMessagesStorage();
             messagesStorage.getClass();
             if (!arrayList4.isEmpty()) {
-                messagesStorage.a.c(new pp(messagesStorage, arrayList4, 0));
+                messagesStorage.a.c(new sp(messagesStorage, arrayList4, 20));
             }
         }
         if (!arrayList3.isEmpty()) {

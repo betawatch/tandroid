@@ -22,7 +22,7 @@ import org.telegram.ui.Components.p41;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class c extends e2 implements is {
     public int E;
@@ -185,7 +185,7 @@ public final class c extends e2 implements is {
                 b22.flags2 &= -9;
                 b22.business_away_message = null;
             }
-            getConnectionsManager().sendRequest(updatebusinessawaymessage, new ai.d1(this, 14));
+            getConnectionsManager().sendRequest(updatebusinessawaymessage, new ai.e1(this, 14));
             getMessagesStorage().j2(b22, false);
         }
     }

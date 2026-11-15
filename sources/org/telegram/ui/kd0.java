@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class kd0 extends org.telegram.ui.Components.xt0 {
     public final ImageView a;
@@ -76,18 +76,18 @@ public final class kd0 extends org.telegram.ui.Components.xt0 {
         imageView.setBackground(h02);
         org.telegram.ui.ActionBar.q6.j(imageView, h02, null, M, null);
         frameLayout.addView(imageView, c8.ja.d(32, 32.0f, 53, 0.0f, 16.0f, -2.0f, 0.0f));
-        di.yb ybVar = new di.yb(context, 1, 1, 1);
-        ybVar.setStarParticlesView(fVar);
+        di.xb xbVar = new di.xb(context, 1, 1, 1);
+        xbVar.setStarParticlesView(fVar);
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         int i11 = org.telegram.ui.ActionBar.j6.Dk;
         canvas.drawColor(i0.a.f(0.5f, org.telegram.ui.ActionBar.j6.x0(null, i11, false), org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false)));
-        ybVar.setBackgroundBitmap(createBitmap);
-        vg.f fVar2 = ybVar.b;
+        xbVar.setBackgroundBitmap(createBitmap);
+        vg.f fVar2 = xbVar.b;
         fVar2.z = i11;
         fVar2.A = org.telegram.ui.ActionBar.j6.Ck;
         fVar2.b();
-        frameLayout.addView(ybVar, c8.ja.e(org.telegram.messenger.ns.q2, org.telegram.messenger.ns.q2, 1));
+        frameLayout.addView(xbVar, c8.ja.e(org.telegram.messenger.ns.q2, org.telegram.messenger.ns.q2, 1));
         TextView textView = new TextView(context);
         textView.setText(org.telegram.messenger.hd.M0(2131745966, null));
         org.telegram.messenger.k5.m(textView, i7, null, 1, 20.0f);
@@ -351,12 +351,12 @@ public final class kd0 extends org.telegram.ui.Components.xt0 {
             }
             dVar.setVisibility(i11);
             dVar.setLoading(true);
-            ai.f1 f1Var = new ai.f1(this, string, str, string2, i12, 24);
+            ai.g1 g1Var = new ai.g1(this, string, str, string2, i12, 24);
             if (org.telegram.messenger.r1.i().k()) {
-                f1Var.run();
+                g1Var.run();
                 return;
             } else {
-                org.telegram.messenger.r1.i().i.add(f1Var);
+                org.telegram.messenger.r1.i().i.add(g1Var);
                 return;
             }
         }

@@ -8,7 +8,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
     public org.telegram.ui.ActionBar.j5 a;
@@ -43,7 +43,7 @@ public final class ec extends FrameLayout implements org.telegram.ui.ActionBar.z
         } else if (org.telegram.messenger.g0.B(org.telegram.ui.ActionBar.j6.w0(i7, e6Var)) < 0.2f) {
             this.f = org.telegram.ui.ActionBar.j6.r1(0.5f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.A8, e6Var));
         } else {
-            this.f = org.telegram.ui.ActionBar.j6.w(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, e6Var), org.telegram.ui.ActionBar.j6.r1(0.7f, im0.B0(org.telegram.ui.ActionBar.j6.w0(i7, e6Var))));
+            this.f = org.telegram.ui.ActionBar.j6.w(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, e6Var), org.telegram.ui.ActionBar.j6.r1(0.7f, jm0.B0(org.telegram.ui.ActionBar.j6.w0(i7, e6Var))));
         }
     }
 

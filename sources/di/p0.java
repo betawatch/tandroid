@@ -30,7 +30,7 @@ import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.vx0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class p0 extends org.telegram.ui.Components.ja {
     public static final int[] t2 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -83,7 +83,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
         this.n2 = l1Var;
         this.E = true;
         this.Q0 = true;
-        boolean j10 = v8.y(i7, true).j();
+        boolean j10 = u8.y(i7, true).j();
         if (j3 <= 0 || np.s1(i7).b2(j3) != null) {
             f10 = 12.0f;
         } else {
@@ -200,7 +200,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
         mb0Var2.e(n0Var);
         mb0Var2.addView(n0Var, c8.ja.d(-1, -2.0f, 48, 0.0f, 0.0f, 48.0f, 0.0f));
         c8.na.b(mb0Var2, 0.02f, 1.2f);
-        mb0Var2.setOnClickListener(new ai.t2(8, this, context));
+        mb0Var2.setOnClickListener(new ai.v2(8, this, context));
         f11.addView(mb0Var2, c8.ja.k(18.0f, 18.0f, 18.0f, 0.0f, -1, 58));
         ImageView imageView3 = new ImageView(context);
         imageView3.setImageResource(R.drawable.arrow_more);
@@ -229,7 +229,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
                         org.telegram.ui.b.b(i16);
                         return;
                     }
-                    v8 x10 = v8.x(i16, p0Var2.j2.a);
+                    u8 x10 = u8.x(i16, p0Var2.j2.a);
                     cg.a l10 = x10.e ? cg.a.l(x10.p()) : null;
                     cg.b bVar6 = cg.b.a;
                     cg.b bVar7 = cg.b.b;
@@ -262,10 +262,10 @@ public final class p0 extends org.telegram.ui.Components.ja {
                             vx0 vx0Var = new vx0(p0Var2.getContext(), p0Var2.J0);
                             final long N1 = np.s1(p0Var2.a).N1(j14);
                             final cg.a g12 = cg.a.g(N1, bVar6);
-                            vx0Var.c(hd.M0(2131749704, null), mb.a1(z11, hd.a0(null, null, 2131749740, d), 0.8f, null), null, null);
+                            vx0Var.c(hd.M0(2131749704, null), lb.a1(z11, hd.a0(null, null, 2131749740, d), 0.8f, null), null, null);
                             if (N1 > 0) {
                                 i14 = 0;
-                                vx0Var.c(hd.M0(2131749705, null), mb.a1(false, hd.a0(null, null, 2131749740, g12.d()), 0.8f, null), null, null);
+                                vx0Var.c(hd.M0(2131749705, null), lb.a1(false, hd.a0(null, null, 2131749740, g12.d()), 0.8f, null), null, null);
                             } else {
                                 i14 = 0;
                             }
@@ -275,12 +275,12 @@ public final class p0 extends org.telegram.ui.Components.ja {
                             long E = ez.E();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (N1 == 0) {
-                                spannableStringBuilder.append((CharSequence) mb.V0(hd.a0(null, null, 2131749712, d), z11));
+                                spannableStringBuilder.append((CharSequence) lb.V0(hd.a0(null, null, 2131749712, d), z11));
                                 z12 = z11;
                                 j12 = E;
                                 i15 = 0;
                             } else if (z11) {
-                                spannableStringBuilder.append(hd.V(null, null, 2131749711, mb.V0(hd.a0(null, null, 2131749710, d), true), mb.T0(hd.a0(null, null, 2131749710, g12.d()))));
+                                spannableStringBuilder.append(hd.V(null, null, 2131749711, lb.V0(hd.a0(null, null, 2131749710, d), true), lb.T0(hd.a0(null, null, 2131749710, g12.d()))));
                                 z12 = z11;
                                 j12 = E;
                                 i15 = 0;
@@ -288,7 +288,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
                                 z12 = z11;
                                 j12 = E;
                                 i15 = 0;
-                                spannableStringBuilder.append((CharSequence) mb.T0(hd.a0(null, null, 2131749712, cg.a.i(p0Var2.j2.b + g12.b, bVar6).d())));
+                                spannableStringBuilder.append((CharSequence) lb.T0(hd.a0(null, null, 2131749712, cg.a.i(p0Var2.j2.b + g12.b, bVar6).d())));
                             }
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(i15, p0Var2.getContext(), p0Var2.J0);
                             alertDialog$Builder.o(linearLayout2);
@@ -302,11 +302,11 @@ public final class p0 extends org.telegram.ui.Components.ja {
                                     if (j16 > 0) {
                                         int i19 = p0Var3.a;
                                         cg.b bVar8 = cg.b.a;
-                                        v8 x11 = v8.x(i19, bVar8);
+                                        u8 x11 = u8.x(i19, bVar8);
                                         cg.a l11 = x11.e ? cg.a.l(x11.p()) : null;
                                         cg.a g13 = z13 ? cg.a.g(j16, bVar8) : cg.a.i(p0Var3.j2.b + g12.b, bVar8);
                                         if (l11 == null || l11.b < g13.b) {
-                                            new cb(p0Var3.getContext(), p0Var3.J0, g13.a(), 14, null, null, p0Var3.X1).show();
+                                            new bb(p0Var3.getContext(), p0Var3.J0, g13.a(), 14, null, null, p0Var3.X1).show();
                                             return;
                                         }
                                     }
@@ -337,7 +337,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
                     Context context2 = context;
                     org.telegram.ui.ActionBar.e6 e6Var3 = e6Var;
                     if (bVar8 == bVar6) {
-                        new cb(context2, e6Var3, aVar2.a(), 14, null, null, j3).show();
+                        new bb(context2, e6Var3, aVar2.a(), 14, null, null, j3).show();
                     } else if (bVar8 == bVar7) {
                         new ii.e(context2, e6Var3, aVar2, true, null).show();
                     }
@@ -534,7 +534,7 @@ public final class p0 extends org.telegram.ui.Components.ja {
             boolean z20 = aVar4.a == bVar3 ? true : z14;
             Object[] objArr4 = new Object[1];
             objArr4[z14] = z20 ? aVar4.b() : hd.E(aVar4.a(), ',');
-            this.e2.i(mb.s1(mb.Y0(z20, hd.a0(null, null, 2131749733, objArr4), z20 ? this.p2 : this.o2), z20), z12, true);
+            this.e2.i(lb.s1(lb.Y0(z20, hd.a0(null, null, 2131749733, objArr4), z20 ? this.p2 : this.o2), z20), z12, true);
             e1(z12);
         }
         if (z16 || z17) {

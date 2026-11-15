@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mj implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -226,11 +226,11 @@ public final /* synthetic */ class mj implements RequestDelegate {
                 break;
             case 7:
                 np npVar6 = (np) this.c;
-                ai.f0 f0Var = (ai.f0) this.d;
+                ai.g0 g0Var = (ai.g0) this.d;
                 long j15 = this.b;
                 if (tLObject instanceof TLRPC.TL_exportedContactToken) {
                     npVar6.Y7 = (TLRPC.TL_exportedContactToken) tLObject;
-                    g0.i3(new fi(22, npVar6, f0Var), Math.max(0L, 0 - (System.currentTimeMillis() - j15)));
+                    g0.i3(new fi(22, npVar6, g0Var), Math.max(0L, 0 - (System.currentTimeMillis() - j15)));
                     break;
                 } else {
                     npVar6.X7 = false;
@@ -248,7 +248,7 @@ public final /* synthetic */ class mj implements RequestDelegate {
                     }
                     int i16 = i15;
                     vr messagesStorage = npVar7.getMessagesStorage();
-                    messagesStorage.a.c(new vq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
+                    messagesStorage.a.c(new uq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
                 }
                 if (j16 != 0) {
                     npVar7.getMessagesStorage().q1(j16);

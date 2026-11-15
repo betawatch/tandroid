@@ -10,7 +10,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
@@ -59,31 +59,31 @@ public final /* synthetic */ class q2 implements org.telegram.messenger.z10 {
                 ((ft) this.b).H(((Integer) obj).intValue());
                 break;
             case 8:
-                ja0 ja0Var = (ja0) this.b;
+                ka0 ka0Var = (ka0) this.b;
                 Integer num = (Integer) obj;
-                ArrayList arrayList = ja0Var.e.a;
-                p90 p90Var = ja0Var.f;
-                if (((ga0) arrayList.get(p90Var.getCurrentPosition())).a != num.intValue()) {
+                ArrayList arrayList = ka0Var.e.a;
+                q90 q90Var = ka0Var.f;
+                if (((ha0) arrayList.get(q90Var.getCurrentPosition())).a != num.intValue()) {
                     int i7 = 0;
                     int i10 = 0;
                     while (true) {
                         if (i10 < arrayList.size()) {
-                            if (((ga0) arrayList.get(i10)).a == num.intValue()) {
+                            if (((ha0) arrayList.get(i10)).a == num.intValue()) {
                                 i7 = i10;
                             } else {
                                 i10++;
                             }
                         }
                     }
-                    if (p90Var.getCurrentPosition() != i7) {
-                        p90Var.C(i7);
+                    if (q90Var.getCurrentPosition() != i7) {
+                        q90Var.C(i7);
                         break;
                     }
                 }
                 break;
             case 9:
-                da0 da0Var = (da0) this.b;
-                da0Var.n.y(da0Var.f.T((View) obj));
+                ea0 ea0Var = (ea0) this.b;
+                ea0Var.n.y(ea0Var.f.T((View) obj));
                 break;
             case 10:
                 fc0 fc0Var = (fc0) this.b;

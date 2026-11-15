@@ -143,7 +143,7 @@ import org.telegram.ui.mp0;
 import org.telegram.ui.t71;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class g0 {
     public static final int C;
@@ -1874,11 +1874,11 @@ public abstract class g0 {
         return spannableStringBuilder;
     }
 
-    public static void S3(WindowManager windowManager, ai.j0 j0Var, WindowManager.LayoutParams layoutParams) {
-        if (windowManager == null || j0Var == null || j0Var.getParent() == null) {
+    public static void S3(WindowManager windowManager, ai.k0 k0Var, WindowManager.LayoutParams layoutParams) {
+        if (windowManager == null || k0Var == null || k0Var.getParent() == null) {
             return;
         }
-        windowManager.updateViewLayout(j0Var, layoutParams);
+        windowManager.updateViewLayout(k0Var, layoutParams);
     }
 
     public static void T() {

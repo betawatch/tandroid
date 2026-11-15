@@ -32,7 +32,7 @@ import bi.w1;
 import bi.w3;
 import bi.z4;
 import c8.ja;
-import di.ra;
+import di.qa;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
@@ -56,7 +56,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ei0;
 import org.telegram.ui.t9;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class i0 extends e2 {
     public boolean E;
@@ -160,14 +160,14 @@ public class i0 extends e2 {
         s2 s2Var = new s2(i0Var.getParentActivity(), i0Var.currentAccount, i0Var.getUserConfig().e(), null, null);
         if (!s2Var.p2) {
             s2Var.p2 = true;
-            ra raVar = s2Var.r2;
-            if (raVar != null && (raVar.getParent() instanceof ViewGroup)) {
+            qa qaVar = s2Var.r2;
+            if (qaVar != null && (qaVar.getParent() instanceof ViewGroup)) {
                 ViewGroup viewGroup = (ViewGroup) s2Var.r2.getParent();
                 int indexOfChild = viewGroup.indexOfChild(s2Var.r2);
                 viewGroup.removeView(s2Var.r2);
-                ra raVar2 = new ra(s2Var.getContext(), ns.Z3, 2, 0);
-                s2Var.r2 = raVar2;
-                viewGroup.addView(raVar2, indexOfChild, ja.c(-1.0f, -1));
+                qa qaVar2 = new qa(s2Var.getContext(), ns.Z3, 2, 0);
+                s2Var.r2 = qaVar2;
+                viewGroup.addView(qaVar2, indexOfChild, ja.c(-1.0f, -1));
             }
             z70 z70Var = s2Var.s2;
             if (z70Var != null) {

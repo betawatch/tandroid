@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public class ContactsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i7) {
@@ -75,7 +75,7 @@ public class ContactsWidgetProvider extends AppWidgetProvider {
             int i10 = sharedPreferences.getInt("account" + iArr[i7], -1);
             if (i10 >= 0) {
                 vr a02 = vr.a0(c.a(i10).a);
-                a02.a.c(new qp(a02, iArr[i7], 2));
+                a02.a.c(new tp(a02, iArr[i7], 1));
             }
             edit.remove("account" + iArr[i7]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i7]);

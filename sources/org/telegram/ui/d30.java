@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class d30 extends org.telegram.ui.Components.e20 {
     public final /* synthetic */ h30 s1;
@@ -159,7 +159,7 @@ public final class d30 extends org.telegram.ui.Components.e20 {
         t1Var.j(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Wg, false));
         t1Var.setOnShowListener(new c30(this, t1Var, editTextBoldCursor, 1));
         t1Var.setOnDismissListener(new dy(editTextBoldCursor, i12));
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131744915, null), new ai.q1(this, editTextBoldCursor, i7, 10));
+        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131744915, null), new ai.r1(this, editTextBoldCursor, i7, 10));
         alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), new ay(editTextBoldCursor, i12));
         t1Var.j(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.lh, false));
         t1Var.show();

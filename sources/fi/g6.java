@@ -8,7 +8,7 @@ import org.telegram.messenger.vr;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class g6 {
     public final int a;
@@ -74,7 +74,7 @@ public final class g6 {
         if (z10) {
             TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
             tL_getAlbums.peer = np.s1(i7).j1(j3);
-            ConnectionsManager.getInstance(i7).sendRequest(tL_getAlbums, new ai.d1(this, 8));
+            ConnectionsManager.getInstance(i7).sendRequest(tL_getAlbums, new ai.e1(this, 8));
         } else {
             vr a02 = vr.a0(i7);
             a02.a.c(new org.telegram.messenger.a4(a02, j3, new e6(this), 23));

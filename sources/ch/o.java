@@ -54,7 +54,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.n01;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class o extends e2 implements is {
     public final Paint E;
@@ -164,9 +164,9 @@ public final class o extends e2 implements is {
         this.F = u41Var;
         u41Var.setSections(true);
         this.F.setSectionsDrawBackground(true);
-        ai.j0 j0Var = new ai.j0(this, context);
-        j0Var.setFocusableInTouchMode(true);
-        j0Var.requestFocus();
+        ai.k0 k0Var = new ai.k0(this, context);
+        k0Var.setFocusableInTouchMode(true);
+        k0Var.requestFocus();
         q8 q8Var = new q8(context);
         this.e = q8Var;
         q8Var.setHeight(56);
@@ -415,14 +415,14 @@ public final class o extends e2 implements is {
                 }
             }
         });
-        j0Var.addView(this.F);
-        j0Var.addView(this.w, ja.d(-1, 74.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        k0Var.addView(this.F);
+        k0Var.addView(this.w, ja.d(-1, 74.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         this.w.addView(this.s, ja.d(-1, 48.0f, 80, 13.0f, 13.0f, 13.0f, 13.0f));
         l0();
         g2 g2Var = new g2(this, context);
         this.c = g2Var;
         g2Var.setVisibility(4);
-        j0Var.addView(this.c, ja.e(-1, -2, 80));
+        k0Var.addView(this.c, ja.e(-1, -2, 80));
         this.R = new te.a(0, new cb.c(this, 10), er.f, 350L, false);
         m0();
         n0();
@@ -548,8 +548,8 @@ public final class o extends e2 implements is {
             this.K.putAll(linkedHashMap);
             this.M = this.a;
             this.N = this.Z;
-            this.fragmentView = j0Var;
-            return j0Var;
+            this.fragmentView = k0Var;
+            return k0Var;
         }
         SpannableStringBuilder spannableStringBuilder6 = new SpannableStringBuilder();
         int size3 = arrayList3.size();
@@ -588,8 +588,8 @@ public final class o extends e2 implements is {
         this.K.putAll(linkedHashMap);
         this.M = this.a;
         this.N = this.Z;
-        this.fragmentView = j0Var;
-        return j0Var;
+        this.fragmentView = k0Var;
+        return k0Var;
     }
 
     public final boolean d0(boolean z10) {
@@ -783,7 +783,7 @@ public final class o extends e2 implements is {
             } else {
                 f0();
                 this.w.animate().setListener(null).cancel();
-                this.w.animate().alpha(0.0f).setDuration(350L).setInterpolator(er.f).setListener(new ai.i0(this, 3)).start();
+                this.w.animate().alpha(0.0f).setDuration(350L).setInterpolator(er.f).setListener(new ai.j0(this, 3)).start();
                 this.h.setFocusableInTouchMode(false);
                 this.F.g3.O(true);
                 return;

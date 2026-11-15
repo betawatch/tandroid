@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.tasks.OnFailureListener;
-import di.cb;
-import di.k8;
-import di.v8;
+import di.bb;
+import di.j8;
+import di.u8;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -35,7 +35,7 @@ import org.telegram.ui.ek0;
 import org.telegram.ui.kd0;
 import org.telegram.ui.ln0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.q1, gb0, pi, org.telegram.messenger.q1, OnFailureListener {
     public final /* synthetic */ int a;
@@ -120,19 +120,19 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
         org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.d;
         Integer num = (Integer) number;
         View view = (View) obj;
-        k8 k8Var = wp0Var.e;
+        j8 j8Var = wp0Var.e;
         if (num.intValue() == -1 || num.intValue() == -2 || num.intValue() == 0 || wp0Var.P) {
             return Boolean.FALSE;
         }
         int i10 = 0;
         while (true) {
-            if (i10 >= k8Var.d().size()) {
+            if (i10 >= j8Var.d().size()) {
                 i7 = -1;
                 tL_starGiftCollection = null;
                 break;
             }
-            if (((TL_stars.TL_starGiftCollection) k8Var.d().get(i10)).collection_id == num.intValue()) {
-                tL_starGiftCollection = (TL_stars.TL_starGiftCollection) k8Var.d().get(i10);
+            if (((TL_stars.TL_starGiftCollection) j8Var.d().get(i10)).collection_id == num.intValue()) {
+                tL_starGiftCollection = (TL_stars.TL_starGiftCollection) j8Var.d().get(i10);
                 i7 = i10;
                 break;
             }
@@ -140,7 +140,7 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
         }
         int i11 = this.b;
         String r10 = org.telegram.messenger.m5.r(np.s1(i11).e2(wp0Var.c));
-        boolean h = k8Var.h();
+        boolean h = j8Var.h();
         if (TextUtils.isEmpty(r10) && !h) {
             return Boolean.FALSE;
         }
@@ -150,7 +150,7 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
         H.l(R.drawable.msg_share, hd.M0(2131750234, null), new u2(wp0Var, i11, r10, tL_starGiftCollection, context, e6Var, e2Var, 0), !TextUtils.isEmpty(r10));
         H.l(R.drawable.msg_edit, hd.M0(2131750236, null), new a1.e(27, wp0Var, tL_starGiftCollection), h);
         H.l(R.drawable.tabs_reorder, hd.M0(2131750235, null), new t2(wp0Var, 1), h);
-        H.m(R.drawable.msg_delete, new ai.z0(wp0Var, i7, tL_starGiftCollection, 2), hd.M0(2131750237, null), h, true);
+        H.m(R.drawable.msg_delete, new ai.a1(wp0Var, i7, tL_starGiftCollection, 2), hd.M0(2131750237, null), h, true);
         wp0Var.J = H;
         H.Z();
         return Boolean.TRUE;
@@ -167,7 +167,7 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
                 di.c5 c5Var = (di.c5) e5Var.o.get(e5Var.q);
                 if (c5Var != null) {
                     cg.a aVar = c5Var.c;
-                    v8 x10 = v8.x(this.b, e5Var.q);
+                    u8 x10 = u8.x(this.b, e5Var.q);
                     cg.a l10 = x10.e ? cg.a.l(x10.p()) : null;
                     if (l10 != null && aVar.b > l10.b) {
                         cg.b bVar = e5Var.q;
@@ -177,7 +177,7 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
                                 break;
                             }
                         } else {
-                            new cb(context, e6Var, aVar.a(), 14, null, null, 0L).show();
+                            new bb(context, e6Var, aVar.a(), 14, null, null, 0L).show();
                             break;
                         }
                     } else {
@@ -210,15 +210,15 @@ public final /* synthetic */ class b3 implements t10, org.telegram.ui.ActionBar.
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        tg.f2 f2Var = (tg.f2) this.e;
+        tg.e2 e2Var = (tg.e2) this.e;
         Bitmap bitmap = (Bitmap) this.f;
         int i7 = this.b;
         ln0 ln0Var = (ln0) this.c;
         w2 w2Var = (w2) this.d;
-        f2Var.y = false;
+        e2Var.y = false;
         a8.g(exc, true);
-        if ((exc instanceof lb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && f2Var.isAttachedToWindow()) {
-            org.telegram.messenger.g0.i3(new sp0(f2Var, bitmap, i7, ln0Var, 23), 2000L);
+        if ((exc instanceof lb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && e2Var.isAttachedToWindow()) {
+            org.telegram.messenger.g0.i3(new sp0(e2Var, bitmap, i7, ln0Var, 23), 2000L);
         } else {
             w2Var.a(new ArrayList());
         }

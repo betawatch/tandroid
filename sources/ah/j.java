@@ -1,6 +1,6 @@
 package ah;
 
-import ai.m0;
+import ai.n0;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -34,13 +34,13 @@ import org.telegram.messenger.gj;
 import org.telegram.messenger.gz;
 import org.telegram.messenger.hd;
 import org.telegram.messenger.m10;
-import org.telegram.messenger.n0;
 import org.telegram.messenger.np;
 import org.telegram.messenger.p5;
 import org.telegram.messenger.s10;
 import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.m0;
 import org.telegram.ui.ActionBar.w4;
 import org.telegram.ui.Components.d51;
 import org.telegram.ui.Components.e51;
@@ -70,7 +70,7 @@ import org.telegram.ui.Components.zp;
 import org.telegram.ui.Wallet.l4;
 import v4.h0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class j implements TextWatcher {
     public final /* synthetic */ int a;
@@ -107,16 +107,16 @@ public final class j implements TextWatcher {
                 }
                 break;
             case 1:
-                m0 m0Var = (m0) this.b;
-                if (!m0Var.L) {
-                    int i11 = m0Var.r;
+                n0 n0Var = (n0) this.b;
+                if (!n0Var.L) {
+                    int i11 = n0Var.r;
                     if (i11 == 1) {
-                        m0Var.N = m0Var.M.length();
-                        m0Var.I = editable.length();
-                        m0Var.O = editable.length() > 0 && !Character.isWhitespace(editable.charAt(editable.length() - 1));
+                        n0Var.N = n0Var.M.length();
+                        n0Var.I = editable.length();
+                        n0Var.O = editable.length() > 0 && !Character.isWhitespace(editable.charAt(editable.length() - 1));
                         break;
                     } else if (i11 == 3 && TextUtils.isEmpty(editable)) {
-                        m0Var.i();
+                        n0Var.i();
                         break;
                     }
                 }
@@ -216,7 +216,7 @@ public final class j implements TextWatcher {
                     if (!TextUtils.equals(str4, str5 != null ? str5 : "")) {
                         v6Var.e1();
                         String str6 = v6Var.n2;
-                        if (str6 != null && str6.length() > 3 && !TextUtils.isEmpty(((n0) np.s1(v6Var.a).y7.F.b).c)) {
+                        if (str6 != null && str6.length() > 3 && !TextUtils.isEmpty(((org.telegram.messenger.n0) np.s1(v6Var.a).y7.F.b).c)) {
                             z10 = true;
                         }
                         v6Var.y2 = z10;
@@ -346,7 +346,7 @@ public final class j implements TextWatcher {
                 g0.r(liVar);
                 if (!TextUtils.isEmpty(viVar.E)) {
                     String str8 = viVar.E;
-                    viVar.n0 = (str8 == null || str8.length() < 3 || TextUtils.isEmpty(((n0) np.s1(viVar.b.H3).y7.F.b).c)) ? false : true;
+                    viVar.n0 = (str8 == null || str8.length() < 3 || TextUtils.isEmpty(((org.telegram.messenger.n0) np.s1(viVar.b.H3).y7.F.b).c)) ? false : true;
                     if (!TextUtils.equals(viVar.f0, viVar.E)) {
                         viVar.N.clear();
                         viVar.h0 = false;
@@ -590,7 +590,7 @@ public final class j implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        org.telegram.ui.ActionBar.m0 searchListener;
+        m0 searchListener;
         switch (this.a) {
             case 0:
             case 1:
@@ -624,7 +624,7 @@ public final class j implements TextWatcher {
                 break;
             case 14:
                 org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.b;
-                org.telegram.ui.ActionBar.m0 m0Var = q0Var.I;
+                m0 m0Var = q0Var.I;
                 if (m0Var != null) {
                     m0Var.l(q0Var.e);
                 }

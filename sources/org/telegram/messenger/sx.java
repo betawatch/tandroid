@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sx implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -610,10 +610,10 @@ public final /* synthetic */ class sx implements Runnable {
                         int i27 = i7;
                         message11.send_state = i27;
                         if (r12 == 0 && tL_error != null && (str = tL_error.text) != null && str.startsWith("ALLOW_PAYMENT_REQUIRED_")) {
-                            di.v8.y(ezVar.currentAccount, false);
-                            message11.errorAllowedPriceStars = di.v8.o(tLObject2);
+                            di.u8.y(ezVar.currentAccount, false);
+                            message11.errorAllowedPriceStars = di.u8.o(tLObject2);
                             message11.errorNewPriceStars = Long.parseLong(tL_error.text.substring(23));
-                            di.v8.y(ezVar.currentAccount, false).d0(Arrays.asList(gjVar5));
+                            di.u8.y(ezVar.currentAccount, false).d0(Arrays.asList(gjVar5));
                             ezVar.getMessagesStorage().X1(gj.B0(message11), message11);
                         }
                         ezVar.getNotificationCenter().k(23, Integer.valueOf(message11.id));

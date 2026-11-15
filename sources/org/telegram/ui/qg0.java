@@ -14,7 +14,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class qg0 extends org.telegram.ui.Components.ja {
     public static qg0 q2;
@@ -109,14 +109,14 @@ public final class qg0 extends org.telegram.ui.Components.ja {
         int i15 = this.u0;
         uj0Var.setPadding(i15, 0, i15, org.telegram.messenger.g0.L(60.0f));
         this.o1.j(new g3(this, 21));
-        this.o1.setOnItemClickListener(new ai.r1(this, i7, 17));
+        this.o1.setOnItemClickListener(new ai.s1(this, i7, 17));
         v4.k kVar = new v4.k();
         kVar.n(350L);
         kVar.o(org.telegram.ui.Components.er.h);
         kVar.C = false;
         kVar.m = false;
         this.o1.setItemAnimator(kVar);
-        this.o1.i(new ai.h0(this, 7));
+        this.o1.i(new ai.i0(this, 7));
         ng0Var.setText("");
         ng0Var.d.b(false);
         ng0Var.b(false, hashSet, new kg0(this, 1), null);

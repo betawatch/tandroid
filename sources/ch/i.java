@@ -1,6 +1,6 @@
 package ch;
 
-import ai.z0;
+import ai.a1;
 import android.text.SpannableStringBuilder;
 import android.view.KeyEvent;
 import org.telegram.messenger.z10;
@@ -9,7 +9,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements z10 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class i implements z10 {
                                 org.telegram.messenger.g0.i3(hVar, 350L);
                                 break;
                             } else {
-                                p5Var.setRemoved(new z0(oVar2, p5Var, editTextSelectionEnd, 3));
+                                p5Var.setRemoved(new a1(oVar2, p5Var, editTextSelectionEnd, 3));
                                 oVar2.c0(p5Var);
                                 oVar2.e0(false);
                                 break;

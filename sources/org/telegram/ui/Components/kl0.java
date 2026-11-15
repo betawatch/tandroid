@@ -8,14 +8,14 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class kl0 extends Drawable {
     public final Paint b;
     public boolean f;
     public int j;
     public boolean m;
-    public di.u7 o;
+    public di.t7 o;
     public float p;
     public float q;
     public float r;
@@ -62,16 +62,16 @@ public final class kl0 extends Drawable {
         }
         if (!z11 && i7 == 2) {
             if (this.o == null) {
-                di.u7 u7Var = new di.u7(this, i7, z10, 5);
-                this.o = u7Var;
-                org.telegram.messenger.g0.i3(u7Var, 65L);
+                di.t7 t7Var = new di.t7(this, i7, z10, 5);
+                this.o = t7Var;
+                org.telegram.messenger.g0.i3(t7Var, 65L);
                 return;
             }
             return;
         }
-        di.u7 u7Var2 = this.o;
-        if (u7Var2 != null) {
-            org.telegram.messenger.g0.r(u7Var2);
+        di.t7 t7Var2 = this.o;
+        if (t7Var2 != null) {
+            org.telegram.messenger.g0.r(t7Var2);
         }
         u5 u5Var = this.n;
         boolean z12 = false;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.ma0;
+import org.telegram.ui.Components.u80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.an;
@@ -32,7 +32,7 @@ import org.telegram.ui.lm;
 import org.telegram.ui.tj0;
 import org.telegram.ui.x11;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class k7 implements RequestDelegate {
         Object obj5 = this.e;
         switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new j6((v8) obj4, tLObject, (gj) obj3, (TLRPC.InputInvoice) obj2, (z10) obj5, (org.telegram.ui.Components.cc) obj, tL_error));
+                org.telegram.messenger.g0.h3(new j6((u8) obj4, tLObject, (gj) obj3, (TLRPC.InputInvoice) obj2, (z10) obj5, (org.telegram.ui.Components.cc) obj, tL_error));
                 break;
             case 1:
                 org.telegram.messenger.g0.h3(new bi.p1((int[]) obj4, tLObject, (np) obj3, (TLRPC.User[]) obj2, (hi.mb) obj5, (hi.kb) obj, 9, false));
@@ -93,10 +93,10 @@ public final /* synthetic */ class k7 implements RequestDelegate {
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
                 Purchase purchase = (Purchase) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj5;
-                ma0 ma0Var = (ma0) obj;
+                u80 u80Var = (u80) obj;
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
-                        org.telegram.messenger.g0.h3(new iz(ma0Var, 28));
+                        org.telegram.messenger.g0.h3(new iz(u80Var, 28));
                         break;
                     }
                 } else {

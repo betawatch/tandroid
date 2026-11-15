@@ -69,7 +69,7 @@ import org.telegram.ui.q60;
 import org.telegram.ui.vm;
 import org.telegram.ui.ym;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements o4, pg.b {
     public static Drawable w1;
@@ -1732,9 +1732,9 @@ public class ActionBarLayout extends FrameLayout implements o4, pg.b {
             bi.w2 w2Var = new bi.w2(i11, j1Var, c0Var);
             String str = i6Var.d;
             if (str != null) {
-                Utilities.i.c(new m5(w2Var, obj, str, obj, 0));
+                Utilities.i.c(new l5(w2Var, obj, str, obj, 1));
             } else {
-                Utilities.i.c(new m5(w2Var, new File(i6Var.b), obj, strArr, 0));
+                Utilities.i.c(new l5(w2Var, new File(i6Var.b), obj, strArr, 1));
             }
         } catch (Exception e11) {
             e = e11;

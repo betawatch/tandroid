@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ys0;
 import org.telegram.ui.zg;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements z10 {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final /* synthetic */ class h3 implements z10 {
             case 0:
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 if (((Boolean) obj).booleanValue()) {
-                    v8.y(i10, false).P(j3);
+                    u8.y(i10, false).P(j3);
                     org.telegram.messenger.g0.h3(new aa.r((Object) new l3(j3, i11), (Object) document, (Object) hd.M0(2131750102, null), 19));
                     break;
                 }

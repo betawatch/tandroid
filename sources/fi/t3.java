@@ -37,7 +37,7 @@ import org.telegram.ui.Components.ye0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.tq;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class t3 extends k.a {
     public boolean c;
@@ -848,7 +848,7 @@ public final class t3 extends k.a {
                 tLObject4 = messageMedia3.photo;
             }
             d8 d8Var = new d8(t3Var2.r, b4Var.m2, tLObject4, z3Var.a, z16, arrayList2, t3Var2.d);
-            d8Var.setOnClickListener(new ai.t2(19, t3Var2, d8Var));
+            d8Var.setOnClickListener(new ai.v2(19, t3Var2, d8Var));
             d8Var.setTag(R.id.fit_width_tag, 1);
             actionBarPopupWindow$ActionBarPopupWindowLayout6.a(d8Var, ja.o(-1, -2));
         }

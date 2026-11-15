@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a7 implements org.telegram.ui.Components.jj0, org.telegram.ui.Components.th0, org.telegram.ui.Components.r4, org.telegram.messenger.oc, u4, org.telegram.ui.ActionBar.q1, org.telegram.messenger.qr, org.telegram.ui.Components.hj0, sw, ka1, org.telegram.ui.Components.voip.d3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -193,13 +193,13 @@ public final /* synthetic */ class a7 implements org.telegram.ui.Components.jj0,
     }
 
     public boolean e(TLRPC.Message message) {
-        jl0 jl0Var = (jl0) this.b;
+        kl0 kl0Var = (kl0) this.b;
         org.telegram.ui.ActionBar.o4 o4Var = (org.telegram.ui.ActionBar.o4) this.c;
         Activity activity = (Activity) this.d;
-        if (org.telegram.messenger.gj.B1(message.peer_id) != jl0Var.m0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
+        if (org.telegram.messenger.gj.B1(message.peer_id) != kl0Var.m0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
             return false;
         }
-        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.ma0(jl0Var, o4Var, activity, message, 28));
+        org.telegram.messenger.g0.h3(new org.telegram.ui.Components.u80(kl0Var, o4Var, activity, message, 29));
         return true;
     }
 

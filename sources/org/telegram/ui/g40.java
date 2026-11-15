@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g40 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -720,24 +720,24 @@ public final /* synthetic */ class g40 implements View.OnClickListener {
                     return;
                 }
             case 18:
-                nm0 nm0Var = (nm0) this.b;
-                an anVar = nm0Var.G;
+                om0 om0Var = (om0) this.b;
+                an anVar = om0Var.G;
                 if (anVar != null && anVar.c()) {
-                    org.telegram.ui.Components.t4.I(nm0Var.getParentActivity(), anVar.a(), new jm0(nm0Var, r9));
+                    org.telegram.ui.Components.t4.I(om0Var.getParentActivity(), anVar.a(), new km0(om0Var, r9));
                     return;
                 } else {
-                    nm0Var.a0(nm0Var.b, nm0Var.c, true, 0);
-                    nm0Var.finishFragment();
+                    om0Var.a0(om0Var.b, om0Var.c, true, 0);
+                    om0Var.finishFragment();
                     return;
                 }
             case 19:
-                ym0 ym0Var = (ym0) this.b;
-                an anVar2 = ym0Var.V;
+                zm0 zm0Var = (zm0) this.b;
+                an anVar2 = zm0Var.V;
                 if (anVar2 == null || !anVar2.c()) {
-                    ym0Var.j0(0, true);
+                    zm0Var.j0(0, true);
                     return;
                 } else {
-                    org.telegram.ui.Components.t4.I(ym0Var.getParentActivity(), anVar2.a(), new rm0(ym0Var, r9));
+                    org.telegram.ui.Components.t4.I(zm0Var.getParentActivity(), anVar2.a(), new sm0(zm0Var, r9));
                     return;
                 }
             case 20:

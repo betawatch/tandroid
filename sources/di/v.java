@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.jf0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,16 +31,16 @@ public final /* synthetic */ class v implements RequestDelegate {
             case 1:
                 hi.d dVar = (hi.d) this.d;
                 org.telegram.ui.ActionBar.u2[] u2VarArr = (org.telegram.ui.ActionBar.u2[]) this.e;
-                org.telegram.messenger.g0.h3(new x7(this.b, 1, this.c, dVar, u2VarArr));
+                org.telegram.messenger.g0.h3(new w7(this.b, 1, this.c, dVar, u2VarArr));
                 break;
             case 2:
                 org.telegram.messenger.g0.h3(new bi.e0((fi.s6) this.d, tLObject, this.b, (String) this.e, this.c, 3));
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new v7(tLObject, this.b, (hi.d) this.d, (org.telegram.ui.ActionBar.u2) this.e, this.c, tL_error));
+                org.telegram.messenger.g0.h3(new u7(tLObject, this.b, (hi.d) this.d, (org.telegram.ui.ActionBar.u2) this.e, this.c, tL_error));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new v7((jf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
+                org.telegram.messenger.g0.h3(new u7((jf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
                 break;
         }
     }

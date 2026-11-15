@@ -6,11 +6,11 @@ import org.telegram.messenger.gj;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.fh0;
 import org.telegram.ui.ni0;
-import org.telegram.ui.nm0;
+import org.telegram.ui.om0;
 import org.telegram.ui.xz;
 import org.telegram.ui.zz;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 v5 v5Var = (v5) obj;
                 u5 u5Var = v5Var.d;
                 if (u5Var != null) {
-                    nm0.Z((nm0) ((org.telegram.ui.l4) ((ni0) u5Var).b).e, v5Var.b[((Integer) view.getTag()).intValue()]);
+                    om0.Z((om0) ((org.telegram.ui.l4) ((ni0) u5Var).b).e, v5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;

@@ -40,7 +40,7 @@ import org.telegram.ui.Components.ra0;
 import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.y80;
 import org.telegram.ui.Components.zz;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.an;
@@ -56,7 +56,7 @@ import org.telegram.ui.to;
 import org.telegram.ui.yw;
 import org.telegram.ui.zg;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m6 implements Runnable {
     public final /* synthetic */ int a;
@@ -220,7 +220,7 @@ public final /* synthetic */ class m6 implements Runnable {
                         break;
                     }
                     sQLiteCursor.dispose();
-                    org.telegram.messenger.g0.h3(new ai.j(yVar, arrayList5, arrayList6, arrayList7, this.b, 4));
+                    org.telegram.messenger.g0.h3(new ai.j(yVar, arrayList5, arrayList6, arrayList7, this.b, 3));
                     return;
                 } finally {
                     if (sQLiteCursor != null) {
@@ -406,8 +406,8 @@ public final /* synthetic */ class m6 implements Runnable {
                 ((zz) obj2).e1((wz) obj, !z10);
                 return;
             case 21:
-                x80 x80Var = (x80) obj2;
-                x80Var.getMessagesController().P1().r0(x80Var.e, (ArrayList) obj, this.b, null);
+                y80 y80Var = (y80) obj2;
+                y80Var.getMessagesController().P1().r0(y80Var.e, (ArrayList) obj, this.b, null);
                 return;
             case 22:
                 fc0 fc0Var = (fc0) obj2;

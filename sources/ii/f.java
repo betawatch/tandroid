@@ -14,11 +14,11 @@ import bi.x5;
 import bi.z4;
 import c8.ja;
 import di.e0;
+import di.kb;
 import di.lb;
-import di.mb;
-import di.ra;
+import di.qa;
 import di.t;
-import di.v8;
+import di.u8;
 import di.z6;
 import fh.g;
 import hi.e1;
@@ -64,12 +64,12 @@ import v4.b0;
 import v4.h0;
 import wg.c1;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class f extends p00 implements is {
     public FrameLayout S;
     public w6 T;
-    public lb U;
+    public kb U;
     public it0 V;
     public o2 W;
     public View X;
@@ -122,10 +122,10 @@ public final class f extends p00 implements is {
             return;
         }
         if (i10 == -2) {
-            v8.y(fVar.currentAccount, true).u();
+            u8.y(fVar.currentAccount, true).u();
             c1.l1(1, v1.a(fVar.currentAccount).b());
         } else if (i10 == -3) {
-            v8.y(fVar.currentAccount, true).V();
+            u8.y(fVar.currentAccount, true).V();
             fVar.u0.O(true);
         } else if (i10 == -4) {
             if (np.s1(fVar.currentAccount).v2()) {
@@ -159,7 +159,7 @@ public final class f extends p00 implements is {
         if (getParentActivity() == null) {
             return;
         }
-        v8 y10 = v8.y(this.currentAccount, true);
+        u8 y10 = u8.y(this.currentAccount, true);
         rv rvVar = (rv) super.o0(getParentActivity());
         b41 b41Var = new b41(-2);
         b41Var.c = rvVar;
@@ -191,12 +191,12 @@ public final class f extends p00 implements is {
     public final void F0() {
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
         final int i7 = 1;
-        v8 y10 = v8.y(this.currentAccount, true);
+        u8 y10 = u8.y(this.currentAccount, true);
         double d = ((i0) getMessagesController().y7.l.b).a;
         TL_stars.StarsAmount p10 = y10.p();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) this.k0);
-        spannableStringBuilder.append((CharSequence) mb.M0(p10, 0.66f, ' '));
+        spannableStringBuilder.append((CharSequence) lb.M0(p10, 0.66f, ' '));
         this.l0.setText(spannableStringBuilder);
         int i10 = (int) ((p10.amount / 1.0E9d) * d * 100.0d);
         if (i10 > 0) {
@@ -308,7 +308,7 @@ public final class f extends p00 implements is {
         it0 it0Var2 = this.V;
         it0Var2.getClass();
         this.W = new o2(26, context, it0Var2);
-        this.U = new lb(context, this.currentAccount, true, 0L, getClassGuid(), getResourceProvider(), this.V);
+        this.U = new kb(context, this.currentAccount, true, 0L, getClassGuid(), getResourceProvider(), this.V);
         this.h0 = new o2(4, context, this);
         super.createView(context);
         o00 o00Var = this.s;
@@ -364,7 +364,7 @@ public final class f extends p00 implements is {
         this.c.setItemAnimator(kVar);
         this.c.setOnItemClickListener(new b6(this, 12));
         this.s.addView(new nz(getParentActivity()), ja.c(-1.0f, -1));
-        v8.y(this.currentAccount, true);
+        u8.y(this.currentAccount, true);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.j0 = linearLayout;
         linearLayout.setOrientation(1);
@@ -524,7 +524,7 @@ public final class f extends p00 implements is {
             return;
         }
         if (i7 == ns.z3) {
-            v8 y10 = v8.y(this.currentAccount, true);
+            u8 y10 = u8.y(this.currentAccount, true);
             if (this.s0 != y10.N(0)) {
                 this.s0 = y10.N(0);
                 u0();
@@ -572,11 +572,11 @@ public final class f extends p00 implements is {
         this.s.addView(this.V, ja.c(-1.0f, -1));
         this.V.u(this.c, new a(this, 3));
         it0 it0Var = this.V;
-        lb lbVar = this.U;
-        w61 viewPager = lbVar.getViewPager();
-        lb lbVar2 = this.U;
-        Objects.requireNonNull(lbVar2);
-        it0Var.x(lbVar, viewPager, new z6(lbVar2, 23));
+        kb kbVar = this.U;
+        w61 viewPager = kbVar.getViewPager();
+        kb kbVar2 = this.U;
+        Objects.requireNonNull(kbVar2);
+        it0Var.x(kbVar, viewPager, new z6(kbVar2, 23));
         this.V.y(this.U.getTabsContainer());
         this.U.getTabsContainer().setLayoutParams(ja.d(-1, -2.0f, 48, -4.0f, 0.0f, -4.0f, 0.0f));
         D0();
@@ -605,7 +605,7 @@ public final class f extends p00 implements is {
 
     @Override // org.telegram.ui.p00
     public final s1 m0() {
-        return new ra(getParentActivity(), 75, 1, 1);
+        return new qa(getParentActivity(), 75, 1, 1);
     }
 
     @Override // org.telegram.ui.p00
@@ -625,9 +625,9 @@ public final class f extends p00 implements is {
         ns.f(this.currentAccount).c(this, ns.z3);
         ns.f(this.currentAccount).c(this, ns.A3);
         ns.f(this.currentAccount).c(this, ns.C3);
-        v8.y(this.currentAccount, true).S(true);
-        v8.y(this.currentAccount, true).R();
-        v8.y(this.currentAccount, true).z();
+        u8.y(this.currentAccount, true).S(true);
+        u8.y(this.currentAccount, true).R();
+        u8.y(this.currentAccount, true).z();
         return super.onFragmentCreate();
     }
 

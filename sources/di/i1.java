@@ -27,7 +27,7 @@ import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.n40;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class i1 extends org.telegram.ui.Components.ja {
     public static final /* synthetic */ int w2 = 0;
@@ -175,7 +175,7 @@ public final class i1 extends org.telegram.ui.Components.ja {
         imageView2.setBackground(org.telegram.ui.ActionBar.j6.b0(0, 285212671, 16, 16));
         imageView2.setImageResource(R.drawable.filled_gift_pause_24);
         imageView2.setScaleType(scaleType);
-        imageView2.setOnClickListener(new ai.t2(10, this, arrayList));
+        imageView2.setOnClickListener(new ai.v2(10, this, arrayList));
         c8.na.a(imageView2);
         frameLayout.addView(imageView2, c8.ja.d(32, 32.0f, 53, 0.0f, 14.0f, 12.0f, 0.0f));
         TextView textView = new TextView(context);
@@ -197,7 +197,7 @@ public final class i1 extends org.telegram.ui.Components.ja {
         linearLayout.setOrientation(0);
         linearLayout.setClipChildren(false);
         this.V1 = new e1[3];
-        this.f2 = new h1(context, e6Var, new ai.f0(this, 9));
+        this.f2 = new h1(context, e6Var, new ai.g0(this, 9));
         int i15 = 0;
         while (true) {
             e1[] e1VarArr = this.V1;

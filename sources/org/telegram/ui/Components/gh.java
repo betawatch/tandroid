@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements org.telegram.messenger.z10 {
     public final /* synthetic */ int a;
@@ -250,13 +250,13 @@ public final /* synthetic */ class gh implements org.telegram.messenger.z10 {
                 }
                 break;
             case 16:
-                org.telegram.ui.fm0 fm0Var = (org.telegram.ui.fm0) obj2;
+                org.telegram.ui.gm0 gm0Var = (org.telegram.ui.gm0) obj2;
                 Integer num = (Integer) obj;
                 org.telegram.ui.hz hzVar = ((org.telegram.ui.ez) obj3).e;
                 if (hzVar.getUserConfig().q()) {
                     int intValue = num.intValue();
                     hzVar.F = intValue;
-                    fm0Var.a(intValue, true);
+                    gm0Var.a(intValue, true);
                     org.telegram.ui.xy xyVar = hzVar.J;
                     if (xyVar != null) {
                         xyVar.d(!hzVar.getUserConfig().q() ? -1 : hzVar.F, true);

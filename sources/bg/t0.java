@@ -8,9 +8,9 @@ import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
 import org.telegram.ui.r3;
-import org.telegram.ui.xl0;
+import org.telegram.ui.yl0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public abstract class t0 {
     public static final p0 a = new p0(0);
@@ -19,12 +19,12 @@ public abstract class t0 {
     public static Outline d;
     public static Rect e;
 
-    public static void a(Canvas canvas, xl0 xl0Var, r3 r3Var) {
+    public static void a(Canvas canvas, yl0 yl0Var, r3 r3Var) {
         Path path;
         Outline outline;
         Rect rect;
-        ViewOutlineProvider outlineProvider = xl0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !xl0Var.getClipToOutline() || outlineProvider == null) {
+        ViewOutlineProvider outlineProvider = yl0Var.getOutlineProvider();
+        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !yl0Var.getClipToOutline() || outlineProvider == null) {
             r3Var.a(canvas);
             return;
         }
@@ -45,7 +45,7 @@ public abstract class t0 {
             rect = new Rect();
         }
         Path path2 = path;
-        outlineProvider.getOutline(xl0Var, outline);
+        outlineProvider.getOutline(yl0Var, outline);
         path2.rewind();
         if (outline.isEmpty() || !outline.getRect(rect)) {
             r3Var.a(canvas);

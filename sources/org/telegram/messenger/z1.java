@@ -12,7 +12,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -206,7 +206,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     long j10 = jArr[r14];
                     vr messagesStorage = f2Var.getMessagesStorage();
                     messagesStorage.getClass();
-                    messagesStorage.I(new vq(messagesStorage, this.b, this.c, j10, 4));
+                    messagesStorage.I(new uq(messagesStorage, this.b, this.c, j10, 4));
                     r14++;
                 }
                 g0.h3(runnable);
@@ -399,9 +399,9 @@ public final /* synthetic */ class z1 implements Runnable {
                                 boolean z14 = z12;
                                 try {
                                     try {
-                                        fr frVar = new fr(vrVar2, j12, tL_updates_channelDifferenceTooLong, 0);
+                                        dr drVar = new dr(vrVar2, j12, tL_updates_channelDifferenceTooLong, 0);
                                         vrVar2 = vrVar2;
-                                        g0.h3(frVar);
+                                        g0.h3(drVar);
                                         if (z14) {
                                             i10 = i12;
                                             if (i10 == 1) {
@@ -417,7 +417,7 @@ public final /* synthetic */ class z1 implements Runnable {
                                             try {
                                                 h00 h00Var = vrVar2.getMessagesController().r7;
                                                 h00Var.getClass();
-                                                g0.h3(new di.sb(h00Var, j11, z11, 4));
+                                                g0.h3(new di.rb(h00Var, j11, z11, 4));
                                             } catch (Exception e15) {
                                                 e = e15;
                                                 vrVar2.o(e, z11);

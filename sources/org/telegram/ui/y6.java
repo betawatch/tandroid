@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
     public static volatile boolean i0 = false;
@@ -165,7 +165,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
         File j3;
         int i11;
         char c11;
-        di.x7 x7Var;
+        di.w7 w7Var;
         char c12;
         int i12;
         char c13;
@@ -179,7 +179,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
         int i14 = (zArr[0] ? 2 : 0) + (zArr[1] ? 2 : 0) + (zArr[2] ? 2 : 0) + (zArr[3] ? 2 : 0) + (zArr[4] ? 1 : 0) + (zArr[5] ? 2 : 0) + (zArr[6] ? 1 : 0) + (zArr[7] ? 1 : 0) + (zArr[8] ? 1 : 0) + (zArr[9] ? 1 : 0);
         long currentTimeMillis = System.currentTimeMillis();
         bi.w2 w2Var = new bi.w2(n6Var, iArr, i14, 4);
-        di.x7 x7Var2 = new di.x7(i14, 3, currentTimeMillis, n6Var, iArr);
+        di.w7 w7Var2 = new di.w7(i14, 3, currentTimeMillis, n6Var, iArr);
         long j10 = 0;
         boolean z14 = true;
         int i15 = 0;
@@ -252,14 +252,14 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                     n0(j3.getAbsolutePath(), r12, null, w2Var);
                                 }
                                 iArr[0] = iArr[0] + 1;
-                                x7Var2.run();
+                                w7Var2.run();
                                 if (i10 == 100) {
                                     File j11 = org.telegram.messenger.w7.j(4);
                                     if (j11 != null) {
                                         n0(j11.getAbsolutePath(), 3, null, w2Var);
                                     }
                                     iArr[0] = iArr[0] + 1;
-                                    x7Var2.run();
+                                    w7Var2.run();
                                 }
                                 if (i10 == 0 || i10 == 2) {
                                     File j12 = org.telegram.messenger.w7.j(i10 == 0 ? 100 : 101);
@@ -269,7 +269,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                     }
                                     c11 = 0;
                                     iArr[0] = iArr[0] + 1;
-                                    x7Var2.run();
+                                    w7Var2.run();
                                 } else {
                                     c11 = 0;
                                     i11 = 101;
@@ -280,7 +280,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                         n0(j13.getAbsolutePath(), r12, null, w2Var);
                                     }
                                     iArr[c11] = iArr[c11] + 1;
-                                    x7Var2.run();
+                                    w7Var2.run();
                                 }
                                 if (i15 == 9) {
                                     y6Var.F = s0(org.telegram.messenger.g0.P0(), z12 ? 1 : 0);
@@ -293,7 +293,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                         i12 = 2;
                                         c12 = 5;
                                         c13 = 4;
-                                        x7Var = x7Var2;
+                                        w7Var = w7Var2;
                                     } else if (i10 == z16) {
                                         y6Var.s = s0(org.telegram.messenger.w7.j(z16 ? 1 : 0), r12);
                                     } else if (i10 == 6) {
@@ -301,13 +301,13 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                     } else {
                                         if (i10 == 3) {
                                             if (r12 == z16) {
-                                                x7Var = x7Var2;
+                                                w7Var = w7Var2;
                                                 long s02 = s0(org.telegram.messenger.w7.j(3), r12);
                                                 y6Var.r = s02;
                                                 c12 = 5;
                                                 y6Var.r = s0(org.telegram.messenger.w7.j(5), r12) + s02;
                                             } else {
-                                                x7Var = x7Var2;
+                                                w7Var = w7Var2;
                                                 c12 = 5;
                                                 long s03 = s0(org.telegram.messenger.w7.j(3), r12);
                                                 y6Var.x = s03;
@@ -315,7 +315,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                             }
                                             i12 = 2;
                                         } else {
-                                            x7Var = x7Var2;
+                                            w7Var = w7Var2;
                                             c12 = 5;
                                             if (i10 == 0) {
                                                 long s04 = s0(org.telegram.messenger.w7.j(0), r12);
@@ -343,7 +343,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                                     }
                                 }
                             }
-                            x7Var = x7Var2;
+                            w7Var = w7Var2;
                             i12 = 2;
                             c12 = 5;
                             c13 = 4;
@@ -352,7 +352,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                         r12 = c10;
                         if (i10 != -1) {
                         }
-                        x7Var = x7Var2;
+                        w7Var = w7Var2;
                         i12 = 2;
                         c12 = 5;
                         c13 = 4;
@@ -365,7 +365,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                 i10 = r13;
                 if (i10 != -1) {
                 }
-                x7Var = x7Var2;
+                w7Var = w7Var2;
                 i12 = 2;
                 c12 = 5;
                 c13 = 4;
@@ -373,12 +373,12 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
                 c13 = c14;
                 c12 = c15;
                 z14 = false;
-                x7Var = x7Var2;
+                w7Var = w7Var2;
                 i12 = r122 == true ? 1 : 0;
             }
             i15++;
             r122 = i12;
-            x7Var2 = x7Var;
+            w7Var2 = w7Var;
             c15 = c12;
             c14 = c13;
             z13 = true;
@@ -400,7 +400,7 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
             f8Var.h(new org.telegram.messenger.a(f8Var, 8));
         }
         org.telegram.messenger.w7.G(y6Var.currentAccount).i();
-        org.telegram.messenger.g0.h3(new ai.k2(y6Var, z15, j10, o6Var));
+        org.telegram.messenger.g0.h3(new ai.l2(y6Var, z15, j10, o6Var));
     }
 
     public static void c0(y6 y6Var, org.telegram.ui.ActionBar.t1 t1Var) {
@@ -428,10 +428,10 @@ public final class y6 extends org.telegram.ui.ActionBar.e2 implements org.telegr
         s12.N1.b();
         if (z10) {
             org.telegram.messenger.vr messagesStorage = y6Var.getMessagesStorage();
-            messagesStorage.a.c(new org.telegram.messenger.oq(messagesStorage, 12));
+            messagesStorage.a.c(new org.telegram.messenger.nq(messagesStorage, 12));
         } else {
             org.telegram.messenger.vr messagesStorage2 = y6Var.getMessagesStorage();
-            messagesStorage2.a.c(new org.telegram.messenger.oq(messagesStorage2, 15));
+            messagesStorage2.a.c(new org.telegram.messenger.nq(messagesStorage2, 15));
         }
     }
 

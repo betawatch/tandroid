@@ -20,17 +20,17 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.rc1;
 import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ u1(int i7, m9 m9Var) {
+    public /* synthetic */ u1(int i7, l9 l9Var) {
         this.a = 3;
         this.b = i7;
-        this.c = m9Var;
+        this.c = l9Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:127:0x02cf  */
@@ -78,7 +78,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                 }
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new ai.z0((v8) obj, i17, tLObject, 7));
+                org.telegram.messenger.g0.h3(new ai.a1((u8) obj, i17, tLObject, 7));
                 break;
             case 2:
                 fi.e1 e1Var = (fi.e1) obj;
@@ -198,7 +198,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new ai.z0(tLObject, i17, (m9) obj, i11));
+                org.telegram.messenger.g0.h3(new ai.a1(tLObject, i17, (l9) obj, i11));
                 break;
             case 4:
                 fi.k6 k6Var = (fi.k6) obj;
@@ -216,7 +216,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                     break;
                 }
             case 5:
-                org.telegram.messenger.g0.h3(new ai.z0((ki.y3) obj, tLObject, i17, i12));
+                org.telegram.messenger.g0.h3(new ai.a1((ki.y3) obj, tLObject, i17, i12));
                 break;
             case 6:
                 ((VoIPService) obj).lambda$startScreenCapture$60(i17, tLObject, tL_error);

@@ -7,7 +7,7 @@ import org.telegram.messenger.yi;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.b41;
 import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.da0;
+import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.oy;
 import org.telegram.ui.Components.p41;
@@ -15,12 +15,12 @@ import org.telegram.ui.Components.qx;
 import org.telegram.ui.Components.rx;
 import org.telegram.ui.an;
 import org.telegram.ui.bg0;
-import org.telegram.ui.cm0;
+import org.telegram.ui.dm0;
 import org.telegram.ui.jl;
-import org.telegram.ui.ym0;
 import org.telegram.ui.z11;
+import org.telegram.ui.zm0;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class y1 extends g.p {
     public final /* synthetic */ int c;
@@ -138,8 +138,8 @@ public final class y1 extends g.p {
                 rxVar.B1();
                 return rxVar.R.get(i7);
             case 12:
-                da0 da0Var = (da0) this.d;
-                if (i7 < 0 || i7 >= da0Var.r.f.size() || (a10 = da0.a(da0Var, (gjVar2 = (gj) da0Var.r.f.get(i7)))) == null) {
+                ea0 ea0Var = (ea0) this.d;
+                if (i7 < 0 || i7 >= ea0Var.r.f.size() || (a10 = ea0.a(ea0Var, (gjVar2 = (gj) ea0Var.r.f.get(i7)))) == null) {
                     return 1000;
                 }
                 return a10.d(gjVar2).i;
@@ -158,18 +158,18 @@ public final class y1 extends g.p {
                 }
                 return 1000;
             case 15:
-                cm0 cm0Var = (cm0) this.d;
-                if (i7 < cm0Var.c0 || i7 >= cm0Var.d0) {
-                    return (i7 < cm0Var.e0 || i7 >= cm0Var.f0) ? 3 : 1;
+                dm0 dm0Var = (dm0) this.d;
+                if (i7 < dm0Var.c0 || i7 >= dm0Var.d0) {
+                    return (i7 < dm0Var.e0 || i7 >= dm0Var.f0) ? 3 : 1;
                 }
                 return 1;
             case 16:
-                ym0 ym0Var = (ym0) this.d;
-                if (ym0Var.M.d(i7) == 1 || ym0Var.Z || (ym0Var.K == null && TextUtils.isEmpty(ym0Var.w))) {
-                    return ym0Var.N.J;
+                zm0 zm0Var = (zm0) this.d;
+                if (zm0Var.M.d(i7) == 1 || zm0Var.Z || (zm0Var.K == null && TextUtils.isEmpty(zm0Var.w))) {
+                    return zm0Var.N.J;
                 }
-                int i21 = ym0Var.S;
-                int i22 = ym0Var.h0;
+                int i21 = zm0Var.S;
+                int i22 = zm0Var.h0;
                 return i21 + (i7 % i22 != i22 - 1 ? org.telegram.messenger.g0.L(2.0f) : 0);
             case 17:
                 z11 z11Var = (z11) this.d;

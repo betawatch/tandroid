@@ -5,8 +5,8 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import di.jb;
-import di.mb;
+import di.ib;
+import di.lb;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.gz;
 import org.telegram.ui.Components.cj0;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.ve;
 import org.telegram.ui.Components.y7;
 import org.telegram.ui.qv;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class z4 extends v4.t0 {
     public final /* synthetic */ int a;
@@ -256,18 +256,18 @@ public final class z4 extends v4.t0 {
                 ((di.c6) obj).U1.g();
                 break;
             case 9:
-                mb mbVar = (mb) obj;
-                te.a aVar = mbVar.Y;
-                if (!mbVar.c.canScrollVertically(-1)) {
-                    w4Var = ((org.telegram.ui.ActionBar.e2) mbVar).simpleActionBar;
+                lb lbVar = (lb) obj;
+                te.a aVar = lbVar.Y;
+                if (!lbVar.c.canScrollVertically(-1)) {
+                    w4Var = ((org.telegram.ui.ActionBar.e2) lbVar).simpleActionBar;
                     break;
                 }
                 z11 = true;
                 aVar.a(z11, true);
                 break;
             case 10:
-                jb jbVar = (jb) obj;
-                u41 u41Var = jbVar.a;
+                ib ibVar = (ib) obj;
+                u41 u41Var = ibVar.a;
                 if (u41Var.canScrollVertically(1)) {
                     for (int i20 = 0; i20 < u41Var.getChildCount(); i20++) {
                         if (!(u41Var.getChildAt(i20) instanceof pz)) {
@@ -275,7 +275,7 @@ public final class z4 extends v4.t0 {
                     }
                     break;
                 }
-                jbVar.h.run();
+                ibVar.h.run();
                 break;
             case 11:
                 qv qvVar = (qv) obj;

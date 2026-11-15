@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import di.a9;
+import di.z8;
 import fi.b7;
 import fi.d7;
 import fi.f7;
@@ -55,7 +55,7 @@ import org.telegram.ui.qq;
 import org.telegram.ui.yw;
 import org.telegram.ui.zr;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -333,7 +333,7 @@ public final /* synthetic */ class m1 implements Runnable {
                 break;
             case 12:
                 ((long[]) obj2)[0] = j3;
-                ((ai.f1) obj).run();
+                ((ai.g1) obj).run();
                 break;
             case 13:
                 ((VideoFramesRewinder) obj2).lambda$new$1((ArrayList) obj, j3);
@@ -491,7 +491,7 @@ public final /* synthetic */ class m1 implements Runnable {
                     T3.presentFragment(ua2);
                     TLRPC.Chat M0 = np.s1(launchActivity.P).M0(Long.valueOf(-l10.longValue()));
                     if (M0 != null) {
-                        org.telegram.messenger.g0.i3(new a9(ua2, this.b, M0, 1), 250L);
+                        org.telegram.messenger.g0.i3(new z8(ua2, this.b, M0, 1), 250L);
                         break;
                     }
                 }

@@ -1,7 +1,7 @@
 package ji;
 
-import ai.b2;
-import ai.y;
+import ai.c2;
+import ai.z;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.g5;
 import org.telegram.ui.Components.gf;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements z10 {
     public final /* synthetic */ int a;
@@ -56,14 +56,14 @@ public final /* synthetic */ class h implements z10 {
                         if (xr.k == mVar2) {
                             xr.k = null;
                         }
-                        b2 b2Var = mVar2.f;
-                        if (b2Var != null) {
-                            b2Var.c();
+                        c2 c2Var = mVar2.f;
+                        if (c2Var != null) {
+                            c2Var.c();
                             mVar2.f = null;
                         }
-                        y yVar = mVar2.d;
-                        if (yVar != null) {
-                            yVar.d();
+                        z zVar = mVar2.d;
+                        if (zVar != null) {
+                            zVar.d();
                             mVar2.d = null;
                         }
                         mVar2.e = null;

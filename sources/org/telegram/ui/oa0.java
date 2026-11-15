@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class oa0 extends org.telegram.ui.Components.st0 implements r0.l {
     public final /* synthetic */ int g0 = 1;
@@ -40,8 +40,8 @@ public final class oa0 extends org.telegram.ui.Components.st0 implements r0.l {
 
     public boolean Y() {
         org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.j0;
-        ai.q2 q2Var = y5Var.o0;
-        return q2Var != null && (q2Var.getParent() instanceof View) && ((View) y5Var.o0.getParent()).getTop() <= y5Var.a.getPaddingTop();
+        ai.r2 r2Var = y5Var.o0;
+        return r2Var != null && (r2Var.getParent() instanceof View) && ((View) y5Var.o0.getParent()).getTop() <= y5Var.a.getPaddingTop();
     }
 
     /* JADX WARN: Finally extract failed */

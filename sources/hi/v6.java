@@ -35,7 +35,7 @@ import org.telegram.ui.Components.tj0;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.v00;
 
-/* compiled from: r8-map-id-ca0014cba5a37e4c611014264e76a6d5467852d34299934bcc713efe0d9e05bc */
+/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
 /* loaded from: classes3.dex */
 public final class v6 extends org.telegram.ui.Components.ja implements is, org.telegram.messenger.x5, te.b {
     public boolean A2;
@@ -621,11 +621,11 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                 while (i12 < size2) {
                     Object obj2 = arrayList3.get(i12);
                     i12++;
-                    di.qa qaVar = new di.qa(this, i10);
+                    di.pa paVar = new di.pa(this, i10);
                     int i14 = org.telegram.ui.Cells.e7.b;
                     b41 K = b41.K(org.telegram.ui.Cells.e7.class);
                     K.G = (gj) obj2;
-                    K.H = qaVar;
+                    K.H = paVar;
                     arrayList.add(K);
                     i11 += org.telegram.messenger.g0.L(56.0f);
                 }
@@ -715,7 +715,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                     return;
                 }
                 this.A2 = true;
-                np.s1(this.a).d2().a(str2, null, new ai.f0(this, 29));
+                np.s1(this.a).d2().a(str2, null, new ai.g0(this, 29));
                 return;
             }
             this.x2 = true;
@@ -776,7 +776,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                 tL_messages_searchGlobal.offset_id = 0;
                 tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
             }
-            this.t2 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_searchGlobal, new ai.d1(this, 10));
+            this.t2 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_searchGlobal, new ai.e1(this, 10));
             this.l2.O(true);
         }
     }
